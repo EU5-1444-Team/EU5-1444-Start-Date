@@ -4437,7 +4437,7 @@ countries = {
 		government = {
 			type = monarchy
 			heir_selection = cognatic_primogeniture
-			ruler = eng_henry_grosmont
+			ruler = eng_edward_iii
 
 			ruler_term = {	 character = eng_alfred_the_great start_date = 886.1.1 end_date = 899.10.26 regnal_number = 0	}
 			ruler_term = {	 character = eng_edward_the_elder start_date = 899.10.26 end_date = 924.7.17 regnal_number = 0	}
@@ -10726,8 +10726,7 @@ countries = {
 			type = monarchy
 			heir_selection = salic_law
 
-			ruler = nap_robert_i_anjou
-			consort = nap_sancha_aragon
+			ruler = ara_peter_iv_arago
 
 			ruler_term = { character = nap_charles_i_anjou start_date = 1246.1.31 end_date = 1285.1.7 regnal_number = 1 }
 			ruler_term = { character = nap_carlo_ii_anjou start_date = 1285.1.7 end_date = 1309.5.5 regnal_number = 2 }
@@ -10757,10 +10756,9 @@ countries = {
 		tolerated_cultures = { median }
 		capital = naples
 		country_rank = rank_kingdom
-		dynasty = anjou_dynasty
 	}
 
-	#Provence (Union with Naples)
+	#Provence
 	PRO = {
 		own_control_core = {
 			aix_en_provence arles brignoles marseille toulon tarascon
@@ -13559,17 +13557,15 @@ countries = {
 			castellon_de_la_plana ares_del_maestre llucena morella peniscola
 			jativa alcoy alicante denia elche orihuela
 			valencia gandia ayora bunol chelva lliria
+			palma ciudadela_de_menorca ibiza manacor pollensa #Kingdom of Mallorca
+			puigcerda prades #County of Cerdanya
+			perpignan #County of Roselló
 		}
 
 		own_control_conquered = {
 			cagliari tratalias villa_di_chiesa isili muravera seddori tortoli orosei terranova_pausania posada tempiopausania
 			sassari sorgono terralba bosa macomer bitti ozieri ales alghero thiesi
 			malta
-		}
-
-		our_cores_conquered_by_others = {
-			puigcerda prades montpellier perpignan
-			palma ciudadela_de_menorca ibiza manacor pollensa #Majorca
 		}
 
 		starting_technology_level = 3
@@ -13667,7 +13663,7 @@ countries = {
 		}
 	}
 	MLL = {
-		own_control_core = {
+		our_cores_conquered_by_others = {
 			palma ciudadela_de_menorca ibiza manacor pollensa #Kingdom of Mallorca
 			puigcerda prades #County of Cerdanya
 			perpignan #County of Roselló
@@ -33698,6 +33694,7 @@ countries = {
 			}
 		}
 		capital = graz
+		dynasty = habsburg_dynasty
 	}
 
 	CRH = {	#Carinthia
@@ -57680,6 +57677,12 @@ countries = {
 
 	CIR = { #Circassia
 		own_control_core = {
+			kuzhyb shkhancheriekhabl
+			armavir chatyun adyukh uspenskoye
+			maykop belorechensk moschevo
+			shanjir siba_circassia khadyzhi
+			costa tuapse
+			susaco
 		}
 
 		include = "expl_christian_caucasus"
@@ -57716,11 +57719,7 @@ countries = {
 
 	HTY = { #Hatukay
 		our_cores_conquered_by_others = {
-			mapa
-		}
-
-		our_cores_conquered_by_others = {
-			taman
+			mapa taman
 		}
 
 		starting_technology_level = 3
@@ -57737,7 +57736,7 @@ countries = {
 	}
 
 	HYT = { #Hytuk
-		own_control_core = {
+		our_cores_conquered_by_others = {
 			shanjir siba_circassia khadyzhi
 			costa tuapse
 		}
@@ -57756,7 +57755,7 @@ countries = {
 	}
 
 	KDA = { #Kabardia
-		own_control_core = {
+		our_cores_conquered_by_others = {
 			kuzhyb shkhancheriekhabl
 			armavir chatyun adyukh uspenskoye
 		}
@@ -57775,7 +57774,7 @@ countries = {
 	}
 
 	KIP = { #Kipike
-		own_control_core = {
+		taman = {
 			susaco
 		}
 
@@ -57793,7 +57792,7 @@ countries = {
 	}
 
 	TEM = { #Temirgoy
-		own_control_core = {
+		our_cores_conquered_by_others = {
 			maykop belorechensk moschevo
 		}
 
