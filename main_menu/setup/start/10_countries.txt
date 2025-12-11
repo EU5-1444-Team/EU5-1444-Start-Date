@@ -49237,10 +49237,18 @@ countries = {
 	KHM = { #Khmer
 		own_control_core = {
 			angkor
-			angkor_borei angkor_knong apui ban_don ban_phone banlung banon banteay_chhmar battambang beng_mealea buriram champasak chhmuoh_thmei damrey_trom doh_kromum
-			idkabue indrapura_khmer ishanapura kampong_saom koh_ker koh_kong khorat kracheh longvek lumphat kampong_roessei kon_tum khukhan kramuon_sa
-			mahaxay muang_mang muang_phalan muang_phin muang_ta_oi muang_tam mueng_thung_yai nokor_reach_seyma nong_bok or_keo peam phanom_rung phimai phnom_penh phnom_santuk phnom_srok phsar_dek phutthaisong pouthi_loeu prathai_saman preah_ko prasat_andet prasat_don_an prasat_don_kau prasat_pram_lovet prasat_thong_lang
-			preah_khan_kompong_svay preah_vihear prey_nokor pursat rattanaburi rong_damrel sampheak_borak samxay sandan sangkha savannakhet sdok_kok_thom sepon song_be srey_sarchhor srok_khleang stung_treng suwannaphum tboung_khmum thuan_binh toek_khmau tonle_kong tuol_ta_mouk thung_samrit vat_phou vyadhapura
+			angkor_borei angkor_knong apui ban_don banlung banon banteay_chhmar battambang beng_mealea chhmuoh_thmei damrey_trom doh_kromum
+			indrapura_khmer ishanapura kampong_saom koh_ker koh_kong kracheh longvek lumphat kampong_roessei kon_tum kramuon_sa
+			mueng_thung_yai or_keo peam phnom_penh phnom_santuk phnom_srok phsar_dek pouthi_loeu preah_ko prasat_andet prasat_don_an prasat_don_kau prasat_pram_lovet 
+			preah_khan_kompong_svay preah_vihear prey_nokor pursat rong_damrel sampheak_borak sandan sdok_kok_thom song_be srey_sarchhor srok_khleang stung_treng tboung_khmum toek_khmau tuol_ta_mouk vyadhapura
+		}
+		our_cores_owned_by_others = {
+			mahaxay nong_bok
+			savannakhet thuan_binh muang_phalan sepon muang_ta_oi muang_phin
+			thung_samrit nokor_reach_seyma phimai khorat phanom_rung
+			phutthaisong buriram suwannaphum prathai_saman muang_tam
+			rattanaburi sangkha khukhan prasat_thong_lang vat_phou
+			champasak muang_mang ban_phone tonle_kong idkabue samxay
 		}
 
 		include = "south_east_asia_monarchy"
@@ -49345,6 +49353,9 @@ countries = {
 			thien_truong tho_hoang thu_vat trang_an tuyen_hoa tuyen_quang van_kiep vo_nhai vu_ninh
 			# own_control_integrated, but culture accepted
 			phon_nha vrddha_ratnapura visnupura amarendrapura
+			# Cobra
+			thuan_chau muong_cha
+			muong_luan son_la mang_viet lai_chau thuy_vi van_ban quy_hoa
 		}
 		own_control_integrated = {}
 		our_cores_conquered_by_others = {}
@@ -49444,11 +49455,8 @@ countries = {
 	}
 
 	LAV = { #Lavo
-		own_control_core = {
-			dong_lakhon dong_si_maha_phot lopburi muang_khuan_kra_buri phanat prachinburi rayong sa_kaeo saraburi
-		}
-
 		our_cores_conquered_by_others = {
+			dong_lakhon dong_si_maha_phot lopburi muang_khuan_kra_buri phanat prachinburi rayong sa_kaeo saraburi
 			ayodhya
 		}
 
@@ -49482,11 +49490,8 @@ countries = {
 	}
 
 	ADH = { #Lavo
-		own_control_core = {
-			ayodhya
-		}
-
 		our_cores_conquered_by_others = {
+			ayodhya
 			dong_lakhon dong_si_maha_phot lopburi muang_khuan_kra_buri phanat prachinburi rayong sa_kaeo saraburi
 		}
 
@@ -49514,6 +49519,28 @@ countries = {
 			lawa_culture
 			mon_culture
 		}
+	}
+
+	AYU = { # Ayutthaya	
+		own_control_core = {
+			ayodhya
+			# Phetchaburi
+			phetchaburi muang_na_rang chumphon
+			# Tenasserim
+			tenasserim kawthaung mergui myitta singkhon tavoy thayetchaung
+			# Suphanburi
+			suphanburi
+			chaisri kanchanaburi ratchaburi wang_pho
+			# Lavo
+			dong_lakhon dong_si_maha_phot lopburi muang_khuan_kra_buri phanat prachinburi rayong sa_kaeo saraburi
+			# Ligor
+			kraburi prasong
+		}
+
+		include = "south_east_asia_monarchy"
+
+		country_rank = rank_kingdom
+		capital = ayodhya
 	}
 
 	PEG = { #Pegu / Hanthawaddy
@@ -49558,8 +49585,13 @@ countries = {
 
 	LIG = { #Ligor
 		own_control_core = {
+			sichon singgora takua_pa tha_tong thalang trang wiang_sa
 			thammarat
-			chaiya ko_samui kraburi krabi mardelong prasong satingpura sichon singgora takua_pa tha_tong thalang trang wiang_sa
+			chaiya ko_samui krabi mardelong satingpura 
+		}
+
+		own_cores_conquered_by_others = {
+			kraburi prasong
 		}
 
 		include = "south_east_asia_monarchy"
@@ -49645,7 +49677,7 @@ countries = {
 	}
 
 	SPN = { #Suphanburi
-		own_control_core = {
+		our_cores_conquered_by_others = {
 			suphanburi
 			chaisri kanchanaburi ratchaburi wang_pho
 		}
@@ -49784,9 +49816,27 @@ countries = {
 			muang_sua ban_luang_cheng hongsa muang_et muang_kham muang_lang muang_thaeng muang_xay nam_xuang phongsali
 			phonsavan xam_neua 
 		}
-
+		
 		own_control_integrated = {
+			# Vientiane, maybe make these cores?
+			vientiane phon_hong
+			loei chiang_khan dan_sai nong_khay udon_thani
+			nong_bua_lamphu phu_wiang
+			kham_muang khon_kaen mueng_fa_daet
+			muang_nakhon  kut_ling muang_nong_han_luang mukdahan pak_huei_lang that_phanom
+			muang_phuan bolikham thoulakhom
+			thakhek  keutkeut khamkeut ngoc_ma
+			muang_khemarat yasothon roi_et
+			chaiyaphum kaset_sombun khon_san mancha_khiri
 			ban_khon sayniabuli vang_vieng
+
+			# Khmer
+			mahaxay nong_bok
+			savannakhet thuan_binh muang_phalan sepon muang_ta_oi muang_phin
+			thung_samrit nokor_reach_seyma phimai khorat phanom_rung
+			phutthaisong buriram suwannaphum prathai_saman muang_tam
+			rattanaburi sangkha khukhan prasat_thong_lang vat_phou
+			champasak muang_mang ban_phone tonle_kong idkabue samxay
 		}
 
 		include = "south_east_asia_monarchy_no_coast"
@@ -49800,12 +49850,12 @@ countries = {
 			tai_lu_culture
 		}
 
-		country_rank = rank_duchy
-		capital = muang_sua
+		country_rank = rank_kingdom
+		capital = vientiane
 	}
 
 	VTN = { #Vientiane
-		own_control_core = {
+		own_cores_conquered_by_others = {
 			vientiane phon_hong
 			loei  chiang_khan dan_sai nong_khay udon_thani
 			nong_bua_lamphu phu_wiang
@@ -49813,9 +49863,6 @@ countries = {
 			muang_nakhon   kut_ling muang_nong_han_luang mukdahan pak_huei_lang that_phanom
 			muang_phuan  bolikham thoulakhom
 			thakhek  keutkeut khamkeut ngoc_ma
-		}
-
-		own_control_integrated = {
 			muang_khemarat yasothon roi_et
 			chaiyaphum kaset_sombun khon_san mancha_khiri
 		}
@@ -49835,7 +49882,7 @@ countries = {
 	}
 
 	CBK = { #Nguu Hong (Cobra Kingdom) https://en.wikipedia.org/wiki/Ng%C6%B0u_H%E1%BB%91ng
-		own_control_core = {
+		own_cores_conquered_by_others = {
 			thuan_chau muong_cha
 			muong_luan son_la mang_viet lai_chau thuy_vi van_ban quy_hoa
 		}
@@ -50298,7 +50345,7 @@ countries = {
 	}
 
 	PTC = { #Phetchaburi
-		own_control_core = {
+		our_cores_conquered_by_others = {
 			phetchaburi muang_na_rang chumphon
 		}
 
@@ -50322,7 +50369,7 @@ countries = {
 	}
 
 	TSM = { #Tenasserim
-		own_control_core = {
+		our_cores_conquered_by_others = {
 			tenasserim kawthaung mergui myitta singkhon tavoy thayetchaung
 		}
 
