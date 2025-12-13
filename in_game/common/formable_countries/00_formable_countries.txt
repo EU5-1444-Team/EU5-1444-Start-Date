@@ -4110,3 +4110,42 @@ AZT_f = {
 		}
 	}
 }
+TIM_f = {
+	level = 3
+	required_locations_fraction = 1.0
+	capital_required = no
+	rule = historical
+	potential = {
+		OR = {
+			tag = TIH
+			tag = TIS
+			tag = TTK
+			tag = TIK
+			tag = TIG
+			tag = TII
+			tag = TIF
+		}
+
+	}
+
+	allow = {
+		owns = location:herat
+		owns = location:balkh
+		owns = location:samarkand
+		owns = location:gorgan
+		owns = location:isfahan
+		owns = location:qom
+		owns = location:shiraz
+		owns = location:kabul
+	}
+
+	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_empire }
+	}
+
+	name = TIM
+	flag = TIM
+	adjective = TIM_ADJ
+	tag = TIM
+	color = rgb { 213 0 39 }
+}
