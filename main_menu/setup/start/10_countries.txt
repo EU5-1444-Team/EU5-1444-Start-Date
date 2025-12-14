@@ -51474,7 +51474,7 @@ countries = {
             #Pahang
             own_control_core = {
                 pahang
-                bera gelanggi jerantut johor_lama kuala_lipis kuantan malacca muar pulai rantau_panjang
+                bera jerantut kuala_lipis kuantan pulai
             }
 
             include = "indonesia_monarchy"
@@ -51484,6 +51484,24 @@ countries = {
             }
 
             capital = pahang
+            government = {
+                ruler = random
+            }
+        }
+
+        MLC = {
+            #Malacca
+            own_control_core = {
+                gelanggi johor_lama malacca muar rantau_panjang klang kajang
+            }
+
+            include = "indonesia_monarchy"
+
+            tolerated_cultures = {
+                orang_asli_culture
+            }
+
+            capital = malacca
             government = {
                 ruler = random
             }
@@ -52198,7 +52216,11 @@ countries = {
         MNJ = {
             #Manjung
             own_control_core = {
-                manjung klang kajang
+                manjung
+            }
+
+            our_cores_conquered_by_others = {
+                klang kajang
             }
 
             include = "south_east_asia_monarchy"
