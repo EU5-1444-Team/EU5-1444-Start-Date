@@ -101008,4 +101008,251 @@ character_db = {
         dynasty = kaimana_dynasty
         tag = KAM
     }
+
+    tim_timur = {
+        first_name = { name = "Timur" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 75 dip = 85 mil = 99
+        birth_date = 1336.4.8
+        death_date = 1405.2.18
+        birth = kesh
+        dynasty = timurid_dynasty
+        tag = TIM
+        ruler_trait = conqueror
+        ruler_trait = tactical_genius
+        ruler_trait = martial_educator
+    }
+
+    tim_tuman_aqa = {
+        first_name = { name = "Tuman Aqa" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1350.1.1
+        death_date = 1400.1.1
+        birth = samarkand
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_shahrukh_mirza = {
+        first_name = { name = "Shahrukh Mirza" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 70 dip = 75 mil = 50
+        birth_date = 1377.8.20
+        birth = samarkand
+        father = tim_timur
+        mother = tim_tuman_aqa
+        dynasty = timurid_dynasty
+        tag = TIM
+        ruler_trait = righteous
+        ruler_trait = lawgiver
+        ruler_trait = careful
+
+        timed_modifier = {
+            modifier = "sickly_character"
+            start_date = 1440.1.1
+            date = 1447.3.13
+            size = 1
+        }
+    }
+
+    tim_jahangir_mirza = {
+        first_name = { name = "Jahangir" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1356.1.1
+        death_date = 1376.1.1
+        father = tim_timur
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_baysonqor_father = {
+        first_name = { name = "Baysonqor" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1399.1.1
+        death_date = 1433.1.1
+        father = tim_shahrukh_mirza
+        dynasty = timurid_dynasty
+        tag = TII
+    }
+
+    tif_ibrahim_father = {
+        first_name = { name = "Ibrahim Sultan" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1394.1.1
+        death_date = 1435.1.1
+        father = tim_shahrukh_mirza
+        dynasty = timurid_dynasty
+        tag = TIF
+    }
+
+    tim_gauhar_shad = {
+        first_name = { name = "Gauhar Shad" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 60 dip = 75 mil = 5
+        birth_date = 1379.1.1
+        birth = herat
+        dynasty = timurid_dynasty
+        tag = TIM
+        ruler_trait = lawgiver
+        ruler_trait = righteous
+    }
+
+    tis_ruqaiya_sultan = {
+        first_name = { name = "Ruqaiya Sultan" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1395.1.1
+        dynasty = timurid_dynasty
+        tag = TIS
+    }
+
+    tis_ulugh_beg = {
+        first_name = { name = "Ulugh Beg" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 50 dip = 40 mil = 25
+        birth_date = 1394.3.22
+        birth = sultaniyya
+        father = tim_shahrukh_mirza
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIS
+        ruler_trait = scholar
+        ruler_trait = well_advised
+    }
+
+    tii_sultan_muhammad = {
+        first_name = { name = "Sultan Muhammad" }
+        culture = farsi_culture
+        religion = sunni
+        adm = 45 dip = 40 mil = 55
+        birth_date = 1418.1.1
+        father = tim_baysonqor_father
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TII
+        ruler_trait = expansionist
+        ruler_trait = charismatic_negotiator
+    }
+
+    tig_babur_mirza = {
+        first_name = { name = "Babur" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 55 dip = 55 mil = 40
+        birth_date = 1422.1.1
+        father = tim_baysonqor_father
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIG
+        ruler_trait = scholar
+    }
+
+    tik_sultan_masud = {
+        first_name = { name = "Sultan Mas'ud" }
+        culture = afghan_culture
+        religion = sunni
+        adm = 40 dip = 30 mil = 30
+        birth_date = 1410.1.1
+        father = tim_shahrukh_mirza
+        dynasty = timurid_dynasty
+        tag = TIK
+        ruler_trait = bold_fighter
+    }
+
+    tif_abdullah_mirza = {
+        first_name = { name = "Abdullah" }
+        culture = farsi_culture
+        religion = sunni
+        adm = 30 dip = 35 mil = 30
+        birth_date = 1433.1.1
+        father = tif_ibrahim_father
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIF
+    }
+
+    ttk_abd_al_latif = {
+        first_name = { name = "Abd al-Latif" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 40 dip = 30 mil = 65
+        birth_date = 1420.1.1
+        birth = samarkand
+        father = tis_ulugh_beg
+        mother = tis_ruqaiya_sultan
+        dynasty = timurid_dynasty
+        tag = TTK
+        ruler_trait = expansionist
+        ruler_trait = cruel
+    }
+
+    tim_baysunghur_mirza = {
+        first_name = { name = "Baysunghur" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 80 dip = 85 mil = 40
+        birth_date = 1397.9.6
+        birth = herat
+        father = tim_shahrukh_mirza
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_abul_qasim_babur_mirza = {
+        first_name = { name = "Abul-Qasim Babur" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 50 dip = 65 mil = 60
+        birth_date = 1423.1.1
+        birth = herat
+        father = tim_baysunghur_mirza
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_ala_al_dawla = {
+        first_name = { name = "Ala al-Dawla" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 45 dip = 50 mil = 40
+        birth_date = 1417.1.1
+        birth = herat
+        father = tim_shahrukh_mirza
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    ttk_abd_allah_mirza = {
+        first_name = { name = "Abd Allah" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 35 dip = 40 mil = 30
+        birth_date = 1410.1.1
+        father = tis_ulugh_beg
+        dynasty = timurid_dynasty
+        tag = TTK
+    }
+
+    tii_abu_said_mirza = {
+        first_name = { name = "Abu Sa'id" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 60 dip = 55 mil = 70
+        birth_date = 1424.1.1
+        father = tii_sultan_muhammad
+        dynasty = timurid_dynasty
+        tag = TII
+        ruler_trait = tactical_genius
+        ruler_trait = ambitious
+    }
 }

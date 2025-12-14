@@ -1,0 +1,15 @@
+timurid_dynasty = {
+    # Timurids - Timur's annulets tamgha
+    pattern = "pattern_solid.dds"
+    color1 = hsv360 { 204 70 15 }  # Dark blue, almost black
+    color2 = hsv360 { 0 80 70 }     # Red for the circles
+
+    colored_emblem = {
+        texture = "ce_roundel.dds"
+        color1 = color2 # Red
+        color2 = color2 # Red
+        instance = { position = { 0.345 0.70 } scale = { 0.55 0.55 } }
+        instance = { position = { 0.655 0.70 } scale = { 0.55 0.55 } }
+        instance = { position = { 0.5 0.30 } scale = { 0.55 0.55 } }
+    }
+}
