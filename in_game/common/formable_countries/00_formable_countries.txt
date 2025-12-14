@@ -4110,3 +4110,31 @@ AZT_f = {
 		}
 	}
 }
+AFG_f = {
+    level = 3
+    required_locations_fraction = 0.5
+    rule = historical
+
+    potential = {
+        culture = culture:afghan_culture 
+    }
+
+    allow = {
+        owns = location:kabul
+        owns = location:kandahar 
+    }
+    
+    name = AFG
+    flag = AFG
+    adjective = AFG_ADJ
+    tag = AFG
+    color = map_aztec
+
+    # Use provinces/regions corresponding to modern Afghanistan
+    provinces = {
+        kabul_province
+        kandahar_province
+    }
+    form_effect = {
+    }
+}
