@@ -30662,7 +30662,7 @@ countries = {
             country_name = NORTHERN_YUA
         }
 
-        MNG = {
+        CHI = {
             #Míng
             own_control_core = {
                 #Proper China
@@ -30836,12 +30836,33 @@ countries = {
             include = "expl_silk_road_center"
             include = "expl_silk_road_east"
             government = {
-                type = monarchy
+                sinicized_vs_unsinicized = 100
+
+                laws = {
+                    status_of_the_han_law = maintain_status_quo_in_han_policies
+                }
             }
+            flag = "MNG"
+        	country_name = "MNG"
             court_language = southern_mandarin_dialect
             liturgical_language = classical_chinese_language
             country_rank = rank_empire
             capital = dadu
+        }
+
+        MNG = {	#Míng fallback tag
+            our_cores_conquered_by_others = {}
+            include = "chinese_monarchy"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            government = {
+                type = monarchy
+            }
+            court_language = southern_mandarin_dialect
+            liturgical_language = classical_chinese_language
+            country_rank = rank_kingdom
+            capital = shangyuan
         }
 
         CSO = {
@@ -50105,7 +50126,7 @@ countries = {
         HUI = {
             # Hui
             our_cores_conquered_by_others = {
-                jingning shuiluo longde sanchuan kaycheng_guyuan xianzhou
+                jingning shuiluo longde sanchuan kaicheng_guyuan xianzhou
                 zhenrong yingli mingsha lingzhou lingwu ningxia dingyuan_lingzhou
             }
             starting_technology_level = 3
