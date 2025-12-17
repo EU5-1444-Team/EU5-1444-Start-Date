@@ -3,11 +3,61 @@ SIW = { # Siwistan
     color1 = hsv360     {    210    15    25    }
     color2 = hsv360     {    85     12    45    }
     color3 = hsv360     {    40     10    85    }
-
     colored_emblem = {
         texture = "ce_roundel.dds"
         color1 = color3
         color2 = color3
         instance = { position = { 0.5 0.5 } scale = { 0.4 0.4 } }
+    }
+}
+
+SEH = { #Sindh puppet
+    pattern = "pattern_diagonal_split.dds"
+    color1 = hsv360     {    0      100   50    }  # red
+    color2 = hsv360     {    0      0     100   }  # white
+    
+    colored_emblem = {
+        texture = "ce_bars_03.dds"
+        color1 = hsv360     {    0      0     0     }  # black
+        color2 = color2
+        instance = { position = { 0.5 0.5 } scale = { 0.8 0.8 } }
+    }
+}
+
+SKU = { #Sindh Puppet
+    pattern = "pattern_horizontal_split.dds"
+    color1 = hsv360     {    0      100   50    }  # red
+    color2 = hsv360     {    0      0     100   }  # white
+    
+    colored_emblem = {
+        texture = "ce_bars_03.dds"
+        color1 = color1
+        color2 = color1
+        instance = { position = { 0.5 0.5 } scale = { 1.2 1.2 } }
+    }
+}
+
+MLA = { # Multan
+    pattern = "pattern_solid.dds"
+    color1 = hsv360     {    120    100   35    }  # green
+    color2 = hsv360     {    0      0     100   }  # white
+    color3 = hsv360     {    60     100   100   }  # yellow
+    colored_emblem = {
+        texture = "ce_crescent_increscent.dds"
+        color1 = color2
+        color2 = color2
+        instance = { position = { 0.35 0.35 } scale = { 0.6 0.6 } }
+    }
+    colored_emblem = {
+        texture = "ce_star_05.dds"
+        color1 = color2
+        color2 = color2
+        instance = { position = { 0.65 0.35 } scale = { 0.35 0.35 } }
+    }
+    colored_emblem = {
+        texture = "ce_border_orle_thin.dds"
+        color1 = color3
+        color2 = color3
+        instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }
     }
 }
