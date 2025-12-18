@@ -267,49 +267,25 @@
 	}
 	on_monthly = {
 		sengoku_reevaluate_strongest_daimyos = yes		#See common/scripted_effects/situation_effects.txt
-		random_list = {
-			20 = {
-				#Event to land daimyo
-				trigger = {
-					international_organization:japanese_shogunate = {
-						any_international_organization_member = {
-							is_valid_landable_daimyo = yes
+		#Give the sengoku CB to all other members (each member gains a CB against every other member)
+		international_organization:japanese_shogunate = {
+			every_international_organization_member = {
+				save_scope_as = actor
+				international_organization:japanese_shogunate = {
+					scope:actor = {
+						international_organization:japanese_shogunate = {
+							every_international_organization_member = {
+								limit = {
+									this != scope:actor
+								}
+								add_casus_belli = {
+									target = scope:actor
+									type = casus_belli:cb_sengoku
+								}
+							}
 						}
 					}
 				}
-				international_organization:japanese_shogunate = {
-					random_international_organization_member = {
-						limit = {
-							is_valid_landable_daimyo = yes
-						}
-						trigger_event_non_silently = sengoku.3
-					}
-				}
-			}
-			20 = {
-				#Event to give cbs
-				international_organization:japanese_shogunate = {
-					random_international_organization_member = {
-						trigger_event_non_silently = sengoku.4
-					}
-				}
-			}
-			20 = {
-				#Event to declare war
-				trigger = {
-					international_organization:japanese_shogunate = {
-						any_international_organization_member = {
-							at_war = no
-						}
-					}
-				}
-				international_organization:japanese_shogunate = {
-					random_international_organization_member = {
-						trigger_event_non_silently = sengoku.5
-					}
-				}
-			}
-			200 = {
 			}
 		}
 	}
