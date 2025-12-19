@@ -1,0 +1,108 @@
+1444_innovativeness = {
+	age = age_2_renaissance
+	icon = scholasticism
+
+	depth = 0
+
+	starting_technology_level = 4
+	global_max_literacy = 5
+}
+
+### Administration ###
+
+1444_empiricism = {
+	age = age_2_renaissance
+	icon = scholasticism
+
+	requires = 1444_innovativeness
+	
+	legislative_efficiency = 0.10
+}
+
+1444_state_efficiency = {
+	age = age_2_renaissance
+	icon = road_building
+	
+	
+	requires = 1444_empiricism
+	global_distance_from_capital_cost_modifier = -0.05
+}
+
+1444_deus_vult = {
+	age = age_2_renaissance
+	icon = teu_crusader_discipline
+	
+	requires = 1444_state_efficiency
+	ai_weight = { add = 20 }
+
+	unlock_casus_belli = cb_deus_vult
+}
+
+### Military ###
+
+1444_marcher_lords = {
+	age = age_2_renaissance
+	icon = diplomatic_influence
+	
+	requires = 1444_innovativeness
+	
+	
+	unlock_subject_type = march
+}
+
+1444_regular_levy_training = {
+	age = age_2_renaissance
+	icon = drill_army_advance
+
+	levy_combat_efficiency_modifier = 0.10
+	levy_recovery_modifier = 0.05
+	
+	requires = 1444_marcher_lords
+}
+
+1444_privateers = {
+	age = age_2_renaissance
+	icon = letters_of_marque
+	
+	requires = 1444_marcher_lords
+	
+	can_hire_privateers = yes
+}
+
+1444_naval_glory = {
+	age = age_2_renaissance
+	icon = ship_building_advance
+
+	requires = 1444_privateers
+
+	monthly_navy_tradition = 0.1
+}
+
+### Diplomacy ###
+
+1444_experienced_diplomats  = {
+	age = age_2_renaissance
+	
+	requires = 1444_innovativeness
+	
+	diplomatic_reputation = diplomatic_reputation_mild_bonus
+}
+
+1444_benign_diplomats = {
+	age = age_2_renaissance
+	icon = cultural_acceptance_advance
+	requires = 1444_experienced_diplomats
+	
+	improve_relation_impact = 0.2
+
+	ai_weight = {
+		if = {
+			limit = {
+				root = {
+					subjects_relative_power > 0.25
+				}
+			}
+			add = 1
+		}
+	}
+}
