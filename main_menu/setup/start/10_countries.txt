@@ -51855,6 +51855,8 @@ countries = {
             own_control_core = {
                 launggyet
                 akyab ann gwa maungdaw minbya mrauk_u ramree talak_burma taungup thandwe weithali
+            }
+            our_cores_conquered_by_others = {
                 chittagong chakaria kaptai ramu sitakunda
             }
 
@@ -52879,7 +52881,7 @@ countries = {
 
         SGN = {
             #Sonargaon
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 sonargaon bikrampur chandpur kobirhat kumilla savar
                 khalifatabad barguna chandrawip fathabad kotalipara qasba shahbazpur
                 mymensingh atiya belabo kapasia muktagacha tarakanda
@@ -52911,7 +52913,7 @@ countries = {
 
         GAU = {
             #Gaur
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 gaur godagari naogaon pabna rampur_boalla
                 bogra birampur goraghat rangpur_bengal shahjadpur
                 devkot barbakaabad pandua_adina siliguri tajpur
@@ -52939,18 +52941,26 @@ countries = {
                 satgaon pandua baragram bardhaman dubrajpur ilambazar
                 khulna east_sundarban husaynabad jaynagar kulpi west_sundarban
                 nadia chandrabad jessore jhenaidah maheshpur pipli sreepur
+                sonargaon bikrampur chandpur kobirhat kumilla savar
+                khalifatabad barguna chandrawip fathabad kotalipara qasba shahbazpur
+                mymensingh atiya belabo kapasia muktagacha tarakanda
+                gaur godagari naogaon pabna rampur_boalla
+                bogra birampur goraghat rangpur_bengal shahjadpur
+                devkot barbakaabad pandua_adina siliguri tajpur
+                panchagarh jalpaiguri ruga chisobibra dura
+                sitakunda chittagong chakaria ramu kaptai
+
+                alamganj katihar purnia bihariganj saharsa kosi
+                khagaria  bhagalpur jangipur rajmahal teliagarhi mandar_parvat dumka deoghar
             }
 
             include = "indian_muslim_monarchy"
-            court_language = persian_language
             religious_school = hanafi_school
             government = { mysticism_vs_jurisprudence = -15 }
+            country_rank = rank_kingdom
 
             government = {
-                ruler = stn_shamsuddin_ilyas_shah
 
-                #Societal Values
-                land_vs_naval = 50
 
                 laws = {
                     sharia_law = hanafi_policy
@@ -52968,10 +52978,12 @@ countries = {
         AHO = {
             #Ahom
             own_control_core = {
-                charaideo charagua namrup noadihang
+                charaideo charagua
                 konwargaon lakhimpur
                 itanagar nakshaparvat
                 morangi dergaon
+                tezpur bordowa rowta durjaya guwahati
+                lyngngam sohra nabagram
             }
 
             include = "expl_india_hindu"
@@ -53017,7 +53029,7 @@ countries = {
         DIM = {
             #Dimasa
             own_control_core = {
-                dimapur dhansiri diphu
+                dimapur dhansiri diphu maibong lanka khaspur
             }
 
             include = "expl_india_hindu"
@@ -53038,6 +53050,8 @@ countries = {
             own_control_core = {
                 rangamati agartala chandrapur kailashahar pilak
                 karpus_mahal
+                laskarpur baniachang
+                sylhet khaliajuri patharkandi rajnagar shaharpara
             }
 
             include = "expl_india_hindu"
@@ -53058,7 +53072,7 @@ countries = {
             #Chutia
             own_control_core = {
                 sadiya gomsi tengapani malinithan dibang
-                bengmara dibrugarh
+                bengmara dibrugarh namrup noadihang
             }
 
             include = "expl_india_hindu"
@@ -53078,7 +53092,7 @@ countries = {
 
         JNT = {
             #Jaintia
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 jaintiapur sutnga
                 maibong lanka daboka
             }
@@ -53099,7 +53113,7 @@ countries = {
 
         TRF = {
             #Taraf
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 laskarpur baniachang
                 sylhet khaliajuri khaspur patharkandi rajnagar shaharpara
             }
@@ -53126,7 +53140,7 @@ countries = {
 
         LUR = {
             #Laur
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 nabagram dura chisobibra lyngngam ruga sohra
             }
 
@@ -53169,7 +53183,7 @@ countries = {
 
         CER = {
             #Chero
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 rohtas
                 chatra tarhasi untari
             }
@@ -53189,7 +53203,7 @@ countries = {
 
         UJJ = {
             #Ujjainiya
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 buxar arrah ballia jaund sasaram
             }
 
@@ -53230,7 +53244,7 @@ countries = {
 
         ONW = {
             #Oiniwar
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 madhubani darbhanga janakpur_nepal jhanjharpur siraha sitamarhi
                 purnia alamganj bihariganj katihar kosi saharsa
             }
@@ -53337,7 +53351,7 @@ countries = {
         KTU = {
             #Kathmandu
             own_control_core = {
-                kathmandu dhading gorkha lamjung nuwakot upardang
+                kathmandu dhading gorkha lamjung nuwakot upardang makwanpur
             }
 
             include = "expl_india_hindu"
@@ -64138,7 +64152,13 @@ countries = {
         }
         JNP = { #Jaunpur
             own_control_core = {
-                jaunpur
+                jaunpur hajipur samastipur monghyr gidhaur roh chai hazaribagh urda rohtas
+                chatra tarhasi untari narhat gaya deo patna rajgir bihar_sharif sonepur_bihar andar thawe kushinagar gorakhpur binayakpur
+                buxar arrah ballia jaund sasaram chunar varanasi bhadohi mungra sultanpur_uttar_pradesh ghazipur mau_jaunpur azamgarh chillupar bansi basti
+                gonda balrampur tulsipur shravasti bahraich akbarpur awadh kishi raebareli mungra bhadohi prayag kara asni manikpur raebareli korra
+                makanpur etawah kanauj agra chandwar sargadwari jalesar_doab mathura kol unnao bilgram lucknow ibrahimabad biswan khairabad hardoi pali_uttar_pradesh
+                biswan khairabad firuzabad_bahraich bhurwara kherigarh nahil pilibhit shahjahanpur bareilly dudaun gunnaur sambhal chandpur_uttar_pradesh
+                shahabad_uttar_pradesh seohara nagina
             }
             
             starting_technology_level = 3
@@ -64243,7 +64263,7 @@ countries = {
         SIR = {
             own_control_core = {
                 sirhind samana_india sunam bathinda raikot rahon rajwara jalandhar hajner faridkot
-                muktsar chishtian jalandhar milwat kapurthala firozpur diapalpur pakpattan chichawatini
+                muktsar chishtian jalandhar milwat kapurthala firozpur diapalpur pakpattan chichawantni dipalpur
                 gugera kasur lahore fatehabad batala sultanwind kalanaur pasrur sialkot eminabad virkgarh
                 pindi_bhattian talwandi jaranwala chiniot dijkot jhang kamalia shorkot sillanwali shahpur
                 lalian bhera busal gujrat
