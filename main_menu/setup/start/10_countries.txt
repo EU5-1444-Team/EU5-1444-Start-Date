@@ -6206,13 +6206,11 @@ countries = {
         #MAB - Madurai Sultanate
         MAB = {
             own_control_core = {
-                madurai ramesvaram vembar kayattar pattukkottai
-                sankaranayinarkoil aruppukkottai batlagundu
-                dindigul kambam thondi virudhunagar devakottai
+                kayattar sankaranayinarkoil virudhunagar aruppukkottai tirunelveli tenkasi
             }
-            own_control_conquered = {
-                nagapattinam puddokothai tiruccirapalli thanjavur srirangam pennadam jayankondam karaikal #cola_nadu
-                parangipettai pondicherry perambalur tirukoilur kallakurichi
+            our_cores_conquered_by_others = {
+                madurai ramesvaram vembar pattukkottai
+                batlagundu
             }
 
             religious_school = maliki_school
@@ -6222,7 +6220,7 @@ countries = {
             court_language = persian_language
 
             country_rank = rank_kingdom
-            capital = madurai
+            capital = virudhunagar
             government = {
                 ruler_term = { character = mab_jalaluddi_ahsan_khan_mabar start_date = 1335.1.2 regnal_number = 0 }
 
@@ -6249,7 +6247,7 @@ countries = {
 
         #TNK - Pandya
         TNK = {
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 tenkasi tirunelveli kayal thoothukudi
             }
 
@@ -6296,6 +6294,36 @@ countries = {
                 gutti gandikota ahobalam udayagiri nandyal kurnool srisailam
                 karwar anantapur porumamilla vempalle dhone puvina_padangile
                 hanagal aimangala devadurga kundgol sonda_karnataka gadag
+
+                tiruvannamalai
+                honnavara
+                bangalore kolar manyapura nandagiri
+                magadi sira sringeri bednur penukonda kadiri
+                karur erode coimbatore satyamanagalam dharapuram
+                krishnagiri dharmapuri salem sendamangalam
+                palani tiruppur bhavani jagadevipalayam denkanikottai pennagaram
+                palasamudram dharmavaram tumkur
+                shimoga devanahalli hoskote ballalapura
+            }
+
+            own_control_integrated = {
+                madurai ramesvaram vembar pattukkottai
+                batlagundu
+
+                mangalore uppinangady bhatkal udupi karkala
+                londa madgaon goa savantvadi rajapur rabhol sangamesvara
+                raigarh janjira
+
+                dindigul kambam thondi devakottai 
+                nagapattinam puddokothai tiruccirapalli thanjavur srirangam pennadam jayankondam karaikal #cola_nadu
+                parangipettai pondicherry perambalur tirukoilur kallakurichi
+                padaividu kanchipuram vellore
+                gingee
+                madras maduranthakam arcot
+                tirupati medanapalle cuddapah kangundi gurramkonda chittoor pakala rayachoti pottapi
+                nellore pazhaverkadu durgarazpatnam
+                kavali
+                kalahasti cumbum kanigiri gudur
             }
 
             include = "indian_hindu_monarchy_jain"
@@ -8078,7 +8106,7 @@ countries = {
         #HNV - Honnavara
         HNV = {
             #https://en.wikipedia.org/wiki/Honnavar
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 honnavara
             }
 
@@ -8524,7 +8552,7 @@ countries = {
 
         #SMV - Sambuvarayar
         SMV = {
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 padaividu kanchipuram vellore
                 gingee
                 madras maduranthakam arcot
@@ -8583,7 +8611,7 @@ countries = {
         #HSL -Hoysala
         HSL = {
             #https://en.wikipedia.org/wiki/Hoysala_Empire
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 mysore shravanabelagola seringapatam tiruvannamalai
                 ummatur belur dvarasamudra haleri
                 bangalore kolar manyapura nandagiri
@@ -8642,9 +8670,13 @@ countries = {
         RDY = {
             #https://en.wikipedia.org/wiki/Reddi_Kingdom
             own_control_core = {
+                kandakura motupalli adanki markapur vinukonda macherla kondavidu guntur peddapalli masulipatnam
+            }
+
+            our_cores_conquered_by_others = {
                 nellore pazhaverkadu durgarazpatnam
-                kavali kandakura motupalli adanki markapur kondavidu peddapalli macherla
-                masulipatnam gudur kalahasti cumbum vinukonda guntur kanigiri
+                kavali
+                kalahasti cumbum kanigiri gudur
             }
 
             include = "expl_india_hindu"
@@ -8667,7 +8699,7 @@ countries = {
 
         #YDR - Yadavaraya
         YDR = {
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 tirupati medanapalle cuddapah kangundi gurramkonda chittoor pakala rayachoti pottapi
             }
 
@@ -8691,7 +8723,7 @@ countries = {
         #ZMR - Kozhikode
         ZMR = {
             own_control_core = {
-                malapuram kozhikode
+                malapuram kozhikode ponnani thrissur angadippuram
             }
 
             include = "expl_india_hindu"
@@ -8715,6 +8747,7 @@ countries = {
             #https://en.wikipedia.org/wiki/Kolathunadu
             own_control_core = {
                 kannur thalassery #also Laccadives
+                wayanad kasaragod haleri
             }
 
             include = "expl_india_hindu"
@@ -8737,7 +8770,7 @@ countries = {
         PDU = {
             #https://en.wikipedia.org/wiki/Kingdom_of_Cochin
             own_control_core = {
-                kochi edappaly
+                kochi edappaly kodungallur palghat
             }
 
             include = "expl_india_hindu"
@@ -8760,7 +8793,7 @@ countries = {
         VND = {
             #https://en.wikipedia.org/wiki/Venad_(kingdom)
             own_control_core = {
-                thiruvananthapuram kollam kanyakumari pandalam
+                thiruvananthapuram kollam kanyakumari pandalam  kayal thoothukudi
             }
 
             include = "expl_india_hindu"
@@ -8805,7 +8838,7 @@ countries = {
         #KDU - Kodungallur
         KDU = {
             #https://en.wikipedia.org/wiki/Kodungallur
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 kodungallur thrissur
             }
 
@@ -8827,7 +8860,7 @@ countries = {
         #KYA - Kottayam
         KYA = {
             #https://en.wikipedia.org/wiki/Kingdom_of_Kottayam
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 wayanad
             }
 
@@ -8846,7 +8879,7 @@ countries = {
         #VLD - Valluvanad
         VLD = {
             #https://en.wikipedia.org/wiki/Kingdom_of_Valluvanad
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 palghat angadippuram
             }
 
@@ -8929,11 +8962,8 @@ countries = {
 
         ALU = {
             #Alupa
-            own_control_core = {
-                mangalore kasaragod uppinangady
-            }
-            own_control_integrated = {
-                bhatkal udupi
+            our_cores_conquered_by_others = {
+                mangalore kasaragod uppinangady bhatkal udupi
             }
 
             include = "indian_hindu_monarchy_jain"
@@ -8961,7 +8991,7 @@ countries = {
         #STR - Santara
         STR = {
             #https://en.wikipedia.org/wiki/Santara_dynasty
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 karkala
             }
 
@@ -8993,6 +9023,7 @@ countries = {
             #https://en.wikipedia.org/wiki/Jaffna_kingdom
             own_control_core = {
                 jaffna mullaitivu mahatittha vavuniya
+                trincomalee anuradhapura salavata
             }
 
             include = "expl_india_hindu"
@@ -9023,21 +9054,21 @@ countries = {
         DBD = {
             #https://en.wikipedia.org/wiki/Kingdom_of_Dambadeniya
             own_control_core = {
-                yapavu anuradhapura salavata kurunegala polonnaruva madakalapu hatthigiripura
+                kurunegala
                 kotte negombo sitavaka galle hambantota badulla devanagara digavapi tissamaharama
-                kandy gampola ratnapura_LKA trincomalee medawachchiya
             }
 
             our_cores_conquered_by_others = {
-                jaffna mullaitivu mahatittha vavuniya
+                jaffna mullaitivu mahatittha vavuniya trincomalee anuradhapura salavata
+
+                yapavu hatthigiripura kandy gampola ratnapura_LKA medawachchiya polonnaruva madakalapu
             }
 
             include = "expl_india_hindu"
             include = "indian_hindu_monarchy"
-            capital = kurunegala
+            capital = kotte
+            country_rank = rank_kingdom
             government = {
-                #https://en.wikipedia.org/wiki/List_of_Sri_Lankan_monarchs
-                ruler = dbd_vijayabahu_siri_sanga_bo
 
                 #Societal Values
                 land_vs_naval = 50
@@ -64147,7 +64178,7 @@ countries = {
 
         BAH = { #Bahmanis
             own_control_core = {
-                bidar
+                bidar bijapur
             }
             
             starting_technology_level = 3
@@ -64164,10 +64195,58 @@ countries = {
                 }
             }
 
-            capital = bidar
+            capital = bijapur
             accepted_cultures = {
                 marathi_culture
             }
         }
+
+        #KAY - Kandy
+        KAY = {
+            own_control_core = {
+                yapavu hatthigiripura kandy gampola ratnapura_LKA medawachchiya polonnaruva madakalapu
+            }
+
+            include = "expl_india_hindu"
+            include = "indian_hindu_monarchy"
+            capital = kandy
+            country_rank = rank_kingdom
+            government = {
+
+                #Societal Values
+                land_vs_naval = 50
+
+                laws = {
+                    marriage_law = monogamous_marriage
+                    heir_religion_law = heir_same_religion
+                    administrative_system = feudal_administration
+                }
+            }
+
+            tolerated_cultures = {
+                vedda
+                tamil
+            }
+
+        }
+
+        #MYS - Mysore
+        MYS = {
+            own_control_core = {
+                mysore nanjanagud ummatur sathyagala seringapatam mankunda srigangapatna shravanabelagola narsipur
+                hassan_karnataka dvarasamudra belur kadur
+            }
+
+            include = "expl_india_hindu"
+            include = "indian_hindu_monarchy"
+            capital = mysore
+            government = {
+
+                #Societal Values
+                land_vs_naval = -50
+            }
+
+        }
+
     }
 }
