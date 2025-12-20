@@ -19,12 +19,12 @@ COUNTRIES_DIR = os.path.join('in_game', 'setup', 'countries')
 OUTPUT_PATH = os.path.join(COUNTRIES_DIR, '1444_tags.info')
 LOCALE_ROOTS = [os.path.join('main_menu', 'localization'), '.']
 
-TAG_LINE_RE = re.compile(r'^\s*([A-Z]{3})\s*=', re.MULTILINE)
-INLINE_NAME_RE = re.compile(r'^\s*([A-Z]{3})\s*=\s*["\'](.+?)["\']\s*$', re.MULTILINE)
+TAG_LINE_RE = re.compile(r'^\s*([A-Z][A-Z0-9]{2})\s*=', re.MULTILINE)
+INLINE_NAME_RE = re.compile(r'^\s*([A-Z][A-Z0-9]{2})\s*=\s*["\'](.+?)["\']\s*$', re.MULTILINE)
 NAME_IN_BLOCK_RE = re.compile(r'name\s*=\s*["\'](.+?)["\']', re.IGNORECASE | re.DOTALL)
 
-LOCALE_LINE_RE = re.compile(r'^\s*([A-Z]{3})\s*(?:\: ?\d+|\:)?\s*["\'](.+?)["\']\s*$', re.MULTILINE)
-LOCALE_ALT_RE = re.compile(r'^\s*([A-Z]{3})\s+"(.+?)"\s*$', re.MULTILINE)
+LOCALE_LINE_RE = re.compile(r'^\s*([A-Z][A-Z0-9]{2})\s*(?:\: ?\d+|\:)?\s*["\'](.+?)["\']\s*$', re.MULTILINE)
+LOCALE_ALT_RE = re.compile(r'^\s*([A-Z][A-Z0-9]{2})\s+"(.+?)"\s*$', re.MULTILINE)
 
 
 def read_text(path):
