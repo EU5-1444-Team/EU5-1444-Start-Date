@@ -1,0 +1,34 @@
+burgundian_feudalism = {
+	unique = yes
+	major = yes # is this a major reform? a country cannot select another major reform if they already have a major reform. default = no
+
+	age = age_1_traditions # which age is this available from?
+
+	government = monarchy # which government is allowed to use this
+
+	potential = {
+		has_or_had_tag = BUR
+	}
+
+	allow = {
+		has_or_had_tag = BUR
+	}	
+	
+	locked = {
+		has_or_had_tag = BUR # when these triggers are true, the reform cannot be manually removed by the country. root = country
+	}
+	
+	country_modifier = {
+		#conditional country modifiers. Can add multiple of these
+		#optional trigger = {}
+		diplomatic_capacity = 10
+		subject_loyalty = 5
+		diplomatic_reputation = 3
+		monthly_towards_decentralization = 0.1
+		monthly_towards_aristocracy = 0.1
+		global_nobles_estate_power = 0.33
+		diplomatic_annexation_cost = 10
+	}
+
+	years = 2 #how long it takes before the reform is fully implemented. Leave unset for instant implementation
+}

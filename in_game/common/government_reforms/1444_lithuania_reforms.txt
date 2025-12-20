@@ -1,0 +1,32 @@
+grand_duchy_lit = {
+	unique = yes
+	major = no # is this a major reform? a country cannot select another major reform if they already have a major reform. default = no
+
+	age = age_1_traditions # which age is this available from?
+
+	government = monarchy # which government is allowed to use this
+
+	potential = {
+		has_or_had_tag = LIT
+	}
+
+	allow = {
+		has_or_had_tag = LIT
+	}	
+	
+	locked = {
+		has_or_had_tag = LIT # when these triggers are true, the reform cannot be manually removed by the country. root = country
+	}
+	
+	country_modifier = {
+		#conditional country modifiers. Can add multiple of these
+		#optional trigger = {}
+		diplomatic_capacity = 5
+		monthly_towards_decentralization = 0.05
+		monthly_towards_traditionalist = 0.05
+		global_nobles_estate_power = 0.1
+		diplomatic_annexation_cost = 0.1
+	}
+
+	years = 2 #how long it takes before the reform is fully implemented. Leave unset for instant implementation
+}
