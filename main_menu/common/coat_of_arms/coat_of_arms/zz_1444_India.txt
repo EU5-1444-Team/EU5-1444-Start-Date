@@ -1,8 +1,8 @@
 SIW = { # Siwistan
     pattern = "pattern_vertical_split_01.dds"
-    color1 = hsv360     {    210    15    25    }
-    color2 = hsv360     {    85     12    45    }
-    color3 = hsv360     {    40     10    85    }
+    color1 = rgb { 54 59 64 }
+    color2 = rgb { 109 115 101 }
+    color3 = rgb { 217 210 195 }
     colored_emblem = {
         texture = "ce_roundel.dds"
         color1 = color3
@@ -10,33 +10,32 @@ SIW = { # Siwistan
         instance = { position = { 0.5 0.5 } scale = { 0.4 0.4 } }
     }
 }
-
-SEH = { #Sindh dynastic puppet
-    pattern = "pattern_diagonal_split.dds"
-    color1 = "red"
-    color2 = "white"
-    
+SEH = { #Sindh dynastic Puppet
+    pattern = "pattern_base_25.dds"
+    color1 = rgb { 255 255 255 }
+    color2 = rgb { 255 255 255 }
     colored_emblem = {
         texture = "ce_bars_03.dds"
-        color1 = "black"
-        color2 = "white"  # explicitly set instead of referencing
-        instance = { position = { 0.5 0.5 } scale = { 0.8 0.8 } }
+        color1 = rgb { 170 0 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
     }
 }
-
 SKU = { #Sindh dynastic Puppet
-    pattern = "pattern_horizontal_split.dds"
-    color1 = "red"
-    color2 = "white"
-    
+    pattern = "pattern_base_25.dds"
+    color1 = rgb { 255 255 255 }
+    color2 = rgb { 255 255 255 }
     colored_emblem = {
         texture = "ce_bars_03.dds"
-        color1 = "red"  # explicitly set
-        color2 = "red"  # explicitly set
-        instance = { position = { 0.5 0.5 } scale = { 1.2 1.2 } }
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
     }
 }
-
 MLA = { # Multan
     pattern = "pattern_solid.dds"
     color1 = hsv360     {    120    100   35    }  # green
@@ -61,162 +60,170 @@ MLA = { # Multan
         instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }
     }
 }
-NAU = { # Nagaur
+NAU = { #Nagaur
     pattern = "pattern_solid.dds"
-    color1 = hsv360     {    25     85    93    }
-    color2 = hsv360     {    0      0     100   } 
-    color3 = hsv360     {    20     95    80    }
+    color1 = rgb { 244 196 48 }
 }
-
-MEA = { # Mewat
-    pattern = "pattern_horizontal_split.dds"
-    color1 = "light_blue"
-    color2 = "white"
-    color3 = "dark_green"
-    
+MEA = { #Mewat
+    pattern = "pattern_border_thin.dds"
+    color1 = rgb { 69 255 17 }
+    color2 = rgb { 255 255 255 }
     colored_emblem = {
-        texture = "ce_crescent_increscent.dds"
-        color1 = color3
-        color2 = color3
-        instance = { position = { 0.4 0.5 } scale = { 0.6 0.6 } }
-    }
-    colored_emblem = {
-        texture = "ce_star_05.dds"
-        color1 = color3
-        color2 = color3
-        instance = { position = { 0.65 0.5 } scale = { 0.35 0.35 } }
+        texture = "ce_crescent_decrescent.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.479 0.492 }
+            scale = { 0.500 0.500 }
+        }
     }
 }
-DIU = {
-    pattern = "pattern_horizontal_split.dds"
-    color1 = "turquoise"
-    color2 = "white"
-    
+DIU = { #Diu
+    pattern = "pattern_border_thin.dds"
+    color1 = rgb { 255 255 0 }
+    color2 = rgb { 170 0 0 }
+}
+SMN = { #Sommanth
+    pattern = "pattern_pennant_single.dds"
+    color1 = rgb { 255 170 0 }
     colored_emblem = {
-        texture = "ce_crescent.dds"
-        color1 = "white"
-        color2 = "turquoise"
-        instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }
+        texture = "ce_zhuang_sun.dds"
+        color1 = rgb { 255 255 255 }
+        color2 = rgb { 172 209 255 }
+        color3 = rgb { 247 0 129 }
+        instance = {
+            position = { 0.245 0.492 }
+            scale = { 0.500 0.500 }
+        }
     }
 }
-
-SMN = { #Somnath
-    pattern = "pattern_solid.dds"
-    color1 = "orange"
-    color2 = "yellow"
-    
-    colored_emblem = {
-        texture = "ce_sun.dds"
-        color1 = "yellow"
-        color2 = "orange"
-        instance = { position = { 0.5 0.5 } scale = { 0.7 0.7 } }
-    }
-}
-
 SUA = { #Surat
-    pattern = "pattern_diagonal_split.dds"
-    color1 = "blue"
-    color2 = "dark_blue"
-    
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 31 15 255 }
     colored_emblem = {
-        texture = "ce_star.dds"
-        color1 = "white"
-        color2 = "white"
-        instance = { position = { 0.5 0.5 } scale = { 0.5 0.5 } }
+        texture = "ce_bo_star_08.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.134 0.180 }
+            scale = { 0.300 0.300 }
+        }
     }
 }
-
 KHD = { #Khandesh
-    pattern = "pattern_vertical_split.dds"
-    color1 = "brown"
-    color2 = "dark_red"
-    
-    colored_emblem = {
-        texture = "ce_triangle.dds"
-        color1 = "yellow"
-        color2 = "brown"
-        instance = { position = { 0.5 0.5 } scale = { 0.8 0.8 } }
-    }
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 0 0 0 }
 }
 KAP = { #Kapi
-    pattern = "pattern_vertical_split.dds"
-    color1 = "brown"
-    color2 = "dark_red"
+    pattern = "pattern_border_thin.dds"
+    color1 = rgb { 27 6 255 }
+    color2 = rgb { 255 255 255 }
 }
 KAY = { #Kandy
-    pattern = "pattern_vertical_split.dds"
-    color1 = "brown"
-    color2 = "dark_red"
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 255 0 0 }
+    textured_emblem = {
+        texture = "kandy_lion.dds"
+        instance = {
+            position = { 0.503 0.496 }
+            scale = { 0.920 0.910 }
+        }
+    }
 }
 MYS = { #Mysore
-    pattern = "pattern_vertical_split.dds"
-    color1 = "brown"
-    color2 = "dark_red"
+    pattern = "pattern_tricolor_vertical_01.dds"
+    color1 = rgb { 128 0 0 }
+    color2 = rgb { 255 215 0 }
+    color3 = rgb { 255 255 255 }
 }
 SIR = { #Sirhind
-    pattern = "pattern_vertical_split.dds"
-    color1 = "brown"
-    color2 = "dark_red"
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 9 83 9 }
+    color2 = rgb { 251 255 0 }
 }
-JUM = { # Jumla
-    pattern = "pattern_vertical_split.dds"
-    color1 = "dark_yellow"
-    color2 = "dark_red"
+JUM = { #Jumbla
+    pattern = "pattern_pennant_double_thin_border.dds"
+    color1 = rgb { 255 255 0 }
+    color2 = rgb { 170 0 0 }
 }
-PLP = { # Palpa
-    pattern = "pattern_vertical_split.dds"
-    color1 = "red"
-    color2 = "gold"
+PLP = { #Palpa
+    pattern = "pattern_pennant_double.dds"
+    color1 = rgb { 135 18 22 }
+    colored_emblem = {
+        texture = "ce_star_05.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.201 0.496 }
+            scale = { 0.500 0.500 }
+        }
+    }
 }
-PAB = { # Parbat
-    pattern = "pattern_vertical_split.dds"
-    color1 = "blue"
-    color2 = "white"
+PAB = { #Parbat
+    pattern = "pattern_pennant_double_thin_border.dds"
+    color1 = rgb { 100 0 2 }
+    color2 = rgb { 255 255 255 }
 }
-SLY = { # Salyan
-    pattern = "pattern_vertical_split.dds"
-    color1 = "green"
-    color2 = "light_brown"
+SLY = { #Salyan
+    pattern = "pattern_pennant_double_thin_border.dds"
+    color1 = rgb { 221 255 2 }
+    color2 = rgb { 255 255 255 }
 }
 JAJ = { # Jajarkot
-    pattern = "pattern_vertical_split.dds"
-    color1 = "brown"
-    color2 = "white"
+    pattern = "pattern_pennant_single_thin_border.dds"
+    color1 = rgb { 255 0 0 }
+    color2 = rgb { 255 255 0 }
 }
 DAG = { # Dang
-    pattern = "pattern_vertical_split.dds"
-    color1 = "purple"
-    color2 = "black"
+    pattern = "pattern_pennant_single_thin_border.dds"
+    color1 = rgb { 255 255 0 }
+    color2 = rgb { 170 0 0 }
 }
 MSI = { # Musikot
-    pattern = "pattern_vertical_split.dds"
-    color1 = "orange"
-    color2 = "dark_green"
+    pattern = "pattern_pennant_single.dds"
+    color1 = rgb { 255 234 2 }
 }
 PUY = { # Pyuthan
-    pattern = "pattern_vertical_split.dds"
-    color1 = "blue"
-    color2 = "dark_red"
+    pattern = "pattern_pennant_single.dds"
+    color1 = rgb { 170 0 0 }
 }
 KPI = { # Kaski
-    pattern = "pattern_vertical_split.dds"
-    color1 = "orange"
-    color2 = "dark_blue"
+    pattern = "pattern_pennant_double.dds"
+    color1 = rgb { 255 255 0 }
 }
-THN = { # Tanahun
-    pattern = "pattern_vertical_split.dds"
-    color1 = "dark_green"
-    color2 = "white"
+THN = { #Tanahun
+    pattern = "pattern_pennant_double_thin_border.dds"
+    color1 = rgb { 21 100 20 }
+    color2 = rgb { 255 255 255 }
 }
-BKH = { # Badakhshan
-    pattern = "pattern_vertical_split.dds"
-    color1 = "dark_green"
-    color2 = "white"
+BKH = { #Badakhshan
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 20 40 150 }
+    colored_emblem = {
+        texture = "ce_uzbek_text.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
 }
-KSH = {
-	color = map_kashmir
-	color2 = map_kashmir_2
-
-	culture_definition = kashmiri_culture
-	religion_definition = sunni
+STN = { #Bengal
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 255 255 255 }
+    colored_emblem = {
+        texture = "ce_lion_statant_kandy.dds"
+        color1 = rgb { 170 0 0 }
+        color2 = rgb { 255 255 255 }
+        color3 = rgb { 250 0 123 }
+        instance = {
+            position = { 0.409 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+    colored_emblem = {
+        texture = "ce_stripe_fly.dds"
+        color1 = rgb { 29 20 129 }
+        instance = {
+            position = { 0.620 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
 }
