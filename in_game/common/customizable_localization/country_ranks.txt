@@ -73,6 +73,15 @@ country_flavor = {
         }
     }
 
+    # MYD Theocracy variant (Dreaming Land) - in the main country_flavor section
+    text = {
+        localization_key = country_dreaming_land
+        trigger = {
+            tag = MYD
+            government_type = government_type:theocracy
+        }
+    }
+
     ################## EMPIRE ##################
 
     text = {
@@ -585,6 +594,62 @@ country_flavor = {
                 country_rank_is_kingdom = yes
             }
             culture = { has_culture_group = culture_group:nahua_group }
+        }
+    }
+    # AFZ with Fiji variant (Empire only)
+    text = {
+        localization_key = rank_empire_commonwealth_fiji
+        trigger = {
+            tag = AFZ
+            country_rank_is_empire = yes
+            owns = location:burebasaga
+        }
+    }
+
+    # Base AFZ (Empire only, without Fiji)
+    text = {
+        localization_key = rank_empire_commonwealth
+        trigger = {
+            tag = AFZ
+            country_rank_is_empire = yes
+        }
+    }
+
+    # PAE government variants
+    text = {
+        localization_key = rank_empire_pacific_empire
+        trigger = {
+            tag = PAE
+            country_rank_is_empire = yes
+            government_type = government_type:monarchy
+        }
+    }
+
+    text = {
+        localization_key = rank_empire_pacific_republic
+        trigger = {
+            tag = PAE
+            country_rank_is_empire = yes
+            government_type = government_type:republic
+        }
+    }
+
+    text = {
+        localization_key = rank_empire_pacific_theocracy
+        trigger = {
+            tag = PAE
+           country_rank_is_empire = yes
+            government_type = government_type:theocracy
+        }
+    }
+
+    # Timurid Empire
+    text = {
+        localization_key = rank_empire_timurid_prince
+        trigger = {
+            country_rank_is_empire = yes
+            has_reform = government_reform:timurid_prince
+            NOT = { tag = TIM }
         }
     }
 
@@ -1179,6 +1244,16 @@ country_flavor = {
         }
     }
 
+    #Timurid Sultanate
+    text = {
+        localization_key = rank_kingdom_timurid_prince
+        trigger = {
+            country_rank_is_kingdom = yes
+            has_reform = government_reform:timurid_prince
+            NOT = { tag = TIM }
+        }
+    }
+
     text = {
         localization_key = rank_kingdom
         trigger = {
@@ -1589,6 +1664,15 @@ country_flavor = {
             }
         }
     }
+    # Timurid Duchy
+    text = {
+        localization_key = rank_duchy_timurid_prince
+        trigger = {
+            country_rank_is_duchy = yes
+            has_reform = government_reform:timurid_prince
+        }
+    }
+
     #--- Dynasties ----
     text = {
         localization_key = rank_duchy_andalusi

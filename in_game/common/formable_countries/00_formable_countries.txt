@@ -2546,7 +2546,7 @@ KON_f = {
 
 NTR_f = {
 	level = 2
-	required_locations_fraction = 0.5
+	required_locations_fraction = 0.25
 	rule = plausible
 	
 	potential = {
@@ -4157,16 +4157,8 @@ AFG_f = {
 #		}
 #	}
 #	
-#	allow = {
-#		NOT = { country_exists = c:TIM }
-#        owns = location:herat
-#        owns = location:samarkand
-#        owns = location:gorgan
-#        owns = location:balkh
-#        owns = location:kabul
-#        owns = location:shiraz
-#        owns = location:isfahan
-#        owns = location:qom
+#    allow = {
+#        owns = location:burebasaga
 #	}
 #	
 #	name = TIX
@@ -4186,3 +4178,561 @@ AFG_f = {
 #		}
 #	}
 #}
+
+VIT_f = { #Viti
+	level = 2
+	required_locations_fraction = 1.0
+	rule = plausible
+	
+	potential = {
+		culture = culture:itaukei_culture
+	}
+
+	allow = {
+        owns = location:burebasaga
+	}
+	
+	name = VIT
+	flag = VIT
+	adjective = VIT_ADJ
+	tag = VIT
+	color = RGB { 0 120 190 }
+	areas = {
+		fiji_area
+	}
+	form_effect = {
+	}
+}
+
+HII_f = { #Kingdom of Hawaii
+	level = 2
+	required_locations_fraction = 0.9
+	rule = historical
+	
+	potential = {
+		culture = culture:kanaka_maoli_culture
+	}
+
+	allow = {
+		owns = location:o_ahu
+	}
+	
+	name = HII
+	flag = HII
+	adjective = HII_ADJ
+	tag = HII
+	color = RGB { 220 50 50 }
+	areas = {
+		hawaii_area
+	}
+	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_kingdom }
+	}
+}
+
+AOT_f = { #Aotearoa
+	level = 2
+	required_locations_fraction = 1.0
+	rule = plausible
+	
+	potential = {
+		culture = culture:maori_culture
+	}
+
+	allow = {
+		has_advance = maori_he_whakaputanga_advance
+	}
+	
+	name = AOT
+	flag = AOT
+	adjective = AOT_ADJ
+	tag = AOT
+	color = RGB { 0 0 0 }
+	regions = {
+		new_zealand_region
+	}
+	form_effect = {
+	}
+}
+
+SOI_f = { #Solomon Islands
+	level = 2
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		culture = { has_culture_group = culture_group:micronesian_group }
+	}
+
+	allow = {
+        owns = location:naasioi
+	}
+	
+	name = SOI
+	flag = SOI
+	adjective = SOI_ADJ
+	tag = SOI
+	color = RGB { 0 100 160 }
+	provinces = {
+		bougainville_province
+		tinputz_province
+		choiseul_province
+		roviana_province
+		isatabu_province
+		malaita_province
+		mu_ngava_province
+	}
+	form_effect = {
+	}
+}
+
+POF_f = { #Tahiti
+	level = 2
+	required_locations_fraction = 0.7
+	rule = plausible
+	
+	potential = {
+		OR = {
+			culture = culture:maohi_culture
+			culture = culture:tuamotus_culture
+		}
+	}
+
+	allow = {
+        owns = location:tahiti
+	}
+	
+	name = POF
+	flag = POF
+	adjective = POF_ADJ
+	tag = POF
+	color = RGB { 200 30 50 }
+	areas = {
+		totaiete_ma_area
+		palliser_area
+		raffsky_area
+		tuamotu_area
+	}
+	form_effect = {
+	}
+}
+
+VAN_f = { #Vanuatu
+	level = 2
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		culture = { has_culture_group = culture_group:micronesian_group }
+	}
+
+	allow = {
+        owns = location:malakula
+	}
+	
+	name = VAN
+	flag = VAN
+	adjective = VAN_ADJ
+	tag = VAN
+	color = RGB { 200 160 0 }
+	areas = {
+		vanuatu_area
+	}
+	form_effect = {
+	}
+}
+
+
+NCD_f = { #Kanak
+	level = 2
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		culture = { has_culture_group = culture_group:micronesian_group }
+	}
+
+	allow = {
+        owns = location:numee
+	}
+	
+	name = NCD
+	flag = NCD
+	adjective = NCD_ADJ
+	tag = NCD
+	color = RGB { 0 140 70 }
+	areas = {
+		kanaky_area
+	}
+	form_effect = {
+	}
+}
+
+NZL_f = { #New Zealand
+	level = 2
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		owns = location:wellington
+	}
+
+	allow = {
+        owns = location:wellington
+	}
+	
+	name = NZL
+	flag = NZL
+	adjective = NZL_ADJ
+	tag = NZL
+	color = RGB { 0 30 90 }
+	regions = {
+		new_zealand_region
+	}
+	form_effect = {
+	}
+}
+
+PAU_f = { #Papua
+	level = 3
+	required_locations_fraction = 0.8
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		or = {
+			owns = location:waima
+			owns = location:kaimana
+			owns = location:asmat
+		}
+
+	}
+
+	allow = {
+    	owns = location:waima
+		owns = location:kaimana
+		owns = location:asmat
+	}
+	
+	name = PAU
+	flag = PAU
+	adjective = PAU_ADJ
+	tag = PAU
+	color = RGB { 200 0 0 }
+	areas = {
+		momase_area
+		milne_area
+		kerema_area
+		anim_ha_area
+		wanin_area
+	}
+	form_effect = {
+	}
+}
+
+PYN_f = { #Polynesia
+	level = 3
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		culture = { has_culture_group = culture_group:polynesian_group }
+	}
+
+	allow = {
+        owns = location:tahiti
+		owns = location:o_ahu
+		owns = location:tongatapu
+		owns = location:savaii
+	}
+	
+	name = PYN
+	flag = PYN
+	adjective = PYN_ADJ
+	tag = PYN
+	color = RGB { 180 100 40 }
+	regions = {
+		polynesia_region
+	}
+	form_effect = {
+	}
+}
+
+
+MIA_f = { #Micronesia
+	level = 3
+	required_locations_fraction = 0.86
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		culture = { has_culture_group = culture_group:micronesian_group }
+	}
+
+	allow = {
+		owns = location:tabiteuea_atoll
+		owns = location:chuuk
+		owns = location:yap
+	}
+	
+	name = MIA
+	flag = MIA
+	adjective = MIA_ADJ
+	tag = MIA
+	color = RGB { 70 130 180 }
+	regions = {
+		micronesia_region
+	}
+	form_effect = {
+	}
+}
+
+MEL_f = { #Melanesia
+	level = 3
+	required_locations_fraction = 0.3
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		culture = { has_culture_group = culture_group:micronesian_group }
+	}
+
+	allow = {
+        owns = location:burebasaga
+		owns = location:numee
+		owns = location:naasioi
+	}
+	
+	name = MEL
+	flag = MEL
+	adjective = MEL_ADJ
+	tag = MEL
+	color = RGB { 50 50 50 }
+	regions = {
+		melanesia_region
+	}
+	form_effect = {
+	}
+}
+
+MYD_f = { #Makarr Yindi
+	level = 3
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		owns = location:eora
+	}
+
+	allow = {
+        owns = location:eora
+	}
+	
+	name = MYD
+	flag = MYD
+	adjective = MYD_ADJ
+	tag = MYD
+	color = RGB { 200 0 0 }
+	regions = {
+		australia_region
+	}
+	form_effect = {
+	}
+}
+
+ATA_f = { #Colonial Australia
+	level = 3
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = historical
+	
+	potential = {
+		owns = location:eora
+	}
+
+	allow = {
+        owns = location:eora
+	}
+	
+	name = ATA
+	flag = ATA
+	adjective = ATA_ADJ
+	tag = ATA
+	color = RGB { 0 50 150 }
+	regions = {
+		australia_region
+	}
+	form_effect = {
+	}
+}
+
+PAE_f = { #Pacific
+	level = 4
+	required_locations_fraction = 0.6
+	capital_required = yes 
+	rule = historical
+	
+	potential = {
+		or = {
+			culture = { has_culture_group = culture_group:micronesian_group }
+			culture = { has_culture_group = culture_group:polynesian_group }
+		}
+	}
+
+	allow = {
+       	owns = location:o_ahu
+		owns = location:wellington
+		owns = location:yap
+		owns = location:burebasaga
+	}
+	
+	name = PAE
+	flag = PAE
+	adjective = PAE_ADJ
+	tag = PAE
+	color = RGB { 0 100 180 }
+	regions = {
+		new_zealand_region
+		micronesia_region
+		melanesia_region
+		polynesia_region
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+	}
+}
+
+OCE_f = { #Oceania
+	level = 4
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = historical
+	
+	potential = {
+		owns = location:eora
+	}
+
+	allow = {
+       	owns = location:o_ahu
+		owns = location:wellington
+		owns = location:yap
+		owns = location:burebasaga
+		owns = location:eora
+		owns = location:waima
+	}
+	
+	name = OCE
+	flag = OCE
+	adjective = OCE_ADJ
+	tag = OCE
+	color = RGB { 0 140 200 }
+	regions = {
+		new_zealand_region
+		micronesia_region
+		melanesia_region
+		polynesia_region
+		australia_region
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+	}
+}
+
+AFZ_f = { #Greater Australian Commonwealth
+	level = 4
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = historical
+	
+	potential = {
+		owns = location:eora
+	}
+
+	allow = {
+		owns = location:wellington
+		owns = location:eora
+	}
+	
+	name = AFZ
+	flag = AFZ
+	adjective = AFZ_ADJ
+	tag = AFZ
+	color = RGB { 0 50 120 } 
+	regions = {
+		new_zealand_region
+		australia_region
+	}
+	areas = {
+		fiji_area
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+	}
+}
+
+GAN_f = { #Greater Austonesia
+	level = 4
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = historical
+	
+	potential = {
+		AND = {
+			owns = location:eora
+			owns = location:o_ahu
+			owns = location:basai
+		}
+	}
+	allow = {
+       	owns = location:o_ahu
+		owns = location:wellington
+		owns = location:yap
+		owns = location:burebasaga
+		owns = locataion:eora
+		owns = location:waima
+		owns = location:basai
+		owns = location:maynila
+		owns = location:malacca
+		owns = location:vijaya
+		owns = location:cibuaya
+	}
+	
+	name = GAN
+	flag = GAN
+	adjective = GAN_ADJ
+	tag = GAN
+	color = RGB { 140 60 20 }
+	regions = {
+		new_zealand_region
+		australia_region
+		polynesia_region
+		micronesia_region
+		melanesia_region
+		madagascar_region
+	}
+	areas = {
+		champa_area
+		taiwan_area
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+	}
+}

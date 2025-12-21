@@ -4024,9 +4024,8 @@ countries = {
         }
 
         SAK = {
-            type = pop
 
-            add_pops_from_locations = {
+            own_control_core = {
                 bulun uolba dakky cherkekh churapcha uorga us_kyuyol byanye byadi chiryapchi
                 tomtor mayya tabaga khatas maymaga kysyl_syr ulu_sysy magan zhatai nuochakha
                 tit_ebya tyokhtyur charang kenkeme ulakhan_an toyon_ary tit_ary yedey
@@ -4041,7 +4040,7 @@ countries = {
             }
 
 
-            starting_technology_level = 0
+            starting_technology_level = 3
             include = "eurasian_tribe"
             government = {
                 type = tribe
@@ -4049,6 +4048,53 @@ countries = {
                 ruler = random
             }
             capital = zhatai
+        }
+
+        TUG = { #Tungus
+
+            own_control_core = {
+                bratsk chuva educhanka reka_tuba lower_angara upper_angara kezhma yarkino boguchany chunoyar aban
+                manzaya pashino motygino taseyevo derzhinskoye
+            }
+
+            discovered_regions = {
+                ural_region
+                west_siberia_region
+                east_siberia_region
+            }
+
+
+            starting_technology_level = 3
+            include = "eurasian_tribe"
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = bratsk
+        }
+
+        CKC = { #Chukchi
+
+            own_control_core = {
+                v_enyn tumanskaya y_lkytveem nyerpicha ugolnye unazigmit nunligran enmyl_yn sigheneg guvrel rykuul
+                valkall_an ervykynnot keniergyn
+            }
+
+            discovered_regions = {
+                west_siberia_region
+                east_siberia_region
+            }
+
+
+            starting_technology_level = 3
+            include = "eurasian_tribe"
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = v_enyn
         }
 
         BSH = {
@@ -6418,6 +6464,13 @@ countries = {
                 delhi rohtak panipat dadri mirat hapur jansath baran saharanpur piran_i_kaliyar
                 hisar hansi jind kaithal karnal thanesar sadhaura
             }
+            our_cores_conquered_by_others = {
+                sirhind samana_india sunam bathinda raikot rahon bajwara jalandhar hajner faridkot
+                muktsar chishtian milwat kapurthala firozpur pakpattan chichawatni dipalpur
+                gugera kasur lahore fatehabad batala sultanwind kalanaur pasrur sialkot eminabad virkgarh
+                pindi_bhattian talwandi jaranwala chiniot dijkot jhang kamalia shorkot sillanwali shahpur
+                lalian bhera busal gujrat
+            }
 
             court_language = persian_language
 
@@ -6699,7 +6752,7 @@ countries = {
         KGR = {
             #https://en.wikipedia.org/wiki/Kangra_State
             own_control_core = {
-                nagarkot palampur kutlehar suket mandi sarahan naggar bajaura nurpur pathankot
+                nagarkot palampur kutlehar suket mandi sarahan naggar bajaura nurpur pathankot kahlur chamba_india barmaur
             }
 
             capital = nagarkot
@@ -6774,7 +6827,7 @@ countries = {
         #BSP - Bilaspur
         BSP = {
             #https://en.wikipedia.org/wiki/Bilaspur_State_(princely_state)
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 kahlur
             }
 
@@ -6912,7 +6965,7 @@ countries = {
         #CAB - Chamba
         CAB = {
             #https://en.wikipedia.org/wiki/Chamba_State
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 chamba_india barmaur
             }
 
@@ -64317,9 +64370,8 @@ countries = {
         # --- Fiji ---
         #Burebasaga - BUB
         BUB = {
-            type = pop
 
-            add_pops_from_locations = {
+            own_control_core = {
                 burebasaga kandavu beqa_lagoon
             }
 
@@ -64331,9 +64383,8 @@ countries = {
         }
         #Kubuna - KBN
         KBN = {
-            type = pop
 
-            add_pops_from_locations = {
+            own_control_core = {
                 kubuna yasawa ngau
             }
 
@@ -64345,9 +64396,8 @@ countries = {
         }
         #Tovata - TOV
         TOV = {
-            type = pop
 
-            add_pops_from_locations = {
+            own_control_core = {
                 vanua_levu qelelevu_atoll taveuni vanua_balavu_atoll
                 moce_atoll kabara_atoll fulaga_atoll
 
@@ -64764,7 +64814,7 @@ countries = {
 
         }
 
-         #SIR - Sirhind
+        #SIR - Sirhind
         SIR = {
             own_control_core = {
                 sirhind samana_india sunam bathinda raikot rahon bajwara jalandhar hajner faridkot
@@ -64772,6 +64822,10 @@ countries = {
                 gugera kasur lahore fatehabad batala sultanwind kalanaur pasrur sialkot eminabad virkgarh
                 pindi_bhattian talwandi jaranwala chiniot dijkot jhang kamalia shorkot sillanwali shahpur
                 lalian bhera busal gujrat
+            }
+            our_cores_conquered_by_others = {
+                delhi rohtak panipat dadri mirat hapur jansath baran saharanpur piran_i_kaliyar
+                hisar hansi jind kaithal karnal thanesar sadhaura
             }
 
             include = "expl_india_hindu"
@@ -64979,6 +65033,192 @@ countries = {
                 ruler = random
             }
             religious_school = hanafi_school
+        }
+        TIW = { #Tiwi
+
+            own_control_core = {
+                tiwi maung kuwena larrakia woolna konbudj
+            }
+
+            discovered_regions = {
+                australia_region
+            }
+
+
+            starting_technology_level = 3
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = tiwi
+        }
+        EOA = { #Eora
+            own_control_core = {
+                eora tharawal dharug guramal jerrinja
+            }
+
+            discovered_regions = {
+                australia_region
+            }
+
+
+            starting_technology_level = 3
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = eora
+        }
+        WUW = { #Wurundjeri 
+            own_control_core = {
+                wathaurong woi_wurrung boon_wurrung gadubanud marin_balluk yarra
+            }
+
+            discovered_regions = {
+                australia_region
+            }
+
+
+            starting_technology_level = 3
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = wathaurong
+            accepted_cultures = {
+                boon_wurrung_culture
+                wathaurong_culture
+            }
+        }
+        WAT = { #Waikato
+
+            own_control_core = {
+                ahurei manukau hauraki tauranga urewera
+            }
+
+            discovered_regions = {
+                new_zealand_region
+                polynesia_region
+            }
+
+
+            starting_technology_level = 3
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = ahurei
+        }
+        TIA = { #Tahiti
+
+            own_control_core = {
+                tahiti havaii manuae_atoll rangiroa_atoll nganaa_nui_atoll
+            }
+
+            discovered_regions = {
+                polynesia_region
+                micronesia_region
+                melanesia_region
+            }
+
+
+            starting_technology_level = 3
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = tahiti
+        }
+        PAI = { #Paici
+
+            own_control_core = {
+                paici cemuhi ajie yuanga nyelayu
+            }
+
+            discovered_regions = {
+                polynesia_region
+                micronesia_region
+                melanesia_region
+            }
+
+
+            starting_technology_level = 3
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = paici
+        }
+        NIV = { #Ni-Vanuatu
+
+            own_control_core = {
+                tanna aneityum erromango malakula ambae
+            }
+
+            discovered_regions = {
+                polynesia_region
+                micronesia_region
+                melanesia_region
+            }
+
+
+            starting_technology_level = 3
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = tanna
+        }
+        NII = {#Naasuiu
+
+            own_control_core = {
+                naasioi bannoni tinputz vaghua cheke_holo mono
+            }
+
+            discovered_regions = {
+                polynesia_region
+                micronesia_region
+                melanesia_region
+            }
+
+
+            starting_technology_level = 3
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = naasioi
+        }
+        WAM = { #Waima
+
+            own_control_core = {
+                waima koiali toaripi namau sinaugoro suau wipi
+            }
+
+            discovered_regions = {
+                indonesia_region
+                polynesia_region
+                micronesia_region
+                melanesia_region
+            }
+
+
+            starting_technology_level = 3
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            capital = waima
+        }
         }
     }
 }
