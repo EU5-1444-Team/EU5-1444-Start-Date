@@ -1,5 +1,7 @@
 #Remember to write sons and daughters ALWAYS after their parents to avoid crashes
 
+# ONLY ADD CHARACTERS BELOW LINE 100964 !!!
+
 character_db = {
 
     #
@@ -49290,56 +49292,6 @@ character_db = {
         dynasty = hanyang_han_dynasty
         tag = KOR
     }
-
-	joe_taejo = { # https://en.wikipedia.org/wiki/Taejo_of_Joseon
-		first_name = { name = name_seong_gye }
-		culture = korean_culture
-		religion = sanjiao
-		adm = 80 dip = 70 mil = 90
-		birth_date = 1335.11.4
-		death_date = 1408.6.27
-		birth = hwaju
-		dynasty = yi_dynasty
-		tag = JOE
-	}
-
-	joe_jeongjong = { # https://en.wikipedia.org/wiki/Jeongjong_of_Joseon
-		first_name = { name = name_bang_gwa }
-		culture = korean_culture
-		religion = sanjiao
-		adm = 30 dip = 60 mil = 40
-		birth_date = 1357.7.1
-		death_date = 1419.9.26
-		father = joe_taejo
-		birth = hamheung
-		dynasty = yi_dynasty
-		tag = JOE
-	}
-
-	joe_taejong = { # https://en.wikipedia.org/wiki/Taejong_of_Joseon
-		first_name = { name = name_bang_won }
-		culture = korean_culture
-		religion = sanjiao
-		adm = 60 dip = 40 mil = 70
-		birth_date = 1367.5.13
-		death_date = 1422.5.10
-		father = joe_taejo
-		birth = hamheung
-		dynasty = yi_dynasty
-		tag = JOE
-	}
-
-	joe_sejong = { # https://en.wikipedia.org/wiki/Sejong_the_Great
-		first_name = { name = name_do }
-		culture = korean_culture
-		religion = sanjiao
-		adm = 80 dip = 90 mil = 70
-		birth_date = 1397.5.15
-		father = joe_taejong
-		birth = hanyang
-		dynasty = yi_dynasty
-		tag = JOE
-	}
 
     ssg_jo_hwi = {
         first_name = { name = name_hwi }
@@ -101009,6 +100961,8 @@ character_db = {
         tag = KAM
     }
 
+    # === NEW CHARACTERS ===
+
     tim_timur = {
         first_name = { name = "Timur" }
         culture = khorezmian_culture
@@ -101258,4 +101212,54 @@ character_db = {
         ruler_trait = tactical_genius
         ruler_trait = ambitious
     }
+
+	joe_taejo = { # https://en.wikipedia.org/wiki/Taejo_of_Joseon
+		first_name = { name = name_seong_gye }
+		culture = korean_culture
+		religion = sanjiao
+		adm = 80 dip = 70 mil = 90
+		birth_date = 1335.11.4
+		death_date = 1408.6.27
+		birth = hwaju
+		dynasty = yi_dynasty
+		tag = JOE
+	}
+
+	joe_jeongjong = { # https://en.wikipedia.org/wiki/Jeongjong_of_Joseon
+		first_name = { name = name_bang_gwa }
+		culture = korean_culture
+		religion = sanjiao
+		adm = 30 dip = 60 mil = 40
+		birth_date = 1357.7.1
+		death_date = 1419.9.26
+		father = joe_taejo
+		birth = hamheung
+		dynasty = yi_dynasty
+		tag = JOE
+	}
+
+	joe_taejong = { # https://en.wikipedia.org/wiki/Taejong_of_Joseon
+		first_name = { name = name_bang_won }
+		culture = korean_culture
+		religion = sanjiao
+		adm = 60 dip = 40 mil = 70
+		birth_date = 1367.5.13
+		death_date = 1422.5.10
+		father = joe_taejo
+		birth = hamheung
+		dynasty = yi_dynasty
+		tag = JOE
+	}
+
+	joe_sejong = { # https://en.wikipedia.org/wiki/Sejong_the_Great
+		first_name = { name = name_do }
+		culture = korean_culture
+		religion = sanjiao
+		adm = 80 dip = 90 mil = 70
+		birth_date = 1397.5.15
+		father = joe_taejong
+		birth = hanyang
+		dynasty = yi_dynasty
+		tag = JOE
+	}
 }
