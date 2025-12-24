@@ -2144,7 +2144,6 @@ countries = {
                     veche_republic
                     merchant_republic
                 }
-                ruler = mos_ivan_i_danilovich_kalita_rurikovich
 
                 ruler_term = { character = kie_rurik start_date = 862.1.1 end_date = 879.1.1 regnal_number = 1 }
                 ruler_term = { character = kie_igor_rurikovich start_date = 879.1.1 end_date = 945.1.1 regnal_number = 1 }
@@ -3556,10 +3555,9 @@ countries = {
 
             starting_technology_level = 3
             government = {
-                type = republic
-                heir_selection = veche_selection
+                type = monarchy
+                heir_selection = cognatic_primogeniture
                 reforms = {
-                    veche_republic
                 }
                 parliament = {
                     parliament_type = estate_parliament
@@ -4152,7 +4150,6 @@ countries = {
             own_control_core = {
 
                 kreminna bielska_sloboda bilovodsk novopskov kalnivka konstantinovka
-                semikarakorsk
                 mityakinskaya novoaidar belaya_kalitva millerovo oblivskaya
                 kashary chertkovo bokovskaya milyutinskaya boguchar ostrogozhsk
                 kalach uryupin mikhaylovka novoanninsky alexeyevskaya veesky kumylzhenskaya
@@ -4195,6 +4192,7 @@ countries = {
             our_cores_conquered_by_others = {
                 kichkas rozdory pavlohrad
                 sloviansk
+                semikarakorsk
 
             }
             starting_technology_level = 3
@@ -4279,7 +4277,8 @@ countries = {
                 oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka
                 balikley aqmecit_prybuzhzhya vithold_hammami dashev argamakli_sarai
                 khadjibey teligol kuyanlik ananiv iagorlic
-                sofiivka kryvyi_rih tomakivka mykytyn_rih kodak 
+                sofiivka kryvyi_rih tomakivka mykytyn_rih kodak
+                semikarakorsk
             }
 
             starting_technology_level = 3
@@ -12948,6 +12947,8 @@ countries = {
                 aromanian
             }
 
+            country_rank = rank_duchy
+
             liturgical_language = greek_language
 
             capital = arta
@@ -14683,15 +14684,9 @@ countries = {
                 belin la_teste_de_buch
                 mimizan
                 montpellier
-                valence die privas montlaur condorcet
+                privas montlaur
 
-                # own_control_integrated, but culture accepted
                 tournon #S. de Tournon
-                grenoble gap briancon pragelato
-                romans la_mure saint_marceilin
-                mevouillon
-                la_tour_du_pin
-                vienne
                 lautrec #Vic. de Lautrec
                 castres #S. de Castres
 
@@ -16319,11 +16314,14 @@ countries = {
 
         #Valentinois (Vassal, Fief Mouvant)
         VLN = {
-            our_cores_conquered_by_others = {
-                valence die privas montlaur condorcet
+            own_control_core = {
+                valence die condorcet
+            }
 
-                # own_control_integrated, but culture accepted
+            our_cores_conquered_by_others = {
+                privas montlaur
                 tournon #S. de Tournon
+
             }
             starting_technology_level = 3
             include = "expl_western_europe"
@@ -17656,7 +17654,7 @@ countries = {
 
         #Dauphine
         DAU = {
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 grenoble gap briancon pragelato
                 romans la_mure saint_marceilin
                 mevouillon
@@ -17852,7 +17850,7 @@ countries = {
             own_control_core = {
                 cassel dunkirk oudenaarde ypres veurne
                 ostend bruges hulst ghent sint_niklaas aalst kortriik
-                lille douai tournai
+                lille douai
             }
 
             starting_technology_level = 3
@@ -19030,7 +19028,7 @@ countries = {
             religious_school = maliki_school
             government = { mysticism_vs_jurisprudence = -5 }
 
-            capital = oudja
+            capital = oujda
             dynasty = marinid_dynasty
         }
 
@@ -19224,7 +19222,7 @@ countries = {
                 kalaat_sraghna
                 echemmaia sidi_bennour
                 asfi mazaghan tit boulaouane miatbir aguz
-                tednest ait_daoud tafedna mogador
+                tednest ait_daoud mogador
                 chichaoua
             }
 
@@ -20789,7 +20787,7 @@ countries = {
 
         AIR = {
             own_control_core = {
-                agadez in_gall tadekka marandet assode iferouane
+                agadez in_gall takedda marandet assode iferouane
                 bilma dirkou djado seguedine fachi agadem
             }
 
@@ -21756,7 +21754,6 @@ countries = {
                 # own_control_integrated, but culture accepted
                 asaita killelu mora_eth #mora_province
                 ankober gendebelo nora_eth #argobba_province
-                siyara
             }
 
             starting_technology_level = 3
@@ -22015,10 +22012,9 @@ countries = {
         #Adal - ADA (Bookmark/Vassal?)
         ADA = {
             own_control_core = {
-                siyara arabi awbare dakkar dire_dawa jeldesa
+                arabi awbare dakkar dire_dawa jeldesa
                 zeila ali_sabieh amud el_sheikh hargeisa #ifat_province
                 berbera fardawsa siyara #guban_province
-                galkayo #mudugh_province
                 # own_control_integrated, but culture accepted
                 asaita killelu mora_eth #mora_province
                 hargaya limey gode degehabur aware oodweyne burao
@@ -22050,7 +22046,7 @@ countries = {
                 barawa haranka merca qoryooley #banaadir_province
                 kelafo el_dhere #haud_province
                 kismayo afmadow bardera buale garbahare jilib luuq rasini #jubaland_province
-                dusmareb ceeldheer el_buur awrtable el_hamurre galkayo #mudugh_province
+                dusmareb ceeldheer el_buur el_hamurre galkayo #mudugh_province
                 baidoa beledweyne buur_hakaba buur_heybe hudur jowhar maxaas #shebelle_province
                 geledi
             }
@@ -33757,7 +33753,6 @@ countries = {
             religious_school = maturidi_school #Widespread among the Turks together with Hanafi
             tolerated_cultures = {
                 armenian_culture
-                turkoman_culture
             }
         }
 
@@ -33778,25 +33773,26 @@ countries = {
                 santeh takht_e_soleyman
                 miyaneh aghkand
                 zanjan mahneshan sarcham sojas
-                bashqurtaran dehgolan divandarreh ghorveh sohrevard yasukand
+                bashqurtaran sohrevard yasukand
                 goroz shusha
                 julfa nakhchivan
                 erbil
                 duhok balad
                 baciravan
                 lankaran
+                hashtrud malekan miandoab sain ujan
             }
 
             own_control_integrated = {
                 van bahcesaray catak hosap
                 surmali igdir bayazit khor_virap
+                hashatjin khalkhal
             }
 
             own_control_conquered = {
                 ani
-                kayen khunani
                 yerevan bjni
-                amberd artashavan spitak
+                amberd artashavan
                 gladzor
                 sotk
                 kapan_armenia goris kashatagh tatev
@@ -33816,7 +33812,6 @@ countries = {
             capital = mosul
             religious_school = maturidi_school #Widespread among the Turks together with Hanafi
             tolerated_cultures = {
-                turkoman_culture
             }
         }
 
@@ -34733,14 +34728,14 @@ countries = {
         TRE = {
             own_control_core = {
                 trebizond giresun gorele gumushane surmene
-                khupati rize
+                rize
             }
 
             own_control_integrated = {
             }
 
             our_cores_conquered_by_others = {
-                khupati rize
+                khupati
                 akkus mesudiye terme
                 bayramlu unye
             }
@@ -35056,7 +35051,7 @@ countries = {
 
             }
 
-            capital = khalkhal
+            capital = ardabil
             tolerated_cultures = {
                 azeri_culture
             }
@@ -35115,7 +35110,7 @@ countries = {
         ARD = {
             own_control_core = {
                 sanandaj hawraman marivan
-                bijar bijar dehgolan divandarreh ghorveh
+                bijar dehgolan divandarreh ghorveh
             }
 
             include = "expl_middle_east"
@@ -35165,7 +35160,7 @@ countries = {
 
         #Hasbani - HBN
         HBN = {
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 hashtrud malekan miandoab sain ujan
             }
 
@@ -41992,7 +41987,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
                 sorbian
             }
 
@@ -42026,7 +42021,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = legnica
@@ -42056,7 +42051,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = olesnica
@@ -42089,7 +42084,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
                 sorbian
             }
 
@@ -42120,7 +42115,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
                 moravian
             }
 
@@ -42173,7 +42168,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = bytom
@@ -42204,7 +42199,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
                 moravian
             }
 
@@ -42236,7 +42231,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = raciborz
@@ -42266,7 +42261,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
                 moravian
             }
 
@@ -42326,7 +42321,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = swidnica
@@ -42353,7 +42348,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = wolow
@@ -42380,7 +42375,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = ziebice
@@ -42407,7 +42402,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = brzeg
@@ -42434,7 +42429,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = namyslow
@@ -42461,7 +42456,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = strzelce_opolskie
@@ -42488,7 +42483,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = niemodlin
@@ -42515,7 +42510,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
                 lesser_polish
             }
 
@@ -42569,7 +42564,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
                 moravian
             }
 
@@ -42600,7 +42595,7 @@ countries = {
             }
 
             tolerated_cultures = {
-                german_silesian
+                silesian
             }
 
             capital = glogow
@@ -50105,10 +50100,8 @@ countries = {
                 dungene lepsy sagabuyen tekeli
                 merki aspara khantau kulan sretenskoe tasuktul tolekskoe
                 talas dzhulsub sarvaslyk tekabket yangi zherkorgan
-                altyntobe bogiston burchmullo
                 isbijab arsubaniket badam karabulak kazatlyk shymkent
                 koshoy_korgon cholok_kaiyn chon_naryn jumgal ketmen_tobe naryn
-                otrar artyk_ata kyr_uzkand mardankuyik
                 turkestan aktas_kystagy baydibek_ata ikan karnak sawran shilik
                 kurchum kandysu
 
@@ -50398,7 +50391,7 @@ countries = {
                 herat firozkoh chishti_sarif tulak awbeh karokh pushang
                 firuzkuh_afghanistan azab khaysar shindand adraskan
                 kusk kusk_kohneh qala_naw jawand qala_kohistan marv_al_rudh ghormach qasr_ahnaf
-                pandjih isfahan doroh sarbisheh
+                pandjih sarbisheh
                 mashhad_rizeh torbat_e_jam bakharz salehabad fariman
                 farhadgerd mazdaran mashhad radkan tus
                 sarakhs tejend kalat_nader abiward
@@ -50417,7 +50410,7 @@ countries = {
 
                 ravar zarand_iran kuhbanan bafq behabad
                 saryazd yazd taft nadushan meybod ardakan
-                bavanat marvast dehshir eqlid abarkuh abadeh
+                bavanat marvast dehshir
                 harat khabar shahr_e_babak meshkan khatunabad
                 qatruyeh saadatabad sirjan hajjiabad khabr arzu soghan
                 golashkerd kahnuj mardehek
@@ -50426,6 +50419,8 @@ countries = {
                 ghobeyra shahdad kerman mahan
                 negar bardsir baghin rafsanjan anar bahreman dehaj ernan
                 manujan nowdezh rudkhaneh shaqrud
+                aqda
+                sarlawuk dehistan
             }
             our_cores_conquered_by_others = {
                 andijan arslanbob gulcha jalalabad_fergana uzkand
@@ -50463,14 +50458,14 @@ countries = {
                 qala_safid nurabad bandar_rig jannaba bandar_deylam basht
 
                 nardin minudasht aliabad_katul astarabad tammisha mubarakabad incheh_borun etrek gorgan
-                maraveh sarlawuk dehistan
+                maraveh
 
                 qom kahak neyasar kashan maranjab aveh saveh
                 khwar eyvanekey damavand rey varamin karaj rahimabad razeqan
                 lasjerd firuzkuh
-                natanz ardestan zavareh nain aqda anarak
+                natanz ardestan zavareh nain anarak
                 tudeshk komshecheh murcheh_khvort dowlatabad dehagh
-                yazdikhwast ramsheh qumisha yangabad sohrfiruzan karkevand fereydunshahr
+                ramsheh qumisha yangabad sohrfiruzan karkevand fereydunshahr
                 nimvar khwansar golpayegan khomeyn mahallat delijan
                 sibak aligurdaz borborud gerit dorud borujerd
                 karaj_abi_dulaf saruk tafresh khondab qorveh_darjazin hamadan kurijan
@@ -50484,6 +50479,10 @@ countries = {
                 gandamak jalalabad alishang panjshir asadabad_kunar parun hajiabad
                 gardez logar chak ghazni zarghun_shahr muqur nawah wazakhwa maruf yakawlang
                 chaman arghestan kandahar qalat_ghilji deychopan tarinkot deh_kundi kajran baghran
+                doroh
+                isfahan
+                yazdikhwast
+                eqlid abarkuh abadeh
             }
 
             starting_technology_level = 3
@@ -50519,7 +50518,6 @@ countries = {
 
         TIS = {
             own_control_core = {
-
                 andijan arslanbob gulcha jalalabad_fergana uzkand
                 akhsikath asht karasuu kasan kerben pop_fargana
                 ura_tyube zomin pishagar jizzakh
@@ -50531,10 +50529,12 @@ countries = {
                 khiva kyat_kala kath nyzvar xojeli urgench vezir
                 orta_kuyu talaikhan_ata uzboy gazanjyk
 
-                amol_turkmenabad merv barkdiz khoja_idat_kala firabr navidakh akhsisek nasaf
+                amol_turkmenabad merv barkdiz khoja_idat_kala firabr navidakh nasaf
                 paikend muborak koson chiroqchi guzor kish_shahrisabz
                 nurota dakhkat khujand konibodom isfara kokand
                 rishton marghinan fergana quva osh
+                otrar artyk_ata kyr_uzkand mardankuyik
+                altyntobe bogiston burchmullo
             }
             our_cores_conquered_by_others = {
                 artyk_ata kyr_uzkand asanas jand barchkend karmakshi jubara yangikent buzikkala
@@ -50569,6 +50569,7 @@ countries = {
                 aiwanj arkhan taleqan kishim araska farkhor hulbuk vakhs wesgird munk kulob
                 khamyab zadian boyena_qara mazar_i_sharif khulm samangan kunduz baghlan
                 ashkamesh
+                akhsisek
             }
 
             starting_technology_level = 3
@@ -50610,6 +50611,7 @@ countries = {
                 firuzabad dehram riz bandar_deyr khormoj kalameh
                 farashband sar_mashhad kazerun borazjan reyshahr
                 qala_safid nurabad basht
+                eqlid abarkuh abadeh
             }
             our_cores_conquered_by_others = {
                 kish
@@ -50642,8 +50644,8 @@ countries = {
 
         TIG = {
             own_control_core = {
-                nardin minudasht aliabad_katul astarabad tammisha mubarakabad incheh_borun etrek gorgan
-                maraveh sarlawuk dehistan
+                nardin minudasht aliabad_katul astarabad mubarakabad incheh_borun etrek gorgan
+                maraveh
             }
             our_cores_conquered_by_others = {
                 faraveh ganlygala jargalan
@@ -50651,6 +50653,8 @@ countries = {
                 meshkan_khorasan agh_qala azadvar bam_esfarayen bam_esfarayen shoqan jajarm
                 haresabad kharturan sabzevar farumad beyarjomand
                 bastam damghan qumis semnan
+                tammisha
+                sarlawuk dehistan
             }
 
             starting_technology_level = 3
@@ -50681,10 +50685,10 @@ countries = {
             own_control_core = {
                 qom kahak neyasar kashan maranjab aveh saveh
                 khwar eyvanekey damavand rey varamin karaj rahimabad razeqan
-                lasjerd firuzkuh
-                natanz ardestan zavareh nain aqda anarak
+                lasjerd semnan firuzkuh
+                natanz ardestan zavareh nain anarak
                 tudeshk komshecheh murcheh_khvort dowlatabad dehagh
-                yazdikhwast ramsheh qumisha yangabad sohrfiruzan karkevand fereydunshahr
+                ramsheh qumisha yangabad sohrfiruzan karkevand fereydunshahr
                 nimvar khwansar golpayegan khomeyn mahallat delijan
                 sibak aligurdaz dorud borujerd
                 karaj_abi_dulaf saruk tafresh khondab qorveh_darjazin hamadan kurijan
@@ -50692,15 +50696,18 @@ countries = {
                 bashqurtaran sohrevard yasukand
                 sagzabad savojbolagh avaj qazvin takestan abhar qeydar
                 shahrestan_sofla sirdan rudbar shamiram
-                soltaniyeh sojas zanjan mahneshan sarcham
+                soltaniyeh sojas zanjan mahneshan
+                isfahan
+                yazdikhwast
             }
 
             own_control_integrated = {
-                hashatjin khalkhal
             }
 
             our_cores_conquered_by_others = {
-                isfahan bijar dehgolan divandarreh ghorveh
+                bijar dehgolan divandarreh ghorveh
+                aqda
+                sarcham
             }
 
             starting_technology_level = 3
@@ -50735,6 +50742,7 @@ countries = {
                 lalpur mardan peshawar kohat
                 urgun wana zhob
                 hangu khost bannu tank akora thal_daman
+                musa_qala
             }
 
             starting_technology_level = 3
@@ -59818,7 +59826,7 @@ countries = {
             type = army
             our_cores_conquered_by_others = {
                 gorgan aliabad_katul etrek incheh_borun minudasht mubarakabad nardin
-                damghan bastam lasjerd qumis semnan
+                damghan bastam lasjerd qumis
                 raz
                 konjikala anew dargaz durun
                 faraveh dehistan ganlygala gazanjyk jargalan maraveh sarlawuk
@@ -59868,8 +59876,9 @@ countries = {
                 bahramchah delaram khash_sistan qala_fateh qarnin rudbar_sistan
                 garmsir banader khanashin maiwand pangvay
                 farah anardara shahr_sabz
-                bost gereshk musa_qala
+                bost gereshk
                 sepeh dowzdab
+                doroh
             }
 
             own_control_integrated = {
@@ -59989,7 +59998,6 @@ countries = {
                 yasuj samiram sisakht vanak borujen deh_kord
                 bagh_malek
                 dehdasht dishmok suq
-                somaleh
             }
 
             include = "expl_middle_east"
@@ -60304,6 +60312,7 @@ countries = {
             #Tabaristan
             own_control_core = {
                 amol al_mamtir sari ashraf farim_iran lafur
+                tammisha
             }
 
             include = "expl_middle_east"
@@ -60560,6 +60569,7 @@ countries = {
                 andimeshk
                 borborud gerit
                 borujerd aligurdaz dorud sibak
+                somaleh
             }
 
             include = "expl_middle_east"
@@ -61343,6 +61353,11 @@ countries = {
                 hereti balakan bodbe khornabuji qakh
                 dmanisi kldekari
                 gagi lori
+                kutaisi lentekhi skande shorapani tsageri tsesi ushguli vartsikhe
+                bedia anaklia batumi ozurgeti poti_caucasus tsalenjikha
+                sukhumi anacopia lata_georgia pitsunda
+                kayen khunani spitak
+                khupati
             }
 
             our_cores_conquered_by_others = {
@@ -61428,7 +61443,7 @@ countries = {
 
         AAI = {
             #Alastani
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 akhalkalaki kumayri
             }
 
@@ -61464,6 +61479,7 @@ countries = {
                 artanuji khikhani oltu parkhali savsat
                 kars kagizman tmogvi
                 panaskerti tortum
+                akhalkalaki kumayri
             }
 
             include = "expl_christian_caucasus"
@@ -61493,7 +61509,7 @@ countries = {
 
         IME = {
             #Imereti / Western Georgia
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 kutaisi lentekhi skande shorapani tsageri tsesi ushguli vartsikhe
                 bedia anaklia batumi ozurgeti poti_caucasus tsalenjikha
                 sukhumi anacopia lata_georgia pitsunda
