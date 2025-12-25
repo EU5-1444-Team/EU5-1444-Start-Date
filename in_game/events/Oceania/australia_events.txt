@@ -1,0 +1,44 @@
+namespace = australia_events
+
+australia_pops.1 = {
+	type = country_event
+	title = australia_pops.1.title
+	desc = australia_pops.1.desc
+	
+	trigger = {
+		OR = {
+			tag = WUW
+			tag = EOA
+			tag = TIW
+			tag = CKC
+		}
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		capital = {
+			save_scope_as = target_capital
+		}
+	}
+	
+	option = {
+		name = australia_pops.1.a
+		
+		ai_chance = { factor = 0 }
+		
+		capital = {
+			every_pop = {
+				add_pop_size = {
+					value = 5000
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = australia_pops.1.b
+		
+		ai_chance = { factor = 100 }
+	}
+}
