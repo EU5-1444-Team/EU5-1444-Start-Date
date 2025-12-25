@@ -1,21 +1,21 @@
-namespace = australia_events
+namespace = australia_pops
 
 australia_pops.1 = {
 	type = country_event
 	title = australia_pops.1.title
 	desc = australia_pops.1.desc
 	
-	dynamic_historical_event = {
-		OR = {
-			tag = WUW
-			tag = EOA
-			tag = TIW
-			tag = CKC
+	trigger = {
+		AND = {
+			current_year > 1400
+			OR = {
+				tag = WUW
+				tag = EOA
+				tag = TIW
+				tag = CKC
+			}
 		}
-        from = 1444.1.1
-        to = 1450.1.1
-        monthly_chance = 100
-    }
+	}
 	
 	fire_only_once = yes
 	
@@ -43,5 +43,7 @@ australia_pops.1 = {
 		name = australia_pops.1.b
 		
 		ai_chance = { factor = 100 }
+		
+		# Refuse - do nothing
 	}
 }
