@@ -20,7 +20,7 @@ international_organization_manager = {
             LUN BRU GBH HDH GOS SCB HOY NIE DPH VRD RTB OLD ZAG JAW LGC OEL OPL TES BYM RCB MVA AGC WER MBZ MFK BCH STG ZUR SYZ LCA URI OBW LCU SIT BRN SLT NEU BAS LSA KYB ANS
             EIC WEI NUR WBG RIE MSB UFF ROT DNB MEM KMP ULM KNZ OET SWH HBR BDE WDB RVA BIB UBL HHB FBG OFB WLD PRZ BRD GOR FCB ALL ZEE CAM STV HTR HPL NWG SWD
             SCI ZIE BRZ NMS STZ NMD WRC GLO NYS OPV PDK VUD BMS BLB HSP BSK MSO WGO BHL GLN AOS RBG FLK NSI RDL NID MDS LDA TGG GRY VEL PSZ SFC CFC MUR HAG MUL LIC WDE NSH NSS
-            BLM DIS EVS FUR GRK HAC JEV SAW SAB THD WIE ELL HEH HLF HOH KIR NEL TUB KTZ NSW LEU FRI STY MOD PIO SAX SOP ING
+            BLM DIS EVS FUR GRK HAC JEV SAW SAB THD WIE ELL HEH HLF HOH KIR NEL TUB KTZ NSW LEU FRI STY MOD PIO SAX SOP ING TRN GLR
         }
         leader = STY
         regions = { south_german_region }
@@ -378,11 +378,11 @@ international_organization_manager = {
             HSK NKI KTB IMG TKD SBA CBA STK KGK TKI OGS UES OYM TGS YSM KRA YMN MTD HTK
             SHN OTM SMZ NBU MGM KSI SOM DTE ASN YUK UTN IIX AKJ ISK MSD OUC KKC ASO
             SGR KMT SOU ANM TZW WAG HIE DHJ NGM TMR ISW MIU SUW RKK ITO ODA AKT
-            NAS HNM UNN KOK TOY NGN
+            NAS HNM UNN KOK TOY NGN MKT
             MYH KAG KOZ AKI AHT ARI TMD
             # New Countries
-            KAK NMI SHI NIK SGO ODE OSA RSU NIH IWA SNO HJO NAK KYO JNB TKA SAT OMO OYA YMO ASI MTU KUW
-            OCH TSU KKI EDA AKA AMO KOO SAI ICH MUK MSU UKU KMC ANA NES TNE
+            KAK NMI SHI NIK SGO ODE OSA RSU NIH IWA SNO HJO NAK JNB TKA SAT OMO OYA YMO ASI MTU KUW
+            OCH TSU KKI EDA AKA AMO KOO SAI ICH MSU UKU KMC ANA NES TNE
         }
 
         japanese_emperor = {
@@ -420,80 +420,12 @@ international_organization_manager = {
             HSK NKI KTB IMG TKD SBA CBA STK KGK TKI OGS UES OYM TGS YSM KRA YMN MTD HTK
             SHN OTM SMZ NBU MGM KSI SOM DTE ASN YUK UTN IIX AKJ ISK MSD OUC KKC ASO
             SGR KMT SOU ANM TZW WAG HIE DHJ NGM TMR ISW MIU SUW RKK ITO ODA AKT
-            NAS HNM UNN KOK TOY NGN
+            NAS HNM UNN KOK TOY NGN MKT
             MYH KAG KOZ AKI AHT ARI TMD
             # New Countries
             KAK NMI SHI NIK SGO ODE OSA RSU NIH IWA SNO HJO NAK KYO JNB TKA SAT OMO OYA YMO ASI MTU KUW
-            OCH TSU KKI EDA AKA AMO KOO SAI ICH MUK MSU UKU KMC ANA NES TNE
+            OCH TSU KKI EDA AKA AMO KOO SAI ICH MSU UKU KMC ANA NES TNE
         }
-    }
-
-    #################################################################
-    # 				Guelphs & Ghibellines							#
-    #################################################################
-    add_international_organization = {
-        type = guelphs_io
-        creation_date = 1125.5.23
-        members = {
-            NAP PAP BLG PEA FLO ASD FER CNV CHX MND IMO RAV FAE RIM ANC CMR PTG SIE MTA PES ATI
-        }
-        leader = NAP
-    }
-    add_international_organization = {
-        type = ghibellines_io
-        creation_date = 1125.5.23
-        members = {
-            MLO PIS URB GEN ATI SAL PAR LUC CES UBV MAN MFA FRM LCA CRR
-        }
-        leader = MLO
-    }
-
-    #################################################################
-    # 				Ilkhanate										#
-    #################################################################
-    add_international_organization = {
-        type = ilkhanate
-        creation_date = 1260.1.1
-        members = {
-            #Borjigid Faction
-
-            MZN
-            BDS #Baduspanids
-            #Kartids
-            HLG #Huleguids
-
-            #Jalayirid Faction
-
-            JAL ARD ATZ DML ERE HBN HDR HLL HNY IHB KEL KKL KLR KRI KTW MKW RKL SLI SRV SYY ZBR
-            SUT BHT BIN BIT CEM DIL DMB DSN EGL HKK HZN HZR JLM MUS MZJ SOH ZRQ ZZR #Sutayids
-
-            #Unaligned
-
-            ARM KCN SYU VDZ #Armenia
-            GEO AAI SKI SME #Georgia
-            #Injuids
-            MKR BMP BLA KLW #Makran
-            ORM JSK #Ormus
-            ATQ FMN HSN HZP KHN KHZ KLA LCK LHJ MIH RNK RSH TLM
-        }
-
-        laws = {
-        }
-
-        ilkhan_claimant = {
-            JAL HLG
-        }
-        ruler_term = { character = hulegu_khan_borjigin start_date = 1256.1.1 end_date = 1265.2.8 regnal_number = 1 }
-        ruler_term = { character = abaqa_khan_borjigin start_date = 1265.2.8 end_date = 1282.4.4 regnal_number = 1 }
-        ruler_term = { character = ahmed_tekuder_borjigin start_date = 1282.4.4 end_date = 1284.8.10 regnal_number = 1 }
-        ruler_term = { character = arghun_khan_borjigin start_date = 1284.8.10 end_date = 1291.3.10 regnal_number = 1 }
-        ruler_term = { character = gaykhatu_borjigin start_date = 1291.3.10 end_date = 1295.3.21 regnal_number = 1 }
-        ruler_term = { character = hlg_baydu start_date = 1295.3.21 end_date = 1295.10.4 regnal_number = 1 }
-        ruler_term = { character = mahmud_ghazan_borjigin start_date = 1295.10.4 end_date = 1304.5.11 regnal_number = 1 }
-        ruler_term = { character = oljaitu_borjigin start_date = 1304.5.11 end_date = 1316.12.16 regnal_number = 1 }
-        ruler_term = { character = abu_said_bahadur_borjigin start_date = 1316.12.16 end_date = 1335.12.1 regnal_number = 1 }
-        ruler_term = { character = arpa_keun_borjigin start_date = 1335.12.1 end_date = 1336.5.15 regnal_number = 1 }
-
     }
 
     #################################################################
