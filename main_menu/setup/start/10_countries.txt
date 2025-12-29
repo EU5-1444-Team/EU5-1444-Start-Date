@@ -13251,11 +13251,14 @@ countries = {
 
         ALB = {
             own_control_core = {
-                tirana
             }
 
             our_cores_conquered_by_others = {
-                elbasan kavaje kruje durres lezha
+                kruje elbasan kavaje tirana debar durres 
+                ballsh berat devol
+                avlonya
+                lezha dukagjini koman has shkoder bar_cg
+                gjakova prizren
             }
 
             starting_technology_level = 3
@@ -13269,12 +13272,6 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                regency = consort_regency
-                active_regent = alb_agnes_perigord
-                start_regency_date = 1336.4.5
-                end_regency_date = 1341.1.1
-                heir = alb_charles_durazzo
-
                 ruler_term = { character = nap_charles_i_anjou start_date = 1272.2.1 end_date = 1285.1.7 regnal_number = 1 }
                 ruler_term = { character = nap_carlo_ii_anjou start_date = 1285.1.7 end_date = 1294.8.13 regnal_number = 2 }
                 ruler_term = { character = alb_filippo_i_taranto start_date = 1294.8.13 end_date = 1332.12.23 regnal_number = 1 }
@@ -13284,6 +13281,7 @@ countries = {
                 regnal_numbers = {
                     name_john = 1
                     name_charles = 1
+                    name_george = 1
                 }
             }
 
@@ -13293,16 +13291,11 @@ countries = {
 
             country_rank = rank_kingdom
             capital = tirana
-            dynasty = anjou_dynasty
-            #dynasty = anjou_durazzo_dynasty
+            dynasty = kastrioti_dynasty
         }
 
         THP = {
             own_control_core = {
-                kruje
-            }
-
-            our_cores_conquered_by_others = {
                 tirana
             }
 
@@ -13376,11 +13369,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                regency = consort_regency
-                active_regent = alb_agnes_perigord
-                start_regency_date = 1336.4.5
-                end_regency_date = 1341.1.1
-                heir = alb_charles_durazzo
+                ruler = random
 
                 ruler_term = { character = nap_charles_i_anjou start_date = 1272.2.1 end_date = 1285.1.7 regnal_number = 1 }
 
@@ -13414,6 +13403,33 @@ countries = {
 
             capital = kavaje
             dynasty = mataranga_dynasty
+        }
+
+        KAT = {
+            own_control_core = {   
+                kruje
+            }
+
+            our_cores_conquered_by_others = {
+                debar elbasan
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = kat_skanderbeg_kastrioti
+            }
+
+            capital = kruje
+            dynasty = kastrioti_dynasty
         }
 
         DGJ = {
@@ -14164,6 +14180,12 @@ countries = {
                 outward_vs_inward = -30
             }
 
+            discovered_areas = {
+                canary_islands_area
+                madeira_sea_area
+                nw_africa_coast_area
+            }
+
             country_rank = rank_kingdom
             capital = valladolid
 
@@ -14264,6 +14286,14 @@ countries = {
                 leonese
                 andalusi
                 sephardi
+            }
+
+            discovered_areas = {
+                madeira_sea_area
+                south_macaronesia_area
+                nw_africa_coast_area
+                azores_sea_area
+                azores_area
             }
 
             country_rank = rank_kingdom
@@ -14417,6 +14447,15 @@ countries = {
             government = {
                 type = monarchy
 
+                ruler_term = { character = cny_jean_bethencourt start_date = 1404.6.15 end_date = 1425.1.1 regnal_number = 1 }
+
+                ruler_term = { character = cny_maciot_bethencourt start_date = 1425.1.1 regnal_number = 1 }
+            }
+
+            discovered_areas = {
+                canary_islands_area
+                madeira_sea_area
+                nw_africa_coast_area
             }
 
             country_rank = rank_kingdom
@@ -14728,7 +14767,7 @@ countries = {
             government = {
                 heir_selection = salic_law
 
-                ruler = fra_philip_vi_valois
+                ruler = fra_charles_vii_valois
 
                 ruler_term = { character = fra_pepin_the_short start_date = 751.10.9 end_date = 768.9.24 regnal_number = 1 }
                 ruler_term = { character = fra_charlemagne start_date = 768.9.24 end_date = 814.1.28 regnal_number = 1 }
@@ -14766,8 +14805,11 @@ countries = {
                 ruler_term = { character = fra_jean_i_capet start_date = 1316.11.15 end_date = 1316.11.20 regnal_number = 1 }
                 ruler_term = { character = fra_philippe_v_capet start_date = 1316.11.20 end_date = 1322.1.3 regnal_number = 5 }
                 ruler_term = { character = fra_charles_iv_capet start_date = 1322.1.3 end_date = 1328.3.21 regnal_number = 4 }
-
-                ruler_term = { character = fra_philip_vi_valois start_date = 1328.4.1 regnal_number = 6 }
+                ruler_term = { character = fra_philip_vi_valois start_date = 1328.4.1 end_date = 1350.8.22 regnal_number = 6 }
+                ruler_term = { character = fra_jean_ii_valois start_date = 1350.8.22 end_date = 1364.4.8 regnal_number = 2 }
+                ruler_term = { character = fra_charles_v_valois start_date = 1364.4.8 end_date = 1380.9.16 regnal_number = 5 }
+                ruler_term = { character = fra_charles_vi_valois start_date = 1380.9.16 end_date = 1422.10.21 regnal_number = 6 }
+                ruler_term = { character = fra_charles_vii_valois start_date = 1422.10.21 regnal_number = 7 }
 
                 regnal_numbers = {
                     #Clovis = 4
@@ -14785,7 +14827,7 @@ countries = {
                     name_pepin = 1
                     name_carloman = 2
                     name_otto = 1
-                    name_charles = 4
+                    name_charles = 7
                     name_henry = 1
                     name_hugh = 1
                     name_john = 1
@@ -15125,7 +15167,7 @@ countries = {
             include = "catholic_monarchy_no_coast_no_censor"
 
             government = {
-                ruler = ale_charles_ii_valois
+                ruler = ale_jean_ii_valois_alencon
                 reforms = {
                     french_appanage_reform
                 }
@@ -15133,20 +15175,28 @@ countries = {
                 ruler_term = { character = ale_pierre_i_capet start_date = 1268.3.1 end_date = 1283.4.6 regnal_number = 1 }
 
                 ruler_term = { character = fra_charles_valois start_date = 1291.1.1 end_date = 1325.12.16 regnal_number = 1 }
-                ruler_term = { character = ale_charles_ii_valois start_date = 1325.12.16 regnal_number = 2 }
+                ruler_term = { character = ale_charles_ii_valois start_date = 1325.12.16 end_date = 1346.8.26 regnal_number = 2 }
+                ruler_term = { character = ale_charles_iii_valois start_date = 1346.8.26 end_date = 1361.1.1 regnal_number = 3 }
+                ruler_term = { character = ale_pierre_ii_valois_alencon start_date = 1361.1.1 end_date = 1404.9.2 regnal_number = 2 }
+                ruler_term = { character = ale_jean_i_valois_alencon start_date = 1404.9.2 end_date = 1415.10.25 regnal_number = 1 }
+                ruler_term = { character = ale_jean_ii_valois_alencon start_date = 1415.10.25 end_date = 1429.12.31  regnal_number = 2 }
+                
 
                 regnal_numbers = {
-                    name_peter = 1
-                    name_charles = 2
+                    name_peter = 2
+                    name_charles = 3
+                    name_john = 2
                 }
             }
+
+            country_rank = rank_duchy
 
             tolerated_cultures = {
                 french
                 burgundian
             }
 
-            capital = belleme
+            capital = alencon
         }
 
         #Auvergne (Appanage)
@@ -17692,7 +17742,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = dau_humbert_ii_de_la_tour
+                ruler = fra_louis_xi_valois
 
                 ruler_term = { character = dau_guigues_i_albon start_date = 1034.1.1 end_date = 1075.1.1 regnal_number = 1 }
                 ruler_term = { character = dau_guigues_ii_albon start_date = 1075.1.1 end_date = 1079.1.1 regnal_number = 2 }
@@ -33811,7 +33861,7 @@ countries = {
                 van bahcesaray catak hosap
                 surmali igdir bayazit khor_virap
                 hashatjin khalkhal
-                kars kagizman
+                kars kagizman kumayri
             }
 
             own_control_conquered = {
@@ -33823,6 +33873,7 @@ countries = {
                 kapan_armenia goris kashatagh tatev
                 siirt
                 karakilise
+                khunani
             }
 
             starting_technology_level = 3
@@ -34760,9 +34811,9 @@ countries = {
             }
 
             our_cores_conquered_by_others = {
-                khupati
                 akkus mesudiye terme
                 bayramlu unye
+                khupati
             }
 
             starting_technology_level = 3
@@ -61630,20 +61681,40 @@ countries = {
                 hereti balakan bodbe khornabuji qakh
                 dmanisi kldekari
                 gagi lori
-                kutaisi lentekhi skande shorapani tsageri tsesi ushguli vartsikhe
-                bedia anaklia batumi ozurgeti poti_caucasus tsalenjikha
-                sukhumi anacopia lata_georgia pitsunda
-                kayen khunani spitak
-                khupati
+                kutaisi skande shorapani vartsikhe
+                kayen spitak
+                tsageri tsesi
             }
 
             our_cores_conquered_by_others = {
                 gardman shamkir
                 kayen khunani
+                rize khupati
+                batumi ozurgeti
+                bedia anaklia poti_caucasus tsalenjikha
+                sukhumi anacopia lata_georgia pitsunda
+                ushguli
+                lentekhi
+                costa tuapse
+                akhaltsikhe ardahan
+                hasankale ispir
+                artanuji oltu parkhali savsat
+                tmogvi
+                panaskerti tortum
+                akhalkalaki kumayri
+                khikhani
+                yerevan bjni amberd ani artashavan kars kagizman kumayri surmali
+                gladzor
+                sotk
+                tatev kapan_armenia goris kashatagh
+                gandzasar haterk shusha
+     
+                shaki aresh vartashen
+                agsu goychay javad qabala zardab
             }
 
             include = "expl_christian_caucasus"
-            include = "eastern_european_monarchy"
+            include = "eastern_european_monarchy_no_coast"
             starting_technology_level = 3
             government = {
                 type = monarchy
@@ -61753,14 +61824,15 @@ countries = {
             own_control_core = {
                 akhaltsikhe ardahan
                 hasankale ispir
-                artanuji khikhani oltu parkhali savsat
+                artanuji oltu parkhali savsat
                 tmogvi
                 panaskerti tortum
-                akhalkalaki kumayri
+                akhalkalaki
             }
 
             our_cores_conquered_by_others = {
-                kars kagizman
+                kars kagizman kumayri
+                khikhani
             }
 
             include = "expl_christian_caucasus"
@@ -61814,6 +61886,72 @@ countries = {
             capital = kutaisi
         }
 
+        GUI = {
+            #Guria
+            own_control_core = {
+                batumi ozurgeti
+                khikhani
+            }
+
+            own_control_integrated = {
+                khupati
+            }
+
+            include = "expl_christian_caucasus"
+            include = "eastern_european_monarchy"
+            starting_technology_level = 3
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+            }
+
+            capital = batumi
+        }
+
+        ODI = {
+            #Odishi
+            own_control_core = {
+                bedia anaklia poti_caucasus tsalenjikha
+            }
+
+            own_control_integrated = {
+                sukhumi anacopia lata_georgia pitsunda
+                costa tuapse
+            }
+
+            include = "expl_christian_caucasus"
+            include = "eastern_european_monarchy"
+            starting_technology_level = 3
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+            }
+
+            accepted_cultures = {
+                georgian_culture
+            }
+
+            capital = anaklia
+        }
+
+        SVT = {
+            #Svaneti
+            own_control_core = {
+                lentekhi
+                ushguli
+            }
+
+            include = "expl_christian_caucasus"
+            include = "eastern_european_monarchy_no_coast"
+            starting_technology_level = 3
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+            }
+
+            capital = lentekhi
+        }
+
         SRV = {
             #Shirvan
             own_control_core = {
@@ -61854,7 +61992,8 @@ countries = {
         AVR = {
             #Avaria
             own_control_core = {
-                khunzakh tindi
+                khunzakh 
+                kumukh
             }
 
             include = "expl_middle_east"
@@ -61882,7 +62021,7 @@ countries = {
         TRK = {
             #Shamkhalate of Tarki
             own_control_core = {
-                tarki boynak endirey kumukh temirkhan_shura terek
+                tarki boynak endirey temirkhan_shura terek
             }
 
             include = "expl_middle_east"
@@ -61990,8 +62129,11 @@ countries = {
                 armavir chatyun adyukh uspenskoye
                 maykop belorechensk moschevo
                 shanjir siba_circassia khadyzhi
-                costa tuapse
                 susaco
+            }
+
+            our_cores_conquered_by_others = {
+                tuapse
             }
 
             include = "expl_christian_caucasus"
@@ -62353,6 +62495,24 @@ countries = {
             }
 
             capital = rutul
+        }
+
+        TIN = {
+            #Tindi
+            own_control_core = {
+                tindi
+            }
+
+            include = "expl_middle_east"
+            starting_technology_level = 3
+            include = "eurasian_tribe"
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+
+            capital = tindi
         }
 
         TBA = {

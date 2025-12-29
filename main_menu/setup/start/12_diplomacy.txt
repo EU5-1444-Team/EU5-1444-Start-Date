@@ -167,7 +167,7 @@ diplomacy_manager = {
     scripted_oneway = { first = FRA second = SCO type = guarantee }
 
     #Appanages
-    dependency = { first = ENG second = ALE subject_type = vassal }
+
     dependency = { first = FRA second = AUV subject_type = appanage }
     dependency = { first = FRA second = BOU subject_type = appanage }
     dependency = { first = FRA second = SAN subject_type = appanage }
@@ -201,6 +201,7 @@ diplomacy_manager = {
 
     #Vassals of vassals
     dependency = { first = NRM second = MIE subject_type = fiefdom }
+    dependency = { first = NRM second = ALE subject_type = fiefdom }
     dependency = { first = FLA second = NAM subject_type = vassal }
     dependency = { first = FOI second = MDM subject_type = fiefdom }
     dependency = { first = ALE second = PRC subject_type = fiefdom }
@@ -346,11 +347,11 @@ diplomacy_manager = {
     dependency = { first = POL second = CZK subject_type = vassal }
 
     #Balkans:
-    dependency = { first = ALB second = ANT subject_type = vassal }
-    dependency = { first = ALB second = MTR subject_type = vassal }
-    dependency = { first = ALB second = MZK subject_type = vassal }
-    dependency = { first = ALB second = THP subject_type = vassal }
-    dependency = { first = ALB second = DGJ subject_type = vassal }
+    dependency = { first = KAT second = ANT subject_type = tributary }
+    dependency = { first = KAT second = MTR subject_type = tributary }
+    dependency = { first = KAT second = MZK subject_type = tributary }
+    dependency = { first = KAT second = THP subject_type = tributary }
+    dependency = { first = KAT second = DGJ subject_type = tributary }
 
     #Anatolia
     dependency = { first = BIT second = HZN subject_type = vassal }
@@ -391,19 +392,17 @@ diplomacy_manager = {
 
     #-------------Caucasus------------
     dependency = { first = QAR second = KCN subject_type = vassal }
-    dependency = { first = ARM second = SYU subject_type = vassal }
-    dependency = { first = SME second = AAI subject_type = vassal }
-    dependency = { first = GEO second = ARM subject_type = vassal }
-    dependency = { first = GEO second = IME subject_type = vassal }
-    dependency = { first = GEO second = SKI subject_type = vassal }
     dependency = { first = GEO second = SME subject_type = vassal }
-    dependency = { first = GLH second = AVR subject_type = vassal }
-    dependency = { first = GLH second = LEK subject_type = vassal }
+    dependency = { first = GEO second = GUI subject_type = vassal }
+    dependency = { first = GEO second = ODI subject_type = vassal }
+    dependency = { first = GEO second = SVT subject_type = vassal }
+    dependency = { first = GEO second = RUT subject_type = tributary }
+    dependency = { first = GEO second = TIN subject_type = tributary }
     dependency = { first = GLH second = SMS subject_type = vassal }
     dependency = { first = GLH second = TRK subject_type = vassal }
     dependency = { first = SYU second = VDZ subject_type = vassal }
-    dependency = { first = TRK second = KAI subject_type = vassal }
-    dependency = { first = TRK second = TBA subject_type = vassal }
+
+    scripted_mutual = { first = GEO second = TRE type = alliance }
 
     #------------- Persia ------------
 
