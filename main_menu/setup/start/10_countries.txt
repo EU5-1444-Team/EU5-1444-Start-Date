@@ -473,17 +473,12 @@ countries = {
 
         GRL = {
             own_control_core = {
-                gardr brattahlid dyrnes hvalsey einarsfjord vatnahverfi
-                herjolfsnes petursvik lundey altafjord ketilsfjord siglufjord
+                herjolfsnes eggers_o
             }
-            capital = gardr
+            capital = herjolfsnes
 
             include = "catholic_monarchy_limited"
             include = "expl_scandinavia"
-
-            discovered_areas = {
-                labrador_sea_area
-            }
 
             government = {
                 ruler = swe_magnus_eriksson
@@ -1316,7 +1311,7 @@ countries = {
 
                 ruler_term = { character = bra_waldemar_askanier start_date = 1318.2.14 end_date = 1319.8.14 regnal_number = 1 }
                 ruler_term = { character = bra_heinrich_ii_askanier start_date = 1319.8.14 end_date = 1320.7.1 regnal_number = 2 }
-                ruler_term = { character = bra_ludwig_v_wittelsbach start_date = 1323.7.8 regnal_number = 1 }
+                ruler_term = { character = bra_ludwig_v_wittelsbach start_date = 1323.7.8 end_date = 1351.1.1 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_albert = 3
@@ -1347,7 +1342,7 @@ countries = {
                 eastern_pomeranian
             }
 
-            country_rank = rank_county
+            country_rank = rank_duchy
             capital = berlin
             dynasty = hohenzollern_dynasty
         }
@@ -11078,7 +11073,7 @@ countries = {
 
                 ruler_term = { character = nap_charles_i_anjou start_date = 1246.1.31 end_date = 1285.1.7 regnal_number = 1 }
                 ruler_term = { character = nap_carlo_ii_anjou start_date = 1285.1.7 end_date = 1309.5.5 regnal_number = 2 }
-                ruler_term = { character = nap_robert_i_anjou start_date = 1309.5.5 regnal_number = 1 }
+                ruler_term = { character = nap_robert_i_anjou start_date = 1309.5.5 end_date = 1343.1.20 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_charles = 2
@@ -11900,7 +11895,7 @@ countries = {
 
         #Saint-Claude Abbey - SCL
         SCL = {
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 saint_claude
             }
 
@@ -13510,11 +13505,11 @@ countries = {
 
         SER = {
             own_control_core = {
-                peja prizren onogost gradina
+                peja prizren
                 budimlja brskovo gjakova mitrovica pristina novo_brdo
-                vranje podgorica prijepolje visegrad soko_grad
+                vranje prijepolje visegrad
                 glubocica nis prokuplje stalac ravno jagodina
-                krusevac kucevo branicevo rudnik smederevo krupanj valjevo uzice pljevlja
+                krusevac kucevo branicevo rudnik smederevo krupanj valjevo uzice
                 gradac zica trgoviste_SER sjenica
                 arilje brvenik medveda
                 debrc sabac
@@ -13525,6 +13520,8 @@ countries = {
                 slano mostar konjic belgrad
                 skopje kumanovo veles prosek shtip kratovo kocani strumica
                 ohrid tetovo debar bitola prilep kicevo florina
+                pljevlja soko_grad onogost
+                podgorica gradina
             }
             starting_technology_level = 3
             include = "expl_mediterranean"
@@ -13580,15 +13577,37 @@ countries = {
             dynasty = nemanjic_dynasty
         }
 
+        ZET = { ## Zeta
+            own_control_core = {
+                podgorica gradina
+            }
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "eastern_european_monarchy"
+            country_rank = rank_duchy
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = random
+            }
+
+            liturgical_language = church_slavonic_language
+
+            capital = po
+            dynasty = crnojevic_dynasty
+        }
+
         BOS = {
             own_control_core = {
                 vrhbosna srebrenica doboj soli
                 jajce zenica kljuc srebrenik
-                glaz teocak olovo borac 
+                glaz teocak olovo borac
+                livno glamoc
             }
 
             our_cores_conquered_by_others = {
-                livno ustikolina konjic glamoc
+                ustikolina konjic
             }
 
             starting_technology_level = 3
@@ -15034,13 +15053,17 @@ countries = {
         BUR = {
             own_control_core = {
                 dijon semur_en_auxois chatillon_sur_seine
-                chalon_sur_saone charolles autun
+                chalon_sur_saone autun
                 semur_en_brionnais
                 avallon
                 montcenis
                 aignay arnay beaune auxonne louhans
-                macon auxerre
+                auxerre
                 bar_sur_seine
+            }
+
+            our_cores_conquered_by_others = {
+                charolles macon
             }
 
             starting_technology_level = 3
@@ -15111,7 +15134,6 @@ countries = {
                 pontarlier poligny orgelet ornans baume montbozon
                 # own_control_integrated, but culture accepted
                 luxeuil salins_les_bains
-                saint_claude
             }
             starting_technology_level = 3
             include = "expl_western_europe"
@@ -15202,6 +15224,38 @@ countries = {
             }
 
             capital = dole
+            country_rank = rank_county
+        }
+
+        #Charolais (Title of Heir Apparent of Burgundy)
+        CAL = {
+            own_control_core = {
+               charolles
+            }
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                ruler = bur_philip_i_burgundy
+            }
+
+            capital = charolles
+            country_rank = rank_county
+        }
+
+        #Mâcon
+        MCO = {
+            own_control_core = {
+               macon
+            }
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                ruler = random
+            }
+
+            capital = macon
             country_rank = rank_county
         }
 
@@ -17331,6 +17385,7 @@ countries = {
                 poitevin
             }
 
+            country_rank = rank_duchy
             capital = angers
         }
 
@@ -19043,7 +19098,11 @@ countries = {
             #Travunija
             own_control_core = {
                 trebinje gacko mostar nevesinje drijeva metkovic
-                livno ustikolina konjic glamoc makarska
+                ustikolina konjic makarska
+            }
+
+            own_control_integrated = {
+                pljevlja soko_grad onogost
             }
             starting_technology_level = 3
             include = "expl_mediterranean"
