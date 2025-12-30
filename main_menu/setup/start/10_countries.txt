@@ -18448,6 +18448,60 @@ countries = {
             }
         }
 
+        TRA = {
+            #Transylvania
+            own_control_core = {
+                dabaca baita dej sic #doboka_province
+                alba_iulia aiud cetatea_balta deva felvint hateg hunedoara #feher_province
+                turda baia_de_aries cluj huedin reghin #torda_province
+                fagaras #kiralyfold_province
+                gurghiu #szekelyfold_province
+            }
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_catholic_monarchy_no_auxilium_no_coast_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            country_rank = rank_duchy
+            capital = alba_iulia
+        }
+
+        SZE = {
+            #Székelyland
+            own_control_core = {
+                targu_mures chezdi_osorheiu covasna cristuru_secuiesc gheorgheni odorhei sfantu_gheorghe miercurea_cluc #szekelyfold_province
+            }
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_catholic_monarchy_no_auxilium_no_coast_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            capital = cristuru_secuiesc
+        }
+
+        SBN = {
+            #Siebenbürgen
+            own_control_core = {
+                sibiu brasov cincu medias sebes sighisoara #kiralyfold_province
+                bistrita #doboka_province          
+            }
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_catholic_monarchy_no_auxilium_no_coast_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            capital = brasov
+        }
+
         WAL = {
             #Wallachia
             own_control_core = {
@@ -18651,27 +18705,6 @@ countries = {
             }
             liturgical_language = church_slavonic_language
             capital = storozhynets
-        }
-
-        TRA = {
-            #Transylvania
-            own_control_core = {
-                dabaca baita bistrita dej sic #doboka_province
-                alba_iulia aiud cetatea_balta deva felvint hateg hunedoara #feher_province
-                turda baia_de_aries cluj huedin reghin #torda_province
-                sibiu brasov cincu fagaras medias sebes sighisoara #kiralyfold_province
-                targu_mures chezdi_osorheiu covasna cristuru_secuiesc gheorgheni gurghiu odorhei sfantu_gheorghe miercurea_cluc #szekelyfold_province
-            }
-            starting_technology_level = 3
-            include = "expl_eastern_europe"
-            include = "eastern_european_catholic_monarchy_no_auxilium_no_coast_not_present"
-            government = {
-                type = monarchy
-                heir_selection = cognatic_primogeniture
-                ruler = random
-            }
-            country_rank = rank_duchy
-            capital = huedin
         }
 
         CLI = {
