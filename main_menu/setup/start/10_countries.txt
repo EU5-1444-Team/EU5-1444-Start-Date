@@ -31065,7 +31065,7 @@ countries = {
             }
 
             include = "far_east_asia_monarchy_not_present"
-            include = "expl_mongols"
+            include = "expl_mongols_legacy"
             include = "expl_silk_road_west"
             include = "expl_silk_road_center"
             include = "expl_silk_road_east"
@@ -31264,9 +31264,8 @@ countries = {
             }
             our_cores_conquered_by_others = { }
             include = "far_east_asia_monarchy"
-            include = "expl_mongols"
             include = "expl_china"
-            include = "expl_silk_road_west"
+            include = "expl_zheng_he"
             include = "expl_silk_road_center"
             include = "expl_silk_road_east"
             government = {
@@ -50627,7 +50626,7 @@ countries = {
 
             our_cores_conquered_by_others = { }
             starting_technology_level = 3
-            include = "expl_mongols"
+            include = "expl_mongols_legacy"
             government = {
                 type = steppe_horde
                 heir_selection = tribal_oldest_male
@@ -52538,10 +52537,12 @@ countries = {
         CHA = {
             #Champa
             own_control_core = {
-                vijaya amaravati aryaru bal_cattinon bong_son camp_po_thit cat_tien chan_bo dak_lak di_dinh dien_ban ha_va_nguon indrapura kampong_sraka_trey
-                kauthara panduranga samriddhipuri simhapura kon_klor ia bang_keng
+                vijaya amaravati aryaru bal_cattinon bong_son camp_po_thit cat_tien chan_bo dak_lak di_dinh ha_va_nguon indrapura kampong_sraka_trey
+                kauthara panduranga samriddhipuri kon_klor ia bang_keng
             }
-            our_cores_conquered_by_others = { }
+            our_cores_conquered_by_others = {
+                dien_ban simhapura
+            }
             include = "vietnamese_champa_monarchy"
             government = {
                 ruler_term = { character = cha_indravarman_v start_date = 1257.1.1 end_date = 1288.1.1 regnal_number = 2 }
@@ -52651,11 +52652,11 @@ countries = {
             #Sukhothai
             own_control_core = {
                 sukhothai
-                mae_sot mueng_bang_yom nakhon_thai  sri_satchanalai tak thung_yang
+                mae_sot mueng_bang_yom sri_satchanalai tak thung_yang
             }
 
             our_cores_conquered_by_others = {
-                phraek chai_nat sri_thep phayuhakhiri phuenchapura ban_pa_la_ta nakhon_sawan chakangrao nakhon_chum sra_luang song_khwae mueng_rat
+                phraek chai_nat sri_thep phayuhakhiri phuenchapura ban_pa_la_ta nakhon_sawan chakangrao nakhon_chum sra_luang song_khwae mueng_rat nakhon_thai
             }
 
             include = "south_east_asia_monarchy_no_coast"
@@ -52794,7 +52795,7 @@ countries = {
                 # Lavo
                 dong_lakhon dong_si_maha_phot lopburi muang_khuan_kra_buri phanat prachinburi rayong saraburi
                 # Sukhothai
-                phraek chai_nat sri_thep phayuhakhiri phuenchapura ban_pa_la_ta nakhon_sawan chakangrao nakhon_chum sra_luang song_khwae mueng_rat
+                phraek chai_nat sri_thep phayuhakhiri phuenchapura ban_pa_la_ta nakhon_sawan chakangrao nakhon_chum sra_luang song_khwae mueng_rat nakhon_thai
                 # Khmer
                 nokor_reach_seyma khorat phimai phutthaisong thung_samrit
                 # Vientiane
