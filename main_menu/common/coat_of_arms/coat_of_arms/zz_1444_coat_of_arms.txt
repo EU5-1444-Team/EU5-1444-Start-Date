@@ -186,3 +186,32 @@ YRK = {  #Yarkent
         }
     }
 }
+
+KAT = {
+    # Kastrioti Principality
+	pattern = "pattern_solid.dds"
+	color1 = hsv360 { 358 70 58	}	
+	color2 = "black"
+	color3 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_per_chevron_embowed_short_shield.dds"
+		color1 = color1
+		color2 = blue
+		color3 = blue
+		instance = { position = { 0.5 0.08 } scale = { 0.45 -0.8 } }
+    }	
+	colored_emblem = {
+		texture = "ce_eagle_doubleheaded_wide.dds"
+		color1 = color2
+		color2 = color2
+		color3 = hsv360 { 0	0 80 } 
+		instance = { position = { 0.5 0.515 } scale = { 0.95 0.95 } }				
+	}
+	colored_emblem = {
+		texture = "ce_star_06.dds"
+		color1 = color3
+		color2 = color3
+		instance = { position = { 0.5 0.08 } scale = { 0.16 0.16 } }				
+	}
+}

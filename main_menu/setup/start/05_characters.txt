@@ -8896,7 +8896,8 @@ character_db = {
         religion = catholic
         estate = nobles_estate
         adm = 42 dip = 42 mil = 59
-        birth_date = 1400.11.17
+        birth_date = 1293.1.1
+        death_date = 1350.8.22
         birth = paris
         father = fra_charles_valois
         mother = fra_margaret_anjou
@@ -8911,7 +8912,8 @@ character_db = {
         culture = french
         religion = catholic
         estate = nobles_estate
-        birth_date = 1426.4.26
+        birth_date = 1319.4.26
+        death_date = 1364.4.8
         birth = le_mans
         father = fra_philip_vi_valois
         mother = fra_jeanne_burgundy
@@ -8926,7 +8928,8 @@ character_db = {
         religion = catholic
         estate = nobles_estate
         adm = 1 dip = 0 mil = 0
-        birth_date = 1443.7.1
+        birth_date = 1336.7.1
+        death_date = 1375.9.1
         birth = paris
         father = fra_philip_vi_valois
         mother = fra_jeanne_burgundy
@@ -8978,11 +8981,12 @@ character_db = {
         religion = catholic
         estate = nobles_estate
         adm = 23 dip = 36 mil = 77
-        birth_date = 1404.1.1
+        birth_date = 1297.1.1
+        death_date = 1346.8.26
         birth = paris
         father = fra_charles_valois
         mother = fra_margaret_anjou
-        dynasty = valois_dynasty # Should be dynasty = valois_alencon_dynasty # Founder of the Alençon line of the House of Valois
+        dynasty = valois_alencon_dynasty # Founder of the Alençon line of the House of Valois
         tag = ALE
     }
 
@@ -8992,12 +8996,13 @@ character_db = {
         culture = french
         religion = catholic
         estate = nobles_estate
-        adm = 1 dip = 1 mil = 0
-        birth_date = 1444.2.1
+        adm = 45 dip = 64 mil = 32
+        birth_date = 1337.1.1
+        death_date = 1375.7.5
         birth = paris
         father = ale_charles_ii_valois
         mother = ale_maria_burgundy_castile
-        dynasty = valois_dynasty # Should be dynasty = valois_alencon_dynasty
+        dynasty = valois_alencon_dynasty
         tag = ALE
         child_trait = child_intelligent
     }
@@ -11612,7 +11617,8 @@ character_db = {
         estate = nobles_estate
         adm = 69 dip = 26 mil = 16
         female = yes
-        birth_date = 1400.1.1
+        birth_date = 1293.1.1
+        death_date = 1349.12.12
         birth = dijon
         father = bur_robert_ii_burgundian
         mother = bur_agnes_capet
@@ -13072,7 +13078,8 @@ character_db = {
         religion = catholic
         estate = nobles_estate
         female = yes
-        birth_date = 1426.1.1
+        birth_date = 1319.1.1
+        death_date = 1375.4.13
         birth = ciudad_real
         father = cas_fernando_lacerda_jr
         mother = cas_juana_nunez_lara
@@ -79702,7 +79709,8 @@ character_db = {
         religion = catholic
         estate = nobles_estate
         female = yes
-        birth_date = 1422.5.20
+        birth_date = 1315.5.20
+        death_date = 1349.9.11
         birth = prague
         spouse = fra_jean_ii_valois
         father = boh_john_luxembourg
@@ -100963,6 +100971,8 @@ character_db = {
 
     # === NEW CHARACTERS ===
 
+    ### Timurid Empire
+
     tim_timur = {
         first_name = { name = "Timur" }
         culture = khorezmian_culture
@@ -101035,17 +101045,6 @@ character_db = {
         tag = TII
     }
 
-    tif_ibrahim_father = {
-        first_name = { name = "Ibrahim Sultan" }
-        culture = khorezmian_culture
-        religion = sunni
-        birth_date = 1394.1.1
-        death_date = 1435.1.1
-        father = tim_shahrukh_mirza
-        dynasty = timurid_dynasty
-        tag = TIF
-    }
-
     tim_gauhar_shad = {
         first_name = { name = "Gauhar Shad" }
         culture = khorezmian_culture
@@ -101058,97 +101057,6 @@ character_db = {
         tag = TIM
         ruler_trait = lawgiver
         ruler_trait = righteous
-    }
-
-    tis_ruqaiya_sultan = {
-        first_name = { name = "Ruqaiya Sultan" }
-        culture = khorezmian_culture
-        religion = sunni
-        female = yes
-        birth_date = 1395.1.1
-        dynasty = timurid_dynasty
-        tag = TIS
-    }
-
-    tis_ulugh_beg = {
-        first_name = { name = "Ulugh Beg" }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 50 dip = 40 mil = 25
-        birth_date = 1394.3.22
-        birth = samarkand
-        father = tim_shahrukh_mirza
-        mother = tim_gauhar_shad
-        dynasty = timurid_dynasty
-        tag = TIS
-        ruler_trait = scholar
-        ruler_trait = well_advised
-    }
-
-    tii_sultan_muhammad = {
-        first_name = { name = name_muhammad }
-        culture = farsi_culture
-        religion = sunni
-        adm = 45 dip = 40 mil = 55
-        birth_date = 1418.1.1
-        father = tim_baysonqor_father
-        mother = tim_gauhar_shad
-        dynasty = timurid_dynasty
-        tag = TII
-        ruler_trait = expansionist
-        ruler_trait = charismatic_negotiator
-    }
-
-    tig_babur_mirza = {
-        first_name = { name = "Babur" }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 55 dip = 55 mil = 40
-        birth_date = 1422.1.1
-        father = tim_baysonqor_father
-        mother = tim_gauhar_shad
-        dynasty = timurid_dynasty
-        tag = TIG
-        ruler_trait = scholar
-    }
-
-    tik_sultan_masud = {
-        first_name = { name = "Sultan Mas'ud" }
-        culture = afghan_culture
-        religion = sunni
-        adm = 40 dip = 30 mil = 30
-        birth_date = 1410.1.1
-        father = tim_shahrukh_mirza
-        dynasty = timurid_dynasty
-        tag = TIK
-        ruler_trait = bold_fighter
-    }
-
-    tif_abdullah_mirza = {
-        first_name = { name = "Abdullah" }
-        culture = farsi_culture
-        religion = sunni
-        adm = 30 dip = 35 mil = 30
-        birth_date = 1433.1.1
-        father = tif_ibrahim_father
-        mother = tim_gauhar_shad
-        dynasty = timurid_dynasty
-        tag = TIF
-    }
-
-    ttk_abd_al_latif = {
-        first_name = { name = "Abd al-Latif" }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 40 dip = 30 mil = 65
-        birth_date = 1420.1.1
-        birth = samarkand
-        father = tis_ulugh_beg
-        mother = tis_ruqaiya_sultan
-        dynasty = timurid_dynasty
-        tag = TTK
-        ruler_trait = expansionist
-        ruler_trait = cruel
     }
 
     tim_baysunghur_mirza = {
@@ -101189,15 +101097,72 @@ character_db = {
         tag = TIM
     }
 
-    ttk_abd_allah_mirza = {
-        first_name = { name = "Abd Allah" }
+    ### Fars
+
+    tif_ibrahim_father = {
+        first_name = { name = "Ibrahim Sultan" }
         culture = khorezmian_culture
         religion = sunni
-        adm = 35 dip = 40 mil = 30
-        birth_date = 1410.1.1
-        father = tis_ulugh_beg
+        birth_date = 1394.1.1
+        death_date = 1435.1.1
+        father = tim_shahrukh_mirza
         dynasty = timurid_dynasty
-        tag = TTK
+        tag = TIF
+    }
+
+    tif_abdullah_mirza = {
+        first_name = { name = "Abdullah" }
+        culture = farsi_culture
+        religion = sunni
+        adm = 30 dip = 35 mil = 30
+        birth_date = 1433.1.1
+        father = tif_ibrahim_father
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIF
+    }
+
+    ### Samarkand
+
+    tis_ruqaiya_sultan = {
+        first_name = { name = "Ruqaiya Sultan" }
+        culture = khorezmian_culture
+        religion = sunni
+        female = yes
+        birth_date = 1395.1.1
+        dynasty = timurid_dynasty
+        tag = TIS
+    }
+
+    tis_ulugh_beg = {
+        first_name = { name = "Ulugh Beg" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 50 dip = 40 mil = 25
+        birth_date = 1394.3.22
+        birth = samarkand
+        father = tim_shahrukh_mirza
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIS
+        ruler_trait = scholar
+        ruler_trait = well_advised
+    }
+
+    ### Ajam
+
+    tii_sultan_muhammad = {
+        first_name = { name = name_muhammad }
+        culture = farsi_culture
+        religion = sunni
+        adm = 45 dip = 40 mil = 55
+        birth_date = 1418.1.1
+        father = tim_baysonqor_father
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TII
+        ruler_trait = expansionist
+        ruler_trait = charismatic_negotiator
     }
 
     tii_abu_said_mirza = {
@@ -101212,6 +101177,65 @@ character_db = {
         ruler_trait = tactical_genius
         ruler_trait = ambitious
     }
+
+    ### Gorgan
+
+    tig_babur_mirza = {
+        first_name = { name = "Babur" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 55 dip = 55 mil = 40
+        birth_date = 1422.1.1
+        father = tim_baysonqor_father
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIG
+        ruler_trait = scholar
+    }
+
+    ### Kandahar
+
+    tik_sultan_masud = {
+        first_name = { name = "Sultan Mas'ud" }
+        culture = afghan_culture
+        religion = sunni
+        adm = 40 dip = 30 mil = 30
+        birth_date = 1410.1.1
+        father = tim_shahrukh_mirza
+        dynasty = timurid_dynasty
+        tag = TIK
+        ruler_trait = bold_fighter
+    }
+
+    ### Balkh
+
+    ttk_abd_al_latif = {
+        first_name = { name = "Abd al-Latif" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 40 dip = 30 mil = 65
+        birth_date = 1420.1.1
+        birth = samarkand
+        father = tis_ulugh_beg
+        mother = tis_ruqaiya_sultan
+        dynasty = timurid_dynasty
+        tag = TTK
+        ruler_trait = expansionist
+        ruler_trait = cruel
+    }
+
+    ttk_abd_allah_mirza = {
+        first_name = { name = "Abd Allah" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 35 dip = 40 mil = 30
+        birth_date = 1410.1.1
+        father = tis_ulugh_beg
+        dynasty = timurid_dynasty
+        tag = TTK
+    }
+
+    ### Korea
 
 	joe_taejo = { # https://en.wikipedia.org/wiki/Taejo_of_Joseon
 		first_name = { name = name_seong_gye }
@@ -101262,4 +101286,480 @@ character_db = {
 		dynasty = yi_dynasty
 		tag = JOE
 	}
+
+    ### France
+
+    fra_charles_v_valois = { # https://en.wikipedia.org/wiki/Charles_V_of_France
+        first_name = { name = name_charles }
+        nickname = { name = the_wise }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        adm = 84 dip = 67 mil = 73
+        birth_date = 1338.1.21
+        death_date = 1380.9.16
+        birth = paris
+        father = fra_jean_ii_valois
+        mother = fra_jutta_luxembourg
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    fra_jeanne_de_bourbon = { # https://en.wikipedia.org/wiki/Joanna_of_Bourbon
+        first_name = { name = name_joanna }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1338.2.3
+        death_date = 1378.2.6
+        female = yes
+        birth = paris
+        spouse = fra_charles_v_valois
+        father = bou_pierre_i_bourbon
+        mother = bou_isabelle_valois
+        dynasty = bourbon_dynasty
+        tag = FRA
+    }
+
+    anj_louis_i_valois_anjou = { # https://en.wikipedia.org/wiki/Louis_I_of_Anjou
+        first_name = { name = name_louis }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        adm = 34 dip = 23 mil = 44
+        birth_date = 1339.7.23
+        death_date = 1384.9.20
+        birth = paris
+        father = fra_jean_ii_valois
+        mother = fra_jutta_luxembourg
+        dynasty = valois_anjou_dynasty
+        tag = FRA
+    }
+
+    ber_jean_valois = { # https://en.wikipedia.org/wiki/Louis_I_of_Anjou
+        first_name = { name = name_john }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1341.11.30
+        death_date = 1416.6.15
+        birth = paris
+        father = fra_jean_ii_valois
+        mother = fra_jutta_luxembourg
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    fra_charles_vi_valois = { # https://en.wikipedia.org/wiki/Charles_VI_of_France
+        first_name = { name = name_charles }
+        nickname = { name = "the Mad" }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        adm = 42 dip = 12 mil = 33
+        birth_date = 1368.12.21
+        death_date = 1422.10.12
+        birth = paris
+        father = fra_charles_v_valois
+        mother = fra_jeanne_de_bourbon
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    orl_louis_i_valois_orleans = { # https://en.wikipedia.org/wiki/Louis_I,_Duke_of_Orl%C3%A9ans
+        first_name = { name = name_louis }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        adm = 23 dip = 13 mil = 74
+        birth_date = 1372.4.13
+        death_date = 1407.11.23
+        birth = paris
+        father = fra_charles_v_valois
+        mother = fra_jeanne_de_bourbon
+        dynasty = valois_orleans_dynasty
+        tag = FRA
+    }
+
+    fra_isabeau_wittelsbach = { # https://en.wikipedia.org/wiki/Isabeau_of_Bavaria
+        first_name = { name = name_elizabeth }
+        culture = danube_bavarian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1370.1.1
+        death_date = 1435.9.24
+        female = yes
+        birth = munich
+        spouse = fra_charles_vi_valois
+        father = ubv_stephen_iii_wittelsbach
+        dynasty = wittelsbach_dynasty
+        tag = FRA
+    }
+
+    orl_isabelle_valois = { # https://en.wikipedia.org/wiki/Isabella_of_Valois
+        first_name = { name = name_elizabeth }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1389.11.9
+        death_date = 1409.9.13
+        female = yes
+        birth = paris
+        father = fra_charles_vi_valois
+        mother = fra_isabelle_wittelsbach
+        dynasty = valois_dynasty
+        tag = ORL
+    }
+
+    bri_joanne_valois = { # https://en.wikipedia.org/wiki/Joan_of_France,_Duchess_of_Brittany
+        first_name = { name = name_joanna }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1391.1.24
+        death_date = 1433.9.24
+        female = yes
+        birth = paris
+        father = fra_charles_vi_valois
+        mother = fra_isabelle_wittelsbach
+        dynasty = valois_dynasty
+        tag = BRI
+    }
+
+    fra_louis_guyenne_valois = { # https://en.wikipedia.org/wiki/Louis,_Duke_of_Guyenne
+        first_name = { name = name_louis }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1397.1.22
+        death_date = 1415.12.18
+        birth = paris
+        father = fra_charles_vi_valois
+        mother = fra_isabelle_wittelsbach
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    fra_jean_touraine_valois = { # https://en.wikipedia.org/wiki/Louis,_Duke_of_Guyenne
+        first_name = { name = name_louis }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1398.8.31
+        death_date = 1417.4.12
+        birth = paris
+        father = fra_charles_vi_valois
+        mother = fra_isabelle_wittelsbach
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    eng_catherine_valois = { # https://en.wikipedia.org/wiki/Catherine_of_Valois
+        first_name = { name = name_catherine }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1401.10.27
+        death_date = 1437.1.3
+        female = yes
+        birth = paris
+        father = fra_charles_vi_valois
+        mother = fra_isabelle_wittelsbach
+        dynasty = valois_dynasty
+        tag = ENG
+    }
+
+    fra_charles_vii_valois = { # https://en.wikipedia.org/wiki/Charles_VII_of_France
+        first_name = { name = name_charles }
+        nickname = { name = nick_the_victorious }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        adm = 73 dip = 52 mil = 67
+        birth_date = 1403.2.22
+        birth = paris
+        ruler_trait = well_advised
+        ruler_trait = righteous
+        father = fra_charles_vi_valois
+        mother = fra_isabelle_wittelsbach
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    anj_marie_valois_anjou = { # https://en.wikipedia.org/wiki/Marie_of_Anjou
+        first_name = { name = name_mary }
+        culture = angevin
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1404.10.14
+        female = yes
+        birth = angers
+        spouse = fra_charles_vii_valois
+        dynasty = valois_anjou_dynasty
+        tag = FRA    
+    }
+
+    fra_louis_xi_valois = { # https://en.wikipedia.org/wiki/Louis_XI
+        first_name = { name = name_louis }
+        nickname = { name = "the Prudent" }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        adm = 61 dip = 90 mil = 63
+        birth_date = 1423.7.3
+        birth = bourges
+        ruler_trait = intricate_web_weaver
+        ruler_trait = silver_tongue
+        father = fra_charles_vii_valois
+        mother = anj_marie_valois_anjou
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    fra_margaret_stewart = {
+        first_name = { name = name_margaret }
+        culture = scottish
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1424.12.25
+        female = yes
+        birth = perth
+        spouse = fra_louis_xi_valois
+        dynasty = stewart_dynasty
+        tag = DAU       
+    }
+
+    fra_radagonde_valois = { # https://en.wikipedia.org/wiki/Radegonde_of_Valois
+        first_name = { name = "Radagonde" }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1428.8.1
+        female = yes
+        birth = chinon
+        father = fra_charles_vii_valois
+        mother = anj_marie_valois_anjou
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    bur_catherine_valois = { # https://en.wikipedia.org/wiki/Catherine_of_France,_Countess_of_Charolais
+        first_name = { name = name_catherine }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1428.1.1
+        female = yes
+        birth = paris
+        father = fra_charles_vii_valois
+        mother = anj_marie_valois_anjou
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    sav_yolande_valois = { # https://en.wikipedia.org/wiki/Yolande_of_Valois
+        first_name = { name = name_yolande }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1434.9.23
+        female = yes
+        birth = tours
+        father = fra_charles_vii_valois
+        mother = anj_marie_valois_anjou
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    bou_joanne_valois = { # https://en.wikipedia.org/wiki/Joan_of_France,_Duchess_of_Bourbon
+        first_name = { name = name_joanna }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1435.5.4
+        female = yes
+        birth = paris
+        father = fra_charles_vii_valois
+        mother = anj_marie_valois_anjou
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    nav_magdalena_valois = { # https://en.wikipedia.org/wiki/Magdalena_of_Valois
+        first_name = { name = "Magdalena" }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1443.12.1
+        female = yes
+        birth = tours
+        father = fra_charles_vii_valois
+        mother = anj_marie_valois_anjou
+        dynasty = valois_dynasty
+        tag = FRA
+    }
+
+    fra_jean_bureau = { # https://en.wikipedia.org/wiki/Jean_Bureau
+        first_name = { name = name_john }
+        last_name = { name = Bureau }
+        culture = champenais
+        religion = catholic
+        estate = nobles_estate
+        adm = 72 dip = 65 mil = 90
+        birth_date = 1390.1.1
+        birth = troyes
+        general_trait = cannoneer
+        general_trait = siege_specialist
+        tag = FRA
+    }
+
+    fra_jacques_coeur = { # https://en.wikipedia.org/wiki/Jacques_C%C5%93ur
+        first_name = { name = name_james }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        adm = 93 dip = 87 mil = 45
+        birth_date = 1395.1.1
+        birth = bourges
+        dynasty = coeur_dynasty
+        tag = FRA
+    }
+
+    bri_arthur_de_richemont = { # https://en.wikipedia.org/wiki/Arthur_III,_Duke_of_Brittany
+        first_name = { name = name_arthur }
+        culture = gallo
+        religion = catholic
+        estate = nobles_estate
+        adm = 55 dip = 57 mil = 87
+        birth_date = 1390.1.1
+        birth = vannes
+        dynasty = montfort_brittany_dynasty
+        tag = FRA
+    }
+
+    fra_antoine_de_chabannes = { # https://en.wikipedia.org/wiki/Antoine_de_Chabannes
+        first_name = { name = name_anthony }
+        culture = limousin
+        religion = catholic
+        estate = nobles_estate
+        adm = 61 dip = 52 mil = 78
+        birth_date = 1408.1.1
+        birth = ussel
+        dynasty = chabannes_dynasty
+        tag = FRA
+    }
+
+    ### Alençon
+
+    ale_pierre_ii_valois_alencon = { # https://en.wikipedia.org/wiki/Pierre_II,_Count_of_Alen%C3%A7on
+        first_name = { name = name_peter }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1340.1.1
+        death_date = 1404.9.2
+        birth = argentan
+        father = ale_charles_ii_valois
+        mother = ale_maria_burgundy_castile
+        dynasty = valois_alencon_dynasty
+        tag = ALE
+    }  
+
+    ale_jean_i_valois_alencon = { # https://en.wikipedia.org/wiki/Jean_I,_Duke_of_Alen%C3%A7on
+        first_name = { name = name_john }
+        culture = norman
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1385.1.1
+        death_date = 1415.10.25
+        birth = alencon
+        father = ale_pierre_ii_valois_alencon
+        dynasty = valois_alencon_dynasty
+        tag = ALE
+    }
+
+    ale_marie_montfort_brittany = { # https://en.wikipedia.org/wiki/Marie_of_Brittany,_Lady_of_La_Guerche
+        first_name = { name = name_mary }
+        culture = gallo
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1391.2.18
+        female = yes
+        birth = nantes
+        spouse = ale_jean_i_valois_alencon
+        dynasty = montfort_brittany_dynasty
+        tag = FRA        
+    }
+
+    ale_jean_ii_valois_alencon = { # https://en.wikipedia.org/wiki/Jean_II,_Duke_of_Alen%C3%A7on
+        first_name = { name = name_john }
+        culture = norman
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1409.9.8
+        birth = argentan
+        father = ale_jean_i_valois_alencon
+        mother = ale_marie_montfort_brittany
+        dynasty = valois_alencon_dynasty
+        tag = FRA
+    }
+
+    ale_marie_armagnac = { # https://en.wikipedia.org/wiki/Jean_II,_Duke_of_Alen%C3%A7on
+        first_name = { name = name_mary }
+        culture = gascon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1420.1.1
+        female = yes
+        birth = auch
+        spouse = ale_jean_ii_valois_alencon
+        dynasty = armagnac_dynasty
+        tag = FRA     
+    }   
+
+    ### Canary Islands
+
+    cny_jean_bethencourt = { # https://en.wikipedia.org/wiki/Jean_de_B%C3%A9thencourt
+        first_name = { name = name_john }
+        culture = norman
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1362.1.1
+        death_date = 1425.1.1
+        birth = fecamp
+        dynasty = bethencourt_dynasty
+        tag = CNY
+    }
+
+    cny_maciot_bethencourt = { # https://www.geni.com/people/Maciot-de-Bethencourt-II-Se%C3%B1or-de-Islas-Canarias/6000000002009192096
+        first_name = { name = Maciot }
+        culture = norman
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1390.1.1
+        birth = fecamp
+        adm = 10 = dip = 20 mil = 40
+        ruler_trait = secretive
+        ruler_trait = cruel
+        dynasty = bethencourt_dynasty
+        tag = CNY
+    }
+
+    ### Albania
+
+    kat_skanderbeg_kastrioti = { # The man, the myth - https://en.wikipedia.org/wiki/Skanderbeg
+        first_name = { name = name_george }
+        nickname = { name = "Skanderbeg" }
+        culture = albanian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1405.1.1
+        birth = debar
+        adm = 84 dip = 81 mil = 97
+        ruler_trait = tactical_genius
+        ruler_trait = martial_educator
+        general_trait = military_theorist
+        dynasty = kastrioti_dynasty
+        tag = KAT
+    }   
 }
