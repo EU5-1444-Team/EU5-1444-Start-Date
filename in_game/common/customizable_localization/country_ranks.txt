@@ -73,6 +73,15 @@ country_flavor = {
         }
     }
 
+    # MYD Theocracy variant (Dreaming Land) - in the main country_flavor section
+    text = {
+        localization_key = country_dreaming_land
+        trigger = {
+            tag = MYD
+            government_type = government_type:theocracy
+        }
+    }
+
     ################## EMPIRE ##################
 
     text = {
@@ -288,6 +297,39 @@ country_flavor = {
 
             country_rank_is_empire = yes
             government_type = government_type:theocracy
+        }
+    }
+
+    # Romuvan Elderships - rank-specific
+    text = {
+        localization_key = rank_empire_eldership_romuva
+        trigger = {
+            country_rank_is_empire = yes
+            religion = religion:romuva
+        }
+    }
+
+    text = {
+        localization_key = rank_kingdom_eldership_romuva
+        trigger = {
+            country_rank_is_kingdom = yes
+            religion = religion:romuva
+        }
+    }
+
+    text = {
+        localization_key = rank_duchy_eldership_romuva
+        trigger = {
+            country_rank_is_duchy = yes
+            religion = religion:romuva
+        }
+    }
+
+    text = {
+        localization_key = rank_county_eldership_romuva
+        trigger = {
+            country_rank_is_county = yes
+            religion = religion:romuva
         }
     }
 
@@ -585,6 +627,16 @@ country_flavor = {
                 country_rank_is_kingdom = yes
             }
             culture = { has_culture_group = culture_group:nahua_group }
+        }
+    }
+
+    # Timurid Empire
+    text = {
+        localization_key = rank_empire_timurid_prince
+        trigger = {
+            country_rank_is_empire = yes
+            has_reform = government_reform:timurid_prince
+            NOT = { tag = TIM }
         }
     }
 
@@ -1195,6 +1247,15 @@ country_flavor = {
         }
     }
 
+    #Timurid Sultanate
+    text = {
+        localization_key = rank_kingdom_timurid_prince
+        trigger = {
+            country_rank_is_kingdom = yes
+            has_reform = government_reform:timurid_prince
+        }
+    }
+
     text = {
         localization_key = rank_kingdom
         trigger = {
@@ -1605,6 +1666,15 @@ country_flavor = {
             }
         }
     }
+    # Timurid Duchy
+    text = {
+        localization_key = rank_duchy_timurid_prince
+        trigger = {
+            country_rank_is_duchy = yes
+            has_reform = government_reform:timurid_prince
+        }
+    }
+
     #--- Dynasties ----
     text = {
         localization_key = rank_duchy_andalusi
