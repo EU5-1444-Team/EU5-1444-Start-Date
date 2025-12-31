@@ -20,7 +20,7 @@ locations = {
     oslo = { rank = town town_setup = important_scandinavian_town }
 
     #denmark
-    kobenhavn = { rank = town town_setup = important_scandinavian_town }
+    kobenhavn = { rank = city town_setup = german_coastal_city }
     roskilde = { rank = town town_setup = important_scandinavian_town }
     viborg = { rank = town town_setup = important_scandinavian_town }
     randers = { rank = town town_setup = important_scandinavian_town }
@@ -31,9 +31,9 @@ locations = {
     skalholt = { rank = town town_setup = scandinavian_town }
 
     # britain
-    london = { rank = city town_setup = british_town_port }
+    london = { rank = city town_setup = london_the_city_of }
     edinburgh = { rank = town town_setup = british_town_port }
-    york = { rank = town town_setup = british_town }
+    york = { rank = city town_setup = british_town }
     bristol = { rank = town town_setup = british_town_port }
     coventry = { rank = town town_setup = british_town }
     norwich = { rank = town town_setup = british_town }
@@ -41,7 +41,7 @@ locations = {
     cambridge = { rank = town town_setup = british_town }
     lincoln = { rank = town town_setup = british_town }
     salisbury = { rank = town town_setup = british_town }
-    lynn = { rank = town town_setup = british_town_port }
+    lynn = { rank = city town_setup = british_town_port }
     colchester = { rank = town town_setup = british_town_port }
     boston = { rank = town town_setup = british_town_port }
     inverness = { rank = town town_setup = british_town_port }
@@ -75,7 +75,7 @@ locations = {
 
     # turkey (modern day)
     constantinople = { rank = city town_setup = greek_city_port }
-    edirne = { rank = town town_setup = balkan_town }
+    edirne = { rank = city town_setup = anatolian_city }
     gallipoli = { rank = town town_setup = greek_town_port }
 
     # bulgaria
@@ -200,10 +200,13 @@ locations = {
     narbonne = { rank = city town_setup = french_city }
     paris = { rank = city town_setup = french_city }
     rouen = { rank = city town_setup = french_city }
-    saint_omer = { rank = town town_setup = french_town }
+    saint_omer = { rank = town town_setup = french_city }
     toulouse = { rank = city town_setup = french_city }
     tours = { rank = city town_setup = french_city }
     troyes = { rank = city town_setup = french_city }
+    reims = { rank = city town_setup = french_city }
+    dijon = { rank = city town_setup = french_city }
+    strasbourg = { rank = city town_setup = french_city }
 
     agen = { rank = town town_setup = french_town }
     aix_en_provence = { rank = town town_setup = french_town }
@@ -226,7 +229,6 @@ locations = {
     chartres = { rank = town town_setup = french_town }
     cherbourg = { rank = town town_setup = french_town }
     clermont = { rank = town town_setup = french_town }
-    dijon = { rank = town town_setup = french_town }
     colmar = { rank = town town_setup = french_town }
     mulhouse = { rank = town town_setup = french_town }
     laon = { rank = town town_setup = french_town }
@@ -242,7 +244,6 @@ locations = {
     perpignan = { rank = town town_setup = iberian_town_port }
     poitiers = { rank = town town_setup = french_town }
     provins = { rank = town town_setup = french_town }
-    reims = { rank = town town_setup = french_town }
     rennes = { rank = town town_setup = french_town }
     rodez = { rank = town town_setup = french_town }
     saint_flour = { rank = town town_setup = french_town }
@@ -264,6 +265,8 @@ locations = {
     augsburg = { rank = city town_setup = german_city }
     prague = { rank = city town_setup = german_city }
     vienna = { rank = city town_setup = german_city }
+    linz = { rank = city town_setup = german_city }
+    salzburg = { rank = city town_setup = german_city }
 
     aachen = { rank = town town_setup = german_town }
     bamberg = { rank = town town_setup = german_town }
@@ -329,26 +332,24 @@ locations = {
     opole = { rank = town town_setup = german_town }
     plzen = { rank = town town_setup = german_town }
 
-    linz = { rank = town town_setup = german_town }
     melk = { rank = town town_setup = german_town }
     klagenfurt = { rank = town town_setup = german_town }
-    salzburg = { rank = town town_setup = german_town }
 
     #Low Countries
     bruges = { rank = city town_setup = lowlands_coastal_city }
+    amsterdam = { rank = city town_setup = lowlands_coastal_city }
+    the_hague = { rank = city town_setup = lowlands_costal_town }
     ghent = { rank = city town_setup = lowlands_city }
-    ypres = { rank = town town_setup = lowlands_town }
+    ypres = { rank = city town_setup = lowlands_city }
+    brussels = { rank = city town_setup = lowlands_city }
 
     antwerp = { rank = town town_setup = lowlands_costal_town }
-    the_hague = { rank = town town_setup = lowlands_costal_town }
-    amsterdam = { rank = town town_setup = lowlands_costal_town }
     middelburg = { rank = town town_setup = lowlands_costal_town }
     groningen = { rank = town town_setup = lowlands_costal_town }
     utrecht = { rank = town town_setup = lowlands_town }
     zwolle = { rank = town town_setup = lowlands_town }
 
     liege = { rank = town town_setup = lowlands_town }
-    brussels = { rank = town town_setup = lowlands_town }
     mons = { rank = town town_setup = lowlands_town }
     tournai = { rank = town town_setup = lowlands_town }
     leuven = { rank = town town_setup = lowlands_town }
@@ -1030,7 +1031,8 @@ locations = {
     teyuna = { rank = town town_setup = andes_town }
     chunsua = { rank = town town_setup = andes_town }
 
-    # East America
+    # Cahokia
+    cahokia = { rank = town town_setup = south_east_woodlands_town }
     canajoharie = { rank = town town_setup = south_east_woodlands_town }
     ialophaybo = { rank = town town_setup = south_east_woodlands_town }
 
@@ -4181,3 +4183,4 @@ building_manager = {
     stockade = { tag = ZIB level = 1 location = madin_bani_sulaym }
     stockade = { tag = ZIB level = 1 location = al_ghrabah }
 }
+
