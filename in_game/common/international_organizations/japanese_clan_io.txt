@@ -1,8 +1,8 @@
-japanese_clan = {
+jap_branching_clan = {
     has_target = no
     disband_if_no_leader = no
     expel_members_who_are_targets_of_other_members = no
-    custom_name = japanese_clan_name
+    custom_name = jap_branching_clan_name
 
     leader_change_trigger_type = rulerchange
     leader_type = country
@@ -61,7 +61,14 @@ japanese_clan = {
             }
         } else_if = {
             limit = {
-                ruler ?= { dynasty = { dynasty_name = uesugi_dynasty } }
+                ruler ?= {
+                    dynasty = {
+                        OR = {
+                            dynasty_name = uesugi_dynasty
+                            dynasty_name = nagao_dynasty
+                        }
+                    }
+                }
             }
             leader_country = {
                 change_country_tag = UES
@@ -78,14 +85,14 @@ japanese_clan = {
                 ruler ?= { dynasty = { dynasty_name = hosokawa_dynasty } }
             }
             leader_country = {
-                change_country_tag = YMN
+                change_country_tag = HSK
             }
         } else_if = {
             limit = {
                 ruler ?= { dynasty = { dynasty_name = nanbu_dynasty } }
             }
             leader_country = {
-                change_country_tag = YMN
+                change_country_tag = NBU
             }
         }
     }

@@ -3,7 +3,7 @@ japanese_clan_foundation_law = {
     type = international_organization
     law_category = foundation
     potential = {
-        international_organization_type = international_organization_type:japanese_clan
+        international_organization_type = international_organization_type:jap_branching_clan
     }
     allow = {
         international_organization_lifetime >= 5
@@ -37,14 +37,14 @@ japanese_clan_foundation_law = {
             }
         }
         on_activate = {
-            custom_tooltip = japanese_clan_main_branch_policy_at
+            custom_tooltip = jap_branching_clan_main_branch_policy_at
             on_union_policy_change_effect = yes
             if = {
                 limit = { NOT = { has_variable = pre_selected_main_branch } }
-                custom_tooltip = japanese_clan_main_branch_policy_tt
+                custom_tooltip = jap_branching_clan_main_branch_policy_tt
             }
             else = {
-                custom_tooltip = japanese_clan_main_branch_policy_specific_tt
+                custom_tooltip = jap_branching_clan_main_branch_policy_specific_tt
             }
             custom_tooltip = japanese_clan_unlocks_war_for_seniority_casus_belli_tt
         }
@@ -150,7 +150,7 @@ japanese_clan_codified_inheritance_law = {
     type = international_organization
     law_category = centralization
     potential = {
-        international_organization_type = international_organization_type:japanese_clan
+        international_organization_type = international_organization_type:jap_branching_clan
     }
     allow = {
         international_organization_lifetime >= 10
@@ -236,7 +236,7 @@ japanese_clan_economic_law = {
     law_category = centralization
     custom_tags = { forbids_no_policy }
     potential = {
-        international_organization_type = international_organization_type:japanese_clan
+        international_organization_type = international_organization_type:jap_branching_clan
     }
     allow = {
         international_organization_lifetime >= 20
@@ -308,7 +308,7 @@ japanese_clan_diplomatic_law = {
     law_category = centralization
     custom_tags = { forbids_no_policy }
     potential = {
-        international_organization_type = international_organization_type:japanese_clan
+        international_organization_type = international_organization_type:jap_branching_clan
     }
     allow = {
         international_organization_lifetime >= 30
@@ -403,7 +403,7 @@ japanese_clan_legislature_law = {
     law_category = centralization
     custom_tags = { forbids_no_policy }
     potential = {
-        international_organization_type = international_organization_type:japanese_clan
+        international_organization_type = international_organization_type:jap_branching_clan
     }
     allow = {
         international_organization_lifetime >= 40
@@ -477,7 +477,7 @@ japanese_clan_unification_of_crowns_law = {
     law_category = centralization
     custom_tags = { forbids_no_policy }
     potential = {
-        international_organization_type = international_organization_type:japanese_clan
+        international_organization_type = international_organization_type:jap_branching_clan
     }
     allow = {
         international_organization_lifetime >= 50
@@ -611,7 +611,7 @@ japanese_clan_mutual_offense_law = {
     type = international_organization
     law_category = federal
     potential = {
-        international_organization_type = international_organization_type:japanese_clan
+        international_organization_type = international_organization_type:jap_branching_clan
     }
     allow = {
         international_organization_lifetime >= 25

@@ -382,7 +382,7 @@ international_organization_manager = {
             NAS HNM UNN KOK TOY NGN MKT
             MYH KAG KOZ AKI AHT ARI TMD
             # Branch Clans
-            NAO UE1 UE2 UE3 
+            NAO UE1 UE2 UE3
             TK1 TK2 TK3 TK4
             YM1 YM2 YM3
             HS1 HS2 HS3 HS4
@@ -435,7 +435,7 @@ international_organization_manager = {
             OCH TSU KKI EDA AKA AMO KOO SAI ICH MUK MSU UKU KMC ANA NES TNE
 
             # Branch Countries
-            NAO UE1 UE2 UE3 
+            NAO UE1 UE2 UE3
             TK1 TK2 TK3 TK4
             YM1 YM2 YM3
             HS1 HS2 HS3 HS4
@@ -449,51 +449,75 @@ international_organization_manager = {
     #################################################################
     # Uesugi
     add_international_organization = {
-        type = japanese_clan
+        type = jap_branching_clan
         creation_date = 1250.1.1 # Late 13th Century
         members = { NAO UE1 UE2 UE3 }
         # Nagao clan holds the real power over the Uesugi
         leader = NAO
+
+        main_branch = UE1
+        cadet_branch = {
+            UE2 UE3
+        }
     }
 
     # Takeda
     add_international_organization = {
-        type = japanese_clan
+        type = jap_branching_clan
         creation_date = 1100.1.1 # Minamoto no Yoshikiyo
         members = { TK1 TK2 TK3 TK4 }
         leader = TK1
+
+        main_branch = TK1
+        cadet_branch = {
+            TK2 TK3 TK4
+        }
     }
 
     # Yamana
     add_international_organization = {
-        type = japanese_clan
+        type = jap_branching_clan
         creation_date = 1336.1.1 # Nanboku-cho period
         members = { YM1 YM2 YM3 }
         leader = YM1
+
+        main_branch = YM1
+        cadet_branch = { YM2 YM3 }
     }
 
     # Nanbu
     add_international_organization = {
-        type = japanese_clan
+        type = jap_branching_clan
         creation_date = 1180.1.1 # Kamakura period
         members = { NB1 NB2 }
         leader = NB1
+
+        main_branch = NB1
+        cadet_branch = NB2
     }
 
     # Hosokawa
     add_international_organization = {
-        type = japanese_clan
+        type = jap_branching_clan
         creation_date = 1180.1.1 # Kamakura period
         members = { HS1 HS2 HS3 HS4 }
         leader = HS1
+
+        main_branch = HS1
+        cadet_branch = {
+            HS2 HS3 HS4
+        }
     }
 
     # Hatakeyama
     add_international_organization = {
-        type = japanese_clan
+        type = jap_branching_clan
         creation_date = 1180.1.1 # Kamakura period
         members = { HT1 HT2 }
         leader = HT1
+
+        main_branch = HT1
+        cadet_branch = HT2
     }
 
     #################################################################
