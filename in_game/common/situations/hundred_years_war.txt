@@ -1,0 +1,415 @@
+﻿hundred_years_war = {
+	monthly_spawn_chance = monthly_spawn_chance_unique
+	hint_tag = hint_hundred_years_war
+	
+	can_start = {
+		country_exists = c:FRA
+		country_exists = c:ENG
+		current_date > 1337.5.1
+		
+		c:FRA = {
+			has_ruler = yes
+		}
+		c:ENG = {
+			has_ruler = yes
+		}
+	}
+	
+	can_end = {
+		hundred_years_war_unified_requirements = yes
+	}
+	
+	visible = {
+		capital ?= { sub_continent = sub_continent:western_europe }
+	}
+	
+
+	on_start = {
+		every_country = {
+			limit = {
+				NOT = { tag = ENG }
+				NOT = { tag = FRA }
+				exists = capital
+				capital.sub_continent = sub_continent:western_europe
+			}
+		
+			trigger_event_non_silently = hundred_years_war.1
+		}
+		c:ENG = { 
+			trigger_event_non_silently = hundred_years_war.2 
+			add_country_modifier = { modifier = hundred_years_war_impact years = -1 mode = add }
+			add_opinion_mutual_effect = {
+				modifier = opinion_hyw_enemies
+				target = c:FRA
+			}
+		}
+		c:FRA = { 
+			trigger_event_non_silently = hundred_years_war.3
+			add_country_modifier = { modifier = hundred_years_war_impact years = -1 mode = add }
+		}
+	}
+
+	on_monthly = {
+		random_list = {
+			1 = { c:ENG = { trigger_event_non_silently = hundred_years_war.211 } }
+			1 = { c:FRA = { trigger_event_non_silently = hundred_years_war.211 } }
+			99 = {}
+		}
+		custom_tooltip = {
+			text = hundred_years_war_monthly
+			random_list = {
+			
+				# give cb to england
+				20 = {
+					trigger = {
+						c:ENG ?= {
+							NOT = {	has_casus_belli_on = c:FRA	}
+							NOT = {	has_truce_with = c:FRA	}
+							NOT = {	is_at_war_with = c:FRA	}
+							has_ruler = yes
+						}
+					}
+					c:ENG = {	trigger_event_non_silently = hundred_years_war.10 }
+				}
+
+				# give cb to france
+				20 = {
+					trigger = {
+						c:FRA ?= {
+							NOT = {	has_casus_belli_on = c:ENG	}
+							NOT = {	has_truce_with = c:ENG	}
+							NOT = {	is_at_war_with = c:ENG	}
+							has_ruler = yes
+						}
+					}
+					c:FRA = {	trigger_event_non_silently = hundred_years_war.11 }
+				}
+				
+				
+				# attempt a war for england
+				20 = {
+					trigger = {
+						c:ENG ?= {
+							has_casus_belli_on = c:FRA
+							NOT = {	has_truce_with = c:FRA	}
+							NOT = {	is_at_war_with = c:FRA	}
+							at_war = no
+							manpower_percentage > 0.75
+							war_exhaustion_percentage < 0.1
+							relative_strength = {
+								target = c:FRA
+								value > 0.45
+							}
+						}
+					}
+					c:ENG = { trigger_event_non_silently = hundred_years_war.20 }
+				}
+
+				# attempt a war for france
+				20 = {
+					trigger = {
+						c:FRA ?= {
+							has_casus_belli_on = c:ENG
+							NOT = {	has_truce_with = c:ENG	}
+							NOT = {	is_at_war_with = c:ENG	}
+							at_war = no
+							manpower_percentage > 0.75
+							war_exhaustion_percentage < 0.1
+							relative_strength = {
+								target = c:ENG
+								value > 0.45
+							}
+						}
+					}
+					c:FRA = { trigger_event_non_silently = hundred_years_war.21 }
+				}
+				200 = {}
+				
+			}
+		}
+	}
+
+
+	on_ended = {
+		c:ENG = { 
+			remove_country_modifier = hundred_years_war_impact
+			remove_opinion_mutual_effect = {
+				modifier = opinion_hyw_enemies
+				target = c:FRA
+			}
+			remove_casus_belli = {
+				target = c:FRA
+				type = casus_belli:cb_hundred_years_war
+			}
+		}
+		c:FRA = { 
+			remove_country_modifier = hundred_years_war_impact
+			remove_casus_belli = {
+				target = c:ENG
+				type = casus_belli:cb_hundred_years_war_fra
+			}
+		}
+	
+	
+		if = {
+			limit = {
+				OR = {
+					c:FRA = { is_subject_or_below_of = c:ENG }
+					NOT = { country_exists = c:FRA }
+					c:ENG = {
+						in_union_with = c:FRA
+						union ?= {
+							international_organization_has_policy = policy:union_establish_seniority_policy
+							country_has_special_status = {
+								type = special_status:senior_partner
+								country = c:ENG
+							}
+						}
+					}
+					region:france_region = {
+						any_ownable_location_in_region = {
+							owner = {
+								top_overlord_or_this ?= c:ENG
+							}
+							count > 130
+						}
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					capital.sub_continent = sub_continent:western_europe
+				}
+				trigger_event_non_silently = hundred_years_war.100
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					NOT = { country_exists = c:ENG }
+					AND = {
+						region:france_region = {
+							any_ownable_location_in_region = {
+								owner = {
+									top_overlord_or_this ?= c:ENG
+								}
+								count < 4
+							}
+						}
+						region:france_region = {
+							any_ownable_location_in_region = {
+								owner = {
+									this = c:FRA
+								}
+								count > 200
+							}
+						}
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = { tag = FRA }
+					capital.sub_continent = sub_continent:western_europe
+				}
+				trigger_event_non_silently = hundred_years_war.101
+			}
+			c:FRA = { trigger_event_non_silently = flavor_fra.26 }
+		}
+		else = {
+			every_country = {
+				limit = { can_see_situation = situation:hundred_years_war }
+				trigger_event_non_silently = hundred_years_war.1537
+			}
+		}
+		
+	}
+
+	tooltip = {
+		if = {
+			limit = { owner ?= c:FRA }
+			custom_tooltip = this_is_france_tt
+		}
+		else_if = {
+			limit = { owner ?= c:ENG }
+			custom_tooltip = this_is_england_tt
+		}
+		else_if = {
+			limit = {
+				owner ?= {
+					AND = {
+						is_subject_or_below_of = c:FRA
+						subject_loyalty >= 50
+					}
+				}
+			}
+			custom_tooltip = loyal_member_of_the_french_side_tt
+		}
+		else_if = {
+			limit = {
+				owner ?= {
+					AND = {
+						is_subject_or_below_of = c:FRA
+						is_disloyal_subject = yes
+					}
+				}
+			}
+			custom_tooltip = disloyal_member_of_the_french_side_tt
+		}
+		else_if = {
+			limit = {
+				owner ?= {
+					AND = {
+						is_subject_or_below_of = c:ENG
+						subject_loyalty >= 50
+					}
+				}
+			}
+			custom_tooltip = loyal_member_of_the_english_side_tt
+		}
+		else_if = {
+			limit = {
+				owner ?= {
+					AND = {
+						is_subject_or_below_of = c:ENG
+						is_disloyal_subject = yes
+					}
+				}
+			}
+			custom_tooltip = disloyal_member_of_the_english_side_tt
+		}
+		else_if = {
+			limit = {
+				owner ?= { 
+					is_allied_with = { target =  c:FRA }
+					NOT = { is_allied_with = { target =  c:ENG }}
+				}
+			}
+			custom_tooltip = this_is_ally_of_france_tt
+		}
+		else_if = {
+			limit = {
+				owner ?= { 
+					is_allied_with = { target =  c:ENG }
+					NOT = { is_allied_with = { target =  c:FRA }}
+				}
+			}
+			custom_tooltip = this_is_ally_of_england_tt
+		}
+		else_if = {
+			limit = {
+				owner ?= { 
+					is_allied_with = { target = c:ENG }
+					is_allied_with = { target = c:FRA }
+				}
+			}
+			custom_tooltip = this_is_ally_of_both_tt
+		}
+	}
+
+	map_color = {
+		if = {
+			limit = {
+				owner ?= c:FRA
+			}
+			value = map_FRA
+		}
+		else_if = {
+			limit = {
+				owner ?= {
+					is_subject_or_below_of = c:FRA
+					subject_loyalty > 50
+				}
+			}
+			value = map_FRA
+		}
+		else_if = {
+			limit = {
+				owner ?= {
+					is_subject_or_below_of = c:ENG
+					subject_loyalty > 50
+				}
+			}
+			value = map_ENG
+		}
+		else_if = {
+			limit = {
+				owner ?= c:ENG
+			}
+			value = map_ENG
+		}
+		else_if = {
+			limit = {
+				owner ?= { is_allied_with = { target =  c:FRA }}
+			}
+			value = root.owner.country_color
+		}
+		else_if = {
+			limit = {
+				owner ?= {
+					is_allied_with = { target =  c:ENG }
+				}
+			}
+			value = root.owner.country_color
+		}
+		else = {
+			value = define:NMapColors|DEFAULT_COLOR
+		}
+	}
+	
+	legend_key = { 
+		desc = "ENG"
+		color = map_ENG
+	}
+	legend_key = { 
+		desc = "FRA"
+		color = map_FRA
+	}
+
+	secondary_map_color = {
+		if = {
+			limit = {
+				owner ?= c:FRA
+			}
+			value = map_FRA
+		}
+		else_if = {
+			limit = {
+				owner ?= c:ENG
+			}
+			value = map_ENG
+		}
+		else_if = {
+			limit = {
+				owner ?= {
+					is_allied_with = { target =  c:FRA }
+					NOT = { is_allied_with = { target =  c:ENG }}
+				}
+			}
+			value = map_FRA
+		}
+		else_if = {
+			limit = {
+				owner ?= { is_subject_or_below_of = c:FRA }
+			}
+			value = map_FRA
+		}
+		else_if = {
+			limit = {
+				owner ?= { is_subject_or_below_of = c:ENG }
+			}
+			value = map_ENG
+		}
+		else_if = {
+			limit = {
+				owner ?= { 
+					is_allied_with = { target =  c:ENG }
+					NOT = { 
+						is_allied_with = { target =  c:FRA }
+					}
+				}
+			}
+			value = map_ENG
+		}
+	}
+}

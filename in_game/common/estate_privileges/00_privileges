@@ -1,0 +1,78 @@
+peasants_no_poll_tax_privilege = {
+    estate = peasants_estate
+
+    potential = {
+        has_or_had_tag = ENG
+    }
+    allow = {
+    }
+    can_revoke = {
+        societal_value:serfdom_vs_free_subjects <= -50
+        estate_satisfaction:peasants_estate >= 0.5
+    }
+
+    country_modifier = {
+        peasants_estate_max_tax    = -0.25
+        global_peasants_estate_power = 0.2
+        peasants_estate_target_satisfaction = 0.1
+        monthly_towards_free_subjects = 0.1
+        monthly_towards_individualism = 0.2
+        monthly_inflation = -0.001
+        global_max_rgo_size_modifier = 0.2
+    }
+}
+
+coign_and_livery_privilege = {
+    estate = nobles_estate
+
+    potential = {
+        OR = {
+            culture ?= { has_culture_group = culture_group:hibernian_group }
+            has_reform = government_reform:celtic_traditions_reform
+            AND = {
+                any_primary_or_accepted_culture = { has_culture_group = culture_group:hibernian_group }
+                has_reform = government_reform:act_of_union_reform
+            }
+        }
+    }
+    allow = {
+    }
+    can_revoke = {
+    }
+
+    country_modifier = {
+        nobles_estate_max_tax = 0.1
+        global_nobles_estate_power = 0.1
+        nobles_estate_target_satisfaction = medium_privilege_target_satisfaction_penalty
+        army_infantry_maintenance_cost_modifier = -0.25
+        army_cavalry_maintenance_cost_modifier = -0.25
+    }
+}
+
+tribes_scotland_gaelic_heritage = {
+    estate = tribes_estate
+
+    potential = { 
+        NOT = { has_estate_privilege =  estate_privilege:sco_statutes_of_iona }
+        NOT = { has_variable = preserved_clan_autonomy }
+        OR = {
+            culture ?= { has_culture_group = culture_group:scottish_group }
+            AND = {
+                any_primary_or_accepted_culture = { has_culture_group = culture_group:scottish_group }
+                has_reform = government_reform:act_of_union_reform
+            } 
+        }
+    }
+    allow = {
+        NOT = { has_estate_privilege =  estate_privilege:sco_statutes_of_iona }
+    }
+    can_revoke = {
+        "estate_power(estate_type:crown_estate)" > 0.33
+    }
+    country_modifier = {
+        tribes_estate_target_satisfaction = medium_privilege_target_satisfaction
+        global_tribes_estate_power = 0.25
+        global_monthly_control = -0.0010
+        global_monthly_development = 0.002
+    }
+}

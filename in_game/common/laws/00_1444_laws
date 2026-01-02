@@ -1,0 +1,463 @@
+eng_order_of_the_garter_law = {
+		law_category = administrative
+
+		law_country_group = ENG
+
+		potential = {
+			government_type = government_type:monarchy
+		}
+
+		eng_order_of_the_garter_nobility_policy = {
+			country_modifier = {
+				country_cabinet_efficiency = 0.2
+				global_nobles_estate_power = 0.5
+				nobles_estate_target_satisfaction = medium_permanent_target_satisfaction
+			}
+			estate_preferences = {
+				nobles_estate
+			}
+			years = 2
+		}
+		
+		eng_order_of_the_garter_foreign_policy = {
+			country_modifier = {
+				max_diplomats = 1
+				counter_espionage = -0.2
+				diplomatic_reputation = diplomatic_reputation_weak_bonus
+			}
+			estate_preferences = {
+				clergy_estate
+			}
+			years = 2
+		}
+
+		eng_order_of_the_garter_clergy_policy = {
+			country_modifier = {
+				global_institution_growth_modifier = 0.1
+				global_clergy_estate_power = 0.1
+				clergy_estate_target_satisfaction = medium_permanent_target_satisfaction
+			}
+			estate_preferences = {
+				clergy_estate
+			}
+			years = 2
+		}
+		
+		eng_order_of_the_garter_arts_policy = {
+			country_modifier = {
+				num_possible_artists = 1
+				global_burghers_estate_power = 0.1
+				burghers_estate_target_satisfaction = medium_permanent_target_satisfaction
+			}
+			estate_preferences = {
+				burghers_estate
+			}
+			years = 2
+		}
+		
+		eng_order_of_the_garter_peasants_policy = {
+			country_modifier = {
+				global_pop_promotion_speed_modifier = 0.1
+				global_peasants_estate_power = 0.1
+				peasants_estate_target_satisfaction = medium_permanent_target_satisfaction
+			}
+			estate_preferences = {
+				peasants_estate
+			}
+			years = 2
+	}
+}
+
+distribution_of_power_law = {
+	law_category = estates
+	potential = {
+	}
+
+	dop_traditional_distribution_of_power = {
+		country_modifier = {
+			global_estate_target_satisfaction = small_permanent_target_satisfaction
+			global_crown_estate_power = -0.1
+			monthly_legitimacy = 0.05
+			monthly_republican_tradition = 0.02
+			monthly_devotion = 0.05
+			monthly_horde_unity = 0.05
+			monthly_tribal_cohesion = 0.03
+			monthly_towards_decentralization = societal_value_monthly_move
+			monthly_towards_liberalism = societal_value_tiny_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+			clergy_estate
+			burghers_estate
+		}
+		years = 2
+	}
+
+	dop_favor_the_ruler = {
+		country_modifier = {
+			global_crown_estate_power = 0.20
+			global_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+			global_estate_max_tax = 0.05
+			monthly_towards_absolutism = societal_value_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+	
+	dop_favor_the_nobles = {
+		country_modifier = {
+			nobles_estate_max_tax = 0.1
+			nobles_estate_agenda_impact = 0.1
+			global_nobles_food_consumption = 0.1
+			monthly_towards_aristocracy = societal_value_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+
+	dop_favor_the_burghers = {
+		country_modifier = {
+			burghers_estate_max_tax = 0.1
+			burghers_estate_agenda_impact = 0.1
+			global_burghers_food_consumption = 0.1
+			court_language_is_market_language_importance_modifier = 0.5
+			monthly_towards_plutocracy = societal_value_monthly_move
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		years = 2
+	}
+
+	dop_favor_the_clergy = {
+		country_modifier = {
+			clergy_estate_max_tax = 0.1
+			clergy_estate_agenda_impact = 0.1
+			global_clergy_food_consumption = 0.1
+			court_language_is_liturgical_language_importance_modifier = 0.5
+			monthly_towards_spiritualist = societal_value_monthly_move
+		}
+		estate_preferences = {
+			clergy_estate
+		}
+		years = 2
+	}
+
+	dop_favor_the_commoners = {
+		country_modifier = {
+			peasants_estate_max_tax = 0.1
+			peasants_estate_agenda_impact = 0.1
+			global_peasants_food_consumption = 0.1
+			global_laborers_food_consumption = 0.1
+			court_language_is_common_language_importance_modifier = 0.5
+			monthly_towards_free_subjects = societal_value_monthly_move
+			monthly_towards_liberalism = societal_value_monthly_move
+		}
+		estate_preferences = {
+			peasants_estate
+		}
+		years = 2
+	}
+
+	#Mali
+	dop_law_gbara = {
+		potential = {
+			has_advance = kouroukan_fouga_advance
+		}
+		country_modifier = {
+			nobles_estate_agenda_impact = 0.2
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+			cultures_capacity = 1
+			add_accepted_culture_cost_modifier = -0.2
+			monthly_towards_decentralization = societal_value_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+
+	#England
+	dop_law_english_parliament = {
+		potential = {
+			OR = {
+				has_advance = magna_carta_advance
+				overlord ?= { OR = { has_or_had_tag = ENG has_or_had_tag = GBR } }
+			}
+		}
+	
+		allow = {
+			NOT = { has_reform = government_reform:autocracy }
+		}
+		country_modifier = {
+			global_crown_estate_power = -0.33
+			monthly_legitimacy = 0.1
+			global_estate_max_tax = 0.2
+			monthly_towards_liberalism = 0.1
+			nobles_estate_agenda_impact = 0.15
+			burghers_estate_agenda_impact = 0.15
+			global_estate_target_satisfaction = 0.1
+		}
+		estate_preferences = {
+			nobles_estate
+			burghers_estate
+		}
+
+		on_activate = {
+			if = {
+				limit = { is_subject = yes }
+				add_liberty_desire = liberty_desire_mild_plus
+			}
+		}
+		on_deactivate = {
+			if = {
+				limit = { is_subject = yes }
+				add_liberty_desire = liberty_desire_mild_minus
+			}
+		}
+		years = 2
+	}
+
+	#Navarra
+	dop_law_navarrese_courts = {
+		potential = {
+			has_reform = government_reform:pyrenean_fueros_reform
+			OR = {
+				has_or_had_tag = NAV
+				culture = culture:basque
+			}
+		}
+
+		allow = {
+			has_reform = government_reform:pyrenean_fueros_reform
+		}
+		country_modifier = {
+			nobles_estate_agenda_impact = 0.05
+			clergy_estate_agenda_impact = 0.05
+			burghers_estate_agenda_impact = 0.05
+			government_size = 1
+			monthly_towards_decentralization = societal_value_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+			clergy_estate
+		}
+		years = 2
+	}
+
+	#Russia
+	dop_law_governing_senate = {
+		potential = {
+			culture = { has_culture_group = culture_group:russian_group}
+			country_rank_level >= 4
+		}
+		country_modifier = {
+			global_crown_estate_power = 0.1
+			government_size = 1
+			monthly_towards_centralization = societal_value_minor_monthly_move
+			monthly_towards_absolutism = societal_value_tiny_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+			burghers_estate
+		}
+		years = 2
+	}
+
+
+	dop_law_state_council = {
+		potential = {
+			culture = { has_culture_group = culture_group:russian_group }
+			has_reform = government_reform:speransky_liberalization_reform
+		}
+		country_modifier = {
+			global_crown_estate_power = 0.15
+			tax_income_efficiency = large_tax_income_efficiency_bonus
+			legislative_efficiency = 0.1
+			monthly_towards_absolutism = societal_value_tiny_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+			nobles_estate
+		}
+		years = 2
+	}
+
+	#France, non-Revolutionary
+	dop_law_estates_general = {
+		potential = {
+			has_advance = estates_general
+			#linked to french_group in the advance
+		}
+		country_modifier = {
+			government_size = 1
+			nobles_estate_agenda_impact = 0.2
+			clergy_estate_agenda_impact = 0.2
+		}
+		estate_preferences = {
+			nobles_estate
+			clergy_estate
+		}
+		years = 2
+	}
+
+	#France, Revolutionary
+	dop_law_assemblee_nationale = {
+		potential = {
+			current_age = age_6_revolutions
+			culture = { has_culture_group = culture_group:french_group}
+		}
+		country_modifier = {
+			government_size = 1
+			change_policy_cost_modifier = -0.25
+			global_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+			burghers_estate_agenda_impact = 0.2
+			peasants_estate_agenda_impact = 0.2
+		}
+		estate_preferences = {
+			burghers_estate
+			peasants_estate
+		}
+		years = 2
+	}
+
+	#Castile
+	
+	dop_law_castilian_courts = {
+		potential = {
+			has_reform = government_reform:crown_castile_reform
+			OR = {
+				has_or_had_tag = CAS
+				has_or_had_tag = SPA
+				culture = culture:castilian
+			}
+		}
+
+		allow = {
+			has_reform = government_reform:crown_castile_reform
+		}
+
+		country_modifier = {
+			global_crown_estate_power = 0.10
+			nobles_estate_agenda_impact = 0.2
+			global_estate_max_tax = 0.05
+			monthly_towards_absolutism = societal_value_tiny_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+			nobles_estate
+		}
+		years = 2
+	}
+
+	dop_law_comuneros_parliament = {
+		potential = {
+			has_unlocked_policy_trigger = { type = dop_law_comuneros_parliament }
+			OR = {
+				has_or_had_tag = CAS
+				culture = culture:castilian
+				AND = {
+					has_or_had_tag = SPA
+					culture = culture:castilian
+				}
+			}
+		}
+		country_modifier = {
+			global_crown_estate_power = -0.33
+			monthly_legitimacy = 0.05
+			parliament_base_support = 0.2
+		}
+		estate_preferences = {
+			burghers_estate
+			peasants_estate
+		}
+		years = 2
+	}
+
+	dop_law_castilian_courts_reinforced = {
+		potential = {
+			has_unlocked_policy_trigger = { type = dop_law_castilian_courts_reinforced }
+			OR = {
+				has_or_had_tag = CAS
+				culture = culture:castilian
+				AND = {
+					has_or_had_tag = SPA
+					culture = culture:castilian
+				}
+			}
+		}
+
+		allow = {
+			has_reform = government_reform:crown_castile_reform
+		}
+
+		country_modifier = {
+			global_crown_estate_power = 0.20
+			nobles_estate_agenda_impact = 0.1
+			global_estate_max_tax = 0.05
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+
+	dop_favor_the_kontors = {
+		potential = {
+			modifier:allows_hanseatic_federation_buildings = yes
+		}
+
+		allow = {
+			modifier:allows_hanseatic_federation_buildings = yes
+		}
+
+		country_modifier = {
+			global_foreign_build_buildings_cost = -0.05
+			burghers_estate_agenda_impact = 0.2
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		years = 2
+	}
+
+	dop_office_of_the_eristavi = {
+		unique = yes
+		potential = {
+			has_or_had_tag = GEO
+		}
+
+		country_modifier = {
+			head_of_cabinet_promotion_cost_modifier = -0.33
+			monthly_towards_aristocracy = societal_value_tiny_monthly_move
+			global_levy_size_modifier = 0.05
+			nobles_estate_agenda_impact = 0.2
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+	
+	dop_rudolfine_house_rules = {
+		potential = {
+			has_unlocked_policy_trigger = { type = dop_rudolfine_house_rules }
+		}
+
+		country_modifier = {
+			global_crown_estate_power = -0.1
+			monthly_towards_decentralization = societal_value_minor_monthly_move
+			monthly_legitimacy = 0.1
+			tax_income_efficiency = large_tax_income_efficiency_bonus
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+}
+
