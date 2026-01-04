@@ -80763,7 +80763,7 @@ adm = 31 dip = 34 mil = 24
         culture = silesian
         religion = catholic
         birth_date = 1294.1.1
-        death_date = 1365.11.23
+        death_date = 1346.5.1
         birth = opole
         father = jaw_bolko_i_the_strict
         mother = jaw_beatrix_askanier
@@ -96866,7 +96866,7 @@ adm = 31 dip = 34 mil = 24
         culture = silesian
         religion = catholic
         birth_date = 1291.9.23
-        death_date = 1363.8.26
+        death_date = 1352.4.21
         birth = legnica
         dynasty = piast_dynasty
         father = lgc_henryk_v_the_fat_piast
@@ -97288,7 +97288,7 @@ adm = 31 dip = 34 mil = 24
         culture = silesian
         religion = catholic
         birth_date = 1312.1.1
-        death_date = 1371.12.11
+        death_date = 1368.7.28
         father = swd_bernard_ii_swidnicki
         birth = swidnica
         dynasty = piast_dynasty
@@ -97330,7 +97330,7 @@ adm = 31 dip = 34 mil = 24
         culture = silesian
         religion = catholic
         birth_date = 1300.2.1
-        death_date = 1373.8.13
+        death_date = 1341.6.11
         birth = jawor
         father = jaw_bolko_i_the_strict
         mother = jaw_beatrix_askanier
@@ -106839,6 +106839,32 @@ adm = 31 dip = 34 mil = 24
         tag = ENG
     }
 
+    eng_alice_montagu_neville = {
+        first_name = { name = name_alice }
+        culture = english
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1407.1.1
+        dynasty = montagu_dynasty
+        spouse = eng_richard_neville_salisbury
+        tag = ENG
+    }
+
+    eng_richard_neville_kingmaker = { # Warwick the Kingmaker!
+        first_name = { name = name_richard }
+        nickname = { name = Kingmaker }
+        culture = english
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1428.11.22
+        birth = richmond
+        dynasty = neville_dynasty
+        father = eng_richard_neville_salisbury
+        mother = eng_alice_montagu_neville
+        tag = ENG
+    }
+
     dhm_robert_neville_durham = {
         first_name = { name = name_robert }
         culture = english
@@ -107005,8 +107031,10 @@ adm = 31 dip = 34 mil = 24
         adm = 38 dip = 52 mil = 56
         female = yes
         birth_date = 1398.2.1
-        birth = raby
+        birth = durham
         dynasty = neville_dynasty
+        father = eng_ralph_neville_westmorland
+        mother = eng_joan_beaufort_neville
         spouse = eng_henry_percy_northumberland
         tag = ENG
     }
@@ -107108,6 +107136,8 @@ adm = 31 dip = 34 mil = 24
         female = yes
         birth_date = 1414.1.1
         birth = richmond
+        father = eng_ralph_neville_westmorland
+        mother = eng_joan_beaufort_neville
         spouse = eng_humphrey_stafford_buckingham
         dynasty = neville_dynasty
         tag = ENG
