@@ -27,4 +27,14 @@ war_manager = {
             }
         }
     }
+
+	truce = { #Ottoman-Turkish truce - for BYZ buildup and around historical date of conquest
+		#Ottomans
+		attacker = TUR
+		#Byzantium
+		defender = BYZ
+		#either use end_date or start_date = <date> with months = <int>. Can skip months to use NDefines::NDiplomacy::TRUCE_YEARS instead
+		start_date = 1444.1.1
+		months = 48
+	}
 }

@@ -1942,14 +1942,14 @@ countries = {
                     name_charles = 4
                 }
 
-                ruler = boh_john_luxembourg
+                ruler = random
 
                 ruler_term = { character = boh_otakar_ii_premyslid start_date = 1253.12.23 end_date = 1278.8.26 regnal_number = 2 }
                 ruler_term = { character = boh_wenceslaus_ii_premyslid start_date = 1278.8.26 end_date = 1305.6.21 regnal_number = 2 }
                 ruler_term = { character = boh_wenceslaus_iii_premyslid start_date = 1305.6.21 end_date = 1306.8.4 regnal_number = 3 }
                 ruler_term = { character = boh_rudolf_habsburg start_date = 1306.8.4 end_date = 1307.7.3 regnal_number = 1 }
                 ruler_term = { character = tir_henry_gorizia start_date = 1307.7.3 end_date = 1310.8.31 regnal_number = 1 }
-                ruler_term = { character = boh_john_luxembourg start_date = 1310.8.31 regnal_number = 1 }
+                ruler_term = { character = boh_john_luxembourg start_date = 1310.8.31 end_date = 1346.8.26 regnal_number = 1 }
 
                 centralization_vs_decentralization = 80
                 aristocracy_vs_plutocracy = -70
@@ -11126,12 +11126,20 @@ countries = {
                 ruler_term = { character = nap_carlo_ii_anjou start_date = 1285.1.7 end_date = 1309.5.5 regnal_number = 2 }
                 ruler_term = { character = nap_robert_i_anjou start_date = 1309.5.5 end_date = 1343.1.20 regnal_number = 1 }
                 ruler_term = { character = nap_giovanna_i_anjou start_date = 1343.1.20 end_date = 1381.8.25 regnal_number = 1 }
-
+                ruler_term = { character = nap_luigi_i_taranto start_date = 1348.8.18 end_date = 1362.5.26 regnal_number = 1 }
+                ruler_term = { character = nap_carlo_iii_anjou_durazzo start_date = 1382.5.12 end_date = 1386.2.24 regnal_number = 3 }
+                ruler_term = { character = nap_ladislao_anjou_durazzo start_date = 1386.2.24 end_date = 1414.8.6 regnal_number = 1 }
+                ruler_term = { character = nap_giovanna_ii_anjou_durazzo start_date = 1414.8.6 end_date = 1435.2.2 regnal_number = 2 }
+                ruler_term = { character = anj_rene_i_valois_anjou start_date = 1435.2.2 end_date = 1442.6.2 }
                 ruler_term = { character = ara_alfons_v_trastamara start_date = 1442.6.2 regnal_number = 1 }
 
                 regnal_numbers = {
-                    name_charles = 2
+                    name_charles = 3
                     name_robert = 1
+                    name_joanna = 2
+                    name_louis = 1
+                    name_vladislav = 1
+                    name_alphonse = 1
                 }
 
 
@@ -11172,7 +11180,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = random
+                ruler = anj_rene_i_valois_anjou
 
                 ruler_term = { character = cat_ramon_berenguer_iii_barcelona start_date = 1127.1.1 end_date = 1131.7.19 regnal_number = 1 }
                 ruler_term = { character = pro_berenguier_ramon_barcelona start_date = 1131.7.19 end_date = 1144.3.1 regnal_number = 1 }
@@ -11203,6 +11211,12 @@ countries = {
                 ruler_term = { character = nap_charles_i_anjou start_date = 1267.9.23 end_date = 1285.1.7 regnal_number = 1 }
                 ruler_term = { character = nap_carlo_ii_anjou start_date = 1285.1.7 end_date = 1309.5.5 regnal_number = 2 }
                 ruler_term = { character = nap_robert_i_anjou start_date = 1309.5.5 end_date = 1343.1.20 regnal_number = 1 }
+                ruler_term = { character = nap_giovanna_i_anjou start_date = 1343.1.20 end_date = 1381.8.25 regnal_number = 1 }
+                ruler_term = { character = nap_luigi_i_taranto start_date = 1348.8.18 end_date = 1362.5.26 regnal_number = 1 }
+                ruler_term = { character = anj_louis_i_valois_anjou start_date = 1381.8.25 end_date = 1384.9.20 regnal_number = 1 }
+                ruler_term = { character = anj_louis_ii_valois_anjou start_date = 1384.9.20 end_date = 1417.4.29 regnal_number = 2 }
+                ruler_term = { character = anj_louis_iii_valois_anjou start_date = 1417.4.29 end_date = 1434.11.12 regnal_number = 3 }
+                ruler_term = { character = anj_rene_i_valois_anjou start_date = 1434.11.12 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_boson = 1
@@ -11217,6 +11231,8 @@ countries = {
                     name_beatrix = 1
                     name_charles = 2
                     name_robert = 1
+                    name_louis = 3
+                    René = 1
                 }
             }
 
@@ -15166,7 +15182,7 @@ countries = {
             include = "expl_western_europe"
             include = "catholic_monarchy_no_coast"
             government = {
-                ruler = bur_eudes_iv_burgundy
+                ruler = random
 
                 ruler_term = { character = fra_hugues_le_grand start_date = 952.12.17 end_date = 956.6.16 regnal_number = 0 }
                 ruler_term = { character = bur_otton_bourgogne start_date = 956.6.16 end_date = 965.2.23 regnal_number = 0 }
@@ -15187,7 +15203,7 @@ countries = {
                 ruler_term = { character = bur_hugues_iv_burgundian start_date = 1218.7.6 end_date = 1272.10.27 regnal_number = 4 }
                 ruler_term = { character = bur_robert_ii_burgundian start_date = 1272.10.27 end_date = 1306.3.21 regnal_number = 2 }
                 ruler_term = { character = bur_hugues_v_burgundian start_date = 1306.3.21 end_date = 1315.5.9 regnal_number = 5 }
-                ruler_term = { character = bur_eudes_iv_burgundy start_date = 1315.5.9 regnal_number = 4 }
+                ruler_term = { character = bur_eudes_iv_burgundy start_date = 1315.5.9 end_date = 1349.4.3 regnal_number = 4 }
 
                 regnal_numbers = {
                     name_robert = 2
@@ -17283,7 +17299,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = stp_jean_chatillon
+                ruler = random
 
                 ruler_term = { character = stp_gaucher_iii_chatillon start_date = 1205.1.1 end_date = 1219.10.1 regnal_number = 1 }
                 ruler_term = { character = stp_guy_ii_chatillon start_date = 1219.10.1 end_date = 1226.8.6 regnal_number = 2 }
@@ -17291,7 +17307,7 @@ countries = {
                 ruler_term = { character = stp_guy_iii_chatillon start_date = 1248.4.9 end_date = 1289.3.12 regnal_number = 3 }
                 ruler_term = { character = bls_hugues_ii_chatillon start_date = 1289.3.12 end_date = 1292.4.7 regnal_number = 6 }
                 ruler_term = { character = stp_guy_iv_chatillon start_date = 1292.4.7 end_date = 1317.4.6 regnal_number = 4 }
-                ruler_term = { character = stp_jean_chatillon start_date = 1317.4.6 regnal_number = 1 }
+                ruler_term = { character = stp_jean_chatillon start_date = 1317.4.6 end_date = 1344.1.1 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_roger = 1
@@ -17442,7 +17458,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = fra_jean_ii_valois
+                ruler = anj_rene_i_valois_anjou
                 reforms = {
                     french_appanage_reform
                 }
@@ -17467,7 +17483,11 @@ countries = {
                 ruler_term = { character = fra_charles_valois start_date = 1299.12.31 end_date = 1314.5.20 regnal_number = 3 }
 
                 ruler_term = { character = fra_philip_vi_valois start_date = 1314.5.20 end_date = 1328.4.1 regnal_number = 1 }
-                ruler_term = { character = fra_jean_ii_valois start_date = 1332.2.17 regnal_number = 3 }
+                ruler_term = { character = fra_jean_ii_valois start_date = 1332.2.17 end_date = 1350.8.26 regnal_number = 3 }
+                ruler_term = { character = anj_louis_i_valois_anjou start_date = 1350.1.1 end_date = 1384.9.20 regnal_number = 1 }
+                ruler_term = { character = anj_louis_ii_valois_anjou start_date = 1384.9.20 end_date = 1417.4.29 regnal_number = 2 }
+                ruler_term = { character = anj_louis_iii_valois_anjou start_date = 1417.4.29 end_date = 1434.11.12 regnal_number = 3 }
+                ruler_term = { character = anj_rene_i_valois_anjou start_date = 1434.11.12 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_robert = 2
@@ -17480,6 +17500,8 @@ countries = {
                     name_charles = 3
                     name_margaret = 1
                     name_philip = 1
+                    name_louis = 3
+                    René = 1
                 }
             }
 
@@ -22951,13 +22973,41 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = mamluk_succesion
+                ruler_term = { character = mam_qalawun start_date = 1279.11.1 end_date = 1290.11.10 regnal_number = 1 }
                 ruler_term = { character = mam_an_nasir_bahri start_date = 1293.1.1 end_date = 1294.1.1 regnal_number = 1 }
                 ruler_term = { character = mam_al_adil_kitbugha start_date = 1294.1.1 end_date = 1296.12.7 regnal_number = 1 }
                 ruler_term = { character = mam_lajin_al_mansuri start_date = 1296.12.7 end_date = 1299.1.16 regnal_number = 1 }
                 ruler_term = { character = mam_an_nasir_bahri start_date = 1299.1.16 end_date = 1309.4.1 regnal_number = 1 }
                 ruler_term = { character = mam_baybars_ii start_date = 1309.4.1 end_date = 1310.3.5 regnal_number = 2 }
-                ruler_term = { character = mam_an_nasir_bahri start_date = 1310.3.5 regnal_number = 1 }
-                ruler = mam_an_nasir_bahri
+                ruler_term = { character = mam_an_nasir_bahri start_date = 1310.3.5 end_date = 1341.6.7 regnal_number = 1 }
+                ruler_term = { character = mam_al_mansuri_abu_bakr start_date = 1341.6.7 end_date = 1341.8.5 regnal_number = 1 }
+                ruler_term = { character = mam_al_ashraf start_date = 1341.8.5 end_date = 1342.1.21 regnal_number = 1 }
+                ruler_term = { character = mam_an_nasir_ahmad_bahri start_date = 1342.1.21 end_date = 1342.6.27 regnal_number = 1 }
+                ruler_term = { character = mam_as_salih_ismail_bahri start_date = 1342.6.27 end_date = 1345.8.1 regnal_number = 1 }
+                ruler_term = { character = mam_sayf_al_din_anuk start_date = 1345.8.1 end_date = 1346.9.21 regnal_number = 1 }
+                ruler_term = { character = mam_al_muzaffar_hajji_bahri start_date = 1346.9.21 end_date = 1347.12.1 regnal_number = 1 }
+                ruler_term = { character = mam_al_nasir_hasan start_date = 1347.12.1 end_date = 1351.8.1 regnal_number = 1 }
+                ruler_term = { character = mam_as_salih_salih_bahri start_date = 1351.8.1 end_date = 1354.10.1 regnal_number = 1 }
+                ruler_term = { character = mam_al_nasir_hasan start_date = 1354.10.1 end_date = 1361.3.17 regnal_number = 1 }
+                ruler_term = { character = mam_al_mansur_muhammad_bahri start_date = 1361.3.17 end_date = 1363.5.29 regnal_number = 1 }
+                ruler_term = { character = mam_al_ashraf_shaban_bahri start_date = 1363.5.29 end_date = 1377.3.15 regnal_number = 1 }
+                ruler_term = { character = mam_al_mansur_ali_bahri start_date = 1377.3.15 end_date = 1381.5.19 regnal_number = 1 }
+                ruler_term = { character = mam_as_salih_hajji_bahri start_date = 1381.5.19 end_date = 1382.11.27 regnal_number = 1 }
+                ruler_term = { character = mam_sayf_barquq_burji start_date = 1382.11.27 end_date = 1389.6.2 regnal_number = 1 }
+                ruler_term = { character = mam_as_salih_hajji_bahri start_date = 1389.6.2 end_date = 1390.2.1 regnal_number = 1 }
+                ruler_term = { character = mam_sayf_barquq_burji start_date = 1390.2.1 end_date = 1399.6.20 regnal_number = 1 }
+                ruler_term = { character = mam_al_nasir_faraj_burji start_date = 1399.6.20 end_date = 1405.9.20 regnal_number = 1 }
+                ruler_term = { character = mam_izz_al_aziz_burji start_date = 1405.9.20 end_date = 1405.11.28 regnal_number = 1 }
+                ruler_term = { character = mam_al_nasir_faraj_burji start_date = 1405.11.28 end_date = 1412.5.23 regnal_number = 1 }
+                ruler_term = { character = mam_al_mustain_abbasid start_date = 1412.5.23 end_date = 1412.11.6 regnal_number = 1 }
+                ruler_term = { character = mam_al_muayyad_shaykh_burji start_date = 1412.11.6 end_date = 1421.1.13 regnal_number = 1 }
+                ruler_term = { character = mam_al_muzaffar_ahmad_burji start_date = 1421.1.13 end_date = 1421.8.29 regnal_number = 1 }
+                ruler_term = { character = mam_sayf_tatar_burji start_date = 1421.8.29 end_date = 1421.11.30 regnal_number = 1 }
+                ruler_term = { character = mam_al_nasir_muhammad_burji start_date = 1421.11.30 end_date = 1422.4.1 regnal_number = 1 }
+                ruler_term = { character = mam_al_ashraf_barsbay_burji start_date = 1422.4.1 end_date = 1438.6.7 regnal_number = 1 }
+                ruler_term = { character = mam_al_aziz_yusuf_burji start_date = 1438.6.7 end_date = 1438.9.9 regnal_number = 1 }
+                ruler_term = { character = mam_sayf_jaqmaq_burji start_date = 1438.9.9 regnal_number = 1 }
+                ruler = mam_sayf_jaqmaq_burji
                 regnal_numbers = {
                     lajin = 1
                     name_baybars = 2
@@ -42963,10 +43013,10 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = jaw_henryk_i_javorski
+                ruler = random
 
                 ruler_term = { character = glg_mechthild_von_braunschweig_luneburg start_date = 1310.12.11 end_date = 1318.4.26 regnal_number = 1 }
-                ruler_term = { character = jaw_henryk_i_javorski start_date = 1337.1.1 regnal_number = 1 }
+                ruler_term = { character = jaw_henryk_i_javorski start_date = 1337.1.1 end_date = 1346.5.15 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_henry = 1
