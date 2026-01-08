@@ -67,7 +67,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = dan_valdemar_atterdag
+                ruler = dan_christopher_iii_wittelsbach
 
                 ruler_term = { character = swe_erik_vii start_date = 970.1.1 end_date = 995.1.1 regnal_number = 7 }
                 ruler_term = { character = swe_olof_i start_date = 995.1.1 end_date = 1022.1.1 regnal_number = 1 }
@@ -99,13 +99,23 @@ countries = {
                 ruler_term = { character = swe_valdemar_birgersson start_date = 1250.2.2 end_date = 1275.7.22 regnal_number = 3 }
                 ruler_term = { character = swe_magnus_ladulas start_date = 1275.7.22 end_date = 1290.12.18 regnal_number = 3 }
                 ruler_term = { character = swe_birger_magnusson start_date = 1290.12.18 end_date = 1319.1.1 regnal_number = 2 }
-                ruler_term = { character = swe_magnus_eriksson start_date = 1319.7.8 regnal_number = 4 }
+                ruler_term = { character = swe_magnus_eriksson start_date = 1319.7.8 end_date = 1364.2.15 regnal_number = 4 }
+                ruler_term = { character = swe_erik_magnusson_bjalbo start_date = 1356.10.17 end_date = 1359.6.20 regnal_number = 12 }
+                ruler_term = { character = nor_haakon_vi_bjalbo start_date = 1362.2.15 end_date = 1364.2.15 regnal_number = 0 }
+                ruler_term = { character = swe_albrecht_i_mecklenburg start_date = 1364.2.15 end_date = 1389.2.24 regnal_number = 1 }
+                ruler_term = { character = dan_margrete_i_estridsen start_date = 1389.2.24 end_date = 1412.10.28 regnal_number = 1 }
+                ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1396.7.23 end_date = 1439.9.24 regnal_number = 13 }
+                ruler_term = { character = dan_christopher_iii_wittelsbach start_date = 1440.4.9 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_john = 2
                     name_birger = 2
-                    name_eric = 11
+                    name_eric = 13
                     name_charles = 7
+                    name_magnus = 4
+                    name_albert = 1
+                    name_margaret = 1
+                    name_christopher = 1
                 }
 
                 laws = {
@@ -151,8 +161,7 @@ countries = {
             }
 
             capital = stockholm
-            dynasty = bjalbo_atten_dynasty
-            dynasty = aspenas_atten_dynasty
+            dynasty = wittelsbach_dynasty
 
             accepted_cultures = { finnish gutnish }
             tolerated_cultures = { tavastian karelian kvens }
@@ -183,7 +192,7 @@ countries = {
             }
 
             capital = kobenhavn
-            dynasty = estrid_dynasty
+            dynasty = wittelsbach_dynasty
             court_language = low_german_dialect
 
             country_rank = rank_kingdom
@@ -239,9 +248,13 @@ countries = {
                 ruler_term = { character = dan_chistopher_ii start_date = 1320.1.25 end_date = 1326.1.1 regnal_number = 2 }
                 ruler_term = { character = dan_valdemar_iii start_date = 1326.1.1 end_date = 1329.1.1 regnal_number = 3 } #Yes, there are 2 Valdemar III
                 ruler_term = { character = dan_chistopher_ii start_date = 1329.1.1 end_date = 1332.8.2 regnal_number = 2 }
+                ruler_term = { character = dan_valdemar_atterdag start_date = 1340.6.24 end_date = 1375.6.24 regnal_number = 4 }
+                ruler_term = { character = dan_olav_ii_bjalbo start_date = 1376.5.3 end_date = 1387.8.3 regnal_number = 2 }
+                ruler_term = { character = dan_margrete_i_estridsen start_date = 1376.8.10 end_date = 1412.10.28 regnal_number = 1 }
+                ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1412.10.28 end_date = 1439.9.24 regnal_number = 7 }
+                ruler_term = { character = dan_christopher_iii_wittelsbach start_date = 1440.4.9 regnal_number = 3 }
 
-                ruler = dan_valdemar_atterdag
-                designated_heir_reason = prince_in_exile
+                ruler = dan_christopher_iii_wittelsbach
 
                 regnal_numbers = {
                     name_guthrum = 1
@@ -249,12 +262,13 @@ countries = {
                     name_sven = 3
                     name_canute = 6
                     name_magnus = 1
-                    name_olaf = 1
-                    name_eric = 6
+                    name_olaf = 2
+                    name_eric = 7
                     name_nicholas = 1
-                    name_valdemar = 3
+                    name_valdemar = 4
                     name_abel = 1
-                    name_christopher = 2
+                    name_christopher = 3
+                    name_margaret = 1
                 }
 
                 privilege = {
@@ -361,7 +375,9 @@ countries = {
 
 
             government = {
-                ruler = random
+                ruler = pom_erik_of_pomerania_gryf
+
+                ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1439.9.8 }
             }
 
             dynasty = gryf_dynasty
@@ -369,7 +385,6 @@ countries = {
 
         NOR = {
             own_control_core = {
-
                 konghalla stromstad uddevalla hornborg
                 moss halden borg trogstad
                 oslo ski eidsvoll
@@ -411,10 +426,15 @@ countries = {
             include = "catholic_monarchy"
             include = "expl_scandinavia"
             government = {
-                ruler = dan_valdemar_atterdag
+                ruler = dan_christopher_iii_wittelsbach
 
                 ruler_term = { character = nor_hakan_magnusson start_date = 1299.11.1 end_date = 1319.5.8 regnal_number = 5 }
-                ruler_term = { character = swe_magnus_eriksson start_date = 1319.5.8 regnal_number = 7 }
+                ruler_term = { character = swe_magnus_eriksson start_date = 1319.5.8 end_date = 1355.11.1 regnal_number = 7 }
+                ruler_term = { character = nor_haakon_vi_bjalbo start_date = 1343.8.15 end_date = 1380.9.11 regnal_number = 6 }
+                ruler_term = { character = dan_olav_ii_bjalbo start_date = 1380.7.29 end_date = 1387.8.3 regnal_number = 4 }
+                ruler_term = { character = dan_margrete_i_estridsen start_date = 1388.2.2 end_date = 1412.10.28 regnal_number = 1 }
+                ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1389.9.8 end_date = 1442.6.4 regnal_number = 3 }
+                ruler_term = { character = dan_christopher_iii_wittelsbach start_date = 1440.6.4 regnal_number = 1 }
 
 
                 centralization_vs_decentralization = 40
@@ -1864,7 +1884,7 @@ countries = {
             include = "expl_northern_europe"
             government = {
 
-                ruler = dan_valdemar_iii
+                ruler = random
 
                 ruler_term = { character = dan_olaf_hunger start_date = 1080.1.1 end_date = 1095.8.18 regnal_number = 1 }
                 ruler_term = { character = dan_canute_lavard start_date = 1095.8.18 end_date = 1131.1.7 regnal_number = 1 }
@@ -1892,7 +1912,7 @@ countries = {
                 ruler_term = { character = dan_erik_ii_schleswig start_date = 1312.4.30 end_date = 1325.3.12 regnal_number = 2 }
                 ruler_term = { character = dan_valdemar_iii start_date = 1325.3.12 end_date = 1326.8.15 regnal_number = 5 }
                 ruler_term = { character = shl_gerhard_iii_holstein_rendsburg start_date = 1326.8.15 end_date = 1330.1.1 regnal_number = 1 }
-                ruler_term = { character = dan_valdemar_iii start_date = 1330.1.1 regnal_number = 5 }
+                ruler_term = { character = dan_valdemar_iii start_date = 1330.1.1 end_date = 1364.1.1 regnal_number = 5 }
 
                 regnal_numbers = {
                     name_olaf = 1
@@ -4861,12 +4881,6 @@ countries = {
             capital = wigmore
             government = {
                 ruler_term = { character = eng_roger_mortimer_1st_earl_of_march start_date = 1330.11.29 end_date = 1330.11.29 regnal_number = 1 }
-
-                regency = overlord_regency
-                active_regent = eng_edward_iii
-                start_regency_date = 1330.11.29
-                end_regency_date = 1350.3.5
-                heir = eng_roger_mortimer_2nd_earl_of_march
             }
             tolerated_cultures = { welsh }
         }
@@ -4958,11 +4972,6 @@ countries = {
 
             government = {
 
-                regency = overlord_regency
-                active_regent = eng_edward_iii
-                start_regency_date = 1327.1.25
-                end_regency_date = 1339.3.20
-                heir = eng_laurence_hastings_1st_earl_of_pembroke
             }
             tolerated_cultures = { welsh }
         }
@@ -5373,7 +5382,10 @@ countries = {
                 ruler_term = { character = sco_james_i_stewart start_date = 1406.4.4 end_date = 1437.5.21 regnal_number = 1 }
                 ruler_term = { character = sco_james_ii_stewart start_date = 1437.5.21 regnal_number = 2 }
 
-                ruler = sco_james_ii_stewart
+                heir = sco_james_ii_stewart
+                regency = nobles_estate_regency
+                active_regent = sco_william_crichton
+                start_regency_date = 1437.5.21
 
                 regnal_numbers = {
                     name_robert = 3
@@ -9744,7 +9756,11 @@ countries = {
 
         CES = {
             own_control_core = {
-                cesena modigliana
+                cesena
+            }
+
+            our_cores_conquered_by_others = {
+                modigliana
             }
 
             starting_technology_level = 3
@@ -10198,15 +10214,13 @@ countries = {
             include = "expl_indian_trade_route"
             include = "catholic_republic"
             government = {
-                type = republic
-                heir_selection = signoria_selection
+                type = monarchy
+                heir_selection = cognatic_primogeniture
 
                 reforms = {
-                    dynastic_signoria_reform
                 }
 
-                ruler = fer_obizzo_iii_este
-                consort = fer_giacoma_pepoli
+                ruler = random
 
                 ruler_term = { character = fer_azzo_vi_este start_date = 1209.1.1 end_date = 1212.11.1 regnal_number = 6 }
                 ruler_term = { character = fer_aldobrandino_i_este start_date = 1212.11.1 end_date = 1215.10.10 regnal_number = 1 }
@@ -10227,7 +10241,7 @@ countries = {
                     character = fer_obizzo_iii_este start_date = 1335.12.31 end_date = 1336.12.31 regnal_number = 3
                     character = fer_nicolo_i_este start_date = 1335.12.31 end_date = 1336.12.31 regnal_number = 1 # Junior Co-Ruler
                 }
-                ruler_term = { character = fer_obizzo_iii_este start_date = 1337.1.1 regnal_number = 3 }
+                ruler_term = { character = fer_obizzo_iii_este start_date = 1337.1.1 end_date = 1352.3.20 regnal_number = 3 }
             }
 
             tolerated_cultures = {
@@ -10236,7 +10250,6 @@ countries = {
 
             capital = ferrara
             dynasty = deste_dynasty
-            dynasty = ramberti_dynasty
         }
 
         FLO = {
@@ -10246,7 +10259,7 @@ countries = {
             }
 
             own_control_conquered = {
-                prato sansepolcro pescia volterra
+                prato sansepolcro pescia volterra modigliana
             }
 
             starting_technology_level = 3
@@ -10859,11 +10872,10 @@ countries = {
             include = "catholic_republic_no_coast"
 
             government = {
-                type = republic
-                heir_selection = signoria_selection
+                type = monarchy
+                heir_selection = cognatic_primogeniture
 
-                ruler = mlo_azzone_i_visconti
-                consort = mlo_caterina_savoiavaud
+                ruler = random
 
                 ruler_term = { character = mlo_alberto_azzo_ii_este start_date = 1029.1.1 end_date = 1097.8.20 regnal_number = 2 }
                 ruler_term = { character = mlo_folco_i_este start_date = 1097.8.20 end_date = 1136.1.1 regnal_number = 1 }
@@ -10896,7 +10908,7 @@ countries = {
 
                 ruler_term = { character = mlo_matteo_i_visconti start_date = 1311.1.6 end_date = 1322.6.24 regnal_number = 1 }
                 ruler_term = { character = mlo_galeazzo_i_visconti start_date = 1322.6.24 end_date = 1328.8.6 regnal_number = 1 }
-                ruler_term = { character = mlo_azzone_i_visconti start_date = 1328.8.6 regnal_number = 0 }
+                ruler_term = { character = mlo_azzone_i_visconti start_date = 1328.8.6 end_date = 1339.8.16 regnal_number = 0 }
 
                 regnal_numbers = {
                     name_albert = 1
@@ -13577,6 +13589,15 @@ countries = {
                 heir_selection = cognatic_primogeniture
 
                 ruler = kat_skanderbeg_kastrioti
+
+                ruler_term = { character = kat_pal_i_kastrioti start_date = 1389.1.1 end_date = 1407.1.1 regnal_number = 1 }
+                ruler_term = { character = kat_gjon_i_kastrioti start_date = 1407.1.1 end_date = 1439.1.1 regnal_number = 1 }
+                ruler_term = { character = kat_skanderbeg_kastrioti start_date = 1439.1.1 regnal_number = 1 }
+
+                reforms = {
+                    local_army_organization
+                    garrison_system
+                }
             }
 
             capital = kruje
@@ -14145,18 +14166,21 @@ countries = {
                 ruler_term = { character = ara_jaume_ii_arago start_date = 1291.6.18 end_date = 1327.11.2 regnal_number = 2 }
                 ruler_term = { character = ara_alfonso_iv_arago start_date = 1327.11.2 end_date = 1336.1.24 regnal_number = 4 }
                 ruler_term = { character = ara_peter_iv_arago start_date = 1336.1.24 end_date = 1386.1.6 regnal_number = 4 }
-                ruler_term = { character = ara_john_i_barcelona start_date = 1387.1.6 end_date = 1396.5.19 regnal_number = 4 }
-                ruler_term = { character = ara_martin_i_barcelona start_date = 1396.5.19 end_date = 1410.5.31 regnal_number = 4 }
-                ruler_term = { character = ara_fernando_i_trastamara start_date = 1412.6.25 end_date = 1416.4.2 regnal_number = 4 }
-                ruler_term = { character = ara_alfons_v_trastamara start_date = 1416.4.2 regnal_number = 4 }
+                ruler_term = { character = ara_john_i_barcelona start_date = 1387.1.6 end_date = 1396.5.19 regnal_number = 1 }
+                ruler_term = { character = ara_martin_i_barcelona start_date = 1396.5.19 end_date = 1410.5.31 regnal_number = 1 }
+                ruler_term = { character = ara_fernando_i_trastamara start_date = 1412.6.25 end_date = 1416.4.2 regnal_number = 1 }
+                ruler_term = { character = ara_alfons_v_trastamara start_date = 1416.4.2 regnal_number = 5 }
 
                 regnal_numbers = {
                     name_ramiro = 2
                     name_sancho = 1
                     name_peter = 4
-                    name_alphonse = 4
+                    name_alphonse = 5
                     name_petronilla = 1
                     name_james = 2
+                    name_john = 1
+                    name_martin = 1
+                    name_ferdinand = 1
                 }
 
                 reforms = {
@@ -16255,7 +16279,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = lor_raoul_lorraine
+                ruler = lor_isabelle_lorraine
 
                 ruler_term = { character = lor_adalbert_alsace start_date = 1047.1.1 end_date = 1048.11.11 regnal_number = 1 }
                 ruler_term = { character = lor_gerard_alsace start_date = 1048.11.11 end_date = 1070.4.14 regnal_number = 1 }
@@ -19516,7 +19540,10 @@ countries = {
                 bordj_bou_arreridj jama_TUN
                 el_ksour medjez_el_bab sbikha
                 azeffoun kuku
+            }
 
+            own_control_integrated = {
+                el_kantara maqqara msila
             }
 
             starting_technology_level = 3
@@ -19865,8 +19892,8 @@ countries = {
         #Zab - ZAB
         ZAB = {
             own_control_core = {
-                biskra amdoukal bades el_kantara madila sidi_okba tolga
-                bou_saada maqqara msila
+                biskra amdoukal bades madila sidi_okba tolga
+                bou_saada
                 ouled_djellal
             }
 
