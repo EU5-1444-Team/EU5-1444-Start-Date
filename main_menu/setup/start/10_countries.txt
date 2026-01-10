@@ -4753,7 +4753,7 @@ countries = {
                 ruler_term = { character = eng_edward_ii start_date = 1307.7.8 end_date = 1327.1.20 regnal_number = 2 }
                 #after 1337
                 ruler_term = { character = eng_edward_iii start_date = 1327.1.25 end_date = 1377.6.12 regnal_number = 3 }
-                ruler_term = { character = eng_richard_ii start_date = 1327.7.16 end_date = 1399.10.1 regnal_number = 2 }
+                ruler_term = { character = eng_richard_ii_plantagenet start_date = 1377.6.12 end_date = 1399.10.1 regnal_number = 2 }
                 ruler_term = { character = eng_henry_iv_lancaster start_date = 1399.10.13 end_date = 1413.3.20 regnal_number = 4 }
                 ruler_term = { character = eng_henry_v_lancaster start_date = 1413.3.12 end_date = 1422.8.31 regnal_number = 5 }
                 ruler_term = { character = eng_henry_vi_lancaster start_date = 1422.9.1 regnal_number = 6 }
@@ -5017,7 +5017,7 @@ countries = {
 
 
         LAN = {
-            #Palatinate of Lancaster
+            #Duchy of Lancaster
             our_cores_conquered_by_others = {
                 lancaster blackburn liverpool preston manchester
             }
@@ -5026,9 +5026,12 @@ countries = {
             include = "expl_western_europe"
 
             government = {
-                ruler_term = { character = eng_henry_lancaster start_date = 1322.3.22 }
+                ruler_term = { character = eng_henry_lancaster start_date = 1322.3.22 end_date = 1345.9.22 }
+                ruler_term = { character = eng_henry_grosmont start_date = 1345.9.22 end_date = 1361.3.23 }
+                ruler_term = { character = eng_blanche_lancaster start_date = 1361.3.23 end_date = 1368.9.12 }
+                ruler_term = { character = eng_john_of_gaunt start_date = 1362.1.1 end_date = 1399.2.3 }
 
-                ruler = eng_henry_lancaster
+                ruler = eng_henry_vi_lancaster
             }
 
             accepted_cultures = {
@@ -5039,6 +5042,7 @@ countries = {
                 welsh
             }
 
+            country_rank = rank_duchy
             capital = lancaster
         }
 
@@ -10951,7 +10955,7 @@ countries = {
                 emilian
             }
 
-            country_rank = rank_county
+            country_rank = rank_duchy
             capital = milano
             dynasty = visconti_dynasty
         }
@@ -18477,8 +18481,8 @@ countries = {
             include = "german_principality"
             government = {
 
-                active_regent = hab_frederick_iii_kaiser_habsburg
-                heir = hab_ladislaus_posthumous_habsburg
+                active_regent = hab_friedrich_iii_habsburg
+                heir = hab_ladislas_v_habsburg
                 start_regency_date = 1440.2.2
 
                 ruler_term = { character = hab_rudolf_i_habsburg start_date = 1276.11.1 end_date = 1282.12.1 regnal_number = 1 }
@@ -18499,19 +18503,18 @@ countries = {
                 ruler_term = { character = hab_friedrich_i_habsburg start_date = 1326.2.28 end_date = 1330.1.13 regnal_number = 1 }
                 ruler_term = { character = hab_albrecht_ii_habsburg start_date = 1330.1.13 end_date = 1358.8.16 regnal_number = 2 }
                 #ruler_term = { character = hab_otto_habsburg start_date = 1330.1.13 regnal_number = 1 } # As Co-Ruler
-                ruler_term = { character = hab_albrecht_ii_habsburg start_date = 1330.1.13 end_date = 1358.8.16 regnal_number = 2 }
-                ruler_term = { character = hab_albrecht_iii_habsburg start_date = 1365.7.27 end_date = 1395.8.29 regnal_number = 2 }
-                ruler_term = { character = hab_albrecht_vi_habsburg start_date = 1395.8.29 end_date = 1404.9.14 regnal_number = 2 } 
-                ruler_term = { character = hab_leopold_iii_just_habsburg start_date = 1365.7.27 end_date = 1424.1.10 regnal_number = 2 }
-                ruler_term = { character = hab_ernest_iron_willed_habsburg start_date = 1406.7.15 end_date = 1424.6.10 regnal_number = 2 }
-                ruler_term = { character = hab_albrecht_ii_crusader_habsburg start_date = 1404.9.14 end_date = 1439.10.27 regnal_number = 2 }
-                ruler_term = { character = hab_ladislaus_posthumous_habsburg start_date = 1440.2.2 regnal_number = 5 } 
+                ruler_term = { character = hab_albrecht_iii_habsburg start_date = 1365.7.27 end_date = 1395.8.29 regnal_number = 3 }
+                ruler_term = { character = hab_albrecht_iv_habsburg start_date = 1395.8.29 end_date = 1404.9.14 regnal_number = 4 } 
+                ruler_term = { character = hab_leopold_iii_just_habsburg start_date = 1365.7.27 end_date = 1424.1.10 regnal_number = 3 }
+                ruler_term = { character = hab_ernst_i_habsburg start_date = 1406.7.15 end_date = 1424.6.10 regnal_number = 1 }
+                ruler_term = { character = hab_albrecht_v_habsburg start_date = 1404.9.14 end_date = 1439.10.27 regnal_number = 5 }
+                ruler_term = { character = hab_ladislas_v_habsburg start_date = 1440.2.2 regnal_number = 5 } 
 
                 regnal_numbers = {
                     name_rudolf = 3
-                    name_albert = 2
+                    name_albert = 5
                     name_frederick = 1
-                    name_leopold = 1
+                    name_leopold = 3
                     name_otto = 1
                 }
 
@@ -36145,7 +36148,7 @@ countries = {
             include = "german_principality_not_present"
             country_rank = rank_duchy
             government = {
-                ruler = hab_frederick_iii_kaiser_habsburg
+                ruler = hab_friedrich_iii_habsburg
 
                 ruler_term = { character = hab_rudolf_i_habsburg start_date = 1276.11.1 end_date = 1282.12.1 regnal_number = 1 }
                 ruler_term = {
@@ -36163,18 +36166,25 @@ countries = {
                     character = hab_leopold_i_habsburg start_date = 1308.5.1 end_date = 1326.2.28 regnal_number = 1 # As Co-Ruler
                 }
                 ruler_term = { character = hab_friedrich_i_habsburg start_date = 1326.2.28 end_date = 1330.1.13 regnal_number = 1 }
-                # ruler_term = { character = hab_albrecht_ii_habsburg start_date = 1330.1.13 regnal_number = 2 }
+                ruler_term = { character = hab_albrecht_ii_habsburg start_date = 1330.1.13 end_date = 1358.8.16 regnal_number = 2 }
                 #ruler_term = { character = hab_otto_habsburg start_date = 1330.1.13 regnal_number = 1 } # As Co-Ruler
+                ruler_term = { character = hab_rudolf_iv_habsburg start_date = 1358.8.16 end_date = 1365.1.1 regnal_number = 4 }
+                ruler_term = { character = hab_leopold_iii_habsburg start_date = 1365.1.1 end_date = 1386.7.9 regnal_number = 3 }
+                ruler_term = { character = hab_wilhelm_habsburg start_date = 1386.7.9 end_date = 1406.7.15 regnal_number = 1 }
+                ruler_term = { character = hab_ernst_habsburg start_date = 1406.7.15 end_date = 1424.6.10 regnal_number = 1 }
+                ruler_term = { character = hab_friedrich_iii_habsburg start_date = 1424.6.10 regnal_number = 3 }
+
 
                 regnal_numbers = {
                     name_odoacer = 2
-                    name_leopold = 2
+                    name_leopold = 3
                     name_frederick = 2
                     name_bela = 1
                     name_stephen = 1
                     name_rudolf = 3
                     name_albert = 2
                     name_otto = 1
+                    name_william = 1
                 }
             }
             capital = graz
@@ -36568,7 +36578,7 @@ countries = {
             include = "expl_northern_europe"
             include = "german_principality"
             government = {
-                ruler = hab_sigismund_archduke_habsburg
+                ruler = hab_siegmund_habsburg
                 regnal_numbers = {
                     name_meinhard = 2
                     name_henry = 2
@@ -36578,6 +36588,9 @@ countries = {
                 ruler_term = { character = tir_henry_gorizia start_date = 1295.11.1 end_date = 1335.4.2 regnal_number = 2 }
                 ruler_term = { character = tir_margarete_von_tirol start_date = 1335.4.2 regnal_number = 1 }
                 #ruler_term = { character = tir_jan_jindrich_luxembourg start_date = 1335.4.2 regnal_number = 1 } # As Marital Co-Ruler
+                ruler_term = { character = hab_leopold_iv_habsburg start_date = 1391.1.1 end_date = 1406.1.1 regnal_number = 4 }
+                ruler_term = { character = hab_frederick_iv_habsburg start_date = 1406.1.1 end_date = 1439.6.24 regnal_number = 1 }
+                ruler_term = { character = hab_siegmund_habsburg start_date = 1439.6.24 regnal_number = 1 }
             }
 
             tolerated_cultures = {
@@ -42455,7 +42468,6 @@ countries = {
             #Legnica
             own_control_core = {
                 legnica zlotoryja #Duchy of Legnica
-                kluczbork #Duchy of Brzeg
             }
 
             starting_technology_level = 3
@@ -42551,8 +42563,7 @@ countries = {
         OPL = {
             #Opole
             own_control_core = {
-                opole olesno #Duchy of Opole
-                lubliniec #Duchy of Strzelce
+                opole #Duchy of Opole
             }
 
             starting_technology_level = 3
@@ -42896,6 +42907,9 @@ countries = {
             #Strzelce
             own_control_core = {
                 strzelce_opolskie
+                lubliniec #Duchy of Strzelce
+                olesno
+                kluczbork #Duchy of Brzeg
             }
             starting_technology_level = 3
             include = "catholic_monarchy_no_coast"
