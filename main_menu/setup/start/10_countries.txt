@@ -4033,7 +4033,6 @@ countries = {
 
         KMG = { #Khamag Mongolians
             type = pop
-
             add_pops_from_locations = {
                 kichera argada ust_barguzin chitkan bayangol karaftit bagdarin bukachacha
                 ziul_zkan telemba isenga narhata
@@ -50228,33 +50227,19 @@ countries = {
                 khorezmian_culture
             }
         }
-        IMP = {
+        IMP = { #Chahar/Imperials/Yuan
             type = building
-
-            capital = karakorum
-
+             capital = karakorum
+            include = "mongol_court"  # Doesn't matter if this exists or not
             government = {
-                #ruler = imp_taisun_khan
-                #heir = imp_agbarjin
-
+                # ruler/heir setup
                 reforms = {
-                    #mongol_imperial_family
+                    mongol_khagan  # This is what actually matters
                 }
-            }
-
-            variables = {
-            #    data = {
-            #        {
-            #            flag = "supports_oirats"
-            #            data = {
-            #                type = boolean
-            #                identity = 1
-            #            }
-            #        }
-            #    }
             }
             country_rank = rank_empire
         }
+        
         MGE = {
             #The Mongol Empire
             type = army
@@ -50270,6 +50255,167 @@ countries = {
             country_rank = rank_empire
             court_language = mongolian_language
             capital = karakorum
+        }
+
+        JAA = {
+            # Jalayir Khalkha
+            own_control_core = {
+                urga tuul manzushir bayan takhilyn gimpil_darjaalan choyrin_datsan gazrin_chuluu ooshiyn_gobi khatanbulag zhavklant_khairkhan
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                reforms = {
+                    legacy_of_genghis
+                }
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = urga
+        }
+
+        BEU = { # Besud Khalkha
+            own_control_core = {
+                avraga kherlen rahsaan_khad uguumur undurkhaan baldan_bereeven bornuur nibuchu tsagaan baruun_tar_nuur
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                reforms = {
+                    legacy_of_genghis
+                }
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = kherlen
+        }
+
+        OLK = { # Olkhonud Khalkha
+            own_control_core = {
+                lower_ulz upper_ulz yakhi zyyn_tar_nuur bishreit dalay doloodyn_gobi ikh_narttin_chuluu saikhandulaan ulaanbadrakh
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                reforms = {
+                    legacy_of_genghis
+                }
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = bishreit
+        }
+
+        ELJ = { # Eljigin Khalkha
+            own_control_core = {
+                tavan_tolgoi matad sharga_uul sumtiin zara_uul erenkhot avga baganuur khobootsar shuluun_khoboot_tsagaan
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                reforms = {
+                    legacy_of_genghis
+                }
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = erenkhot
+        }
+
+        GOO = { # Gorlos Khalkha
+            own_control_core = {
+                sonod jingzhou_dorbod bathahalak chahar muumyangan ulan_hua ulanchab bars_khot bayan_tumen bayantsagaan
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                reforms = {
+                    legacy_of_genghis
+                }
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = jingzhou_dorbod
+        }
+
+        BAN = { # Baarin Khalkha
+            own_control_core = {
+                fuzhou zhongdu baochang chagannur ulziit ukhaa_khudag del_khad galbyn_gobi xinhure
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                reforms = {
+                    legacy_of_genghis
+                }
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = zhongdu
+        }
+
+        JAR = { # Jarud Khalkha
+            own_control_core = {
+                yinshan hebin ningbian yunnei fengzhou dongsheng wuchuan zhenwu pingdi liangcheng
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                reforms = {
+                    legacy_of_genghis
+                }
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = yinshan
+        }
+
+        BAY = { # Bayaut Khalkha
+            own_control_core = {
+                erdao xuanning jining weining uraqai aerzhai otog tongwancheng ordos
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                reforms = {
+                    legacy_of_genghis
+                }
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = ordos
         }
 
 #        OIR = {
@@ -50550,6 +50696,23 @@ countries = {
          	capital = yixingzhou
         }
 
+        ADU = { # Asud/Alans
+         	own_control_core = {
+                urad bayannur
+            }
+
+         	starting_technology_level = 3
+         	include = "expl_mongols"
+         	government = {
+         		type = steppe_horde
+         		heir_selection = cognatic_primogeniture
+                centralization_vs_decentralization = 0
+         	}
+         	country_rank = rank_county
+         	court_language = mongolian_language
+         	capital = bayannur
+        }
+
 #        KHA = {
 #            # Khorchin Mongols
 #            own_control_core = {
@@ -50579,7 +50742,10 @@ countries = {
             include = "expl_mongols"
             government = {
                 type = steppe_horde
-                heir_selection = tribal_oldest_male
+                heir_selection = cognatic_primogeniture
+                reforms = {
+                    legacy_of_khasar
+                }
             }
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -50597,7 +50763,10 @@ countries = {
             include = "expl_mongols"
             government = {
                 type = steppe_horde
-                heir_selection = tribal_oldest_male
+                heir_selection = cognatic_primogeniture
+                reforms = {
+                    legacy_of_khasar
+                }
             }
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -50615,7 +50784,10 @@ countries = {
             include = "expl_mongols"
             government = {
                 type = steppe_horde
-                heir_selection = tribal_oldest_male
+                heir_selection = cognatic_primogeniture
+                reforms = {
+                    legacy_of_khasar
+                }
             }
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -50634,7 +50806,10 @@ countries = {
             include = "expl_mongols"
             government = {
                 type = steppe_horde
-                heir_selection = tribal_oldest_male
+                heir_selection = cognatic_primogeniture
+                reforms = {
+                    legacy_of_khasar
+                }
             }
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -52018,7 +52193,7 @@ countries = {
                 malong mudan_ula
                 juru_hoton mulun
                 hailang ningguta dongning kaiyuan_warka
-                kahari
+                kahari ilan_hala
             }
 
             include = "expl_manchurian_tribe"

@@ -65,3 +65,36 @@ legacy_of_khasar = {
 
 	years = 2
 }
+mongol_khagan = {
+    major = yes
+    potential = {
+        culture = culture:mongolian_culture
+    }
+    allow = {
+        OR = {
+            AND = {
+                has_ruler = no
+                heir ?= { dynasty ?= dynasty:borjigin_dynasty }
+            }
+            ruler ?= { dynasty ?= dynasty:borjigin_dynasty }
+        }
+        country_type = building
+    }
+    locked = {
+        OR = {
+            AND = {
+                has_regent = yes
+                heir ?= { dynasty = dynasty:borjigin_dynasty }
+            }
+            ruler ?= { dynasty = dynasty:borjigin_dynasty }
+        }
+        country_type = building
+    }
+    country_modifier = {
+        diplomatic_reputation = diplomatic_reputation_severe_bonus
+        army_cavalry_maintenance_cost_modifier = -0.1
+        global_crown_estate_power = 0.2
+		monthly_legitimacy = 0.5
+    }
+    years = 2
+}
