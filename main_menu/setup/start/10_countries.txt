@@ -31172,7 +31172,6 @@ countries = {
                 gaizhou fuzhou_liaoyang jinzhou_dalian xiuyan zhuanghe
                 jinzhou_liaoyang dalinghe haizhou_liaoyang ningyuan_jinzhou
                 qiantun shenyang kuandian
-                guangning wangping kaicheng
 
                 ningpu lingfang xuanhua_nanning
 
@@ -31186,7 +31185,9 @@ countries = {
                 hezhou dingqiang
                 jishi
             }
-            our_cores_conquered_by_others = { }
+            our_cores_conquered_by_others = { 
+                wangping kaicheng guangning
+            }
             include = "far_east_asia_monarchy"
             include = "expl_mongols"
             include = "expl_china"
@@ -50473,7 +50474,7 @@ countries = {
         TBU = {  # Transbaikal Uriankhai
          	own_control_core = {
          		kyra qorqonaq_yubur tura aga boorj unda nibuchu kuenga chit uldurga
-                upper_gazimur talman boorj urov silkari uryum nurchuu lower_gazimur kara
+                upper_gazimur talman_boorj urov silkari uryum nurchuu lower_gazimur kara_shilka
          	}
 
          	starting_technology_level = 3
@@ -50490,7 +50491,8 @@ countries = {
 
         FUY = { # Fuyu Guard
          	own_control_core = {
-                qiqihar
+                qiqihar hurle taizhou_jurchen chol buteha arun laha bila kuile nuomin
+                gan dobkuri non
             }
 
          	starting_technology_level = 3
@@ -50507,7 +50509,9 @@ countries = {
 
         TIN = { # Tai’nin Guard
          	own_control_core = {
-                tongliao
+                tongliao ningchang yizhou_jurchen naiman fuxin wangping kaicheng
+                kailu zhengjiatun xinkai gorlos huolin boduna chaghankhot wafang
+                changchun nongan guangning
             }
 
          	starting_technology_level = 3
@@ -50524,8 +50528,8 @@ countries = {
 
         DOY = { # Doyan Guard
          	own_control_core = {
-                daning_pingquan huihe hezhong naiman pingquan wuping_daning fushu xingzhong xiankang lizhou longshan chuanzhou shenshui quanning songzhou enhua baitan yixingzhou kuanhe_xingzhou niushan limin taipingzhuang liuyuan xiabancheng zhangsanying 
-                fuxin yizhou_jinzhou yizhou_jurchen ningchang
+                daning_pingquan huihe hezhong pingquan wuping_daning fushu xingzhong xiankang lizhou longshan chuanzhou shenshui quanning songzhou enhua baitan yixingzhou kuanhe_xingzhou niushan limin taipingzhuang liuyuan xiabancheng zhangsanying 
+                yizhou_jinzhou
             }
 
          	starting_technology_level = 3
@@ -50541,7 +50545,7 @@ countries = {
         }
 
 #        KHA = {
-#            # Kharchin Mongols
+#            # Khorchin Mongols
 #            own_control_core = {
 #            }
 #
@@ -50556,10 +50560,75 @@ countries = {
 #            court_language = mongolian_language
 #            capital = karakorum
 #
-#            tolerated_cultures = {
-#                jurchen_culture
-#            }
 #        }
+
+HAS = {
+            # Hasarid Khorchin
+            own_control_core = {
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = karakorum
+        }
+
+        JAI = {
+            # Jalaid Khorchin
+            own_control_core = {
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = karakorum
+        }
+
+        KDB = {
+            # Dörbed Khorchin
+            own_control_core = {
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = karakorum
+        }
+
+        AKC = {
+            # Aru Khorchin
+            own_control_core = {
+            }
+
+            our_cores_conquered_by_others = { }
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+            }
+            country_rank = rank_duchy
+            court_language = mongolian_language
+            capital = karakorum
+        }
 
         TIM = {
             own_control_core = {
@@ -52021,7 +52090,11 @@ countries = {
         YEH = {
             #Yehe
             own_control_core = {
-                changchun itu_jilin nongan yehe
+                itu_jilin ngan yehe
+            }
+
+            our_cores_conquered_by_others = {
+                nongan changchun
             }
 
             include = "expl_manchurian_tribe"
