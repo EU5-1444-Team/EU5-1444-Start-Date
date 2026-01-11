@@ -30953,40 +30953,20 @@ countries = {
                 tavan_tolgoi matad sharga_uul sumtiin zara_uul
                 erenkhot avga baganuur khobootsar shuluun_khoboot_tsagaan sonod
                 jingzhou_dorbod bathahalak chahar muumyangan ulan_hua ulanchab
-
-                buir_nuur barun_xiabaer khalkh tamsabulag
-                bars_khot bayan_tumen bayantsagaan dalai_nuur menen
-
-                hailar bayan_ula hulun xuguit yimin
-
+                bars_khot bayan_tumen bayantsagaan
                 avraga kherlen rahsaan_khad uguumur undurkhaan
                 baldan_bereeven
-
                 bornuur
-
                 nibuchu
-
                 tsagaan baruun_tar_nuur lower_ulz upper_ulz yakhi zyyn_tar_nuur
-
-                avnagar chono khuuchid sangiin_dalai sorin_nuur ulgain uzemchin
-
-                haihaer linhuang qingzhou_mongol
-
                 bishreit dalay doloodyn_gobi ikh_narttin_chuluu
                 saikhandulaan ulaanbadrakh
                 urga
-
-                enhe_hada jiliu merelka
-
-                abagaita gegen hasar khirkhira
-
                 yinshan hebin ningbian yunnei fengzhou dongsheng wuchuan zhenwu
                 pingdi liangcheng erdao xuanning jining weining
-
-                fuzhou zhongdu baochang chagannur shangdu dongliangting huanzhou pingdisonglin yingchang
-
+                fuzhou zhongdu baochang chagannur
                 tuul manzushir bayan takhilyn gimpil_darjaalan choyrin_datsan gazrin_chuluu ooshiyn_gobi khatanbulag zhavklant_khairkhan ulziit ukhaa_khudag del_khad galbyn_gobi xinhure bayannur urad uraqai aerzhai otog tongwancheng ordos
-            }
+           }
 
             include = "far_east_asia_monarchy_not_present"
             include = "expl_mongols"
@@ -50248,7 +50228,33 @@ countries = {
                 khorezmian_culture
             }
         }
+        IMP = {
+            type = building
 
+            capital = karakorum
+
+            government = {
+                #ruler = imp_taisun_khan
+                #heir = imp_agbarjin
+
+                reforms = {
+                    #mongol_imperial_family
+                }
+            }
+
+            variables = {
+            #    data = {
+            #        {
+            #            flag = "supports_oirats"
+            #            data = {
+            #                type = boolean
+            #                identity = 1
+            #            }
+            #        }
+            #    }
+            #}
+            country_rank = rank_empire
+        }
         MGE = {
             #The Mongol Empire
             type = army
@@ -50510,7 +50516,7 @@ countries = {
         TIN = { # Tai’nin Guard
          	own_control_core = {
                 tongliao ningchang yizhou_jurchen naiman fuxin wangping kaicheng
-                kailu zhengjiatun xinkai gorlos huolin boduna chaghankhot wafang
+                kailu zhengjiatun gorlos huolin boduna chaghankhot wafang
                 changchun nongan guangning
             }
 
@@ -50562,9 +50568,10 @@ countries = {
 #
 #        }
 
-HAS = {
+        HAS = {
             # Hasarid Khorchin
             own_control_core = {
+                hasar merelka enhe_hada jiliu gegen mohe hailar xuguit hulun abagaita khirkhira yimin bayan_ula dalai_nuur
             }
 
             our_cores_conquered_by_others = { }
@@ -50576,12 +50583,13 @@ HAS = {
             }
             country_rank = rank_duchy
             court_language = mongolian_language
-            capital = karakorum
+            capital = hasar
         }
 
         JAI = {
             # Jalaid Khorchin
             own_control_core = {
+                yingchang pingdisonglin qingzhou_mongol linhuang khuuchid avnagar dongliangting shangdu huanzhou
             }
 
             our_cores_conquered_by_others = { }
@@ -50593,12 +50601,13 @@ HAS = {
             }
             country_rank = rank_duchy
             court_language = mongolian_language
-            capital = karakorum
+            capital = yingchang
         }
 
         KDB = {
             # Dörbed Khorchin
             own_control_core = {
+                uzemchin ulgain tuliemao khuuchid sorin_nuur xinkai haihaer
             }
 
             our_cores_conquered_by_others = { }
@@ -50610,12 +50619,14 @@ HAS = {
             }
             country_rank = rank_duchy
             court_language = mongolian_language
-            capital = karakorum
+            capital = uzemchin
         }
 
         AKC = {
             # Aru Khorchin
             own_control_core = {
+                khalkh buir_nuur tamsabulag barun_xiabaer taluhe ulgain sangiin_dalai menen chono
+                
             }
 
             our_cores_conquered_by_others = { }
@@ -50627,7 +50638,7 @@ HAS = {
             }
             country_rank = rank_duchy
             court_language = mongolian_language
-            capital = karakorum
+            capital = khalkh
         }
 
         TIM = {
