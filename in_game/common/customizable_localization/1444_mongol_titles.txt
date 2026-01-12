@@ -1,0 +1,62 @@
+character_title_prefix = {
+    type = character
+    # Khatun (Female)
+    text = {
+        localization_key = character_title_khatun
+        trigger = {
+            is_ruler = yes
+            government_type = government_type:steppe_horde
+            is_female = yes
+        }
+    }
+
+    # Taishi (Oirats)
+    text = {
+        localization_key = character_title_taishi_khagan
+        trigger = {
+            is_ruler = yes
+            government_type = government_type:steppe_horde
+            culture = culture:oirat_culture
+        }
+    }
+    
+    # Chingsang (Three Guards)
+    text = {
+        localization_key = character_title_chingsang
+        trigger = {
+            is_ruler = yes
+            government_type = government_type:steppe_horde
+            culture = culture:kharchin_culture
+        }
+    }
+
+    # Khagan (Empire)
+    text = {
+        localization_key = character_title_khagan
+        trigger = {
+            is_ruler = yes
+            government_type = government_type:steppe_horde
+            country_rank_level = 4
+        }
+    }
+    
+    # Khan (Kingdom)
+    text = {
+        localization_key = character_title_khan
+        trigger = {
+            is_ruler = yes
+            government_type = government_type:steppe_horde
+            country_rank_level = 3
+        }
+    }
+    
+    # Noyan (Duke)
+    text = {
+        localization_key = character_title_noyan
+        trigger = {
+            is_ruler = yes
+            government_type = government_type:steppe_horde
+            country_rank_level = 2
+        }
+    }
+}
