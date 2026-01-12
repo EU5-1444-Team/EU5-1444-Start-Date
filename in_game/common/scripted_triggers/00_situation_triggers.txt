@@ -1,0 +1,53 @@
+﻿hundred_years_war_unified_requirements = {
+	OR = {
+		current_age_or_later = { age = age_4_reformation }
+		NOT = { country_exists = c:ENG }
+		NOT = { country_exists = c:FRA }
+
+		AND = {
+			region:france_region = {
+				any_ownable_location_in_region = {
+					owner = {
+						top_overlord_or_this ?= c:ENG
+					}
+					count < 4
+				}
+			}
+			region:france_region = {
+				any_ownable_location_in_region = {
+					custom_tooltip = {
+						text = owned_by_fra_tt
+						owner = { this = c:FRA }
+					}
+					count > 177
+				}
+			}
+		}
+		OR = {
+			custom_tooltip = {
+				text = england_has_enforced_union_through_claim_french_throne_treaty_tt
+				c:ENG = {
+					in_union_with = c:FRA
+					union ?= {
+						international_organization_has_policy = policy:union_establish_seniority_policy
+						country_has_special_status = {
+							type = special_status:senior_partner
+							country = c:ENG
+						}
+					}
+				}
+			}
+			region:france_region = {
+				any_ownable_location_in_region = {
+					owner = {
+						top_overlord_or_this ?= c:ENG
+					}
+					count > 175
+				}
+			}
+		}
+
+		c:ENG = { is_subject_or_below_of = c:FRA }
+		c:FRA = { is_subject_or_below_of = c:ENG }
+	}
+}

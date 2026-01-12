@@ -67,7 +67,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = dan_christopher_iii_wittelsbach
+                ruler = dan_christoph_iii_wittelsbach
 
                 ruler_term = { character = swe_erik_vii start_date = 970.1.1 end_date = 995.1.1 regnal_number = 7 }
                 ruler_term = { character = swe_olof_i start_date = 995.1.1 end_date = 1022.1.1 regnal_number = 1 }
@@ -105,7 +105,7 @@ countries = {
                 ruler_term = { character = swe_albrecht_i_mecklenburg start_date = 1364.2.15 end_date = 1389.2.24 regnal_number = 1 }
                 ruler_term = { character = dan_margrete_i_estridsen start_date = 1389.2.24 end_date = 1412.10.28 regnal_number = 1 }
                 ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1396.7.23 end_date = 1439.9.24 regnal_number = 13 }
-                ruler_term = { character = dan_christopher_iii_wittelsbach start_date = 1440.4.9 regnal_number = 1 }
+                ruler_term = { character = dan_christoph_iii_wittelsbach start_date = 1440.4.9 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_john = 2
@@ -252,9 +252,9 @@ countries = {
                 ruler_term = { character = dan_olav_ii_bjalbo start_date = 1376.5.3 end_date = 1387.8.3 regnal_number = 2 }
                 ruler_term = { character = dan_margrete_i_estridsen start_date = 1376.8.10 end_date = 1412.10.28 regnal_number = 1 }
                 ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1412.10.28 end_date = 1439.9.24 regnal_number = 7 }
-                ruler_term = { character = dan_christopher_iii_wittelsbach start_date = 1440.4.9 regnal_number = 3 }
+                ruler_term = { character = dan_christoph_iii_wittelsbach start_date = 1440.4.9 regnal_number = 3 }
 
-                ruler = dan_christopher_iii_wittelsbach
+                ruler = dan_christoph_iii_wittelsbach
 
                 regnal_numbers = {
                     name_guthrum = 1
@@ -426,7 +426,7 @@ countries = {
             include = "catholic_monarchy"
             include = "expl_scandinavia"
             government = {
-                ruler = dan_christopher_iii_wittelsbach
+                ruler = dan_christoph_iii_wittelsbach
 
                 ruler_term = { character = nor_hakan_magnusson start_date = 1299.11.1 end_date = 1319.5.8 regnal_number = 5 }
                 ruler_term = { character = swe_magnus_eriksson start_date = 1319.5.8 end_date = 1355.11.1 regnal_number = 7 }
@@ -434,7 +434,7 @@ countries = {
                 ruler_term = { character = dan_olav_ii_bjalbo start_date = 1380.7.29 end_date = 1387.8.3 regnal_number = 4 }
                 ruler_term = { character = dan_margrete_i_estridsen start_date = 1388.2.2 end_date = 1412.10.28 regnal_number = 1 }
                 ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1389.9.8 end_date = 1442.6.4 regnal_number = 3 }
-                ruler_term = { character = dan_christopher_iii_wittelsbach start_date = 1440.6.4 regnal_number = 1 }
+                ruler_term = { character = dan_christoph_iii_wittelsbach start_date = 1440.6.4 regnal_number = 1 }
 
 
                 centralization_vs_decentralization = 40
@@ -4818,8 +4818,6 @@ countries = {
                 capital_economy_vs_traditional_economy = 20
                 individualism_vs_communalism = -100
                 outward_vs_inward = -60
-
-
             }
 
             accepted_cultures = {
@@ -4835,6 +4833,13 @@ countries = {
 
             ai_advance_preference_tags = {
                 exploration = 5
+            }
+
+            timed_modifier = {
+                modifier = "eng_unstable_country"
+                start_date = 1444.11.11
+                date = 1460.1.1
+                size = 1
             }
         }
 
@@ -5107,7 +5112,7 @@ countries = {
                     noble_fortification_licenses
                     peasants_yeomanry
                 }
-                ruler = eng_edward_iii
+                ruler = eng_henry_vi_lancaster
             }
             country_rank = rank_duchy
             capital = carnarvon
@@ -5725,7 +5730,9 @@ countries = {
                 ruler_term = { character = eng_henry_iii start_date = 1216.10.28 end_date = 1272.11.16 regnal_number = 3 }
                 ruler_term = { character = eng_edward_i start_date = 1272.11.20 end_date = 1307.7.8 regnal_number = 1 }
                 ruler_term = { character = eng_edward_ii start_date = 1307.7.8 end_date = 1327.1.20 regnal_number = 2 }
-                ruler_term = { character = eng_edward_iii start_date = 1327.1.25 regnal_number = 3 }
+                ruler_term = { character = eng_edward_iii start_date = 1327.1.25 end_date = 1377.6.21 regnal_number = 3 }
+
+                ruler = eng_henry_vi_lancaster
 
                 # same numbering as England
                 regnal_numbers = {
@@ -10307,13 +10314,6 @@ countries = {
             tolerated_cultures = {
                 emilian
             }
-
-            timed_modifier = {
-                modifier = "interdict"
-                start_date = 1000.1.1
-                date = 1345.1.1
-                size = 1
-            }
         }
 
         PRZ = {
@@ -11147,7 +11147,7 @@ countries = {
                 heir_selection = salic_law
 
                 ruler = ara_alfons_v_trastamara
-                heir = ara_ferdinand_i_of_naples
+                heir = nap_ferran_i_trastamara
 
                 ruler_term = { character = nap_charles_i_anjou start_date = 1246.1.31 end_date = 1285.1.7 regnal_number = 1 }
                 ruler_term = { character = nap_carlo_ii_anjou start_date = 1285.1.7 end_date = 1309.5.5 regnal_number = 2 }
@@ -11923,7 +11923,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = sav_aymon_savoy
+                ruler = sav_louis_i_savoy
 
                 ruler_term = { character = sav_humbert_i_savoy start_date = 1027.1.1 end_date = 1042.7.1 regnal_number = 1 }
                 ruler_term = { character = sav_amedee_i_savoy start_date = 1042.7.1 end_date = 1051.1.1 regnal_number = 1 }
@@ -11940,11 +11940,15 @@ countries = {
                 ruler_term = { character = sav_philippe_i_savoy start_date = 1268.5.16 end_date = 1285.8.15 regnal_number = 1 }
                 ruler_term = { character = sav_amedee_v_savoy start_date = 1285.8.15 end_date = 1323.10.16 regnal_number = 5 }
                 ruler_term = { character = sav_edouard_i_savoy start_date = 1323.10.16 end_date = 1329.11.4 regnal_number = 1 }
-                ruler_term = { character = sav_aymon_savoy start_date = 1329.11.4 regnal_number = 2 }
+                ruler_term = { character = sav_aymon_savoy start_date = 1329.11.4 end_date = 1343.6.22 regnal_number = 2 }
+                ruler_term = { character = sav_amedee_vi_savoy start_date = 1343.6.22 end_date = 1383.3.1 regnal_number = 6 }
+                ruler_term = { character = sav_amedee_vii_savoy start_date = 1383.3.1 end_date = 1391.11.1 regnal_number = 7 }
+                ruler_term = { character = sav_amedee_viii_savoy start_date = 1391.11.1 end_date = 1440.1.6 regnal_number = 8 }
+                ruler_term = { character = sav_louis_i_savoy start_date = 1440.1.6 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_humbert = 3
-                    name_amadeus = 5
+                    name_amadeus = 8
                     name_otto = 1
                     name_peter = 2
                     name_thomas = 1
@@ -11952,6 +11956,7 @@ countries = {
                     name_philip = 1
                     name_edward = 1
                     name_haimo = 1
+                    name_louis = 1
                 }
             }
 
@@ -11959,7 +11964,7 @@ countries = {
                 piedmontese
             }
 
-            country_rank = rank_county
+            country_rank = rank_duchy
             capital = chambery
         }
 
@@ -11979,18 +11984,22 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = sav_jacques_savoy_achaia
+                ruler = sav_louis_i_savoy
 
                 ruler_term = { character = sav_thomas_i_savoy start_date = 1189.3.4 end_date = 1233.3.1 regnal_number = 1 }
                 ruler_term = { character = sav_thomas_ii_piedmont start_date = 1233.3.1 end_date = 1259.2.7 regnal_number = 2 }
                 ruler_term = { character = sav_thomas_iii_piedmont start_date = 1259.2.7 end_date = 1282.5.16 regnal_number = 3 }
                 ruler_term = { character = sav_philippe_i_savoy_achaia start_date = 1282.5.16 end_date = 1334.9.25 regnal_number = 1 }
-                ruler_term = { character = sav_jacques_savoy_achaia start_date = 1334.9.25 regnal_number = 1 }
+                ruler_term = { character = sav_jacques_savoy_achaia start_date = 1334.9.25 end_date = 1367.5.1 regnal_number = 1 }
+                ruler_term = { character = pie_philippe_ii_savoy_achaia start_date = 1367.5.1 end_date = 1368.12.1 regnal_number = 2 }
+                ruler_term = { character = pie_amedee_savoy_achaia start_date = 1368.12.1 end_date = 1402.5.7 regnal_number = 2 }
+                ruler_term = { character = pie_louis_savoy_achaia start_date = 1402.5.7 end_date = 1418.12.11 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_thomas = 3
-                    name_philip = 1
+                    name_philip = 2
                     name_james = 1
+                    name_louis = 1
                 }
             }
 
@@ -12033,14 +12042,18 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = gnv_amedee_iii_geneve
-
+                ruler = sav_louis_i_savoy
 
                 ruler_term = { character = gnv_amedee_ii_geneve start_date = 1280.1.1 end_date = 1308.5.22 regnal_number = 3 }
                 ruler_term = { character = gnv_guillaume_iii_geneve start_date = 1308.5.22 end_date = 1320.1.1 regnal_number = 3 }
-                ruler_term = { character = gnv_amedee_iii_geneve start_date = 1320.1.1 regnal_number = 3 }
+                ruler_term = { character = gnv_amedee_iii_geneve start_date = 1320.1.1 end_date = 1367.1.18 regnal_number = 3 }
+                ruler_term = { character = gnv_amedee_iv_geneve start_date = 1367.1.1 end_date = 1369.1.1 regnal_number = 4 }
+                ruler_term = { character = sav_amedee_viii_savoy start_date = 1424.1.1 end_date = 1440.1.6 regnal_number = 5 }
+                ruler_term = { character = gnv_philippe_savoy start_date = 1440.1.6 end_date = 1444.3.3 regnal_number = 1 }
+                ruler_term = { character = sav_louis_i_savoy start_date = 1444.3.3 regnal_number = 1 }
             }
 
+            dynasty = geneve_dynasty
             country_rank = rank_county
             capital = annecy
         }
@@ -12057,7 +12070,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = sav_louis_ii_savoy_vaud
+                ruler = sav_louis_i_savoy
 
                 ruler_term = { character = sav_pierre_ii_savoy start_date = 1234.1.1 end_date = 1268.5.16 regnal_number = 1 }
                 ruler_term = {
@@ -12066,7 +12079,8 @@ countries = {
                 }
                 ruler_term = { character = sav_philippe_i_savoy_achaia start_date = 1271.1.1 end_date = 1281.9.1 regnal_number = 1 }
                 ruler_term = { character = sav_louis_i_savoy_vaud start_date = 1281.9.1 end_date = 1302.1.13 regnal_number = 1 }
-                ruler_term = { character = sav_louis_ii_savoy_vaud start_date = 1302.1.13 regnal_number = 2 }
+                ruler_term = { character = sav_louis_ii_savoy_vaud start_date = 1302.1.13 end_date = 1348.1.1 regnal_number = 2 }
+                ruler_term = { character = mlo_caterina_savoia_vaud start_date = 1348.1.1 end_date = 1388.6.18 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_peter = 1
@@ -12074,6 +12088,7 @@ countries = {
                     name_wigo = 1
                     name_philip = 1
                     name_louis = 2
+                    name_catherine = 1
                 }
             }
 
@@ -15424,7 +15439,7 @@ countries = {
             include = "catholic_monarchy_no_coast_no_censor"
 
             government = {
-                ruler = ale_jean_ii_valois_alencon
+                ruler = eng_henry_vi_lancaster
                 reforms = {
                     french_appanage_reform
                 }
@@ -17016,7 +17031,7 @@ countries = {
                     feudal_de_jure_law = by_tradition
                     legal_code_law = civil_law_policy
                 }
-                ruler = eng_edward_iii
+                ruler = eng_henry_vi_lancaster
 
                 ruler_term = { character = fra_louis_vii_capet start_date = 1137.7.25 end_date = 1152.3.21 regnal_number = 1 } # As Marital Co-Ruler
                 ruler_term = { character = eng_henry_ii_curtmantle start_date = 1152.3.21 end_date = 1189.7.6 regnal_number = 1 } # As Marital Co-Ruler
@@ -17030,7 +17045,7 @@ countries = {
                 ruler_term = { character = eng_henry_iii start_date = 1216.10.28 end_date = 1272.11.16 regnal_number = 2 }
                 ruler_term = { character = eng_edward_i start_date = 1272.11.20 end_date = 1306.4.7 regnal_number = 1 }
                 ruler_term = { character = eng_edward_ii start_date = 1306.4.7 end_date = 1325.9.10 regnal_number = 2 }
-                ruler_term = { character = eng_edward_iii start_date = 1325.9.10 regnal_number = 3 }
+                ruler_term = { character = eng_edward_iii start_date = 1325.9.10 end_date = 1377.6.21 regnal_number = 3 }
 
                 regnal_numbers = {
                     #Corson = 1
@@ -17094,7 +17109,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = fra_jean_ii_valois
+                ruler = eng_henry_vi_lancaster
 
                 ruler_term = { character = anj_geoffroy_v_anjou start_date = 1129.1.1 end_date = 1151.9.7 regnal_number = 2 }
                 ruler_term = { character = eng_henry_ii_curtmantle start_date = 1151.9.7 end_date = 1189.7.6 regnal_number = 1 }
@@ -17197,7 +17212,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = ale_charles_ii_valois
+                ruler = eng_henry_vi_lancaster
 
                 ruler_term = { character = ale_pierre_i_capet start_date = 1268.3.1 end_date = 1283.4.6 regnal_number = 1 }
 
@@ -17784,7 +17799,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = fra_jean_ii_valois
+                ruler = eng_henry_vi_lancaster
 
                 ruler_term = { character = eng_william_the_conquerer start_date = 1035.7.2 end_date = 1087.9.9 regnal_number = 1 }
                 ruler_term = { character = eng_henry_i start_date = 1106.9.28 end_date = 1135.12.1 regnal_number = 1 }
@@ -37589,7 +37604,7 @@ countries = {
             starting_technology_level = 3
             include = "expl_mediterranean"
             include = "catholic_monarchy_no_coast"
-            government = { ruler = sav_aymon_savoy }
+            government = { ruler = sav_louis_ii_savoy }
             country_rank = rank_duchy
             capital = aosta
         }
@@ -43222,13 +43237,6 @@ countries = {
             dynasty = piast_dynasty
             country_rank = rank_kingdom
             court_language = latin_language
-
-            timed_modifier = {
-                modifier = "interdict"
-                start_date = 1000.1.1
-                date = 1342.1.1
-                size = 1
-            }
 
             accepted_cultures = {
                 greater_polish
@@ -66031,7 +66039,7 @@ countries = {
         
         GJR = { #Gujarat
             own_control_core = {
-                ashaval dholka danduka limbdi ranpur
+                ashaval dholka danduka limbdi ranpur khambat
                 patan radhanpur palanpur deodar
                 baroda broach rander daman bassein bombay kalyan chaul
             }
