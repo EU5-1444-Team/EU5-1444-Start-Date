@@ -100154,6 +100154,31 @@ character_db={
         tag = MAJ
     }
 
+    maj_dyah_nertaja = { #Daughter to maj_tribhuwana mother of maj_vikramavardhana
+        first_name = { name = Dyah_Nertaja }
+        culture = javanese_culture
+        religion = hindu
+        birth_date = 1340.1.1 #Unknown, younger to maj_hayam_wuruk
+        birth = trowulan
+        female = yes
+        death_date = 1390.1.1 #Unknown (guessing)
+        mother = maj_tribhuwana
+        father = maj_cakradhara
+        dynasty = rajasa_dynasty
+        spouse = maj_singhawardhana
+        tag = MAJ
+    }
+
+    maj_singhawardhana = { #Daughter to maj_tribhuwana mother of maj_vikramavardhana
+        first_name = { name = Singhawardhana }
+        culture = javanese_culture
+        religion = hindu
+        birth_date = 1330.1.1 #Unknown guess
+        birth = trowulan
+        death_date = 1380.1.1
+        spouse = maj_dyah_nertaja
+        tag = MAJ
+    }
 
     maj_raden_wijaya = {
         first_name = { name = Raden_Wijaya }
@@ -100186,7 +100211,7 @@ character_db={
     }
 
 
-    maj_hayam_wuruk = { #Heir
+    maj_hayam_wuruk = {
         first_name = { name = Hayam_Wuruk }
         culture = javanese_culture
         religion = hindu
@@ -100198,7 +100223,59 @@ character_db={
         mother = maj_tribhuwana
         father = maj_cakradhara
         tag = MAJ
-        child_trait = child_prodigy
+    }
+
+    maj_vikramavardhana = {
+        first_name = { name = Ikramavardhana }
+        culture = javanese_culture
+        religion = hindu
+        adm = 20 dip = 63 mil = 52 # Had to Co-Rule, Good relations with China, Invaded Singapore
+        birth_date = 1365.1.1
+        death_date = 1429.1.1
+        birth = trowulan
+        dynasty = rajasa_dynasty
+        mother = maj_dyah_nertaja
+        father = maj_singhawardhana
+        spouse = maj_bhre_daha
+        tag = MAJ
+    }
+
+    maj_bhre_daha = {
+        first_name = { name = Bhre_daha }
+        culture = javanese_culture
+        religion = hindu
+        female = yes
+        birth_date = 1380.1.1 #Unknown guess
+        birth = trowulan
+        death_date = 1430.1.1 #Unknown guess
+        spouse = maj_vikramavardhana
+        tag = MAJ
+    }
+
+    maj_sri_suhita = {
+        first_name = { name = Sri_Suhita }
+        culture = javanese_culture
+        religion = hindu
+        female = yes
+        adm = 41 dip = 66 mil = 55 #Guess, Legend associated with her, Guess
+        birth_date = 1405.1.1 #Unknown rough guess
+        birth = trowulan
+        dynasty = rajasa_dynasty
+        father = maj_vikramavardhana
+        mother = maj_bhre_daha
+        tag = MAJ
+    }
+
+    maj_kertawijaya = {
+        first_name = { name = Kertawijaya }
+        culture = javanese_culture
+        religion = hindu
+        adm = 31 dip = 52 mil = 23 #Disaster game start, good relations with 
+        birth_date = 1410.1.1 #Unknown, younger than maj_sri_suhita
+        birth = trowulan
+        father = maj_vikramavardhana
+        dynasty = rajasa_dynasty
+        tag = MAJ
     }
 
 
@@ -100285,6 +100362,20 @@ character_db={
         mother = maj_dara_petak
         father = maj_raden_wijaya
         death_date = 1328.1.1
+        tag = MAJ
+    }
+
+    maj_tribhuwana_ijayatunggadewi = {
+        first_name = { name = Tribhuwana_Ijayatunggadewi }
+        female = yes
+        culture = javanese_culture
+        religion = hindu
+        birth_date = 1309.1.1 #unknown
+        birth = trowulan
+        dynasty = rajasa_dynasty
+        mother = maj_dara_petak
+        father = maj_raden_wijaya
+        death_date = 1374.1.1 # 1372-1375 so just chose a middle ground
         tag = MAJ
     }
 
@@ -102316,7 +102407,62 @@ character_db={
         birth_date = 1313.1.1
         death_date = 1371.4.18
         birth = qusqu
+        father = csu_qhapaq_yupanki
         dynasty = hanan_qusqu_dynasty
+        tag = CSU
+    }
+
+    csu_yawar_waqaq = {
+        first_name = { name = name_yawar_waqaq }
+        nickname = { name = nick_blood_crier } # name translation is so fucking sick, I have to include it
+        culture = inka_culture
+        religion = inti
+        adm = 43 dip = 62 mil = 64 #Guess, got a mistress to help his escape, he escaped capture
+        birth_date = 1361.1.1
+        death_date = 1410.1.1
+        birth = qusqu
+        dynasty = hanan_qusqu_dynasty
+        father = csu_inka_roqa
+        tag = CSU
+    }
+
+    csu_viracocha_inka = {
+        first_name = { name = name_viracocha_inka }
+        culture = inka_culture
+        religion = inti
+        adm = 72 dip = 73 mil = 13 #first Sapa inca to administer territory, and not just loot, "valiant", abandoed Qusqu
+        birth_date = 1380.1.1
+        death_date = 1420.1.1
+        birth = qusqu
+        dynasty = hanan_qusqu_dynasty
+        father = csu_yawar_waqaq
+        tag = CSU
+    }
+
+    csu_pachacuti = {
+        first_name = { name = name_pachacuti }
+        nickname = { name = nick_earthshaker }
+        culture = inka_culture
+        religion = inti
+        adm = 81 dip = 67 mil = 92 #rebuilt Qsuqu, designated fellow tribes honourary Inkas, conquer innit
+        birth_date = 1418.1.1 # could also be 1403
+        birth = qusqu
+        dynasty = hanan_qusqu_dynasty
+        father = csu_viracocha_inka
+        ruler_trait = conqueror
+        ruler_trait = expansionist #bc uncolonised andes
+        ruler_trait = architectural_visionary #rebuilt Qsuqu
+        tag = CSU
+    }
+
+    inc_tupac_yupanqui = {
+        first_name = { name = name_tupac_yupanqui }
+        culture = inka_culture
+        religion = inti
+        birth_date = 1443.1.1 # just so hes around (dies then historically ~50)
+        birth = qusqu
+        dynasty = hanan_qusqu_dynasty
+        father = csu_pachacuti
         tag = CSU
     }
 
@@ -103812,8 +103958,6 @@ character_db={
         tag = VIJ
     }
 
-
-    #Ruler's GreatGrandfather - Ruler of Kampili
     vij_singeya_nayaka_kampili = {
         first_name = { name = name_singeya_nayaka }
         culture = kannadiga
@@ -103825,7 +103969,6 @@ character_db={
         tag = VIJ
     }
 
-    #Ruler's Grandfather - Ruler of Kampili
     vij_kampilideva_kampili = { #https://en.wikipedia.org/wiki/Kampilideva
         first_name = { name = name_kampilideva }
         culture = kannadiga
@@ -103838,7 +103981,6 @@ character_db={
         tag = VIJ
     }
 
-    #Ruler's Mother
     vij_maravve_nayakiti = { #https://en.wikipedia.org/wiki/Bhavana_Sangama
         first_name = { name = name_maravve_nayakiti }
         culture = kannadiga
@@ -103854,7 +103996,7 @@ character_db={
     }
 
 
-    #Ruler
+    #1337
     vij_harihara_sangama = { #https://en.wikipedia.org/wiki/Harihara_I
         first_name = { name = name_harihara }
         culture = kannadiga
@@ -103869,8 +104011,7 @@ character_db={
     }
 
     
-    #Ruler's Brother
-    vij_bukka_raya_sangama = { #https://en.wikipedia.org/wiki/Bukka_Raya_I
+    vij_bukka_raya_sangama = {
         first_name = { name = name_bukka_raya }
         culture = kannadiga
         religion = hindu
@@ -103879,6 +104020,100 @@ character_db={
         death_date = 1374.4.27
         father = vij_bhavana_sangama
         mother = vij_maravve_nayakiti
+        dynasty = sangama_dynasty
+        tag = VIJ
+    }
+
+    vij_harihara_ii = {
+        first_name = { name = name_harihara }
+        culture = kannadiga
+        religion = hindu
+        birth = vijayanagar
+        birth_date = 1340.1.1
+        death_date = 1404.8.31
+        father = vij_bukka_raya_sangama
+        dynasty = sangama_dynasty
+        tag = VIJ
+    }
+
+    vij_virupaksha_raya = {
+        first_name = { name = name_virupaksha_raya }
+        culture = kannadiga
+        religion = hindu
+        birth = vijayanagar
+        birth_date = 1360.1.1 #Unknown
+        death_date = 1410.1.1 #Unknown
+        father = vij_harihara_ii
+        dynasty = sangama_dynasty
+        tag = VIJ
+    }
+
+    vij_bukka_raya_ii = {
+        first_name = { name = name_bukka_raya }
+        culture = kannadiga
+        religion = hindu
+        birth = vijayanagar
+        birth_date = 1363.1.1
+        death_date = 1411.1.1
+        father = vij_harihara_ii
+        dynasty = sangama_dynasty
+        tag = VIJ
+    }
+
+    vij_deva_raya_i = {
+        first_name = { name = name_deva_raya }
+        culture = kannadiga
+        religion = hindu
+        birth = vijayanagar
+        birth_date = 1370.11.5 
+        death_date = 1423.2.25
+        father = vij_harihara_ii
+        dynasty = sangama_dynasty
+        tag = VIJ
+    }
+
+    vij_ramachandra_raya = {
+        first_name = { name = name_ramachandra_raya }
+        culture = kannadiga
+        religion = hindu
+        birth = vijayanagar
+        birth_date = 1386.1.1 #Wikipedia say 1367 but its wrong as then hes older than his father  
+        death_date = 1424.1.1
+        father = vij_deva_raya_i
+        dynasty = sangama_dynasty
+        tag = VIJ
+    }
+
+    vij_bukka_raya_iii = {
+        first_name = { name = name_bukka_raya }
+        culture = kannadiga
+        religion = hindu
+        birth = vijayanagar
+        birth_date = 1372.1.1 #Unknown
+        death_date = 1443.1.1 #Unknown
+        father = vij_deva_raya_i
+        dynasty = sangama_dynasty
+        tag = VIJ
+    }
+
+    vij_deva_raya_ii = { #Ruler 1444
+        first_name = { name = name_deva_raya }
+        culture = kannadiga
+        religion = hindu
+        birth = vijayanagar
+        birth_date = 1400.1.1 #Unknown
+        father = vij_bukka_raya_iii
+        dynasty = sangama_dynasty
+        tag = VIJ
+    }
+
+    vij_deva_raya_iii = { #heir
+        first_name = { name = name_deva_raya }
+        culture = kannadiga
+        religion = hindu
+        birth = vijayanagar
+        birth_date = 1420.1.1 #Unknown
+        father = vij_deva_raya_ii
         dynasty = sangama_dynasty
         tag = VIJ
     }
@@ -113421,4 +113656,146 @@ character_db={
 		dynasty = yi_dynasty
 		tag = JOE
 	}
+
+    #Bahmanis
+    bah_ala_ud_din_hasan_bahman = { #Founder of Bahmanis
+		first_name = { name = name_hasan_bahman }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1291.1.1
+        death_date = 1358.1.1
+		birth = ghazni
+		dynasty = bahmani_dynasty 
+		tag = BAH
+	}
+
+    bah_mohammed_shah_i = {
+		first_name = { name = name_muhammad }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1328.1.1
+        death_date = 1375.4.21
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_ala_ud_din_hasan_bahman
+		tag = BAH
+	}
+
+    bah_mujahid_shah = {
+		first_name = { name = name_mujahid }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1355.1.1
+        death_date = 1378.4.16
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_mohammed_shah_i
+		tag = BAH
+	}
+
+    bah_dawood_uncle = { # I presume as there is no Info (quick google search)
+        first_name = { name = name_dawud }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1327.1.1
+        death_date = 1378.5.21
+		birth = ghazni
+		dynasty = bahmani_dynasty 
+        father = bah_ala_ud_din_hasan_bahman
+		tag = BAH
+    }
+
+    bah_dawud_shah = {
+		first_name = { name = name_dawud }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1350.1.1
+        death_date = 1378.5.21
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_dawood_uncle
+		tag = BAH
+	}
+
+    bah_mohammed_shah_ii = { #Creative Liberty - "Price Mahmud" wikipedia bah_ala_ud_din_hasan_bahman son
+		first_name = { name = name_muhammad }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1330.1.1
+        death_date = 1397.4.21
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_ala_ud_din_hasan_bahman
+		tag = BAH
+	}
+
+    bah_ghiyasuddin = { #Throne 1397.1.1
+		first_name = { name = name_ghiyasuddin }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1380.1.1
+        death_date = 1397.7.14
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_mohammed_shah_ii
+		tag = BAH
+	}
+
+    bah_shamsuddin = { #Throne 1397.1.1
+		first_name = { name = name_shamsuddin }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1380.1.1
+        death_date = 1397.11.15
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_mohammed_shah_ii
+		tag = BAH
+	}
+
+    bah_firoz_shah = {
+        first_name = { name = name_firoz }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1370.1.1
+        death_date = 1422.10.1
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_dawud_shah
+		tag = BAH
+    }
+
+    bah_ahmed_shah_al_wali = {
+        first_name = { name = name_ahmad }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1371.1.1
+        death_date = 1436.10.1
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_dawud_shah
+		tag = BAH
+    }
+
+    bah_alau_d_din_ahmad_shah = {
+        first_name = { name = name_ahmad }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1410.1.1
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_ahmed_shah_al_wali
+		tag = BAH
+    }
+
+    bah_humayun_shah = {
+        first_name = { name = name_humayun }
+		culture = farsi_culture
+		religion = shia
+		birth_date = 1430.1.1
+		birth = ghazni
+		dynasty = bahmani_dynasty
+        father = bah_alau_d_din_ahmad_shah
+		tag = BAH
+    }
 }
