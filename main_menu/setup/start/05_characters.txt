@@ -32124,7 +32124,6 @@ character_db={
         tag = VEN
     }
 
-
     ven_maria = {
         first_name = { name = name_mary }
         culture = venetian
@@ -32137,7 +32136,6 @@ character_db={
         spouse = ven_lorenzo_celsi
         tag = VEN
     }
-
 
     # HOUSE CHIAVELLI (Lords of Fabriano)
 
@@ -111528,6 +111526,7 @@ character_db={
         birth_date = 1369.1.1
         death_date = 1431.2.20
         birth = rome
+        father = pap_agapito_colonna
         dynasty = colonna_dynasty
         tag = PAP
     }
@@ -111643,7 +111642,7 @@ character_db={
         tag = GEN
     }
 
-    # Courtiers
+    # House Farnese
 
     pap_ranuccio_farnese = {
         first_name = { name = "Ranuccio" }
@@ -111693,6 +111692,69 @@ character_db={
         father = pap_ranuccio_farnese
         dynasty = farnese_dynasty
         tag = PAP
+    }
+
+    # House Colonna
+
+    pap_agapito_colonna = {
+        first_name = { name = Agapito }
+        culture = median
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1335.1.1
+        death_date = 1398.1.1
+        birth = tivoli
+        dynasty = colonna_dynasty
+        tag = PAP        
+    }
+
+    pap_lorenzo_onofrio_colonna = {
+        first_name = { name = name_laurence }
+        culture = median
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1356.1.1
+        death_date = 1423.1.1
+        birth = tivoli
+        father = pap_agapito_colonna
+        dynasty = colonna_dynasty
+        tag = PAP        
+    }
+
+    pap_antonio_colonna = {
+        first_name = { name = name_anthony }
+        culture = median
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1408.1.1
+        birth = tivoli
+        father = pap_lorenzo_onofrio_colonna
+        dynasty = colonna_dynasty
+        tag = PAP        
+    }
+
+    pap_odoardo_colonna = {
+        first_name = { name = name_edward }
+        culture = median
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1409.1.1
+        birth = tivoli
+        father = pap_lorenzo_onofrio_colonna
+        dynasty = colonna_dynasty
+        tag = PAP        
+    }
+
+    pap_prospero_colonna = {
+        first_name = { name = Prospero }
+        culture = median
+        religion = catholic
+        estate = clergy_estate_estate
+        birth_date = 1410.1.1
+        birth = tivoli
+        father = pap_lorenzo_onofrio_colonna
+        dynasty = colonna_dynasty
+        tag = PAP        
     }
 
     ### Denmark
@@ -112623,6 +112685,19 @@ character_db={
         tag = MLO
     }
 
+    mlo_galeazzo_maria_sforza = {
+        first_name = { name = name_galahad.name_mary }
+        culture = lombard
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1444.1.24
+        birth = fermo
+        father = mlo_francesco_i_sforza
+        mother = mlo_bianca_maria_visconti
+        dynasty = sforza_dynasty
+        tag = MLO
+    }
+
     mlo_alessandro_sforza = {
         first_name = { name = name_alexander }
         culture = emilian
@@ -112635,16 +112710,16 @@ character_db={
         tag = MLO
     }
 
-    mlo_galeazzo_maria_sforza = {
-        first_name = { name = name_galahad.name_mary }
-        culture = lombard
+    mlo_costanza_varano = {
+        first_name = { name = name_constance }
+        culture = median
         religion = catholic
         estate = nobles_estate
-        birth_date = 1444.1.24
-        birth = fermo
-        father = mlo_francesco_i_sforza
-        mother = mlo_bianca_maria_visconti
-        dynasty = sforza_dynasty
+        birth_date = 1426.1.1
+        birth = camerino
+        spouse = mlo_alessandro_sforza
+        father = cmr_pier_gentile_varano
+        dynasty = varano_dynasty
         tag = MLO
     }
 
@@ -113338,14 +113413,14 @@ character_db={
     mam_fatma_sahzade_osmanoglu = {
         first_name = { name = name_fatima }
         last_name = { name = Şahzade }
-        dynasty = ottoman_dynasty
+        culture = turkish_culture
+        religion = sunni        
         birth = edirne
         birth_date = 1422.1.1
         female = yes
         spouse = mam_sayf_jaqmaq_burji
         father = tur_orhan_celebi_osmanoglu_suleyman_son
-        culture = turkish_culture
-        religion = sunni
+        dynasty = ottomans_dynasty
         tag = MAM
     }
 
