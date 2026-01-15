@@ -9603,7 +9603,6 @@ character_db={
         tag = BOU
     }
 
-    
     # Crown Princess Consort of Bohemia & Sister of the King of France
     boh_blanche_valois = {
         first_name = { name = name_blanche }
@@ -9613,7 +9612,7 @@ character_db={
         adm = 52 dip = 83 mil = 23
         female = yes
         birth_date = 1317.1.1
-        death_date = 1383.7.2
+        death_date = 1348.8.1
         birth = paris
         father = fra_charles_valois
         mother = fra_mahaut_chatillon
@@ -9621,7 +9620,6 @@ character_db={
         dynasty = valois_dynasty
         tag = MVA
     }
-
 
     # Line of the Counts of Evreux & Kings of Navarra (HOUSE OF EVREUX)
     
@@ -83897,7 +83895,6 @@ character_db={
         tag = NRM
     }
 
-
     # Duke of Moravia & Son & Heir of the King of Bohemia & Count of Luxembourg
     boh_charles_iv_luxembourg = {
         first_name = { name = name_charles }
@@ -83906,33 +83903,30 @@ character_db={
         estate = nobles_estate
         adm = 93 dip = 91 mil = 83
         birth_date = 1316.5.22
-        death_date = 1376.10.18
+        death_date = 1378.11.29
         birth = prague
         father = boh_john_luxembourg
         mother = boh_elisabeth_premyslid
         dynasty = luxembourg_dynasty
-        tag = MVA
         ruler_trait = lawgiver
+        tag = BOH
     }
     
-
     # Daughter of the Duke of Moravia
     boh_margaret_hungary = {
         first_name = { name = name_margaret }
         culture = czech
         religion = catholic
         estate = nobles_estate
-        adm = 0 dip = 1 mil = 0
         female = yes
         birth_date = 1335.5.24
-        death_date = 1391.9.17
+        death_date = 1349.1.1
         birth = prague
         father = boh_charles_iv_luxembourg
         mother = boh_blanche_valois
         dynasty = luxembourg_dynasty
-        tag = MVA
+        tag = BOH
     }
-
 
     # Hated spouse of the Countess of Tyrol (technically, he is the ruler, but he was kept from power by his wife and tyrolean nobility). Son of the King of Bohemia & Count of Luxembourg
     tir_jan_jindrich_luxembourg = {
@@ -114003,15 +113997,14 @@ character_db={
         ruler_trait = martial_educator
     }
 
-    tim_tuman_aqa = {
-        first_name = { name = "Tuman Aqa" }
+    tim_toghay_turkan_aqa = {
+        first_name = { name = "Toghay Turkan Aqa" }
         culture = khorezmian_culture
         religion = sunni
         female = yes
         birth_date = 1350.1.1
         death_date = 1400.1.1
         birth = samarkand
-        dynasty = timurid_dynasty
         tag = TIM
     }
 
@@ -114023,7 +114016,7 @@ character_db={
         birth_date = 1377.8.20
         birth = samarkand
         father = tim_timur
-        mother = tim_tuman_aqa
+        mother = tim_toghay_turkan_aqa
         dynasty = timurid_dynasty
         tag = TIM
         ruler_trait = righteous
@@ -114049,17 +114042,6 @@ character_db={
         tag = TIM
     }
 
-    tim_baysonqor_father = {
-        first_name = { name = "Baysonqor" }
-        culture = khorezmian_culture
-        religion = sunni
-        birth_date = 1399.1.1
-        death_date = 1433.1.1
-        father = tim_shahrukh_mirza
-        dynasty = timurid_dynasty
-        tag = TII
-    }
-
     tim_gauhar_shad = {
         first_name = { name = "Gauhar Shad" }
         culture = khorezmian_culture
@@ -114068,7 +114050,7 @@ character_db={
         adm = 60 dip = 75 mil = 5
         birth_date = 1379.1.1
         birth = herat
-        dynasty = timurid_dynasty
+        spouse = tim_shahrukh_mirza
         tag = TIM
         ruler_trait = lawgiver
         ruler_trait = righteous
@@ -114080,21 +114062,10 @@ character_db={
         religion = sunni
         adm = 80 dip = 85 mil = 40
         birth_date = 1397.9.6
+        death_date = 1433.12.20
         birth = herat
         father = tim_shahrukh_mirza
         mother = tim_gauhar_shad
-        dynasty = timurid_dynasty
-        tag = TIM
-    }
-
-    tim_abul_qasim_babur_mirza = {
-        first_name = { name = "Abul-Qasim Babur" }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 50 dip = 65 mil = 60
-        birth_date = 1423.1.1
-        birth = herat
-        father = tim_baysunghur_mirza
         dynasty = timurid_dynasty
         tag = TIM
     }
@@ -114106,8 +114077,7 @@ character_db={
         adm = 45 dip = 50 mil = 40
         birth_date = 1417.1.1
         birth = herat
-        father = tim_shahrukh_mirza
-        mother = tim_gauhar_shad
+        father = tim_baysunghur_mirza
         dynasty = timurid_dynasty
         tag = TIM
     }
@@ -114119,7 +114089,7 @@ character_db={
         culture = khorezmian_culture
         religion = sunni
         birth_date = 1394.1.1
-        death_date = 1435.1.1
+        death_date = 1435.4.3
         father = tim_shahrukh_mirza
         dynasty = timurid_dynasty
         tag = TIF
@@ -114132,7 +114102,6 @@ character_db={
         adm = 30 dip = 35 mil = 30
         birth_date = 1433.1.1
         father = tif_ibrahim_father
-        mother = tim_gauhar_shad
         dynasty = timurid_dynasty
         tag = TIF
     }
@@ -114144,8 +114113,8 @@ character_db={
         culture = khorezmian_culture
         religion = sunni
         female = yes
+        spouse = tis_ulugh_beg
         birth_date = 1395.1.1
-        dynasty = timurid_dynasty
         tag = TIS
     }
 
@@ -114172,8 +114141,7 @@ character_db={
         religion = sunni
         adm = 45 dip = 40 mil = 55
         birth_date = 1418.1.1
-        father = tim_baysonqor_father
-        mother = tim_gauhar_shad
+        father = tim_baysunghur_mirza
         dynasty = timurid_dynasty
         tag = TII
         ruler_trait = expansionist
@@ -114186,7 +114154,6 @@ character_db={
         religion = sunni
         adm = 60 dip = 55 mil = 70
         birth_date = 1424.1.1
-        father = tii_sultan_muhammad
         dynasty = timurid_dynasty
         tag = TII
         ruler_trait = tactical_genius
@@ -114195,32 +114162,19 @@ character_db={
 
     ### Gorgan
 
-    tig_babur_mirza = {
-        first_name = { name = "Babur" }
+    tig_abul_qasim_babur_mirza = {
+        first_name = { name = "Abul-Qasim Babur" }
         culture = khorezmian_culture
         religion = sunni
-        adm = 55 dip = 55 mil = 40
-        birth_date = 1422.1.1
-        father = tim_baysonqor_father
-        mother = tim_gauhar_shad
+        adm = 50 dip = 65 mil = 60
+        birth_date = 1422.6.7
+        birth = herat
+        father = tim_baysunghur_mirza
         dynasty = timurid_dynasty
-        tag = TIG
-        ruler_trait = scholar
+        tag = TIM
     }
 
     ### Kandahar
-
-    tik_sultan_masud = {
-        first_name = { name = "Sultan Mas'ud" }
-        culture = afghan_culture
-        religion = sunni
-        adm = 40 dip = 30 mil = 30
-        birth_date = 1410.1.1
-        father = tim_shahrukh_mirza
-        dynasty = timurid_dynasty
-        tag = TIK
-        ruler_trait = bold_fighter
-    }
 
     ### Balkh
 
@@ -114239,20 +114193,9 @@ character_db={
         ruler_trait = cruel
     }
 
-    ttk_abd_allah_mirza = {
-        first_name = { name = "Abd Allah" }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 35 dip = 40 mil = 30
-        birth_date = 1410.1.1
-        father = tis_ulugh_beg
-        dynasty = timurid_dynasty
-        tag = TTK
-    }
-
     ### China/Ming
 
-    chi_zhu_yuanzhang = { # Hongwu Emperor
+    mng_zhu_yuanzhang = { # Hongwu Emperor
 		first_name = { name = Yuanzhang }
 		culture = jianghuai_culture
 		religion = sanjiao
@@ -114263,77 +114206,77 @@ character_db={
 		tag = CHI       
     }
 
-    chi_zhu_biao = {
+    mng_zhu_biao = {
 		first_name = { name = Biao }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1355.10.10
         death_date = 1392.5.17
 		birth = jiangning
-        father = chi_zhu_yuanzhang
+        father = mng_zhu_yuanzhang
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_zhu_yunwen = { # Jianwen Emperor
+    mng_zhu_yunwen = { # Jianwen Emperor
 		first_name = { name = Yunwen }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1377.12.5
         death_date = 1402.7.13
 		birth = jiangning
-        father = chi_zhu_biao
+        father = mng_zhu_biao
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_zhu_di = { # Yongle Emperor (Live Yongle Reaction)
+    mng_zhu_di = { # Yongle Emperor (Live Yongle Reaction)
 		first_name = { name = Di }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1360.5.2
         death_date = 1424.8.12
 		birth = jiangning
-        father = chi_zhu_yuanzhang
+        father = mng_zhu_yuanzhang
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_zhu_gui = {
+    mng_zhu_gui = {
 		first_name = { name = Gui }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1374.8.25
 		birth = jiangning
-        father = chi_zhu_yuanzhang
+        father = mng_zhu_yuanzhang
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_zhu_quan = {
+    mng_zhu_quan = {
 		first_name = { name = Quan }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1378.1.1
 		birth = jiangning
-        father = chi_zhu_yuanzhang
+        father = mng_zhu_yuanzhang
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_zhu_gaochi = { # Hongxi Emperor
+    mng_zhu_gaochi = { # Hongxi Emperor
 		first_name = { name = Gaochi }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1378.8.16
         death_date = 1425.5.29
 		birth = jiangning
-        father = chi_zhu_di
+        father = mng_zhu_di
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_zhang_chengxiaozhao = { # Chengxiaozho
+    mng_zhang_chengxiaozhao = { # Chengxiaozho
 		first_name = { name = Chengxiaozho }
         last_name = { name = Zhang }
 		culture = zhongyuan_culture
@@ -114342,36 +114285,36 @@ character_db={
 		birth_date = 1379.1.1
         death_date = 1442.11.20
 		birth = yongcheng
-        spouse = chi_zhu_gaochi
+        spouse = mng_zhu_gaochi
 		tag = CHI       
     }
 
-    chi_zhu_zhanji = { # Xuande Emperor
+    mng_zhu_zhanji = { # Xuande Emperor
 		first_name = { name = Zhanji }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1399.3.16
         death_date = 1435.1.31
 		birth = dadu
-        father = chi_zhu_gaochi
-        mother = chi_zhang_chengxiaozhao
+        father = mng_zhu_gaochi
+        mother = mng_zhang_chengxiaozhao
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_zhu_zhanshan = {
+    mng_zhu_zhanshan = {
 		first_name = { name = Zhanshan }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1406.1.1
 		birth = dadu
-        father = chi_zhu_gaochi
-        mother = chi_zhang_chengxiaozhao
+        father = mng_zhu_gaochi
+        mother = mng_zhang_chengxiaozhao
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_zhang_gongjingxian = { # Gongjingxian
+    mng_zhang_gongjingxian = { # Gongjingxian
 		first_name = { name = Gongjingxian }
         last_name = { name = Li }
 		culture = jianghuai_culture
@@ -114379,23 +114322,23 @@ character_db={
         female = yes
 		birth_date = 1385.1.1
 		birth = yongcheng
-        spouse = chi_zhu_gaochi
+        spouse = mng_zhu_gaochi
 		tag = CHI       
     }
 
-    chi_zhu_zhanjun = {
+    mng_zhu_zhanjun = {
 		first_name = { name = Zhanjun }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1404.3.27
 		birth = dadu
-        father = chi_zhu_gaochi
-        mother = chi_zhang_gongjingxian
+        father = mng_zhu_gaochi
+        mother = mng_zhang_gongjingxian
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_sun_xiaogongzhang = { # Xiaogongzhang
+    mng_sun_xiaogongzhang = { # Xiaogongzhang
 		first_name = { name = Xiaogongzhang }
         last_name = { name = Sun }
 		culture = jiaodong_culture
@@ -114403,59 +114346,59 @@ character_db={
         female = yes
 		birth_date = 1399.1.1
 		birth = zouping
-        spouse = chi_zhu_zhanji
+        spouse = mng_zhu_zhanji
 		tag = CHI           
     }
 
-    chi_zhu_qizhen = { # Yingzong/Zhengtong/Tianshun Emperor
+    mng_zhu_qizhen = { # Yingzong/Zhengtong/Tianshun Emperor
 		first_name = { name = Qizhen }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1427.11.29
 		birth = dadu
-        father = chi_zhu_zhanji
-        mother = chi_sun_xiaogongzhang
+        father = mng_zhu_zhanji
+        mother = mng_sun_xiaogongzhang
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_wu_xiaoyi = { # Rongsixian
+    mng_wu_xiaoyi = { # Rongsixian
 		first_name = { name = Xiaoyi }
 		culture = wu_culture
 		religion = sanjiao
         female = yes
 		birth_date = 1399.1.1
 		birth = dantu
-        spouse = chi_zhu_zhanji
+        spouse = mng_zhu_zhanji
         dynasty = wu_dynasty
 		tag = CHI          
     }
 
-    chi_zhu_qiyu = { # Jingtai Emperor
+    mng_zhu_qiyu = { # Jingtai Emperor
 		first_name = { name = Qiyu }
 		culture = jianghuai_culture
 		religion = sanjiao
 		birth_date = 1428.9.22
 		birth = dadu
-        father = chi_zhu_zhanji
-        mother = chi_wu_xiaoyi
+        father = mng_zhu_zhanji
+        mother = mng_wu_xiaoyi
 		dynasty = zhu_dynasty
 		tag = CHI       
     }
 
-    chi_qian_xiaozhuangrui = { # Xiaozhuangrui
+    mng_qian_xiaozhuangrui = { # Xiaozhuangrui
 		first_name = { name = Xiaozhuangrui }
 		culture = jianghuai_culture
 		religion = sanjiao
         female = yes
 		birth_date = 1426.1.1
 		birth = ganyu
-        spouse = chi_zhu_qizhen
+        spouse = mng_zhu_qizhen
         dynasty = qian_dynasty
 		tag = CHI          
     }
 
-    chi_zhou_xiaosu = { # Xiaosu
+    mng_zhou_xiaosu = { # Xiaosu
 		first_name = { name = Xiaosu }
         last_name = { name = Zhou }
 		culture = yan_culture
@@ -114463,13 +114406,13 @@ character_db={
         female = yes
 		birth_date = 1430.1.1
 		birth = ganyu
-        spouse = chi_zhu_qizhen
+        spouse = mng_zhu_qizhen
 		tag = CHI          
     }
 
     # Courtiers
 
-    chi_wang_zhen = {
+    mng_wang_zhen = {
 		first_name = { name = Wang }
         last_name = { name = Zheng }
 		culture = jin_culture
@@ -114480,7 +114423,7 @@ character_db={
 		tag = CHI       
     }
 
-    chi_yang_pu = {
+    mng_yang_pu = {
 		first_name = { name = Pu }
         last_name = { name = Yang }
 		culture = qin_culture
@@ -114490,7 +114433,7 @@ character_db={
 		tag = CHI       
     }
 
-    chi_yu_qian = {
+    mng_yu_qian = {
 		first_name = { name = Qian }
         last_name = { name = Yu }
 		culture = wu_culture
