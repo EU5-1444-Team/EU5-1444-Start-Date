@@ -108715,6 +108715,12 @@ character_db={
         dynasty = habsburg_dynasty
         child_trait = child_intelligent
         tag = HAB
+        timed_modifier = {
+            modifier = "sickly_character"
+            start_date = 1440.1.1
+            date = 1447.3.13
+            size = 1
+        }
     }
 
     #Leopoldian line
@@ -114008,6 +114014,85 @@ character_db={
         tag = TIM
     }
 
+    tim_jahangir_mirza = {
+        first_name = { name = "Jahangir" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1356.1.1
+        death_date = 1376.1.1
+        father = tim_timur
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_muhammad_sultan_mirza = {
+        first_name = { name = "Muhammad Mirza" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1375.1.1
+        death_date = 1403.3.13
+        father = tim_jahangir_mirza
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_pir_muhammad_mirza = {
+        first_name = { name = "Pir Muhammad Mirza" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1376.1.1
+        death_date = 1407.2.22
+        father = tim_jahangir_mirza
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_miran_shah = {
+        first_name = { name = "Miran-Shah" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1366.1.1
+        death_date = 1408.4.20
+        father = tim_timur
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_khalil_sultan = {
+        first_name = { name = "Khalil Sultan" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1384.1.1
+        death_date = 1411.11.4
+        father = tim_miran_shah
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_muhammad_mirza = {
+        first_name = { name = "Muhammad Mirza" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1387.1.1 #Unknown
+        death_date = 1426.1.1 #Unknown
+        father = tim_miran_shah
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_abu_said_mirza = {
+        first_name = { name = "Abu Sa'id" }
+        culture = khorezmian_culture
+        religion = sunni
+        adm = 60 dip = 55 mil = 70
+        birth_date = 1424.1.1
+        father = tim_muhammad_mirza
+        dynasty = timurid_dynasty
+        tag = TIM
+        ruler_trait = tactical_genius
+        ruler_trait = ambitious
+    }
+
     tim_shahrukh_mirza = {
         first_name = { name = "Shahrukh Mirza" }
         culture = khorezmian_culture
@@ -114022,24 +114107,12 @@ character_db={
         ruler_trait = righteous
         ruler_trait = lawgiver
         ruler_trait = careful
-
         timed_modifier = {
             modifier = "sickly_character"
             start_date = 1440.1.1
             date = 1447.3.13
             size = 1
         }
-    }
-
-    tim_jahangir_mirza = {
-        first_name = { name = "Jahangir" }
-        culture = khorezmian_culture
-        religion = sunni
-        birth_date = 1356.1.1
-        death_date = 1376.1.1
-        father = tim_timur
-        dynasty = timurid_dynasty
-        tag = TIM
     }
 
     tim_gauhar_shad = {
@@ -114078,6 +114151,17 @@ character_db={
         birth_date = 1417.1.1
         birth = herat
         father = tim_baysunghur_mirza
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_ibrahim_mirza = {
+        first_name = { name = "Ibrahim Mirza" }
+        culture = khorezmian_culture
+        religion = sunni
+        birth_date = 1440.1.1
+        birth = herat
+        father = tim_ala_al_dawla
         dynasty = timurid_dynasty
         tag = TIM
     }
@@ -114146,18 +114230,6 @@ character_db={
         tag = TII
         ruler_trait = expansionist
         ruler_trait = charismatic_negotiator
-    }
-
-    tii_abu_said_mirza = {
-        first_name = { name = "Abu Sa'id" }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 60 dip = 55 mil = 70
-        birth_date = 1424.1.1
-        dynasty = timurid_dynasty
-        tag = TII
-        ruler_trait = tactical_genius
-        ruler_trait = ambitious
     }
 
     ### Gorgan

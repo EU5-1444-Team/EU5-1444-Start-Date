@@ -347,7 +347,6 @@ countries = {
                 heinjoki jaskis elimaki
             }
 
-
             capital = vyborg
 
             include = "catholic_monarchy"
@@ -355,9 +354,12 @@ countries = {
 
             country_rank = rank_duchy
 
-
             government = {
                 ruler = random
+
+                reforms = {
+                    margraviate
+                }
             }
         }
 
@@ -372,7 +374,6 @@ countries = {
             include = "expl_scandinavia"
 
             country_rank = rank_duchy
-
 
             government = {
                 ruler = pom_erik_of_pomerania_gryf
@@ -3285,14 +3286,15 @@ countries = {
                 heir_selection = cognatic_primogeniture
                 ruler = mos_vasily_ii_rurikovich
                 heir = mos_ivan_iii_the_great_rurikovich
+
                 ruler_term = { character = mos_daniil_aleksandrovich_rurikovich start_date = 1263.11.14 regnal_number = 1 end_date = 1303.5.4 }
                 ruler_term = { character = mos_yury_danilovich_rurikovich start_date = 1303.5.4 regnal_number = 1 end_date = 1325.11.21 }
-                ruler_term = { character = mos_ivan_i_danilovich_kalita_rurikovich start_date = 1325.11.21 regnal_number = 1 end_date = 1340.3.31 }
+                ruler_term = { character = mos_ivan_i_danilovich_kalita_rurikovich start_date = 1325.11.21 regnal_number = 1 end_date = 1340.3.31 regnal_number = 1 }
                 ruler_term = { character = mos_simeon_ivanovich_gordyy_rurikovich start_date = 1340.3.31 regnal_number = 1 end_date = 1353.4.27 }
-                ruler_term = { character = mos_ivan_ii_ivanovich_rurikovich start_date = 1353.4.27 regnal_number = 1 end_date = 1359.11.13 }
+                ruler_term = { character = mos_ivan_ii_ivanovich_rurikovich start_date = 1353.4.27 regnal_number = 1 end_date = 1359.11.13 regnal_number = 2 }
                 ruler_term = { character = mos_dmitry_donskoy_rurikovich start_date = 1359.11.13 regnal_number = 1 end_date = 1389.5.19 }
-                ruler_term = { character = mos_vasily_i_rurikovich start_date = 1389.5.19 regnal_number = 1 end_date = 1425.2.27 }
-                ruler_term = { character = mos_vasily_ii_rurikovich start_date = 1389.5.19 regnal_number = 1 }
+                ruler_term = { character = mos_vasily_i_rurikovich start_date = 1389.5.19 end_date = 1425.2.27 regnal_number = 1  }
+                ruler_term = { character = mos_vasily_ii_rurikovich start_date = 1425.2.27 regnal_number = 2 }
 
                 reforms = {
                     russian_principality
@@ -11921,11 +11923,9 @@ countries = {
                 bourg_en_bresse belley chambery gex saint_jean_de_maurienne
                 moutiers evian
                 bage thoire
-                cuneo barcelonnette puget_theniers nice
+                puget_theniers nice
                 faucigny sallanches villars
                 biella vercelli
-                mondovi
-                alba
             }
 
             starting_technology_level = 3
@@ -11983,6 +11983,7 @@ countries = {
         PIE = {
             own_control_core = {
                 pinerolo susa turin lanzo chieri
+                cuneo barcelonnette mondovi alba
             }
 
             starting_technology_level = 3
@@ -51487,7 +51488,7 @@ countries = {
             capital = qom
         }
 
-        TIK = { #kandahar
+        TIK = { #Kandahar
             own_control_core = {
                 kabul andarab kahmard bamyan charikar bagram istalif kohi_safi
                 gandamak jalalabad alishang panjshir asadabad_kunar parun hajiabad
@@ -51511,7 +51512,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = random
+                ruler = tim_abu_said_mirza
 
                 reforms = {
                     timurid_prince
