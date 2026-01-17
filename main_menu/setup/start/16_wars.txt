@@ -27,4 +27,56 @@ war_manager = {
             }
         }
     }
+
+	war = {
+		war_name={
+			name="NORMAL_WAR_NAME"
+			ordinal=1
+			first = {
+				name="SIE"
+			}
+			SECOND = {
+				name="PTG"
+			}
+		}
+		
+		take_province = {
+			type = take_capital_subjugation
+			casus_belli = cb_subjugation
+			location = pitigliano
+		}
+		
+		start_date = 1444.11.11
+		action = 1444.11.11
+		attacker = {
+			country = SIE #Siena
+			request = {
+				reason = Instigator
+			}
+		}
+
+		attacker = {
+			country = PIO #Piombino
+			request = {
+				reason = Instigator
+			}
+		}
+
+		defender = {
+			country = PTG #Pitigliano
+			request = {
+				reason = Target
+			}
+		}
+	}
+
+	truce = { #Ottoman-Turkish truce - for BYZ buildup and around historical date of conquest
+		#Ottomans
+		attacker = TUR
+		#Byzantium
+		defender = BYZ
+		#either use end_date or start_date = <date> with months = <int>. Can skip months to use NDefines::NDiplomacy::TRUCE_YEARS instead
+		start_date = 1444.1.1
+		months = 48
+	}
 }

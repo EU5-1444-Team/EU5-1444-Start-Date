@@ -364,6 +364,40 @@ country_flavor = {
             government_type = government_type:theocracy
         }
     }
+
+    # Romuvan Elderships - rank-specific
+    text = {
+        localization_key = rank_empire_eldership_romuva
+        trigger = {
+            country_rank_is_empire = yes
+            religion = religion:romuva
+        }
+    }
+
+    text = {
+        localization_key = rank_kingdom_eldership_romuva
+        trigger = {
+            country_rank_is_kingdom = yes
+            religion = religion:romuva
+        }
+    }
+
+    text = {
+        localization_key = rank_duchy_eldership_romuva
+        trigger = {
+            country_rank_is_duchy = yes
+            religion = religion:romuva
+        }
+    }
+
+    text = {
+        localization_key = rank_county_eldership_romuva
+        trigger = {
+            country_rank_is_county = yes
+            religion = religion:romuva
+        }
+    }
+
     # Horde
     text = {
         localization_key = rank_empire_horde_2
@@ -906,6 +940,8 @@ country_flavor = {
             ruler ?= { religion = religion:catholic }
         }
     }
+
+    ### 1444 MODDED ###
 
     text = {
         localization_key = rank_kingdom_despotate
@@ -1853,10 +1889,21 @@ country_flavor = {
                 tag = WLS
                 tag = CAT
                 tag = ANR
+                ### 1444 Edits ###
                 tag = ORA
                 tag = ASU
                 tag = WAL
                 tag = MOL
+                tag = ZET
+                tag = KAT
+                tag = THP
+                tag = MTR
+                tag = ANT
+                tag = MZK
+                tag = DGJ
+                tag = GUI
+                tag = ODI
+                tag = SVT
             }
 
             OR = {
