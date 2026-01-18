@@ -98236,7 +98236,6 @@ character_db={
         tag = CHA
     }
 
-
     #Dai Viet
     dai_canh = { #Dead emperor
         first_name = { name = Canh_vietnamse }
@@ -98764,8 +98763,8 @@ character_db={
         first_name = { name = name_borommarachathirat }
         culture = thai_culture
         religion = theravada
-        birth_date = 1314.3.10
-        death_date = 1384.1.10
+        birth_date = 1310.3.10
+        death_date = 1388.1.10
         birth = suphanburi
         spouse = spn_ramathibodi_sister
         spouse = spn_phraya_loe_thai_daughter
@@ -98817,7 +98816,6 @@ character_db={
         dynasty = mangrai_dynasty
         tag = LNA
     }
-
 
     #Pegu / Hanthawaddy
     peg_wareru_father = {
@@ -111430,7 +111428,7 @@ character_db={
         estate = nobles_estate
         birth_date = 1390.1.1
         birth = fecamp
-        adm = 10 = dip = 20 mil = 40
+        adm = 10 dip = 20 mil = 40
         ruler_trait = secretive
         ruler_trait = cruel
         dynasty = bethencourt_dynasty
@@ -114729,6 +114727,9 @@ character_db={
         birth_date = 1423.12.22
         death_date = 1442.8.28
         birth = thang_long
+        spouse = dai_nguyen_thi_anh
+        spouse = dai_ngo_thi_ngoc_dao
+        spouse = dai_duong_thi_bi
         father = dai_thai_to
         dynasty = le_dynasty
         tag = DAI
@@ -114812,5 +114813,186 @@ character_db={
         mother = dai_ngo_thi_ngoc_dao
         dynasty = le_dynasty
         tag = DAI
+    }
+
+    #Champa
+    cha_po_binasuor = {
+        first_name = { name = Po_Binasuor }
+        culture = cham_culture
+        religion = hindu
+        birth_date = 1325.1.1 #Unknown
+        death_date = 1390.1.1 #Unknown
+        birth = vijaya
+        father = cha_jaya_ananda
+        dynasty = champa_dynasty
+        tag = CHA
+    }
+
+    cha_jaya_simhavarman_vi = {
+        first_name = { name = Simhavarman }
+        culture = cham_culture
+        religion = hindu
+        birth_date = 1345.1.1 #Unknown
+        death_date = 1400.1.1 #Unknown
+        birth = vijaya
+        father = cha_po_binasuor
+        dynasty = champa_dynasty
+        tag = CHA
+    }
+
+    cha_indravarman_vi = {
+        first_name = { name = Indravarman }
+        culture = cham_culture
+        religion = hindu
+        birth_date = 1370.1.1 #Unknown
+        death_date = 1441.1.1 #Unknown
+        birth = vijaya
+        father = cha_jaya_simhavarman_vi
+        dynasty = champa_dynasty
+        tag = CHA
+    }
+
+    cha_virabhadravarman = {
+        first_name = { name = Virabhadravarman }
+        culture = cham_culture
+        religion = hindu
+        birth_date = 1395.1.1 #Unknown
+        birth = vijaya
+        father = cha_indravarman_vi
+        dynasty = champa_dynasty
+        tag = CHA
+    }
+
+    cha_maha_vijaya = {
+        first_name = { name = Maha_Vijaya }
+        culture = cham_culture
+        religion = hindu
+        birth_date = 1415.1.1 #Unknown
+        birth = vijaya
+        father = cha_virabhadravarman
+        dynasty = champa_dynasty
+        tag = CHA
+    }
+
+    #Ayutthaya
+    ayu_thong_lan = {
+        first_name = { name = name_thong_lan }
+        culture = thai_culture
+        religion = theravada
+        birth_date = 1374.1.1
+        death_date = 1388.1.8
+        birth = ayodhya
+        father = spn_borommarachathirat
+        dynasty = suphannaphum_dynasty
+        tag = AYU
+    }
+
+    ayu_ramesuan = {
+        first_name = { name = name_ramesuan }
+        culture = thai_culture
+        religion = theravada
+        birth_date = 1339.1.1
+        death_date = 1395.1.1
+        birth = ayodhya
+        father = adh_ramathibodi
+        mother = spn_borommarachathirat_sister
+        dynasty = singhanavati_dynasty
+        tag = AYU
+    }
+
+    ayu_ramrachathirat = {
+        first_name = { name = name_ramrachathirat }
+        culture = thai_culture
+        religion = theravada
+        birth_date = 1356.1.1
+        death_date = 1409.1.1
+        birth = ayodhya
+        father =  ayu_ramesuan
+        dynasty = singhanavati_dynasty
+        tag = AYU
+    }
+
+    ayu_intharachathirat = {
+        first_name = { name = name_intharachathirat }
+        culture = thai_culture
+        religion = theravada
+        birth_date = 1359.1.1 #Unknown
+        death_date = 1424.1.1 #Exact date unknown
+        birth = suphanburi
+        father = spn_borommarachathirat
+        dynasty = suphannaphum_dynasty
+        tag = AYU
+    }
+
+    ayu_borommarachathirat_ii = {
+        first_name = { name = name_borommarachathirat }
+        culture = thai_culture
+        religion = theravada
+        birth_date = 1389.1.1
+        birth = ayodhya
+        father = ayu_intharachathirat
+        dynasty = suphannaphum_dynasty
+        tag = AYU
+    }
+
+    ayu_borommatrailokkanat = {
+        first_name = { name = name_borommatrailokkanat }
+        culture = thai_culture
+        religion = theravada
+        birth_date = 1431.1.1
+        birth = ayodhya
+        father = ayu_borommarachathirat_ii
+        dynasty = suphannaphum_dynasty
+        tag = AYU
+    }
+
+    # Lan Na
+
+    lna_kue_na = {
+        first_name = { name = name_kue_na }
+        culture = khon_muang_culture
+        religion = theravada
+        birth_date = 1335.1.1 #Unknown
+        death_date = 1385.1.1 #Unknown
+        birth = chiang_mai
+        father = lna_phayu
+        dynasty = mangrai_dynasty
+        tag = LNA
+    }
+
+    lna_saenmueangma = {
+        first_name = { name = name_saenmueangma }
+        culture = khon_muang_culture
+        religion = theravada
+        birth_date = 1355.1.1 #Unknown
+        death_date = 1401.1.1 #Unknown
+        birth = chiang_mai
+        father = lna_kue_na
+        dynasty = mangrai_dynasty
+        tag = LNA
+    }
+
+    lna_samfangkaen = {
+        first_name = { name = name_samfangkaen }
+        culture = khon_muang_culture
+        religion = theravada
+        birth_date = 1370.1.1 #Unknown
+        death_date = 1442.1.1 #Unknown
+        birth = chiang_mai
+        father = lna_saenmueangma
+        dynasty = mangrai_dynasty
+        tag = LNA
+    }
+
+    lna_tilokaraj = {
+        first_name = { name = name_tilokaraj }
+        culture = khon_muang_culture
+        religion = theravada
+        birth_date = 1412.1.1 #Unknown
+        death_date = 1487.1.1
+        birth = chiang_mai
+        father = lna_samfangkaen
+        dynasty = mangrai_dynasty
+        tag = LNA
     }
 }

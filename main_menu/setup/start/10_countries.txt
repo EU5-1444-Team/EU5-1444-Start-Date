@@ -5248,7 +5248,7 @@ countries = {
                 ruler_term = { character = sco_archibald_douglas_5th_earl start_date = 1424.8.17 end_date = 1439.6.26 }
                 ruler_term = { character = sco_william_douglas_6th_earl start_date = 1439.6.26 end_date = 1440.11.24 }
                 ruler_term = { character = sco_james_douglas_7th_earl start_date = 1440.11.24 end_date = 1443.3.24 }
-                ruler_term = { character = sco_william_douglas_8th_earl start_date = 1443.3.24 end_date = }
+                ruler_term = { character = sco_william_douglas_8th_earl start_date = 1443.3.24 }
             }
             include = "catholic_monarchy_scottish_earldom"
             include = "expl_northern_europe"
@@ -52949,12 +52949,18 @@ countries = {
             }
             include = "vietnamese_champa_monarchy"
             government = {
-                ruler_term = { character = cha_indravarman_v start_date = 1257.1.1 end_date = 1288.1.1 regnal_number = 2 }
+                ruler_term = { character = cha_indravarman_v start_date = 1257.1.1 end_date = 1288.1.1 regnal_number = 5 }
                 ruler_term = { character = cha_jaya_simhavarman_iii start_date = 1288.1.1 end_date = 1307.1.1 regnal_number = 3 }
                 ruler_term = { character = cha_jaya_simhavarman_iv start_date = 1307.1.1 end_date = 1312.1.1 regnal_number = 4 }
-                ruler_term = { character = cha_simhavarman start_date = 1312.1.1 end_date = 1318.1.1 regnal_number = 3 }
-                ruler_term = { character = cha_jaya_ananda start_date = 1318.1.1 regnal_number = 1 }
-                ruler = cha_jaya_ananda
+                ruler_term = { character = cha_simhavarman start_date = 1312.1.1 end_date = 1318.1.1 regnal_number = 5 }
+                ruler_term = { character = cha_jaya_ananda start_date = 1318.1.1 end_date = 1342.1.1 regnal_number = 1 }
+                ruler_term = { character = cha_maha_sawa start_date = 1342.1.1 end_date = 1360.1.1 regnal_number = 1 }
+                ruler_term = { character = cha_po_binasuor start_date = 1360.1.1 end_date = 1390.1.1 regnal_number = 1 }
+                ruler_term = { character = cha_jaya_simhavarman_vi start_date = 1390.1.1 end_date = 1400.1.1 regnal_number = 6 }
+                ruler_term = { character = cha_indravarman_vi start_date = 1400.1.1 end_date = 1441.1.1 regnal_number = 6 }
+                ruler_term = { character = cha_virabhadravarman start_date = 1441.1.1 end_date = 1442.1.1 regnal_number = 1 }
+                ruler_term = { character = cha_maha_vijaya start_date = 1442.1.1 end_date = 1446.1.1 regnal_number = 1 }
+                ruler = cha_maha_vijaya
                 heir_selection = matrilineal_salic_law
 
                 centralization_vs_decentralization = 40
@@ -53068,13 +53074,13 @@ countries = {
 
             include = "south_east_asia_monarchy_no_coast"
             government = {
-                ruler_term = { character = suk_si_inthrathit start_date = 1238.1.1 end_date = 1270.1.1 regnal_number = 1 }
-                ruler_term = { character = suk_ban_mueang start_date = 1270.1.1 end_date = 1279.1.1 regnal_number = 1 }
-                ruler_term = { character = suk_ram_khamhaeng start_date = 1279.1.1 end_date = 1298.1.1 regnal_number = 1 }
-                ruler_term = { character = suk_loe_thai start_date = 1298.1.1 end_date = 1323.1.1 regnal_number = 1 }
-                ruler_term = { character = suk_ngua_nam_thum start_date = 1323.1.1 regnal_number = 1 }
+                # ruler_term = { character = suk_si_inthrathit start_date = 1238.1.1 end_date = 1270.1.1 regnal_number = 1 }
+                # ruler_term = { character = suk_ban_mueang start_date = 1270.1.1 end_date = 1279.1.1 regnal_number = 1 }
+                # ruler_term = { character = suk_ram_khamhaeng start_date = 1279.1.1 end_date = 1298.1.1 regnal_number = 1 }
+                # ruler_term = { character = suk_loe_thai start_date = 1298.1.1 end_date = 1323.1.1 regnal_number = 1 }
+                # ruler_term = { character = suk_ngua_nam_thum start_date = 1323.1.1 regnal_number = 1 }
 
-                ruler = suk_ngua_nam_thum
+                ruler = ayu_borommatrailokkanat
             }
 
             accepted_cultures = {
@@ -53086,7 +53092,8 @@ countries = {
             }
 
             country_rank = rank_kingdom
-            capital = sukhothai
+            # capital = sukhothai
+            capital = song_khwae # changed around 1430
         }
 
         LNA = {
@@ -53102,7 +53109,13 @@ countries = {
 
             include = "south_east_asia_monarchy_no_coast"
             government = {
-                ruler = lna_phayu
+                ruler_term = { character = lna_phayu start_date = 1337.1.1 end_date = 1355.1.1 regnal_number = 1 }
+                ruler_term = { character = lna_kue_na start_date = 1355.1.1 end_date = 1385.1.1 regnal_number = 1 }
+                ruler_term = { character = lna_saenmueangma start_date = 1385.1.1 end_date = 1401.1.1 regnal_number = 1 }
+                ruler_term = { character = lna_samfangkaen start_date = 1401.1.1 end_date = 1441.1.1 regnal_number = 1 }
+                ruler_term = { character = lna_tilokaraj start_date = 1441.1.1 regnal_number = 1 }
+
+                ruler = lna_tilokaraj
             }
 
             accepted_cultures = {
@@ -53212,6 +53225,18 @@ countries = {
                 phanom_rung
 
                 mueng_thung_yai
+            }
+
+            government = {
+                ruler_term = { character = spn_borommarachathirat start_date = 1370.1.1 end_date = 1388.1.1 regnal_number = 1 }
+                ruler_term = { character = ayu_thong_lan start_date = 1388.1.1 end_date = 1388.1.8 regnal_number = 1 }
+                ruler_term = { character = ayu_ramesuan start_date = 1388.1.8 end_date = 1395.1.1 regnal_number = 1 }
+                ruler_term = { character = ayu_ramrachathirat start_date = 1395.1.1 end_date = 1409.1.1 regnal_number = 1 }
+                ruler_term = { character = ayu_intharachathirat start_date = 1409.1.1 end_date = 1424.1.1 regnal_number = 1 }
+                ruler_term = { character = ayu_borommarachathirat_ii start_date = 1424.1.1 regnal_number = 2 }
+
+                ruler = ayu_borommarachathirat_ii
+                heir = ayu_trailokkanat
             }
 
             include = "south_east_asia_monarchy"
