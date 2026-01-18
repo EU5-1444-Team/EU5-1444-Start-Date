@@ -1239,7 +1239,6 @@ countries = {
                 stendal osterburg salzwedel gardelegen
                 wittenberge pritzwalk treuenbrietzen
                 angermunde prenzlau
-                lebus
             }
 
             own_control_integrated = {
@@ -1956,14 +1955,21 @@ countries = {
             government = {
                 regnal_numbers = {
                     name_odoacer = 2
-                    name_wenceslas = 3
+                    name_wenceslas = 4
                     name_rudolf = 1
                     name_henry = 1
                     name_john = 1
                     name_charles = 4
+                    name_sigmund = 1
+                    name_albert = 1
+                    name_vladislav = 1 
                 }
 
-                ruler = random
+                regency = nobles_estate_regency
+                active_regent = boh_jiri_podebrad
+                start_regency_date = 1439.10.27
+                end_regency_date = 1453.10.28
+                heir = hab_ladislas_v_habsburg
 
                 ruler_term = { character = boh_otakar_ii_premyslid start_date = 1253.12.23 end_date = 1278.8.26 regnal_number = 2 }
                 ruler_term = { character = boh_wenceslaus_ii_premyslid start_date = 1278.8.26 end_date = 1305.6.21 regnal_number = 2 }
@@ -1971,6 +1977,10 @@ countries = {
                 ruler_term = { character = boh_rudolf_habsburg start_date = 1306.8.4 end_date = 1307.7.3 regnal_number = 1 }
                 ruler_term = { character = tir_henry_gorizia start_date = 1307.7.3 end_date = 1310.8.31 regnal_number = 1 }
                 ruler_term = { character = boh_john_luxembourg start_date = 1310.8.31 end_date = 1346.8.26 regnal_number = 1 }
+                ruler_term = { character = boh_charles_iv_luxembourg start_date = 1346.8.26 end_date = 1378.11.29 regnal_number = 1 }
+                ruler_term = { character = boh_wenceslaus_iv_luxembourg start_date = 1378.11.29 end_date = 1419.8.16 regnal_number = 4 }
+                ruler_term = { character = hun_sigismund_i_luxembourg start_date = 1419.8.16 end_date = 1437.12.9 regnal_number = 1 }
+                ruler_term = { character = hab_albrecht_v_habsburg start_date = 1438.5.6 end_date = 1439.10.27 regnal_number = 1 }
 
                 centralization_vs_decentralization = 80
                 aristocracy_vs_plutocracy = -70
@@ -1990,7 +2000,6 @@ countries = {
                     inaugural_diplomas
                     ius_teutonicum
                 }
-
             }
 
             tolerated_cultures = {
@@ -2002,11 +2011,6 @@ countries = {
             country_rank = rank_kingdom
             capital = prague
             dynasty = luxembourg_dynasty
-
-            #Setup to accurately portray the starting situation
-            currency_data = {
-                war_exhaustion = 5
-            }
         }
 
         MVA = {
@@ -2021,7 +2025,11 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = random
+                regency = nobles_estate_regency
+                active_regent = boh_jiri_podebrad
+                start_regency_date = 1439.10.27
+                end_regency_date = 1453.10.28
+                heir = hab_ladislas_v_habsburg
 
                 ruler_term = { character = boh_otakar_ii_premyslid start_date = 1253.12.23 end_date = 1278.8.26 regnal_number = 1 }
                 ruler_term = { character = hab_rudolf_i_habsburg start_date = 1278.8.26 end_date = 1283.1.1 regnal_number = 1 }
@@ -2031,6 +2039,10 @@ countries = {
                 ruler_term = { character = tir_henry_gorizia start_date = 1307.7.3 end_date = 1310.8.31 regnal_number = 1 }
                 ruler_term = { character = boh_john_luxembourg start_date = 1310.8.31 end_date = 1333.1.1 regnal_number = 1 }
                 ruler_term = { character = boh_charles_iv_luxembourg start_date = 1333.1.1 end_date = 1349.1.1 regnal_number = 1 }
+                ruler_term = { character = tir_jan_jindrich_luxembourg start_date = 1349.1.1 end_date = 1375.11.12 regnal_number = 1 }
+                ruler_term = { character = mva_jost_luxembourg start_date = 1375.11.12 end_date = 1411.1.18 regnal_number = 1 }
+                ruler_term = { character = hun_sigismund_i_luxembourg start_date = 1419.8.16 end_date = 1437.12.9 regnal_number = 1 }
+                ruler_term = { character = hab_albrecht_v_habsburg start_date = 1438.5.6 end_date = 1439.10.27 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_conrad = 1
@@ -2042,6 +2054,9 @@ countries = {
                     name_henry = 1
                     name_john = 1
                     name_charles = 1
+                    name_joyce = 1
+                    name_sigmund = 1
+                    name_albert = 1
                 }
 
                 reforms = {
@@ -5035,8 +5050,11 @@ countries = {
             government = {
                 ruler_term = { character = eng_henry_lancaster start_date = 1322.3.22 end_date = 1345.9.22 }
                 ruler_term = { character = eng_henry_grosmont start_date = 1345.9.22 end_date = 1361.3.23 }
-                ruler_term = { character = eng_blanche_lancaster start_date = 1361.3.23 end_date = 1368.9.12 }
+                ruler_term = { character = eng_blanche_lancaster_grosmont start_date = 1361.3.23 end_date = 1368.9.12 }
                 ruler_term = { character = eng_john_of_gaunt start_date = 1362.1.1 end_date = 1399.2.3 }
+                ruler_term = { character = eng_henry_iv_lancaster start_date = 1399.10.13 end_date = 1413.3.20  }
+                ruler_term = { character = eng_henry_v_lancaster start_date = 1413.3.12 end_date = 1422.8.31}
+                ruler_term = { character = eng_henry_vi_lancaster start_date = 1422.9.1 }
 
                 ruler = eng_henry_vi_lancaster
             }
@@ -15159,7 +15177,7 @@ countries = {
             include = "expl_western_europe"
             include = "catholic_monarchy"
             government = {
-                ruler = bri_francis_i_of_brittany
+                ruler = random
 
                 ruler_term = { character = bri_guy_thouars start_date = 1199.9.1 end_date = 1201.9.1 regnal_number = 1 } # As Marital Co-Ruler
 
@@ -15227,7 +15245,7 @@ countries = {
 
         }
 
-        #Burgundy (Appanage)
+        #Burgundy
         BUR = {
             own_control_core = {
                 dijon semur_en_auxois chatillon_sur_seine
@@ -15248,7 +15266,7 @@ countries = {
             include = "expl_western_europe"
             include = "catholic_monarchy_no_coast"
             government = {
-                ruler = random
+                ruler = bur_philippe_iii_valois_burgundy
 
                 ruler_term = { character = fra_hugues_le_grand start_date = 952.12.17 end_date = 956.6.16 regnal_number = 0 }
                 ruler_term = { character = bur_otton_bourgogne start_date = 956.6.16 end_date = 965.2.23 regnal_number = 0 }
@@ -15270,12 +15288,20 @@ countries = {
                 ruler_term = { character = bur_robert_ii_burgundian start_date = 1272.10.27 end_date = 1306.3.21 regnal_number = 2 }
                 ruler_term = { character = bur_hugues_v_burgundian start_date = 1306.3.21 end_date = 1315.5.9 regnal_number = 5 }
                 ruler_term = { character = bur_eudes_iv_burgundy start_date = 1315.5.9 end_date = 1349.4.3 regnal_number = 4 }
+                ruler_term = { character = bur_philippe_i_burgundy start_date = 1349.4.3 end_date = 1361.11.21 regnal_number = 1 }
+
+                ruler_term = { character = fra_jean_ii_valois start_date = 1361.12.28 end_date = 1363.9.6 regnal_number = 2 }
+                ruler_term = { character = bur_philippe_ii_valois_burgundy start_date = 1363.9.6 end_date = 1404.4.27 regnal_number = 2 }
+                ruler_term = { character = bur_jean_i_valois_burgundy start_date = 1404.4.27 end_date = 1419.9.10 regnal_number = 1 }
+                ruler_term = { character = bur_philippe_iii_valois_burgundy start_date = 1419.9.10 regnal_number = 3 }
 
                 regnal_numbers = {
                     name_robert = 2
                     name_henry = 1
                     name_hugh = 5
                     name_otto = 4
+                    name_philip = 2
+                    name_john = 1
                 }
 
                 centralization_vs_decentralization = 30
@@ -15301,6 +15327,7 @@ countries = {
                 arpitan
             }
 
+            dynasty = valois_burgundy_dynasty
             capital = dijon
             country_rank = rank_duchy
         }
@@ -15317,7 +15344,7 @@ countries = {
             include = "expl_western_europe"
             include = "catholic_monarchy_no_coast"
             government = {
-                ruler = bur_jeanne_iii_capet
+                ruler = bur_philippe_iii_valois_burgundy
 
                 ruler_term = { character = fcb_othon_guillaume_burgundy start_date = 982.1.1 end_date = 1027.9.21 regnal_number = 1 }
                 ruler_term = { character = fcb_renaud_i_burgundy start_date = 1027.9.21 end_date = 1057.9.4 regnal_number = 1 }
@@ -15364,7 +15391,7 @@ countries = {
                     character = fra_philippe_v_capet start_date = 1307.1.21 end_date = 1322.1.3 regnal_number = 2 # Marital Co-Ruler
                 }
                 ruler_term = { character = fra_jeanne_ii_chalon_burgundy start_date = 1322.1.3 end_date = 1330.1.21 regnal_number = 2 }
-                ruler_term = { character = bur_jeanne_iii_capet start_date = 1330.1.21 regnal_number = 3 }
+                ruler_term = { character = bur_jeanne_iii_capet start_date = 1330.1.21 end_date = 1347.8.10  regnal_number = 3 }
 
                 regnal_numbers = {
                     name_otto.name_william = 1
@@ -15414,7 +15441,7 @@ countries = {
             include = "expl_western_europe"
             include = "catholic_monarchy_no_coast"
             government = {
-                ruler = bur_philip_i_burgundy
+                ruler = bur_charles_i_valois_burgundy
             }
 
             capital = charolles
@@ -15430,7 +15457,7 @@ countries = {
             include = "expl_western_europe"
             include = "catholic_monarchy_no_coast"
             government = {
-                ruler = random
+                ruler = bur_philippe_iii_valois_burgundy
             }
 
             capital = macon
@@ -17634,7 +17661,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = fla_louis_i_dampierre
+                ruler = bur_philippe_iii_valois_burgundy
                 reforms = {
                     french_ducal_vassal_reform
                 }
@@ -17668,7 +17695,7 @@ countries = {
                     character = fla_robert_iii_dampierre start_date = 1272.1.1 end_date = 1280.6.2 regnal_number = 1 # Marital Co-Ruler
                 }
                 ruler_term = { character = nev_louis_i_dampierre start_date = 1280.6.2 end_date = 1322.7.22 regnal_number = 1 }
-                ruler_term = { character = fla_louis_i_dampierre start_date = 1322.7.22 regnal_number = 2 }
+                ruler_term = { character = fla_louis_i_dampierre start_date = 1322.7.22 end_date = 1346.8.26 regnal_number = 2 }
 
                 regnal_numbers = {
                     #Seguin = 2
@@ -18132,14 +18159,14 @@ countries = {
             include = "catholic_monarchy_no_coast"
             include = "german_principality"
             government = {
-                ruler = boh_john_luxembourg
+                ruler = bur_philippe_iii_valois_burgundy
 
                 ruler_term = { character = fcb_otton_hohenstaufen start_date = 1196.8.14 end_date = 1197.1.1 regnal_number = 1 }
 
                 ruler_term = { character = lux_henri_v_luxembourg start_date = 1247.2.17 end_date = 1281.12.24 regnal_number = 5 }
                 ruler_term = { character = lux_henry_vi_luxembourg start_date = 1281.12.24 end_date = 1288.6.5 regnal_number = 6 }
                 ruler_term = { character = lux_henry_vii_luxembourg start_date = 1288.6.5 end_date = 1313.8.24 regnal_number = 7 }
-                ruler_term = { character = boh_john_luxembourg start_date = 1313.8.24 regnal_number = 1 }
+                ruler_term = { character = boh_john_luxembourg start_date = 1313.8.24 end_date = 1346.8.26 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_sigfrid = 1
@@ -18159,7 +18186,7 @@ countries = {
                 land_vs_naval = -20
                 outward_vs_inward = -40
             }
-            country_rank = rank_county
+            country_rank = rank_duchy
             capital = luxembourg
 
             tolerated_cultures = {
@@ -18179,12 +18206,12 @@ countries = {
             include = "catholic_monarchy_no_coast"
             include = "german_principality"
             government = {
-                ruler = hai_guillaume_de_hainault
+                ruler = bur_philippe_iii_valois_burgundy
 
                 ruler_term = { character = hai_jean_i_avesnes start_date = 1253.11.29 end_date = 1257.12.24 regnal_number = 1 }
 
                 ruler_term = { character = hai_jean_ii_de_hainault start_date = 1280.1.1 end_date = 1304.8.22 regnal_number = 2 }
-                ruler_term = { character = hai_guillaume_de_hainault start_date = 1304.8.22 regnal_number = 1 }
+                ruler_term = { character = hai_guillaume_de_hainault start_date = 1304.8.22 end_date = 1337.6.7 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_reginar = 5
@@ -18231,7 +18258,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = fla_louis_i_dampierre
+                ruler = bur_philippe_iii_valois_burgundy
 
                 ruler_term = { character = fla_thierry_alsace start_date = 1128.7.28 end_date = 1168.1.17 regnal_number = 1 }
                 ruler_term = { character = fla_philippe_i_alsace start_date = 1168.1.17 end_date = 1191.6.1 regnal_number = 1 }
@@ -18243,14 +18270,15 @@ countries = {
 
                 ruler_term = { character = fla_guy_i_dampierre start_date = 1279.1.1 end_date = 1305.3.7 regnal_number = 1 }
                 ruler_term = { character = fla_robert_iii_dampierre start_date = 1305.3.7 end_date = 1322.9.17 regnal_number = 3 }
-                ruler_term = { character = fla_louis_i_dampierre start_date = 1322.9.17 regnal_number = 1 }
+                ruler_term = { character = fla_louis_i_dampierre start_date = 1322.9.17 end_date = 1346.8.26 regnal_number = 1 }
+                ruler_term = { character = fla_louis_ii_dampierre start_date = 1346.8.26 end_date = 1384.1.30 regnal_number = 2 }
 
                 regnal_numbers = {
                     name_arnulf = 3
                     name_baldwin = 9
                     name_charles = 1
                     name_joanna = 1
-                    name_louis = 1
+                    name_louis = 2
                     name_margaret = 2
                     name_robert = 3
                     name_wido = 1
@@ -18268,7 +18296,7 @@ countries = {
             court_language = french_language
         }
 
-        #Holland - Union under Hainaut
+        #Holland - Under Dukes of Burgundy
         HOL = {
             own_control_core = {
                 the_hague leiden rotterdam amsterdam alkmaar dordrecht geertruidenberg hoorn
@@ -18279,10 +18307,10 @@ countries = {
             include = "catholic_monarchy"
             include = "german_principality"
             government = {
-                ruler = hai_guillaume_de_hainault
+                ruler = bur_philippe_iii_valois_burgundy
 
                 ruler_term = { character = hai_jean_ii_de_hainault start_date = 1299.11.10 end_date = 1304.8.22 regnal_number = 2 }
-                ruler_term = { character = hai_guillaume_de_hainault start_date = 1304.8.22 regnal_number = 3 }
+                ruler_term = { character = hai_guillaume_de_hainault start_date = 1304.8.22 end_date = 1337.6.7 regnal_number = 3 }
 
                 regnal_numbers = {
                     name_gerulf = 1
@@ -18377,7 +18405,7 @@ countries = {
             include = "catholic_monarchy"
             include = "german_principality"
             government = {
-                ruler = brb_jan_iii_van_brabant
+                ruler = bur_philippe_iii_valois_burgundy
 
                 ruler_term = { character = brb_hendrik_i_van_brabant start_date = 1183.1.1 end_date = 1235.9.5 regnal_number = 1 }
                 ruler_term = { character = brb_hendrik_ii_van_brabant start_date = 1235.9.5 end_date = 1248.2.1 regnal_number = 2 }
@@ -18385,7 +18413,7 @@ countries = {
                 ruler_term = { character = brb_hendrik_iv_van_brabant start_date = 1261.2.28 end_date = 1267.1.1 regnal_number = 4 }
                 ruler_term = { character = brb_jan_i_van_brabant start_date = 1267.1.1 end_date = 1294.5.3 regnal_number = 1 }
                 ruler_term = { character = brb_jan_ii_van_brabant start_date = 1294.5.3 end_date = 1312.10.27 regnal_number = 2 }
-                ruler_term = { character = brb_jan_iii_van_brabant start_date = 1312.10.27 regnal_number = 3 }
+                ruler_term = { character = brb_jan_iii_van_brabant start_date = 1312.10.27 end_date = 1355.12.5  regnal_number = 3 }
 
                 regnal_numbers = {
                     name_henry = 4
@@ -36276,7 +36304,7 @@ countries = {
             include = "german_principality"
             country_rank = rank_duchy
             government = {
-                ruler = lbv_heinrich_xiv_wittelsbach
+                ruler = lbv_heinrich_xvi_wittelsbach
 
                 ruler_term = { character = lbv_heinrich_xiii_wittelsbach start_date = 1253.11.29 end_date = 1290.2.3 regnal_number = 13 }
                 ruler_term = {
@@ -36302,10 +36330,16 @@ countries = {
                     character = lbv_heinrich_xiv_wittelsbach start_date = 1333.6.18 end_date = 1334.12.14 regnal_number = 14
                     character = lbv_otto_iv_wittelsbach start_date = 1333.6.18 end_date = 1334.12.14 regnal_number = 4 # As Co-Ruler
                 }
-                ruler_term = { character = lbv_heinrich_xiv_wittelsbach start_date = 1334.12.14 regnal_number = 14 }
+                ruler_term = { character = lbv_heinrich_xiv_wittelsbach start_date = 1334.12.14 end_date = 1339.9.1 regnal_number = 14 }
+                ruler_term = { character = lbv_johann_i_wittelsbach start_date = 1339.9.1 end_date = 1340.12.20 regnal_number = 1 }
+
+                ruler_term = { character = ubv_stephen_ii_wittelsbach start_date = 1347.10.11 end_date = 1375.5.13 regnal_number = 2 }
+                ruler_term = { character = lbv_friedrich_wittelsbach start_date = 1375.5.13 end_date = 1393.12.4 regnal_number = 1 }
+                ruler_term = { character = lbv_heinrich_xvi_wittelsbach start_date = 1393.12.4 regnal_number = 16 }
+
                 regnal_numbers = {
-                    name_stephen = 1
-                    name_henry = 14
+                    name_stephen = 2
+                    name_henry = 16
                     name_otto = 4
                     name_louis = 4
                     name_rudolf = 1
@@ -36316,6 +36350,8 @@ countries = {
                     name_everard = 1
                     name_arnulf = 1
                     name_leopold = 1
+                    name_john = 1
+                    name_frederick = 1
                 }
             }
 
@@ -36342,14 +36378,19 @@ countries = {
             include = "german_principality"
             country_rank = rank_duchy
             government = {
-                ruler = ubv_ludwig_iv_wittelsbach
+                ruler = ubv_albrecht_iii_wittelsbach
 
                 ruler_term = { character = ubv_ludwig_ii_wittelsbach start_date = 1253.11.29 end_date = 1294.2.2 regnal_number = 2 }
                 ruler_term = {
                     character = ubv_rudolf_i_wittelsbach start_date = 1294.2.2 end_date = 1317.1.1 regnal_number = 1
                     character = ubv_ludwig_iv_wittelsbach start_date = 1294.2.2 end_date = 1317.1.1 regnal_number = 4
                 }
-                ruler_term = { character = ubv_ludwig_iv_wittelsbach start_date = 1317.1.1 regnal_number = 4 }
+                ruler_term = { character = ubv_ludwig_iv_wittelsbach start_date = 1317.1.1 end_date = 1347.10.11 regnal_number = 4 }
+
+                ruler_term = { character = ubv_johann_ii_wittelsbach start_date = 1392.1.1 end_date = 1397.1.1 regnal_number = 2 }
+                ruler_term = { character = ubv_wilhelm_iii_wittelsbach start_date = 1397.1.1 end_date = 1435.9.12 regnal_number = 2 }
+                ruler_term = { character = ubv_ernst_i_wittelsbach start_date = 1397.1.1 end_date = 1438.7.2 regnal_number = 1 }
+                ruler_term = { character = ubv_albrecht_iii_wittelsbach start_date = 1438.7.2 regnal_number = 3 }
 
                 regnal_numbers = {
                     name_stephen = 1
@@ -36363,7 +36404,10 @@ countries = {
                     name_berthold = 1
                     name_everard = 1
                     name_arnulf = 1
-                    name_leopold = 1
+                    name_john = 2
+                    name_william = 3
+                    name_ernest = 1
+                    name_albert = 3
                 }
 
                 laws = {
@@ -36392,6 +36436,11 @@ countries = {
             include = "german_principality"
             country_rank = rank_duchy
             government = {
+                ruler = ing_ludwig_vii_wittelsbach
+                heir = ing_ludwig_viii_wittelsbach
+
+                ruler_term = { character = ing_stephen_iii_wittelsbach start_date = 1392.1.1 end_date = 1413.9.26 regnal_number = 3 }
+                ruler_term = { character = ing_ludwig_vii_wittelsbach start_date = 1413.9.26 regnal_number = 7 }
             }
 
             tolerated_cultures = {
@@ -36403,7 +36452,7 @@ countries = {
         }
 
         EIC = {
-            #Eichst tt
+            #Eichstätt
             own_control_core = {
                 eichstatt beilngries
             }
@@ -36425,7 +36474,7 @@ countries = {
         }
 
         WEI = {
-            #Wei enburg
+            #Weißenburg
             own_control_core = {
                 weissenburg
             }
@@ -36475,7 +36524,7 @@ countries = {
         }
 
         WBG = {
-            #W rzburg
+            #Würzburg
             own_control_core = {
                 wurzburg hassfurt karlstadt mellrichstadt konigshofen schweinfurt bruckenau
             }
@@ -37340,7 +37389,7 @@ countries = {
             capital = heidelberg
             dynasty = wittelsbach_dynasty
             government = {
-                ruler = pal_rudolf_ii_wittelsbach
+                ruler = pal_ludwig_iv_wittelsbach
 
                 ruler_term = { character = pal_konrad_hohenstaufen start_date = 1156.1.1 end_date = 1195.11.8 regnal_number = 1 }
 
@@ -37355,7 +37404,13 @@ countries = {
                     character = ubv_ludwig_iv_wittelsbach start_date = 1294.2.2 end_date = 1317.1.1 regnal_number = 4
                 }
                 ruler_term = { character = ubv_ludwig_iv_wittelsbach start_date = 1317.1.1 end_date = 1329.8.4 regnal_number = 3 }
-                ruler_term = { character = pal_rudolf_ii_wittelsbach start_date = 1329.8.4 regnal_number = 2 }
+                ruler_term = { character = pal_rudolf_ii_wittelsbach start_date = 1329.8.4 end_date = 1353.10.4 regnal_number = 2 }
+                ruler_term = { character = pal_ruprecht_i_wittelsbach start_date = 1353.10.4 end_date = 1390.2.16 regnal_number = 1 }
+                ruler_term = { character = pal_ruprecht_ii_wittelsbach start_date = 1390.2.16 end_date = 1398.2.6 regnal_number = 2 }
+                ruler_term = { character = pal_ruprecht_iii_wittelsbach start_date = 1398.2.6 end_date = 1410.5.18 regnal_number = 3 }
+                ruler_term = { character = pal_ludwig_iii_wittelsbach start_date = 1410.5.18 end_date = 1436.12.30 regnal_number = 3 }
+                ruler_term = { character = pal_ludwig_iv_wittelsbach start_date = 1436.12.30 regnal_number = 4 }
+
                 regnal_numbers = {
                     name_herman = 3
                     #Ezzo = 1
@@ -37365,8 +37420,9 @@ countries = {
                     name_godfrey = 1
                     name_william = 1
                     name_conrad = 1
-                    name_louis = 3
+                    name_louis = 4
                     name_rudolf = 2
+                    name_robert = 3
                 }
             }
 
@@ -37376,7 +37432,6 @@ countries = {
             }
 
             country_rank = rank_county
-
         }
 
         BMS = {
@@ -37406,7 +37461,7 @@ countries = {
 
         BLB = {
             # Bishopric of Lebus
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 lebus
             }
             starting_technology_level = 3
@@ -39544,7 +39599,11 @@ countries = {
             include = "german_principality"
             capital = cottbus
             government = {
-                ruler = bra_ludwig_v_wittelsbach
+                regency = nobles_estate_regency
+                active_regent = boh_jiri_podebrad
+                start_regency_date = 1439.10.27
+                end_regency_date = 1453.10.28
+                heir = hab_ladislas_v_habsburg
 
                 reforms = {
                     margraviate

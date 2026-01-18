@@ -1,0 +1,112 @@
+#            | existing country | releasing a country | country formation |
+# |==========|==================|=====================|===================|
+# |root      | definition       | definition          | definition        |
+# |----------|------------------|---------------------|-------------------|
+# |target    | country          | N/A                 | N/A               |
+# |----------|------------------|---------------------|-------------------|
+# |initiator | N/A              | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |actor     | country          | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |          | country's        |                     | player's          |
+# |overlord  | direct overlord  | player              | direct overlord   |
+# |          | if it exists     |                     | if it exists      |
+# |----------|------------------|---------------------|-------------------|
+
+coa_def_capetian_trigger = { # Royal house including all branches
+	scope:actor ?= {
+		ruler ?= {
+			dynasty ?= {
+				OR = {
+					this = dynasty:burgundy_dynasty
+					this = dynasty:dreux_dynasty
+					this = dynasty:anjou_dynasty
+					this = dynasty:artois_dynasty
+					this = dynasty:bourbon_dynasty
+					this = dynasty:capet_dynasty
+					this = dynasty:de_evreux_dynasty
+					this = dynasty:valois_dynasty
+                    this = dynasty:valois_anjou_dynasty
+                    this = dynasty:valois_orleans_dynasty
+                    this = dynasty:valois_burgundy_dynasty
+                    this = dynasty:valois_alencon_dynasty
+				}
+			}
+		}
+	}
+}
+
+coa_def_capetian_semy_trigger = { # Only the late capetians
+	scope:actor.ruler.dynasty ?= {
+		OR = {			
+			dynasty:anjou_dynasty ?= this
+			dynasty:artois_dynasty ?= this
+			dynasty:bourbon_dynasty ?= this
+			dynasty:capet_dynasty ?= this
+			dynasty:de_evreux_dynasty ?= this
+			dynasty:valois_dynasty ?= this
+            dynasty:valois_anjou_dynasty ?= this
+            dynasty:valois_orleans_dynasty ?= this
+            dynasty:valois_burgundy_dynasty ?= this
+            dynasty:valois_alencon_dynasty ?= this
+		}
+	}
+}
+
+coa_def_capetian_navarre_trigger = { # Evreux-Navarre
+	scope:actor ?= {
+		ruler ?= {
+			OR = {
+				dynasty ?= { this = dynasty:de_evreux_dynasty }
+				AND = {
+					is_female = no
+					is_regent = no
+					dynasty ?= {
+						OR = {
+							this = dynasty:anjou_dynasty
+							this = dynasty:artois_dynasty
+							this = dynasty:bourbon_dynasty
+							this = dynasty:capet_dynasty
+							this = dynasty:valois_dynasty
+                            this = dynasty:valois_anjou_dynasty
+                            this = dynasty:valois_orleans_dynasty
+                            this = dynasty:valois_burgundy_dynasty
+                            this = dynasty:valois_alencon_dynasty
+						}
+					}					
+				}
+			}	
+		}
+	}
+}
+
+coa_def_capetian_overlord_trigger = {
+	scope:overlord ?= {
+		ruler ?= {
+			dynasty ?= {
+				OR = {
+					this = dynasty:anjou_dynasty
+					this = dynasty:artois_dynasty
+					this = dynasty:bourbon_dynasty
+					this = dynasty:capet_dynasty
+					this = dynasty:dreux_dynasty
+					this = dynasty:de_evreux_dynasty
+					this = dynasty:valois_dynasty
+                    this = dynasty:valois_anjou_dynasty
+                    this = dynasty:valois_orleans_dynasty
+                    this = dynasty:valois_burgundy_dynasty
+                    this = dynasty:valois_alencon_dynasty
+					# Not Burgundy because Portugal
+				}
+			}
+		}
+	}
+}
+
+coa_def_valois_anjou_dynasty_trigger = {
+	scope:actor.ruler.dynasty ?= { dynasty:valois_anjou_dynasty ?= this }
+}
+
+coa_def_valois_burgundy_dynasty_trigger = {
+	scope:actor.ruler.dynasty ?= { dynasty:valois_burgundy_dynasty ?= this }
+}
