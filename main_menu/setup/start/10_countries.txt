@@ -5050,8 +5050,11 @@ countries = {
             government = {
                 ruler_term = { character = eng_henry_lancaster start_date = 1322.3.22 end_date = 1345.9.22 }
                 ruler_term = { character = eng_henry_grosmont start_date = 1345.9.22 end_date = 1361.3.23 }
-                ruler_term = { character = eng_blanche_lancaster start_date = 1361.3.23 end_date = 1368.9.12 }
+                ruler_term = { character = eng_blanche_lancaster_grosmont start_date = 1361.3.23 end_date = 1368.9.12 }
                 ruler_term = { character = eng_john_of_gaunt start_date = 1362.1.1 end_date = 1399.2.3 }
+                ruler_term = { character = eng_henry_iv_lancaster start_date = 1399.10.13 end_date = 1413.3.20  }
+                ruler_term = { character = eng_henry_v_lancaster start_date = 1413.3.12 end_date = 1422.8.31}
+                ruler_term = { character = eng_henry_vi_lancaster start_date = 1422.9.1 }
 
                 ruler = eng_henry_vi_lancaster
             }
@@ -36301,7 +36304,7 @@ countries = {
             include = "german_principality"
             country_rank = rank_duchy
             government = {
-                ruler = lbv_heinrich_xiv_wittelsbach
+                ruler = lbv_heinrich_xvi_wittelsbach
 
                 ruler_term = { character = lbv_heinrich_xiii_wittelsbach start_date = 1253.11.29 end_date = 1290.2.3 regnal_number = 13 }
                 ruler_term = {
@@ -36327,10 +36330,16 @@ countries = {
                     character = lbv_heinrich_xiv_wittelsbach start_date = 1333.6.18 end_date = 1334.12.14 regnal_number = 14
                     character = lbv_otto_iv_wittelsbach start_date = 1333.6.18 end_date = 1334.12.14 regnal_number = 4 # As Co-Ruler
                 }
-                ruler_term = { character = lbv_heinrich_xiv_wittelsbach start_date = 1334.12.14 regnal_number = 14 }
+                ruler_term = { character = lbv_heinrich_xiv_wittelsbach start_date = 1334.12.14 end_date = 1339.9.1 regnal_number = 14 }
+                ruler_term = { character = lbv_johann_i_wittelsbach start_date = 1339.9.1 end_date = 1340.12.20 regnal_number = 1 }
+
+                ruler_term = { character = ubv_stephen_ii_wittelsbach start_date = 1347.10.11 end_date = 1375.5.13 regnal_number = 2 }
+                ruler_term = { character = lbv_friedrich_wittelsbach start_date = 1375.5.13 end_date = 1393.12.4 regnal_number = 1 }
+                ruler_term = { character = lbv_heinrich_xvi_wittelsbach start_date = 1393.12.4 regnal_number = 16 }
+
                 regnal_numbers = {
-                    name_stephen = 1
-                    name_henry = 14
+                    name_stephen = 2
+                    name_henry = 16
                     name_otto = 4
                     name_louis = 4
                     name_rudolf = 1
@@ -36341,6 +36350,8 @@ countries = {
                     name_everard = 1
                     name_arnulf = 1
                     name_leopold = 1
+                    name_john = 1
+                    name_frederick = 1
                 }
             }
 
@@ -36367,14 +36378,19 @@ countries = {
             include = "german_principality"
             country_rank = rank_duchy
             government = {
-                ruler = ubv_ludwig_iv_wittelsbach
+                ruler = ubv_albrecht_iii_wittelsbach
 
                 ruler_term = { character = ubv_ludwig_ii_wittelsbach start_date = 1253.11.29 end_date = 1294.2.2 regnal_number = 2 }
                 ruler_term = {
                     character = ubv_rudolf_i_wittelsbach start_date = 1294.2.2 end_date = 1317.1.1 regnal_number = 1
                     character = ubv_ludwig_iv_wittelsbach start_date = 1294.2.2 end_date = 1317.1.1 regnal_number = 4
                 }
-                ruler_term = { character = ubv_ludwig_iv_wittelsbach start_date = 1317.1.1 regnal_number = 4 }
+                ruler_term = { character = ubv_ludwig_iv_wittelsbach start_date = 1317.1.1 end_date = 1347.10.11 regnal_number = 4 }
+
+                ruler_term = { character = ubv_johann_ii_wittelsbach start_date = 1392.1.1 end_date = 1397.1.1 regnal_number = 2 }
+                ruler_term = { character = ubv_wilhelm_iii_wittelsbach start_date = 1397.1.1 end_date = 1435.9.12 regnal_number = 2 }
+                ruler_term = { character = ubv_ernst_i_wittelsbach start_date = 1397.1.1 end_date = 1438.7.2 regnal_number = 1 }
+                ruler_term = { character = ubv_albrecht_iii_wittelsbach start_date = 1438.7.2 regnal_number = 3 }
 
                 regnal_numbers = {
                     name_stephen = 1
@@ -36388,7 +36404,10 @@ countries = {
                     name_berthold = 1
                     name_everard = 1
                     name_arnulf = 1
-                    name_leopold = 1
+                    name_john = 2
+                    name_william = 3
+                    name_ernest = 1
+                    name_albert = 3
                 }
 
                 laws = {
@@ -36417,6 +36436,11 @@ countries = {
             include = "german_principality"
             country_rank = rank_duchy
             government = {
+                ruler = ing_ludwig_vii_wittelsbach
+                heir = ing_ludwig_viii_wittelsbach
+
+                ruler_term = { character = ing_stephen_iii_wittelsbach start_date = 1392.1.1 end_date = 1413.9.26 regnal_number = 3 }
+                ruler_term = { character = ing_ludwig_vii_wittelsbach start_date = 1413.9.26 regnal_number = 7 }
             }
 
             tolerated_cultures = {
@@ -36428,7 +36452,7 @@ countries = {
         }
 
         EIC = {
-            #Eichst tt
+            #Eichstätt
             own_control_core = {
                 eichstatt beilngries
             }
@@ -36450,7 +36474,7 @@ countries = {
         }
 
         WEI = {
-            #Wei enburg
+            #Weißenburg
             own_control_core = {
                 weissenburg
             }
@@ -36500,7 +36524,7 @@ countries = {
         }
 
         WBG = {
-            #W rzburg
+            #Würzburg
             own_control_core = {
                 wurzburg hassfurt karlstadt mellrichstadt konigshofen schweinfurt bruckenau
             }
@@ -37365,7 +37389,7 @@ countries = {
             capital = heidelberg
             dynasty = wittelsbach_dynasty
             government = {
-                ruler = pal_rudolf_ii_wittelsbach
+                ruler = pal_ludwig_iv_wittelsbach
 
                 ruler_term = { character = pal_konrad_hohenstaufen start_date = 1156.1.1 end_date = 1195.11.8 regnal_number = 1 }
 
@@ -37380,7 +37404,13 @@ countries = {
                     character = ubv_ludwig_iv_wittelsbach start_date = 1294.2.2 end_date = 1317.1.1 regnal_number = 4
                 }
                 ruler_term = { character = ubv_ludwig_iv_wittelsbach start_date = 1317.1.1 end_date = 1329.8.4 regnal_number = 3 }
-                ruler_term = { character = pal_rudolf_ii_wittelsbach start_date = 1329.8.4 regnal_number = 2 }
+                ruler_term = { character = pal_rudolf_ii_wittelsbach start_date = 1329.8.4 end_date = 1353.10.4 regnal_number = 2 }
+                ruler_term = { character = pal_ruprecht_i_wittelsbach start_date = 1353.10.4 end_date = 1390.2.16 regnal_number = 1 }
+                ruler_term = { character = pal_ruprecht_ii_wittelsbach start_date = 1390.2.16 end_date = 1398.2.6 regnal_number = 2 }
+                ruler_term = { character = pal_ruprecht_iii_wittelsbach start_date = 1398.2.6 end_date = 1410.5.18 regnal_number = 3 }
+                ruler_term = { character = pal_ludwig_iii_wittelsbach start_date = 1410.5.18 end_date = 1436.12.30 regnal_number = 3 }
+                ruler_term = { character = pal_ludwig_iv_wittelsbach start_date = 1436.12.30 regnal_number = 4 }
+
                 regnal_numbers = {
                     name_herman = 3
                     #Ezzo = 1
@@ -37390,8 +37420,9 @@ countries = {
                     name_godfrey = 1
                     name_william = 1
                     name_conrad = 1
-                    name_louis = 3
+                    name_louis = 4
                     name_rudolf = 2
+                    name_robert = 3
                 }
             }
 
