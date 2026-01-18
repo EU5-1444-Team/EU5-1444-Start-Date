@@ -1955,14 +1955,21 @@ countries = {
             government = {
                 regnal_numbers = {
                     name_odoacer = 2
-                    name_wenceslas = 3
+                    name_wenceslas = 4
                     name_rudolf = 1
                     name_henry = 1
                     name_john = 1
                     name_charles = 4
+                    name_sigmund = 1
+                    name_albert = 1
+                    name_vladislav = 1 
                 }
 
-                ruler = random
+                regency = nobles_estate_regency
+                active_regent = boh_jiri_podebrad
+                start_regency_date = 1439.10.27
+                end_regency_date = 1453.10.28
+                heir = hab_ladislas_v_habsburg
 
                 ruler_term = { character = boh_otakar_ii_premyslid start_date = 1253.12.23 end_date = 1278.8.26 regnal_number = 2 }
                 ruler_term = { character = boh_wenceslaus_ii_premyslid start_date = 1278.8.26 end_date = 1305.6.21 regnal_number = 2 }
@@ -1970,6 +1977,10 @@ countries = {
                 ruler_term = { character = boh_rudolf_habsburg start_date = 1306.8.4 end_date = 1307.7.3 regnal_number = 1 }
                 ruler_term = { character = tir_henry_gorizia start_date = 1307.7.3 end_date = 1310.8.31 regnal_number = 1 }
                 ruler_term = { character = boh_john_luxembourg start_date = 1310.8.31 end_date = 1346.8.26 regnal_number = 1 }
+                ruler_term = { character = boh_charles_iv_luxembourg start_date = 1346.8.26 end_date = 1378.11.29 regnal_number = 1 }
+                ruler_term = { character = boh_wenceslaus_iv_luxembourg start_date = 1378.11.29 end_date = 1419.8.16 regnal_number = 4 }
+                ruler_term = { character = hun_sigismund_i_luxembourg start_date = 1419.8.16 end_date = 1437.12.9 regnal_number = 1 }
+                ruler_term = { character = hab_albrecht_v_habsburg start_date = 1438.5.6 end_date = 1439.10.27 regnal_number = 1 }
 
                 centralization_vs_decentralization = 80
                 aristocracy_vs_plutocracy = -70
@@ -1989,7 +2000,6 @@ countries = {
                     inaugural_diplomas
                     ius_teutonicum
                 }
-
             }
 
             tolerated_cultures = {
@@ -2001,11 +2011,6 @@ countries = {
             country_rank = rank_kingdom
             capital = prague
             dynasty = luxembourg_dynasty
-
-            #Setup to accurately portray the starting situation
-            currency_data = {
-                war_exhaustion = 5
-            }
         }
 
         MVA = {
@@ -2020,7 +2025,11 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = random
+                regency = nobles_estate_regency
+                active_regent = boh_jiri_podebrad
+                start_regency_date = 1439.10.27
+                end_regency_date = 1453.10.28
+                heir = hab_ladislas_v_habsburg
 
                 ruler_term = { character = boh_otakar_ii_premyslid start_date = 1253.12.23 end_date = 1278.8.26 regnal_number = 1 }
                 ruler_term = { character = hab_rudolf_i_habsburg start_date = 1278.8.26 end_date = 1283.1.1 regnal_number = 1 }
@@ -2030,6 +2039,10 @@ countries = {
                 ruler_term = { character = tir_henry_gorizia start_date = 1307.7.3 end_date = 1310.8.31 regnal_number = 1 }
                 ruler_term = { character = boh_john_luxembourg start_date = 1310.8.31 end_date = 1333.1.1 regnal_number = 1 }
                 ruler_term = { character = boh_charles_iv_luxembourg start_date = 1333.1.1 end_date = 1349.1.1 regnal_number = 1 }
+                ruler_term = { character = tir_jan_jindrich_luxembourg start_date = 1349.1.1 end_date = 1375.11.12 regnal_number = 1 }
+                ruler_term = { character = mva_jost_luxembourg start_date = 1375.11.12 end_date = 1411.1.18 regnal_number = 1 }
+                ruler_term = { character = hun_sigismund_i_luxembourg start_date = 1419.8.16 end_date = 1437.12.9 regnal_number = 1 }
+                ruler_term = { character = hab_albrecht_v_habsburg start_date = 1438.5.6 end_date = 1439.10.27 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_conrad = 1
@@ -2041,6 +2054,9 @@ countries = {
                     name_henry = 1
                     name_john = 1
                     name_charles = 1
+                    name_joyce = 1
+                    name_sigmund = 1
+                    name_albert = 1
                 }
 
                 reforms = {
@@ -18167,7 +18183,7 @@ countries = {
                 land_vs_naval = -20
                 outward_vs_inward = -40
             }
-            country_rank = rank_county
+            country_rank = rank_duchy
             capital = luxembourg
 
             tolerated_cultures = {
@@ -39552,7 +39568,11 @@ countries = {
             include = "german_principality"
             capital = cottbus
             government = {
-                ruler = bra_ludwig_v_wittelsbach
+                regency = nobles_estate_regency
+                active_regent = boh_jiri_podebrad
+                start_regency_date = 1439.10.27
+                end_regency_date = 1453.10.28
+                heir = hab_ladislas_v_habsburg
 
                 reforms = {
                     margraviate
