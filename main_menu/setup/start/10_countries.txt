@@ -53784,11 +53784,29 @@ countries = {
             capital = pua
         }
 
+        MPH = {
+            #Muang Phuan
+            own_control_core = {
+                muang_phuan bolikham thoulakhom phonsavan
+            }
+
+            include = "south_east_asia_monarchy_no_coast"
+            government = {
+                ruler = random
+            }
+
+            tolerated_cultures = {
+                lao_culture
+            }
+
+            capital = muang_phuan
+        }
+
         MUA = {
             #Muang Sua (Lan Xang)
             own_control_core = {
                 muang_sua ban_luang_cheng hongsa muang_et muang_kham muang_lang muang_thaeng muang_xay nam_xuang phongsali
-                phonsavan xam_neua
+                xam_neua
             }
 
             own_control_integrated = {
@@ -53798,7 +53816,6 @@ countries = {
                 nong_bua_lamphu phu_wiang
                 kham_muang khon_kaen mueng_fa_daet
                 muang_nakhon kut_ling muang_nong_han_luang mukdahan pak_huei_lang that_phanom
-                muang_phuan bolikham thoulakhom
                 thakhek keutkeut khamkeut ngoc_ma
                 muang_khemarat yasothon roi_et
                 khon_san mancha_khiri
@@ -54048,6 +54065,20 @@ countries = {
             }
 
             capital = mongnai
+            government = {
+                ruler = random
+            }
+        }
+
+        MGP = {
+            #Mongpai
+            own_control_core = {
+                taunggyi yawnghwe mongpai siri_do
+            }
+
+            include = "south_east_asia_monarchy_no_coast"
+
+            capital = taunggyi
             government = {
                 ruler = random
             }
