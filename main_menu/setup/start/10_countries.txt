@@ -13977,6 +13977,10 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
+
+                active_regent = hun_janos_hunyadi
+                start_regency_date = 1444.11.11
+                heir = hab_ladislas_v_habsburg
             }
 
             tolerated_cultures = {
@@ -13984,7 +13988,7 @@ countries = {
             }
 
             capital = zagreb
-            country_rank = rank_kingdom
+            country_rank = rank_duchy
         }
 
         BUL = {
@@ -18709,31 +18713,49 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = hun_karoly_robert
-                consort = pol_elzbieta_piast
+                active_regent = hun_janos_hunyadi
+                regency = nobles_estate_regency
+                start_regency_date = 1444.11.11
+                heir = hab_ladislas_v_habsburg
 
                 ruler_term = { character = hun_bela_iv_arpad start_date = 1235.9.21 end_date = 1270.5.3 }
                 ruler_term = { character = hun_stephen_v_arpad start_date = 1270.5.3 end_date = 1272.1.1 }
                 ruler_term = { character = hun_ladislaus_iv_arpad start_date = 1272.1.1 end_date = 1290.1.1 }
                 ruler_term = { character = hun_andrew_iii_arpad start_date = 1290.1.1 end_date = 1301.1.14 }
                 ruler_term = { character = lbv_otto_iii_wittelsbach start_date = 1305.10.9 end_date = 1307.6.1 regnal_number = 1 }
-                ruler_term = { character = hun_karoly_robert start_date = 1308.11.17 regnal_number = 1 }
+                ruler_term = { character = hun_karoly_robert start_date = 1308.11.17 end_date = 1342.7.16 regnal_number = 1 }
+                ruler_term = { character = hun_lajos_i start_date = 1342.7.16 end_date = 1382.9.10 regnal_number = 1 }
+                ruler_term = { character = hun_maria_anjou start_date = 1382.9.10 end_date = 1385.12.31 regnal_number = 1 }
+                ruler_term = { character = nap_carlo_iii_anjou_durazzo start_date = 1385.12.31 end_date = 1386.2.24 regnal_number = 2 }
+                ruler_term = { character = hun_maria_anjou start_date = 1386.2.24 end_date = 1395.5.17 regnal_number = 1 }
+                ruler_term = { character = hun_sigismund_i_luxembourg start_date = 1395.5.17 end_date = 1437.12.9 regnal_number = 1 }
+                ruler_term = { character = hab_albrecht_v_habsburg start_date = 1437.12.18 end_date = 1439.10.27 regnal_number = 1 }
+                ruler_term = { character = lit_vladislovas_iii_jagiellon start_date = 1440.7.17 end_date = 1444.11.10 regnal_number = 1 }
+
                 regnal_numbers = {
                     name_bela = 4
                     name_stephen = 5
                     name_vladislav = 4
                     name_andrew = 3
                     name_charles = 1
+                    name_louis = 1
+                    name_mary = 1
+                    name_sigmund = 1
+                    name_albert = 1
+                    name_vladislav = 1
                 }
+
                 laws = {
                     legal_code_law = civil_law_policy
                     marriage_law = monogamous_marriage
                     heir_religion_law = heir_same_religion
                     precious_metal_distribution_law = gold_export_ban
                 }
+
                 reforms = {
                     autocracy
                 }
+
                 privilege = {
                     #nobles
                     monetary_fiefs
@@ -18794,7 +18816,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = random
+                ruler = hun_janos_hunyadi
             }
             country_rank = rank_duchy
             capital = alba_iulia
@@ -18811,7 +18833,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = random
+                ruler = hun_janos_hunyadi
             }
             capital = cristuru_secuiesc
         }
@@ -53183,14 +53205,16 @@ countries = {
             our_cores_conquered_by_others = { }
             include = "vietnamese_champa_monarchy"
             government = {
-                ruler_term = { character = dai_thai_to start_date = 1428.4.29 end_date = 1433.10.5 regnal_name = "Thái Tổ" regnal_number = 1 }
-                ruler_term = { character = dai_le_thai_tong start_date = 1433.10.20 end_date = 1442.9.7 regnal_name = "Thái Tông" regnal_number = 1 }
-                ruler_term = { character = dai_le_nhan_tong start_date = 1442.9.7 regnal_number = 1 }
                 active_regent = dai_nguyen_thi_anh
-                ruler = dai_le_nhan_tong
+                heir = dai_le_nhan_tong
                 regency = consort_regency
                 start_regency_date = 1442.9.7
                 end_regency_date = 1453.1.1
+
+                ruler_term = { character = dai_thai_to start_date = 1428.4.29 end_date = 1433.10.5 regnal_name = "Thái Tổ" regnal_number = 1 }
+                ruler_term = { character = dai_le_thai_tong start_date = 1433.10.20 end_date = 1442.9.7 regnal_name = "Thái Tông" regnal_number = 1 }
+                ruler_term = { character = dai_le_nhan_tong start_date = 1442.9.7 regnal_number = 1 }
+
                 centralization_vs_decentralization = -35
                 mercantilism_vs_free_trade = -20
                 sinicized_vs_unsinicized = -50

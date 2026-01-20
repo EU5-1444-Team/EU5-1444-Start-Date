@@ -10498,7 +10498,7 @@ character_db={
         estate = nobles_estate
         adm = 66 dip = 61 mil = 43
         birth_date = 1288.1.1
-        death_date = 1345.3.13
+        death_date = 1342.7.16
         birth = naples
         father = cro_martell_karoly
         mother = hun_klementia_habsburg
@@ -10519,14 +10519,13 @@ character_db={
         female = yes
         spouse = hun_karoly_robert
         birth_date = 1305.1.1
-        death_date = 1368.1.19
+        death_date = 1380.12.29
         birth = krakow
         father = pol_wladislaw_i_piast
         mother = pol_jadwiga_boleslawowna
         dynasty = piast_dynasty
         tag = HUN
     }
-
 
     # Daughter of the King of Hungary & Croatia
     hun_katalin = { #https://en.wikipedia.org/wiki/Catherine_of_Hungary,_Duchess_of_%C5%9Awidnica
@@ -10536,14 +10535,13 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1315.1.1
-        death_date = 1364.12.3
+        death_date = 1355.1.1
         birth = visegrad
         father = hun_karoly_robert
         mother = hun_maria_bytom
         dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
         tag = HUN
     }
-
 
     hun_elzbieta = {
         first_name = { name = name_elizabeth }
@@ -10552,14 +10550,13 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1317.1.1
-        death_date = 1366.2.5
+        death_date = 1367.1.1
         birth = visegrad
         father = hun_karoly_robert
         mother = hun_maria_bytom
         dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
         tag = HUN
     }
-
     
     # Bastard Son of the King of Hungary & Croatia
     hun_kalman = { #Bastard son of hun_karoly_robert
@@ -10568,7 +10565,7 @@ character_db={
         religion = catholic
         estate = clergy_estate
         birth_date = 1317.1.1
-        death_date = 1382.11.22
+        death_date = 1375.1.1
         father = hun_karoly_robert
         birth = pest
         dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
@@ -10581,14 +10578,13 @@ character_db={
         }
     }
 
-
     # Son & Heir of the King of Hungary & Croatia
     hun_lajos_i = {
         first_name = { name = name_louis }
+        nickname = { name = nick_the_great }
         culture = hungarian
         religion = catholic
         estate = nobles_estate
-        adm = 48 dip = 61 mil = 40
         birth_date = 1326.3.5
         death_date = 1379.12.11
         birth = visegrad
@@ -10596,9 +10592,7 @@ character_db={
         mother = pol_elzbieta_piast
         dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
         tag = HUN
-        child_trait = child_prodigy
     }
-
 
     # Childs of the King of Hungary & Croatia   
     hun_andras = {
@@ -10606,33 +10600,28 @@ character_db={
         culture = hungarian
         religion = catholic
         estate = nobles_estate
-        adm = 28 dip = 27 mil = 48
         birth_date = 1327.10.30
-        death_date = 1384.5.14
+        death_date = 1345.9.18
         birth = visegrad
         father = hun_karoly_robert
         mother = pol_elzbieta_piast
         dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
         tag = NAP
-        child_trait = child_rowdy
     }
 
-    
     hun_istvan = {
         first_name = { name = name_stephen }
         culture = hungarian
         religion = catholic
         estate = nobles_estate
-        adm = 6 dip = 6 mil = 6
         birth_date = 1332.8.20
-        death_date = 1388.12.23
+        death_date = 1354.8.9
         birth = visegrad
         father = hun_karoly_robert
         mother = pol_elzbieta_piast
         dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
         tag = HUN
     }
-
 
     # Mother of the Dauphin of Viennois
     dau_beatrix_anjou = {
@@ -10650,7 +10639,6 @@ character_db={
         dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
         tag = DAU
     }
-
 
     fra_klemencia_anjou = {
         first_name = { name = name_clemence }
@@ -109090,7 +109078,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         female = yes
-        birth_date = 13714.10.1
+        birth_date = 1374.10.1
         death_date = 1441.3.8
         birth = dijon
         spouse = hol_wilhelm_vi_wittelsbach
@@ -110055,6 +110043,36 @@ character_db={
     
     ### Hungary
 
+    hun_elizabeta_kotromanic = {
+        first_name = { name = name_elizabeth }
+        culture = bosnian
+        religion = catholic
+        female = yes
+        birth_date = 1339.1.1
+        death_date = 1387.1.1
+        birth = zenica
+        spouse = hun_lajos_i
+        father = bos_stephen_kotromanic
+        #mother = Elizabeth of Kuyavia
+        dynasty = kotromanic_dynasty
+        tag = HUN  
+    }
+
+    hun_maria_anjou = {
+        first_name = { name = name_mary }
+        culture = hungarian
+        religion = catholic
+        female = yes
+        birth_date = 1371.1.1
+        death_date = 1395.5.17
+        birth = buda
+        spouse = hun_sigismund_i_luxembourg
+        father = hun_lajos_i
+        mother = hun_elizabeta_kotromanic
+        dynasty = anjou_dynasty
+        tag = HUN         
+    }
+
     hun_sigismund_i_luxembourg = {
         first_name = { name = name_sigmund }
         culture = hungarian
@@ -110080,7 +110098,214 @@ character_db={
         tag = BOH          
     }
 
+    # Croatia/Slavonia
+
+    cro_janos_anjou = {
+        first_name = { name = name_john }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1354.1.1
+        death_date = 1360.1.1
+        birth = buda
+        father = hun_istvan
+        mother = ubv_margarete_wittelsbach
+        dynasty = anjou_dynasty
+        tag = CRO         
+    }
+
+    # Courtiers - HUN
+
+    hun_janos_hunyadi = {
+        first_name = { name = name_john }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1406.1.1
+        birth = buda
+        dynasty = hunyadi_dynasty
+        tag = HUN         
+    }
+
+    hun_erzsebet_szilagyi = {
+        first_name = { name = name_elizabeth }
+        culture = hungarian
+        religion = catholic
+        female = yes
+        birth_date = 1410.1.1
+        birth = zalau
+        father = hun_laszlo_szilagyi
+        dynasty = szilagyi_dynasty
+        tag = HUN          
+    }
+
+    hun_laszlo_hunyadi = {
+        first_name = { name = name_vladislav }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1431.1.1
+        birth = hunedoara
+        father = hun_janos_hunyadi
+        mother = hun_erzsebet_szilagyi
+        dynasty = hunyadi_dynasty
+        tag = HUN         
+    }
+
+    hun_matyas_hunyadi = {
+        first_name = { name = name_matthew }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1443.2.23
+        birth = cluj
+        father = hun_janos_hunyadi
+        mother = hun_erzsebet_szilagyi
+        dynasty = hunyadi_dynasty
+        tag = HUN
+        child_trait = child_intelligent       
+    }
+
+    hun_laszlo_szilagyi = {
+        first_name = { name = name_vladislav }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1380.1.1
+        birth = zalau
+        dynasty = szilagyi_dynasty
+        tag = HUN
+    }
+
+    hun_mihaly_szilagyi = {
+        first_name = { name = name_michael }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1402.1.1
+        birth = zalau
+        father = hun_laszlo_szilagyi
+        dynasty = szilagyi_dynasty
+        tag = HUN
+    }
+
+    hun_osvat_szilagyi = {
+        first_name = { name = Osvát }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1435.1.1
+        birth = zalau
+        father = hun_laszlo_szilagyi
+        dynasty = szilagyi_dynasty
+        tag = HUN
+    }
+
+    hun_orsolya_szilagyi = {
+        first_name = { name = Orsolya }
+        culture = hungarian
+        religion = catholic
+        female = yes
+        birth_date = 1437.1.1
+        birth = zalau
+        father = hun_laszlo_szilagyi
+        dynasty = szilagyi_dynasty
+        tag = HUN
+    }
+
+    hun_miklos_i_garai = {
+        first_name = { name = name_nicholas }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1325.1.1
+        death_date = 1386.7.25
+        birth = mako
+        dynasty = garai_dynasty
+        tag = HUN      
+    }
+
+    hun_miklos_ii_garai = {
+        first_name = { name = name_nicholas }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1367.1.1
+        death_date = 1433.12.1
+        birth = mako
+        father = hun_miklos_i_garai
+        dynasty = garai_dynasty
+        tag = HUN      
+    }
+
+    hun_miklos_iii_garai = {
+        first_name = { name = name_nicholas }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1408.1.1
+        birth = mako
+        father = hun_miklos_ii_garai
+        dynasty = garai_dynasty
+        tag = HUN      
+    }
+
+    hun_laszlo_garai = {
+        first_name = { name = name_vladislav }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1410.1.1
+        birth = mako
+        father = hun_miklos_ii_garai
+        dynasty = garai_dynasty
+        tag = HUN      
+    }
+
+    hun_job_garai = {
+        first_name = { name = name_joyce }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1434.1.1
+        birth = mako
+        father = hun_laszlo_garai
+        dynasty = garai_dynasty
+        tag = HUN      
+    }
+
+    hun_anna_garai = {
+        first_name = { name = name_anna }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1436.1.1
+        birth = mako
+        father = hun_laszlo_garai
+        dynasty = garai_dynasty
+        tag = HUN      
+    }
+
+    hun_janos_garai = {
+        first_name = { name = name_john }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1371.1.1
+        birth = mako
+        father = hun_miklos_i_garai
+        dynasty = garai_dynasty
+        tag = HUN      
+    }
+
+    # Courtiers - CRO
+
+    #House of Frankopan
+
     ### Poland
+
+    pol_jadwiga_anjou = {
+        first_name = { name = name_hedwig }
+        culture = polish
+        religion = catholic
+        female = yes
+        birth_date = 1373.10.3
+        death_date = 1399.5.17
+        birth = buda
+        spouse = lit_jogalia_jagiellon
+        father = hun_lajos_i
+        mother = hun_elizabeta_kotromanic
+        dynasty = anjou_dynasty
+        tag = POL          
+    }
+
+    # Courtiers
 
     ### Lithuania
 
