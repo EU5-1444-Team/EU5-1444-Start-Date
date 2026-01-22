@@ -1804,7 +1804,6 @@ countries = {
         HPL = {
             #Holstein-Plön
             own_control_core = {
-                kiel heiligenhafen plon
             }
 
             starting_technology_level = 3
@@ -1843,6 +1842,7 @@ countries = {
             #Holstein-Rendsburg
             own_control_core = {
                 stormarn segeberg rendsburg steinburg
+                kiel heiligenhafen plon
             }
 
             starting_technology_level = 3
@@ -1852,10 +1852,11 @@ countries = {
             include = "german_principality"
             government = {
 
-                ruler = shl_gerhard_iii_holstein_rendsburg
+                ruler = HTR_adolf_8
 
                 ruler_term = { character = shl_henry_i_holstein_rendsburg start_date = 1290.1.1 end_date = 1304.8.5 regnal_number = 1 }
-                ruler_term = { character = shl_gerhard_iii_holstein_rendsburg start_date = 1304.8.5 regnal_number = 3 }
+                ruler_term = { character = shl_gerhard_iii_holstein_rendsburg start_date = 1304.8.5 end_date = 1340.4.1 regnal_number = 3 }
+                ruler_term = { character = HTR_adolf_8 start_date = 1421.1.1 end_date = 1459.12.4 regnal_number = 8 }
 
                 regnal_numbers = {
                     name_gerard = 3
@@ -1884,7 +1885,7 @@ countries = {
             include = "expl_northern_europe"
             government = {
 
-                ruler = random
+                ruler = HTR_adolf_8
 
                 ruler_term = { character = dan_olaf_hunger start_date = 1080.1.1 end_date = 1095.8.18 regnal_number = 1 }
                 ruler_term = { character = dan_canute_lavard start_date = 1095.8.18 end_date = 1131.1.7 regnal_number = 1 }
@@ -1913,6 +1914,7 @@ countries = {
                 ruler_term = { character = dan_valdemar_iii start_date = 1325.3.12 end_date = 1326.8.15 regnal_number = 5 }
                 ruler_term = { character = shl_gerhard_iii_holstein_rendsburg start_date = 1326.8.15 end_date = 1330.1.1 regnal_number = 1 }
                 ruler_term = { character = dan_valdemar_iii start_date = 1330.1.1 end_date = 1364.1.1 regnal_number = 5 }
+                ruler_term = { character = HTR_adolf_8 start_date = 1440.1.1 end_date = 1459.12.4 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_olaf = 1
@@ -1934,7 +1936,7 @@ countries = {
 
             country_rank = rank_duchy
             capital = flensburg
-            dynasty = estrid_dynasty
+            dynasty = schauenburg_dynasty
         }
 
         BOH = {
@@ -5246,7 +5248,7 @@ countries = {
                 ruler_term = { character = sco_archibald_douglas_5th_earl start_date = 1424.8.17 end_date = 1439.6.26 }
                 ruler_term = { character = sco_william_douglas_6th_earl start_date = 1439.6.26 end_date = 1440.11.24 }
                 ruler_term = { character = sco_james_douglas_7th_earl start_date = 1440.11.24 end_date = 1443.3.24 }
-                ruler_term = { character = sco_william_douglas_8th_earl start_date = 1443.3.24 end_date = }
+                ruler_term = { character = sco_william_douglas_8th_earl start_date = 1443.3.24 }
             }
             include = "catholic_monarchy_scottish_earldom"
             include = "expl_northern_europe"
@@ -66672,7 +66674,6 @@ countries = {
                 ruler = random
             }
             capital = waima
-        }
         }
     }
 }
