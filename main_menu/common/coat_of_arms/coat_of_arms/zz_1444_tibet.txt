@@ -1,30 +1,13 @@
 RIN = {
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 0 }
-    colored_emblem = {
-        texture = "ce_rinpungpa.dds"
-        color1 = rgb { 204 51 0 }
-        instance = {
-            position = { 0.5 0.35 }
-            scale = { 1.0 1.0 }
-        }
-    }
-    colored_emblem = {
-        texture = "ce_tibetan_seal.dds"
-        color1 = rgb { 204 51 0 }
-        instance = {
-            position = { 0.5 0.75 }
-            scale = { 0.25 0.25 }
-        }
-    }
-}
+    # Rinpungpa
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "black"
+	color3 = "red_scarlet"
 
-PHA = {
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 255 }
-    colored_emblem = {
-		texture = "ce_phagmodrupa.dds"
-        color1 = rgb { 204 51 0 }
+	colored_emblem = {
+		texture = "ce_rinpungpa.dds"
+        color1 = color3
         instance = {
 			position = { 0.5 0.35 }
             scale = { 1.0 1.0 }
@@ -32,35 +15,68 @@ PHA = {
     }
 	colored_emblem = {
 		texture = "ce_tibetan_seal.dds"
-		color1 = rgb { 204 51 0 }
+		color1 = color3
 		instance = {
 			position = { 0.5 0.75 }
 			scale = { 0.25 0.25 }
 		}
-	}
+	}	
+	colored_emblem = {
+		texture = "ce_border_thin_double.dds"
+		color1 = color2
+		color2 = color3
+	}		
 }
 
-KHP = {
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 119 129 136 }
-    colored_emblem = {
-		texture = "ce_dharma_wheel_tibet.dds"
-        color1 = rgb { 171 147 26 }
-        color2 = rgb { 172 184 197 }
-        color3 = rgb { 202 202 202 }
+PHA = {
+    # Phagmodrupa
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "yellow"
+	color3 = "red_scarlet"
+
+	colored_emblem = {
+		texture = "ce_phagmodrupa.dds"
+        color1 = color3
         instance = {
-            position = { 0.5 0.35 }
-            scale = { 0.7 0.7 }
+			position = { 0.5 0.35 }
+            scale = { 1.0 1.0 }
         }
     }
 	colored_emblem = {
 		texture = "ce_tibetan_seal.dds"
-		color1 = rgb { 204 51 0 }
+		color1 = color3
 		instance = {
 			position = { 0.5 0.75 }
 			scale = { 0.25 0.25 }
 		}
-	}
+	}	
+	colored_emblem = {
+		texture = "ce_border_thin_double.dds"
+		color1 = color3
+		color2 = color2
+	}		
+}
+
+KHP = {
+    # Kham
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "black"
+	color3 = "red_scarlet"
+
+	textured_emblem = {
+		texture = "te_khampa.dds"
+		instance = { 
+            position = { 0.5 0.5 } 
+            scale = { 0.80 0.80 } 
+        }		
+	}	
+	colored_emblem = {
+		texture = "ce_border_thin_double.dds"
+		color1 = color2
+		color2 = color3
+	}		
 }
 
 UTS = { # U-Tsang, formerly Tibet flag
