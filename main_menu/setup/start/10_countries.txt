@@ -50841,8 +50841,10 @@ countries = {
                 # dibang siang siyom subansiri
                 # ziro bomdila kameng kamla kurung 
                 metog rigyal tirkong
-                chumdo shukden
-                pome lhari
+                pome lhari chumdo shukden
+                siang subansiri
+
+                rima sangacho walong
             }
 
             country_rank = rank_duchy
@@ -50922,6 +50924,9 @@ countries = {
                 nenying ralung
                 dingri pelmo nyalam
                 sakya gonga_chode chorten_nyima
+                dargyeling dzongkar
+                baryang lo_mustang tradun
+                namtso_doring
             }
 
             country_rank = rank_duchy
@@ -51006,86 +51011,6 @@ countries = {
             include = "expl_china"
         }
 
-        GUA = {
-            # Guanjue
-            own_control_core = {
-                gonjo drayab sho tangkya
-                chamdo karma_densa khamgar
-                wara_kham jomda sibda
-            }
-
-            starting_technology_level = 3
-            include = "expl_china"
-
-            capital = chamdo
-            government = {
-                ruler = random
-            }
-        }
-
-        DGA = {
-            # Doganda
-            own_control_core = {
-                nangchen chodrak gechak jang_tana pelme zurmang_namgyaltse
-                jyekundo lungsho
-            }
-
-            starting_technology_level = 3
-            include = "expl_china"
-
-            capital = jyekundo
-            government = {
-                ruler = random
-            }
-        }
-
-        BOM = {
-            # Bome
-            own_control_core = {
-                lhakhang pasho pema
-            }
-
-            starting_technology_level = 3
-            include = "expl_china"
-
-            capital = pasho
-            government = {
-                ruler = random
-            }
-        }
-
-        CGP = {
-            # Chigungpa
-            own_control_core = {
-                namtso_doring gonkri ronglung
-                nakchu barom rongpo
-                zagya tsedzong
-            }
-
-            starting_technology_level = 3
-            include = "expl_china"
-
-            capital = namtso_doring
-            government = {
-                ruler = random
-            }
-        }
-
-        SJP = {
-            # Sahjonbu
-            own_control_core = {
-                biru pembar riwoche samda shopando sok tengchen yangdzong
-            }
-
-            starting_technology_level = 3
-            include = "expl_china"
-            
-            capital = shopando
-            government = {
-                ruler = random
-            }
-        }
-
         PUR = {
             #Purang
             our_cores_conquered_by_others = {
@@ -51106,7 +51031,9 @@ countries = {
             # Maryul, Ladakh in 1460
             own_control_core = {
                 shey leh charasa kargil karpokhar lamayuru
+                # Baltistan?
                 skardu khaplu shigar
+                # ????
                 zangla padum phuktal
                 nagar
                 phander yasin punial
@@ -51114,7 +51041,8 @@ countries = {
                 astore chilas
                 altit passu misgar
                 chitral mulkhow yarkhun mastuj urtsun
-                murgo amtogor raskam sanju
+                # Yarkent passageway
+                # murgo amtogor raskam sanju
             }
             own_control_integrated = {
                 jijial kandia dasu tangir
@@ -51967,9 +51895,8 @@ countries = {
 
         HOR = {
             #Hor States
-            our_cores_conquered_by_others = {
-                ganze manigango trotsang
-                khordong dawu
+            own_control_core = {
+                ganze manigango trotsang khordong dawu
             }
 
             include = "east_asia_monarchy_no_coast"
@@ -51985,8 +51912,6 @@ countries = {
             own_control_core = {
                 longtang gegong mangge sershul
                 dzagyal khana lab serkar
-                nubzur serta
-                khordong dawu
             }
 
             include = "limited_east_asia_monarchy"
@@ -52004,9 +51929,7 @@ countries = {
         DRG = {
             #Derge
             own_control_core = {
-                derge katok kharak tromge
-                ganze manigango trotsang
-                nyarong
+                derge jomda katok kharak sibda tromge wara_kham
             }
 
             include = "east_asia_monarchy_no_coast"
@@ -52019,7 +51942,7 @@ countries = {
 
         NCN = {
             #Nangchen
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 nangchen chodrak gechak jang_tana pelme zurmang_namgyaltse
                 jyekundo lungsho
             }
@@ -52034,7 +51957,7 @@ countries = {
 
         GNJ = {
             #Gonjo
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 gonjo drayab sho tangkya
                 chamdo karma_densa khamgar
                 lhakhang pasho pema
@@ -52050,7 +51973,7 @@ countries = {
 
         BTG = {
             #Batang
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 batang markham shar_yelpuk
                 tsakhalkho dzogang mengung
                 sampheling dzingcho sangme
@@ -52066,7 +51989,7 @@ countries = {
 
         NBH = {
             #Nubhor
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 biru pembar riwoche samda shopando sok tengchen yangdzong
             }
 
@@ -52080,7 +52003,7 @@ countries = {
 
         LTN = {
             #Litang
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 litang nyachukha daoba
             }
 
@@ -52094,7 +52017,8 @@ countries = {
 
         NYA = {
             #Nyarong
-            our_cores_conquered_by_others = {
+            own_control_core = {
+                nyarong chodrak_kham
             }
 
             include = "asia_advanced_no_pagan_tribe"
@@ -52379,9 +52303,12 @@ countries = {
         }
 
         CKL = {
-            #Minyag
-            our_cores_conquered_by_others = {
+            #Minyag (Chakla in 1444)
+            own_control_core = {
                 dartsedo lhagang kazhi dzogon zhanggu
+            }
+
+            own_control_integrated = {
                 baurang
             }
 
@@ -52403,42 +52330,6 @@ countries = {
                 chabcha buha caka dulan dungkar_amdo guolimu qardam amnye_machen quge sailahai zeku muxihe
 
                 sanjiaocheng
-            }
-
-            include = "asia_advanced_no_pagan_tribe"
-
-            capital = chabcha
-            government = {
-                ruler = random
-            }
-        }
-
-        KHP = {
-            # Kham
-            own_control_core = {
-                rima sangacho walong
-                tsakhalkho dzogang mengung
-                sampheling dzingcho sangme
-                litang daoba
-                batang markham shar_yelpuk 
-                
-            }
-
-            include = "asia_advanced_no_pagan_tribe"
-
-            capital = chabcha
-            government = {
-                ruler = random
-            }
-        }
-
-        CKA = {
-            # Chakla
-            own_control_core = {
-                chodrak_kham
-                waerhdje kheong muli
-                baurang nyachukha
-                dartsedo lhagang kazhi dzogon zhanggu
             }
 
             include = "asia_advanced_no_pagan_tribe"
@@ -54977,12 +54868,10 @@ countries = {
             #Ahom
             own_control_core = {
                 charaideo charagua
-                konwargaon lakhimpur
                 morangi dergaon
                 tezpur bordowa rowta durjaya guwahati
                 lyngngam sohra nabagram
                 daboka sutnga jaintiapur
-                itanagar nakshaparvat
                 namrup noadihang
             }
 
@@ -55076,6 +54965,8 @@ countries = {
             own_control_core = {
                 sadiya gomsi tengapani malinithan dibang
                 bengmara dibrugarh
+                # NOTE: Possibly Ahom territory
+                konwargaon lakhimpur itanagar nakshaparvat
             }
 
             include = "expl_india_hindu"

@@ -78,6 +78,50 @@ AFG_f = {
     }
 }
 
+TIB_f = {
+	level = 3
+	required_locations_fraction = 0.6
+	rule = historical
+	potential = {
+		culture = { has_culture_group = culture_group:tibetan_group }
+	}
+	name = TIB
+	flag = TIB
+	adjective = TIB_ADJ
+	tag = TIB
+	color = map_TIB
+	regions = {
+		tibet_region
+	}
+	form_effect = {
+	}
+}
+
+KHP_f = {
+	level = 2
+	required_locations_fraction = 0.6
+	rule = historical
+
+	potential = {
+		culture = culture:khampa_culture
+	}
+
+	allow = {
+	}
+	
+	name = KHP
+	flag = KHP
+	adjective = KHP_ADJ
+	tag = KHP
+	color = map_KHP
+
+	areas = {
+		kham_area
+	}
+	form_effect = {
+	}
+}
+
 #TIX_f = {
 #	level = 3
 #	required_locations_fraction = 1.0
