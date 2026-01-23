@@ -50780,33 +50780,33 @@ countries = {
         #     capital = sakya
         # }
 
-        LDK = {
-            # Ladakh
-            own_control_core = {
-                shey leh charasa kargil karpokhar lamayuru
-                skardu khaplu shigar
-                zangla padum phuktal
-                nagar
-                phander yasin punial
-                gilgit ishkoman bunji
-                astore chilas
-                altit passu misgar
-                chitral mulkhow yarkhun mastuj urtsun
-                murgo amtogor raskam sanju
-            }
-            own_control_integrated = {
-                jijial kandia dasu tangir
-            }
+        # LDK = {
+        #     # Ladakh
+        #     own_control_core = {
+        #         shey leh charasa kargil karpokhar lamayuru
+        #         skardu khaplu shigar
+        #         zangla padum phuktal
+        #         nagar
+        #         phander yasin punial
+        #         gilgit ishkoman bunji
+        #         astore chilas
+        #         altit passu misgar
+        #         chitral mulkhow yarkhun mastuj urtsun
+        #         murgo amtogor raskam sanju
+        #     }
+        #     own_control_integrated = {
+        #         jijial kandia dasu tangir
+        #     }
 
-            starting_technology_level = 3
-            include = "expl_india_hindu"
-            include = "indian_hindu_monarchy_no_coast"
+        #     starting_technology_level = 3
+        #     include = "expl_india_hindu"
+        #     include = "indian_hindu_monarchy_no_coast"
 
-            capital = toling
-            government = {
-                ruler = random
-            }
-        }
+        #     capital = toling
+        #     government = {
+        #         ruler = random
+        #     }
+        # }
 
         GUG = {
             #Guge
@@ -50818,6 +50818,7 @@ countries = {
                 baryang lo_mustang tradun
                 ormogang tsherlung
                 mendong samten selephu
+                dargyeling dzongkar
             }
 
             starting_technology_level = 3
@@ -50836,7 +50837,7 @@ countries = {
                 gyamda buchu daklha_gampo zhokha
                 trigu chikchar gonpatsi lhodrak lho_taklung tragor zangchen
                 lhasa damzhung drigung galo gyama taklung tsora tsurphu
-                nedong densatil gongkar nyemo rinpung_yarlung samye
+                nedong densatil gongkar samye
                 # dibang siang siyom subansiri
                 # ziro bomdila kameng kamla kurung 
                 metog rigyal tirkong
@@ -50863,18 +50864,18 @@ countries = {
                 heir_selection = theocratic_elective
 
                 aristocracy_vs_plutocracy = -60
-                centralization_vs_decentralization = -60
+                centralization_vs_decentralization = 60
                 traditionalist_vs_innovative = -50
-                spiritualist_vs_humanist = -25
+                spiritualist_vs_humanist = -50
                 serfdom_vs_free_subjects = -40
                 mercantilism_vs_free_trade = -80
-                belligerent_vs_conciliatory = -50
+                belligerent_vs_conciliatory = 50
                 quality_vs_quantity = 20
-                offensive_vs_defensive = 10
-                land_vs_naval = -20
+                offensive_vs_defensive = 50
+                land_vs_naval = -100
                 capital_economy_vs_traditional_economy = 80
                 individualism_vs_communalism = 20
-                outward_vs_inward = -95
+                outward_vs_inward = 95
 
                 parliament = {
                     parliament_type = council
@@ -50917,6 +50918,10 @@ countries = {
                 ganden_delingshar lhadrak ngamring tagmo_lingkha
                 serzhik shantsa zangdan
                 gyantse
+                nyemo rinpung_yarlung
+                nenying ralung
+                dingri pelmo nyalam
+                sakya gonga_chode chorten_nyima
             }
 
             country_rank = rank_duchy
@@ -50932,16 +50937,16 @@ countries = {
                 aristocracy_vs_plutocracy = -60
                 centralization_vs_decentralization = -60
                 traditionalist_vs_innovative = -50
-                spiritualist_vs_humanist = -25
+                spiritualist_vs_humanist = -50
                 serfdom_vs_free_subjects = -40
                 mercantilism_vs_free_trade = -80
-                belligerent_vs_conciliatory = -50
-                quality_vs_quantity = 20
-                offensive_vs_defensive = 10
-                land_vs_naval = -20
+                belligerent_vs_conciliatory = -80
+                quality_vs_quantity = 60
+                offensive_vs_defensive = -50
+                land_vs_naval = -100
                 capital_economy_vs_traditional_economy = 80
                 individualism_vs_communalism = 20
-                outward_vs_inward = -95
+                outward_vs_inward = -40
 
                 reforms = {
                     # TODO: This doesn't work, make a custom reform
@@ -50980,6 +50985,25 @@ countries = {
                 changpa_culture
                 khampa_culture
             }
+        }
+
+        GPH = {
+            # Ganden Monastery, seat of the first Dalai Lama
+            type = building
+            capital = lhasa
+            government = {
+                ruler = gph_gedun_drupa
+                type = theocracy
+                heir_selection = theocratic_elective
+                laws = {
+                    heir_religion_law = heir_special_succession
+                }
+
+                reforms = {
+                    gelugpa_institution
+                }
+            }
+            include = "expl_china"
         }
 
         GUA = {
@@ -51062,66 +51086,6 @@ countries = {
             }
         }
 
-        KHW = {
-            # Khakaw
-            own_control_core = {
-                nenying ralung
-            }
-
-            starting_technology_level = 3
-            include = "expl_china"
-
-            capital = nenying
-            government = {
-                ruler = random
-            }
-        }
-
-        SYA = {
-            # Sakya
-            own_control_core = {
-                sakya gonga_chode chorten_nyima
-            }
-
-            starting_technology_level = 3
-            include = "expl_china"
-
-            capital = sakya
-            government = {
-                ruler = random
-            }
-        }
-
-        LHU = {
-            # Lhadlu
-            own_control_core = {
-                dingri pelmo nyalam
-            }
-
-            starting_technology_level = 3
-            include = "expl_china"
-
-            capital = dingri
-            government = {
-                ruler = random
-            }
-        }
-
-        GHO = {
-            # Ghontanpa
-            own_control_core = {
-                dargyeling dzongkar
-            }
-
-            starting_technology_level = 3
-            include = "expl_china"
-
-            capital = dzongkar
-            government = {
-                ruler = random
-            }
-        }
-
         PUR = {
             #Purang
             our_cores_conquered_by_others = {
@@ -51139,25 +51103,31 @@ countries = {
         }
 
         MAR = {
-            #Maryul
-            our_cores_conquered_by_others = {
+            # Maryul, Ladakh in 1460
+            own_control_core = {
                 shey leh charasa kargil karpokhar lamayuru
                 skardu khaplu shigar
-                nako tabo tsorub
-                rutok drangtse hanle tashigang
+                zangla padum phuktal
+                nagar
+                phander yasin punial
+                gilgit ishkoman bunji
+                astore chilas
+                altit passu misgar
+                chitral mulkhow yarkhun mastuj urtsun
+                murgo amtogor raskam sanju
+            }
+            own_control_integrated = {
+                jijial kandia dasu tangir
             }
 
-            include = "east_asia_monarchy_no_coast"
-            government = {
-                ruler = mar_rinchen
-            }
-
-            tolerated_cultures = {
-                balti_culture
-                utsang_culture
-            }
+            starting_technology_level = 3
+            include = "expl_india_hindu"
+            include = "indian_hindu_monarchy_no_coast"
 
             capital = shey
+            government = {
+                ruler = random
+            }
         }
 
         ZNK = {

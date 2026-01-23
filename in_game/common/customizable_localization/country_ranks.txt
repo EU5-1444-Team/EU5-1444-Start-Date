@@ -553,6 +553,17 @@ country_flavor = {
     }
 
     text = {
+        localization_key = rank_tibetan_monastery
+        trigger = {
+            culture = { has_culture_group = culture_group:tibetan_group }
+            OR = {
+                has_reform = government_reform:gelugpa_institution
+                tag = GPH
+            }
+        }
+    }
+
+    text = {
         localization_key = rank_japanese_court
         trigger = {
             culture = { has_culture_group = culture_group:japanese_group }

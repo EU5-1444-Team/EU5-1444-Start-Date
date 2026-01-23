@@ -1,0 +1,30 @@
+gelugpa_institution = {
+	major = yes
+	unique = yes
+	potential = {
+		tag = GPH
+	}
+	allow = {
+	}
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = gelugpa_institution
+		}
+	}
+	country_modifier = {
+		monthly_religious_influence = 0.25
+		monthly_devotion = 0.1
+		monthly_towards_traditionalist = societal_value_monthly_move
+		is_dalai_lama = yes
+		disallow_diplomatic_subjugation = yes
+		blocked_from_conversion = yes
+		blocked_from_forming_countries = yes
+		ruler_name_in_court_language = yes
+		can_declare_war = no
+		
+		government_reform_slots = 1
+	}
+	block_for_rebel = yes
+	years = 2
+}
