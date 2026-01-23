@@ -1,0 +1,50 @@
+ganden_monastery = {
+    is_foreign = yes
+    stronger_power_projection = no
+    need_good_relation = yes
+    pop_type = clergy
+
+    category = religious_category
+
+    max_levels = 1
+    employment_size = religious_building_employment
+
+    rural_settlement = yes
+    town = yes
+    city = yes
+
+    ai_foreign_ignore_naval_range = yes
+
+    location_potential = {
+        dominant_culture = { has_culture_group = culture_group:tibetan_group }
+    }
+
+    country_potential = {
+        has_reform = government_reform:gelugpa_institution
+        country_type = building
+    }
+
+    build_time = religious_building_time
+
+    allow = {
+        dominant_culture = { has_culture_group = culture_group:tibetan_group }
+        any_foreign_building_countries_in_location = { this = scope:actor }
+    }
+
+    modifier = {
+        manpower_to_building_owner = 0.0
+        gold_to_building_owner = 0.05
+        local_clergy_max_literacy = 20
+		local_unrest = -0.025
+		local_max_control = 0.05
+        local_pop_conversion_speed_modifier = 0.2
+        local_migration_attraction = 0.1
+    }
+
+    possible_production_methods = {
+        estate_building_input
+    }
+
+    construction_demand = cathedral_construction
+    graphical_tags = { large_religious }
+}

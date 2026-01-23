@@ -7174,7 +7174,7 @@ countries = {
         #CTR - Chitral
         CTR = {
             #https://en.wikipedia.org/wiki/Chitral_(princely_state)
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 chitral mulkhow yarkhun mastuj
             }
 
@@ -7264,7 +7264,7 @@ countries = {
         #GLI - Gilgit
         GLI = {
             #https://en.wikipedia.org/wiki/Gilgit
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 phander yasin punial
                 gilgit ishkoman bunji
                 astore chilas
@@ -7315,7 +7315,7 @@ countries = {
         #HNZ - Hunza
         HNZ = {
             #https://en.wikipedia.org/wiki/Hunza_(princely_state)
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 altit passu misgar
             }
 
@@ -7357,7 +7357,7 @@ countries = {
         #NAG - Nagar
         NAG = {
             #Nagar
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 nagar
             }
 
@@ -51001,31 +51001,33 @@ countries = {
         #     capital = sakya
         # }
 
-        LDK = {
-            # Ladakh
-            own_control_core = {
-                shey leh charasa kargil karpokhar lamayuru
-                skardu khaplu shigar
-                zangla padum phuktal
-                nagar
-                phander yasin punial
-                gilgit ishkoman bunji
-                astore chilas
-                altit passu misgar
-                chitral mulkhow yarkhun mastuj urtsun
-                murgo amtogor raskam sanju
-            }
-            own_control_integrated = {
-                jijial kandia dasu tangir
-            }
+        # LDK = {
+        #     # Ladakh
+        #     own_control_core = {
+        #         shey leh charasa kargil karpokhar lamayuru
+        #         skardu khaplu shigar
+        #         zangla padum phuktal
+        #         nagar
+        #         phander yasin punial
+        #         gilgit ishkoman bunji
+        #         astore chilas
+        #         altit passu misgar
+        #         chitral mulkhow yarkhun mastuj urtsun
+        #         murgo amtogor raskam sanju
+        #     }
+        #     own_control_integrated = {
+        #         jijial kandia dasu tangir
+        #     }
 
-            include = "east_asia_monarchy_no_coast"
+        #     starting_technology_level = 3
+        #     include = "expl_india_hindu"
+        #     include = "indian_hindu_monarchy_no_coast"
 
-            capital = toling
-            government = {
-                ruler = random
-            }
-        }
+        #     capital = toling
+        #     government = {
+        #         ruler = random
+        #     }
+        # }
 
         GUG = {
             #Guge
@@ -51034,14 +51036,17 @@ countries = {
                 toling dungkar tsaparang
                 gyanema khyunglung purang tokchen
                 rutok drangtse hanle tashigang gartok rala
-                baryang lo_mustang tradun
-                ormogang tsherlung
-                mendong samten selephu
+                # baryang lo_mustang tradun
+                # ormogang tsherlung
+                # mendong samten selephu
+                # dargyeling dzongkar
             }
 
-            include = "east_asia_monarchy_no_coast"
+            starting_technology_level = 3
+            include = "expl_india_hindu"
+            include = "indian_hindu_monarchy_no_coast"
 
-            capital = toling
+            capital = tsaparang
             government = {
                 ruler = random
             }
@@ -51053,19 +51058,79 @@ countries = {
                 gyamda buchu daklha_gampo zhokha
                 trigu chikchar gonpatsi lhodrak lho_taklung tragor zangchen
                 lhasa damzhung drigung galo gyama taklung tsora tsurphu
-                nedong densatil gongkar nyemo rinpung_yarlung samye
+                nedong densatil gongkar samye
                 # dibang siang siyom subansiri
                 # ziro bomdila kameng kamla kurung 
-                metog rigyal tirkong
-                chumdo shukden
-                pome lhari
+                # metog rigyal tirkong
+                # pome lhari chumdo shukden
+                # siang subansiri
+
+                # rima sangacho walong
             }
 
-            include = "east_asia_monarchy_no_coast"
+            country_rank = rank_duchy
+            starting_technology_level = 3
+            include = "expl_china"
 
             capital = nedong
             government = {
-                ruler = random
+                ruler_term = { character = pha_tai_situ_changchub_gyaltsen start_date = 1354.1.1 end_date = 1364.1.1 regnal_number = 1 }
+                ruler_term = { character = pha_jamyang_shakya_gyaltsen start_date = 1364.1.1 end_date = 1373.1.1 regnal_number = 1 }
+                ruler_term = { character = pha_drakpa_changchub start_date = 1373.1.1 end_date = 1381.1.1 regnal_number = 1 }
+                ruler_term = { character = pha_sonam_drakpa start_date = 1381.1.1 end_date = 1385.1.1 regnal_number = 1 }
+                ruler_term = { character = pha_gongma_drakpa_gyaltsen start_date = 1385.1.1 end_date = 1432.1.1 regnal_number = 1 }
+                ruler_term = { character = pha_drakpa_jungne start_date = 1432.1.1 regnal_number = 1 }
+                ruler = pha_drakpa_jungne
+                heir = pha_kunga_lekpa
+
+                type = theocracy
+                heir_selection = theocratic_elective
+
+                aristocracy_vs_plutocracy = -60
+                centralization_vs_decentralization = 60
+                traditionalist_vs_innovative = -50
+                spiritualist_vs_humanist = -50
+                serfdom_vs_free_subjects = -40
+                mercantilism_vs_free_trade = -80
+                belligerent_vs_conciliatory = 50
+                quality_vs_quantity = 20
+                offensive_vs_defensive = 50
+                land_vs_naval = -100
+                capital_economy_vs_traditional_economy = 80
+                individualism_vs_communalism = 20
+                outward_vs_inward = 95
+
+                parliament = {
+                    parliament_type = council
+                }
+
+                laws = {
+                    censorship = limited_censorship
+                    education_masses_law = basic_religious_education
+                    administrative_system = feudal_administration
+                    cultural_traditions_law = civil_society
+                    marriage_law = monogamous_marriage
+                    heir_religion_law = heir_special_succession
+                    legal_code_law = traditional_law_policy
+                    distribution_of_power_law = dop_traditional_distribution_of_power
+                }
+                privilege = {
+                    #Clergy
+                    clergy_literacy_rights
+                    clergy_land_rights
+                    embellish_great_works_of_faith
+                    promote_cultural_unity
+                    #Nobles
+                    nobles_land_rights
+                    noble_serfdom_rights
+                    noble_fortification_licenses
+                    elaborate_court_ceremonies
+                }
+            }
+
+            tolerated_cultures = {
+                changpa_culture
+                khampa_culture
             }
         }
 
@@ -51075,145 +51140,102 @@ countries = {
                 shigatse jonang namling tropu tsangdram
                 ganden_delingshar lhadrak ngamring tagmo_lingkha
                 serzhik shantsa zangdan
-            }
-
-            include = "east_asia_monarchy_no_coast"
-
-            capital = nedong
-            government = {
-                ruler = random
-            }
-        }
-
-        GUA = {
-            # Guanjue
-            own_control_core = {
-                gonjo drayab sho tangkya
-                chamdo karma_densa khamgar
-                wara_kham jomda sibda
-            }
-
-            include = "east_asia_monarchy_no_coast"
-
-            capital = chamdo
-            government = {
-                ruler = random
-            }
-        }
-
-        DGA = {
-            # Doganda
-            own_control_core = {
-                nangchen chodrak gechak jang_tana pelme zurmang_namgyaltse
-                jyekundo lungsho
-            }
-
-            include = "east_asia_monarchy_no_coast"
-
-            capital = jyekundo
-            government = {
-                ruler = random
-            }
-        }
-
-        BOM = {
-            # Bome
-            own_control_core = {
-                lhakhang pasho pema
-            }
-
-            include = "east_asia_monarchy_no_coast"
-
-            capital = pasho
-            government = {
-                ruler = random
-            }
-        }
-
-        CGP = {
-            # Chigungpa
-            own_control_core = {
-                namtso_doring gonkri ronglung
-                nakchu barom rongpo
-                zagya tsedzong
-            }
-
-            include = "east_asia_monarchy_no_coast"
-
-            capital = namtso_doring
-            government = {
-                ruler = random
-            }
-        }
-
-        SJP = {
-            # Sahjonbu
-            own_control_core = {
-                biru pembar riwoche samda shopando sok tengchen yangdzong
-            }
-
-            include = "east_asia_monarchy_no_coast"
-
-            capital = shopando
-            government = {
-                ruler = random
-            }
-        }
-
-        KHW = {
-            # Khakaw
-            own_control_core = {
+                gyantse
+                nyemo rinpung_yarlung
                 nenying ralung
-            }
-
-            include = "east_asia_monarchy_no_coast"
-
-            capital = nenying
-            government = {
-                ruler = random
-            }
-        }
-
-        SYA = {
-            # Sakya
-            own_control_core = {
-                sakya gonga_chode chorten_nyima
-            }
-
-            include = "east_asia_monarchy_no_coast"
-
-            capital = sakya
-            government = {
-                ruler = random
-            }
-        }
-
-        LHU = {
-            # Lhadlu
-            own_control_core = {
                 dingri pelmo nyalam
+                sakya gonga_chode chorten_nyima
+                dargyeling dzongkar
+                baryang lo_mustang tradun
+                namtso_doring
+
+                nakchu barom rongpo
+                namtso_doring tsedzong ronglung gonkri
+                phari
+                tsherlung ormogang
+                mendong samten selephu
             }
 
-            include = "east_asia_monarchy_no_coast"
-
-            capital = dingri
+            country_rank = rank_duchy
+            starting_technology_level = 3
+            include = "expl_china"
+            
+            capital = shigatse
             government = {
-                ruler = random
+                ruler = rin_norzang
+                type = theocracy
+                heir_selection = theocratic_elective
+
+                aristocracy_vs_plutocracy = -60
+                centralization_vs_decentralization = -60
+                traditionalist_vs_innovative = -50
+                spiritualist_vs_humanist = -50
+                serfdom_vs_free_subjects = -40
+                mercantilism_vs_free_trade = -80
+                belligerent_vs_conciliatory = -80
+                quality_vs_quantity = 60
+                offensive_vs_defensive = -50
+                land_vs_naval = -100
+                capital_economy_vs_traditional_economy = 80
+                individualism_vs_communalism = 20
+                outward_vs_inward = -40
+
+                reforms = {
+                    # TODO: This doesn't work, make a custom reform
+                    military_order_reform
+                }
+
+                parliament = {
+                    parliament_type = council
+                }
+
+                laws = {
+                    censorship = limited_censorship
+                    education_masses_law = basic_religious_education
+                    administrative_system = feudal_administration
+                    cultural_traditions_law = civil_society
+                    marriage_law = monogamous_marriage
+                    heir_religion_law = heir_special_succession
+                    legal_code_law = traditional_law_policy
+                    distribution_of_power_law = dop_traditional_distribution_of_power
+                }
+                privilege = {
+                    #Clergy
+                    clergy_literacy_rights
+                    clergy_land_rights
+                    embellish_great_works_of_faith
+                    promote_cultural_unity
+                    #Nobles
+                    nobles_land_rights
+                    noble_serfdom_rights
+                    noble_fortification_licenses
+                    elaborate_court_ceremonies
+                }
+            }
+
+            tolerated_cultures = {
+                changpa_culture
+                khampa_culture
             }
         }
 
-        GHO = {
-            # Ghontanpa
-            own_control_core = {
-                dargyeling dzongkar
-            }
-
-            include = "east_asia_monarchy_no_coast"
-
-            capital = dzongkar
+        GPH = {
+            # Ganden Monastery, seat of the first Dalai Lama
+            type = building
+            capital = lhasa
             government = {
-                ruler = random
+                ruler = gph_gedun_drupa
+                type = theocracy
+                heir_selection = theocratic_elective
+                laws = {
+                    heir_religion_law = heir_special_succession
+                }
+
+                reforms = {
+                    gelugpa_institution
+                }
             }
+            include = "expl_china"
         }
 
         PUR = {
@@ -51222,7 +51244,9 @@ countries = {
                 purang tokchen
             }
 
-            include = "east_asia_monarchy_no_coast"
+            starting_technology_level = 3
+            include = "expl_china"
+
             government = {
                 ruler = pur_punyamalla
             }
@@ -51231,30 +51255,39 @@ countries = {
         }
 
         MAR = {
-            #Maryul
-            our_cores_conquered_by_others = {
+            # Maryul, Ladakh in 1460
+            own_control_core = {
                 shey leh charasa kargil karpokhar lamayuru
+                # Baltistan?
                 skardu khaplu shigar
-                nako tabo tsorub
-                rutok drangtse hanle tashigang
+                # ????
+                # zangla padum phuktal
+                # nagar
+                # phander yasin punial
+                # gilgit ishkoman bunji
+                # astore chilas
+                # altit passu misgar
+                # chitral mulkhow yarkhun mastuj urtsun
+                # Yarkent passageway
+                # murgo amtogor raskam sanju
+            }
+            own_control_integrated = {
+                jijial kandia dasu tangir
             }
 
-            include = "east_asia_monarchy_no_coast"
-            government = {
-                ruler = mar_rinchen
-            }
-
-            tolerated_cultures = {
-                balti_culture
-                utsang_culture
-            }
+            starting_technology_level = 3
+            include = "expl_india_hindu"
+            include = "indian_hindu_monarchy_no_coast"
 
             capital = shey
+            government = {
+                ruler = random
+            }
         }
 
         ZNK = {
             #Zanskar
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 zangla padum phuktal
             }
 
@@ -52069,7 +52102,7 @@ countries = {
 
         POO = {
             #Powo
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 pome lhari chumdo shukden
                 rigyal metog tirkong
                 rima sangacho walong
@@ -52089,9 +52122,8 @@ countries = {
 
         HOR = {
             #Hor States
-            our_cores_conquered_by_others = {
-                ganze manigango trotsang
-                khordong dawu
+            own_control_core = {
+                ganze manigango trotsang khordong dawu
             }
 
             include = "east_asia_monarchy_no_coast"
@@ -52107,8 +52139,6 @@ countries = {
             own_control_core = {
                 longtang gegong mangge sershul
                 dzagyal khana lab serkar
-                nubzur serta
-                khordong dawu
             }
 
             include = "limited_east_asia_monarchy"
@@ -52126,9 +52156,7 @@ countries = {
         DRG = {
             #Derge
             own_control_core = {
-                derge katok kharak tromge
-                ganze manigango trotsang
-                nyarong
+                derge jomda katok kharak sibda tromge wara_kham
             }
 
             include = "east_asia_monarchy_no_coast"
@@ -52141,7 +52169,7 @@ countries = {
 
         NCN = {
             #Nangchen
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 nangchen chodrak gechak jang_tana pelme zurmang_namgyaltse
                 jyekundo lungsho
             }
@@ -52156,7 +52184,7 @@ countries = {
 
         GNJ = {
             #Gonjo
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 gonjo drayab sho tangkya
                 chamdo karma_densa khamgar
                 lhakhang pasho pema
@@ -52172,7 +52200,7 @@ countries = {
 
         BTG = {
             #Batang
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 batang markham shar_yelpuk
                 tsakhalkho dzogang mengung
                 sampheling dzingcho sangme
@@ -52188,7 +52216,7 @@ countries = {
 
         NBH = {
             #Nubhor
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 biru pembar riwoche samda shopando sok tengchen yangdzong
             }
 
@@ -52202,7 +52230,7 @@ countries = {
 
         LTN = {
             #Litang
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 litang nyachukha daoba
             }
 
@@ -52216,7 +52244,8 @@ countries = {
 
         NYA = {
             #Nyarong
-            our_cores_conquered_by_others = {
+            own_control_core = {
+                nyarong chodrak_kham
             }
 
             include = "asia_advanced_no_pagan_tribe"
@@ -52501,9 +52530,12 @@ countries = {
         }
 
         CKL = {
-            #Minyag
-            our_cores_conquered_by_others = {
+            #Minyag (Chakla in 1444)
+            own_control_core = {
                 dartsedo lhagang kazhi dzogon zhanggu
+            }
+
+            own_control_integrated = {
                 baurang
             }
 
@@ -52525,42 +52557,6 @@ countries = {
                 chabcha buha caka dulan dungkar_amdo guolimu qardam amnye_machen quge sailahai zeku muxihe
 
                 sanjiaocheng
-            }
-
-            include = "asia_advanced_no_pagan_tribe"
-
-            capital = chabcha
-            government = {
-                ruler = random
-            }
-        }
-
-        KHP = {
-            # Kham
-            own_control_core = {
-                rima sangacho walong
-                tsakhalkho dzogang mengung
-                sampheling dzingcho sangme
-                litang daoba
-                batang markham shar_yelpuk 
-                
-            }
-
-            include = "asia_advanced_no_pagan_tribe"
-
-            capital = chabcha
-            government = {
-                ruler = random
-            }
-        }
-
-        CKA = {
-            # Chakla
-            own_control_core = {
-                chodrak_kham
-                waerhdje kheong muli
-                baurang nyachukha
-                dartsedo lhagang kazhi dzogon zhanggu
             }
 
             include = "asia_advanced_no_pagan_tribe"
@@ -55099,12 +55095,10 @@ countries = {
             #Ahom
             own_control_core = {
                 charaideo charagua
-                konwargaon lakhimpur
                 morangi dergaon
                 tezpur bordowa rowta durjaya guwahati
                 lyngngam sohra nabagram
                 daboka sutnga jaintiapur
-                itanagar nakshaparvat
                 namrup noadihang
             }
 
@@ -55198,6 +55192,8 @@ countries = {
             own_control_core = {
                 sadiya gomsi tengapani malinithan dibang
                 bengmara dibrugarh
+                # NOTE: Possibly Ahom territory
+                konwargaon lakhimpur itanagar nakshaparvat
             }
 
             include = "expl_india_hindu"
@@ -67098,7 +67094,9 @@ countries = {
                 roshtqala qila_panjeh gunt sarhad oksu murghab
             }
 
-            include = "east_asia_monarchy_no_coast"
+            starting_technology_level = 3
+            include = "expl_india_hindu"
+            include = "indian_hindu_monarchy_no_coast"
 
             capital = vamar
             government = {

@@ -78,6 +78,60 @@ AFG_f = {
     }
 }
 
+KHP_f = {
+	level = 1
+	required_locations_fraction = 0.6
+	rule = historical
+
+	potential = {
+		culture = culture:khampa_culture
+	}
+
+	allow = {
+	}
+	
+	name = KHP
+	flag = KHP
+	adjective = KHP_ADJ
+	tag = KHP
+	color = map_KHP
+
+	areas = {
+		kham_area
+	}
+	form_effect = {
+	}
+}
+
+UTS_f = {
+	level = 1
+	required_locations_fraction = 0.8
+	rule = historical
+
+	potential = {
+		culture = culture:utsang_culture
+	}
+
+	allow = {
+		NOT = {
+			tag = TIB
+		}
+	}
+	
+	name = UTS
+	flag = UTS
+	adjective = UTS_ADJ
+	tag = UTS
+	color = map_UTS
+
+	areas = {
+		u_area
+		tsang_area
+	}
+	form_effect = {
+	}
+}
+
 #TIX_f = {
 #	level = 3
 #	required_locations_fraction = 1.0

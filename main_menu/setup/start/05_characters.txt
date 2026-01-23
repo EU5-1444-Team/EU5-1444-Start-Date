@@ -117033,6 +117033,7 @@ character_db={
         last_name = { name = Trinh }
         culture = vietnamese_culture
         religion = mahayana
+        estate = nobles_estate
         birth_date = 1403.1.1
         tag = DAI
     }
@@ -117855,5 +117856,212 @@ character_db={
         father = bpr_thinkaya
         dynasty = pagan_dynasty
         tag = BPR
+    }
+
+    ### Tibet
+    # Phagmodrupa dynasty
+    pha_rinchen_kyab = {
+        first_name = { name = Rinchen_Kyab }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1270.1.1 # Estimated
+        death_date = 1340.1.1 # Estimated
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+
+    pha_tai_situ_changchub_gyaltsen = {
+        first_name = { name = Tai_Situ_Changchub_Gyaltsen }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1302.1.1
+        death_date = 1364.11.21
+        father = pha_rinchen_kyab
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+    
+    pha_drakpa_changchub = {
+        first_name = { name = Drakpa_Changchub }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1356.1.1
+        death_date = 1386.1.1
+        father = pha_rinchen_dorje
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+    
+    pha_sonam_zangpo = {
+        first_name = { name = Sonam_Zangpo }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1310.1.1 # Estimated
+        death_date = 1375.1.1 # Estimated
+        father = pha_rinchen_kyab
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+
+    pha_rinchen_dorje = {
+        first_name = { name = Rinchen_Dorje }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1325.1.1 # Estimated
+        death_date = 1385.1.1 # Estimated
+        father = pha_sonam_zangpo
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+
+    pha_sonam_drakpa = {
+        first_name = { name = Sonam_Drakpa }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1359.1.1
+        death_date = 1408.1.1
+        father = pha_rinchen_dorje
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+
+    pha_shakya_rinchen = {
+        first_name = { name = Shakya_Rinchen }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1345.1.1 # Estimated
+        death_date = 1405.1.1 # Estimated
+        father = pha_sonam_zangpo
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+
+    pha_jamyang_shakya_gyaltsen = {
+        first_name = { name = Jamyang_Shakya_Gyaltsen }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1340.1.1
+        death_date = 1373.1.1
+        father = pha_sonam_zangpo
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+    
+    pha_gongma_drakpa_gyaltsen = {
+        first_name = { name = Gongma_Drakpa_Gyaltsen }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1374.1.1
+        death_date = 1432.1.1
+        father = pha_shakya_rinchen
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+
+    pha_sister_of_drakpa_gyaltsen = {
+        first_name = random
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1365.1.1 # Estimated
+        death_date = 1425.1.1 # Estimated
+        female = yes
+        father = pha_shakya_rinchen
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+    
+    pha_sangye_gyaltsen = {
+        first_name = { name = Sangye_Gyaltsen }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1390.1.1
+        death_date = 1432.1.1
+        father = pha_shakya_rinchen
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+
+    pha_drakpa_jungne = {
+        first_name = { name = Drakpa_Jungne }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1414.1.1
+        father = pha_sangye_gyaltsen
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+
+    pha_kunga_lekpa = {
+        first_name = { name = Kunga_Lekpa }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1431.12.30 # Should be 1433 but ??
+        father = pha_sangye_gyaltsen
+        dynasty = phagmodrupa_dynasty
+        tag = PHA
+    }
+
+    # Rinpungpa dynasty
+    rin_namkha_gyaltsen = {
+        first_name = { name = Namkha_Gyaltsen }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1365.1.1 # Estimated
+        death_date = 1420.1.1 # Estimated
+        spouse = pha_sister_of_drakpa_gyaltsen
+        dynasty = rinpungpa_dynasty
+        tag = RIN
+    }
+
+    rin_namkha_gyalpo = {
+        first_name = { name = Namkha_Gyalpo }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1380.1.1 # Estimated
+        death_date = 1415.1.1 # Estimated
+        father = rin_namkha_gyaltsen
+        mother = pha_sister_of_drakpa_gyaltsen
+        dynasty = rinpungpa_dynasty
+        tag = RIN
+    }
+    
+    rin_norzang = {
+        first_name = { name = Norzang }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1403.1.1
+        father = rin_namkha_gyalpo
+        dynasty = rinpungpa_dynasty
+        tag = RIN
+    }
+
+    # Ganden Monastery
+    gph_gedun_drupa = {
+        first_name = { name = Gedun_Drupa } # 1st Dalai Lama
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1391.1.1
+        estate = clergy_estate
+        tag = GPH
+    }
+
+    gph_thang_tong_gyalpo = {
+        first_name = { name = Thang_Tong_Gyalpo }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1385.1.1
+        estate = clergy_estate
+        tag = GPH
+    }
+
+    gph_chokyi_dronma = {
+        first_name = { name = Chökyi_Drönma }
+        culture = utsang_culture
+        religion = tibetan_buddhism
+        birth_date = 1422.1.1
+        spouse = gph_thang_tong_gyalpo
+        female = yes
+        estate = clergy_estate
+        tag = GPH
     }
 }
