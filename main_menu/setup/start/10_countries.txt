@@ -50891,6 +50891,27 @@ countries = {
             religious_school = hanafi_school
             capital = almaty
         }
+        KYZ = {
+            #Kyrgyz
+            type = pop
+
+            add_pops_from_locations = {
+                almaliq almaty boyauli karakastek karamergen kargaly kurty shengeldy talkhir balasagun dzhul harandzuvan kysmyci nuzket sargau soltobe charyn
+                chundzha kegen barskoon lavar shelek balykchy san_tash kayalyk dungene lepsy sagabuyen tekeli khantau
+            }
+
+            include = "asia_tribe"
+            country_rank = rank_kingdom
+            court_language = karluk_language
+            include = "expl_mongols"
+            include = "eurasian_horde_no_muslim"
+            starting_technology_level = 3
+            government = {
+                ruler = random
+                type = steppe_horde
+                heir_selection = cognatic_primogeniture
+            }
+        }
 
         YRK = { # Yarkent
             own_control_core = {
