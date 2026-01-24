@@ -1,0 +1,21 @@
+has_active_main_branch = {
+    international_organization_has_policy = policy:union_establish_seniority_policy
+    trigger_if = {
+        limit = { has_special_status_available = special_status:main_branch }
+        any_country_with_special_status_of_type = {
+            type = main_branch
+            government_type = government_type:monarchy
+        }
+    }
+    trigger_else = {
+        has_special_status_available = special_status:main_branch
+    }
+}
+
+country_is_main_branch = {
+    international_organization_has_policy = policy:union_establish_seniority_policy
+    country_has_special_status = {
+        type = special_status:main_branch
+        country = $country$
+    }
+}

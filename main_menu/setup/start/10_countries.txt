@@ -24918,17 +24918,10 @@ countries = {
             government = {
                 ruler = joe_sejong
 
-                ruler_term = { character = joe_taejo start_date = 1392.8.5 end_date = 1398.10.14 regnal_number = 1 }
-                ruler_term = { character = joe_jeongjong start_date = 1398.10.14 end_date = 1400.11.13 regnal_number = 1 }
-                ruler_term = { character = joe_taejong start_date = 1400.11.13 end_date = 1418.8.10 regnal_number = 1 }
+                ruler_term = { character = joe_taejo start_date = 1392.8.5 end_date = 1398.10.14 regnal_name = name_taejo regnal_number = 1 }
+                ruler_term = { character = joe_jeongjong start_date = 1398.10.14 end_date = 1400.11.13 regnal_name = name_jeongjong regnal_number = 1 }
+                ruler_term = { character = joe_taejong start_date = 1400.11.13 end_date = 1418.8.10 regnal_name = name_taejong regnal_number = 1 }
                 ruler_term = { character = joe_sejong start_date = 1418.9.18 regnal_number = 1 }
-
-                regnal_numbers = {
-                    name_seong_gye = 1
-                    name_bang_gwa = 1
-                    name_bang_won = 1
-                    name_do = 1
-                }
 
                 centralization_vs_decentralization = 50
                 aristocracy_vs_plutocracy = -20
@@ -25053,9 +25046,21 @@ countries = {
 
             include = "japanese_clan"
             government = {
-                ruler_term = { character = jap_ashikaga_takauji start_date = 1336.9.20 regnal_number = 1 }
+                ruler_term = { character = jap_ashikaga_takauji start_date = 1336.9.20 end_date = 1358.6.7 regnal_number = 1 }
+                ruler_term = { character = jap_ashikaga_yoshiakira start_date = 1358.6.7 end_date = 1367.12.7 regnal_number = 1 }
+                ruler_term = { character = jap_ashikaga_yoshimitsu start_date = 1367.12.7 end_date = 1394.1.10 regnal_number = 1 }
+                ruler_term = { character = jap_ashikaga_yoshimochi start_date = 1394.1.10 end_date = 1423.5.29 regnal_number = 1 }
+                ruler_term = { character = jap_ashikaga_yoshikazu start_date = 1423.5.29 end_date = 1425.3.17 regnal_number = 1 }
+                ruler_term = { character = jap_ashikaga_yoshinori start_date = 1425.3.17 end_date = 1441.7.12 regnal_number = 1 }
+                ruler_term = { character = jap_ashikaga_yoshikatsu start_date = 1441.7.12 end_date = 1443.8.16 regnal_number = 1 }
+                ruler_term = { character = jap_ashikaga_yoshimasa start_date = 1443.8.16 regnal_number = 1 }
 
-                ruler = jap_ashikaga_takauji
+                regency = nobles_estate_regency
+                active_regent = jap_hatakeyama_mochikuni
+                start_regency_date = 1443.8.16 # Death of Yoshikatsu
+                # Hosokawa Katsumoto takes over as Kanrei in 1445 but we cannot model successive regencies
+                end_regency_date = 1449.1.1 # Ascension of Yoshimasa
+                heir = jap_ashikaga_yoshimasa
 
                 reforms = {
                     shogunate
@@ -25069,17 +25074,6 @@ countries = {
 
             }
 
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             accepted_cultures = {
                 tougoku_culture
@@ -25096,14 +25090,612 @@ countries = {
 
         ################################### New Daimyos #####################################
 
-        KAK = {
-            capital = kameda
-            include = "japanese_clan"
-            own_control_core = {
-                fukushima kamiiso kameda
+	KAK = {
+        # Kakisaki
+		capital = kameda
+		include = "japanese_clan"
+		own_control_core = {
+			fukushima kamiiso kameda
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+
+            country_rank = rank_county
+        }
+
+	NMI = {
+        # Namioka
+		capital = inaka
+		include = "japanese_clan"
+		own_control_core = {
+			inaka
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	SHI = {
+        # Shizuzu
+        capital = kazuno
+		include = "japanese_clan"
+		our_cores_conquered_by_others = {
+			kazuno
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	NIK = {
+        # Nikaho
+		capital = yuri
+		include = "japanese_clan"
+		own_control_core = {
+			yuri yuza
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	SGO = {
+        # Sagoshi
+		capital = yuza
+		include = "japanese_clan"
+		our_cores_conquered_by_others = {
+			yuza
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	ODE = {
+        # Onodera
+		capital = kamiura
+		include = "japanese_clan"
+		own_control_core = {
+			kamiura
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	OSA = {
+        # Osaki
+		capital = kurokawa
+		include = "japanese_clan"
+		own_control_core = {
+			kurokawa kami kurihara
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	RSU = {
+        # Rusu
+		capital = miyagi
+		include = "japanese_clan"
+		own_control_core = {
+			miyagi
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	NIH = {
+        # Nihonmatsu
+		capital = asaka
+		include = "japanese_clan"
+		own_control_core = {
+			asaka tamura
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	IWA = {
+        # Iwaki
+		capital = iwaki
+		include = "japanese_clan"
+		own_control_core = {
+			iwaki kikuta
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	SNO = {
+        # Sano
+		capital = ashikaga_loc
+		include = "japanese_clan"
+		own_control_core = {
+			ashikaga_loc
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	HJO = {
+        # Honjō
+		capital = iwafune
+		include = "japanese_clan"
+		own_control_core = {
+			iwafune
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	NAK = {
+        # Nakajo
+		capital = nutari
+		include = "japanese_clan"
+		own_control_core = {
+			nutari
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+    JNB = {
+        capital = niikawa
+        include = "japanese_clan"
+        own_control_core = {
+            niikawa
+        }
+        government = {
+            ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+            reforms = {
+                daimyo
             }
+        }
+        country_rank = rank_county
+    }
+
+	TKA = {
+        # Takanashi
+		capital = takai
+		include = "japanese_clan"
+		own_control_core = {
+			minochi takai
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	SAT = {
+        # Satomi
+		capital = awa
+		include = "japanese_clan"
+		own_control_core = {
+			awa
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	OMO = {
+        # Omori
+		capital = aikou
+		include = "japanese_clan"
+		our_cores_conquered_by_others = {
+			aikou ashigara
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	OYA = {
+        # Oyamada
+		capital = tsuru
+		include = "japanese_clan"
+		own_control_core = {
+			tsuru
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	YMO = {
+        # Yamamoto
+		capital = tagata
+		include = "japanese_clan"
+		our_cores_conquered_by_others = {
+			tagata
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	ASI = {
+        # Asahina
+		capital = kitou
+		include = "japanese_clan"
+		own_control_core = {
+			kitou
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	MTU = {
+        # Matsudaira
+		capital = hekikai
+		include = "japanese_clan"
+		own_control_core = {
+			hekikai
+		}
+		government = {
+			ruler_term = { character = jap_matsudaira_nobumitsu start_date = 1425.1.1 regnal_number = 1 }
+            ruler = jap_matsudaira_nobumitsu
+            heir = jap_matsudaira_chikatada
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	KUW = {
+        # Kuwayama
+		capital = nakajima
+		include = "japanese_clan"
+		our_cores_conquered_by_others = {
+			nakajima
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	OCH = {
+        # Ochi
+		capital = yoshino
+		include = "japanese_clan"
+		own_control_core = {
+			yoshino
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	TSU = {
+        # Tsutsui
+		capital = nara
+		include = "japanese_clan"
+		own_control_core = {
+			nara takaichi
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	KKI = {
+        # Kuki
+		capital = akashi
+		include = "japanese_clan"
+		own_control_core = {
+			akashi
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	EDA = {
+        # Eda
+		capital = funai
+		include = "japanese_clan"
+		own_control_core = {
+			funai
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	AKA = {
+        # Akai
+		capital = hikami
+		include = "japanese_clan"
+		own_control_core = {
+			hikami
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	AMO = {
+        # Amago
+		capital = nita
+		include = "japanese_clan"
+		own_control_core = {
+			nita ou izumo iishi hino oki
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	KOO = {
+        # Kōno
+		capital = iyo
+		include = "japanese_clan"
+		own_control_core = {
+			iyo ukena ochi
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	SAI = {
+        # Saionji
+		capital = uwa
+		include = "japanese_clan"
+		own_control_core = {
+			uwa
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	ICH = {
+        # Ichijō
+		capital = hata
+		include = "japanese_clan"
+		own_control_core = {
+			hata takaoka
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+    MSU = {
+        capital = nishimatsuura
+        include = "japanese_clan"
+        own_control_core = {
+            nishimatsuura
+        }
+        government = {
+            ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+            reforms = {
+                daimyo
+            }
+        }
+        country_rank = rank_county
+    }
+
+	UKU = {
+        # Uku
+		capital = minamimatsuura
+		include = "japanese_clan"
+		own_control_core = {
+			minamimatsuura
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	KMC = {
+        # Kamachi
+		capital = mii
+		include = "japanese_clan"
+		own_control_core = {
+			mii
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	ANA = {
+        # Anan
+		capital = naoiri
+		include = "japanese_clan"
+		our_cores_conquered_by_others = {
+			naoiri
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	NES = {
+        # Neshin
+		capital = oosumi
+		include = "japanese_clan"
+		our_cores_conquered_by_others = {
+			oosumi
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+	TNE = {
+        # Tanegashima
+		capital = kumage_oosumi
+		include = "japanese_clan"
+		own_control_core = {
+			kumage_oosumi gomu
+		}
+		government = {
+			ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+			reforms = {
+				daimyo
+			}
+		}
+		country_rank = rank_county
+	}
+
+        AMK = {
+
+            capital = amakusa
+            include = "japanese_clan"
+
+            own_control_core = {
+                amakusa
+            }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
@@ -25112,549 +25704,1361 @@ countries = {
             country_rank = rank_county
         }
 
-        NMI = {
-            capital = inaka
+        NWA = {
+
+            capital = ashikita
             include = "japanese_clan"
+
             own_control_core = {
-                inaka
+                ashikita yatsushiro_higo
             }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
             }
+
             country_rank = rank_county
         }
 
-        SHI = {
-            capital = kazuno
+        KOG = {
+
+            capital = akita_kumamoto
             include = "japanese_clan"
+
             own_control_core = {
-                kazuno
+                akita_kumamoto
             }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
             }
+
             country_rank = rank_county
         }
 
-        NIK = {
-            capital = yuri
+        SHD = {
+
+            capital = tamana
             include = "japanese_clan"
+
             own_control_core = {
-                yuri
+                tamana
             }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
             }
+
             country_rank = rank_county
         }
 
-        SGO = {
-            capital = yuza
+        MOC = {
+
+            capital = kamitsuma
             include = "japanese_clan"
+
             own_control_core = {
-                yuza
+                kamitsuma
             }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
             }
+
             country_rank = rank_county
         }
 
-        ODE = {
-            capital = kamiura
+        OKU = {
+            # Okura
+            capital = hita
             include = "japanese_clan"
+
             own_control_core = {
-                kamiura
+                hita
             }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
             }
+
             country_rank = rank_county
         }
 
-        OSA = {
-            capital = kurokawa
+        OKU = {
+            # Okura
+            capital = hita
             include = "japanese_clan"
+
             own_control_core = {
-                kurokawa kami kurihara
+                hita
             }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
             }
+
             country_rank = rank_county
         }
 
-        RSU = {
-            capital = miyagi
-            include = "japanese_clan"
-            own_control_core = {
-                miyagi
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        NIH = {
-            capital = adachi
-            include = "japanese_clan"
-            own_control_core = {
-                adachi
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        IWA = {
-            capital = iwaki
-            include = "japanese_clan"
-            own_control_core = {
-                iwaki kikuta
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        SNO = {
-            capital = ashikaga_loc
-            include = "japanese_clan"
-            own_control_core = {
-                ashikaga_loc
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        HJO = {
-            capital = iwafune
-            include = "japanese_clan"
-            own_control_core = {
-                iwafune
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        NAK = {
-            capital = nutari
-            include = "japanese_clan"
-            own_control_core = {
-                nutari
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        JNB = {
-            capital = niikawa
-            include = "japanese_clan"
-            own_control_core = {
-                niikawa
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        TKA = {
-            capital = sarashina
-            include = "japanese_clan"
-            own_control_core = {
-                sarashina minochi takai kamo_izu
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        SAT = {
-            capital = awa
-            include = "japanese_clan"
-            own_control_core = {
-                awa
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        OMO = {
-            capital = aikou
-            include = "japanese_clan"
-            own_control_core = {
-                aikou ashigara
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        OYA = {
-            capital = tsuru
-            include = "japanese_clan"
-            own_control_core = {
-                tsuru
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        YMO = {
-            capital = tagata
-            include = "japanese_clan"
-            own_control_core = {
-                tagata
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        ASI = {
-            capital = kitou
-            include = "japanese_clan"
-            own_control_core = {
-                kitou
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        MTU = {
-            capital = shitara
-            include = "japanese_clan"
-            own_control_core = {
-                shitara kamo_mikawa hoi
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        KUW = {
-            capital = nakajima
-            include = "japanese_clan"
-            own_control_core = {
-                nakajima
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        OCH = {
-            capital = yoshino
-            include = "japanese_clan"
-            own_control_core = {
-                yoshino
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        TSU = {
-            capital = nara
-            include = "japanese_clan"
-            own_control_core = {
-                nara takaichi
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        KKI = {
-            capital = akashi
-            include = "japanese_clan"
-            own_control_core = {
-                akashi
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        EDA = {
-            capital = funai
-            include = "japanese_clan"
-            own_control_core = {
-                funai
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        AKA = {
-            capital = hikami
-            include = "japanese_clan"
-            own_control_core = {
-                hikami
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        AMO = {
-            capital = nita
-            include = "japanese_clan"
-            own_control_core = {
-                nita ou izumo iishi hino oki
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        KOO = {
-            capital = iyo
-            include = "japanese_clan"
-            own_control_core = {
-                iyo ukena ochi
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        SAI = {
-            capital = uwa
-            include = "japanese_clan"
-            own_control_core = {
-                uwa
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        ICH = {
-            capital = hata
-            include = "japanese_clan"
-            own_control_core = {
-                hata takaoka
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        MSU = {
-            capital = nishimatsuura
-            include = "japanese_clan"
-            own_control_core = {
-                nishimatsuura
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        UKU = {
-            capital = minamimatsuura
-            include = "japanese_clan"
-            own_control_core = {
-                minamimatsuura
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        KMC = {
-            capital = mii
-            include = "japanese_clan"
-            own_control_core = {
-                mii kamitsuma
-            }
-            government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                reforms = {
-                    daimyo
-                }
-            }
-            country_rank = rank_county
-        }
-
-        ANA = {
+        SGA = {
+            # Shiga
             capital = naoiri
             include = "japanese_clan"
+
             own_control_core = {
                 naoiri
             }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
             }
+
             country_rank = rank_county
         }
 
-        NES = {
+        TTU = {
+            # Totsugi
+            capital = oono_bungo
+            include = "japanese_clan"
+
+            own_control_core = {
+                oono_bungo
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        TAW = {
+            # Tawara
+            capital = kunisaki
+            include = "japanese_clan"
+
+            own_control_core = {
+                kunisaki
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NIR = {
+            # Niira
+            capital = minamimorokata
+            include = "japanese_clan"
+
+            own_control_core = {
+                minamimorokata
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        HOG = {
+            # Hongō
+            capital = kitamorokata
+            include = "japanese_clan"
+
+            own_control_core = {
+                kitamorokata
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        KAA = {
+            # Kitahara
+            capital = nishimorokata
+            include = "japanese_clan"
+
+            own_control_core = {
+                nishimorokata
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NEJ = {
+            # Nejime
             capital = oosumi
             include = "japanese_clan"
+
             own_control_core = {
                 oosumi
             }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
             }
+
             country_rank = rank_county
         }
 
-        TNE = {
-            capital = kumage_oosumi
+        # USU = {
+        #     # Usa Jingū
+        #     capital = usa
+        #     include = "japanese_clan"
+
+        #     own_control_core = {
+        #         usa
+        #     }
+
+        #     government = {
+
+        #         ruler = random
+
+        #         reforms = {
+        #             daimyo
+        #         }
+        #     }
+
+        #     country_rank = rank_county
+        # }
+
+
+        UT1 = {
+            # Buzen Utsunomiya
+            capital = nakatsu
             include = "japanese_clan"
+
             own_control_core = {
-                kumage_oosumi gomu
+                nakatsu mike
             }
+
             government = {
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+
+                ruler = random
+
                 reforms = {
                     daimyo
                 }
             }
+
+            country_rank = rank_county
+        }
+
+        UT2 = {
+            # Iyo Utsunomiya
+            capital = kita_shikoku
+            include = "japanese_clan"
+
+            own_control_core = {
+                kita_shikoku
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        TCB = {
+            # Tachibana
+            capital = hakata
+            include = "japanese_clan"
+
+            own_control_core = {
+                hakata
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        OMR = {
+            # Omura
+            capital = nishisonogi
+            include = "japanese_clan"
+
+            own_control_core = {
+                nishisonogi higashisonogi
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        MOT = {
+            # Motoyama
+            capital = tosa
+            include = "japanese_clan"
+
+            own_control_core = {
+                tosa agawa
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        UED = {
+            # Ueda
+            capital = miki
+            include = "japanese_clan"
+
+            own_control_core = {
+                miki
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        AZA = {
+            # Akazawa
+            capital = awa_shikoku
+            include = "japanese_clan"
+
+            own_control_core = {
+                awa_shikoku
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        HIO = {
+            # Hironaka
+            capital = kuga
+            include = "japanese_clan"
+
+            own_control_core = {
+                kuga
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        AZI = {
+            # Azai
+            capital = azai
+            include = "japanese_clan"
+
+            own_control_core = {
+                azai
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        SUZ = {
+            # Suzuki
+            capital = kamo_mikawa
+            include = "japanese_clan"
+
+            own_control_core = {
+                kamo_mikawa
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        SUG = {
+            # Suganuma
+            capital = shitara
+            include = "japanese_clan"
+
+            own_control_core = {
+                shitara
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        ANO = {
+            # Amano
+            capital = shuuchi
+            include = "japanese_clan"
+
+            own_control_core = {
+                shuuchi
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        MII = {
+            # Miki
+            capital = mashita
+            include = "japanese_clan"
+
+            own_control_core = {
+                mashita
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        IBI = {
+            # Ibi
+            capital = ikeda
+            include = "japanese_clan"
+
+            own_control_core = {
+                ikeda
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        SIO = {
+            # Saito
+            capital = mugi
+            include = "japanese_clan"
+
+            own_control_core = {
+                mugi
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        AAN = {
+            # Asano
+            capital = gujou
+            include = "japanese_clan"
+
+            own_control_core = {
+                gujou
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        KIS = {
+            # Kiso
+            capital = kiso
+            include = "japanese_clan"
+
+            own_control_core = {
+                kiso
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        CKU = {
+            # Chiku
+            capital = shimoina
+            include = "japanese_clan"
+
+            own_control_core = {
+                shimoina
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NSN = {
+            # Nishina
+            capital = azumi
+            include = "japanese_clan"
+
+            own_control_core = {
+                azumi
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NSN = {
+            # Nishina
+            capital = azumi
+            include = "japanese_clan"
+
+            own_control_core = {
+                azumi
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        OG1 = {
+            # Suzuoka Ogasawara
+            capital = kamiina
+            include = "japanese_clan"
+
+            own_control_core = {
+                kamiina
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            dynasty = ogasawara_dynasty
+            country_rank = rank_county
+        }
+
+        OG2 = {
+            # Fuchu Ogasawara
+            capital = tsukama
+            include = "japanese_clan"
+
+            own_control_core = {
+                tsukama
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            dynasty = ogasawara_dynasty
+            country_rank = rank_county
+        }
+
+        OG3 = {
+            # Matsuo Ogasawara
+            capital = sarashina
+            include = "japanese_clan"
+
+            own_control_core = {
+                sarashina
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            dynasty = ogasawara_dynasty
+            country_rank = rank_county
+        }
+
+        FUJ = {
+            # Fuji
+            capital = fuji
+            include = "japanese_clan"
+
+            own_control_core = {
+                fuji
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+
+            country_rank = rank_county
+        }
+
+        KMO = {
+            # Kamakura Kubō
+            capital = kamakura
+            include = "japanese_clan"
+
+            own_control_core = {
+                kamakura aikou ashigara kamo_izu tagata suntou
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            dynasty = ashikaga_dynasty
+            country_rank = rank_county
+        }
+
+        MUK = {
+            # Murakami
+            capital = chiisagata
+            include = "japanese_clan"
+
+            own_control_core = {
+                chiisagata
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        MTI = {
+            # Maki-Toki
+            capital = isumi
+            include = "japanese_clan"
+
+            own_control_core = {
+                isumi
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        MIA = {
+            # Mita
+            capital = tama
+            include = "japanese_clan"
+
+            own_control_core = {
+                tama
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        FJI = {
+            # Fujita
+            capital = chichibu
+            include = "japanese_clan"
+
+            own_control_core = {
+                chichibu
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        OAT = {
+            # Ōta
+            capital = saitama
+            include = "japanese_clan"
+
+            own_control_core = {
+                saitama
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        YU1 = {
+            # Shimosa Yuki
+            capital = katsushika
+            include = "japanese_clan"
+
+            own_control_core = {
+                katsushika
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        YU2 = {
+            # Shirakawa Yuki
+            capital = shirakawa
+            include = "japanese_clan"
+
+            own_control_core = {
+                shirakawa
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        SO1 = {
+            # Shimosa Soma
+            capital = souma
+            include = "japanese_clan"
+
+            own_control_core = {
+                souma
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        KAH = {
+            # Kashima
+            capital = kashima
+            include = "japanese_clan"
+
+            own_control_core = {
+                kashima
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        EDO = {
+            # Edo
+            capital = ibaraki
+            include = "japanese_clan"
+
+            own_control_core = {
+                ibaraki
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        HOD = {
+            # Hitachi Oda
+            capital = ibaraki
+            include = "japanese_clan"
+
+            own_control_core = {
+                niihari tsukuba
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        HGA = {
+            # Haga
+            capital = haga
+            include = "japanese_clan"
+
+            own_control_core = {
+                haga
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        IWM = {
+            # Iwamatsu
+            capital = nitta
+            include = "japanese_clan"
+
+            own_control_core = {
+                nitta
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NA1 = {
+            # Fuchu Nagao
+            capital = nishikubiki
+            include = "japanese_clan"
+
+            own_control_core = {
+                nishikubiki
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NA2 = {
+            # Koshi Nagao
+            capital = koshi
+            include = "japanese_clan"
+
+            own_control_core = {
+                koshi kariwa
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NA3 = {
+            # Ueda Nagao
+            capital = minamiuonuma
+            include = "japanese_clan"
+
+            own_control_core = {
+                minamiuonuma
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NA4 = {
+            # Shirai Nagao
+            capital = seta
+            include = "japanese_clan"
+
+            own_control_core = {
+                seta
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NUM = {
+            # Numata
+            capital = tone
+            include = "japanese_clan"
+
+            own_control_core = {
+                tone
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        SI1 = {
+            # Kozuke-Saitō
+            capital = agatsuma
+            include = "japanese_clan"
+
+            own_control_core = {
+                agatsuma
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        KWD = {
+            # Kawarada
+            capital = minamiaizu
+            include = "japanese_clan"
+
+            own_control_core = {
+                minamiaizu
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        NAR = {
+            # Naraha
+            capital = naraha
+            include = "japanese_clan"
+
+            own_control_core = {
+                naraha
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        TED = {
+            # Tendō
+            capital = kitamogami
+            include = "japanese_clan"
+
+            own_control_core = {
+                murayama kitamogami
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        AAR = {
+            # Asari
+            capital = hinai
+            include = "japanese_clan"
+
+            own_control_core = {
+                hinai
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        AK1 = {
+            # Minato Andō
+            capital = akita
+            include = "japanese_clan"
+
+            own_control_core = {
+                akita toshima
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        AK2 = {
+            # Hiyama Andō
+            capital = hiyama
+            include = "japanese_clan"
+
+            own_control_core = {
+                hiyama hanawa hiraka_aomori
+            }
+
+            government = {
+
+                ruler = random
+
+                reforms = {
+                    daimyo
+                }
+            }
+
             country_rank = rank_county
         }
 
         ########################################### End New Daimyos ####################################
 
         YMT = {
+            type = building
+
             starting_technology_level = 3
             include = "east_asia_monarchy_not_present"
             government = {
@@ -25736,50 +27140,21 @@ countries = {
                 ruler_term = { character = jap_kougon_tenno start_date = 1331.10.22 end_date = 1333.7.7 regnal_number = 1 regnal_name = name_kougon }
                 ruler_term = { character = jap_go_daigo_tenno start_date = 1333.7.7 end_date = 1336.9.20 regnal_number = 1 regnal_name = name_go_daigo }
 
+                # Northern Court / unified line continuation
+                ruler_term = { character = jap_koumyou_tenno start_date = 1336.9.20 end_date = 1348.11.18 regnal_number = 1 regnal_name = name_koumyou }
+                ruler_term = { character = jap_sukou_tenno start_date = 1348.11.18 end_date = 1351.11.22 regnal_number = 1 regnal_name = name_sukou }
+                ruler_term = { character = jap_go_kougon_tenno start_date = 1352.9.25 end_date = 1371.4.9 regnal_number = 1 regnal_name = name_go_kougon }
+                ruler_term = { character = jap_go_enyu_tenno start_date = 1371.4.9 end_date = 1382.5.24 regnal_number = 1 regnal_name = name_go_enyu }
+                ruler_term = { character = jap_go_komatsu_tenno start_date = 1382.5.24 end_date = 1412.10.5 regnal_number = 1 regnal_name = name_go_komatsu }
+                ruler_term = { character = jap_shoukou_tenno start_date = 1412.10.5 end_date = 1428.8.30 regnal_number = 1 regnal_name = name_shoukou }
+                ruler_term = { character = jap_go_hanazono_tenno start_date = 1428.9.7 regnal_number = 1 regnal_name = name_go_hanazono }
+
+                ruler = jap_go_hanazono_tenno
             }
             flag = "JAP_monarchy"
 
             country_rank = rank_empire
             capital = kyoto
-        }
-
-        NTC = {
-            type = building
-
-            capital = kyoto
-            include = "japanese_clan"
-
-            government = {
-                #ruler = jap_koumyou_tenno
-                inherit_ruler_terms = YMT
-                #ruler_term = { character = jap_koumyou_tenno start_date = 1336.9.20 regnal_number = 1 regnal_name = name_koumyou }
-
-                regency = nobles_estate_regency
-                active_regent = jap_kougon_tenno
-                start_regency_date = 1336.9.20
-                end_regency_date = 1341.1.11
-                heir = jap_koumyou_tenno
-                designated_heir_reason = infant_emperor
-
-                reforms = {
-                    japanese_imperial_family
-                }
-            }
-
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
-            flag = "JAP_monarchy"
-
-            country_rank = rank_empire
         }
 
         # STC = {
@@ -25798,18 +27173,6 @@ countries = {
 
         # 		reforms = {
         # 			japanese_imperial_family
-        # 		}
-        # 	}
-
-        # 	variables = {
-        # 		data = {
-        # 			{
-        # 				flag = "supports_southern_court"
-        # 				data = {
-        # 					type = boolean
-        # 					identity = 1
-        # 				}
-        # 			}
         # 		}
         # 	}
 
@@ -25834,60 +27197,140 @@ countries = {
                 }
             }
 
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
+
+            country_rank = rank_county
+        }
+
+        # HSK = {
+        #     # Hososkawa Formable
+        #     capital = awa_shikoku
+        #     include = "japanese_clan"
+
+        #     own_control_core = {
+        #         # izumi osaka kawabe muko
+        #         # awaji nakata awa_shikoku naka_shikoku kaifu
+        #         # kami_shikoku nagaoka tosa agawa
+        #         # nii
+        #     }
+
+        #     government = {
+
+        #         ruler_term = { character = jap_hosokawa_yoshisue start_date = 1230.1.1 end_date = 1260.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_hosokawa_toshiuji start_date = 1260.1.1 end_date = 1320.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_hosokawa_kimiyori start_date = 1320.1.1 end_date = 1330.1.1 regnal_number = 1 }
+        #         ruler_term = {
+        #             character = jap_hosokawa_kimiyori start_date = 1330.1.1 end_date = 1335.7.1 regnal_number = 1
+        #             character = jap_hosokawa_kazuuji start_date = 1330.1.1 end_date = 1335.7.1 regnal_number = 1
+        #         }
+        #         ruler_term = { character = jap_hosokawa_kazuuji start_date = 1335.7.1 regnal_number = 1 }
+
+        #         ruler = jap_hosokawa_kazuuji
+
+        #         reforms = {
+        #             daimyo
+        #         }
+        #     }
+
+
+        #     country_rank = rank_county
+        # }
+
+        HS1 = {
+            # Hosokawa (Kanrei Branch)
+            capital = kawabe
+            include = "japanese_clan"
+
+            own_control_core = {
+                kawabe muko
+            }
+
+            government = {
+                ruler_term = { character = jap_hosokawa_yoshisue start_date = 1230.1.1 end_date = 1260.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_toshiuji start_date = 1260.1.1 end_date = 1320.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_kimiyori start_date = 1320.1.1 end_date = 1335.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_kazuuji start_date = 1335.1.1 end_date = 1355.8.15 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_yoriharu start_date = 1355.8.15 end_date = 1373.12.24 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_yoriyuki start_date = 1373.12.24 end_date = 1392.3.25 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_yorimoto start_date = 1392.3.25 end_date = 1397.6.2 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_mitsumoto start_date = 1397.6.2 end_date = 1426.11.15 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_mochiyuki start_date = 1426.11.15 end_date = 1442.9.8 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_katsumoto start_date = 1442.9.8 regnal_number = 1 }
+                ruler = jap_hosokawa_katsumoto
+                reforms = {
+                    daimyo
                 }
             }
 
             country_rank = rank_county
         }
 
-        HSK = {
-
-            capital = awa_shikoku
+        HS2 = {
+            # Hosokawa (Awa Branch)
+            capital = nakata
             include = "japanese_clan"
 
             own_control_core = {
-                izumi osaka kawabe muko
-                awaji nakata awa_shikoku naka_shikoku kaifu
-                kami_shikoku nagaoka tosa agawa
-                nii
+                nakata naka_shikoku kaifu
+                mima
+            }
+
+            our_cores_conquered_by_others = {
+                awa_shikoku
             }
 
             government = {
-
                 ruler_term = { character = jap_hosokawa_yoshisue start_date = 1230.1.1 end_date = 1260.1.1 regnal_number = 1 }
                 ruler_term = { character = jap_hosokawa_toshiuji start_date = 1260.1.1 end_date = 1320.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_hosokawa_kimiyori start_date = 1320.1.1 end_date = 1330.1.1 regnal_number = 1 }
-                ruler_term = {
-                    character = jap_hosokawa_kimiyori start_date = 1330.1.1 end_date = 1335.7.1 regnal_number = 1
-                    character = jap_hosokawa_kazuuji start_date = 1330.1.1 end_date = 1335.7.1 regnal_number = 1
-                }
-                ruler_term = { character = jap_hosokawa_kazuuji start_date = 1335.7.1 regnal_number = 1 }
-
-                ruler = jap_hosokawa_kazuuji
-
+                ruler_term = { character = jap_hosokawa_kimiyori start_date = 1320.1.1 end_date = 1335.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_kazuuji start_date = 1335.1.1 end_date = 1355.8.15 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_yoriharu start_date = 1355.8.15 end_date = 1373.12.24 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_mitsuyuki end_date = 1373.12.24 death_date = 1406.1.14 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_mitsuhisa end_date = 1406.1.14 death_date = 1430.10.24 regnal_number = 1 }
+                ruler_term = { character = jap_hosokawa_norisuke end_date = 1430.10.24 regnal_number = 1 }
+                ruler = jap_hosokawa_norisuke
+                heir = jap_hosokawa_shigeyuki
                 reforms = {
                     daimyo
                 }
             }
 
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
+            country_rank = rank_county
+        }
+
+        HS3 = {
+            # Hosokawa (Awaji Branch)
+            capital = awaji
+            include = "japanese_clan"
+
+            own_control_core = {
+                awaji
+            }
+
+            government = {
+                ruler_term = { character = jap_hosokawa_mitsutoshi start_date = 1407.1.1 regnal_number = 1 }
+                ruler = jap_hosokawa_mitsutoshi
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        HS4 = {
+            # Hosokawa (Tosa Branch)
+            capital = tosa
+            include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                tosa
+            }
+
+            government = {
+                ruler_term = { character = jap_hosokawa_mochimasu start_date = 1444.11.11 regnal_number = 1 }
+                ruler = jap_hosokawa_mochimasu
+                reforms = {
+                    daimyo
                 }
             }
 
@@ -25909,17 +27352,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -25949,17 +27381,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -25986,17 +27407,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26020,50 +27430,33 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         IMG = {
 
-            capital = toyoda
+            capital = ihara
             include = "japanese_clan"
 
             own_control_core = {
-                suntou fuji ihara abe shida
+                ihara abe shida
             }
 
             government = {
                 ruler_term = { character = jap_imagawa_kuniuji start_date = 1265.1.1 end_date = 1282.4.3 regnal_number = 1 }
                 ruler_term = { character = jap_imagawa_motouji start_date = 1282.4.3 end_date = 1323.5.13 regnal_number = 1 }
-                ruler_term = { character = jap_imagawa_norikuni start_date = 1323.5.13 regnal_number = 1 }
+                ruler_term = { character = jap_imagawa_norikuni start_date = 1323.5.13 end_date = 1351.10.12 regnal_number = 1 }
+                ruler_term = { character = jap_imagawa_noriuji start_date = 1351.10.12 end_date = 1369.11.24 regnal_number = 1 }
+                ruler_term = { character = jap_imagawa_yasunori start_date = 1369.11.24 end_date = 1391.5.11 regnal_number = 1 }
+                ruler_term = { character = jap_imagawa_norimasa start_date = 1391.5.11 end_date = 1433.6.14 regnal_number = 1 }
+                ruler_term = { character = jap_imagawa_noritada start_date = 1433.6.14 regnal_number = 1 }
 
-                ruler = jap_imagawa_norikuni
+                ruler = jap_imagawa_noritada
+                heir = jap_imagawa_yoshitada
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -26085,31 +27478,48 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
-        TKD = {
+        # TKD = {
+        #     # Takeda Formable
+        #     capital = koma_kai
+        #     include = "japanese_clan"
 
+        #     own_control_core = {
+        #         # makuda ichihara isumi
+        #         # yamanashi yatsushiro koma_kai
+        #         # tsuruga onyuu
+        #         # saeki yamagata takata aki
+        #     }
+
+        #     government = {
+        #         ruler_term = { character = jap_takeda_nobuyoshi start_date = 1180.4.1 end_date = 1186.3.31 regnal_number = 1 }
+        #         ruler_term = { character = jap_takeda_nobumitsu start_date = 1186.3.31 end_date = 1239.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_takeda_nobumasa start_date = 1239.1.1 end_date = 1265.1.24 regnal_number = 1 }
+        #         ruler_term = { character = jap_takeda_nobutoki start_date = 1265.1.24 end_date = 1289.3.2 regnal_number = 1 }
+        #         ruler_term = { character = jap_takeda_tokitsuna start_date = 1289.3.2 end_date = 1307.8.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_takeda_nobumune start_date = 1307.8.1 end_date = 1330.12.19 regnal_number = 1 }
+        #         ruler_term = { character = jap_takeda_nobutake start_date = 1330.12.19 regnal_number = 1 }
+
+        #         ruler = jap_takeda_nobutake
+
+        #         reforms = {
+        #             daimyo
+        #         }
+        #     }
+
+        #     country_rank = rank_county
+        # }
+
+        TK1 = {
+            # Takeda — Kai branch
             capital = koma_kai
             include = "japanese_clan"
 
             own_control_core = {
-                makuda ichihara isumi
                 yamanashi yatsushiro koma_kai
-                tsuruga onyuu
-                saeki yamagata takata aki
             }
 
             government = {
@@ -26119,23 +27529,82 @@ countries = {
                 ruler_term = { character = jap_takeda_nobutoki start_date = 1265.1.24 end_date = 1289.3.2 regnal_number = 1 }
                 ruler_term = { character = jap_takeda_tokitsuna start_date = 1289.3.2 end_date = 1307.8.1 regnal_number = 1 }
                 ruler_term = { character = jap_takeda_nobumune start_date = 1307.8.1 end_date = 1330.12.19 regnal_number = 1 }
-                ruler_term = { character = jap_takeda_nobutake start_date = 1330.12.19 regnal_number = 1 }
-
-                ruler = jap_takeda_nobutake
-
+                ruler_term = { character = jap_takeda_nobutake start_date = 1330.12.19 end_date = 1362.2.9 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobunari start_date = 1362.2.9 end_date = 1378.5.18 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobuharu start_date = 1378.5.18 end_date = 1413.11.25 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobumitsu_kai start_date = 1413.11.25 end_date = 1417.3.3 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobushige_kai start_date = 1417.3.3 regnal_number = 1 }
+                ruler = jap_takeda_nobushige_kai
+                heir = jap_nobumori_takeda
                 reforms = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
+
+            country_rank = rank_county
+        }
+
+        TK2 = {
+            # Takeda — Aki branch
+            capital = aki
+            include = "japanese_clan"
+
+            own_control_core = {
+                saeki yamagata aki
+            }
+
+            government = {
+                ruler_term = { character = jap_takeda_nobumitsu start_date = 1186.3.31 end_date = 1239.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobumasa start_date = 1239.1.1 end_date = 1265.1.24 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobutoki start_date = 1265.1.24 end_date = 1289.3.2 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_tokitsuna start_date = 1289.3.2 end_date = 1307.8.1 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobumune start_date = 1307.8.1 end_date = 1330.12.19 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobutake start_date = 1330.12.19 end_date = 1362.2.9 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobunari start_date = 1362.2.9 end_date = 1378.5.18 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobushige start_date = 1378.5.18 end_date = 1390.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobukata start_date = 1390.1.1 regnal_number = 1 }
+                ruler = jap_takeda_nobukata
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        TK3 = {
+            # Takeda — Wakasa branch
+            capital = tsuruga
+            include = "japanese_clan"
+
+            own_control_core = {
+                tsuruga onyuu
+            }
+
+            government = {
+                ruler_term = { character = jap_takeda_nobuhide start_date = 1378.5.18 end_date = 1440.8.29 regnal_number = 1 }
+                ruler_term = { character = jap_takeda_nobukata start_date = 1440.8.29 regnal_number = 1 }
+                ruler = jap_takeda_nobukata
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        TK4 = {
+            # Takeda — Kazusa branch
+            capital = makuda
+            include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                makuda ichihara
+            }
+
+            government = {
+                reforms = {
+                    daimyo
                 }
             }
 
@@ -26144,13 +27613,13 @@ countries = {
 
         SBA = {
 
-            capital = shiwa
+            capital = sakai_echizen
             include = "japanese_clan"
 
             own_control_core = {
-                shiwa
                 sakai_echizen nakaoono imadate nyuu
-                aichi niwa
+                niwa
+                toyoda
             }
 
             government = {
@@ -26165,17 +27634,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26187,6 +27645,7 @@ countries = {
 
             own_control_core = {
                 katori chiba musa
+                makuda ichihara
             }
 
             government = {
@@ -26208,17 +27667,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26229,7 +27677,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                kuji_kanto taga naka ibaraki kashima
+                kuji_kanto taga naka takano
             }
 
             government = {
@@ -26248,17 +27696,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26269,8 +27706,8 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                azai echi gamou takashima
-                kamioono yoshiki
+                echi takashima
+                kamioono
             }
 
             government = {
@@ -26286,17 +27723,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26307,7 +27733,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                minokamo gujou mugi toki katagata ikeda fuwa_mino
+                minokamo toki katagata fuwa_mino
             }
 
             government = {
@@ -26322,17 +27748,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26342,8 +27757,7 @@ countries = {
             capital = kamiina
             include = "japanese_clan"
 
-            own_control_core = {
-                kamiina shimoina azumi tsukama kiso
+            our_cores_conquered_by_others = {
             }
 
             government = {
@@ -26361,57 +27775,99 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
-        UES = {
+        # UES = {
+        #     # Uesugi Formable
+        #     capital = higashikubiki
+        #     include = "japanese_clan"
 
-            capital = ikaruga
+        #     own_control_core = {
+        #         # nishikanbara higashikanbara koshi kariwa minamiuonuma kitauonuma higashikubiki nishikubiki
+        #         # tone seta nitta gunma agatsuma chichibu hiki hanzawa
+        #         # tama tachibana toshima_kanto adachi_kanto saitama katsushika
+        #     }
+
+        #     government = {
+        #         ruler_term = { character = jap_uesugi_shigefusa start_date = 1252.1.1 end_date = 1310.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_uesugi_yorishige start_date = 1310.1.1 end_date = 1330.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_uesugi_norifusa start_date = 1330.1.1 end_date = 1336.3.10 regnal_number = 1 }
+        #         ruler_term = { character = jap_uesugi_noriaki start_date = 1336.3.10 regnal_number = 1 }
+
+        #         ruler = jap_uesugi_noriaki
+        #         reforms = {
+        #             daimyo
+        #         }
+        #     }
+
+        #     country_rank = rank_county
+        # }
+
+        UE1 = {
+            # Uesugi - Ōgigayatsu branch
+            capital = higashikubiki
             include = "japanese_clan"
 
             own_control_core = {
-                katsushika
-                saitama adachi_kanto toshima_kanto tachibana tama chichibu hiki hanzawa
-                tone seta nitta gunma agatsuma
-                nishikanbara higashikanbara koshi kariwa minamiuonuma kitauonuma higashikubiki nishikubiki
+                nishikanbara kitauonuma higashikubiki
             }
 
-            government = {
-                ruler_term = { character = jap_uesugi_shigefusa start_date = 1252.1.1 end_date = 1310.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_uesugi_yorishige start_date = 1310.1.1 end_date = 1330.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_uesugi_norifusa start_date = 1330.1.1 end_date = 1336.3.10 regnal_number = 1 }
-                ruler_term = { character = jap_uesugi_noriaki start_date = 1336.3.10 regnal_number = 1 }
+            government = { reforms = { daimyo } }
+            country_rank = rank_county
+        }
 
-                ruler = jap_uesugi_noriaki
+        UE2 = {
+            # Uesugi - Yamauchi branch
+            capital = kanra
+            include = "japanese_clan"
 
-                reforms = {
-                    daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
+            own_control_core = {
+                kanra
             }
 
+            government = { reforms = { daimyo } }
+            country_rank = rank_county
+        }
+
+        UE3 = {
+            # Uesugi - Ogigayatsu branch
+            capital = toshima_kanto
+            include = "japanese_clan"
+
+            own_control_core = {
+                tachibana toshima_kanto adachi_kanto hiki
+            }
+
+            government = { reforms = { daimyo } }
+            country_rank = rank_county
+        }
+
+        UE4 = {
+            # Uesugi - Fukaya branch
+            capital = hanzawa
+            include = "japanese_clan"
+
+            own_control_core = {
+                hanzawa
+            }
+
+            government = { reforms = { daimyo } }
+            country_rank = rank_county
+        }
+
+        NAO = {
+            # Nagao clan — de facto ruler over Uesugi clan
+            capital = nishikubiki
+            include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                # Only the main base of operations; does not legally own all Echigo
+                nishikubiki
+            }
+
+            government = { reforms = { daimyo } }
             country_rank = rank_county
         }
 
@@ -26442,17 +27898,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -26486,17 +27931,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26507,7 +27941,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                abu
+                abu kanoashi
             }
 
             government = {
@@ -26519,17 +27953,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -26554,17 +27977,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26574,7 +27986,7 @@ countries = {
             capital = hekikai
             include = "japanese_clan"
 
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 hekikai
             }
 
@@ -26588,22 +28000,48 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
-        YMN = {
+        # YMN = {
+
+        #     capital = keta_tajima
+        #     include = "japanese_clan"
+
+        #     own_control_core = {
+        #         # taka shikama akou
+        #         # wake tsudaka
+        #         # kume mashima tomata aita
+        #         # houmi takakusa
+        #         # keta_tajima futakata
+        #         # aimi kume_houki
+        #         # katou_bicchuu kaya aka
+        #         # ashida sera miyoshi eso nuka kameshi
+        #         # nima oochi
+        #         # toyota
+        #     }
+
+        #     government = {
+        #         ruler_term = { character = jap_yamana_yoshinori start_date = 1175.1.1 end_date = 1200.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_yamana_yoshisada start_date = 1200.1.1 end_date = 1215.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_yamana_shigekuni start_date = 1215.1.1 end_date = 1235.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_yamana_shigemura start_date = 1235.1.1 end_date = 1270.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_yamana_yoshinaga start_date = 1270.1.1 end_date = 1300.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_yamana_yoshitoshi start_date = 1300.1.1 end_date = 1320.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_yamana_masauji start_date = 1320.1.1 regnal_number = 1 }
+
+        #         ruler = jap_yamana_masauji
+
+        #         reforms = {
+        #             daimyo
+        #         }
+        #     }
+
+        #     country_rank = rank_county
+        # }
+
+        YM1 = {
 
             capital = keta_tajima
             include = "japanese_clan"
@@ -26614,37 +28052,62 @@ countries = {
                 kume mashima tomata aita
                 houmi takakusa
                 keta_tajima futakata
-                aimi kume_houki
                 katou_bicchuu kaya aka
                 ashida sera miyoshi eso nuka kameshi
-                nima oochi
                 toyota
             }
 
             government = {
-                ruler_term = { character = jap_yamana_yoshinori start_date = 1175.1.1 end_date = 1200.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_yamana_yoshisada start_date = 1200.1.1 end_date = 1215.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_yamana_shigekuni start_date = 1215.1.1 end_date = 1235.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_yamana_shigemura start_date = 1235.1.1 end_date = 1270.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_yamana_yoshinaga start_date = 1270.1.1 end_date = 1300.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_yamana_yoshitoshi start_date = 1300.1.1 end_date = 1320.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_yamana_masauji start_date = 1320.1.1 regnal_number = 1 }
-
-                ruler = jap_yamana_masauji
+                ruler_term = { character = jap_yamana_tokiuji start_date = 1340.1.1 end_date = 1371.4.14 regnal_number = 1 }
+                ruler_term = { character = jap_yamana_moroyoshi start_date = 1371.4.14 end_date = 1376.3.31 regnal_number = 1 }
+                ruler_term = { character = jap_yamana_tokiyoshi start_date = 1376.3.31 end_date = 1389.5.29 regnal_number = 1 }
+                ruler_term = { character = jap_yamana_tokihiro start_date = 1389.5.29 end_date = 1433.8.9 regnal_number = 1 }
+                ruler_term = { character = jap_yamana_mochitoyo start_date = 1433.8.9 regnal_number = 1 }
+                ruler = jap_yamana_mochitoyo
 
                 reforms = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
+
+            country_rank = rank_county
+        }
+
+        YM2 = {
+
+            capital = nima
+            include = "japanese_clan"
+
+            own_control_core = {
+                nima oochi
+            }
+
+            government = {
+                ruler_term = { character = jap_yamana_hirotaka start_date = 1437.1.1 end_date = 1441.6.24 regnal_number = 1 }
+                ruler_term = { character = jap_yamana_norikiyo start_date = 1441.6.24 regnal_number = 1 }
+                ruler = jap_yamana_norikiyo
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        YM3 = {
+
+            capital = kume_houki
+            include = "japanese_clan"
+
+            own_control_core = {
+                aimi kume_houki
+            }
+
+            government = {
+                ruler_term = { character = jap_yamana_noriyuki start_date = 1426.5.1 regnal_number = 1 }
+                ruler = jap_yamana_noriyuki
+                reforms = {
+                    daimyo
                 }
             }
 
@@ -26667,17 +28130,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26696,17 +28148,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -26735,17 +28176,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26764,17 +28194,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -26814,17 +28233,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26833,6 +28241,10 @@ countries = {
 
             capital = tsuno
             include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                tsuno
+            }
 
             government = {
                 ruler_term = { character = jap_washizu_moriyasu start_date = 1180.1.1 end_date = 1210.1.1 regnal_number = 1 }
@@ -26844,17 +28256,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -26888,53 +28289,103 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
+
+            country_rank = rank_county
+        }
+
+        # HTK = {
+        #     # Hatakeyama Formable
+        #     capital = hiki
+        #     include = "japanese_clan"
+
+        #     own_control_core = {
+        #         # tonami imizu nei
+        #         # noto_jap fugeshi suzu
+        #         # higashimuro minamimuro nishimuro hidaka kaisou naga
+        #     }
+
+        #     government = {
+        #         ruler_term = { character = jap_hatakeyama_yoshizumi start_date = 1205.1.1 end_date = 1210.10.26 regnal_number = 1 }
+        #         ruler_term = { character = jap_hatakeyama_yasukuni start_date = 1210.10.26 end_date = 1260.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_hatakeyama_tokikuni start_date = 1260.1.1 end_date = 1300.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_hatakeyama_takakuni start_date = 1300.1.1 regnal_number = 1 }
+
+        #         ruler = jap_hatakeyama_takakuni
+
+        #         reforms = {
+        #             daimyo
+        #         }
+        #     }
+
+        #     country_rank = rank_county
+        # }
+
+        HT1 = {
+            # Kishu Hatakeyama
+            capital = kaisou
+            include = "japanese_clan"
+
+            own_control_core = {
+                higashimuro minamimuro nishimuro hidaka kaisou naga
+            }
+
+            government = {
+                ruler = jap_hatakeyama_mochikuni
+
+                reforms = {
+                    daimyo
                 }
             }
 
             country_rank = rank_county
         }
 
-        HTK = {
-
-            capital = hiki
+        HT2 = {
+            # Noto Hatakeyama
+            capital = noto_jap
             include = "japanese_clan"
 
             own_control_core = {
                 tonami imizu nei
                 noto_jap fugeshi suzu
-                higashimuro minamimuro nishimuro hidaka kaisou naga
+            }
+
+            government = {
+                ruler = jap_hatakeyama_mochikuni
+                
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
+        HT3 = {
+            # Kawachi Hatakeyama
+            capital = osaka
+
+            include = "japanese_clan"
+
+            own_control_core = {
+                izumi osaka
             }
 
             government = {
                 ruler_term = { character = jap_hatakeyama_yoshizumi start_date = 1205.1.1 end_date = 1210.10.26 regnal_number = 1 }
                 ruler_term = { character = jap_hatakeyama_yasukuni start_date = 1210.10.26 end_date = 1260.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_hatakeyama_tokikuni start_date = 1260.1.1 end_date = 1300.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_hatakeyama_takakuni start_date = 1300.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_hatakeyama_tokikuni start_date = 1260.1.1 end_date = 1310.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_hatakeyama_sadakuni start_date = 1310.1.1 end_date = 1330.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_hatakeyama_iekuni start_date = 1330.1.1 end_date = 1335.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_hatakeyama_yoshifuka start_date = 1335.1.1 end_date = 1398.10.13 regnal_number = 1 }
+                ruler_term = { character = jap_hatakeyama_motokuni start_date = 1398.10.13 end_date = 1406.2.14 regnal_number = 1 }
+                ruler_term = { character = jap_hatakeyama_mitsuie start_date = 1406.2.14 end_date = 1433.11.9 regnal_number = 1 }
+                ruler_term = { character = jap_hatakeyama_mochikuni start_date = 1433.11.9 regnal_number = 1 }
 
-                ruler = jap_hatakeyama_takakuni
+                ruler = jap_hatakeyama_mochikuni
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -26961,17 +28412,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -26983,7 +28423,8 @@ countries = {
 
             own_control_core = {
                 saga
-                mikasa hakata
+                mikasa
+                kishima
             }
 
             government = {
@@ -27000,23 +28441,12 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         KII = {
-
+            # Kikuchi
             capital = nakatsu
             include = "japanese_clan"
 
@@ -27035,29 +28465,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         OTM = {
-
+            # Otomo
             capital = ooita
             include = "japanese_clan"
 
             own_control_core = {
-                kunisaki hayami ooita amabe oono_bungo kusu hita
-                usa
+                hayami ooita amabe kusu
             }
 
             government = {
@@ -27075,17 +28493,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27097,7 +28504,7 @@ countries = {
 
             own_control_core = {
                 satsuma kagoshima ibusuki izumi_satsuma
-                kuwabara hishikari soo kimotsuki
+                kuwabara hishikari soo
             }
 
             government = {
@@ -27113,59 +28520,75 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
+
+            country_rank = rank_county
+        }
+
+        # NBU = {
+        #     # Nanbu Formable
+        #     capital = nukanobu
+        #     include = "japanese_clan"
+
+        #     own_control_core = {
+        #         # shimokita hanawa hiraka_aomori kamikita nukanobu
+        #         # kuji iwate kitahei
+        #     }
+
+        #     government = {
+        #         ruler_term = { character = jap_nanbu_mitsuyuki start_date = 1180.1.1 end_date = 1236.4.25 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_sanemitsu start_date = 1236.4.25 end_date = 1255.2.3 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_tokizane start_date = 1255.2.3 end_date = 1263.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_masamitsu start_date = 1263.1.1 end_date = 1265.9.3 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_munetsune start_date = 1265.9.3 end_date = 1283.6.13 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_muneyuki start_date = 1283.6.13 end_date = 1295.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_hiroyuki start_date = 1295.1.1 end_date = 1300.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_masatsura start_date = 1300.1.1 end_date = 1310.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_sukemasa start_date = 1310.1.1 end_date = 1315.1.1 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+        #         ruler_term = { character = jap_nanbu_nobunaga start_date = 1333.7.4 regnal_number = 1 }
+
+        #         ruler = jap_nanbu_nobunaga
+
+        #         reforms = {
+        #             daimyo
+        #         }
+        #     }
+
+        #     country_rank = rank_county
+        # }
+
+        NB1 = {
+            # Nanbu (Sannohe)
+            capital = nukanobu
+            include = "japanese_clan"
+
+            own_control_core = {
+                kuji iwate kitahei nukanobu
+                shiwa
+                kazuno
+            }
+
+            government = {
+                reforms = {
+                    daimyo
                 }
             }
 
             country_rank = rank_county
         }
 
-        NBU = {
-
-            capital = nukanobu
+        NB2 = {
+            # Nanbu (Hachinohe)
+            capital = shimokita
             include = "japanese_clan"
 
             own_control_core = {
-                shimokita hanawa hiraka_aomori kamikita nukanobu
-                kuji iwate kitahei
+                shimokita kamikita 
             }
 
             government = {
-                ruler_term = { character = jap_nanbu_mitsuyuki start_date = 1180.1.1 end_date = 1236.4.25 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_sanemitsu start_date = 1236.4.25 end_date = 1255.2.3 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_tokizane start_date = 1255.2.3 end_date = 1263.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_masamitsu start_date = 1263.1.1 end_date = 1265.9.3 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_munetsune start_date = 1265.9.3 end_date = 1283.6.13 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_muneyuki start_date = 1283.6.13 end_date = 1295.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_hiroyuki start_date = 1295.1.1 end_date = 1300.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_masatsura start_date = 1300.1.1 end_date = 1310.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_sukemasa start_date = 1310.1.1 end_date = 1315.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-                ruler_term = { character = jap_nanbu_nobunaga start_date = 1333.7.4 regnal_number = 1 }
-
-                ruler = jap_nanbu_nobunaga
-
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -27198,17 +28621,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27229,27 +28641,16 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
         MGM = {
 
-            capital = kitamogami
+            capital = minamimogami
             include = "japanese_clan"
 
             own_control_core = {
-                murayama kitamogami minamimogami
+                minamimogami
             }
 
             government = {
@@ -27262,17 +28663,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -27301,17 +28691,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27321,7 +28700,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                namekata shineha naraha
+                namekata shineha
             }
 
             government = {
@@ -27339,17 +28718,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27359,7 +28727,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                date_loc uda_mutsu katta shinobu nishiokitama higashiokitama natori
+                date_loc uda_mutsu katta shinobu higashiokitama natori adachi
             }
 
             government = {
@@ -27377,17 +28745,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27398,7 +28755,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                kitaaizu asaka kawanuma oonuma yama_jap minamiaizu
+                kitaaizu kawanuma oonuma yama_jap higashikanbara
             }
 
             government = {
@@ -27420,17 +28777,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27441,8 +28787,8 @@ countries = {
             capital = takano #changed
             include = "japanese_clan"
 
-            own_control_core = {
-                takano
+            our_cores_conquered_by_others = {
+                takano shirakawa
             }
 
             government = {
@@ -27463,17 +28809,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27492,17 +28827,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -27527,17 +28851,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27548,9 +28861,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                shioya kawachi haga
-                kita_shikoku
-                mike
+                shioya kawachi
             }
 
             government = {
@@ -27574,17 +28885,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27595,7 +28895,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                shuuchi toyoda fuchi
+                fuchi
             }
 
             government = {
@@ -27618,28 +28918,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         AKJ = {
 
-            capital = mashita
+            capital = yoshiki
             include = "japanese_clan"
 
             own_control_core = {
-                mashita
+                yoshiki
             }
 
             government = {
@@ -27661,17 +28950,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27691,17 +28969,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27714,6 +28981,8 @@ countries = {
             own_control_core = {
                 kasa yosa
                 ikaruga
+                aichi
+                hoi
             }
 
             government = {
@@ -27724,17 +28993,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -27757,17 +29015,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27778,7 +29025,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                naka_iwami mino kanoashi
+                naka_iwami mino
 
             }
 
@@ -27798,17 +29045,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27819,10 +29055,9 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                kuga kumage tsuno saba yoshiki_suou
+                kumage yoshiki_suou
                 asa toyoura ootsu
-                nakatsu
-                asakura
+                onga
             }
 
             government = {
@@ -27833,23 +29068,16 @@ countries = {
                 ruler_term = { character = jap_oouchi_hirosada start_date = 1244.10.21 end_date = 1286.7.29 regnal_number = 1 }
                 ruler_term = { character = jap_oouchi_hiroie start_date = 1286.7.29 end_date = 1300.4.17 regnal_number = 1 }
                 ruler_term = { character = jap_oouchi_shigehiro start_date = 1300.4.17 end_date = 1320.4.15 regnal_number = 1 }
-                ruler_term = { character = jap_oouchi_hiroyuki start_date = 1320.4.15 regnal_number = 1 }
+                ruler_term = { character = jap_oouchi_hiroyuki start_date = 1320.4.15 end_date = 1352.4.20 regnal_number = 1 }
+                ruler_term = { character = jap_oouchi_hiroyo start_date = 1352.4.20 end_date = 1386.11.23 regnal_number = 1 }
+                ruler_term = { character = jap_oouchi_yoshihiro start_date = 1386.11.23 end_date = 1400.1.25 regnal_number = 1 }
+                ruler_term = { character = jap_oouchi_mochimori start_date = 1400.1.25 end_date = 1433.5.6 regnal_number = 1 }
+                ruler_term = { character = jap_oouchi_norihiro start_date = 1433.5.6 regnal_number = 1 }
 
-                ruler = jap_oouchi_hiroyuki
+                ruler = jap_oouchi_norihiro
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -27875,17 +29103,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -27904,17 +29121,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -27938,17 +29144,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -27975,17 +29170,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28010,17 +29194,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28031,7 +29204,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                koushi tamana yatsushiro_higo amakusa mashiki akita_kumamoto
+                koushi
             }
 
             government = {
@@ -28055,17 +29228,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28076,7 +29238,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                aso
+                aso mashiki
             }
 
             government = {
@@ -28095,17 +29257,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28116,7 +29267,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                kuma ashikita
+                kuma
             }
 
             government = {
@@ -28130,17 +29281,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -28163,28 +29303,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         KMT = {
 
-            capital = kitamorokata
+            capital = kimotsuki
             include = "japanese_clan"
 
             own_control_core = {
-                nishimorokata kitamorokata minamimorokata
+                kimotsuki
             }
 
             government = {
@@ -28201,17 +29330,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -28239,17 +29357,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28272,17 +29379,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28291,6 +29387,10 @@ countries = {
 
             capital = shimohei
             include = "japanese_clan"
+
+            own_control_core = {
+                shimohei
+            }
 
             government = {
                 #Following the line of 閉伊花輪氏, as the main line geneaology has a lot of problems, with too many generations in between
@@ -28307,17 +29407,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28328,7 +29417,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                shimohei kamihei
+                kamihei
             }
 
             government = {
@@ -28344,17 +29433,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -28383,17 +29461,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28417,17 +29484,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -28456,25 +29512,18 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         SGE = {
 
-            capital = murayama
+            capital = nishiokitama
             include = "japanese_clan"
+
+            own_control_core = {
+                nishiokitama
+            }
 
             government = {
                 ruler_term = { character = jap_sagae_chikahiro start_date = 1192.1.1 end_date = 1242.1.17 regnal_number = 1 }
@@ -28487,17 +29536,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -28526,17 +29564,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28546,7 +29573,7 @@ countries = {
             capital = iwase
             include = "japanese_clan"
 
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 iwase
             }
 
@@ -28562,17 +29589,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28581,6 +29597,10 @@ countries = {
 
             capital = kamakura
             include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                kamakura
+            }
 
             government = {
                 ruler_term = { character = jap_nikaidou_yukimasa start_date = 1192.11.25 end_date = 1219.1.27 regnal_number = 1 }
@@ -28607,28 +29627,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         TMR = {
 
-            capital = tamura
+            capital = iwase
             include = "japanese_clan"
 
             own_control_core = {
-                tamura
+                iwase
             }
 
             government = {
@@ -28639,17 +29648,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -28673,17 +29671,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28693,7 +29680,7 @@ countries = {
             capital = shirakawa #Ishikawa gun
             include = "japanese_clan"
 
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 shirakawa
             }
 
@@ -28719,17 +29706,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28739,7 +29715,7 @@ countries = {
             capital = kamakura #kouza
             include = "japanese_clan"
 
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 kamakura
             }
 
@@ -28761,17 +29737,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -28802,17 +29767,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -28823,7 +29777,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                kurita kouka
+                kurita kouka gamou
             }
 
             government = {
@@ -28835,17 +29789,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -28865,17 +29808,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
             dynasty = miya_dynasty
@@ -28902,27 +29834,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         MKT = {
-            own_control_core = {
-                onga
-            }
             capital = onga
             include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                onga
+            }
 
             government = {
                 ruler_term = { character = jap_munakata_kiyouji start_date = 914.1.1 end_date = 938.1.1 regnal_number = 1 }
@@ -28986,17 +29908,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -29015,25 +29926,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         CSK = {
-
             capital = nagaoka
             include = "japanese_clan"
+
+            own_control_core = {
+                kami_shikoku nagaoka
+            }
 
             government = {
                 ruler_term = { character = jap_chousokabe_yoshitoshi start_date = 1150.1.1 end_date = 1190.1.1 regnal_number = 1 }
@@ -29052,17 +29955,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -29085,25 +29977,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         IKE = {
-
             capital = kawabe #mishima
             include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                ikeda
+            }
 
             government = {
                 ruler_term = { character = jap_ikeda_korezane start_date = 950.1.1 end_date = 970.1.1 regnal_number = 1 }
@@ -29126,17 +30010,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
             dynasty = ikeda_dynasty
 
             country_rank = rank_county
@@ -29144,11 +30017,11 @@ countries = {
 
         ITO = {
 
-            capital = higashiusuki
+            capital = koyu
             include = "japanese_clan"
 
             own_control_core = {
-                higashiusuki nishiusuki koyu
+                nishiusuki koyu naka_hyuuga
             }
 
             government = {
@@ -29162,17 +30035,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -29181,6 +30043,10 @@ countries = {
 
             capital = takata
             include = "japanese_clan"
+
+            own_control_core = {
+                takata
+            }
 
             government = {
                 ruler_term = { character = jap_mori_suemitsu start_date = 1221.1.1 end_date = 1247.7.8 regnal_number = 1 }
@@ -29197,51 +30063,32 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         ODA = {
 
-            capital = nyuu
+            capital = nakajima
             include = "japanese_clan"
 
             own_control_core = {
-                niihari tsukuba souma
+                nakajima
             }
 
             government = {
-                ruler_term = { character = jap_oda_chikazane start_date = 1233.1.1 end_date = 1260.3.31 regnal_number = 1 }
-                ruler_term = { character = jap_oda_chikamoto start_date = 1260.3.31 end_date = 1290.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_oda_chikayuki start_date = 1290.1.1 end_date = 1310.1.1 regnal_number = 1 }
-                ruler_term = { character = jap_oda_yukihiro start_date = 1310.1.1 regnal_number = 1 }
+                # NOTE: If historians can't fix this mess, I sure as hell won't
+                # ruler_term = { character = jap_oda_chikazane start_date = 1233.1.1 end_date = 1260.3.31 regnal_number = 1 }
+                # ruler_term = { character = jap_oda_chikamoto start_date = 1260.3.31 end_date = 1290.1.1 regnal_number = 1 }
+                # ruler_term = { character = jap_oda_chikayuki start_date = 1290.1.1 end_date = 1310.1.1 regnal_number = 1 }
+                # ruler_term = { character = jap_oda_yukihiro start_date = 1310.1.1 regnal_number = 1 }
+                ruler_term = { character = jap_oda_josho start_date = 1400.1.1 regnal_number = 1 }
 
-                ruler = jap_oda_yukihiro
+                ruler = jap_oda_josho
+                heir = jap_oda_hirochika
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -29251,7 +30098,6 @@ countries = {
         AKT = {
 
             own_control_core = {
-                hiyama hinai akita toshima
             }
 
             capital = akita
@@ -29265,17 +30111,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -29299,17 +30134,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -29337,17 +30161,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -29366,17 +30179,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
             dynasty = kawanobe_dynasty
             country_rank = rank_county
         }
@@ -29385,6 +30187,10 @@ countries = {
 
             capital = niihari
             include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                niihari
+            }
 
             government = {
                 ruler_term = { character = jap_hatta_tomoie start_date = 1170.1.1 end_date = 1225.1.1 regnal_number = 1 }
@@ -29401,17 +30207,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -29420,6 +30215,10 @@ countries = {
 
             capital = haga
             include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                haga
+            }
 
             government = {
                 ruler_term = { character = jap_mashiko_masataka start_date = 1060.1.1 end_date = 1080.1.1 regnal_number = 1 }
@@ -29440,17 +30239,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -29469,17 +30257,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -29512,17 +30289,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -29547,17 +30313,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
             dynasty = oogo_dynasty
             country_rank = rank_county
         }
@@ -29566,6 +30321,10 @@ countries = {
 
             capital = nitta
             include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                nitta
+            }
 
             government = {
                 ruler_term = { character = jap_nitta_yoshishige start_date = 1157.1.1 end_date = 1160.1.1 regnal_number = 1 }
@@ -29581,17 +30340,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -29610,17 +30358,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
             dynasty = yamaguchi_dynasty
@@ -29646,17 +30383,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -29688,28 +30414,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         UNN = {
 
-            capital = chiisagata
+            capital = saku
             include = "japanese_clan"
 
             own_control_core = {
-                chiisagata
+                saku
             }
 
             government = {
@@ -29729,17 +30444,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -29749,7 +30453,7 @@ countries = {
             capital = saku
             include = "japanese_clan"
 
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 saku
             }
 
@@ -29766,17 +30470,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -29804,17 +30497,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -29840,17 +30522,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -29868,17 +30539,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
             dynasty = ema_dynasty
@@ -29900,17 +30560,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
             dynasty = nakajima_dynasty
             country_rank = rank_county
         }
@@ -29930,28 +30579,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
             dynasty = ooba_dynasty
             country_rank = rank_county
         }
 
         NGN = {
 
-            capital = suzuka #anou
+            capital = usui #anou
             include = "japanese_clan"
 
             own_control_core = {
-                usui kanra
+                usui gunma
             }
 
             government = {
@@ -29963,17 +30601,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -29994,17 +30621,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30036,17 +30652,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30070,17 +30675,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30099,17 +30693,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30126,17 +30709,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30159,17 +30731,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30190,17 +30751,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30226,17 +30776,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30253,17 +30792,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30293,17 +30821,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30329,17 +30846,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30360,17 +30866,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30394,17 +30889,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30424,17 +30908,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30445,7 +30918,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                mima miyoshi_shikoku
+                miyoshi_shikoku
 
             }
 
@@ -30467,17 +30940,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30486,6 +30948,10 @@ countries = {
 
             capital = tsuno
             include = "japanese_clan"
+
+            own_control_core = {
+                tsuno saba
+            }
 
             government = {
                 ruler_term = { character = jap_sue_hirokata start_date = 1280.1.1 end_date = 1320.1.1 regnal_number = 1 }
@@ -30497,17 +30963,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30516,6 +30971,10 @@ countries = {
 
             capital = saba
             include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                saba
+            }
 
             government = {
                 ruler_term = { character = jap_migita_morinaga start_date = 1180.1.1 end_date = 1200.1.1 regnal_number = 1 }
@@ -30529,17 +30988,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30556,6 +31004,10 @@ countries = {
                 yabu
             }
 
+            own_control_conquered = {
+                mitoyo
+            }
+
             government = {
                 ruler_term = { character = jap_kagawa_kagefusa start_date = 1330.1.1 regnal_number = 1 }
 
@@ -30563,17 +31015,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30586,7 +31027,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                mitoyo aya miki
+                aya
             }
 
             government = {
@@ -30601,25 +31042,17 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
 
         KNE = {
-
             capital = nii
             include = "japanese_clan"
+
+            own_control_core = {
+                nii
+            }
 
             government = {
                 ruler_term = { character = jap_kaneko_ienori start_date = 1150.1.1 end_date = 1190.1.1 regnal_number = 1 }
@@ -30635,17 +31068,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30672,17 +31094,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
             dynasty = aki_dynasty
             country_rank = rank_county
         }
@@ -30702,17 +31113,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30740,17 +31140,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30759,6 +31148,10 @@ countries = {
 
             capital = asakura
             include = "japanese_clan"
+
+            own_control_core = {
+                asakura
+            }
 
             government = {
                 ruler_term = { character = jap_akizuki_taneo start_date = 1203.1.1 end_date = 1230.1.1 regnal_number = 1 }
@@ -30776,17 +31169,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30810,17 +31192,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30853,17 +31224,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30874,7 +31234,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                takaki nishisonogi kishima higashisonogi
+                takaki
             }
 
             government = {
@@ -30889,17 +31249,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -30930,17 +31279,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -30951,7 +31289,7 @@ countries = {
             include = "japanese_clan"
 
             own_control_core = {
-                naka_hyuuga miyazaki
+                miyazaki higashiusuki
             }
 
             government = {
@@ -30966,17 +31304,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 
@@ -31010,17 +31337,6 @@ countries = {
                     daimyo
                 }
             }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_southern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
-                }
-            }
 
             country_rank = rank_county
         }
@@ -31041,17 +31357,6 @@ countries = {
 
                 reforms = {
                     daimyo
-                }
-            }
-            variables = {
-                data = {
-                    {
-                        flag = "supports_northern_court"
-                        data = {
-                            type = boolean
-                            identity = 1
-                        }
-                    }
                 }
             }
 

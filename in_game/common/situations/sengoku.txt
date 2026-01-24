@@ -1,0 +1,362 @@
+﻿sengoku = {
+	monthly_spawn_chance = monthly_spawn_chance_ultimate_high
+	hint_tag = hint_sengoku
+	can_start = {
+		current_year >= 1400		#To give a bit of margin of 'free wars' during the nanbokucho
+		international_organization:japanese_shogunate = {
+			OR = {
+				international_organization_has_leader = no
+				leader_country ?= {
+					OR = {
+						government_power <= 50
+						stability <= 20
+						in_civil_war = yes
+						any_rebel = {
+							rebel_progress > 0.9
+						}
+					}
+				}
+				any_international_organization_member = {
+					any_current_war = {
+						OR = {
+							any_attacker = {
+								is_member_of_international_organization = international_organization:japanese_shogunate
+							}
+							any_defender = {
+								is_member_of_international_organization = international_organization:japanese_shogunate
+							}
+						}
+					}
+					count >= 6
+				}
+			}
+		}
+	}
+	can_end = {
+		sengoku_end_trigger = yes
+	}
+	visible = {
+		is_member_of_international_organization = international_organization:japanese_shogunate
+	}
+	on_start = {
+		c:JAP ?= {
+			change_country_tag = ASK
+		}
+		international_organization:japanese_shogunate = {
+			if = {
+				limit = {
+					international_organization_has_policy = policy:appointed_posts_policy
+				}
+				add_policy_to_international_organization = policy:established_domains_policy
+			}
+			every_international_organization_member = {
+				limit = {
+					is_valid_landable_daimyo = yes
+				}
+				turn_japanese_clan_into_normal_tag = yes
+			}
+			ordered_international_organization_member = {
+				order_by = {
+					add = {
+						value = country_total_army_levy_size
+					}
+					multiply = country_rank_level
+					add = {
+						value = army_size
+						multiply = 10
+					}
+					add = {
+						value = country_total_navy_levy_size
+						divide = 2
+					}
+					add = {
+						value = monthly_income_trade_and_tax
+						divide = 10
+					}
+					if = {
+						limit = {
+							is_great_power = yes
+						}
+						add = 100
+					}
+				}
+				limit = {
+					this != international_organization:japanese_shogunate.leader_country
+				}
+				max = 1
+				check_range_bounds = no
+				situation:sengoku = {
+					set_variable = {
+						name = sengoku_threatening_daimyo
+						value = prev
+					}
+				}
+				add_to_global_variable_list = {
+					name = sengoku_strong_daimyo_list
+					target = this
+				}
+			}
+			ordered_international_organization_member = {
+				order_by = {
+					add = {
+						value = country_total_army_levy_size
+					}
+					multiply = country_rank_level
+					add = {
+						value = army_size
+						multiply = 10
+					}
+					add = {
+						value = country_total_navy_levy_size
+						divide = 2
+					}
+					add = {
+						value = monthly_income_trade_and_tax
+						divide = 10
+					}
+					if = {
+						limit = {
+							is_great_power = yes
+						}
+						add = 100
+					}
+				}
+				limit = {
+					this != international_organization:japanese_shogunate.leader_country
+				}
+				position = 1
+				check_range_bounds = no
+				situation:sengoku = {
+					set_variable = {
+						name = sengoku_second_threatening_daimyo
+						value = prev
+					}
+				}
+				add_to_global_variable_list = {
+					name = sengoku_strong_daimyo_list
+					target = this
+				}
+			}
+			ordered_international_organization_member = {
+				order_by = {
+					add = {
+						value = country_total_army_levy_size
+					}
+					multiply = country_rank_level
+					add = {
+						value = army_size
+						multiply = 10
+					}
+					add = {
+						value = country_total_navy_levy_size
+						divide = 2
+					}
+					add = {
+						value = monthly_income_trade_and_tax
+						divide = 10
+					}
+					if = {
+						limit = {
+							is_great_power = yes
+						}
+						add = 100
+					}
+				}
+				limit = {
+					this != international_organization:japanese_shogunate.leader_country
+				}
+				position = 2
+				check_range_bounds = no
+				situation:sengoku = {
+					set_variable = {
+						name = sengoku_third_threatening_daimyo
+						value = prev
+					}
+				}
+				add_to_global_variable_list = {
+					name = sengoku_strong_daimyo_list
+					target = this
+				}
+			}
+			ordered_international_organization_member = {
+				order_by = {
+					add = {
+						value = country_total_army_levy_size
+					}
+					multiply = country_rank_level
+					add = {
+						value = army_size
+						multiply = 10
+					}
+					add = {
+						value = country_total_navy_levy_size
+						divide = 2
+					}
+					add = {
+						value = monthly_income_trade_and_tax
+						divide = 10
+					}
+					if = {
+						limit = {
+							is_great_power = yes
+						}
+						add = 100
+					}
+				}
+				limit = {
+					this != international_organization:japanese_shogunate.leader_country
+				}
+				position = 3
+				check_range_bounds = no
+				situation:sengoku = {
+					set_variable = {
+						name = sengoku_fourth_threatening_daimyo
+						value = prev
+					}
+				}
+				add_to_global_variable_list = {
+					name = sengoku_strong_daimyo_list
+					target = this
+				}
+			}
+			ordered_international_organization_member = {
+				order_by = {
+					add = {
+						value = country_total_army_levy_size
+					}
+					multiply = country_rank_level
+					add = {
+						value = army_size
+						multiply = 10
+					}
+					add = {
+						value = country_total_navy_levy_size
+						divide = 2
+					}
+					add = {
+						value = monthly_income_trade_and_tax
+						divide = 10
+					}
+					if = {
+						limit = {
+							is_great_power = yes
+						}
+						add = 100
+					}
+				}
+				limit = {
+					this != international_organization:japanese_shogunate.leader_country
+				}
+				position = 4
+				check_range_bounds = no
+				situation:sengoku = {
+					set_variable = {
+						name = sengoku_fifth_threatening_daimyo
+						value = prev
+					}
+				}
+				add_to_global_variable_list = {
+					name = sengoku_strong_daimyo_list
+					target = this
+				}
+			}
+			every_international_organization_member = {
+				trigger_event_non_silently = sengoku.1
+			}
+		}
+	}
+	on_monthly = {
+		sengoku_reevaluate_strongest_daimyos = yes		#See common/scripted_effects/situation_effects.txt
+		#Give the sengoku CB to all other members (each member gains a CB against every other member)
+		international_organization:japanese_shogunate = {
+			every_international_organization_member = {
+				save_scope_as = actor
+				international_organization:japanese_shogunate = {
+					scope:actor = {
+						international_organization:japanese_shogunate = {
+							every_international_organization_member = {
+								limit = {
+									this != scope:actor
+								}
+								add_casus_belli = {
+									target = scope:actor
+									type = casus_belli:cb_sengoku
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	map_color = {
+		if = {
+			limit = {
+				OR = {
+					international_organization:japanese_shogunate.leader_country = prev.owner
+					situation:sengoku.var:sengoku_threatening_daimyo = prev.owner
+					situation:sengoku.var:sengoku_second_threatening_daimyo = prev.owner
+					situation:sengoku.var:sengoku_third_threatening_daimyo = prev.owner
+					situation:sengoku.var:sengoku_fourth_threatening_daimyo = prev.owner
+					situation:sengoku.var:sengoku_fifth_threatening_daimyo = prev.owner
+				}
+			}
+			value = owner.country_color
+		}
+		else = {
+			value = define:NMapColors|DEFAULT_COLOR
+		}
+	}
+	legend_key = {
+		limit = {
+			OR = {
+				international_organization:japanese_shogunate.leader_country = prev.owner
+				situation:sengoku.var:sengoku_threatening_daimyo = prev.owner
+				situation:sengoku.var:sengoku_second_threatening_daimyo = prev.owner
+				situation:sengoku.var:sengoku_third_threatening_daimyo = prev.owner
+				situation:sengoku.var:sengoku_fourth_threatening_daimyo = prev.owner
+				situation:sengoku.var:sengoku_fifth_threatening_daimyo = prev.owner
+			}
+		}
+		desc = "LOCATION_OWNER_NAME"
+		color = owner.country_color
+	}
+	on_ended = {
+		if = {
+			limit = {
+				exists = international_organization:japanese_shogunate
+				exists = international_organization:japanese_shogunate.leader_country
+			}
+			international_organization:japanese_shogunate.leader_country = {
+				if = {
+					limit = {
+						tag = YMT
+					}
+					change_country_name = JAP
+					change_country_adjective = JAP_ADJ
+				}
+				change_country_tag = JAP
+			}
+		}
+		else = {
+			situation:sengoku.var:sengoku_threatening_daimyo ?= {
+				if = {
+					limit = {
+						tag = YMT
+					}
+					change_country_name = JAP
+					change_country_adjective = JAP_ADJ
+				}
+				change_country_tag = JAP
+				international_organization:japanese_shogunate ?= {
+					set_leader_country = prev
+				}
+			}
+		}
+		international_organization:japanese_shogunate ?= {
+			every_international_organization_member = {
+				trigger_event_non_silently = sengoku.2
+			}
+		}
+	}
+}

@@ -1,0 +1,782 @@
+#Foundation Law
+japanese_clan_foundation_law = {
+    type = international_organization
+    law_category = foundation
+    potential = {
+        international_organization_type = international_organization_type:jap_branching_clan
+    }
+    allow = {
+        international_organization_lifetime >= 5
+        # NOT = { has_cooldown = japanese_clan_recent_policy_change_cd }
+    }
+    locked = {
+        international_organization_has_law = law:japanese_clan_foundation_law
+        international_organization_has_policy = policy:japanese_clan_senior_succession_law
+    }
+    custom_tags = { forbids_no_policy }
+    japanese_clan_establish_seniority_policy = {
+        allow = {
+            is_same_ruler_personal_union = no
+        }
+        has_parliament = yes
+        propose_effect = {
+            scope:recipient ?= {
+                ordered_international_organization_member = {
+                    order_by = great_power_score
+                    max = 1
+                    check_range_bounds = no
+                    save_scope_as = best_main_branch_candidate
+                }
+                if = {
+                    limit = { exists = scope:best_main_branch_candidate }
+                    set_variable = {
+                        name = pre_selected_main_branch
+                        value = scope:best_main_branch_candidate
+                    }
+                }
+            }
+        }
+        on_activate = {
+            custom_tooltip = jap_branching_clan_main_branch_policy_at
+            on_union_policy_change_effect = yes
+            if = {
+                limit = { NOT = { has_variable = pre_selected_main_branch } }
+                custom_tooltip = jap_branching_clan_main_branch_policy_tt
+            }
+            else = {
+                custom_tooltip = jap_branching_clan_main_branch_policy_specific_tt
+            }
+            custom_tooltip = japanese_clan_unlocks_war_for_seniority_casus_belli_tt
+        }
+        wants_propose_policy = {
+            if = {
+                limit = {
+                    is_most_likely_candidate_for_seniority = { union = scope:recipient }
+                    scope:recipient = {
+                        any_international_organization_member = {
+                            this != root
+                            is_neighbor_of = root
+                        }
+                    }
+                }
+                add = {
+                    desc = "POLICY_WOULD_BECOME_LEADER_OF_ORGANIZATION"
+                    value = 1000
+                }
+            }
+            else = {
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = -50
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = {
+                desc = "VOTE_BASE_VALUE"
+                value = -50
+            }
+            if = {
+                limit = { is_most_likely_candidate_for_seniority = { union = scope:recipient } }
+                add = {
+                    desc = "POLICY_WOULD_BECOME_LEADER_OF_ORGANIZATION"
+                    value = 1000
+                }
+            }
+            else_if = {
+                limit = {
+                    get_most_likely_candidate_for_seniority = { union = scope:recipient }
+                    exists = scope:likely_main_branch
+                }
+                add = {
+                    desc = "POLICY_DIP_REP_OF_FUTURE_LEADER"
+                    value = scope:likely_main_branch.modifier:diplomatic_reputation
+                    multiply = 3
+                }
+                add = {
+                    desc = "POLICY_OPINION_OF_FUTURE_LEADER"
+                    value = "root.opinion(scope:likely_main_branch)"
+                }
+                if = {
+                    limit = { scope:recipient.total_members > 1 }
+                    add = {
+                        desc = "POLICY_POWER_COMPARISON_OF_FUTURE_LEADER"
+                        value = {
+                            value = 0
+                            scope:recipient = {
+                                every_international_organization_member = {
+                                    limit = { NOT = { this = scope:likely_main_branch } }
+                                    add = great_power_score
+                                }
+                            }
+                            divide = {
+                                value = scope:recipient.total_members
+                                subtract = 1
+                            }
+                            subtract = scope:likely_main_branch.great_power_score
+                            multiply = -1
+                        }
+                    }
+                }
+            }
+        }
+    }
+    japanese_clan_maintain_federal_status_policy = {
+        country_modifier = {
+            stability_investment = tiny_stability_investment
+        }
+        on_activate = {
+            on_union_policy_change_effect = yes
+        }
+        wants_propose_policy = {
+            #we give it -100 because the AI should not really care - Unions already start with that law, and it would be unenjoyable when there is a senior partner already established
+            subtract = {
+                desc = "VOTE_BASE_VALUE"
+                value = 100
+            }
+        }
+        wants_this_policy_bias = {
+            #AI is always in favor of not being anyone's puppet
+            add = {
+                desc = "POLICY_GUARANTEED_FREEDOM"
+                value = 50
+            }
+        }
+    }
+}
+
+#Inheritance Law
+japanese_clan_codified_inheritance_law = {
+    type = international_organization
+    law_category = centralization
+    potential = {
+        international_organization_type = international_organization_type:jap_branching_clan
+    }
+    allow = {
+        international_organization_lifetime >= 10
+        # NOT = { has_cooldown = japanese_clan_recent_policy_change_cd }
+        international_organization_has_law = law:japanese_clan_foundation_law
+    }
+    locked = {
+        international_organization_has_policy = policy:japanese_clan_unified_treasury_policy
+    }
+    custom_tags = { forbids_no_policy }
+
+    japanese_clan_senior_succession_law = {
+        allow = {
+            is_same_ruler_personal_union = yes
+            has_active_main_branch = yes
+            international_organization_has_policy = policy:japanese_clan_establish_seniority_policy
+        }
+        on_activate = {
+            on_union_policy_change_effect = yes
+            apply_same_inheritance_policy_effect = yes
+            change_union_integration_level = { value = 1 }
+        }
+        on_deactivate = {
+            change_union_integration_level = { value = -1 }
+        }
+        international_organization_modifier = {
+            union_integration_level = 1
+            enabled_negotiate_succession_law = yes
+        }
+        country_modifier = {
+            potential_trigger = {
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:main_branch
+                        international_organization = union
+                    }
+                }
+            }
+            blocked_from_changing_heir_selection = yes
+        }
+        wants_propose_policy = {
+            if = {
+                limit = {
+                    scope:recipient = {
+                        country_is_main_branch = { country = root }
+                    }
+                }
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = 50
+                }
+            }
+            else = {
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = -50
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_centralization
+        }
+    }
+
+    japanese_clan_sovereign_succession_law = {
+        on_activate = {
+            on_union_policy_change_effect = yes
+        }
+        country_modifier = {
+            monthly_legitimacy = 0.05
+        }
+        international_organization_modifier = {
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_maintain
+        }
+    }
+}
+
+#Economic Law
+japanese_clan_economic_law = {
+    type = international_organization
+    law_category = centralization
+    custom_tags = { forbids_no_policy }
+    potential = {
+        international_organization_type = international_organization_type:jap_branching_clan
+    }
+    allow = {
+        international_organization_lifetime >= 20
+        # NOT = { has_cooldown = japanese_clan_recent_policy_change_cd }
+        international_organization_has_law = law:japanese_clan_codified_inheritance_law
+    }
+    locked = {
+        international_organization_has_law = law:japanese_clan_economic_law
+        international_organization_has_policy = policy:japanese_clan_unified_external_diplomacy_policy
+    }
+
+    japanese_clan_unified_treasury_policy = {
+        allow = {
+            is_same_ruler_personal_union = yes
+            has_active_main_branch = yes
+            international_organization_has_policy = policy:japanese_clan_senior_succession_law
+        }
+        payments_implemented = { union_contribution }
+        on_activate = {
+            on_union_policy_change_effect = yes
+            change_union_integration_level = { value = 1 }
+        }
+        on_deactivate = {
+            change_union_integration_level = { value = -1 }
+        }
+        international_organization_modifier = {
+            union_integration_level = 1
+        }
+        wants_propose_policy = {
+            if = {
+                limit = {
+                    scope:recipient = {
+                        country_is_main_branch = { country = root }
+                    }
+                }
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = 50
+                }
+            }
+            else = {
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = -50
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_centralization
+        }
+    }
+
+    japanese_clan_cooperative_investment_policy = {
+        on_activate = {
+            on_union_policy_change_effect = yes
+        }
+        can_build_buildings_in_members = yes
+        can_build_roads_in_members = yes
+        can_build_rgos_in_members = yes
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_maintain
+        }
+    }
+}
+
+#Diplomatic Law
+japanese_clan_diplomatic_law = {
+    type = international_organization
+    law_category = centralization
+    custom_tags = { forbids_no_policy }
+    potential = {
+        international_organization_type = international_organization_type:jap_branching_clan
+    }
+    allow = {
+        international_organization_lifetime >= 30
+        # NOT = { has_cooldown = japanese_clan_recent_policy_change_cd }
+        international_organization_has_law = law:japanese_clan_economic_law
+    }
+    locked = {
+        international_organization_has_law = law:japanese_clan_diplomatic_law
+        international_organization_has_policy = policy:japanese_clan_aligned_legislature_policy
+    }
+
+    japanese_clan_unified_external_diplomacy_policy = {
+        allow = {
+            is_same_ruler_personal_union = yes
+            has_active_main_branch = yes
+            international_organization_has_policy = policy:japanese_clan_unified_treasury_policy
+        }
+        on_activate = {
+            on_union_policy_change_effect = yes
+            change_union_integration_level = { value = 1 }
+        }
+        on_deactivate = {
+            change_union_integration_level = { value = -1 }
+        }
+        international_organization_modifier = {
+            union_integration_level = 1
+            union_allowed_enforce_peace = no
+            union_unlock_rein_in_junior_diplomacy = no
+        }
+        has_limited_diplomacy = {
+            NOT = {
+                has_special_status_in_international_organization = {
+                    type = special_status:main_branch
+                    international_organization = scope:recipient
+                }
+            }
+        }
+        country_modifier = {
+            potential_trigger = {
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:main_branch
+                        international_organization = union
+                    }
+                }
+            }
+            war_no_cb_cost_modifier = 0.25
+            aggressiveness_modifier = -0.75
+            carefulness_modifier = 0.5
+        }
+        wants_propose_policy = {
+            if = {
+                limit = {
+                    scope:recipient = {
+                        country_is_main_branch = { country = root }
+                    }
+                }
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = 50
+                }
+            }
+            else = {
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = -50
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_centralization
+        }
+    }
+    japanese_clan_organized_diplomats_policy = {
+        on_activate = {
+            on_union_policy_change_effect = yes
+        }
+        country_modifier = {
+            diplomatic_capacity_modifier = 0.1
+            monthly_diplomats = 0.1
+            max_diplomats = 1
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_maintain
+        }
+    }
+}
+
+#Legislative Law
+japanese_clan_legislature_law = {
+    type = international_organization
+    law_category = centralization
+    custom_tags = { forbids_no_policy }
+    potential = {
+        international_organization_type = international_organization_type:jap_branching_clan
+    }
+    allow = {
+        international_organization_lifetime >= 40
+        # NOT = { has_cooldown = japanese_clan_recent_policy_change_cd }
+        international_organization_has_law = law:japanese_clan_diplomatic_law
+    }
+    locked = {
+        international_organization_has_law = law:japanese_clan_legislature_law
+        international_organization_has_law = law:japanese_clan_unification_of_crowns_law
+        NOT = { international_organization_has_policy = policy:japanese_clan_federal_japanese_clan_policy }
+    }
+
+    japanese_clan_aligned_legislature_policy = {
+        allow = {
+            is_same_ruler_personal_union = yes
+            has_active_main_branch = yes
+            international_organization_has_policy = policy:japanese_clan_unified_external_diplomacy_policy
+        }
+        on_activate = {
+            on_union_policy_change_effect = yes
+            apply_same_laws_policy_effect = yes
+            change_union_integration_level = { value = 1 }
+        }
+        on_deactivate = {
+            change_union_integration_level = { value = -1 }
+        }
+        international_organization_modifier = {
+            union_integration_level = 1
+        }
+        wants_propose_policy = {
+            if = {
+                limit = {
+                    scope:recipient = {
+                        country_is_main_branch = { country = root }
+                    }
+                }
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = 50
+                }
+            }
+            else = {
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = -50
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_centralization
+        }
+    }
+    japanese_clan_federal_legislature_policy = {
+        on_activate = {
+            on_union_policy_change_effect = yes
+        }
+        country_modifier = {
+            country_cabinet_efficiency = 0.1
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_maintain
+        }
+
+    }
+}
+
+#Unification Law
+# Note: update define_values.txt and 11_japanese_clan_issue.txt when adding more centralization laws
+japanese_clan_unification_of_crowns_law = {
+    type = international_organization
+    law_category = centralization
+    custom_tags = { forbids_no_policy }
+    potential = {
+        international_organization_type = international_organization_type:jap_branching_clan
+    }
+    allow = {
+        international_organization_lifetime >= 50
+        # NOT = { has_cooldown = japanese_clan_recent_policy_change_cd }
+        international_organization_has_law = law:japanese_clan_legislature_law
+    }
+    locked = {
+    }
+
+    japanese_clan_rapid_crown_unification_policy = {
+        allow = {
+            is_same_ruler_personal_union = yes
+            has_active_main_branch = yes
+            international_organization_has_policy = policy:japanese_clan_aligned_legislature_policy
+            OR = {
+                international_organization_has_policy = policy:japanese_clan_rapid_crown_unification_policy
+                international_organization_has_policy = policy:japanese_clan_swift_crown_unification_policy
+            }
+        }
+        on_activate = {
+            on_union_policy_change_effect = yes
+            change_union_integration_level = { value = 3 }
+        }
+        on_deactivate = {
+            change_union_integration_level = { value = -3 }
+        }
+        allow_member_annexation = yes
+        international_organization_modifier = {
+            union_integration_level = 3
+        }
+        annexation_speed = 2
+        international_organization_modifier = {
+            years_to_annex_members = -20
+            enable_annexation_of_members = yes
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_centralization
+            subtract = 100
+        }
+    }
+    japanese_clan_swift_crown_unification_policy = {
+        allow = {
+            is_same_ruler_personal_union = yes
+            has_active_main_branch = yes
+            international_organization_has_policy = policy:japanese_clan_aligned_legislature_policy
+            OR = {
+                international_organization_has_policy = policy:japanese_clan_rapid_crown_unification_policy
+                international_organization_has_policy = policy:japanese_clan_swift_crown_unification_policy
+                international_organization_has_policy = policy:japanese_clan_crown_unification_policy
+            }
+        }
+        on_activate = {
+            on_union_policy_change_effect = yes
+            change_union_integration_level = { value = 2 }
+        }
+        on_deactivate = {
+            change_union_integration_level = { value = -2 }
+        }
+        allow_member_annexation = yes
+        international_organization_modifier = {
+            union_integration_level = 2
+        }
+        annexation_speed = 1.5
+        international_organization_modifier = {
+            enable_annexation_of_members = yes
+            years_to_annex_members = -10
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_centralization
+            subtract = 50
+        }
+    }
+    japanese_clan_crown_unification_policy = {
+        allow = {
+            is_same_ruler_personal_union = yes
+            has_active_main_branch = yes
+            international_organization_has_policy = policy:japanese_clan_aligned_legislature_policy
+        }
+        on_activate = {
+            on_union_policy_change_effect = yes
+            change_union_integration_level = { value = 1 }
+        }
+        on_deactivate = {
+            change_union_integration_level = { value = -1 }
+        }
+        allow_member_annexation = yes
+        international_organization_modifier = {
+            enable_annexation_of_members = yes
+            union_integration_level = 1
+        }
+        annexation_speed = 1
+        wants_propose_policy = {
+            if = {
+                limit = {
+                    scope:recipient = {
+                        country_is_main_branch = { country = root }
+                    }
+                }
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = 50
+                }
+            }
+            else = {
+                add = {
+                    desc = "VOTE_BASE_VALUE"
+                    value = -50
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_centralization
+            subtract = 25
+        }
+    }
+
+    japanese_clan_federal_japanese_clan_policy = {
+        on_activate = {
+            on_union_policy_change_effect = yes
+        }
+        opinion_bonus = 25
+        trust_bonus = 5
+        wants_this_policy_bias = {
+            add = union_member_opinion_on_maintain
+        }
+    }
+}
+
+#Military Law
+japanese_clan_mutual_offense_law = {
+    type = international_organization
+    law_category = federal
+    potential = {
+        international_organization_type = international_organization_type:jap_branching_clan
+    }
+    allow = {
+        international_organization_lifetime >= 25
+        # NOT = { has_cooldown = japanese_clan_recent_policy_change_cd }
+    }
+    locked = {
+    }
+
+    japanese_clan_assured_offense_policy = {
+        allow = { policy_is_voting_target = { policy = policy:japanese_clan_assured_offense_policy } }
+        on_activate = {
+            on_union_policy_change_effect = yes
+        }
+        join_offensive_wars_always = {
+            always = yes
+        }
+        wants_propose_policy = {
+            if = {
+                limit = {
+                    scope:recipient = {
+                        NOT = { country_is_main_branch = { country = scope:actor } }
+                    }
+                }
+                subtract = {
+                    desc = "DIPLOREASON_IS_NOT_LEADER_COUNTRY"
+                    value = 1000
+                }
+            }
+            else = {
+                add = {
+                    desc = "BIAS_FROM_RULER_TRAITS"
+                    value = modifier:bias_for_militarist_policies
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = {
+                desc = "VOTE_BASE_VALUE"
+                value = -100
+            }
+            add = {
+                desc = "NEEDS_ALLIES_AGAINST_DIFFICULT_CONQUEST_TARGETS"
+                # Check if the country needs allies at all
+                value = country_needs_offensive_friends
+                multiply = 1.4
+                max = 30
+                min = 0.5
+            }
+            add = io_wants_offensive_war_policy
+        }
+    }
+
+    japanese_clan_automatic_offense_policy = {
+        allow = { policy_is_voting_target = { policy = policy:japanese_clan_automatic_offense_policy } }
+        on_activate = {
+            on_union_policy_change_effect = yes
+        }
+        join_offensive_wars_auto_call = {
+            always = yes
+        }
+        wants_propose_policy = {
+            if = {
+                limit = {
+                    scope:recipient = {
+                        NOT = { country_is_main_branch = { country = scope:actor } }
+                    }
+                }
+                subtract = {
+                    desc = "DIPLOREASON_IS_NOT_LEADER_COUNTRY"
+                    value = 1000
+                }
+            }
+            else = {
+                subtract = {
+                    desc = "DIPLOREASON_BASE"
+                    value = 20
+                }
+                add = {
+                    desc = "BIAS_FROM_RULER_TRAITS"
+                    value = modifier:bias_for_militarist_policies
+                }
+            }
+            if = {
+                limit = {
+                    scope:recipient = {
+                        international_organization_has_policy = policy:japanese_clan_possible_offense_policy
+                    }
+                }
+                subtract = {
+                    desc = "WE_ALREADY_HAVE_A_BETTER_POLICY"
+                    value = 1000
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = {
+                desc = "VOTE_BASE_VALUE"
+                value = -50
+            }
+            add = {
+                desc = "NEEDS_ALLIES_AGAINST_DIFFICULT_CONQUEST_TARGETS"
+                # Check if the country needs allies at all
+                value = country_needs_offensive_friends
+                multiply = 1.2
+                max = 30
+                min = 0.5
+            }
+            add = io_wants_offensive_war_policy
+        }
+    }
+
+    japanese_clan_possible_offense_policy = {
+        allow = { policy_is_voting_target = { policy = policy:japanese_clan_possible_offense_policy } }
+        on_activate = {
+            on_union_policy_change_effect = yes
+        }
+        join_offensive_wars_can_call = {
+            always = yes
+        }
+        wants_propose_policy = {
+            if = {
+                limit = {
+                    scope:recipient = {
+                        NOT = { country_is_main_branch = { country = scope:actor } }
+                    }
+                }
+                subtract = {
+                    desc = "DIPLOREASON_IS_NOT_LEADER_COUNTRY"
+                    value = 1000
+                }
+            }
+            else = {
+                add = {
+                    desc = "BIAS_FROM_RULER_TRAITS"
+                    value = modifier:bias_for_militarist_policies
+                }
+            }
+            if = {
+                limit = {
+                    scope:recipient = {
+                        OR = {
+                            international_organization_has_policy = policy:japanese_clan_automatic_offense_policy
+                            international_organization_has_policy = policy:japanese_clan_assured_offense_policy
+                        }
+                    }
+                }
+                subtract = {
+                    desc = "WE_ALREADY_HAVE_A_BETTER_POLICY"
+                    value = 1000
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = {
+                desc = "VOTE_BASE_VALUE"
+                value = -25
+            }
+            add = {
+                desc = "NEEDS_ALLIES_AGAINST_DIFFICULT_CONQUEST_TARGETS"
+                # Check if the country needs allies at all
+                value = country_needs_offensive_friends
+                max = 30
+                min = 0.5
+            }
+            add = io_wants_offensive_war_policy
+        }
+    }
+}

@@ -1,0 +1,103 @@
+jap_branching_clan = {
+    has_target = no
+    disband_if_no_leader = no
+    expel_members_who_are_targets_of_other_members = no
+    custom_name = jap_branching_clan_name
+
+    leader_change_trigger_type = rulerchange
+    leader_type = country
+    leader = {
+        every_international_organization_member = {
+            ruler_or_heir_if_regent ?= {
+                add_to_list = leaders
+            }
+        }
+    }
+
+    join_defensive_wars_always = {
+        always = no
+    }
+
+    can_declare_war = {
+        always = yes
+    }
+
+    modifier = {
+    }
+
+    create_visible_trigger = {
+        always = no
+    }
+
+    invite_visible_trigger = {
+        always = no
+    }
+
+    fog_of_war_lifted = yes
+    show_on_diplomatic_map = yes
+
+    can_join_trigger = {
+        #these aren't things you can just join
+        always = no
+    }
+
+    can_leave_trigger = {
+        #these aren't things you can just leave
+        always = no
+    }
+
+    auto_leave_trigger = {
+        #happens in code
+        always = no
+    }
+
+    on_disband = {
+        if = {
+            limit = {
+                ruler ?= { dynasty = { dynasty_name = takeda_dynasty } }
+            }
+            leader_country = {
+                change_country_tag = TKD
+            }
+        } else_if = {
+            limit = {
+                ruler ?= {
+                    dynasty = {
+                        OR = {
+                            dynasty_name = uesugi_dynasty
+                            dynasty_name = nagao_dynasty
+                        }
+                    }
+                }
+            }
+            leader_country = {
+                change_country_tag = UES
+            }
+        } else_if = {
+            limit = {
+                ruler ?= { dynasty = { dynasty_name = yamana_dynasty } }
+            }
+            leader_country = {
+                change_country_tag = YMN
+            }
+        } else_if = {
+            limit = {
+                ruler ?= { dynasty = { dynasty_name = hosokawa_dynasty } }
+            }
+            leader_country = {
+                change_country_tag = HSK
+            }
+        } else_if = {
+            limit = {
+                ruler ?= { dynasty = { dynasty_name = nanbu_dynasty } }
+            }
+            leader_country = {
+                change_country_tag = NBU
+            }
+        }
+    }
+
+    auto_disband_trigger = {
+        total_members = 1
+    }
+}

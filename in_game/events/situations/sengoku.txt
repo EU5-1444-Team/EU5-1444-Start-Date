@@ -1,0 +1,866 @@
+namespace = sengoku
+sengoku.1 = {
+	#Ōnin War
+	type = country_event
+	category = situation_event
+	title = sengoku.1.title
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					is_japanese_emperor_or_shogun = yes
+				}
+				desc = sengoku.1.desc.shogun
+			}
+			triggered_desc = {
+				desc = sengoku.1.desc
+			}
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = sengoku.1.a
+		trigger = {
+			OR = {
+				country_type = location
+				AND = {
+					country_type = building
+					clan_has_valid_landable_location = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_japanese_emperor_or_shogun = yes
+			}
+			add_government_power = government_power_mild_penalty
+			add_prestige = prestige_mild_penalty
+		}
+		else_if = {
+			limit = {
+				country_type = location
+			}
+			add_prestige = prestige_mild_bonus
+			show_as_tooltip = {
+				turn_japanese_clan_into_normal_tag = yes
+			}
+		}
+		else = {
+			turn_japanese_clan_into_normal_tag = yes
+		}
+	}
+	option = {
+		name = sengoku.1.b
+		trigger = {
+			is_japanese_emperor_or_shogun = no
+			NOT = {
+				country_type = location
+			}
+		}
+		add_prestige = prestige_mild_penalty
+		add_government_power = government_power_mild_penalty
+	}
+}
+
+sengoku.2 = {
+	#The End of the Sengoku Jidai
+	hide_portraits = yes
+	type = country_event
+	category = situation_event
+	title = sengoku.2.title
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					international_organization:japanese_shogunate ?= {
+						total_members = 1
+					}
+				}
+				desc = sengoku.2.desc.absolute
+			}
+			triggered_desc = {
+				desc = sengoku.2.desc
+			}
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				international_organization:japanese_shogunate ?= {
+					total_members > 1
+					leader_country = root
+				}
+			}
+			international_organization:japanese_shogunate = {
+				random_international_organization_member = {
+					limit = {
+						has_special_status_in_international_organization = {
+							type = special_status:japanese_emperor
+							international_organization = international_organization:japanese_shogunate
+						}
+					}
+					save_scope_as = target_emperor
+				}
+			}
+		}
+	}
+	option = {
+		name = sengoku.2.a
+		add_government_power = government_power_extreme_bonus
+		add_prestige = prestige_extreme_bonus
+		add_stability = stability_extreme_bonus
+		if = {
+			limit = {
+				international_organization:japanese_shogunate ?= {
+					total_members = 1
+				}
+			}
+			destroy_international_organization = {
+				target = international_organization:japanese_shogunate
+			}
+		}
+	}
+	option = {
+		name = sengoku.2.b
+		trigger = {
+			international_organization:japanese_shogunate = {
+				total_members = 2
+				leader_country = root
+			}
+		}
+		destroy_international_organization = {
+			target = international_organization:japanese_shogunate
+		}
+		scope:target_emperor = {
+			every_owned_foreign_building_location = {
+				destroy_building = "building(building_type:gosho|scope:target_emperor)"
+			}
+		}
+	}
+}
+
+sengoku.3 = {
+	#Expansion of the [ROOT.GetCountry.GetFlavorRank] (event that turns clans into normal tags)
+	type = country_event
+	category = situation_event
+	title = sengoku.3.title
+	desc = sengoku.3.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.3.a
+		turn_japanese_clan_into_normal_tag = yes
+		save_scope_as = actor
+		international_organization:japanese_shogunate.leader_country ?= {
+			trigger_event_silently = sengoku.23
+		}
+	}
+	option = {
+		name = sengoku.3.b
+		add_prestige = prestige_mild_penalty
+		add_government_power = government_power_mild_penalty
+	}
+}
+
+sengoku.4 = {
+	#A Moment of Weakness (event that gives cbs)
+	type = country_event
+	category = situation_event
+	title = sengoku.4.title
+	desc = sengoku.4.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	trigger = {
+		international_organization:japanese_shogunate = {
+			any_international_organization_member = {
+				this != root
+				NOT = {
+					is_at_war_with = root
+				}
+				NOT = {
+					has_truce_with = root
+				}
+				NOT = {
+					root = {
+						has_casus_belli_on = prev
+					}
+				}
+			}
+		}
+	}
+	immediate = {
+		international_organization:japanese_shogunate = {
+			random_international_organization_member = {
+				limit = {
+					this != root
+					NOT = {
+						is_at_war_with = root
+					}
+					NOT = {
+						has_truce_with = root
+					}
+					NOT = {
+						root = {
+							has_casus_belli_on = prev
+						}
+					}
+				}
+				save_scope_as = target_enemy
+			}
+		}
+	}
+	option = {
+		name = sengoku.4.a
+		add_casus_belli = {
+			target = scope:target_enemy
+			type = casus_belli:cb_sengoku
+		}
+	}
+}
+
+sengoku.5 = {
+	#The Moment of Truth (event that declares war)
+	type = country_event
+	category = situation_event
+	title = sengoku.5.title
+	desc = sengoku.5.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	trigger = {
+		international_organization:japanese_shogunate = {
+			any_international_organization_member = {
+				NOT = {
+					has_truce_with = root
+				}
+				root = {
+					has_casus_belli_on = prev
+				}
+			}
+		}
+	}
+	immediate = {
+		international_organization:japanese_shogunate = {
+			random_international_organization_member = {
+				limit = {
+					NOT = {
+						has_truce_with = root
+					}
+					root = {
+						has_casus_belli_on = prev
+					}
+				}
+				save_scope_as = target_enemy
+			}
+		}
+	}
+	option = {
+		name = sengoku.5.a
+		declare_war_with_cb = {
+			target = scope:target_enemy
+			type = casus_belli:cb_sengoku
+		}
+	}
+	option = {
+		name = sengoku.5.b
+		add_prestige = prestige_mild_penalty
+	}
+}
+
+sengoku.6 = {
+	#The emperor asks us to stop war
+	type = country_event
+	category = situation_event
+	title = sengoku.6.title
+	desc = sengoku.6.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.6.a
+		white_peace = scope:target_war
+		if = {
+			limit = {
+				religion = {
+					has_honor = yes
+				}
+			}
+			add_honor = honor_weak_bonus
+		}
+		scope:actor = {
+			trigger_event_silently = sengoku.7
+		}
+	}
+	option = {
+		name = sengoku.6.b
+		if = {
+			limit = {
+				religion = {
+					has_honor = yes
+				}
+			}
+			add_honor = honor_weak_penalty
+		}
+		add_prestige = prestige_weak_penalty
+		scope:actor = {
+			add_opinion = {
+				target = root
+				modifier = opinion_refused_imperial_petition
+			}
+			trigger_event_silently = sengoku.8
+		}
+	}
+}
+
+sengoku.7 = {
+	#They accepted
+	type = country_event
+	category = situation_event
+	title = sengoku.7.title
+	desc = sengoku.7.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.7.a
+		add_legitimacy = legitimacy_mild_bonus
+	}
+}
+
+sengoku.8 = {
+	#They refused
+	type = country_event
+	category = situation_event
+	title = sengoku.8.title
+	desc = sengoku.8.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.8.a
+		add_legitimacy = legitimacy_mild_penalty
+		show_as_tooltip = {
+			add_opinion = {
+				target = scope:target_country
+				modifier = opinion_refused_imperial_petition
+			}
+		}
+	}
+}
+
+sengoku.9 = {
+	#Shogun takes away land
+	type = country_event
+	category = situation_event
+	title = sengoku.9.title
+	desc = sengoku.9.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		#Accept
+		name = sengoku.9.a
+		if = {
+			limit = {
+				country_type = location
+			}
+			scope:target_location ?= {
+				change_location_owner = scope:actor
+				if = {
+					limit = {
+						scope:actor = {
+							NOT = {
+								has_core = prev
+							}
+						}
+					}
+					add_core = scope:actor
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_type = building
+			}
+			scope:target_location ?= {
+				every_foreign_buildings_in_location = {
+					limit = {
+						owner = root
+					}
+					location = {
+						destroy_building = prev
+					}
+				}
+			}
+		}
+		add_casus_belli = {
+			target = scope:actor
+			type = casus_belli:cb_japanese_clan_rebel_against_shogunate_authority
+		}
+		scope:actor = {
+			trigger_event_silently = sengoku.10
+		}
+	}
+	option = {
+		#Refuse
+		name = sengoku.9.b
+		scope:actor = {
+			add_casus_belli = {
+				target = root
+				type = casus_belli:cb_shogunate_reassert_authority
+			}
+			add_opinion = {
+				target = root
+				modifier = opinion_refused_shogunate_authority
+			}
+			trigger_event_silently = sengoku.11
+		}
+	}
+}
+
+sengoku.10 = {
+	#They accepted
+	type = country_event
+	category = situation_event
+	title = sengoku.10.title
+	desc = sengoku.10.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.10.a
+		add_legitimacy = legitimacy_mild_bonus
+		if = {
+			limit = {
+				exists = scope:target_location
+			}
+			show_as_tooltip = {
+				scope:target_country = {
+					if = {
+						limit = {
+							country_type = location
+						}
+						scope:target_location ?= {
+							change_location_owner = scope:actor
+							if = {
+								limit = {
+									scope:actor = {
+										NOT = {
+											has_core = prev
+										}
+									}
+								}
+								add_core = scope:actor
+							}
+						}
+					}
+					if = {
+						limit = {
+							country_type = building
+						}
+						scope:target_location ?= {
+							scope:target_location ?= {
+								every_foreign_buildings_in_location = {
+									limit = {
+										owner = scope:target_country
+									}
+									location = {
+										destroy_building = prev
+									}
+								}
+							}
+						}
+					}
+					add_casus_belli = {
+						target = scope:actor
+						type = casus_belli:cb_japanese_clan_rebel_against_shogunate_authority
+					}
+				}
+			}
+		}
+		else = {
+			show_as_tooltip = {
+				scope:target_country = {
+					turn_japanese_clan_into_building_based = yes
+					add_casus_belli = {
+						target = scope:actor
+						type = casus_belli:cb_japanese_clan_rebel_against_shogunate_authority
+					}
+				}
+			}
+		}
+	}
+}
+
+sengoku.11 = {
+	#They refused
+	type = country_event
+	category = situation_event
+	title = sengoku.11.title
+	desc = sengoku.11.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.11.a
+		add_legitimacy = legitimacy_mild_penalty
+		show_as_tooltip = {
+			add_casus_belli = {
+				target = scope:target_country
+				type = casus_belli:cb_shogunate_reassert_authority
+			}
+			add_opinion = {
+				target = scope:target_country
+				modifier = opinion_refused_shogunate_authority
+			}
+		}
+	}
+}
+
+sengoku.12 = {
+	#Shogun limits clan autonomy
+	hide_portraits = yes
+	type = country_event
+	category = situation_event
+	title = sengoku.12.title
+	desc = sengoku.12.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		#Accept
+		name = sengoku.12.a
+		save_scope_as = loser
+		scope:actor = {
+			save_scope_as = winner
+			trigger_event_silently = sengoku.10
+		}
+		turn_japanese_clan_into_building_based = yes
+		add_casus_belli = {
+			target = scope:actor
+			type = casus_belli:cb_japanese_clan_rebel_against_shogunate_authority
+		}
+		hidden_effect = {
+			situation:sengoku = {
+				sengoku_reevaluate_strongest_daimyos = yes
+			}
+		}
+	}
+	option = {
+		#Refuse
+		name = sengoku.12.b
+		scope:actor = {
+			add_casus_belli = {
+				target = root
+				type = casus_belli:cb_shogunate_reassert_authority
+			}
+			add_opinion = {
+				target = root
+				modifier = opinion_refused_shogunate_authority
+			}
+			trigger_event_silently = sengoku.11
+		}
+	}
+}
+
+sengoku.13 = {
+	#Offer of Hostage
+	type = country_event
+	category = situation_event
+	title = sengoku.13.title
+	desc = sengoku.13.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		#Accept
+		name = sengoku.13.a
+		scope:target_character ?= {
+			move_country = scope:target_country
+			set_variable = {
+				name = hostage_character_country
+				value = scope:actor
+			}
+		}
+		scope:actor ?= {
+			add_opinion_mutual_effect = {
+				target = scope:target_country
+				modifier = opinion_offered_hostage
+			}
+			add_trust_mutual_effect = {
+				target = scope:target_country
+				modifier = trust_offered_hostage
+			}
+			trigger_event_silently = sengoku.14
+		}
+	}
+	option = {
+		#Refuse
+		name = sengoku.13.b
+		scope:actor ?= {
+			add_opinion = {
+				target = scope:target_country
+				modifier = opinion_insulted
+			}
+			trigger_event_silently = sengoku.15
+		}
+	}
+}
+
+sengoku.14 = {
+	#They accepted
+	type = country_event
+	category = situation_event
+	title = sengoku.14.title
+	desc = sengoku.14.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.14.a
+		show_as_tooltip = {
+			scope:target_character ?= {
+				move_country = scope:target_country
+				set_variable = {
+					name = hostage_character_country
+					value = scope:actor
+				}
+			}
+			scope:actor ?= {
+				add_opinion_mutual_effect = {
+					target = scope:target_country
+					modifier = opinion_offered_hostage
+				}
+				add_trust_mutual_effect = {
+					target = scope:target_country
+					modifier = trust_offered_hostage
+				}
+			}
+		}
+	}
+}
+
+sengoku.15 = {
+	#They refused
+	type = country_event
+	category = situation_event
+	title = sengoku.15.title
+	desc = sengoku.15.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.15.a
+		add_prestige = prestige_weak_penalty
+		show_as_tooltip = {
+			scope:actor ?= {
+				add_opinion = {
+					target = scope:target_country
+					modifier = opinion_insulted
+				}
+			}
+		}
+	}
+}
+
+sengoku.16 = {
+	#Petition for Hostage
+	type = country_event
+	category = situation_event
+	title = sengoku.16.title
+	desc = sengoku.16.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.16.a
+		scope:target_character ?= {
+			move_country = scope:actor
+			set_variable = {
+				name = hostage_character_country
+				value = scope:target_country
+			}
+		}
+		scope:actor ?= {
+			add_opinion_mutual_effect = {
+				target = scope:target_country
+				modifier = opinion_offered_hostage
+			}
+			add_trust_mutual_effect = {
+				target = scope:target_country
+				modifier = trust_offered_hostage
+			}
+			trigger_event_silently = sengoku.17
+		}
+	}
+	option = {
+		name = sengoku.16.b
+		add_opinion = {
+			target = scope:actor
+			modifier = opinion_insulted
+		}
+		scope:actor = {
+			trigger_event_silently = sengoku.18
+		}
+	}
+}
+
+sengoku.17 = {
+	#They accepted
+	type = country_event
+	category = situation_event
+	title = sengoku.17.title
+	desc = sengoku.17.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.17.a
+		add_prestige = prestige_weak_bonus
+		show_as_tooltip = {
+			scope:target_character ?= {
+				move_country = scope:actor
+				set_variable = {
+					name = hostage_character_country
+					value = scope:target_country
+				}
+			}
+			scope:actor ?= {
+				add_opinion_mutual_effect = {
+					target = scope:target_country
+					modifier = opinion_offered_hostage
+				}
+				add_trust_mutual_effect = {
+					target = scope:target_country
+					modifier = trust_offered_hostage
+				}
+			}
+		}
+	}
+}
+
+sengoku.18 = {
+	#They refused
+	type = country_event
+	category = situation_event
+	title = sengoku.18.title
+	desc = sengoku.18.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.18.a
+		show_as_tooltip = {
+			scope:target_country ?= {
+				add_opinion = {
+					target = scope:actor
+					modifier = opinion_insulted
+				}
+			}
+		}
+	}
+}
+
+sengoku.19 = {
+	#Summoned to court
+	type = country_event
+	category = situation_event
+	title = sengoku.19.title
+	desc = sengoku.19.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	immediate = {
+		ruler ?= {
+			save_scope_as = target_ruler
+		}
+	}
+	option = {
+		#Accept
+		name = sengoku.19.a
+		add_legitimacy = legitimacy_mild_penalty
+		add_stability = stability_mild_penalty
+		scope:actor = {
+			trigger_event_silently = sengoku.20
+		}
+	}
+	option = {
+		#Refuse
+		name = sengoku.19.b
+		scope:actor ?= {
+			add_opinion = {
+				target = scope:target_country
+				modifier = opinion_refused_shogunate_authority
+			}
+			add_casus_belli = {
+				target = scope:target_country
+				type = casus_belli:cb_shogunate_reassert_authority
+			}
+			trigger_event_silently = sengoku.21
+		}
+	}
+}
+
+sengoku.20 = {
+	#They accepted
+	type = country_event
+	category = situation_event
+	title = sengoku.20.title
+	desc = sengoku.20.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.20.a
+		add_legitimacy = legitimacy_weak_bonus
+	}
+}
+
+sengoku.21 = {
+	#They refused
+	type = country_event
+	category = situation_event
+	title = sengoku.21.title
+	desc = sengoku.21.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.21.a
+		show_as_tooltip = {
+			scope:actor ?= {
+				add_opinion = {
+					target = scope:target_country
+					modifier = opinion_refused_shogunate_authority
+				}
+				add_casus_belli = {
+					target = scope:target_country
+					type = casus_belli:cb_shogunate_reassert_authority
+				}
+			}
+		}
+	}
+}
+
+sengoku.22 = {
+	#Imperial restoration
+	type = country_event
+	category = situation_event
+	title = sengoku.22.title
+	desc = sengoku.22.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.22.a
+		show_as_tooltip = {
+			scope:actor ?= {
+				custom_tooltip = {
+					text = sengoku_attempt_imperial_restoration.tt
+					change_country_type = location
+					every_owned_foreign_building_location = {
+						change_location_owner = scope:actor
+						add_core = scope:actor
+						change_integration_level = core
+					}
+				}
+				reverse_add_opinion = {
+					modifier = opinion_refused_shogunate_authority
+					target = international_organization:japanese_shogunate.leader_country
+				}
+			}
+			add_casus_belli = {
+				type = casus_belli:cb_shogunate_reassert_authority
+				target = scope:actor
+			}
+		}
+		add_prestige = prestige_mild_penalty
+	}
+}
+
+sengoku.23 = {
+	#Clan gains independence
+	type = country_event
+	category = situation_event
+	title = sengoku.23.title
+	desc = sengoku.23.desc
+	image = "gfx/interface/illustrations/situation/sengoku.dds"
+	option = {
+		name = sengoku.22.a
+		show_as_tooltip = {
+			scope:actor ?= {
+				turn_japanese_clan_into_normal_tag = yes
+			}
+			add_casus_belli = {
+				type = casus_belli:cb_shogunate_reassert_authority
+				target = scope:actor
+			}
+		}
+		add_prestige = prestige_mild_penalty
+	}
+}

@@ -409,22 +409,29 @@ international_organization_manager = {
             #Emperors
             NTC
             #Clans
-            HSK NKI KTB IMG TKD SBA CBA STK KGK TKI OGS UES OYM TGS YSM KRA YMN MTD HTK
-            SHN OTM SMZ NBU MGM KSI SOM DTE ASN YUK UTN IIX AKJ ISK MSD OUC KKC ASO
+            NKI KTB IMG SBA CBA STK KGK TKI OGS OYM TGS YSM KRA MTD
+            SHN OTM SMZ MGM KSI SOM DTE ASN YUK UTN IIX AKJ ISK MSD OUC KKC ASO
             SGR KMT SOU ANM TZW WAG HIE DHJ NGM TMR ISW MIU SUW RKK ITO ODA AKT
             NAS HNM UNN KOK TOY NGN MKT
             MYH KAG KOZ AKI AHT ARI TMD
+            # Branch Clans
+            NAO UE1 UE2 UE3
+            TK1 TK2 TK3 TK4
+            YM1 YM2 YM3
+            HS1 HS2 HS3 HS4
+            NB1 NB2
+            HT1 HT2
             # New Countries
             KAK NMI SHI NIK SGO ODE OSA RSU NIH IWA SNO HJO NAK JNB TKA SAT OMO OYA YMO ASI MTU KUW
             OCH TSU KKI EDA AKA AMO KOO SAI ICH MSU UKU KMC ANA NES TNE
         }
 
         japanese_emperor = {
-            NTC
+            YMT
         }
 
         shugo_daimyo = {
-            HSK NKI KTB IMG TKD SBA CBA STK KGK TKI OGS UES OYM TGS YSM KRA YMN MTD HTK
+            HS1 NKI KTB IMG TK1 SBA CBA STK KGK TKI OGS OYM TGS YSM KRA YM1 MTD HT1
             SHN OTM SMZ
         }
 
@@ -451,19 +458,173 @@ international_organization_manager = {
         members = {
             JAP
             NTC
-            HSK NKI KTB IMG TKD SBA CBA STK KGK TKI OGS UES OYM TGS YSM KRA YMN MTD HTK
-            SHN OTM SMZ NBU MGM KSI SOM DTE ASN YUK UTN IIX AKJ ISK MSD OUC KKC ASO
+            NKI KTB IMG SBA CBA STK KGK TKI OGS OYM TGS YSM KRA MTD
+            SHN OTM SMZ MGM KSI SOM DTE ASN YUK UTN IIX AKJ ISK MSD OUC KKC ASO
             SGR KMT SOU ANM TZW WAG HIE DHJ NGM TMR ISW MIU SUW RKK ITO ODA AKT
             NAS HNM UNN KOK TOY NGN MKT
             MYH KAG KOZ AKI AHT ARI TMD
             # New Countries
             KAK NMI SHI NIK SGO ODE OSA RSU NIH IWA SNO HJO NAK KYO JNB TKA SAT OMO OYA YMO ASI MTU KUW
-            OCH TSU KKI EDA AKA AMO KOO SAI ICH MSU UKU KMC ANA NES TNE
+            OCH TSU KKI EDA AKA AMO KOO SAI ICH MUK MSU UKU KMC ANA NES TNE
+
+            # Branch Countries
+            NAO UE1 UE2 UE3
+            TK1 TK2 TK3 TK4
+            YM1 YM2 YM3
+            HS1 HS2 HS3 HS4
+            NB1 NB2
+            HT1 HT2
         }
     }
 
     #################################################################
-    #               Tatar Yoke                                      #
+    # 				Japanese Clans With Cadet Branches              #
+    #################################################################
+    # Uesugi
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1250.1.1 # Late 13th Century
+        members = { NAO UE1 UE2 UE3 }
+        # Nagao clan holds the real power over the Uesugi
+        leader = NAO # Nagao
+
+        main_branch = UE1
+        cadet_branch = {
+            UE2 UE3
+        }
+    }
+
+    # Takeda
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1100.1.1 # Minamoto no Yoshikiyo
+        members = { TK1 TK2 TK3 TK4 }
+        leader = TK1 # Kai
+
+        main_branch = TK1
+        cadet_branch = {
+            TK2 TK3 TK4
+        }
+    }
+
+    # Yamana
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1336.1.1 # Nanboku-cho period
+        members = { YM1 YM2 YM3 }
+        leader = YM1 # Tajima
+
+        main_branch = YM1
+        cadet_branch = { YM2 YM3 }
+    }
+
+    # Nanbu
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { NB1 NB2 }
+        leader = NB1
+
+        main_branch = NB1
+        cadet_branch = NB2
+    }
+
+    # Hosokawa
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { HS1 HS2 HS3 } # HS4 is conquered by 1444
+        leader = HS1 # Kanrei
+
+        main_branch = HS1
+        cadet_branch = {
+            HS2 HS3 HS4
+        }
+    }
+
+    # Hatakeyama
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { HT1 HT2 HT3 }
+        leader = HT3 # Kawachi
+
+        main_branch = HT3
+        cadet_branch = { HT1 HT2 }
+    }
+
+    # TODO: Add the remaining ones
+
+    #################################################################
+    # 				Guelphs & Ghibellines							#
+    #################################################################
+    add_international_organization = {
+        type = guelphs_io
+        creation_date = 1125.5.23
+        members = {
+            NAP PAP BLG PEA FLO ASD FER CNV CHX MND IMO RAV FAE RIM ANC CMR PTG SIE MTA PES ATI
+        }
+        leader = NAP
+    }
+    add_international_organization = {
+        type = ghibellines_io
+        creation_date = 1125.5.23
+        members = {
+            MLO PIS URB GEN ATI SAL PAR LUC CES UBV MAN MFA FRM LCA CRR
+        }
+        leader = MLO
+    }
+
+    #################################################################
+    # 				Ilkhanate										#
+    #################################################################
+    add_international_organization = {
+        type = ilkhanate
+        creation_date = 1260.1.1
+        members = {
+            #Borjigid Faction
+
+            MZN
+            BDS #Baduspanids
+            #Kartids
+            HLG #Huleguids
+
+            #Jalayirid Faction
+
+            JAL ARD ATZ DML ERE HBN HDR HLL HNY IHB KEL KKL KLR KRI KTW MKW RKL SLI SRV SYY ZBR
+            SUT BHT BIN BIT CEM DIL DMB DSN EGL HKK HZN HZR JLM MUS MZJ SOH ZRQ ZZR #Sutayids
+
+            #Unaligned
+
+            ARM KCN SYU VDZ #Armenia
+            GEO AAI SKI SME #Georgia
+            #Injuids
+            MKR BMP BLA KLW #Makran
+            ORM JSK #Ormus
+            ATQ FMN HSN HZP KHN KHZ KLA LCK LHJ MIH RNK RSH TLM
+        }
+
+        laws = {
+        }
+
+        ilkhan_claimant = {
+            JAL HLG
+        }
+        ruler_term = { character = hulegu_khan_borjigin start_date = 1256.1.1 end_date = 1265.2.8 regnal_number = 1 }
+        ruler_term = { character = abaqa_khan_borjigin start_date = 1265.2.8 end_date = 1282.4.4 regnal_number = 1 }
+        ruler_term = { character = ahmed_tekuder_borjigin start_date = 1282.4.4 end_date = 1284.8.10 regnal_number = 1 }
+        ruler_term = { character = arghun_khan_borjigin start_date = 1284.8.10 end_date = 1291.3.10 regnal_number = 1 }
+        ruler_term = { character = gaykhatu_borjigin start_date = 1291.3.10 end_date = 1295.3.21 regnal_number = 1 }
+        ruler_term = { character = hlg_baydu start_date = 1295.3.21 end_date = 1295.10.4 regnal_number = 1 }
+        ruler_term = { character = mahmud_ghazan_borjigin start_date = 1295.10.4 end_date = 1304.5.11 regnal_number = 1 }
+        ruler_term = { character = oljaitu_borjigin start_date = 1304.5.11 end_date = 1316.12.16 regnal_number = 1 }
+        ruler_term = { character = abu_said_bahadur_borjigin start_date = 1316.12.16 end_date = 1335.12.1 regnal_number = 1 }
+        ruler_term = { character = arpa_keun_borjigin start_date = 1335.12.1 end_date = 1336.5.15 regnal_number = 1 }
+
+    }
+
+    #################################################################
+    # 				Tatar Yoke										#
     #################################################################
     add_international_organization = {
         type = tatar_yoke

@@ -1,0 +1,111 @@
+cadet_branch = {
+    subject_pays = empty_unit_maintenance
+    color = subject_vassal
+    level = 2
+    visible_through_diplomacy = {
+        always = no
+    }
+    visible_through_treaty = {
+        always = no
+    }
+    creation_visible = {
+        government_type = government_type:monarchy
+        has_reform = government_reform:daimyo
+    }
+    join_offensive_wars_always = {
+        NOT = {
+            scope:actor ?= {
+                is_subject_of = scope:recipient
+            }
+        }
+    }
+    join_offensive_wars_can_call = {
+        scope:actor ?= {
+            is_subject_of = scope:recipient
+        }
+    }
+    join_defensive_wars_always = {
+        always = yes
+    }
+    diplomatic_capacity_cost_scale = 1
+    strength_vs_overlord = -0.5
+    has_overlords_ruler = no
+    annexation_speed = 1
+    annexation_min_years_before = 10
+    annexation_min_opinion = 150
+    annexation_stall_opinion = 125
+    overlord_can_cancel = yes
+    can_overlord_build_roads = yes
+    can_overlord_build_buildings = yes
+    can_overlord_build_rgos = yes
+    has_limited_diplomacy = yes
+    allow_declaring_wars = {
+        always = yes
+    }
+    food_access = yes
+    can_change_rank = no
+    can_change_heir_selection = yes
+    minimum_opinion_for_offer = 150
+    great_power_score_transfer = 0
+    institution_spread_to_overlord = monthly_institution_spread_mild
+    institution_spread_to_subject = monthly_institution_spread_mild
+    overlord_modifier = {
+        monthly_towards_decentralization = societal_value_tiny_monthly_move
+    }
+    subject_modifier = {
+        country_cabinet_efficiency = 0.05
+    }
+    on_enable = {
+        save_scope_as = subject
+        scope:future_overlord = {
+            if = {
+                limit = {
+                    is_member_of_international_organization_of_type = {
+                        type = jap_branching_clan
+                    }
+                }
+                random_international_organizations_member_of = {
+                    limit = {
+                        international_organization_type = international_organization_type:jap_branching_clan
+                    }
+                    add_country_to_international_organization = scope:subject
+                }
+                international_organization_add_special_status = {
+                    country = scope:future_overlord
+                    type = special_status:main_branch
+                }
+            }
+            else = {
+                create_international_organization = {
+                    save_scope_as = io
+                    type = international_organization_type:jap_branching_clan
+                    add_country_to_international_organization = scope:future_overlord
+                    creator = scope:future_overlord
+                    set_leader_country = prev
+                    add_country_to_international_organization = scope:subject
+                }
+            }
+        }
+        scope:future_overlord = {
+            cancel_subject = scope:subject
+        }
+        international_organization_add_special_status = {
+            country = scope:subject
+            type = special_status:cadet_branch
+        }
+    }
+    ai_wants_to_be_overlord = {
+        scope:subject = {
+            add = {
+                desc = "COALITION_GRADE_ANTAGONISM_TOWARDS_THEM_SUBJECT"
+                value = {
+                    every_country_with_coalition_grade_antagonism_against_us = {
+                        add = {
+                            value = -10
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

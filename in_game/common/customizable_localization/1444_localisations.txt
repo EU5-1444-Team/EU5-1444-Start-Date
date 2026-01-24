@@ -1,0 +1,87 @@
+jap_branching_clan_name = {
+    type = international_organization
+
+    text = {
+        trigger = {
+            leader_country ?= {
+                OR = {
+                    tag = NAO
+                    tag = UE1
+                    tag = UE2
+                    tag = UE3
+                }
+            }
+        }
+        localization_key = uesugi_clan_name
+    }
+
+    text = {
+        trigger = {
+            leader_country ?= {
+                OR = {
+                    tag = TK1
+                    tag = TK2
+                    tag = TK3
+                    tag = TK4
+                }
+            }
+        }
+        localization_key = takeda_clan_name
+    }
+
+    text = {
+        trigger = {
+            leader_country ?= {
+                OR = {
+                    tag = YM1
+                    tag = YM2
+                    tag = YM3
+                }
+            }
+        }
+        localization_key = yamana_clan_name
+    }
+
+    text = {
+        trigger = {
+            leader_country ?= {
+                OR = {
+                    tag = NB1
+                    tag = NB2
+                }
+            }
+        }
+        localization_key = nanbu_clan_name
+    }
+
+    text = {
+        trigger = {
+            leader_country ?= {
+                OR = {
+                    tag = HS1
+                    tag = HS2
+                    tag = HS3
+                    tag = HS4
+                }
+            }
+        }
+        localization_key = hosokawa_clan_name
+    }
+
+    text = {
+        trigger = {
+            leader_country ?= {
+                OR = {
+                    tag = HT1
+                    tag = HT2
+                }
+            }
+        }
+        localization_key = hatakeyama_clan_name
+    }
+
+    text = {
+        localization_key = "Clan"
+        fallback = yes
+    }
+}
