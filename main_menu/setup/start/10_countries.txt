@@ -5053,7 +5053,6 @@ countries = {
             capital = durham
         }
 
-
         LAN = {
             #Duchy of Lancaster
             our_cores_conquered_by_others = {
@@ -5085,6 +5084,34 @@ countries = {
 
             country_rank = rank_duchy
             capital = lancaster
+        }
+
+        YOR = {
+            #Duchy of York
+            our_cores_conquered_by_others = {
+                york scarborough bedale richmond whitby
+                hull bridlington selby norton
+                leeds pontefract skipton wakefield doncaster ripon
+            }
+
+            include = "catholic_monarchy_english_lordship"
+            include = "expl_western_europe"
+
+            government = {
+
+                ruler = eng_richard_of_york_duke
+            }
+
+            accepted_cultures = {
+                english
+            }
+
+            tolerated_cultures = {
+                welsh
+            }
+
+            country_rank = rank_duchy
+            capital = york
         }
 
 
@@ -14595,7 +14622,7 @@ countries = {
                 murcia albacete caravaca cartagena chinchilla cieza hellin lorca mula segura_de_la_sierra villena
                 sevilla arcos_de_la_frontera cadiz carmona constantina ecija jerez_de_la_frontera medina_sidonia moron olvera osuna sanlucar tarifa
                 huelva almonaster_la_real aracena aroche ayamonte coria_del_rio niebla puebla_de_guzman sanlucar_la_mayor
-                bilbao anana durango onate salvatierra san_sebastian tolosa valmaseda vitoria algeciras antequera huescar velez_rubio jumilla
+                anana onate salvatierra san_sebastian tolosa vitoria algeciras antequera huescar velez_rubio jumilla
             }
 
             starting_technology_level = 3
@@ -14700,10 +14727,10 @@ countries = {
             own_control_core = {
                 lagos faro silves tavira
                 evora alvalade alvito avis beja crato elvas estremoz mertola montemor mora_portugal moura odemira ourique ponte_sor portalegre portel salvaterra serpa sines vila_vicosa
-                coimbra besteiros castelo_branco covilha esgueira feira guarda idanha lamego meda pinhel proenca_nova sabugal seia trancoso viseu
-                lisbon alcacer_do_sal alcobaca chao_de_couce figueira leiria santarem setubal tomar torres_novas torres_vedras
-                porto aguiar barcelos braga guimaraes montalegre valenca viana_do_castelo
-                braganca chaves macedo miranda_de_i_douro mirandela moncorvo vila_real
+                besteiros castelo_branco covilha esgueira feira guarda idanha lamego meda pinhel proenca_nova sabugal trancoso viseu
+                lisbon alcacer_do_sal alcobaca chao_de_couce leiria santarem setubal tomar torres_novas torres_vedras
+                porto barcelos braga guimaraes valenca viana_do_castelo
+                miranda_de_i_douro mirandela moncorvo vila_real
             }
 
             own_control_conquered = {
@@ -14806,6 +14833,58 @@ countries = {
             ai_advance_preference_tags = {
                 exploration = 5
             }
+        }
+
+        #Braganza
+        BGZ = {
+            own_control_core = {
+                braganca macedo montalegre aguiar chaves
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                ruler = por_afonso_i_braganca_duke
+
+                regnal_numbers = {
+                }
+            }
+
+            country_rank = rank_duchy
+            dynasty = braganca_dynasty
+            capital = braganca
+        }
+
+        #Coimbra
+        COB = {
+            own_control_core = {
+                coimbra figueira seia
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                ruler = por_pedro_i_avis_coimbra
+
+                regnal_numbers = {
+                }
+            }
+
+            country_rank = rank_duchy
+            dynasty = avis_dynasty
+            capital = coimbra
         }
 
         LON = {
@@ -14940,6 +15019,32 @@ countries = {
             capital = oviedo
         }
 
+        #Vizcaya
+        VIZ = {
+            own_control_core = {
+                bilbao durango valmaseda
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+
+                regnal_numbers = {
+                }
+            }
+
+            country_rank = rank_county
+            dynasty = trastamara_dynasty
+            capital = bilbao
+        }
+
+        #Canary Islands
         CNY = {
             own_control_core = {
                 teguise maxorata hipalan #Islands conquered under Jean de Bethencourt
@@ -15189,28 +15294,18 @@ countries = {
         FRA = {
             own_control_core = {
                 paris brie_comte_robert corbeil montmorency
-                clermont montargis sens saint_florentin senlis melun
-                beauvais la_rochelle
-                laon
-                cahors mirepoix limoux carcassonne lavaur castelnaudary condom bazas agen
-                bergerac montauban albi saint_pons beziers agde sauveterre_de_guyenne
+                clermont montargis sens senlis melun
+                la_rochelle
+                cahors limoux lavaur castelnaudary condom bazas agen
+                bergerac montauban albi saint_pons beziers sauveterre_de_guyenne
                 figeac chaumont_vexin
                 limeuil sarlat marmande montflanquin
-                braine
 
                 tours chinon loches chatillon_sur_indre #D. de Touraine
 
                 chartres auneau #C. Chartres
                 gourdon #Vic.Turenne
-                mende #C. de Gevaudan
-                langres grancey #D. de Langres
-                lyon #C. de Lyon
-                le_puy #C. du Velay
-                viviers # C. de Viviers
-                nimes uzes melgueil
-                french_ales #S. Ales
-                chalons_champagne #C. de Chalon
-                reims #D. Reims
+                nimes uzes
 
                 amboise #S.
 
@@ -15218,46 +15313,36 @@ countries = {
 
                 chateauroux boussac #S. de Chateauroux
 
-                lodeve #C. Lodeve
-
                 fenouillet toulouse verdun_sur_garonne villemur
                 meaux
                 provins
-                chalancon peyre chateauneuf_de_randon florac st_ambroix
+                st_ambroix
                 mantes
-                roucy chateau_porcien
-                alluyes evreux senonches
+                chateau_porcien
+                evreux senonches
+                hirson
             }
             own_control_integrated = {
                 #Appanages
 
                 #Poitou (Own by the ruler)
                 poitiers la_roche_sur_yon montaigu fontenay montmorillon
-                niort chatellerault brosse lusignan aulnay st_jean_dangely
+                niort brosse lusignan aulnay st_jean_dangely
                 talmont mauleon_poitou
 
                 #C. de Champagne
-                chateau_thierry broyes vertus bar_sur_aube
+                chateau_thierry broyes bar_sur_aube
                 chaumont vaucouleurs vitry_en_pertois troyes epernay menehould
-                rosnay choiseul
-
-                #Too small/unimportant appanages
-                guise hirson
 
                 #Too small/unimportant vassals (fiefs movants)
-                marle coucy #S. Coucy
-                brienne #C. Brienne
-                joinville #S. Joinville
-                grandpre #C. Grandpre
                 benauges
                 saintes jonzac montendre oleron royan rochefort
-                belin la_teste_de_buch
+                belin
                 montpellier
-                privas montlaur
 
-                tournon #S. de Tournon
-                lautrec #Vic. de Lautrec
-                castres #S. de Castres
+                grancey
+                st_affrique
+                villefranche peyrusse
             }
 
             our_cores_conquered_by_others = {
@@ -15403,7 +15488,7 @@ countries = {
         BRI = {
             own_control_core = {
                 brest carhaix chateaulin chatelaudren le_faou quimper quimperle saint_brieuc st_pol_de_leon treguier
-                nantes blain chateaubriant guerande machecoul
+                nantes blain chateaubriant guerande
                 rennes dol fougeres monfort_sur_meu saint_malo vitre
                 vannes hennebont josselin ploermel redon rohan
             }
@@ -15477,7 +15562,29 @@ countries = {
                 breton
                 poitevin
             }
+        }
 
+        RTZ = {
+            #Retz
+            own_control_core = {
+                machecoul
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = machecoul
         }
 
         #Burgundy
@@ -15750,7 +15857,6 @@ countries = {
             own_control_core = {
                 vic_le_comte
                 thiers #S. Thiers
-                aurillac
                 mauriac riom tour_auvergne brioude saint_flour vodable allegre
                 montaigut herment
             }
@@ -15801,6 +15907,7 @@ countries = {
                 }
             }
 
+            county_rank = rank_duchy
             capital = vic_le_comte
         }
 
@@ -15865,7 +15972,7 @@ countries = {
 
         #Carlat
         CLT = {
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 aurillac
             }
             starting_technology_level = 3
@@ -15965,8 +16072,6 @@ countries = {
                 bourbon molins huriel montlucon vichy
                 jaligny st_gerand
                 # own_control_integrated, but culture accepted
-                clermont_en_beauvaisis #C. Clermont-en-Beauvaisis
-                chambon #B. de Combraille
                 chateau_chinon #S. Chateau-Chinon
             }
             starting_technology_level = 3
@@ -16149,7 +16254,7 @@ countries = {
         #Sancerre (Appanage)
         SAN = {
             own_control_core = {
-                sancerre gien sancoins
+                sancerre sancoins
             }
 
             starting_technology_level = 3
@@ -16356,13 +16461,11 @@ countries = {
 
             capital = mont_de_marsan
         }
+
         #Armagnac (Vassal, Fief Mouvant)
         AMG = {
             own_control_core = {
-                auch nogaro rodez
-                lectoure #Vic. de Lomagne
-                lisle_jourdain
-                entraigues st_affrique millau villefranche peyrusse
+                auch nogaro
             }
 
             starting_technology_level = 3
@@ -16541,8 +16644,6 @@ countries = {
         FRZ = {
             own_control_core = {
                 roanne montbrison feurs saint_etienne
-                riverie beaujeu perreux #S.de Beaujeu
-                trevoux
             }
 
             starting_technology_level = 3
@@ -16759,7 +16860,11 @@ countries = {
         NEM = {
             #Nemours
             own_control_core = {
-                nemours joigny nogent_sur_seine
+                nemours nogent_sur_seine
+            }
+
+            own_control_integrated = {
+                saint_florentin
             }
 
             starting_technology_level = 3
@@ -16794,6 +16899,907 @@ countries = {
             capital = chateaudun
         }
 
+        VRT = {
+            #Vertus
+            own_control_core = {
+                vertus rosnay
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = vertus
+        }
+
+        CLO = {
+            #Châlons
+            own_control_core = {
+                chalons_champagne
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_bishopric_no_coast"
+            country_rank = rank_duchy
+            government = {
+                ruler = random
+
+                reforms = {
+                    prince_bishopric_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = chalons_champagne
+        }
+
+        REI = {
+            #Reims
+            own_control_core = {
+                reims
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_bishopric_no_coast"
+            country_rank = rank_duchy
+            government = {
+                ruler = random
+
+                reforms = {
+                    prince_bishopric_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = reims
+        }
+
+        BNN = {
+            #Brienne
+            own_control_core = {
+                brienne
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = brienne
+        }
+
+        LAO = {
+            #Laon
+            own_control_core = {
+                laon
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = laon
+        }
+
+        COU = {
+            #Coucy
+            own_control_core = {
+                coucy
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = coucy
+        }
+
+        MRL = {
+            #Marle
+            own_control_core = {
+                marle
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = marle
+        }
+
+        GUS = {
+            #Guise
+            own_control_core = {
+                guise
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = guise
+        }
+
+        JON = {
+            #Joinville
+            own_control_core = {
+                joinville
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = joinville
+        }
+
+        LGR = {
+            #Langres
+            own_control_core = {
+                langres choiseul
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = langres
+        }
+
+        GPE = {
+            #Grandpré
+            own_control_core = {
+                grandpre
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = grandpre
+        }
+
+        BAN = {
+            #Braine
+            own_control_core = {
+                braine
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = braine
+        }
+
+        BEU = {
+            #Beauvais
+            own_control_core = {
+                beauvais
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = beauvais
+        }
+
+        SOI = {
+            #Soissons
+            own_control_core = {
+                soissons
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            capital = soissons
+        }
+
+        NOY = {
+            #Noyon
+            own_control_core = {
+                noyon
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_bishopric_no_coast"
+            country_rank = rank_county
+            government = {
+                ruler = random
+
+                reforms = {
+                    prince_bishopric_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = noyon
+        }
+
+        CBU = {
+            #Clermont-en-Beauvaisis
+            own_control_core = {
+                clermont_en_beauvaisis
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = clermont_en_beauvaisis
+        }
+
+        NOY = {
+            #Noyon
+            own_control_core = {
+                noyon
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_bishopric_no_coast"
+            country_rank = rank_county
+            government = {
+                ruler = random
+
+                reforms = {
+                    prince_bishopric_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = noyon
+        }
+
+        PRG = {
+            #Perche-Gouët
+            own_control_core = {
+                alluyes
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_bishopric_no_coast"
+            country_rank = rank_county
+            government = {
+                ruler = random
+
+                reforms = {
+                    prince_bishopric_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = alluyes
+        }
+
+        GIN = {
+            #Gien
+            own_control_core = {
+                gien
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = gien
+        }
+
+        CLU = {
+            #Châtellerault
+            own_control_core = {
+                chatellerault
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = chatellerault
+        }
+
+        JOI = {
+            #Joigny
+            own_control_core = {
+                joigny
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = joigny
+        }
+
+        BUC = {
+            #Buch
+            own_control_core = {
+                la_teste_de_buch
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = la_teste_de_buch
+        }
+
+        CST = {
+            #Castres
+            own_control_core = {
+                castres #S. de Castres
+                lautrec #Vic. de Lautrec
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = castres
+        }
+
+        COE = {
+            #Couserans
+            own_control_core = {
+                saint_lizier
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = saint_lizier
+        }
+
+        MPX = {
+            #Mirepoix
+            own_control_core = {
+                mirepoix
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = mirepoix
+        }
+
+        LOG = {
+            #Lomagne
+            own_control_core = {
+                lectoure #Vic. de Lomagne
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = lectoure
+        }
+
+        CSS = {
+            #Carcassonne
+            own_control_core = {
+                carcassonne
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = carcassonne
+        }
+
+        AGD = {
+            #Agde
+            own_control_core = {
+                agde
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = agde
+        }
+
+        MEL = {
+            #Melgueil
+            own_control_core = {
+                melgueil
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = melgueil
+        }
+
+        LOD = {
+            #Lodève
+            own_control_core = {
+                lodeve #C. Lodeve
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = lodeve
+        }
+
+        MLU = {
+            #Millau
+            own_control_core = {
+                millau
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = millau
+        }
+
+        AES = {
+            #Alès
+            own_control_core = {
+                french_ales #S. Ales
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = french_ales
+        }
+
+        RDZ = {
+            #Rodez
+            own_control_core = {
+                rodez entraigues
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = rodez
+        }
+
+        GEV = {
+            #Gévaudan
+            own_control_core = {
+                florac peyre chateauneuf_de_randon mende #C. de Gevaudan
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = florac
+        }
+
+        VLY = {
+            #Velay
+            own_control_core = {
+                le_puy chalancon #C. du Velay
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = le_puy
+        }
+
+        CMB = {
+            #Combraille
+            own_control_core = {
+                chambon #B. de Combraille
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = chambon
+        }
+
+        BJU = {
+            #Beaujeu
+            own_control_core = {
+                beaujeu perreux #S.de Beaujeu
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = beaujeu
+        }
+
+        LYO = {
+            #Lyon
+            own_control_core = {
+                lyon riverie trevoux #C. de Lyon
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = lyon
+        }
+
+        VIV = {
+            #Viviers
+            own_control_core = {
+                viviers privas montlaur tournon # C. de Viviers
+                tournon #S. de Tournon
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = viviers
+        }
+
+        DEI = {
+            #Die
+            own_control_core = {
+                die condorcet
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = die
+        }
+
+        ESC = {
+            #Escartons
+            own_control_core = {
+                briancon pragelato
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = republic
+                reforms = {
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = briancon
+        }
+
         ALR = {
             #Albret
             own_control_core = {
@@ -16820,7 +17826,7 @@ countries = {
 
         #Astarac (Vassal, Fief Mouvant)
         AST = {
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 mirande
             }
 
@@ -16872,9 +17878,8 @@ countries = {
         #Comminges (Vassal, Fief Mouvant)
         COM = {
             own_control_core = {
-                muret aspet saint_lizier
+                muret aspet
                 saint_gaudens #Vic. des Quatre Valles
-                mirande
             }
 
             starting_technology_level = 3
@@ -16933,7 +17938,7 @@ countries = {
 
         #Isle de Jourdan (Vassal, Fief Mouvant)
         IJO = {
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 lisle_jourdain
             }
 
@@ -16975,12 +17980,13 @@ countries = {
         #Valentinois (Vassal, Fief Mouvant)
         VLN = {
             own_control_core = {
-                valence die condorcet
+                valence
             }
 
             our_cores_conquered_by_others = {
                 privas montlaur
                 tournon #S. de Tournon
+                die condorcet
 
             }
             starting_technology_level = 3
@@ -17176,7 +18182,7 @@ countries = {
         #Tonnerre (Vassal, Fief Mouvant)
         TON = {
             own_control_core = {
-                tonnerre villemaur
+                tonnerre
             }
 
             starting_technology_level = 3
@@ -17343,7 +18349,7 @@ countries = {
 
         #Roucy (Vassal, Fief Mouvant)
         ROU = {
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 roucy
             }
 
@@ -17548,7 +18554,7 @@ countries = {
         #Valois (Revolter)
         VLS = {
             own_control_core = {
-                soissons crepy noyon ribemont
+                crepy ribemont
             }
 
             starting_technology_level = 3
@@ -17579,7 +18585,7 @@ countries = {
                     name_charles = 1
                 }
             }
-            capital = soissons
+            capital = crepy
         }
 
         #Perche (In PU with Alençon)
@@ -17630,7 +18636,7 @@ countries = {
 
         #Mortain
         MRT = {
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 mortain
             }
 
@@ -18075,6 +19081,10 @@ countries = {
                 st_pierre_de_moutier montreuillon cercy
             }
 
+            own_control_integrated = {
+                villemaur
+            }
+
             starting_technology_level = 3
             include = "expl_western_europe"
             include = "catholic_monarchy_no_coast"
@@ -18233,6 +19243,29 @@ countries = {
             capital = evreux
         }
 
+        LGV = {
+            #Longueville
+            own_control_core = {
+                longueville #Longueville
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy"
+            country_rank = rank_county
+            government = {
+                type = monarchy
+                reforms = {
+                    french_ducal_vassal_reform
+                }
+            }
+
+            tolerated_cultures = {
+            }
+
+            capital = longueville
+        }
+
         #Normandy
         NRM = {
             own_control_core = {
@@ -18240,16 +19273,16 @@ countries = {
                 caen bayeux falaise lisieux pont_douilly
                 cherbourg coutances avranches st_sauveur vire
                 rouen arques fecamp gisors tancarville
-                longueville
-                harcourt mortain
+                harcourt
             }
 
             our_cores_conquered_by_others = {
                 jersey # England
-                evreux harcourt mortain #Evreux
-                longueville #Longueville
+                evreux #Evreux
                 alencon domfront argentan #Alencon
                 argentan laigle
+                longueville
+                mortain
             }
 
             starting_technology_level = 3
@@ -18367,8 +19400,6 @@ countries = {
                 amiens corbie breteuil 
             }
             our_cores_conquered_by_others = {
-                calais guise hirson marle
-                ribemont noyon
             }
 
             starting_technology_level = 3
@@ -18511,7 +19542,7 @@ countries = {
         #Dauphine
         DAU = {
             own_control_core = {
-                grenoble gap briancon pragelato
+                grenoble gap
                 romans la_mure saint_marceilin
                 mevouillon
                 la_tour_du_pin
