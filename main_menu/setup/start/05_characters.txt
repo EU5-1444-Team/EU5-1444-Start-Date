@@ -6804,7 +6804,6 @@ character_db={
         }
     }
 
-    
     #Heir
     byz_john_v_palaiologos = { #https://en.wikipedia.org/wiki/John_V_Palaiologos
         first_name = { name = name_john }
@@ -6818,7 +6817,6 @@ character_db={
         dynasty = palaiologos_dynasty
         tag = BYZ
     }
-
     
     #Heir's Brother
     byz_michael_palaiologos_ii = { #https://en.wikipedia.org/wiki/Michael_Palaiologos_(son_of_Andronikos_III)
@@ -6833,7 +6831,6 @@ character_db={
         dynasty = palaiologos_dynasty
         tag = BYZ
     }
-
     
     #Ruler's Siblings & Nieces
 
@@ -6880,7 +6877,6 @@ character_db={
         tag = BYZ
     }
 
-
     byz_demetrios_palaiologos = { #https://en.wikipedia.org/wiki/Demetrios_Palaiologos_(son_of_Andronikos_II)
         first_name = { name = name_demetrius }
         culture = greek_culture
@@ -6893,7 +6889,6 @@ character_db={
         dynasty = palaiologos_dynasty
         tag = BYZ
     }
-
     
     byz_theodora = {
         first_name = { name = name_theodora }
@@ -6906,7 +6901,6 @@ character_db={
         spouse = byz_demetrios_palaiologos
         tag = BYZ
     }
-
     
     byz_eirene_palaiologina = {
         first_name = { name = name_irene }
@@ -6921,7 +6915,6 @@ character_db={
         dynasty = palaiologos_dynasty
         tag = BYZ
     }
-
 
     # Other Family members
 
@@ -111131,6 +111124,7 @@ character_db={
         adm = 15 dip = 10 mil = 10
         culture = castilian
         religion = catholic
+        fertility = 0
         birth_date = 1425.1.5
         birth = valladolid
         father = cas_juan_ii_trastamara
@@ -115606,10 +115600,16 @@ character_db={
         father = byz_manuel_ii_palaiologos
         mother = byz_jelena_dragas_dejanovic
         dynasty = palaiologos_dynasty
-        tag = BYZ        
+        tag = BYZ
+        timed_modifier = { #Dies in 1448 for Constantine XI to take the throne
+            modifier = "sickly_character"
+            start_date = 1444.1.1
+            date = 9999.1.1
+            size = 1
+        }     
     }
 
-    mre_theodore_ii_palaiologos = {
+    mre_theodoros_ii_palaiologos = {
         first_name = { name = name_theodore }
         culture = greek_culture
         religion = orthodox
@@ -115622,7 +115622,7 @@ character_db={
         tag = BYZ        
     }
 
-    byz_constantine_xi_palaiologos = { #The Marble Emperor...
+    byz_konstantinos_xi_palaiologos = { #The Marble Emperor...
         first_name = { name = name_constantine }
         nickname = {name = Dragases }
         culture = greek_culture
@@ -115634,6 +115634,8 @@ character_db={
         father = byz_manuel_ii_palaiologos
         mother = byz_jelena_dragas_dejanovic
         dynasty = palaiologos_dynasty
+        ruler_trait = bold_fighter
+        general_trait = inspirational_leader_general
         tag = BYZ        
     }
 

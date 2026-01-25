@@ -2174,6 +2174,17 @@ countries = {
                     distribution_of_power_law = dop_traditional_distribution_of_power
                     immigration_law = open_borders_law
                 }
+
+                reforms = {
+                    peasant_republic_reform
+                }
+
+                privilege = {
+                    peasants_free_peasantry
+                    peasants_allowed_weapons_privilege
+                    peasants_represented_in_parliament
+                    peasants_autonomous_villages
+                }
             }
 
             tolerated_cultures = {
@@ -11758,7 +11769,7 @@ countries = {
             capital = matera
         }
 
-        AND = { #Andria
+        AIA = { #Andria
             own_control_core = {
                 andria barletta
             }
@@ -14040,7 +14051,7 @@ countries = {
                 sporades
             }
             own_control_conquered = {
-                burgas sozopol rusokastro anhialo
+                burgas sozopol anhialo
             }
             our_cores_conquered_by_others = {
                 #Vardar Province - lost in 1285
@@ -14113,7 +14124,7 @@ countries = {
                 heir_selection = cognatic_primogeniture
 
                 ruler = byz_ioannes_viii_palaiologos
-                heir = byz_constantine_xi_palaiologos
+                heir = byz_konstantinos_xi_palaiologos
 
                 ruler_term = { character = byz_isaakios_i_komnenos start_date = 1057.6.8 end_date = 1059.11.22 regnal_number = 1 }
 
@@ -14194,7 +14205,7 @@ countries = {
                     elaborate_court_ceremonies
                     noble_serfdom_rights
                     manorial_courts
-                    consolidated_corruption_of_the_nobles
+                    #consolidated_corruption_of_the_nobles
 
                     #Clergy
                     embellish_great_works_of_faith
@@ -14231,12 +14242,12 @@ countries = {
             }
             #Setup to accurately portray the starting situation
             currency_data = {
-                gold = -300
-                stability = -5
+                gold = 50
+                stability = -10
                 prestige = 20
-                government_power = 10
+                government_power = 70
                 inflation = 0.1
-                war_exhaustion = 10
+                war_exhaustion = 5
             }
 
             tolerated_cultures = {
@@ -33917,7 +33928,16 @@ countries = {
                 hezhou dingqiang
                 jishi
             }
+
+            own_control_integrated = {
+                taipengruodong panqiao zhenyuan_sizhou shuitejiang shiqian yinjiang dejiang wuchuan_sinan
+                guzhou yongcong longquanping liping
+                wuluo qiongshui tongren tixi
+                wuzhai xiajiang yanhe tonggu_liping
+            }
+
             our_cores_conquered_by_others = { }
+
             include = "far_east_asia_monarchy"
             include = "expl_china"
             include = "expl_zheng_he"
@@ -35288,7 +35308,7 @@ countries = {
 
         SZH = {
             #Sizhou
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 taipengruodong panqiao zhenyuan_sizhou shuitejiang shiqian yinjiang dejiang wuchuan_sinan
                 guzhou yongcong longquanping liping
                 wuluo qiongshui tongren tixi
@@ -37651,6 +37671,7 @@ countries = {
                 tsepina
                 beden haskovo perperek smolyan stanimaka
                 parga ioannina konitsa argyrokastro avlonya karpenisi
+                rusokastro
             }
 
             own_control_conquered = {
@@ -45001,6 +45022,8 @@ countries = {
 
                 privilege = {
                     peasants_free_peasantry
+                    peasants_allowed_weapons_privilege
+                    peasants_represented_in_parliament
                 }
 
                 reforms = {
@@ -69614,7 +69637,7 @@ countries = {
         TIW = { #Tiwi
 
             own_control_core = {
-                tiwi maung kuwena larrakia woolna konbudj
+                tiwi maung larrakia woolna konbudj
             }
 
             discovered_regions = {
@@ -69632,7 +69655,7 @@ countries = {
         }
         EOA = { #Eora
             own_control_core = {
-                eora tharawal dharug guramal jerrinja
+                eora tharawal dharug
             }
 
             discovered_regions = {
@@ -69650,7 +69673,7 @@ countries = {
         }
         WUW = { #Wurundjeri 
             own_control_core = {
-                wathaurong woi_wurrung boon_wurrung gadubanud marin_balluk yarra geelong
+                wathaurong woi_wurrung boon_wurrung marin_balluk geelong
             }
 
             discovered_regions = {
@@ -69671,9 +69694,8 @@ countries = {
             }
         }
         WAT = { #Waikato
-
             own_control_core = {
-                ahurei manukau hauraki tauranga urewera
+                ahurei manukau hauraki tauranga
             }
 
             discovered_regions = {
@@ -69692,7 +69714,6 @@ countries = {
             capital = ahurei
         }
         TIA = { #Tahiti
-
             own_control_core = {
                 tahiti havaii manuae_atoll rangiroa_atoll nganaa_nui_atoll
             }
@@ -69715,7 +69736,6 @@ countries = {
             capital = tahiti
         }
         PAI = { #Paici
-
             own_control_core = {
                 paici cemuhi ajie yuanga nyelayu
             }
@@ -69738,7 +69758,6 @@ countries = {
             capital = paici
         }
         NIV = { #Ni-Vanuatu
-
             own_control_core = {
                 tanna aneityum erromango malakula ambae
             }
@@ -69761,9 +69780,8 @@ countries = {
             capital = tanna
         }
         NII = {#Naasuiu
-
             own_control_core = {
-                naasioi bannoni tinputz vaghua cheke_holo mono
+                naasioi bannoni tinputz vaghua mono
             }
 
             discovered_regions = {
@@ -69784,9 +69802,8 @@ countries = {
             capital = naasioi
         }
         WAM = { #Waima
-
             own_control_core = {
-                waima koiali toaripi namau sinaugoro suau wipi
+                waima koiali toaripi
             }
 
             discovered_regions = {
