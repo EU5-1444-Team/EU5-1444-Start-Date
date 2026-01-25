@@ -4127,6 +4127,7 @@ countries = {
 
             starting_technology_level = 0
             include = "eurasian_tribe"
+            include = "expl_mongols"
             government = {
                 type = tribe
                 heir_selection = tribal_oldest_male
@@ -4233,6 +4234,7 @@ countries = {
 
             starting_technology_level = 3
             include = "eurasian_tribe"
+            include = "expl_mongols"
             government = {
                 type = tribe
                 heir_selection = tribal_oldest_male
@@ -33542,10 +33544,7 @@ countries = {
                 guohuo boluohe kushunkotan nayoro
             }
 
-            discovered_regions = {
-                japan_region
-            }
-
+            include = "expl_manchurian_tribe"
 
             starting_technology_level = 0
             include = "asia_tribe"
@@ -56135,8 +56134,6 @@ countries = {
 
         KYK = {
             #Koryak
-            type = pop
-
             add_pops_from_locations = {
                 atargan yamsk brokhovo takhtoyamsk merenga omchikan buksunda kushka
                 evenksk chivitkino gizhiga paren manily kamenskoie oklan talovka
@@ -56155,12 +56152,9 @@ countries = {
 
         NAN = {
             #Nanai
-            type = pop
-
-            add_pops_from_locations = {
+            own_control_core = {
                 achan boli nemptu
                 arkhara jiajin
-                ilan_hala
                 lahasusu nuoluo shuangyashan
                 wehe
                 tyrma
@@ -56177,9 +56171,7 @@ countries = {
 
         NVK = {
             #Nivkh
-            type = pop
-
-            add_pops_from_locations = {
+            own_control_core = {
                 usalgin amgun bitki bulava dzhuk nurgan nanghaer idy_sakhalin porokotan wuliehe
             }
 
@@ -56192,9 +56184,7 @@ countries = {
 
         ORC = {
             #Oroch
-            type = pop
-
-            add_pops_from_locations = {
+            own_control_core = {
                 tumzhdin xungake
                 uschu
                 datta
@@ -56247,10 +56237,7 @@ countries = {
 
         SOL = {
             #Solon
-            type = pop
-
-            add_pops_from_locations = {
-                boduna yushu
+            own_control_core = {
                 dalaiketun nemeri
                 hulan bayan_susu hailun hvlan ougen shangjing hulawen zhaozhou_jurchen talaha sart zhalong
             }
@@ -56264,9 +56251,7 @@ countries = {
 
         UDE = {
             #Udege
-            type = pop
-
-            add_pops_from_locations = {
+            own_control_core = {
                 alchan katen xunka
                 hulin
                 jixi mishan
@@ -56286,9 +56271,7 @@ countries = {
 
         ULC = {
             #Ulch
-            type = pop
-
-            add_pops_from_locations = {
+            own_control_core = {
                 pilda
                 deren
             }
@@ -56390,7 +56373,7 @@ countries = {
         YEH = {
             #Yehe
             own_control_core = {
-                itu_jilin ngan yehe
+                itu_jilin yehe
             }
 
             our_cores_conquered_by_others = {
@@ -70658,5 +70641,9 @@ countries = {
             }
             capital = waima
         }
+    }
+}
+    }
+}
     }
 }
