@@ -737,8 +737,9 @@ countries = {
         TEU = {
             #Teutonic Order
             own_control_core = {
-                balga ostroda dzierzgon elblag morag
+                balga ostroda dzierzgon morag
             }
+
             own_control_integrated = {
                 ragnit tilsit mergentheim gumbinnen barten wegorzewo
                 gerdauen insterburg wehlau
@@ -753,11 +754,12 @@ countries = {
                 #Chełmno Land
                 brodnica grudziadz torun
                 #Pomerelia
-                gdansk gniew koscierzyna mirochowo puck tczew
+                gniew koscierzyna mirochowo puck tczew
                 tuchola bialobork czluchow nowe swiecie
 
                 bytow lebork
             }
+
             control = {
                 ##Dobrzyń Land
                 #dobrzyn lipno rypin
@@ -819,7 +821,7 @@ countries = {
             }
 
             own_control_integrated = {
-                parnu valmiera viljandi kaina valjala
+                parnu valmiera viljandi valjala
                 karksi poltsamaa kandava dobele bauska sigulda cesis aluksne
                 rezekne daugavpils selpils kraslava jelgava tukums
                 saarde suure_jaani makonkalns aizkraukle salaspils saldus
@@ -960,6 +962,42 @@ countries = {
             tolerated_cultures = { pruthenian }
             country_rank = rank_county
             capital = fischhausen
+        }
+
+        DZG = {
+            #Danzig
+            own_control_core = {
+                gdansk
+            }
+
+            include = "catholic_republic"
+            include = "expl_northern_europe"
+            government = {
+                type = republic
+                heir_selection = oligarchic_elective
+                ruler = random
+            }
+
+            country_rank = rank_county
+            capital = gdansk
+        }
+
+        ELB = {
+            #Elbing
+            own_control_core = {
+                elblag
+            }
+
+            include = "catholic_republic"
+            include = "expl_northern_europe"
+            government = {
+                type = republic
+                heir_selection = oligarchic_elective
+                ruler = random
+            }
+
+            country_rank = rank_county
+            capital = elblag
         }
 
         #CTV = { # Order of Calatrava
@@ -1121,7 +1159,7 @@ countries = {
 
         BIO = {
             own_control_core = {
-                hapsal lihula kuressaare st_martin
+                hapsal lihula kuressaare st_martin kaina
             }
 
             include = "catholic_bishopric"
@@ -2166,10 +2204,11 @@ countries = {
                 bronnitsa gruzino veliky_porog valday pribuzh ivangorod izboishchi pashozero tervenichi megra voznesenye ostrechiny andomsky_pogost
                 kinerma pryazha salmi loimola sordavala kurkijoki sellinkyla karhumagi puatane saarijoki sumsky_posad unezhma vygozero maloshuyka
                 chelmuzhi vodlozero shalskii rakitnya mikshino bernovo lyuban
+                rzheva_pustaya
             }
 
             our_cores_conquered_by_others = {
-                rzheva_pustaya ashevo
+                ashevo
             }
 
             own_control_colony = {
@@ -2447,7 +2486,7 @@ countries = {
             include = "expl_novgorod"
         }
 
-        #Principality of Kashin	(Ruler: Prince Vasily of Kashin (https://en.wikipedia.org/wiki/Mikhail_of_Tver#Family_and_children)
+        #Principality of Kashin	- Ruler: Prince Vasily of Kashin (https://en.wikipedia.org/wiki/Mikhail_of_Tver#Family_and_children)
         #Appanage of Tver
         KAS = {
             own_control_core = {
@@ -2864,6 +2903,10 @@ countries = {
             own_control_core = {
                 korocha belgorod rakitnoye muzhech sudzha oboyan manturovo_kursk oskol
                 sumy krasnopillia melnya buryn putyvl glushkovo vilshana
+            }
+
+            own_control_integrated = {
+                lypova_dolyna khotmyzh
             }
 
             starting_technology_level = 3
@@ -3535,7 +3578,7 @@ countries = {
             }
 
             own_control_integrated = {
-                pietalava rzheva_pustaya ashevo
+                pietalava ashevo
             }
 
             our_cores_conquered_by_others = {
@@ -4382,11 +4425,8 @@ countries = {
                 #nogai
                 #astrakhani
                 #kazani
-
             }
-
         }
-
 
         CRI = {
             type = location
@@ -4401,7 +4441,7 @@ countries = {
                 oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka
                 balikley aqmecit_prybuzhzhya vithold_hammami dashev argamakli_sarai
                 khadjibey teligol kuyanlik ananiv iagorlic
-                sofiivka kryvyi_rih tomakivka mykytyn_rih kodak
+                sofiivka kryvyi_rih tomakivka mykytyn_rih 
                 semikarakorsk
             }
 
@@ -4683,15 +4723,11 @@ countries = {
         GAZ = {
             # Gazaria
             own_control_core = {
-                kaffa vosporo #Black Sea
+                kaffa #Black Sea
                 lusta soldaia
             }
 
             own_control_integrated = {
-                tana
-                taman
-                mapa
-                copa
             }
 
             starting_technology_level = 3
@@ -10134,6 +10170,106 @@ countries = {
             capital = ajaccio
         }
 
+        COH = {
+            own_control_core = {
+                aleria
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            capital = aleria
+        }
+
+        ADI = {
+            own_control_core = {
+                corte
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            capital = corte
+        }
+
+        ROC = {
+            own_control_core = {
+                sartene
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            capital = sartene
+        }
+
+        NUL = {
+            own_control_core = {
+                ajaccio
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            capital = ajaccio
+        }
+
+        VCL = {
+            own_control_core = {
+                vico
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            capital = vico
+        }
+
         COT = {
             our_cores_conquered_by_others = {
                 cortona
@@ -10597,13 +10733,14 @@ countries = {
             own_control_core = {
                 albenga ventimiglia genoa lavagna sarzana savona #Liguria
                 # own_control_integrated, but culture accepted
-                aleria bastia calvi corte ajaccio sartene vico bonifacio #Corsica
+                bastia calvi bonifacio #Corsica
             }
             own_control_integrated = {
                 samos ikaria foca menemen #Aegean Sea
                 castelsardo #Sardinia
                 amasra #Black Sea
                 chios molyvos mitilene enez thasos famagusta
+                vosporo tana taman mapa copa
             }
 
             starting_technology_level = 3
@@ -10972,11 +11109,10 @@ countries = {
             own_control_core = {
                 legnano milano rho varese lecco monza treviglio
                 lomello pavia voghera
-                varallo
             }
 
             own_control_integrated = {
-                lodi
+                lodi como
             }
 
             our_cores_conquered_by_others = {
@@ -10984,8 +11120,7 @@ countries = {
             }
 
             own_control_conquered = {
-                chiavenna tresivio arona novara domodossola como
-                bardi fiorenzuola piacenza
+                fiorenzuola piacenza
                 novi tortona
                 rovegno bobbio
             }
@@ -11058,7 +11193,7 @@ countries = {
 
                 reforms = { dynastic_signoria_reform }
 
-                centralization_vs_decentralization = 80
+                centralization_vs_decentralization = 60
                 aristocracy_vs_plutocracy = -50
                 serfdom_vs_free_subjects = -40
                 traditionalist_vs_innovative = 20
@@ -11125,6 +11260,98 @@ countries = {
 
             country_rank = rank_county
             capital = bormio
+        }
+
+        SRO = {
+            own_control_core = {
+                tresivio chiavenna
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = random
+            }
+
+            country_rank = rank_county
+            capital = tresivio
+        }
+
+        AGE = {
+            own_control_core = {
+                arona domodossola
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = random
+            }
+
+            country_rank = rank_county
+            capital = arona
+        }
+
+        TIC = {
+            own_control_core = {
+                lugano locarno bellinzona
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = random
+            }
+
+            country_rank = rank_county
+            capital = lugano
+        }
+
+        NVR = {
+            own_control_core = {
+                novara varallo
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = random
+            }
+
+            country_rank = rank_county
+            capital = novara
         }
 
         MND = {
@@ -11278,11 +11505,11 @@ countries = {
         NAP = {
             own_control_core = {
                 aquila atri celano cittaducale csantangelo sulmona teramo chieti lanciano vasto bojano
-                isernia larino trivento altamura andria bari barletta monopoli bovino foggia lucera
-                manfredonia rotondo sansevero brindisi francavilla gallipoliita lecce martinafr taranto
-                acerenza lagonegro matera melfi montepeloso potenza santarcangelo catanzaro cotrone gerace
-                monteleone nicastro palmi reggiocal cassano castrovillari cosenza scalea paola rossano caserta
-                gaeta naples nola piedimonte sora venafro campagna salacon salerno vallo ariano avellino santangelo
+                isernia larino trivento altamura bovino foggia lucera
+                manfredonia rotondo sansevero
+                acerenza lagonegro melfi montepeloso potenza santarcangelo catanzaro gerace
+                nicastro palmi reggiocal cassano castrovillari cosenza scalea caserta
+                gaeta naples nola piedimonte venafro campagna salacon salerno vallo ariano avellino santangelo
             }
             our_cores_conquered_by_others = {
                 #Sicily
@@ -11343,6 +11570,303 @@ countries = {
             tolerated_cultures = { median }
             capital = naples
             country_rank = rank_kingdom
+        }
+
+        #Taranto - Ruled by the Orisinis (vassals of Naples)
+        TTO = {
+            own_control_core = {
+                taranto martinafr
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = salic_law
+
+                ruler = random
+
+                centralization_vs_decentralization = 30
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = -50
+                aristocracy_vs_plutocracy = -60
+                mercantilism_vs_free_trade = 0
+
+                reforms = {
+                    feudal_nobility
+                }
+
+                privilege = {
+                    formal_guilds
+                }
+            }
+            accepted_cultures = { sicilian }
+            country_rank = rank_duchy
+            capital = taranto
+        }
+
+        LEC = { #Lecce - Ruled by the Orisinis (vassals of Naples)
+            own_control_core = {
+                lecce gallipoliita
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = salic_law
+
+                ruler = random
+
+                centralization_vs_decentralization = 30
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = -50
+                aristocracy_vs_plutocracy = -60
+                mercantilism_vs_free_trade = 0
+
+                reforms = {
+                    feudal_nobility
+                }
+
+                privilege = {
+                    formal_guilds
+                }
+            }
+            accepted_cultures = { sicilian }
+            country_rank = rank_county
+            capital = lecce
+        }
+
+        OTR = { #Otranto - Ruled by the Orisinis (vassals of Naples)
+            own_control_core = {
+                brindisi francavilla
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = salic_law
+
+                ruler = random
+
+                centralization_vs_decentralization = 30
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = -50
+                aristocracy_vs_plutocracy = -60
+                mercantilism_vs_free_trade = 0
+
+                reforms = {
+                    feudal_nobility
+                }
+
+                privilege = {
+                    formal_guilds
+                }
+            }
+            accepted_cultures = { sicilian }
+            country_rank = rank_county
+            capital = brindisi
+        }
+
+        BBR = { #Bari - Ruled by the Orisinis (vassals of Naples)
+            own_control_core = {
+                bari monopoli
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = salic_law
+
+                ruler = random
+
+                centralization_vs_decentralization = 30
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = -50
+                aristocracy_vs_plutocracy = -60
+                mercantilism_vs_free_trade = 0
+
+                reforms = {
+                    feudal_nobility
+                }
+
+                privilege = {
+                    formal_guilds
+                }
+            }
+            accepted_cultures = { sicilian }
+            country_rank = rank_duchy
+            capital = bari
+        }
+
+        MTE = { #Matera - Ruled by the Orisinis (vassals of Naples)
+            own_control_core = {
+                matera
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = salic_law
+
+                ruler = random
+
+                centralization_vs_decentralization = 30
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = -50
+                aristocracy_vs_plutocracy = -60
+                mercantilism_vs_free_trade = 0
+
+                reforms = {
+                    feudal_nobility
+                }
+
+                privilege = {
+                    formal_guilds
+                }
+            }
+            accepted_cultures = { sicilian }
+            country_rank = rank_county
+            capital = matera
+        }
+
+        AND = { #Andria
+            own_control_core = {
+                andria barletta
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = salic_law
+
+                ruler = random
+
+                centralization_vs_decentralization = 30
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = -50
+                aristocracy_vs_plutocracy = -60
+                mercantilism_vs_free_trade = 0
+
+                reforms = {
+                    feudal_nobility
+                }
+
+                privilege = {
+                    formal_guilds
+                }
+            }
+            accepted_cultures = { sicilian }
+            country_rank = rank_duchy
+            capital = andria
+        }
+
+        SRR = { #Sora - made vassal in 1443
+            own_control_core = {
+                sora
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = salic_law
+
+                ruler = random
+
+                centralization_vs_decentralization = 30
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = -50
+                aristocracy_vs_plutocracy = -60
+                mercantilism_vs_free_trade = 0
+
+                reforms = {
+                    feudal_nobility
+                }
+
+                privilege = {
+                    formal_guilds
+                }
+            }
+            accepted_cultures = { sicilian }
+            country_rank = rank_duchy
+            capital = sora
+        }
+
+        RSA = { #Rossano
+            own_control_core = {
+                rossano cotrone paola monteleone
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = salic_law
+
+                ruler = random
+
+                centralization_vs_decentralization = 30
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = -50
+                aristocracy_vs_plutocracy = -60
+                mercantilism_vs_free_trade = 0
+
+                reforms = {
+                    feudal_nobility
+                }
+
+                privilege = {
+                    formal_guilds
+                }
+            }
+            accepted_cultures = { sicilian }
+            country_rank = rank_duchy
+            capital = rossano
         }
 
         #Provence
@@ -11621,6 +12145,10 @@ countries = {
                 berceto parma sandonnino
             }
 
+            own_control_integrated = {
+                bardi
+            }
+
             starting_technology_level = 3
             include = "expl_mediterranean"
             include = "expl_silk_road_west"
@@ -11824,13 +12352,6 @@ countries = {
         PIS = {
             own_control_core = {
                 livorno pisa pontedera
-
-            }
-
-            our_cores_conquered_by_others = {
-                aleria bastia calvi corte ajaccio sartene vico
-                cagliari tratalias villa_di_chiesa isili muravera seddori tortoli
-                orosei terranova_pausania posada tempiopausania
             }
 
             starting_technology_level = 3
@@ -12088,6 +12609,7 @@ countries = {
                 bage thoire
                 faucigny sallanches villars
                 biella vercelli
+                martigny
             }
 
             starting_technology_level = 3
@@ -12301,8 +12823,8 @@ countries = {
 
         SIC = {
             own_control_core = {
-                catania messina mistretta nicosiasic patti piazza girgenti bivona caltanisetta cefalu sciacca termini
-                corleone mazara palermo salemi trapani caltagirone modica noto syracuse terranovasic
+                catania messina mistretta nicosiasic patti piazza girgenti bivona caltanisetta sciacca
+                corleone mazara palermo salemi trapani caltagirone noto syracuse terranovasic
             }
             our_cores_conquered_by_others = {
                 ajim
@@ -12377,6 +12899,50 @@ countries = {
 
             country_rank = rank_kingdom
             capital = palermo
+        }
+
+        MCA = {
+            own_control_core = {
+                modica
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = random
+            }
+            country_rank = rank_county
+            capital = modica
+        }
+
+        GCI = {
+            own_control_core = {
+                cefalu termini
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = random
+            }
+            country_rank = rank_county
+            capital = modica
         }
 
         SIE = {
@@ -14136,9 +14702,13 @@ countries = {
 
         CAR = {
             #Carniola
+            own_control_core = {
+                ljubljana postojna
+            }
+
             our_cores_conquered_by_others = {
-                novo_mesto ilirska_bistrica kocevje metlika postojna
-                ljubljana bled kranj skofja_loka
+                novo_mesto kocevje metlika
+                bled kranj skofja_loka
             }
             starting_technology_level = 3
             include = "expl_mediterranean"
@@ -14151,12 +14721,27 @@ countries = {
             capital = ljubljana
         }
 
+        DUI = {
+            #Duino
+            own_control_core = {
+                ilirska_bistrica #Counts of Duino
+            }
+            
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "catholic_monarchy_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            capital = ilirska_bistrica
+        }
+
         CRO = {
             own_control_core = {
-                kaseg knin novigrad crikvenica senj
+                kaseg knin novigrad
                 bihac srb sinj otocac
-                slunj
-                rijeka
             }
             our_cores_conquered_by_others = {
                 zadar split sibenik makarska
@@ -14211,6 +14796,28 @@ countries = {
 
             capital = zagreb
             country_rank = rank_duchy
+        }
+
+        FPN = {
+            own_control_core = {
+                slunj crikvenica senj
+                rijeka
+            }
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "catholic_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+
+            tolerated_cultures = {
+                dalmatian
+            }
+
+            capital = slunj
+            country_rank = rank_county
         }
 
         KRZ = {
@@ -17029,6 +17636,10 @@ countries = {
                 marle
             }
 
+            own_control_integrated = {
+                ribemont
+            }
+
             starting_technology_level = 3
             include = "expl_western_europe"
             include = "catholic_monarchy_no_coast"
@@ -18554,7 +19165,7 @@ countries = {
         #Valois (Revolter)
         VLS = {
             own_control_core = {
-                crepy ribemont
+                crepy
             }
 
             starting_technology_level = 3
@@ -20233,12 +20844,12 @@ countries = {
                 trencin oravsky_podzamok turciansky_svaty_martin liptovsky_mikulas
                 gemer rimavska_sobota levoca lubica presov turna
                 zemplin kosice humenne uzhorod beregovo
-                caransebes lugoj
+                lugoj
                 bihar beius crasna
                 debrecen nagyboszormeny nagykallo nagyecsed varda szatmar syvlyush zalau baia_mare
                 szolnok eger karcag borsod
                 bekes csanad szeged
-                kovin veliky_beckerek carasova mihalt
+                kovin veliky_beckerek
                 timisoara arad zarand
                 baia_crisului
                 vukovar ilok pozega sremska_mitrovica petrovaradin
@@ -20400,16 +21011,50 @@ countries = {
             capital = brasov
         }
 
+        CUM = {
+            #Cumania
+            own_control_core = {
+                felegyhaza halas karcag jaszbereny
+            }
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_catholic_monarchy_no_auxilium_no_coast_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+
+            accepted_cultures = {
+                jasz_culture
+            }
+            capital = felegyhaza
+        }
+
+        SVR = {
+            #Severin
+            own_control_core = {
+                mihalt carasova caransebes     
+            }
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_catholic_monarchy_no_auxilium_no_coast_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+            }
+            capital = mihalt
+        }
+
         WAL = {
             #Wallachia
             own_control_core = {
                 targoviste ploesti valenii_de_munte campulung_muscel arges zimnicea
-                severin stramba targu_jiu targu_bengai ramnicu_valcea craiova
-                caracal calafat slatina turnu_magurele
+                slatina turnu_magurele
                 rusii_de_vede comana bucharest
                 buzau orasul_de_floci braila ramnicu_sarat
-                lichiresti strehaia
-                corabia dragasani radovanu plenita
+                lichiresti
                 cozia glavacioc gratia pitesti poenari
                 bukov cegani cetateni gaiseni meteleu parscov slanic slobozia viziru
             }
@@ -20453,6 +21098,45 @@ countries = {
             capital = targoviste
         }
 
+        OLT = {
+            #Oltenia
+            own_control_core = {
+                craiova severin stramba targu_jiu targu_bengai ramnicu_valcea
+                corabia dragasani radovanu plenita caracal calafat strehaia
+            }
+
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_monarchy_no_coast"
+
+            government = {
+                ruler = random
+
+                centralization_vs_decentralization = 70
+                aristocracy_vs_plutocracy = -50
+                serfdom_vs_free_subjects = -90
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = -50
+                mercantilism_vs_free_trade = -60
+                offensive_vs_defensive = 20
+                land_vs_naval = -20
+                quality_vs_quantity = 15
+                belligerent_vs_conciliatory = -20
+                capital_economy_vs_traditional_economy = 95
+                individualism_vs_communalism = -20
+                outward_vs_inward = 20
+            }
+
+            tolerated_cultures = {
+                bulgarian
+            }
+
+            liturgical_language = church_slavonic_language
+
+            country_rank = rank_county
+            capital = craiova
+        }
+
         MOL = {
             #Moldova
             own_control_core = {
@@ -20467,9 +21151,14 @@ countries = {
                 storozhynets putna siret
             }
 
+            own_control_conquered = {
+                tulcea enisala isaccea
+            }
+
             our_cores_conquered_by_others = {
                 hotin
             }
+
             starting_technology_level = 3
             include = "expl_eastern_europe"
             include = "eastern_european_monarchy_no_coast"
@@ -20608,8 +21297,7 @@ countries = {
         CLI = {
             #Cilli
             own_control_core = {
-                celje lasko varazdin kocevje
-                metlika #County of Möttling
+                celje lasko varazdin spittal
             }
 
             starting_technology_level = 3
@@ -20638,7 +21326,7 @@ countries = {
         ORT = {
             #Ortenburg
             own_control_core = {
-                spittal
+                kocevje metlika
             }
 
             starting_technology_level = 3
@@ -20654,7 +21342,7 @@ countries = {
             }
 
             country_rank = rank_county
-            capital = spittal
+            capital = kocevje
             dynasty = von_ortenburg_dynasty
 
         }
@@ -36954,9 +37642,9 @@ countries = {
                 tarnovo drastar tutrakan cherven razgrad shumen aytos targoviste_BUL sliven kran
                 nikopol pleven vratsa kutlovitsa vidin oryahovo bozhenitsa hotalich tryavna
                 varna karvuna pangalia kaliakra
-                tulcea harsova
+                harsova
                 archar lom gigen dobrolak svoge kostenets strelcha ruse kladentsi lyaskovets veliki_preslav ktenia constantia_bul elhovo
-                babadag cernavoda constanta enisala isaccea
+                babadag cernavoda constanta
                 visesav kozelj svrljig pirot tsaribrod
                 zemlungrad dupnitsa
                 dospat bansko krupnik melnik nevrokop
@@ -37802,9 +38490,9 @@ countries = {
             #Styria
             own_control_core = {
                 klagenfurt st_veit steinfeld volkermarkt #Duchy of Carinthia
-                ljubljana kranj novo_mesto postojna #Duchy of Carniola
+                kranj novo_mesto #Duchy of Carniola
                 graz feldbach furstenfeld judenburg kapfenberg leoben liezen maribor murau murzzuschlag rottenmann schladming slovenj_gradec voitsberg weiz #Duchy of Styria
-                ilirska_bistrica #Counts of Duino
+
             }
 
             own_control_integrated = {
@@ -38249,6 +38937,7 @@ countries = {
                 schwaz innsbruck
                 imst reutte landeck
                 merano sterzing villandro bolzano silandro
+                bludenz feldkirch
             }
 
             own_control_integrated = {
@@ -38296,7 +38985,7 @@ countries = {
         WER = {
             #Werdenberg
             own_control_core = {
-                werdenberg bludenz
+                werdenberg
             }
 
             starting_technology_level = 3
@@ -38346,11 +39035,8 @@ countries = {
 
         MFK = {
             #Feldkirch
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 feldkirch
-            }
-            own_control_conquered = {
-                davos
             }
 
             starting_technology_level = 3
@@ -38476,7 +39162,7 @@ countries = {
 
         BCH = {
             #Bishopric of Chur
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 chur zuoz tarasp
             }
 
@@ -38561,10 +39247,6 @@ countries = {
         }
 
         LCA = {
-            # Como, last remnants in defense against Milan
-            own_control_core = {
-                bellinzona locarno lugano
-            }
             our_cores_conquered_by_others = {
                 como
             }
@@ -38648,7 +39330,11 @@ countries = {
         SIT = {
             #Sion / Sitten
             own_control_core = {
-                sion brig martigny
+                sion
+            }
+
+            our_cores_conquered_by_others = {
+                martigny brig
             }
 
             starting_technology_level = 3
@@ -38677,7 +39363,24 @@ countries = {
             tolerated_cultures = {
                 high_alemannic
             }
+        }
+        
+        VLA = {
+            #Valais
+            own_control_core = {
+                brig
+            }
 
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_german_republic_no_coast"
+            include = "expl_northern_europe"
+            include = "swiss_republic"
+            government = {
+                ruler = random
+            }
+            country_rank = rank_county
+            capital = brig
         }
 
         SWI = {
@@ -38699,7 +39402,7 @@ countries = {
         BRN = {
             #Bern
             own_control_core = {
-                bern interlaken
+                bern
                 aarau baden_im_aargau #County of Lenzburg
                 burgdorf_emmental thun
             }
@@ -38891,6 +39594,44 @@ countries = {
             dynasty = turn_dynasty
         }
 
+        INT = {
+            #Interlaken
+            own_control_core = {
+                interlaken
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            include = "expl_northern_europe"
+            include = "german_principality"
+            include = "swiss_monarchy"
+            government = {
+                ruler = random
+            }
+            country_rank = rank_county
+            capital = interlaken
+        }
+
+        AAR = {
+            #Aargau
+            own_control_core = {
+                baden_im_aargau
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            include = "expl_northern_europe"
+            include = "german_principality"
+            include = "swiss_monarchy"
+            government = {
+                ruler = random
+            }
+            country_rank = rank_county
+            capital = baden_im_aargau
+        }
+
         FRE = {
             #Freising
             own_control_core = {
@@ -39040,6 +39781,9 @@ countries = {
 
             government = {
                 ruler = dan_christoph_iii_wittelsbach
+
+                ruler_term = { character = pal_johann_wittelsbach_neumarkt start_date = 1410.1.1 end_date = 1443.3.14 }
+                ruler_term = { character = dan_christoph_iii_wittelsbach start_date = 1443.3.14 }
             }
 
             accepted_cultures = {
@@ -39256,16 +40000,66 @@ countries = {
         }
 
         SGL = {
-            # Grey League - Formable in Switzerland		starting_technology_level = 3
+            # Grey League
+            own_control_core = {
+                ilanz disentis
+            }
+            starting_technology_level = 3
             include = "expl_western_europe"
             include = "expl_northern_europe"
-            include = "catholic_republic_not_present"
+            include = "catholic_republic"
             government = {
                 type = republic
                 heir_selection = oligarchic_elective
                 ruler = random
             }
+
+            accepted_cultures = {
+                romansh
+            }
             capital = ilanz
+        }
+
+        ZEH = {
+            # League of the Ten Jurisdictions (Zehngerichtenbund)
+            own_control_core = {
+                davos
+            }
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "expl_northern_europe"
+            include = "catholic_republic"
+            government = {
+                type = republic
+                heir_selection = oligarchic_elective
+                ruler = random
+            }
+
+            accepted_cultures = {
+                romansh
+            }
+            capital = davos
+        }
+
+        GHB = {
+            # League of God's House (Gotteshausbund)
+            own_control_core = {
+                chur zuoz tarasp
+            }
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "expl_northern_europe"
+            include = "catholic_republic"
+            government = {
+                type = republic
+                heir_selection = oligarchic_elective
+                ruler = random
+            }
+
+            accepted_cultures = {
+                romansh
+            }
+            capital = chur
         }
 
         GLN = {
@@ -39921,7 +40715,7 @@ countries = {
 
         BLM = {
             # Belmont (Switzerland)
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 ilanz
             }
             starting_technology_level = 3
@@ -39938,7 +40732,7 @@ countries = {
 
         DIS = {
             # Disentis (Switzerland)
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 disentis
             }
             starting_technology_level = 3
@@ -40544,7 +41338,7 @@ countries = {
 
         WUR = {
             #Württemberg
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 stuttgart goppingen sigmaringen welzheim backnang urach nagold riedlingen oberndorf calw
                 vaihingen tubingen balingen
             }
@@ -40568,6 +41362,62 @@ countries = {
 
             country_rank = rank_county
             capital = stuttgart
+            dynasty = wurttemberg_dynasty
+        }
+
+        STT = {
+            #Stuttgart
+            own_control_core = {
+                stuttgart goppingen welzheim backnang vaihingen
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            include = "expl_northern_europe"
+            include = "german_principality"
+            government = {
+                regnal_numbers = {
+                    name_ulrick = 2
+                    name_everard = 2
+                }
+                ruler = random
+            }
+
+            tolerated_cultures = {
+                rhine_franconian
+            }
+
+            country_rank = rank_county
+            capital = stuttgart
+            dynasty = wurttemberg_dynasty
+        }
+
+        URA = {
+            #Urach
+            own_control_core = {
+                urach riedlingen tubingen calw nagold oberndorf balingen sigmaringen
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_monarchy_no_coast"
+            include = "expl_northern_europe"
+            include = "german_principality"
+            government = {
+                regnal_numbers = {
+                    name_ulrick = 2
+                    name_everard = 2
+                }
+                ruler = random
+            }
+
+            tolerated_cultures = {
+                rhine_franconian
+            }
+
+            country_rank = rank_county
+            capital = urach
             dynasty = wurttemberg_dynasty
         }
 
@@ -41464,6 +42314,10 @@ countries = {
                 schwerin butzow
             }
 
+            our_cores_conquered_by_others = { 
+                hagenow
+            }
+
             starting_technology_level = 3
             include = "catholic_monarchy_no_coast"
             include = "expl_northern_europe"
@@ -41628,7 +42482,7 @@ countries = {
         RST = {
             #Rostock
             our_cores_conquered_by_others = {
-                rostock
+                rostock ribnitz
             }
 
             starting_technology_level = 3
@@ -44970,8 +45824,6 @@ countries = {
                 wloclawek kowal radziejow
                 czaplinek walcz czlopa
 
-                chelm krasnystaw liuboml ratne shatsk ugrovesk
-
                 bydgoszcz inowroclaw
                 leczyca lodz zgierz orlow
                 sieradz szadek turek tuszyn uniejow
@@ -44981,21 +45833,6 @@ countries = {
             }
 
             own_control_integrated = {
-                halych bohorodchany buchach rohatyn
-                drohobych sambir stryi turka
-                kolomyia kosiv sniatyn tysmenytsia
-                lviv bereschany zhovkva yavoriv zvenyhorod
-                przemysl piskorowice rzeszow yaroslav_poland
-                sanok krosno lesko
-                terebovlia khorostkiv ternopil
-                zhydachiv bolekhiv dolyna
-                bakota horodok kamianets_podilskyi zalishchyky
-                brody
-                ushytsia khmilnyk letychiv mezhybozhe mohyliv_podilskyi rov
-            }
-
-            own_control_conquered = {
-                hotin
             }
 
             our_cores_conquered_by_others = {
@@ -45214,15 +46051,10 @@ countries = {
             dynasty = piast_dynasty
         }
 
-            MAZ = {
+        MAZ = {
             #https://en.wikipedia.org/wiki/Duchy_of_Masovia
             own_control_core = {
-                warsaw grojec czersk liw nur kamieniec garwolin tarczyn wizna goniadz zambrow ostroleka zakroczym przasnysz rozan lomza kolno ciechanow tykocin
-            }
-
-            own_control_integrated = {
-                #Halych
-                belz grabowiec sokal lubaczow busk
+                warsaw grojec czersk liw nur kamieniec garwolin tarczyn zambrow ostroleka zakroczym przasnysz rozan lomza kolno ciechanow
             }
 
             starting_technology_level = 3
@@ -45275,7 +46107,11 @@ countries = {
         PLK = {
             #https://en.wikipedia.org/wiki/Duchy_of_Masovia
             own_control_core = {
-                plock sierpc szrensk plonsk gostynin gabin rawa sochaczew biala_rawska
+                plock sierpc szrensk plonsk
+            }
+
+            own_control_integrated = {
+                wizna
             }
 
             starting_technology_level = 3
@@ -45331,9 +46167,8 @@ countries = {
         #Rawa
         RAW = {
             #https://en.wikipedia.org/wiki/Duchy_of_Masovia
-            our_cores_conquered_by_others = {
-                rawa sochaczew wizna goniadz zambrow ostroleka zakroczym przasnysz
-                rozan lomza kolno biala_rawska ciechanow tykocin
+            own_control_core = {
+                rawa sochaczew biala_rawska
             }
 
             starting_technology_level = 3
@@ -45442,6 +46277,55 @@ countries = {
             dynasty = piast_dynasty
         }
 
+        #Gostynin
+        GTN = {
+            own_control_core = {
+                gostynin gabin
+            }
+
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_catholic_monarchy_no_coast"
+            include = "eastern_european_catholic"
+            government = {
+                type = monarchy
+                heir_selection = youngest_son_of_ruler
+
+                ruler = random
+
+                centralization_vs_decentralization = 80
+                traditionalist_vs_innovative = 20
+                spiritualist_vs_humanist = 10
+                aristocracy_vs_plutocracy = -90
+                serfdom_vs_free_subjects = -70
+                mercantilism_vs_free_trade = -70
+                belligerent_vs_conciliatory = 0
+                quality_vs_quantity = 0
+                offensive_vs_defensive = -70
+                land_vs_naval = -60
+                capital_economy_vs_traditional_economy = 90
+                individualism_vs_communalism = -20
+                outward_vs_inward = 0
+
+                privilege = {
+                    #Burghers
+                    novi_fori
+                    urban_development_grants
+
+                    #Commoners
+                    peasants_free_peasantry
+                }
+            }
+
+            tolerated_cultures = {
+                sudovian
+            }
+
+            country_rank = rank_duchy
+            capital = gostynin
+            dynasty = piast_dynasty
+        }
+
         INO = {
             #Inowrocław - PU under Poland
             our_cores_conquered_by_others = {
@@ -45473,18 +46357,17 @@ countries = {
 
         HAL = {
             #Halych
-            our_cores_conquered_by_others = {
-                #Halych
+            own_control_core = {
+                #Halych/Red Ruthenia
+                lviv bereschany zhovkva yavoriv zvenyhorod brody
                 halych bohorodchany buchach rohatyn
                 drohobych sambir stryi turka
                 kolomyia kosiv sniatyn tysmenytsia
-                lviv bereschany zhovkva yavoriv zvenyhorod
                 przemysl piskorowice rzeszow yaroslav_poland
                 sanok krosno lesko
                 terebovlia khorostkiv ternopil
                 zhydachiv bolekhiv dolyna
-                ushytsia khmilnyk letychiv mezhybozhe mohyliv_podilskyi rov
-                bakota horodok kamianets_podilskyi zalishchyky
+                chelm krasnystaw liuboml ratne shatsk ugrovesk
             }
 
             starting_technology_level = 3
@@ -45572,7 +46455,75 @@ countries = {
             }
 
             capital = lviv
-            country_rank = rank_kingdom
+            country_rank = rank_duchy
+        }
+
+        BLZ = {
+            #Bełz
+            own_control_core = {
+                #Halych
+                belz grabowiec sokal lubaczow busk
+            }
+
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_monarchy_no_coast"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+
+                privilege = {
+                    #Burghers
+                    novi_fori
+                    market_fairs
+                }
+            }
+
+            liturgical_language = church_slavonic_language
+
+            tolerated_cultures = {
+                volhynian_culture
+            }
+
+            capital = belz
+            country_rank = rank_duchy
+        }
+
+        POE = {
+            #Podole
+            own_control_core = {
+                ushytsia khmilnyk letychiv mezhybozhe mohyliv_podilskyi rov
+                bakota horodok kamianets_podilskyi zalishchyky
+            }
+
+            own_control_conquered = {
+                hotin
+            }
+
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_monarchy_no_coast"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+
+                privilege = {
+                    #Burghers
+                    novi_fori
+                    market_fairs
+                }
+            }
+
+            liturgical_language = church_slavonic_language
+
+            tolerated_cultures = {
+                volhynian_culture
+            }
+
+            capital = mezhybozhe
+            country_rank = rank_duchy
         }
 
         VOL = {
@@ -45586,12 +46537,6 @@ countries = {
                 novohrad_volynskyi iziaslav korets liubar polonne
                 #Polesia
                 liubeshiv
-            }
-
-            own_control_integrated = {
-                bratslav balta bershad drahushiv karabul savran
-                torhovytsia teplyk tsybuliv uman zavallia
-                vinnytsia buzhskyi pohrebyshche sokilets
             }
 
             starting_technology_level = 3
@@ -45638,7 +46583,41 @@ countries = {
             }
 
             capital = lviv
-            country_rank = rank_kingdom
+            country_rank = rank_duchy
+        }
+
+        POD = {
+            #Podolia
+            own_control_core = {
+                bratslav balta bershad drahushiv karabul savran
+                torhovytsia teplyk tsybuliv uman zavallia
+                vinnytsia buzhskyi pohrebyshche sokilets
+            }
+
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_monarchy_no_coast"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random
+
+                privilege = {
+                    #Burghers
+                    novi_fori
+                    market_fairs
+                }
+            }
+
+            liturgical_language = church_slavonic_language
+
+            tolerated_cultures = {
+                volhynian_culture
+                halychian_culture
+            }
+
+            capital = bratslav
+            country_rank = rank_duchy
         }
 
         LIT = {
@@ -45669,11 +46648,6 @@ countries = {
                 #Podlasie
                 drohiczyn bielsk_podlaski mielnik sokolow suraz
 
-                sloviansk vovchansk izium adalaga barvinkove
-                samarchyk oril ternivka berestyn
-                usivka petrove mala_vyska umanske ingul yelanets
-                myshuryn_rih
-                karlivka
                 streshyn
                 novogrudok lyubcha turets
                 vawkavysk porazava vowpa
@@ -45685,11 +46659,7 @@ countries = {
                 dubrovytsia
                 tyatseryn
                 novy_bykhaw chavusy
-            }
-            own_control_conquered = {
-                kupiansk
-                kolomak okhtyrka kotelva khotmyzh donets_kharkiv zmiiv chuhuiv
-                harbuzynka
+                goniadz tykocin
             }
 
             include = "expl_eastern_europe"
@@ -46318,16 +47288,12 @@ countries = {
                 ovruch bilokorovychi korosten malyn narodychi stodolichi
                 zhytomyr berdychiv chudniv chortolisy korostyshiv mychesk
 
-                poltava kremenchuk myrhorod velyki_sorochyntsi
-                lubny pyriatyn horodyshche horoshino zolotonosha
+                zolotonosha
                 pereiaslav desnyanskyi_horodok boryspil kozelets
                 #Black Ruthenia
                 mazyr buinovichi kalinkavichy pietrykaw rudobelka
-                #Chernihiv
-                ichnia pryluky chornukhy
-                lypova_dolyna romen hadiach
 
-                yaroslavka yahotyn opishnya hovtva
+                yaroslavka
                 rechytsa
             }
 
@@ -46429,12 +47395,52 @@ countries = {
             country_rank = rank_duchy
         }
 
+        GLK = {
+            #Glinski - Vassal of LIT
+            own_control_core = {
+                #Chernihiv
+                ichnia pryluky chornukhy lubny pyriatyn
+                romen hadiach yahotyn horoshino horodyshche
+                poltava kremenchuk myrhorod velyki_sorochyntsi opishnya hovtva
+                kolomak okhtyrka kotelva
+            }
+
+            include = "expl_eastern_europe"
+            include = "lithuanian_monarchy"
+            government = {
+                ruler = random
+
+                privilege = {
+                    #Clergy
+                    clergy_powerful_dioceses
+                    #Burghers
+                    market_fairs
+                    cossack_identity
+                }
+            }
+
+            liturgical_language = church_slavonic_language
+
+            tolerated_cultures = {
+                severian
+            }
+
+            capital = chornukhy
+            dynasty = gediminid_dynasty
+            country_rank = rank_duchy
+        }
+
         ZAZ = {
             #Zaporozhia
-            type = army
+            own_control_core = {
+                usivka petrove mala_vyska umanske ingul yelanets
+                myshuryn_rih harbuzynka kodak
+                samarchyk oril berestyn karlivka
+            }
+
             starting_technology_level = 3
             include = "expl_eastern_europe"
-            include = "eurasian_horde_not_present"
+            include = "eurasian_horde"
             court_language = ukrainian_dialect
 
             government = {
@@ -46450,7 +47456,35 @@ countries = {
                     heir_religion_law = heir_same_religion
                 }
             }
-            capital = kichkas
+            capital = usivka
+        }
+
+        DNC = {
+            #Don Cossacks (I have zero clue who to put here)
+            own_control_core = {
+                izium sloviansk vovchansk adalaga barvinkove ternivka
+                kupiansk donets_kharkiv zmiiv chuhuiv
+            }
+
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eurasian_horde"
+            court_language = ukrainian_dialect
+
+            government = {
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                ruler = random
+                reforms = {
+                    cossacks_reform
+                }
+
+                laws = {
+                    marriage_law = monogamous_marriage
+                    heir_religion_law = heir_same_religion
+                }
+            }
+            capital = izium
         }
 
         #-------------------------- Mesoamerica ----------------------------
