@@ -24,7 +24,7 @@ CHG_f = { #Chagatai formable
 	form_effect = {
 	}
 }
-KHL_f = {
+KHL_f = { #Khalkha and Chahar Formable
 
 	level = 3
 	required_locations_fraction = 0.25
@@ -48,38 +48,6 @@ KHL_f = {
 	adjective = KHL_ADJ
 	tag = KHL
 	color = map_KHL
-	
-	regions = {
-		mongolia_region
-	}
-	form_effect = {
-        if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		}
-	}
-}
-KHA_f = { #Khalkha and Chahar Formable
-
-	level = 3
-	required_locations_fraction = 0.25
-	rule = historical
-	potential = {
-		culture = culture:khorchin_culture
-	}
-
-	allow = {
-		custom_tooltip = {
-			text = KHA_f_tt
-			always = no
-		}
-	}
-	
-	name = KHA
-	flag = KHA
-	adjective = KHA_ADJ
-	tag = KHA
-	color = map_KHA
 	
 	regions = {
 		mongolia_region
