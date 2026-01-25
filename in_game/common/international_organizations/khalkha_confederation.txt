@@ -1,0 +1,65 @@
+khalkha_confederation = {
+    has_target = no
+    unique = yes
+
+    custom_name = khalkha_confederation_name
+    show_on_diplomatic_map = yes
+
+    has_leader_country = yes
+    leader_type = country
+    leader_change_method = mongol_election
+    
+    create_visible_trigger = { always = no }
+    invite_visible_trigger = { always = yes }
+
+    can_declare_war = { always = yes }
+
+    laws = {
+        mutual_defense_law = assured_defense_policy
+        mutual_offense_law = possible_offense_policy
+    }
+
+    modifier = {
+        monthly_tribal_cohesion = 0.03
+    }
+
+    leader_modifier = {
+        global_manpower_modifier = 0.1
+        slave_raid_efficiency = 0.3
+    }
+
+    can_join_trigger = {
+        NOT = {
+            is_member_of_international_organization_of_type = khalkha_confederation
+        }
+        government_type = government_type:steppe_horde
+        OR = {
+            culture = culture:khalkha_culture
+            culture = culture:mongolian_culture
+        }
+    }
+
+    auto_leave_trigger = {
+        NOT = {
+            OR = {
+                culture = culture:khalkha_culture
+                culture = culture:mongolian_culture
+            }
+        }
+    }
+
+    auto_disband_trigger = {
+        total_members < 2
+    }
+
+    ai_desire_to_join = {
+        add = {
+            value = "scope:actor.relative_strength(root)"
+            multiply = 50
+        }
+        add = {
+            value = prev_opinion_of_this
+            multiply = 0.2
+        }
+    }
+}

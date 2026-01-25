@@ -1,0 +1,93 @@
+mongol_confederation_election = {
+    loc = mongol_election # This is the unique key we reference in the ORG
+    potential = { always = yes }
+    
+    ai_tick = monthly
+
+    is_live = {
+        scope:recipient = {
+            international_organization_has_leader = no
+        }
+    }
+
+    votes = {
+        add = {
+            desc = "[elector|e]"
+            value = 1
+        }
+    }
+
+    total_votes_needed = {
+        add = {
+            value = scope:total_votes_available
+            multiply = 0.5
+        }
+    }
+
+    requires_explicit_votes = no
+
+    should_finalize_vote = {
+        custom_tooltip = {
+            text = OVER_HALF_OF_VOTES
+            scope:recipient = {
+                not = { exists = leader_country }
+            }
+            scope:highest_vote >= scope:total_votes_needed
+        }
+    }
+
+    # Selection for the Organization itself
+    select_trigger = {
+        looking_for_a = international_organization
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = { data = name }
+    }
+
+    # Selection for the Countries eligible to be voted for
+    select_trigger = {
+        looking_for_a = country
+        source = recipient
+        target_flag = vote
+        allow_self = yes
+        name = "election_select_country"
+        default_sort = great_power_score
+        column = { data = name }
+        column = { data = great_power_score }
+        visible = {
+            # Only countries that are members and can lead can be candidates
+            is_member_of_international_organization = scope:recipient
+            can_lead_international_organization = scope:recipient
+        }
+    }
+
+    ai_will_do = {
+        scope:vote = {
+            # Standard logic from your example
+            if = {
+                limit = { this = scope:actor }
+                add = { value = 25 }
+            }
+            add = {
+                if = {
+                    limit = { is_rival_of = scope:actor }
+                    value = -1000
+                }
+            }
+            add = {
+                if = {
+                    limit = { country_rank = country_rank:rank_empire }
+                    value = 50
+                }
+            }
+            # Weighted by opinion (fixed the double call from your example)
+            add = {
+                limit = { not = { this = scope:actor } }
+                scope:actor = {
+                    value = this_opinion_of_prev
+                    divide = 4
+                }
+            }
+        }
+    }
+}
