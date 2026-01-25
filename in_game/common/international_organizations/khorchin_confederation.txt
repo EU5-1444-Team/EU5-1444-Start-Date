@@ -28,6 +28,18 @@ khorchin_culture = {
         slave_raid_efficiency = 0.3
     }
 
+    monthly_effect = {
+        every_country = {
+            limit = {
+                culture = culture:khorchin_culture
+                NOT = { is_member_of_international_organization = root }
+            }
+            root = {
+                add_country_to_international_organization = prev
+            }
+        }
+    }
+
     can_join_trigger = {
         NOT = {
             is_member_of_international_organization_of_type = khorchin_culture

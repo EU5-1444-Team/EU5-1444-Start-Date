@@ -22,6 +22,21 @@ khalkha_confederation = {
     modifier = {
         monthly_tribal_cohesion = 0.03
     }
+    
+    monthly_effect = {
+        every_country = {
+            limit = {
+                OR = {
+                    culture = culture:khalkha_culture
+                    culture = culture:mongolian_culture
+                }
+                NOT = { is_member_of_international_organization = root }
+            }
+            root = {
+                add_country_to_international_organization = prev
+            }
+        }
+    }
 
     leader_modifier = {
         global_manpower_modifier = 0.1

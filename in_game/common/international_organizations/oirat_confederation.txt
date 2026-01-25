@@ -27,6 +27,18 @@ oirat_confederation = {
         global_manpower_modifier = 0.1
         slave_raid_efficiency = 0.3
     }
+    
+    monthly_effect = {
+        every_country = {
+            limit = {
+                culture = culture:oirat_culture
+                NOT = { is_member_of_international_organization = root }
+            }
+            root = {
+                add_country_to_international_organization = prev
+            }
+        }
+    }
 
     can_join_trigger = {
         NOT = {
