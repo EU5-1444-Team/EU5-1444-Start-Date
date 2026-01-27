@@ -1,0 +1,1007 @@
+## Overrides the base game until I figure out how to fix it properly
+
+main_philosophy_law = {
+	type = international_organization
+	law_category = religious
+	potential = {
+		international_organization_type = international_organization_type:sect
+	}
+	allow = {
+	}
+	locked = {
+		always = yes
+	}
+	##### Chinese #####
+	confucianism_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			monthly_legitimacy = 0.05
+			global_monthly_development = 0.001
+			allow_righteousness = yes
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			monthly_legitimacy = -0.1
+			monthly_righteousness = -0.1
+			allow_righteousness = yes
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			monthly_legitimacy = -0.05
+			monthly_righteousness = -0.05
+			allow_righteousness = yes
+		}
+	}
+	daoism_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			stability_cost = -0.1
+			monthly_war_exhaustion = -0.025
+			allow_harmony = yes
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			stability_cost = 0.2
+			monthly_war_exhaustion = 0.1
+			allow_harmony = yes
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			stability_cost = 0.15
+			monthly_war_exhaustion = 0.05
+			allow_harmony = yes
+		}
+	}
+	##### Mahayana ######
+	pure_land_school_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			global_clergy_max_literacy = 10
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			global_clergy_max_literacy = -15
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			global_clergy_max_literacy = -10
+		}
+	}
+	tiantai_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			tolerance_heretic = 1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			tolerance_heretic = -4
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			tolerance_heretic = -2
+		}
+	}
+	dharma_school_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			monthly_karma = 0.1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			monthly_karma = -0.2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			monthly_karma = -0.15
+		}
+	}
+	flower_garland_school_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			monthly_religious_rebel_growth = -0.01
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			monthly_religious_rebel_growth = 0.02
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			monthly_religious_rebel_growth = 0.01
+		}
+	}
+	meditation_school_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			army_tradition_from_battle = 0.5
+			max_war_exhaustion = -2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			army_tradition_from_battle = -0.5
+			max_war_exhaustion = 5
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			army_tradition_from_battle = -0.25
+			max_war_exhaustion = 2
+		}
+	}
+	mantra_school_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			stability_investment = standard_stability_investment
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			stability_investment = large_stability_investment_penalty
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			stability_investment = stability_investment_penalty
+		}
+	}
+	shugendo_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			monthly_purity = 0.1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			monthly_purity = -0.2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			monthly_purity = -0.15
+		}
+	}
+	azhaliism_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			tolerance_own = 1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			tolerance_own = -2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			tolerance_own = -1.5
+		}
+	}
+	musok_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			monthly_prestige = 0.1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			monthly_prestige = -0.2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			monthly_prestige = -0.15
+		}
+	}
+	mulasarvastivada_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			clergy_estate_target_satisfaction = medium_permanent_target_satisfaction
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			clergy_estate_target_satisfaction = large_permanent_target_satisfaction_penalty
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			clergy_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+		}
+	}
+	##### Theravada ######
+	mahavihara_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			cultural_tradition_modifier = 0.1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			cultural_tradition_modifier = -0.2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			cultural_tradition_modifier = -0.15
+		}
+	}
+	burmese_buddhism_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			tolerance_heathen = 1
+			tolerance_heretic = 1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			tolerance_heathen = -2
+			tolerance_heretic = -2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			tolerance_heathen = -1.5
+			tolerance_heretic = -1.5
+		}
+	}
+	lankavong_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			monthly_legitimacy = 0.1
+			monthly_prestige = 0.1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			monthly_legitimacy = -0.2
+			monthly_prestige = -0.2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			monthly_legitimacy = -0.15
+			monthly_prestige = -0.15
+		}
+	}
+	khmer_buddhism_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			global_clergy_max_literacy = 10
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			global_clergy_max_literacy = -20
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			global_clergy_max_literacy = -15
+		}
+	}
+}
+
+vajrayana_law = {
+	type = international_organization
+	law_category = religious
+	potential = {
+		international_organization_type = international_organization_type:sect
+		international_organization_has_policy = policy:vajrayana_policy
+	}
+	allow = {
+	}
+	locked = {
+		international_organization_has_policy = policy:vajrayana_policy
+	}
+	vajrayana_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			tolerance_heathen = 1
+			monthly_prestige = 0.1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			tolerance_heathen = -2
+			monthly_prestige = -0.2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			tolerance_heathen = -1.5
+			monthly_prestige = -0.1
+		}
+	}
+	no_vajrayana_policy = {
+	}
+}
+
+sect_school_law = {
+	type = international_organization
+	law_category = religious
+	potential = {
+		international_organization_type = international_organization_type:sect
+		OR = {
+			international_organization_has_policy = policy:nichiren_policy
+			international_organization_has_policy = policy:nyigma_policy
+			international_organization_has_policy = policy:kadam_policy
+			international_organization_has_policy = policy:kagyu_policy
+			international_organization_has_policy = policy:sakya_policy
+			international_organization_has_policy = policy:jonang_policy
+		}
+	}
+	allow = {
+	}
+	locked = {
+		always = yes
+	}
+	nichiren_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			global_pop_conversion_speed_modifier = 0.1
+			tolerance_heretic = 0.5
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			global_pop_conversion_speed_modifier = -0.2
+			tolerance_heretic = -1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			global_pop_conversion_speed_modifier = -0.15
+			tolerance_heretic = -0.5
+		}
+	}
+	jodou_shinshuu_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			peasants_estate_target_satisfaction = medium_permanent_target_satisfaction
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			peasants_estate_target_satisfaction = large_permanent_target_satisfaction
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			peasants_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+		}
+	}
+	nyigma_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			stability_investment = small_stability_investment
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			stability_investment = stability_investment_penalty
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			stability_investment = small_stability_investment_penalty
+		}
+	}
+	kadam_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			global_max_literacy = 5
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			global_max_literacy = -10
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			global_max_literacy = -5
+		}
+	}
+	kagyu_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			tolerance_own = 1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			tolerance_own = -2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			tolerance_own = -1
+		}
+	}
+	sakya_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			monthly_legitimacy = 0.1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			monthly_legitimacy = -0.2
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			monthly_legitimacy = -0.1
+		}
+	}
+	# New one for Rinpungpa
+	gelug_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			land_morale = 0.25
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			land_morale = -0.25
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			land_morale = 0.25
+		}
+	}
+	jonang_policy = {
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+		country_modifier = {
+			pop_join_rebel_threshold = -0.05
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = disfavoring_sect_tt
+					has_variable = disfavoring_sect
+					exists = scope:recipient
+					var:disfavoring_sect ?= {
+						this = scope:recipient
+					}
+				}
+			}
+			pop_join_rebel_threshold = 0.1
+		}
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = promoting_sect_tt
+					has_variable = promoting_sect
+					exists = scope:recipient
+					var:promoting_sect ?= {
+						NOT = {
+							this = scope:recipient
+						}
+					}
+				}
+			}
+			pop_join_rebel_threshold = 0.05
+		}
+	}
+}
