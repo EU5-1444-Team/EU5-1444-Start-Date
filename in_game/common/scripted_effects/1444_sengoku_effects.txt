@@ -1,0 +1,50 @@
+1444_refresh_sengoku_neighbor_cbs = {
+	if = {
+		limit = {
+			is_situation_active = situation:sengoku
+			is_member_of_international_organization = international_organization:japanese_shogunate
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:japanese_emperor
+					international_organization = international_organization:japanese_shogunate
+				}
+			}
+		}
+		every_neighbor_country = {
+			limit = {
+				is_member_of_international_organization = international_organization:japanese_shogunate
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:japanese_emperor
+						international_organization = international_organization:japanese_shogunate
+					}
+				}
+			}
+			save_scope_as = sengoku_neighbor
+			root = {
+				if = {
+					limit = {
+						NOT = {
+							has_casus_belli_on = scope:sengoku_neighbor
+						}
+					}
+					add_casus_belli = {
+						target = scope:sengoku_neighbor
+						type = casus_belli:cb_sengoku
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_casus_belli_on = root
+					}
+				}
+				add_casus_belli = {
+					target = root
+					type = casus_belli:cb_sengoku
+				}
+			}
+		}
+	}
+}

@@ -263,6 +263,35 @@
 			every_international_organization_member = {
 				trigger_event_non_silently = sengoku.1
 			}
+			# One-time CB setup at Sengoku start: non-emperor members get CBs on neighboring non-emperor clans.
+			every_international_organization_member = {
+				limit = {
+					NOT = {
+						has_special_status_in_international_organization = {
+							type = special_status:japanese_emperor
+							international_organization = international_organization:japanese_shogunate
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						is_member_of_international_organization = international_organization:japanese_shogunate
+						NOT = {
+							has_special_status_in_international_organization = {
+								type = special_status:japanese_emperor
+								international_organization = international_organization:japanese_shogunate
+							}
+						}
+						NOT = {
+							has_casus_belli_on = prev
+						}
+					}
+					add_casus_belli = {
+						target = prev
+						type = casus_belli:cb_sengoku
+					}
+				}
+			}
 		}
 	}
 	on_monthly = {

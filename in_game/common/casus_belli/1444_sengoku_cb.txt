@@ -1,0 +1,19 @@
+cb_sengoku = {
+
+	visible = {
+		is_member_of_international_organization = international_organization:japanese_shogunate
+		is_situation_active = situation:sengoku
+	}
+	allow_creation = {
+		is_member_of_international_organization = international_organization:japanese_shogunate
+		is_situation_active = situation:sengoku
+		scope:target = {
+			is_member_of_international_organization = international_organization:japanese_shogunate
+		}
+	}
+
+	speed = 10
+	can_expire = no
+
+	war_goal_type = sengoku_wargoal
+}
