@@ -267,27 +267,7 @@
 	}
 	on_monthly = {
 		sengoku_reevaluate_strongest_daimyos = yes		#See common/scripted_effects/situation_effects.txt
-		#Give the sengoku CB to all other members (each member gains a CB against every other member)
-		international_organization:japanese_shogunate = {
-			every_international_organization_member = {
-				save_scope_as = actor
-				international_organization:japanese_shogunate = {
-					scope:actor = {
-						international_organization:japanese_shogunate = {
-							every_international_organization_member = {
-								limit = {
-									this != scope:actor
-								}
-								add_casus_belli = {
-									target = scope:actor
-									type = casus_belli:cb_sengoku
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		# Temporarily disabled: monthly IO-wide Sengoku CB distribution.
 	}
 	map_color = {
 		if = {
