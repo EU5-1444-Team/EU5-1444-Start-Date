@@ -52255,10 +52255,9 @@ countries = {
         #Settled Pop based, but divided in multiple chieftains
         WAN = {
             #https://es.wikipedia.org/wiki/Huanca
-            type = pop
 
-            add_pops_from_locations = {
-                wari_willka willka_ulo ingapirca tunanmarca tarmatambo llampqui
+            own_control_core = {
+                wari_willka willka_ulo ingapirca tunanmarca tarmatambo llampqui pumpu
             }
 
             include = "andean_tribe"
@@ -52325,7 +52324,7 @@ countries = {
             #https://en.wikipedia.org/wiki/Inca_Empire
             own_control_core = {
                 qusqu quillarumiyoc
-                yanatile ullantaytampu urupampa pisaq picchu
+                yanatile ullantaytampu urupampa pisaq picchu yunca
                 pikillaqta
                 waqrapukara
                 sausaya kanamarca raqchi uyo_uyo pampa achachiwa
@@ -52808,10 +52807,10 @@ countries = {
         #Huacrachuco - HCR
         HCR = {
             #https://es.wikipedia.org/wiki/Intermedio_Tard%C3%ADo
-            type = pop
 
-            add_pops_from_locations = {
-                huacrachuco
+            own_control_core = {
+                huacrachuco aqush yaino manchac
+                huari rapayan chavin japallan
             }
 
             include = "andean_tribe"
@@ -52876,10 +52875,9 @@ countries = {
         #Settled Pop based, but divided in multiple chieftains
         HUA = {
             #https://www.elincape.com/historia-de-ancash/nacion-huaylas-y-sus-limites/
-            type = pop
 
-            add_pops_from_locations = {
-                choquerecuay waricoto willcahuain tumshukaiko
+            own_control_core = {
+                choquerecuay waricoto willcahuain tumshukaiko andaymarca pashas
             }
 
             include = "andean_tribe"
@@ -52889,13 +52887,24 @@ countries = {
             }
         }
 
+        YRO = {
+            own_control_core = {
+                garu wanuco_marka chiquia atash ichugan gochacalla
+            }
+
+            include = "andean_tribe"
+            include = "expl_andean"
+            government = {
+                ruler = random
+            }
+        }
+
+
         #Xauxa - XAU
-        #Settled Pop based, but divided in multiple chieftains
         XAU = {
             #http://blog.pucp.edu.pe/blog/sergionunez/2010/10/11/quienes-eran-los-xauxas/
-            type = pop
 
-            add_pops_from_locations = {
+            own_control_core = {
                 hatun_xauxa
             }
 
@@ -52975,9 +52984,8 @@ countries = {
         #Settled Pop based, but divided in multiple chieftains
         ATV = {
             #https://revistasinvestigacion.unmsm.edu.pe/index.php/sociales/article/download/17481/14725/61112
-            type = pop
 
-            add_pops_from_locations = {
+            own_control_core = {
                 chiprac
             }
 
@@ -52992,9 +53000,8 @@ countries = {
         #Settled Pop based, but divided in multiple chieftains
         YAW = {
             #https://muniyauyoslima.gob.pe/ciudad/resena-historica/
-            type = pop
 
-            add_pops_from_locations = {
+            own_control_core = {
                 naupahuasi pumaruri
             }
 
@@ -53009,10 +53016,9 @@ countries = {
         #Settled Pop based, but divided in multiple chieftains
         CCY = {
             #https://muniyauyoslima.gob.pe/ciudad/resena-historica/
-            type = pop
 
-            add_pops_from_locations = {
-                chancay quillahuaca
+            own_control_core = {
+                chancay quillahuaca guamanmayo ocro 
             }
 
             include = "andean_tribe"
@@ -53042,7 +53048,7 @@ countries = {
         #Settled Pop based, made into normal tag for balance
         MYM = {
             own_control_core = {
-                choccalpata paqwayranra
+                choccalpata paqwayranra pampahuaylla
             }
 
             include = "andean_tribe"
@@ -53121,10 +53127,9 @@ countries = {
         #Chiribaya - CBY
         #Settled Pop based
         CBY = {
-            type = pop
-
-            add_pops_from_locations = {
-                uyo_uyo tampo arequipa puquina ichuna yanque
+            
+            own_control_core = {
+                tampo arequipa puquina yanque
             }
 
             include = "andean_tribe"
@@ -53151,29 +53156,12 @@ countries = {
         }
 
         #Collagua - LLG
-        LLG = {
-            #https://pueblosoriginarios.com/sur/andina/collagua/collagua.html
-            type = pop
-
-            add_pops_from_locations = {
-                yanque arequipa
-            }
-
-            include = "expl_southamerica"
-            include = "expl_andean"
-            include = "andean_tribe"
-            government = {
-                ruler = random
-            }
-        }
 
         #Camana - AMN
         AMN = {
             #https://pueblosoriginarios.com/sur/andina/collagua/collagua.html
-            type = pop
-
-            add_pops_from_locations = {
-                camana
+            own_control_core = {
+                camana quilca ucuna
             }
 
             include = "andean_tribe"
@@ -70453,9 +70441,5 @@ countries = {
             }
             capital = waima
         }
-    }
-}
-    }
-}
     }
 }
