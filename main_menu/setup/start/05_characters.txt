@@ -7720,6 +7720,7 @@ character_db={
         dynasty = shishman_dynasty
         tag = BUL
     }
+
     bul_ivan_alexander = { #https://en.wikipedia.org/wiki/Ivan_Alexander_of_Bulgaria
         first_name = { name = name_john.name_alexander }
         culture = bulgarian
@@ -7733,7 +7734,6 @@ character_db={
         dynasty = sratsimir_dynasty
         tag = BUL
     }
-
     
     bul_teodora_of_wallachia = { #https://en.wikipedia.org/wiki/Theodora_of_Wallachia
         first_name = { name = name_theodora }
@@ -7742,7 +7742,7 @@ character_db={
         adm = 37 dip = 60 mil = 43
         female = yes
         birth_date = 1302.1.1 #unknown
-        death_date = 1352.12.12
+        death_date = 1352.1.1
         birth = campulung_muscel #Unknown
         father = wal_basarab
         mother = wal_marghita
@@ -7750,7 +7750,6 @@ character_db={
         dynasty = basarab_dynasty
         tag = BUL
     }
-
     
     bul_michail_iv_asen = { #https://en.wikipedia.org/wiki/Michael_Asen_IV_of_Bulgaria
         first_name = { name = Michail_Asen }
@@ -7765,7 +7764,6 @@ character_db={
         dynasty = sratsimir_dynasty
         tag = BUL
     }
-
         
     bul_irene_palaiologos = { #https://en.wikipedia.org/wiki/Maria-Irene_Palaiologina
         first_name = { name = name_irene }
@@ -7782,7 +7780,6 @@ character_db={
         tag = BUL
     }
 
-
     bul_ivan_sratsimir = { #https://en.wikipedia.org/wiki/Ivan_Sratsimir_of_Bulgaria
         first_name = { name = Ivan_Sratsimir }
         culture = bulgarian
@@ -7795,21 +7792,19 @@ character_db={
         dynasty = sratsimir_dynasty
         tag = BUL
     }
-
     
     bul_ivan_asen = { #https://en.wikipedia.org/wiki/Ivan_Asen_IV_of_Bulgaria
         first_name = { name = name_john.name_asen }
         culture = bulgarian
         religion = orthodox
         birth_date = 1326.1.1
-        death_date = 1384.11.26
+        death_date = 1349.1.1
         birth = lovech
         father = bul_ivan_alexander
         mother = bul_teodora_of_wallachia
         dynasty = sratsimir_dynasty
         tag = BUL
     }
-
 
     ser_helena_sratsimir = { #https://en.wikipedia.org/wiki/Helena_of_Bulgaria,_Empress_of_Serbia
         first_name = { name = name_helen }
@@ -46635,7 +46630,7 @@ character_db={
         religion = orthodox
         female = yes
         birth_date = 1280.1.1 #Unknown
-        death_date = 1333.6.12
+        death_date = 1355.1.1
         birth = campulung_muscel #Unknown
         spouse = wal_basarab
         tag = WAL
@@ -46661,7 +46656,7 @@ character_db={
         religion = catholic 
         female = yes
         birth_date = 1300.1.1 #unknown
-        death_date = 1368.4.11
+        death_date = 1360.1.1
         birth = medias #Unknown
         spouse = wal_nicolae_alexandru
         dynasty = lackfi_dynasty
@@ -111941,19 +111936,204 @@ character_db={
 
     ### Wallachia
 
+	wal_elizabeth_basarab = {
+		first_name = { name = name_elizabeth }
+		culture = wallachian
+		religion = orthodox
+        female = yes
+		birth_date = 1340.1.1
+		death_date = 1369.1.1
+		birth = arges #Unknown
+		father = wal_nicolae_alexandru
+		dynasty = basarab_dynasty
+		tag = WAL
+	}
+
+	bul_anna_basarab = {
+		first_name = { name = name_anna }
+		culture = wallachian
+		religion = orthodox
+        female = yes
+		birth_date = 1341.1.1
+		death_date = 1369.1.1
+		birth = arges #Unknown
+		father = wal_nicolae_alexandru
+		spouse = bul_ivan_sratsimir
+		dynasty = basarab_dynasty
+		tag = BUL
+	}
+
+	wal_anka_wallachia = {
+		first_name = { name = Anka }
+		culture = wallachian
+		religion = orthodox
+        female = yes
+		birth_date = 1342.1.1
+		death_date = 1371.1.1
+		birth = arges #Unknown
+		father = wal_nicolae_alexandru
+		spouse = ser_stefan_uros
+		dynasty = basarab_dynasty
+		tag = SER
+	}
+
+	wal_radu_i_basarab = {
+		first_name = { name = name_radu }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1337.1.1
+		death_date = 1383.1.1
+		birth = arges #Unknown
+		father = wal_nicolae_alexandru
+		dynasty = basarab_dynasty
+		tag = WAL
+	}
+
+	wal_dan_i_danesti = {
+		first_name = { name = name_dane }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1354.1.1
+		death_date = 1386.9.23
+		birth = targoviste
+		father = wal_radu_i_basarab
+		dynasty = danesti_dynasty
+		tag = WAL
+	}
+
+	wal_dan_ii_danesti = {
+		first_name = { name = name_dane }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1375.1.1
+		death_date = 1432.6.1
+		birth = targoviste
+		father = wal_dan_i_danesti
+		dynasty = danesti_dynasty
+		tag = WAL
+	}
+
+	wal_vlad_i_danesti = {
+		first_name = { name = name_vlad }
+        nickname = { name = "the Usurper" }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1355.1.1
+		death_date = 1397.1.1
+		birth = targoviste
+        father = wal_dan_i_danesti
+        dynasty = danesti_dynasty
+		tag = WAL
+	}
+
+	wal_vladislav_ii_danesti = {
+		first_name = { name = name_vladislav }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1394.1.1
+		birth = targoviste
+		father = wal_dan_ii_danesti
+		dynasty = danesti_dynasty
+		tag = WAL
+	}
+
+	wal_dan_iii_danesti = {
+		first_name = { name = name_dan }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1410.1.1
+		birth = targoviste
+		father = wal_dan_ii_danesti
+		dynasty = danesti_dynasty
+		tag = WAL
+	}
+
+	wal_basarab_ii_danesti = {
+		first_name = { name = name_basarab }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1418.1.1
+		birth = targoviste
+		father = wal_dan_ii_danesti
+		dynasty = danesti_dynasty
+		tag = WAL
+	}
+
+	wal_basarab_iv_danesti = {
+		first_name = { name = name_basarab }
+        nickname = { name = "the Young" }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1443.1.1
+		birth = targoviste
+		father = wal_basarab_ii_danesti
+		dynasty = danesti_dynasty
+		tag = WAL
+	}
+
+	wal_mircea_i_basarab = {
+		first_name = { name = name_mircea }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1355.1.1
+		death_date = 1418.2.4
+		birth = targoviste
+		father = wal_radu_i_basarab
+		dynasty = basarab_dynasty
+		tag = WAL
+	}
+
+	wal_mihai_i_basarab = {
+		first_name = { name = name_michael }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1375.1.1
+		death_date = 1420.8.1
+		birth = targoviste
+		father = wal_mircea_i_basarab
+		dynasty = basarab_dynasty
+		tag = WAL
+	}
+
+	wal_radu_ii_basarab = {
+		first_name = { name = name_radu }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1376.1.1
+		death_date = 1431.1.1
+		birth = targoviste
+		father = wal_mircea_i_basarab
+		dynasty = basarab_dynasty
+		tag = WAL
+	}
+
+	wal_alexandru_i_basarab = {
+		first_name = { name = name_alexander }
+		nickname = { name = Aldea }
+		culture = wallachian
+		religion = orthodox
+		birth_date = 1397.1.1
+		death_date = 1436.12.1
+		birth = targoviste
+		father = wal_mircea_i_basarab
+		dynasty = basarab_dynasty
+		tag = WAL
+	}
+
     wal_vlad_ii_draculesti = {
-        first_name = { name = name_vladislav }
+        first_name = { name = name_vlad }
         nickname = { name = nick_the_dragon }
         culture = wallachian
         religion = catholic
         birth_date = 1395.1.1
         birth = targoviste
+        father = wal_mircea_i_basarab
         dynasty = draculesti_dynasty
         tag = WAL          
     }
 
     wal_mircea_ii_draculesti = {
-        first_name = { name = Mircea }
+        first_name = { name = name_mircea }
         culture = wallachian
         religion = catholic
         birth_date = 1428.1.1
@@ -111964,7 +112144,7 @@ character_db={
     }
 
     wal_vlad_iii_draculesti = {
-        first_name = { name = name_vladislav }
+        first_name = { name = name_vlad }
         nickname = { name = "the Impaler" }
         culture = wallachian
         religion = catholic
@@ -111976,7 +112156,7 @@ character_db={
     }
 
     wal_radu_iii_draculesti = {
-        first_name = { name = Radu }
+        first_name = { name = name_radu }
         culture = wallachian
         religion = catholic
         birth_date = 1438.1.1
@@ -111987,7 +112167,7 @@ character_db={
     }
 
     wal_vlad_iv_draculesti = {
-        first_name = { name = name_vladislav }
+        first_name = { name = name_vlad }
         nickname = { name = "the Monk" }
         culture = wallachian
         religion = catholic
