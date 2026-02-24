@@ -773,10 +773,14 @@ countries = {
 
             government = {
                 type = theocracy
-                ruler = teu_dietrich_von_altenburg
+                ruler = teu_konrad_erlichshausen
+
                 ruler_term = { character = teu_werner_von_orseln start_date = 1324.7.6 end_date = 1331.2.17 regnal_number = 1 }
                 ruler_term = { character = teu_luther_von_braunschweig_grubenhagen start_date = 1331.2.17 end_date = 1335.4.18 regnal_number = 1 }
-                ruler_term = { character = teu_dietrich_von_altenburg start_date = 1335.4.18 regnal_number = 1 }
+                ruler_term = { character = teu_dietrich_von_altenburg start_date = 1335.4.18 end_date = 1341.1.1 regnal_number = 1 }
+
+                ruler_term = { character = teu_konrad_erlichshausen start_date = 1441.1.1 regnal_number = 1 }
+
                 regnal_numbers = {
                     name_theodoric = 1
                     name_luther = 1
@@ -836,12 +840,15 @@ countries = {
 
             government = {
                 type = theocracy
-                ruler = liv_eberhard_von_monheim
-                ruler_term = { character = liv_eberhard_von_monheim start_date = 1328.1.1 regnal_number = 1 }
+                ruler = liv_heinrich_vincke_overbergen
+
+                ruler_term = { character = liv_eberhard_von_monheim start_date = 1328.1.1 end_date = 1340.1.1 regnal_number = 1 }
+
+                ruler_term = { character = liv_heinrich_vincke_overbergen start_date = 1438.1.1 regnal_number = 1 }
+
                 regnal_numbers = {
                     name_everard = 1
                 }
-
 
                 centralization_vs_decentralization = 20
                 aristocracy_vs_plutocracy = -95
@@ -856,7 +863,6 @@ countries = {
                 capital_economy_vs_traditional_economy = 100
                 individualism_vs_communalism = -20
                 outward_vs_inward = -60
-
             }
 
             tolerated_cultures = {
@@ -5082,9 +5088,9 @@ countries = {
             government = {
                 ruler_term = { character = dhm_richard_de_bury start_date = 1333.2.1 end_date = 1345.4.14 }
 
-                ruler_term = { character = dhm_robert_neville_durham start_date = 1438.1.27 }
+                ruler_term = { character = dhm_robert_neville_bishop start_date = 1438.1.27 }
 
-                ruler = dhm_robert_neville_durham
+                ruler = dhm_robert_neville_bishop
             }
 
             accepted_cultures = {
@@ -5964,6 +5970,7 @@ countries = {
             }
             capital = skreen
         }
+
         IMA = {
             our_cores_conquered_by_others = {
                 carlow glendalough # Castledermot ancestral homeland
@@ -5976,6 +5983,7 @@ countries = {
             }
             capital = glendalough
         }
+
         GLS = {
             our_cores_conquered_by_others = {
                 ballycastle
@@ -5990,6 +5998,7 @@ countries = {
             tolerated_cultures = { irish }
             capital = ballycastle
         }
+
         LEI = {
             # Leinster
             own_control_core = {
@@ -6005,12 +6014,16 @@ countries = {
             include = "gaelic_tribe"
             include = "expl_western_europe"
             government = {
-                ruler = lei_domhnall_mac_art_caomhanach
-                ruler_term = { character = lei_domhnall_mac_art_caomhanach start_date = 1323.1.1 }
+                ruler = lei_donnchadh_mac_art_mac_murchadha_caomhanach
+
+                ruler_term = { character = lei_domhnall_mac_art_caomhanach start_date = 1323.1.1 end_date = 1338.1.1 }
+                ruler_term = { character = lei_art_og_mac_murchadha_caomhanach start_date = 1375.1.1 end_date = 1417.1.1 }
+                ruler_term = { character = lei_donnchadh_mac_art_mac_murchadha_caomhanach start_date = 1417.1.1 }
             }
             country_rank = rank_duchy # remnants of an old provincial kingdom
             capital = wicklow
         }
+
         TRY = {
             own_control_core = {
                 donegal kilmacrennan inishowen
@@ -6024,6 +6037,7 @@ countries = {
             }
             capital = donegal
         }
+
         OIL = {
             own_control_core = {
                 monaghan carrickmacross
@@ -10760,7 +10774,7 @@ countries = {
                 type = republic
                 heir_selection = diarchic_election
 
-                ruler = gen_galeotto_spinola #diarchy? with gen_raffaello_doria
+                ruler = gen_raffaelo_adorno
 
                 ruler_term = { character = gen_simone_doria start_date = 1165.1.1 end_date = 1188.1.1 regnal_number = 0 } # Among others
 
@@ -10815,7 +10829,9 @@ countries = {
                     character = gen_galeotto_spinola start_date = 1335.1.1 end_date = 1336.12.31 regnal_number = 0
                     character = gen_raffaello_doria start_date = 1335.1.1 end_date = 1336.12.31 regnal_number = 0
                 }
-                ruler_term = { character = gen_galeotto_spinola start_date = 1337.1.1 regnal_number = 0 }
+                ruler_term = { character = gen_galeotto_spinola start_date = 1337.1.1 end_date = 1338.1.1 regnal_number = 0 }
+
+                ruler_term = { character = gen_raffaele_adorno start_date = 1443.1.28 regnal_number = 0 }
 
                 laws = {
                     republican_foundation_law = republicanism_policy
@@ -11006,20 +11022,18 @@ countries = {
             include = "expl_indian_trade_route"
             include = "catholic_republic_no_coast"
             government = {
-                type = republic
-                heir_selection = podesta_elective
+                type = monarchy
+                heir_selection = cognatic_primogeniture
 
                 reforms = {
-                    signoria_reform
                 }
 
-                ruler = man_luigi_i_gonzaga
-                consort = man_caterina_i_malatesta
+                ruler = man_ludovico_iii_gonzaga
 
                 ruler_term = { character = neg_leone_dalle_carceri start_date = 1222.12.25 end_date = 1223.12.24 }
+                ruler_term = { character = man_luigi_i_gonzaga start_date = 1328.8.16 end_date = 1360.1.1 }
 
-                ruler_term = { character = man_luigi_i_gonzaga start_date = 1328.8.16 regnal_number = 0 }
-
+                ruler_term = { character = man_ludovico_iii_gonzaga start_date = 1444.1.1 }
             }
 
             tolerated_cultures = {
@@ -12168,27 +12182,19 @@ countries = {
                 reforms = {
                     signoria_reform
                 }
+
                 ruler = random
 
                 ruler_term = { character = par_oberto_pallavicini start_date = 1189.1.1 end_date = 1190.1.1 regnal_number = 0 }
-
                 ruler_term = { character = rgg_ghiberto_iii_correggio start_date = 1303.1.1 end_date = 1308.4.1 regnal_number = 0 }
-
                 ruler_term = { character = rgg_ghiberto_iii_correggio start_date = 1308.8.1 end_date = 1311.1.1 regnal_number = 0 }
-
                 ruler_term = { character = msp_franceschino_i_malaspina start_date = 1311.4.1 end_date = 1311.9.1 regnal_number = 0 }
-
                 ruler_term = { character = rgg_ghiberto_iii_correggio start_date = 1311.11.1 end_date = 1316.1.1 regnal_number = 0 }
-
                 ruler_term = { character = ven_marsilio_rossi start_date = 1322.1.1 end_date = 1326.1.1 regnal_number = 0 }
-
                 ruler_term = { character = pap_passerino_della_torre start_date = 1326.1.1 end_date = 1328.1.1 regnal_number = 0 }
-
                 ruler_term = { character = ven_rolando_rossi start_date = 1328.1.1 end_date = 1329.1.1 regnal_number = 0 }
                 ruler_term = { character = ven_marsilio_rossi start_date = 1329.1.1 end_date = 1331.1.1 regnal_number = 0 }
-
                 ruler_term = { character = pav_castellino_beccaria start_date = 1331.1.1 end_date = 1333.1.1 regnal_number = 0 }
-
                 ruler_term = { character = ver_alberto_ii_scala start_date = 1335.6.21 end_Date = 1352.9.13 regnal_number = 0 }
             }
 
@@ -13321,7 +13327,7 @@ countries = {
                 type = republic
                 heir_selection = lottery_election
 
-                ruler = random
+                ruler = ven_francesco_foscari
 
                 ruler_term = { character = ven_domenico_contarini start_date = 1043.1.1 end_date = 1071.1.1 }
                 ruler_term = { character = ven_domenico_morosini start_date = 1148.1.1 end_date = 1156.2.1 }
@@ -13336,6 +13342,8 @@ countries = {
                 ruler_term = { character = ven_marino_zorzi start_date = 1311.8.23 end_date = 1312.7.3 }
                 ruler_term = { character = ven_giovanni_soranzo start_date = 1312.7.13 end_date = 1328.12.31 }
                 ruler_term = { character = ven_francesco_dandolo start_date = 1329.1.4 end_date = 1339.1.1 }
+
+                ruler_term = { character = ven_francesco_foscari start_date = 1423.4.15 }
 
                 laws = {
                     republican_foundation_law = republicanism_policy
@@ -13707,7 +13715,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = random
+                ruler = mre_thomas_palaiologos
 
                 ruler_term = { character = ach_guillaume_i_champlitte start_date = 1205.1.1 end_date = 1209.1.1 regnal_number = 1 }
 
@@ -13739,6 +13747,8 @@ countries = {
 
                 ruler_term = { character = ach_catherine_valois start_date = 1333.1.1 end_date = 1336.4.5 regnal_number = 1 }
                 ruler_term = { character = ach_robert_taranto start_date = 1333.1.1 end_date = 1364.9.10 regnal_number = 1 } # As Co-Ruler with his mother
+
+                ruler_term = { character = mre_thomas_palaiologos start_date = 1428.1.1 regnal_number = 1 } # As Co-Ruler with his mother
 
                 regnal_numbers = {
                     name_william = 2
@@ -14498,13 +14508,16 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = random
+                ruler = ser_durad_brankovic
 
                 ruler_term = { character = ser_stefan start_date = 1243.1.1 end_date = 1276.1.1 regnal_number = 1 }
                 ruler_term = { character = ser_stefan_dragutin start_date = 1276.1.1 end_date = 1282.1.1 regnal_number = 1 }
                 ruler_term = { character = ser_stefan_milutin start_date = 1282.1.1 end_date = 1321.10.29 regnal_number = 2 }
                 ruler_term = { character = ser_stefan_decanski start_date = 1322.1.6 end_date = 1331.9.8 regnal_number = 3 }
                 ruler_term = { character = ser_stefan_dusan start_date = 1331.9.8 end_date = 1355.12.20 regnal_number = 4 }
+
+                ruler_term = { character = ser_stefan_lazarevic start_date = 1389.6.15 end_date = 1427.7.19 }
+                ruler_term = { character = ser_durad_brankovic start_date = 1427.7.19 }
 
                 regnal_numbers = {
                     name_stephen = 1
@@ -15742,7 +15755,7 @@ countries = {
             include = "muslim_monarchy_no_abrahamic_dhimmi"
 
             government = {
-                ruler = random
+                ruler = gra_muhammad_ix_nasrid
 
                 ruler_term = { character = gra_muhammad_i_nasrid start_date = 1238.5.1 end_date = 1273.1.20 regnal_number = 1 }
                 ruler_term = { character = gra_muhammad_ii_nasrid start_date = 1273.1.20 end_date = 1302.1.20 regnal_number = 2 }
@@ -15756,11 +15769,13 @@ countries = {
                 ruler_term = { character = gra_muhammad_iv_nasrid start_date = 1325.7.8 end_date = 1333.8.25 regnal_number = 4 }
                 ruler_term = { character = gra_yusuf_i_nasrid start_date = 1333.8.25 end_date = 1354.10.19 regnal_number = 1 }
 
+                ruler_term = { character = gra_muhammad_ix_nasrid start_date = 1432.1.1 regnal_number = 9 }
+
                 regnal_numbers = {
-                    name_muhammad = 4
+                    name_muhammad = 9
                     name_nasr = 1
                     name_ishmael = 1
-                    name_joseph = 1
+                    name_joseph = 4
                 }
 
                 reforms = {
@@ -21073,10 +21088,26 @@ countries = {
             include = "eastern_european_monarchy_no_coast"
 
             government = {
-                ruler = wal_basarab
-                consort = wal_marghita
+                ruler = wal_vlad_ii_draculesti
 
-                ruler_term = { character = wal_basarab start_date = 1324.7.26 }
+                ruler_term = { character = wal_basarab start_date = 1324.7.26 end_date = 1351.1.1 }
+                ruler_term = { character = wal_nicolae_alexandru start_date = 1351.1.1 end_date = 1364.11.1 }
+                ruler_term = { character = wal_vladislav start_date = 1364.11.1 end_date = 1377.1.1 regnal_number = 1 }
+                ruler_term = { character = wal_radu_i_basarab start_date = 1377.1.1 end_date = 1383.1.1 regnal_number = 1 }
+                ruler_term = { character = wal_dan_i_danesti start_date = 1383.1.1 end_date = 1386.9.23 regnal_number = 1 }
+                ruler_term = { character = wal_mircea_i_basarab start_date = 1386.9.23 end_date = 1394.1.1 regnal_number = 1 }
+                ruler_term = { character = wal_vlad_i_danesti start_date = 1394.1.1 end_date = 1397.1.1 regnal_number = 1 }
+                ruler_term = { character = wal_mircea_i_basarab start_date = 1397.1.1 end_date = 1418.2.4 regnal_number = 1 }
+                ruler_term = { character = wal_mihai_i_basarab start_date = 1415.1.1 end_date = 1420.8.1 regnal_number = 1 }
+                ruler_term = { character = wal_radu_ii_basarab start_date = 1420.8.1 end_date = 1422.10.1 regnal_number = 2 }
+                ruler_term = { character = wal_dan_ii_danesti start_date = 1422.10.1 end_date = 1426.12.1 regnal_number = 2 }
+                ruler_term = { character = wal_radu_ii_basarab start_date = 1426.12.1 end_date = 1427.6.1 regnal_number = 2 }
+                ruler_term = { character = wal_dan_ii_danesti start_date = 1427.6.1 end_date = 1431.6.1 regnal_number = 2 }
+                ruler_term = { character = wal_alexander_i_basarab start_date = 1431.6.1 end_date = 1436.12.1 regnal_number = 1 }
+                ruler_term = { character = wal_vlad_ii_draculesti start_date = 1436.12.1 end_date = 1442.9.1 regnal_number = 2 }
+                ruler_term = { character = wal_mircea_ii_draculesti start_date = 1442.9.1 end_date = 1442.12.1 regnal_number = 2 }
+                ruler_term = { character = wal_basarab_ii_danesti start_date = 1442.6.1 end_date = 1443.3.1 regnal_number = 2 }
+                ruler_term = { character = wal_vlad_ii_draculesti start_date = 1443.3.1 regnal_number = 2 }
 
                 centralization_vs_decentralization = 70
                 aristocracy_vs_plutocracy = -50
@@ -21115,7 +21146,7 @@ countries = {
             include = "eastern_european_monarchy_no_coast"
 
             government = {
-                ruler = random
+                ruler = wal_vlad_ii_draculesti
 
                 centralization_vs_decentralization = 70
                 aristocracy_vs_plutocracy = -50
@@ -21170,7 +21201,18 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = random
+                ruler = mol_stefan_ii_musat
+
+                ruler_term = { character = mol_stefan_ii_musat start_date = 1434.9.1 regnal_number = 2 }
+
+                regnal_numbers = {
+                    name_stephen = 2
+                    name_roman = 1
+                    name_peter = 2
+                    name_bogdan = 1
+                    name_alexander = 1
+                }
+
             }
             liturgical_language = church_slavonic_language
             capital = suceava
@@ -21697,7 +21739,11 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = random
+                regency = nobles_estate_regency
+                active_regent = mor_abu_zakariya_yahya_wattasid
+                start_regency_date = 1423.1.1
+                end_regency_date = 1455.1.1
+                heir = mor_abd_al_haqq_ii_marinid
 
                 ruler_term = { character = mor_uthman start_date = 1217.1.1 end_date = 1240.1.1 regnal_number = 1 }
                 ruler_term = { character = mor_muhammad start_date = 1240.1.1 end_date = 1244.1.1 regnal_number = 1 }
@@ -21707,10 +21753,12 @@ countries = {
                 ruler_term = { character = mor_abu_thabit_amir start_date = 1307.5.1 end_date = 1308.7.28 regnal_number = 1 }
                 ruler_term = { character = mor_abu_al_rabi_sulayman start_date = 1308.7.28 end_date = 1310.11.23 regnal_number = 1 }
                 ruler_term = { character = mor_abu_said_uthman_ii start_date = 1310.11.23 end_date = 1331.8.1 regnal_number = 2 }
-                ruler_term = { character = mor_abu_al_hasan_ali start_date = 1331.8.1 end_date = 1348.1.1 regnal_number = 1 }
+                ruler_term = { character = mor_abu_al_hasan_ali start_date = 1331.8.1 end_date = 1351.5.24 regnal_number = 1 }
+
+                ruler_term = { character = mor_abd_al_haqq_ii_marinid start_date = 1420.10.1 regnal_number = 2 }
 
                 regnal_numbers = {
-                    Abd_al-Haqq = 1
+                    Abd_al-Haqq = 2
                     name_osman = 2
                     name_muhammad = 1
                     name_abu.name_john = 1
@@ -21811,10 +21859,11 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = tle_abu_tashufin
+                ruler = tle_abu_abbas_ahmad_zayyanid
 
                 ruler_term = { character = tle_abu_hammu start_date = 1308.4.14 end_date = 1318.7.2 regnal_number = 1 }
-                ruler_term = { character = tle_abu_tashufin start_date = 1318.7.2 regnal_number = 1 }
+                ruler_term = { character = tle_abu_tashufin start_date = 1318.7.2 end_date = 1337.7.1 regnal_number = 1 }
+                ruler_term = { character = tle_abu_abbas_ahmad_zayyanid start_date = 1430.1.1 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_abu.name_john = 1
@@ -21893,7 +21942,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = random
+                ruler = tun_abu_amr_uthman_hafsid
 
                 ruler_term = { character = tun_abu_l_baqa_khalid_an_nasr start_date = 1309.1.1 end_date = 1311.1.1 regnal_number = 1 }
                 ruler_term = { character = tun_abu_yahya_abu_bakr_ii start_date = 1318.1.1 end_date = 1346.10.19 regnal_number = 2 }
@@ -22430,9 +22479,9 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = trp_muhammad_ibn_thabit
+                ruler = random
                 ruler_term = { character = trp_thabit_ibn_ammar start_date = 1324.1.1 end_date = 1327.1.1 regnal_number = 1 }
-                ruler_term = { character = trp_muhammad_ibn_thabit start_date = 1332.1.1 regnal_number = 1 }
+                ruler_term = { character = trp_muhammad_ibn_thabit start_date = 1332.1.1 end_date = 1348.1.1 regnal_number = 1 }
 
                 laws = {
                     sharia_law = maliki_policy
@@ -22461,11 +22510,12 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = btl_ali_bin_galib
+                ruler = random
+
                 ruler_term = { character = btl_ahmad_bin_tellis start_date = 1228.1.1 end_date = 1267.1.1 regnal_number = 1 }
                 ruler_term = { character = btl_ali_bin_ahmad start_date = 1267.1.1 end_date = 1285.1.1 regnal_number = 1 }
                 ruler_term = { character = btl_galib_bin_ali start_date = 1285.1.1 end_date = 1315.1.1 regnal_number = 1 }
-                ruler_term = { character = btl_ali_bin_galib start_date = 1315.1.1 regnal_number = 2 }
+                ruler_term = { character = btl_ali_bin_galib start_date = 1315.1.1 end_date = 1350.1.1 regnal_number = 2 }
 
                 laws = {
                     sharia_law = maliki_policy
@@ -46666,7 +46716,13 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = vol_boleslaw_jerzy_ii_piast
+
+                heir = lit_kazimieras_iv_jagiellon
+                active_regent = pol_zbigniew_olesnicki
+                regency = nobles_estate_regency
+                start_regency_date = 1444.11.10
+                end_regency_date = 1447.6.25
+
 
                 ruler_term = {
                     character = hal_rurik_rostislavich_rurikovich start_date = 1085.1.1 end_date = 1092.1.1 regnal_number = 1
@@ -46727,7 +46783,7 @@ countries = {
                 ruler_term = { character = vol_leo_i_rurikovich start_date = 1264.1.1 end_date = 1301.1.1 regnal_number = 1 }
                 ruler_term = { character = vol_yuri_i_rurikovich start_date = 1301.1.1 end_date = 1308.1.1 regnal_number = 1 }
                 ruler_term = { character = vol_andrii_rurikovich start_date = 1308.1.1 end_date = 1323.1.1 regnal_number = 1 }
-                ruler_term = { character = vol_boleslaw_jerzy_ii_piast start_date = 1323.1.1 regnal_number = 2 regnal_name = name_george }
+                ruler_term = { character = vol_boleslaw_jerzy_ii_piast start_date = 1323.1.1 end_date = 1340.1.1 regnal_number = 2 regnal_name = name_george }
 
                 privilege = {
                     #Burghers
@@ -47403,12 +47459,16 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = lit_gediminas_gediminids
-                ruler_term = { character = lit_gediminas_gediminids start_date = 1320.1.1 regnal_number = 1 }
+                ruler = kie_alexandras_olelkovich
+
+                ruler_term = { character = lit_gediminas_gediminids start_date = 1320.1.1 end_date = 1341.1.1 regnal_number = 1 }
+
+                ruler_term = { character = kie_alexandras_olelkovich start_date = 1405.1.1 regnal_number = 1 }
+
                 laws = { heir_religion_law = heir_any_religion }
             }
+
             capital = slutsk
-            #
             liturgical_language = church_slavonic_language
 
             country_rank = rank_duchy
@@ -47590,7 +47650,7 @@ countries = {
             include = "expl_eastern_europe"
             include = "lithuanian_monarchy"
             government = {
-                ruler = kie_teodoras_ivanovich_rurikovich
+                ruler = kie_alexandras_olelkovich
 
                 ruler_term = { character = kie_igor_rurikovich start_date = 912.1.1 end_date = 945.1.1 regnal_number = 1 }
                 ruler_term = {
@@ -47662,7 +47722,9 @@ countries = {
                 ruler_term = { character = kie_stanislav_ivanovich_rurikovich start_date = 1301.1.1 end_date = 1321.1.1 regnal_number = 1 }
                 ruler_term = { character = kie_mindaugas_holshanski start_date = 1321.1.1 end_date = 1324.1.1 regnal_number = 1 }
                 ruler_term = { character = kie_algimantas start_date = 1324.1.1 end_date = 1331.1.1 regnal_number = 1 }
-                ruler_term = { character = kie_teodoras_ivanovich_rurikovich start_date = 1331.1.1 regnal_number = 1 }
+                ruler_term = { character = kie_teodoras_ivanovich_rurikovich start_date = 1331.1.1 end_date = 1362.1.1 regnal_number = 1 }
+
+                ruler_term = { character = kie_alexandras_olelkovich start_date = 1443.1.1 regnal_number = 0 }
 
                 privilege = {
                     #Clergy
@@ -47956,8 +48018,8 @@ countries = {
                 ruler_term = { character = azt_acamapichtli_tenochcatl start_date = 1375.1.1 end_date = 1390.1.1 regnal_number = 1 }
                 ruler_term = { character = azt_huitzilihuitl start_date = 1391.1.1 end_date = 1414.1.1 regnal_number = 1 }
                 ruler_term = { character = azt_chimalpopoca start_date = 1415.1.1 end_date = 1427.1.1 regnal_number = 1 }
-                ruler_term = { character = azt_xihuitl_itzacoalt start_date = 1427.1.1 end_date = 1427.3.1 regnal_number = 1 }
-                ruler_term = { character = azt_itzacoalt start_date = 1427.3.1 end_date = 1440.1.1 regnal_number = 1 }
+                ruler_term = { character = azt_xihuitl_itzacoatl start_date = 1427.1.1 end_date = 1427.3.1 regnal_number = 1 }
+                ruler_term = { character = azt_itzacoatl start_date = 1427.3.1 end_date = 1440.1.1 regnal_number = 1 }
                 ruler_term = { character = azt_moctezuma start_date = 1440.1.1 regnal_number = 1 }
                 
 
