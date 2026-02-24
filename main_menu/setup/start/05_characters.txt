@@ -1174,7 +1174,6 @@ character_db={
         tag = BRO
     }
 
-    
     eng_roger_mortimer_1st_earl_of_march = {        
         first_name = { name = name_roger }
         culture = english
@@ -1185,6 +1184,7 @@ character_db={
         dynasty = mortimer_dynasty
         tag = MAC
     }
+
     eng_maud_mortimer = {       
         first_name = { name = name_matilda }
         culture = english
@@ -107581,7 +107581,7 @@ character_db={
         death_date = 1422.8.13
         dynasty = lancaster_dynasty
         father = eng_henry_iv_lancaster
-        mother = eng_joan_of_navarre_evreux
+        mother = eng_mary_de_bohun
         ruler_trait = "tactical_genius"
         tag = ENG
     }
@@ -107603,6 +107603,32 @@ character_db={
         ruler_trait = babbling_buffoon
     }
 
+    eng_thomas_of_clarence = {
+        first_name = { name = name_thomas }
+        culture = english
+        religion = catholic
+        birth_date = 1387.9.1
+        death_date = 1421.3.22
+        birth = london
+        dynasty = lancaster_dynasty
+        father = eng_henry_iv_lancaster
+        mother = eng_mary_de_bohun
+        tag = ENG
+    }
+
+    eng_john_of_bedford = {
+        first_name = { name = name_john }
+        culture = english
+        religion = catholic
+        birth_date = 1389.6.20
+        death_date = 1435.9.30
+        birth = london
+        dynasty = lancaster_dynasty
+        father = eng_henry_iv_lancaster
+        mother = eng_mary_de_bohun
+        tag = ENG
+    }
+
     eng_humphrey_lancaster = {
         first_name = { name = name_humphrey }
         nickname = { name = Good }
@@ -107615,6 +107641,36 @@ character_db={
         father = eng_henry_iv_lancaster
         mother = eng_mary_de_bohun
         tag = ENG
+    }
+
+    pal_blanche_lancaster = {
+        first_name = { name = name_blanche }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1392.3.1
+        death_date = 1409.5.22
+        birth = london
+        dynasty = lancaster_dynasty
+        spouse = pal_ludwig_iii_wittelsbach
+        father = eng_henry_iv_lancaster
+        mother = eng_mary_de_bohun
+        tag = PAL
+    }
+
+    dan_philippa_lancaster = {
+        first_name = { name = name_philippa }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1406.5.1
+        death_date = 1430.1.5
+        birth = london
+        dynasty = lancaster_dynasty
+        spouse = pom_erik_of_pomerania_gryf
+        father = eng_henry_iv_lancaster
+        mother = eng_mary_de_bohun
+        tag = DAN
     }
 
     eng_eleanor_cobham = {  #wife
@@ -107827,8 +107883,7 @@ character_db={
         tag = ENG
     }
 
-    #house of Tudor
-
+    # House of Tudor
     eng_owen_tudor = {
         first_name = { name = name_eugene }
         culture = welsh
@@ -108731,7 +108786,84 @@ character_db={
         tag = ENG
     }
 
-    #church
+    #House of Woodville
+    eng_richard_woodville_founder = {
+        first_name = { name = name_richard }
+        culture = english
+        religion = catholic
+        birth_date = 1375.1.1
+        death_date = 1441.1.1
+        birth = buckingham
+        dynasty = woodville_dynasty
+        tag = ENG
+    }
+
+    eng_richard_woodville_rivers = {
+        first_name = { name = name_richard }
+        culture = english
+        religion = catholic
+        birth_date = 1405.1.1
+        birth = canterbury
+        father = eng_richard_woodville_founder
+        spouse = eng_jacquetta_luxembourg
+        dynasty = woodville_dynasty
+        tag = ENG
+    }
+
+    eng_jacquetta_luxembourg = {
+        first_name = { name = Jacquetta }
+        culture = walloon
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1415.1.1
+        birth = saint_pol
+        father = stp_peter_i_luxembourg
+        mother = stp_marguerite_baux
+        spouse = eng_richard_woodville_rivers
+        dynasty = luxembourg_dynasty
+        tag = ENG
+    }
+
+    eng_elizabeth_woodville = {
+        first_name = { name = name_elizabeth }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1437.1.1
+        birth = northampton
+        father = eng_richard_woodville_rivers
+        mother = eng_jacquetta_luxembourg
+        dynasty = woodville_dynasty
+        tag = ENG
+    }
+
+    eng_anne_woodville = {
+        first_name = { name = name_anna }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1438.1.1
+        birth = northampton
+        father = eng_richard_woodville_rivers
+        mother = eng_jacquetta_luxembourg
+        dynasty = woodville_dynasty
+        tag = ENG
+    }
+
+    eng_anthony_woodville = {
+        first_name = { name = name_anthony }
+        culture = english
+        religion = catholic
+        birth_date = 1440.1.1
+        birth = northampton
+        father = eng_richard_woodville_rivers
+        mother = eng_jacquetta_luxembourg
+        dynasty = woodville_dynasty
+        tag = ENG
+    }
+
+    #Church of England
     eng_henry_beaufort_cardinal = {
         first_name = { name = name_henry }
         culture = english
@@ -108776,7 +108908,7 @@ character_db={
         tag = ENG
     }
 
-    #burghers
+    #Burghers of England
     eng_william_caxton = {
         first_name = { name = name_william }
         last_name = { name = Caxton }
