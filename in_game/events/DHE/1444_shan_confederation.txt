@@ -1,0 +1,142 @@
+namespace = 1444_shan_confederation
+1444_shan_confederation.1 = {
+	hide_portraits = yes
+	type = country_event
+	title = 1444_shan_confederation.1.title
+	desc = 1444_shan_confederation.1.desc
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+	trigger = {
+		this = c:AVV
+		country_exists = c:TNG
+		c:TNG = {
+			num_of_owned_locations > 0
+		}
+		any_current_war = {
+			casus_belli ?= casus_belli:cb_shan_confederation_raid
+			any_war_participant = {
+				this = c:AVV
+			}
+		}
+	}
+	immediate = {
+		event_illustration_estate_effect = {
+			foreground = estate_type:peasants_estate
+			background = estate_type:peasants_estate
+		}
+		ordered_owned_location = {
+			order_by = population
+			max = 1
+			save_scope_as = target_location
+		}
+		save_scope_as = target_country
+		c:TNG = {
+			ordered_owned_location = {
+				order_by = {
+					value = population
+					multiply = -1
+				}
+				max = 1
+				save_scope_as = target_location2
+			}
+		}
+	}
+	option = {
+		name = 1444_shan_confederation.1.a
+		add_migration = {
+			amount = 0.4
+			from = scope:target_location.province_definition
+			owner = scope:target_country
+			to = scope:target_location2.province_definition
+			months = 24
+		}
+		c:TNG = {
+			trigger_event_non_silently = 1444_shan_confederation.3
+		}
+		trigger_event_non_silently = 1444_shan_confederation.2
+	}
+}
+
+1444_shan_confederation.2 = {
+	hide_window = yes
+	hide_portraits = yes
+	type = country_event
+	title = 1444_shan_confederation.2.title
+	desc = 1444_shan_confederation.2.desc
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+	trigger = {
+		this = c:AVV
+		country_exists = c:BPR
+		c:BPR = {
+			num_of_owned_locations > 0
+		}
+		any_current_war = {
+			casus_belli ?= casus_belli:cb_shan_confederation_raid
+			any_war_participant = {
+				this = c:AVV
+			}
+		}
+	}
+	immediate = {
+		event_illustration_estate_effect = {
+			foreground = estate_type:peasants_estate
+			background = estate_type:peasants_estate
+		}
+		ordered_owned_location = {
+			order_by = population
+			max = 1
+			save_scope_as = target_location
+		}
+		save_scope_as = target_country
+		c:BPR = {
+			ordered_owned_location = {
+				order_by = {
+					value = population
+					multiply = -1
+				}
+				max = 1
+				save_scope_as = target_location2
+			}
+			trigger_event_non_silently = 1444_shan_confederation.4
+		}
+		add_migration = {
+			amount = 0.1
+			from = scope:target_location.province_definition
+			owner = scope:target_country
+			to = scope:target_location2.province_definition
+			months = 24
+		}
+	}
+	option = {
+		name = OK
+	}
+}
+
+1444_shan_confederation.3 = {
+	type = country_event
+	title = 1444_shan_confederation.3.title
+	desc = 1444_shan_confederation.3.desc
+	trigger = {
+		this = c:TNG
+	}
+	option = {
+		name = 1444_shan_confederation.3.a
+	}
+}
+
+1444_shan_confederation.4 = {
+	type = country_event
+	title = 1444_shan_confederation.4.title
+	desc = 1444_shan_confederation.4.desc
+	trigger = {
+		this = c:BPR
+	}
+	option = {
+		name = 1444_shan_confederation.4.a
+	}
+}

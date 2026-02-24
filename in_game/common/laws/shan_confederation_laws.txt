@@ -1,0 +1,153 @@
+shan_unification_law = {
+	type = international_organization
+	law_category = administrative
+	requires_vote = yes
+	potential = {
+		international_organization_type = international_organization_type:shan_states_confederation
+		total_members > 1
+	}
+	locked = {
+	}
+	shan_delegated_authority_policy = {
+		modifier = {
+			monthly_legitimacy = 0.05
+		}
+	}
+	shan_bid_for_unification_policy = {
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BIAS_GOOD_IDEA"
+				value = 20
+			}
+		}
+		allow = { }
+		years = 10
+		on_fully_activated = {
+			custom_tooltip = shan_will_unify_confederation_tt
+			ordered_international_organization_member = {
+				order_by = great_power_score
+				max = 1
+				check_range_bounds = no
+				save_scope_as = shan_unifier
+			}
+
+			scope:shan_unifier = {
+				form_country = formable_country:SHA_f
+				if = {
+					limit = {
+						country_rank_level < 3
+					}
+					set_country_rank_effect = {
+						rank = country_rank:rank_kingdom
+					}
+				}
+			}
+
+			every_international_organization_member = {
+				limit = {
+					NOT = {
+						this = scope:shan_unifier
+					}
+				}
+				scope:shan_unifier = {
+					annex_country = {
+						country = prev
+						reason = Diplomatic
+					}
+				}
+			}
+		}
+	}
+}
+
+shan_leadership_law = {
+	type = international_organization
+	law_category = election
+	requires_vote = yes
+	potential = {
+		always = no
+	}
+	locked = {
+	}
+	shan_frequent_leadership_votes_policy = {
+		leader_change_method = vote
+		leader_change_trigger_type = timed
+		months_between_leader_changes = 6
+		leadership_election_resolution = resolution:international_organization_election
+	}
+	shan_extended_leadership_terms_policy = {
+		leader_change_method = vote
+		leader_change_trigger_type = timed
+		months_between_leader_changes = 36
+		leadership_election_resolution = resolution:international_organization_election
+		leader_modifier = {
+			diplomatic_reputation = 1
+		}
+	}
+}
+
+shan_membership_law = {
+	type = international_organization
+	law_category = federal
+	requires_vote = yes
+	potential = {
+		international_organization_type = international_organization_type:shan_states_confederation
+	}
+	locked = {
+	}
+	shan_regional_focus_policy = {
+		country_modifier = {
+			diplomatic_reputation = 1
+			improve_relation_modifier = 0.2
+			prestige = 0.5
+		}
+	}
+	shan_diplomatic_expansion_policy = {
+		on_activate = {
+			if = {
+				limit = {
+					country_exists = c:CHI
+				}
+				every_international_organization_member = {
+					limit = {
+						NOT = {
+							this = c:CHI
+						}
+					}
+					c:CHI = {
+						add_opinion = {
+							target = prev
+							modifier = opinion_shan_expansion
+						}
+					}
+				}
+			}
+		}
+		on_deactivate = {
+			if = {
+				limit = {
+					country_exists = c:CHI
+				}
+				every_international_organization_member = {
+					limit = {
+						NOT = {
+							this = c:CHI
+						}
+					}
+					c:CHI = {
+						remove_opinion = {
+							target = prev
+							modifier = opinion_shan_expansion
+						}
+					}
+				}
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BIAS_GOOD_IDEA"
+				value = 20
+			}
+		}
+	}
+}
