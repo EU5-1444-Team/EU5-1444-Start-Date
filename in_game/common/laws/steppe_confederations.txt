@@ -947,7 +947,7 @@ khalkha_unification_law = {
     type = international_organization
 
     potential = {
-        international_organization_type = khalkha_confederation
+        international_organization_type = international_organization_type:khalkha_confederation
     }
 
     allow = {
@@ -992,7 +992,12 @@ khalkha_unification_law = {
 
             every_international_organization_member = {
                 limit = { NOT = { this = root.leader_country } }
-                annex = root.leader_country
+                root.leader_country = {
+                    annex_country = {
+                        country = prev
+                        reason = Diplomatic
+                    }
+                }
             }
 
             disband_international_organization = yes
@@ -1004,7 +1009,7 @@ khorchin_unification_law = {
     type = international_organization
 
     potential = {
-        international_organization_type = khorchin_confederation
+        international_organization_type = international_organization_type:khorchin_confederation
     }
 
     allow = {
@@ -1048,7 +1053,12 @@ khorchin_unification_law = {
 		        }            }
             every_international_organization_member = {
                 limit = { NOT = { this = root.leader_country } }
-                annex = root.leader_country
+                root.leader_country = {
+                    annex_country = {
+                        country = prev
+                        reason = Diplomatic
+                    }
+                }
             }
 
             disband_international_organization = yes
@@ -1060,7 +1070,7 @@ oirat_unification_law = {
     type = international_organization
 
     potential = {
-        international_organization_type = oirat_confederation
+        international_organization_type = international_organization_type:oirat_confederation
     }
 
     allow = {
@@ -1105,7 +1115,12 @@ oirat_unification_law = {
             }
             every_international_organization_member = {
                 limit = { NOT = { this = root.leader_country } }
-                annex = root.leader_country
+                root.leader_country = {
+                    annex_country = {
+                        country = prev
+                        reason = Diplomatic
+                    }
+                }
             }
 
             disband_international_organization = yes
