@@ -112312,14 +112312,274 @@ character_db={
 
     ### Moldavia
 
+    mol_dragos_dragosesti = {
+        first_name = { name = Dragoș }
+        nickname = { name = "the Founder" }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1320.1.1
+        death_date = 1353.1.1
+        dynasty = dragosesti_dynasty
+        tag = MOL
+    }
+
+    mol_sas_dragosesti = {
+        first_name = { name = Sas }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1338.1.1
+        death_date = 1364.1.1
+        father = mol_dragos_dragosesti
+        dynasty = dragosesti_dynasty
+        tag = MOL
+    }
+
+    mol_balc_dragosesti = {
+        first_name = { name = Balc }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1340.1.1
+        death_date = 1364.1.1
+        father = mol_sas_dragosesti
+        dynasty = dragosesti_dynasty
+        tag = MOL
+    }
+
+    mol_bogdan_i_musat = {
+        first_name = { name = name_bogdan }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1326.1.1
+        death_date = 1367.1.1
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_stefan_father_musat = {
+        first_name = { name = name_stephen }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1343.1.1
+        death_date = 1366.1.1
+        father = mol_bogdan_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_petru_i_musat = {
+        first_name = { name = name_peter }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1361.1.1
+        death_date = 1368.1.1
+        father = mol_stefan_father_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_latcu_musat = {
+        first_name = { name = Lațcu }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1344.1.1
+        death_date = 1375.1.1
+        father = mol_bogdan_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_anatasia_musat = {
+        first_name = { name = name_anastasia }
+        culture = moldovan
+        religion = orthodox
+        female = yes
+        birth_date = 1360.1.1
+        death_date = 1390.1.1
+        father = mol_latcu_musat
+        spouse = mol_roman_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_costea_noble = {
+        first_name = { name = Costea }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1330.1.1
+        death_date = 1374.1.1
+        tag = MOL
+    }
+
+    mol_margareta_musat = {
+        first_name = { name = name_margaret }
+        culture = moldovan
+        religion = orthodox
+        female = yes
+        birth_date = 1336.1.1
+        death_date = 1370.1.1
+        father = mol_bogdan_i_musat
+        spouse = mol_costea_noble
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_petru_ii_musat = {
+        first_name = { name = name_peter }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1350.1.1
+        death_date = 1391.12.1
+        father = mol_costea_noble
+        mother = mol_margareta_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_roman_i_musat = {
+        first_name = { name = name_roman }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1352.1.1
+        death_date = 1394.3.1
+        father = mol_costea_noble
+        mother = mol_margareta_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_stefan_i_musat = {
+        first_name = { name = name_stephen }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1368.1.1
+        death_date = 1399.1.1
+        father = mol_roman_i_musat
+        mother = mol_anatasia_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_iuga_musat = {
+        first_name = { name = Iuga }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1369.1.1
+        death_date = 1400.7.19
+        father = mol_roman_i_musat
+        mother = mol_anatasia_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_alexandru_i_musat = {
+        first_name = { name = name_alexander }
+        nickname = { name = nick_the_good }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1375.1.1
+        death_date = 1432.1.1
+        father = mol_roman_i_musat
+        mother = mol_anatasia_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_ilias_i_musat = {
+        first_name = { name = Iliaș }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1409.7.20
+        father = mol_alexandru_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_roman_ii_musat = {
+        first_name = { name = name_roman }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1426.1.1
+        father = mol_ilias_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_alexandru_ii_musat = {
+        first_name = { name = name_roman }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1429.1.1
+        father = mol_ilias_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_anastasia_musat_daughter = {
+        first_name = { name = name_anastasia }
+        culture = moldovan
+        religion = orthodox
+        female = yes
+        birth_date = 1429.1.1
+        father = mol_ilias_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
     mol_stefan_ii_musat = {
         first_name = { name = name_stephen }
         culture = moldovan
         religion = catholic
         birth_date = 1410.1.1
         birth = suceava
+        father = mol_alexandru_i_musat
         dynasty = musat_dynasty
         tag = WAL        
+    }
+
+    mol_petru_iii_musat = {
+        first_name = { name = name_peter }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1422.1.1
+        father = mol_alexandru_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_petru_aron_musat = {
+        first_name = { name = name_peter.name_aaron }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1419.1.1
+        father = mol_alexandru_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1419.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    mol_bogdan_ii_musat = {
+        first_name = { name = name_bogdan }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1409.1.1
+        father = mol_alexandru_i_musat
+        dynasty = musat_dynasty
+        tag = MOL
+    }
+
+    mol_stefan_iii_musat = {
+        first_name = { name = name_stephen }
+        culture = moldovan
+        religion = orthodox
+        birth_date = 1433.1.9
+        father = mol_bogdan_ii_musat
+        dynasty = musat_dynasty
+        tag = MOL
     }
 
     ### Poland
