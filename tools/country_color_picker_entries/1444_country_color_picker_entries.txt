@@ -1,0 +1,30 @@
+# Data-only list for country color picker profiles.
+#
+# Format:
+# TAG = {
+# 	choice1 = <named_color_or_rgb>
+# 	choice1_label = "Button text for choice 1"   # optional (aliases: choice1_text / choice1_name)
+# 	choice2 = <named_color_or_rgb>
+# 	choice2_label = "Button text for choice 2"   # optional
+# 	choice3 = <named_color_or_rgb>
+# 	choice3_label = "Button text for choice 3"   # optional
+# 	choice4 = <named_color_or_rgb>
+# 	choice4_label = "Button text for choice 4"   # optional
+# 	keep_default_label = "Button text for keep default" # optional
+# }
+# Where TAG is the 3-character country tag, e.g. TUR.
+#
+# Rebuild generated dispatcher + events after editing:
+#   ./tools/generate_country_color_picker_effects.py
+
+# TUR = {
+# 	choice1 = hsv360 { 0 70 70 }
+# 	choice1_label = "Ottoman Red"
+# 	keep_default_label = "Keep EU4 Green"
+# }
+
+# CHI = {
+# 	choice1 = rgb { 235 166 3 }
+# 	choice1_label = "Ming Yellow"
+# 	keep_default_label = "Keep EU4 Brown"
+# }
