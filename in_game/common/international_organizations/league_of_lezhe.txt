@@ -1,0 +1,34 @@
+league_of_lezhe = {
+	has_target = no
+	unique = yes
+	show_on_diplomatic_map = yes
+	has_leader_country = yes
+	leader_type = country
+	leader_change_trigger_type = none
+	leader_change_method = none
+	create_visible_trigger = {
+		always = no
+	}
+	invite_visible_trigger = {
+		always = no
+	}
+	can_declare_war = {
+		always = yes
+	}
+	laws = {
+		mutual_defense_law = assured_defense_policy
+		mutual_offense_law = possible_offense_policy
+	}
+	can_join_trigger = {
+		always = no
+	}
+	can_leave_trigger = {
+		always = no
+	}
+	auto_leave_trigger = {
+		always = no
+	}
+	auto_disband_trigger = {
+		total_members < 2
+	}
+}
