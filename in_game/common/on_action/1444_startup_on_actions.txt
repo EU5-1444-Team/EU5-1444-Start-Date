@@ -1,21 +1,12 @@
 on_game_start = {
 	on_actions = {
 		1444_startup_country_events
-		1444_staging_events
 	}
 }
 
 1444_startup_country_events = {
 	effect = {
 		1444_queue_country_color_picker_events = yes
-	}
-}
-
-1444_staging_events = {
-	events = {
-		delay = {
-			days = 1
-		}
-		trigger_event_non_silently = 1444_flavor_tur.1
+		1444_queue_country_staging_events = yes
 	}
 }
