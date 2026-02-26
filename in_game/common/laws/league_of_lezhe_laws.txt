@@ -1,3 +1,123 @@
+league_of_lezhe_defense_law = {
+	law_category = military
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:league_of_lezhe
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	league_of_lezhe_defense_policy = {
+		allow = {
+			NOT = {
+				tag = VEN
+			}
+		}
+		# Albanian League members defend each other.
+		join_defensive_wars_always = {
+			scope:actor ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer
+						international_organization = root
+					}
+				}
+			}
+			scope:recipient ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer
+						international_organization = root
+					}
+				}
+			}
+		}
+		# If Venice remains in the League as Backer, it can be called only against the Ottomans.
+		join_defensive_wars_auto_call = {
+			scope:actor ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer
+						international_organization = root
+					}
+				}
+			}
+			scope:recipient ?= {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer
+					international_organization = root
+				}
+			}
+			scope:target ?= {
+				this = c:TUR
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+}
+
+league_of_lezhe_offense_law = {
+	law_category = military
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:league_of_lezhe
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	league_of_lezhe_offensive_coordination_policy = {
+		allow = {
+			NOT = {
+				tag = VEN
+			}
+		}
+		# Offensive coordination is available only among League members, not the League Backer.
+		join_offensive_wars_can_call = {
+			scope:actor ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer
+						international_organization = root
+					}
+				}
+			}
+			scope:recipient ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer
+						international_organization = root
+					}
+				}
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+	league_of_lezhe_no_offense_policy = {
+		allow = {
+			NOT = {
+				tag = VEN
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+}
+
 league_of_lezhe_unification_law = {
 	law_category = centralization
 	type = international_organization
@@ -5,14 +125,25 @@ league_of_lezhe_unification_law = {
 		international_organization_type = international_organization_type:league_of_lezhe
 	}
 	allow = {
-		international_organization = {
-			total_members >= 2
+		any_international_organization_member = {
+			count >= 2
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer
+					international_organization = root
+				}
+			}
 		}
 	}
 	custom_tags = {
 		forbids_no_policy
 	}
 	preserve_league_of_lezhe_policy = {
+		allow = {
+			NOT = {
+				tag = VEN
+			}
+		}
 		wants_propose_policy = {
 			subtract = {
 				value = 1000
@@ -20,6 +151,11 @@ league_of_lezhe_unification_law = {
 		}
 	}
 	unify_albania_policy = {
+		allow = {
+			NOT = {
+				tag = VEN
+			}
+		}
 		wants_propose_policy = {
 			add = {
 				value = 500
@@ -29,10 +165,6 @@ league_of_lezhe_unification_law = {
 			add = {
 				value = prev_opinion_of_this
 				multiply = 0.3
-			}
-			add = {
-				value = root.relative_strength(scope:recipient)
-				multiply = 50
 			}
 		}
 		on_fully_activated = {
@@ -53,6 +185,12 @@ league_of_lezhe_unification_law = {
 					NOT = {
 						this = root.leader_country
 					}
+					NOT = {
+						has_special_status_in_international_organization = {
+							type = special_status:league_backer
+							international_organization = root
+						}
+					}
 				}
 				root.leader_country = {
 					annex_country = {
@@ -61,7 +199,9 @@ league_of_lezhe_unification_law = {
 					}
 				}
 			}
-			disband_international_organization = yes
+			destroy_international_organization = {
+				target = root
+			}
 		}
 		years = 25
 	}
