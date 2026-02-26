@@ -1,0 +1,13 @@
+# root = country, scope:actor = country who declares the war, scope:recipient = country who gets declared on, scope:war = war
+on_war_declared = {
+	effect = {
+		if = {
+			limit = {
+				scope:war ?= {
+					casus_belli ?= casus_belli:cb_shan_confederation_raid
+				}
+			}
+			trigger_event_non_silently = 1444_shan_confederation.1
+		}
+	}
+}

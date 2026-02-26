@@ -1,0 +1,133 @@
+league_of_lezhe = {
+	has_target = no
+	unique = yes
+	show_on_diplomatic_map = yes
+	has_leader_country = yes
+	leader_title_key = "LEAGUE_OF_LEZHE_LEADER"
+	leader_type = country
+	leader_change_trigger_type = rulerchange
+	leader_change_method = score
+	leader_score = {
+		value = great_power_score
+	}
+	disband_if_no_leader = no
+	create_visible_trigger = {
+		always = no
+	}
+	invite_visible_trigger = {
+		always = no
+	}
+	can_lead_trigger = {
+		NOT = {
+			has_special_status_in_international_organization = {
+				type = special_status:league_backer
+				international_organization = root
+			}
+		}
+	}
+	can_declare_war = {
+		always = yes
+	}
+	can_initiate_policy_votes = {
+		is_member_of_international_organization = scope:recipient
+		is_leader_of_international_organization = scope:recipient
+	}
+	land_ownership_rule = league_of_lezhe_land_ownership
+	laws = {
+		league_of_lezhe_defense_law = league_of_lezhe_defense_policy
+		league_of_lezhe_offense_law = league_of_lezhe_no_offense_policy
+		league_of_lezhe_unification_law = preserve_league_of_lezhe_policy
+	}
+	special_statuses_implemented = {
+		league_captain
+		league_backer
+	}
+	can_join_trigger = {
+		always = no
+	}
+	can_leave_trigger = {
+		always = yes
+	}
+	auto_leave_trigger = {
+		tag = VEN
+		OR = {
+			scope:recipient.leader_country ?= {
+				OR = {
+					root = {
+						is_at_war_with = prev
+					}
+					opinion = {
+						target = root
+						value <= -100
+					}
+					root = {
+						opinion = {
+							target = prev
+							value <= -100
+						}
+					}
+				}
+			}
+			scope:recipient = {
+				any_international_organization_member = {
+					count >= 2
+					NOT = {
+						this = root
+					}
+					OR = {
+						opinion = {
+							target = root
+							value <= -100
+						}
+						root = {
+							opinion = {
+								target = this
+								value <= -100
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	auto_disband_trigger = {
+		any_international_organization_member = {
+			count < 2
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer
+					international_organization = root
+				}
+			}
+		}
+	}
+	on_joined = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						tag = VEN
+					}
+				}
+				every_owned_location = {
+					limit = {
+						area = area:albania_area
+					}
+					scope:recipient = {
+						add_location_to_international_organization = prev
+					}
+				}
+			}
+		}
+	}
+	on_left = {
+		every_owned_location = {
+			limit = {
+				is_owned_by_international_organization = scope:recipient
+			}
+			scope:recipient = {
+				remove_location_from_international_organization = prev
+			}
+		}
+	}
+}
