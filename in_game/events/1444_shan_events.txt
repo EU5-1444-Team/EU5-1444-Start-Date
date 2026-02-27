@@ -1,0 +1,131 @@
+namespace = 1444_shan_confederation
+# Fires from on_war_declared when Ava is attacked with the Shan confederation raid CB.
+1444_shan_confederation.1 = {
+	type = country_event
+	title = 1444_shan_confederation.1.title
+	desc = 1444_shan_confederation.1.desc
+	immediate = {
+		if = {
+			limit = {
+				country_exists = c:TNG
+			}
+			c:TNG = {
+				capital = {
+					save_scope_as = shan_flee_target_tng
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = c:BPR
+			}
+			c:BPR = {
+				capital = {
+					save_scope_as = shan_flee_target_bpr
+				}
+			}
+		}
+		# Collect refugee origin locations across Ava.
+		every_owned_location = {
+			limit = {
+				any_pop = {
+					pop_type = pop_type:peasants
+					culture = culture:burmese_culture
+					pop_size > 0.05
+				}
+			}
+			add_to_list = shan_flee_origin_locations
+		}
+		if = {
+			limit = {
+				list_size = {
+					name = shan_flee_origin_locations
+					value > 0
+				}
+				exists = scope:shan_flee_target_tng
+			}
+			ordered_in_list = {
+				list = shan_flee_origin_locations
+				order_by = population
+				max = 5
+				check_range_bounds = no
+				random_pop = {
+					limit = {
+						pop_type = pop_type:peasants
+						culture = culture:burmese_culture
+						pop_size > 0.05
+					}
+					transfer_pop = {
+						target = scope:shan_flee_target_tng
+						operator = divide
+						value = 40
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				list_size = {
+					name = shan_flee_origin_locations
+					value > 0
+				}
+				exists = scope:shan_flee_target_bpr
+			}
+			ordered_in_list = {
+				list = shan_flee_origin_locations
+				order_by = population
+				max = 5
+				check_range_bounds = no
+				random_pop = {
+					limit = {
+						pop_type = pop_type:peasants
+						culture = culture:burmese_culture
+						pop_size > 0.05
+					}
+					transfer_pop = {
+						target = scope:shan_flee_target_bpr
+						operator = divide
+						value = 40
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = 1444_shan_confederation.1.a
+		if = {
+			limit = {
+				country_exists = c:TNG
+			}
+			c:TNG = {
+				trigger_event_non_silently = 1444_shan_confederation.2
+			}
+		}
+		if = {
+			limit = {
+				country_exists = c:BPR
+			}
+			c:BPR = {
+				trigger_event_non_silently = 1444_shan_confederation.3
+			}
+		}
+	}
+}
+
+1444_shan_confederation.2 = {
+	type = country_event
+	title = 1444_shan_confederation.2.title
+	desc = shan_confederation_refugees_desc
+	option = {
+		name = shan_confederation_refugees_a
+	}
+}
+
+1444_shan_confederation.3 = {
+	type = country_event
+	title = 1444_shan_confederation.3.title
+	desc = shan_confederation_refugees_desc
+	option = {
+		name = shan_confederation_refugees_a
+	}
+}

@@ -34707,7 +34707,7 @@ countries = {
         LNG = {
             #Liang
 
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 kunming lufeng yiliang kunyang anning chenggong yimen songming fumin
                 zhennan dingyuan_chuxiong weichu nanan
                 heyang jiangchuan lunan xinxing
@@ -34738,10 +34738,14 @@ countries = {
                 taihe_dali menghua yunlong binchuan yangbei wujing yunnan langqiong
                 midu dingbian_shunning
                 yongping_yongchang
+            }
 
-                # Liang
-                kunming lufeng yiliang kunyang anning chenggong yimen songming fumin
+            our_cores_conquered_by_others = {
+                # Chuxiong
                 zhennan dingyuan_chuxiong weichu nanan
+
+                # Yunnan
+                kunming lufeng yiliang kunyang anning chenggong yimen songming fumin
                 heyang jiangchuan lunan xinxing
             }
 
@@ -34754,14 +34758,43 @@ countries = {
             capital = taihe_dali
             court_language = southern_mandarin_dialect
             government = {
-                ruler_term = { character = cld_duan_guang start_date = 1333.1.1 regnal_number = 1 }
-
-                ruler = cld_duan_guang
+                ruler = random
             }
             tolerated_cultures = {
                 yi_culture
             }
             country_rank = rank_kingdom
+        }
+
+        CXG = {
+            # Chuxiong
+            own_control_core = {
+                zhennan dingyuan_chuxiong weichu nanan
+            }
+
+            include = "south_east_asia_monarchy_no_mandala_no_coast"
+
+            capital = dingyuan_chuxiong
+
+            government = {
+                ruler = random
+            }
+        }
+
+        CYN = {
+            own_control_core = {
+                # Yunnan
+                kunming lufeng yiliang kunyang anning chenggong yimen songming fumin
+                heyang jiangchuan lunan xinxing
+            }
+
+            include = "south_east_asia_monarchy_no_mandala_no_coast"
+
+            capital = kunming
+
+            government = {
+                ruler = random
+            }
         }
 
         CHH = {
@@ -57321,10 +57354,10 @@ countries = {
                 champasak muang_mang ban_phone tonle_kong idkabue samxay
 
                 # Lan Na
-                muang_luang_phukha vieng_phouka chom_khao_maneerat mong_hpayak mong_hsat chiang_saen chiang_khong
+                muang_luang_phukha vieng_phouka chom_khao_maneerat chiang_saen chiang_khong
 
                 # Chiang Hung
-                mengla mengban_jihong yot_ou muang_sing mong_yawng
+                mengla mengban_jihong yot_ou muang_sing
             }
 
             include = "south_east_asia_monarchy_no_coast"
@@ -57409,7 +57442,7 @@ countries = {
                 mongyang monhyin katha
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             capital = monhyin
             government = {
@@ -57427,7 +57460,7 @@ countries = {
                 hkamti maingkwan hukawng lahe minsin tarung mongkawng myitkyina
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             accepted_cultures = {
                 kado_culture
@@ -57449,7 +57482,7 @@ countries = {
                 putao suamprabon injangyang
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             tolerated_cultures = {
                 jingpo_culture
@@ -57467,7 +57500,7 @@ countries = {
                 phakant zalon_taung htamanthi
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             accepted_cultures = {
                 kado_culture
@@ -57490,7 +57523,7 @@ countries = {
                 thaungdut tamu
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             accepted_cultures = {
                 zo_culture
@@ -57509,7 +57542,7 @@ countries = {
                 kehsi lai_hka lashio mong_yai mongkung mongnawng monghsu muse namhsan
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
             government = {
                 ruler = hse_sao_san_noi
             }
@@ -57535,7 +57568,7 @@ countries = {
                 palaung_culture
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             capital = hsipaw
             government = {
@@ -57550,7 +57583,7 @@ countries = {
                 kengkham kengtawng mawkmai mongtung
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             tolerated_cultures = {
                 karen_culture
@@ -57568,7 +57601,7 @@ countries = {
                 taunggyi yawnghwe mongpai siri_do
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             accepted_cultures = {
                 karen_culture
@@ -57588,7 +57621,7 @@ countries = {
                 namhkan
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             tolerated_cultures = {
                 palaung_culture
@@ -57606,7 +57639,7 @@ countries = {
                 kale
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             tolerated_cultures = {
                 zo_culture
@@ -57625,7 +57658,7 @@ countries = {
                 htigyaing
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             tolerated_cultures = {
                 kado_culture
@@ -57644,7 +57677,7 @@ countries = {
                 shwegu
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
 
             tolerated_cultures = {
                 palaung_culture
@@ -57661,9 +57694,12 @@ countries = {
             own_control_core = {
                 kengtung
                 mongping
+
+                # Possibly Lan Xang lands
+                mong_hsat mong_hpayak mong_yawng
             }
 
-            include = "south_east_asia_monarchy_no_coast"
+            include = "shan_state_template"
             government = {
                 ruler = ktg_sao_lak_hpa
             }

@@ -20,7 +20,8 @@ shan_unification_law = {
 				value = 20
 			}
 		}
-		allow = { }
+		allow = {
+		}
 		years = 10
 		on_fully_activated = {
 			custom_tooltip = shan_will_unify_confederation_tt
@@ -30,7 +31,6 @@ shan_unification_law = {
 				check_range_bounds = no
 				save_scope_as = shan_unifier
 			}
-
 			scope:shan_unifier = {
 				form_country = formable_country:SHA_f
 				if = {
@@ -42,7 +42,6 @@ shan_unification_law = {
 					}
 				}
 			}
-
 			every_international_organization_member = {
 				limit = {
 					NOT = {
@@ -65,25 +64,24 @@ shan_leadership_law = {
 	law_category = election
 	requires_vote = yes
 	potential = {
-		always = no
+		international_organization_type = international_organization_type:shan_states_confederation
+		total_members > 1
 	}
 	locked = {
 	}
-	shan_frequent_leadership_votes_policy = {
-		leader_change_method = vote
-		leader_change_trigger_type = timed
-		months_between_leader_changes = 6
-		leadership_election_resolution = resolution:international_organization_election
-	}
-	shan_extended_leadership_terms_policy = {
-		leader_change_method = vote
-		leader_change_trigger_type = timed
-		months_between_leader_changes = 36
-		leadership_election_resolution = resolution:international_organization_election
-		leader_modifier = {
-			diplomatic_reputation = 1
+		shan_frequent_leadership_votes_policy = {
+			leader_change_method = vote
+			leader_change_trigger_type = rulerchange
+			leadership_election_resolution = international_organization_election
 		}
-	}
+		shan_extended_leadership_terms_policy = {
+			leader_change_method = vote
+			leader_change_trigger_type = rulerchange
+			leadership_election_resolution = international_organization_election
+			leader_modifier = {
+				diplomatic_reputation = 1
+			}
+		}
 }
 
 shan_membership_law = {

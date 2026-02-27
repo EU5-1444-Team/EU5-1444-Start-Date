@@ -1,13 +1,24 @@
-# root = country, scope:actor = country who declares the war, scope:recipient = country who gets declared on, scope:war = war
 on_war_declared = {
+	on_actions = {
+		1444_shan_on_war_declared
+	}
+}
+
+# root = country, scope:actor = country who declares the war, scope:recipient = country who gets declared on, scope:war = war
+1444_shan_on_war_declared = {
 	effect = {
 		if = {
 			limit = {
-				scope:war ?= {
+				scope:war = {
+					is_no_cb_war = no
 					casus_belli ?= casus_belli:cb_shan_confederation_raid
 				}
+				country_exists = c:AVV
+				scope:recipient = c:AVV
 			}
-			trigger_event_non_silently = 1444_shan_confederation.1
+			scope:recipient = {
+				trigger_event_non_silently = 1444_shan_confederation.1
+			}
 		}
 	}
 }
