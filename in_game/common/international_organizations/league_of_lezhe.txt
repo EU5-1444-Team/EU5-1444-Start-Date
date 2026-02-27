@@ -4,7 +4,14 @@ league_of_lezhe = {
 	show_on_diplomatic_map = yes
 	has_leader_country = yes
 	leader_title_key = "LEAGUE_OF_LEZHE_LEADER"
-	leader_type = country
+	leader_type = character
+	leader = {
+		leader_country ?= {
+			ruler = {
+				add_to_list = leaders
+			}
+		}
+	}
 	leader_change_trigger_type = rulerchange
 	leader_change_method = score
 	leader_score = {
