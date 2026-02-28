@@ -4767,10 +4767,10 @@ countries = {
             include = "catholic_republic"
         }
 
-        ENG = { #DONE CHARACTERS
+        ENG = {
             #ENGLAND
             own_control_core = {
-                appleby hythe alnwick barnstaple bedford dunstable birmingham boston bosworth shoreham lewes bristol buckingham bury glossop cambridge canterbury carlisle rochester cheltenham chelmsford chesterfield chichester chippenham cockermouth colchester kettering coventry cirencester derby dorchester dover exeter gloucester grimsby guildford reigate harrow hastings hedingham hertford hexham hull huntingdon ipswich kendal grantham penrith kidderminster leeds leicester lincoln london loughborough lowestoft lynn daventry newark newcastle northampton norwich nottingham oxford ely plymouth bideford bampton okehampton poole portsmouth amesbury lymington retford rutland salisbury southampton prittlewell kingston stafford stoke stratford trowbridge taunton wells barking weymouth shaftesbury wight winchester windsor worcester yarmouth york scarborough tamworth bedale richmond whitby bridlington selby pontefract skipton wakefield louth thetford fakenham reading tonbridge minehead portishead bath henley royston aylesbury wycombe lavenham abingdon st_albans banbury walden spalding woking morpeth billingham norton ripon doncaster egremont basingstoke
+                appleby hythe alnwick barnstaple bedford dunstable birmingham boston bosworth shoreham lewes bristol buckingham bury glossop cambridge canterbury carlisle rochester cheltenham chelmsford chesterfield chichester chippenham cockermouth colchester kettering coventry cirencester derby dorchester dover exeter gloucester grimsby guildford reigate harrow hastings hedingham hertford hexham hull huntingdon ipswich kendal grantham penrith kidderminster leeds leicester lincoln london loughborough lowestoft lynn daventry newark newcastle northampton norwich nottingham oxford plymouth bideford bampton okehampton poole portsmouth amesbury lymington retford rutland salisbury southampton prittlewell kingston stafford stoke stratford trowbridge taunton wells barking weymouth shaftesbury wight winchester windsor worcester yarmouth york scarborough tamworth bedale richmond whitby bridlington selby pontefract skipton wakefield louth thetford fakenham reading tonbridge minehead portishead bath henley royston aylesbury wycombe lavenham abingdon st_albans banbury walden spalding woking morpeth billingham norton ripon doncaster egremont basingstoke
 
                 # Earldom of Chester
                 #chester macclesfield nantwich
@@ -5186,6 +5186,27 @@ countries = {
             }
 
             capital = chester
+        }
+
+        ELZ = {
+            #Bisphoric of Ely
+            own_control_core = {
+                ely
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_bishopric"
+
+            government = {
+                ruler = eng_thomas_bourchier
+
+                reforms = {
+                    prince_bishopric_reform
+                }
+            }
+            country_rank = rank_county
+            capital = ely
         }
 
         WLS = {
@@ -13703,7 +13724,7 @@ countries = {
 
         ACH = {
             #https://en.wikipedia.org/wiki/Principality_of_Achaea
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 damala ermioni kalamata kyparissia
                 andritsaina pontikokastro andravida corinth
                 chalandritsa patras vostitsa kalavryta xylokastro
@@ -13721,7 +13742,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = mre_thomas_palaiologos
+                ruler = random
 
                 ruler_term = { character = ach_guillaume_i_champlitte start_date = 1205.1.1 end_date = 1209.1.1 regnal_number = 1 }
 
@@ -13754,8 +13775,6 @@ countries = {
                 ruler_term = { character = ach_catherine_valois start_date = 1333.1.1 end_date = 1336.4.5 regnal_number = 1 }
                 ruler_term = { character = ach_robert_taranto start_date = 1333.1.1 end_date = 1364.9.10 regnal_number = 1 } # As Co-Ruler with his mother
 
-                ruler_term = { character = mre_thomas_palaiologos start_date = 1428.1.1 regnal_number = 1 } # As Co-Ruler with his mother
-
                 regnal_numbers = {
                     name_william = 2
                     name_godfrey = 2
@@ -13781,6 +13800,42 @@ countries = {
             capital = andravida
             dynasty = palaiologos_dynasty
             #dynasty = anjou_taranto_dynasty
+        }
+
+        MRE = {
+            own_control_core = {
+                damala ermioni kalamata kyparissia
+                andritsaina pontikokastro andravida corinth
+                chalandritsa patras vostitsa kalavryta xylokastro
+                tripolitsa veligosti karytaina
+                monemvasia mystras oitylo leuktron astros
+            }
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "eastern_european_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = mre_thomas_palaiologos
+
+                ruler_term = { character = mre_thomas_palaiologos start_date = 1428.1.1 regnal_number = 1 }
+
+                regnal_numbers = {
+                }
+            }
+
+            tolerated_cultures = {
+                greek_culture
+            }
+
+            country_rank = rank_duchy
+            capital = mystras
+            dynasty = palaiologos_dynasty
         }
 
         CEP = {
@@ -21008,7 +21063,6 @@ countries = {
                 dabaca baita dej sic #doboka_province
                 alba_iulia aiud cetatea_balta deva felvint hateg hunedoara #feher_province
                 turda baia_de_aries cluj huedin reghin #torda_province
-                fagaras #kiralyfold_province
                 gurghiu #szekelyfold_province
             }
             starting_technology_level = 3
@@ -21074,6 +21128,23 @@ countries = {
                 jasz_culture
             }
             capital = felegyhaza
+        }
+
+        FAG = {
+            #Fogaras/Făgăraș
+            own_control_core = {
+                fagaras     
+            }
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_monarchy_no_coast"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = wal_vlad_ii_draculesti
+            }
+            capital = fagaras
         }
 
         SVR = {
@@ -36648,6 +36719,10 @@ countries = {
                 nicosia_cyp kyrenia larnaca limassol morphou paphos
             }
 
+            own_control_integrated = {
+                corycus
+            }
+
             our_cores_conquered_by_others = {
                 famagusta
             }
@@ -36795,6 +36870,7 @@ countries = {
                 malatya
                 divrigi arapgir egin arguvan
                 darende dasmenda deliktash gurun
+                comana_cil
             }
             own_control_integrated = {
                 marash
@@ -36833,9 +36909,8 @@ countries = {
                 adana
                 anavarza
                 sis caxud hargan
-                tarsus
-                ayas
-                comana_cil
+                tarsus candir_cil molevon
+                ayas 
             }
             
             our_cores_conquered_by_others = {
@@ -37184,15 +37259,19 @@ countries = {
                 nevsehir sariyahsi
                 konya celtik eregli_kar eskil hatunsaray karapinar ladik larende pirloganda
                 bekarlar bor_tur ermenek
-                beysehir aksehir bolvadin sarkikaraagac seydisehir
+                beysehir aksehir sarkikaraagac seydisehir
                 ilgin turgut suluklu kulu_turkey obruk altinekin cumra
-                urgup molevon
+                urgup
             }
 
             own_control_integrated = {
                 silifke anamur mut nigde
-                candir_cil corycus
                 develi yahyali
+            }
+
+            our_cores_conquered_by_others = {
+                bolvadin yalvac
+                corycus
             }
 
             include = "expl_eastern_europe"
@@ -69905,7 +69984,8 @@ countries = {
 
             capital = somnath
         }
-   KHD = { #Kandesh
+
+        KHD = { #Kandesh
             own_control_core = {
                 thalner sultanpur nandurbar laling dharangaon chandor
                 pachora burhanpur asirgarh
@@ -69926,6 +70006,7 @@ countries = {
             religious_school = hanafi_school
             capital = thalner
         }
+
         MLW = { #Malwa
             own_control_core = {
                 mandu bijagarh alirajpur mandleshwar khandwa handia hoshangabad kherla
@@ -69951,6 +70032,7 @@ countries = {
             religious_school = hanafi_school
             capital = mandu
         }
+
         KAP = { #Kalpi
             own_control_core = {
                 kalpi konch irij jhansi orchha kundar tehri lalitpur rath
@@ -69972,6 +70054,7 @@ countries = {
             religious_school = hanafi_school
             capital = kalpi
         }
+
         JNP = { #Jaunpur
             own_control_core = {
                 jaunpur hajipur rohtas
@@ -70312,6 +70395,7 @@ countries = {
 		
 		    capital = tanahun
 		}
+
         BKH = {
             # Badakhshan
             own_control_core = {
@@ -70330,6 +70414,7 @@ countries = {
             }
             religious_school = hanafi_school
         }
+
         TIW = { #Tiwi
 
             own_control_core = {
@@ -70349,6 +70434,7 @@ countries = {
             }
             capital = tiwi
         }
+
         EOA = { #Eora
             own_control_core = {
                 eora tharawal dharug
@@ -70367,6 +70453,7 @@ countries = {
             }
             capital = eora
         }
+
         WUW = { #Wurundjeri 
             own_control_core = {
                 wathaurong woi_wurrung boon_wurrung marin_balluk geelong
@@ -70389,6 +70476,7 @@ countries = {
                 wathaurong_culture
             }
         }
+
         WAT = { #Waikato
             own_control_core = {
                 ahurei manukau hauraki tauranga
@@ -70409,6 +70497,7 @@ countries = {
             }
             capital = ahurei
         }
+
         TIA = { #Tahiti
             own_control_core = {
                 tahiti havaii manuae_atoll rangiroa_atoll nganaa_nui_atoll
@@ -70431,6 +70520,7 @@ countries = {
             }
             capital = tahiti
         }
+
         PAI = { #Paici
             own_control_core = {
                 paici cemuhi ajie yuanga nyelayu
@@ -70453,6 +70543,7 @@ countries = {
             }
             capital = paici
         }
+
         NIV = { #Ni-Vanuatu
             own_control_core = {
                 tanna aneityum erromango malakula ambae
@@ -70475,6 +70566,7 @@ countries = {
             }
             capital = tanna
         }
+
         NII = {#Naasuiu
             own_control_core = {
                 naasioi bannoni tinputz vaghua mono
@@ -70497,6 +70589,7 @@ countries = {
             }
             capital = naasioi
         }
+
         WAM = { #Waima
             own_control_core = {
                 waima koiali toaripi
@@ -70520,9 +70613,5 @@ countries = {
             }
             capital = waima
         }
-    }
-}
-    }
-}
     }
 }
