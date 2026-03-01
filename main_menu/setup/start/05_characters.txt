@@ -117974,7 +117974,7 @@ character_db={
     }
 
     zet_djuradj_djurasevic = {
-        first_name = { name = Djuradj }
+        first_name = { name = name_george }
         culture = serbian
         religion = orthodox
         birth_date = 1370.1.1
@@ -118048,12 +118048,69 @@ character_db={
         tag = BOS
     }
 
+    hum_stephen_vukcic_kosaca = {
+        # Stjepan Vukčić Kosača
+        first_name = { name = name_stephen }
+        culture = bosnian
+        religion = bosnian_church
+        birth_date = 1404.1.1 # Estimated
+        dynasty = kosaca_dynasty
+        tag = HUM
+    }
+
+    hum_jelena_balsic = {
+        # Jelena Balšić
+        first_name = { name = Jelena }
+        culture = bosnian
+        religion = orthodox
+        birth_date = 1411.1.1 # Estimated
+        female = yes
+        spouse = hum_stephen_vukcic_kosaca
+        tag = HUM
+    }
+
+    hum_catherine_of_bosnia = {
+        # Catherine of Bosnia
+        first_name = { name = name_catherine }
+        culture = bosnian
+        religion = bosnian_church
+        birth_date = 1424.1.1 # Estimated
+        dynasty = kosaca_dynasty
+        father = hum_stephen_vukcic_kosaca
+        mother = hum_jelena_balsic
+        tag = HUM
+    }
+
+    hum_vladislav_hercegovic = {
+        # Vladislav Hercegović
+        first_name = { name = name_vladislav }
+        culture = bosnian
+        religion = bosnian_church
+        birth_date = 1426.1.1 # Estimated
+        father = hum_stephen_vukcic_kosaca
+        dynasty = kosaca_dynasty
+        mother = hum_jelena_balsic
+        tag = HUM
+    }
+
+    hum_vlatko_hercegovic = {
+        # Vlatko Hercegović
+        first_name = { name = name_vladislav }
+        culture = bosnian
+        religion = bosnian_church
+        birth_date = 1428.1.1 # Estimated
+        father = hum_stephen_vukcic_kosaca
+        dynasty = kosaca_dynasty
+        mother = hum_jelena_balsic
+        tag = HUM
+    }
+
     ### Epirus & 
 
     epi_carlo_ii_tocco = {
         first_name = { name = name_charles }
         culture = neapolitan
-        religion = catholic
+        religion = bosnian_church
         birth_date = 1400.1.1  # estimated
         dynasty = tocco_dynasty
         tag = EPI

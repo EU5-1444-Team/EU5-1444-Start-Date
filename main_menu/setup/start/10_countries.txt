@@ -14657,6 +14657,10 @@ countries = {
                 vrhbosna srebrenica doboj soli
                 jajce zenica kljuc srebrenik
                 glaz teocak olovo borac
+                trebinje gacko mostar nevesinje drijeva metkovic
+                ustikolina konjic makarska
+                pljevlja soko_grad onogost
+                livno glamoc
             }
 
             our_cores_conquered_by_others = {
@@ -14692,6 +14696,27 @@ countries = {
 
             capital = zenica
             dynasty = kotromanic_dynasty
+        }
+
+        HUM = {
+            # Hum
+            own_control_core = {
+                trebinje gacko mostar nevesinje drijeva metkovic
+                ustikolina konjic makarska
+                pljevlja soko_grad onogost
+                livno glamoc
+            }
+
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "catholic_monarchy_not_present"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = hum_stephen_vukcic_kosaca
+            }
+            country_rank = rank_duchy
+            capital = trebinje
         }
 
         RAG = {
@@ -21803,12 +21828,9 @@ countries = {
 
         TRO = {
             #Travunija
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 trebinje gacko mostar nevesinje drijeva metkovic
                 ustikolina konjic makarska
-            }
-
-            own_control_integrated = {
                 pljevlja soko_grad onogost
                 livno glamoc
             }
