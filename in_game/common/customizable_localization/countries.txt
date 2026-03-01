@@ -123,24 +123,68 @@ GBR_ADJ = { parent = GBR suffix = "_ADJ" }
 GLH = {
     type = country
     text = {
+		# Cumania
         localization_key = GLH_cuman
         trigger = {
 			culture = culture:cuman_culture
         }
     }
+	text = {
+		# Kipchak Khanate
+		localization_key = GLH_kipchak
+		trigger = {
+			OR = {
+				court_language = language:kipchak_language
+				culture = { 
+					has_culture_group = culture_group:turkic_group
+				}
+			}
+		}
+	}
+	text = {
+		# Ulug Ulus
+		localization_key = GLH_mongol
+		trigger = {
+			AND = {
+				government_type = government_type:steppe_horde
+				culture = culture:mongolian_culture
+			}
+		}
+	}
     text = {
+		# Golden Horde
         localization_key = GLH_horde
         trigger = {
             government_type = government_type:steppe_horde
         }
     }
-
     text = {
+		# Jochid
         localization_key = GLH
         fallback = yes
     }
 }
 GLH_ADJ = { parent = GLH suffix = "_ADJ" }
+
+ILK = {
+	type = country
+
+	text = {
+		# Hülegü Ulus
+		localization_key = ILK_mongol
+		trigger = {
+			AND = {
+				government_type = government_type:steppe_horde
+				culture = culture:mongolian_culture
+			}
+		}
+	}
+	
+	text = {
+		localization_key = ILK
+		fallback = yes
+	}
+}
 
 
 HEN = {
