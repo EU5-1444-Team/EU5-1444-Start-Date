@@ -107604,6 +107604,7 @@ character_db={
 
     eng_henry_v_lancaster = {
         first_name = { name = name_henry }
+        nickname = { name = "of Monmouth" }
         culture = english
         religion = catholic
         adm = 79 dip = 88 mil = 84
@@ -108164,7 +108165,7 @@ character_db={
 
     eng_richard_neville_kingmaker = { # Warwick the Kingmaker!
         first_name = { name = name_richard }
-        nickname = { name = Kingmaker }
+        nickname = { name = "the Kingmaker" }
         culture = english
         religion = catholic
         estate = nobles_estate
@@ -112020,6 +112021,7 @@ character_db={
         religion = catholic
         birth_date = 1436.1.1
         birth = mako
+        female = yes
         father = hun_laszlo_garai
         dynasty = garai_dynasty
         tag = HUN      
@@ -112030,10 +112032,56 @@ character_db={
         culture = hungarian
         religion = catholic
         birth_date = 1371.1.1
+        death_date = 1428.4.8
         birth = mako
         father = hun_miklos_i_garai
         dynasty = garai_dynasty
         tag = HUN      
+    }
+
+    hun_jadwiga_piast = {
+        first_name = { name = name_hedwig }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1392.1.1
+        death_date = 
+        birth = warsaw
+        female = yes
+        spouse = hun_janos_garai
+        father = maz_siemowit_iv_piast
+        mother = maz_alexandra_gediminid
+        dynasty = piast_dynasty
+        tag = HUN   
+    }
+
+    cro_hedvig_garai = {
+        first_name = { name = name_hedwig }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1411.1.1
+        death_date =  1437.1.1
+        birth = mako
+        female = yes
+        spouse = cro_petar_talovac
+        father = hun_janos_garai
+        mother = hun_jadwiga_piast
+        dynasty = garai_dynasty
+        tag = CRO      
+    }
+
+    bos_dorottya_garai = {
+        first_name = { name = Dorottya }
+        culture = hungarian
+        religion = catholic
+        birth_date = 1413.1.1
+        death_date =  1438.9.1
+        birth = mako
+        female = yes
+        spouse = bos_stefan_tvrtko_ii_kotromanic
+        father = hun_janos_garai
+        mother = hun_jadwiga_piast
+        dynasty = garai_dynasty
+        tag = BOS
     }
 
     # Courtiers - CRO
@@ -115146,6 +115194,8 @@ character_db={
         birth_date = 1391.2.18
         female = yes
         birth = nantes
+        father = bri_jean_iv_montfort_brittany
+		mother = bri_jeanne_evreux
         spouse = ale_jean_i_valois_alencon
         dynasty = montfort_brittany_dynasty
         tag = FRA        
