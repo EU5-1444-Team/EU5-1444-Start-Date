@@ -11,11 +11,8 @@ league_of_lezhe = {
 	leader_title_key = "LEAGUE_OF_LEZHE_LEADER"
 	leader_type = character
 	leader = {
-		every_international_organization_member = {
-			limit = {
-				can_lead_international_organization = root
-			}
-			ruler_or_heir_if_regent ?= {
+		leader_country ?= {
+			ruler ?= {
 				add_to_list = leaders
 			}
 		}
