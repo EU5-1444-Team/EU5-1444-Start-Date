@@ -1,0 +1,101 @@
+league_captain = {
+	max_countries = 1
+	priority = 20
+	leader = yes
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+
+	can_bestow_trigger = {
+		is_leader_of_international_organization = scope:recipient
+		NOT = {
+			has_special_status_in_international_organization = {
+				type = special_status:league_backer
+				international_organization = scope:recipient
+			}
+		}
+	}
+
+	auto_bestowal_trigger = {
+		is_leader_of_international_organization = scope:recipient
+		NOT = {
+			has_special_status_in_international_organization = {
+				type = special_status:league_backer
+				international_organization = scope:recipient
+			}
+		}
+	}
+
+	auto_rescind_trigger = {
+		NOT = {
+			is_leader_of_international_organization = scope:recipient
+		}
+	}
+
+	special_status_power = {
+		value = 100
+	}
+}
+
+league_backer = {
+	max_countries = 1
+	priority = 12
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER2_COLOR
+
+	can_bestow_trigger = {
+		tag = VEN
+		is_member_of_international_organization = scope:recipient
+	}
+
+	auto_bestowal_trigger = {
+		always = no
+	}
+
+	auto_rescind_trigger = {
+		always = no
+	}
+
+	special_status_power = {
+		value = 0
+	}
+}
+
+venetian_governorate = {
+	priority = 11
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER1_COLOR
+	can_be_invited = no
+
+	can_bestow_trigger = {
+		is_member_of_international_organization = scope:recipient
+		is_subject_type = governorate
+		overlord ?= {
+			this = c:VEN
+		}
+	}
+
+	auto_bestowal_trigger = {
+		is_member_of_international_organization = scope:recipient
+		is_subject_type = governorate
+		overlord ?= {
+			this = c:VEN
+		}
+	}
+
+	auto_rescind_trigger = {
+		OR = {
+			NOT = {
+				is_member_of_international_organization = scope:recipient
+			}
+			NOT = {
+				is_subject_type = governorate
+			}
+			NOT = {
+				overlord ?= {
+					this = c:VEN
+				}
+			}
+		}
+	}
+
+	special_status_power = {
+		value = 5
+	}
+}

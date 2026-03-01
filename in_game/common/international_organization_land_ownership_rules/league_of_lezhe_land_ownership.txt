@@ -1,0 +1,67 @@
+league_of_lezhe_land_ownership = {
+	# applied to locations that are owned by the international organization
+	modifier = {
+	}
+	can_add_trigger = {
+		always = yes
+	}
+	can_remove_trigger = {
+		always = yes
+	}
+	# root = location, recipient = international organization
+	can_add_location_trigger = {
+		is_land = yes
+		is_passable = yes
+		owner ?= {
+			is_member_of_international_organization = scope:recipient
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer
+					international_organization = scope:recipient
+				}
+			}
+		}
+		OR = {
+			area = area:albania_area
+			any_neighbor_location = {
+				is_owned_by_international_organization = scope:recipient
+			}
+		}
+	}
+	# root = location, recipient = international organization
+	can_remove_location_trigger = {
+		OR = {
+			owner ?= {
+				NOT = {
+					is_member_of_international_organization = scope:recipient
+				}
+			}
+			owner ?= {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer
+					international_organization = scope:recipient
+				}
+			}
+			AND = {
+				NOT = {
+					area = area:albania_area
+				}
+				owner ?= {
+					NOT = {
+						is_leader_of_international_organization = scope:recipient
+					}
+				}
+			}
+		}
+	}
+	# root = location, recipient = international organization
+	on_added = {
+	}
+	# root = location, recipient = international organization
+	on_removed = {
+	}
+	# root = location, recipient = international organization
+	ai_desire_to_add = {
+	}
+	allow_control_propagation = yes
+}

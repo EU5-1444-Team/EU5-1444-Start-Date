@@ -106,7 +106,7 @@ countries = {
                 ruler_term = { character = nor_haakon_vi_bjalbo start_date = 1362.2.15 end_date = 1364.2.15 regnal_number = 0 }
                 ruler_term = { character = swe_albrecht_i_mecklenburg start_date = 1364.2.15 end_date = 1389.2.24 regnal_number = 1 }
                 ruler_term = { character = dan_margrete_i_estridsen start_date = 1389.2.24 end_date = 1412.10.28 regnal_number = 1 }
-                ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1396.7.23 end_date = 1439.9.24 regnal_number = 13 }
+                ruler_term = { character = dan_erich_gryf start_date = 1396.7.23 end_date = 1439.9.24 regnal_number = 13 }
                 ruler_term = { character = dan_christoph_iii_wittelsbach start_date = 1440.4.9 regnal_number = 1 }
 
                 regnal_numbers = {
@@ -253,7 +253,7 @@ countries = {
                 ruler_term = { character = dan_valdemar_atterdag start_date = 1340.6.24 end_date = 1375.6.24 regnal_number = 4 }
                 ruler_term = { character = dan_olav_ii_bjalbo start_date = 1376.5.3 end_date = 1387.8.3 regnal_number = 2 }
                 ruler_term = { character = dan_margrete_i_estridsen start_date = 1376.8.10 end_date = 1412.10.28 regnal_number = 1 }
-                ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1412.10.28 end_date = 1439.9.24 regnal_number = 7 }
+                ruler_term = { character = dan_erich_gryf start_date = 1412.10.28 end_date = 1439.9.24 regnal_number = 7 }
                 ruler_term = { character = dan_christoph_iii_wittelsbach start_date = 1440.4.9 regnal_number = 3 }
 
                 ruler = dan_christoph_iii_wittelsbach
@@ -378,9 +378,9 @@ countries = {
             country_rank = rank_duchy
 
             government = {
-                ruler = pom_erik_of_pomerania_gryf
+                ruler = dan_erich_gryf
 
-                ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1439.9.8 }
+                ruler_term = { character = dan_erich_gryf start_date = 1439.9.8 }
             }
 
             dynasty = gryf_dynasty
@@ -404,9 +404,8 @@ countries = {
                 vardal lillehammer valdres otta alvdal imsdalen hedmarksvidda
                 hamar kongsvinger elverum glommadal trysil amot tynset
                 troms trondenes senja bardodalen
-                bodo birndal alstahaug gildeskal steigen langenes lofotr hamaroy ofoti
+                bodo rana birndal alstahaug gildeskal steigen langenes lofotr hamaroy ofoti
                 raisa vardo deatnu porsanger hammerfest lebesby
-
 
                 # Northern Isles
                 #shetland orkney
@@ -436,7 +435,7 @@ countries = {
                 ruler_term = { character = nor_haakon_vi_bjalbo start_date = 1343.8.15 end_date = 1380.9.11 regnal_number = 6 }
                 ruler_term = { character = dan_olav_ii_bjalbo start_date = 1380.7.29 end_date = 1387.8.3 regnal_number = 4 }
                 ruler_term = { character = dan_margrete_i_estridsen start_date = 1388.2.2 end_date = 1412.10.28 regnal_number = 1 }
-                ruler_term = { character = pom_erik_of_pomerania_gryf start_date = 1389.9.8 end_date = 1442.6.4 regnal_number = 3 }
+                ruler_term = { character = dan_erich_gryf start_date = 1389.9.8 end_date = 1442.6.4 regnal_number = 3 }
                 ruler_term = { character = dan_christoph_iii_wittelsbach start_date = 1440.6.4 regnal_number = 1 }
 
 
@@ -821,9 +820,6 @@ countries = {
 
         LIV = {
             #Livonian Order
-            own_control_core = {
-            }
-
             own_control_integrated = {
                 parnu valmiera viljandi valjala
                 karksi poltsamaa kandava dobele bauska sigulda cesis aluksne
@@ -1137,9 +1133,6 @@ countries = {
 
         KUR = {
             #Courland
-            own_control_core = {
-            }
-
             own_control_integrated = {
                 dundaga piltene
             }
@@ -4464,7 +4457,12 @@ countries = {
 
             religious_school = hanafi_school
             government = {
+                ruler = cri_haci_giray
+
+                ruler_term = { character = cri_haci_giray start_date = 1441.1.1 regnal_number = 1 }
+
                 mysticism_vs_jurisprudence = -15
+
                 laws = {
                     legal_code_law = sharia_law_policy
                     sharia_law = hanafi_policy
@@ -4717,6 +4715,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
+
                 ruler = feo_demetrios_gabras
                 ruler_term = { character = feo_demetrios_gabras start_date = 1337.1.1 regnal_number = 1 }
             }
@@ -4761,10 +4760,10 @@ countries = {
             include = "catholic_republic"
         }
 
-        ENG = { #DONE CHARACTERS
+        ENG = {
             #ENGLAND
             own_control_core = {
-                appleby hythe alnwick barnstaple bedford dunstable birmingham boston bosworth shoreham lewes bristol buckingham bury glossop cambridge canterbury carlisle rochester cheltenham chelmsford chesterfield chichester chippenham cockermouth colchester kettering coventry cirencester derby dorchester dover exeter gloucester grimsby guildford reigate harrow hastings hedingham hertford hexham hull huntingdon ipswich kendal grantham penrith kidderminster leeds leicester lincoln london loughborough lowestoft lynn daventry newark newcastle northampton norwich nottingham oxford ely plymouth bideford bampton okehampton poole portsmouth amesbury lymington retford rutland salisbury southampton prittlewell kingston stafford stoke stratford trowbridge taunton wells barking weymouth shaftesbury wight winchester windsor worcester yarmouth york scarborough tamworth bedale richmond whitby bridlington selby pontefract skipton wakefield louth thetford fakenham reading tonbridge minehead portishead bath henley royston aylesbury wycombe lavenham abingdon st_albans banbury walden spalding woking morpeth billingham norton ripon doncaster egremont basingstoke
+                appleby hythe alnwick barnstaple bedford dunstable birmingham boston bosworth shoreham lewes bristol buckingham bury glossop cambridge canterbury carlisle rochester cheltenham chelmsford chesterfield chichester chippenham cockermouth colchester kettering coventry cirencester derby dorchester dover exeter gloucester grimsby guildford reigate harrow hastings hedingham hertford hexham hull huntingdon ipswich kendal grantham penrith kidderminster leeds leicester lincoln london loughborough lowestoft lynn daventry newark newcastle northampton norwich nottingham oxford plymouth bideford bampton okehampton poole portsmouth amesbury lymington retford rutland salisbury southampton prittlewell kingston stafford stoke stratford trowbridge taunton wells barking weymouth shaftesbury wight winchester windsor worcester yarmouth york scarborough tamworth bedale richmond whitby bridlington selby pontefract skipton wakefield louth thetford fakenham reading tonbridge minehead portishead bath henley royston aylesbury wycombe lavenham abingdon st_albans banbury walden spalding woking morpeth billingham norton ripon doncaster egremont basingstoke
 
                 # Earldom of Chester
                 #chester macclesfield nantwich
@@ -5088,9 +5087,9 @@ countries = {
             government = {
                 ruler_term = { character = dhm_richard_de_bury start_date = 1333.2.1 end_date = 1345.4.14 }
 
-                ruler_term = { character = dhm_robert_neville_durham start_date = 1438.1.27 }
+                ruler_term = { character = dhm_robert_neville_bishop start_date = 1438.1.27 }
 
-                ruler = dhm_robert_neville_durham
+                ruler = dhm_robert_neville_bishop
             }
 
             accepted_cultures = {
@@ -5180,6 +5179,27 @@ countries = {
             }
 
             capital = chester
+        }
+
+        ELZ = {
+            #Bisphoric of Ely
+            own_control_core = {
+                ely
+            }
+
+            starting_technology_level = 3
+            include = "expl_western_europe"
+            include = "catholic_bishopric"
+
+            government = {
+                ruler = eng_thomas_bourchier
+
+                reforms = {
+                    prince_bishopric_reform
+                }
+            }
+            country_rank = rank_county
+            capital = ely
         }
 
         WLS = {
@@ -10755,7 +10775,7 @@ countries = {
                 bastia calvi bonifacio #Corsica
             }
             own_control_integrated = {
-                samos ikaria foca menemen #Aegean Sea
+                samos ikaria foca #Aegean Sea
                 castelsardo #Sardinia
                 amasra #Black Sea
                 chios molyvos mitilene enez thasos famagusta
@@ -13697,7 +13717,7 @@ countries = {
 
         ACH = {
             #https://en.wikipedia.org/wiki/Principality_of_Achaea
-            own_control_core = {
+            our_cores_conquered_by_others = {
                 damala ermioni kalamata kyparissia
                 andritsaina pontikokastro andravida corinth
                 chalandritsa patras vostitsa kalavryta xylokastro
@@ -13715,7 +13735,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = mre_thomas_palaiologos
+                ruler = random
 
                 ruler_term = { character = ach_guillaume_i_champlitte start_date = 1205.1.1 end_date = 1209.1.1 regnal_number = 1 }
 
@@ -13748,8 +13768,6 @@ countries = {
                 ruler_term = { character = ach_catherine_valois start_date = 1333.1.1 end_date = 1336.4.5 regnal_number = 1 }
                 ruler_term = { character = ach_robert_taranto start_date = 1333.1.1 end_date = 1364.9.10 regnal_number = 1 } # As Co-Ruler with his mother
 
-                ruler_term = { character = mre_thomas_palaiologos start_date = 1428.1.1 regnal_number = 1 } # As Co-Ruler with his mother
-
                 regnal_numbers = {
                     name_william = 2
                     name_godfrey = 2
@@ -13777,6 +13795,42 @@ countries = {
             #dynasty = anjou_taranto_dynasty
         }
 
+        MOE = {
+            own_control_core = {
+                damala ermioni kalamata kyparissia
+                andritsaina pontikokastro andravida corinth
+                chalandritsa patras vostitsa kalavryta xylokastro
+                tripolitsa veligosti karytaina
+                monemvasia mystras oitylo leuktron astros
+            }
+            starting_technology_level = 3
+            include = "expl_mediterranean"
+            include = "expl_silk_road_west"
+            include = "expl_silk_road_center"
+            include = "expl_silk_road_east"
+            include = "expl_indian_trade_route"
+            include = "eastern_european_monarchy"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = moe_thomas_palaiologos
+
+                ruler_term = { character = moe_thomas_palaiologos start_date = 1428.1.1 regnal_number = 1 }
+
+                regnal_numbers = {
+                }
+            }
+
+            tolerated_cultures = {
+                greek_culture
+            }
+
+            country_rank = rank_duchy
+            capital = mystras
+            dynasty = palaiologos_dynasty
+        }
+
         CEP = {
             own_control_core = {
                 zakynthos leukas cephalonia
@@ -13793,26 +13847,29 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = random
+                ruler = epi_carlo_ii_tocco
+                heir = epi_leonardo_iii_tocco
 
-                ruler_term = { character = cep_riccardo_i_orsini start_date = 1194.1.1 end_date = 1197.1.1 regnal_number = 1 }
-                ruler_term = { character = cep_maio_i_orsini start_date = 1197.1.1 end_date = 1238.1.1 regnal_number = 1 }
-                ruler_term = { character = cep_maio_ii_orsini start_date = 1238.1.1 end_date = 1259.1.1 regnal_number = 2 }
-                ruler_term = { character = cep_riccardo_ii_orsini start_date = 1259.1.1 end_date = 1304.1.1 regnal_number = 2 }
-                ruler_term = { character = cep_giovanni_i_orsini start_date = 1304.1.1 end_date = 1317.1.1 regnal_number = 1 }
-                ruler_term = { character = epi_nikolaos_orsini start_date = 1317.1.1 end_date = 1323.1.1 regnal_number = 1 }
-                ruler_term = { character = cep_john_orsini start_date = 1323.1.1 end_date = 1324.1.1 regnal_number = 2 }
+                # ruler_term = { character = cep_riccardo_i_orsini start_date = 1194.1.1 end_date = 1197.1.1 regnal_number = 1 }
+                # ruler_term = { character = cep_maio_i_orsini start_date = 1197.1.1 end_date = 1238.1.1 regnal_number = 1 }
+                # ruler_term = { character = cep_maio_ii_orsini start_date = 1238.1.1 end_date = 1259.1.1 regnal_number = 2 }
+                # ruler_term = { character = cep_riccardo_ii_orsini start_date = 1259.1.1 end_date = 1304.1.1 regnal_number = 2 }
+                # ruler_term = { character = cep_giovanni_i_orsini start_date = 1304.1.1 end_date = 1317.1.1 regnal_number = 1 }
+                # ruler_term = { character = epi_nikolaos_orsini start_date = 1317.1.1 end_date = 1323.1.1 regnal_number = 1 }
+                # ruler_term = { character = cep_john_orsini start_date = 1323.1.1 end_date = 1324.1.1 regnal_number = 2 }
 
-                ruler_term = { character = alb_john_gravina start_date = 1324.1.1 end_date = 1336.4.5 regnal_number = 3 }
-                ruler_term = { character = ach_robert_taranto start_date = 1336.4.5 end_date = 1357.1.1 regnal_number = 1 }
+                # ruler_term = { character = alb_john_gravina start_date = 1324.1.1 end_date = 1336.4.5 regnal_number = 3 }
+                # ruler_term = { character = ach_robert_taranto start_date = 1336.4.5 end_date = 1357.1.1 regnal_number = 1 }
 
                 regnal_numbers = {
                     #Margaritus = 1
-                    name_matthew = 2
-                    name_richard = 2
-                    name_john = 3
-                    name_charles = 1
-                    name_robert = 1
+                    # name_matthew = 2
+                    # name_richard = 2
+                    # name_john = 3
+                    # name_charles = 1
+                    # name_robert = 1
+                    Carlo = 1
+                    Leonardo = 2
                 }
             }
 
@@ -13925,28 +13982,40 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = epi_theodoros_synadenos
-                consort = epi_eudokia_doukania_kommene
+                ruler = epi_carlo_ii_tocco
+                heir = epi_leonardo_iii_tocco
 
-                ruler_term = { character = epi_michael_i_komnenos_doukas start_date = 1205.1.1 end_date = 1215.1.1 regnal_number = 1 }
-                ruler_term = { character = the_theodoros_komnenos_doukas start_date = 1215.1.1 end_date = 1230.1.1 regnal_number = 1 }
-                ruler_term = { character = epi_michael_ii_komnenos_doukas start_date = 1230.1.1 end_date = 1268.1.1 regnal_number = 2 }
-                ruler_term = { character = epi_nikephoros_i_komnenos_doukas start_date = 1268.1.1 end_date = 1297.1.1 regnal_number = 1 }
-                ruler_term = { character = epi_thomas_i_komnenos_doukas start_date = 1297.1.1 end_date = 1318.1.1 regnal_number = 1 }
+                # TODO
+                # ruler_term = { character = epi_michael_i_komnenos_doukas start_date = 1205.1.1 end_date = 1215.1.1 regnal_number = 1 }
+                # ruler_term = { character = the_theodoros_komnenos_doukas start_date = 1215.1.1 end_date = 1230.1.1 regnal_number = 1 }
+                # ruler_term = { character = epi_michael_ii_komnenos_doukas start_date = 1230.1.1 end_date = 1268.1.1 regnal_number = 2 }
+                # ruler_term = { character = epi_nikephoros_i_komnenos_doukas start_date = 1268.1.1 end_date = 1297.1.1 regnal_number = 1 }
+                # ruler_term = { character = epi_thomas_i_komnenos_doukas start_date = 1297.1.1 end_date = 1318.1.1 regnal_number = 1 }
 
-                ruler_term = { character = epi_nikolaos_orsini start_date = 1318.1.1 end_date = 1323.1.1 regnal_number = 1 }
-                ruler_term = { character = cep_john_orsini start_date = 1323.1.1 end_date = 1335.1.1 regnal_number = 1 }
-                ruler_term = { character = epi_nikephoros_ii_orsini start_date = 1335.1.1 end_date = 1336.1.1 regnal_number = 2 }
+                # ruler_term = { character = epi_nikolaos_orsini start_date = 1318.1.1 end_date = 1323.1.1 regnal_number = 1 }
+                # ruler_term = { character = cep_john_orsini start_date = 1323.1.1 end_date = 1335.1.1 regnal_number = 1 }
+                # ruler_term = { character = epi_nikephoros_ii_orsini start_date = 1335.1.1 end_date = 1336.1.1 regnal_number = 2 }
 
-                ruler_term = { character = epi_theodoros_synadenos start_date = 1336.1.1 regnal_number = 0 } # As Governor of Epirus
+                # ruler_term = { character = epi_theodoros_synadenos start_date = 1336.1.1 regnal_number = 0 } # As Governor of Epirus
+
+                # regnal_numbers = {
+                #     name_michael = 2
+                #     name_theodore = 1
+                #     name_nikephoros = 2
+                #     name_thomas = 1
+                #     name_nicholas = 1
+                #     name_john = 1
+                # }
 
                 regnal_numbers = {
-                    name_michael = 2
-                    name_theodore = 1
-                    name_nikephoros = 2
-                    name_thomas = 1
-                    name_nicholas = 1
-                    name_john = 1
+                    # name_michael = 2
+                    # name_theodore = 1
+                    # name_nikephoros = 2
+                    # name_thomas = 1
+                    # name_nicholas = 1
+                    # name_john = 1
+                    Carlo = 1
+                    Leonardo = 2
                 }
             }
 
@@ -14265,50 +14334,48 @@ countries = {
             country_rank = rank_empire
         }
 
-        ALB = {
-            own_control_core = {
-            }
+        # Should not be active 
+        # ALB = {
+        #     our_cores_conquered_by_others = {
+        #         kruje elbasan kavaje tirana debar durres 
+        #         ballsh berat devol
+        #         avlonya
+        #         lezha dukagjini koman has shkoder bar_cg
+        #         gjakova prizren
+        #     }
 
-            our_cores_conquered_by_others = {
-                kruje elbasan kavaje tirana debar durres 
-                ballsh berat devol
-                avlonya
-                lezha dukagjini koman has shkoder bar_cg
-                gjakova prizren
-            }
+        #     starting_technology_level = 3
+        #     include = "expl_mediterranean"
+        #     include = "expl_silk_road_west"
+        #     include = "expl_silk_road_center"
+        #     include = "expl_silk_road_east"
+        #     include = "expl_indian_trade_route"
+        #     include = "catholic_monarchy"
+        #     government = {
+        #         type = monarchy
+        #         heir_selection = cognatic_primogeniture
 
-            starting_technology_level = 3
-            include = "expl_mediterranean"
-            include = "expl_silk_road_west"
-            include = "expl_silk_road_center"
-            include = "expl_silk_road_east"
-            include = "expl_indian_trade_route"
-            include = "catholic_monarchy"
-            government = {
-                type = monarchy
-                heir_selection = cognatic_primogeniture
+        #         ruler_term = { character = nap_charles_i_anjou start_date = 1272.2.1 end_date = 1285.1.7 regnal_number = 1 }
+        #         ruler_term = { character = nap_carlo_ii_anjou start_date = 1285.1.7 end_date = 1294.8.13 regnal_number = 2 }
+        #         ruler_term = { character = alb_filippo_i_taranto start_date = 1294.8.13 end_date = 1332.12.23 regnal_number = 1 }
+        #         ruler_term = { character = ach_robert_taranto start_date = 1332.12.23 end_date = 1333.1.1 regnal_number = 1 }
+        #         ruler_term = { character = alb_john_gravina start_date = 1333.1.1 end_date = 1336.4.5 regnal_number = 1 }
 
-                ruler_term = { character = nap_charles_i_anjou start_date = 1272.2.1 end_date = 1285.1.7 regnal_number = 1 }
-                ruler_term = { character = nap_carlo_ii_anjou start_date = 1285.1.7 end_date = 1294.8.13 regnal_number = 2 }
-                ruler_term = { character = alb_filippo_i_taranto start_date = 1294.8.13 end_date = 1332.12.23 regnal_number = 1 }
-                ruler_term = { character = ach_robert_taranto start_date = 1332.12.23 end_date = 1333.1.1 regnal_number = 1 }
-                ruler_term = { character = alb_john_gravina start_date = 1333.1.1 end_date = 1336.4.5 regnal_number = 1 }
+        #         regnal_numbers = {
+        #             name_john = 1
+        #             name_charles = 1
+        #             name_george = 1
+        #         }
+        #     }
 
-                regnal_numbers = {
-                    name_john = 1
-                    name_charles = 1
-                    name_george = 1
-                }
-            }
+        #     tolerated_cultures = {
+        #         bulgarian
+        #     }
 
-            tolerated_cultures = {
-                bulgarian
-            }
-
-            country_rank = rank_kingdom
-            capital = tirana
-            dynasty = kastrioti_dynasty
-        }
+        #     country_rank = rank_kingdom
+        #     capital = tirana
+        #     dynasty = kastrioti_dynasty
+        # }
 
         THP = {
             own_control_core = {
@@ -14461,6 +14528,10 @@ countries = {
                 koman dukagjini has
             }
 
+            own_control_integrated = {
+                prizren
+            }
+
             starting_technology_level = 3
             include = "expl_mediterranean"
             include = "expl_silk_road_west"
@@ -14472,7 +14543,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = random
+                ruler = dgj_nicholas_dukagjini
 
             }
 
@@ -14482,23 +14553,27 @@ countries = {
 
         SER = {
             own_control_core = {
-                peja prizren
-                budimlja brskovo gjakova mitrovica pristina novo_brdo
+                peja
+                budimlja brskovo mitrovica pristina novo_brdo
                 vranje prijepolje visegrad
                 glubocica nis prokuplje stalac ravno jagodina
                 krusevac kucevo branicevo rudnik smederevo krupanj valjevo uzice
                 gradac zica trgoviste_SER sjenica
                 arilje brvenik medveda
                 debrc sabac
+                gjakova
             }
+
             own_control_integrated = {
             }
+
             our_cores_conquered_by_others = {
                 slano mostar konjic belgrad
                 skopje kumanovo veles prosek shtip kratovo kocani strumica
                 ohrid tetovo debar bitola prilep kicevo florina
                 pljevlja soko_grad onogost
                 podgorica gradina
+                prizren
             }
             starting_technology_level = 3
             include = "expl_mediterranean"
@@ -14568,7 +14643,7 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = random
+                ruler = zet_gojcin_crnojevic
             }
 
             liturgical_language = church_slavonic_language
@@ -14582,11 +14657,11 @@ countries = {
                 vrhbosna srebrenica doboj soli
                 jajce zenica kljuc srebrenik
                 glaz teocak olovo borac
-                livno glamoc
             }
 
             our_cores_conquered_by_others = {
                 ustikolina konjic
+                livno glamoc
             }
 
             starting_technology_level = 3
@@ -14596,14 +14671,14 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = bos_stephen_kotromanic
+                ruler = bos_thomas_kotromanic
 
                 ruler_term = { character = bos_stephen_kotromanic_father start_date = 1287.1.1 end_date = 1312.5.1 regnal_number = 1 }
                 ruler_term = { character = bos_mladen_subic start_date = 1312.5.1 end_date = 1322.3.15 regnal_number = 2 }
                 ruler_term = { character = bos_stephen_kotromanic start_date = 1322.3.15 regnal_number = 2 }
 
                 regnal_numbers = {
-                    name_stephen = 2
+                    name_stephen = 1
                 }
 
             }
@@ -14612,7 +14687,7 @@ countries = {
                 aromanian dalmatian croatian
             }
 
-            country_rank = rank_duchy
+            country_rank = rank_kingdom
             liturgical_language = church_slavonic_language
 
             capital = zenica
@@ -15599,7 +15674,7 @@ countries = {
         }
 
         #Asturias
-        ASU = {
+        ATS = {
             own_control_core = {
                 oviedo aviles castropol villaviciosa cangas llanes mieres #Asturias
             }
@@ -16124,7 +16199,7 @@ countries = {
             include = "expl_western_europe"
             include = "catholic_monarchy"
             government = {
-                ruler = random
+                ruler = bri_francois_i_montfort_brittany
 
                 ruler_term = { character = bri_guy_thouars start_date = 1199.9.1 end_date = 1201.9.1 regnal_number = 1 } # As Marital Co-Ruler
 
@@ -16137,7 +16212,12 @@ countries = {
                 ruler_term = { character = bri_yann_i_dreux start_date = 1221.10.21 end_date = 1286.10.8 regnal_number = 1 }
                 ruler_term = { character = bri_yann_ii_dreux start_date = 1286.10.8 end_date = 1305.11.18 regnal_number = 2 }
                 ruler_term = { character = bri_arthur_ii_dreux start_date = 1305.11.18 end_date = 1312.8.27 regnal_number = 2 }
-                ruler_term = { character = bri_yann_iii_dreux start_date = 1312.8.27 end_date = 1341.4.30 regnal_number = 3 }
+			    ruler_term = { character = bri_yann_iii_dreux start_date = 1312.8.27 end_date = 1341.4.30 regnal_number = 3 }
+                ruler_term = { character = bri_janed_penthievre start_date = 1341.4.30 end_date = 1365.1.1 regnal_number = 1 }
+                ruler_term = { character = mon_jean_montfort start_date = 1341.5.30 end_date = 1345.9.26 }
+                ruler_term = { character = bri_jean_iv_montfort_brittany start_date = 1345.9.26 end_date = 1399.11.1 regnal_number = 4 }
+                ruler_term = { character = bri_jean_v_montfort_brittany start_date = 1399.11.1 end_date = 1442.8.29 regnal_number = 5 }
+                ruler_term = { character = bri_francois_i_montfort_brittany start_date = 1442.8.29 regnal_number = 1 }
 
                 regnal_numbers = {
                     #Judicaël = 1
@@ -16203,6 +16283,11 @@ countries = {
             country_rank = rank_county
             government = {
                 type = monarchy
+                ruler = rtz_rene_tournemine
+
+                ruler_term = { character = rtz_gilles_laval start_date = 1422.1.1 end_date = 1440.10.26 regnal_number = 0 }
+                ruler_term = { character = rtz_rene_tournemine start_date = 1444.1.1 regnal_number = 0 }
+
                 reforms = {
                     french_ducal_vassal_reform
                 }
@@ -17388,10 +17473,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = bar_henry_iv_de_bar
-                reforms = {
-                    feudal_nobility
-                }
+                ruler = anj_rene_i_valois_anjou
 
                 ruler_term = { character = mtb_louis_scarpone start_date = 1038.1.1 end_date = 1073.1.1 regnal_number = 1 } # Marital Co-Ruler
                 ruler_term = { character = mtb_thierry_i_scarpone start_date = 1093.1.21 end_date = 1103.2.1 regnal_number = 2 }
@@ -17415,12 +17497,17 @@ countries = {
                     name_theobald = 2
                     name_edward = 1
                 }
+
+                reforms = {
+                    feudal_nobility
+                }
             }
 
             tolerated_cultures = {
                 french
             }
 
+            country_rank = rank_duchy
             capital = bar_le_duc
         }
 
@@ -17484,7 +17571,7 @@ countries = {
             capital = blois
         }
 
-        NEM = {
+        NMR = {
             #Nemours
             own_control_core = {
                 nemours nogent_sur_seine
@@ -19277,7 +19364,7 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = nav_jeanne_ii_capet
+                ruler = random
 
                 ruler_term = { character = eng_stephen_i start_date = 1112.1.1 end_date = 1135.12.22 regnal_number = 1 }
 
@@ -19542,7 +19629,7 @@ countries = {
         }
 
         #Thouars
-        TAS = {
+        THR = {
             own_control_core = {
                 thouars
             }
@@ -20873,7 +20960,6 @@ countries = {
                 timisoara arad zarand
                 baia_crisului
                 vukovar ilok pozega sremska_mitrovica petrovaradin
-                cakovec
                 khust rakhiv cuhea
             }
 
@@ -20906,7 +20992,7 @@ countries = {
                 ruler_term = { character = hun_maria_anjou start_date = 1386.2.24 end_date = 1395.5.17 regnal_number = 1 }
                 ruler_term = { character = hun_sigismund_luxembourg start_date = 1395.5.17 end_date = 1437.12.9 regnal_number = 1 }
                 ruler_term = { character = hab_albrecht_v_habsburg start_date = 1437.12.18 end_date = 1439.10.27 regnal_number = 1 }
-                ruler_term = { character = lit_vladislovas_iii_jagiellon start_date = 1440.7.17 end_date = 1444.11.10 regnal_number = 1 }
+                ruler_term = { character = pol_wladyslaw_iii_jagiellon start_date = 1440.7.17 end_date = 1444.11.10 regnal_number = 1 }
 
                 regnal_numbers = {
                     name_bela = 4
@@ -20983,7 +21069,6 @@ countries = {
                 dabaca baita dej sic #doboka_province
                 alba_iulia aiud cetatea_balta deva felvint hateg hunedoara #feher_province
                 turda baia_de_aries cluj huedin reghin #torda_province
-                fagaras #kiralyfold_province
                 gurghiu #szekelyfold_province
             }
             starting_technology_level = 3
@@ -21031,8 +21116,8 @@ countries = {
             capital = brasov
         }
 
-        CUM = {
-            #Cumania
+        KNS = {
+            #Kunság
             own_control_core = {
                 felegyhaza halas karcag jaszbereny
             }
@@ -21049,6 +21134,23 @@ countries = {
                 jasz_culture
             }
             capital = felegyhaza
+        }
+
+        FAG = {
+            #Fogaras/Făgăraș
+            own_control_core = {
+                fagaras     
+            }
+            starting_technology_level = 3
+            include = "expl_eastern_europe"
+            include = "eastern_european_monarchy_no_coast"
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+
+                ruler = wal_vlad_ii_draculesti
+            }
+            capital = fagaras
         }
 
         SVR = {
@@ -21091,10 +21193,23 @@ countries = {
                 ruler = wal_vlad_ii_draculesti
 
                 ruler_term = { character = wal_basarab start_date = 1324.7.26 end_date = 1351.1.1 }
-
-                ruler_term = { character = wal_vlad_ii_draculesti start_date = 1436.12.1 end_date = 1442.9.1 }
-                ruler_term = { character = wal_mircea_ii_draculesti start_date = 1442.9.1 end_date = 1443.12.31 }
-                ruler_term = { character = wal_vlad_ii_draculesti start_date = 1443.1.1 }
+                ruler_term = { character = wal_nicolae_alexandru start_date = 1351.1.1 end_date = 1364.11.1 }
+                ruler_term = { character = wal_vladislav start_date = 1364.11.1 end_date = 1377.1.1 regnal_number = 1 }
+                ruler_term = { character = wal_radu_i_basarab start_date = 1377.1.1 end_date = 1383.1.1 regnal_number = 1 }
+                ruler_term = { character = wal_dan_i_danesti start_date = 1383.1.1 end_date = 1386.9.23 regnal_number = 1 }
+                ruler_term = { character = wal_mircea_i_basarab start_date = 1386.9.23 end_date = 1394.1.1 regnal_number = 1 }
+                ruler_term = { character = wal_vlad_i_danesti start_date = 1394.1.1 end_date = 1397.1.1 regnal_number = 1 }
+                ruler_term = { character = wal_mircea_i_basarab start_date = 1397.1.1 end_date = 1418.2.4 regnal_number = 1 }
+                ruler_term = { character = wal_mihai_i_basarab start_date = 1415.1.1 end_date = 1420.8.1 regnal_number = 1 }
+                ruler_term = { character = wal_radu_ii_basarab start_date = 1420.8.1 end_date = 1422.10.1 regnal_number = 2 }
+                ruler_term = { character = wal_dan_ii_danesti start_date = 1422.10.1 end_date = 1426.12.1 regnal_number = 2 }
+                ruler_term = { character = wal_radu_ii_basarab start_date = 1426.12.1 end_date = 1427.6.1 regnal_number = 2 }
+                ruler_term = { character = wal_dan_ii_danesti start_date = 1427.6.1 end_date = 1431.6.1 regnal_number = 2 }
+                ruler_term = { character = wal_alexander_i_basarab start_date = 1431.6.1 end_date = 1436.12.1 regnal_number = 1 }
+                ruler_term = { character = wal_vlad_ii_draculesti start_date = 1436.12.1 end_date = 1442.9.1 regnal_number = 2 }
+                ruler_term = { character = wal_mircea_ii_draculesti start_date = 1442.9.1 end_date = 1442.12.1 regnal_number = 2 }
+                ruler_term = { character = wal_basarab_ii_danesti start_date = 1442.6.1 end_date = 1443.3.1 regnal_number = 2 }
+                ruler_term = { character = wal_vlad_ii_draculesti start_date = 1443.3.1 regnal_number = 2 }
 
                 centralization_vs_decentralization = 70
                 aristocracy_vs_plutocracy = -50
@@ -21133,7 +21248,7 @@ countries = {
             include = "eastern_european_monarchy_no_coast"
 
             government = {
-                ruler = random
+                ruler = wal_vlad_ii_draculesti
 
                 centralization_vs_decentralization = 70
                 aristocracy_vs_plutocracy = -50
@@ -21190,14 +21305,32 @@ countries = {
                 heir_selection = cognatic_primogeniture
                 ruler = mol_stefan_ii_musat
 
+                ruler_term = { character = mol_dragos_dragosesti start_date = 1345.1.1 end_date = 1354.1.1 regnal_number = 0 }
+                ruler_term = { character = mol_sas_dragosesti start_date = 1354.1.1 end_date = 1364.1.1 regnal_number = 0 }
+                ruler_term = { character = mol_balc_dragosesti start_date = 1364.1.1 end_date = 1365.1.1 regnal_number = 0 }
+                ruler_term = { character = mol_bogdan_i_musat start_date = 1365.1.1 end_date = 1367.1.1 regnal_number = 0 }
+                ruler_term = { character = mol_petru_i_musat start_date = 1367.1.1 end_date = 1368.1.1 regnal_number = 1 }
+                ruler_term = { character = mol_latcu_musat start_date = 1368.1.1 end_date = 1375.1.1 regnal_number = 1 }
+                ruler_term = { character = mol_petru_ii_musat start_date = 1375.1.1 end_date = 1391.12.1 regnal_number = 2 }
+                ruler_term = { character = mol_roman_i_musat start_date = 1391.12.1 end_date = 1394.3.1 regnal_number = 1 }
+                ruler_term = { character = mol_stefan_i_musat start_date = 1394.3.1 end_date = 1399.1.1 regnal_number = 1 }
+                ruler_term = { character = mol_iuga_musat start_date = 1399.1.1 end_date = 1400.7.19 regnal_number = 1	}
+                ruler_term = { character = mol_alexandru_i_musat start_date = 1400.7.19 end_date = 1432.1.1 regnal_number = 1 }
+                ruler_term = { character = mol_ilias_i_musat start_date = 1432.1.1 end_date = 1434.9.1 regnal_number = 1 }
                 ruler_term = { character = mol_stefan_ii_musat start_date = 1434.9.1 regnal_number = 2 }
+                ruler_term = { character = mol_ilias_i_musat start_date = 1435.1.1 regnal_number = 1 }
+                ruler_term = { character = mol_petru_iii_musat start_date = 1444.5.1 regnal_number = 3 }
 
                 regnal_numbers = {
                     name_stephen = 2
                     name_roman = 1
-                    name_peter = 2
+                    name_peter = 3
                     name_bogdan = 1
                     name_alexander = 1
+                    Ilias = 1
+                    Iuga = 1
+                    Dragoș = 1
+                    Sas = 1
                 }
 
             }
@@ -21331,7 +21464,11 @@ countries = {
         CLI = {
             #Cilli
             own_control_core = {
-                celje lasko varazdin spittal
+                celje lasko spittal
+            }
+
+            own_control_integrated = {
+                varazdin cakovec
             }
 
             starting_technology_level = 3
@@ -21339,9 +21476,14 @@ countries = {
             include = "catholic_monarchy_no_coast"
             include = "german_principality"
             government = {
+                ruler = cli_friderik_ii_celjiski
 
-                ruler = cli_friderik
-                consort = cli_diemut_walsee
+                ruler_term = { character = cli_friderik start_date = 1300.2.1 end_date = 1359.1.1 }
+                ruler_term = { character = cli_ulrik start_date = 1359.1.1 end_date = 1368.1.1 regnal_number = 1 }
+                ruler_term = { character = cli_hermann start_date = 1368.1.1 end_date = 1385.1.1 regnal_number = 1 }
+                ruler_term = { character = cli_viljem_celjiski start_date = 1385.1.1 end_date = 1392.8.19regnal_number = 1 }
+                ruler_term = { character = cli_herman_ii_celjiski start_date = 1392.8.19 end_date = 1435.10.13 regnal_number = 2 }
+                ruler_term = { character = cli_friderik_ii_celjiski start_date = 1435.10.13 regnal_number = 2 }
 
                 laws = {
                     mining_law = nobles_mining_law
@@ -21668,7 +21810,9 @@ countries = {
 
             own_control_integrated = {
                 pljevlja soko_grad onogost
+                livno glamoc
             }
+
             starting_technology_level = 3
             include = "expl_mediterranean"
             include = "catholic_monarchy_not_present"
@@ -23926,27 +24070,27 @@ countries = {
             government = { mysticism_vs_jurisprudence = -5 }
         }
 
-        KEB = {
-            own_control_core = {
-            }
+        # KEB = {
+        #     own_control_core = {
+        #     }
 
-            starting_technology_level = 3
-            include = "expl_west_africa_muslim"
-            include = "subsaharan_muslim_monarchy_not_present"
-            government = {
-                type = monarchy
-                heir_selection = cognatic_primogeniture
-                ruler = random
+        #     starting_technology_level = 3
+        #     include = "expl_west_africa_muslim"
+        #     include = "subsaharan_muslim_monarchy_not_present"
+        #     government = {
+        #         type = monarchy
+        #         heir_selection = cognatic_primogeniture
+        #         ruler = random
 
-                laws = {
-                    sharia_law = maliki_policy
-                }
-            }
+        #         laws = {
+        #             sharia_law = maliki_policy
+        #         }
+        #     }
 
-            capital = birnin_kebbi
-            religious_school = maliki_school
-            government = { mysticism_vs_jurisprudence = -5 }
-        }
+        #     capital = birnin_kebbi
+        #     religious_school = maliki_school
+        #     government = { mysticism_vs_jurisprudence = -5 }
+        # }
 
         RAN = {
             own_control_core = {
@@ -27323,7 +27467,7 @@ countries = {
 		country_rank = rank_county
 	}
 
-	SHI = {
+	SHZ = {
         # Shizuzu
         capital = kazuno
 		include = "japanese_clan"
@@ -32295,27 +32439,27 @@ countries = {
             country_rank = rank_county
         }
 
-        AKT = {
+        # AKT = {
 
-            own_control_core = {
-            }
+        #     own_control_core = {
+        #     }
 
-            capital = akita
-            include = "japanese_clan"
+        #     capital = akita
+        #     include = "japanese_clan"
 
-            government = {
-                ruler_term = { character = jap_andou_munesue start_date = 1290.1.1 end_date = 1335.11.15 regnal_number = 1 }
-                ruler_term = { character = jap_andou_morosue start_date = 1335.11.15 regnal_number = 1 }
+        #     government = {
+        #         ruler_term = { character = jap_andou_munesue start_date = 1290.1.1 end_date = 1335.11.15 regnal_number = 1 }
+        #         ruler_term = { character = jap_andou_morosue start_date = 1335.11.15 regnal_number = 1 }
 
-                ruler = jap_andou_morosue
+        #         ruler = jap_andou_morosue
 
-                reforms = {
-                    daimyo
-                }
-            }
+        #         reforms = {
+        #             daimyo
+        #         }
+        #     }
 
-            country_rank = rank_county
-        }
+        #     country_rank = rank_county
+        # }
 
         ISA = {
 
@@ -36471,9 +36615,6 @@ countries = {
 
         #Cilicia - CIL https://en.wikipedia.org/wiki/Armenian_Kingdom_of_Cilicia
         CIL = {
-            own_control_core = {
-            }
-
             our_cores_conquered_by_others = {
                 silifke anamur ermenek mut
                 selinti
@@ -36579,6 +36720,10 @@ countries = {
         CYP = {
             own_control_core = {
                 nicosia_cyp kyrenia larnaca limassol morphou paphos
+            }
+
+            own_control_integrated = {
+                corycus
             }
 
             our_cores_conquered_by_others = {
@@ -36728,6 +36873,7 @@ countries = {
                 malatya
                 divrigi arapgir egin arguvan
                 darende dasmenda deliktash gurun
+                comana_cil
             }
             own_control_integrated = {
                 marash
@@ -36766,9 +36912,8 @@ countries = {
                 adana
                 anavarza
                 sis caxud hargan
-                tarsus
-                ayas
-                comana_cil
+                tarsus candir_cil molevon
+                ayas 
             }
             
             our_cores_conquered_by_others = {
@@ -37117,15 +37262,19 @@ countries = {
                 nevsehir sariyahsi
                 konya celtik eregli_kar eskil hatunsaray karapinar ladik larende pirloganda
                 bekarlar bor_tur ermenek
-                beysehir aksehir bolvadin sarkikaraagac seydisehir
+                beysehir aksehir sarkikaraagac seydisehir
                 ilgin turgut suluklu kulu_turkey obruk altinekin cumra
-                urgup molevon
+                urgup
             }
 
             own_control_integrated = {
                 silifke anamur mut nigde
-                candir_cil corycus
                 develi yahyali
+            }
+
+            our_cores_conquered_by_others = {
+                bolvadin yalvac
+                corycus
             }
 
             include = "expl_eastern_europe"
@@ -37923,7 +38072,7 @@ countries = {
                 akkus terme
                 manisa akhisar demirci gordes kula
                 bergama bigadic soma
-                smyrna ayasuluk cesme urla
+                smyrna ayasuluk cesme urla menemen
                 tire balat birgi guzelhisar nazilli
                 alasehir honaz lazkiye
                 mihaliccik sivrihisar bozan kaymaz
@@ -37990,15 +38139,15 @@ countries = {
             include = "turkish_beylik"
             government = {
 
+                ruler = tur_mehmed_ii_ottomans
+
                 ruler_term = { character = tur_osman start_date = 1299.1.1 end_date = 1324.1.1 regnal_number = 1 }
                 ruler_term = { character = tur_orhan start_date = 1324.1.1 end_date = 1462.3.9 regnal_number = 1 }
                 ruler_term = { character = tur_murad start_date = 1362.3.8 end_date = 1489.6.15 regnal_number = 1 }
                 ruler_term = { character = tur_bayezid_i_padishah start_date = 1389.6.16 end_date = 1402.7.20 regnal_number = 1 }
                 ruler_term = { character = tur_mehmed_i_padishah start_date = 1413.7.5 end_date = 1421.5.26 regnal_number = 1 }
-                ruler_term = { character = tur_murad_ii_padishah start_date = 1421.5.26 end_date = 1444.8.1 regnal_number = 2 }
-                ruler_term = { character = tur_mehmed_ii_the_conqueror start_date = 1444.8.1 regnal_number = 2 }
-
-                ruler = tur_mehmed_ii_the_conqueror
+                ruler_term = { character = tur_murad_ii_ottomans start_date = 1421.5.26 end_date = 1444.8.1 regnal_number = 2 }
+                ruler_term = { character = tur_mehmed_ii_ottomans start_date = 1444.8.1 regnal_number = 2 }
 
                 regnal_numbers = {
                     name_osman = 1
@@ -39938,7 +40087,7 @@ countries = {
             capital = interlaken
         }
 
-        AAR = {
+        AGU = {
             #Aargau
             own_control_core = {
                 baden_im_aargau
@@ -41535,7 +41684,7 @@ countries = {
 
             starting_technology_level = 3
             include = "expl_western_europe"
-            include = "catholic_german_republic_no_coast"
+            include = "catholic_monarchy_no_coast"
             include = "expl_northern_europe"
             government = {
                 ruler = random
@@ -42945,7 +43094,7 @@ countries = {
             dynasty = gryf_dynasty
         }
 
-        BAT = {
+        BTH = {
             #Barth
             own_control_core = {
                 stralsund grimmen rugen
@@ -46188,8 +46337,8 @@ countries = {
                 ruler_term = { character = pol_casimir_iii_piast start_date = 1333.4.25 end_date = 1370.11.5 regnal_number = 3 }
                 ruler_term = { character = hun_lajos_i start_date = 1370.11.17 end_date = 1382.9.10 regnal_number = 1 }
                 ruler_term = { character = pol_jadwiga_anjou start_date = 1384.10.16 end_date = 1399.7.17 regnal_number = 1 }
-                ruler_term = { character = lit_jogalia_jagiellon start_date = 1399.7.17 end_date = 1434.6.1 regnal_number = 1 }
-                ruler_term = { character = lit_vladislovas_iii_jagiellon start_date = 1434.7.25 end_date = 1444.11.10 regnal_number = 3 }
+                ruler_term = { character = lit_jogalia_jagiellon start_date = 1399.7.17 end_date = 1434.6.1 regnal_number = 2 regnal_name = name_vladislav }
+                ruler_term = { character = pol_wladyslaw_iii_jagiellon start_date = 1434.7.25 end_date = 1444.11.10 regnal_number = 3 }
 
                 regnal_numbers = {
                     name_vladislav = 3
@@ -47015,7 +47164,7 @@ countries = {
                 ruler_term = { character = lit_vytautas_gediminid start_date = 1401.1.1 end_date = 1430.10.27 regnal_number = 1 }
                 ruler_term = { character = lit_svitrigaila_gediminid start_date = 1430.10.27 end_date = 1432.8.31 regnal_number = 1 }
                 ruler_term = { character = lit_zygimantas_gediminid start_date = 1432.8.31 end_date = 1440.3.20 regnal_number = 1 }
-                ruler_term = { character = lit_vladislovas_iii_jagiellon start_date = 1440.6.1 end_date = 1444.11.10 regnal_number = 3 }
+                ruler_term = { character = pol_wladyslaw_iii_jagiellon start_date = 1440.6.1 end_date = 1444.11.10 regnal_number = 3 }
                 ruler_term = { character = lit_kazimieras_iv_jagiellon start_date = 1440.11.10 regnal_number = 4 }
 
                 regnal_numbers = {
@@ -54270,7 +54419,7 @@ countries = {
             }
         }
 
-        BAY = { # Bayaut Khalkha
+        BYT = { # Bayaut Khalkha
             type = army
             own_control_core = {
                 uraqai aerzhai otog tongwancheng ordos
@@ -54298,20 +54447,20 @@ countries = {
             }
         }
 
-        OIR = {
-            own_control_core = {
-            }
-            our_cores_conquered_by_others = { }
-            starting_technology_level = 3
-            include = "expl_mongols"
-            government = {
-                type = steppe_horde
-                heir_selection = cognatic_primogeniture
-            }
-            country_rank = rank_kingdom
-            court_language = mongolian_language
-            capital = khar_balgas
-        }
+        # OIR = {
+        #     own_control_core = {
+        #     }
+        #     our_cores_conquered_by_others = { }
+        #     starting_technology_level = 3
+        #     include = "expl_mongols"
+        #     government = {
+        #         type = steppe_horde
+        #         heir_selection = cognatic_primogeniture
+        #     }
+        #     country_rank = rank_kingdom
+        #     court_language = mongolian_language
+        #     capital = khar_balgas
+        # }
 
         CRS = {  # Choros
          	type = army
@@ -54433,7 +54582,7 @@ countries = {
          	capital = hoboksar
         }
 
-        THG = {  # Torghut
+        TRH = {  # Torghut
          	type = army
             own_control_core = {
                 oiyin_korken
@@ -54459,7 +54608,7 @@ countries = {
             }
         }
 
-        KHI = {  # Khoid
+        KHD = {  # Khoid
          	type = army
             own_control_core = {
                 kurchum jeminay utbulaq burqin ulungur kara_irtysh
@@ -54669,7 +54818,7 @@ countries = {
 #
 #        }
 
-        HAS = { # Hasarid Khorchin
+        QAS = { # Hasarid Khorchin
             type = army
             own_control_core = {
                 hasar merelka enhe_hada jiliu gegen mohe hailar xuguit hulun abagaita khirkhira yimin bayan_ula dalai_nuur
@@ -55119,6 +55268,7 @@ countries = {
                 gandamak jalalabad alishang panjshir asadabad_kunar parun hajiabad
                 gardez logar chak ghazni zarghun_shahr muqur nawah wazakhwa maruf yakawlang
                 chaman arghestan kandahar qalat_ghilji deychopan tarinkot deh_kundi kajran baghran
+                quetta gulistan shorabak lorelai
             }
             own_control_integrated = {
                 dir timergara malakand bajaur
@@ -55218,7 +55368,7 @@ countries = {
             capital = liyuan
         }
 
-        HUI = {
+        HUZ = {
             # Hui
             our_cores_conquered_by_others = {
                 jingning shuiluo longde sanchuan kaicheng_guyuan xianzhou
@@ -65418,12 +65568,10 @@ countries = {
 
         NGD = {
             #Neguderi
-            own_control_core = {
-                quetta gulistan shorabak lorelai
-            }
             our_cores_conquered_by_others = {
                 ghazni gardez muqur nawah wazakhwa zarghun_shahr
                 kandahar arghestan chaman deychopan maruf qalat_ghilji
+                quetta gulistan shorabak lorelai
             }
 
             include = "expl_middle_east"
@@ -69808,7 +69956,7 @@ countries = {
             capital = surat
         }
         
-        SMN = { #Somnath
+        SMH = { #Somnath
             own_control_core = {
                 somnath chhaya
             }
@@ -69826,7 +69974,8 @@ countries = {
 
             capital = somnath
         }
-   KHD = { #Kandesh
+
+        KDH = { #Kandesh
             own_control_core = {
                 thalner sultanpur nandurbar laling dharangaon chandor
                 pachora burhanpur asirgarh
@@ -69847,6 +69996,7 @@ countries = {
             religious_school = hanafi_school
             capital = thalner
         }
+
         MLW = { #Malwa
             own_control_core = {
                 mandu bijagarh alirajpur mandleshwar khandwa handia hoshangabad kherla
@@ -69872,6 +70022,7 @@ countries = {
             religious_school = hanafi_school
             capital = mandu
         }
+
         KAP = { #Kalpi
             own_control_core = {
                 kalpi konch irij jhansi orchha kundar tehri lalitpur rath
@@ -69893,6 +70044,7 @@ countries = {
             religious_school = hanafi_school
             capital = kalpi
         }
+
         JNP = { #Jaunpur
             own_control_core = {
                 jaunpur hajipur rohtas
@@ -70029,8 +70181,8 @@ countries = {
 
         }
 
-        #SIR - Sirhind
-        SIR = {
+        #SRH - Sirhind
+        SRH = {
             own_control_core = {
                 sirhind samana_india sunam bathinda raikot rahon bajwara jalandhar hajner faridkot
                 muktsar chishtian milwat kapurthala firozpur pakpattan chichawatni dipalpur
@@ -70233,6 +70385,7 @@ countries = {
 		
 		    capital = tanahun
 		}
+
         BKH = {
             # Badakhshan
             own_control_core = {
@@ -70251,6 +70404,7 @@ countries = {
             }
             religious_school = hanafi_school
         }
+
         TIW = { #Tiwi
 
             own_control_core = {
@@ -70270,6 +70424,7 @@ countries = {
             }
             capital = tiwi
         }
+
         EOA = { #Eora
             own_control_core = {
                 eora tharawal dharug
@@ -70288,6 +70443,7 @@ countries = {
             }
             capital = eora
         }
+
         WUW = { #Wurundjeri 
             own_control_core = {
                 wathaurong woi_wurrung boon_wurrung marin_balluk geelong
@@ -70310,6 +70466,7 @@ countries = {
                 wathaurong_culture
             }
         }
+
         WAT = { #Waikato
             own_control_core = {
                 ahurei manukau hauraki tauranga
@@ -70330,6 +70487,7 @@ countries = {
             }
             capital = ahurei
         }
+
         TIA = { #Tahiti
             own_control_core = {
                 tahiti havaii manuae_atoll rangiroa_atoll nganaa_nui_atoll
@@ -70352,6 +70510,7 @@ countries = {
             }
             capital = tahiti
         }
+
         PAI = { #Paici
             own_control_core = {
                 paici cemuhi ajie yuanga nyelayu
@@ -70374,6 +70533,7 @@ countries = {
             }
             capital = paici
         }
+
         NIV = { #Ni-Vanuatu
             own_control_core = {
                 tanna aneityum erromango malakula ambae
@@ -70396,6 +70556,7 @@ countries = {
             }
             capital = tanna
         }
+
         NII = {#Naasuiu
             own_control_core = {
                 naasioi bannoni tinputz vaghua mono
@@ -70418,6 +70579,7 @@ countries = {
             }
             capital = naasioi
         }
+
         WAM = { #Waima
             own_control_core = {
                 waima koiali toaripi
