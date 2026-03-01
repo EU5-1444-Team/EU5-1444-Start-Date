@@ -121,19 +121,24 @@ GBR_ADJ = { parent = GBR suffix = "_ADJ" }
 
 
 GLH = {
-	type = country
+    type = country
+    text = {
+        localization_key = GLH_cuman
+        trigger = {
+			culture = culture:cuman_culture
+        }
+    }
+    text = {
+        localization_key = GLH_horde
+        trigger = {
+            government_type = government_type:steppe_horde
+        }
+    }
 
-	text = {
-		localization_key = GLH_horde
-		trigger = {
-			government_type = government_type:steppe_horde
-		}
-	}
-	
-	text = {
-		localization_key = GLH
-		fallback = yes
-	}
+    text = {
+        localization_key = GLH
+        fallback = yes
+    }
 }
 GLH_ADJ = { parent = GLH suffix = "_ADJ" }
 
