@@ -1,59 +1,16 @@
-﻿#puppet_khans = {
-#	monthly_spawn_chance = monthly_spawn_chance_unique
-#	hint_tag = hint_puppet_khans
-#
-#	can_start = {
-#		current_year >= 1440
-#	}
-#	
-#	can_end = {
-#		puppet_khans_end_trigger = yes
-#	}
-#	
-#	visible = {
-#		or = {
-#			tag = CHG
-#			tag = YRK
-#		}
-#	}
-#
-#	on_start = {
-#		c:CHG = {
-#			trigger_event_non_silently = puppet_khans.1
-#			add_country_modifier = { modifier = duglat_overlords years = -1 mode = add }
-#		}
-#
-#		c:YRK = {
-#			trigger_event_non_silently = puppet_khans.2
-#			add_country_modifier = { modifier = duglat_masters years = -1 mode = add }
-#		}
-#	}
-#
-#	on_monthly = {
-#		random_list = {
-#			100 = {}
-#		}
-#	}
-#
-#	map_color = {
-#
-#			value = map_CHG
-#		}
-#	
-#	legend_key = {
-#		desc = "LOCATION_OWNER_NAME"
-#		color = owner.country_color
-#	}
-#
-#	on_ended = {
-#		c:CHG = {
-#			remove_country_modifier = duglat_overlords
-#		}
-#		c:YRK = {
-#			remove_country_modifier = duglat_masters
-#		}
-#	}
-#
-#
-#
-#}
+puppet_khans = {
+	monthly_spawn_chance = monthly_spawn_chance_unique
+	hint_tag = hint_puppet_khans
+
+	can_start = {
+		always = no
+	}
+
+	can_end = {
+		always = yes
+	}
+
+	visible = {
+		always = no
+	}
+}

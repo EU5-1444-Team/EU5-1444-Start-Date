@@ -1,0 +1,26 @@
+# root = winner, scope:location = location, scope:winner = new owner, scope:loser = old owner
+on_took_location_in_peace_treaty = {
+	effect = {
+		if = {
+			limit = {
+				is_situation_active = situation:sengoku
+				exists = scope:winner
+			}
+			scope:winner = {
+				1444_refresh_sengoku_neighbor_cbs = yes
+			}
+		}
+	}
+}
+
+# root = annexing country, scope:target = annexed country
+on_annexed = {
+	effect = {
+		if = {
+			limit = {
+				is_situation_active = situation:sengoku
+			}
+			1444_refresh_sengoku_neighbor_cbs = yes
+		}
+	}
+}

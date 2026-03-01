@@ -1,8 +1,8 @@
-khorchin_culture = {
+khorchin_confederation = {
     has_target = no
     unique = yes
 
-    custom_name = khorchin_culture_name
+    custom_name = khorchin_confederation_name
     show_on_diplomatic_map = yes
 
     has_leader_country = yes
@@ -42,10 +42,10 @@ khorchin_culture = {
 
     can_join_trigger = {
         NOT = {
-            is_member_of_international_organization_of_type = khorchin_culture
+            is_member_of_international_organization_of_type = khorchin_confederation
         }
         government_type = government_type:steppe_horde
-        culture = culture:oirat_culture
+        culture = culture:khorchin_culture
     }
 
     auto_leave_trigger = {

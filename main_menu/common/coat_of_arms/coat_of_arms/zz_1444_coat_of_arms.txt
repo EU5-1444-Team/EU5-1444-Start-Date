@@ -1,3 +1,103 @@
+
+KAT = {
+    # Kastrioti Principality
+	pattern = "pattern_solid.dds"
+	color1 = hsv360 { 358 70 58	}	
+	color2 = "black"
+	color3 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_per_chevron_embowed_short_shield.dds"
+		color1 = color1
+		color2 = blue
+		color3 = blue
+		instance = { position = { 0.5 0.08 } scale = { 0.45 -0.8 } }
+    }	
+	colored_emblem = {
+		texture = "ce_eagle_doubleheaded_wide.dds"
+		color1 = color2
+		color2 = color2
+		color3 = hsv360 { 0	0 80 } 
+		instance = { position = { 0.5 0.515 } scale = { 0.95 0.95 } }				
+	}
+	colored_emblem = {
+		texture = "ce_star_06.dds"
+		color1 = color3
+		color2 = color3
+		instance = { position = { 0.5 0.08 } scale = { 0.16 0.16 } }				
+	}
+}
+
+DGJ = { # Dukagjini
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "white"
+	color3 = "black"
+	
+	colored_emblem = {
+		texture = "ce_eagle.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color2
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }				
+    }
+}
+
+ZET = {
+    # Zeta
+    pattern = "pattern_solid.dds"
+    color1 = "red"
+    color2 = "white"
+    color3 = "yellow"
+    
+    colored_emblem = {
+        texture = "ce_eagle_doubleheaded_crowned_wide.dds"
+        color1 = color2
+        color2 = color2
+        color3 = color3
+        instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }				
+    }
+}
+
+CEP = {
+	# Cephalonia
+    pattern = "pattern_vertical_split_01.dds"
+    color1 = white
+    color2 = red
+    colored_emblem = {
+        texture = "ce_bars_05_dancetty_shield.dds"
+        color1 = blue
+        instance = {
+            position = { 0.250 0.500 }
+            scale = { 0.500 1.000 }
+        }
+    }
+    colored_emblem = {
+        texture = "ce_eagle_doubleheaded_crowned_wide.dds"
+        color1 = yellow
+        color2 = yellow
+        color3 = yellow
+        instance = {
+            position = { 0.750 0.500 }
+            scale = { 0.600 1.000 }
+        }
+    }
+}
+
+MOE = {
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_eagle_doubleheaded_crowned_wide.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color2
+		instance = { position = { 0.5 0.475 } scale = { 0.9 0.9 } }				
+	}
+}
+
 CHG = {
     # Moghulistan/Chagatai
 	pattern = "pattern_solid.dds"
@@ -204,18 +304,7 @@ YRK = {  #Yarkent
         }
     }
 }
-dughlat_dynasty = { # Dughlat Clans
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 255 }
-    colored_emblem = {
-        texture = "ce_dounut2.dds"
-        color2 = rgb { 0 0 0 }
-        instance = {
-            position = { 0.539 0.516 }
-            scale = { 0.750 0.750 }
-        }
-    }
-}
+
 #Mongol Dynasties
 IMP = { #Imperials
 	pattern = "pattern_solid.dds"
@@ -237,63 +326,7 @@ IMP = { #Imperials
 		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }		
 	}		
 }
-khasar_dynasty = { #Khasar - Genghis's Brother
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 255 }
-    colored_emblem = {
-        texture = "ce_frame_circle_plain.dds"
-        color1 = rgb { 170 0 0 }
-        instance = {
-            position = { 0.500 0.273 }
-            scale = { 0.250 0.250 }
-        }
-    }
-    colored_emblem = {
-        texture = "ce_crescent_decrescent.dds"
-        color1 = rgb { 170 0 0 }
-        instance = {
-            position = { 0.500 0.586 }
-            scale = { 0.300 0.300 }
-        }
-    }
-}
-chagatayid_dynasty = { # Chagatai
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 255 }
-    textured_emblem = {
-        texture = "te_chagatai_tamga_yellow.dds"
-        instance = {
-            position = { 0.500 0.500 }
-            scale = { 1.000 1.000 }
-        }
-    }
-}
-uriangkhad_dynasty = { # Uriankhai Mongols
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 0 85 0 }
-    colored_emblem = {
-        texture = "ce_mongol_tamga_v.dds"
-        color1 = rgb { 0 85 0 }
-        color2 = rgb { 0 85 0 }
-        color3 = rgb { 247 243 255 }
-        instance = {
-            position = { 0.388 0.438 }
-            scale = { 1.000 1.000 }
-        }
-    }
-}
-choros_dynasty = { # Choros Oirats
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 255 }
-    colored_emblem = {
-        texture = "ce_tamgha_mongol_olum.dds"
-        color1 = rgb { 255 215 0 }
-        instance = {
-            position = { 0.500 0.500 }
-            scale = { 0.750 0.750 }
-        }
-    }
-}
+
 CRS = { # Choros
 	pattern = "pattern_solid.dds"
 	color1 = "yellow"
@@ -311,78 +344,7 @@ CRS = { # Choros
 		color2 = color2
 	}	
 }
-kerait_dynasty = { # Kerait Oirats
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 255 }
-    colored_emblem = {
-        texture = "ce_mongol_tamga_x.dds"
-        color1 = rgb { 85 255 0 }
-        color2 = rgb { 255 255 255 }
-        instance = {
-            position = { 0.521 0.539 }
-            scale = { 1.000 1.000 }
-        }
-    }
-}
-yutob_dynasty = { # Yutob Oirats
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 255 }
-    colored_emblem = {
-        texture = "ce_mongol_tamga_w.dds"
-        instance = {
-            position = { 0.526 0.535 }
-            scale = { 1.000 1.000 }
-        }
-    }
-}
-ujeed_dynasty = { # Ujeed Mongols
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 85 85 0 }
-    colored_emblem = {
-        texture = "ce_mongol_tamga_vL.dds"
-        color2 = rgb { 255 255 255 }
-        instance = {
-            position = { 0.396 0.488 }
-            scale = { 1.000 1.000 }
-        }
-    }
-}
-onggirat_dynasty = { # Onggirat Mongols
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 85 85 0 }
-    colored_emblem = {
-        texture = "ce_mongol_tamga_vL.dds"
-        color2 = rgb { 255 255 255 }
-        instance = {
-            position = { 0.388 0.539 }
-            scale = { 1.000 1.000 }
-        }
-    }
-}
-asud_dynasty = { # Asud Alans
-    pattern = "pattern_solid.dds"
-    color1 = rgb { 0 0 255 }
-    colored_emblem = {
-        texture = "ce_tamgha_03.dds"
-        color1 = rgb { 255 255 255 }
-        instance = {
-            position = { 0.499 0.496 }
-            scale = { 0.300 0.300 }
-        }
-    }
-}
-yenisei_dynasty = { # Yenisei Kirgyz
-	pattern = "pattern_solid.dds"
-	color1 = "green"
-	color2 = "yellow"
-							
-	colored_emblem = {
-		texture = "ce_khakas_sun.dds"
-		color1 = color2
-		color2 = color2
-		instance = { position = { 0.5 0.5 } scale = { 0.85 0.85 } }
-	}	
-}
+
 YKZ = { # Yenisei Kirgyz
 	pattern = "pattern_solid.dds"
 	color1 = "green"
@@ -395,20 +357,7 @@ YKZ = { # Yenisei Kirgyz
 		instance = { position = { 0.5 0.5 } scale = { 0.85 0.85 } }
 	}	
 }
-soyot_dynasty = { # Soyot Tuvans
-    pattern = "pattern_triangle_bicolor.dds"
-    color1 = rgb { 255 255 0 }
-    color2 = rgb { 85 255 255 }
-    color3 = rgb { 170 255 255 }
-    colored_emblem = {
-        texture = "ce_tamgha_kuchuk.dds"
-        color1 = rgb { 255 255 255 }
-        instance = {
-            position = { 0.117 0.469 }
-            scale = { 0.250 0.250 }
-        }
-    }
-}
+
 KYZ = { #Kyrgyz Pop
     pattern = "pattern_solid.dds"
     color1 = rgb { 255 0 0 }
@@ -417,6 +366,19 @@ KYZ = { #Kyrgyz Pop
         instance = {
             position = { 0.497 0.502 }
             scale = { 0.500 0.500 }
+        }
+    }
+}
+
+KNS = {
+    # Kunság, also Cumania
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 0 160 228 }
+    textured_emblem = {
+        texture = "te_cumania.dds"
+        instance = {
+            position = { 0.5 0.5 }
+            scale = { 1 1 }
         }
     }
 }

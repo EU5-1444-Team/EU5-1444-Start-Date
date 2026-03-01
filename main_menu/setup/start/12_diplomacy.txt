@@ -8,6 +8,7 @@ diplomacy_manager = {
     dependency = { first = ENG second = DHM subject_type = vassal }
     dependency = { first = ENG second = CET subject_type = vassal }
     dependency = { first = ENG second = JER subject_type = vassal }
+    dependency = { first = ENG second = ELZ subject_type = vassal }
     dependency = { first = SCO second = LOI subject_type = vassal }
     dependency = { first = SCO second = GLY subject_type = vassal }
     dependency = { first = LOI second = ROS subject_type = vassal }
@@ -172,7 +173,7 @@ diplomacy_manager = {
     dependency = { first = FRA second = BOU subject_type = appanage }
     dependency = { first = FRA second = SAN subject_type = appanage }
     dependency = { first = FRA second = VDM subject_type = appanage }
-    dependency = { first = PRO second = ANJ subject_type = fiefdom }
+    dependency = { first = FRA second = ANJ subject_type = vassal }
     dependency = { first = FRA second = ANG subject_type = appanage }
     dependency = { first = FRA second = ORL subject_type = appanage }
     dependency = { first = ORL second = BLS subject_type = fiefdom }
@@ -182,9 +183,9 @@ diplomacy_manager = {
     dependency = { first = FRA second = LYO subject_type = fiefdom }
     dependency = { first = FRA second = FOI subject_type = vassal }
     dependency = { first = FRA second = AMG subject_type = vassal }
-    dependency = { first = AMG second = NEM subject_type = fiefdom }
+    dependency = { first = AMG second = NMR subject_type = fiefdom }
     dependency = { first = BOU second = FRZ subject_type = fiefdom }
-    dependency = { first = PRO second = BAR subject_type = fiefdom }
+    dependency = { first = FRA second = BAR subject_type = vassal }
     dependency = { first = FRA second = ALR subject_type = vassal }
     dependency = { first = FRA second = COM subject_type = vassal }
     dependency = { first = FRA second = TON subject_type = vassal }
@@ -197,7 +198,7 @@ diplomacy_manager = {
     dependency = { first = FRA second = TOI subject_type = vassal }
     dependency = { first = FRA second = MON subject_type = vassal }
     dependency = { first = FRA second = PRH subject_type = vassal }
-    dependency = { first = FRA second = TAS subject_type = vassal }
+    dependency = { first = FRA second = THR subject_type = vassal }
     dependency = { first = FRA second = LVL subject_type = vassal }
     dependency = { first = FRA second = LMG subject_type = vassal }
     dependency = { first = FRA second = VNT subject_type = vassal }
@@ -240,8 +241,8 @@ diplomacy_manager = {
     dependency = { first = NRM second = ALE subject_type = fiefdom }
     dependency = { first = NRM second = MRT subject_type = fiefdom }
     dependency = { first = NRM second = LGV subject_type = fiefdom }
-    dependency = { first = NEM second = BNN subject_type = fiefdom }
-    dependency = { first = NEM second = JOI subject_type = fiefdom }
+    dependency = { first = NMR second = BNN subject_type = fiefdom }
+    dependency = { first = NMR second = JOI subject_type = fiefdom }
     dependency = { first = FLA second = NAM subject_type = vassal }
     dependency = { first = FOI second = MDM subject_type = fiefdom }
     dependency = { first = ALE second = PRC subject_type = fiefdom }
@@ -253,7 +254,7 @@ diplomacy_manager = {
     dependency = { first = AMG second = CLT subject_type = fiefdom }
     dependency = { first = AMG second = RDZ subject_type = fiefdom }
     dependency = { first = ALR second = DRE subject_type = fiefdom }
-    dependency = { first = TAS second = MOI subject_type = fiefdom }
+    dependency = { first = THR second = MOI subject_type = fiefdom }
     dependency = { first = BRR second = BIG subject_type = fiefdom }
     dependency = { first = LMG second = PER subject_type = fiefdom }
     dependency = { first = BOU second = CMB subject_type = fiefdom }
@@ -277,7 +278,6 @@ diplomacy_manager = {
     dependency = { first = VEN second = DAL subject_type = vassal }
 
     dependency = { first = VEN second = NAX subject_type = vassal }
-    dependency = { first = VEN second = CEP subject_type = vassal start_date = 1332.1.1 } #John of Gravina, Prince of Achaea, exchanges his Principality with Robert, Prince of Taranto
 
     dependency = { first = STY second = TTE subject_type = vassal } #Trieste conquered by the Habsburgs
     dependency = { first = VEN second = CRT subject_type = vassal }
@@ -320,7 +320,11 @@ diplomacy_manager = {
     dependency = { first = PAP second = PEA subject_type = vassal }
     dependency = { first = PAP second = ORV subject_type = vassal }
     dependency = { first = PAP second = URB subject_type = vassal }
+    dependency = { first = PAP second = CDC subject_type = vassal }
+    dependency = { first = PAP second = ANC subject_type = vassal }
+    dependency = { first = PAP second = RIM subject_type = vassal }
     dependency = { first = PAP second = VNS subject_type = fiefdom }
+    dependency = { first = PAP second = BLG subject_type = tributary }
 
     dependency = { first = NAP second = TTO subject_type = vassal }
     dependency = { first = TTO second = LEC subject_type = vassal }
@@ -342,7 +346,7 @@ diplomacy_manager = {
 
     #-------Iberia-------
 
-    dependency = { first = CAS second = ASU subject_type = appanage }
+    dependency = { first = CAS second = ATS subject_type = appanage }
     dependency = { first = CAS second = VIZ subject_type = fiefdom }
     dependency = { first = CAS second = CNY subject_type = vassal }
 
@@ -459,11 +463,6 @@ diplomacy_manager = {
 
     #Balkans:
     dependency = { first = WAL second = OLT subject_type = vassal }
-    dependency = { first = KAT second = ANT subject_type = tributary }
-    dependency = { first = KAT second = MTR subject_type = tributary }
-    dependency = { first = KAT second = MZK subject_type = tributary }
-    dependency = { first = KAT second = THP subject_type = tributary }
-    dependency = { first = KAT second = DGJ subject_type = tributary }
 
     #Anatolia
     dependency = { first = BIT second = HZN subject_type = vassal }
@@ -480,6 +479,7 @@ diplomacy_manager = {
     dependency = { first = QAR second = SLI subject_type = vassal }
     dependency = { first = QAR second = ZBR subject_type = vassal }
     dependency = { first = MAM second = KIL subject_type = vassal }
+    dependency = { first = MAM second = DUL subject_type = tributary }
     dependency = { first = AQQ second = EGL subject_type = vassal }
     dependency = { first = AQQ second = BIN subject_type = vassal }
     dependency = { first = AQQ second = HZR subject_type = vassal }
@@ -856,8 +856,8 @@ diplomacy_manager = {
     dependency = { first = KOL second = PDB subject_type = vassal }
 
     #------------Balkans--------------
-    dependency = { first = BYZ second = ATH subject_type = vassal }
-    dependency = { first = BYZ second = ACH subject_type = vassal }
+    dependency = { first = MOE second = ATH subject_type = vassal }
+    dependency = { first = BYZ second = MOE subject_type = appanage }
 
     dependency = { first = VEN second = NEG subject_type = vassal }
 
@@ -869,9 +869,10 @@ diplomacy_manager = {
     dependency = { first = HUN second = TRA subject_type = vassal }
     dependency = { first = TRA second = SZE subject_type = fiefdom }
     dependency = { first = TRA second = SBN subject_type = vassal }
+    dependency = { first = TRA second = FAG subject_type = vassal }
     dependency = { first = HUN second = SNI subject_type = vassal }
     dependency = { first = HUN second = SVR subject_type = vassal }
-    dependency = { first = HUN second = CUM subject_type = vassal }
+    dependency = { first = HUN second = KNS subject_type = vassal }
 
     dependency = { first = CRO second = FPN subject_type = vassal }
     dependency = { first = FPN second = KRZ subject_type = vassal }
@@ -911,5 +912,5 @@ diplomacy_manager = {
     dependency = { first = GJR second = PLT subject_type = tributary }
     dependency = { first = GJR second = SUA subject_type = vassal }
     dependency = { first = GJR second = DIU subject_type = vassal }
-    dependency = { first = GJR second = SMN subject_type = vassal }
+    dependency = { first = GJR second = SMH subject_type = vassal }
 }
