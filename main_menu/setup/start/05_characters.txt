@@ -118016,6 +118016,38 @@ character_db={
         tag = ZET
     }
 
+    ### Bosnia
+
+    bos_thomas_kotromanic = {
+        first_name = { name = name_thomas }
+        culture = bosnian
+        religion = catholic
+        birth_date = 1411.1.1 # Estimated
+        dynasty = kotromanic_dynasty
+        tag = BOS
+    }
+
+    bos_vojaca = {
+        first_name = { name = Vojaca }
+        culture = bosnian
+        religion = catholic
+        birth_date = 1416.1.1 # Estimated
+        female = yes
+        spouse = bos_thomas_kotromanic
+        tag = BOS
+    }
+
+    bos_stephen_ii_kotromanic = {
+        first_name = { name = name_stephen }
+        culture = bosnian
+        religion = catholic
+        birth_date = 1438.1.1 # Estimated
+        father = bos_thomas_kotromanic
+        mother = bos_vojaca
+        dynasty = kotromanic_dynasty
+        tag = BOS
+    }
+
     ### Epirus & 
 
     epi_carlo_ii_tocco = {
