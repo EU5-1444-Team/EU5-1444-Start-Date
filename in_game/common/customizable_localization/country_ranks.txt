@@ -35,6 +35,12 @@ country_flavor = {
         }
     }
     text = {
+        localization_key = country_rank_governorate
+        trigger = {
+            is_subject_type = governorate
+        }
+    }
+    text = {
         localization_key = country_rank_governor
         trigger = {
             OR = {
@@ -639,6 +645,13 @@ country_flavor = {
                 has_reform = government_reform:gelugpa_institution
                 tag = GPH
             }
+        }
+    }
+
+    text = {
+        localization_key = rank_county_palatine
+        trigger = {
+            tag = CEP
         }
     }
 

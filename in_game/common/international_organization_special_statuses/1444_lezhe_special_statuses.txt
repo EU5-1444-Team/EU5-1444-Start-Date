@@ -46,20 +46,56 @@ league_backer = {
 	}
 
 	auto_bestowal_trigger = {
-		tag = VEN
+		always = no
+	}
+
+	auto_rescind_trigger = {
+		always = no
+	}
+
+	special_status_power = {
+		value = 0
+	}
+}
+
+venetian_governorate = {
+	priority = 11
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER1_COLOR
+	can_be_invited = no
+
+	can_bestow_trigger = {
 		is_member_of_international_organization = scope:recipient
+		is_subject_type = governorate
+		overlord ?= {
+			this = c:VEN
+		}
+	}
+
+	auto_bestowal_trigger = {
+		is_member_of_international_organization = scope:recipient
+		is_subject_type = governorate
+		overlord ?= {
+			this = c:VEN
+		}
 	}
 
 	auto_rescind_trigger = {
 		OR = {
-			tag != VEN
 			NOT = {
 				is_member_of_international_organization = scope:recipient
+			}
+			NOT = {
+				is_subject_type = governorate
+			}
+			NOT = {
+				overlord ?= {
+					this = c:VEN
+				}
 			}
 		}
 	}
 
 	special_status_power = {
-		value = 0
+		value = 5
 	}
 }

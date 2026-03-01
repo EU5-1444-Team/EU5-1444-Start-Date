@@ -17,6 +17,10 @@ league_of_lezhe_defense_law = {
 		}
 		# Albanian League members defend each other.
 		join_defensive_wars_always = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
 			scope:actor ?= {
 				NOT = {
 					has_special_status_in_international_organization = {
@@ -25,7 +29,7 @@ league_of_lezhe_defense_law = {
 					}
 				}
 			}
-			scope:recipient ?= {
+			international_organization:league_of_lezhe ?= {
 				NOT = {
 					has_special_status_in_international_organization = {
 						type = special_status:league_backer
@@ -36,6 +40,10 @@ league_of_lezhe_defense_law = {
 		}
 		# If Venice remains in the League as Backer, it can be called only against the Ottomans.
 		join_defensive_wars_auto_call = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
 			scope:actor ?= {
 				NOT = {
 					has_special_status_in_international_organization = {
@@ -44,7 +52,7 @@ league_of_lezhe_defense_law = {
 					}
 				}
 			}
-			scope:recipient ?= {
+			international_organization:league_of_lezhe ?= {
 				has_special_status_in_international_organization = {
 					type = special_status:league_backer
 					international_organization = root
@@ -81,6 +89,10 @@ league_of_lezhe_offense_law = {
 		}
 		# Offensive coordination is available only among League members, not the League Backer.
 		join_offensive_wars_can_call = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
 			scope:actor ?= {
 				NOT = {
 					has_special_status_in_international_organization = {
@@ -89,7 +101,7 @@ league_of_lezhe_offense_law = {
 					}
 				}
 			}
-			scope:recipient ?= {
+			international_organization:league_of_lezhe ?= {
 				NOT = {
 					has_special_status_in_international_organization = {
 						type = special_status:league_backer
@@ -115,6 +127,210 @@ league_of_lezhe_offense_law = {
 				value = 1000
 			}
 		}
+	}
+}
+
+league_of_lezhe_venetian_governance_law = {
+	law_category = administrative
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:league_of_lezhe
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	no_venetian_local_governors_policy = {
+		allow = {
+			NOT = {
+				tag = VEN
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+	venetian_local_governors_policy = {
+		allow = {
+			NOT = {
+				tag = VEN
+			}
+			country_exists = c:VEN
+			c:VEN = {
+				is_member_of_international_organization = international_organization:league_of_lezhe
+				opinion = {
+					target = international_organization:league_of_lezhe.leader_country
+					value >= 100
+				}
+				any_owned_location = {
+					area = area:albania_area
+				}
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				value = 120
+			}
+			if = {
+				limit = {
+					international_organization:league_of_lezhe = {
+						international_organization_has_leader = yes
+					}
+					c:VEN = {
+						opinion = {
+							target = international_organization:league_of_lezhe.leader_country
+							value >= 100
+						}
+					}
+				}
+				add = {
+					value = 120
+				}
+			}
+			else = {
+				subtract = {
+					value = 200
+				}
+			}
+		}
+		wants_this_policy_bias = {
+			if = {
+				limit = {
+					tag = VEN
+				}
+				subtract = {
+					desc = "POLICY_RESTRICTS_SOVEREIGNTY"
+					value = 85
+				}
+				if = {
+					limit = {
+						international_organization:league_of_lezhe = {
+							international_organization_has_leader = yes
+						}
+					}
+					add = {
+						desc = "POLICY_BIAS_OPINION_OF_IO_LEADER"
+						value = "opinion(international_organization:league_of_lezhe.leader_country)"
+					}
+					add = {
+						desc = "IO_LEADER_DIP_REP"
+						value = international_organization:league_of_lezhe.leader_country.modifier:diplomatic_reputation
+						multiply = 10
+					}
+				}
+				if = {
+					limit = {
+						average_control_in_home_region < 0.55
+					}
+					add = {
+						desc = "VOTE_BASE_VALUE"
+						value = 35
+					}
+				}
+				if = {
+					limit = {
+						monthly_balance < 0
+					}
+					add = {
+						desc = "VOTE_BASE_VALUE"
+						value = 25
+					}
+				}
+				if = {
+					limit = {
+						any_owned_location = {
+							area = area:albania_area
+							province_average_control < 0.6
+						}
+					}
+					add = {
+						desc = "VOTE_BASE_VALUE"
+						value = 50
+					}
+				}
+				if = {
+					limit = {
+						any_owned_location = {
+							area = area:albania_area
+							province_average_control > 0.85
+						}
+					}
+					subtract = {
+						desc = "VOTE_BASE_VALUE"
+						value = 20
+					}
+				}
+			}
+			else = {
+				add = {
+					desc = "DIPLOREASON_BASE"
+					value = 35
+				}
+				if = {
+					limit = {
+						international_organization:league_of_lezhe = {
+							international_organization_has_leader = yes
+						}
+					}
+					add = {
+						desc = "POLICY_BIAS_OPINION_OF_IO_LEADER"
+						value = "opinion(international_organization:league_of_lezhe.leader_country)"
+						multiply = 0.25
+					}
+				}
+			}
+			add = {
+				desc = "BIAS_FROM_RULER_TRAITS"
+				value = modifier:bias_for_diplomat_policies
+			}
+		}
+		on_fully_activated = {
+			if = {
+				limit = {
+					country_exists = c:VEN
+					c:VEN = {
+						is_member_of_international_organization = international_organization:league_of_lezhe
+						any_owned_location = {
+							area = area:albania_area
+						}
+					}
+				}
+				area:albania_area = {
+					every_location_in_area = {
+						limit = {
+							owner = c:VEN
+						}
+						create_country_from_location = {
+							make_subject_of = {
+								target = c:VEN
+								type = subject_type:governorate
+							}
+							change_country_name = LEZHE_GOVERNORATE_DYNAMIC
+							change_country_adjective = LEZHE_GOVERNORATE_DYNAMIC_ADJ
+							save_scope_as = lezhe_venetian_governor_country
+						}
+						if = {
+							limit = {
+								exists = scope:lezhe_venetian_governor_country
+							}
+							scope:lezhe_venetian_governor_country = {
+								every_owned_location = {
+									limit = {
+										owner ?= scope:lezhe_venetian_governor_country
+									}
+									add_core = scope:lezhe_venetian_governor_country
+									change_integration_level = core
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		months = 6
 	}
 }
 
@@ -169,17 +385,6 @@ league_of_lezhe_unification_law = {
 		}
 		on_fully_activated = {
 			custom_tooltip = league_of_lezhe_unification_tt
-			root.leader_country = {
-				form_country = formable_country:ALB_f
-				if = {
-					limit = {
-						country_rank_level < 3
-					}
-					set_country_rank_effect = {
-						rank = country_rank:rank_kingdom
-					}
-				}
-			}
 			every_international_organization_member = {
 				limit = {
 					NOT = {
@@ -199,10 +404,21 @@ league_of_lezhe_unification_law = {
 					}
 				}
 			}
+			root.leader_country = {
+				form_country = formable_country:ALB_f
+				if = {
+					limit = {
+						country_rank_level < 3
+					}
+					set_country_rank_effect = {
+						rank = country_rank:rank_kingdom
+					}
+				}
+			}
 			destroy_international_organization = {
 				target = root
 			}
 		}
-		years = 25
+		years = 10
 	}
 }

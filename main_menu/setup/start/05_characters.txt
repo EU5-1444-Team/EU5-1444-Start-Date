@@ -112055,7 +112055,7 @@ character_db={
     }
 
     ser_durad_brankovic = {
-        first_name = { name = name_george }
+        first_name = { name = Djuradj }
         culture = serbian
         religion = catholic
         birth_date = 1377.2.22
@@ -117910,6 +117910,90 @@ character_db={
         mother = kat_voisava_tripalda
         dynasty = kastrioti_dynasty
         tag = KAT
+    }
+
+    ### Other minor Balkan countries
+
+    dgj_nicholas_dukagjini = {
+        first_name = { name = Nicholas }
+        culture = albanian
+        religion = catholic
+        birth_date = 1398.1.1
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    zet_djuradj_djurasevic = {
+        first_name = { name = Djuradj }
+        culture = serbian
+        religion = orthodox
+        birth_date = 1370.1.1
+        death_date = 1435.1.1
+        dynasty = crnojevic_dynasty
+        tag = ZET
+    }
+
+    zet_busha_zaharia = {
+        first_name = { name = Busha }
+        culture = serbian
+        religion = orthodox
+        birth_date = 1380.1.1 # Estimated
+        spouse = zet_djuradj_djurasevic
+        female = yes
+        tag = ZET
+    }
+
+    zet_gojcin_crnojevic = {
+        first_name = { name = Gojcin }
+        culture = serbian
+        religion = orthodox
+        birth_date = 1398.1.1
+        father = zet_djuradj_djurasevic
+        mother = zet_busha_zaharia
+        dynasty = crnojevic_dynasty
+        tag = ZET
+    }
+
+    zet_stefan_crnojevic = {
+        first_name = { name = Stefan }
+        culture = serbian
+        religion = orthodox
+        estate = nobles_estate
+        birth_date = 1426.1.1
+        father = zet_djuradj_djurasevic
+        mother = zet_busha_zaharia
+        dynasty = crnojevic_dynasty
+        tag = ZET
+    }
+
+    epi_tocco_carlo_ii = {
+        first_name = { name = Carlo }
+        culture = neapolitan
+        religion = catholic
+        birth_date = 1400.1.1  # estimated
+        dynasty = tocco_dynasty
+        tag = EPI
+    }
+
+    epi_raimondina_ventimiglia = {
+        first_name = { name = Raimondina }
+        culture = neapolitan
+        religion = catholic
+        spouse = epi_tocco_carlo_ii
+        birth_date = 1405.1.1 # Estimated
+        female = yes
+        tag = EPI
+    }
+    
+    epi_tocco_leonardo_iii = {
+        first_name = { name = Leonardo }
+        culture = neapolitan
+        religion = catholic
+        father = epi_tocco_carlo_ii
+        mother = epi_raimondina_ventimiglia
+        birth_date = 1436.1.1  # estimated
+        dynasty = tocco_dynasty
+        tag = EPI
     }
 
     ### Muscovy
