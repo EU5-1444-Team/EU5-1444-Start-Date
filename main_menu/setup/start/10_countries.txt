@@ -3102,6 +3102,25 @@ countries = {
             include = "expl_novgorod"
         }
 
+        #Principality of Voronezh
+        VOV = {
+            own_control_core = {
+                voronezh anna_russia novaya_pokrovka ostrogozhsk semidesyatnoye kastornoye terbuny zemlyansk usman  teshevka lipetsk donkov
+                ust_stanovykh_ryas izberdey kozlov
+            }
+            capital = voronezh
+            include = "russian_principality_no_coast"
+            include = "expl_novgorod"
+            country_rank = rank_duchy
+            liturgical_language = church_slavonic_language
+            starting_technology_level = 3
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random # TODO: add me
+            }
+        }
+
         #Principality of Pronsk
         PRK = {
             own_control_core = {
@@ -3132,6 +3151,23 @@ countries = {
             capital = pronsk
             include = "russian_principality_no_coast"
             include = "expl_novgorod"
+        }
+        KOY = { #Khopyor Cossak Host
+            own_control_core = {
+                chernyanka alexeyevka valuyki kalnivka novopskov nyzhnia_duvanka kreminna novoaidar bilovodsk konstantinovka rossosh boguchar chertkovo veesky
+                kalach verkhny_mamon buturlinovka alexeyevskaya uryupin borisoglebsk bolshaya_gribanovka bannoye sadovoye novoanninsky novonikolayevsky
+            }
+            capital = rovenki
+            include = "russian_principality_no_coast"
+            include = "expl_novgorod"
+            country_rank = rank_county
+            liturgical_language = church_slavonic_language
+            starting_technology_level = 3
+            government = {
+                type = monarchy
+                heir_selection = cognatic_primogeniture
+                ruler = random # TODO: add me
+            }
         }
 
         #Principality of Starodub (-on-the-Klyazma)
@@ -4390,14 +4426,15 @@ countries = {
         AGZ = {  #Sayid Ahmad's Pretenders
          	type = army
             own_control_core = {
-         		kreminna bielska_sloboda bilovodsk novopskov kalnivka konstantinovka mityakinskaya novoaidar belaya_kalitva millerovo oblivskaya kashary chertkovo bokovskaya milyutinskaya boguchar ostrogozhsk kalach uryupin mikhaylovka novoanninsky alexeyevskaya veesky kumylzhenskaya yelan machekha novonikolayevsky samoylovka kastornoye chernyanka bondari serdobinskaya staroyuryevo morsha nyzhnia_duvanka novaya_pokrovka semidesyatnoye zemlyansk rossosh borisoglebsk bannoye sadovoye bolshaya_gribanovka buturlinovka verkhny_mamon atkarsk lysye_gory yekaterinovka balanda rtishchevo balashov turki arkadak donkov teshevka voronezh lipetsk usman mordovo zherdevka uvarovo kirsanov rasskazovo izberdey tambov ust_stanovykh_ryas kozlov terbuny alexeyevka rovenki valuyki
-         	    yundin peschanokopskoye bagayevskaya yegorlykskaya semikarakorsk shakhty kamenskaya kalmius krasny_sulin rovenky
+                mityakinskaya belaya_kalitva millerovo oblivskaya kashary
+                bokovskaya milyutinskaya
+                mikhaylovka kumylzhenskaya
+                yundin peschanokopskoye bagayevskaya yegorlykskaya semikarakorsk shakhty kamenskaya kalmius krasny_sulin rovenky
                 luhansk bakhmut lysychansk oleksandrivka posad velyka_novosilka domakha huliaipole shyrokyne taganrog vasylivka
                 melitopol tokmak konski_vody kuchugur berdiansk
                 tomakivka kichkas rozdory pavlohrad hryshyne
-
                 privolnoye bol_shaya_martynovka cheplak bolshoy_gashun dubovskoye
-                ust_tsimla konstantinovsk tatsinskaya tormosin nizhny_chir anna_russia
+                ust_tsimla konstantinovsk tatsinskaya tormosin nizhny_chir
                 kletskaya ust_medveditskaya zimnyatsky
             }
 
@@ -4423,7 +4460,6 @@ countries = {
                 alexandrovskoye blagodarnoye novoselitskoye stavropol
                 shad_kirman petrovskoye_pontic
                 bezopasnoye ipatovo
-                kremenskaya
                 
                 khosheutovo krasny_yar ganyushkino zamyany astrakhan ikryanoye
                 dardeling mekletin kok_usn arzgir levokumskoye majar
@@ -4461,6 +4497,10 @@ countries = {
             botkul mechet stepanevka
             ukek tereshka petrovsk malodelskaya ilovlya
             savinka rovnoye pokrovsk baronsk krasny_kut_pontic mokrous
+            mordovo tambov bondari staroyuryevo morsha rasskazovo
+            zherdevka uvarovo kirsanov atkarsk serdobinskaya lysye_gory
+            yekaterinovka balanda rtishchevo balashov turki arkadak kremenskaya
+            yelan machekha samoylovka
             }
 
          	starting_technology_level = 3
@@ -4488,7 +4528,7 @@ countries = {
                 oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka
                 balikley aqmecit_prybuzhzhya vithold_hammami argamakli_sarai
                 khadjibey teligol kuyanlik ananiv iagorlic
-                sofiivka kryvyi_rih mykytyn_rih 
+                sofiivka kryvyi_rih mykytyn_rih
             }
             our_cores_conquered_by_others = {
                 shcherbinovka dashev kezlev aqmecit azok
