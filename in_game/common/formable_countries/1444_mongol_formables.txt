@@ -219,3 +219,48 @@ MGA_f = { #Mongolia formable
         }
     }
 }
+GTH_f = { #Great Horde
+	level = 2
+	required_locations_fraction = 0.1
+	rule = historical
+	
+	potential = {
+		or = {
+			tag = AGZ
+			tag = KGZ
+			tag = MGZ
+		}
+	}
+
+	allow = {
+		or = {
+			AND = {
+				tag = AGZ
+				NOT = { country_exists = c:KGZ }
+				NOT = { country_exists = c:MGZ }
+			}
+			AND = {
+				tag = KGZ
+				NOT = { country_exists = c:AGZ }
+				NOT = { country_exists = c:MGZ }
+			}
+			AND = {
+				tag = MGZ
+				NOT = { country_exists = c:AGZ }
+				NOT = { country_exists = c:KGZ }
+			}
+		}
+	}
+	
+	name = GTH
+	flag = GTH
+	adjective = GTH_ADJ
+	tag = GTH
+	color = map_GTH
+	location = {
+		sarai_al_jadid
+	}
+	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_kingdom }
+	}
+}

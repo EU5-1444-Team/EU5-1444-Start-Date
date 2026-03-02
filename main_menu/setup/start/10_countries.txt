@@ -3154,19 +3154,27 @@ countries = {
         }
         KOY = { #Khopyor Cossak Host
             own_control_core = {
-                chernyanka alexeyevka valuyki kalnivka novopskov nyzhnia_duvanka kreminna novoaidar bilovodsk konstantinovka rossosh boguchar chertkovo veesky
-                kalach verkhny_mamon buturlinovka alexeyevskaya uryupin borisoglebsk bolshaya_gribanovka bannoye sadovoye novoanninsky novonikolayevsky
+                chernyanka alexeyevka novopskov bilovodsk konstantinovka rossosh boguchar chertkovo veesky
+                kalach verkhny_mamon buturlinovka alexeyevskaya uryupin borisoglebsk bolshaya_gribanovka bannoye sadovoye novoanninsky novonikolayevsky rovenki
             }
             capital = rovenki
             include = "russian_principality_no_coast"
             include = "expl_novgorod"
-            country_rank = rank_county
+            country_rank = rank_duchy
             liturgical_language = church_slavonic_language
             starting_technology_level = 3
             government = {
-                type = monarchy
-                heir_selection = cognatic_primogeniture
-                ruler = random # TODO: add me
+                type = steppe_horde
+                heir_selection = tribal_oldest_male
+                ruler = random
+                reforms = {
+                    cossacks_reform
+                }
+
+                laws = {
+                    marriage_law = monogamous_marriage
+                    heir_religion_law = heir_same_religion
+                }
             }
         }
 
@@ -48069,6 +48077,7 @@ countries = {
             own_control_core = {
                 izium sloviansk vovchansk adalaga barvinkove ternivka
                 kupiansk donets_kharkiv zmiiv chuhuiv
+                nyzhnia_duvanka kreminna kalnivka bielska_sloboda novoaidar valuyki
             }
 
             starting_technology_level = 3
