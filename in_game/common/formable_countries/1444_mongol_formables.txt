@@ -262,7 +262,7 @@ GTH_f = { #Great Horde
 		steppes_region
 	}
 	form_effect = {
-		set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		set_country_rank_effect = { rank = country_rank:rank_duchy }
 		set_capital = location:sarai_al_jadid
 	}
 }
@@ -281,7 +281,9 @@ GLH_f = {
 			culture = { 
 				has_culture_group = culture_group:tartar_group
 			}
-			culture = culture:mongolian_culture
+			culture = {
+				has_culture_group = culture_group:mongolian_group
+			}
 		}
 	}
 
@@ -302,7 +304,7 @@ GLH_f = {
 		desht_kipchak_area
 	}
 	form_effect = {
-		set_country_rank_effect = { rank = country_rank:rank_empire }
+		set_country_rank_effect = { rank = country_rank:rank_kingdom }
 		change_government_type = government_type:steppe_horde
 		set_capital = location:sarai_al_jadid
 	}
