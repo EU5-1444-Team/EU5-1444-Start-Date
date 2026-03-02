@@ -111904,6 +111904,7 @@ character_db={
 
     hun_matyas_hunyadi = {
         first_name = { name = name_matthew }
+        nickname = { name = Corvinus }
         culture = hungarian
         religion = catholic
         birth_date = 1443.2.23
@@ -118018,8 +118019,8 @@ character_db={
 
     ### Bosnia
 
-    bos_thomas_kotromanic = {
-        first_name = { name = name_thomas }
+    bos_stefan_tomas_i_kotromanic = {
+        first_name = { name = name_stephen.name_thomas }
         culture = bosnian
         religion = catholic
         birth_date = 1411.1.1 # Estimated
@@ -118028,29 +118029,29 @@ character_db={
     }
 
     bos_vojaca = {
-        first_name = { name = Vojaca }
+        first_name = { name = Vojača }
         culture = bosnian
         religion = catholic
         birth_date = 1416.1.1 # Estimated
         female = yes
-        spouse = bos_thomas_kotromanic
+        spouse = bos_stefan_tomas_kotromanic
         tag = BOS
     }
 
-    bos_stephen_ii_kotromanic = {
+    bos_stefan_tomasevic_ii_kotromanic = {
         first_name = { name = name_stephen }
         culture = bosnian
         religion = catholic
         birth_date = 1438.1.1 # Estimated
-        father = bos_thomas_kotromanic
+        father = bos_stefan_tomas_i_kotromanic
         mother = bos_vojaca
         dynasty = kotromanic_dynasty
         tag = BOS
     }
 
-    hum_stephen_vukcic_kosaca = {
+    hum_stefan_vukcic_kosaca = {
         # Stjepan Vukčić Kosača
-        first_name = { name = name_stephen }
+        first_name = { name = name_stephen.Vukčić }
         culture = bosnian
         religion = bosnian_church
         birth_date = 1404.1.1 # Estimated
@@ -118066,47 +118067,49 @@ character_db={
         birth_date = 1411.1.1 # Estimated
         female = yes
         spouse = hum_stephen_vukcic_kosaca
+        dynasty = balsic_dynasty
         tag = HUM
     }
 
-    hum_catherine_of_bosnia = {
+    hum_katarina_kosaca = {
         # Catherine of Bosnia
         first_name = { name = name_catherine }
         culture = bosnian
         religion = bosnian_church
         birth_date = 1424.1.1 # Estimated
-        dynasty = kosaca_dynasty
-        father = hum_stephen_vukcic_kosaca
-        mother = hum_jelena_balsic
         female = yes
+        father = hum_stefan_vukcic_kosaca
+        mother = hum_jelena_balsic
+        dynasty = kosaca_dynasty
         tag = HUM
     }
 
-    hum_vladislav_hercegovic = {
+    hum_vladislav_hercegovic_kosaca = {
         # Vladislav Hercegović
-        first_name = { name = name_vladislav }
+        first_name = { name = name_vladislav.Hercegović }
         culture = bosnian
         religion = bosnian_church
         birth_date = 1426.1.1 # Estimated
-        father = hum_stephen_vukcic_kosaca
-        dynasty = kosaca_dynasty
+        father = hum_stefan_vukcic_kosaca
         mother = hum_jelena_balsic
+        dynasty = kosaca_dynasty
         tag = HUM
     }
 
-    hum_vlatko_hercegovic = {
+    hum_vlatko_hercegovic_kosaca = {
         # Vlatko Hercegović
-        first_name = { name = name_vladislav }
+        first_name = { name = Vlatko.Hercegović }
         culture = bosnian
         religion = bosnian_church
         birth_date = 1428.1.1 # Estimated
-        father = hum_stephen_vukcic_kosaca
+        father = hum_stefan_vukcic_kosaca
+        #mother = Random Apulian noblewoman
         dynasty = kosaca_dynasty
         mother = hum_jelena_balsic
         tag = HUM
     }
 
-    ### Epirus & 
+    ### Epirus & Cephalonia
 
     epi_carlo_ii_tocco = {
         first_name = { name = name_charles }
