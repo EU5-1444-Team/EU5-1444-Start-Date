@@ -4328,124 +4328,138 @@ countries = {
             capital = barnaul
         }
 
-        GLH = {
-            type = location
+        #Golden Horde
+#        GLH = {
+#            type = location
+#            own_control_core = {
+#            }
+#
+#            our_cores_conquered_by_others = {
+#            }
+#            starting_technology_level = 3
+#            include = "expl_mongols"
+#            include = "eurasian_horde"
+#            country_rank = rank_kingdom
+#
+#            government = {
+#                type = steppe_horde
+#                heir_selection = tribal_oldest_male
+#
+#                reforms = {
+#                    legacy_of_genghis
+#                }
+#                privilege = {
+#                    dhimmi_abrahamic_communities
+#                    urban_development_grants
+#                   dhimmi_military_service
+#                   dhimmi_traditions
+#                   dhimmi_administrative_posts
+#                }
+#
+#                laws = {
+#                    sharia_law = hanafi_policy
+#                }
+#            }
+#            capital = sarai_al_jadid
+#            religious_school = hanafi_school
+#            government = { mysticism_vs_jurisprudence = -15 }
+#
+#            court_language = kipchak_language
+#
+#
+#            accepted_cultures = {
+#                crimean
+#
+#            }
+#            tolerated_cultures = {
+#                mishar
+#                bashkir
+#                uzbek_culture
+#                yerle_qaliq_culture
+#                smolenskian_culture
+#                kyrgyz_culture
+#                #ruthenian
+#                #ryazanian
+#                #severian
+#                #nogai
+#                #astrakhani
+#                #kazani
+#            }
+#        }
+
+        AGZ = {  #Sayid Ahmad's Pretenders
+         	type = army
             own_control_core = {
+         		kreminna bielska_sloboda bilovodsk novopskov kalnivka konstantinovka mityakinskaya novoaidar belaya_kalitva millerovo oblivskaya kashary chertkovo bokovskaya milyutinskaya boguchar ostrogozhsk kalach uryupin mikhaylovka novoanninsky alexeyevskaya veesky kumylzhenskaya yelan machekha novonikolayevsky samoylovka kastornoye chernyanka bondari serdobinskaya staroyuryevo morsha nyzhnia_duvanka novaya_pokrovka semidesyatnoye zemlyansk rossosh borisoglebsk bannoye sadovoye bolshaya_gribanovka buturlinovka verkhny_mamon atkarsk lysye_gory yekaterinovka balanda rtishchevo balashov turki arkadak donkov teshevka voronezh lipetsk usman mordovo zherdevka uvarovo kirsanov rasskazovo izberdey tambov ust_stanovykh_ryas kozlov terbuny alexeyevka rovenki valuyki
+         	}
 
-                kreminna bielska_sloboda bilovodsk novopskov kalnivka konstantinovka
-                mityakinskaya novoaidar belaya_kalitva millerovo oblivskaya
-                kashary chertkovo bokovskaya milyutinskaya boguchar ostrogozhsk
-                kalach uryupin mikhaylovka novoanninsky alexeyevskaya veesky kumylzhenskaya
-                yelan machekha novonikolayevsky samoylovka
-                novopavlovsk yessentuq alexandrovskoye blagodarnoye novoselitskoye
-                stavropol grigoropolisskaya shad_kirman petrovskoye_pontic privolnoye
-                novo_alexandrovskoye bezopasnoye ipatovo
-                mechet stepanevka
-                kastornoye chernyanka
-                bondari serdobinskaya
-                alkhan_kala nazran dzhulat tatartup
-                staroyuryevo morsha
-            }
-            own_control_integrated = {
-                nyzhnia_duvanka
-                bol_shaya_martynovka cheplak bolshoy_gashun dubovskoye ust_tsimla konstantinovsk
-                tatsinskaya tormosin kremenskaya kletskaya ust_medveditskaya nizhny_chir anna_russia
-                novaya_pokrovka semidesyatnoye zemlyansk rossosh borisoglebsk bannoye sadovoye
-                bolshaya_gribanovka buturlinovka verkhny_mamon zimnyatsky malodelskaya ilovlya
-                atkarsk lysye_gory yekaterinovka balanda rtishchevo balashov turki arkadak
-                sarai_al_jadid beljamen zenzevatka nagavskaya aksay rudnya_pontic danilovka
-                kotovo kamyshin goly_karamysh pologoye_zaymishche srednyaya_akhtuba bykovo
-                elton zolotari berezhnovka
-                astrakhan khosheutovo krasny_yar ganyushkino zamyany yenotayevka sapara
-                chernyye_zemli ikryanoye chyorny_yar nikolskoye_pontic malye_derbety
-                sadovoye_kalmykia ded_khulsun zavetnoye bolkhuny mikhaylovka_pontic
-                rechnoye botkul
-                dardeling mekletin kok_usn yashkul
-                iki_burul priyutnoye elista remontnoye gorodovikovsk raguli majar zelenokumsk arzgir levokumskoye
-                naurskaya kara_bazaar terekli_mekteb kurskaya kamysh_burun
-
-                donkov teshevka voronezh
-                lipetsk usman mordovo zherdevka uvarovo kirsanov rasskazovo izberdey tambov ust_stanovykh_ryas
-                kozlov terbuny alexeyevka
-                rovenki valuyki
-                savinka rovnoye pokrovsk baronsk krasny_kut_pontic mokrous
-                ukek tereshka petrovsk
-            }
-
-            our_cores_conquered_by_others = {
-                kichkas rozdory pavlohrad
-                sloviansk
-                semikarakorsk
-
-            }
-            starting_technology_level = 3
-            include = "expl_mongols"
-            include = "eurasian_horde"
-            country_rank = rank_kingdom
-
-            government = {
-                type = steppe_horde
-                heir_selection = tribal_oldest_male
-
-                reforms = {
-                    legacy_of_genghis
-                }
-                privilege = {
-                    dhimmi_abrahamic_communities
-                    urban_development_grants
-                    dhimmi_military_service
-                    dhimmi_traditions
-                    dhimmi_administrative_posts
+         	starting_technology_level = 3
+         	include = "expl_mongols"
+         	government = {
+         		type = steppe_horde
+         		heir_selection = cognatic_primogeniture
+                centralization_vs_decentralization = 100
+#                ruler = tokhta_dorbet_fictional
+         	}
+         	country_rank = rank_duchy
+         	court_language = mongolian_language
+         	capital = kreminna
+        }
+        KGZ = {  #Kuchuk Muhammad's Pretenders
+         	type = army
+            own_control_core = {
+         		astrakhan alkhan_kala nazran dzhulat tatartup novopavlovsk yessentuq alexandrovskoye blagodarnoye novoselitskoye stavropol grigoropolisskaya shad_kirman petrovskoye_pontic privolnoye novo_alexandrovskoye bezopasnoye ipatovo mechet stepanevka bol_shaya_martynovka cheplak bolshoy_gashun dubovskoye ust_tsimla konstantinovsk tatsinskaya tormosin kremenskaya kletskaya ust_medveditskaya nizhny_chir anna_russia ilovlya zimnyatsky malodelskaya
                 }
 
-                laws = {
-                    sharia_law = hanafi_policy
-                }
+         	starting_technology_level = 3
+         	include = "expl_mongols"
+         	government = {
+         		type = steppe_horde
+         		heir_selection = cognatic_primogeniture
+                centralization_vs_decentralization = 100
+#                ruler = tokhta_dorbet_fictional
+         	}
+         	country_rank = rank_duchy
+         	court_language = mongolian_language
+         	capital = astrakhan
+        }
+        MGZ = {  #Mustafa's Pretenders
+         	type = army
+            own_control_core = {
+         	sarai_al_jadid beljamen zenzevatka nagavskaya aksay rudnya_pontic danilovka kotovo kamyshin goly_karamysh pologoye_zaymishche srednyaya_akhtuba bykovo elton zolotari berezhnovka khosheutovo krasny_yar ganyushkino zamyany yenotayevka sapara chernyye_zemli ikryanoye chyorny_yar nikolskoye_pontic malye_derbety sadovoye_kalmykia ded_khulsun zavetnoye bolkhuny mikhaylovka_pontic rechnoye botkul dardeling mekletin kok_usn yashkul iki_burul priyutnoye elista remontnoye gorodovikovsk raguli majar zelenokumsk arzgir levokumskoye naurskaya kara_bazaar terekli_mekteb kurskaya kamysh_burun ukek tereshka petrovsk savinka rovnoye pokrovsk baronsk krasny_kut_pontic mokrous	
             }
-            capital = sarai_al_jadid
-            religious_school = hanafi_school
-            government = { mysticism_vs_jurisprudence = -15 }
 
-            court_language = kipchak_language
-
-
-            accepted_cultures = {
-                crimean
-
-            }
-
-
-            tolerated_cultures = {
-                mishar
-                bashkir
-                uzbek_culture
-                yerle_qaliq_culture
-                smolenskian_culture
-                kyrgyz_culture
-                #ruthenian
-                #ryazanian
-                #severian
-                #nogai
-                #astrakhani
-                #kazani
-            }
+         	starting_technology_level = 3
+         	include = "expl_mongols"
+         	government = {
+         		type = steppe_horde
+         		heir_selection = cognatic_primogeniture
+                centralization_vs_decentralization = 100
+#                ruler = tokhta_dorbet_fictional
+         	}
+         	country_rank = rank_duchy
+         	court_language = mongolian_language
+         	capital = sarai_al_jadid
         }
 
-        CRI = {
+        CRI = { #Crimea
             type = location
             own_control_core = {
-                qirq_yer qarasuvbazar seyitler solkhat kalay kezlev aqmecit jurchi or_qapi akhtar kalininskaya bryukhovetskaya
+                qirq_yer qarasuvbazar seyitler solkhat kalay jurchi or_qapi akhtar kalininskaya bryukhovetskaya
                 bzhedygu_kal ust_labinsk pavlovskaya tbilisskaya romanovsky_khutor qalancaq aslan_horod ordu_bazar rohat_kermen enice velyka_lepetykha hryshyne
                 melitopol kyrylivka tokmak konski_vody kuchugur berdiansk taganrog velyka_novosilka domakha huliaipole shyrokyne vasylivka bakhmut lysychansk
-                oleksandrivka posad azok bagayevskaya shcherbinovka balzimachi kanevskaya starominskaya yegorlykskaya krasny_sulin shakhty rovenky kalmius
+                oleksandrivka posad bagayevskaya balzimachi kanevskaya starominskaya yegorlykskaya krasny_sulin shakhty rovenky kalmius
                 kamenskaya yundin belaya_glina peschanokopskoye
                 kichkas rozdory pavlohrad
                 luhansk
                 oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka
-                balikley aqmecit_prybuzhzhya vithold_hammami dashev argamakli_sarai
+                balikley aqmecit_prybuzhzhya vithold_hammami argamakli_sarai
                 khadjibey teligol kuyanlik ananiv iagorlic
                 sofiivka kryvyi_rih tomakivka mykytyn_rih 
                 semikarakorsk
+            }
+            our_cores_conquered_by_others = {
+                shcherbinovka dashev kezlev aqmecit azok
             }
 
             starting_technology_level = 3
@@ -4453,7 +4467,7 @@ countries = {
             include = "eurasian_horde"
             country_rank = rank_duchy
 
-            capital = tana
+            capital = qirq_yer
 
             religious_school = hanafi_school
             government = {
@@ -4734,7 +4748,9 @@ countries = {
             # Gazaria
             own_control_core = {
                 kaffa #Black Sea
-                lusta soldaia
+                lusta soldaia vosporo
+                taman mapa copa tana
+                shcherbinovka kezlev aqmecit dashev azok
             }
 
             own_control_integrated = {
@@ -10779,7 +10795,6 @@ countries = {
                 castelsardo #Sardinia
                 amasra #Black Sea
                 chios molyvos mitilene enez thasos famagusta
-                vosporo tana taman mapa copa
             }
 
             starting_technology_level = 3
