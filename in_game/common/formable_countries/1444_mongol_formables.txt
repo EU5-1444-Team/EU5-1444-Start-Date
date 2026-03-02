@@ -220,19 +220,23 @@ MGA_f = { #Mongolia formable
     }
 }
 GTH_f = { #Great Horde
-	level = 2
-	required_locations_fraction = 0.1
+	level = 3
+	required_locations_fraction = 0.3
 	rule = historical
 	
 	potential = {
 		or = {
-			tag = AGZ
-			tag = KGZ
-			tag = MGZ
+			always = yes
+			or = {
+				tag = AGZ
+				tag = KGZ
+				tag = MGZ
+			}
 		}
 	}
 
 	allow = {
+		owns = location:sarai_al_jadid
 		or = {
 			AND = {
 				tag = AGZ
@@ -257,10 +261,11 @@ GTH_f = { #Great Horde
 	adjective = GTH_ADJ
 	tag = GTH
 	color = map_GTH
-	location = {
-		sarai_al_jadid
+	regions = {
+		steppes_region
 	}
 	form_effect = {
 		set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		set_capital = location:sarai_al_jadid
 	}
 }
