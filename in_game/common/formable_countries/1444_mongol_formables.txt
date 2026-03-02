@@ -226,12 +226,9 @@ GTH_f = { #Great Horde
 	
 	potential = {
 		or = {
-			always = yes
-			or = {
-				tag = AGZ
-				tag = KGZ
-				tag = MGZ
-			}
+			tag = AGZ
+			tag = KGZ
+			tag = MGZ
 		}
 	}
 
@@ -266,6 +263,47 @@ GTH_f = { #Great Horde
 	}
 	form_effect = {
 		set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		set_capital = location:sarai_al_jadid
+	}
+}
+
+GLH_f = {
+	level = 4
+	required_locations_fraction = 0.7
+	rule = historical
+	
+	potential = {
+		OR = {
+			court_language = language:kipchak_language
+			culture = { 
+				has_culture_group = culture_group:turkic_group
+			}
+			culture = { 
+				has_culture_group = culture_group:tartar_group
+			}
+			culture = culture:mongolian_culture
+		}
+	}
+
+	allow = {
+		owns = location:sarai_al_jadid
+	}
+	
+	name = GLH
+	flag = GTH
+	adjective = GLH_ADJ
+	tag = GLH
+	color = map_golden_horde
+	regions = {
+		steppes_region
+	}
+	areas = {
+		khwarazm_area
+		desht_kipchak_area
+	}
+	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_empire }
+		change_government_type = government_type:steppe_horde
 		set_capital = location:sarai_al_jadid
 	}
 }
