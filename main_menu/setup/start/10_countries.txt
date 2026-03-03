@@ -11200,20 +11200,26 @@ countries = {
                 ruler_term = { character = mfa_bonifacio_ii_monferrato start_date = 1226.9.17 end_date = 1253.6.12 regnal_number = 2 }
                 ruler_term = { character = mfa_guglielmo_vii_monferrato start_date = 1253.6.12 end_date = 1292.2.6 regnal_number = 7 }
                 ruler_term = { character = mfa_giovanni_i_monferrato start_date = 1292.2.6 end_date = 1305.1.9 regnal_number = 1 }
-
-                ruler_term = { character = mfa_teodoro_i_palaiologos start_date = 1305.1.9 regnal_number = 1 }
+                ruler_term = { character = mfa_teodoro_i_palaiologos start_date = 1305.1.9 end_date = 1338.4.24 regnal_number = 1 }
+                ruler_term = { character = mfa_giovanni_palaiologos start_date = 1338.4.24 end_date = 1372.3.19 regnal_number = 2 }
+                ruler_term = { character = mfa_ottone_iii_palaiologos_monferrato start_date = 1372.1.1 end_date = 1378.12.16 regnal_number = 3 }
+                ruler_term = { character = mfa_giovanni_iii_palaiologos_monferrato start_date = 1378.12.16 end_date = 1381.8.25 regnal_number = 3 }
+                ruler_term = { character = mfa_theodoro_ii_palaiologos_monferrato start_date = 1381.8.25 end_date = 1418.4.16 regnal_number = 2 }
+                ruler_term = { character = mfa_gian_giacomo_palaiologos_monferrato start_date = 1418.4.16 regnal_number = 1 }
+                
 
                 regnal_numbers = {
                     name_aleramo = 1
                     name_anselm = 1
-                    name_otto = 2
+                    name_otto = 3
                     name_william = 7
                     name_henry = 1
                     name_rayner = 1
                     name_conrad = 1
                     name_boniface = 2
-                    name_john = 1
-                    name_theodore = 1
+                    name_john = 3
+                    name_theodore = 2
+                    name_john.name_james = 1
                 }
 
                 reforms = {
@@ -36850,7 +36856,8 @@ countries = {
             government = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
-                ruler = random # TODO: add me
+                ruler = cyp_john_ii
+                heir = cyp_charlotte
 
                 ruler_term = { character = cyp_guy_i_lusignan start_date = 1192.5.5 end_date = 1194.1.1 regnal_number = 1 }
                 ruler_term = { character = koj_aimery_ii_lusignan start_date = 1194.4.1 end_date = 1205.4.1 regnal_number = 1 }
@@ -36862,15 +36869,23 @@ countries = {
                 ruler_term = { character = cyp_henri_ii_lusignan start_date = 1285.5.20 end_date = 1306.4.26 regnal_number = 2 }
                 ruler_term = { character = cyp_amaury_ii_lusignan start_date = 1306.4.26 end_date = 1310.6.5 regnal_number = 2 }
                 ruler_term = { character = cyp_henri_ii_lusignan start_date = 1310.6.5 end_date = 1324.8.31 regnal_number = 2 } # Restored
-                ruler_term = { character = cyp_hugues_iv start_date = 1324.8.31 regnal_number = 4 }
+                ruler_term = { character = cyp_hugues_iv start_date = 1324.8.31 end_date = 1358.11.24 regnal_number = 4 }
+                ruler_term = { character = cyp_pierre_i start_date = 1358.11.24 end_date = 1369.1.1 regnal_number = 1 }
+                ruler_term = { character = cyp_pierre_ii start_date = 1369.1.17 end_date = 1382.10.13 regnal_number = 2 }
+                ruler_term = { character = cyp_jacques_i start_date = 1382.10.13 end_date = 1398.9.9 regnal_number = 1 }
+                ruler_term = { character = cyp_janus start_date = 1398.9.9 end_date = 1432.6.29 regnal_number = 1 }
+                ruler_term = { character = cyp_john_ii start_date = 1432.6.29 regnal_number = 2 }
+
 
                 regnal_numbers = {
                     name_wido = 1
                     name_aimeric = 1
                     name_hugh = 4
                     name_henri = 2
-                    name_john = 1
+                    name_john = 2
                     name_amalric = 2
+                    name_james = 1
+                    name_janus = 1
                 }
             }
 
