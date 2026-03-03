@@ -4236,11 +4236,13 @@ countries = {
         }
 
         SAK = {
+            type = pop
 
-            own_control_core = {
+            add_pops_from_locations = {
                 bulun uolba dakky cherkekh churapcha uorga us_kyuyol byanye byadi chiryapchi
                 tomtor mayya tabaga khatas maymaga kysyl_syr ulu_sysy magan zhatai nuochakha
                 tit_ebya tyokhtyur charang kenkeme ulakhan_an toyon_ary tit_ary yedey
+                topolinoe echiy sysy_meyite bala sartang barylas bestyakh bakhanay jigansk kystatyam
                 buotama talalakh sitte salban batamay
             }
 
@@ -4251,7 +4253,7 @@ countries = {
             }
 
 
-            starting_technology_level = 3
+            starting_technology_level = 0
             include = "eurasian_tribe"
             government = {
                 type = tribe
@@ -4259,31 +4261,6 @@ countries = {
                 ruler = random
             }
             capital = zhatai
-        }
-
-        TUG = { #Tungus
-
-            own_control_core = {
-                bratsk chuva educhanka reka_tuba lower_angara upper_angara kezhma yarkino boguchany chunoyar aban
-                manzaya pashino motygino taseyevo derzhinskoye
-            }
-
-            discovered_regions = {
-                ural_region
-                west_siberia_region
-                east_siberia_region
-            }
-
-
-            starting_technology_level = 3
-            include = "eurasian_tribe"
-            include = "expl_mongols"
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = bratsk
         }
 
         CKC = { #Chukchi
@@ -11190,8 +11167,8 @@ countries = {
                 type = monarchy
                 heir_selection = cognatic_primogeniture
 
-                ruler = mfa_john_jacob_palaiologos # TODO: add me
-                consort = mfa_joanna_of_savoy # TODO: add me
+                ruler = mfa_gian_giacomo_palaiologos_monferrato # TODO: add me
+                consort = mfa_jiana_savoy # TODO: add me
 
                 ruler_term = { character = mfa_aleramo_monferrato start_date = 967.1.1 end_date = 983.1.1 regnal_number = 1 }
                 ruler_term = {
@@ -34554,7 +34531,7 @@ countries = {
                     status_of_the_han_law = maintain_status_quo_in_han_policies
                 }
             }
-            flag = "CHI_Ming_characters"
+            flag = "CHI_Ming"
         	country_name = "MNG"
             court_language = southern_mandarin_dialect
             liturgical_language = classical_chinese_language
@@ -69803,6 +69780,21 @@ countries = {
                 ruler = random
             }
         }
+
+        WAT = { #Waikato
+            type = pop
+            
+            add_pops_from_locations = {
+                manukau hauraki
+            }
+
+            include = "polynesian_tribe"
+            include = "expl_polynesia"
+            government = {
+                ruler = random
+            }
+        }
+
         # --- Tonga ---
         #Tuʻi Tonga - TOG
         TOG = {
@@ -69858,49 +69850,52 @@ countries = {
         # --- Fiji ---
         #Burebasaga - BUB
         BUB = {
+            type = pop
 
-            own_control_core = {
+            add_pops_from_locations = {
                 burebasaga kandavu beqa_lagoon
             }
 
             include = "polynesian_tribe"
             include = "expl_polynesia"
-            starting_technology_level = 3
             government = {
                 ruler = random
             }
         }
+
         #Kubuna - KBN
         KBN = {
+            type = pop
 
-            own_control_core = {
+            add_pops_from_locations = {
                 kubuna yasawa ngau
             }
 
             include = "polynesian_tribe"
             include = "expl_polynesia"
-            starting_technology_level = 3
             government = {
                 ruler = random
             }
         }
+
         #Tovata - TOV
         TOV = {
+            type = pop
 
-            own_control_core = {
+            add_pops_from_locations = {
                 vanua_levu qelelevu_atoll taveuni vanua_balavu_atoll
                 moce_atoll kabara_atoll fulaga_atoll
-
+                
             }
 
             include = "polynesian_tribe"
             include = "expl_polynesia"
-            starting_technology_level = 3
             government = {
                 ruler = random
             }
         }
 		
+        # India
         SIW = { #Siwistan, Balochi
             own_control_core = {
                 siwi dhadar gandava lahri bab_kot jhal
@@ -70559,205 +70554,6 @@ countries = {
                 ruler = random
             }
             religious_school = hanafi_school
-        }
-
-        TIW = { #Tiwi
-
-            own_control_core = {
-                tiwi maung larrakia woolna konbudj
-            }
-
-            discovered_regions = {
-                australia_region
-            }
-
-            include = "polynesian_monarchy"
-            starting_technology_level = 3
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = tiwi
-        }
-
-        EOA = { #Eora
-            own_control_core = {
-                eora tharawal dharug
-            }
-
-            discovered_regions = {
-                australia_region
-            }
-
-            include = "polynesian_monarchy"
-            starting_technology_level = 3
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = eora
-        }
-
-        WUW = { #Wurundjeri 
-            own_control_core = {
-                wathaurong woi_wurrung boon_wurrung marin_balluk geelong
-            }
-
-            discovered_regions = {
-                australia_region
-            }
-
-            include = "polynesian_monarchy"
-            starting_technology_level = 3
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = wathaurong
-            accepted_cultures = {
-                boon_wurrung_culture
-                wathaurong_culture
-            }
-        }
-
-        WAT = { #Waikato
-            own_control_core = {
-                ahurei manukau hauraki tauranga
-            }
-
-            discovered_regions = {
-                new_zealand_region
-                polynesia_region
-            }
-
-            include = "polynesian_monarchy"
-            include = "expl_polynesia"
-            starting_technology_level = 3
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = ahurei
-        }
-
-        TIA = { #Tahiti
-            own_control_core = {
-                tahiti havaii manuae_atoll rangiroa_atoll nganaa_nui_atoll
-            }
-
-            discovered_regions = {
-                polynesia_region
-                micronesia_region
-                melanesia_region
-            }
-
-
-            include = "polynesian_monarchy"
-            include = "expl_polynesia"
-            starting_technology_level = 3
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = tahiti
-        }
-
-        PAI = { #Paici
-            own_control_core = {
-                paici cemuhi ajie yuanga nyelayu
-            }
-
-            include = "polynesian_monarchy"
-            include = "expl_polynesia"
-            discovered_regions = {
-                polynesia_region
-                micronesia_region
-                melanesia_region
-            }
-
-
-            starting_technology_level = 3
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = paici
-        }
-
-        NIV = { #Ni-Vanuatu
-            own_control_core = {
-                tanna aneityum erromango malakula ambae
-            }
-
-            discovered_regions = {
-                polynesia_region
-                micronesia_region
-                melanesia_region
-            }
-
-
-            include = "polynesian_monarchy"
-            include = "expl_polynesia"
-            starting_technology_level = 3
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = tanna
-        }
-
-        NII = {#Naasuiu
-            own_control_core = {
-                naasioi bannoni tinputz vaghua mono
-            }
-
-            discovered_regions = {
-                polynesia_region
-                micronesia_region
-                melanesia_region
-            }
-
-
-            include = "polynesian_monarchy"
-            include = "expl_polynesia"
-            starting_technology_level = 3
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = naasioi
-        }
-
-        WAM = { #Waima
-            own_control_core = {
-                waima koiali toaripi
-            }
-
-            discovered_regions = {
-                indonesia_region
-                polynesia_region
-                micronesia_region
-                melanesia_region
-            }
-
-
-            include = "polynesian_monarchy"
-            include = "expl_polynesia"
-            starting_technology_level = 3
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            capital = waima
         }
     }
 }

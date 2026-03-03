@@ -103704,7 +103704,7 @@ character_db={
         tag = CRI
     }
 
-   cri_gyyas_ed_din_giray = {
+    cri_gyyas_ed_din_giray = {
         first_name = { name = name_Ghiyath.name_al_din }
         culture = crimean
         religion = sunni
@@ -117328,126 +117328,6 @@ character_db={
         tag = SAV        
     }
 
-    mfa_otto_iii_palaiologos = {
-        first_name = { name = name_otto }
-        nickname = { name = Secondotto }
-        culture = piedmontese
-        religion = catholic
-        birth_date = 1360.1.1 # Estimated
-        death_date = 1378.12.16
-        birth = casale
-        father = mfa_giovanni_palaiologos
-        dynasty = palaiologos_monferrato_dynasty
-        tag = MFA
-    }
-
-    mfa_john_iii_palaiologos = {
-        first_name = { name = name_john }
-        culture = piedmontese
-        religion = catholic
-        birth_date = 1362.1.1 # Estimated
-        death_date = 1381.8.25
-        birth = casale
-        father = mfa_giovanni_palaiologos
-        dynasty = palaiologos_monferrato_dynasty
-        tag = MFA
-    }
-
-    mfa_theodore_ii_palaiologos = {
-        first_name = { name = name_theodore }
-        culture = piedmontese
-        religion = catholic
-        birth_date = 1364.1.1 # Estimated
-        death_date =  1418.4.16
-        birth = casale
-        father = mfa_giovanni_palaiologos
-        dynasty = palaiologos_monferrato_dynasty
-        tag = MFA
-    }
-
-    mfa_joanna_of_bar = {
-        first_name = { name = name_joanna }
-        culture = lorrain
-        religion = catholic
-        birth_date = 1370.1.1 # Estimated
-        death_date = 1420.1.1 # Estimated
-        spouse = mfa_theodore_ii_palaiologos
-        female = yes
-        tag = MFA
-    }
-
-    mfa_john_jacob_palaiologos = {
-        first_name = { name = name_john.name_james }
-        culture = piedmontese
-        religion = catholic
-        birth_date = 1395.3.23
-        birth = casale
-        father = mfa_theodore_ii_palaiologos
-        mother = mfa_joanna_of_bar
-        dynasty = palaiologos_monferrato_dynasty
-        tag = MFA
-    }
-
-    mfa_joanna_of_savoy = {
-        first_name = { name = name_joanna }
-        culture = arpitan
-        religion = catholic
-        birth_date = 1392.1.1
-        spouse = mfa_john_jacob_palaiologos
-        female = yes
-        tag = MFA
-    }
-
-    mfa_john_iv_palaiologos = {
-        first_name = { name = name_john }
-        culture = piedmontese
-        religion = catholic
-        birth_date = 1413.6.24
-        birth = casale
-        father = mfa_john_jacob_palaiologos
-        mother = mfa_joanna_of_savoy
-        dynasty = palaiologos_monferrato_dynasty
-        tag = MFA
-    }
-
-    mfa_amadea_palaiologina = {
-        first_name = { name = name_amadea }
-        culture = piedmontese
-        religion = catholic
-        birth_date = 1418.1.1
-        death_date = 1440.1.1
-        # spouse = cyp_john_ii
-        father = mfa_john_jacob_palaiologos
-        mother = mfa_joanna_of_savoy
-        female = yes
-        dynasty = palaiologos_monferrato_dynasty
-        tag = MFA
-    }
-
-    mfa_william_viii_palaiologos = {
-        first_name = { name = name_william }
-        culture = piedmontese
-        religion = catholic
-        birth_date = 1420.7.19
-        birth = casale
-        father = mfa_john_jacob_palaiologos
-        mother = mfa_joanna_of_savoy
-        dynasty = palaiologos_monferrato_dynasty
-        tag = MFA
-    }
-
-    mfa_boniface_iii_palaiologos = {
-        first_name = { name = name_boniface }
-        culture = piedmontese
-        religion = catholic
-        birth_date = 1426.8.10
-        birth = casale
-        father = mfa_john_jacob_palaiologos
-        mother = mfa_joanna_of_savoy
-        dynasty = palaiologos_monferrato_dynasty
-        tag = MFA
-    }
-
     sav_pierre_savoy_bishop = {
         first_name = { name = name_peter }
         culture = arpitan
@@ -117556,6 +117436,146 @@ character_db={
         father = sav_jacques_savoy_achaia
         dynasty = savoy_dynasty #should be savoy_achaia_dynasty
         tag = SAV
+    }
+
+    ### Montferrat
+
+    mfa_ottone_iii_palaiologos_monferrato = {
+        first_name = { name = name_otto }
+        nickname = { name = Secondotto }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1360.1.1 # Estimated
+        death_date = 1378.12.16
+        birth = casale
+        father = mfa_giovanni_palaiologos
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_giovanni_iii_palaiologos_monferrato = {
+        first_name = { name = name_john }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1362.1.1 # Estimated
+        death_date = 1381.8.25
+        birth = casale
+        father = mfa_giovanni_palaiologos
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_theodoro_ii_palaiologos_monferrato = {
+        first_name = { name = name_theodore }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1364.1.1 # Estimated
+        death_date =  1418.4.16
+        birth = casale
+        father = mfa_giovanni_palaiologos
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_jeanne_scarponnois = {
+        first_name = { name = name_joanna }
+        culture = lorrain
+        religion = catholic
+        birth_date = 1370.1.1 # Estimated
+        death_date = 1420.1.1 # Estimated
+        spouse = mfa_theodoro_ii_palaiologos_monferrato
+        female = yes
+        dynasty = scarponnois_dynasty
+        tag = MFA
+    }
+
+    mfa_gian_giacomo_palaiologos_monferrato = {
+        first_name = { name = name_john.name_james }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1395.3.23
+        birth = casale
+        father = mfa_theodoro_ii_palaiologos_monferrato
+        mother = mfa_jeanne_scarponnois
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    byz_sofia_palaiologos_monferrato = {
+        first_name = { name = name_sophia }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1400.1.1
+        death_date = 1434.1.1
+        father = mfa_theodoro_ii_palaiologos_monferrato
+        mother = mfa_jeanne_scarponnois
+        spouse = byz_ioannes_viii_palaiologos
+        female = yes
+        dynasty = palaiologos_monferrato_dynasty
+        tag = BYZ     
+    }
+
+    mfa_jiana_savoy = {
+        first_name = { name = name_joanna }
+        culture = arpitan
+        religion = catholic
+        birth_date = 1392.1.1
+        spouse = mfa_gian_giacomo_palaiologos_monferrato
+        father = sav_amedee_viii_savoy
+        mother = sav_bonne_valois_berry
+        female = yes
+        dynasty = savoy_dynasty
+        tag = MFA
+    }
+
+    mfa_giovanni_iv_palaiologos_monferrato = {
+        first_name = { name = name_john }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1413.6.24
+        birth = casale
+        father = mfa_gian_giacomo_palaiologos_monferrato
+        mother = mfa_jiana_savoy
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    cyp_amadea_palaiologos_monferrato = {
+        first_name = { name = name_amadea }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1418.1.1
+        death_date = 1440.1.1
+        # spouse = cyp_john_ii
+        father = mfa_gian_giacomo_palaiologos_monferrato
+        mother = mfa_jiana_savoy
+        female = yes
+        dynasty = palaiologos_monferrato_dynasty
+        tag = CYP
+    }
+
+    mfa_guglielmo_viii_palaiologos_monferrato = {
+        first_name = { name = name_william }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1420.7.19
+        birth = casale
+        father = mfa_gian_giacomo_palaiologos_monferrato
+        mother = mfa_jiana_savoy
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_bonifacio_iii_palaiologos_monferrato = {
+        first_name = { name = name_boniface }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1426.8.10
+        birth = casale
+        father = mfa_gian_giacomo_palaiologos_monferrato
+        mother = mfa_jiana_savoy
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
     }
 
     ### Milan
