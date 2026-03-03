@@ -6952,7 +6952,7 @@ character_db={
         father = byz_andronikos_ii_palaiologos
         mother = byz_eirene_di_monferrato
         spouse = mfa_argentina_spinola
-        dynasty = palaiologos_dynasty # Should be dynasty = palaiologos_monferrato_dynasty # Founder of the Monferrato Line of the House of Palaiologos
+        dynasty = palaiologos_monferrato_dynasty # Founder of the Monferrato Line of the House of Palaiologos
         tag = MFA
     }
 
@@ -6969,22 +6969,22 @@ character_db={
         father = mfa_teodoro_i_palaiologos
         mother = mfa_argentina_spinola
         spouse = sav_aymon_savoy 
-        dynasty = palaiologos_dynasty # should be dynasty = palaiologos_monferrato_dynasty
+        dynasty = palaiologos_monferrato_dynasty
         tag = MFA
     }
 
-    # Son & Heir of the Marquis of Monferrato
+    #  John II, Marquis of Montferrat
     mfa_giovanni_palaiologos = {
         first_name = { name = name_john }
         culture = piedmontese
         religion = catholic
         adm = 44 dip = 72 mil = 74
         birth_date = 1321.2.5
-        death_date = 1376.9.3
+        death_date = 1372.3.13
         birth = casale
         father = mfa_teodoro_i_palaiologos
         mother = mfa_argentina_spinola
-        dynasty = palaiologos_dynasty # Should be dynasty = palaiologos_monferrato_dynasty
+        dynasty = palaiologos_monferrato_dynasty
         tag = MFA
     }
 
@@ -112432,7 +112432,7 @@ character_db={
     }
 
     ser_durad_brankovic = {
-        first_name = { name = Djuradj }
+        first_name = { name = name_george }
         culture = serbian
         religion = catholic
         birth_date = 1377.2.22
@@ -117328,6 +117328,126 @@ character_db={
         tag = SAV        
     }
 
+    mfa_otto_iii_palaiologos = {
+        first_name = { name = name_otto }
+        nickname = { name = Secondotto }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1360.1.1 # Estimated
+        death_date = 1378.12.16
+        birth = casale
+        father = mfa_giovanni_palaiologos
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_john_iii_palaiologos = {
+        first_name = { name = name_john }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1362.1.1 # Estimated
+        death_date = 1381.8.25
+        birth = casale
+        father = mfa_giovanni_palaiologos
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_theodore_ii_palaiologos = {
+        first_name = { name = name_theodore }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1364.1.1 # Estimated
+        death_date =  1418.4.16
+        birth = casale
+        father = mfa_giovanni_palaiologos
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_joanna_of_bar = {
+        first_name = { name = name_joanna }
+        culture = lorrain
+        religion = catholic
+        birth_date = 1370.1.1 # Estimated
+        death_date = 1420.1.1 # Estimated
+        spouse = mfa_theodore_ii_palaiologos
+        female = yes
+        tag = MFA
+    }
+
+    mfa_john_jacob_palaiologos = {
+        first_name = { name = name_john.name_james }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1395.3.23
+        birth = casale
+        father = mfa_theodore_ii_palaiologos
+        mother = mfa_joanna_of_bar
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_joanna_of_savoy = {
+        first_name = { name = name_joanna }
+        culture = arpitan
+        religion = catholic
+        birth_date = 1392.1.1
+        spouse = mfa_john_jacob_palaiologos
+        female = yes
+        tag = MFA
+    }
+
+    mfa_john_iv_palaiologos = {
+        first_name = { name = name_john }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1413.6.24
+        birth = casale
+        father = mfa_john_jacob_palaiologos
+        mother = mfa_joanna_of_savoy
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_amadea_palaiologina = {
+        first_name = { name = name_amadea }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1418.1.1
+        death_date = 1440.1.1
+        # spouse = cyp_john_ii
+        father = mfa_john_jacob_palaiologos
+        mother = mfa_joanna_of_savoy
+        female = yes
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_william_viii_palaiologos = {
+        first_name = { name = name_william }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1420.7.19
+        birth = casale
+        father = mfa_john_jacob_palaiologos
+        mother = mfa_joanna_of_savoy
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
+    mfa_boniface_iii_palaiologos = {
+        first_name = { name = name_boniface }
+        culture = piedmontese
+        religion = catholic
+        birth_date = 1426.8.10
+        birth = casale
+        father = mfa_john_jacob_palaiologos
+        mother = mfa_joanna_of_savoy
+        dynasty = palaiologos_monferrato_dynasty
+        tag = MFA
+    }
+
     sav_pierre_savoy_bishop = {
         first_name = { name = name_peter }
         culture = arpitan
@@ -118323,7 +118443,7 @@ character_db={
     }
 
     zet_gojcin_crnojevic = {
-        first_name = { name = Gojcin }
+        first_name = { name = Gojčin }
         culture = serbian
         religion = orthodox
         birth_date = 1398.1.1
@@ -118467,6 +118587,85 @@ character_db={
         birth_date = 1436.1.1  # estimated
         dynasty = tocco_dynasty
         tag = EPI
+    }
+
+    ### Athens
+
+    # ath_antonio_i_acciaioli = {
+    #     first_name = { name = name_anthony }
+    #     culture = tuscan
+    #     religion = catholic
+    #     birth_date = 1368.1.1 # Estimated
+    #     death_date = 1435.7.1 # Estimated
+    #     dynasty = acciaioli_dynasty
+    #     tag = ATH
+    # }
+
+    # ath_francesca_acciaioli = {
+    #     first_name = { name = name_frances }
+    #     culture = tuscan
+    #     religion = catholic
+    #     birth_date = 1368.1.1 # Estimated
+    #     death_date = 1430.1.1 # Estimated
+    #     dynasty = acciaioli_dynasty
+    #     tag = ATH
+    # }
+
+    # ath_bartholomea_acciaioli = {
+    #     first_name = { name = name_bartholomea }
+    #     culture = tuscan
+    #     religion = catholic
+    #     birth_date = 1370.1.1 # Estimated
+    #     death_date = 1396.1.1 # Estimated
+    #     dynasty = acciaioli_dynasty
+    #     tag = ATH
+    # }
+
+    ath_nerio_ii_acciaioli = {
+        first_name = { name = Nerio }
+        culture = tuscan
+        religion = catholic
+        birth_date = 1416.1.1 # Estimated
+        dynasty = acciaioli_dynasty
+        # father = ath_antonio_i_acciaioli
+        tag = ATH
+    }
+
+    ath_ciara_zorzi = {
+        first_name = { name = name_claire }
+        culture = tuscan
+        religion = catholic
+        birth_date = 1418.1.1 # Estimated
+        tag = ATH
+    }
+
+    ath_francesco_i_acciaioli = {
+        first_name = { name = name_francis }
+        culture = tuscan
+        religion = catholic
+        birth_date = 1440.1.1 # Estimated
+        dynasty = acciaioli_dynasty
+        father = ath_nerio_ii_acciaioli
+        mother = ath_ciara_zorzi
+        tag = ATH
+    }
+
+    neg_matteo_barbaro = {
+        first_name = { name = name_matthew }
+        culture = venetian
+        religion = catholic
+        birth_date = 1400.1.1 # Estimated
+        dynasty = barbaro_dynasty
+        tag = NEG
+    }
+
+    crt_tomaso_duodo = {
+        first_name = { name = name_thomas }
+        culture = ligurian
+        religion = catholic
+        birth_date = 1400.1.1 # Estimated
+        dynasty = duodo_dynasty
+        tag = CRT
     }
 
     ### Muscovy
@@ -119126,6 +119325,42 @@ character_db={
         birth = constantinople
         dynasty = kantakouzenos_dynasty
         tag = BYZ          
+    }
+
+    ### Theodoro
+
+    feo_stephen_gabras = {
+        first_name = { name = name_stephen }
+        culture = gothic_culture
+        religion = orthodox
+        birth_date = 1395.1.1 # Estimated
+        birth = theodoro
+        dynasty = gabras_dynasty
+        tag = FEO
+    }
+
+    feo_mother_of_alexios = {
+        first_name = random
+        culture = gothic_culture
+        religion = orthodox
+        birth_date = 1400.1.1 # Estimated
+        birth = theodoro
+        estate = nobles_estate
+        spouse = feo_stephen_gabras
+        female = yes
+        tag = FEO
+    }
+
+    feo_alexios_gabras = {
+        first_name = { name = name_alexis }
+        culture = gothic_culture
+        religion = orthodox
+        birth_date = 1426.1.1 # Estimated
+        birth = theodoro
+        dynasty = gabras_dynasty
+        father = feo_stephen_gabras
+        mother = feo_mother_of_alexios
+        tag = FEO
     }
 
     ### Morocco
