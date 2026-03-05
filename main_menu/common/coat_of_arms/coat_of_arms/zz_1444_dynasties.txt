@@ -580,3 +580,85 @@ yi_dynasty = {
         }
     }
 }
+
+baux_orange_dynasty = { # Baux-Orange - Used from mid 14th c.
+	pattern = "pattern_quarterly_shield.dds"
+	color1 = "red"            # Baux field (Q1, Q4)
+	color2 = "yellow"         # Orange field (Q2, Q3)
+	color3 = "white"          # Baux star
+	color4 = "blue"           # Orange horn
+	color5 = "red_secondary"  # Orange horn detail
+
+	colored_emblem = { # Q1 Baux (from baux_dynasty)
+		texture = "ce_star_16_shield.dds"
+		color1 = color3
+		color2 = color3
+		instance = { position = { 0.372 0.255 } scale = { 0.45 0.49 } }
+	}
+	colored_emblem = { # Q2 Orange (from orange_dynasty_early)
+		texture = "ce_hunting_horn_shield.dds"
+		color1 = color4
+		color2 = color5
+		color3 = "blue_dark"
+		instance = { position = { 0.628 0.255 } scale = { 0.45 0.49 } }
+	}
+	colored_emblem = { # Q3 Orange (from orange_dynasty_early)
+		texture = "ce_hunting_horn_shield.dds"
+		color1 = color4
+		color2 = color5
+		color3 = "blue_dark"
+		instance = { position = { 0.380 0.685 } scale = { 0.425 0.425 } }
+	}
+	colored_emblem = { # Q4 Baux (from baux_dynasty)
+		texture = "ce_star_16_shield.dds"
+		color1 = color3
+		color2 = color3
+		instance = { position = { 0.615 0.680 } scale = { 0.425 0.425 } }
+	}
+	colored_emblem = {
+		texture = "ce_divider_quarterly_shield_50.dds"
+		color1 = "black"
+		color2 = "black"
+	}
+}
+
+chalon_orange_dynasty = {
+	pattern = "pattern_quarterly_shield.dds"
+	color1 = "red"            # Chalon field (Q1, Q4)
+	color2 = "yellow"         # Orange field (Q2, Q3)
+	color3 = "yellow"         # Chalon bend
+	color4 = "blue"           # Orange horn
+	color5 = "red_secondary"  # Orange horn detail
+
+	colored_emblem = { # Q1 Chalon
+		texture = "ce_bend_shield.dds"
+		color1 = color3
+		color2 = color3
+		instance = { position = { 0.372 0.255 } scale = { 0.45 0.49 } }
+	}
+	colored_emblem = { # Q2 Orange
+		texture = "ce_hunting_horn_shield.dds"
+		color1 = color4
+		color2 = color5
+		color3 = "blue_dark"
+		instance = { position = { 0.628 0.255 } scale = { 0.45 0.49 } }
+	}
+	colored_emblem = { # Q3 Orange
+		texture = "ce_hunting_horn_shield.dds"
+		color1 = color4
+		color2 = color5
+		color3 = "blue_dark"
+		instance = { position = { 0.380 0.685 } scale = { 0.425 0.425 } }
+	}
+	colored_emblem = { # Q4 Chalon
+		texture = "ce_bend_shield.dds"
+		color1 = color3
+		color2 = color3
+		instance = { position = { 0.615 0.680 } scale = { 0.425 0.425 } }
+	}
+	colored_emblem = {
+		texture = "ce_divider_quarterly_shield_50.dds"
+		color1 = "black"
+		color2 = "black"
+	}
+}

@@ -13307,7 +13307,6 @@ character_db={
 
     sav_isabelle_chalon_arlay = {
         first_name = { name = name_elizabeth }
-        last_name = { name = Chalon_Arlay }
         culture = burgundian
         religion = catholic
         estate = nobles_estate
@@ -13318,7 +13317,7 @@ character_db={
         #father = fcb_jean_i_chalon_arlay
         #mother = fcb_marguerite_burgundian
         spouse = sav_louis_ii_savoy_vaud
-        #dynasty = chalon_arlay_dynasty
+        dynasty = chalon_arlay_dynasty
         tag = VUD
     }
 
@@ -16118,7 +16117,7 @@ character_db={
         birth = mende
         #father = Guerin IV d'Apchier
         #mother = Gausserande de Narbonne
-        spouse = nap_hugues_iv_baux
+        spouse = nap_hu gues_iv_baux
         tag = NAP
     }
 
@@ -16352,7 +16351,7 @@ character_db={
         father = ora_bertrand_i_orange
         #mother = Tibors de Sarenom
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -16367,7 +16366,7 @@ character_db={
         father = ora_guillaume_i_orange
         #mother = Ermengarde de Mévouillon
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -16382,7 +16381,7 @@ character_db={
         father = ora_raymond_i_orange
         #mother = Malberjone d'Aix
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -16397,7 +16396,7 @@ character_db={
         father = ora_bertrand_ii_orange
         #mother = Eléonore de Géneve
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -16413,7 +16412,7 @@ character_db={
         father = ora_raymond_ii_orange
         #mother = Anne de Viennois
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -16429,7 +16428,7 @@ character_db={
         father = ora_raymond_ii_orange
         #mother = Anne de Viennois
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -16445,7 +16444,7 @@ character_db={
         father = ora_raymond_ii_orange
         #mother = Anne de Viennois
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
         child_trait = child_gregarious
     }
@@ -16461,7 +16460,7 @@ character_db={
         father = ora_raymond_ii_orange
         #mother = Anne de Viennois
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -16476,7 +16475,7 @@ character_db={
         father = ora_raymond_ii_orange
         #mother = Anne de Viennois
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -16492,7 +16491,7 @@ character_db={
         father = ora_raymond_ii_orange
         #mother = Anne de Viennois
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -16507,7 +16506,7 @@ character_db={
         father = ora_guillaume_i_orange
         #mother = Alix
         birth = orange
-        dynasty = baux_dynasty # Should be baux_orange_dynasty
+        dynasty = baux_orange_dynasty
         tag = ORA
     }
 
@@ -112373,7 +112372,7 @@ character_db={
         culture = mazovian
         religion = catholic
         birth_date = 1392.1.1
-        death_date = 
+        # death_date = TODO: Fixme
         birth = warsaw
         female = yes
         spouse = hun_janos_garai
@@ -118767,6 +118766,90 @@ character_db={
         tag = CYP        
     }
 
+    ### Orange
+
+    ora_mary_orange = {
+        first_name = { name = name_mary }
+        culture = vivaro_alpine
+        religion = catholic
+        female = yes
+        birth_date = 1365.1.1 # Estimated
+        death_date = 1417.1.1
+        birth = orange
+        father = ora_raymond_iii_orange
+        dynasty = baux_orange_dynasty
+        tag = ORA # TODO: Change Me      
+    }
+
+    ora_john_iii_chalon_arlay = {
+        first_name = { name = name_john }
+        culture = burgundian
+        religion = catholic
+        birth_date = 1361.1.1 # Estimated
+        death_date = 1418.1.1
+        birth = besancon
+        dynasty = chalon_orange_dynasty
+        tag = ORA
+    }
+
+    ora_louis_ii_chalon_orange = {
+        first_name = { name = name_louis }
+        nickname = { name = nick_the_good }
+        culture = burgundian
+        religion = catholic
+        birth_date = 1388.1.1 # Estimated
+        birth = besancon
+        father = ora_john_iii_chalon_arlay
+        mother = ora_mary_orange
+        dynasty = chalon_orange_dynasty
+        tag = ORA
+    }
+
+    ora_johanna_of_montfaucon = {
+        first_name = { name = name_joanna }
+        last_name = { name = Montfaucon }
+        culture = burgundian
+        religion = catholic
+        spouse = ora_louis_ii_chalon_orange
+        female = yes
+        birth_date = 1411.1.1 # Estimated
+        tag = ORA
+    }
+
+    ora_william_vii_chalon_orange = {
+        first_name = { name = name_william }
+        culture = burgundian
+        religion = catholic
+        birth_date = 1415.1.1 # Estimated
+        birth = besancon
+        father = ora_louis_ii_chalon_orange
+        mother = ora_johanna_of_montfaucon
+        dynasty = chalon_orange_dynasty
+        tag = ORA
+    }
+
+    ora_catherine_of_brittany = {
+        first_name = { name = name_catherine}
+        culture = breton
+        religion = catholic
+        female = yes
+        birth_date = 1420.1.1 # Estimated
+        birth = nantes
+        spouse = ora_william_vii_chalon_orange
+        tag = ORA
+    }
+
+    ora_john_iv_chalon_orange = {
+        first_name = { name = name_john }
+        culture = burgundian
+        religion = catholic
+        birth_date = 1443.1.1 # Estimated
+        birth = besancon
+        father = ora_william_vii_chalon_orange
+        mother = ora_catherine_of_brittany
+        dynasty = chalon_orange_dynasty
+        tag = ORA
+    }
 
     ### Muscovy
 
