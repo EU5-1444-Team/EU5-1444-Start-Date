@@ -274,3 +274,33 @@ BUR = { # Burgundy
 		}
 	}
 }
+
+GLH = {
+	flag_definition = {
+		coa = GLH
+		priority = 1
+	}
+	flag_definition = {
+		# Might wanna add a new COA here but for now this will do
+		coa = KNS
+		priority = 2
+		trigger = {
+			court_language = language:kipchak_language
+			OR = {
+				culture = culture:cuman_culture
+				culture = culture:crimean
+				culture = culture:kazani
+				culture = culture:astrakhani
+				culture = culture:bashkir
+				culture = culture:mishar
+				culture = culture:nogai
+				culture = culture:kazakh_culture
+				culture = culture:kyrgyz_culture
+				culture = culture:kumyk_culture
+				culture = culture:karachay_culture
+				culture = culture:balkar_culture
+				culture = culture:yerle_qaliq_culture
+			}
+		}
+	}
+}

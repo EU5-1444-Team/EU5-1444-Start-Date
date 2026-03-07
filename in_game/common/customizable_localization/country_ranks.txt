@@ -135,6 +135,9 @@ country_flavor = {
                 tag = FUY
                 tag = TIZ
                 tag = ADQ
+                tag = AGZ
+                tag = MGZ
+                tag = KGZ
             }
         }
     }
@@ -149,6 +152,17 @@ country_flavor = {
                 tag = KHO
                 tag = TRH
                 tag = KHD
+            }
+        }
+    }
+    text = {
+        localization_key = horde_host
+        trigger = {
+            government_type = government_type:steppe_horde
+            OR = {
+                tag = DNC
+                tag = ZAZ
+                tag = KOY
             }
         }
     }
@@ -406,20 +420,6 @@ country_flavor = {
 
     # Horde
     text = {
-        localization_key = rank_empire_horde_2
-        trigger = {
-
-            country_rank_is_empire = yes
-            government_type = government_type:steppe_horde
-            OR = {
-                tag = GLH
-                tag = NOG
-            }
-        }
-    }
-
-    # Khanate
-    text = {
         localization_key = rank_empire_horde
         trigger = {
 
@@ -652,6 +652,20 @@ country_flavor = {
         localization_key = rank_county_palatine
         trigger = {
             tag = CEP
+        }
+    }
+
+    text = {
+        localization_key = rank_triarchy
+        trigger = {
+            tag = NEG
+        }
+    }
+
+    text = {
+        localization_key = rank_kingdom_candia
+        trigger = {
+            tag = CRT
         }
     }
 
@@ -1045,18 +1059,6 @@ country_flavor = {
         }
     }
 
-    #Horde
-    text = {
-        localization_key = rank_kingdom_horde_2
-        trigger = {
-            government_type = government_type:steppe_horde
-            OR = {
-                tag = GLH
-                tag = NOG
-            }
-        }
-    }
-    
     # Khanate
     text = {
         localization_key = rank_kingdom_horde
@@ -1929,6 +1931,7 @@ country_flavor = {
                 tag = GUI
                 tag = ODI
                 tag = SVT
+                tag = FEO
             }
 
             OR = {
