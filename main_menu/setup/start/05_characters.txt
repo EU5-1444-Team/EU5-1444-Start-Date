@@ -82162,12 +82162,11 @@ character_db={
         tag = MEI
     }
 
-
     mei_friedrich_ii_meissen = { #Ruler
         first_name = { name = name_frederick }
         culture = saxon
         religion = catholic
-        birth_date = 1290.1.1
+        birth_date = 1310.11.30
         death_date = 1349.11.18
         birth = meissen
         father = mei_friedrich_the_bitten_meissen
@@ -82196,28 +82195,26 @@ character_db={
         culture = saxon
         religion = catholic
         birth_date = 1332.12.14
-        death_date = 1389.10.23
+        death_date = 1381.5.21
         birth = meissen
         dynasty = wettin_dynasty
         father = mei_friedrich_ii_meissen
         mother = mei_mathilde_von_bayern
         tag = MEI
     }
-
 
     mei_balthasar_meissen = { #Son of Ruler
         first_name = { name = name_balthazar }
         culture = saxon
         religion = catholic
         birth_date = 1336.12.21
-        death_date = 1403.6.28
+        death_date = 1406.5.18
         birth = meissen
         dynasty = wettin_dynasty
         father = mei_friedrich_ii_meissen
         mother = mei_mathilde_von_bayern
         tag = MEI
     }
-
 
     # Mother of the Princes of Grubenhagen & Sister of the Count of Meissen
     gbh_agnes_meissen = {
@@ -101353,7 +101350,6 @@ character_db={
         tag = GEO
     }
 
-
     geo_rulers_wife = {
         first_name = "random"
         culture = georgian_culture
@@ -101366,13 +101362,12 @@ character_db={
         tag = GEO
     }
 
-
     geo_david_ix = { #Heir
         first_name = { name = name_david }
         culture = georgian_culture
         religion = orthodox
         birth_date = 1310.1.1 #Unknown
-        death_date = 1370.11.20
+        death_date = 1360.1.1
         birth = tbilisi
         father = geo_george_v
         mother = geo_rulers_wife
@@ -101381,14 +101376,13 @@ character_db={
         tag = GEO
     }
 
-
     geo_sindukhtar = { #Spouse of Ruler
         first_name = { name = name_sindukhtar }
         culture = georgian_culture
         religion = orthodox
         female = yes
         birth_date = 1315.1.1 #unknown
-        death_date = 1366.9.4
+        death_date = 1375.1.1 #unknown
         birth = akhaltsikhe
         father = sme_qvarqvare
         spouse = geo_david_ix
@@ -101396,20 +101390,19 @@ character_db={
         tag = GEO
     }
 
-
     geo_bagrat_v = {
         first_name = { name = name_bagrat }
+        nickname = { name = nick_the_great }
         culture = georgian_culture
         religion = orthodox
         birth_date = 1330.1.1 #Unknown
-        death_date = 1397.5.23
+        death_date = 1393.1.1
         birth = tbilisi
         father = geo_david_ix
         mother = geo_sindukhtar
         dynasty = bagrationi_dynasty
         tag = GEO
     }
-
 
     geo_mirian_iii = {
         first_name = { name = name_mirian }
@@ -101445,7 +101438,6 @@ character_db={
         birth = rome
         tag = GEO
     }
-
 
     #Samtskhe
     sme_sargis_i = {
@@ -101567,13 +101559,12 @@ character_db={
         culture = georgian_culture
         religion = orthodox
         birth_date = 1315.1.1 #Unknown (but still a minor in 1329)
-        death_date = 1367.7.15
+        death_date = 1372.1.1
         birth = kutaisi
         father = ime_michael_i
         dynasty = bagrationi_dynasty
         tag = GEO
     }
-
 
     #Shabankara
     shb_ardashir = {
@@ -101586,7 +101577,6 @@ character_db={
         dynasty = fadlawayhid_dynasty
         tag = SHB
     }
-
 
     #Hazaraspids
     hzp_rukn_al_din_yusuf_shah = {
@@ -101601,7 +101591,6 @@ character_db={
         tag = HZP
     }
 
-
     hzp_muzaffar_al_din_afrasiab = {
         first_name = { name = name_muzaffar.name_al_din }
         nickname = { name = nick_afrasiab }
@@ -101614,7 +101603,6 @@ character_db={
         dynasty = hazaraspid_dynasty
         tag = HZP
     }
-
 
     #Ormus
     orm_izz_al_din_kurdanshah = { #Father of the Ruler
@@ -110503,6 +110491,7 @@ character_db={
         birth_date = 1415.9.21
         birth = vienna
         father = hab_ernst_habsburg
+        mother = hab_cymburgis_piast
         dynasty = habsburg_dynasty
         ruler_trait = patron_of_arts
         ruler_trait = charismatic_negotiator
@@ -110518,6 +110507,7 @@ character_db={
         birth_date = 1418.12.18
         birth = vienna
         father = hab_ernst_habsburg
+        mother = hab_cymburgis_piast
         dynasty = habsburg_dynasty
         ruler_trait = drunkard
         tag = STY
@@ -111862,6 +111852,219 @@ character_db={
         mother = bra_elisabeth_wittelsbach
         dynasty = hohenzollern_brandenburg_dynasty
         tag = ANS         
+    }
+
+    ### Saxony/Wettins
+
+    sax_friedrich_i_wettin = { #https://en.wikipedia.org/wiki/Frederick_I,_Elector_of_Saxony
+        first_name = { name = name_frederick }
+        nickname = { name = "the Belligerent" }
+        culture = saxon
+        religion = catholic
+        birth_date = 1370.4.11
+        death_date = 1428.1.4
+        spouse = sax_katharina_welfen
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = mei_friedrich_iii_meissen
+        tag = SAX
+    }
+
+    sax_katharina_welfen = {
+        first_name = { name = name_catherine }
+        culture = lower_saxon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1395.1.1
+        death_date = 1441.12.28
+        female = yes
+        birth = landsberg
+        #father = bru_heinrich_welfen
+        #mother =
+        spouse = sax_friedrich_i_wettin
+        dynasty = welfen_dynasty
+        tag = SAX
+    }
+
+    sax_friedrich_ii_wettin = { #https://en.wikipedia.org/wiki/Frederick_II,_Elector_of_Saxony
+        first_name = { name = name_frederick }
+        nickname = { name = "the Gentle" }
+        culture = saxon
+        religion = catholic
+        birth_date = 1412.8.22
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = sax_friedrich_i_wettin
+        mother = sax_katharina_welfen
+        spouse = sax_margarete_habsburg
+        tag = SAX
+    }
+
+    sax_margarete_habsburg = {
+        first_name = { name = name_margaret }
+        culture = danube_bavarian
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1416.1.1
+        birth = innsbruck
+        father = hab_ernst_habsburg
+        mother = hab_cymburgis_piast
+        spouse = sax_friedrich_ii_wettin
+        dynasty = habsburg_dynasty
+        tag = SAX
+    }
+
+    sax_amalia_wettin = {
+        first_name = { name = Amalia }
+        culture = saxon
+        religion = catholic
+        birth_date = 1436.4.4
+        female = yes
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = sax_friedrich_ii_wettin
+        mother = sax_margarete_habsburg
+        tag = SAX
+    }
+
+    sax_anna_wettin = {
+        first_name = { name = name_anna }
+        culture = saxon
+        religion = catholic
+        birth_date = 1437.3.7
+        female = yes
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = sax_friedrich_ii_wettin
+        mother = sax_margarete_habsburg
+        tag = SAX
+    }
+
+    sax_friedrich_prince_wettin = {
+        first_name = { name = name_frederick }
+        culture = saxon
+        religion = catholic
+        birth_date = 1439.8.28
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = sax_friedrich_ii_wettin
+        mother = sax_margarete_habsburg
+        tag = SAX
+    }
+
+    sax_ernst_i_wettin = {
+        first_name = { name = name_ernest }
+        culture = saxon
+        religion = catholic
+        birth_date = 1441.3.24
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = sax_friedrich_ii_wettin
+        mother = sax_margarete_habsburg
+        tag = SAX
+    }
+
+    sax_albrecht_iii_wettin = {
+        first_name = { name = name_albert }
+        nickname = { name = the_bold }
+        culture = saxon
+        religion = catholic
+        birth_date = 1443.7.31
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = sax_friedrich_ii_wettin
+        mother = sax_margarete_habsburg
+        tag = SAX
+    }
+
+    sax_siegmund_wettin = {
+        first_name = { name = name_sigmund }
+        culture = saxon
+        religion = catholic
+        birth_date = 1416.3.3
+        estate = clergy_estate
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = sax_friedrich_i_wettin
+        mother = sax_katharina_welfen
+        tag = SAX
+    }
+
+    hes_anna_wettin = { #https://en.wikipedia.org/wiki/Anna_of_Saxony,_Landgravine_of_Hesse
+        first_name = { name = name_anna }
+        culture = saxon
+        religion = catholic
+        birth_date = 1420.6.5
+        female = yes
+        birth = meissen
+        father = sax_friedrich_i_wettin
+        mother = sax_katharina_welfen
+        spouse = hes_ludwig_i_hessen
+        dynasty = wettin_dynasty
+        tag = SAX
+    }
+
+    sax_wilhelm_iii_wettin = {
+        first_name = { name = name_william }
+        culture = saxon
+        religion = catholic
+        birth_date = 1425.4.30
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = sax_friedrich_i_wettin
+        mother = sax_katharina_welfen
+        tag = SAX
+    }
+
+    mei_wilhelm_ii_wettin = {
+        first_name = { name = name_william }
+        culture = saxon
+        religion = catholic
+        birth_date = 1371.4.23
+        death_date = 1425.3.13
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = mei_friedrich_iii_meissen
+        tag = MEI
+    }
+
+    mei_georg_wettin = {
+        first_name = { name = name_george }
+        culture = saxon
+        religion = catholic
+        birth_date = 1380.1.1
+        death_date = 1401.12.9
+        birth = meissen
+        dynasty = wettin_dynasty
+        father = mei_friedrich_iii_meissen
+        tag = MEI
+    }
+
+    mei_friedrich_iv_wettin = {
+        first_name = { name = name_frederick }
+        nickname = { name = "the Peaceful" }
+        culture = saxon
+        religion = catholic
+        birth_date = 1383.12.1
+        death_date = 1440.5.7
+        birth = meissen
+        father = mei_balthasar_meissen
+        dynasty = wettin_dynasty
+        tag = MEI
+    }
+
+    mei_wilhelm_i_wettin = { 
+        first_name = { name = name_william }
+        culture = saxon
+        religion = catholic
+        birth_date = 1343.12.19
+        death_date = 1407.2.9
+        birth = meissen
+        father = mei_friedrich_ii_meissen
+        mother = mei_mathilde_von_bayern
+        dynasty = wettin_dynasty
+        tag = MEI
     }
 
     ### Bohemia
@@ -113666,6 +113869,7 @@ character_db={
         first_name = { name = name_eudokia }
         culture = aukstaitian
         religion = orthodox
+        female = yes
         birth_date = 1425.1.1
         birth = slutsk
         father = kie_alexandras_olelkovich
@@ -113678,6 +113882,7 @@ character_db={
         first_name = { name = Barbara }
         culture = aukstaitian
         religion = orthodox
+        female = yes
         birth_date = 1428.1.1
         birth = kyiv
         father = kie_alexandras_olelkovich
@@ -119545,6 +119750,301 @@ character_db={
         father = feo_stephen_gabras
         mother = feo_mother_of_alexios
         tag = FEO
+    }
+
+    ### Georgia
+
+    tre_gulkan_eudokia_bagrationi = {
+        first_name = { name = name_eudokia }
+        culture = georgian_culture
+        religion = orthodox
+        female = yes
+        birth_date = 1332.1.1
+        death_date = 1395.5.2
+        birth = tbilisi
+        spouse = tre_manouel_iii_komnenos
+        dynasty = bagrationi_dynasty
+        father = geo_david_ix
+        tag = GEO    
+    }
+
+    geo_giorgi_vii_bagrationi = {
+        first_name = { name = name_george }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1361.1.1
+        death_date = 1407.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_bagrat_v
+        tag = GEO 
+    }
+
+    geo_anna_komnenos = {
+        first_name = { name = name_anna }
+        culture = pontic_greek_culture
+        religion = orthodox
+        female = yes
+        birth_date = 1357.4.6
+        death_date = 1407.1.1
+        birth = trebizond
+        spouse = geo_bagrat_v
+        dynasty = komnenos_dynasty
+        father = tre_alexios_iii_komnenos
+        tag = GEO     
+    }
+
+    geo_konstantine_i_bagrationi = {
+        first_name = { name = name_constantine }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1369.1.1
+        death_date = 1412.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_bagrat_v
+        mother = geo_anna_komnenos
+        tag = GEO 
+    }
+
+    geo_natia_amirejibi = {
+        first_name = { name = Natia }
+        culture = georgian_culture
+        religion = orthodox
+        female = yes
+        birth_date = 1375.1.1
+        death_date = 1420.1.1
+        birth = tbilisi
+        spouse = geo_konstantine_i_bagrationi
+        dynasty = amirejibi_dynasty
+        father = geo_kutsna_mirejibi
+        tag = GEO  
+    }
+
+    geo_aleksandre_i_bagrationi = {
+        first_name = { name = name_alexander }
+        nickname = { name = nick_the_great }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1390.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_konstantine_i_bagrationi
+        mother = geo_natia_amirejibi
+        tag = GEO 
+    }
+
+    geo_dulandukht_orbelian = {
+        first_name = { name = Dulandukht }
+        culture = armenian_culture
+        religion = orthodox
+        female = yes
+        birth_date = 1396.1.1 #unknown
+        death_date = 1414.1.1
+        birth = syunik
+        spouse = geo_aleksandre_i_bagrationi
+        dynasty = orbelian_dynasty
+        tag = GEO  
+    }
+
+    geo_vakhtang_iv_bagrationi = {
+        first_name = { name = name_vakhtang }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1411.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_aleksandre_i_bagrationi
+        mother = geo_dulandukht_orbelian
+        tag = GEO 
+    }
+
+    geo_demetre_prince_bagrationi = {
+        first_name = { name = name_demetrius }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1413.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_aleksandre_i_bagrationi
+        mother = geo_dulandukht_orbelian
+        tag = GEO 
+    }
+
+    geo_giorgi_viii_bagrationi = {
+        first_name = { name = name_george }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1415.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        spouse = geo_nestan_darejan_tamar_bagrationi
+        father = geo_aleksandre_i_bagrationi
+        mother = geo_tamar_consort_bagrationi
+        tag = GEO 
+    }
+
+    geo_aleksandre_i_kakheti_bagrationi = {
+        first_name = { name = name_alexander }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1444.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_giorgi_viii_bagrationi
+        mother = geo_nestan_darejan_tamar_bagrationi
+    }
+
+    geo_davit_bagrationi_bishop = {
+        first_name = { name = name_david }
+        culture = georgian_culture
+        religion = orthodox
+        estate = clergy_estate
+        birth_date = 1416.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_aleksandre_i_bagrationi
+        mother = geo_tamar_consort_bagrationi
+        tag = GEO 
+    }
+
+    geo_zaal_bagrationi = {
+        first_name = { name = Zaal }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1428.1.1
+        death_date = 1443.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_aleksandre_i_bagrationi
+        mother = geo_tamar_consort_bagrationi
+        tag = GEO 
+    }
+
+    geo_bagrat_prince_bagrationi = {
+        first_name = { name = name_bagrat }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1391.1.1
+        death_date = 1425.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_konstantine_i_bagrationi
+        mother = geo_natia_amirejibi
+        tag = GEO 
+    }
+
+    geo_nestan_darejan_tamar_bagrationi = {
+        first_name = { name = "Nestan-Darejan Tamar" }
+        culture = georgian_culture
+        religion = orthodox
+        female = yes
+        birth_date = 1420.1.1
+        birth = tbilisi
+        spouse = geo_giorgi_viii_bagrationi
+        dynasty = bagrationi_dynasty
+        father = geo_bagrat_prince_bagrationi
+        tag = GEO     
+    }
+
+    geo_giorgi_prince_bagrationi = {
+        first_name = { name = name_george }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1392.1.1
+        death_date = 1438.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_konstantine_i_bagrationi
+        mother = geo_natia_amirejibi
+        tag = GEO 
+    }
+
+    geo_bagrat_vi_bagrationi = {
+        first_name = { name = name_bagrat }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1435.1.1
+        birth = tbilisi
+        dynasty = bagrationi_dynasty
+        father = geo_giorgi_prince_bagrationi
+        mother = geo_gulashar_bagrationi
+        tag = GEO 
+    }
+
+    # Imereti
+
+    ime_aleksandre_i_bagrationi = {
+        first_name = { name = name_alexander }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1359.1.1
+        death_date = 1389.1.1
+        birth = kutaisi
+        dynasty = bagrationi_dynasty
+        father = ime_bagrat_i
+        tag = IME     
+    }
+
+    ime_demetre_bagrationi = {
+        first_name = { name = name_demetrius }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1385.1.1
+        birth = kutaisi
+        dynasty = bagrationi_dynasty
+        father = ime_aleksandre_i_bagrationi
+        tag = GEO     
+    }
+
+    geo_gulashar_bagrationi = {
+        first_name = { name = Gulashar }
+        culture = georgian_culture
+        religion = orthodox
+        female = yes
+        birth_date = 1410.1.1 #unknown
+        birth = kutaisi
+        spouse = geo_giorgi_prince_bagrationi
+        dynasty = bagrationi_dynasty
+        father = ime_demetre_bagrationi
+        tag = GEO   
+    }
+
+    geo_tamar_consort_bagrationi = {
+        first_name = { name = name_tamara }
+        culture = georgian_culture
+        religion = orthodox
+        female = yes
+        birth_date = 1386.1.1
+        birth = kutaisi
+        spouse = geo_aleksandre_i_bagrationi
+        dynasty = bagrationi_dynasty
+        father = ime_aleksandre_i_bagrationi
+        tag = GEO     
+    }
+
+    ime_giorgi_i_bagrationi = {
+        first_name = { name = name_george }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1361.1.1
+        death_date = 1392.1.1
+        birth = kutaisi
+        dynasty = bagrationi_dynasty
+        father = ime_bagrat_i
+        tag = IME     
+    }
+
+    ime_konstantine_ii_bagrationi = {
+        first_name = { name = name_constantine }
+        culture = georgian_culture
+        religion = orthodox
+        birth_date = 1362.1.1
+        death_date = 1402.1.1
+        birth = kutaisi
+        dynasty = bagrationi_dynasty
+        father = ime_bagrat_i
+        tag = IME     
     }
 
     ### Morocco

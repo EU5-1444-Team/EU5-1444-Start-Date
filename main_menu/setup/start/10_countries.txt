@@ -1419,6 +1419,54 @@ countries = {
         dynasty = hohenzollern_brandenburg_dynasty
     }
 
+    SAX = {
+        #Saxony
+        own_control_core = {
+            meissen sayda freiberg dresden
+            pirna annaburg
+            weissenfels zwickau rochlitz grimma delitzsch
+            leipzig chemnitz altenburg
+            wittenberg belzig schweinitz bitterfeld torgau liebenwerda
+            schleiz
+            glauchau
+        }
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "catholic_monarchy_no_coast"
+        include = "expl_northern_europe"
+        include = "german_principality"
+        government = {
+
+            ruler = sax_friedrich_ii_wettin
+
+            ruler_term = {	character = sax_friedrich_i_wettin start_date = 1423.1.6 end_date = 1428.1.4 regnal_number = 1	}
+            ruler_term = {	character = sax_friedrich_ii_wettin start_date = 1428.1.4  regnal_number = 2	}
+
+            regnal_numbers = {
+                name_frederick = 2
+            }
+
+            reforms = {
+                margraviate
+            }
+
+            laws = {
+                feudal_de_jure_law = by_tradition
+            }
+
+            offensive_vs_defensive = 10
+            belligerent_vs_conciliatory = 0
+            outward_vs_inward = 0
+        }
+
+        country_rank = rank_duchy
+        capital = dresden
+        dynasty = wettin_dynasty
+        tolerated_cultures = {
+            sorbian
+        }
+    }
+
     ALL = {
         #Saxony-Allstedt
         own_control_core = {
@@ -1507,55 +1555,6 @@ countries = {
         }
     }
 
-    SAX = {
-        #Saxony
-        own_control_core = {
-            meissen sayda freiberg dresden
-            pirna annaburg
-            weissenfels zwickau rochlitz grimma delitzsch
-            leipzig chemnitz altenburg
-            wittenberg belzig schweinitz bitterfeld torgau liebenwerda
-            schleiz
-            glauchau
-        }
-        starting_technology_level = 3
-        include = "expl_western_europe"
-        include = "catholic_monarchy_no_coast"
-        include = "expl_northern_europe"
-        include = "german_principality"
-        government = {
-
-            ruler = random
-
-            ruler_term = { character = mei_albrecht_ii_the_degenerate_meissen start_date = 1288.1.1 end_date = 1291.1.1 regnal_number = 2 }
-            ruler_term = { character = mei_friedrich_the_bitten_meissen start_date = 1291.1.1 end_date = 1323.1.1 regnal_number = 1 }
-            ruler_term = { character = mei_friedrich_ii_meissen start_date = 1323.1.1 end_date = 1349.11.18 regnal_number = 2 }
-
-            regnal_numbers = {
-                name_frederick = 2
-            }
-
-            reforms = {
-                margraviate
-            }
-
-            laws = {
-                feudal_de_jure_law = by_tradition
-            }
-
-            offensive_vs_defensive = 10
-            belligerent_vs_conciliatory = 0
-            outward_vs_inward = 0
-        }
-
-        country_rank = rank_duchy
-        capital = dresden
-        dynasty = wettin_dynasty
-        tolerated_cultures = {
-            sorbian
-        }
-    }
-
     MEI = {
         #Meissen
         our_cores_conquered_by_others = {
@@ -1569,12 +1568,19 @@ countries = {
         include = "german_principality"
         government = {
 
-            ruler = random
-            consort = random
+            ruler = sax_friedrich_ii_wettin
 
-            ruler_term = { character = mei_albrecht_ii_the_degenerate_meissen start_date = 1288.1.1 end_date = 1291.1.1 regnal_number = 2 }
-            ruler_term = { character = mei_friedrich_the_bitten_meissen start_date = 1291.1.1 end_date = 1323.1.1 regnal_number = 1 }
-            ruler_term = { character = mei_friedrich_ii_meissen start_date = 1323.1.1 regnal_number = 2 }
+			ruler_term = {	character = mei_albrecht_ii_the_degenerate_meissen start_date = 1288.1.1 end_date = 1291.1.1 regnal_number = 2	}
+			ruler_term = {	character = mei_friedrich_the_bitten_meissen start_date = 1291.1.1 end_date = 1323.1.1 regnal_number = 1	}
+			ruler_term = {	character = mei_friedrich_ii_meissen start_date = 1323.1.1 end_date = 1349.11.18 regnal_number = 2	}
+            ruler_term = {	character = mei_friedrich_iii_meissen start_date = 1349.11.18 end_date = 1381.5.21 regnal_number = 3	}
+            ruler_term = {	character = mei_balthasar_meissen start_date = 1349.11.18 end_date = 1382.5.1 regnal_number = 1	}
+            ruler_term = {	character = mei_wilhelm_i_wettin start_date = 1349.11.18 end_date = 1407.2.9 regnal_number = 1	}
+            ruler_term = {	character = mei_georg_wettin start_date = 1381.5.21 end_date = 1401.12.9 regnal_number = 1	}
+            ruler_term = {	character = mei_wilhelm_ii_wettin start_date = 1371.4.23 end_date = 1425.3.13 regnal_number = 2	}
+            ruler_term = {	character = sax_friedrich_i_wettin start_date = 1407.2.9 end_date = 1428.1.4 regnal_number = 4	}
+            ruler_term = {	character = mei_friedrich_iv_wettin start_date = 1407.2.9 end_date = 1440.5.7 regnal_number = 5	}
+            ruler_term = {	character = sax_friedrich_ii_wettin start_date = 1428.1.4 regnal_number = 6	}
 
             regnal_numbers = {
                 name_frederick = 2
@@ -1644,7 +1650,14 @@ countries = {
         country_rank = rank_county
         capital = eisenach
         government = {
-            ruler = random # TODO: add me
+            ruler = sax_friedrich_ii_wettin
+
+            ruler_term = {	character = mei_friedrich_ii_meissen start_date = 1323.1.1 end_date = 1349.11.18 regnal_number = 2	}
+            ruler_term = {	character = mei_friedrich_iii_meissen start_date = 1349.11.18 end_date = 1381.5.21 regnal_number = 3 }
+            ruler_term = {	character = mei_wilhelm_i_wettin start_date = 1349.11.18 end_date = 1382.5.1 regnal_number = 1	}
+            ruler_term = {	character = mei_balthasar_meissen start_date = 1382.5.1 end_date = 1406.5.18 regnal_number = 1	}
+            ruler_term = {	character = mei_friedrich_iv_wettin start_date = 1406.5.18 end_date = 1440.5.7 regnal_number = 4 }
+            ruler_term = {	character = sax_friedrich_ii_wettin start_date = 1440.5.7 regnal_number = 5	}
 
             reforms = {
                 landgraviate
@@ -66875,6 +66888,8 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            ruler = geo_vakhtang_iv_bagrationi
+            heir = geo_giorgi_viii_bagrationi
 
             ruler_term = { character = geo_bagrat_iii start_date = 1008.1.1 end_date = 1014.5.7 regnal_number = 3 }
             ruler_term = { character = geo_george_i start_date = 1014.5.7 end_date = 1027.8.16 regnal_number = 1 }
@@ -66897,9 +66912,13 @@ countries = {
             ruler_term = { character = geo_vakhtang_iii start_date = 1302.1.1 end_date = 1308.1.1 regnal_number = 3 }
             ruler_term = { character = geo_david_viii start_date = 1308.1.1 end_date = 1311.1.1 regnal_number = 8 }
             ruler_term = { character = geo_george_vi start_date = 1311.1.1 end_date = 1313.1.1 regnal_number = 8 }
-            ruler_term = { character = geo_george_v start_date = 1313.1.1 regnal_number = 5 }
-
-            ruler = random # TODO: add me
+            ruler_term = { character = geo_george_v start_date = 1313.1.1 end_date = 1346.1.1 regnal_number = 5 }
+            ruler_term = { character = geo_david_ix start_date = 1346.1.1 end_date = 1360.1.1 regnal_number = 9 }
+            ruler_term = { character = geo_bagrat_v start_date = 1360.1.1 end_date = 1393.1.1 regnal_number = 5 }
+            ruler_term = { character = geo_giorgi_vii_bagrationi start_date = 1393.1.1 end_date = 1407.1.1 regnal_number = 7 }
+            ruler_term = { character = geo_konstantine_i_bagrationi start_date = 1407.1.1 end_date = 1412.1.1 regnal_number = 1 }
+            ruler_term = { character = geo_aleksandre_i_bagrationi start_date = 1412.1.1 end_date = 1442.1.1 regnal_number = 1 }
+            ruler_term = { character = geo_vakhtang_iv_bagrationi start_date = 1442.1.1 regnal_number = 4 }
 
             #Societal Values
             offensive_vs_defensive = 40
@@ -67030,6 +67049,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            ruler = random
 
             ruler_term = { character = geo_david_vi start_date = 1259.1.1 end_date = 1293.1.1 regnal_number = 1 }
             ruler_term = { character = ime_constantine_i start_date = 1293.1.1 end_date = 1327.1.1 regnal_number = 1 }
