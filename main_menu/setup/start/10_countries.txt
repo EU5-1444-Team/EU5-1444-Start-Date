@@ -2602,6 +2602,7 @@ countries = {
         GLM = {
             own_control_core = {
                 galich chukhloma parfenyevo sol_galichskaya sudai unzha
+                sharanga uren tonshayevo vetluga semyonov krasnye_baki varnavino
             }
 
             own_control_integrated = {
@@ -3209,9 +3210,8 @@ countries = {
         }
 
         #Principality of Nizhny Novgorod
-        #Personal Union under Moscovy, event fires when MOS' ruler dies which gives NZH an owner ruler
         NZH = {
-            our_cores_conquered_by_others = {
+            own_control_core = {
                 nizhny_novgorod gorokhovets meshchersk pestyaki rastyapino dalneye_konstantinovo
             }
 
@@ -3310,6 +3310,29 @@ countries = {
             include = "expl_novgorod"
         }
 
+        #Mari
+        MRZ = {
+            own_control_core = {
+                kozmodemyansk kabachischi yoshkar_ola kiknur yaransk kutarka sernur urzhum
+                oli_baraza
+                kilmez stelty
+                sarapul mozhga yelabuga izhevsk vavozh_mozhga vyatskiye_polyany
+                votkings kasevo yanaul tatyshly saygatsky yelovo osa
+            }
+
+            
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+
+            liturgical_language = church_slavonic_language
+            country_rank = rank_county
+            starting_technology_level = 3
+            capital = morki
+        }
+
         #Principality of Murom
         MRM = {
             our_cores_conquered_by_others = {
@@ -3389,7 +3412,6 @@ countries = {
                 yuryev_polsky
                 starodub_on_the_klyazma palekh rozhdestveno
                 gorodets lukh korenevo vasilyeva_sloboda yuryev_povolzhsk kadyy
-                nizhny_novgorod gorokhovets meshchersk pestyaki rastyapino dalneye_konstantinovo
                 kostroma buy demyanovo gryazovets lyubim nerekhta sudislavl yakovlevskoye_bolshoye ostrovskoye
                 #Principality of Kolomna
                 kolomna borovsk khatun koshira maloyaroslavets serpukhov vereya vysokoye
@@ -3404,7 +3426,6 @@ countries = {
                 kasimov azeevo
 
                 yezsk ramenki gorodetsk spas_na_kholmu ves_yogonskaya
-                bolshoye_murashkino kurmysh lyskovo perevoz sechenovo spasskoye_lyskovo alatyr sergach
                 pavlovo arzamas
                 sasovo
             }
@@ -3723,6 +3744,7 @@ countries = {
                 vyatka ust_cheptsa suna verkhoshizhemye orlov belozerye slobodskoy
                 oparino obyachevo lalsk nikolsk vokhma
                 podosinovets omutninsk kholunitsky kobra nagorsk
+                ural_nema falenki stelty dondykar
             }
 
             own_control_integrated = {
@@ -3810,12 +3832,11 @@ countries = {
                 beryozovka lysva kizel gubakha dobryanka solikamsk
                 usolye yusva chyormoz kudymkar kelich kosa_perm gayny
                 ochyor okhannoye chastye debyosy stepanenki
-                igra dondykar yakshur_bodya votkings sarapul mozhga yelabuga izhevsk vavozh_mozhga vyatskiye_polyany
-                kilmez stelty falenki uni ural_nema
-            }
+                igra yakshur_bodya
+                }
 
             own_control_integrated = {
-                aspa suksun ust_kishert orda kasevo yanaul tatyshly saygatsky yelovo osa
+                aspa suksun ust_kishert orda
             }
 
             starting_technology_level = 3
@@ -4651,14 +4672,11 @@ countries = {
             # Kazan
             type = location
             own_control_core = {
-                kazan laish calli mamadysh bogatye_saby oli_baraza dobyaz
+                kazan laish calli mamadysh bogatye_saby dobyaz
                 pokrovskoye simbirsk cherdakly staraya_mayna melekess tetyushi sviyazhsk
-                kutarka sernur morki urzhum
-                yaransk kiknur kabachischi yoshkar_ola
-                cheboksary kozmodemyansk alikovo vasilsursk
-                vetluga semyonov khakhaly krasnye_baki raznezhye voskresenskoye varnavino
-                sharanga uren tonshayevo
-                atrat altyshevo bolshoye_boldino shatki sarov lukoyanov krasnoslobodsk ruzayevka
+                cheboksary alikovo vasilsursk
+                raznezhye voskresenskoye
+                atrat altyshevo bolshoye_boldino shatki sarov lukoyanov krasnoslobodsk ruzayevka khakhaly
                 promsa batyrevo
                 nikolskoye bazarny_syzgan karsun
                 chamzinka saransk lunino
@@ -4687,6 +4705,7 @@ countries = {
                 menzelinsk lower_aktanyshbash chalninsky_pochinok burayevo
                 ulukulevo davlekanovo bizhbulyak turkmenevo sterlibashevo
                 krasnaya_gorka belekes bolshoy_ik ust_katav mesyagutovo zlatoust
+                bolshoye_murashkino kurmysh lyskovo perevoz sechenovo spasskoye_lyskovo alatyr sergach
             }
 
             capital = kazan
@@ -4735,7 +4754,8 @@ countries = {
         MGH = { # Manghit
             type = location
             own_control_core = {
-                ushtagan sarayjuk kisikkamys kulagin saryadyn talowski piterka taskala dergachi chertanla
+                ushtagan sarayjuk kisikkamys kulagin saryadyn talowski
+                ryn bokey zhanybek alexandrov_gay
             }
 
             capital = sarayjuk
@@ -4760,7 +4780,8 @@ countries = {
         JAK = { # Jamboyluk
             type = location
             own_control_core = {
-                bokey zhanybek kalmyk karatobe shyngyrlau aksay_pointic zhympity terekti oral ryn
+                kalmyk terekti oral
+                taskala dergachi chertanla piterka yershov ozinki sakminskoye_vodokhranilishche
             }
 
             capital = oral
@@ -4785,7 +4806,8 @@ countries = {
         AOG = { # Altıoğul
             type = location
             own_control_core = {
-                alexandrov_gay ozinki sakminskoye_vodokhranilishche yershov baytak ilek kargaly_aktobe kobda irek ushkan
+                baytak ilek kargaly_aktobe kobda irek ushkan
+                karatobe shyngyrlau aksay_pointic zhympity kiyl
             }
 
             capital = ilek
@@ -4810,7 +4832,9 @@ countries = {
         QON = { # Qongirat
             type = location
             own_control_core = {
-                koskuduk manysai shagan zhaksy_karasay tas_kichu kaynar shagiz tenteksor mavliberda kiyl
+                koskuduk tas_kichu kaynar shagiz tenteksor mavliberda
+                ushkan
+                uchkuduk beleuli shuruk kyushe sam
             }
 
             capital = shagiz
@@ -4835,7 +4859,7 @@ countries = {
         NWM = { # Naymans
             type = location
             own_control_core = {
-                koptam uil emba atzhaksy shatyrlysay temir or_aktobe masat_ata beket_ata beki
+                koptam uil emba atzhaksy shatyrlysay temir or_aktobe manysai shagan zhaksy_karasay
             }
 
             capital = emba
@@ -4860,7 +4884,8 @@ countries = {
         JIK = { # Jaik
             type = location
             own_control_core = {
-                kenderli_kayasan koshkar_ata temir_baba ketik_kala kabakty karatobe_mangyshlak kyzylkala beleuli kyushe sam shuruk sisem_ata uchkuduk
+                kenderli_kayasan koshkar_ata temir_baba ketik_kala kabakty karatobe_mangyshlak kyzylkala sisem_ata
+                masat_ata beket_ata beki
             }
 
             capital = kyzylkala
