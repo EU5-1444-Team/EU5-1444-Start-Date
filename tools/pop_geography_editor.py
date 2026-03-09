@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import argparse
 import copy
 import json
 import re
@@ -52,12 +51,29 @@ class PopRow:
 
 def load_settings() -> dict:
     if SETTINGS_PATH.is_file():
-        return json.loads(SETTINGS_PATH.read_text(encoding="utf-8"))
+        try:
+            settings = json.loads(SETTINGS_PATH.read_text(encoding="utf-8"))
+            if "base_game" in settings and "mod_folder" in settings:
+                return settings
+        except json.JSONDecodeError:
+            pass
     return {}
+
+
+def prompt_for_paths() -> dict:
+    print("Settings file is missing or malformed.")
+    base_game = input("Enter the base game path (which has the corresponding files in root/game): ").strip()
+    mod_folder = input("Enter the mod path (which has the corresponding files in root): ").strip()
+    settings = {"base_game": base_game, "mod_folder": mod_folder}
+    SETTINGS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    SETTINGS_PATH.write_text(json.dumps(settings, indent=2), encoding="utf-8")
+    return settings
 
 
 def resolve_default_paths() -> tuple[Path, Path, Path]:
     settings = load_settings()
+    if not settings:
+        settings = prompt_for_paths()
     mod_folder = Path(settings.get("mod_folder", REPO_ROOT)).expanduser()
     base_game = Path(settings.get("base_game", "")).expanduser()
     pops_path = mod_folder / "main_menu/setup/start/06_pops.txt"
@@ -228,12 +244,11 @@ def format_pop_line(attrs: OrderedDict[str, str]) -> str:
 
 
 class PopEditorApp:
-    def __init__(self, root: tk.Tk, pops_path: Path, definitions_path: Path, base_pops_path: Path):
+    def __init__(self, root: tk.Tk, base_game_path: Path, mod_folder_path: Path):
         self.root = root
         self.root.title("EU5 1444 Pop Geography Editor")
-        self.pops_path = pops_path
-        self.definitions_path = definitions_path
-        self.base_pops_path = base_pops_path
+        self.base_game_path = base_game_path
+        self.mod_folder_path = mod_folder_path
 
         self.location_geo: dict[str, GeoInfo] = {}
         self.geography_locations: dict[str, set[str]] = {}
@@ -252,8 +267,8 @@ class PopEditorApp:
         self.batch_mult_var = tk.StringVar(value="1")
         self.status_var = tk.StringVar(value="Load a pop file to begin.")
         self.path_vars = {
-            "pops": tk.StringVar(value=str(self.pops_path)),
-            "definitions": tk.StringVar(value=str(self.definitions_path)),
+            "base_game": tk.StringVar(value=str(self.base_game_path)),
+            "mod_folder": tk.StringVar(value=str(self.mod_folder_path)),
         }
         self.item_to_row: dict[str, PopRow] = {}
         self.sort_column = "location"
@@ -272,12 +287,12 @@ class PopEditorApp:
         file_frame.columnconfigure(1, weight=1)
         file_frame.columnconfigure(4, weight=1)
 
-        ttk.Label(file_frame, text="Pop file").grid(row=0, column=0, sticky="w")
-        ttk.Entry(file_frame, textvariable=self.path_vars["pops"]).grid(row=0, column=1, sticky="ew", padx=(6, 6))
-        ttk.Button(file_frame, text="Browse", command=self.browse_pops).grid(row=0, column=2, padx=(0, 10))
-        ttk.Label(file_frame, text="Definitions").grid(row=0, column=3, sticky="w")
-        ttk.Entry(file_frame, textvariable=self.path_vars["definitions"]).grid(row=0, column=4, sticky="ew", padx=(6, 6))
-        ttk.Button(file_frame, text="Browse", command=self.browse_definitions).grid(row=0, column=5, padx=(0, 10))
+        ttk.Label(file_frame, text="Base Game").grid(row=0, column=0, sticky="w")
+        ttk.Entry(file_frame, textvariable=self.path_vars["base_game"]).grid(row=0, column=1, sticky="ew", padx=(6, 6))
+        ttk.Button(file_frame, text="Browse", command=self.browse_base_game).grid(row=0, column=2, padx=(0, 10))
+        ttk.Label(file_frame, text="Mod Folder").grid(row=0, column=3, sticky="w")
+        ttk.Entry(file_frame, textvariable=self.path_vars["mod_folder"]).grid(row=0, column=4, sticky="ew", padx=(6, 6))
+        ttk.Button(file_frame, text="Browse", command=self.browse_mod_folder).grid(row=0, column=5, padx=(0, 10))
         ttk.Button(file_frame, text="Reload", command=self.load_data).grid(row=0, column=6)
         ttk.Button(file_frame, text="Save", command=self.save_data).grid(row=0, column=7, padx=(6, 0))
 
@@ -374,28 +389,29 @@ class PopEditorApp:
         status = ttk.Label(self.root, textvariable=self.status_var, padding=(8, 2))
         status.grid(row=4, column=0, sticky="ew")
 
-    def browse_pops(self) -> None:
-        selected = filedialog.askopenfilename(
-            title="Select 06_pops.txt",
-            initialfile=self.path_vars["pops"].get(),
-            filetypes=[("Text files", "*.txt"), ("All files", "*.*")],
+    def browse_base_game(self) -> None:
+        selected = filedialog.askdirectory(
+            title="Select Base Game Directory",
+            initialdir=self.path_vars["base_game"].get(),
         )
         if selected:
-            self.path_vars["pops"].set(selected)
+            self.path_vars["base_game"].set(selected)
 
-    def browse_definitions(self) -> None:
-        selected = filedialog.askopenfilename(
-            title="Select definitions.txt",
-            initialfile=self.path_vars["definitions"].get(),
-            filetypes=[("Text files", "*.txt"), ("All files", "*.*")],
+    def browse_mod_folder(self) -> None:
+        selected = filedialog.askdirectory(
+            title="Select Mod Folder Directory",
+            initialdir=self.path_vars["mod_folder"].get(),
         )
         if selected:
-            self.path_vars["definitions"].set(selected)
+            self.path_vars["mod_folder"].set(selected)
 
     def load_data(self) -> None:
         try:
-            self.pops_path = Path(self.path_vars["pops"].get()).expanduser()
-            self.definitions_path = Path(self.path_vars["definitions"].get()).expanduser()
+            base_game_path = Path(self.path_vars["base_game"].get()).expanduser()
+            mod_folder_path = Path(self.path_vars["mod_folder"].get()).expanduser()
+            self.pops_path = mod_folder_path / "main_menu/setup/start/06_pops.txt"
+            self.definitions_path = base_game_path / "game/in_game/map_data/definitions.txt"
+            self.base_pops_path = base_game_path / BASE_POPS_REL
             self.location_geo, self.geography_locations = parse_definitions(self.definitions_path)
             self.location_order, location_pops = parse_pops(self.pops_path)
             _, self.base_location_pops = parse_pops(self.base_pops_path)
@@ -700,7 +716,8 @@ class PopEditorApp:
 
     def save_data(self) -> None:
         try:
-            output_path = Path(self.path_vars["pops"].get()).expanduser()
+            mod_folder_path = Path(self.path_vars["mod_folder"].get()).expanduser()
+            output_path = mod_folder_path / "main_menu/setup/start/06_pops.txt"
             backup_path = output_path.with_suffix(output_path.suffix + ".bak")
             if output_path.exists():
                 backup_path.write_text(output_path.read_text(encoding="utf-8-sig"), encoding="utf-8")
@@ -730,14 +747,14 @@ class PopEditorApp:
 
 
 def main() -> None:
-    default_pops, default_definitions, default_base_pops = resolve_default_paths()
-    parser = argparse.ArgumentParser(description="GUI editor for 1444 pops filtered by basegame geography.")
-    parser.add_argument("--pops", type=Path, default=default_pops)
-    parser.add_argument("--definitions", type=Path, default=default_definitions)
-    args = parser.parse_args()
+    settings = load_settings()
+    if not settings:
+        settings = prompt_for_paths()
+    base_game_path = Path(settings.get("base_game", "")).expanduser()
+    mod_folder_path = Path(settings.get("mod_folder", REPO_ROOT)).expanduser()
 
     root = tk.Tk()
-    app = PopEditorApp(root, args.pops, args.definitions, default_base_pops)
+    app = PopEditorApp(root, base_game_path, mod_folder_path)
     root.mainloop()
 
 
