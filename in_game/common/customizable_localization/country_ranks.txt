@@ -418,11 +418,28 @@ country_flavor = {
         }
     }
 
-    # Horde
+    # Khaganate
     text = {
         localization_key = rank_empire_horde
         trigger = {
+            country_rank_is_empire = yes
+            tag = AVR
+            has_reform = government_reform:nutsaldom
+        }
+    }
 
+    text = {
+        localization_key = rank_empire_horde
+        trigger = {
+            country_rank_is_empire = yes
+            tag = TRK
+            has_reform = government_reform:shamkhalate
+        }
+    }
+
+    text = {
+        localization_key = rank_empire_horde
+        trigger = {
             country_rank_is_empire = yes
             government_type = government_type:steppe_horde
         }
@@ -1063,6 +1080,24 @@ country_flavor = {
     text = {
         localization_key = rank_kingdom_horde
         trigger = {
+            country_rank_is_kingdom = yes
+            tag = AVR
+            has_reform = government_reform:nutsaldom
+        }
+    }
+
+    text = {
+        localization_key = rank_kingdom_horde
+        trigger = {
+            country_rank_is_kingdom = yes
+            tag = TRK
+            has_reform = government_reform:shamkhalate
+        }
+    }
+
+    text = {
+        localization_key = rank_kingdom_horde
+        trigger = {
             government_type = government_type:steppe_horde
         }
     }
@@ -1372,6 +1407,38 @@ country_flavor = {
         trigger = {
             country_rank_is_kingdom = yes
             has_reform = government_reform:timurid_prince
+        }
+    }
+
+    text = {
+        localization_key = rank_duchy_nutsaldom
+        trigger = {
+            country_rank_is_duchy = yes
+            has_reform = government_reform:nutsaldom
+        }
+    }
+
+    text = {
+        localization_key = rank_duchy_shamkhalate
+        trigger = {
+            country_rank_is_duchy = yes
+            has_reform = government_reform:shamkhalate
+        }
+    }
+
+    text = {
+        localization_key = rank_county_nutsaldom
+        trigger = {
+            country_rank_is_county = yes
+            has_reform = government_reform:nutsaldom
+        }
+    }
+
+    text = {
+        localization_key = rank_county_shamkhalate
+        trigger = {
+            country_rank_is_county = yes
+            has_reform = government_reform:shamkhalate
         }
     }
 

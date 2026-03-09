@@ -140,6 +140,14 @@ country_name_construction = {
 	}
 
 	text = {
+		localization_key = country_name_construction_prefix_name_rank
+		trigger = {
+			tag = TRK
+			has_reform = government_reform:shamkhalate
+		}
+	}
+
+	text = {
 		localization_key = country_name_construction_prefix_adjective_rank
 		trigger = {
 			OR = {
@@ -180,6 +188,10 @@ country_name_construction = {
 						country_rank = country_rank:rank_duchy
 					}
 					NOT = { tag = KNI }
+				}
+				AND = {
+					tag = AVR
+					has_reform = government_reform:nutsaldom
 				}
 				has_reform = government_reform:japanese_clan
 				has_reform = government_reform:gelugpa_institution
