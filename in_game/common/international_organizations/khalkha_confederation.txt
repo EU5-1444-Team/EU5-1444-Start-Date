@@ -24,18 +24,6 @@ khalkha_confederation = {
     }
     
     monthly_effect = {
-        every_country = {
-            limit = {
-                OR = {
-                    culture = culture:khalkha_culture
-                    culture = culture:mongolian_culture
-                }
-                NOT = { is_member_of_international_organization = root }
-            }
-            root = {
-                add_country_to_international_organization = prev
-            }
-        }
     }
 
     leader_modifier = {
