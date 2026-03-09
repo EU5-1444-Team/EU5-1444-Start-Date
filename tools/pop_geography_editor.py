@@ -90,6 +90,18 @@ def format_attrs_summary(attrs: OrderedDict[str, str]) -> str:
     return ", ".join(f"{key}={value}" for key, value in attrs.items())
 
 
+def normalize_size(value: str) -> str:
+    """Return a size string with three decimal places if numeric.
+
+    Non-numeric values are returned unchanged so the rest of the parser can
+    handle unusual entries without raising exceptions.
+    """
+    try:
+        return f"{float(value):.3f}"
+    except Exception:
+        return value
+
+
 class GeoNode:
     def __init__(self, name: str, path: tuple[str, ...]):
         self.name = name
@@ -233,6 +245,11 @@ def parse_pops(path: Path) -> tuple[list[str], dict[str, list[OrderedDict[str, s
 
 
 def format_pop_line(attrs: OrderedDict[str, str]) -> str:
+    # make sure size is formatted before writing
+    if "size" in attrs:
+        attrs = OrderedDict(attrs)
+        attrs["size"] = normalize_size(attrs["size"])
+
     ordered = OrderedDict()
     for key in STD_ATTR_ORDER:
         if key in attrs:
@@ -308,6 +325,7 @@ class PopEditorApp:
                 width=24,
             )
             combo.grid(row=idx, column=1, sticky="ew", padx=(4, 8))
+            combo.bind("<<ComboboxSelected>>", self.on_filter_change)
             setattr(self, f"{field}_combo", combo)
             ttk.Button(filter_frame, text="Include", command=lambda f=field: self.add_selection(f, "include")).grid(
                 row=idx, column=2, padx=(0, 4)
@@ -419,6 +437,11 @@ class PopEditorApp:
             self.next_row_id = 1
             for location in self.location_order:
                 for attrs in location_pops.get(location, []):
+                    # normalize size values on load so the table always shows
+                    # three decimal places
+                    if "size" in attrs:
+                        attrs = OrderedDict(attrs)
+                        attrs["size"] = normalize_size(attrs["size"])
                     self.rows.append(PopRow(self.next_row_id, location, OrderedDict(attrs)))
                     self.next_row_id += 1
             self.original_rows = copy.deepcopy(self.rows)
@@ -462,16 +485,74 @@ class PopEditorApp:
         return row.get_value(column, geo)
 
     def update_filter_options(self) -> None:
+        """Rebuild the combobox choices for each filter field.
+
+        The available values for a field are drawn from the pop rows but are
+        restricted by any selections made on ancestor fields.  Both include and
+        exclude selections are taken into account so that children only offer
+        options that actually exist under the current parent constraints.
+        """
+        parent_map = {
+            "superregion": "continent",
+            "region": "superregion",
+            "area": "region",
+            "province": "area",
+            "location": "province",
+        }
+
+        # build ancestor lists for each field for fast lookup
+        ancestor_map: dict[str, list[str]] = {}
         for field in FILTER_FIELDS:
-            values = sorted(
-                {
-                    getattr(self.location_geo.get(row.location, GeoInfo()), field)
-                    if field != "location"
-                    else row.location
-                    for row in self.rows
-                }
-                - {""}
-            )
+            ancestors: list[str] = []
+            p = parent_map.get(field)
+            while p:
+                ancestors.append(p)
+                p = parent_map.get(p)
+            ancestor_map[field] = ancestors
+
+        for field in FILTER_FIELDS:
+            values: set[str] = set()
+            for row in self.rows:
+                geo = self.location_geo.get(row.location, GeoInfo())
+                if field == "location":
+                    value = row.location
+                else:
+                    value = getattr(geo, field)
+                if not value:
+                    continue
+
+                # Ancestors can restrict the candidate rows in three ways:
+                # * a value is selected in the combobox itself (filter_vars)
+                # * a value has been added to the include set
+                # * a value has been added to the exclude set
+                # The combobox selection acts like a provisional include; it
+                # affects the options of sibling/descendant fields immediately
+                # without the user having to press an "Include" button.
+                skip = False
+                for anc in ancestor_map[field]:
+                    # determine the row's value for this ancestor
+                    anc_val = row.location if anc == "location" else getattr(geo, anc)
+                    if anc_val == "":
+                        continue
+                    # filter_vars selection (temporary include)
+                    fv = self.filter_vars.get(anc).get()
+                    if fv and anc_val != fv:
+                        skip = True
+                        break
+                    inc_vals = self.include_values.get(anc, set())
+                    if inc_vals and anc_val not in inc_vals:
+                        skip = True
+                        break
+                    exc_vals = self.exclude_values.get(anc, set())
+                    if exc_vals and anc_val in exc_vals:
+                        skip = True
+                        break
+                if skip:
+                    continue
+
+                values.add(value)
+
+            values = sorted(values - {""})
             combo = getattr(self, f"{field}_combo")
             current = self.filter_vars[field].get()
             combo["values"] = [""] + values
@@ -486,9 +567,14 @@ class PopEditorApp:
             self.include_values[field].clear()
             self.exclude_values[field].clear()
             self.update_selection_summary(field)
+        self.update_filter_options()
         self.refresh_table()
 
     def on_filter_change(self, _event=None) -> None:
+        # when the user selects a value in a combobox we need to rebuild the
+        # other comboboxes so that children are restricted by any newly chosen
+        # parent value.  Afterwards refresh the visible rows.
+        self.update_filter_options()
         self.refresh_table()
 
     def add_selection(self, field: str, mode: str) -> None:
@@ -500,12 +586,14 @@ class PopEditorApp:
         target[field].add(value)
         other[field].discard(value)
         self.update_selection_summary(field)
+        self.update_filter_options()
         self.refresh_table()
 
     def clear_selection(self, field: str) -> None:
         self.include_values[field].clear()
         self.exclude_values[field].clear()
         self.update_selection_summary(field)
+        self.update_filter_options()
         self.refresh_table()
 
     def update_selection_summary(self, field: str) -> None:
@@ -610,7 +698,11 @@ class PopEditorApp:
         if len(filtered) > MAX_VISIBLE_ROWS:
             suffix = f" Showing first {MAX_VISIBLE_ROWS}; narrow filters to edit the rest."
         unique_locations = len({row.location for row in filtered})
-        self.status_var.set(f"{len(filtered)} matching pop rows across {unique_locations} locations.{suffix}")
+        total_pop = sum(float(row.attrs.get("size", "0")) for row in filtered)
+        # display three decimals for the total population
+        self.status_var.set(
+            f"{len(filtered)} matching pop rows across {unique_locations} locations, total pop: {total_pop:.3f}.{suffix}"
+        )
 
     def sort_key(self, row: PopRow, column: str):
         geo = self.get_geo(row.location)
@@ -687,8 +779,9 @@ class PopEditorApp:
             row.attrs = updated
             return
         if column == "size":
+            # ensure numeric and normalize to three decimals
             try:
-                float(value)
+                value = normalize_size(value)
             except ValueError as exc:
                 raise ValueError("Size must be numeric.") from exc
         if column not in row.attrs and column not in STD_ATTR_ORDER:
@@ -735,7 +828,10 @@ class PopEditorApp:
             for location in ordered_locations:
                 lines.append(f"{location} = {{")
                 for row in grouped.get(location, []):
-                    lines.append(format_pop_line(row.attrs))
+                    attrs = dict(row.attrs)
+                    if "size" in attrs:
+                        attrs["size"] = normalize_size(attrs["size"])
+                    lines.append(format_pop_line(attrs))
                 lines.append("}")
             lines.append("}")
             output_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
