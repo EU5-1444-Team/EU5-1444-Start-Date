@@ -148,6 +148,14 @@ country_name_construction = {
 	}
 
 	text = {
+		localization_key = country_name_construction_prefix_name_rank
+		trigger = {
+			tag = KAI
+			has_reform = government_reform:utsmiate
+		}
+	}
+
+	text = {
 		localization_key = country_name_construction_prefix_adjective_rank
 		trigger = {
 			OR = {
@@ -191,8 +199,10 @@ country_name_construction = {
 				}
 				AND = {
 					tag = AVR
-					has_reform = government_reform:nutsaldom
-				}
+					has_reform = government_reform:nutsaldom			}
+			AND = {
+				tag = KAI
+				has_reform = government_reform:utsmiate				}
 				has_reform = government_reform:japanese_clan
 				has_reform = government_reform:gelugpa_institution
 				country_type = pop

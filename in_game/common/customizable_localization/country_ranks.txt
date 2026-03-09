@@ -441,6 +441,15 @@ country_flavor = {
         localization_key = rank_empire_horde
         trigger = {
             country_rank_is_empire = yes
+            tag = KAI
+            has_reform = government_reform:utsmiate
+        }
+    }
+
+    text = {
+        localization_key = rank_empire_horde
+        trigger = {
+            country_rank_is_empire = yes
             government_type = government_type:steppe_horde
         }
     }
@@ -683,6 +692,13 @@ country_flavor = {
         localization_key = rank_kingdom_candia
         trigger = {
             tag = CRT
+        }
+    }
+
+    text = {
+        localization_key = rank_duchy_tabasaran
+        trigger = {
+            tag = TBA
         }
     }
 
@@ -1098,6 +1114,15 @@ country_flavor = {
     text = {
         localization_key = rank_kingdom_horde
         trigger = {
+            country_rank_is_kingdom = yes
+            tag = KAI
+            has_reform = government_reform:utsmiate
+        }
+    }
+
+    text = {
+        localization_key = rank_kingdom_horde
+        trigger = {
             government_type = government_type:steppe_horde
         }
     }
@@ -1427,6 +1452,14 @@ country_flavor = {
     }
 
     text = {
+        localization_key = rank_duchy_utsmiate
+        trigger = {
+            country_rank_is_duchy = yes
+            has_reform = government_reform:utsmiate
+        }
+    }
+
+    text = {
         localization_key = rank_county_nutsaldom
         trigger = {
             country_rank_is_county = yes
@@ -1439,6 +1472,14 @@ country_flavor = {
         trigger = {
             country_rank_is_county = yes
             has_reform = government_reform:shamkhalate
+        }
+    }
+
+    text = {
+        localization_key = rank_county_utsmiate
+        trigger = {
+            country_rank_is_county = yes
+            has_reform = government_reform:utsmiate
         }
     }
 
