@@ -58,6 +58,17 @@ country_name_construction = {
 	}
 
 	text = {
+		localization_key = country_name_construction_prefix_name_rank
+		trigger = {
+			OR = {
+				tag = QAR
+				tag = AQQ
+			}
+			government_type = government_type:tribe
+		}
+	}
+
+	text = {
 		localization_key = country_name_construction_prefix_name
 		trigger = {
 			country_rank ?= country_rank:rank_empire
@@ -142,7 +153,7 @@ country_name_construction = {
 	text = {
 		localization_key = country_name_construction_prefix_name_rank
 		trigger = {
-			tag = TRK
+			tag = GZK
 			has_reform = government_reform:shamkhalate
 		}
 	}

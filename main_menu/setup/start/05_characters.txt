@@ -120830,6 +120830,108 @@ character_db={
         dynasty = amirid_dynasty
         tag = KAI
     }
+    
+    # Ardabil
+    abl_shaykh_ibrahim = {
+        first_name = { name = name_ibrahim }
+        culture = farsi_culture
+        religion = shia
+        birth_date = 1401.1.1
+        birth = ardabil
+        dynasty = safavid_dynasty
+        tag = ABL
+    }
+
+    abl_shayk_junayd = {
+        first_name = { name = Junayd }
+        culture = farsi_culture
+        religion = shia
+        birth_date = 1429.1.1
+        birth = ardabil
+        dynasty = safavid_dynasty
+        father = abl_shaykh_ibrahim
+        tag = ABL
+    }
+
+    # Qara Qoyunlu
+    qar_qara_yusuf = {
+        first_name = { name = Qara.name_joseph }
+        culture = turkoman_culture
+        religion = sunni
+        birth_date = 1356.1.1
+        death_date = 1420.11.17
+        birth = erzurum
+        dynasty = qara_qoyunlu_dynasty
+        tag = QAR
+    }
+
+    qar_shah_muhammad = {
+        first_name = { name = Shah.name_muhammad }
+        culture = turkoman_culture
+        religion = sunni
+        birth_date = 1380.1.1 # estimated based on father
+        death_date = 1433.8.5
+        birth = erzurum
+        dynasty = qara_qoyunlu_dynasty
+        father = qar_qara_yusuf
+        tag = QAR
+    }
+
+    qar_jahan_shah = {
+        first_name = { name = Jahan.Shah }
+        culture = turkoman_culture
+        religion = sunni
+        birth_date = 1397.1.1
+        birth = tabriz
+        dynasty = qara_qoyunlu_dynasty
+        father = qar_shah_muhammad
+        tag = QAR
+    }
+
+    qar_pir_budaq = {
+        first_name = { name = Pir.Budaq }
+        culture = turkoman_culture
+        religion = sunni
+        birth_date = 1415.1.1 # estimated ~18 years after Jahan Shah
+        birth = tabriz
+        dynasty = qara_qoyunlu_dynasty
+        father = qar_jahan_shah
+        tag = QAR
+    }
+
+    # Aq Qoyunlu
+    aqq_qara_osman = {
+        first_name = { name = Qara.name_osman }
+        culture = turkoman_culture
+        religion = sunni
+        birth_date = 1356.1.1
+        death_date = 1435.1.1
+        birth = erzincan
+        dynasty = aq_qoyunlu_dynasty
+        tag = AQQ
+    }
+
+    aqq_uthman_beg = {
+        first_name = { name = name_osman.Beg }
+        culture = turkoman_culture
+        religion = sunni
+        birth_date = 1380.1.1 # estimated based on father
+        birth = diyarbekir
+        dynasty = aq_qoyunlu_dynasty
+        father = aqq_qara_osman
+        tag = AQQ
+    }
+
+    aqq_uzun_hasan = {
+        first_name = { name = Uzun.name_hasan }
+        culture = turkoman_culture
+        religion = sunni
+        birth_date = 1423.1.1
+        birth = diyarbekir
+        dynasty = aq_qoyunlu_dynasty
+        father = aqq_uthman_beg
+        tag = AQQ
+    }
 
     tim_shahrukh_mirza = {
         first_name = { name = "Shahrukh Mirza" }

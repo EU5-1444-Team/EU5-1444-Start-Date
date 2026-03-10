@@ -674,3 +674,46 @@ derbent_dynasty = {
         }
     }
 }
+
+aq_qoyunlu_dynasty = {
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 0 0 170 }
+    colored_emblem = {
+        texture = "ce_akkoyunlu.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.5 0.5 }
+            scale = { 0.5 0.5 }
+        }
+    }
+}
+
+qara_qoyunlu_dynasty = {
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 0 151 196 }
+    colored_emblem = {
+        texture = "ce_karakoyunlu.dds"
+        color1 = rgb { 0 0 0 }
+        instance = {
+            position = { 0.5 0.5 }
+            scale = { 1.4 1.4 }
+        }
+    }
+}
+
+safavid_dynasty = { # Persia
+	pattern = "pattern_solid.dds"
+	color1 = "green"
+	color2 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_lion_persia.dds" # TODO
+		color1 = color2
+		color2 = hsv360 	{	42	70	90	}
+		color3 = "white"
+		instance = { 
+			position = { 0.49 0.48 } 
+			scale = { 0.6 0.6 }
+		}
+	}
+}

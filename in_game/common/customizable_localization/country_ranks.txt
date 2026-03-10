@@ -35,7 +35,7 @@ country_flavor = {
         }
     }
     text = {
-        localization_key = country_rank_governorate
+        localization_key = rank_county_governorate
         trigger = {
             is_subject_type = governorate
         }
@@ -609,6 +609,18 @@ country_flavor = {
             religion.group = religion_group:muslim
         }
     }
+
+    text = {
+        localization_key = rank_sheep_confederation
+        trigger = {
+            OR = {
+                tag = QAR
+                tag = AQQ
+            }
+            government_type = government_type:tribe
+        }
+    }
+
 
     text = {
         localization_key = rank_empire_tsar
@@ -2541,12 +2553,88 @@ country_flavor = {
         localization_key = rank_county_arabic
         trigger = {
             OR = {
+                country_rank_is_county = yes
+                country_rank_is_duchy = yes
+            }
+            OR = {
                 court_language ?= language:arabic_language
                 AND = {
                     exists = culture
                     exists = culture.language
                     culture.language = language:arabic_language
                 }
+                AND = {
+                    OR = {
+                        religion = religion:shia
+                        religion = religion:sunni
+                    }
+                    OR = {
+                        government_type = government_type:theocracy
+                        has_reform = government_reform:feudal_theocracy
+                    }
+                }
+            }
+        }
+    }
+
+    text = {
+        localization_key = rank_county_imamate
+        trigger = {
+            OR = {
+                AND = {
+                    religion = religion:ibadi
+                    OR = {
+                        government_type = government_type:theocracy
+                        has_reform = government_reform:feudal_theocracy
+                    }
+                }
+                AND = {
+                    country_rank_is_kingdom = yes
+                    religion = religion:sunni
+                    OR = {
+                        government_type = government_type:theocracy
+                        has_reform = government_reform:feudal_theocracy
+                    }
+                }
+            }
+        }
+    }
+
+    text = {
+        localization_key = rank_kingdom_imamate
+        trigger = {
+            country_rank_is_kingdom = yes
+            religion = religion:ibadi
+            OR = {
+                government_type = government_type:theocracy
+                has_reform = government_reform:feudal_theocracy
+            }
+        }
+    }
+
+    text = {
+        localization_key = rank_empire_imamate
+        trigger = {
+            country_rank_is_empire = yes
+            OR = {
+                religion = religion:sunni
+                religion = religion:shiite
+            }
+            OR = {
+                government_type = government_type:theocracy
+                has_reform = government_reform:feudal_theocracy
+            }
+        }
+    }
+
+    text = {
+        localization_key = rank_kingdom_holy_state
+        trigger = {
+            country_rank_is_kingdom = yes
+            religion = religion:shiite
+            OR = {
+                government_type = government_type:theocracy
+                has_reform = government_reform:feudal_theocracy
             }
         }
     }

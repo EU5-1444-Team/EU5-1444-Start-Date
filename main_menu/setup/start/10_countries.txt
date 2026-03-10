@@ -22538,6 +22538,9 @@ countries = {
             laws = {
                 sharia_law = ibadi_policy
             }
+            reforms = {
+                feudal_theocracy
+            }
         }
         religious_school = ibadi_school
 
@@ -37159,9 +37162,12 @@ countries = {
         include = "turkish_beylik_no_coast_no_greek"
         government = {
             type = tribe
+            ruler = aqq_uthman_beg
+            ruler_term = { character = aqq_qara_osman start_date = 1378.1.1 end_date = 1435.1.1 }
+            ruler_term = { character = aqq_uthman_beg start_date = 1435.1.2 }
         }
 
-        country_rank = rank_duchy
+        country_rank = rank_kingdom
 
         capital = erzurum
         religious_school = maturidi_school #Widespread among the Turks together with Hanafi
@@ -37222,9 +37228,13 @@ countries = {
         include = "turkish_beylik_no_coast_no_greek"
         government = {
             type = tribe
+            ruler_term = { character = qar_qara_yusuf start_date = 1388.1.1 end_date = 1420.11.17 }
+            ruler_term = { character = qar_shah_muhammad start_date = 1420.11.18 end_date = 1433.8.5 }
+            ruler_term = { character = qar_jahan_shah start_date = 1438.1.1 }
+            ruler = qar_jahan_shah
         }
 
-        country_rank = rank_duchy
+        country_rank = rank_kingdom
 
         capital = mosul
         religious_school = maturidi_school #Widespread among the Turks together with Hanafi
@@ -38498,8 +38508,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = abl_shaykh_ibrahim
 
+            reforms = {
+                feudal_theocracy
+            }
         }
 
         capital = ardabil
@@ -66458,6 +66471,9 @@ countries = {
 
         government = {
             type = monarchy
+            reforms = {
+                feudal_theocracy
+            }
         }
 
         country_rank = rank_duchy
@@ -67171,7 +67187,6 @@ countries = {
         #Avaria
         own_control_core = {
             khunzakh 
-            kumukh
         }
 
         include = "expl_middle_east"
@@ -67231,6 +67246,37 @@ countries = {
 
         country_rank = rank_duchy
         capital = tarki
+    }
+
+    GZK = {
+        # Gazikumukh Shamkhalate
+        own_control_core = {
+            kumukh
+        }
+
+        include = "expl_middle_east"
+        include = "muslim_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+
+            laws = {
+                sharia_law = hanafi_policy
+            }
+            reforms = {
+                shamkhalate
+            }
+        }
+
+        tolerated_cultures = {
+            avar_culture
+        }
+
+        religious_school = hanafi_school
+        government = { mysticism_vs_jurisprudence = -15 }
+
+        country_rank = rank_county
+        capital = kumukh
     }
 
     ARM = {
@@ -67785,6 +67831,9 @@ countries = {
         starting_technology_level = 3
         include = "muslim_monarchy"
         government = {
+            reforms = {
+                feudal_theocracy
+            }
         }
 
         tolerated_cultures = {
@@ -67945,6 +67994,9 @@ countries = {
 
             laws = {
                 sharia_law = ibadi_policy
+            }
+            reforms = {
+                feudal_theocracy
             }
         }
 
