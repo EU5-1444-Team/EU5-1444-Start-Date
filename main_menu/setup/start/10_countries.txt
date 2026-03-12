@@ -43238,16 +43238,7 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
-            ruler = wol_wartislaw_ix_wolgast
-            heir = got_erik_i
-            ruler_term = { character = sop_barnim_v_stolp start_date = 1377.1.1 end_date = 1402.1.1 regnal_number = 5 }
-            ruler_term = { character = sop_bogislaw_viii_stolp start_date = 1402.1.1 end_date = 1418.1.1 regnal_number = 6 }
-            ruler_term = { character = sop_bogislaw_ix_stolp start_date = 1418.1.1 regnal_number = 9 }
-            regnal_numbers = {
-                Wartislaw = 9
-                Bogislaw = 6
-                Barnim = 7
-            }
+            ruler = random #TODO
         }
 
         tolerated_cultures = {
@@ -43333,9 +43324,8 @@ countries = {
     SOP = {
         #Stolp
         own_control_core = {
-            miastko szadzko
-            nowoszczecin gryfia_gora bialogard slawno slupsk
-            kamien resko
+            miastko
+            nowoszczecin bialogard slawno slupsk
         }
 
         starting_technology_level = 3
@@ -43367,6 +43357,40 @@ countries = {
 
         country_rank = rank_duchy
         capital = slupsk
+        dynasty = gryf_dynasty
+    }
+
+    SGD = {
+        #Pomerania-Stargard
+        own_control_core = {
+            szadzko resko gryfia_gora
+            kamien
+        }
+
+        starting_technology_level = 3
+        include = "catholic_monarchy"
+        include = "expl_northern_europe"
+        include = "german_principality"
+        government = {
+            ruler = sop_bogislaw_ix_stolp
+            heir = dan_erich_gryf
+            ruler_term = { character = sop_barnim_v_stolp start_date = 1377.1.1 end_date = 1402.1.1 regnal_number = 5 }
+            ruler_term = { character = sop_bogislaw_viii_stolp start_date = 1402.1.1 end_date = 1418.1.1 regnal_number = 6 }
+            ruler_term = { character = sop_bogislaw_ix_stolp start_date = 1418.1.1 regnal_number = 9 }
+            regnal_numbers = {
+                Wartislaw = 9
+                Bogislaw = 6
+                Barnim = 7
+            }
+        }
+
+        tolerated_cultures = {
+            western_pomeranian
+            kashubian
+        }
+
+        country_rank = rank_duchy
+        capital = stralsund
         dynasty = gryf_dynasty
     }
 
