@@ -104,7 +104,6 @@ diplomacy_manager = {
     dependency = { first = LIT second = VOL subject_type = vassal }
     # TODO: Investigate dual rulership for Samogitia (SXM)
     dependency = { first = LIT second = SXM subject_type = vassal }
-    dependency = { first = LIT second = VOL subject_type = vassal }
     dependency = { first = VOL second = POD subject_type = vassal }
     dependency = { first = LIT second = NSL subject_type = vassal }
     dependency = { first = LIT second = KCH subject_type = vassal }
@@ -144,7 +143,6 @@ diplomacy_manager = {
     dependency = { first = KSH second = DOG subject_type = samanta }
     dependency = { first = KSH second = KSW subject_type = samanta }
     dependency = { first = KSH second = LHL subject_type = samanta }
-    dependency = { first = KSH second = KSW subject_type = samanta }
 
     #Haihaya Subjects:
     dependency = { first = RTP second = SRG subject_type = samanta }
@@ -158,7 +156,6 @@ diplomacy_manager = {
     dependency = { first = ORI second = PLA subject_type = samanta }
     dependency = { first = ORI second = BNA subject_type = samanta }
     dependency = { first = ORI second = KLH subject_type = samanta }
-    dependency = { first = ORI second = BNA subject_type = samanta }
 
 
     dependency = { first = SRM second = JBL subject_type = samanta }
@@ -635,8 +632,7 @@ diplomacy_manager = {
     dependency = { first = CHI second = MUA subject_type = tributary }
 
     # Jurchen Tributes
-    dependency = { first = CHI second = SSH subject_type = tusi }
-    dependency = { first = CHI second = JEC subject_type = tusi }
+    dependency = { first = CHI second = SSH subject_type = tributary }
     dependency = { first = CHI second = HDA subject_type = tributary }
     dependency = { first = CHI second = HOI subject_type = tributary }
     dependency = { first = CHI second = ULA subject_type = tributary }
@@ -656,19 +652,14 @@ diplomacy_manager = {
 
     #Mongol Tributes of China
     dependency = { first = CHI second = DOY subject_type = tributary }
-    dependency = { first = CHI second = TIN subject_type = tributary }
     dependency = { first = CHI second = FUY subject_type = tributary }
 
     # Xinjiang Tributes
-    dependency = { first = CHI second = HMI subject_type = tributary }
     dependency = { first = CHI second = SRY subject_type = tributary }
     dependency = { first = CHI second = TUO subject_type = tributary }
 
     # Vassals and Tusi
     dependency = { first = CHI second = MMA subject_type = vassal }
-    dependency = { first = CHI second = CHH subject_type = tusi }
-    dependency = { first = CHI second = CDL subject_type = tusi }
-    dependency = { first = CHI second = LJG subject_type = tusi }
     dependency = { first = CHI second = CHH subject_type = tusi }
     dependency = { first = CHI second = CDL subject_type = tusi }
     dependency = { first = CHI second = LJG subject_type = tusi }
@@ -750,8 +741,6 @@ diplomacy_manager = {
     dependency = { first = CHG second = YRK subject_type = vassal }
 
     #------------South East Asia-------------
-    dependency = { first = CHI second = CHA subject_type = tributary }
-    dependency = { first = CHI second = DAI subject_type = tributary }
     dependency = { first = CHI second = MLM subject_type = tributary }
     dependency = { first = CHI second = MPH subject_type = tributary }
     dependency = { first = AVV second = TNG subject_type = tributary }
@@ -768,9 +757,7 @@ diplomacy_manager = {
     dependency = { first = AVV second = MYA subject_type = tributary }
     dependency = { first = AYU second = SUK subject_type = vassal }
     dependency = { first = AYU second = LIG subject_type = vassal }
-    dependency = { first = HSE second = MGT subject_type = vassal }
     dependency = { first = LNA second = MNI subject_type = vassal }
-    dependency = { first = HSE second = MGT subject_type = fiefdom }
     dependency = { first = BNG second = ARK subject_type = vassal }
     scripted_oneway = { first = DAI second = MPH type = guarantee }
     scripted_oneway = { first = MUA second = MPH type = guarantee }
