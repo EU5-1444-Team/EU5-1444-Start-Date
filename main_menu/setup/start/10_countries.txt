@@ -1841,16 +1841,26 @@ countries = {
         include = "catholic_monarchy"
         include = "expl_northern_europe"
         include = "german_principality"
-        country_rank = rank_duchy
         government = {
-
-            ruler = random # TODO: add me
+            ruler = ste_joachim_i_stettin
 
             ruler_term = { character = pom_barnim_i_the_good start_date = 1233.1.1 end_date = 1278.1.1 regnal_number = 1 }
-            ruler_term = { character = ste_otto_i_stettin start_date = 1294.1.1 regnal_number = 1 }
+            ruler_term = { character = ste_otto_i_stettin start_date = 1295.1.1 end_date = 1344.1.1 regnal_number = 1 }
+            ruler_term = { character = ste_barnim_iii_stettin start_date = 1344.1.1 end_date = 1368.1.1  regnal_number = 3 }
+            ruler_term = { character = ste_casimir_iii_stettin start_date = 1368.1.1 end_date = 1372.1.1  regnal_number = 3 }
+            ruler_term = { character = ste_bogislaw_vii_stettin start_date = 1372.1.1 end_date = 1404.1.1  regnal_number = 7 }
+            ruler_term = { character = ste_swantibor_iii_stettin start_date = 1404.1.1 end_date = 1413.1.1  regnal_number = 3 }
+            ruler_term = { character = ste_otto_ii_stettin start_date = 1413.1.1 end_date = 1428.1.1  regnal_number = 2 }
+            ruler_term = { character = ste_casimir_v_stettin start_date = 1428.1.1 end_date = 1435.1.1  regnal_number = 5 }
+            ruler_term = { character = ste_joachim_i_stettin start_date = 1435.1.1 regnal_number = 1 }
 
             regnal_numbers = {
-                Barnim = 1
+                Barnim = 3
+                name_otto = 2
+                name_casimir = 5
+                name_joachim = 1
+                Svantibor = 3
+                Bogislaw = 7
             }
         }
 
@@ -1860,6 +1870,7 @@ countries = {
             western_pomeranian
         }
 
+        country_rank = rank_duchy
         capital = stettin
         dynasty = gryf_dynasty
     }
@@ -43227,15 +43238,23 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
-
-            ruler = random
+            ruler = wol_wartislaw_ix_wolgast
+            heir = got_erik_i
+            ruler_term = { character = sop_barnim_v_stolp start_date = 1377.1.1 end_date = 1402.1.1 regnal_number = 5 }
+            ruler_term = { character = sop_bogislaw_viii_stolp start_date = 1402.1.1 end_date = 1418.1.1 regnal_number = 6 }
+            ruler_term = { character = sop_bogislaw_ix_stolp start_date = 1418.1.1 regnal_number = 9 }
+            regnal_numbers = {
+                Wartislaw = 9
+                Bogislaw = 6
+                Barnim = 7
+            }
         }
 
         tolerated_cultures = {
             polabian
         }
 
-        country_rank = rank_county
+        country_rank = rank_duchy
         capital = strelitz
         dynasty = mecklenburg_dynasty
     }
@@ -43250,18 +43269,23 @@ countries = {
         include = "catholic_monarchy"
         include = "expl_northern_europe"
         include = "german_principality"
-        country_rank = rank_duchy
         government = {
-
-            ruler = random # TODO: add me
+            ruler = wol_wartislaw_ix_wolgast
+            heir = wol_barnim_vii_wolgast
             ruler_term = { character = pom_barnim_i_the_good start_date = 1233.1.1 end_date = 1278.1.1 regnal_number = 1 }
+            ruler_term = { character = pom_bogislaw_iv start_date = 1295.1.1 end_date = 1309.1.1 regnal_number = 4 }
             ruler_term = { character = wol_wartislaw_iv_wolgast start_date = 1309.1.1 end_date = 1326.8.1 regnal_number = 4 }
-            ruler_term = { character = wol_bogislaw_v_wolgast start_date = 1326.8.1 regnal_number = 5 }
-
+            ruler_term = { character = wol_barnim_iv_wolgast start_date = 1326.8.1 end_date = 1365.1.1 regnal_number = 4 }
+            ruler_term = { character = pom_bogislaw_v start_date = 1365.8.1 end_date = 1366.1.1 regnal_number = 5 }
+            ruler_term = { character = wol_wartislaw_v_wolgast start_date = 1366.8.1 end_date = 1368.1.1 regnal_number = 5 }
+            ruler_term = { character = pom_bogislaw_vi start_date = 1368.1.1 end_date = 1393.3.7 regnal_number = 6 }
+            ruler_term = { character = wol_wartislaw_vi_wolgast start_date = 1393.3.7 end_date = 1394.6.13 regnal_number = 6 }
+            ruler_term = { character = wol_barnim_vi_wolgast start_date = 1394.6.13 end_date = 1405.9.22 regnal_number = 6 }
+            ruler_term = { character = wol_wartislaw_ix_wolgast start_date = 1405.9.22 regnal_number = 9 }
             regnal_numbers = {
-                Wartislaw = 4
-                Bogislaw = 5
-                Barnim = 3
+                Wartislaw = 9
+                Bogislaw = 6
+                Barnim = 7
             }
         }
 
@@ -43270,6 +43294,7 @@ countries = {
             kashubian
         }
 
+        country_rank = rank_duchy
         capital = wolgast
         dynasty = gryf_dynasty
     }
@@ -43284,8 +43309,15 @@ countries = {
         include = "catholic_monarchy"
         include = "expl_northern_europe"
         include = "german_principality"
-        country_rank = rank_duchy
         government = {
+            ruler = bth_barnim_viii_barth
+            ruler_term = { character = wol_wartislaw_vi_wolgast start_date = 1376.1.1 end_date = 1394.1.1 regnal_number = 6 }
+            ruler_term = { character = wol_wartislaw_viii_wolgast start_date = 1394.1.1 end_date = 1415.1.1 regnal_number = 8 }
+            ruler_term = { character = bth_barnim_viii_barth regnal_number = 8 }
+            regnal_numbers = {
+                Wartislaw = 6
+                Barnim = 8
+            }
         }
 
         tolerated_cultures = {
@@ -43293,6 +43325,7 @@ countries = {
             kashubian
         }
 
+        country_rank = rank_duchy
         capital = stralsund
         dynasty = gryf_dynasty
     }
@@ -43309,8 +43342,22 @@ countries = {
         include = "catholic_monarchy"
         include = "expl_northern_europe"
         include = "german_principality"
-        country_rank = rank_duchy
         government = {
+            ruler = sop_bogislaw_ix_stolp
+            ruler_term = { character = wol_bogislaw_v_wolgast start_date = 1368.1.1 end_date = 1373.1.1 regnal_number = 5 }
+            ruler_term = { character = sop_casimir_iv_stolp start_date = 1374.1.1 end_date = 1377.1.1 regnal_number = 4 }
+            ruler_term = { character = sop_wartislaw_vii_stolp start_date = 1377.1.1 end_date = 1395.1.1 regnal_number = 7 }
+            ruler_term = { character = sop_bogislaw_viii_stolp start_date = 1395.1.1 end_date = 1402.1.1 regnal_number = 8 }
+            ruler_term = { character = sop_barnim_v_stolp start_date = 1402.1.1 end_date = 1403.1.1 regnal_number = 5 }
+            ruler_term = { character = sop_bogislaw_viii_stolp start_date = 1403.1.1 end_date = 1418.1.1 regnal_number = 8 }
+            ruler_term = { character = sop_bogislaw_ix_stolp start_date = 1418.1.1 regnal_number = 9 }
+
+            regnal_numbers = {
+                Bogislaw = 9
+                name_casimir = 4
+                Wartislaw = 7
+                Barnim = 5
+            }
         }
 
         tolerated_cultures = {
@@ -43318,6 +43365,7 @@ countries = {
             kashubian
         }
 
+        country_rank = rank_duchy
         capital = slupsk
         dynasty = gryf_dynasty
     }

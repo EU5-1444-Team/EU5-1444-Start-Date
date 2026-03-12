@@ -111436,9 +111436,9 @@ character_db={
         female = yes
         birth_date = 1390.1.1
         death_date = 1426.3.4
-        birth = stolp
+        birth = slupsk
         spouse = pal_johann_wittelsbach_neumarkt
-        #father =
+        father = sop_wartislaw_vii_stolp
         mother = mkl_marie_mecklenburg
         dynasty = gryf_dynasty
         tag = PAL
@@ -117036,20 +117036,6 @@ character_db={
         tag = DAN
     }
 
-    dan_erich_gryf = {
-        first_name = { name = name_eric }
-        nickname = { name = "of Pomerania" }
-        culture = eastern_pomeranian
-        religion = catholic
-        estate = nobles_estate
-        birth_date = 1381.1.1
-        birth = stolp
-        #father = 
-        mother = mkl_marie_mecklenburg
-        dynasty = gryf_dynasty
-        tag = GOT
-    }
-
     dan_christoph_iii_wittelsbach = {
         first_name = { name = name_christopher }
         nickname = { name = "the Bark King" }
@@ -117266,7 +117252,7 @@ character_db={
     }
 
     swe_erik_birgersson_trolle = {
-        first_name = { name = name_erik }
+        first_name = { name = name_eric }
         culture = swedish
         religion = catholic
         estate = nobles_estate
@@ -117310,6 +117296,288 @@ character_db={
         father = swe_ture_stensson_bielke
         dynasty = bielke_dynasty
         tag = SWE
+    }
+
+    #### Gryf family
+
+    wol_wartislaw_vi_wolgast = {
+        first_name = { name = Wartislaw }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1345.1.1 # Estimated
+        death_date = 1394.6.13
+        birth = wolgast
+        father = wol_barnim_iv_wolgast
+        dynasty = gryf_dynasty
+        tag = WOL
+    }
+
+    sop_wartislaw_vii_stolp = {
+        first_name = { name = Wartislaw }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1364.1.1 # Estimated
+        death_date = 1394.1.1 # Estimated
+        birth = slupsk
+        father = wol_bogislaw_v_wolgast
+        dynasty = gryf_dynasty
+        tag = SOP
+    }
+
+    got_erik_i = {
+        first_name = { name = name_eric }
+        nickname = { name = "of Pomerania" }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1381.1.1
+        birth = slupsk
+        father = sop_wartislaw_vii_stolp
+        mother = mkl_marie_mecklenburg
+        dynasty = gryf_dynasty
+        tag = GOT
+    }
+
+    wol_wartislaw_viii_wolgast = {
+        first_name = { name = Wartislaw }
+        culture = western_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1373.1.1 # Estimated
+        death_date = 1415.8.20 # Estimated
+        birth = wolgast # Estimated
+        father = wol_wartislaw_vi_wolgast
+        dynasty = gryf_dynasty
+        tag = WOL
+    }
+
+    sop_barnim_v_stolp = {
+        first_name = { name = Barnim }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1369.1.1 # Estimated
+        death_date = 1403.1.11
+        birth = slupsk # Estimated
+        father = wol_bogislaw_v_wolgast
+        dynasty = gryf_dynasty
+        tag = SOP
+    }
+    
+    wol_barnim_vi_wolgast = {
+        first_name = { name = Barnim }
+        culture = western_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1365.1.1 # Estimated
+        death_date = 1405.9.22
+        birth = wolgast # Estimated
+        father = wol_wartislaw_vi_wolgast
+        dynasty = gryf_dynasty
+        tag = WOL
+    }
+
+    wol_barnim_vii_wolgast = {
+        first_name = { name = Barnim }
+        culture = western_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1390.1.1 # Estimated
+        birth = wolgast # Estimated
+        father = wol_barnim_vi_wolgast
+        dynasty = gryf_dynasty
+        tag = WOL
+    }
+
+    # Duke of Barth in 1444
+    bth_barnim_viii_barth = {
+        first_name = { name = Barnim }
+        culture = western_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1406.1.1 # Estimated
+        birth = rugen # Estimated
+        father = wol_wartislaw_viii_wolgast
+        dynasty = gryf_dynasty
+        tag = BTH
+    }
+
+    # Duke of Wolgast in 1444
+    wol_wartislaw_ix_wolgast = {
+        first_name = { name = Wartislaw }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1400.1.1 # Estimated
+        birth = wolgast # Estimated
+        father = wol_barnim_vi_wolgast
+        dynasty = gryf_dynasty
+        tag = WOL
+    }
+
+    ste_bogislaw_vii_stettin = {
+        first_name = { name = Bogislaw }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1355.1.1 # Estimated
+        death_date = 1404.1.1 # Estimated
+        birth = stettin # Estimated
+        father = ste_barnim_iii_stettin
+        dynasty = gryf_dynasty
+        tag = SOP
+    }
+
+    sop_bogislaw_viii_stolp = {
+        first_name = { name = Bogislaw }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1364.1.1 # Estimated
+        death_date = 1418.2.11
+        birth = slupsk # Estimated
+        father = wol_bogislaw_v_wolgast
+        dynasty = gryf_dynasty
+        tag = SOP
+    }
+
+    # Duke of Stolp in 1444
+    sop_bogislaw_ix_stolp = {
+        first_name = { name = Bogislaw }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1408.1.1 # Estimated
+        birth = slupsk # Estimated
+        father = sop_bogislaw_viii_stolp
+        dynasty = gryf_dynasty
+        tag = SOP
+    }
+
+    sop_sophie_stolp = {
+        first_name = { name = name_sophia }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1435.1.1 # Estimated
+        birth = slupsk # Estimated
+        father = sop_bogislaw_ix_stolp
+        dynasty = gryf_dynasty
+        tag = SOP
+    }
+
+    ste_casimir_iii_stettin = {
+        first_name = { name = name_casimir }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1348.1.1 # Estimated
+        death_date = 1372.8.24
+        birth = stettin # Estimated
+        father = ste_barnim_iii_stettin
+        dynasty = gryf_dynasty
+        tag = STE
+    }
+
+    ste_swantibor_iii_stettin = {
+        first_name = { name = Swantibor }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1351.1.1 # Estimated
+        death_date = 1413.6.21
+        birth = stettin # Estimated
+        father = ste_barnim_iii_stettin
+        dynasty = gryf_dynasty
+        tag = STE
+    }
+
+    sop_casimir_iv_stolp = {
+        first_name = { name = name_casimir }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1351.1.1 # Estimated
+        death_date = 1377.1.2
+        birth = slupsk # Estimated
+        father = wol_bogislaw_v_wolgast
+        dynasty = gryf_dynasty
+        tag = SOP
+    }
+
+    ste_otto_ii_stettin = {
+        first_name = { name = name_otto }
+        culture = eastern_pomeranian
+        religion = catholic
+        birth_date = 1380.1.1
+        death_date = 1428.3.27
+        birth = stettin
+        father = ste_swantibor_iii_stettin
+        dynasty = gryf_dynasty
+        tag = STE
+    }
+
+    ste_casimir_v_stettin = {
+        first_name = { name = name_casimir }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1380.1.1 # Estimated
+        death_date = 1435.4.13
+        birth = stettin # Estimated
+        father = ste_swantibor_iii_stettin
+        dynasty = gryf_dynasty
+        tag = STE
+    }
+
+    # Duke of Stettin in 1444
+    ste_joachim_i_stettin = {
+        first_name = { name = name_joachim }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1424.1.1 # Estimated
+        birth = stettin # Estimated
+        father = ste_casimir_v_stettin
+        dynasty = gryf_dynasty
+        tag = STE
+    }
+
+    ste_otto_iii_stettin = {
+        first_name = { name = name_otto }
+        culture = eastern_pomeranian
+        religion = catholic
+        birth_date = 1444.5.29
+        birth = stettin
+        father = ste_joachim_i_stettin
+        dynasty = gryf_dynasty
+        tag = STE
+    }
+
+    wol_erik_ii_wolgast = {
+        first_name = { name = name_eric }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1420.1.1 # Estimated
+        birth = wolgast # Estimated
+        father = wol_wartislaw_ix_wolgast
+        dynasty = gryf_dynasty
+        tag = WOL
+    }
+
+    wol_wartislaw_x_wolgast = {
+        first_name = { name = Wartislaw }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1435.1.1 # Estimated
+        birth = wolgast # Estimated
+        father = wol_wartislaw_ix_wolgast
+        dynasty = gryf_dynasty
+        tag = WOL
     }
 
     ### Norway 
