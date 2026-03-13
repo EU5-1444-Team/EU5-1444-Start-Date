@@ -10466,7 +10466,7 @@ character_db={
         birth = naples
         father = nap_carlo_ii_anjou
         mother = nap_maria_arpad
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty # Founder of the Hungarian Line of the House of Anjou
+        dynasty = anjou_hungary_dynasty
         tag = NAP
     }
     
@@ -10483,12 +10483,11 @@ character_db={
         birth = naples
         father = cro_martell_karoly
         mother = hun_klementia_habsburg
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = HUN
         ruler_trait = bold_fighter
         ruler_trait = midas_touched
     }
-
 
     # Queen Consort of Hungary & Croatia
     pol_elzbieta_piast = {
@@ -10520,7 +10519,7 @@ character_db={
         birth = visegrad
         father = hun_karoly_robert
         mother = hun_maria_bytom
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = HUN
     }
 
@@ -10535,7 +10534,7 @@ character_db={
         birth = visegrad
         father = hun_karoly_robert
         mother = hun_maria_bytom
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = HUN
     }
     
@@ -10549,7 +10548,7 @@ character_db={
         death_date = 1375.1.1
         father = hun_karoly_robert
         birth = pest
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = HUN
         timed_modifier = {
             modifier = "bastard"
@@ -10571,7 +10570,7 @@ character_db={
         birth = visegrad
         father = hun_karoly_robert
         mother = pol_elzbieta_piast
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = HUN
     }
 
@@ -10586,7 +10585,7 @@ character_db={
         birth = visegrad
         father = hun_karoly_robert
         mother = pol_elzbieta_piast
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = NAP
     }
 
@@ -10600,7 +10599,7 @@ character_db={
         birth = visegrad
         father = hun_karoly_robert
         mother = pol_elzbieta_piast
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = HUN
     }
 
@@ -10617,7 +10616,7 @@ character_db={
         father = cro_martell_karoly
         mother = hun_klementia_habsburg
         spouse = dau_jean_ii_de_la_tour
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = DAU
     }
 
@@ -10634,7 +10633,7 @@ character_db={
         father = cro_martell_karoly
         mother = hun_klementia_habsburg
         spouse = fra_louis_x_capet
-        dynasty = anjou_dynasty # Should be dynasty = anjou_hungary_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = FRA
     }
     
@@ -108081,7 +108080,6 @@ character_db={
         tag = ENG
     }
 
-    #dead numbers
     eng_catherine_valois = { #mother of ENG king
         first_name = { name = name_catherine }
         culture = french
@@ -112338,7 +112336,7 @@ character_db={
         tag = HUN  
     }
 
-    hun_maria_anjou = {
+    hun_maria_anjou_hungary = {
         first_name = { name = name_mary }
         culture = hungarian
         religion = catholic
@@ -112349,7 +112347,7 @@ character_db={
         spouse = hun_sigismund_luxembourg
         father = hun_lajos_i
         mother = hun_elizabeta_kotromanic
-        dynasty = anjou_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = HUN         
     }
 
@@ -112381,7 +112379,7 @@ character_db={
 
     # Croatia/Slavonia
 
-    cro_janos_anjou = {
+    cro_janos_anjou_hungary = {
         first_name = { name = name_john }
         culture = hungarian
         religion = catholic
@@ -112390,7 +112388,7 @@ character_db={
         birth = buda
         father = hun_istvan
         mother = ubv_margarete_wittelsbach
-        dynasty = anjou_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = CRO         
     }
 
@@ -113221,7 +113219,7 @@ character_db={
 
     ### Poland
 
-    pol_jadwiga_anjou = {
+    pol_jadwiga_anjou_hungary = {
         first_name = { name = name_hedwig }
         culture = lesser_polish
         religion = catholic
@@ -113232,7 +113230,7 @@ character_db={
         spouse = lit_jogalia_jagiellon
         father = hun_lajos_i
         mother = hun_elizabeta_kotromanic
-        dynasty = anjou_dynasty
+        dynasty = anjou_hungary_dynasty
         tag = POL          
     }
 
@@ -115419,21 +115417,6 @@ character_db={
         tag = FRA
     }
 
-    orl_louis_i_valois_orleans = { # https://en.wikipedia.org/wiki/Louis_I,_Duke_of_Orl%C3%A9ans
-        first_name = { name = name_louis }
-        culture = french
-        religion = catholic
-        estate = nobles_estate
-        adm = 23 dip = 13 mil = 74
-        birth_date = 1372.4.13
-        death_date = 1407.11.23
-        birth = paris
-        father = fra_charles_v_valois
-        mother = fra_jeanne_de_bourbon
-        dynasty = valois_orleans_dynasty
-        tag = FRA
-    }
-
     fra_isabeau_wittelsbach = { # https://en.wikipedia.org/wiki/Isabeau_of_Bavaria
         first_name = { name = name_elizabeth }
         culture = danube_bavarian
@@ -115450,6 +115433,19 @@ character_db={
         tag = FRA
     }
 
+    fra_charles_dauphin_valois = {
+		first_name = { name = name_charles }
+		culture = french
+		religion = catholic
+		birth_date = 1386.9.25
+		death_date = 1386.12.28
+		birth = paris
+		father = fra_charles_vi_valois
+		mother = fra_isabeau_wittelsbach
+		dynasty = valois_dynasty
+		tag = FRA
+	}
+
     orl_isabelle_valois = { # https://en.wikipedia.org/wiki/Isabella_of_Valois
         first_name = { name = name_elizabeth }
         culture = french
@@ -115465,20 +115461,33 @@ character_db={
         tag = ORL
     }
 
-    bri_joanne_valois = { # https://en.wikipedia.org/wiki/Joan_of_France,_Duchess_of_Brittany
-        first_name = { name = name_joanna }
-        culture = french
-        religion = catholic
-        estate = nobles_estate
-        birth_date = 1391.1.24
-        death_date = 1433.9.24
+    fra_charles_dauphin_ii_valois = {
+		first_name = { name = name_charles }
+		culture = french
+		religion = catholic
+		birth_date = 1392.2.6
+		death_date = 1401.1.13
+		birth = paris
+		father = fra_charles_vi_valois
+		mother = fra_isabeau_wittelsbach
+		dynasty = valois_dynasty
+		tag = FRA
+	}
+
+	bur_michelle_valois = {
+		first_name = { name = name_michaela }
+		culture = french
+		religion = catholic
         female = yes
-        birth = paris
-        father = fra_charles_vi_valois
-        mother = fra_isabelle_wittelsbach
-        dynasty = valois_dynasty
-        tag = BRI
-    }
+		birth_date = 1395.1.11
+		death_date = 1422.7.8
+		birth = paris
+        spouse = bur_philippe_iii_valois_burgundy
+		father = fra_charles_vi_valois
+		mother = fra_isabeau_wittelsbach
+		dynasty = valois_dynasty
+		tag = BUR
+	}
 
     fra_louis_guyenne_valois = { # https://en.wikipedia.org/wiki/Louis,_Duke_of_Guyenne
         first_name = { name = name_louis }
@@ -115494,7 +115503,7 @@ character_db={
         tag = FRA
     }
 
-    fra_jean_touraine_valois = { # https://en.wikipedia.org/wiki/Louis,_Duke_of_Guyenne
+    fra_jean_touraine_valois = { # https://en.wikipedia.org/wiki/John,_Duke_of_Touraine
         first_name = { name = name_john }
         culture = french
         religion = catholic
@@ -115657,25 +115666,6 @@ character_db={
         tag = FRA
     }
 
-    fra_jean_dunois = { # https://en.wikipedia.org/wiki/Jean_de_Dunois
-        first_name = { name = name_john }
-        nickname = { name = Dunois }
-        culture = french
-        religion = catholic
-        estate = nobles_estate
-        birth_date = 1402.11.26
-        birth = orleans
-        father = orl_louis_i_valois_orleans
-        dynasty = orleans_longueville_dynasty
-        tag = FRA
-        timed_modifier = {
-            modifier = "bastard"
-            start_date = 1317.1.1
-            date = 9999.1.1
-            size = 1
-        }
-    }
-
     fra_jacques_coeur = { # https://en.wikipedia.org/wiki/Jacques_C%C5%93ur
         first_name = { name = name_james }
         culture = berrichon
@@ -115768,6 +115758,120 @@ character_db={
         spouse = ale_jean_ii_valois_alencon
         dynasty = armagnac_dynasty
         tag = FRA     
+    }
+
+    ### Orleans
+
+    orl_louis_i_valois_orleans = { # https://en.wikipedia.org/wiki/Louis_I,_Duke_of_Orl%C3%A9ans
+        first_name = { name = name_louis }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        adm = 23 dip = 13 mil = 74
+        birth_date = 1372.4.13
+        death_date = 1407.11.23
+        birth = paris
+        father = fra_charles_v_valois
+        mother = fra_jeanne_de_bourbon
+        dynasty = valois_orleans_dynasty
+        tag = ORL
+    }
+
+    orl_valentina_visconti = {
+        first_name = { name = name_valentina }
+        culture = lombard
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1371.1.1
+        death_date = 1408.12.4
+        birth = pavia
+        spouse = orl_louis_i_valois_orleans
+        father = mlo_gian_galeazzo_visconti
+        dynasty = visconti_dynasty
+        tag = ORL       
+    }
+
+	orl_charles_i_valois_orleans = {
+		first_name = { name = name_charles }
+		culture = french
+		religion = catholic
+		estate = crown_estate
+		birth_date = 1394.11.24
+		birth = orleans
+		father = orl_louis_i_valois_orleans
+		mother = orl_valentina_visconti
+		dynasty = valois_orleans_dynasty
+		tag = ORL
+	}
+
+	vrt_philippe_valois_orleans = {
+		first_name = { name = name_philip }
+		culture = french
+		religion = catholic
+		estate = crown_estate
+		birth_date = 1396.7.21
+		death_date = 1420.9.1
+		birth = orleans
+		father = orl_louis_i_valois_orleans
+		mother = orl_valentina_visconti
+		dynasty = valois_orleans_dynasty
+		tag = VRT
+	}
+
+    duo_jean_dunois_orleans_longueville = { # https://en.wikipedia.org/wiki/Jean_de_Dunois
+        first_name = { name = name_john }
+        nickname = { name = "de Dunois" }
+        culture = french
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1402.11.26
+        birth = orleans
+        father = orl_louis_i_valois_orleans
+        dynasty = orleans_longueville_dynasty
+        tag = DUO
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1317.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    ### Vertus
+
+    vrt_philippe_antoine_valois_orleans = {
+		first_name = { name = name_philip.name_anthony }
+        nickname = { name = "the Bastard of Vertus" }
+		culture = french
+		religion = catholic
+		estate = crown_estate
+		birth_date = 1419.1.1
+		birth = orleans
+		father = vrt_philippe_valois_orleans
+		dynasty = valois_orleans_dynasty
+		tag = VRT
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1317.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    ### Angouleme
+
+    ang_jean_ii_valois_angouleme = {
+		first_name = { name = name_john }
+		culture = french
+		religion = catholic
+		estate = crown_estate
+		birth_date = 1399.6.28
+		birth = orleans
+		father = orl_louis_i_valois_orleans
+		mother = orl_valentina_visconti
+		dynasty = valois_angouleme_dynasty
+		tag = ANG
     }
 
     ### Brittany
@@ -116087,6 +116191,20 @@ character_db={
 		tag = ORA
 	}
 
+	bri_marie_fontevraud_montfort_brittany = {
+		first_name = { name = name_mary }
+		culture = gallo
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1428.1.1
+		female = yes
+		birth = vannes
+		father = eta_richard_montfort_brittany
+		mother = eta_marguerite_valois_orleans
+		dynasty = montfort_brittany_dynasty
+		tag = BRI
+	}
+
 	bri_francois_ii_montfort_brittany = {
 		first_name = { name = name_francis }
 		culture = gallo
@@ -116386,6 +116504,20 @@ character_db={
         dynasty = valois_burgundy_dynasty 
         tag = BUR       
     }
+
+	bur_agnes_valois_burgundy_infant = {
+		first_name = { name = name_agnes }
+		culture = burgundian
+		religion = catholic
+		female = yes
+		birth_date = 1421.1.1
+		death_date = 1421.3.1
+		birth = dijon
+        father = bur_philip_iii_valois_burgundy
+		mother = bur_michelle_valois
+		dynasty = valois_burgundy_dynasty
+		tag = BUR
+	}
 
     bur_isabel_avis = {
         first_name = { name = name_elizabeth }
@@ -117979,20 +118111,6 @@ character_db={
         mother = mlo_beatrice_scala
         dynasty = visconti_dynasty
         tag = MLO       
-    }
-
-    orl_valentina_visconti = {
-        first_name = { name = name_valentina }
-        culture = lombard
-        religion = catholic
-        estate = nobles_estate
-        female = yes
-        birth_date = 1371.1.1
-        death_date = 1408.12.4
-        birth = pavia
-        father = mlo_gian_galeazzo_visconti
-        dynasty = visconti_dynasty
-        tag = ORL       
     }
 
     mlo_giovanni_maria_visconti = {

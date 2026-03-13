@@ -16885,8 +16885,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = ang_jean_v_de_armagnac
-            heir = ang_charles_de_armagnac
+            ruler = ang_jean_ii_valois_angouleme
 
             ruler_term = { character = mrc_hugues_xi_lusignan start_date = 1246.6.4 end_date = 1250.4.6 regnal_number = 1 }
             ruler_term = { character = mrc_hugues_xii_lusignan start_date = 1250.4.6 end_date = 1270.8.25 regnal_number = 2 }
@@ -16897,6 +16896,10 @@ countries = {
             # Annexed to France 1314-1336
 
             ruler_term = { character = nav_philip_iii_evreux start_date = 1336.3.14 end_date = 1362.6.14 regnal_number = 1 }
+
+            ruler_term = { character = ber_jean_valois_berry start_date = 1356.1.1 end_date = 1374.1.1 regnal_number = 1 }
+            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1392.36.4 end_date = 1407.11.23 regnal_number = 1 }
+            ruler_term = { character = ang_jean_ii_valois_angouleme start_date = 1336.3.14 end_date = 1362.6.14 regnal_number = 1 }
 
             regnal_numbers = {
                 #Turpion = 1
@@ -16915,6 +16918,7 @@ countries = {
                 name_wido = 1
                 name_yolande = 1
                 name_philip = 1
+                name_john = 2
             }
         }
 
@@ -17480,16 +17484,13 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            regency = consort_regency
-            active_regent = random # TODO: add me
-            start_regency_date = 1336.9.5
-            end_regency_date = 1354.1.1
-            heir = random # TODO: add me
+            ruler = eta_jean_ii_valois_burgundy_nevers
+
+            ruler_term = { character = eta_charles_evreux start_date = 1319.5.19 end_date = 1336.9.5 regnal_number = 1 }
+
             reforms = {
                 french_appanage_reform
             }
-
-            ruler_term = { character = eta_charles_evreux start_date = 1319.5.19 end_date = 1336.9.5 regnal_number = 1 }
 
             regnal_numbers = {
                 name_charles = 1
@@ -17671,10 +17672,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
-            reforms = {
-                french_ducal_vassal_reform
-            }
+            ruler = orl_charles_i_valois_orleans
 
             ruler_term = { character = bls_thibault_i_blois start_date = 940.1.1 end_date = 977.1.1 regnal_number = 1 }
             ruler_term = { character = bls_eudes_i_blois start_date = 977.1.1 end_date = 996.3.12 regnal_number = 1 }
@@ -17698,6 +17696,9 @@ countries = {
             ruler_term = { character = bls_hugues_ii_chatillon start_date = 1292.1.29 end_date = 1307.1.1 regnal_number = 2 }
             ruler_term = { character = bls_guy_i_chatillon start_date = 1307.1.1 end_date = 1342.8.12 regnal_number = 1 }
 
+            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1392.36.4 end_date = 1407.11.23 regnal_number = 1 }
+            ruler_term = { character = orl_charles_i_valois_orleans start_date = 1407.11.23 }
+
             regnal_numbers = {
                 name_theobald = 6
                 name_otto = 2
@@ -17709,6 +17710,10 @@ countries = {
                 name_joanna = 1
                 name_hugh = 2
                 name_wido = 1
+            }
+
+            reforms = {
+                french_ducal_vassal_reform
             }
         }
 
@@ -17753,6 +17758,10 @@ countries = {
         include = "catholic_monarchy_no_coast"
         government = {
             type = monarchy
+            ruler = duo_jean_dunois_orleans_longueville
+
+            ruler_term = { character = duo_jean_dunois_orleans_longueville start_date = 1439.1.1 regnal_number = 1 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -17772,6 +17781,11 @@ countries = {
         include = "catholic_monarchy_no_coast"
         government = {
             type = monarchy
+            ruler = eta_marguerite_valois_orleans
+
+            ruler_term = { character = vrt_philippe_valois_orleans start_date = 1413.1.1 end_date = 1420.9.1 regnal_number = 1 }
+            ruler_term = { character = eta_marguerite_valois_orleans start_date = 1420.9.1 regnal_number = 1 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -19417,7 +19431,7 @@ countries = {
         capital = mayenne
     }
 
-    #Valois (Revolter)
+    #Valois
     VLS = {
         own_control_core = {
             crepy
@@ -19429,12 +19443,15 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = orl_charles_i_valois_orleans
 
             ruler_term = { character = vls_jean_tristan_capet start_date = 1266.8.4 end_date = 1270.8.3 regnal_number = 1 }
 
             ruler_term = { character = fra_charles_valois start_date = 1299.12.31 end_date = 1325.12.16 regnal_number = 1 }
-            ruler_term = { character = fra_philip_vi_valois start_date = 1325.12.16 end_date = 1328.4.1 regnal_number = 2 }
+            ruler_term = { character = fra_philip_vi_valois start_date = 1325.12.16 end_date = 1328.4.1 regnal_number = 1 }
+            ruler_term = { character = fra_philip_valois start_date = 1344.1.1 end_date = 1375.9.1 regnal_number = 2 }
+            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1386.1.1 end_date = 1407.11.23 regnal_number = 1 }
+            ruler_term = { character = orl_charles_i_valois_orleans start_date = 1407.11.23 }
 
             regnal_numbers = {
                 #Ermenfroi = 1
@@ -19448,9 +19465,12 @@ countries = {
                 name_eleanor = 1
                 name_philip = 2
                 name_john = 1
-                name_charles = 1
+                name_charles = 2
+                name_louis = 1
             }
         }
+        
+        country_rank = rank_duchy
         capital = crepy
     }
 
@@ -20243,7 +20263,7 @@ countries = {
         capital = narbonne
     }
 
-    #Orleans (Revolter) Becomes an appanage in 1344
+    #Orleans
     ORL = {
         own_control_core = {
             orleans sully vitry_aux_loges
@@ -20255,7 +20275,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = orl_charles_i_valois_orleans
+
+            ruler_term = { character = fra_philip_valois start_date = 1344.1.1 end_date = 1375.9.1 regnal_number = 1 }
+            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1392.36.4 end_date = 1407.11.23 regnal_number = 1 }
+            ruler_term = { character = orl_charles_i_valois_orleans start_date = 1407.11.23 }
         }
         capital = orleans
     }
@@ -21141,9 +21165,9 @@ countries = {
             ruler_term = { character = lbv_otto_iii_wittelsbach start_date = 1305.10.9 end_date = 1307.6.1 regnal_number = 1 }
             ruler_term = { character = hun_karoly_robert start_date = 1308.11.17 end_date = 1342.7.16 regnal_number = 1 }
             ruler_term = { character = hun_lajos_i start_date = 1342.7.16 end_date = 1382.9.10 regnal_number = 1 }
-            ruler_term = { character = hun_maria_anjou start_date = 1382.9.10 end_date = 1385.12.31 regnal_number = 1 }
+            ruler_term = { character = hun_maria_anjou_hungary start_date = 1382.9.10 end_date = 1385.12.31 regnal_number = 1 }
             ruler_term = { character = nap_carlo_iii_anjou_durazzo start_date = 1385.12.31 end_date = 1386.2.24 regnal_number = 2 }
-            ruler_term = { character = hun_maria_anjou start_date = 1386.2.24 end_date = 1395.5.17 regnal_number = 1 }
+            ruler_term = { character = hun_maria_anjou_hungary start_date = 1386.2.24 end_date = 1395.5.17 regnal_number = 1 }
             ruler_term = { character = hun_sigismund_luxembourg start_date = 1395.5.17 end_date = 1437.12.9 regnal_number = 1 }
             ruler_term = { character = hab_albrecht_v_habsburg start_date = 1437.12.18 end_date = 1439.10.27 regnal_number = 1 }
             ruler_term = { character = pol_wladyslaw_iii_jagiellon start_date = 1440.7.17 end_date = 1444.11.10 regnal_number = 1 }
@@ -46591,7 +46615,7 @@ countries = {
             ruler_term = { character = pol_wladislaw_i_piast start_date = 1320.1.20 end_date = 1333.3.2 regnal_number = 1 }
             ruler_term = { character = pol_casimir_iii_piast start_date = 1333.4.25 end_date = 1370.11.5 regnal_number = 3 }
             ruler_term = { character = hun_lajos_i start_date = 1370.11.17 end_date = 1382.9.10 regnal_number = 1 }
-            ruler_term = { character = pol_jadwiga_anjou start_date = 1384.10.16 end_date = 1399.7.17 regnal_number = 1 }
+            ruler_term = { character = pol_jadwiga_anjou_hungary start_date = 1384.10.16 end_date = 1399.7.17 regnal_number = 1 }
             ruler_term = { character = lit_jogalia_jagiellon start_date = 1399.7.17 end_date = 1434.6.1 regnal_number = 2 regnal_name = name_vladislav }
             ruler_term = { character = pol_wladyslaw_iii_jagiellon start_date = 1434.7.25 end_date = 1444.11.10 regnal_number = 3 }
 
