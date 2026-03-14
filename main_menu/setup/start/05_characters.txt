@@ -76253,7 +76253,7 @@ character_db={
 
 
     tre_maria_komnenos = {
-        first_name = { name = name_maria }
+        first_name = { name = name_mary }
         culture = greek_culture
         religion = orthodox
         adm = 15 dip = 15 mil = 8
@@ -96364,6 +96364,30 @@ character_db={
         tag = CZK
     }
 
+    czk_euphemia_of_opava = {
+        first_name = { name = name_euphemia }
+        culture = silesian
+        religion = catholic
+        birth_date = 1320.1.1
+        death_date = 1352.1.1
+        birth = opava
+        dynasty = premyslid_dynasty
+        father = opv_mikolaj_ii_premyslid
+        female = yes
+        tag = CZK
+    }
+
+    maz_siemowit_iv_piast = {
+        first_name = { name = name_siemowit }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1353.1.1
+        death_date = 1426.1.21
+        birth = warsaw
+        dynasty = piast_dynasty
+        father = czk_siemowit_iii_piast
+        tag = CZK
+    }
 
     czk_kazimierz_iii_piast = { #Son of Ruler
         first_name = { name = name_casimir }
@@ -113495,7 +113519,7 @@ character_db={
         birth_date = 1358.1.1
         death_date = 1434.6.19
         birth = vilnius
-        #spouse = Siemowit IV, Duke of Masovia
+        spouse = maz_siemowit_iv_piast
         father = lit_algirdas_gediminds
         mother = lit_uliana_alexnadrovna_rurikovich
         dynasty = gediminid_dynasty
@@ -117612,6 +117636,20 @@ character_db={
         tag = SOP
     }
 
+    sop_maria_of_masovia = {
+        first_name = { name = name_mary }
+        culture = mazovian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1408.1.1
+        birth = warsaw
+        father = maz_siemowit_iv_piast
+        spouse = sop_bogislaw_ix_stolp
+        dynasty = piast_dynasty
+        female = yes
+        tag = SOP
+    }
+
     sop_sophie_stolp = {
         first_name = { name = name_sophia }
         culture = eastern_pomeranian
@@ -117620,6 +117658,7 @@ character_db={
         birth_date = 1435.1.1 # Estimated
         birth = slupsk # Estimated
         father = sop_bogislaw_ix_stolp
+        mother = sop_maria_of_masovia
         dynasty = gryf_dynasty
         female = yes
         tag = SOP
@@ -117712,7 +117751,7 @@ character_db={
         birth = brandenburg # Estimated
         father = bra_johann_hohenzollern_brandenburg
         spouse = ste_joachim_i_stettin
-        dynasty = hohenzollern_dynasty
+        dynasty = hohenzollern_brandenburg_dynasty
         female = yes
         tag = STE
     }
