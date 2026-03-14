@@ -582,6 +582,24 @@ country_flavor = {
         }
     }
     text = {
+        localization_key = rank_empire_muslim_wattasids
+        trigger = {
+            tag = MOR
+            ruler_or_heir_if_regent.dynasty ?= { dynasty:wattasid_dynasty ?= this }
+            country_rank_is_empire = yes
+            religion.group = religion_group:muslim
+        }
+    }
+    text = {
+        localization_key = rank_empire_muslim_saadis
+        trigger = {
+            tag = MOR
+            ruler_or_heir_if_regent.dynasty ?= { dynastysaadiid_dynasty ?= this }
+            country_rank_is_empire = yes
+            religion.group = religion_group:muslim
+        }
+    }
+    text = {
         localization_key = rank_empire_muslim_zayyanids
         trigger = {
             tag = TLE
@@ -1232,6 +1250,24 @@ country_flavor = {
         trigger = {
             tag = MOR
             ruler_or_heir_if_regent.dynasty ?= { dynasty:marinid_dynasty ?= this }
+            country_rank_is_kingdom = yes
+            religion.group = religion_group:muslim
+        }
+    }
+    text = {
+        localization_key = rank_kingdom_muslim_wattasids
+        trigger = {
+            tag = MOR
+            ruler_or_heir_if_regent.dynasty ?= { dynasty:marinid_dynasty ?= this }
+            country_rank_is_kingdom = yes
+            religion.group = religion_group:muslim
+        }
+    }
+    text = {
+        localization_key = rank_kingdom_muslim_saadis
+        trigger = {
+            tag = MOR
+            ruler_or_heir_if_regent.dynasty ?= { dynasty:saadi_dynasty ?= this }
             country_rank_is_kingdom = yes
             religion.group = religion_group:muslim
         }
@@ -1939,6 +1975,24 @@ country_flavor = {
         trigger = {
             tag = MOR
             ruler_or_heir_if_regent.dynasty ?= { dynasty:marinid_dynasty ?= this }
+            country_rank_is_duchy = yes
+            religion.group = religion_group:muslim
+        }
+    }
+    text = {
+        localization_key = rank_duchy_muslim_wattasids
+        trigger = {
+            tag = MOR
+            ruler_or_heir_if_regent.dynasty ?= { dynasty:wattasid_dynasty ?= this }
+            country_rank_is_duchy = yes
+            religion.group = religion_group:muslim
+        }
+    }
+    text = {
+        localization_key = rank_duchy_muslim_saadis
+        trigger = {
+            tag = MOR
+            ruler_or_heir_if_regent.dynasty ?= { dynastsaadisid_dynasty ?= this }
             country_rank_is_duchy = yes
             religion.group = religion_group:muslim
         }
