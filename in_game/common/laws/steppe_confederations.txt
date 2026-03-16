@@ -7,10 +7,13 @@ local_administration = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 90
+    	}
 	}
 	locked = {
 		custom_tooltip = {
@@ -110,10 +113,13 @@ tax_obligations = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
         }
     }
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 80
+    	}
 	}
 	locked = {
 		custom_tooltip = {
@@ -234,10 +240,13 @@ court_etiquette = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 70
+    	}
 	}
 	locked = {
 		custom_tooltip = {
@@ -359,11 +368,13 @@ formal_script = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
         }
     }
 	allow = {
-		leader_country = { tribal_cohesion > 5 }
-
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 50
+    	}
 	}
 	locked = {
 		custom_tooltip = {
@@ -461,10 +472,13 @@ legal_framework = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 30
+    	}
 	}
 	locked = {
 		custom_tooltip = {
@@ -583,10 +597,13 @@ economic_framework = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 10
+    	}
 	}
 	locked = {
 		custom_tooltip = {
@@ -706,10 +723,13 @@ trade_relations = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < -10
+    	}
 	}
 	locked = {
 		custom_tooltip = {
@@ -830,10 +850,13 @@ clan_diplomacy = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < -25
+    	}
 	}
 	locked = {
 		custom_tooltip = {
@@ -951,10 +974,13 @@ khalkha_unification_law = {
     }
 
     allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
+		international_organization = {
+			total_members >= 2
+		}
+		leader_country ?= {
+			societal_value:centralization_vs_decentralization < -40
+		}
+	}
 
     custom_tags = { forbids_no_policy }
 
@@ -984,7 +1010,7 @@ khalkha_unification_law = {
             custom_tooltip = khalkha_unification_tt
 
             root.leader_country = {
-                form_country = KHL
+                form_country = formable_country:KHL_f
                 if = {
 			        limit = { country_rank_level < 3 }
 			        set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -1046,7 +1072,7 @@ khorchin_unification_law = {
             custom_tooltip = khorchin_unification_tt
 
             root.leader_country = {
-                form_country = KHA
+                form_country = formable_country:KHA_f
                 if = {
 			        limit = { country_rank_level < 3 }
 			        set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -1107,11 +1133,73 @@ oirat_unification_law = {
             custom_tooltip = oirat_unification_tt
 
             root.leader_country = {
-                form_country = OIR
+                form_country = formable_country:OIR_f
                 if = {
 			        limit = { country_rank_level < 3 }
 			        set_country_rank_effect = { rank = country_rank:rank_kingdom }
 		        }
+            }
+            every_international_organization_member = {
+                limit = { NOT = { this = root.leader_country } }
+                root.leader_country = {
+                    annex_country = {
+                        country = prev
+                        reason = Diplomatic
+                    }
+                }
+            }
+
+            disband_international_organization = yes
+        }
+    }
+}
+nogai_unification_law = {
+    law_category = centralization
+    type = international_organization
+
+    potential = {
+        international_organization_type = international_organization_type:nogai_confederation
+    }
+
+    allow = {
+        international_organization = {
+            total_members >= 2
+        }
+    }
+
+    custom_tags = { forbids_no_policy }
+
+    no_unification_policy = {
+        wants_propose_policy = {
+            subtract = { value = 1000 }
+        }
+    }
+
+    unify_nogai_policy = {
+        wants_propose_policy = {
+            add = { value = 500 }
+        }
+
+        wants_this_policy_bias = {
+            add = {
+                value = prev_opinion_of_this
+                multiply = 0.3
+            }
+            add = {
+                value = root.relative_strength(scope:recipient)
+                multiply = 50
+            }
+        }
+
+        on_activate = {
+            custom_tooltip = nogai_unification_tt
+
+            root.leader_country = {
+                form_country = formable_country:NOG_f
+                if = {
+                    limit = { country_rank_level < 3 }
+                    set_country_rank_effect = { rank = country_rank:rank_kingdom }
+                }
             }
             every_international_organization_member = {
                 limit = { NOT = { this = root.leader_country } }

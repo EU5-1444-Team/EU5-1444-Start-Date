@@ -1,4 +1,4 @@
-khorchin_confederation = {
+nogai_confederation = {
 	has_target = no
 	unique = yes
 	expel_members_who_are_targets_of_other_members = no
@@ -8,7 +8,7 @@ khorchin_confederation = {
 
     has_leader_country = yes
     leader_type = country
-    leader_title_key = "KHORCHIN_LEADER"
+    leader_title_key = "NOGAI_LEADER"
     leader_change_method = mongol_election
     
     create_visible_trigger = { always = no }
@@ -25,7 +25,7 @@ khorchin_confederation = {
         economic_framework = shared_crops_policy
         trade_relations = clan_trade_only_policy
         clan_diplomacy = no_embassies_policy
-        khorchin_unification_law = no_unification_policy
+        nogai_unification_law = no_unification_policy
     }
 
     modifier = {
@@ -45,13 +45,13 @@ khorchin_confederation = {
 
     can_join_trigger = {
         government_type = government_type:steppe_horde
-        culture = culture:khorchin_culture
+        culture = culture:nogai
     }
     can_leave_trigger = {
         always = no
     }
     auto_leave_trigger = {
-        NOT = { culture = culture:khorchin_culture }
+        NOT = { culture = culture:nogai }
     }
 
     auto_disband_trigger = {
