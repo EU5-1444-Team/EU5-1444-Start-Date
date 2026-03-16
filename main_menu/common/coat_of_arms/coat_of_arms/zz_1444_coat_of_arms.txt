@@ -218,23 +218,24 @@ BUK = {
         }
     }
 }
-KZN = { #KZN
+KZN = { #Kazan
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 215 30 }
+    color1 = rgb { 255 236 161 }
     colored_emblem = {
         texture = "ce_tamgha_qazan_temur.dds"
         color1 = rgb { 0 0 0 }
         instance = {
             position = { 0.500 0.500 }
-            scale = { 1.000 1.000 }
+            scale = { 0.750 0.750 }
+            rotation = { 45.0 }
         }
     }
 }
-CRI = {
+CRI = { #Crimea
     pattern = "pattern_tricolor_horizontal_01.dds"
-    color1 = rgb { 0 100 0 }
+    color1 = rgb { 0 100 255 }
     color2 = rgb { 0 100 255 }
-    color3 = color2
+    color3 = rgb { 0 100 255 }
     colored_emblem = {
         texture = "ce_tamgha_giray_wide.dds"
         color1 = rgb { 255 255 255 }
@@ -296,15 +297,24 @@ SBR = {
     }
 }
 
-NOG = {
-    # Nogai
+NOG = { # Nogai
     pattern = "pattern_solid.dds"
-    color1 = rgb { 46 205 254 }
-    textured_emblem = {
-        texture = "te_nogai.dds"
+    color1 = rgb { 85 170 255 }
+    colored_emblem = {
+        texture = "ce_tamgha_nogai.dds"
+        color1 = rgb { 255 255 255 }
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
+        }
+    }
+    colored_emblem = {
+        texture = "ce_tamgha_nogai_02.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.167 0.164 }
+            scale = { 0.500 0.500 }
+            rotation = { 90.0 }
         }
     }
 }
@@ -605,7 +615,7 @@ MRZ = { #Mari
     pattern = "pattern_tricolor_horizontal_01.dds"
     color1 = rgb { 85 170 255 }
     color2 = rgb { 255 255 255 }
-    color3 = color2
+    color3 = rgb { 255 255 255 }
     colored_emblem = {
         texture = "ce_mari_sun_02.dds"
         color1 = rgb { 170 0 0 }
@@ -619,7 +629,7 @@ UDM = { #Udmurts
     pattern = "pattern_tricolor_horizontal_01.dds"
     color1 = rgb { 0 0 0 }
     color2 = rgb { 255 255 255 }
-    color3 = color2
+    color3 = rgb { 255 255 255 }
     colored_emblem = {
         texture = "ce_mari_sun.dds"
         color1 = rgb { 170 0 0 }

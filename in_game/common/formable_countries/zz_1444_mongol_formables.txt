@@ -302,7 +302,7 @@ GTH_f = { #Great Horde
 GLH_f = { #Golden Horde
 
 	level = 4
-	required_locations_fraction = 0.75
+	required_locations_fraction = 0.25
 	rule = historical
 	potential = {
 		OR = {
@@ -356,6 +356,7 @@ GLH_f = { #Golden Horde
 					tag = KAZ
 					tag = NOG
 					culture = culture:cuman_culture
+					culture = culture:nogai
 				}
 				NOT = { country_exists = c:GTH }
 				NOT = { country_exists = c:KZN }
