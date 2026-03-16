@@ -54132,8 +54132,8 @@ countries = {
             ruler = pha_drakpa_jungne
             heir = pha_kunga_lekpa
 
-            type = theocracy
-            heir_selection = theocratic_elective
+            type = monarchy
+            heir_selection = tanistry_elective
 
             aristocracy_vs_plutocracy = -60
             centralization_vs_decentralization = 60
@@ -54149,6 +54149,10 @@ countries = {
             individualism_vs_communalism = 20
             outward_vs_inward = 95
 
+            reforms = {
+                feudal_theocracy
+            }
+
             parliament = {
                 parliament_type = council
             }
@@ -54158,7 +54162,7 @@ countries = {
                 education_masses_law = basic_religious_education
                 administrative_system = feudal_administration
                 cultural_traditions_law = civil_society
-                marriage_law = monogamous_marriage
+                marriage_law = polyandry
                 heir_religion_law = heir_special_succession
                 legal_code_law = traditional_law_policy
                 distribution_of_power_law = dop_traditional_distribution_of_power
@@ -54205,15 +54209,15 @@ countries = {
             mendong samten selephu
         }
 
-        country_rank = rank_duchy
+        country_rank = rank_kingdom
         starting_technology_level = 3
         include = "expl_china"
         
         capital = shigatse
         government = {
             ruler = rin_norzang
-            type = theocracy
-            heir_selection = theocratic_elective
+            type = monarchy
+            heir_selection = cognatic_primogeniture
 
             aristocracy_vs_plutocracy = -60
             centralization_vs_decentralization = -60
@@ -54230,8 +54234,7 @@ countries = {
             outward_vs_inward = -40
 
             reforms = {
-                # TODO: This doesn't work, make a custom reform
-                military_order_reform
+                feudal_theocracy
             }
 
             parliament = {
@@ -54243,7 +54246,7 @@ countries = {
                 education_masses_law = basic_religious_education
                 administrative_system = feudal_administration
                 cultural_traditions_law = civil_society
-                marriage_law = monogamous_marriage
+                marriage_law = polyandry
                 heir_religion_law = heir_special_succession
                 legal_code_law = traditional_law_policy
                 distribution_of_power_law = dop_traditional_distribution_of_power

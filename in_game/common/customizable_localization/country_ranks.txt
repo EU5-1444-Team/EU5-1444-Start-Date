@@ -736,6 +736,23 @@ country_flavor = {
     }
 
     text = {
+        localization_key = rank_rinpungpa
+        trigger = {
+            tag = RIN
+        }
+    }
+
+    text = {
+        localization_key = rank_phagmodrupa
+        trigger = {
+            OR = {
+                tag = PHA
+                tag = UTS
+            }
+        }
+    }
+
+    text = {
         localization_key = rank_japanese_court
         trigger = {
             culture = { has_culture_group = culture_group:japanese_group }
