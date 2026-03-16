@@ -308,11 +308,11 @@ GLH_f = {
 	required_locations_fraction = 0.75
 	rule = historical
 	potential = {
-		AND = {
+		OR = {
 			exists = international_organization:golden_horde
 			is_member_of_international_organization = international_organization:golden_horde
+			culture = culture:cuman_culture
 		}
-		culture = culture:cuman_culture
 	}
 
 	allow = {
@@ -378,17 +378,39 @@ GLH_f = {
 	regions = {
 		steppe_region
 	}
-	areas = {
-		iraq_arabi_area
-		jazira_area
-		shirvan_area
-		armenia_area
-		armenian_highlands_area
-		georgia_area
-		pontus_area
-		cappadocia_area
-	}
+
 	form_effect = {
-		destroy_international_organization = { target = international_organization:ilkhanate }
+		destroy_international_organization = { target = international_organization:golden_horde }
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+	}
+}
+
+KAZ_f = {
+	level = 1
+	required_locations_fraction = 0.75
+	rule = historical
+
+	potential = {
+		culture = culture:kazakh_culture
+	}
+	allow = {
+		
+	}
+
+	name = KAZ
+	flag = KAZ	
+	adjective = KAZ_ADJ
+	tag = KAZ
+	color = map_KAZ
+
+	areas = {
+		desht_kipchak_area
+		zhetysu_area
+	}
+
+	form_effect = {
 	}
 }

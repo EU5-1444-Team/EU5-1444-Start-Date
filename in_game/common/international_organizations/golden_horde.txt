@@ -57,36 +57,18 @@ golden_horde = {
 	
 	create_visible_trigger = {
 		any_owned_location = { 
-			OR = {
-				region = region:pontic_steppe_region
-				region = region:volga_region
-				region = region:caucasus_region
-				region = region:ruthenia_region
-			}
+			region = region:steppes_region
 		}
+		primary_culture = culture:cuman_culture
 	}
 	invite_visible_trigger = {
 		any_owned_location = { 
-			OR = {
-				region = region:pontic_steppe_region
-				region = region:volga_region
-				region = region:caucasus_region
-				region = region:ruthenia_region
-			}
+			region = region:steppes_region
 		}
+		primary_culture = culture:cuman_culture
 	}
 	can_join_trigger = {
-        capital = {
-            OR = {
-                region = region:pontic_steppe_region
-                region = region:volga_region
-                region = region:caucasus_region
-                region = region:ruthenia_region
-            }
-        }
-        OR = {
-            primary_culture = culture:cuman_culture
-        }
+       	primary_culture = culture:cuman_culture
     }
 	
 	can_leave_trigger = {

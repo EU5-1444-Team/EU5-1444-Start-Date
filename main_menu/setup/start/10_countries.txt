@@ -4347,13 +4347,10 @@ countries = {
             capital = v_enyn
         }
 
-        BSH = {
-            type = pop
+        BSH = { #Bak
 
-            add_pops_from_locations = {
-                gebergeyel khaiylmysh khaqmar shikashin yuldibay namjan atach ishkul kumak suyunduk tanalyk yaik meleuz
-                tabynsky ishimbay kapova_pesera zhetykol shoptikol kartaly uyskoye
-                bolshoy_ik ust_katav mesyagutovo zlatoust
+            own_control_core = {
+                davlekanovo
             }
 
             discovered_regions = {
@@ -4365,7 +4362,7 @@ countries = {
             }
 
 
-            starting_technology_level = 0
+            starting_technology_level = 3
             include = "eurasian_muslim_tribe"
             government = {
                 type = tribe
@@ -4377,7 +4374,7 @@ countries = {
                     sharia_law = hanafi_policy
                 }
             }
-            capital = khaiylmysh
+            capital = davlekanovo
             religious_school = hanafi_school
             government = { mysticism_vs_jurisprudence = -15 }
         }
@@ -4733,6 +4730,7 @@ countries = {
             country_rank = rank_duchy
             religious_school = hanafi_school
             government = {
+                centralization_vs_decentralization = 100
                 ruler = ulugh_muhammad_borjigin
                 mysticism_vs_jurisprudence = -15
                 laws = {
@@ -4742,23 +4740,6 @@ countries = {
                     heir_religion_law = heir_same_religion
                 }
             }
-        }
-
-        BSR = { #Bakshri
-            own_control_core = {
-                davlekanovo
-            }
-            government = {
-                type = tribe
-                heir_selection = tribal_oldest_male
-                ruler = random
-            }
-            religious_school = hanafi_school
-            country_rank = rank_county
-            starting_technology_level = 3
-            capital = davlekanovo
-            include = "limited_russian_principality"
-            include = "expl_novgorod"
         }
 
 #        NOG = {
