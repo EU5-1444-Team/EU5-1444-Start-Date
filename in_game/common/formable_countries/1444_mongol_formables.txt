@@ -312,7 +312,7 @@ GLH_f = {
 			exists = international_organization:golden_horde
 			is_member_of_international_organization = international_organization:golden_horde
 		}
-		tag = CUM
+		culture = culture:cuman_culture
 	}
 
 	allow = {
@@ -355,15 +355,17 @@ GLH_f = {
 				NOT = { country_exists = c:CRI }
 			}
 			AND = {
-				tag = KAZ
+				OR = {
+					tag = KAZ
+					tag = NOG
+					culture = culture:cuman_culture
+				}
 				NOT = { country_exists = c:GTH }
 				NOT = { country_exists = c:KZN }
 				NOT = { country_exists = c:UZB }
 				NOT = { country_exists = c:CRI }
 				NOT = { country_exists = c:SBR }
 			}
-			tag = NOG
-			tag = CUM
 		}
 	}
 	
