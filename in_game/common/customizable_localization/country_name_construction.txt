@@ -12,6 +12,27 @@ country_name_construction = {
 		}
 	}
 	text = {
+		localization_key = country_name_construction_prefix_name
+		trigger = {
+			is_leader_of_international_organization = international_organization:middle_kingdom
+		}
+	}
+
+	text = { #Preventing Northern Yuan Khaganate
+		localization_key = country_name_northern_yuan
+		trigger = {
+            government_type = government_type:steppe_horde
+            tag = YUA
+        }
+	}
+	text = { #Preventing Imperial Yuan Khaganate
+		localization_key = country_name_imperial_yuan
+		trigger = {
+            government_type = government_type:steppe_horde
+            tag = IMP
+        }
+	}
+	text = {
 		localization_key = country_name_construction_prefix_rank_of_name_but_map_is_just_prefix_rank
 		trigger = {
 			OR = {
@@ -54,14 +75,6 @@ country_name_construction = {
 				country_rank = country_rank:rank_empire
 			}
 			tag = MAL
-		}
-	}
-
-	text = {
-		localization_key = country_name_construction_prefix_name
-		trigger = {
-			country_rank ?= country_rank:rank_empire
-			court_language ?= { language_family ?= language_family:chinese_language_family }
 		}
 	}
 

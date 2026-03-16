@@ -87,17 +87,6 @@ country_flavor = {
             government_type = government_type:theocracy
         }
     }
-    #Yuan not being Imperial Yuan Khaganate
-    text = {
-        localization_key = imp_not_khaganate
-        trigger = {
-            government_type = government_type:steppe_horde
-            or = {
-                tag = IMP
-                tag = YUA
-            }
-        }
-    }
     # Uriankhai Tumen
     text = {
         localization_key = uriankhai_tumen
@@ -437,11 +426,23 @@ country_flavor = {
     text = {
         localization_key = rank_empire_horde_2
         trigger = {
-
             country_rank_is_empire = yes
             government_type = government_type:steppe_horde
             OR = {
-                tag = GLH
+                AND = {
+                    tag = GLH
+                    OR = {
+				        ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this }
+				        ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this }
+			        }
+                }
+                AND = {
+                    tag = SBR
+                    OR = {
+                        c:UZB ?= { is_subject_of = root }
+                        owns = location:sighnaq
+                    }
+                }
                 tag = NOG
                 tag = GTH
             }
@@ -1078,9 +1079,23 @@ country_flavor = {
     text = {
         localization_key = rank_kingdom_horde_2
         trigger = {
+            country_rank_is_kingdom = yes
             government_type = government_type:steppe_horde
             OR = {
-                tag = GLH
+                AND = {
+                    tag = GLH
+                    OR = {
+				        ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this }
+				        ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this }
+			        }
+                }
+                AND = {
+                    tag = SBR
+                    OR = {
+                        c:UZB ?= { is_subject_of = root }
+                        owns = location:sighnaq
+                    }
+                }
                 tag = NOG
                 tag = GTH
             }

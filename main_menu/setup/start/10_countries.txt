@@ -4347,10 +4347,14 @@ countries = {
             capital = v_enyn
         }
 
-        BSH = { #Bak
+        BSH = { #Bashkir
 
             own_control_core = {
                 davlekanovo
+                krasnaya_gorka belekes bolshoy_ik ust_katav mesyagutovo zlatoust tabynsky ishimbay beloretsk meleuz kapova_pesera
+                gebergeyel khaiylmysh khaqmar shikashin yuldibay sadak sorochinskaya buzuluk grachevka bol_shoy_uran malyy_uran
+                ulukulevo bizhbulyak turkmenevo sterlibashevo sterlitamak chishmy bavly bugulma abdulino buguruslan
+                syun verkhneyarkeyevo chekmagush menzelinsk lower_aktanyshbash burayevo ufa askino baltas
             }
 
             discovered_regions = {
@@ -4640,7 +4644,7 @@ countries = {
         }
 
         CRI = { #Crimea
-            type = location
+            type = army
             own_control_core = {
                 qirq_yer qarasuvbazar seyitler solkhat kalay jurchi or_qapi
                 qalancaq aslan_horod ordu_bazar rohat_kermen enice velyka_lepetykha
@@ -4684,7 +4688,7 @@ countries = {
 
         KZN = {
             # Kazan
-            type = location
+            type = army
             own_control_core = {
                 kazan laish calli mamadysh bogatye_saby dobyaz
                 pokrovskoye simbirsk cherdakly staraya_mayna melekess tetyushi sviyazhsk
@@ -4703,22 +4707,15 @@ countries = {
                 sosnovy_ostrov malykovka novye_burasy
                 mechetnaya perelyub ivanteyevka balakovo dukhovnitskoye
                 samara shigony morkvash
-                poganovka sorochinskaya buzuluk grachevka bol_shoy_uran malyy_uran
+                poganovka
                 s_ezzaja bogatoye
                 khvorostyanka stavropol_na_volge kondurcha pestravka
-                gebergeyel khaiylmysh khaqmar
                 bolghar cukataw bilyar almetyevsk
-                ufa askino baltas
-                shikashin yuldibay
-                buguruslan sergiyevsk
+                sergiyevsk
                 koshki kamyshla bolshoy_cheremshan staryi_amanak
-                sterlitamak bavly bugulma abdulino aznakayevo sadak
-                tabynsky ishimbay beloretsk
-                meleuz kapova_pesera
-                zainsk syun verkhneyarkeyevo chekmagush chishmy
-                menzelinsk lower_aktanyshbash chalninsky_pochinok burayevo
-                ulukulevo bizhbulyak turkmenevo sterlibashevo
-                krasnaya_gorka belekes bolshoy_ik ust_katav mesyagutovo zlatoust
+                aznakayevo
+                zainsk
+                chalninsky_pochinok
                 bolshoye_murashkino kurmysh lyskovo perevoz sechenovo spasskoye_lyskovo alatyr sergach
             }
 
@@ -4767,7 +4764,7 @@ countries = {
 #        }
 
         MGH = { # Manghit
-            type = location
+            type = army
             own_control_core = {
                 ushtagan sarayjuk kisikkamys kulagin saryadyn talowski
                 ryn bokey zhanybek alexandrov_gay
@@ -4793,7 +4790,7 @@ countries = {
         }
 
         JAK = { # Jamboyluk
-            type = location
+            type = army
             own_control_core = {
                 kalmyk terekti oral
                 taskala dergachi chertanla piterka yershov ozinki sakminskoye_vodokhranilishche
@@ -4819,7 +4816,7 @@ countries = {
         }
 
         AOG = { # Altıoğul
-            type = location
+            type = army
             own_control_core = {
                 baytak ilek kargaly_aktobe kobda irek ushkan
                 karatobe shyngyrlau aksay_pointic zhympity kiyl
@@ -4845,7 +4842,7 @@ countries = {
         }
 
         QON = { # Qongirat
-            type = location
+            type = army
             own_control_core = {
                 koskuduk tas_kichu kaynar shagiz tenteksor mavliberda
                 ushkan
@@ -4872,7 +4869,7 @@ countries = {
         }
 
         NWM = { # Naymans
-            type = location
+            type = army
             own_control_core = {
                 koptam uil emba atzhaksy shatyrlysay temir or_aktobe manysai shagan zhaksy_karasay
             }
@@ -4897,7 +4894,7 @@ countries = {
         }
 
         JIK = { # Jaik
-            type = location
+            type = army
             own_control_core = {
                 kenderli_kayasan koshkar_ata temir_baba ketik_kala kabakty karatobe_mangyshlak kyzylkala sisem_ata
                 masat_ata beket_ata beki
@@ -4924,9 +4921,8 @@ countries = {
 
         UZB = {
             # Uzbek Kanate
-            type = location
+            type = army
             own_control_core = {
-                chimgi_tura
                 bayanaul shybyndy bozok_astana akkol
                 karasor karkaraly takhir
                 arykbalyk kak kokshetau shoindykol atbasar
@@ -4970,7 +4966,7 @@ countries = {
                 karnak sawran aktas_kystagy sholakkorgan baba_ata saudakent tamdy akkesene sarvaslyk
             }
 
-            capital = chimgi_tura
+            capital = sighnaq
 
             starting_technology_level = 3
             include = "expl_mongols"
@@ -4987,12 +4983,14 @@ countries = {
                     heir_religion_law = heir_same_religion
                 }
             }
+            accepted_cultures = {kazakh_culture}
         }
 
         KAZ = {
             # Kazakh Kanate
-            type = location
-            our_cores_conquered_by_others = {
+            type = pop
+
+            add_pops_from_locations = {
                 sozak
             }
 
@@ -5004,7 +5002,6 @@ countries = {
             country_rank = rank_duchy
             religious_school = hanafi_school
             government = {
-                ruler = ulugh_muhammad_borjigin
                 mysticism_vs_jurisprudence = -15
                 laws = {
                     legal_code_law = sharia_law_policy
@@ -5016,9 +5013,9 @@ countries = {
         }
 
         SBR = {
-            # Sibir Kanate
-            type = location
-            our_cores_conquered_by_others = {
+            # Sibir Khanate
+            type = army
+            own_control_core = {
                 chimgi_tura
             }
 
@@ -5027,7 +5024,7 @@ countries = {
             starting_technology_level = 3
             include = "expl_mongols"
             include = "eurasian_horde"
-            country_rank = rank_duchy
+            country_rank = rank_kingdom
             religious_school = hanafi_school
             government = {
                 ruler = mustafa_borjigin
