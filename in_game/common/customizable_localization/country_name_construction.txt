@@ -14,7 +14,14 @@ country_name_construction = {
 	text = {
 		localization_key = country_name_construction_prefix_name
 		trigger = {
-			is_leader_of_international_organization = international_organization:middle_kingdom
+			NOT = { tag = DAI }
+			OR = {
+				AND = { 
+					country_rank ?= country_rank:rank_empire
+            		court_language ?= { language_family ?= language_family:chinese_language_family }
+				}
+				is_leader_of_international_organization = international_organization:middle_kingdom
+			}
 		}
 	}
 
