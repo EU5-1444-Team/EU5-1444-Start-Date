@@ -122,6 +122,38 @@ OIR_f = { #Oirat formable
 	}
 }
 
+NOG_f = { #Nogai formable
+    level = 3
+    required_locations_fraction = 0.1
+    rule = historical
+    potential = {
+        culture = culture:nogai_culture
+    }
+
+    allow = {
+        custom_tooltip = {
+            text = NOG_f_tt
+            always = no
+        }
+    }
+
+    name = NOG
+    flag = NOG
+    adjective = NOG_ADJ
+    tag = NOG
+    color = map_NOG
+
+    regions = {
+		steppes_region
+	}
+	form_effect = {
+        if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+
 URZ_f = { #Uriankhai formable
     level = 3
     required_locations_fraction = 0.25
@@ -267,5 +299,94 @@ GTH_f = { #Great Horde
 	form_effect = {
 		set_country_rank_effect = { rank = country_rank:rank_kingdom }
 		set_capital = location:sarai_al_jadid
+	}
+}
+
+GLH_f = {
+
+	level = 4
+	required_locations_fraction = 0.75
+	rule = historical
+	potential = {
+		AND = {
+			exists = international_organization:golden_horde
+			is_member_of_international_organization = international_organization:golden_horde
+		}
+		tag = CUM
+	}
+
+	allow = {
+		exists = international_organization:golden_horde
+		is_leader_of_international_organization = international_organization:golden_horde
+		OR = {
+			AND = {
+				tag = GTH
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:CRI }
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = KZN
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:CRI }
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = UZB
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:CRI }
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = CRI
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = SBR
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:CRI }
+			}
+			AND = {
+				tag = KAZ
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:CRI }
+				NOT = { country_exists = c:SBR }
+			}
+			tag = NOG
+			tag = CUM
+		}
+	}
+	
+	name = GLH
+	flag = GLH
+	adjective = GLH_ADJ
+	tag = GLH
+	color = map_golden_horde
+	
+	regions = {
+		steppe_region
+	}
+	areas = {
+		iraq_arabi_area
+		jazira_area
+		shirvan_area
+		armenia_area
+		armenian_highlands_area
+		georgia_area
+		pontus_area
+		cappadocia_area
+	}
+	form_effect = {
+		destroy_international_organization = { target = international_organization:ilkhanate }
 	}
 }

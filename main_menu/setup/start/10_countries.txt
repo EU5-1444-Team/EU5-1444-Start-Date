@@ -3314,13 +3314,9 @@ countries = {
         MRZ = {
             own_control_core = {
                 kozmodemyansk kabachischi yoshkar_ola kiknur yaransk kutarka sernur urzhum
-                oli_baraza
-                kilmez stelty
-                sarapul mozhga yelabuga izhevsk vavozh_mozhga vyatskiye_polyany
-                votkings kasevo yanaul tatyshly saygatsky yelovo osa
+                oli_baraza morki
+                kilmez
             }
-
-            
             government = {
                 type = tribe
                 heir_selection = tribal_oldest_male
@@ -3331,6 +3327,27 @@ countries = {
             country_rank = rank_county
             starting_technology_level = 3
             capital = morki
+            include = "limited_russian_principality"
+            include = "expl_novgorod"
+        }
+        # Udmurt tribes
+        UDM = {
+            own_control_core = {
+                sarapul mozhga yelabuga izhevsk vavozh_mozhga vyatskiye_polyany
+                votkings kasevo yanaul tatyshly saygatsky yelovo osa
+            }
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+
+            liturgical_language = church_slavonic_language
+            country_rank = rank_county
+            starting_technology_level = 3
+            capital = izhevsk
+            include = "limited_russian_principality"
+            include = "expl_novgorod"
         }
 
         #Principality of Murom
@@ -3744,7 +3761,7 @@ countries = {
                 vyatka ust_cheptsa suna verkhoshizhemye orlov belozerye slobodskoy
                 oparino obyachevo lalsk nikolsk vokhma
                 podosinovets omutninsk kholunitsky kobra nagorsk
-                ural_nema falenki stelty dondykar
+                ural_nema falenki stelty dondykar uni
             }
 
             own_control_integrated = {
@@ -4703,7 +4720,7 @@ countries = {
                 meleuz kapova_pesera
                 zainsk syun verkhneyarkeyevo chekmagush chishmy
                 menzelinsk lower_aktanyshbash chalninsky_pochinok burayevo
-                ulukulevo davlekanovo bizhbulyak turkmenevo sterlibashevo
+                ulukulevo bizhbulyak turkmenevo sterlibashevo
                 krasnaya_gorka belekes bolshoy_ik ust_katav mesyagutovo zlatoust
                 bolshoye_murashkino kurmysh lyskovo perevoz sechenovo spasskoye_lyskovo alatyr sergach
             }
@@ -4725,6 +4742,23 @@ countries = {
                     heir_religion_law = heir_same_religion
                 }
             }
+        }
+
+        BSR = { #Bakshri
+            own_control_core = {
+                davlekanovo
+            }
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+            }
+            religious_school = hanafi_school
+            country_rank = rank_county
+            starting_technology_level = 3
+            capital = davlekanovo
+            include = "limited_russian_principality"
+            include = "expl_novgorod"
         }
 
 #        NOG = {
