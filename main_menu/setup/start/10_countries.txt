@@ -5086,42 +5086,22 @@ countries = {
                 karasor karkaraly takhir
                 arykbalyk kak kokshetau shoindykol atbasar
                 kulykol zhetykol shoptikol siberia_tenteksor konildi
-                zharkol sasykkol kartaly alakol almenevo safkul shchuchye kargapolye kurtamysh
-                yetkul troitsk uyskoye
-                tugulym yalutorovsk shadrinsk
-                tsaryovo_gorodishche
                 zhanaarka balyktykol kaynar_atbai
 
-                chebarkul miass
-                tobolsk vagay tavdinsky_sloboda yurginskoye vikulovo
-                shish muromtsevo
-                namjan atach ishkul kumak suyunduk tanalyk yaik
+                namjan kumak suyunduk tanalyk
                 irgiz chet_irgiz karasay kayrakty sazanbay
-                gorkovskoye okoneshnikovo
-                qashliq siberia_abalak turtas yukonda
-                tara znamenskoye ust_ishim omsk kamyshnoye cherlak tyukalinsk kolosovka
                 siletiteniz zhalauly
                 tuzdysor imakia zhelezin lebyazhye
-                chastoozerye polovinnoye armizonskoye berdyuzhye korkina_sloboda
-                tarankol kyzylzhar presnowka staroye stanitsa_kokchetavskaya
-                salair kytmanovo
-                tomsk melnikovo molchanovo kargasok vasyugan kolpashevo
-                surgut bolshoy_balyk irtysh megion bolshoy_yugan upper_ob
+                stanitsa_kokchetavskaya
                 bursol kuchukskoye volchikha butyrskoe zmeinogorsk shemonayevskoye ust_kalmanka
-                krivoshchekovo kamen dovolnoye kozhevnikovo bolotnye
-
-                sartlan taskayevo kargat kainsky_pas kyshtovka
-                suzun berdsk chesnokovka kalmanka barnaul verkhotomsk kolchugino
                 sarykopa karasu saryozen ulkayak bolgan_ana aitbulat belen_ana talmas_ata tengiz kon_tengiz kulanotpes sonaly tokrau espe kusak zhamankul
                 aybas kabyrga karaturgay turgay zhaldama orda_bazar alashakhan baskamyr ulytau
                 bakanas ashchyozek dagandely koksala sayak
                 zhuban_ana kaip_ata karagau korgan maulimberdy tagatay dandybay karabay smai_samkai yegindybulak
                 zhamshy kashkanteniz kyzylsay moiynty mukur yangikent buzikkala jubara karmakshi
                 sighnaq asanas barchkend jand kamyskala sozak aksumbe gulshara kyzylkorgan ran tasty
-
                 tansyk
                 shimbay khurgancha qonirat pulzhai
-
                 karnak sawran aktas_kystagy sholakkorgan baba_ata saudakent tamdy akkesene sarvaslyk
             }
 
@@ -5210,6 +5190,10 @@ countries = {
             type = army
             own_control_core = {
                 chimgi_tura
+                almenevo safkul shchuchye kargapolye kurtamysh tugulym yalutorovsk shadrinsk tsaryovo_gorodishche chastoozerye polovinnoye armizonskoye berdyuzhye korkina_sloboda
+                tobolsk vagay tavdinsky_sloboda yurginskoye vikulovo tara znamenskoye ust_ishim shish muromtsevo omsk kamyshnoye cherlak tyukalinsk kolosovka gorkovskoye okoneshnikovo
+                sartlan taskayevo kargat kainsky_pas kyshtovka tarankol kyzylzhar presnowka staroye zharkol sasykkol kartaly alakol yetkul troitsk uyskoye
+                chebarkul miass yaik atach ishkul
             }
 
             capital = chimgi_tura
@@ -55184,21 +55168,6 @@ countries = {
             }
         }
 
-        # OIR = {
-        #     own_control_core = {
-        #     }
-        #     our_cores_conquered_by_others = { }
-        #     starting_technology_level = 3
-        #     include = "expl_mongols"
-        #     government = {
-        #         type = steppe_horde
-        #         heir_selection = cognatic_primogeniture
-        #     }
-        #     country_rank = rank_kingdom
-        #     court_language = mongolian_language
-        #     capital = khar_balgas
-        # }
-
         CRS = {  # Choros
             type = army
             own_control_core = {
@@ -55466,6 +55435,41 @@ countries = {
             capital = tongliao
             accepted_cultures = { jurchen_culture }
             tolerated_cultures = { sibe_culture }
+        }
+
+        DOY = { # Doyan Guard
+            type = army
+            own_control_core = {
+                daning_pingquan huihe hezhong pingquan wuping_daning fushu xingzhong xiankang lizhou longshan chuanzhou shenshui
+                quanning songzhou enhua baitan yixingzhou kuanhe_xingzhou niushan limin taipingzhuang liuyuan xiabancheng zhangsanying 
+                yizhou_jinzhou
+            }
+
+            starting_technology_level = 3
+            include = "expl_mongols"
+            government = {
+                type = steppe_horde
+                heir_selection = cognatic_primogeniture
+                ruler = nandashili_doyan
+                country_rank = rank_county
+                court_language = mongolian_language
+                capital = yixingzhou
+
+                centralization_vs_decentralization = -60
+                aristocracy_vs_plutocracy = 60
+                serfdom_vs_free_subjects = 30
+                traditionalist_vs_innovative = -30
+                spiritualist_vs_humanist = 10
+                mercantilism_vs_free_trade = 10
+                offensive_vs_defensive = 20
+                land_vs_naval = -40
+                quality_vs_quantity = -40
+                belligerent_vs_conciliatory = 10
+                capital_economy_vs_traditional_economy = -40
+                individualism_vs_communalism = -20
+                outward_vs_inward = 10
+                sinicized_vs_unsinicized = 60
+            }
         }
 
         ADQ = { # Asud/Alans
