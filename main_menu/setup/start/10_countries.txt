@@ -4347,32 +4347,19 @@ countries = {
             capital = v_enyn
         }
 
-        BSH = { #Bashkir
-
+        TBN = { # Tabyn Bashkirs
             own_control_core = {
-                davlekanovo
-                krasnaya_gorka belekes bolshoy_ik ust_katav mesyagutovo zlatoust tabynsky ishimbay beloretsk meleuz kapova_pesera
-                gebergeyel khaiylmysh khaqmar shikashin yuldibay sadak sorochinskaya buzuluk grachevka bol_shoy_uran malyy_uran
-                ulukulevo bizhbulyak turkmenevo sterlibashevo sterlitamak chishmy bavly bugulma abdulino buguruslan
-                syun verkhneyarkeyevo chekmagush menzelinsk lower_aktanyshbash burayevo ufa askino baltas
+                davlekanovo ufa syun verkhneyarkeyevo chekmagush menzelinsk lower_aktanyshbash burayevo askino baltas
             }
-
             discovered_regions = {
-                russian_region
-                ruthenia_region
-                ural_region
-                west_siberia_region
-                khorasan_region
+                russian_region ruthenia_region ural_region west_siberia_region khorasan_region
             }
-
-
             starting_technology_level = 3
             include = "eurasian_muslim_tribe"
             government = {
                 type = tribe
                 heir_selection = tribal_oldest_male
                 ruler = random
-
                 centralization_vs_decentralization = 85
                 aristocracy_vs_plutocracy = 90
                 serfdom_vs_free_subjects = 10
@@ -4386,13 +4373,152 @@ countries = {
                 capital_economy_vs_traditional_economy = -80
                 individualism_vs_communalism = -40
                 outward_vs_inward = -10
-
                 laws = {
                     legal_code_law = sharia_law_policy
                     sharia_law = hanafi_policy
                 }
             }
             capital = davlekanovo
+            religious_school = hanafi_school
+            government = { mysticism_vs_jurisprudence = -15 }
+        }
+        YRA = { # Yurmaty Bashkirs
+            own_control_core = {
+                sterlibashevo sterlitamak ulukulevo bizhbulyak turkmenevo ishimbay meleuz kapova_pesera beloretsk
+            }
+            discovered_regions = {
+                russian_region ruthenia_region ural_region west_siberia_region khorasan_region
+            }
+            starting_technology_level = 3
+            include = "eurasian_muslim_tribe"
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+                centralization_vs_decentralization = 85
+                aristocracy_vs_plutocracy = 90
+                serfdom_vs_free_subjects = 10
+                traditionalist_vs_innovative = -60
+                spiritualist_vs_humanist = 40
+                mercantilism_vs_free_trade = -50
+                offensive_vs_defensive = 40
+                land_vs_naval = -50
+                quality_vs_quantity = -70
+                belligerent_vs_conciliatory = 40
+                capital_economy_vs_traditional_economy = -80
+                individualism_vs_communalism = -40
+                outward_vs_inward = -10
+                laws = {
+                    legal_code_law = sharia_law_policy
+                    sharia_law = hanafi_policy
+                }
+            }
+            capital = sterlitamak
+            religious_school = hanafi_school
+            government = { mysticism_vs_jurisprudence = -15 }
+        }
+        BZY = { # Burzyan Bashkirs
+            own_control_core = {
+                ust_katav mesyagutovo zlatoust tabynsky krasnaya_gorka belekes bolshoy_ik
+            }
+            discovered_regions = {
+                russian_region ruthenia_region ural_region west_siberia_region khorasan_region
+            }
+            starting_technology_level = 3
+            include = "eurasian_muslim_tribe"
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+                centralization_vs_decentralization = 85
+                aristocracy_vs_plutocracy = 90
+                serfdom_vs_free_subjects = 10
+                traditionalist_vs_innovative = -60
+                spiritualist_vs_humanist = 40
+                mercantilism_vs_free_trade = -50
+                offensive_vs_defensive = 40
+                land_vs_naval = -50
+                quality_vs_quantity = -70
+                belligerent_vs_conciliatory = 40
+                capital_economy_vs_traditional_economy = -80
+                individualism_vs_communalism = -40
+                outward_vs_inward = -10
+                laws = {
+                    legal_code_law = sharia_law_policy
+                    sharia_law = hanafi_policy
+                }
+            }
+            capital = zlatoust
+            religious_school = hanafi_school
+            government = { mysticism_vs_jurisprudence = -15 }
+        }
+        USH = { # Ushergan Bashkirs
+            own_control_core = {
+                sorochinskaya buzuluk grachevka bol_shoy_uran malyy_uran gebergeyel khaiylmysh khaqmar
+            }
+            discovered_regions = {
+                russian_region ruthenia_region ural_region west_siberia_region khorasan_region
+            }
+            starting_technology_level = 3
+            include = "eurasian_muslim_tribe"
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+                centralization_vs_decentralization = 85
+                aristocracy_vs_plutocracy = 90
+                serfdom_vs_free_subjects = 10
+                traditionalist_vs_innovative = -60
+                spiritualist_vs_humanist = 40
+                mercantilism_vs_free_trade = -50
+                offensive_vs_defensive = 40
+                land_vs_naval = -50
+                quality_vs_quantity = -70
+                belligerent_vs_conciliatory = 40
+                capital_economy_vs_traditional_economy = -80
+                individualism_vs_communalism = -40
+                outward_vs_inward = -10
+                laws = {
+                    legal_code_law = sharia_law_policy
+                    sharia_law = hanafi_policy
+                }
+            }
+            capital = buzuluk
+            religious_school = hanafi_school
+            government = { mysticism_vs_jurisprudence = -15 }
+        }
+        YNI = { # Yenei Bashkirs
+            own_control_core = {
+                yuldibay sadak bavly bugulma abdulino buguruslan chishmy shikashin
+            }
+            discovered_regions = {
+                russian_region ruthenia_region ural_region west_siberia_region khorasan_region
+            }
+            starting_technology_level = 3
+            include = "eurasian_muslim_tribe"
+            government = {
+                type = tribe
+                heir_selection = tribal_oldest_male
+                ruler = random
+                centralization_vs_decentralization = 85
+                aristocracy_vs_plutocracy = 90
+                serfdom_vs_free_subjects = 10
+                traditionalist_vs_innovative = -60
+                spiritualist_vs_humanist = 40
+                mercantilism_vs_free_trade = -50
+                offensive_vs_defensive = 40
+                land_vs_naval = -50
+                quality_vs_quantity = -70
+                belligerent_vs_conciliatory = 40
+                capital_economy_vs_traditional_economy = -80
+                individualism_vs_communalism = -40
+                outward_vs_inward = -10
+                laws = {
+                    legal_code_law = sharia_law_policy
+                    sharia_law = hanafi_policy
+                }
+            }
+            capital = bugulma
             religious_school = hanafi_school
             government = { mysticism_vs_jurisprudence = -15 }
         }
