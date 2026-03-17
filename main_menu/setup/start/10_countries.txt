@@ -67328,36 +67328,88 @@ countries = {
             capital = gladzor
         }
 
-        CIR = {
-            #Circassia
+        ZHA = { #Zhaneqo 
             own_control_core = {
-                kuzhyb shkhancheriekhabl
-                grigoropolisskaya novo_alexandrovskoye
-                armavir chatyun adyukh uspenskoye
-                maykop belorechensk moschevo
-                shanjir siba_circassia khadyzhi
-                susaco
-                akhtar kalininskaya bryukhovetskaya bzhedygu_kal ust_labinsk
-                kanevskaya starominskaya pavlovskaya tbilisskaya romanovsky_khutor
-                belaya_glina shcherbinovka
+                shanjir akhtar kalininskaya bryukhovetskaya bzhedygu_kal ust_labinsk kanevskaya starominskaya pavlovskaya
             }
-
             our_cores_conquered_by_others = {
                 tuapse
             }
-
             include = "expl_christian_caucasus"
             starting_technology_level = 3
             include = "eastern_european_monarchy_not_present"
             government = {
-                ruler = random
+                ruler = inal_nef
+                type = tribe
             }
-
             tolerated_cultures = {
                 abazin_culture
             }
-
-            capital = tuapse
+            capital = shanjir
+        }
+        KEM = { #Kemirgoy 
+            own_control_core = {
+                armavir chatyun adyukh uspenskoye kuzhyb shkhancheriekhabl
+            }
+            include = "expl_christian_caucasus"
+            starting_technology_level = 3
+            include = "eastern_european_monarchy_not_present"
+            government = {
+                ruler = maziqo_nef_fictional
+                type = tribe
+            }
+            tolerated_cultures = {
+                abazin_culture
+            }
+            capital = armavir
+        }
+        BSS = { #Besleney
+            own_control_core = {
+                maykop belorechensk moschevo
+            }
+            include = "expl_christian_caucasus"
+            starting_technology_level = 3
+            include = "eastern_european_monarchy_not_present"
+            government = {
+                ruler = anzor_nef_fictional
+                type = tribe
+            }
+            tolerated_cultures = {
+                abazin_culture
+            }
+            capital = maykop
+        }
+        QAB = { #Kabarda 
+            own_control_core = {
+                siba_circassia khadyzhi tbilisskaya romanovsky_khutor
+            }
+            include = "expl_christian_caucasus"
+            starting_technology_level = 3
+            include = "eastern_european_monarchy_not_present"
+            government = {
+                ruler = pshimaf_nef_fictional
+                type = tribe
+            }
+            tolerated_cultures = {
+                abazin_culture
+            }
+            capital = siba_circassia
+        }
+        KBZ = { #Kuban 
+            own_control_core = {
+                belaya_glina shcherbinovka grigoropolisskaya novo_alexandrovskoye susaco
+            }
+            include = "expl_christian_caucasus"
+            starting_technology_level = 3
+            include = "eastern_european_monarchy_not_present"
+            government = {
+                ruler = temruk_nef_fictional
+                type = tribe
+            }
+            tolerated_cultures = {
+                abazin_culture
+            }
+            capital = grigoropolisskaya
         }
 
         CPA = {

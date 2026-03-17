@@ -1,0 +1,358 @@
+circassia_defense_law = {
+	law_category = military
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:circassia_confederation
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	circassia_defense_policy = {
+		allow = {
+			NOT = { tag = GEN }
+		}
+		join_defensive_wars_always = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
+			scope:actor ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer_circassia
+						international_organization = root
+					}
+				}
+			}
+			international_organization:circassia_confederation ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer_circassia
+						international_organization = root
+					}
+				}
+			}
+		}
+		join_defensive_wars_auto_call = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
+			scope:actor ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer_circassia
+						international_organization = root
+					}
+				}
+			}
+			international_organization:circassia_confederation ?= {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer_circassia
+					international_organization = root
+				}
+			}
+			scope:target ?= {
+				OR = {
+					this = c:TUR
+					this = c:CRI
+				}
+			}
+		}
+		wants_propose_policy = {
+			subtract = { value = 1000 }
+		}
+	}
+}
+
+circassia_offense_law = {
+	law_category = military
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:circassia_confederation
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	circassia_offensive_coordination_policy = {
+		allow = {
+			NOT = { tag = GEN }
+		}
+		join_offensive_wars_can_call = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
+			scope:actor ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer_circassia
+						international_organization = root
+					}
+				}
+			}
+			international_organization:circassia_confederation ?= {
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer_circassia
+						international_organization = root
+					}
+				}
+			}
+		}
+		wants_propose_policy = {
+			subtract = { value = 1000 }
+		}
+	}
+	circassia_no_offense_policy = {
+		allow = {
+			NOT = { tag = GEN }
+		}
+		wants_propose_policy = {
+			subtract = { value = 1000 }
+		}
+	}
+}
+
+circassia_genoese_governance_law = {
+	law_category = administrative
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:circassia_confederation
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	no_genoese_local_governors_policy = {
+		allow = {
+			NOT = { tag = GEN }
+		}
+		wants_propose_policy = {
+			subtract = { value = 1000 }
+		}
+	}
+	genoese_local_governors_policy = {
+		allow = {
+			NOT = { tag = GEN }
+			country_exists = c:GEN
+			c:GEN = {
+				is_member_of_international_organization = international_organization:circassia_confederation
+				opinion = {
+					target = international_organization:circassia_confederation.leader_country
+					value >= 100
+				}
+				any_owned_location = {
+					region = region:steppes_region
+				}
+			}
+		}
+		wants_propose_policy = {
+			add = { value = 120 }
+			if = {
+				limit = {
+					international_organization:circassia_confederation = {
+						international_organization_has_leader = yes
+					}
+					c:GEN = {
+						opinion = {
+							target = international_organization:circassia_confederation.leader_country
+							value >= 100
+						}
+					}
+				}
+				add = { value = 120 }
+			}
+			else = {
+				subtract = { value = 200 }
+			}
+		}
+		wants_this_policy_bias = {
+			if = {
+				limit = { tag = GEN }
+				subtract = {
+					desc = "POLICY_RESTRICTS_SOVEREIGNTY"
+					value = 85
+				}
+				if = {
+					limit = {
+						international_organization:circassia_confederation = {
+							international_organization_has_leader = yes
+						}
+					}
+					add = {
+						desc = "POLICY_BIAS_OPINION_OF_IO_LEADER"
+						value = "opinion(international_organization:circassia_confederation.leader_country)"
+					}
+					add = {
+						desc = "IO_LEADER_DIP_REP"
+						value = international_organization:circassia_confederation.leader_country.modifier:diplomatic_reputation
+						multiply = 10
+					}
+				}
+				if = {
+					limit = { average_control_in_home_region < 0.55 }
+					add = {
+						desc = "VOTE_BASE_VALUE"
+						value = 35
+					}
+				}
+				if = {
+					limit = { monthly_balance < 0 }
+					add = {
+						desc = "VOTE_BASE_VALUE"
+						value = 25
+					}
+				}
+			}
+			else = {
+				add = {
+					desc = "DIPLOREASON_BASE"
+					value = 35
+				}
+				if = {
+					limit = {
+						international_organization:circassia_confederation = {
+							international_organization_has_leader = yes
+						}
+					}
+					add = {
+						desc = "POLICY_BIAS_OPINION_OF_IO_LEADER"
+						value = "opinion(international_organization:circassia_confederation.leader_country)"
+						multiply = 0.25
+					}
+				}
+			}
+			add = {
+				desc = "BIAS_FROM_RULER_TRAITS"
+				value = modifier:bias_for_diplomat_policies
+			}
+		}
+		on_fully_activated = {
+			if = {
+				limit = {
+					country_exists = c:GEN
+					c:GEN = {
+						is_member_of_international_organization = international_organization:circassia_confederation
+						any_owned_location = {
+							region = region:steppes_region
+						}
+					}
+				}
+				region:steppes_region = {
+					every_location_in_region = {
+						limit = {
+							owner = c:GEN
+						}
+						create_country_from_location = {
+							make_subject_of = {
+								target = c:GEN
+								type = subject_type:governorate
+							}
+							change_country_name = CIRCASSIA_GOVERNORATE_DYNAMIC
+							change_country_adjective = CIRCASSIA_GOVERNORATE_DYNAMIC_ADJ
+							save_scope_as = circassia_genoese_governor_country
+						}
+						if = {
+							limit = {
+								exists = scope:circassia_genoese_governor_country
+							}
+							scope:circassia_genoese_governor_country = {
+								every_owned_location = {
+									limit = {
+										owner ?= scope:circassia_genoese_governor_country
+									}
+									add_core = scope:circassia_genoese_governor_country
+									change_integration_level = core
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		months = 6
+	}
+}
+
+circassia_unification_law = {
+	law_category = centralization
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:circassia_confederation
+	}
+	allow = {
+		any_international_organization_member = {
+			count >= 2
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer_circassia
+					international_organization = root
+				}
+			}
+		}
+	}
+	custom_tags = {
+		forbids_no_policy
+	}
+	preserve_circassia_confederation_policy = {
+		allow = {
+			NOT = { tag = GEN }
+		}
+		wants_propose_policy = {
+			subtract = { value = 1000 }
+		}
+	}
+	unify_circassia_policy = {
+		allow = {
+			NOT = { tag = GEN }
+		}
+		wants_propose_policy = {
+			add = { value = 500 }
+		}
+		wants_this_policy_bias = {
+			add = {
+				value = prev_opinion_of_this
+				multiply = 0.3
+			}
+		}
+		on_fully_activated = {
+			custom_tooltip = circassia_unification_tt
+			every_international_organization_member = {
+				limit = {
+					NOT = { this = root.leader_country }
+					NOT = {
+						has_special_status_in_international_organization = {
+							type = special_status:league_backer_circassia
+							international_organization = root
+						}
+					}
+				}
+				root.leader_country = {
+					annex_country = {
+						country = prev
+						reason = Diplomatic
+					}
+				}
+			}
+			root.leader_country = {
+				form_country = formable_country:CIR_f
+				if = {
+					limit = { country_rank_level < 3 }
+					set_country_rank_effect = {
+						rank = country_rank:rank_kingdom
+					}
+				}
+			}
+			destroy_international_organization = {
+				target = root
+			}
+		}
+		years = 10
+	}
+}
