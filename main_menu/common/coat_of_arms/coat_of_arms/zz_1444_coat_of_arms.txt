@@ -79,7 +79,6 @@ HUM = {
         }
     }
 }
-
 CEP = {
 	# Cephalonia
     pattern = "pattern_vertical_split_01.dds"
@@ -104,7 +103,6 @@ CEP = {
         }
     }
 }
-
 MOE = {
 	pattern = "pattern_solid.dds"
 	color1 = "red"
@@ -118,7 +116,6 @@ MOE = {
 		instance = { position = { 0.5 0.475 } scale = { 0.9 0.9 } }				
 	}
 }
-
 CHG = {
     # Moghulistan/Chagatai
 	pattern = "pattern_solid.dds"
@@ -136,7 +133,6 @@ CHG = {
 		instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }				
 	}
 }
-
 UYG = {
 	# Uyghuristan
     pattern = "pattern_solid.dds"
@@ -150,7 +146,6 @@ UYG = {
         }
     }
 }
-
 BAL = {
     # Balochistan
     pattern = "pattern_triangle_bicolor.dds"
@@ -166,7 +161,6 @@ BAL = {
         }
     }
 }
-
 UZB = {
 	# Uzbek Khanate
     pattern = "pattern_solid.dds"
@@ -281,7 +275,6 @@ KAZ = {
         }
     }
 }
-
 SBR = {
     # Sibir
     pattern = "pattern_solid.dds"
@@ -295,7 +288,6 @@ SBR = {
         }
     }
 }
-
 NOG = { # Nogai
     pattern = "pattern_solid.dds"
     color1 = rgb { 85 170 255 }
@@ -317,7 +309,6 @@ NOG = { # Nogai
         }
     }
 }
-
 SRY = {
     # Yughur (Sarig Yogir)
     pattern = "pattern_solid.dds"
@@ -331,7 +322,6 @@ SRY = {
         }
     }
 }
-
 YRK = {  #Yarkent
     pattern = "pattern_border_venice.dds"
     color1 = rgb { 76 157 255 }
@@ -345,7 +335,6 @@ YRK = {  #Yarkent
         }
     }
 }
-
 #Mongol Dynasties
 IMP = { #Imperials
 	pattern = "pattern_solid.dds"
@@ -367,25 +356,333 @@ IMP = { #Imperials
 		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }		
 	}		
 }
-
-CRS = { # Choros
-	pattern = "pattern_solid.dds"
-	color1 = "yellow"
-	color2 = "red"
-	
-	colored_emblem = {
-		texture = "ce_crescent_moon_flametip.dds"
-		color1 = color2
-		color2 = color2
-		instance = { position = { 0.5 0.5 } scale = { 0.75 0.75 } }		
-	}	
-	colored_emblem = {
-		texture = "ce_border_ornament_mongol.dds"
-		color1 = color2
-		color2 = color2
-	}	
+BAX = { # Baarin Khalkha
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 255 0 0 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_adamyi.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
 }
-
+GOO = { # Gorlos Khalkha
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 255 0 0 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_ariq_buga.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+ELJ = { # Eljigin Khalkha
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 255 0 0 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_buiwan.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.586 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+OLK = { # Olkhonud Khalkha
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 255 0 0 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_doger.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+BZZ = { # Besud Khalkha
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 255 0 0 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_giray_03.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.496 }
+            scale = { 0.900 0.900 }
+        }
+    }
+}
+JAA = { # Jalayir Khalkha
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 255 0 0 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_jalayir.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+BYT = { # Bayaut Khalkha
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 255 0 0 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_kyrgyz_03.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+JAR = { # Jarud Khalkha
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 255 0 0 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_samsun.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+ADQ = { #Asud
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 83 12 53 }
+    colored_emblem = {
+        texture = "ce_tamgha_choijin.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.500 0.543 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+DOY = { #Doyan Guard
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 136 106 88 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_altai_13.dds"
+        color1 = rgb { 0 0 0 }
+        instance = {
+            position = { 0.495 0.488 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+FUY = { #Fuyu Guard
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 136 106 88 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_altai_11.dds"
+        color1 = rgb { 0 0 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+TIZ = { #Tai’nin Guard
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 136 106 88 }
+    color2 = rgb { 255 215 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_bao.dds"
+        color1 = rgb { 0 0 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+AUK = { #Altai Uriankhai
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 37 83 29 }
+    colored_emblem = {
+        texture = "ce_tamgha_altai_02.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+KUH = { #Khentii Uriankhai
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 37 83 29 }
+    colored_emblem = {
+        texture = "ce_tamgha_altai_08.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+TBU = { #Amur Uriankhai
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 37 83 29 }
+    colored_emblem = {
+        texture = "ce_tamgha_altai_15.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.505 0.504 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+KVU = { #Khövsgöl Uriankhai
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 37 83 29 }
+    colored_emblem = {
+        texture = "ce_tamgha_altai_10.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+QAS = { #Hasarids
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 23 19 143 }
+    color2 = rgb { 203 0 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_mongol_double_bow_03.dds"
+        color1 = rgb { 203 0 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+JAI = { #Jalaids
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 23 19 143 }
+    color2 = rgb { 203 0 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_mongol_alkh.dds"
+        color1 = rgb { 203 0 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+KDB = { #Dörbeds
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 23 19 143 }
+    color2 = rgb { 203 0 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_kaidu.dds"
+        color1 = rgb { 203 0 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+AKK = { #Aru
+    pattern = "pattern_fringe.dds"
+    color1 = rgb { 23 19 143 }
+    color2 = rgb { 203 0 0 }
+    colored_emblem = {
+        texture = "ce_tamgha_holog.dds"
+        color1 = rgb { 203 0 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+CRS = { #Choros
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 255 255 255 }
+    colored_emblem = {
+        texture = "ce_tamgha_khas_02.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+DRB = {  #Dörbet
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 255 255 255 }
+    colored_emblem = {
+        texture = "ce_tamgha_seree_iljigin.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+KHO = {  #Khoshut
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 255 255 255 }
+    colored_emblem = {
+        texture = "ce_tamgha_ram_horn.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+KHD = {  #Khoid
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 255 255 255 }
+    colored_emblem = {
+        texture = "ce_tamgha_tatar_tama.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+TRH = {  #Torghut
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 255 255 255 }
+    colored_emblem = {
+        texture = "ce_tamgha_tatar_dulat.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+TVA = { #Tuva
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 73 255 255 }
+    colored_emblem = {
+        texture = "ce_tamgha_oirat_buily.dds"
+        color1 = rgb { 255 215 0 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
 YKZ = { # Yenisei Kirgyz
 	pattern = "pattern_solid.dds"
 	color1 = "green"
@@ -398,7 +695,6 @@ YKZ = { # Yenisei Kirgyz
 		instance = { position = { 0.5 0.5 } scale = { 0.85 0.85 } }
 	}	
 }
-
 KYZ = { #Kyrgyz Pop
     pattern = "pattern_solid.dds"
     color1 = rgb { 170 0 0 }
@@ -419,9 +715,7 @@ KYZ = { #Kyrgyz Pop
         }
     }
 }
-
-KNS = {
-    # Kunság, also Cumania
+KNS = { # Kunság, also Cumania
     pattern = "pattern_solid.dds"
     color1 = rgb { 0 160 228 }
     textured_emblem = {

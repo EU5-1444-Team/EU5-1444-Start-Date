@@ -1,0 +1,58 @@
+namespace = tatar_yoke_events
+
+tatar_yoke_events.1 = {
+    type = country_event
+    title = tatar_yoke_events.1.title
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+                }
+                desc = tatar_yoke_events.1.desc_rus
+            }
+            triggered_desc = {
+                desc = tatar_yoke_events.1.desc_horde
+            }
+        }
+    }
+    
+    immediate = {
+        event_illustration_estate_effect = {
+            foreground = estate_type:nobles_estate
+            background = estate_type:nobles_estate
+        }
+    }
+    
+    illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+    
+    option = {
+        name = {
+            first_valid = {
+                triggered_desc = {
+                trigger = {
+                    NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+                }
+                    desc = tatar_yoke_events.1.a_rus
+                }
+                triggered_desc = {
+                    desc = tatar_yoke_events.1.a_horde
+                }
+            }
+        }
+        if = {
+            trigger = {
+                NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+            }
+            add_prestige = prestige_extreme_bonus
+            add_legitimacy = legitimacy_mild_bonus
+        }
+        else = {
+            add_prestige = prestige_mild_penalty
+            add_stability = stability_mild_penalty
+        }
+    }
+}
