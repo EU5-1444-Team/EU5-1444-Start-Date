@@ -1,86 +1,86 @@
-cb_seize_yuan = {
-    visible = {
-        exists = international_organization:northern_yuan
-        is_member_of_international_organization = international_organization:northern_yuan
-        NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
-        scope:target = {
-            is_leader_of_international_organization = international_organization:northern_yuan
-        }
-    }
-    allow_creation = {
-        is_member_of_international_organization = international_organization:northern_yuan
-        NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
-        ruler_or_heir_if_regent ?= {
-            OR = {
-                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
-                is_patrilineal_descendant_of = dynasty:jochi_dynasty
-                is_patrilineal_descendant_of = dynasty:giray_dynasty
-                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
-                is_patrilineal_descendant_of = dynasty:khasar_dynasty
-            }
-        }
-    }
-    war_goal_type = seize_yuan_wargoal
-    ai_will_do = {
-        add = {
-            desc = "CB_REASON_IMPORTANT_CB"
-            value = 100
-        }
-    }
-}
-
-cb_seize_protector_general = {
-    visible = {
-        exists = international_organization:northern_yuan
-        is_member_of_international_organization = international_organization:northern_yuan
-        NOT = {
-            has_special_status_in_international_organization = {
-                type = special_status:protector_general
-                international_organization = international_organization:northern_yuan
-            }
-        }
-        scope:target = {
-            has_special_status_in_international_organization = {
-                type = special_status:protector_general
-                international_organization = international_organization:northern_yuan
-            }
-        }
-    }
-    allow_creation = {
-        is_member_of_international_organization = international_organization:northern_yuan
-        NOT = {
-            has_special_status_in_international_organization = {
-                type = special_status:protector_general
-                international_organization = international_organization:northern_yuan
-            }
-        }
-    }
-    war_goal_type = seize_protector_general_wargoal
-    ai_will_do = {
-        add = {
-            desc = "CB_REASON_IMPORTANT_CB"
-            value = 100
-        }
-    }
-}
-
-cb_northern_yuan_raid = {
-    visible = {
-        exists = international_organization:northern_yuan
-        is_member_of_international_organization = international_organization:northern_yuan
-        scope:target = {
-            is_member_of_international_organization = international_organization:northern_yuan
-            NOT = { this = root }
-        }
-    }
-    allow_creation = {
-        NOT = { has_truce_with = scope:target }
-    }
-    war_goal_type = northern_yuan_raid_wargoal
-    ai_will_do = {
-        add = {
-            desc = "BASE"
-            value = 60
-        }
-    }
-}
+#cb_seize_yuan = {
+#    visible = {
+#        exists = international_organization:northern_yuan
+#        is_member_of_international_organization = international_organization:northern_yuan
+#        NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+#        scope:target = {
+#            is_leader_of_international_organization = international_organization:northern_yuan
+#        }
+#    }
+#    allow_creation = {
+#        is_member_of_international_organization = international_organization:northern_yuan
+#        NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+#        ruler_or_heir_if_regent ?= {
+#            OR = {
+#                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+#                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+#                is_patrilineal_descendant_of = dynasty:giray_dynasty
+#                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+#                is_patrilineal_descendant_of = dynasty:khasar_dynasty
+#            }
+#        }
+#    }
+#    war_goal_type = seize_yuan_wargoal
+#    ai_will_do = {
+#        add = {
+#            desc = "CB_REASON_IMPORTANT_CB"
+#            value = 100
+#        }
+#    }
+#}
+#
+#cb_seize_protector_general = {
+#    visible = {
+#        exists = international_organization:northern_yuan
+#        is_member_of_international_organization = international_organization:northern_yuan
+#        NOT = {
+#            has_special_status_in_international_organization = {
+#                type = special_status:protector_general
+#                international_organization = international_organization:northern_yuan
+#            }
+#        }
+#        scope:target = {
+#            has_special_status_in_international_organization = {
+#                type = special_status:protector_general
+#                international_organization = international_organization:northern_yuan
+#            }
+#        }
+#    }
+#    allow_creation = {
+#        is_member_of_international_organization = international_organization:northern_yuan
+#        NOT = {
+#            has_special_status_in_international_organization = {
+#                type = special_status:protector_general
+#                international_organization = international_organization:northern_yuan
+#            }
+#        }
+#    }
+#    war_goal_type = seize_protector_general_wargoal
+#    ai_will_do = {
+#        add = {
+#            desc = "CB_REASON_IMPORTANT_CB"
+#            value = 100
+#        }
+#    }
+#}
+#
+#cb_northern_yuan_raid = {
+#    visible = {
+#        exists = international_organization:northern_yuan
+#        is_member_of_international_organization = international_organization:northern_yuan
+#        scope:target = {
+#            is_member_of_international_organization = international_organization:northern_yuan
+#            NOT = { this = root }
+#        }
+#    }
+#    allow_creation = {
+#        NOT = { has_truce_with = scope:target }
+#    }
+#    war_goal_type = northern_yuan_raid_wargoal
+#    ai_will_do = {
+#        add = {
+#            desc = "BASE"
+#            value = 60
+#        }
+#    }
+#}

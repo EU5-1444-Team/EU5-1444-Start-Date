@@ -1,4 +1,4 @@
-local_administration = {
+mongol_local_administration = {
 	type = international_organization
 	law_category = administrative
 	requires_vote = no
@@ -19,13 +19,13 @@ local_administration = {
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = {
+			leader_country ?= {
 				has_variable = local_adm_law_cooldown_variable
 			}
 		}
 	}
 
-	tribal_administration_policy = {
+	mongol_tribal_administration_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -64,7 +64,7 @@ local_administration = {
 		}
 	}
 
-	sinicized_administration_policy = {
+	mongol_sinicized_administration_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -105,7 +105,7 @@ local_administration = {
 	}
 }
 
-tax_obligations = {
+mongol_tax_obligations = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -126,13 +126,13 @@ tax_obligations = {
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = {
+			leader_country ?= {
 				has_variable = tax_law_cooldown_variable
 			}
 		}
 	}
 
-	no_tax_obligations_policy = {
+	mongol_no_tax_obligations_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -165,7 +165,7 @@ tax_obligations = {
 		}
 	}
 
-	fair_tax_obligations_policy = {
+	mongol_fair_tax_obligations_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -198,7 +198,7 @@ tax_obligations = {
 		}
 	}
 
-	extensive_tax_obligations_policy = {
+	mongol_extensive_tax_obligations_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -233,7 +233,7 @@ tax_obligations = {
 	}
 }
 
-court_etiquette = {
+mongol_court_etiquette = {
 	type = international_organization
 	law_category = estates
 	requires_vote = no
@@ -254,13 +254,13 @@ court_etiquette = {
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = {
+			leader_country ?= {
 				has_variable = court_law_cooldown_variable
 			}
 		}
 	}
 
-	no_court_etiquette_policy = {
+	mongol_no_court_etiquette_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -293,7 +293,7 @@ court_etiquette = {
 		}
 	}
 
-	basic_court_etiquette_policy = {
+	mongol_basic_court_etiquette_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -327,7 +327,7 @@ court_etiquette = {
 		}
 	}
 
-	sinicized_court_etiquette_policy = {
+	mongol_sinicized_court_etiquette_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -362,7 +362,7 @@ court_etiquette = {
 	}
 }
 
-formal_script = {
+mongol_formal_script = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -383,11 +383,11 @@ formal_script = {
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = script_law_cooldown_variable }
+			leader_country ?= { has_variable = script_law_cooldown_variable }
 		}
 	}
 
-	mongol_script_policy = {
+	mongol_mongol_script_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -426,7 +426,7 @@ formal_script = {
 		}
 	}
 
-	sinicized_script_policy = {
+	mongol_sinicized_script_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -467,7 +467,7 @@ formal_script = {
 	}
 }
 
-legal_framework = {
+mongol_legal_framework = {
 	type = international_organization
 	law_category = administrative
 	requires_vote = no
@@ -488,11 +488,11 @@ legal_framework = {
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = legal_law_cooldown_variable }
+			leader_country ?= { has_variable = legal_law_cooldown_variable }
 		}
 	}
 
-	no_legal_framework_policy = {
+	mongol_no_legal_framework_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -525,7 +525,7 @@ legal_framework = {
 		}
 	}
 
-	basic_legal_framework_policy = {
+	mongol_basic_legal_framework_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -558,7 +558,7 @@ legal_framework = {
 		}
 	}
 
-	sinicized_legal_framework_policy = {
+	mongol_sinicized_legal_framework_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -593,7 +593,7 @@ legal_framework = {
 	}
 }
 
-economic_framework = {
+mongol_economic_framework = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -614,11 +614,11 @@ economic_framework = {
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = economic_framework_cooldown_variable }
+			leader_country ?= { has_variable = economic_framework_cooldown_variable }
 		}
 	}
 
-	shared_crops_policy = {
+	mongol_shared_crops_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -652,7 +652,7 @@ economic_framework = {
 		}
 	}
 
-	decentralized_farming_villages = {
+	mongol_decentralized_farming_villages = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -685,7 +685,7 @@ economic_framework = {
 		}
 	}
 
-	financed_rgo_policy = {
+	mongol_financed_rgo_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -720,7 +720,7 @@ economic_framework = {
 	}
 }
 
-trade_relations = {
+mongol_trade_relations = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -741,11 +741,11 @@ trade_relations = {
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = trade_law_cooldown_variable }
+			leader_country ?= { has_variable = trade_law_cooldown_variable }
 		}
 	}
 
-	clan_trade_only_policy = {
+	mongol_clan_trade_only_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -779,7 +779,7 @@ trade_relations = {
 		}
 	}
 
-	allow_foreign_exchanges_policy = {
+	mongol_allow_foreign_exchanges_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -813,7 +813,7 @@ trade_relations = {
 		}
 	}
 
-	chinese_tribute_policy = {
+	mongol_chinese_tribute_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -848,7 +848,7 @@ trade_relations = {
 	}
 }
 
-clan_diplomacy = {
+mongol_clan_diplomacy = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -869,11 +869,11 @@ clan_diplomacy = {
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = diplomacy_law_cooldown_variable }
+			leader_country ?= { has_variable = diplomacy_law_cooldown_variable }
 		}
 	}
 
-	no_embassies_policy = {
+	mongol_no_embassies_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -906,7 +906,7 @@ clan_diplomacy = {
 		}
 	}
 
-	clan_embassies_policy = {
+	mongol_clan_embassies_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -940,7 +940,7 @@ clan_diplomacy = {
 		}
 	}
 
-	chinese_embassies_policy = {
+	mongol_chinese_embassies_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -1003,10 +1003,6 @@ khalkha_unification_law = {
                 value = prev_opinion_of_this
                 multiply = 0.3
             }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
-            }
         }
 
         on_activate = {
@@ -1062,10 +1058,6 @@ khorchin_unification_law = {
                 value = prev_opinion_of_this
                 multiply = 0.3
             }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
-            }
         }
 
         on_activate = {
@@ -1119,10 +1111,6 @@ oirat_unification_law = {
             add = {
                 value = prev_opinion_of_this
                 multiply = 0.3
-            }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
             }
         }
 
@@ -1179,10 +1167,6 @@ nogai_unification_law = {
                 value = prev_opinion_of_this
                 multiply = 0.3
             }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
-            }
         }
 
         on_activate = {
@@ -1221,7 +1205,7 @@ bashkir_unification_law = {
         international_organization = {
             total_members >= 2
         }
-        leader_country = {
+        leader_country ?= {
             societal_value:centralization_vs_decentralization < -40
         }
     }
@@ -1237,10 +1221,6 @@ bashkir_unification_law = {
             add = {
                 value = prev_opinion_of_this
                 multiply = 0.3
-            }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
             }
         }
 
@@ -1276,10 +1256,6 @@ bashkir_unification_law = {
             add = {
                 value = prev_opinion_of_this
                 multiply = 0.3
-            }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
             }
         }
 

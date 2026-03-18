@@ -21,14 +21,14 @@ khorchin_confederation = {
     can_declare_war = { always = yes }
 
     laws = {
-        local_administration = tribal_administration_policy
-        tax_obligations = no_tax_obligations_policy
-        court_etiquette = no_court_etiquette_policy
-        formal_script = mongol_script_policy
-        legal_framework = no_legal_framework_policy
-        economic_framework = shared_crops_policy
-        trade_relations = clan_trade_only_policy
-        clan_diplomacy = no_embassies_policy
+        mongol_local_administration = mongol_tribal_administration_policy
+        mongol_tax_obligations = mongol_no_tax_obligations_policy
+        mongol_court_etiquette = mongol_no_court_etiquette_policy
+        mongol_formal_script = mongol_mongol_script_policy
+        mongol_legal_framework = mongol_no_legal_framework_policy
+        mongol_economic_framework = mongol_shared_crops_policy
+        mongol_trade_relations = mongol_clan_trade_only_policy
+        mongol_clan_diplomacy = mongol_no_embassies_policy
     }
 
     modifier = {
@@ -64,7 +64,17 @@ khorchin_confederation = {
     on_joined = {}
     on_left = {}
 
-    ai_desire_to_join = {}
+    ai_desire_to_join = {
+        if = {
+            limit = {
+                culture = culture:khorchin_culture
+            }
+            add = {
+                desc = "SHARED_MONGOL_HERITAGE"
+                value = 50 
+            }
+        }
+    }
     ai_desire_to_allow_new_member = {
         add = {
             desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"

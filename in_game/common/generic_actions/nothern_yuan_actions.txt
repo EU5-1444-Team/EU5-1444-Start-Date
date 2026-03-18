@@ -1,107 +1,107 @@
-claim_protector_general = {
-    type = internationalorganization
-    ai_tick = monthly
-    ai_tick_frequency = 12
-    automation_tick = never
-    automation_tick_frequency = 12
-    potential = {
-        scope:recipient = { international_organization_type = international_organization_type:northern_yuan }
-    }
-    allow = {
-        scope:actor = {
-            is_leader_of_international_organization = international_organization:northern_yuan
-            NOT = {
-                has_special_status_in_international_organization = {
-                    type = special_status:protector_general
-                    international_organization = international_organization:northern_yuan
-                }
-            }
-        }
-        international_organization:northern_yuan = {
-            NOT = {
-                any_international_organization_member = {
-                    has_special_status_in_international_organization = {
-                        type = special_status:protector_general
-                        international_organization = international_organization:northern_yuan
-                    }
-                }
-            }
-        }
-    }
-    select_trigger = {
-        looking_for_a = international_organization
-        source = actor
-        target_flag = recipient
-        name = "choose_international_organization"
-        column = { data = name }
-        visible = {
-            international_organization_type = international_organization_type:northern_yuan
-        }
-    }
-    effect = {
-        if = {
-            limit = { exists = scope:actor }
-            international_organization:northern_yuan = {
-                international_organization_add_special_status = {
-                    type = special_status:protector_general
-                    country = scope:actor
-                }
-            }
-        }
-    }
-    ai_will_do = {
-        add = 50
-    }
-}
-unite_uriankhai = {
-    type = internationalorganization
-    ai_tick = monthly
-    ai_tick_frequency = 12
-    automation_tick = never
-    automation_tick_frequency = 12
-    potential = {
-        scope:recipient = { international_organization_type = international_organization_type:northern_yuan }
-        scope:actor = {
-            is_leader_of_international_organization = international_organization:northern_yuan
-        }
-    }
-    allow = {
-        scope:actor = {
-            NOT = { has_variable = uriankhai_united_variable }
-        }
-        OR = {
-            exists = c:KUH
-            exists = c:KVU
-            exists = c:TBU
-            exists = c:AUK
-        }
-        international_organization:northern_yuan = {
-            OR = {
-                international_organization_has_policy = policy:yuan_offensive_call_policy
-                international_organization_has_policy = policy:standardized_tumen_policy
-            }
-        }
-    }
-    select_trigger = {
-        looking_for_a = international_organization
-        source = actor
-        target_flag = recipient
-        name = "choose_international_organization"
-        column = { data = name }
-        visible = {
-            international_organization_type = international_organization_type:northern_yuan
-        }
-    }
-    effect = {
-        scope:actor = {
-            trigger_event_non_silently = northern_yuan.200
-            set_variable = {
-                name = uriankhai_united_variable
-                value = yes
-            }
-        }
-    }
-    ai_will_do = {
-        add = 50
-    }
-}
+#claim_protector_general = {
+#    type = internationalorganization
+#    ai_tick = monthly
+#    ai_tick_frequency = 12
+#    automation_tick = never
+#    automation_tick_frequency = 12
+#    potential = {
+#        scope:recipient = { international_organization_type = international_organization_type:northern_yuan }
+#    }
+#    allow = {
+#        scope:actor = {
+#            is_leader_of_international_organization = international_organization:northern_yuan
+#            NOT = {
+#                has_special_status_in_international_organization = {
+#                    type = special_status:protector_general
+#                    international_organization = international_organization:northern_yuan
+#                }
+#            }
+#        }
+#        international_organization:northern_yuan = {
+#            NOT = {
+#                any_international_organization_member = {
+#                    has_special_status_in_international_organization = {
+#                        type = special_status:protector_general
+#                        international_organization = international_organization:northern_yuan
+#                    }
+#                }
+#            }
+#        }
+#    }
+#    select_trigger = {
+#        looking_for_a = international_organization
+#        source = actor
+#        target_flag = recipient
+#        name = "choose_international_organization"
+#        column = { data = name }
+#        visible = {
+#            international_organization_type = international_organization_type:northern_yuan
+#        }
+#    }
+#    effect = {
+#        if = {
+#            limit = { exists = scope:actor }
+#            international_organization:northern_yuan = {
+#                international_organization_add_special_status = {
+#                    type = special_status:protector_general
+#                    country = scope:actor
+#                }
+#            }
+#        }
+#    }
+#    ai_will_do = {
+#        add = 50
+#    }
+#}
+#unite_uriankhai = {
+#    type = internationalorganization
+#    ai_tick = monthly
+#    ai_tick_frequency = 12
+#    automation_tick = never
+#    automation_tick_frequency = 12
+#    potential = {
+#        scope:recipient = { international_organization_type = international_organization_type:northern_yuan }
+#        scope:actor = {
+#            is_leader_of_international_organization = international_organization:northern_yuan
+#        }
+#    }
+#    allow = {
+#        scope:actor = {
+#            NOT = { has_variable = uriankhai_united_variable }
+#        }
+#        OR = {
+#            exists = c:KUH
+#            exists = c:KVU
+#            exists = c:TBU
+#            exists = c:AUK
+#        }
+#        international_organization:northern_yuan = {
+#            OR = {
+#                international_organization_has_policy = policy:yuan_offensive_call_policy
+#                international_organization_has_policy = policy:standardized_tumen_policy
+#            }
+#        }
+#    }
+#    select_trigger = {
+#        looking_for_a = international_organization
+#        source = actor
+#        target_flag = recipient
+#        name = "choose_international_organization"
+#        column = { data = name }
+#        visible = {
+#            international_organization_type = international_organization_type:northern_yuan
+#        }
+#    }
+#    effect = {
+#        scope:actor = {
+#            trigger_event_non_silently = northern_yuan.200
+#            set_variable = {
+#                name = uriankhai_united_variable
+#                value = yes
+#            }
+#        }
+#    }
+#    ai_will_do = {
+#        add = 50
+#    }
+#}
