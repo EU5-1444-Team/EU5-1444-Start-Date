@@ -9,8 +9,12 @@ oirat_confederation = {
     has_leader_country = yes
     leader_type = country
     leader_title_key = "OIRAT_LEADER"
-    leader_change_method = mongol_election
-    
+    leader_change_trigger_type = rulerchange
+	leader_change_method = vote
+	leadership_election_resolution = international_organization_election
+	leader_score = {
+		value = great_power_score
+	}
     create_visible_trigger = { always = no }
     invite_visible_trigger = { always = yes }
 
@@ -25,7 +29,6 @@ oirat_confederation = {
         economic_framework = shared_crops_policy
         trade_relations = clan_trade_only_policy
         clan_diplomacy = no_embassies_policy
-        oirat_unification_law = no_unification_policy
     }
 
     modifier = {

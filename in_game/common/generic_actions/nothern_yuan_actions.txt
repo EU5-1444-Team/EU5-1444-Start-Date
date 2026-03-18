@@ -64,6 +64,11 @@ unite_uriankhai = {
         scope:actor = {
             is_leader_of_international_organization = international_organization:northern_yuan
         }
+    }
+    allow = {
+        scope:actor = {
+            NOT = { has_variable = uriankhai_united_variable }
+        }
         OR = {
             exists = c:KUH
             exists = c:KVU
@@ -75,11 +80,6 @@ unite_uriankhai = {
                 international_organization_has_policy = policy:yuan_offensive_call_policy
                 international_organization_has_policy = policy:standardized_tumen_policy
             }
-        }
-    }
-    allow = {
-        scope:actor = {
-            NOT = { has_variable = uriankhai_united_variable }
         }
     }
     select_trigger = {
