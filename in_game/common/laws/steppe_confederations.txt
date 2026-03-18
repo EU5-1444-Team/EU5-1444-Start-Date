@@ -859,7 +859,7 @@ clan_diplomacy = {
             international_organization_type = international_organization_type:oirat_confederation
 			international_organization_type = international_organization_type:nogai_confederation
 			international_organization_type = international_organization_type:bashkir_confederation
-        }
+		}
 	}
 	allow = {
 		leader_country ?= { 
@@ -1047,10 +1047,13 @@ khorchin_unification_law = {
     }
 
     allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
+		international_organization = {
+			total_members >= 2
+		}
+		leader_country ?= {
+			societal_value:centralization_vs_decentralization < -40
+		}
+	}
 
     custom_tags = { forbids_no_policy }
 
@@ -1108,10 +1111,13 @@ oirat_unification_law = {
     }
 
     allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
+		international_organization = {
+			total_members >= 2
+		}
+		leader_country ?= {
+			societal_value:centralization_vs_decentralization < -40
+		}
+	}
 
     custom_tags = { forbids_no_policy }
 
@@ -1170,10 +1176,13 @@ nogai_unification_law = {
     }
 
     allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
+		international_organization = {
+			total_members >= 2
+		}
+		leader_country ?= {
+			societal_value:centralization_vs_decentralization < -40
+		}
+	}
 
     custom_tags = { forbids_no_policy }
 

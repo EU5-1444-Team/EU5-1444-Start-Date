@@ -19,3 +19,45 @@ country_is_main_branch = {
         country = $country$
     }
 }
+
+northern_yuan_can_select_adjacent_reform_level = {
+	$law$ = {
+		save_temporary_scope_as = law_scope
+	}
+	$policy$ = {
+		save_temporary_scope_as = policy_scope
+	}
+	trigger_if = {
+		limit = {
+			exists = scope:law_scope
+			exists = scope:policy_scope
+			international_organization_has_law = scope:law_scope
+			exists = "law_policy(scope:law_scope)"
+		}
+		trigger_if = {
+			limit = { "law_policy(scope:law_scope)" = { policy_level > policy_level_upper_level } }
+			custom_description = {
+				text = northern_yuan_can_select_adjacent_reform_level_low
+				object = scope:law_scope
+				value = policy_level_upper_level
+				"law_policy(scope:law_scope)" = { policy_level <= policy_level_upper_level }
+			}
+		}
+		trigger_else = {
+			hidden_trigger = { always = yes }
+		}
+		trigger_if = {
+			limit = { "law_policy(scope:law_scope)" = { policy_level < policy_level_lower_level } }
+			custom_description = {
+				text = northern_yuan_can_select_adjacent_reform_level_up
+				object = scope:law_scope
+				value = policy_level_lower_level
+				"law_policy(scope:law_scope)" = { policy_level >= policy_level_lower_level }
+			}
+		}
+		trigger_else = {
+			hidden_trigger = { always = yes }
+		}
+	}
+	trigger_else = { hidden_trigger = { always = yes } }
+}
