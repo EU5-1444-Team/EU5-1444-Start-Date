@@ -12,32 +12,72 @@ country_name_construction = {
 		}
 	}
 	text = {
+		localization_key = country_name_construction_name
+		trigger = {
+			tag = GTH
+			government_type = government_type:steppe_horde
+		}
+	}
+	text = {
+		localization_key = country_name_construction_name
+		trigger = {
+			tag = SBR
+			government_type = government_type:steppe_horde
+			OR = {
+				c:UZB = {
+					is_subject_of = c:SBR
+				}
+				owns = location:sighnaq
+			}
+		}
+	}
+	text = {
+		localization_key = country_name_construction_name
+		trigger = {
+			government_type = government_type:steppe_horde
+			tag = GLH
+			OR = {
+				ruler_or_heir_if_regent.dynasty ?= {
+					dynasty:jochi_dynasty ?= this
+				}
+				ruler_or_heir_if_regent.dynasty ?= {
+					dynasty:giray_dynasty ?= this
+				}
+			}
+		}
+	}
+	text = {
 		localization_key = country_name_construction_prefix_name
 		trigger = {
-			NOT = { tag = DAI }
+			NOT = {
+				tag = DAI
+			}
 			OR = {
-				AND = { 
+				AND = {
 					country_rank ?= country_rank:rank_empire
-            		court_language ?= { language_family ?= language_family:chinese_language_family }
+					court_language ?= {
+						language_family ?= language_family:chinese_language_family
+					}
 				}
 				is_leader_of_international_organization = international_organization:middle_kingdom
 			}
 		}
 	}
-
-	text = { #Preventing Northern Yuan Khaganate
+	text = {
+		#Preventing Northern Yuan Khaganate
 		localization_key = country_name_northern_yuan
 		trigger = {
-            government_type = government_type:steppe_horde
-            tag = YUA
-        }
+			government_type = government_type:steppe_horde
+			tag = YUA
+		}
 	}
-	text = { #Preventing Imperial Yuan Khaganate
+	text = {
+		#Preventing Imperial Yuan Khaganate
 		localization_key = country_name_imperial_yuan
 		trigger = {
-            government_type = government_type:steppe_horde
-            tag = IMP
-        }
+			government_type = government_type:steppe_horde
+			tag = IMP
+		}
 	}
 	text = {
 		localization_key = country_name_construction_prefix_rank_of_name_but_map_is_just_prefix_rank
@@ -72,53 +112,32 @@ country_name_construction = {
 			}
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_name_rank
 		trigger = {
 			government_type = government_type:monarchy
 			OR = {
-				country_rank = country_rank:rank_kingdom 
+				country_rank = country_rank:rank_kingdom
 				country_rank = country_rank:rank_empire
 			}
 			tag = MAL
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_name_rank
 		trigger = {
 			has_reform = government_reform:turkoman_confederation
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_name
 		trigger = {
 			country_rank ?= country_rank:rank_empire
-			court_language ?= { language_family ?= language_family:chinese_language_family }
-		}
-	}
-
-	text = {
-		localization_key = country_name_construction_name
-		trigger = {
-			tag = GTH
-			government_type = government_type:steppe_horde
-		}
-	}
-
-	text = {
-		localization_key = country_name_construction_name
-		trigger = {
-			government_type = government_type:steppe_horde
-			tag = GLH
-			culture = {
-				has_culture_group = culture_group:mongolian_group
+			court_language ?= {
+				language_family ?= language_family:chinese_language_family
 			}
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_rank_of_name
 		trigger = {
@@ -132,7 +151,6 @@ country_name_construction = {
 			}
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_name_horde
 		trigger = {
@@ -146,15 +164,6 @@ country_name_construction = {
 			}
 		}
 	}
-
-	text = {
-		localization_key = country_name_construction_name
-		trigger = {
-			government_type = government_type:steppe_horde
-			tag = GLH
-		}
-	}
-
 	text = {
 		localization_key = country_name_construction_prefix_rank_of_name
 		trigger = {
@@ -166,14 +175,12 @@ country_name_construction = {
 			}
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_name_horde
 		trigger = {
 			government_type = government_type:steppe_horde
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_name_rank
 		trigger = {
@@ -181,7 +188,6 @@ country_name_construction = {
 			has_reform = government_reform:shamkhalate
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_name_rank
 		trigger = {
@@ -189,22 +195,21 @@ country_name_construction = {
 			has_reform = government_reform:utsmiate
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_adjective_rank
 		trigger = {
 			OR = {
 				AND = {
-					country_rank = country_rank:rank_empire 
+					country_rank = country_rank:rank_empire
 					NOT = {
 						OR = {
 							tag = LAT
 							tag = GLH
 							tag = GTH
+							tag = SBR
 						}
 					}
 				}
-				
 				tag = TIM
 				tag = CHG
 				tag = LAT
@@ -212,50 +217,48 @@ country_name_construction = {
 					tag = PLC
 					country_rank = country_rank:rank_kingdom
 				}
-				
 				AND = {
 					country_rank = country_rank:rank_duchy
 					government_type = government_type:republic
 					culture = culture:frisian
 				}
-				
 				AND = {
 					tag = HSA
 					government_type = government_type:republic
 				}
-				
 				AND = {
 					has_reform = government_reform:military_order_reform
 					OR = {
 						country_rank = country_rank:rank_kingdom
 						country_rank = country_rank:rank_duchy
 					}
-					NOT = { tag = KNI }
+					NOT = {
+						tag = KNI
+					}
 				}
 				AND = {
 					tag = AVR
-					has_reform = government_reform:nutsaldom			}
-			AND = {
-				tag = KAI
-				has_reform = government_reform:utsmiate				}
+					has_reform = government_reform:nutsaldom
+				}
+				AND = {
+					tag = KAI
+					has_reform = government_reform:utsmiate
+				}
 				has_reform = government_reform:japanese_clan
 				has_reform = government_reform:gelugpa_institution
 				country_type = pop
 			}
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_sultanate
 		trigger = {
 			religion.group = religion_group:muslim
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_crown
 		trigger = {
-
 			country_rank_is_kingdom = yes
 			OR = {
 				tag = ARA
@@ -268,10 +271,13 @@ country_name_construction = {
 			}
 		}
 	}
-
 	text = {
 		localization_key = country_name_construction_prefix_rank_of_name
 		fallback = yes
 	}
 }
-country_name_construction_map = { parent = country_name_construction suffix = "_map" }
+
+country_name_construction_map = {
+	parent = country_name_construction
+	suffix = "_map"
+}
