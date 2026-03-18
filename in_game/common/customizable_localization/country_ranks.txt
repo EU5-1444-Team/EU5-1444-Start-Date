@@ -87,17 +87,6 @@ country_flavor = {
             government_type = government_type:theocracy
         }
     }
-    #Yuan not being Imperial Yuan Khaganate
-    text = {
-        localization_key = imp_not_khaganate
-        trigger = {
-            government_type = government_type:steppe_horde
-            or = {
-                tag = IMP
-                tag = YUA
-            }
-        }
-    }
     # Uriankhai Tumen
     text = {
         localization_key = uriankhai_tumen
@@ -163,6 +152,29 @@ country_flavor = {
                 tag = DNC
                 tag = ZAZ
                 tag = KOY
+            }
+        }
+    }
+    #Orda
+    text = {
+        localization_key = horde_yurt_confederation
+        trigger = {
+    		is_leader_of_international_organization = international_organization:nogai_confederation
+        }
+    }
+
+    #Yurt
+    text = {
+        localization_key = horde_yurt
+        trigger = {
+            government_type = government_type:steppe_horde
+            OR = {
+                tag = MGH
+                tag = JAK
+                tag = AOG
+                tag = QON
+                tag = NWM
+                tag = JIK
             }
         }
     }
@@ -423,17 +435,25 @@ country_flavor = {
         localization_key = rank_empire_horde
         trigger = {
             country_rank_is_empire = yes
-            tag = AVR
-            has_reform = government_reform:nutsaldom
-        }
-    }
-
-    text = {
-        localization_key = rank_empire_horde
-        trigger = {
-            country_rank_is_empire = yes
-            tag = TRK
-            has_reform = government_reform:shamkhalate
+            government_type = government_type:steppe_horde
+            OR = {
+                AND = {
+                    tag = GLH
+                    OR = {
+				        ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this }
+				        ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this }
+			        }
+                }
+                AND = {
+                    tag = SBR
+                    OR = {
+                        c:UZB ?= { is_subject_of = root }
+                        owns = location:sighnaq
+                    }
+                }
+                tag = NOG
+                tag = GTH
+            }
         }
     }
 
@@ -1147,29 +1167,29 @@ country_flavor = {
         localization_key = rank_kingdom_horde
         trigger = {
             country_rank_is_kingdom = yes
-            tag = AVR
-            has_reform = government_reform:nutsaldom
+            government_type = government_type:steppe_horde
+            OR = {
+                AND = {
+                    tag = GLH
+                    OR = {
+				        ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this }
+				        ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this }
+			        }
+                }
+                AND = {
+                    tag = SBR
+                    OR = {
+                        c:UZB ?= { is_subject_of = root }
+                        owns = location:sighnaq
+                    }
+                }
+                tag = NOG
+                tag = GTH
+            }
         }
     }
-
-    text = {
-        localization_key = rank_kingdom_horde
-        trigger = {
-            country_rank_is_kingdom = yes
-            tag = TRK
-            has_reform = government_reform:shamkhalate
-        }
-    }
-
-    text = {
-        localization_key = rank_kingdom_horde
-        trigger = {
-            country_rank_is_kingdom = yes
-            tag = KAI
-            has_reform = government_reform:utsmiate
-        }
-    }
-
+    
+    # Khanate
     text = {
         localization_key = rank_kingdom_horde
         trigger = {

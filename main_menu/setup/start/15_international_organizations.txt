@@ -23,6 +23,7 @@ international_organization_manager = {
             BLM DIS EVS FUR GRK HAC JEV SAW SAB THD WIE ELL HEH HLF HOH KIR NEL TUB KTZ NSW LEU FRI STY MOD PIO SAX SOP ING TRN GLR
             CTB BTH SGD SAD KUL NMK STT URA BTC AGU ZUT BDA BOZ INT SGL ZEH GHB TRR SRO TIC AGE NVR CRM VLA NIC
             CAR DUI
+            BRS VER BGM ADI COH ROC NUL VCL
         }
         leader = STY
         regions = { south_german_region }
@@ -176,7 +177,7 @@ international_organization_manager = {
             imperial_authority = 5
         }
     }
-
+    
     #################################################################
     #               Catholic Church                                 #
     #################################################################
@@ -242,6 +243,7 @@ international_organization_manager = {
             LLS CGZ XLG WDG RND DCN WNG MHU YNL ZNX WSA ZYI QJG LXG GGX SXI CLE BZU RNG GNG SZU ZGL TGY
             GLU RGM TNP SGZ DWG YGS YYG PCD SZH SDG PDG PDN PAN
             LIN QYN TNZ ZNN TPG SMG GNN LZI SZI DYN LTU AMD
+            DOY TIZ FUY
         }
 
         # If changed, apply changes too to set_up_proper_china_for_middle_kingdom effect
@@ -564,32 +566,26 @@ international_organization_manager = {
         type = tatar_yoke
         creation_date = 1240.1.1
         members = {
-            #The Golden Horde
-            GLH
+            #The Khanates
+            KZN SBR CRI
+            #Golden Pretenders
+            KGZ MGZ AGZ
+            #Nogai
+            MGH NWM JAK AOG QON JIK
             #Tax Collector
             MOS
             #Member
             BLO GLM RSO RYA TRS TVE YAR
-            KAS KLN MOG PRK UGL ZUB
+            KAS KLN MOG PRK UGL ZUB VOV NZH VYT KOY
         }
         tatar_overlord = {
-            GLH
+            KZN
         }
         tatar_tax_collector = {
             MOS
         }
-        ruler_term = { character = jochi_borjigin start_date = 1207.1.1 end_date = 1227.1.1 regnal_number = 1 }
-        ruler_term = { character = batu_borjigin start_date = 1227.1.1 end_date = 1255.1.1 regnal_number = 1 }
-        ruler_term = { character = sartaq_borjigin start_date = 1255.1.1 end_date = 1256.1.1 regnal_number = 1 }
-        ruler_term = { character = ulaghchi_borjigin start_date = 1256.1.1 end_date = 1257.1.1 regnal_number = 1 }
-        ruler_term = { character = berke_borjigin start_date = 1257.1.1 end_date = 1266.1.1 regnal_number = 1 }
-        ruler_term = { character = mongke_temur_borjigin start_date = 1266.1.1 end_date = 1280.1.1 regnal_number = 1 }
-        ruler_term = { character = tode_mongke_borjigin start_date = 1280.1.1 end_date = 1287.1.1 regnal_number = 1 }
-        ruler_term = { character = tole_buqa_borjigin start_date = 1287.1.1 end_date = 1291.1.1 regnal_number = 1 }
-        ruler_term = { character = toqta_borjigin start_date = 1291.1.1 end_date = 1312.1.1 regnal_number = 1 }
-        ruler_term = { character = glh_giyas_al_din_mohammed_oz_beg_borjigin start_date = 1313.1.1 regnal_number = 1 }
         variables = {
-            seat = c:GLH.capital
+            seat = sarai_al_jadid
         }
     }
 
@@ -626,7 +622,22 @@ international_organization_manager = {
         leader = KAT
         league_backer = { VEN }
     }
-
+    #################################################################
+    #               Adyghe Xabze                                    #
+    #################################################################
+    add_international_organization = {
+        type = circassia_confederation
+        creation_date = 1444.1.1
+        members = { ZHA KEM BSS QAB KBZ GEN }
+        areas = {
+            matrega_area
+        }
+        provinces = {
+            balzimachi
+        }
+        leader = ZHA
+        league_backer_circassia = { GEN }
+    }
     #################################################################
     #               Autocephalous Patriarchates                     #
     #################################################################
@@ -831,7 +842,39 @@ international_organization_manager = {
         creation_date = 1337.1.1
         members = { AFR SDQ }
     }
-
+    #################################################################
+    #                   Horde Confederations                      #
+    #################################################################
+    add_international_organization = {
+        type = khalkha_confederation
+        creation_date = 1440.1.1
+        members = { JAA BZZ OLK ELJ GOO BAX JAR BYT IMP }
+        leader = IMP
+    }
+    add_international_organization = {
+        type = oirat_confederation
+        creation_date = 1440.1.1
+        members = { CRS DRB KHO TRH KHD }
+        leader = CRS
+    }
+    add_international_organization = {
+        type = khorchin_confederation
+        creation_date = 1440.1.1
+        members = { QAS JAI KDB AKK }
+        leader = QAS
+    }
+    add_international_organization = {
+        type = nogai_confederation
+        creation_date = 1440.1.1
+        members = { MGH JIK JAK AOG QON NWM }
+        leader = MGH
+    }
+    add_international_organization = {
+        type = bashkir_confederation
+        creation_date = 1440.1.1
+        members = { TBN YRA BZY USH YNI }
+        leader = TBN
+    }
     #################################################################
     #                   Jurchen Confederations                      #
     #################################################################
@@ -850,6 +893,61 @@ international_organization_manager = {
         creation_date = 1300.1.1
         members = { JUS NEY YAL }
     }
+
+    #################################################################
+    # 				Golden Horde									#
+    #################################################################
+    add_international_organization = {
+        type = golden_horde
+        creation_date = 1242.1.1
+        members = { 
+            KZN
+            UZB
+            CRI
+            SBR
+            KAZ
+            KGZ
+            MGZ
+            AGZ
+            MGH JAK AOG QON NWM JIK
+        }
+        
+        laws = {
+        }
+        golden_horde_claimant = {
+            KGZ MGZ AGZ
+        }
+#        
+#    }
+#
+#    #################################################################
+#    #               Northern Yuan                                   #
+#    #################################################################
+#    add_international_organization = {
+#        type = northern_yuan
+#        creation_date = 1368.1.1
+#        members = {
+#            IMP
+#            CRS DRB KHO TRH KHD
+#            JAA BZZ OLK ELJ GOO BAX JAR BYT
+#            QAS JAI KDB AKK
+#            YKZ TVA
+#            FUY TIZ DOY ADQ
+#            AUK KUH KVU TBU HMI
+#        }
+#        leader = IMP
+#        yuan_holder = { IMP }
+#        protector_general = { CRS }
+#        regions = { mongolia_region }
+#        provinces = { upper_non_province nuomin_province chol_province taoer_province xiliao_province guangning_province chaoyang_province daning_province
+#        quanning_province xingzhou_province shangdu_province xinghe_province jining_shanxi_province qingcheng_province ordos_province hetao_province
+#        hami_province beshbalik_province altay_province yangjibaliq_province kurchum_province minusinsk_province altayskoye_province}
+#        locations = { mohe }
+#        variables = {
+#            yeke_mongghul_ulus = 50
+#        }
+#        laws = {}
+#    }
 
     #################################################################
     #                             Sects                                #

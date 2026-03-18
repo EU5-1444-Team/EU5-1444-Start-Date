@@ -1,0 +1,30 @@
+cb_unify_golden_horde = {
+	visible = {
+		has_special_status_in_international_organization = {
+			type = special_status:golden_horde_claimant
+			international_organization = international_organization:golden_horde
+		}
+		scope:target = {
+			is_member_of_international_organization = international_organization:golden_horde
+		}
+	}
+	allow_creation = {
+	}
+	speed = 10
+	war_goal_type = unify_golden_horde_wargoal
+}
+cb_false_golden_horde_claimant = {
+	visible = {
+		is_member_of_international_organization = international_organization:golden_horde
+		scope:target = {
+			has_special_status_in_international_organization = {
+				type = special_status:golden_horde_claimant
+				international_organization = international_organization:golden_horde
+			}
+		}
+	}
+	allow_creation = {
+	}
+	speed = 10
+	war_goal_type = false_golden_horde_claimant_wargoal
+}

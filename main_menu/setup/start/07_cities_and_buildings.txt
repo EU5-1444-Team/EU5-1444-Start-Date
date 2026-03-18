@@ -338,9 +338,9 @@ locations = {
     bruges = { rank = city town_setup = lowlands_coastal_city }
     ghent = { rank = city town_setup = lowlands_city }
 
-    antwerp = { rank = town town_setup = lowlands_costal_city }
-    the_hague = { rank = town town_setup = lowlands_costal_city }
-    amsterdam = { rank = town town_setup = lowlands_costal_city }
+    antwerp = { rank = town town_setup = lowlands_costal_town }
+    the_hague = { rank = town town_setup = lowlands_costal_town }
+    amsterdam = { rank = town town_setup = lowlands_costal_town }
     middelburg = { rank = town town_setup = lowlands_costal_town }
     groningen = { rank = town town_setup = lowlands_costal_town }
     utrecht = { rank = town town_setup = lowlands_town }
@@ -871,8 +871,7 @@ locations = {
     chamdo = { rank = city town_setup = central_asian_city }
     leh = { rank = city town_setup = central_asian_city }
     urgench = { rank = city town_setup = central_asian_city }
-    chimgi_tura = { rank = city town_setup = central_asian_city }
-    sarayjuk = { rank = city town_setup = central_asian_city }
+    chimgi_tura = { rank = town town_setup = central_asian_town }
     turpan = { rank = city town_setup = central_asian_city }
     aksu = { rank = town town_setup = central_asian_city }
     khotan = { rank = town town_setup = central_asian_city }
@@ -1248,12 +1247,21 @@ building_manager = {
 
     # steppes
     kurultai = { tag = MGZ level = 1 location = sarai_al_jadid }
+    kurultai = { tag = AGZ level = 1 location = shakhty }
     kurultai = { tag = KGZ level = 1 location = astrakhan }
+
     kurultai = { tag = CRI level = 1 location = qirq_yer }
     kurultai = { tag = GAZ level = 1 location = tana }
-    kurultai = { tag = KAZ level = 1 location = kazan }
-    kurultai = { tag = KAZ level = 1 location = simbirsk }
-    kurultai = { tag = AGZ level = 1 location = shakhty }
+    kurultai = { tag = KZN level = 1 location = kazan }
+    kurultai = { tag = SBR level = 1 location = chimgi_tura }
+    kurultai = { tag = UZB level = 1 location = sighnaq }
+
+    kurultai = { tag = MGH level = 1 location = sarayjuk }
+    kurultai = { tag = JAK level = 1 location = oral }
+    kurultai = { tag = AOG level = 1 location = ilek }
+    kurultai = { tag = QON level = 1 location = shagiz }
+    kurultai = { tag = NWM level = 1 location = emba }
+    kurultai = { tag = JIK level = 1 location = kyzylkala }
 
     kurultai = { tag = CHG level = 1 location = almaliq }
     kurultai = { tag = CHG level = 1 location = almaty }
@@ -3592,11 +3600,7 @@ building_manager = {
     missionary_building = { tag = PAP level = 1 location = sukhumi }
     university = { tag = VDZ level = 1 location = gladzor }
 
-    #Khmer Empire
-    royal_garden = { tag = KHM level = 1 location = angkor }
-
     #Irrigation System
-    khmer_baray = { tag = KHM level = 1 location = angkor }
     irrigation_systems = { tag = KHM level = 2 location = beng_mealea }
 
     mason = { tag = KHM level = 1 location = angkor_borei }

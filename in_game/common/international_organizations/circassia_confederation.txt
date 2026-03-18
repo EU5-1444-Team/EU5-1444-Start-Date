@@ -1,0 +1,212 @@
+circassia_confederation = {
+	has_target = no
+	unique = yes
+	show_on_diplomatic_map = yes
+	has_leader_country = yes
+	subject_limited = no
+	expel_members_who_are_targets_of_other_members = no
+	expel_members_who_target_the_leader = no
+	expel_members_who_are_attackers_at_war_with_other_members = no
+	expel_members_who_are_defenders_at_war_with_other_members = no
+	leader_title_key = "CIRCASSIAN_CONFEDERATION_LEADER"
+	leader_type = character
+	leader = {
+		leader_country ?= {
+			ruler ?= {
+				add_to_list = leaders
+			}
+		}
+	}
+	leader_change_trigger_type = rulerchange
+	leader_change_method = vote
+	leadership_election_resolution = international_organization_election
+	leader_score = {
+		value = great_power_score
+	}
+	disband_if_no_leader = no
+	create_visible_trigger = {
+		always = no
+	}
+	invite_visible_trigger = {
+		always = yes
+	}
+	join_visible_trigger = {
+		NOT = { tag = GEN }
+	}
+	join_enabled_trigger = {
+		NOT = { tag = GEN }
+	}
+	can_lead_trigger = {
+		NOT = { tag = GEN }
+	}
+	can_declare_war = {
+		always = yes
+	}
+	can_initiate_policy_votes = {
+		is_member_of_international_organization = international_organization:circassia_confederation
+		is_leader_of_international_organization = international_organization:circassia_confederation
+	}
+    land_ownership_rule = circassia_confederation_land_ownership
+	laws = {
+		circassia_defense_law = circassia_defense_policy
+		circassia_offense_law = circassia_no_offense_policy
+		circassia_genoese_governance_law = no_genoese_local_governors_policy
+		circassia_unification_law = preserve_circassia_confederation_policy
+	}
+	special_statuses_implemented = {
+		circassian_supreme_king
+		league_backer_circassia
+		genoan_governorate
+	}
+	can_join_trigger = {
+		trigger_if = {
+			limit = {
+				tag = GEN
+			}
+			always = yes
+		}
+		trigger_else = {
+			is_rebel_country = no
+			capital = {
+				region = region:steppes_region
+			}
+			international_organization:circassia_confederation = {
+				international_organization_has_leader = yes
+			}
+			opinion = {
+				target = international_organization:circassia_confederation.leader_country
+				value >= 100
+			}
+		}
+	}
+	ai_desire_to_join = {
+		if = {
+			limit = {
+				international_organization:circassia_confederation = {
+					international_organization_has_leader = yes
+				}
+			}
+			add = {
+				desc = "POLICY_BIAS_OPINION_OF_IO_LEADER"
+				value = "opinion(international_organization:circassia_confederation.leader_country)"
+				multiply = 0.4
+			}
+		}
+	}
+	ai_desire_to_allow_new_member = {
+		add = {
+			desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+			value = 1000
+		}
+	}
+	can_leave_trigger = {
+		always = yes
+	}
+	auto_leave_trigger = {
+		always = no
+	}
+	auto_disband_trigger = {
+		any_international_organization_member = {
+			count < 2
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer_circassia
+					international_organization = root
+				}
+			}
+		}
+	}
+	on_creation = {
+		if = {
+			limit = {
+				country_exists = c:GEN
+				c:GEN = {
+					is_member_of_international_organization = root
+				}
+			}
+			international_organization_add_special_status = {
+				type = special_status:league_backer_circassia
+				country = c:GEN
+			}
+		}
+	}
+	on_joined = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_subject_type = governorate
+					overlord ?= {
+						this = c:GEN
+					}
+				}
+				international_organization:circassia_confederation = {
+					international_organization_add_special_status = {
+						type = special_status:genoan_governorate
+						country = root
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = GEN
+				}
+				international_organization:circassia_confederation = {
+					international_organization_add_special_status = {
+						type = special_status:league_backer_circassia
+						country = c:GEN
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { tag = GEN }
+				}
+				every_owned_location = {
+					limit = {
+						region = region:steppes_region
+					}
+					international_organization:circassia_confederation = {
+						add_location_to_international_organization = prev
+					}
+				}
+			}
+		}
+	}
+	on_left = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_special_status_in_international_organization = {
+						type = special_status:genoan_governorate
+						international_organization = international_organization:circassia_confederation
+					}
+				}
+				international_organization:circassia_confederation = {
+					international_organization_remove_special_status = {
+						type = special_status:genoan_governorate
+						country = root
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = GEN
+				}
+				international_organization:circassia_confederation = {
+					international_organization_remove_special_status = {
+						type = special_status:league_backer_circassia
+						country = c:GEN
+					}
+				}
+			}
+		}
+		every_owned_location = {
+			limit = {
+				is_owned_by_international_organization = international_organization:circassia_confederation
+			}
+			international_organization:circassia_confederation = {
+				remove_location_from_international_organization = prev
+			}
+		}
+	}
+}

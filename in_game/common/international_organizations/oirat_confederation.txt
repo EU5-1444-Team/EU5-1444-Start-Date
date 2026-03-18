@@ -1,71 +1,84 @@
 oirat_confederation = {
-    has_target = no
-    unique = yes
+	has_target = no
+	unique = yes
+	expel_members_who_are_targets_of_other_members = no
+	disband_if_no_leader = no
 
-    custom_name = oirat_confederation_name
     show_on_diplomatic_map = yes
 
     has_leader_country = yes
     leader_type = country
-    leader_change_method = mongol_election
-
+    leader_title_key = "OIRAT_LEADER"
+    leader_change_trigger_type = rulerchange
+	leader_change_method = vote
+	leadership_election_resolution = international_organization_election
+	leader_score = {
+		value = great_power_score
+	}
     create_visible_trigger = { always = no }
     invite_visible_trigger = { always = yes }
 
     can_declare_war = { always = yes }
 
     laws = {
-        mutual_defense_law = assured_defense_policy
-        mutual_offense_law = possible_offense_policy
+        mongol_local_administration = mongol_tribal_administration_policy
+        mongol_tax_obligations = mongol_no_tax_obligations_policy
+        mongol_court_etiquette = mongol_no_court_etiquette_policy
+        mongol_formal_script = mongol_mongol_script_policy
+        mongol_legal_framework = mongol_no_legal_framework_policy
+        mongol_economic_framework = mongol_shared_crops_policy
+        mongol_trade_relations = mongol_clan_trade_only_policy
+        mongol_clan_diplomacy = mongol_no_embassies_policy
     }
 
     modifier = {
         monthly_tribal_cohesion = 0.03
+    }
+    
+    monthly_effect = {
     }
 
     leader_modifier = {
         global_manpower_modifier = 0.1
         slave_raid_efficiency = 0.3
     }
-    
-    monthly_effect = {
-        every_country = {
-            limit = {
-                culture = culture:oirat_culture
-                NOT = { is_member_of_international_organization = root }
-            }
-            root = {
-                add_country_to_international_organization = prev
-            }
-        }
+
+    can_lead_trigger = {
     }
 
     can_join_trigger = {
-        NOT = {
-            is_member_of_international_organization_of_type = oirat_confederation
-        }
         government_type = government_type:steppe_horde
         culture = culture:oirat_culture
     }
-
+    can_leave_trigger = {
+        always = no
+    }
     auto_leave_trigger = {
-        NOT = {
-            culture = culture:oirat_culture
-        }
+        NOT = { culture = culture:oirat_culture }
     }
 
     auto_disband_trigger = {
         total_members < 2
     }
 
+    on_joined = {}
+    on_left = {}
+
     ai_desire_to_join = {
-        add = {
-            value = "scope:actor.relative_strength(root)"
-            multiply = 50
+        if = {
+            limit = {
+                culture = culture:oirat_culture
+            }
+            add = {
+                desc = "SHARED_MONGOL_HERITAGE"
+                value = 50 
+            }
         }
+    }
+    ai_desire_to_allow_new_member = {
         add = {
-            value = prev_opinion_of_this
-            multiply = 0.2
+            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+            value = 20
         }
     }
 }

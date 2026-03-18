@@ -149,44 +149,18 @@ GLH = {
         }
     }
 	text = {
-		# Kipchak Khanate
-		localization_key = GLH_kipchak
+		# Golden Horde
+		localization_key = GLH_horde
 		trigger = {
-			AND = {
-				government_type = government_type:steppe_horde
-				court_language = language:kipchak_language
-				OR = {
-					culture = culture:crimean
-					culture = culture:kazani
-					culture = culture:astrakhani
-					culture = culture:bashkir
-					culture = culture:mishar
-					culture = culture:nogai
-					culture = culture:kazakh_culture
-					culture = culture:kyrgyz_culture
-					culture = culture:kumyk_culture
-					culture = culture:karachay_culture
-					culture = culture:balkar_culture
-					culture = culture:yerle_qaliq_culture
-				}
-			}
-		}
-	}
-	text = {
-		# Ulug Ulus
-		localization_key = GLH_mongol
-		trigger = {
-			AND = {
-				government_type = government_type:steppe_horde
-				culture = {
-					has_culture_group = culture_group:mongolian_group
-				}
+			OR = {
+				ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this }
+				ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this }
 			}
 		}
 	}
     text = {
-		# Golden Horde
-        localization_key = GLH_horde
+		# Kipchak Fallback
+        localization_key = GLH_kipchak
         trigger = {
             government_type = government_type:steppe_horde
         }
@@ -540,23 +514,6 @@ KHL = { # Imperial Khalkha
 }
 KHL_ADJ = { parent = KHL suffix = "_ADJ" }
 
-YUA = { # Northern Yuan
-    type = country
-    text = {
-        localization_key = n_yuan
-        trigger = {
-    		NOT = {
-				owns = location:dadu
-			}
-		}
-    }
-    text = {
-        localization_key = YUA
-        fallback = yes
-    }
-}
-YUA_ADJ = { parent = YUA suffix = "_ADJ" }
-
 UYG = { # Altishahr / Uyghuristan
     type = country
 
@@ -573,3 +530,37 @@ UYG = { # Altishahr / Uyghuristan
     }
 }
 UYG_ADJ = { parent = UYG suffix = "_ADJ" }
+
+UZB = { # Shaybanids 
+    type = country
+
+    text = {
+        localization_key = starting_uzbek
+        trigger = {
+            is_subject = yes
+        }
+    }
+    text = {
+        localization_key = UZB
+        fallback = yes
+    }
+}
+UZB_ADJ = { parent = UZB suffix = "_ADJ" }
+
+SBR = { #White Horde
+    type = country
+    text = {
+		localization_key = SBR_white_horde
+		trigger = {
+			OR = {
+				c:UZB ?= { is_subject_of = root }
+				owns = location:sighnaq
+			}
+		}
+    }
+    text = {
+        localization_key = SBR
+        fallback = yes
+    }
+}
+SBR_ADJ = { parent = SBR suffix = "_ADJ" }

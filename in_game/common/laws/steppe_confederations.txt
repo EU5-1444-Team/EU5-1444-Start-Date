@@ -1,4 +1,4 @@
-local_administration = {
+mongol_local_administration = {
 	type = international_organization
 	law_category = administrative
 	requires_vote = no
@@ -7,21 +7,25 @@ local_administration = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
+			international_organization_type = international_organization_type:bashkir_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 90
+    	}
 	}
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = {
+			leader_country ?= {
 				has_variable = local_adm_law_cooldown_variable
 			}
 		}
 	}
 
-	tribal_administration_policy = {
+	mongol_tribal_administration_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -60,7 +64,7 @@ local_administration = {
 		}
 	}
 
-	sinicized_administration_policy = {
+	mongol_sinicized_administration_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -101,7 +105,7 @@ local_administration = {
 	}
 }
 
-tax_obligations = {
+mongol_tax_obligations = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -110,21 +114,25 @@ tax_obligations = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
+			international_organization_type = international_organization_type:bashkir_confederation
         }
     }
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 80
+    	}
 	}
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = {
+			leader_country ?= {
 				has_variable = tax_law_cooldown_variable
 			}
 		}
 	}
 
-	no_tax_obligations_policy = {
+	mongol_no_tax_obligations_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -157,7 +165,7 @@ tax_obligations = {
 		}
 	}
 
-	fair_tax_obligations_policy = {
+	mongol_fair_tax_obligations_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -190,7 +198,7 @@ tax_obligations = {
 		}
 	}
 
-	extensive_tax_obligations_policy = {
+	mongol_extensive_tax_obligations_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -225,7 +233,7 @@ tax_obligations = {
 	}
 }
 
-court_etiquette = {
+mongol_court_etiquette = {
 	type = international_organization
 	law_category = estates
 	requires_vote = no
@@ -234,21 +242,25 @@ court_etiquette = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
+			international_organization_type = international_organization_type:bashkir_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 70
+    	}
 	}
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = {
+			leader_country ?= {
 				has_variable = court_law_cooldown_variable
 			}
 		}
 	}
 
-	no_court_etiquette_policy = {
+	mongol_no_court_etiquette_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -281,7 +293,7 @@ court_etiquette = {
 		}
 	}
 
-	basic_court_etiquette_policy = {
+	mongol_basic_court_etiquette_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -315,7 +327,7 @@ court_etiquette = {
 		}
 	}
 
-	sinicized_court_etiquette_policy = {
+	mongol_sinicized_court_etiquette_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -350,7 +362,7 @@ court_etiquette = {
 	}
 }
 
-formal_script = {
+mongol_formal_script = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -359,20 +371,23 @@ formal_script = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
+			international_organization_type = international_organization_type:bashkir_confederation
         }
     }
 	allow = {
-		leader_country = { tribal_cohesion > 5 }
-
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 50
+    	}
 	}
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = script_law_cooldown_variable }
+			leader_country ?= { has_variable = script_law_cooldown_variable }
 		}
 	}
 
-	mongol_script_policy = {
+	mongol_mongol_script_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -411,7 +426,7 @@ formal_script = {
 		}
 	}
 
-	sinicized_script_policy = {
+	mongol_sinicized_script_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -452,7 +467,7 @@ formal_script = {
 	}
 }
 
-legal_framework = {
+mongol_legal_framework = {
 	type = international_organization
 	law_category = administrative
 	requires_vote = no
@@ -461,19 +476,23 @@ legal_framework = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
+			international_organization_type = international_organization_type:bashkir_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 30
+    	}
 	}
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = legal_law_cooldown_variable }
+			leader_country ?= { has_variable = legal_law_cooldown_variable }
 		}
 	}
 
-	no_legal_framework_policy = {
+	mongol_no_legal_framework_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -506,7 +525,7 @@ legal_framework = {
 		}
 	}
 
-	basic_legal_framework_policy = {
+	mongol_basic_legal_framework_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -539,7 +558,7 @@ legal_framework = {
 		}
 	}
 
-	sinicized_legal_framework_policy = {
+	mongol_sinicized_legal_framework_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -574,7 +593,7 @@ legal_framework = {
 	}
 }
 
-economic_framework = {
+mongol_economic_framework = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -583,19 +602,23 @@ economic_framework = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
+			international_organization_type = international_organization_type:bashkir_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < 10
+    	}
 	}
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = economic_framework_cooldown_variable }
+			leader_country ?= { has_variable = economic_framework_cooldown_variable }
 		}
 	}
 
-	shared_crops_policy = {
+	mongol_shared_crops_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -629,7 +652,7 @@ economic_framework = {
 		}
 	}
 
-	decentralized_farming_villages = {
+	mongol_decentralized_farming_villages = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -662,7 +685,7 @@ economic_framework = {
 		}
 	}
 
-	financed_rgo_policy = {
+	mongol_financed_rgo_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -697,7 +720,7 @@ economic_framework = {
 	}
 }
 
-trade_relations = {
+mongol_trade_relations = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -706,19 +729,23 @@ trade_relations = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
+			international_organization_type = international_organization_type:nogai_confederation
+			international_organization_type = international_organization_type:bashkir_confederation
         }
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < -10
+    	}
 	}
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = trade_law_cooldown_variable }
+			leader_country ?= { has_variable = trade_law_cooldown_variable }
 		}
 	}
 
-	clan_trade_only_policy = {
+	mongol_clan_trade_only_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -752,7 +779,7 @@ trade_relations = {
 		}
 	}
 
-	allow_foreign_exchanges_policy = {
+	mongol_allow_foreign_exchanges_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -786,7 +813,7 @@ trade_relations = {
 		}
 	}
 
-	chinese_tribute_policy = {
+	mongol_chinese_tribute_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -821,7 +848,7 @@ trade_relations = {
 	}
 }
 
-clan_diplomacy = {
+mongol_clan_diplomacy = {
 	type = international_organization
 	law_category = socioeconomic
 	requires_vote = no
@@ -830,19 +857,23 @@ clan_diplomacy = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
-        }
+			international_organization_type = international_organization_type:nogai_confederation
+			international_organization_type = international_organization_type:bashkir_confederation
+		}
 	}
 	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
+		leader_country ?= { 
+        	societal_value:centralization_vs_decentralization < -25
+    	}
 	}
 	locked = {
 		custom_tooltip = {
 			text = 5_years_cd
-			leader_country = { has_variable = diplomacy_law_cooldown_variable }
+			leader_country ?= { has_variable = diplomacy_law_cooldown_variable }
 		}
 	}
 
-	no_embassies_policy = {
+	mongol_no_embassies_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -875,7 +906,7 @@ clan_diplomacy = {
 		}
 	}
 
-	clan_embassies_policy = {
+	mongol_clan_embassies_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -909,7 +940,7 @@ clan_diplomacy = {
 		}
 	}
 
-	chinese_embassies_policy = {
+	mongol_chinese_embassies_policy = {
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BIAS_GOOD_IDEA"
@@ -951,18 +982,16 @@ khalkha_unification_law = {
     }
 
     allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
+		international_organization = {
+			total_members >= 2
+		}
+		leader_country ?= {
+			societal_value:centralization_vs_decentralization < -40
+		}
+	}
 
     custom_tags = { forbids_no_policy }
 
-    no_unification_policy = {
-        wants_propose_policy = {
-            subtract = { value = 1000 }
-        }
-    }
 
     unify_khalkha_policy = {
         wants_propose_policy = {
@@ -974,17 +1003,13 @@ khalkha_unification_law = {
                 value = prev_opinion_of_this
                 multiply = 0.3
             }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
-            }
         }
 
         on_activate = {
             custom_tooltip = khalkha_unification_tt
 
             root.leader_country = {
-                form_country = KHL
+                form_country = formable_country:KHL_f
                 if = {
 			        limit = { country_rank_level < 3 }
 			        set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -1013,18 +1038,15 @@ khorchin_unification_law = {
     }
 
     allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
+		international_organization = {
+			total_members >= 2
+		}
+		leader_country ?= {
+			societal_value:centralization_vs_decentralization < -40
+		}
+	}
 
     custom_tags = { forbids_no_policy }
-
-    no_unification_policy = {
-        wants_propose_policy = {
-            subtract = { value = 1000 }
-        }
-    }
 
     unify_khorchin_policy = {
         wants_propose_policy = {
@@ -1036,17 +1058,13 @@ khorchin_unification_law = {
                 value = prev_opinion_of_this
                 multiply = 0.3
             }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
-            }
         }
 
         on_activate = {
             custom_tooltip = khorchin_unification_tt
 
             root.leader_country = {
-                form_country = KHA
+                form_country = formable_country:KHA_f
                 if = {
 			        limit = { country_rank_level < 3 }
 			        set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -1074,18 +1092,15 @@ oirat_unification_law = {
     }
 
     allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
+		international_organization = {
+			total_members >= 2
+		}
+		leader_country ?= {
+			societal_value:centralization_vs_decentralization < -40
+		}
+	}
 
     custom_tags = { forbids_no_policy }
-
-    no_unification_policy = {
-        wants_propose_policy = {
-            subtract = { value = 1000 }
-        }
-    }
 
     unify_oirat_policy = {
         wants_propose_policy = {
@@ -1097,17 +1112,13 @@ oirat_unification_law = {
                 value = prev_opinion_of_this
                 multiply = 0.3
             }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
-            }
         }
 
         on_activate = {
             custom_tooltip = oirat_unification_tt
 
             root.leader_country = {
-                form_country = OIR
+                form_country = formable_country:OIR_f
                 if = {
 			        limit = { country_rank_level < 3 }
 			        set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -1123,6 +1134,151 @@ oirat_unification_law = {
                 }
             }
 
+            disband_international_organization = yes
+        }
+    }
+}
+nogai_unification_law = {
+    law_category = centralization
+    type = international_organization
+
+    potential = {
+        international_organization_type = international_organization_type:nogai_confederation
+    }
+
+    allow = {
+		international_organization = {
+			total_members >= 2
+		}
+		leader_country ?= {
+			societal_value:centralization_vs_decentralization < -40
+		}
+	}
+
+    custom_tags = { forbids_no_policy }
+
+    unify_nogai_policy = {
+        wants_propose_policy = {
+            add = { value = 500 }
+        }
+
+        wants_this_policy_bias = {
+            add = {
+                value = prev_opinion_of_this
+                multiply = 0.3
+            }
+        }
+
+        on_activate = {
+            custom_tooltip = nogai_unification_tt
+
+            root.leader_country = {
+                form_country = formable_country:NOG_f
+                if = {
+                    limit = { country_rank_level < 3 }
+                    set_country_rank_effect = { rank = country_rank:rank_kingdom }
+                }
+            }
+            every_international_organization_member = {
+                limit = { NOT = { this = root.leader_country } }
+                root.leader_country = {
+                    annex_country = {
+                        country = prev
+                        reason = Diplomatic
+                    }
+                }
+            }
+
+            disband_international_organization = yes
+        }
+    }
+}
+bashkir_unification_law = {
+    law_category = centralization
+    type = international_organization
+
+    potential = {
+        international_organization_type = international_organization_type:bashkir_confederation
+    }
+
+    allow = {
+        international_organization = {
+            total_members >= 2
+        }
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < -40
+        }
+    }
+
+    custom_tags = { forbids_no_policy }
+
+    unify_bashkir_tribal_policy = {
+        wants_propose_policy = {
+            add = { value = 500 }
+        }
+
+        wants_this_policy_bias = {
+            add = {
+                value = prev_opinion_of_this
+                multiply = 0.3
+            }
+        }
+
+        on_activate = {
+            custom_tooltip = bashkir_unification_tt
+
+            root.leader_country = {
+                form_country = formable_country:BSH_f
+                if = {
+                    limit = { country_rank_level < 3 }
+                    set_country_rank_effect = { rank = country_rank:rank_kingdom }
+                }
+            }
+            every_international_organization_member = {
+                limit = { NOT = { this = root.leader_country } }
+                root.leader_country = {
+                    annex_country = {
+                        country = prev
+                        reason = Diplomatic
+                    }
+                }
+            }
+            disband_international_organization = yes
+        }
+    }
+
+    unify_bashkir_horde_policy = {
+        wants_propose_policy = {
+            add = { value = 500 }
+        }
+
+        wants_this_policy_bias = {
+            add = {
+                value = prev_opinion_of_this
+                multiply = 0.3
+            }
+        }
+
+        on_activate = {
+            custom_tooltip = bashkir_horde_unification_tt
+
+            root.leader_country = {
+                form_country = formable_country:BSH_f
+                change_government_type = government_type:steppe_horde
+                if = {
+                    limit = { country_rank_level < 3 }
+                    set_country_rank_effect = { rank = country_rank:rank_kingdom }
+                }
+            }
+            every_international_organization_member = {
+                limit = { NOT = { this = root.leader_country } }
+                root.leader_country = {
+                    annex_country = {
+                        country = prev
+                        reason = Diplomatic
+                    }
+                }
+            }
             disband_international_organization = yes
         }
     }

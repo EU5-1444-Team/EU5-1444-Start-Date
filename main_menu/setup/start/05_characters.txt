@@ -12626,7 +12626,7 @@ character_db={
     # Son & Heir of the King of Portugal
     por_pedro_i_portugal = {    
         first_name = { name = name_peter }
-        nickname = { name = "the Justicier" }
+        nickname = { name = "the_Justicier" }
         culture = portuguese
         religion = catholic
         estate = nobles_estate
@@ -88271,7 +88271,7 @@ character_db={
     # Elector of Brandenburg, Son & Heir of the Duke of Upper Bavaria
     bra_ludwig_v_wittelsbach = {
         first_name = { name = name_louis }
-        nickname = { name = "the Brandenburger" }
+        nickname = { name = "the_Brandenburger" }
         culture = danube_bavarian
         religion = catholic
         estate = nobles_estate
@@ -91668,9 +91668,8 @@ character_db={
         culture = nahua_culture
         religion = nahuatl
         adm = 56 dip = 60 mil = 30
-        tag = coi
+        tag = COI
     }
-
 
     #Tenōchtitlan (Aztec Empire) - TNC
     #Ruler
@@ -91792,7 +91791,7 @@ character_db={
         first_name = { name = moctezuma }
         dynasty = tenochcatl_dynasty
         birth = tenochtitlan
-        nickname = { name = "Shoots at the Heavens" }
+        nickname = { name = "Shoots_at_the_Heavens" }
         father = azt_itzacoatl
         birth_date = 1398.1.1
         culture = nahua_culture
@@ -97565,21 +97564,6 @@ character_db={
         tag = CHG
     }
 
-
-    chg_yesun_temur = {
-        first_name = { name = name_yesun.name_temur }
-        dynasty = borjigin_dynasty
-        culture = mongolian_culture
-        religion = tengri
-        adm = 47 dip = 22 mil = 34
-        birth_date = 1305.1.1 #Unknown
-        death_date = 1378.2.3
-        birth = almaliq
-        father = chg_ebugen
-        tag = CHG
-    }
-
-
     chg_taraghai_noyan_borjigin = {
         first_name = { name = name_taraghai }
         culture = khorezmian_culture
@@ -103126,6 +103110,7 @@ character_db={
 		dynasty = borjigin_dynasty
 		culture = mongolian_culture
 		religion = tibetan_buddhism
+		religion = tibetan_buddhism
 		adm = 100 dip = 97 mil = 91
 		birth_date = 1215.9.23
 		birth = khan_khentii
@@ -103138,6 +103123,7 @@ character_db={
 		first_name = { name = name_Zhenjin }
 		dynasty = borjigin_dynasty
 		culture = mongolian_culture
+		religion = tibetan_buddhism
 		religion = tibetan_buddhism
 		adm = 85 dip = 88 mil = 60
 		birth_date = 1243.1.1
@@ -103152,6 +103138,7 @@ character_db={
 		dynasty = borjigin_dynasty
 		culture = mongolian_culture
 		religion = tibetan_buddhism
+		religion = tibetan_buddhism
 		adm = 82 dip = 79 mil = 74
 		birth_date = 1265.10.15
 		birth = dadu
@@ -103164,6 +103151,7 @@ character_db={
 		first_name = { name = name_Darmabala }
 		dynasty = borjigin_dynasty
 		culture = mongolian_culture
+		religion = tibetan_buddhism
 		religion = tibetan_buddhism
 		adm = 54 dip = 61 mil = 45
 		birth_date = 1264.6.29
@@ -103178,6 +103166,7 @@ character_db={
 		dynasty = borjigin_dynasty
 		culture = mongolian_culture
 		religion = tibetan_buddhism
+		religion = tibetan_buddhism
 		adm = 59 dip = 53 mil = 87
 		birth_date = 1281.12.22
 		birth = dadu
@@ -103190,6 +103179,7 @@ character_db={
 		first_name = { name = name_Ayurbarwada.name_buyantu }
 		dynasty = borjigin_dynasty
 		culture = mongolian_culture
+		religion = tibetan_buddhism
 		religion = tibetan_buddhism
 		adm = 88 dip = 85 mil = 63
 		birth_date = 1285.4.9
@@ -103204,6 +103194,7 @@ character_db={
 		dynasty = borjigin_dynasty
 		culture = mongolian_culture
 		religion = tibetan_buddhism
+		religion = tibetan_buddhism
 		adm = 77 dip = 70 mil = 68
 		birth_date = 1303.3.28
 		birth = dadu
@@ -103216,6 +103207,7 @@ character_db={
 		first_name = { name = name_Gammala }
 		dynasty = borjigin_dynasty
 		culture = mongolian_culture
+		religion = tibetan_buddhism
 		religion = tibetan_buddhism
 		adm = 65 dip = 72 mil = 59
 		birth_date = 1263.1.1
@@ -103697,6 +103689,7 @@ character_db={
 
     cri_tash_timur_giray = {
         first_name = { name = name_Tash.name_timur }
+        dynasty = giray_dynasty
         culture = crimean
         religion = sunni
         adm = 55 dip = 52 mil = 60
@@ -103710,6 +103703,7 @@ character_db={
 
     cri_gyyas_ed_din_giray = {
         first_name = { name = name_Ghiyath.name_al_din }
+        dynasty = giray_dynasty
         culture = crimean
         religion = sunni
         adm = 52 dip = 58 mil = 55
@@ -103721,8 +103715,10 @@ character_db={
         tag = CRI
     }
 
-    cri_haci_giray = {
-        first_name = { name = Hacı }
+    haci_giray = {
+        first_name = { name = name_Haji }
+        nickname = { name = Giray }
+        dynasty = giray_dynasty
         culture = crimean
         religion = sunni
         adm = 72 dip = 78 mil = 68
@@ -103735,6 +103731,7 @@ character_db={
 
     cri_mubarek_giray = {
         first_name = { name = name_Mubarek }
+        dynasty = giray_dynasty
         culture = crimean
         religion = sunni
         adm = 50 dip = 55 mil = 52
@@ -103747,6 +103744,7 @@ character_db={
 
     cri_haydar_giray = {
         first_name = { name = name_Haydar }
+        dynasty = giray_dynasty
         culture = crimean
         religion = sunni
         adm = 55 dip = 52 mil = 60
@@ -103759,6 +103757,7 @@ character_db={
 
     cri_nur_devlet_giray = {
         first_name = { name = name_Nur.name_devlet }
+        dynasty = giray_dynasty
         culture = crimean
         religion = sunni
         adm = 58 dip = 62 mil = 55
@@ -103771,6 +103770,7 @@ character_db={
 
     cri_mengli_giray = {
         first_name = { name = name_Mengli }
+        dynasty = giray_dynasty
         culture = crimean
         religion = sunni
         adm = 75 dip = 80 mil = 72
@@ -103944,7 +103944,7 @@ character_db={
         culture = kazani
         religion = sunni
         adm = 68 dip = 65 mil = 72
-        birth_date = 1421.1.1
+        birth_date = 1419.1.1
         birth = sarayjuk
         father = ulugh_muhammad_borjigin
         tag = KZN
@@ -104744,7 +104744,7 @@ character_db={
 	# ===== KARA DEL =====
 	chg_bayan_quli_successor_fictional = {
 		first_name = { name = name_Bayan.name_temur }
-		dynasty = chagataid_dynasty
+		dynasty = chagatayid_dynasty
 		culture = moghul_culture
 		religion = mahayana
 		adm = 52 dip = 48 mil = 61
@@ -104773,7 +104773,7 @@ character_db={
 		religion = mahayana
 		adm = 74 dip = 68 mil = 71
 		birth_date = 1398.1.1
-		birth = turfan
+		birth = turpan
 		death_date = 1425.3.12
 		father = gunashiri_karakhoja
 		tag = HMI
@@ -104822,7 +104822,7 @@ character_db={
 		adm = 63 dip = 58 mil = 89
 		birth_date = 1396.1.1
 		birth = yunnei
-		tag = ADU
+		tag = ADQ
 	}
 
 	# ===== KIRGHIZ AND TUVA =====
@@ -107980,7 +107980,7 @@ character_db={
 
     eng_henry_v_lancaster = {
         first_name = { name = name_henry }
-        nickname = { name = "of Monmouth" }
+        nickname = { name = "of_Monmouth" }
         culture = english
         religion = catholic
         adm = 79 dip = 88 mil = 84
@@ -108094,7 +108094,7 @@ character_db={
         #father = 
         #mother = 
         spouse = eng_humphrey_lancaster
-        dynasty = Cobham
+        dynasty = cobham_dynasty
         tag = ENG
     }
 
@@ -108254,7 +108254,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1363.2.21
-        birth = burford
+        birth = bedford
         death_date = 1426.11.24
         father = eng_john_of_gaunt
         mother = eng_blanche_lancaster_grosmont
@@ -108540,7 +108540,7 @@ character_db={
 
     eng_richard_neville_kingmaker = { # Warwick the Kingmaker!
         first_name = { name = name_richard }
-        nickname = { name = "the Kingmaker" }
+        nickname = { name = "the_Kingmaker" }
         culture = english
         religion = catholic
         estate = nobles_estate
@@ -109835,7 +109835,7 @@ character_db={
     }
 
     tur_alaeddin_ali_sehzade_ottomans = {
-        first_name = { name = "Alaeddin Ali" }
+        first_name = { name = "Alaeddin_Ali" }
         nickname = { name = Şehzade }
         culture = turkish_culture
         religion = sunni
@@ -110336,7 +110336,7 @@ character_db={
 
     hab_albrecht_iii_habsburg = {
         first_name = { name = name_albert }
-        nickname = { name = "with the Braid" }
+        nickname = { name = "with_the_Braid" }
         culture = danube_bavarian
         religion = catholic
         adm = 36 dip = 45 mil = 60
@@ -110421,7 +110421,7 @@ character_db={
 
     hab_ladislas_v_habsburg = {
         first_name = { name = name_vladislav }
-        nickname = { name = "the Posthumous" }
+        nickname = { name = "the_Posthumous" }
         culture = danube_bavarian
         religion = catholic
         birth_date = 1440.2.22
@@ -110457,7 +110457,7 @@ character_db={
     }
     hab_wilhelm_habsburg = {
         first_name = { name = name_william }
-        nickname = { name = "the Courteous" }
+        nickname = { name = "the_Courteous" }
         culture = danube_bavarian
         religion = catholic
         birth_date = 1370.1.1
@@ -110485,7 +110485,7 @@ character_db={
 
     hab_ernst_habsburg = {
         first_name = { name = name_ernest }
-        nickname = { name = "the Iron-Willed" }
+        nickname = { name = "the_Iron-Willed" }
         culture = danube_bavarian
         religion = catholic
         adm = 60 dip = 65 mil = 68
@@ -110509,14 +110509,13 @@ character_db={
         father = hab_ernst_habsburg
         mother = hab_cymburgis_piast
         dynasty = habsburg_dynasty
-        ruler_trait = patron_of_arts
         ruler_trait = charismatic_negotiator
         tag = HAB
     }
 
     hab_albrecht_vi_habsburg = {
         first_name = { name = name_albert }
-        nickname = { name = "the Prodigal" }
+        nickname = { name = "the_Prodigal" }
         culture = danube_bavarian
         religion = catholic
         adm = 42 dip = 35 mil = 78
@@ -110531,7 +110530,7 @@ character_db={
 
     hab_frederick_iv_habsburg = {
         first_name = { name = name_frederick }
-        nickname = { name = "of the Empty Pockets" }
+        nickname = { name = "of_the_Empty_Pockets" }
         culture = danube_bavarian
         religion = catholic
         adm = 30 dip = 60 mil = 65
@@ -110727,7 +110726,7 @@ character_db={
 		religion = orthodox
 		birth_date = 1418.1.1
 		female = yes
-		birth = belgrade
+		birth = belgrad
 		father = ser_durad_brankovic
 		mother = ser_eirene_kantakouzenos
 		spouse = cli_ulrik_ii_celjiski
@@ -110827,7 +110826,7 @@ character_db={
 
     ubv_otto_v_wittelsbach = { # Last son of Louis/Ludwig IV
         first_name = { name = name_otto }
-        nickname = { name = "the Lazy" }
+        nickname = { name = "the_Lazy" }
         culture = danube_bavarian
         religion = catholic
         estate = nobles_estate
@@ -111048,12 +111047,12 @@ character_db={
         father = mlo_bernabo_visconti
         mother = mlo_beatrice_scala
         dynasty = visconti_dynasty
-        tag = BAV       
+        tag = MLO       
     }
 
     lbv_heinrich_xvi_wittelsbach = {
         first_name = { name = name_henry }
-        nickname = { name = "the Rich" }
+        nickname = { name = "the_Rich" }
         culture = danube_bavarian
         religion = catholic
         estate = nobles_estate
@@ -111082,7 +111081,7 @@ character_db={
 
     lbv_ludwig_ix_wittelsbach = {
         first_name = { name = name_henry }
-        nickname = { name = "the Rich" }
+        nickname = { name = "the_Rich" }
         culture = danube_bavarian
         religion = catholic
         estate = nobles_estate
@@ -111336,7 +111335,7 @@ character_db={
         female = yes
         birth_date = 1358.1.1
         death_date = 1411.7.26
-        birth = nuremburg
+        birth = nuremberg
         spouse = pal_ruprecht_iii_wittelsbach
         father = ans_friedrich_v_von_nurnberg
         mother = mei_elisabeth_meissen
@@ -111376,7 +111375,7 @@ character_db={
 
     pal_rupert_wittelsbach = {
         first_name = { name = name_rupert }
-        nickname = { name = "the English" }
+        nickname = { name = "the_English" }
         culture = rhine_franconian
         religion = catholic
         estate = nobles_estate
@@ -111698,7 +111697,7 @@ character_db={
         estate = nobles_estate
         birth_date = 1371.1.1
         death_date = 1440.9.20
-        birth = nuremburg
+        birth = nuremberg
         father = ans_friedrich_v_von_nurnberg
         mother = mei_elisabeth_meissen
         dynasty = hohenzollern_brandenburg_dynasty
@@ -111738,7 +111737,7 @@ character_db={
 
     bra_johann_hohenzollern_brandenburg = {
         first_name = { name = name_john }
-        nickname = { name = "the Alchemist" }
+        nickname = { name = "the_Alchemist" }
         culture = brandenburgish
         religion = catholic
         estate = nobles_estate
@@ -112166,7 +112165,7 @@ character_db={
 
     boh_kunhuta_sternberg = {
         first_name = { name = Kunhuta }
-        last_name = { name = "ze Šternberka" }
+        last_name = { name = "ze_Šternberka" }
         culture = czech
         religion = hussite
         female = yes
@@ -112428,7 +112427,7 @@ character_db={
         religion = catholic
         birth_date = 1368.2.15
         death_date = 1437.12.9
-        birth = nuremburg
+        birth = nuremberg
         father = boh_charles_iv_luxembourg
         #mother = Elizabeth of Pomerania
         dynasty = luxembourg_dynasty
@@ -112728,7 +112727,7 @@ character_db={
         culture = serbian
         religion = catholic
         birth_date = 1417.1.1
-        birth = belgrade
+        birth = belgrad
         father = ser_durad_brankovic
         #mother = Eirene Kantakouzene
         dynasty = brankovic_dynasty
@@ -112842,7 +112841,7 @@ character_db={
 
 	wal_vlad_i_danesti = {
 		first_name = { name = name_vlad }
-        nickname = { name = "the Usurper" }
+        nickname = { name = "the_Usurper" }
 		culture = wallachian
 		religion = orthodox
 		birth_date = 1355.1.1
@@ -112888,7 +112887,7 @@ character_db={
 
 	wal_basarab_iv_danesti = {
 		first_name = { name = name_basarab }
-        nickname = { name = "the Young" }
+        nickname = { name = "the_Young" }
 		culture = wallachian
 		religion = orthodox
 		birth_date = 1443.1.1
@@ -112972,7 +112971,7 @@ character_db={
 
     wal_vlad_iii_draculesti = {
         first_name = { name = name_vlad }
-        nickname = { name = "the Impaler" }
+        nickname = { name = "the_Impaler" }
         culture = wallachian
         religion = catholic
         birth_date = 1429.1.1
@@ -112995,7 +112994,7 @@ character_db={
 
     wal_vlad_iv_draculesti = {
         first_name = { name = name_vlad }
-        nickname = { name = "the Monk" }
+        nickname = { name = "the_Monk" }
         culture = wallachian
         religion = catholic
         birth_date = 1424.1.1
@@ -113009,7 +113008,7 @@ character_db={
 
     mol_dragos_dragosesti = {
         first_name = { name = Dragoș }
-        nickname = { name = "the Founder" }
+        nickname = { name = "the_Founder" }
         culture = moldovan
         religion = orthodox
         birth_date = 1320.1.1
@@ -113441,7 +113440,7 @@ character_db={
 
     pol_wladyslaw_iii_jagiellon = { #Władysław III 
         first_name = { name = name_vladislav }
-        nickname = { name = "of Varna" }
+        nickname = { name = "of_Varna" }
         culture = lesser_polish
         religion = catholic
         birth_date = 1424.10.31
@@ -113488,7 +113487,7 @@ character_db={
         father = lit_algirdas_gediminds
         mother = lit_uliana_alexnadrovna_rurikovich
         dynasty = gediminid_dynasty
-        tag = NSV
+        tag = MSV
     }
 
     msv_karigaila_gediminid = {
@@ -113995,7 +113994,7 @@ character_db={
 
     liv_heinrich_vincke_overbergen = {
         first_name = { name = name_henry }
-        last_name = { name = "von Overbergen" }
+        last_name = { name = "von_Overbergen" }
         culture = low_franconian
         religion = catholic
         birth_date = 1400.1.1
@@ -114091,7 +114090,7 @@ character_db={
     #cas nobles etc.
     cas_alvaro_luna = {
         first_name = { name = Álvaro }
-        last_name = { name = "de Luna" }
+        last_name = { name = "de_Luna" }
         culture = castilian
         religion = catholic
         birth_date = 1398.6.19
@@ -114424,7 +114423,6 @@ character_db={
         tag = ARA
         ruler_trait = lawgiver
         ruler_trait = strict
-        ruler_trait = patron_of_arts
     }
 
     ara_juan_ii_trastamara = { #next ARA ruler
@@ -114468,7 +114466,7 @@ character_db={
 
     ctv_alfonso_aragon_escobar = {
         first_name = { name = name_alphonse }
-        last_name = { name = "de Aragón y Escobar" }
+        last_name = { name = "de_Aragón_y_Escobar" }
         culture = castilian
         religion = catholic
         birth_date = 1417.1.1
@@ -114943,7 +114941,7 @@ character_db={
 
     por_joao_i_avis = {
         first_name = { name = name_john }
-        nickname = { name = "of Fond Memory" }
+        nickname = { name = "of_Fond_Memory" }
         culture = portuguese
         religion = catholic
         estate = nobles_estate
@@ -115049,7 +115047,7 @@ character_db={
 
     por_duarte_i_avis = {
         first_name = { name = name_edward }
-        nickname = { name = "the Eloquent" }
+        nickname = { name = "the_Eloquent" }
         culture = portuguese
         religion = catholic
         estate = nobles_estate
@@ -115079,7 +115077,7 @@ character_db={
 
     por_afonso_v_avis = {
         first_name = { name = name_alphonse }
-        nickname = { name = "the African" }
+        nickname = { name = "the_African" }
         culture = portuguese
         religion = catholic
         estate = nobles_estate
@@ -115148,7 +115146,7 @@ character_db={
 
     por_pedro_i_avis_coimbra = {
         first_name = { name = name_peter }
-        nickname = { name = "of the Seven Parts" }
+        nickname = { name = "of_the_Seven_Parts" }
         culture = portuguese
         religion = catholic
         estate = nobles_estate
@@ -115256,7 +115254,7 @@ character_db={
 
     por_henrique_avis_viseu = {
         first_name = { name = name_henry }
-        nickname = { name = "the Navigator" }
+        nickname = { name = "the_Navigator" }
         culture = portuguese
         religion = catholic
         estate = nobles_estate
@@ -115270,7 +115268,7 @@ character_db={
 
     por_joao_avis_constable = {
         first_name = { name = name_john }
-        nickname = { name = "the Constable Prince" }
+        nickname = { name = "the_Constable_Prince" }
         culture = portuguese
         religion = catholic
         estate = nobles_estate
@@ -115313,7 +115311,7 @@ character_db={
 
     por_fernando_avis_holy = {
         first_name = { name = name_ferdinand }
-        nickname = { name = "the Holy Prince" }
+        nickname = { name = "the_Holy_Prince" }
         culture = portuguese
         religion = catholic
         estate = nobles_estate
@@ -115474,7 +115472,7 @@ character_db={
 
     fra_charles_vi_valois = { # https://en.wikipedia.org/wiki/Charles_VI_of_France
         first_name = { name = name_charles }
-        nickname = { name = "the Mad" }
+        nickname = { name = "the_Mad" }
         culture = french
         religion = catholic
         estate = nobles_estate
@@ -115622,7 +115620,7 @@ character_db={
 
     fra_louis_xi_valois = { # https://en.wikipedia.org/wiki/Louis_XI
         first_name = { name = name_louis }
-        nickname = { name = "the Prudent" }
+        nickname = { name = "the_Prudent" }
         culture = french
         religion = catholic
         estate = nobles_estate
@@ -116533,7 +116531,7 @@ character_db={
 
     bur_jean_i_valois_burgundy = {
         first_name = { name = name_john }
-        nickname = { name = "the Fearless" }
+        nickname = { name = "the_Fearless" }
         culture = burgundian
         religion = catholic
         estate = nobles_estate
@@ -116675,7 +116673,7 @@ character_db={
 
     bur_antoine_valois_burgundy_bastard = {
         first_name = { name = name_anthony }
-        nickname = { name = "the Great Bastard" }
+        nickname = { name = "the_Great_Bastard" }
         culture = burgundian
         religion = catholic
         estate = nobles_estate
@@ -116779,7 +116777,7 @@ character_db={
 
     bur_olivier_la_marche = {
         first_name = { name = Olivier }
-        last_name = { name = "de la Marche" }
+        last_name = { name = "de_la_Marche" }
         culture = limousin
         religion = catholic
         estate = nobles_estate
@@ -116801,7 +116799,7 @@ character_db={
 
     bur_jean_le_fevre_de_saint_remy = {
         first_name = { name = name_peter }
-        last_name = { name = "Le Fèvre de Saint-Remy" }
+        last_name = { name = "Le_Fèvre_de_Saint-Remy" }
         culture = picard
         religion = catholic
         estate = nobles_estate
@@ -117234,7 +117232,7 @@ character_db={
 
     dan_margrete_i_estridsen = {
         first_name = { name = name_margaret }
-        nickname = { name = "the Lady King" }
+        nickname = { name = "the_Lady_King" }
         culture = danish
         religion = catholic
         estate = nobles_estate
@@ -117263,9 +117261,23 @@ character_db={
         tag = DAN
     }
 
+    dan_erich_gryf = {
+        first_name = { name = name_eric }
+        nickname = { name = "of_Pomerania" }
+        culture = eastern_pomeranian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1381.1.1
+        birth = stolp
+        #father = 
+        mother = mkl_marie_mecklenburg
+        dynasty = gryf_dynasty
+        tag = GOT
+    }
+
     dan_christoph_iii_wittelsbach = {
         first_name = { name = name_christopher }
-        nickname = { name = "the Bark King" }
+        nickname = { name = "the_Bark_King" }
         culture = upper_palatine
         religion = catholic
         estate = nobles_estate
@@ -117976,7 +117988,7 @@ character_db={
 
     sav_louis_i_savoy = {
         first_name = { name = name_louis }
-        nickname = { name = "the Generous" }
+        nickname = { name = "the_Generous" }
         culture = arpitan
         religion = catholic
         estate = nobles_estate
@@ -117984,6 +117996,115 @@ character_db={
         birth = geneve
         father = sav_amedee_viii_savoy
         mother = sav_marie_valois_burgundy
+        dynasty = savoy_dynasty
+        tag = SAV        
+    }
+
+    sav_anne_lusignan = {
+        first_name = { name = name_anna }
+        culture = poitevin
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1418.9.24
+        birth = nicosia_cyp
+        spouse = sav_louis_i_savoy
+        #father =
+        #mother =
+        dynasty = lusignan_dynasty #should be lusignan_cyprus_dynasty
+        tag = SAV        
+    }
+
+    sav_amedee_ix_savoy = {
+        first_name = { name = name_amadeus }
+        nickname = { name = "the_Happy" }
+        culture = arpitan
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1435.2.1
+        birth = evian
+        father = sav_louis_i_savoy
+        mother = sav_anne_lusignan
+        dynasty = savoy_dynasty
+        tag = SAV        
+    }
+
+    sav_louis_geneva_savoy = {
+        first_name = { name = name_louis }
+        culture = arpitan
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1436.6.1
+        birth = geneve
+        father = sav_louis_i_savoy
+        mother = sav_anne_lusignan
+        dynasty = savoy_dynasty
+        tag = SAV        
+    }
+
+    sav_philippe_ii_savoy = {
+        first_name = { name = name_philip }
+        culture = arpitan
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1438.2.5
+        birth = chambery
+        father = sav_louis_i_savoy
+        mother = sav_anne_lusignan
+        dynasty = savoy_dynasty
+        tag = SAV        
+    }
+
+    mfa_marguerite_ii_savoy = {
+        first_name = { name = name_margaret }
+        culture = arpitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1439.4.1
+        birth = turin
+        father = sav_louis_i_savoy
+        mother = sav_anne_lusignan
+        dynasty = savoy_dynasty
+        tag = SAV        
+    }
+
+    sav_pierre_savoy_bishop = {
+        first_name = { name = name_peter }
+        culture = arpitan
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1440.2.2
+        birth = geneve
+        father = sav_louis_i_savoy
+        mother = sav_anne_lusignan
+        dynasty = savoy_dynasty
+        tag = SAV        
+    }
+
+    sav_janus_savoy = {
+        first_name = { name = "Janus" }
+        culture = arpitan
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1440.11.2
+        birth = geneve
+        father = sav_louis_i_savoy
+        mother = sav_anne_lusignan
+        dynasty = savoy_dynasty
+        tag = SAV        
+    }
+
+    fra_charlotte_savoy = {
+        first_name = { name = name_charlotte }
+        culture = arpitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1441.11.16
+        birth = chambery
+        father = sav_louis_i_savoy
+        mother = sav_anne_lusignan
         dynasty = savoy_dynasty
         tag = SAV        
     }
@@ -118430,7 +118551,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1412.6.5
-        birth = mantua
+        birth = mantova
         dynasty = gonzaga_dynasty
         tag = MAN      
     }
@@ -118455,7 +118576,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1441.6.25
-        birth = mantua
+        birth = mantova
         father = man_ludovico_iii_gonzaga
         mother = man_barbara_hohenzollern_brandenburg
         dynasty = gonzaga_dynasty
@@ -118468,7 +118589,7 @@ character_db={
         religion = catholic
         estate = clergy_estate
         birth_date = 1444.3.15
-        birth = mantua
+        birth = mantova
         father = man_ludovico_iii_gonzaga
         mother = man_barbara_hohenzollern_brandenburg
         dynasty = gonzaga_dynasty
@@ -119619,7 +119740,6 @@ character_db={
 
     mos_maria_of_borovsk = {#queen Maria of Borovsk
         first_name = { name = name_mary }
-        dynasty = yaroslavl_dynasty
         adm = 75 dip = 60 mil = 40
         culture = muscovite
         religion = orthodox
@@ -119627,7 +119747,7 @@ character_db={
         birth = moscow
         female = yes
         spouse = mos_vasily_ii_rurikovich
-        dynasty = yaroslavl
+        dynasty = yaroslavl_dynasty
         tag = MOS
     }
 
@@ -120587,7 +120707,7 @@ character_db={
 
     mor_yahya_ibn_abi_zakariya_wattasid = {
         first_name = { name = name_john }
-        last_name = { name = "ibn Abi Zakariyya" }
+        last_name = { name = "ibn_Abi_Zakariyya" }
         dynasty = wattasid_dynasty
         birth = tazroute
         birth_date = 1420.1.1
@@ -120600,7 +120720,7 @@ character_db={
     ### Tlemcen
 
     tle_abu_abbas_ahmad_zayyanid = {
-        first_name = { name = "Abu Abbas" }
+        first_name = { name = "Abu_Abbas" }
         last_name = { name = Ahmad }
         dynasty = zayyanid_dynasty
         birth = tlemcen
@@ -120613,8 +120733,8 @@ character_db={
     ### Tunis
 
     tun_abu_amr_uthman_hafsid = {
-        first_name = { name = "Abū ʿAmr" }
-        last_name = { name = "ʿUthmān" }
+        first_name = { name = "Abū_Amr }
+        last_name = { name = Uthmān }
         dynasty = hafsid_dynasty
         birth = tunis
         birth_date = 1419.2.1
@@ -120760,7 +120880,7 @@ character_db={
     mam_izz_al_aziz_burji = {
         first_name = { name = Izz }
         nickname = { name = name_al_din }
-        last_name = { name = "Abd Al-Aziz" }
+        last_name = { name = "Abd_Al-Aziz" }
         dynasty = burji_dynasty
         birth = cairo
         father = mam_sayf_barquq_burji
@@ -120961,7 +121081,7 @@ character_db={
 
     mam_khawand_jawhar_al_handar = {
         first_name = { name = Khawand }
-        last_name = { name = "Jawhar al-Handar" }
+        last_name = { name = "Jawhar_al-Handar" }
         birth = cairo
         birth_date = 1419.1.1
         female = yes
@@ -121114,7 +121234,7 @@ character_db={
     }
 
     mam_abu_al_nasir_qaitbay_burji = {
-        first_name = { name = "Abu Al-Nasir Sayf" }
+        first_name = { name = "Abu_Al-Nasir_Sayf" }
         nickname = { name = name_al_din }
         last_name = { name = "Qaitbay" }
         dynasty = burji_dynasty
@@ -121144,7 +121264,7 @@ character_db={
     }
 
     tim_toghay_turkan_aqa = {
-        first_name = { name = "Toghay Turkan Aqa" }
+        first_name = { name = "Toghay_Turkan_Aqa" }
         culture = khorezmian_culture
         religion = sunni
         female = yes
@@ -121166,7 +121286,7 @@ character_db={
     }
 
     tim_muhammad_sultan_mirza = {
-        first_name = { name = "Muhammad Mirza" }
+        first_name = { name = "Muhammad_Mirza" }
         culture = khorezmian_culture
         religion = sunni
         birth_date = 1375.1.1
@@ -121177,7 +121297,7 @@ character_db={
     }
 
     tim_pir_muhammad_mirza = {
-        first_name = { name = "Pir Muhammad Mirza" }
+        first_name = { name = "Pir_Muhammad_Mirza" }
         culture = khorezmian_culture
         religion = sunni
         birth_date = 1376.1.1
@@ -121199,7 +121319,7 @@ character_db={
     }
 
     tim_khalil_sultan = {
-        first_name = { name = "Khalil Sultan" }
+        first_name = { name = "Khalil_Sultan" }
         culture = khorezmian_culture
         religion = sunni
         birth_date = 1384.1.1
@@ -121210,7 +121330,7 @@ character_db={
     }
 
     tim_muhammad_mirza = {
-        first_name = { name = "Muhammad Mirza" }
+        first_name = { name = "Muhammad_Mirza" }
         culture = khorezmian_culture
         religion = sunni
         birth_date = 1387.1.1 #Unknown
@@ -121221,7 +121341,7 @@ character_db={
     }
 
     tim_abu_said_mirza = {
-        first_name = { name = "Abu Sa'id" }
+        first_name = { name = "Abu_Sa'id" }
         culture = khorezmian_culture
         religion = sunni
         adm = 60 dip = 55 mil = 70
@@ -121446,7 +121566,7 @@ character_db={
     }
 
     tim_shahrukh_mirza = {
-        first_name = { name = "Shahrukh Mirza" }
+        first_name = { name = "Shahrukh_Mirza" }
         culture = khorezmian_culture
         religion = sunni
         adm = 70 dip = 75 mil = 50
@@ -121468,7 +121588,7 @@ character_db={
     }
 
     tim_gauhar_shad = {
-        first_name = { name = "Gauhar Shad" }
+        first_name = { name = "Gauhar_Shad" }
         culture = khorezmian_culture
         religion = sunni
         female = yes
@@ -121496,7 +121616,7 @@ character_db={
     }
 
     tim_ala_al_dawla = {
-        first_name = { name = "Ala al-Dawla" }
+        first_name = { name = "Ala_al-Dawla" }
         culture = khorezmian_culture
         religion = sunni
         adm = 45 dip = 50 mil = 40
@@ -121508,7 +121628,7 @@ character_db={
     }
 
     tim_ibrahim_mirza = {
-        first_name = { name = "Ibrahim Mirza" }
+        first_name = { name = "Ibrahim_Mirza" }
         culture = khorezmian_culture
         religion = sunni
         birth_date = 1440.1.1
@@ -121521,7 +121641,7 @@ character_db={
     ### Fars
 
     tif_ibrahim_father = {
-        first_name = { name = "Ibrahim Sultan" }
+        first_name = { name = "Ibrahim_Sultan" }
         culture = khorezmian_culture
         religion = sunni
         birth_date = 1394.1.1
@@ -121545,7 +121665,7 @@ character_db={
     ### Samarkand
 
     tis_ruqaiya_sultan = {
-        first_name = { name = "Ruqaiya Sultan" }
+        first_name = { name = "Ruqaiya_Sultan" }
         culture = khorezmian_culture
         religion = sunni
         female = yes
@@ -121587,7 +121707,7 @@ character_db={
     ### Gorgan
 
     tig_abul_qasim_babur_mirza = {
-        first_name = { name = "Abul-Qasim Babur" }
+        first_name = { name = Abul-Qasim_Babur }
         culture = khorezmian_culture
         religion = sunni
         adm = 50 dip = 65 mil = 60
@@ -121603,7 +121723,7 @@ character_db={
     ### Balkh
 
     ttk_abd_al_latif = {
-        first_name = { name = "Abd al-Latif" }
+        first_name = { name = Abd_al-Latif }
         culture = khorezmian_culture
         religion = sunni
         adm = 40 dip = 30 mil = 65
@@ -123471,7 +123591,7 @@ character_db={
         first_name = { name = Yandathu }
         culture = burmese_culture
         religion = theravada
-        birth = paukmyaing
+        birth = kyaukse
         birth_date = 1318.1.1 # Unknown
         death_date = 1350.1.1 # Unknown
         father = pin_uzana
@@ -123485,7 +123605,7 @@ character_db={
         religion = theravada
         birth_date = 1335.1.1 # Estimated
         death_date = 1390.1.1 # Estimated
-        birth = paukmyaing
+        birth = kyaukse
         father = avv_yandathu
         dynasty = myinsaing_dynasty
         tag = AVV
@@ -123831,5 +123951,138 @@ character_db={
         female = yes
         estate = clergy_estate
         tag = GPH
+    }
+    #Nogai
+    tokhtamysh_manghit = {
+        first_name = { name = name_Tokhtamysh }
+        dynasty = manghit_dynasty
+        culture = nogai
+        religion = tengri
+        adm = 45 dip = 40 mil = 50
+        birth_date = 1330.1.1
+        death_date = 1380.1.1
+        tag = MGH
+    }
+    edigu_manghit = {
+        first_name = { name = name_Edigu }
+        dynasty = manghit_dynasty
+        culture = nogai
+        religion = sunni
+        adm = 70 dip = 65 mil = 80
+        birth_date = 1352.1.1
+        death_date = 1419.8.20
+        father = tokhtamysh_manghit
+        tag = MGH
+        birth = sarayjuk
+    }
+    nur_ad_din_manghit = {
+        first_name = { name = name_Nur.name_adDin }
+        dynasty = manghit_dynasty
+        culture = nogai
+        religion = sunni
+        adm = 62 dip = 58 mil = 75
+        birth_date = 1390.1.1
+        father = edigu_manghit
+        tag = MGH
+        birth = sarayjuk
+    }
+    jak_chief_fictional = {
+        first_name = { name = name_Yusuf }
+        dynasty = jak_dynasty
+        culture = nogai
+        religion = sunni
+        adm = 40 dip = 35 mil = 45
+        birth_date = 1395.1.1
+        tag = JAK
+        birth = oral
+    }
+    aog_chief_fictional = {
+        first_name = { name = name_Timur }
+        dynasty = aog_dynasty
+        culture = nogai
+        religion = sunni
+        adm = 38 dip = 42 mil = 40
+        birth_date = 1400.1.1
+        tag = AOG
+        birth = ilek
+    }
+    qon_chief_fictional = {
+        first_name = { name = name_Hasan }
+        dynasty = qon_dynasty
+        culture = nogai
+        religion = sunni
+        adm = 42 dip = 38 mil = 44
+        birth_date = 1398.1.1
+        tag = QON
+        birth = shagiz
+    }
+    nwm_chief_fictional = {
+        first_name = { name = name_Ahmad }
+        dynasty = nwm_dynasty
+        culture = nogai
+        religion = sunni
+        adm = 35 dip = 40 mil = 48
+        birth_date = 1402.1.1
+        tag = NWM
+        birth = emba
+    }
+    jik_chief_fictional = {
+        first_name = { name = name_Musa }
+        dynasty = jik_dynasty
+        culture = nogai
+        religion = sunni
+        adm = 44 dip = 36 mil = 42
+        birth_date = 1397.1.1
+        tag = JIK
+        birth = kyzylkala
+    }
+    inal_nef = {
+        first_name = { name = name_Inal }
+        nickname = { name = "Inal_the_great" }
+        dynasty = nef_dynasty
+        culture = circassian_culture
+        religion = khabzeism
+        adm = 70 dip = 75 mil = 65
+        birth_date = 1390.1.1
+        tag = ZHA
+        birth = shanjir
+    }
+    maziqo_nef_fictional = {
+        first_name = { name = name_Maziqo }
+        dynasty = nef_dynasty
+        culture = circassian_culture
+        religion = khabzeism
+        adm = 45 dip = 38 mil = 50
+        birth_date = 1400.1.1
+        tag = KEM
+        birth = shanjir
+    }
+    anzor_nef_fictional = {
+        first_name = { name = name_Anzor }
+        dynasty = nef_dynasty
+        culture = circassian_culture
+        religion = khabzeism
+        adm = 42 dip = 44 mil = 48
+        birth_date = 1395.1.1
+        tag = BSS
+    }
+    pshimaf_nef_fictional = {
+        first_name = { name = name_Pshimaf }
+        dynasty = nef_dynasty
+        culture = circassian_culture
+        religion = orthodox
+        adm = 50 dip = 40 mil = 55
+        birth_date = 1398.1.1
+        tag = QAB
+    }
+    temruk_nef_fictional = {
+        first_name = { name = name_Temruk }
+        dynasty = nef_dynasty
+        culture = circassian_culture
+        religion = khabzeism
+        adm = 38 dip = 42 mil = 45
+        birth_date = 1402.1.1
+        tag = KBZ
+        birth = shanjir
     }
 }
