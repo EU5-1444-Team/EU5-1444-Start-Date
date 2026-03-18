@@ -29,6 +29,7 @@ KHL_f = { #Khalkha and Chahar Formable
 	level = 3
 	required_locations_fraction = 0.25
 	rule = plausible
+	capital_required = no
 	potential = {
         or = {
     		culture = culture:khalkha_culture
@@ -63,6 +64,7 @@ KHA_f = { #Khorchin formable
 	level = 3
 	required_locations_fraction = 0.25
 	rule = historical
+	capital_required = no
 	potential = {
 		culture = culture:khorchin_culture
 	}
@@ -94,6 +96,7 @@ OIR_f = { #Oirat formable
     level = 3
     required_locations_fraction = 0.25
     rule = historical
+	capital_required = no
     potential = {
         culture = culture:oirat_culture
     }
@@ -126,6 +129,7 @@ NOG_f = { #Nogai formable
     level = 3
     required_locations_fraction = 0.1
     rule = historical
+	capital_required = no
     potential = {
         culture = culture:nogai
     }
@@ -158,6 +162,7 @@ URZ_f = { #Uriankhai formable
     level = 3
     required_locations_fraction = 0.25
     rule = historical
+	capital_required = no
     potential = {
         culture = culture:uriankhai_culture
     }
@@ -186,71 +191,6 @@ URZ_f = { #Uriankhai formable
 	}
 }
 
-YUA_f = { #Yuan formable
-    level = 4
-    required_locations_fraction = 0.50
-    rule = plausible
-    potential = {
-        exists = international_organization:northern_yuan
-		is_member_of_international_organization = international_organization:northern_yuan
-    }
-
-    allow = {
-        custom_tooltip = {
-            text = YUA_f_tt
-            always = no
-        }
-    }
-
-    name = YUA
-    flag = YUA
-    adjective = YUA_ADJ
-    tag = YUA
-    color = map_YUA
-
-    regions = {
-		mongolia_region
-	}
-	form_effect = {
-        if = {
-			limit = { country_rank_level < 4 }
-			set_country_rank_effect = { rank = country_rank:rank_empire }
-		}
-	}
-}
-
-MGO_f = { #Mongolia formable
-    level = 4
-    required_locations_fraction = 0.50
-    rule = plausible
-    potential = {
-        exists = international_organization:northern_yuan
-		is_member_of_international_organization = international_organization:northern_yuan
-    }
-
-    allow = {
-        custom_tooltip = {
-            text = MGA_f_tt
-            always = no
-        }
-    }
-
-    name = MGA
-    flag = MGA
-    adjective = MGA_ADJ
-    tag = MGA
-    color = map_MGA
-
-    regions = {
-        mongolia_region
-    }
-    form_effect = {
-        if = {
-            limit = { country_rank_level < 4 }
-            set_country_rank_effect = { rank = country_rank:rank_empire }
-        }
-    }
-}
 GTH_f = { #Great Horde
 	level = 3
 	required_locations_fraction = 0.3
@@ -304,6 +244,7 @@ GLH_f = { #Golden Horde
 	level = 4
 	required_locations_fraction = 0.25
 	rule = historical
+	capital_required = no
 	potential = {
 		OR = {
 			exists = international_organization:golden_horde
@@ -415,6 +356,7 @@ BSH_f = {
     level = 3
     required_locations_fraction = 0.80
     rule = historical
+	capital_required = no
     potential = {
         culture = culture:bashkir
     }
