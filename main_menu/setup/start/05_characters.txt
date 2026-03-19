@@ -117988,7 +117988,7 @@ character_db={
 
     sav_louis_i_savoy = {
         first_name = { name = name_louis }
-        nickname = { name = "the_Generous" }
+        nickname = { name = "the Generous" }
         culture = arpitan
         religion = catholic
         estate = nobles_estate
@@ -117997,21 +117997,6 @@ character_db={
         father = sav_amedee_viii_savoy
         mother = sav_marie_valois_burgundy
         dynasty = savoy_dynasty
-        tag = SAV        
-    }
-
-    sav_anne_lusignan = {
-        first_name = { name = name_anna }
-        culture = poitevin
-        religion = catholic
-        estate = nobles_estate
-        female = yes
-        birth_date = 1418.9.24
-        birth = nicosia_cyp
-        spouse = sav_louis_i_savoy
-        #father =
-        #mother =
-        dynasty = lusignan_dynasty #should be lusignan_cyprus_dynasty
         tag = SAV        
     }
 
@@ -118024,7 +118009,7 @@ character_db={
         birth_date = 1435.2.1
         birth = evian
         father = sav_louis_i_savoy
-        mother = sav_anne_lusignan
+        mother = sav_anne_lusignan_cyprus
         dynasty = savoy_dynasty
         tag = SAV        
     }
@@ -118037,7 +118022,7 @@ character_db={
         birth_date = 1436.6.1
         birth = geneve
         father = sav_louis_i_savoy
-        mother = sav_anne_lusignan
+        mother = sav_anne_lusignan_cyprus
         dynasty = savoy_dynasty
         tag = SAV        
     }
@@ -118050,7 +118035,7 @@ character_db={
         birth_date = 1438.2.5
         birth = chambery
         father = sav_louis_i_savoy
-        mother = sav_anne_lusignan
+        mother = sav_anne_lusignan_cyprus
         dynasty = savoy_dynasty
         tag = SAV        
     }
@@ -118064,7 +118049,7 @@ character_db={
         birth_date = 1439.4.1
         birth = turin
         father = sav_louis_i_savoy
-        mother = sav_anne_lusignan
+        mother = sav_anne_lusignan_cyprus
         dynasty = savoy_dynasty
         tag = SAV        
     }
@@ -118077,7 +118062,7 @@ character_db={
         birth_date = 1440.2.2
         birth = geneve
         father = sav_louis_i_savoy
-        mother = sav_anne_lusignan
+        mother = sav_anne_lusignan_cyprus
         dynasty = savoy_dynasty
         tag = SAV        
     }
@@ -118090,7 +118075,7 @@ character_db={
         birth_date = 1440.11.2
         birth = geneve
         father = sav_louis_i_savoy
-        mother = sav_anne_lusignan
+        mother = sav_anne_lusignan_cyprus
         dynasty = savoy_dynasty
         tag = SAV        
     }
@@ -118104,7 +118089,7 @@ character_db={
         birth_date = 1441.11.16
         birth = chambery
         father = sav_louis_i_savoy
-        mother = sav_anne_lusignan
+        mother = sav_anne_lusignan_cyprus
         dynasty = savoy_dynasty
         tag = SAV        
     }
@@ -119480,101 +119465,7 @@ character_db={
         tag = SAV        
     }
 
-    sav_amedee_ix_savoy = {
-        first_name = { name = name_amadeus }
-        nickname = { name = "the Happy" }
-        culture = arpitan
-        religion = catholic
-        estate = nobles_estate
-        birth_date = 1435.2.1
-        birth = evian
-        father = sav_louis_i_savoy
-        mother = sav_anne_lusignan_cyprus
-        dynasty = savoy_dynasty
-        tag = SAV        
-    }
-
-    sav_louis_geneva_savoy = {
-        first_name = { name = name_louis }
-        culture = arpitan
-        religion = catholic
-        estate = nobles_estate
-        birth_date = 1436.6.1
-        birth = geneve
-        father = sav_louis_i_savoy
-        mother = sav_anne_lusignan_cyprus
-        dynasty = savoy_dynasty
-        tag = SAV        
-    }
-
-    sav_philippe_ii_savoy = {
-        first_name = { name = name_philip }
-        culture = arpitan
-        religion = catholic
-        estate = nobles_estate
-        birth_date = 1438.2.5
-        birth = chambery
-        father = sav_louis_i_savoy
-        mother = sav_anne_lusignan_cyprus
-        dynasty = savoy_dynasty
-        tag = SAV        
-    }
-
-    mfa_marguerite_ii_savoy = {
-        first_name = { name = name_margaret }
-        culture = arpitan
-        religion = catholic
-        estate = nobles_estate
-        female = yes
-        birth_date = 1439.4.1
-        birth = turin
-        father = sav_louis_i_savoy
-        mother = sav_anne_lusignan_cyprus
-        dynasty = savoy_dynasty
-        tag = SAV        
-    }
-
-    sav_pierre_savoy_bishop = {
-        first_name = { name = name_peter }
-        culture = arpitan
-        religion = catholic
-        estate = clergy_estate
-        birth_date = 1440.2.2
-        birth = geneve
-        father = sav_louis_i_savoy
-        mother = sav_anne_lusignan_cyprus
-        dynasty = savoy_dynasty
-        tag = SAV        
-    }
-
-    sav_janus_savoy = {
-        first_name = { name = "Janus" }
-        culture = arpitan
-        religion = catholic
-        estate = nobles_estate
-        birth_date = 1440.11.2
-        birth = geneve
-        father = sav_louis_i_savoy
-        mother = sav_anne_lusignan_cyprus
-        dynasty = savoy_dynasty
-        tag = SAV        
-    }
-
-    fra_charlotte_savoy = {
-        first_name = { name = name_charlotte }
-        culture = arpitan
-        religion = catholic
-        estate = nobles_estate
-        female = yes
-        birth_date = 1441.11.16
-        birth = chambery
-        father = sav_louis_i_savoy
-        mother = sav_anne_lusignan_cyprus
-        dynasty = savoy_dynasty
-        tag = SAV        
-    }
-
-    cyp_jacques_ii_lusignan_poitiers = {
+    cyp_jacques_ii_lusignan_cyprus = {
         first_name = { name = name_james }
         culture = poitevin
         religion = catholic
@@ -119586,7 +119477,7 @@ character_db={
         tag = CYP
         timed_modifier = {
             modifier = "bastard"
-            start_date = 1439.1.1
+            start_date = 1317.1.1
             date = 9999.1.1
             size = 1
         }
@@ -119617,7 +119508,7 @@ character_db={
         birth = orange
         father = ora_raymond_iii_orange
         dynasty = baux_orange_dynasty
-        tag = ORA # TODO: Change Me      
+        tag = ORA    
     }
 
     ora_john_iii_chalon_arlay = {
