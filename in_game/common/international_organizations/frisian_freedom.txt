@@ -1,0 +1,176 @@
+frisian_freedom = {
+	has_target = no
+	unique = yes
+	show_on_diplomatic_map = yes
+	has_leader_country = yes
+	subject_limited = no
+	expel_members_who_are_targets_of_other_members = no
+	expel_members_who_target_the_leader = no
+	expel_members_who_are_attackers_at_war_with_other_members = no
+	expel_members_who_are_defenders_at_war_with_other_members = no
+	leader_title_key = "FRISIAN_FREEDOM_LEADER"
+	leader_type = character
+	leader = {
+		leader_country ?= {
+			if = {
+				limit = {
+					has_regent = yes
+					has_heir = yes
+				}
+				heir ?= {
+					add_to_list = leaders
+				}
+			}
+			else_if = {
+				limit = {
+					has_ruler = yes
+					ruler ?= {
+						is_alive = yes
+					}
+				}
+				ruler ?= {
+					add_to_list = leaders
+				}
+			}
+		}
+	}
+	leader_change_trigger_type = rulerchange
+	leader_change_method = vote
+	leadership_election_resolution = frisian_freedom_election
+	leader_score = {
+		value = great_power_score
+	}
+	disband_if_no_leader = no
+	create_visible_trigger = {
+		always = no
+	}
+	invite_visible_trigger = {
+		always = yes
+	}
+	join_visible_trigger = {
+		always = yes
+	}
+	join_enabled_trigger = {
+		always = yes
+	}
+	can_lead_trigger = {
+		OR = {
+			AND = {
+				scope:recipient = {
+					leader_country ?= root
+				}
+				heir ?= {
+					is_adult = yes
+				}
+			}
+			AND = {
+				scope:recipient = {
+					NOT = {
+						leader_country ?= root
+					}
+				}
+				ruler ?= {
+					is_adult = yes
+				}
+			}
+		}
+	}
+	can_declare_war = {
+		always = yes
+	}
+	can_initiate_policy_votes = {
+		is_member_of_international_organization = international_organization:frisian_freedom
+		is_leader_of_international_organization = international_organization:frisian_freedom
+	}
+	land_ownership_rule = frisian_freedom_land_ownership
+	laws = {
+		frisian_freedom_defense_law = frisian_freedom_defense_policy
+		frisian_freedom_offense_law = frisian_freedom_no_offense_policy
+		frisian_freedom_unification_law = preserve_frisian_freedom_policy
+	}
+	can_join_trigger = {
+		is_rebel_country = no
+		OR = {
+			culture = culture:frisian
+			government_type = government_type:republic
+		}
+		international_organization:frisian_freedom = {
+			international_organization_has_leader = yes
+		}
+		opinion = {
+			target = international_organization:frisian_freedom.leader_country
+			value >= 100
+		}
+	}
+	ai_desire_to_join = {
+		if = {
+			limit = {
+				international_organization:frisian_freedom = {
+					international_organization_has_leader = yes
+				}
+			}
+			add = {
+				desc = "POLICY_BIAS_OPINION_OF_IO_LEADER"
+				value = "opinion(international_organization:frisian_freedom.leader_country)"
+				multiply = 0.4
+			}
+		}
+	}
+	ai_desire_to_allow_new_member = {
+		add = {
+			desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+			value = 1000
+		}
+	}
+	can_leave_trigger = {
+		always = yes
+	}
+	auto_leave_trigger = {
+		always = no
+	}
+	auto_disband_trigger = {
+		any_international_organization_member = {
+			count < 2
+		}
+	}
+	on_creation = {
+	}
+	on_joined = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { government_type = government_type:republic }
+				}
+				change_government_type = government_type:republic
+			}
+			every_owned_location = {
+				limit = {
+					OR = {
+						area = area:friesland_area
+						province = province:south_holland_province
+						province = province:north_holland_province
+						this = location:elsfleth
+						this = location:ritzebuttel
+						this = location:husum
+						this = location:tonder
+					}
+				}
+				international_organization:frisian_freedom = {
+					add_location_to_international_organization = prev
+				}
+			}
+		}
+	}
+	on_left = {
+		hidden_effect = {
+			every_owned_location = {
+				limit = {
+					is_owned_by_international_organization = international_organization:frisian_freedom
+				}
+				international_organization:frisian_freedom = {
+					remove_location_from_international_organization = prev
+				}
+			}
+		}
+	}
+}
