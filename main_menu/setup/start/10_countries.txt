@@ -1975,7 +1975,10 @@ countries = {
         include = "catholic_monarchy_no_coast"
         government = {
             type = monarchy
-            ruler = alr_charles_ii_d_albret
+            ruler = alr_charles_ii_albret
+
+            ruler_term = { character = alr_charles_ii_albret start_date = 1415.10.25 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -3445,13 +3448,16 @@ countries = {
             ruler_term = { character = dre_jean_ii_dreux start_date = 1282.11.12 end_date = 1309.1.1 regnal_number = 2 }
             ruler_term = { character = dre_robert_v_dreux start_date = 1309.1.1 end_date = 1327.1.1 regnal_number = 5 }
             ruler_term = { character = dre_jean_iii_dreux start_date = 1327.1.1 end_date = 1331.1.1 regnal_number = 3 }
-            ruler_term = { character = dre_pierre_i_dreux start_date = 1331.1.1 regnal_number = 1 }
+            ruler_term = { character = dre_pierre_i_dreux start_date = 1331.1.1 end_date = 1345.11.3 regnal_number = 1 }
+
+            ruler_term = { character = alr_charles_ii_albret start_date = 1441.1.1 regnal_number = 2 }
 
             regnal_numbers = {
                 name_otto = 2
                 name_robert = 5
                 name_john = 3
                 name_peter = 1
+                name_charles = 2
             }
         }
 
@@ -4459,10 +4465,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
-            reforms = {
-                french_ducal_vassal_reform
-            }
+            ruler = bri_francois_i_montfort_brittany
 
             ruler_term = { character = mon_amaury_i_montfort start_date = 1050.1.1 end_date = 1053.1.1 regnal_number = 1 }
             ruler_term = { character = mon_simon_i_montfort start_date = 1053.1.1 end_date = 1087.9.25 regnal_number = 1 }
@@ -4476,16 +4479,24 @@ countries = {
             ruler_term = { character = mon_jean_i_montfort start_date = 1241.8.28 end_date = 1249.1.1 regnal_number = 1 }
             ruler_term = { character = mon_beatrice_montfort start_date = 1249.1.1 end_date = 1311.3.9 regnal_number = 1 }
             ruler_term = { character = mon_yolande_montfort start_date = 1311.3.9 end_date = 1322.8.2 regnal_number = 1 }
-            ruler_term = { character = mon_jean_montfort start_date = 1322.8.2 regnal_number = 2 }
+            ruler_term = { character = mon_jean_montfort start_date = 1322.8.2 end_date = 1345.9.26 regnal_number = 2 }
+            ruler_term = { character = bri_jean_iv_montfort_brittany start_date = 1345.9.26 end_date = 1399.11.1 regnal_number = 3 }
+            ruler_term = { character = bri_jean_v_montfort_brittany start_date = 1399.11.1 end_date = 1442.8.29 regnal_number = 4 }
+            ruler_term = { character = bri_francois_i_montfort_brittany start_date = 1442.8.29 regnal_number = 1 }
 
             regnal_numbers = {
                 name_william = 1
                 name_amalric = 6
                 name_simeon = 4
                 name_richard = 1
-                name_john = 2
+                name_john = 4
                 name_beatrix = 1
                 name_yolande = 1
+                name_francis = 1
+            }
+
+            reforms = {
+                french_ducal_vassal_reform
             }
         }
         capital = monfort_lamaury
@@ -4804,7 +4815,17 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = bri_guy_xiii_laval
+
+
+            ruler_term = { character = bri_guy_x_laval start_date = 1333.1.22 end_date = 1347.1.1 regnal_number = 10 }
+            ruler_term = { character = bri_guy_xi_laval start_date = 1347.1.1 end_date = 1348.1.1 regnal_number = 11 }
+            ruler_term = { character = bri_guy_xii_laval start_date = 1348.1.1 end_date = 1412.1.1 regnal_number = 12 }
+            ruler_term = { character = bri_guy_xiii_laval start_date = 1412.1.1  regnal_number = 14 }
+
+            regnal_numbers = {
+                name_guy = 14
+            }
         }
 
         capital = laval
