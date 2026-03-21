@@ -115748,6 +115748,42 @@ character_db={
         tag = FRA
     }
 
+    ### Rheims
+
+    rei_renaud_chartres = {
+        first_name = { name = name_reginald }
+        last_name = { name = "de Chartres" }
+        culture = french
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1380.1.1
+        death_date = 1444.4.4
+        birth = chartres
+        tag = REI 
+    }
+
+    rei_jacques_juvenal_ursins = {
+        first_name = { name = name_james.Juvénal }
+        last_name = { name = "des Ursins" }
+        culture = french
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1386.1.1 #unknown
+        birth = troyes
+        tag = REI 
+    }
+
+    rei_jean_juvenal_ursins = {
+        first_name = { name = name_john.Juvénal }
+        last_name = { name = "des Ursins" }
+        culture = french
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1388.1.1
+        birth = troyes
+        tag = REZI 
+    }
+
     ### Alençon
 
     ale_pierre_ii_valois_alencon = { # https://en.wikipedia.org/wiki/Pierre_II,_Count_of_Alen%C3%A7on
@@ -115917,6 +115953,78 @@ character_db={
         }
     }
 
+    ### Thouars
+
+    thr_louis_ii_amboise = {
+		first_name = { name = name_louis }
+		culture = french
+		religion = catholic
+		estate = crown_estate
+		birth_date = 1392.1.1
+		birth = amboise
+		#father = 
+		#mother = 
+		dynasty = amboise_dynasty
+		tag = THR    
+    }
+
+    thr_louise_marie_rieux = {
+		first_name = { name = name_louise.name_mary }
+		culture = gallo
+		religion = catholic
+		estate = crown_estate
+        female = yes
+		birth_date = 1401.1.1
+		birth = redon
+        spouse = thr_louis_ii_amboise
+		#father =
+		#mother = 
+		dynasty = rieux_dynasty
+		tag = THR        
+    }
+
+    thr_peronelle_amboise = {
+		first_name = { name = name_petronilla }
+		culture = poitevin
+		religion = catholic
+		estate = crown_estate
+        female = yes
+		birth_date = 1427.1.1
+		birth = thouars
+		father = thr_louis_ii_amboise
+		mother = thr_louise_marie_rieux
+		dynasty = amboise_dynasty
+		tag = THR    
+    }
+
+    thr_francoise_amboise = {
+		first_name = { name = name_frances }
+		culture = poitevin
+		religion = catholic
+		estate = crown_estate
+        female = yes
+		birth_date = 1427.1.1
+		birth = thouars
+		father = thr_louis_ii_amboise
+		mother = thr_louise_marie_rieux
+		dynasty = amboise_dynasty
+		tag = THR    
+    }
+
+    thr_marguerite_amboise = {
+		first_name = { name = name_margaret }
+		culture = poitevin
+		religion = catholic
+		estate = crown_estate
+        female = yes
+		birth_date = 1432.1.1
+		birth = thouars
+		father = thr_louis_ii_amboise
+		mother = thr_louise_marie_rieux
+		dynasty = amboise_dynasty
+		tag = THR    
+    }
+
     ### Angouleme
 
     ang_jean_ii_valois_angouleme = {
@@ -115941,8 +116049,147 @@ character_db={
 		estate = crown_estate
 		birth_date = 1407.1.1
 		birth = labrit
+        spouse = alr_anne_armagnac
 		#father = alr_charles_i_albret
 		#mother = alr_marie_sully
+		dynasty = albret_dynasty
+		tag = ALR       
+    }
+
+    alr_anne_armagnac = {
+		first_name = { name = name_anna }
+		culture = languedocien
+		religion = catholic
+		estate = crown_estate
+        female = yes
+		birth_date = 1402.1.1
+		birth = rodez
+        spouse = alr_charles_ii_albret
+		#father = arg_bernard_vii_armagnac
+		mother = sav_bonne_valois_berry
+		dynasty = armagnac_dynasty
+		tag = ALR       
+    }
+
+    alr_jean_i_albret = {
+		first_name = { name = name_john }
+		culture = gascon
+		religion = catholic
+		estate = crown_estate
+		birth_date = 1425.1.1
+		birth = labrit
+        spouse = alr_catherine_rohan
+		father = alr_charles_ii_albret
+		mother = alr_anne_armagnac
+		dynasty = albret_dynasty
+		tag = ALR       
+    }
+
+    alr_catherine_rohan = {
+		first_name = { name = name_catherine }
+		culture = gallo
+		religion = catholic
+		estate = crown_estate
+        female = yes
+		birth_date = 1425.1.1
+		birth = rohan
+        spouse = alr_jean_i_albret
+		#father = Alain IX de Rohan
+		#mother = Marguerite de Dreux
+		dynasty = rohan_dynasty
+		tag = ALR         
+    }
+
+    alr_alain_albret = {
+		first_name = { name = name_alan }
+		culture = gascon
+		religion = catholic
+		estate = crown_estate
+		birth_date = 1440.1.1
+		birth = labrit
+		father = alr_jean_i_albret
+		mother = alr_catherine_rohan
+		dynasty = albret_dynasty
+		tag = ALR       
+    }
+
+    alr_louis_albret_bishop = {
+		first_name = { name = name_john }
+		culture = gascon
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1422.1.1
+		birth = labrit
+		father = alr_charles_ii_albret
+		mother = alr_anne_armagnac
+		dynasty = albret_dynasty
+		tag = MDM       
+    }
+
+    alr_arnaud_amanieu_albret = {
+		first_name = { name = name_arnold.name_emmanuel }
+		culture = gascon
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1422.1.1
+		birth = labrit
+		father = alr_charles_ii_albret
+		mother = alr_anne_armagnac
+		dynasty = albret_dynasty
+		tag = MDM       
+    }
+
+    alr_charles_albret_son = {
+		first_name = { name = name_charles }
+		culture = gascon
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1424.1.1
+		birth = labrit
+		father = alr_charles_ii_albret
+		mother = alr_anne_armagnac
+		dynasty = albret_dynasty
+		tag = ALR       
+    }
+
+    alr_gilles_albret_son = {
+		first_name = { name = name_giles }
+		culture = gascon
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1424.1.1
+		birth = labrit
+		father = alr_charles_ii_albret
+		mother = alr_anne_armagnac
+		dynasty = albret_dynasty
+		tag = ALR       
+    }
+
+    alr_marie_albret_nevers = {
+		first_name = { name = name_mary }
+		culture = gascon
+		religion = catholic
+		estate = clergy_estate
+        female = yes
+		birth_date = 1427.1.1
+		birth = labrit
+		father = alr_charles_ii_albret
+		mother = alr_anne_armagnac
+		dynasty = albret_dynasty
+		tag = ALR       
+    }
+
+    alr_jeanne_ii_albret = {
+		first_name = { name = name_joanna }
+		culture = gascon
+		religion = catholic
+		estate = clergy_estate
+        female = yes
+		birth_date = 1428.1.1
+        death_date = 1444.1.1
+		birth = labrit
+		father = alr_charles_ii_albret
+		mother = alr_anne_armagnac
 		dynasty = albret_dynasty
 		tag = ALR       
     }
@@ -116184,6 +116431,7 @@ character_db={
 
 	bri_arthur_iii_montfort_brittany = {
 		first_name = { name = name_arthur }
+        nickname = { name = "de Richemont" }
 		culture = gallo
 		religion = catholic
 		estate = nobles_estate
