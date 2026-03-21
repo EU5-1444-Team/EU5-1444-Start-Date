@@ -288,41 +288,6 @@ AOT_f = { #Aotearoa
 	}
 }
 
-SOI_f = { #Solomon Islands
-	level = 2
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		or = {
-			culture = { has_culture_group = culture_group:micronesian_group }
-			culture = culture:naasioi
-		}
-	}
-
-	allow = {
-        owns = location:naasioi
-	}
-	
-	name = SOI
-	flag = SOI
-	adjective = SOI_ADJ
-	tag = SOI
-	color = map_SOI
-	provinces = {
-		bougainville_province
-		tinputz_province
-		choiseul_province
-		roviana_province
-		isatabu_province
-		malaita_province
-		mu_ngava_province
-	}
-	form_effect = {
-	}
-}
-
 POF_f = { #Tahiti
 	level = 2
 	required_locations_fraction = 0.7
@@ -529,7 +494,7 @@ MIA_f = { #Micronesia
 	}
 }
 
-MEL_f = { #Melanesia
+MLN_f = { #Melanesia
 	level = 3
 	required_locations_fraction = 0.3
 	capital_required = yes 
@@ -545,11 +510,11 @@ MEL_f = { #Melanesia
 		owns = location:naasioi
 	}
 	
-	name = MEL
-	flag = MEL
-	adjective = MEL_ADJ
-	tag = MEL
-	color = map_MEL
+	name = MLN
+	flag = MLN
+	adjective = MLN_ADJ
+	tag = MLN
+	color = map_MLN
 	regions = {
 		melanesia_region
 	}
