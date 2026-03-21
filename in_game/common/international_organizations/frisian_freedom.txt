@@ -126,7 +126,9 @@ frisian_freedom = {
 		always = yes
 	}
 	auto_leave_trigger = {
-		always = no
+		NOT = {
+			government_type = government_type:republic
+		}
 	}
 	auto_disband_trigger = {
 		any_international_organization_member = {
@@ -139,7 +141,9 @@ frisian_freedom = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOT = { government_type = government_type:republic }
+					NOT = {
+						government_type = government_type:republic
+					}
 				}
 				change_government_type = government_type:republic
 			}
@@ -162,15 +166,5 @@ frisian_freedom = {
 		}
 	}
 	on_left = {
-		hidden_effect = {
-			every_owned_location = {
-				limit = {
-					is_owned_by_international_organization = international_organization:frisian_freedom
-				}
-				international_organization:frisian_freedom = {
-					remove_location_from_international_organization = prev
-				}
-			}
-		}
 	}
 }

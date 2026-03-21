@@ -1,0 +1,50 @@
+namespace = efr_events
+efr_events.1 = {
+	type = country_event
+	title = efr_events.1.t
+	desc = efr_events.1.d
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = EFR
+		from = 1465.1.1
+		to = 1470.1.1
+		monthly_chance = 100
+	}
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+	immediate = {
+		event_illustration_estate_effect = {
+			foreground = estate_type:nobles_estate
+			background = estate_type:nobles_estate
+		}
+	}
+	option = {
+		name = efr_events.1.a
+		change_government_type = government_type:monarchy
+		if = {
+			limit = {
+				country_exists = c:EMD
+			}
+			c:EMD = {
+				make_subject_of = {
+					target = root
+					type = subject_type:vassal
+				}
+			}
+		}
+		international_organization:hre = {
+			add_country_to_international_organization = root
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+	option = {
+		name = efr_events.1.b
+		ai_chance = {
+			base = 70
+		}
+	}
+}
