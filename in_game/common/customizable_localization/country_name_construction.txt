@@ -47,6 +47,16 @@ country_name_construction = {
 		}
 	}
 	text = {
+		localization_key = polynesian_empire_construction
+		trigger = {
+			country_rank_is_empire = yes
+			OR = {
+				culture = { has_culture_group = culture_group:micronesian_group }
+				culture = { has_culture_group = culture_group:polynesian_group }
+			}
+		}
+	}
+	text = {
 		localization_key = country_name_construction_prefix_name
 		trigger = {
 			NOT = {
