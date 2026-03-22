@@ -48,7 +48,11 @@ frisian_freedom = {
 		always = yes
 	}
 	join_visible_trigger = {
-		always = yes
+		capital = {
+			any_pop = {
+				culture = culture:frisian
+			}
+		}
 	}
 	join_enabled_trigger = {
 		always = yes
@@ -87,22 +91,42 @@ frisian_freedom = {
 		frisian_freedom_defense_law = frisian_freedom_defense_policy
 		frisian_freedom_offense_law = frisian_freedom_no_offense_policy
 		frisian_freedom_unification_law = preserve_frisian_freedom_policy
+		frisian_freedom_culture_law = frisian_culture_optional_policy
 	}
 	can_join_trigger = {
 		is_rebel_country = no
-		OR = {
-			culture = culture:frisian
-			government_type = government_type:republic
+		capital = {
+			any_pop = {
+				culture = culture:frisian
+			}
 		}
 		international_organization:frisian_freedom = {
 			international_organization_has_leader = yes
 		}
 		opinion = {
 			target = international_organization:frisian_freedom.leader_country
-			value >= 100
+			value >= 50
 		}
 	}
 	ai_desire_to_join = {
+		if = {
+			limit = {
+				culture = culture:frisian
+			}
+			add = {
+				desc = "FRISIAN_CULTURE_DESIRE"
+				value = 100
+			}
+		}
+		if = {
+			limit = {
+				government_type = government_type:republic
+			}
+			add = {
+				desc = "REPUBLICAN_SOLIDARITY"
+				value = 50
+			}
+		}
 		if = {
 			limit = {
 				international_organization:frisian_freedom = {

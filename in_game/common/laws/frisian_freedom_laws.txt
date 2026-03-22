@@ -139,3 +139,45 @@ frisian_freedom_unification_law = {
 		years = 10
 	}
 }
+
+frisian_freedom_culture_law = {
+	law_category = administrative
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:frisian_freedom
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	frisian_culture_policy = {
+		allow = {
+			always = yes
+		}
+		on_activated = {
+			every_international_organization_member = {
+				limit = {
+					NOT = { culture = culture:frisian }
+				}
+				# verify exact effect name in basegame files
+				change_primary_culture = culture:frisian
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+	frisian_culture_optional_policy = {
+		allow = {
+			always = yes
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+}
