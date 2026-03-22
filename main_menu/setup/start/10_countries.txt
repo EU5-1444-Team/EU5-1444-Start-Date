@@ -913,12 +913,8 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            regency = consort_regency
-            active_regent = random # TODO: add me
-            start_regency_date = 1332.8.6
-            end_regency_date = 1344.5.8
-            ruler = auv_bertrand_v_la_tour
-            heir = auv_bertrand_vi_la_tour
+            ruler = random
+
             reforms = {
                 french_appanage_reform
             }
@@ -2178,11 +2174,16 @@ countries = {
         include = "catholic_monarchy_no_coast"
         government = {
             type = monarchy
+            ruler = cst_bernard_armagnac
+
+            ruler_term = { character = cst_bernard_armagnac start_date = 1441.1.1 regnal_number = 1 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
         }
 
+        country_rank = rank_duchy
         capital = nemours
     }
 
@@ -2225,9 +2226,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = semi_salic_law
-            regency = consort_regency
-            active_regent = random # TODO: add me
-            ruler = com_mathieu_de_foix_comminges
+            ruler = random
 
             ruler_term = { character = com_arnaud_i_comminges start_date = 949.1.1 end_date = 957.1.1 regnal_number = 1 }
             ruler_term = { character = com_roger_i_comminges start_date = 957.1.1 end_date = 979.1.1 regnal_number = 1 }
@@ -2575,8 +2574,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = amg_bertrand_vi_la_tour
-            heir = amg_jacques_de_armagnac
+            ruler = amg_jean_iv_armagnac
 
             ruler_term = { character = amg_bernard_i_armagnac start_date = 965.1.1 end_date = 995.1.1 regnal_number = 1 }
             ruler_term = { character = amg_geraud_i_armagnac start_date = 995.1.1 end_date = 1020.1.1 regnal_number = 1 }
@@ -2602,17 +2600,22 @@ countries = {
 
             ruler_term = { character = amg_geraud_vi_armagnac start_date = 1256.1.1 end_date = 1285.1.1 regnal_number = 6 }
             ruler_term = { character = amg_bernard_vi_armagnac start_date = 1285.1.1 end_date = 1319.1.1 regnal_number = 6 }
-            ruler_term = { character = amg_jean_i_armagnac start_date = 1319.1.1 end_date = 1373.6.22 regnal_number = 1 }
+            ruler_term = { character = amg_jean_i_armagnac start_date = 1319.1.1 end_date = 1373.1.1 regnal_number = 1 }
+            ruler_term = { character = amg_jean_ii_armagnac start_date = 1373.1.1 end_date = 1384.5.26 regnal_number = 2 }
+            ruler_term = { character = amg_jean_iii_armagnac start_date = 1384.5.26 end_date = 1391.7.25 regnal_number = 3 }
+            ruler_term = { character = amg_bernard_vii_armagnac start_date = 1391.7.25 end_date = 1418.6.12 regnal_number = 7 }
+            ruler_term = { character = amg_jean_iv_armagnac start_date = 1418.6.12 regnal_number = 4 }
 
             regnal_numbers = {
-                name_bernard = 6
+                name_bernard = 7
                 name_gerald = 6
                 name_peter.name_gerard = 1
                 name_mascarose = 2
                 name_arnold.name_otto = 1
                 name_eschivat = 1
-                name_john = 1
+                name_john = 4
             }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -2712,6 +2715,10 @@ countries = {
         country_rank = rank_county
         government = {
             type = monarchy
+            ruler = cst_bernard_armagnac
+
+            ruler_term = { character = cst_bernard_armagnac start_date = 1438.1.1 regnal_number = 1 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -2737,6 +2744,14 @@ countries = {
         country_rank = rank_county
         government = {
             type = monarchy
+            ruler = amg_jean_iv_armagnac
+
+            ruler_term = { character = amg_jean_i_armagnac start_date = 1319.1.1 end_date = 1373.1.1 regnal_number = 1 }
+            ruler_term = { character = amg_jean_ii_armagnac start_date = 1373.1.1 end_date = 1384.5.26 regnal_number = 2 }
+            ruler_term = { character = amg_jean_iii_armagnac start_date = 1384.5.26 end_date = 1391.7.25 regnal_number = 3 }
+            ruler_term = { character = amg_bernard_vii_armagnac start_date = 1391.7.25 end_date = 1418.6.12 regnal_number = 1 }
+            ruler_term = { character = amg_jean_iv_armagnac start_date = 1418.6.12 regnal_number = 4 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -3283,7 +3298,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = cst_bernard_armagnac
 
             ruler_term = { character = cat_ramon_berenguer_iii_barcelona start_date = 1113.1.1 end_date = 1131.7.19 regnal_number = 1 }
             ruler_term = { character = pro_berenguier_ramon_barcelona start_date = 1131.7.19 end_date = 1144.3.1 regnal_number = 1 }
@@ -3293,6 +3308,8 @@ countries = {
                 character = ara_alfons_ii_arago start_date = 1166.3.1 end_date = 1167.1.1 regnal_number = 1 # As Co-Ruler
             }
             ruler_term = { character = clt_renaud_iv_pons start_date = 1325.1.1 regnal_number = 4 }
+
+            ruler_term = { character = cst_bernard_armagnac start_date = 1427.1.1 regnal_number = 5 }
 
             regnal_numbers = {
                 name_bernard = 3
@@ -4079,6 +4096,14 @@ countries = {
         country_rank = rank_county
         government = {
             type = monarchy
+            ruler = amg_jean_iv_armagnac
+
+            ruler_term = { character = amg_jean_i_armagnac start_date = 1319.1.1 end_date = 1373.1.1 regnal_number = 1 }
+            ruler_term = { character = amg_jean_ii_armagnac start_date = 1373.1.1 end_date = 1384.5.26 regnal_number = 2 }
+            ruler_term = { character = amg_jean_iii_armagnac start_date = 1384.5.26 end_date = 1391.7.25 regnal_number = 3 }
+            ruler_term = { character = amg_bernard_vii_armagnac start_date = 1391.7.25 end_date = 1418.6.12 regnal_number = 1 }
+            ruler_term = { character = amg_jean_iv_armagnac start_date = 1418.6.12 regnal_number = 4 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -4278,11 +4303,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            regency = consort_regency
-            active_regent = random # TODO: add me
-            start_regency_date = 1330.1.1
-            end_regency_date = 1349.1.1
-            heir = random # TODO: add me
+            ruler = random
 
             ruler_term = { character = ast_arnaud_garcia_astarac start_date = 920.1.1 end_date = 960.1.1 regnal_number = 1 }
             ruler_term = { character = ast_garcia_arnaud_astarac start_date = 960.1.1 end_date = 975.1.1 regnal_number = 1 }
@@ -4330,7 +4351,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = amg_jean_iv_armagnac
 
             ruler_term = { character = ijo_odon_raymond_lisle_jourdain start_date = 1000.1.1 end_date = 1038.1.1 regnal_number = 1 }
             ruler_term = { character = ijo_raymond_lisle_jourdain start_date = 1038.1.1 end_date = 1089.1.1 regnal_number = 1 }
@@ -4344,11 +4365,14 @@ countries = {
             ruler_term = { character = ijo_jourdain_v_lisle_jourdain start_date = 1271.1.1 end_date = 1304.1.1 regnal_number = 3 }
             ruler_term = { character = ijo_bernard_iv_lisle_jourdain start_date = 1304.1.1 regnal_number = 4 }
 
+            ruler_term = { character = amg_jean_iv_armagnac start_date = 1418.6.12 regnal_number = 4 }
+
             regnal_numbers = {
                 name_otto.name_raymond = 1
                 name_raymond = 1
                 name_jordan = 5
                 name_bernard = 4
+                name_john = 1
             }
 
             reforms = {
@@ -4836,13 +4860,12 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = bri_guy_xiii_laval
-
+            ruler = lvl_guy_xiv_laval
 
             ruler_term = { character = bri_guy_x_laval start_date = 1333.1.22 end_date = 1347.1.1 regnal_number = 10 }
             ruler_term = { character = bri_guy_xi_laval start_date = 1347.1.1 end_date = 1348.1.1 regnal_number = 11 }
             ruler_term = { character = bri_guy_xii_laval start_date = 1348.1.1 end_date = 1412.1.1 regnal_number = 12 }
-            ruler_term = { character = bri_guy_xiii_laval start_date = 1412.1.1  regnal_number = 14 }
+            ruler_term = { character = bri_guy_xiii_laval start_date = 1412.1.1  regnal_number = 13 }
 
             regnal_numbers = {
                 name_guy = 14
@@ -17500,6 +17523,10 @@ countries = {
             hollola lohja tavastehus janakkala forssa liljendal jamsa
         }
 
+        own_control_integrated = {
+            hammerdal
+        }
+
         our_cores_conquered_by_others = {
             visby slite hoborg
         }
@@ -17629,7 +17656,7 @@ countries = {
             oslo ski eidsvoll
             tonsberg skien sande grenland
             idre sveg hede
-            hammerdal offerdal berg froso ragunda oviken
+            offerdal berg froso ragunda oviken
             nidaros roros stjordal oppdal orkdal skaun storen holtalen meraker tofte
             levanger namdal orland snasa lierne steinkjer
             molde fosna sunndal rauma sunnmore borgund stordal
@@ -23753,12 +23780,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = semi_salic_law
-
-            regency = subject_regency
-            active_regent = random # TODO: add me
-            start_regency_date = 1336.5.23
-            end_regency_date = 1340.1.1
-            heir = random # TODO: add me
+            ruler = random
 
             ruler_term = { character = czk_boleslaw_ii_piast start_date = 1275.1.20 end_date = 1313.4.20 regnal_number = 2 }
             ruler_term = { character = plk_waclaw_piast start_date = 1313.4.20 end_date = 1336.5.23 regnal_number = 1 }
@@ -29471,10 +29493,10 @@ countries = {
 
         religious_school = hanafi_school
         government = {
-            ruler = haci_giray
             type = steppe_horde
+            ruler = cri_haci_giray
+            
             ruler_term = { character = cri_haci_giray start_date = 1441.1.1 regnal_number = 1 }
-            mysticism_vs_jurisprudence = -15
 
             laws = {
                 legal_code_law = sharia_law_policy
@@ -29482,6 +29504,7 @@ countries = {
                 marriage_law = muslim_marriage
                 heir_religion_law = heir_same_religion
             }
+            mysticism_vs_jurisprudence = -15
             centralization_vs_decentralization = 30
             aristocracy_vs_plutocracy = 50
             serfdom_vs_free_subjects = 30
@@ -52054,24 +52077,6 @@ countries = {
     }
 
     # --- NMI ---
-
-    SHZ = {
-        # Shizuzu
-        capital = kazuno
-        include = "japanese_clan"
-        our_cores_conquered_by_others = {
-            kazuno
-        }
-        government = {
-            ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
-            reforms = {
-                daimyo
-            }
-        }
-        country_rank = rank_county
-    }
-
-    # --- SHZ ---
 
     SGO = {
         # Sagoshi

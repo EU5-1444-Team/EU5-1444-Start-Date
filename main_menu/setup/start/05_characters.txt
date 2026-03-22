@@ -10065,7 +10065,6 @@ character_db={
         dynasty = capet_dynasty
         tag = AMG
     }
-
     
     # Brother of the Duke of Bourbon
     fra_pierre_clermont = {
@@ -10082,7 +10081,6 @@ character_db={
         dynasty = capet_dynasty
         tag = FRA
     }
-
 
     # Grandmother of the Countess of Auvergne
     auv_blanche_clermont = {
@@ -15136,7 +15134,6 @@ character_db={
         tag = AQN
     }
 
-
     # Count of Armagnac
     amg_jean_i_armagnac = {
         first_name = { name = name_john }
@@ -15145,7 +15142,7 @@ character_db={
         estate = nobles_estate
         adm = 39 dip = 32 mil = 72
         birth_date = 1306.1.1
-        death_date = 1367.3.26
+        death_date = 1373.1.1
         birth = auch
         father = amg_bernard_vi_armagnac
         #mother = Cécile de Rodez
@@ -15154,7 +15151,6 @@ character_db={
         ruler_trait = bold_fighter
     }
 
-
     # Son & Heir of the Count of Armagnac
     amg_jean_ii_armagnac = {
         first_name = { name = name_john }
@@ -15162,9 +15158,8 @@ character_db={
         culture = gascon
         religion = catholic
         estate = nobles_estate
-        adm = 5 dip = 3 mil = 5
         birth_date = 1333.1.1
-        death_date = 1400.4.5
+        death_date = 1384.5.26
         birth = auch
         father = amg_jean_i_armagnac
         mother = amg_beatrice_capet
@@ -15173,23 +15168,20 @@ character_db={
         child_trait = child_gallant
     }
 
-
     # Son of the Count of Armagnac
-    amg_bernard_armagnac = {
-        first_name = { name = name_bernard }
-        culture = gascon
-        religion = catholic
-        estate = nobles_estate
-        adm = 1 dip = 0 mil = 0
-        birth_date = 1336.1.1
-        death_date = 1390.7.17
-        birth = auch
-        father = amg_jean_i_armagnac
-        mother = amg_beatrice_capet
-        dynasty = armagnac_dynasty
-        tag = AMG
-    }
-
+    #amg_bernard_armagnac = {
+    #    first_name = { name = name_bernard }
+    #    culture = gascon
+    #    religion = catholic
+    #    estate = nobles_estate
+    #    birth_date = 1336.1.1
+    #    death_date = 1390.7.17
+    #    birth = auch
+    #    father = amg_jean_i_armagnac
+    #    mother = amg_beatrice_capet
+    #    dynasty = armagnac_dynasty
+    #    tag = AMG
+    #}
 
     # Line of the Lords of Fezensaguet
 
@@ -21920,7 +21912,7 @@ character_db={
 		tag = BRI
 	}
 
-	bri_guy_xiv_laval = {  #https://en.wikipedia.org/wiki/Guy_XIV_de_Laval
+	lvl_guy_xiv_laval = {  #https://en.wikipedia.org/wiki/Guy_XIV_de_Laval
 		first_name = { name = name_wido }
 		nickname = { name = name_francis }
 		culture = angevin
@@ -21930,7 +21922,7 @@ character_db={
 		father = bri_guy_xiii_laval
 		mother = bri_anne_laval
 		dynasty = laval_dynasty #montfort_laval_dynasty
-		tag = FRA
+		tag = LVL
 	}
 
 	bri_andre_laval = {  #https://en.wikipedia.org/wiki/Andr%C3%A9_de_Laval-Montmorency
@@ -103709,9 +103701,8 @@ character_db={
         tag = CRI
     }
 
-    haci_giray = {
+    cri_haci_giray = {
         first_name = { name = name_Haji }
-        nickname = { name = Giray }
         culture = crimean
         religion = sunni
         adm = 72 dip = 78 mil = 68
@@ -115899,6 +115890,22 @@ character_db={
 		tag = ORL
 	}
 
+    orl_bonne_armagnac = {
+        first_name = { name = name_bonne }
+        culture = gascon
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1399.2.19
+        death_date = 1430.1.1
+        birth = auch
+        spouse = orl_charles_i_valois_orleans
+        father = amg_bernard_vii_armagnac
+        mother = sav_bonne_valois_berry
+        dynasty = armagnac_dynasty
+        tag = ORL       
+    }
+
 	vrt_philippe_valois_orleans = {
 		first_name = { name = name_philip }
 		culture = french
@@ -116065,7 +116072,7 @@ character_db={
 		birth_date = 1402.1.1
 		birth = rodez
         spouse = alr_charles_ii_albret
-		#father = arg_bernard_vii_armagnac
+		father = amg_bernard_vii_armagnac
 		mother = sav_bonne_valois_berry
 		dynasty = armagnac_dynasty
 		tag = ALR       
@@ -116192,6 +116199,201 @@ character_db={
 		mother = alr_anne_armagnac
 		dynasty = albret_dynasty
 		tag = ALR       
+    }
+
+    ### Armagnac
+
+    amg_jean_iii_armagnac = {
+		first_name = { name = name_john }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1359.1.1
+        death_date = 1391.7.25
+		birth = auch
+		father = amg_jean_ii_armagnac
+		#mother = amg_jeanne_perigord
+		dynasty = armagnac_dynasty
+		tag = AMG     
+    }
+
+    amg_bernard_vii_armagnac = {
+		first_name = { name = name_john }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1360.1.1
+        death_date = 1418.6.12
+		birth = auch
+		father = amg_jean_ii_armagnac
+		#mother = amg_jeanne_perigord
+		dynasty = armagnac_dynasty
+		tag = AMG     
+    }
+
+    amg_jean_iv_armagnac = {
+		first_name = { name = name_john }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1396.10.15
+		birth = auch
+		father = amg_bernard_vii_armagnac
+		mother = sav_bonne_valois_berry
+		dynasty = armagnac_dynasty
+		tag = AMG     
+    }
+
+    amg_isabelle_de_evreux = {
+		first_name = { name = name_elizabeth }
+		culture = french
+		religion = catholic
+		estate = nobles_estate
+        female = yes
+		birth_date = 1395.1.1
+		birth = pamplona
+		#father = nav_charles_ii_de_evreux
+		#mother = nav_leonor_trastamara
+		dynasty = de_evreux_dynasty
+		tag = AMG          
+    }
+
+    amg_bonne_armagnac = {
+		first_name = { name = name_bonne }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+        female = yes
+		birth_date = 1416.1.1
+		birth = auch
+		father = amg_jean_iv_armagnac
+		mother = amg_blanche_montfort_brittany
+		dynasty = armagnac_dynasty
+		tag = AMG     
+    }
+
+    amg_marie_armagnac = {
+		first_name = { name = name_mary }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+        female = yes
+		birth_date = 1420.1.1
+		birth = auch
+		father = amg_jean_iv_armagnac
+		mother = amg_isabelle_de_evreux
+		dynasty = armagnac_dynasty
+		tag = AMG     
+    }
+
+    amg_jean_v_armagnac = {
+		first_name = { name = name_john }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1420.1.1
+		birth = auch
+		father = amg_jean_iv_armagnac
+		mother = amg_isabelle_de_evreux
+		dynasty = armagnac_dynasty
+		tag = AMG     
+    }
+
+    amg_eleonore_armagnac = {
+		first_name = { name = name_eleanor }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+        female = yes
+		birth_date = 1423.1.1
+		birth = auch
+		father = amg_jean_iv_armagnac
+		mother = amg_isabelle_de_evreux
+		dynasty = armagnac_dynasty
+		tag = AMG     
+    }
+
+    amg_charles_i_armagnac = {
+		first_name = { name = name_charles }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1425.1.1
+		birth = auch
+		father = amg_jean_iv_armagnac
+		mother = amg_isabelle_de_evreux
+		dynasty = armagnac_dynasty
+		tag = AMG     
+    }
+
+    amg_isabelle_armagnac_four_valleys = {
+		first_name = { name = name_elizabeth }
+        nickname = { name = "of Four-Valleys" }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+        female = yes
+		birth_date = 1430.1.1
+		birth = auch
+		father = amg_jean_iv_armagnac
+		mother = amg_isabelle_de_evreux
+		dynasty = armagnac_dynasty
+		tag = AMG     
+    }
+
+    ### Castres
+
+    cst_bernard_armagnac = {
+		first_name = { name = name_bernard }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1415.1.1 #unknown
+		birth = auch
+        spouse = cst_eleonore_bourbon_marche
+		father = amg_bernard_vii_armagnac
+		mother = sav_bonne_valois_berry
+		dynasty = armagnac_dynasty
+		tag = CST    
+    }
+
+    cst_eleonore_bourbon_marche = {
+        first_name { name = name_eleanor }
+        culture = berrichon
+        religion = catholic
+        birth_date = 1418.1.1 #unknown
+        birth = gueret
+        spouse = cst_bernard_armagnac
+        #father = mrc_jacques_bourbon_marche
+        #mother = mrc_catherine_montoire
+        dynasty = bourbon_dynasty
+        tag = CST
+    }
+
+    cst_jacques_armagnac = {
+		first_name = { name = name_james }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1433.1.1
+		birth = castres
+		father = cst_bernard_armagnac
+		mother = cst_eleonore_bourbon_marche
+		dynasty = armagnac_dynasty
+		tag = CST    
+    }
+
+    cst_jean_armagnac = {
+		first_name = { name = name_john }
+		culture = gascon
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1433.1.1
+		birth = castres
+		father = cst_bernard_armagnac
+		mother = cst_eleonore_bourbon_marche
+		dynasty = armagnac_dynasty
+		tag = CST    
     }
 
     ### Brittany
@@ -116539,19 +116741,20 @@ character_db={
 		tag = BRI
 	}
 
-	bri_blanche_montfort_brittany = {
+	amg_blanche_montfort_brittany = {
 		first_name = { name = name_blanche }
 		culture = gallo
 		religion = catholic
 		estate = nobles_estate
+        female = yes
 		birth_date = 1397.1.1
 		death_date = 1415.1.1
-        female = yes
 		birth = vannes
+        spouse = amg_jean_iv_armagnac
 		father = bri_jean_iv_montfort_brittany
 		mother = bri_jeanne_evreux
 		dynasty = montfort_brittany_dynasty
-		tag = BRI
+		tag = ARG
 	}
 
     # Retz
