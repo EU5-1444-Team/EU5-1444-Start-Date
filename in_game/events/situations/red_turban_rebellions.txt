@@ -138,7 +138,7 @@ scripted_effect rtr_released_country_setup_effects = {
         change_province_food_percentage = 1
     }
     trigger_event_silently = {
-        id = mandate_crisis.202
+        id = red_turban_rebellions.202
         days = 35    #It must trigger after the first monthly tick
     }
 }
@@ -516,7 +516,7 @@ scripted_effect rtr_become_china_effect = {
             country_exists = c:CHI
         }
         custom_tooltip = rtr_become_china_effect_tt
-        c:CHI = { trigger_event_non_silently = mandate_crisis.1001 }
+        c:CHI = { trigger_event_non_silently = red_turban_rebellions.1001 }
     }
     else = {
         form_country = formable_country:CHI_f
@@ -581,19 +581,19 @@ scripted_trigger rtr_is_rebellious = {
     var:rtr_yuan_allegiance < rtr_IS_NEUTRAL_VALUE
 }
 
-namespace = mandate_crisis
+namespace = red_turban_rebellions
 
 ##########################
 # Situation start events #
 ##########################
 
 #The Red Turban Rebellions (China event)
-mandate_crisis.1 = {
+red_turban_rebellions.1 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.1.title
-    desc = mandate_crisis.1.desc
-    image = "gfx/interface/illustrations/situation/mandate_crisis.dds"
+    title = red_turban_rebellions.1.title
+    desc = red_turban_rebellions.1.desc
+    image = "gfx/interface/illustrations/situation/red_turban_rebellions.dds"
     immediate = {
         save_scope_as = target_country
         character:yua_togon_temur = { save_scope_as = target_ruler }
@@ -631,8 +631,8 @@ mandate_crisis.1 = {
         rtr_setup_countries_to_release = yes
     }
     option = {
-        name = mandate_crisis.1.a
-        custom_tooltip = mandate_crisis.1.a.tt
+        name = red_turban_rebellions.1.a
+        custom_tooltip = red_turban_rebellions.1.a.tt
         add_stability = stability_extreme_penalty
         add_legitimacy = legitimacy_extreme_penalty
         change_celestial_authority = { value = celestial_authority_extreme_penalty }
@@ -654,17 +654,17 @@ mandate_crisis.1 = {
             }
             desc = rtr_red_turban_rebellion_duration
         }
-        custom_tooltip = mandate_crisis.1.a.at
+        custom_tooltip = red_turban_rebellions.1.a.at
     }
 }
 
 #The Red Turban Rebellions (Info Event)
-mandate_crisis.2 = {
+red_turban_rebellions.2 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.1.title
-    desc = mandate_crisis.1.desc
-    image = "gfx/interface/illustrations/situation/mandate_crisis.dds"
+    title = red_turban_rebellions.1.title
+    desc = red_turban_rebellions.1.desc
+    image = "gfx/interface/illustrations/situation/red_turban_rebellions.dds"
     immediate = {
         c:CHI = {
             save_scope_as = target_country
@@ -676,7 +676,7 @@ mandate_crisis.2 = {
         }
     }
     option = {
-        name = mandate_crisis.2.a
+        name = red_turban_rebellions.2.a
         if = {
             limit = { is_subject_of = c:CHI }
             add_liberty_desire = liberty_desire_severe_plus
@@ -691,11 +691,11 @@ mandate_crisis.2 = {
 #========================================================
 # CQI (Qi) Rebellion – No Leader, Jiaodong Culture
 #========================================================
-mandate_crisis.3 = {
+red_turban_rebellions.3 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.3.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.3.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -718,21 +718,21 @@ mandate_crisis.3 = {
     }
 
     option = {
-        name = mandate_crisis.3.a
+        name = red_turban_rebellions.3.a
         rtr_release_warlord_tag = { tag = CQI culture = culture:jiaodong_culture accepted_culture = culture:jilu_culture }
         c:CQI = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CQI }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CQI culture = culture:jiaodong_culture accepted_culture = culture:jilu_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -740,11 +740,11 @@ mandate_crisis.3 = {
 #========================================================
 # CSH (Shun) Rebellion – Li Zicheng, Qin Culture
 #========================================================
-mandate_crisis.4 = {
+red_turban_rebellions.4 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.4.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.4.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -802,21 +802,21 @@ mandate_crisis.4 = {
     }
 
     option = {
-        name = mandate_crisis.4.a
+        name = red_turban_rebellions.4.a
         rtr_release_warlord_tag = { tag = CSH culture = culture:qin_culture accepted_culture = culture:zhongyuan_culture }
         c:CSH = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CSH }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CSH culture = culture:qin_culture accepted_culture = culture:zhongyuan_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -824,11 +824,11 @@ mandate_crisis.4 = {
 #========================================================
 # CUN (Shu) Rebellion – No Leader, Shu Culture
 #========================================================
-mandate_crisis.5 = {
+red_turban_rebellions.5 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.5.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.5.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -851,21 +851,21 @@ mandate_crisis.5 = {
     }
 
     option = {
-        name = mandate_crisis.5.a
+        name = red_turban_rebellions.5.a
         rtr_release_warlord_tag = { tag = CUN culture = culture:shu_culture accepted_culture = culture:chu_culture }
         c:CUN = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CUN }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CUN culture = culture:shu_culture accepted_culture = culture:chu_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -873,11 +873,11 @@ mandate_crisis.5 = {
 #========================================================
 # CWI (Wei) Rebellion – No Leader, Zhongyuan Culture
 #========================================================
-mandate_crisis.6 = {
+red_turban_rebellions.6 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.6.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.6.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -900,21 +900,21 @@ mandate_crisis.6 = {
     }
 
     option = {
-        name = mandate_crisis.6.a
+        name = red_turban_rebellions.6.a
         rtr_release_warlord_tag = { tag = CWI culture = culture:zhongyuan_culture accepted_culture = culture:jilu_culture }
         c:CWI = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CWI }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CWI culture = culture:zhongyuan_culture accepted_culture = culture:jilu_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -922,11 +922,11 @@ mandate_crisis.6 = {
 #========================================================
 # WUU (Wu) Rebellion – No Leader, Wu Culture
 #========================================================
-mandate_crisis.7 = {
+red_turban_rebellions.7 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.7.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.7.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -949,21 +949,21 @@ mandate_crisis.7 = {
     }
 
     option = {
-        name = mandate_crisis.7.a
+        name = red_turban_rebellions.7.a
         rtr_release_warlord_tag = { tag = WUU culture = culture:wu_culture accepted_culture = culture:jianghuai_culture }
         c:WUU = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:WUU }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = WUU culture = culture:wu_culture accepted_culture = culture:jianghuai_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -971,11 +971,11 @@ mandate_crisis.7 = {
 #========================================================
 # CQN (Qin) Rebellion – No Leader, Qin Culture
 #========================================================
-mandate_crisis.8 = {
+red_turban_rebellions.8 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.8.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.8.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1000,21 +1000,21 @@ mandate_crisis.8 = {
     }
 
     option = {
-        name = mandate_crisis.8.a
+        name = red_turban_rebellions.8.a
         rtr_release_warlord_tag = { tag = CQN culture = culture:qin_culture accepted_culture = culture:zhongyuan_culture }
         c:CQN = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CQN }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CQN culture = culture:qin_culture accepted_culture = culture:zhongyuan_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1022,11 +1022,11 @@ mandate_crisis.8 = {
 #========================================================
 # CHU (Chu) Rebellion – No Leader, Chu Culture
 #========================================================
-mandate_crisis.9 = {
+red_turban_rebellions.9 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.9.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.9.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1049,21 +1049,21 @@ mandate_crisis.9 = {
     }
 
     option = {
-        name = mandate_crisis.9.a
+        name = red_turban_rebellions.9.a
         rtr_release_warlord_tag = { tag = CHU culture = culture:chu_culture accepted_culture = culture:changde_culture }
         c:CHU = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CHU }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CHU culture = culture:chu_culture accepted_culture = culture:changde_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1071,11 +1071,11 @@ mandate_crisis.9 = {
 #========================================================
 # CTA (Tang) Rebellion – No Leader, Huaihai Culture
 #========================================================
-mandate_crisis.10 = {
+red_turban_rebellions.10 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.10.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.10.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1098,21 +1098,21 @@ mandate_crisis.10 = {
     }
 
     option = {
-        name = mandate_crisis.10.a
+        name = red_turban_rebellions.10.a
         rtr_release_warlord_tag = { tag = CTA culture = culture:huaihai_culture accepted_culture = culture:jianghuai_culture }
         c:CTA = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CTA }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CTA culture = culture:huaihai_culture accepted_culture = culture:jianghuai_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1120,11 +1120,11 @@ mandate_crisis.10 = {
 #========================================================
 # CYN (Yan) Rebellion – No Leader, Huaihai Culture
 #========================================================
-mandate_crisis.11 = {
+red_turban_rebellions.11 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.11.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.11.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1147,21 +1147,21 @@ mandate_crisis.11 = {
     }
 
     option = {
-        name = mandate_crisis.11.a
+        name = red_turban_rebellions.11.a
         rtr_release_warlord_tag = { tag = CYN culture = culture:yan_culture accepted_culture = culture:jilu_culture }
         c:CYN = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CYN }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CYN culture = culture:yan_culture accepted_culture = culture:jilu_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1169,11 +1169,11 @@ mandate_crisis.11 = {
 #========================================================
 # CJN (Jin) Rebellion – No Leader, Jin Culture
 #========================================================
-mandate_crisis.12 = {
+red_turban_rebellions.12 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.12.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.12.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1196,21 +1196,21 @@ mandate_crisis.12 = {
     }
 
     option = {
-        name = mandate_crisis.12.a
+        name = red_turban_rebellions.12.a
         rtr_release_warlord_tag = { tag = CJN culture = culture:jin_culture accepted_culture = culture:zhongyuan_culture }
         c:CJN = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CJN }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CJN culture = culture:jin_culture accepted_culture = culture:zhongyuan_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1218,11 +1218,11 @@ mandate_crisis.12 = {
 #========================================================
 # CMM (Mǐn) Rebellion – No Leader, Fuzhou Culture
 #========================================================
-mandate_crisis.13 = {
+red_turban_rebellions.13 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.13.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.13.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1244,21 +1244,21 @@ mandate_crisis.13 = {
     }
 
     option = {
-        name = mandate_crisis.13.a
+        name = red_turban_rebellions.13.a
         rtr_release_warlord_tag = { tag = CMM culture = culture:fuzhou_culture accepted_culture = culture:minnan_culture }
         c:CMM = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CMM }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CMM culture = culture:fuzhou_culture accepted_culture = culture:minnan_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1266,11 +1266,11 @@ mandate_crisis.13 = {
 #========================================================
 # CYU (Yue) Rebellion – No Leader, Yuehai Culture
 #========================================================
-mandate_crisis.14 = {
+red_turban_rebellions.14 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.14.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.14.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1292,21 +1292,21 @@ mandate_crisis.14 = {
     }
 
     option = {
-        name = mandate_crisis.14.a
+        name = red_turban_rebellions.14.a
         rtr_release_warlord_tag = { tag = CYU culture = culture:yuehai_culture accepted_culture = culture:chaozhou_culture }
         c:CYU = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CYU }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CYU culture = culture:yuehai_culture accepted_culture = culture:chaozhou_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1314,11 +1314,11 @@ mandate_crisis.14 = {
 #========================================================
 # CLN (Liang) Rebellion – No Leader, Yuehai Culture
 #========================================================
-mandate_crisis.15 = {
+red_turban_rebellions.15 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.15.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.15.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1341,21 +1341,21 @@ mandate_crisis.15 = {
     }
 
     option = {
-        name = mandate_crisis.15.a
+        name = red_turban_rebellions.15.a
         rtr_release_warlord_tag = { tag = CLN culture = culture:liang_culture accepted_culture = culture:qin_culture }
         c:CLN = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CLN }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CLN culture = culture:liang_culture accepted_culture = culture:qin_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1363,11 +1363,11 @@ mandate_crisis.15 = {
 #========================================================
 # CNG (Ning) Rebellion – No Leader, Yuehai Culture
 #========================================================
-mandate_crisis.16 = {
+red_turban_rebellions.16 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.16.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.16.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1390,21 +1390,21 @@ mandate_crisis.16 = {
     }
 
     option = {
-        name = mandate_crisis.16.a
+        name = red_turban_rebellions.16.a
         rtr_release_warlord_tag = { tag = CNG culture = culture:guibei_culture accepted_culture = culture:guinan_culture }
         c:CNG = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CNG }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CNG culture = culture:guibei_culture accepted_culture = culture:guinan_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1412,11 +1412,11 @@ mandate_crisis.16 = {
 #========================================================
 # CXI (Xi) Rebellion – No Leader, Yuehai Culture
 #========================================================
-mandate_crisis.17 = {
+red_turban_rebellions.17 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.17.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.17.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1439,21 +1439,21 @@ mandate_crisis.17 = {
     }
 
     option = {
-        name = mandate_crisis.17.a
+        name = red_turban_rebellions.17.a
         rtr_release_warlord_tag = { tag = CXI culture = culture:bai_culture accepted_culture = culture:shu_culture }
         c:CXI = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CXI }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CXI culture = culture:bai_culture accepted_culture = culture:shu_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1461,11 +1461,11 @@ mandate_crisis.17 = {
 #========================================================
 # CYI (Yi) Rebellion – No Leader, Yuehai Culture
 #========================================================
-mandate_crisis.18 = {
+red_turban_rebellions.18 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.18.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.18.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1487,21 +1487,21 @@ mandate_crisis.18 = {
     }
 
     option = {
-        name = mandate_crisis.18.a
+        name = red_turban_rebellions.18.a
         rtr_release_warlord_tag = { tag = CYI culture = culture:yi_culture accepted_culture = culture:shu_culture }
         c:CYI = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CYI }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CYI culture = culture:yi_culture accepted_culture = culture:shu_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1509,11 +1509,11 @@ mandate_crisis.18 = {
 #========================================================
 # CAI (Huai) Rebellion – No Leader, Yuehai Culture
 #========================================================
-mandate_crisis.19 = {
+red_turban_rebellions.19 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.19.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.19.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1535,21 +1535,21 @@ mandate_crisis.19 = {
     }
 
     option = {
-        name = mandate_crisis.19.a
+        name = red_turban_rebellions.19.a
         rtr_release_warlord_tag = { tag = CAI culture = culture:gan_culture accepted_culture = culture:huaihai_culture }
         c:CAI = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CAI }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CAI culture = culture:gan_culture accepted_culture = culture:huaihai_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1557,11 +1557,11 @@ mandate_crisis.19 = {
 #========================================================
 # CMI (Miao) Rebellion – No Leader, Yuehai Culture
 #========================================================
-mandate_crisis.20 = {
+red_turban_rebellions.20 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.20.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.20.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1583,21 +1583,21 @@ mandate_crisis.20 = {
     }
 
     option = {
-        name = mandate_crisis.20.a
+        name = red_turban_rebellions.20.a
         rtr_release_warlord_tag = { tag = CMI culture = culture:hmong_culture accepted_culture = culture:xianxi_culture }
         c:CMI = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CMI }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CMI culture = culture:hmong_culture accepted_culture = culture:xianxi_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
@@ -1605,11 +1605,11 @@ mandate_crisis.20 = {
 #========================================================
 # CTU (Tung-nen) Rebellion – No Leader, Yuehai Culture
 #========================================================
-mandate_crisis.21 = {
+red_turban_rebellions.21 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_tag.title
-    desc = mandate_crisis.21.desc
+    title = red_turban_rebellions.release_tag.title
+    desc = red_turban_rebellions.21.desc
     illustration_tags = {
         11 = armed
         11 = exterior
@@ -1631,39 +1631,39 @@ mandate_crisis.21 = {
     }
 
     option = {
-        name = mandate_crisis.21.a
+        name = red_turban_rebellions.21.a
         rtr_release_warlord_tag = { tag = CTU culture = culture:minnan_culture accepted_culture = culture:fuzhou_culture }
         c:CTU = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CTU }
     }
 
     option = {
-        name = mandate_crisis.play_as_tag
+        name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CTU culture = culture:minnan_culture accepted_culture = culture:fuzhou_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
-            scope:target_country = { trigger_event_non_silently = { id = mandate_crisis.101 days = 1 } }
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
         }
     }
 }
 
 #Generic Culture Release
-mandate_crisis.100 = {
+red_turban_rebellions.100 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.release_culture.title
+    title = red_turban_rebellions.release_culture.title
     desc = {
         first_valid = {
             triggered_desc = {
                 trigger = { exists = scope:target_country }
-                desc = mandate_crisis.100.desc
+                desc = red_turban_rebellions.100.desc
             }
             triggered_desc = {
                 trigger = { always = yes }
-                desc = mandate_crisis.100.desc.fallback
+                desc = red_turban_rebellions.100.desc.fallback
             }
         }
     }
@@ -1680,7 +1680,7 @@ mandate_crisis.100 = {
         rtr_prepare_biggest_culture_warlord = yes
     }
     option = {
-        name = mandate_crisis.100.a
+        name = red_turban_rebellions.100.a
         trigger = { exists = scope:target_country }
         rtr_release_biggest_culture_warlord = yes
         change_gold_effect = { scale = -3 }
@@ -1693,7 +1693,7 @@ mandate_crisis.100 = {
         }
     }
     option = {
-        name = mandate_crisis.100.b
+        name = red_turban_rebellions.100.b
         if = {
             limit = { exists = scope:target_country }
             rtr_release_biggest_culture_warlord = yes
@@ -1704,11 +1704,11 @@ mandate_crisis.100 = {
 }
 
 #Player info event for the released warlord
-mandate_crisis.101 = {
+red_turban_rebellions.101 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.101.title
-    desc = mandate_crisis.101.desc
+    title = red_turban_rebellions.101.title
+    desc = red_turban_rebellions.101.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1717,8 +1717,8 @@ mandate_crisis.101 = {
         event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
     }
     option = {
-        name = mandate_crisis.101.a
-        custom_tooltip = mandate_crisis.101.a.tt
+        name = red_turban_rebellions.101.a
+        custom_tooltip = red_turban_rebellions.101.a.tt
     }
 }
 
@@ -1727,11 +1727,11 @@ mandate_crisis.101 = {
 ###########################
 
 #Peasant Revolt
-mandate_crisis.200 = {
+red_turban_rebellions.200 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.200.title
-    desc = mandate_crisis.200.desc
+    title = red_turban_rebellions.200.title
+    desc = red_turban_rebellions.200.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1752,12 +1752,12 @@ mandate_crisis.200 = {
     }
 
     option = {
-        name = mandate_crisis.200.a
+        name = red_turban_rebellions.200.a
         scope:target_rebel = { add_rebel_progress = 0.1 }
         add_stability = stability_mild_penalty
     }
     option = {
-        name = mandate_crisis.200.b
+        name = red_turban_rebellions.200.b
         add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
         change_gold_effect = { scale = -2 }
         add_prestige = stability_mild_bonus
@@ -1765,11 +1765,11 @@ mandate_crisis.200 = {
 }
 
 #Mandate Questioned
-mandate_crisis.201 = {
+red_turban_rebellions.201 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.201.title
-    desc = mandate_crisis.201.desc
+    title = red_turban_rebellions.201.title
+    desc = red_turban_rebellions.201.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1797,14 +1797,14 @@ mandate_crisis.201 = {
         }
     }
     option = {
-        name = mandate_crisis.201.a
+        name = red_turban_rebellions.201.a
         change_celestial_authority = { value = celestial_authority_weak_bonus }
         scope:target_rebel = {
             add_rebel_progress = 0.1
         }
     }
     option = {
-        name = mandate_crisis.201.b
+        name = red_turban_rebellions.201.b
         change_celestial_authority = { value = celestial_authority_weak_penalty }
         "estate(estate_type:nobles_estate)" = {
             random_possible_privilege = {
@@ -1822,11 +1822,11 @@ mandate_crisis.201 = {
 }
 
 #Support of [ROOT.GetCountry.GetGovernment.GetRulerOrRegent.GetNameWithNoTooltip]
-mandate_crisis.202 = {
+red_turban_rebellions.202 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.202.title
-    desc = mandate_crisis.202.desc
+    title = red_turban_rebellions.202.title
+    desc = red_turban_rebellions.202.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1841,7 +1841,7 @@ mandate_crisis.202 = {
         ruler_or_regent ?= { save_scope_as = target_character }
     }
     option = {
-        name = mandate_crisis.202.a
+        name = red_turban_rebellions.202.a
         scope:target_character = {
             add_character_modifier = {
                 modifier = rtr_support_of_the_people
@@ -1856,13 +1856,13 @@ mandate_crisis.202 = {
         }
         add_stability = stability_extreme_bonus
         custom_tooltip = {
-            text = mandate_crisis.202.a.tt
+            text = red_turban_rebellions.202.a.tt
             every_owned_location = {
                 change_control = control_radical_bonus
             }
         }
         custom_tooltip = {
-            text = mandate_crisis.202.char.tt
+            text = red_turban_rebellions.202.char.tt
 
             while = {
                 count = 10
@@ -1885,11 +1885,11 @@ mandate_crisis.202 = {
 ########################
 
 #The Rise of a New Dynasty (Leader of the Red Turban Rebellions becomes China, triggers when all of original China is annexed)
-mandate_crisis.1000 = {
+red_turban_rebellions.1000 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.1000.title
-    desc = mandate_crisis.1000.desc
+    title = red_turban_rebellions.1000.title
+    desc = red_turban_rebellions.1000.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1918,7 +1918,7 @@ mandate_crisis.1000 = {
         }
     }
     option = {
-        name = mandate_crisis.1000.a
+        name = red_turban_rebellions.1000.a
         custom_tooltip = {
             text = end_situation_red_turban_rebellions_tt
             every_country = {
@@ -1933,7 +1933,7 @@ mandate_crisis.1000 = {
                         is_member_of_international_organization = international_organization:red_turban_rebels
                     }
                 }
-                trigger_event_non_silently = mandate_crisis.1002
+                trigger_event_non_silently = red_turban_rebellions.1002
             }
             rtr_cleanup_variables = yes
         }
@@ -1942,11 +1942,11 @@ mandate_crisis.1000 = {
 }
 
 #The Rise of a New Dynasty (Old China chaos event)
-mandate_crisis.1001 = {
+red_turban_rebellions.1001 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.1000.title
-    desc = mandate_crisis.1000.desc
+    title = red_turban_rebellions.1000.title
+    desc = red_turban_rebellions.1000.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1955,7 +1955,7 @@ mandate_crisis.1001 = {
         event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
     }
     option = {
-        name = mandate_crisis.1001.a
+        name = red_turban_rebellions.1001.a
         if = {
             limit = { exists = scope:target_country }
             form_country = formable_country:YUA_f
@@ -1967,11 +1967,11 @@ mandate_crisis.1001 = {
 }
 
 #The Rise of a New Dynasty (info event)
-mandate_crisis.1002 = {
+red_turban_rebellions.1002 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.1000.title
-    desc = mandate_crisis.1000.desc
+    title = red_turban_rebellions.1000.title
+    desc = red_turban_rebellions.1000.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -1980,7 +1980,7 @@ mandate_crisis.1002 = {
         event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
     }
     option = {
-        name = mandate_crisis.1002.a
+        name = red_turban_rebellions.1002.a
         custom_tooltip = end_situation_red_turban_rebellions_tt
         show_as_tooltip = {
             scope:target_country = {
@@ -1991,11 +1991,11 @@ mandate_crisis.1002 = {
 }
 
 #China Persists! (Either no rebel exists or all existing rebels are loyalists towards China)
-mandate_crisis.1003 = {
+red_turban_rebellions.1003 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.1003.title
-    desc = mandate_crisis.1003.desc
+    title = red_turban_rebellions.1003.title
+    desc = red_turban_rebellions.1003.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -2013,7 +2013,7 @@ mandate_crisis.1003 = {
         }
     }
     option = {
-        name = mandate_crisis.1003.a
+        name = red_turban_rebellions.1003.a
         custom_tooltip = {
             text = end_situation_red_turban_rebellions_tt
             every_country = {
@@ -2035,7 +2035,7 @@ mandate_crisis.1003 = {
                 }
                 set_variable = rtr_to_be_annexed
             }
-                trigger_event_non_silently = mandate_crisis.1004
+                trigger_event_non_silently = red_turban_rebellions.1004
             }
             rtr_cleanup_variables = yes
         }
@@ -2056,19 +2056,19 @@ mandate_crisis.1003 = {
 }
 
 #China Persists! (info event)
-mandate_crisis.1004 = {
+red_turban_rebellions.1004 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.1003.title
+    title = red_turban_rebellions.1003.title
     desc = {
         first_valid = {
             triggered_desc = {
                 trigger = { NOT = { has_variable = rtr_to_be_annexed } }
-                desc = mandate_crisis.1003.desc
+                desc = red_turban_rebellions.1003.desc
             }
             triggered_desc = {
                 trigger = { has_variable = rtr_to_be_annexed }
-                desc = mandate_crisis.1004.desc
+                desc = red_turban_rebellions.1004.desc
             }
         }
     }
@@ -2080,7 +2080,7 @@ mandate_crisis.1004 = {
         event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
     }
     option = {
-        name = mandate_crisis.1004.a
+        name = red_turban_rebellions.1004.a
         trigger = {
             hidden_trigger = {
                 has_variable = rtr_to_be_annexed
@@ -2097,7 +2097,7 @@ mandate_crisis.1004 = {
         }
     }
     option = {
-        name = mandate_crisis.1001.a
+        name = red_turban_rebellions.1001.a
         trigger = {
             hidden_trigger = {
                 OR = {
@@ -2117,11 +2117,11 @@ mandate_crisis.1004 = {
 }
 
 #End of the Mandate (fallback event in case SOMEHOW the Middle Kingdom stops existing)
-mandate_crisis.1005 = {
+red_turban_rebellions.1005 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.1005.title
-    desc = mandate_crisis.1005.desc
+    title = red_turban_rebellions.1005.title
+    desc = red_turban_rebellions.1005.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -2130,7 +2130,7 @@ mandate_crisis.1005 = {
         event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
     }
     option = {
-        name = mandate_crisis.1005.a
+        name = red_turban_rebellions.1005.a
         custom_tooltip = end_situation_red_turban_rebellions_tt
         if = {
             limit = {
@@ -2149,11 +2149,11 @@ mandate_crisis.1005 = {
 }
 
 #Rebel Stagnation (fallback in case the Red Turban Rebellions have been going forever...)
-mandate_crisis.1006 = {
+red_turban_rebellions.1006 = {
     type = country_event
     category = situation_event
-    title = mandate_crisis.1006.title
-    desc = mandate_crisis.1006.desc
+    title = red_turban_rebellions.1006.title
+    desc = red_turban_rebellions.1006.desc
     illustration_tags = {
         10 = armed
         10 = exterior
@@ -2162,7 +2162,7 @@ mandate_crisis.1006 = {
         event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
     }
     option = {
-        name = mandate_crisis.1006.a
+        name = red_turban_rebellions.1006.a
         custom_tooltip = end_situation_red_turban_rebellions_tt
     }
 }

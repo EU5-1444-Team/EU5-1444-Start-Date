@@ -1,6 +1,6 @@
-mandate_crisis = {
+red_turban_rebellions = {
     monthly_spawn_chance = monthly_spawn_chance_unique
-    hint_tag = hint_mandate_crisis
+    hint_tag = hint_red_turban_rebellions
     can_start = {
         current_age = age_2_renaissance
         current_year > 1350
@@ -19,7 +19,7 @@ mandate_crisis = {
                     2 = { estate_satisfaction:peasants_estate < 0.75 }
                 }
                 custom_tooltip = {
-                    text = rtr_sped_up_mandate_crisis
+                    text = rtr_sped_up_red_turban_rebellions
                     has_variable = chi_red_turban_leader_arrested
                 }
             }
@@ -48,7 +48,7 @@ mandate_crisis = {
     }
     on_start = {
         c:CHI = {
-            trigger_event_non_silently = mandate_crisis.1
+            trigger_event_non_silently = red_turban_rebellions.1
             add_to_global_variable_list = {
                 name = rtr_loyal_faction
                 target = c:CHI
@@ -72,7 +72,7 @@ mandate_crisis = {
                 }
             }
             trigger_event_non_silently = {
-                id = mandate_crisis.2
+                id = red_turban_rebellions.2
                 days = 1
             }
         }
@@ -88,30 +88,28 @@ mandate_crisis = {
                         has_variable = rtr_historical_countries_to_release
                         var:rtr_historical_countries_to_release > 0
                     }
-                    random = {
-                        chance = 20
-                        switch = {
-                            trigger = has_variable
-                            rtr_release_tag_CQI = { trigger_event_non_silently = { id = mandate_crisis.3 days = { 5 15 } } }
-                            rtr_release_tag_CSH = { trigger_event_non_silently = { id = mandate_crisis.4 days = { 5 15 } } }
-                            rtr_release_tag_CUN = { trigger_event_non_silently = { id = mandate_crisis.5 days = { 5 15 } } }
-                            rtr_release_tag_CWI = { trigger_event_non_silently = { id = mandate_crisis.6 days = { 5 15 } } } 
-                            rtr_release_tag_WUU = { trigger_event_non_silently = { id = mandate_crisis.7 days = { 5 15 } } } 
-                            rtr_release_tag_CQN = { trigger_event_non_silently = { id = mandate_crisis.8 days = { 5 15 } } } 
-                            rtr_release_tag_CHU = { trigger_event_non_silently = { id = mandate_crisis.9 days = { 5 15 } } } 
-                            rtr_release_tag_CTA = { trigger_event_non_silently = { id = mandate_crisis.10 days = { 5 15 } } } 
-                            rtr_release_tag_CYN = { trigger_event_non_silently = { id = mandate_crisis.11 days = { 5 15 } } } 
-                            rtr_release_tag_CJN = { trigger_event_non_silently = { id = mandate_crisis.12 days = { 5 15 } } } 
-                            rtr_release_tag_CMM = { trigger_event_non_silently = { id = mandate_crisis.13 days = { 5 15 } } } 
-                            rtr_release_tag_CYU = { trigger_event_non_silently = { id = mandate_crisis.14 days = { 5 15 } } }
-                            rtr_release_tag_CLN = { trigger_event_non_silently = { id = mandate_crisis.15 days = { 5 15 } } }
-                            rtr_release_tag_CNG = { trigger_event_non_silently = { id = mandate_crisis.16 days = { 5 15 } } }
-                            rtr_release_tag_CXI = { trigger_event_non_silently = { id = mandate_crisis.17 days = { 5 15 } } }
-                            rtr_release_tag_CYI = { trigger_event_non_silently = { id = mandate_crisis.18 days = { 5 15 } } }
-                            rtr_release_tag_CAI = { trigger_event_non_silently = { id = mandate_crisis.19 days = { 5 15 } } }
-                            rtr_release_tag_CMI = { trigger_event_non_silently = { id = mandate_crisis.20 days = { 5 15 } } }
-                            rtr_release_tag_CTU = { trigger_event_non_silently = { id = mandate_crisis.21 days = { 5 15 } } }
-                        }
+                    random_list = {
+                        5 = {} # ~20% chance nothing happens
+
+                        1 = { limit = { has_variable = rtr_release_tag_CQI } trigger_event_non_silently = { id = red_turban_rebellions.3 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CSH } trigger_event_non_silently = { id = red_turban_rebellions.4 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CUN } trigger_event_non_silently = { id = red_turban_rebellions.5 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CWI } trigger_event_non_silently = { id = red_turban_rebellions.6 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_WUU } trigger_event_non_silently = { id = red_turban_rebellions.7 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CQN } trigger_event_non_silently = { id = red_turban_rebellions.8 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CHU } trigger_event_non_silently = { id = red_turban_rebellions.9 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CTA } trigger_event_non_silently = { id = red_turban_rebellions.10 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CYN } trigger_event_non_silently = { id = red_turban_rebellions.11 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CJN } trigger_event_non_silently = { id = red_turban_rebellions.12 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CMM } trigger_event_non_silently = { id = red_turban_rebellions.13 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CYU } trigger_event_non_silently = { id = red_turban_rebellions.14 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CLN } trigger_event_non_silently = { id = red_turban_rebellions.15 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CNG } trigger_event_non_silently = { id = red_turban_rebellions.16 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CXI } trigger_event_non_silently = { id = red_turban_rebellions.17 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CYI } trigger_event_non_silently = { id = red_turban_rebellions.18 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CAI } trigger_event_non_silently = { id = red_turban_rebellions.19 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CMI } trigger_event_non_silently = { id = red_turban_rebellions.20 days = { 5 15 } } }
+                        1 = { limit = { has_variable = rtr_release_tag_CTU } trigger_event_non_silently = { id = red_turban_rebellions.21 days = { 5 15 } } }
                     }
                 }
                 #Releasing a generic culture tag should happen very rarely
@@ -135,12 +133,12 @@ mandate_crisis = {
                             var:rtr_historical_countries_to_release < 1
                             add = 1
                         }
-                        trigger_event_non_silently = { id = mandate_crisis.100 days = { 20 50 } }
+                        trigger_event_non_silently = { id = red_turban_rebellions.100 days = { 20 50 } }
                     }
                 }
                 random_list = {
-                    10 = { trigger_event_non_silently = mandate_crisis.200 }
-                    10 = { trigger_event_non_silently = mandate_crisis.201 }
+                    10 = { trigger_event_non_silently = red_turban_rebellions.200 }
+                    10 = { trigger_event_non_silently = red_turban_rebellions.201 }
                     500 = {}
                 }
             }
@@ -172,7 +170,7 @@ mandate_crisis = {
             }
             international_organization:red_turban_rebels = {
                 leader_country = {
-                    trigger_event_non_silently = mandate_crisis.1000
+                    trigger_event_non_silently = red_turban_rebellions.1000
                 }
             }
         }
@@ -186,7 +184,7 @@ mandate_crisis = {
                 }
             }
             c:CHI = {
-                trigger_event_non_silently = mandate_crisis.1003
+                trigger_event_non_silently = red_turban_rebellions.1003
             }
         }
         else = {
@@ -259,7 +257,7 @@ mandate_crisis = {
                             is_member_of_international_organization = international_organization:red_turban_rebels
                         }
                     }
-                    trigger_event_non_silently = mandate_crisis.1005
+                    trigger_event_non_silently = red_turban_rebellions.1005
                 }
             }
             else = {
@@ -270,7 +268,7 @@ mandate_crisis = {
                             is_member_of_international_organization = international_organization:red_turban_rebels
                         }
                     }
-                    trigger_event_non_silently = mandate_crisis.1006
+                    trigger_event_non_silently = red_turban_rebellions.1006
                 }
             }
             destroy_international_organization_no_instigator = { target = international_organization:red_turban_rebels }
@@ -279,8 +277,8 @@ mandate_crisis = {
             limit = { country_exists = c:CHI }
             c:CHI = {
                 if = {
-                    limit = { has_country_modifier = rtr_mandate_crisis }
-                    remove_country_modifier = rtr_mandate_crisis
+                    limit = { has_country_modifier = rtr_red_turban_rebellions }
+                    remove_country_modifier = rtr_red_turban_rebellions
                 }
             }
         }
