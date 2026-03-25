@@ -1,0 +1,29 @@
+tui_tonga_land_ownership = {
+    modifier = {
+    }
+    can_add_trigger = {
+        always = yes
+    }
+    can_remove_trigger = {
+        always = yes
+    }
+    can_add_location_trigger = {
+        owner ?= {
+            is_member_of_international_organization = scope:recipient
+        }
+    }
+    can_remove_location_trigger = {
+        owner ?= {
+            NOT = { is_member_of_international_organization = scope:recipient }
+        }
+    }
+    on_added = {
+        add_location_modifier = {
+            modifier = tui_tonga_market_access
+            years = -1
+        }
+    }
+    on_removed = {
+        remove_location_modifier = tui_tonga_market_access
+    }
+}

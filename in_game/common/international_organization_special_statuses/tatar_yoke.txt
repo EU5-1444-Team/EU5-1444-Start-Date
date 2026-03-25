@@ -13,6 +13,9 @@
 	auto_bestowal_trigger = {
 		always = yes
 	}
+	auto_rescind_trigger = {
+        NOT = { is_leader_of_international_organization = scope:recipient }
+    }
 
 	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
 }

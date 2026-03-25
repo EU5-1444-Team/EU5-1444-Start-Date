@@ -174,47 +174,63 @@ REPLACE:TIB_f = {
 	}
 }
 
-#TIX_f = {
-#	level = 3
-#	required_locations_fraction = 1.0
-#	rule = historical
-#	
-#	potential = {
-#		OR = {
-#			tag = c:TIS
-#			tag = c:TIG
-#			tag = c:TTK
-#			tag = c:TIK
-#			tag = c:TIF
-#			tag = c:TII
-#		}
-#	}
-#	
-#    allow = {
-#        owns = location:burebasaga
-#	}
-#	
-#	name = TIX
-#	flag = TIX
-#	adjective = TIX_ADJ
-#	tag = TIX
-#	color = dark_burgundy
-#	
-#	 provinces = {
-#		herat_province
-#	}
-#	
-#	form_effect = {
-#		if = {
-#			limit = { country_rank_level < 4 }
-#			set_country_rank_effect = { rank = country_rank:rank_empire }
-#		}
-#	}
-#}
+CAZ_f = { #Carolinias
+	level = 2
+	required_locations_fraction = 0.8
+	rule = plausible
+	
+	potential = {
+		OR = {
+			culture = culture:yap_culture
+			culture = culture:chamoru_culture
+		}
+	}
+
+	allow = {
+	}
+	
+	name = CAZ
+	flag = CAZ
+	adjective = CAZ_ADJ
+	tag = CAZ
+	color = map_CAZ
+	areas = {
+		belau_area
+		chuuk_area
+		marianas_area
+	}
+	form_effect = {
+	}
+}
+
+AKO_f = { #Aleon Kein Ad
+	level = 2
+	required_locations_fraction = 0.8
+	rule = plausible
+	
+	potential = {
+		culture = culture:kajoor_ri_majel_culture
+	}
+
+	allow = {
+	}
+	
+	name = AKO
+	flag = AKO
+	adjective = AKO_ADJ
+	tag = AKO
+	color = map_AKO
+	areas = {
+		ratak_area
+		ralik_area
+	}
+	form_effect = {
+	}
+}
 
 VIT_f = { #Viti
 	level = 2
-	required_locations_fraction = 1.0
+	required_locations_fraction = 0.8
 	rule = plausible
 	
 	potential = {
@@ -222,7 +238,6 @@ VIT_f = { #Viti
 	}
 
 	allow = {
-        owns = location:burebasaga
 	}
 	
 	name = VIT
@@ -239,7 +254,7 @@ VIT_f = { #Viti
 
 HII_f = { #Kingdom of Hawaii
 	level = 2
-	required_locations_fraction = 0.9
+	required_locations_fraction = 0.8
 	rule = historical
 	
 	potential = {
@@ -247,7 +262,6 @@ HII_f = { #Kingdom of Hawaii
 	}
 
 	allow = {
-		owns = location:o_ahu
 	}
 	
 	name = HII
@@ -259,13 +273,16 @@ HII_f = { #Kingdom of Hawaii
 		hawaii_area
 	}
 	form_effect = {
-		set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
 	}
 }
 
 AOT_f = { #Aotearoa
 	level = 2
-	required_locations_fraction = 1.0
+	required_locations_fraction = 0.8
 	rule = plausible
 	
 	potential = {
@@ -273,7 +290,6 @@ AOT_f = { #Aotearoa
 	}
 
 	allow = {
-		has_advance = maori_he_whakaputanga_advance
 	}
 	
 	name = AOT
@@ -288,7 +304,7 @@ AOT_f = { #Aotearoa
 	}
 }
 
-POF_f = { #Tahiti
+POF_f = { #Maohi
 	level = 2
 	required_locations_fraction = 0.7
 	rule = plausible
@@ -297,11 +313,12 @@ POF_f = { #Tahiti
 		OR = {
 			culture = culture:maohi_culture
 			culture = culture:tuamotus_culture
+			culture = culture:mangareva_culture
+			culture = culture:enana_culture
 		}
 	}
 
 	allow = {
-        owns = location:tahiti
 	}
 	
 	name = POF
@@ -313,124 +330,39 @@ POF_f = { #Tahiti
 		totaiete_ma_area
 		palliser_area
 		raeffsky_area
+		kuki_airani_area
 		tuamotu_area
+		te_henua_enana_area
 	}
 	form_effect = {
 	}
 }
 
-VAN_f = { #Vanuatu
+HMZ_f = { #Hamoa
 	level = 2
-	required_locations_fraction = 0.9
-	capital_required = yes 
+	required_locations_fraction = 1
 	rule = plausible
 	
 	potential = {
-		culture = { has_culture_group = culture_group:micronesian_group }
-	}
-
-	allow = {
-        owns = location:malakula
-	}
-	
-	name = VAN
-	flag = VAN
-	adjective = VAN_ADJ
-	tag = VAN
-	color = map_VAN
-	areas = {
-		vanuatu_area
-	}
-	form_effect = {
-	}
-}
-
-
-NCD_f = { #Kanak
-	level = 2
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		culture = { has_culture_group = culture_group:micronesian_group }
-	}
-
-	allow = {
-        owns = location:numee
-	}
-	
-	name = NCD
-	flag = NCD
-	adjective = NCD_ADJ
-	tag = NCD
-	color = map_NCD
-	areas = {
-		kanaky_area
-	}
-	form_effect = {
-	}
-}
-
-NZL_f = { #New Zealand
-	level = 2
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		owns = location:wellington
-		NOT = { culture = culture:maori_culture }
-	}
-
-	allow = {
-        owns = location:wellington
-	}
-	
-	name = NZL
-	flag = NZL
-	adjective = NZL_ADJ
-	tag = NZL
-	color = map_NZL
-	regions = {
-		new_zealand_region
-	}
-	form_effect = {
-	}
-}
-
-PAU_f = { #Papua
-	level = 3
-	required_locations_fraction = 0.8
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		or = {
-			owns = location:waima
-			owns = location:kaimana
-			owns = location:asmat
+		OR = {
+			culture = culture:tagata_samoa_culture
+			culture = culture:tonga_oceania_culture
 		}
-
 	}
 
 	allow = {
-    	owns = location:waima
-		owns = location:kaimana
-		owns = location:asmat
 	}
 	
-	name = PAU
-	flag = PAU
-	adjective = PAU_ADJ
-	tag = PAU
-	color = map_PAU
+	name = HMZ
+	flag = HMZ
+	adjective = HMZ_ADJ
+	tag = HMZ
+	color = map_HMZ
 	areas = {
-		momase_area
-		milne_area
-		kerema_area
-		anim_ha_area
-		wanin_area
+		tonga_area
+		samoa_area
+		niue_area
+		futuna_area
 	}
 	form_effect = {
 	}
@@ -447,10 +379,6 @@ PYN_f = { #Polynesia
 	}
 
 	allow = {
-        owns = location:tahiti
-		owns = location:o_ahu
-		owns = location:tongatapu
-		owns = location:savaii
 	}
 	
 	name = PYN
@@ -462,13 +390,17 @@ PYN_f = { #Polynesia
 		polynesia_region
 	}
 	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
 	}
 }
 
 
-MIA_f = { #Micronesia
+MIN_f = { #Micronesia
 	level = 3
-	required_locations_fraction = 0.86
+	required_locations_fraction = 0.80
 	capital_required = yes 
 	rule = plausible
 	
@@ -477,26 +409,32 @@ MIA_f = { #Micronesia
 	}
 
 	allow = {
-		owns = location:tabiteuea_atoll
-		owns = location:chuuk
-		owns = location:yap
+
 	}
 	
-	name = MIA
-	flag = MIA
-	adjective = MIA_ADJ
-	tag = MIA
-	color = map_MIA
-	regions = {
-		micronesia_region
+	name = MIN
+	flag = MIN
+	adjective = MIN_ADJ
+	tag = MIN
+	color = map_MIN
+	areas = {
+		ratak_area
+		ralik_area
+		belau_area
+		chuuk_area
+		marianas_area
 	}
 	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
 	}
 }
 
 MLN_f = { #Melanesia
 	level = 3
-	required_locations_fraction = 0.3
+	required_locations_fraction = 0.80
 	capital_required = yes 
 	rule = plausible
 	
@@ -505,9 +443,7 @@ MLN_f = { #Melanesia
 	}
 
 	allow = {
-        owns = location:burebasaga
-		owns = location:numee
-		owns = location:naasioi
+
 	}
 	
 	name = MLN
@@ -515,68 +451,24 @@ MLN_f = { #Melanesia
 	adjective = MLN_ADJ
 	tag = MLN
 	color = map_MLN
-	regions = {
-		melanesia_region
+	areas = {
+		fiji_area
+		tinputz_area
+		vanuatu_area
+		kanaky_area
+		bismarck_area
 	}
 	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
 	}
 }
 
-MYD_f = { #Makarr Yindi
-	level = 3
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		owns = location:eora
-	}
-
-	allow = {
-        owns = location:eora
-	}
-	
-	name = MYD
-	flag = MYD
-	adjective = MYD_ADJ
-	tag = MYD
-	color = map_MYD
-	regions = {
-		australia_region
-	}
-	form_effect = {
-	}
-}
-
-ATA_f = { #Colonial Australia
-	level = 3
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = historical
-	
-	potential = {
-		owns = location:eora
-	}
-
-	allow = {
-        owns = location:eora
-	}
-	
-	name = ATA
-	flag = ATA
-	adjective = ATA_ADJ
-	tag = ATA
-	color = map_ATA
-	regions = {
-		australia_region
-	}
-	form_effect = {
-	}
-}
-
-PAE_f = { #Pacific
+OCE_f = { #Oceania
 	level = 4
-	required_locations_fraction = 0.6
+	required_locations_fraction = 0.7
 	capital_required = yes 
 	rule = historical
 	
@@ -588,48 +480,6 @@ PAE_f = { #Pacific
 	}
 
 	allow = {
-       	owns = location:o_ahu
-		owns = location:wellington
-		owns = location:yap
-		owns = location:burebasaga
-	}
-	
-	name = PAE
-	flag = PAE
-	adjective = PAE_ADJ
-	tag = PAE
-	color = map_PAE
-	regions = {
-		new_zealand_region
-		micronesia_region
-		melanesia_region
-		polynesia_region
-	}
-	form_effect = {
-		if = {
-			limit = { country_rank_level < 4 }
-			set_country_rank_effect = { rank = country_rank:rank_empire }
-		}
-	}
-}
-
-OCE_f = { #Oceania
-	level = 4
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = historical
-	
-	potential = {
-		owns = location:eora
-	}
-
-	allow = {
-       	owns = location:o_ahu
-		owns = location:wellington
-		owns = location:yap
-		owns = location:burebasaga
-		owns = location:eora
-		owns = location:waima
 	}
 	
 	name = OCE
@@ -642,94 +492,6 @@ OCE_f = { #Oceania
 		micronesia_region
 		melanesia_region
 		polynesia_region
-		australia_region
-	}
-	form_effect = {
-		if = {
-			limit = { country_rank_level < 4 }
-			set_country_rank_effect = { rank = country_rank:rank_empire }
-		}
-	}
-}
-
-AFZ_f = { #Greater Australian Commonwealth
-	level = 4
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = historical
-	
-	potential = {
-		owns = location:eora
-	}
-
-	allow = {
-		owns = location:wellington
-		owns = location:eora
-	}
-	
-	name = AFZ
-	flag = AFZ
-	adjective = AFZ_ADJ
-	tag = AFZ
-	color = map_AFZ
-	regions = {
-		new_zealand_region
-		australia_region
-	}
-	areas = {
-		fiji_area
-	}
-	form_effect = {
-		if = {
-			limit = { country_rank_level < 4 }
-			set_country_rank_effect = { rank = country_rank:rank_empire }
-		}
-	}
-}
-
-GAN_f = { #Greater Austonesia
-	level = 4
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = historical
-	
-	potential = {
-		AND = {
-			owns = location:eora
-			owns = location:o_ahu
-			owns = location:basai
-		}
-	}
-	allow = {
-       	owns = location:o_ahu
-		owns = location:wellington
-		owns = location:yap
-		owns = location:burebasaga
-		owns = location:eora
-		owns = location:waima
-		owns = location:basai
-		owns = location:maynila
-		owns = location:malacca
-		owns = location:vijaya
-		owns = location:cibuaya
-	}
-	
-	name = GAN
-	flag = GAN
-	adjective = GAN_ADJ
-	tag = GAN
-	color = map_GAN
-	regions = {
-		new_zealand_region
-		australia_region
-		polynesia_region
-		micronesia_region
-		melanesia_region
-		madagascar_region
-	}
-	areas = {
-		champa_area
-		taiwan_area
 	}
 	form_effect = {
 		if = {
