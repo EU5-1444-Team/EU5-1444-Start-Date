@@ -2,8 +2,6 @@ red_turban_rebellions = {
     monthly_spawn_chance = monthly_spawn_chance_unique
     hint_tag = hint_red_turban_rebellions
     can_start = {
-        current_age = age_2_renaissance
-        current_year > 1350
         country_exists = c:CHI
         c:CHI = {
             government_type = government_type:monarchy
@@ -26,7 +24,44 @@ red_turban_rebellions = {
         }
     }
     can_end = {
-        rtr_situation_end_requirements = yes
+        situation:red_turban_rebellions = { years_since_situation_start > 20 }
+        OR = {
+            NOT = { exists = international_organization:middle_kingdom }
+            trigger_if = {
+                limit = {
+                    exists = international_organization:red_turban_rebels.leader_country
+                    exists = international_organization:middle_kingdom
+                }
+                international_organization:middle_kingdom = {
+                    any_international_organization_owned_location = {
+                        is_owned_or_owned_by_subjects_or_below_of = international_organization:red_turban_rebels.leader_country
+                        percent >= 0.65
+                    }
+                }
+            }
+            trigger_else = {
+                exists = international_organization:red_turban_rebels
+
+                custom_tooltip = {
+                    text = red_turban_rebellions_strongest_red_turban_rebel_tt
+                    exists = international_organization:red_turban_rebels
+                    international_organization:red_turban_rebels = {
+                        international_organization_has_leader = yes
+                    }
+                }
+            }
+            c:CHI ?= {
+                legitimacy >= 90
+                stability >= 30
+                current_celestial_authority = { value = 50 }
+                trigger_if = {
+                    limit = {
+                        exists = international_organization:red_turban_rebels
+                    }
+                    international_organization:red_turban_rebels = { total_members < 1 }
+                }
+            }
+        }
     }
     visible = {
         OR = {
@@ -89,7 +124,7 @@ red_turban_rebellions = {
                         var:rtr_historical_countries_to_release > 0
                     }
                     random_list = {
-                        5 = {} # ~20% chance nothing happens
+                        10 = {}
 
                         1 = { limit = { has_variable = rtr_release_tag_CQI } trigger_event_non_silently = { id = red_turban_rebellions.3 days = { 5 15 } } }
                         1 = { limit = { has_variable = rtr_release_tag_CSH } trigger_event_non_silently = { id = red_turban_rebellions.4 days = { 5 15 } } }
