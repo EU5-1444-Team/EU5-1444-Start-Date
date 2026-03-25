@@ -1,0 +1,57 @@
+on_game_start = {
+	on_actions = {
+		init_dynasty_clans
+	}
+}
+
+init_dynasty_clans = {
+	effect = {
+		every_country = {
+			limit = {
+				is_japanese_clan = yes
+			}
+			dynasty_io_find_or_create = {
+				io_type = international_organization_type:japanese_dynasty_clan
+			}
+		}
+		every_country = {
+			limit = {
+				ruler ?= {
+					dynasty = dynasty:habsburg_dynasty
+				}
+			}
+			dynasty_io_find_or_create = {
+				io_type = international_organization_type:habsburg_family
+			}
+		}
+	}
+}
+
+on_new_ruler = {
+	on_actions = {
+		refresh_dynasty_clan
+	}
+}
+
+refresh_dynasty_clan = {
+	effect = {
+		if = {
+			limit = {
+				is_japanese_clan = yes
+			}
+			dynasty_io_find_or_create = {
+				io_type = international_organization_type:japanese_dynasty_clan
+			}
+		}
+		if = {
+			limit = {
+				scope:new_ruler ?= {
+					dynasty = dynasty:habsburg_dynasty
+				}
+			}
+			dynasty_io_find_or_create = {
+				io_type = international_organization_type:habsburg_family
+			}
+		}
+	}
+}
