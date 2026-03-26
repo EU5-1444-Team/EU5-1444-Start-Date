@@ -6,15 +6,15 @@ japanese_dynasty_clan = {
 	disband_if_no_leader = no
 	show_on_diplomatic_map = yes
 	has_leader_country = yes
-    leader_change_trigger_type = rulerchange
-    leader_type = country
-    leader = {
-        every_international_organization_member = {
-            ruler_or_heir_if_regent ?= {
-                add_to_list = leaders
-            }
-        }
-    }
+	leader_change_trigger_type = rulerchange
+	leader_type = country
+	leader = {
+		every_international_organization_member = {
+			ruler_or_heir_if_regent ?= {
+				add_to_list = leaders
+			}
+		}
+	}
 	leader_score = {
 		value = great_power_score
 	}
@@ -34,7 +34,17 @@ japanese_dynasty_clan = {
 		always = no
 	}
 	auto_leave_trigger = {
-		always = no
+		OR = {
+			has_ruler = no
+			ruler = {
+				has_dynasty = no
+			}
+			NOT = {
+				ruler = {
+					dynasty = scope:recipient.var:dynasty_io_dynasty
+				}
+			}
+		}
 	}
 	auto_disband_trigger = {
 		always = no

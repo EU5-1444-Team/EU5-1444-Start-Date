@@ -1,7 +1,8 @@
 habsburg_family = {
+	# Fill in whatever you need here, membership is handled through events, so no need to set that up yourself
 	has_target = no
 	unique = no
-	custom_name = dynasty_family_name
+	custom_name = dynasty_family_name	# Can be dynasty_clan_name if you prefer "Clan"
 	expel_members_who_are_targets_of_other_members = no
 	disband_if_no_leader = no
 	show_on_diplomatic_map = yes
@@ -31,9 +32,13 @@ habsburg_family = {
 	auto_leave_trigger = {
 		OR = {
 			has_ruler = no
-			ruler = { has_dynasty = no }
+			ruler = {
+				has_dynasty = no
+			}
 			NOT = {
-				ruler = { dynasty = dynasty:habsburg_dynasty }
+				ruler = {
+					dynasty = dynasty:habsburg_dynasty
+				}
 			}
 		}
 	}
