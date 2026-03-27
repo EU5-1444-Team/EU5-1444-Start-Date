@@ -45,6 +45,7 @@ countries = {
             evreux senonches
             hirson
         }
+
         own_control_integrated = {
             #Appanages
 
@@ -62,9 +63,10 @@ countries = {
             saintes jonzac montendre oleron royan rochefort
             belin
             montpellier
+            carcassonne
 
             grancey
-            st_affrique
+            st_affrique millau
             villefranche peyrusse
         }
 
@@ -1290,7 +1292,9 @@ countries = {
             ruler_term = { character = dau_humbert_i_de_la_tour start_date = 1282.9.24 end_date = 1307.4.16 regnal_number = 1 }
             ruler_term = { character = dau_jean_ii_de_la_tour start_date = 1307.4.16 end_date = 1319.3.5 regnal_number = 2 }
             ruler_term = { character = dau_guigues_viii_de_la_tour start_date = 1319.3.5 end_date = 1333.7.28 regnal_number = 8 }
-            ruler_term = { character = dau_humbert_ii_de_la_tour start_date = 1333.7.28 regnal_number = 2 }
+            ruler_term = { character = dau_humbert_ii_de_la_tour start_date = 1333.7.28 end_date = 1349.1.1 regnal_number = 2 }
+
+            ruler_term = { character = fra_louis_xi_valois start_date = 1423.7.3 regnal_number = 2 }
 
             regnal_numbers = {
                 name_wigo = 8
@@ -1298,6 +1302,7 @@ countries = {
                 name_hugh = 1
                 name_john = 2
                 name_humbert = 2
+                name_louis = 2
             }
         }
 
@@ -1424,10 +1429,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
-            reforms = {
-                french_ducal_vassal_reform
-            }
+            ruler = fra_louis_xi_valois
 
             ruler_term = { character = vln_eustache_poitiers start_date = 1138.1.1 end_date = 1154.1.1 regnal_number = 1 }
             ruler_term = { character = vln_aimar_i_poitiers start_date = 1154.1.1 end_date = 1158.1.1 regnal_number = 1 }
@@ -1442,10 +1444,16 @@ countries = {
             ruler_term = { character = vln_aimar_iv_poitiers start_date = 1277.1.1 end_date = 1239.10.10 regnal_number = 4 }
             ruler_term = { character = vln_aymar_v_poitiers start_date = 1329.10.10 regnal_number = 5 }
 
+            ruler_term = { character = fra_louis_xi_valois start_date = 1423.7.3 regnal_number = 2 }
+
             regnal_numbers = {
                 name_eustathius = 1
                 name_aimar = 5
                 name_william = 1
+            }
+
+            reforms = {
+                french_ducal_vassal_reform
             }
         }
 
@@ -2430,8 +2438,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = san_jean_v_de_bueil
-            heir = san_antoine_de_bueil
+            ruler = san_jean_v_bueil
 
             ruler_term = { character = fra_roger_blois start_date = 986.1.1 end_date = 1015.1.1 regnal_number = 1 }
             ruler_term = { character = chp_eudes_i_blois start_date = 1015.1.1 end_date = 1037.11.15 regnal_number = 1 }
@@ -2444,7 +2451,9 @@ countries = {
             ruler_term = { character = san_jean_i_sancerre start_date = 1267.1.1 end_date = 1284.5.22 regnal_number = 1 }
             ruler_term = { character = san_etienne_ii_sancerre start_date = 1284.5.22 end_date = 1306.5.16 regnal_number = 2 }
             ruler_term = { character = san_jean_ii_sancerre start_date = 1306.5.16 end_date = 1327.1.1 regnal_number = 2 }
-            ruler_term = { character = san_louis_ii_sancerre start_date = 1327.1.1 end_date = 1363.11.21 regnal_number = 2 }
+            ruler_term = { character = san_louis_ii_sancerre start_date = 1327.1.1 end_date = 1346.8.26 regnal_number = 2 }
+
+            ruler_term = { character = san_jean_v_bueil start_date = 1444.1. regnal_number = 5 }
 
             regnal_numbers = {
                 name_roger = 1
@@ -2454,7 +2463,7 @@ countries = {
                 name_stephen = 2
                 name_william = 1
                 name_louis = 2
-                name_john = 2
+                name_john = 5
             }
 
             reforms = {
@@ -2826,6 +2835,11 @@ countries = {
         country_rank = rank_county
         government = {
             type = monarchy
+            ruler = fra_louis_xi_valois
+
+            ruler_term = { character = fra_louis_xi_valois start_date = 1423.7.3 regnal_number = 2 }
+
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -3595,7 +3609,7 @@ countries = {
         include = "catholic_bishopric_no_coast"
         country_rank = rank_duchy
         government = {
-            ruler = random
+            ruler = clo_guillaume_le_tur
 
             reforms = {
                 prince_bishopric_reform
@@ -3668,10 +3682,12 @@ countries = {
 
         starting_technology_level = 3
         include = "expl_western_europe"
-        include = "catholic_monarchy_no_coast"
+        include = "catholic_bishopric_no_coast"
         government = {
-            type = monarchy
+            ruler = lao_jean_juvenal_ursins
+
             reforms = {
+                prince_bishopric_reform
                 french_ducal_vassal_reform
             }
         }
@@ -3794,9 +3810,11 @@ countries = {
 
         starting_technology_level = 3
         include = "expl_western_europe"
-        include = "catholic_monarchy_no_coast"
+        include = "catholic_bishopric_no_coast"
         government = {
-            type = monarchy
+            type = theocracy
+            ruler = beu_guillaume_hellande
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -3916,7 +3934,10 @@ countries = {
         include = "catholic_bishopric_no_coast"
         country_rank = rank_county
         government = {
-            ruler = random
+            ruler = rei_jacques_juvenal_ursins
+
+            ruler_term = { character = rei_regnault_chartres start_date = 1414.1.2 end_date = 1444.4.4 }
+            ruler_term = { character = rei_jacques_juvenal_ursins start_date = 1444.4.15 }
 
             reforms = {
                 prince_bishopric_reform
@@ -4116,7 +4137,7 @@ countries = {
 
     CSS = {
         #Carcassonne
-        own_control_core = {
+        our_cores_conquered_by_others = {
             carcassonne
         }
 
@@ -4126,6 +4147,8 @@ countries = {
         country_rank = rank_county
         government = {
             type = monarchy
+            ruler = fra_charles_vi_valois
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -4147,18 +4170,20 @@ countries = {
 
         starting_technology_level = 3
         include = "expl_western_europe"
-        include = "catholic_monarchy"
-        country_rank = rank_county
+        include = "catholic_bishopric"
         government = {
-            type = monarchy
+            ruler = mel_robert_rouvres
+
             reforms = {
                 french_ducal_vassal_reform
+                prince_bishopric_reform
             }
         }
 
         tolerated_cultures = {
         }
 
+        country_rank = rank_county
         capital = agde
     }
 
@@ -4172,18 +4197,20 @@ countries = {
 
         starting_technology_level = 3
         include = "expl_western_europe"
-        include = "catholic_monarchy"
-        country_rank = rank_county
+        include = "catholic_bishopric"
         government = {
-            type = monarchy
+            ruler = mel_robert_rouvres
+
             reforms = {
                 french_ducal_vassal_reform
+                prince_bishopric_reform
             }
         }
 
         tolerated_cultures = {
         }
 
+        country_rank = rank_county
         capital = melgueil
     }
 
@@ -4197,18 +4224,20 @@ countries = {
 
         starting_technology_level = 3
         include = "expl_western_europe"
-        include = "catholic_monarchy"
-        country_rank = rank_county
+        include = "catholic_bishopric"
         government = {
-            type = monarchy
+            ruler = mel_robert_rouvres
+
             reforms = {
                 french_ducal_vassal_reform
+                prince_bishopric_reform
             }
         }
 
         tolerated_cultures = {
         }
 
+        country_rank = rank_county
         capital = lodeve
     }
 
@@ -4216,7 +4245,7 @@ countries = {
 
     MLU = {
         #Millau
-        own_control_core = {
+        our_cores_conquered_by_others = {
             millau
         }
 
@@ -4248,7 +4277,6 @@ countries = {
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "catholic_monarchy"
-        country_rank = rank_county
         government = {
             type = monarchy
             reforms = {
@@ -4259,6 +4287,7 @@ countries = {
         tolerated_cultures = {
         }
 
+        country_rank = rank_county
         capital = french_ales
     }
 
@@ -4910,15 +4939,16 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = nrb_jeanne_de_foix
-            heir = nrb_gaston_iv_de_foix
+            ruler = nrb_pierre_tinieres
 
             ruler_term = { character = cas_pedro_manrique_lara start_date = 1192.1.1 end_date = 1202.1.1 regnal_number = 2 }
             ruler_term = { character = nrb_amalric_i_lara start_date = 1202.1.1 end_date = 1270.12.1 regnal_number = 1 }
             ruler_term = { character = nrb_aimeric_iv_lara start_date = 1270.12.1 end_date = 1298.10.1 regnal_number = 4 }
             ruler_term = { character = nrb_amalric_ii_lara start_date = 1298.10.1 end_date = 1328.6.19 regnal_number = 2 }
             ruler_term = { character = nrb_aimeric_v_lara start_date = 1328.6.19 end_date = 1336.6.1 regnal_number = 5 }
-            ruler_term = { character = nrb_amalric_iii_lara start_date = 1336.6.1 end_date = 1371.8.20 regnal_number = 3 }
+            ruler_term = { character = nrb_amalric_iii_lara start_date = 1336.6.1 end_date = 1341.1.1 regnal_number = 3 }
+
+            ruler_term = { character = nrb_pierre_tinieres start_date = 1424.1.1 regnal_name = name_william regnal_number = 3 }
 
             regnal_numbers = {
                 #Lindoin = 1
@@ -4934,6 +4964,7 @@ countries = {
                 name_aimeric = 5
                 name_ermengard = 1
                 name_amalric = 3
+                name_william = 3
             }
 
             reforms = {
@@ -21559,6 +21590,7 @@ countries = {
         }
 
         own_control_integrated = {
+            veliky_beckerek
         }
 
         our_cores_conquered_by_others = {
@@ -24944,7 +24976,7 @@ countries = {
             debrecen nagyboszormeny nagykallo nagyecsed varda szatmar syvlyush zalau baia_mare
             szolnok eger karcag borsod
             bekes csanad szeged
-            kovin veliky_beckerek
+            kovin
             timisoara arad zarand
             baia_crisului
             vukovar ilok pozega sremska_mitrovica petrovaradin
@@ -25065,10 +25097,6 @@ countries = {
             iasi bacau cotnari dorohoi harlau husi roman stefanesti tutova ungheni vaslui
             soroca balti lipnic orhei viadineti
             storozhynets putna siret
-        }
-
-        own_control_conquered = {
-            tulcea enisala isaccea
         }
 
         our_cores_conquered_by_others = {
@@ -36020,6 +36048,7 @@ countries = {
             beden haskovo perperek smolyan stanimaka
             parga ioannina konitsa argyrokastro avlonya karpenisi
             rusokastro
+            tulcea enisala isaccea
         }
 
         own_control_conquered = {

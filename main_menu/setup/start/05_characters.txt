@@ -17192,14 +17192,13 @@ character_db={
         estate = nobles_estate
         birth = sancerre
         birth_date = 1305.1.1
-        death_date = 1363.11.21
+        death_date = 1346.8.26
         father = san_jean_ii_sancerre
         #mother = Louise de Beaumez
         dynasty = blois_dynasty # Should be dynasty = sancerre_dynasty
         tag = SAN
         ruler_trait = bold_fighter
     }
-
 
     # Son & Heir of the Count of Sancerre
     san_jean_iii_sancerre = {
@@ -17217,7 +17216,6 @@ character_db={
         child_trait = child_gallant
     }
 
-
     # Sisters of the Count of Sancerre
     fra_jeanne_sancerre = {
         first_name = { name = name_joanna }
@@ -17234,7 +17232,6 @@ character_db={
         dynasty = blois_dynasty # Should be dynasty = sancerre_dynasty
         tag = SAN
     }
-
 
     # Line of Stephen of England, Counts of Boulogne
     
@@ -24353,7 +24350,6 @@ character_db={
         tag = FRA
     }
 
-
     # Count of Roucy
     rou_jean_v_pierrepont = {
         first_name = { name = name_john }
@@ -24368,7 +24364,6 @@ character_db={
         dynasty = pierrepont_dynasty
         tag = ROU
     }
-
 
     #Ruler's Spouse
     rou_marguerite_bommiers = {
@@ -24385,7 +24380,6 @@ character_db={
         tag = ROU
     }
 
-
     # Son & Heir of the Count of Roucy
     rou_robert_ii_pierrepont = {
         first_name = { name = name_robert }
@@ -24400,7 +24394,6 @@ character_db={
         dynasty = pierrepont_dynasty
         tag = ROU
     }
-
 
     # Childs of the Count of Roucy
     rou_hugues_pierrepont = {
@@ -24417,7 +24410,6 @@ character_db={
         tag = ROU
     }
 
-
     rou_simon_i_pierrepont = {
         first_name = { name = name_simeon }
         culture = picard
@@ -24432,7 +24424,6 @@ character_db={
         dynasty = pierrepont_dynasty
         tag = ROU
     }
-
     
     # Countess Consort of Sancerre & Daughter of the Count of Roucy
     san_beatrix_pierrepont = {
@@ -24442,7 +24433,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1316.1.1 # Fifth child
-        death_date = 1370.11.5
+        death_date = 1376.1.1
         birth = roucy
         father = rou_jean_v_pierrepont
         mother = rou_marguerite_bommiers
@@ -24450,7 +24441,6 @@ character_db={
         dynasty = pierrepont_dynasty
         tag = SAN
     }
-
 
     rou_jeanne_pierrepont = {
         first_name = { name = name_joanna }
@@ -24466,7 +24456,6 @@ character_db={
         dynasty = pierrepont_dynasty
         tag = ROU
     }
-
 
     # HOUSE OF POITIERS (Counts of Valentinois)
 
@@ -115756,7 +115745,7 @@ character_db={
     rei_jacques_juvenal_ursins = {
         first_name = { name = name_james.Juvénal }
         last_name = { name = "des Ursins" }
-        culture = french
+        culture = champenais
         religion = catholic
         estate = clergy_estate
         birth_date = 1386.1.1 #unknown
@@ -115764,15 +115753,43 @@ character_db={
         tag = REI 
     }
 
-    rei_jean_juvenal_ursins = {
+    ### Beauvais
+
+    beu_guillaume_hellande = {
+        first_name = { name = name_william }
+        last_name = { name = "de Hellande" }
+        culture = french
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1410.1.1 #unknown
+        birth = beauvais
+        tag = BEU 
+    }
+
+    ### Laon
+
+    lao_jean_juvenal_ursins = {
         first_name = { name = name_john.Juvénal }
         last_name = { name = "des Ursins" }
-        culture = french
+        culture = champenais
         religion = catholic
         estate = clergy_estate
         birth_date = 1388.1.1
         birth = troyes
-        tag = REZI 
+        tag = LAO 
+    }
+
+    ### Châlons
+
+    clo_guillaume_le_tur = {
+        first_name = { name = name_william }
+        last_name = { name = "le Tur" }
+        culture = champenais
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1397.1.1
+        birth = chalons_champagne
+        tag = CLO 
     }
 
     ### Alençon
@@ -115937,6 +115954,20 @@ character_db={
             date = 9999.1.1
             size = 1
         }
+    }
+
+    ### Sancerre
+
+    san_jean_v_bueil = {
+		first_name = { name = name_john }
+		nickname = { name = "the Plague of the English" }
+		culture = french
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1405.8.17
+		birth = tours
+        dynasty = bueil_dynasty
+		tag = SAN    
     }
 
     ### Vertus
@@ -116394,6 +116425,36 @@ character_db={
 		mother = cst_eleonore_bourbon_marche
 		dynasty = armagnac_dynasty
 		tag = CST    
+    }
+
+    ### Viviers
+
+
+
+    ### Melgueil
+
+    mel_robert_rouvres = {
+		first_name = { name = name_robert }
+        last_name = { name = "de Rouvres"}
+		culture = languedocien
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1395.1.1
+		birth = montpellier
+		tag = MEL      
+    }
+
+    ### Narbonne
+
+    nrb_pierre_tinieres = {
+		first_name = { name = name_peter }
+		culture = languedocien
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1400.1.1 #unknown
+		birth = narbonne
+        dynasty = tinieres_dynasty
+		tag = NRB    
     }
 
     ### Brittany
