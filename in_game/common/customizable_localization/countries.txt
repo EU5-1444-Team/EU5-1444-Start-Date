@@ -616,3 +616,45 @@ SBR_ADJ = {
 	parent = SBR
 	suffix = "_ADJ"
 }
+
+PHA = {
+	# Phagmodrupa
+	type = country
+	text = {
+		localization_key = PHA_phagmodrupa
+		trigger = {
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:phagmodrupa_dynasty ?= this
+			}
+		}
+	}
+	text = {
+		localization_key = PHA
+		fallback = yes
+	}
+}
+PHA_ADJ = {
+	parent = PHA
+	suffix = "_ADJ"
+}
+
+RIN = {
+	# Rinpungpa
+	type = country
+	text = {
+		localization_key = RIN_rinpungpa
+		trigger = {
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:rinpungpa_dynasty ?= this
+			}
+		}
+	}
+	text = {
+		localization_key = RIN
+		fallback = yes
+	}
+}
+RIN_ADJ = {
+	parent = RIN
+	suffix = "_ADJ"
+}

@@ -9119,13 +9119,79 @@ countries = {
 
     # --- AQU ---
 
-    ARB = {
+    # ARB = {
+    #     own_control_core = {
+    #         oristano
+    #     }
+
+    #     our_cores_conquered_by_others = {
+    #         sorgono terralba bosa macomer bitti ozieri ales
+    #     }
+
+    #     starting_technology_level = 3
+    #     include = "expl_mediterranean"
+    #     include = "expl_silk_road_west"
+    #     include = "expl_silk_road_center"
+    #     include = "expl_silk_road_east"
+    #     include = "expl_indian_trade_route"
+    #     include = "catholic_monarchy"
+    #     government = {
+    #         type = monarchy
+    #         heir_selection = judicial_election
+
+    #         ruler = random # TODO: add me
+    #         consort = random # TODO: add me
+
+    #         ruler_term = { character = arb_ugone_i_arborea start_date = 1192.1.1 end_date = 1195.1.1 regnal_number = 1 }
+
+    #         ruler_term = { character = arb_ugone_i_arborea start_date = 1206.1.1 end_date = 1211.1.1 regnal_number = 1 } # Restored
+    #         ruler_term = { character = arb_pietro_ii_arborea start_date = 1211.1.1 end_date = 1241.1.1 regnal_number = 2 }
+    #         ruler_term = { character = arb_mariano_ii_arborea start_date = 1241.1.1 end_date = 1297.1.1 regnal_number = 2 } # Only as titular until 1264
+    #         ruler_term = { character = arb_giovanni_arborea start_date = 1297.1.1 end_date = 1304.3.23 regnal_number = 1 }
+    #         ruler_term = {
+    #             character = arb_andreotto_arborea start_date = 1304.3.23 end_date = 1308.4.3 regnal_number = 1
+    #             character = arb_mariano_iii_arborea start_date = 1304.3.23 end_date = 1308.4.3 regnal_number = 3 # Junior Co-Ruler until 1308
+    #         }
+    #         ruler_term = { character = arb_mariano_iii_arborea start_date = 1308.4.3 end_date = 1321.4.5 regnal_number = 3 } # Junior Co-Ruler until 1308
+    #         ruler_term = { character = arb_ugone_ii_arborea start_date = 1321.4.5 end_date = 1335.4.5 regnal_number = 2 }
+    #         ruler_term = { character = arb_pietro_iii_arborea start_date = 1335.4.5 regnal_number = 3 }
+
+    #         regnal_numbers = {
+    #             name_gunther = 2
+    #             name_comita = 3
+    #             name_barisone = 2
+    #             name_marianus = 3
+    #             name_orzocorre = 3
+    #             name_torbjon = 1
+    #             name_constantine = 3
+    #             name_barisone = 1
+    #             name_peter = 3
+    #             name_hugh = 2
+    #             name_william = 1
+    #             name_john = 1
+    #             name_andrew = 1
+    #         }
+
+    #         reforms = {
+    #             judicate_reform
+    #         }
+    #     }
+
+    #     tolerated_cultures = {
+    #         ligurian
+    #     }
+
+    #     country_rank = rank_duchy
+    #     capital = oristano
+    #     dynasty = serra_bas_dynasty
+    # }
+
+    # --- ARB ---
+
+    ORN = {
+        # Oristano
         own_control_core = {
             oristano
-        }
-
-        our_cores_conquered_by_others = {
-            sorgono terralba bosa macomer bitti ozieri ales
         }
 
         starting_technology_level = 3
@@ -9137,56 +9203,24 @@ countries = {
         include = "catholic_monarchy"
         government = {
             type = monarchy
-            heir_selection = judicial_election
+            heir_selection = cognatic_primogeniture
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = orn_antonio_i
+            heir = orn_salvatore_i
 
-            ruler_term = { character = arb_ugone_i_arborea start_date = 1192.1.1 end_date = 1195.1.1 regnal_number = 1 }
+            ruler_term = { character = orn_leonardo_i start_date = 1410.1.1 end_date = 1427.1.1 regnal_number = 1 }
 
-            ruler_term = { character = arb_ugone_i_arborea start_date = 1206.1.1 end_date = 1211.1.1 regnal_number = 1 } # Restored
-            ruler_term = { character = arb_pietro_ii_arborea start_date = 1211.1.1 end_date = 1241.1.1 regnal_number = 2 }
-            ruler_term = { character = arb_mariano_ii_arborea start_date = 1241.1.1 end_date = 1297.1.1 regnal_number = 2 } # Only as titular until 1264
-            ruler_term = { character = arb_giovanni_arborea start_date = 1297.1.1 end_date = 1304.3.23 regnal_number = 1 }
-            ruler_term = {
-                character = arb_andreotto_arborea start_date = 1304.3.23 end_date = 1308.4.3 regnal_number = 1
-                character = arb_mariano_iii_arborea start_date = 1304.3.23 end_date = 1308.4.3 regnal_number = 3 # Junior Co-Ruler until 1308
-            }
-            ruler_term = { character = arb_mariano_iii_arborea start_date = 1308.4.3 end_date = 1321.4.5 regnal_number = 3 } # Junior Co-Ruler until 1308
-            ruler_term = { character = arb_ugone_ii_arborea start_date = 1321.4.5 end_date = 1335.4.5 regnal_number = 2 }
-            ruler_term = { character = arb_pietro_iii_arborea start_date = 1335.4.5 regnal_number = 3 }
-
-            regnal_numbers = {
-                name_gunther = 2
-                name_comita = 3
-                name_barisone = 2
-                name_marianus = 3
-                name_orzocorre = 3
-                name_torbjon = 1
-                name_constantine = 3
-                name_barisone = 1
-                name_peter = 3
-                name_hugh = 2
-                name_william = 1
-                name_john = 1
-                name_andrew = 1
-            }
-
-            reforms = {
-                judicate_reform
-            }
+            ruler_term = { character = orn_antonio_i start_date = 1427.1.1 regnal_number = 1 }
         }
 
         tolerated_cultures = {
             ligurian
         }
 
-        country_rank = rank_duchy
+        country_rank = rank_county
         capital = oristano
-        dynasty = serra_bas_dynasty
+        dynasty = cubello_serra_bas_dynasty
     }
-
-    # --- ARB ---
 
     COR = {
         our_cores_conquered_by_others = {
@@ -12059,7 +12093,7 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = random
+            ruler = mca_bernardo_giovanni_cabrera
         }
         country_rank = rank_county
         capital = modica
@@ -58703,6 +58737,7 @@ countries = {
             changpa_culture
             khampa_culture
         }
+        dynasty = rinpungpa_dynasty
     }
 
     # --- RIN ---
@@ -58791,6 +58826,7 @@ countries = {
             changpa_culture
             khampa_culture
         }
+        dynasty = phagmodrupa_dynasty
     }
 
     # --- PHA ---

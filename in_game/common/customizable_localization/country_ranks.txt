@@ -646,6 +646,13 @@ country_flavor = {
 		}
 	}
 	text = {
+		localization_key = rank_county_marquisate
+		trigger = {
+			tag = ORN
+			country_rank_is_county = yes
+		}
+	}
+	text = {
 		localization_key = rank_county_palatine
 		trigger = {
 			tag = CEP
@@ -679,6 +686,9 @@ country_flavor = {
 		localization_key = rank_rinpungpa
 		trigger = {
 			tag = RIN
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:rinpungpa_dynasty ?= this
+			}
 		}
 	}
 	text = {
@@ -687,6 +697,9 @@ country_flavor = {
 			OR = {
 				tag = PHA
 				tag = UTS
+			}
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:phagmodrupa_dynasty ?= this
 			}
 		}
 	}
