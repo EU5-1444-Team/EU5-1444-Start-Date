@@ -12738,13 +12738,13 @@ countries = {
     # --- MUN ---
 
     LUN = {
-        #Lüneburg
+        #Brunswick-Lüneburg
         own_control_core = {
             luneburg celle winsen harburg ebstorf isenhagen winsen_aller fallingbostel
             dannenberg #County of Danneberg
             luchow #County of Lüchow
             uelzen #Amt of Bodenteich
-
+            burgdorf meinersen gifhorn
         }
 
         starting_technology_level = 3
@@ -13006,12 +13006,10 @@ countries = {
     # --- LUX ---
 
     BRU = {
-        #Brunswick (Lüneburg)
+        #Brunswick (Wolfenbüttel)
         own_control_core = {
-            brunswick gifhorn helmstedt meinersen wolfenbuttel gandersheim #Duchy of Braunschweig-Wolfenbüttel
-            hanover hamelin neustadt_am_rubenberge #Duchy of Calemberg
-            gottingen #Duchy of Göttingen
-
+            brunswick helmstedt wolfenbuttel gandersheim #Duchy of Braunschweig-Wolfenbüttel
+            holzminden
         }
 
         starting_technology_level = 3
@@ -13052,6 +13050,68 @@ countries = {
     }
 
     # --- BRU ---
+
+    GGN = {
+        #Brunswick (Göttingen)
+        own_control_core = {
+            gottingen #Duchy of Göttingen
+        }
+
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "catholic_monarchy_no_coast"
+        include = "expl_northern_europe"
+        include = "german_principality"
+        country_rank = rank_duchy
+        government = {
+
+            ruler = random # TODO: add me
+
+            regnal_numbers = {
+            }
+        }
+
+        tolerated_cultures = {
+            angrian
+            lower_saxon
+        }
+
+        capital = gottingen
+        dynasty = welfen_dynasty
+    }
+
+    # --- GGN ---
+
+    CBG = {
+        #Brunswick (Calenberg)
+        own_control_core = {
+            hanover hamelin neustadt_am_rubenberge #Duchy of Calemberg  
+        }
+
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "catholic_monarchy_no_coast"
+        include = "expl_northern_europe"
+        include = "german_principality"
+        country_rank = rank_duchy
+        government = {
+
+            ruler = random # TODO: add me
+
+            regnal_numbers = {
+            }
+        }
+
+        tolerated_cultures = {
+            angrian
+            lower_saxon
+        }
+
+        capital = hanover
+        dynasty = welfen_dynasty
+    }
+
+    # --- GGN ---
 
     UTR = {
         #Utrecht
@@ -13445,19 +13505,26 @@ countries = {
         own_control_core = {
             stade neuhaus gestenthorpe osterholz achim bremervorde zeven
         }
+
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "catholic_bishopric"
         include = "expl_northern_europe"
-        country_rank = rank_duchy
+        
+
         government = {
-            ruler = random # TODO: add me
+            ruler = bre_gerhard_iii_hoya
+
+            ruler_term = { character = bre_burchard_grelle start_date = 1327.1.1 end_date = 1344.8.13 regnal_number = 2 }
+
+            ruler_term = { character = bre_gerhard_iii_hoya start_date = 1442.1.1 regnal_number = 3 }
         }
 
         tolerated_cultures = {
             frisian
         }
 
+        country_rank = rank_duchy
         capital = bremervorde
     }
 
@@ -14371,7 +14438,7 @@ countries = {
     HDH = {
         #Hildesheim
         own_control_core = {
-            hildesheim alfeld burgdorf
+            hildesheim alfeld
         }
 
         starting_technology_level = 3
@@ -14590,8 +14657,11 @@ countries = {
         include = "expl_northern_europe"
         government = {
 
-            ruler = random # TODO: add me
-            ruler_term = { character = hvb_dietrich_i_kothe start_date = 1324.1.1 regnal_number = 1 }
+            ruler = hvb_konrad_lintdorf
+
+            ruler_term = { character = hvb_dietrich_i_kothe start_date = 1324.1.1 end_date = 1341.1.1 regnal_number = 1 }
+
+            ruler_term = { character = hvb_konrad_lintdorf start_date = 1427.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_henry = 3
@@ -15162,9 +15232,13 @@ countries = {
         include = "catholic_german_bishopric_no_coast"
         include = "expl_northern_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = vrd_johannes_asel
 
             ruler_term = { character = vrd_konrad_i_braunschweig start_date = 1269.5.4 end_date = 1300.9.15 regnal_number = 1 }
+
+            ruler_term = { character = vrd_johannes_hake start_date = 1332.1.1 end_date = 1340.1.1 regnal_number = 1 }
+
+            ruler_term = { character = vrd_johannes_asel start_date = 1426.1.1 regnal_number = 3 }
 
             reforms = {
                 prince_bishopric_reform
@@ -15209,7 +15283,11 @@ countries = {
 
         starting_technology_level = 3
         government = {
-            ruler = random # TODO: add me
+            ruler = lbb_nicolaus_ii_sachau
+
+            ruler_term = { character = lbb_heinrich_ii_bocholt start_date = 1317.1.1 end_date = 1341.1.1 regnal_number = 2 }
+
+            ruler_term = { character = lbb_nicolaus_ii_sachau start_date = 1439.1.1 regnal_number = 2 }
         }
 
         capital = eutin
@@ -15627,8 +15705,11 @@ countries = {
         include = "catholic_german_bishopric_no_coast"
         include = "expl_northern_europe"
         government = {
-            ruler = random # TODO: add me
-            ruler_term = { character = blb_stefan_ii start_date = 1326.1.1 }
+            ruler = blb_johann_deher
+
+            ruler_term = { character = blb_stefan_ii start_date = 1326.1.1 end_date = 1345.2.24 }
+
+            ruler_term = { character = blb_johann_deher start_date = 1443.10.16 }
 
             laws = {
                 mining_law = nobles_mining_law
@@ -16103,7 +16184,7 @@ countries = {
 
     EVS = {
         # Everstein (North Germany)
-        own_control_core = {
+        our_cores_conquered_by_others = {
             holzminden
         }
         starting_technology_level = 3
@@ -16111,7 +16192,10 @@ countries = {
         include = "expl_northern_europe"
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
-        government = { ruler = random }
+        government = { 
+            ruler = random 
+        }
+
         country_rank = rank_county
         capital = holzminden
     }
@@ -16296,11 +16380,17 @@ countries = {
         include = "catholic_german_bishopric_no_coast"
         include = "expl_northern_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = rzb_johannes_ii_prohl
+
+            ruler_term = { character = rzb_volrad_von_dem_dorne start_date = 1335.1.1 death_date = 1355.1.1 }
+
+            ruler_term = { character = rzb_johannes_ii_prohl start_date = 1440.1.1 regnal_number = 2 }
+
             reforms = {
                 prince_bishopric_reform
             }
         }
+
         capital = ratzeburg
 
         tolerated_cultures = {
@@ -23652,11 +23742,16 @@ countries = {
 
         government = {
             type = theocracy
+            ruler = arr_henning_scharpenberg
 
-            ruler = random # TODO: add me
-            ruler_term = { character = rig_friedrich_von_pernstein start_date = 1304.1.1 regnal_number = 1 }
+            ruler_term = { character = rig_friedrich_von_pernstein start_date = 1304.1.1 end_date = 1341.1.1 regnal_number = 1 }
+            ruler_term = { character = bid_engelbert_von_dolen start_date = 1341.1.1 end_date = 1347.1.1 regnal_number = 1 }
+
+            ruler_term = { character = arr_henning_scharpenberg start_date = 1424.1.1 regnal_number = 1 }
+
             regnal_numbers = {
                 name_frederick = 1
+                name_engelbert = 1
             }
         }
 
@@ -23793,9 +23888,12 @@ countries = {
 
         government = {
             type = theocracy
+            ruler = bid_ludolf_grove
 
-            ruler = random # TODO: add me
-            ruler_term = { character = bio_jakob_ii start_date = 1322.1.1 regnal_number = 2 }
+            ruler_term = { character = bio_jakob_ii start_date = 1322.1.1 end_date = 1337.6.1 regnal_number = 2 }
+
+            ruler_term = { character = bid_ludolf_grove start_date = 1439.1.1 }
+
             regnal_numbers = {
                 name_james = 2
             }
@@ -23877,11 +23975,15 @@ countries = {
 
         government = {
             type = theocracy
+            ruler = bid_bartholomaus_savijerwe
 
-            ruler = random # TODO: add me
-            ruler_term = { character = bid_engelbert_von_dolen start_date = 1323.1.1 regnal_number = 1 }
+            ruler_term = { character = bid_engelbert_von_dolen start_date = 1323.1.1 end_date = 1341.1 regnal_number = 1 }
+
+            ruler_term = { character = bid_bartholomaus_savijerwe start_date = 1441.1.1 regnal_number = 1 }
+
             regnal_numbers = {
                 name_engelbert = 1
+                name_bartholomew = 1
             }
         }
 
@@ -24092,11 +24194,15 @@ countries = {
 
         government = {
             type = theocracy
+            ruler = erm_franz_kuhschmalz
 
-            ruler = random # TODO: add me
-            ruler_term = { character = erm_hermann_of_prague start_date = 1337.1.1 regnal_number = 1 }
+            ruler_term = { character = erm_hermann_of_prague start_date = 1337.1.1 end_date = 1349.1.1 regnal_number = 1 }
+
+            ruler_term = { character = erm_franz_kuhschmalz start_date = 1426.1.1 regnal_number = 1 }
+
             regnal_numbers = {
                 name_herman = 1
+                name_francis = 1
             }
         }
         tolerated_cultures = { pruthenian }
@@ -24336,11 +24442,15 @@ countries = {
 
         government = {
             type = theocracy
+            ruler = chl_johann_marienau
 
-            ruler = random # TODO: add me
-            ruler_term = { character = klm_otto start_date = 1323.12.23 regnal_number = 1 }
+            ruler_term = { character = klm_otto start_date = 1323.1.1 end_date = 1349.1.1 regnal_number = 1 }
+
+            ruler_term = { character = chl_johann_marienau start_date = 1416.1.1 regnal_number = 1 }
+
             regnal_numbers = {
                 name_otto = 1
+                name_john = 1
             }
         }
 
@@ -24365,11 +24475,14 @@ countries = {
 
         government = {
             type = theocracy
+            ruler = kur_johann_iii_tiergart
 
-            ruler = random # TODO: add me
-            ruler_term = { character = kur_johann_ii start_date = 1332.1.1 regnal_number = 2 }
+            ruler_term = { character = kur_johann_ii start_date = 1332.1.1 end_date = 1353.1.1 regnal_number = 2 }
+
+            ruler_term = { character = kur_johann_iii_tiergart start_date = 1425.1.1 regnal_number = 3 }
+
             regnal_numbers = {
-                name_john = 1
+                name_john = 3
             }
         }
 
@@ -24695,11 +24808,15 @@ countries = {
 
         government = {
             type = theocracy
+            ruler = pms_kaspar_linke
 
-            ruler = random # TODO: add me
-            ruler_term = { character = pms_bertold_von_riesenburg start_date = 1332.1.1 regnal_number = 1 }
+            ruler_term = { character = pms_bertold_von_riesenburg start_date = 1332.1.1 end_date = 1346.11.28 regnal_number = 1 }
+
+            ruler_term = { character = pms_kaspar_linke start_date = 1440.8.1 regnal_number = 1 }
+
             regnal_numbers = {
                 name_berthold = 1
+                name_casper = 1
             }
         }
         country_rank = rank_county
@@ -24720,11 +24837,15 @@ countries = {
 
         government = {
             type = theocracy
+            ruler = smd_nikolaus_schlotterkopf
 
-            ruler = random # TODO: add me
-            ruler_term = { character = sms_johann_clare start_date = 1320.1.1 regnal_number = 1 }
+            ruler_term = { character = sms_johann_clare start_date = 1320.1.1 end_date = 1344.1.1 regnal_number = 1 }
+
+            ruler_term = { character = smd_nikolaus_schlotterkopf start_date = 1442.1.1 regnal_number = 1 }
+
             regnal_numbers = {
                 name_john = 1
+                name_nicholas = 1
             }
         }
         tolerated_cultures = { pruthenian }
@@ -24745,7 +24866,9 @@ countries = {
         government = {
             type = republic
             heir_selection = oligarchic_elective
-            ruler = random
+            ruler = dzg_meinert_colmer
+
+            ruler_term = { character = dzg_meinert_colmer start_date = 1436.1.1 }
         }
 
         country_rank = rank_county
