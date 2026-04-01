@@ -1564,20 +1564,6 @@ VIZ = {
             scale = { 0.700 0.700 }
         }
     }
-    colored_emblem = {
-        texture = "ce_wolf_passant_preying_on_lamb_haro.dds"
-        color1 = "black"
-        color2 = "brown"
-        color3 = "ivory"
-        instance = {
-            position = { 0.495 0.605 }
-            scale = { 0.250 0.250 }
-        }
-        instance = {
-            position = { 0.495 0.766 }
-            scale = { 0.250 0.250 }
-        }
-    }
 }
 
 ATS = {
@@ -1761,6 +1747,7 @@ COB = {
 }
 
 URG = {
+    # Urgell
     pattern = "pattern_solid.dds"
     color1 = rgb { 255 0 0 }
     colored_emblem = {
@@ -1778,5 +1765,31 @@ URG = {
             position = { 0.500 0.500 }
             scale = { 0.800 0.800 }
         }
+    }
+}
+
+LEC = { 
+    # Lecce
+    # TODO: Add Orsini emblem inside, see https://en.wikipedia.org/wiki/County_of_Lecce#/media/File:Coat_of_arms_of_the_house_of_Orsini_del_Balzo.svg
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "blue"
+	color3 = "red_mid"
+
+    sub = { # Baux
+        parent = "sub_baux"
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = { # Orange
+        parent = "sub_orange"
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = {
+        parent = "sub_div_quarterly_mid"
+		color1 = "black"
+		color2 = "black"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
     }
 }
