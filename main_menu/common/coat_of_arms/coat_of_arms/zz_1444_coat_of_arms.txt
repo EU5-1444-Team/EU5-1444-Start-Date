@@ -1545,24 +1545,37 @@ MCA = {
 
 VIZ = {
     # Vizcaya
-    pattern = "pattern_tricolor_horizontal_01.dds"
+    pattern = "pattern_solid.dds"
     color1 = "white"
-    color2 = "white"
-    color3 = rgb { 199 113 55 }
-    textured_emblem = {
-        texture = "te_vizcaya.dds"
-        instance = {
-            position = { 0.500 0.418 }
-            scale = { 0.500 0.500 }
-        }
-    }
     colored_emblem = {
-        texture = "ce_border_crosses.dds"
-        color1 = "yellow"
-        color2 = "red"
+        texture = "ce_border_lions.dds"
+        color1 = "orange"
+        color2 = "orange"
+        color3 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
+        }
+    }
+    textured_emblem = {
+        texture = "te_vizcaya.dds"
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 0.700 0.700 }
+        }
+    }
+    colored_emblem = {
+        texture = "ce_wolf_passant_preying_on_lamb_haro.dds"
+        color1 = "black"
+        color2 = "brown"
+        color3 = "ivory"
+        instance = {
+            position = { 0.495 0.605 }
+            scale = { 0.250 0.250 }
+        }
+        instance = {
+            position = { 0.495 0.766 }
+            scale = { 0.250 0.250 }
         }
     }
 }
