@@ -6507,7 +6507,7 @@ countries = {
         own_control_core = {
             barcelona berga besalu ripoll castellon_ampurias girona manresa sant_feliu sitges terrassa vic
             cervera balaguer flix lleida montblanc tarragona tarrega tortosa villafranca_del_penedes
-            seu_durgell agramunt cardona talarn vielha
+            agramunt cardona talarn vielha
             huesca ainsa almudevar anso barbastro benabarre ejea_de_los_caballeros fraga jaca monzon sarinena sos
             teruel albarracin alcaniz alfambra cantavieja montalban mora_de_rubielos valderrobres
             zaragoza ariza belchite carinena caspe calatayud daroca pina_de_ebro tarazona zuera
@@ -6611,7 +6611,7 @@ countries = {
         own_control_core = {
             lagos faro silves tavira
             evora alvalade alvito avis beja crato elvas estremoz mertola montemor mora_portugal moura odemira ourique ponte_sor portalegre portel salvaterra serpa sines vila_vicosa
-            besteiros castelo_branco covilha esgueira feira guarda idanha meda pinhel proenca_nova sabugal trancoso
+            castelo_branco covilha esgueira feira guarda seia idanha meda pinhel proenca_nova sabugal trancoso
             lisbon alcacer_do_sal alcobaca chao_de_couce leiria santarem setubal tomar torres_novas torres_vedras
             porto barcelos braga guimaraes valenca viana_do_castelo
             miranda_de_i_douro mirandela moncorvo vila_real
@@ -7150,10 +7150,40 @@ countries = {
             sephardi
             andalusi
         }
-
     }
 
     # --- MLL ---
+
+    URG = {
+        own_control_core = {
+            seu_durgell
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "catholic_bishopric_no_coast"
+        
+        government = {
+            type = theocracy
+            ruler = urg_arnau_rogier_pallars
+
+            ruler_term = { character = anr_arnau_de_llorda start_date = 1326.6.27 end_date = 1346.5.3 }
+
+            ruler_term = { character = urg_arnau_rogier_pallars start_date = 1437.7.19 }
+
+            regnal_numbers = {
+            }
+        }
+
+        country_rank = rank_country
+        capital = seu_durgell
+    }
+
+    # --- URG ---
 
     ATS = {
         own_control_core = {
@@ -7231,7 +7261,7 @@ countries = {
 
     COB = {
         own_control_core = {
-            coimbra figueira seia
+            coimbra figueira
         }
 
         starting_technology_level = 3
@@ -7258,7 +7288,7 @@ countries = {
 
     VSE = {
         own_control_core = {
-            viseu lamego
+            viseu lamego besteiros
         }
 
         starting_technology_level = 3
@@ -7316,16 +7346,19 @@ countries = {
 
         starting_technology_level = 3
         include = "expl_mediterranean"
-        include = "catholic_bishopric_no_coast"
+        include = "catholic_monarchy_no_coast"
 
         government = {
-            ruler = random # TODO: add me
-            type = theocracy
+            type = monarchy
+            ruler = urg_arnau_rogier_pallars
+            
+            ruler_term = { character = anr_arnau_de_llorda start_date = 1326.6.27 end_date = 1346.5.3 }
 
-            ruler_term = { character = anr_arnau_de_llorda start_date = 1326.6.27 }
+            ruler_term = { character = urg_arnau_rogier_pallars start_date = 1437.7.19 }
         }
+
         capital = andorra_la_vella
-        country_rank = rank_duchy
+        country_rank = rank_county
     }
 
     # --- ANR ---

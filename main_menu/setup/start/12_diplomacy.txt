@@ -357,6 +357,8 @@ diplomacy_manager = {
     dependency = { first = CAS second = VIZ subject_type = fiefdom }
     dependency = { first = CAS second = CNY subject_type = vassal }
 
+    dependency = { first = ARA second = URG subject_type = vassal }
+
     dependency = { first = POR second = BGZ subject_type = appanage }
     dependency = { first = POR second = COB subject_type = appanage }
     dependency = { first = POR second = VSE subject_type = appanage }
@@ -364,6 +366,7 @@ diplomacy_manager = {
     scripted_oneway = { first = ARA second = ANR type = guarantee }
     scripted_oneway = { first = FRA second = ANR type = guarantee }
     scripted_oneway = { first = FOI second = ANR type = guarantee }
+    scripted_oneway = { first = URG second = ANR type = guarantee }
     scripted_oneway = { first = CAS second = POR type = guarantee }
 
     #scripted_oneway = { first = CAS second = CTV type = military_sponsorship }
