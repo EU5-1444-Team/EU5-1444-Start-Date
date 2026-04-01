@@ -6023,17 +6023,18 @@ countries = {
         include = "catholic_monarchy"
         include = "expl_northern_europe"
         own_control_core = {
-            orkney shetland
+            orkney shetland torshavn
         }
         our_cores_conquered_by_others = {
-            strathearn thurso
+            thurso
         }
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler_term = { character = ork_malise_v start_date = 1330.1.1 regnal_number = 5 }
             ruler = random # TODO: add me
 
+            ruler_term = { character = ork_malise_v start_date = 1330.1.1 regnal_number = 5 }
+            
             reforms = {
                 galley_lords_reform
             }
@@ -8295,7 +8296,7 @@ countries = {
     NAP = {
         own_control_core = {
             aquila atri celano cittaducale csantangelo sulmona teramo chieti lanciano vasto bojano
-            isernia larino trivento altamura bovino foggia lucera
+            isernia larino trivento bovino foggia lucera
             manfredonia rotondo sansevero
             acerenza lagonegro melfi montepeloso potenza santarcangelo catanzaro gerace
             nicastro palmi reggiocal cassano castrovillari cosenza scalea caserta
@@ -10800,7 +10801,7 @@ countries = {
     BBR = {
         #Bari - Ruled by the Orisinis (vassals of Naples)
         own_control_core = {
-            bari monopoli
+            bari monopoli altamura
         }
 
         starting_technology_level = 3
@@ -17861,7 +17862,7 @@ countries = {
             oslo ski eidsvoll
             tonsberg skien sande grenland
             idre sveg hede
-            offerdal berg froso ragunda oviken
+            oviken
             nidaros roros stjordal oppdal orkdal skaun storen holtalen meraker tofte
             levanger namdal orland snasa lierne steinkjer
             molde fosna sunndal rauma sunnmore borgund stordal
@@ -17874,10 +17875,6 @@ countries = {
             troms trondenes senja bardodalen
             bodo rana birndal alstahaug gildeskal steigen langenes lofotr hamaroy ofoti
             raisa vardo deatnu porsanger hammerfest lebesby
-
-            # Northern Isles
-            #shetland orkney
-            torshavn
         }
 
         own_control_integrated = {
@@ -18096,6 +18093,29 @@ countries = {
     }
 
     # --- SKE ---
+
+    JMT = {
+        own_control_core = {
+            offerdal berg froso ragunda
+        }
+
+        include = "catholic_republic"    
+        include = "expl_scandinavia"
+
+        government = {
+            type = republic
+            heir_selection = oligarchic_elective
+            ruler = random
+
+            reforms = {
+            }
+        }
+
+        country_rank = rank_county
+        capital = offerdal
+    }
+
+    # --- JMT ---
 
     VYB = {
         own_control_core = {
@@ -21774,10 +21794,6 @@ countries = {
             gjakova
         }
 
-        own_control_integrated = {
-            veliky_beckerek
-        }
-
         our_cores_conquered_by_others = {
             slano mostar konjic belgrad
             skopje kumanovo veles prosek shtip kratovo kocani strumica
@@ -21786,6 +21802,7 @@ countries = {
             podgorica gradina
             prizren
         }
+
         starting_technology_level = 3
         include = "expl_mediterranean"
         include = "eastern_european_monarchy"
@@ -21846,9 +21863,9 @@ countries = {
 
     BOS = {
         own_control_core = {
-            vrhbosna srebrenica doboj soli
-            jajce zenica kljuc srebrenik
-            glaz teocak olovo borac
+            vrhbosna srebrenica
+            jajce zenica kljuc
+            olovo borac
             trebinje gacko mostar nevesinje drijeva metkovic
             ustikolina konjic makarska
             pljevlja soko_grad onogost
@@ -21891,6 +21908,41 @@ countries = {
     }
 
     # --- BOS ---
+
+    SLJ = {
+        own_control_core = {
+            soli srebrenik doboj teocak
+        }
+
+        our_cores_conquered_by_others = {
+            glaz
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+
+            regnal_numbers = {
+            }
+
+        }
+
+        tolerated_cultures = {
+            croatian
+        }
+
+        country_rank = rank_duchy
+        liturgical_language = church_slavonic_language
+
+        capital = soli
+        dynasty = kotromanic_dynasty
+    }
+
+    # --- SLJ ---
 
     ACH = {
         #https://en.wikipedia.org/wiki/Principality_of_Achaea
@@ -22136,7 +22188,13 @@ countries = {
             bjelovar koprivnica kutina pakrac vaska
             zagreb karlovac petrinja sisak kozara
             gradiski_brod dubica
+            pozega vukovar
         }
+
+        own_control_conquered = {
+            glaz
+        }
+
         starting_technology_level = 3
         include = "expl_mediterranean"
         include = "catholic_monarchy"
@@ -25197,7 +25255,7 @@ countries = {
             kovin
             timisoara arad zarand
             baia_crisului
-            vukovar ilok pozega sremska_mitrovica petrovaradin
+            ilok sremska_mitrovica petrovaradin
             khust rakhiv cuhea
         }
 
@@ -25644,7 +25702,12 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
             ruler = random
+
+            reforms = {
+                judicate_reform
+            }
         }
+
 
         accepted_cultures = {
             jasz_culture
@@ -25671,6 +25734,58 @@ countries = {
     }
 
     # --- SVR ---
+
+    TRL = {
+        #
+        own_control_core = {
+            veliky_beckerek
+        }
+
+        starting_technology_level = 3
+        include = "expl_eastern_europe"
+        include = "eastern_european_catholic_monarchy_no_auxilium_no_coast_not_present"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+
+            ruler = ser_durad_brankovic
+
+            ruler_term = { character = ser_stefan_lazarevic start_date = 1403.1.1 end_date = 1427.7.19 }
+            ruler_term = { character = ser_durad_brankovic start_date = 1427.7.19 }
+        }
+
+        accepted_cultures = {
+            hungarian
+        }
+
+        capital = veliky_beckerek
+    }
+
+    # --- TRL ---
+
+    BGD = {
+        #Belgrade
+        own_control_core = {
+            belgrad
+        }
+
+        starting_technology_level = 3
+        include = "expl_eastern_europe"
+        include = "eastern_european_catholic_monarchy_no_auxilium_no_coast_not_present"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+
+        accepted_cultures = {
+            hungarian
+        }
+
+        capital = belgrad
+    }
+
+    # --- BGD ---
 
     HTN = {
         #Hotin
