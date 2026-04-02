@@ -25,6 +25,17 @@
 # (no leader) Chu Rebellion       -> rtr_release_tag_CHU
 # (no leader) Tang Rebellion      -> rtr_release_tag_CTA
 # (no leader) Yan Rebellion       -> rtr_release_tag_CYN
+# (no leader) Jin Rebellion       -> rtr_release_tag_CJN
+# (no leader) Min Rebellion       -> rtr_release_tag_CMM
+# (no leader) Yue Rebellion       -> rtr_release_tag_CYU
+# (no leader) Liang Rebellion     -> rtr_release_tag_CLN
+# (no leader) Ning Rebellion      -> rtr_release_tag_CNG
+# (no leader) Xi Rebellion        -> rtr_release_tag_CXI
+# (no leader) Yi Rebellion        -> rtr_release_tag_CYI
+# (no leader) Huai Rebellion      -> rtr_release_tag_CAI
+# (no leader) Miao Rebellion      -> rtr_release_tag_CMI
+# (no leader) Tung-nen Rebellion  -> rtr_release_tag_CTU
+# (no leader) Liao Rebellion      -> rtr_release_tag_CLY
 #========================================================
 
 
@@ -39,6 +50,7 @@ scripted_effect rtr_cleanup_variables = {
     if = { limit = { has_variable = rtr_release_tag_CHU } remove_variable = rtr_release_tag_CHU }
     if = { limit = { has_variable = rtr_release_tag_CTA } remove_variable = rtr_release_tag_CTA }
     if = { limit = { has_variable = rtr_release_tag_CYN } remove_variable = rtr_release_tag_CYN }
+    if = { limit = { has_variable = rtr_release_tag_CLY } remove_variable = rtr_release_tag_CLY }
     if = { limit = { has_variable = rtr_release_tag_CJN } remove_variable = rtr_release_tag_CJN }
     if = { limit = { has_variable = rtr_release_tag_CMM } remove_variable = rtr_release_tag_CMM }
     if = { limit = { has_variable = rtr_release_tag_CYU } remove_variable = rtr_release_tag_CYU }
@@ -66,6 +78,7 @@ scripted_effect rtr_setup_countries_to_release = {
     set_variable = rtr_release_tag_CHU
     set_variable = rtr_release_tag_CTA
     set_variable = rtr_release_tag_CYN
+    set_variable = rtr_release_tag_CLY
     set_variable = rtr_release_tag_CJN
     set_variable = rtr_release_tag_CMM
     set_variable = rtr_release_tag_CYU
@@ -694,7 +707,7 @@ red_turban_rebellions.2 = {
 red_turban_rebellions.3 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.3.title
     desc = red_turban_rebellions.3.desc
     illustration_tags = {
         10 = armed
@@ -743,7 +756,7 @@ red_turban_rebellions.3 = {
 red_turban_rebellions.4 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.4.title
     desc = red_turban_rebellions.4.desc
     illustration_tags = {
         10 = armed
@@ -827,7 +840,7 @@ red_turban_rebellions.4 = {
 red_turban_rebellions.5 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.5.title
     desc = red_turban_rebellions.5.desc
     illustration_tags = {
         10 = armed
@@ -876,7 +889,7 @@ red_turban_rebellions.5 = {
 red_turban_rebellions.6 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.6.title
     desc = red_turban_rebellions.6.desc
     illustration_tags = {
         10 = armed
@@ -925,7 +938,7 @@ red_turban_rebellions.6 = {
 red_turban_rebellions.7 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.7.title
     desc = red_turban_rebellions.7.desc
     illustration_tags = {
         10 = armed
@@ -974,7 +987,7 @@ red_turban_rebellions.7 = {
 red_turban_rebellions.8 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.8.title
     desc = red_turban_rebellions.8.desc
     illustration_tags = {
         10 = armed
@@ -1025,7 +1038,7 @@ red_turban_rebellions.8 = {
 red_turban_rebellions.9 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.9.title
     desc = red_turban_rebellions.9.desc
     illustration_tags = {
         10 = armed
@@ -1074,7 +1087,7 @@ red_turban_rebellions.9 = {
 red_turban_rebellions.10 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.10.title
     desc = red_turban_rebellions.10.desc
     illustration_tags = {
         10 = armed
@@ -1123,7 +1136,7 @@ red_turban_rebellions.10 = {
 red_turban_rebellions.11 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.11.title
     desc = red_turban_rebellions.11.desc
     illustration_tags = {
         11 = armed
@@ -1172,7 +1185,7 @@ red_turban_rebellions.11 = {
 red_turban_rebellions.12 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.12.title
     desc = red_turban_rebellions.12.desc
     illustration_tags = {
         11 = armed
@@ -1221,7 +1234,7 @@ red_turban_rebellions.12 = {
 red_turban_rebellions.13 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.13.title
     desc = red_turban_rebellions.13.desc
     illustration_tags = {
         11 = armed
@@ -1269,7 +1282,7 @@ red_turban_rebellions.13 = {
 red_turban_rebellions.14 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.14.title
     desc = red_turban_rebellions.14.desc
     illustration_tags = {
         11 = armed
@@ -1317,7 +1330,7 @@ red_turban_rebellions.14 = {
 red_turban_rebellions.15 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.15.title
     desc = red_turban_rebellions.15.desc
     illustration_tags = {
         11 = armed
@@ -1366,7 +1379,7 @@ red_turban_rebellions.15 = {
 red_turban_rebellions.16 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.16.title
     desc = red_turban_rebellions.16.desc
     illustration_tags = {
         11 = armed
@@ -1415,7 +1428,7 @@ red_turban_rebellions.16 = {
 red_turban_rebellions.17 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.17.title
     desc = red_turban_rebellions.17.desc
     illustration_tags = {
         11 = armed
@@ -1464,7 +1477,7 @@ red_turban_rebellions.17 = {
 red_turban_rebellions.18 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.18.title
     desc = red_turban_rebellions.18.desc
     illustration_tags = {
         11 = armed
@@ -1512,7 +1525,7 @@ red_turban_rebellions.18 = {
 red_turban_rebellions.19 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.19.title
     desc = red_turban_rebellions.19.desc
     illustration_tags = {
         11 = armed
@@ -1560,7 +1573,7 @@ red_turban_rebellions.19 = {
 red_turban_rebellions.20 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.20.title
     desc = red_turban_rebellions.20.desc
     illustration_tags = {
         11 = armed
@@ -1608,7 +1621,7 @@ red_turban_rebellions.20 = {
 red_turban_rebellions.21 = {
     type = country_event
     category = situation_event
-    title = red_turban_rebellions.release_tag.title
+    title = red_turban_rebellions.21.title
     desc = red_turban_rebellions.21.desc
     illustration_tags = {
         11 = armed
@@ -1641,6 +1654,54 @@ red_turban_rebellions.21 = {
         name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CTU culture = culture:minnan_culture accepted_culture = culture:fuzhou_culture }
+        scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
+        change_player = scope:target_country
+        hidden_effect = {
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
+        }
+    }
+}
+
+#========================================================
+# CLY (Liao) Rebellion – No Leader, Jurchen Culture
+#========================================================
+red_turban_rebellions.22 = {
+    type = country_event
+    category = situation_event
+    title = red_turban_rebellions.22.title
+    desc = red_turban_rebellions.22.desc
+    illustration_tags = {
+        11 = armed
+        11 = exterior
+    }
+    major = yes
+    major_trigger = { rtr_can_see_the_situation = yes }
+
+    trigger = {
+        rtr_can_release_tag = {
+            tag = CLY
+            location = liaoyang
+        }
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+        rtr_create_revolter_capital = { location = liaoyang tag = CLY }
+        rtr_add_cores_to_area = { area = liaodong_area tag = CLY }
+    }
+
+    option = {
+        name = red_turban_rebellions.22.a
+        rtr_release_warlord_tag = { tag = CLY culture = culture:jurchen_culture accepted_culture = culture:jurchen_culture }
+        c:CLY = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = c:CLY }
+    }
+
+    option = {
+        name = red_turban_rebellions.play_as_tag
+        trigger = { hidden_trigger = { is_ai = no } }
+        rtr_release_warlord_tag = { tag = CLY culture = culture:jurchen_culture accepted_culture = culture:jurchen_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country

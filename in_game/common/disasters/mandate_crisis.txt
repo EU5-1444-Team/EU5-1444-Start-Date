@@ -1,0 +1,301 @@
+mandate_crisis = {
+
+    image = "gfx/interface/illustrations/situation/red_turban_rebellions.dds"
+
+    monthly_spawn_chance = monthly_spawn_chance_medium
+
+    can_start = {
+        tag = CHI
+        has_any_active_disaster = no
+        government_type = government_type:monarchy
+        in_civil_war = no
+        stability < 0
+        OR = {
+            legitimacy < 50
+            estate_satisfaction:peasants_estate < 0.25
+            estate_satisfaction:nobles_estate < 0.25
+            estate_satisfaction:clergy_estate < 0.25
+            estate_satisfaction:burghers_estate < 0.25
+        }
+    }
+
+    can_end = {
+        disaster:mandate_crisis = { years_since_disaster_start > 20 }
+        OR = {
+            NOT = { exists = international_organization:middle_kingdom }
+            trigger_if = {
+                limit = {
+                    exists = international_organization:red_turban_rebels.leader_country
+                    exists = international_organization:middle_kingdom
+                }
+                international_organization:middle_kingdom = {
+                    any_international_organization_owned_location = {
+                        is_owned_or_owned_by_subjects_or_below_of = international_organization:red_turban_rebels.leader_country
+                        percent >= 0.65
+                    }
+                }
+            }
+            trigger_else = {
+                exists = international_organization:red_turban_rebels
+
+                custom_tooltip = {
+                    text = red_turban_rebellions_strongest_red_turban_rebel_tt
+                    exists = international_organization:red_turban_rebels
+                    international_organization:red_turban_rebels = {
+                        international_organization_has_leader = yes
+                    }
+                }
+            }
+            c:CHI ?= {
+                legitimacy >= 90
+                stability >= 30
+                current_celestial_authority = { value = 50 }
+                trigger_if = {
+                    limit = {
+                        exists = international_organization:red_turban_rebels
+                    }
+                    international_organization:red_turban_rebels = { total_members < 1 }
+                }
+            }
+        }
+    }
+
+    on_start = {
+        c:CHI = {
+            trigger_event_non_silently = red_turban_rebellions.1
+            add_to_global_variable_list = {
+                name = rtr_loyal_faction
+                target = c:CHI
+            }
+
+            remove_list_global_variable = {
+                name = rtr_faction_list
+                target = this
+            }
+        }
+        every_country = {
+            limit = {
+                NOT = { tag = CHI }
+                OR = {
+                    is_neighbor_of = c:CHI
+                    is_subject_of = c:CHI
+                    is_enemy_of = c:CHI
+                    is_rival_of = c:CHI
+                    capital.sub_continent = sub_continent:east_asia
+                }
+            }
+            trigger_event_non_silently = {
+                id = red_turban_rebellions.2
+                days = 1
+            }
+        }
+    }
+
+    on_monthly = {
+        if = {
+            limit = {
+                country_exists = c:CHI
+            }
+            c:CHI = {
+                if = {
+                    limit = {
+                        has_variable = rtr_historical_countries_to_release
+                        var:rtr_historical_countries_to_release > 0
+                    }
+                    random_list = {
+                        10 = {}
+
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CQI } trigger_event_non_silently = { id = red_turban_rebellions.3 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CSH } trigger_event_non_silently = { id = red_turban_rebellions.4 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CUN } trigger_event_non_silently = { id = red_turban_rebellions.5 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CWI } trigger_event_non_silently = { id = red_turban_rebellions.6 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_WUU } trigger_event_non_silently = { id = red_turban_rebellions.7 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CQN } trigger_event_non_silently = { id = red_turban_rebellions.8 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CHU } trigger_event_non_silently = { id = red_turban_rebellions.9 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CTA } trigger_event_non_silently = { id = red_turban_rebellions.10 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CYN } trigger_event_non_silently = { id = red_turban_rebellions.11 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CJN } trigger_event_non_silently = { id = red_turban_rebellions.12 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CMM } trigger_event_non_silently = { id = red_turban_rebellions.13 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CYU } trigger_event_non_silently = { id = red_turban_rebellions.14 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CLN } trigger_event_non_silently = { id = red_turban_rebellions.15 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CNG } trigger_event_non_silently = { id = red_turban_rebellions.16 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CXI } trigger_event_non_silently = { id = red_turban_rebellions.17 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CYI } trigger_event_non_silently = { id = red_turban_rebellions.18 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CAI } trigger_event_non_silently = { id = red_turban_rebellions.19 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CMI } trigger_event_non_silently = { id = red_turban_rebellions.20 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CTU } trigger_event_non_silently = { id = red_turban_rebellions.21 days = { 5 15 } } } }
+                        1 = { if = { limit = { has_variable = rtr_release_tag_CLY } trigger_event_non_silently = { id = red_turban_rebellions.22 days = { 5 15 } } } }
+                    }
+                }
+                if = {
+                    limit = {
+                        has_variable = rtr_historical_countries_to_release
+                        var:rtr_historical_countries_to_release < 4
+                        var:rtr_country_additional_releaser_counter > 0
+                    }
+                    random = {
+                        chance = 1
+                        modifier = {
+                            var:rtr_historical_countries_to_release < 3
+                            add = 1
+                        }
+                        modifier = {
+                            var:rtr_historical_countries_to_release < 2
+                            add = 1
+                        }
+                        modifier = {
+                            var:rtr_historical_countries_to_release < 1
+                            add = 1
+                        }
+                        trigger_event_non_silently = { id = red_turban_rebellions.100 days = { 20 50 } }
+                    }
+                }
+                random_list = {
+                    10 = { trigger_event_non_silently = red_turban_rebellions.200 }
+                    10 = { trigger_event_non_silently = red_turban_rebellions.201 }
+                    500 = {}
+                }
+            }
+        }
+    }
+
+    on_end = {
+        if = {
+            limit = {
+                country_exists = c:CHI
+            }
+            c:CHI = {
+                if = {
+                    limit = { has_country_modifier = chi_red_turban_propaganda }
+                    remove_country_modifier = chi_red_turban_propaganda
+                }
+                remove_variable = chi_rtr_modifier_intensity
+            }
+        }
+
+        if = {
+            limit = {
+                exists = international_organization:red_turban_rebels.leader_country
+                international_organization:middle_kingdom = {
+                    any_international_organization_owned_location = {
+                        is_owned_or_owned_by_subjects_or_below_of = international_organization:red_turban_rebels.leader_country
+                        percent >= 0.65
+                    }
+                }
+            }
+            international_organization:red_turban_rebels = {
+                leader_country = {
+                    trigger_event_non_silently = red_turban_rebellions.1000
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                c:CHI ?= {
+                    legitimacy >= 90
+                    stability >= 30
+                    current_celestial_authority = { value = 50 }
+                    international_organization:red_turban_rebels = { total_members < 1 }
+                }
+            }
+            c:CHI = {
+                trigger_event_non_silently = red_turban_rebellions.1003
+            }
+        }
+        else = {
+            if = {
+                limit = { country_exists = c:CHI }
+                c:CHI = { save_scope_as = new_china }
+            }
+            else_if = {
+                limit = {
+                    international_organization:red_turban_rebels ?= {
+                        exists = leader_country
+                    }
+                }
+                international_organization:red_turban_rebels.leader_country = { save_scope_as = new_china }
+            }
+            else_if = {
+                limit = {
+                    location:dadu.owner ?= {
+                        culture = {
+                            OR = {
+                                has_culture_group = culture_group:chinese_group
+                                has_culture_group = culture_group:mongolian_group
+                                has_culture_group = culture_group:jurchen_group
+                            }
+                        }
+                    }
+                }
+                location:dadu.owner = { save_scope_as = new_china }
+            }
+            else_if = {
+                limit = {
+                    location:shangyuan.owner ?= {
+                        culture = {
+                            OR = {
+                                has_culture_group = culture_group:chinese_group
+                                has_culture_group = culture_group:mongolian_group
+                                has_culture_group = culture_group:jurchen_group
+                            }
+                        }
+                    }
+                }
+                location:shangyuan.owner = { save_scope_as = new_china }
+            }
+            else = {
+                sub_continent:east_asia = {
+                    ordered_present_country = {
+                        limit = {
+                            culture = {
+                                OR = {
+                                    has_culture_group = culture_group:chinese_group
+                                    has_culture_group = culture_group:mongolian_group
+                                    has_culture_group = culture_group:jurchen_group
+                                }
+                            }
+                        }
+                        order_by = total_population
+                        max = 1
+                        save_scope_as = new_china
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    NOT = { exists = international_organization:middle_kingdom }
+                }
+                every_country = {
+                    limit = {
+                        OR = {
+                            capital.sub_continent = sub_continent:east_asia
+                            is_member_of_international_organization = international_organization:red_turban_rebels
+                        }
+                    }
+                    trigger_event_non_silently = red_turban_rebellions.1005
+                }
+            }
+            else = {
+                every_country = {
+                    limit = {
+                        OR = {
+                            capital.sub_continent = sub_continent:east_asia
+                            is_member_of_international_organization = international_organization:red_turban_rebels
+                        }
+                    }
+                    trigger_event_non_silently = red_turban_rebellions.1006
+                }
+            }
+            destroy_international_organization_no_instigator = { target = international_organization:red_turban_rebels }
+        }
+        if = {
+            limit = { country_exists = c:CHI }
+            c:CHI = {
+                if = {
+                    limit = { has_country_modifier = rtr_red_turban_rebellions }
+                    remove_country_modifier = rtr_red_turban_rebellions
+                }
+            }
+        }
+    }
+}
