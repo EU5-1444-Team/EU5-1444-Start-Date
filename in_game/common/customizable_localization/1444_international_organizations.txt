@@ -1,0 +1,62 @@
+REPLACE:jurchen_confederation_name = {
+	type = international_organization
+
+	text = {
+		trigger = {
+			leader_country ?= {
+				OR = {
+					tag = NAN
+					tag = UDE
+					tag = WRK
+					tag = SFN
+					tag = YER
+				}
+			}
+		}
+		localization_key = yeren_jurchen_confederation
+	}
+
+	text = {
+		trigger = {
+			leader_country ?= {
+				OR = {
+					tag = ULA
+					tag = YEH
+					tag = HDA
+					tag = HOI
+					tag = EJI
+					tag = NAL
+					tag = NEM
+					tag = SNC
+					tag = TAS
+					tag = WEJ
+					tag = HXI
+					culture ?= culture:haixi_culture
+				}
+			}
+		}
+		localization_key = haixi_jurchen_confederation
+	}
+
+	text = {
+		trigger = {
+			leader_country ?= {
+				OR = {
+					tag = JNZ
+					culture ?= {
+						OR = {
+							this = culture:jurchen_culture
+							this = culture:hurga_culture
+						}
+					}
+				}
+			}
+		}
+		localization_key = jianzhou_jurchen_confederation
+	}
+
+	text = {
+		localization_key = jurchen_confederation
+		fallback = yes
+	}
+}

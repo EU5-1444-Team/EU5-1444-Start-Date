@@ -44,6 +44,132 @@ UYG_f = {
 	}
 }
 
+JNZ_f = {
+	level = 1
+	required_locations_fraction = 0.05
+	rule = historical
+
+	potential = {
+		NOT = { tag = JNZ }
+		OR = {
+			culture = culture:jurchen_culture
+			culture = culture:haixi_culture
+			culture = culture:hurga_culture
+		}
+	}
+
+	allow = {
+		owns = location:fushun_liaoyang
+		owns = location:donggo
+		owns = location:hetu_ala
+		owns = location:wanggika
+	}
+
+	name = JNZ
+	flag = JNZ
+	adjective = JNZ_ADJ
+	tag = JNZ
+	color = map_JNZ
+
+	regions = {
+		manchuria_region
+	}
+	form_effect = {
+		if = {
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank_effect = {
+				rank = country_rank:rank_kingdom
+			}
+		}
+	}
+}
+
+HXI_f = {
+	level = 1
+	required_locations_fraction = 0.05
+	rule = historical
+
+	potential = {
+		NOT = { tag = HXI }
+		OR = {
+			culture = culture:jurchen_culture
+			culture = culture:haixi_culture
+			culture = culture:hurga_culture
+		}
+	}
+
+	allow = {
+		owns = location:kaiyuan_jurchen
+		owns = location:yehe
+		owns = location:huifacheng
+		owns = location:girin_ula
+	}
+
+	name = HXI
+	flag = HXI
+	adjective = HXI_ADJ
+	tag = HXI
+	color = map_HXI
+
+	regions = {
+		manchuria_region
+	}
+	form_effect = {
+		if = {
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank_effect = {
+				rank = country_rank:rank_kingdom
+			}
+		}
+	}
+}
+
+YER_f = {
+	level = 1
+	required_locations_fraction = 0.05
+	rule = historical
+
+	potential = {
+		NOT = { tag = YER }
+		OR = {
+			culture = culture:jurchen_culture
+			culture = culture:haixi_culture
+			culture = culture:hurga_culture
+		}
+	}
+
+	allow = {
+		owns = location:achan
+		owns = location:hulin
+		owns = location:mudan_ula
+		owns = location:yongmingcheng
+	}
+
+	name = YER
+	flag = YER
+	adjective = YER_ADJ
+	tag = YER
+	color = map_YER
+
+	regions = {
+		manchuria_region
+	}
+	form_effect = {
+		if = {
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank_effect = {
+				rank = country_rank:rank_kingdom
+			}
+		}
+	}
+}
+
 BAL_f = {
 	level = 2
 	required_locations_fraction = 0.6

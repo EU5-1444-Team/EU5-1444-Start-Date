@@ -1,0 +1,76 @@
+REPLACE:unification_law = {
+	type = international_organization
+	law_category = administrative
+	requires_vote = no
+	potential = {
+		international_organization_type = international_organization_type:jurchen_confederation
+		total_members > 1
+	}
+	locked = { }
+
+	bid_for_unification = {
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BIAS_GOOD_IDEA"
+				value = 20
+			}
+		}
+
+		allow = {
+			leader_country ?= {
+				tribal_cohesion > 10
+				OR = {
+					societal_value:centralization_vs_decentralization < -75
+					societal_value:sinicized_vs_unsinicized < -75
+				}
+			}
+		}
+
+		years = 5
+		on_fully_activated = {
+			leader_country = {
+				if = {
+					limit = {
+						OR = {
+							tag = NAN
+							tag = UDE
+							tag = WRK
+							tag = SFN
+						}
+					}
+					form_country = formable_country:YER_f
+				}
+				else_if = {
+					limit = {
+						OR = {
+							tag = ULA
+							tag = YEH
+							tag = HDA
+							tag = HOI
+							tag = EJI
+							tag = NAL
+							tag = NEM
+							tag = SNC
+							tag = TAS
+							tag = WEJ
+							tag = HXI
+							culture ?= culture:haixi_culture
+						}
+					}
+					form_country = formable_country:HXI_f
+				}
+				else = {
+					form_country = formable_country:JNZ_f
+				}
+				trigger_event_non_silently = jurchen_confederation_events.17
+			}
+			custom_tooltip = will_ask_members_to_submit_tt
+		}
+	}
+
+	delegated_authority = {
+		modifier = {
+			monthly_tribal_cohesion = 0.05
+		}
+	}
+}
