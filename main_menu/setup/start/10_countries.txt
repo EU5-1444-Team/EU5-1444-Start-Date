@@ -50068,7 +50068,7 @@ countries = {
     # japan_region
     # ------------
 
-    YM1 = {
+    YM1 = { #Yamana
 
         capital = keta_tajima
         include = "japanese_clan"
@@ -50079,9 +50079,7 @@ countries = {
             kume mashima tomata aita
             houmi takakusa
             keta_tajima futakata
-            katou_bicchuu kaya aka
             ashida sera miyoshi eso nuka kameshi
-            toyota
         }
 
         government = {
@@ -50102,7 +50100,7 @@ countries = {
 
     # --- YM1 ---
 
-    KTB = {
+    KTB = { #Ise Kitabatake
 
         capital = taki
         include = "japanese_clan"
@@ -50116,9 +50114,13 @@ countries = {
             ruler_term = { character = jap_kitabatake_masaie start_date = 1230.1.1 end_date = 1274.4.24 regnal_number = 1 }
             ruler_term = { character = jap_kitabatake_morochika start_date = 1274.4.24 end_date = 1315.11.3 regnal_number = 1 }
             ruler_term = { character = jap_kitabatake_moroshige start_date = 1315.11.3 end_date = 1322.1.30 regnal_number = 1 }
-            ruler_term = { character = jap_kitabatake_chikafusa start_date = 1322.1.30 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_chikafusa start_date = 1322.1.30 end_date = 1354.5.10 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_akiyoshi start_date = 1354.5.10 end_date = 1395.1.28 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_akiyasu start_date = 1395.1.28 end_date = 1413.10.15 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_mitsumasa start_date = 1413.10.15 end_date = 1428.12.21 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_noritomo start_date = 1428.12.21 regnal_number = 1 }
 
-            ruler = random # TODO: add me
+            ruler = jap_kitabatake_noritomo
 
             reforms = {
                 daimyo
@@ -50130,7 +50132,7 @@ countries = {
 
     # --- KTB ---
 
-    SMZ = {
+    SMZ = { #Shimazu
 
         capital = satsuma
         include = "japanese_clan"
@@ -50159,7 +50161,7 @@ countries = {
 
     # --- SMZ ---
 
-    KSI = {
+    KSI = { #Kasai
 
         capital = tome
         include = "japanese_clan"
@@ -50188,7 +50190,7 @@ countries = {
 
     # --- KSI ---
 
-    DTE = {
+    DTE = { #Date
 
         capital = date_loc
         include = "japanese_clan"
@@ -50342,10 +50344,46 @@ countries = {
         own_control_core = {
             kuji iwate kitahei nukanobu
             shiwa
+        }
+
+        government = {
+            ruler = jap_nanbu_yoshimasa
+            heir = jap_nanbu_masashige
+            reforms = {
+                daimyo
+            }
+        }
+
+        country_rank = rank_county
+    }
+
+	NI1 = {
+		type = building
+
+		capital = saitama
+		include = "japanese_clan"
+
+		government = {
+
+			ruler = jap_ni1_akiyasu
+
+			reforms = {
+				japanese_clan
+			}
+		}
+
+		country_rank = rank_county
+	}
+    NI2 = { #Kazuno Narita
+        capital = kazuno
+        include = "japanese_clan"
+
+        own_control_core = {
             kazuno
         }
 
         government = {
+            ruler = jap_ni2_ujimitsu
             reforms = {
                 daimyo
             }
@@ -50693,7 +50731,8 @@ countries = {
             fukushima kamiiso kameda
         }
         government = {
-            ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+            ruler = jap_kakizaki_sueshige
+            heir = jap_kakizaki_nobuhiro
             reforms = {
                 daimyo
             }
@@ -50746,7 +50785,48 @@ countries = {
         include = "japanese_clan"
 
         own_control_core = {
-            hiyama hanawa hiraka_aomori
+            hiyama
+        }
+
+        our_cores_conquered_by_others = {
+            hanawa hiraka_aomori
+        }
+
+        government = {
+
+            ruler = jap_andou_yoshisue
+
+            reforms = {
+                daimyo
+            }
+        }
+
+        country_rank = rank_county
+    }
+
+	AK3 = {
+		type = building
+
+		capital = kameda
+		include = "japanese_clan"
+
+		government = {
+
+			ruler = jap_andou_masasue
+
+			reforms = {
+				japanese_clan
+			}
+		}
+		country_rank = rank_county
+	}
+
+    KTA = { # Kita
+        capital = hiraka_aomori
+        include = "japanese_clan"
+
+        own_control_core = {
+            hiraka_aomori
         }
 
         government = {
@@ -50762,6 +50842,25 @@ countries = {
     }
 
     # --- AK2 ---
+    HAN = { #Hanawa
+        capital = hanawa
+        include = "japanese_clan"
+
+        own_control_core = {
+            hanawa
+        }
+
+        government = {
+
+            ruler = jap_hanawa_yasunobu
+
+            reforms = {
+                daimyo
+            }
+        }
+
+        country_rank = rank_county
+    }
 
     IMG = {
 
@@ -50833,7 +50932,7 @@ countries = {
         include = "japanese_clan"
 
         own_control_core = {
-            saeki yamagata aki
+            saeki yamagata aki toyota
         }
 
         government = {
@@ -51345,7 +51444,8 @@ countries = {
 
         government = {
 
-            ruler = random
+            ruler = jap_andou_yasusue_minato
+            heir = jap_andou_hirosue
 
             reforms = {
                 daimyo
@@ -51400,7 +51500,8 @@ countries = {
         government = {
             ruler_term = { character = jap_takeda_nobuhide start_date = 1378.5.18 end_date = 1440.8.29 regnal_number = 1 }
             ruler_term = { character = jap_takeda_nobukata start_date = 1440.8.29 regnal_number = 1 }
-            ruler = jap_takeda_nobukata
+            ruler = jap_takeda_nobumasa_wakasa
+            jap_takeda_nobumasa_wakasa
             reforms = {
                 daimyo
             }
@@ -51541,7 +51642,7 @@ countries = {
         include = "japanese_clan"
 
         own_control_core = {
-            joutou asakuchi
+            joutou
         }
 
         government = {
@@ -51597,7 +51698,7 @@ countries = {
     # --- HT3 ---
 
     NB2 = {
-        # Nanbu (Hachinohe)
+        # Nanbu (Nejo)
         capital = shimokita
         include = "japanese_clan"
 
@@ -51606,6 +51707,7 @@ countries = {
         }
 
         government = {
+            ruler = jap_nanbu_masakiyo
             reforms = {
                 daimyo
             }
@@ -51951,14 +52053,17 @@ countries = {
     # --- TMD ---
 
     NMI = {
-        # Namioka
+        # Namioka Kitabatake
         capital = inaka
         include = "japanese_clan"
         own_control_core = {
             inaka
         }
         government = {
-            ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_akinari start_date = 1354.5.10 end_date = 1402.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_namioka_morochika start_date = 1402.1.1 end_date = 1420.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_namioka_akimori start_date = 1420.1.1 regnal_number = 1 }
+            ruler = jap_namioka_akimori
             reforms = {
                 daimyo
             }
@@ -53689,6 +53794,28 @@ countries = {
     }
 
     # --- HS4 ---
+
+    HS5 = { #Bitchu Hosokawa
+
+        own_control_core = {
+            katou_bicchuu kaya aka asakuchi
+        }
+            capital = asakuchi
+            include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                
+            }
+
+            government = {
+                ruler = random
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
 
     NKI = {
 

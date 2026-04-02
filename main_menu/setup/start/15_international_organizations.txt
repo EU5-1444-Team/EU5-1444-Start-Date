@@ -537,12 +537,12 @@ international_organization_manager = {
     add_international_organization = {
         type = jap_branching_clan
         creation_date = 1180.1.1 # Kamakura period
-        members = { HS1 HS2 HS3 } # HS4 is conquered by 1444
+        members = { HS1 HS2 HS3 HS5 } # HS4 is conquered by 1444
         leader = HS1 # Kanrei
 
         main_branch = HS1
         cadet_branch = {
-            HS2 HS3 HS4
+            HS2 HS3 HS4 HS5
         }
     }
 
@@ -555,6 +555,41 @@ international_organization_manager = {
 
         main_branch = HT3
         cadet_branch = { HT1 HT2 }
+    }
+
+    #Kitabatake
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { KTB NMI }
+        leader = KTB # Mie
+
+        main_branch = KTB
+        cadet_branch = { NMI }
+    }
+
+    #Ando
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { AK1 AK2 AK3 }
+        leader = AK1
+
+        main_branch = AK3
+        cadet_branch = { AK1 AK2 }
+    }
+
+    # Narita
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period 
+        members = { NI1 NI2 }
+        leader = NI1 # Oshi
+
+        main_branch = NI1
+        cadet_branch = {
+            NI2
+        }
     }
 
     # TODO: Add the remaining ones
