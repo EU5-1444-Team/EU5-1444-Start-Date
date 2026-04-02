@@ -41006,7 +41006,7 @@ countries = {
         include = "eurasian_tribe"
         government = {
             type = tribe
-            heir_selection = tribal_oldest_male
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = random
         }
         capital = v_enyn
@@ -50518,7 +50518,7 @@ countries = {
     # japan_region
     # ------------
 
-    YM1 = {
+    YM1 = { #Yamana
 
         capital = keta_tajima
         include = "japanese_clan"
@@ -50529,9 +50529,7 @@ countries = {
             kume mashima tomata aita
             houmi takakusa
             keta_tajima futakata
-            katou_bicchuu kaya aka
             ashida sera miyoshi eso nuka kameshi
-            toyota
         }
 
         government = {
@@ -50552,7 +50550,7 @@ countries = {
 
     # --- YM1 ---
 
-    KTB = {
+    KT1 = { #Ise Kitabatake
 
         capital = taki
         include = "japanese_clan"
@@ -50566,9 +50564,13 @@ countries = {
             ruler_term = { character = jap_kitabatake_masaie start_date = 1230.1.1 end_date = 1274.4.24 regnal_number = 1 }
             ruler_term = { character = jap_kitabatake_morochika start_date = 1274.4.24 end_date = 1315.11.3 regnal_number = 1 }
             ruler_term = { character = jap_kitabatake_moroshige start_date = 1315.11.3 end_date = 1322.1.30 regnal_number = 1 }
-            ruler_term = { character = jap_kitabatake_chikafusa start_date = 1322.1.30 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_chikafusa start_date = 1322.1.30 end_date = 1354.5.10 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_akiyoshi start_date = 1354.5.10 end_date = 1395.1.28 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_akiyasu start_date = 1395.1.28 end_date = 1413.10.15 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_mitsumasa start_date = 1413.10.15 end_date = 1428.12.21 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_noritomo start_date = 1428.12.21 regnal_number = 1 }
 
-            ruler = random # TODO: add me
+            ruler = jap_kitabatake_noritomo
 
             reforms = {
                 daimyo
@@ -50578,9 +50580,9 @@ countries = {
         country_rank = rank_county
     }
 
-    # --- KTB ---
+    # --- KT1 ---
 
-    SMZ = {
+    SMZ = { #Shimazu
 
         capital = satsuma
         include = "japanese_clan"
@@ -50609,7 +50611,7 @@ countries = {
 
     # --- SMZ ---
 
-    KSI = {
+    KSI = { #Kasai
 
         capital = tome
         include = "japanese_clan"
@@ -50638,7 +50640,7 @@ countries = {
 
     # --- KSI ---
 
-    DTE = {
+    DTE = { #Date
 
         capital = date_loc
         include = "japanese_clan"
@@ -50784,18 +50786,68 @@ countries = {
 
     # --- HT2 ---
 
-    NB1 = {
-        # Nanbu (Sannohe)
+    NB1 = { # Nanbu (Sannohe)
         capital = nukanobu
         include = "japanese_clan"
 
         own_control_core = {
-            kuji iwate kitahei nukanobu
+            iwate nukanobu
             shiwa
+        }
+
+        government = {
+            ruler = jap_nanbu_yoshinari
+            reforms = {
+                daimyo
+            }
+        }
+
+        country_rank = rank_county
+    }
+    NB3 = { $Kuji Nanbu
+        capital = kuji
+        include = "japanese_clan"
+
+        own_control_core = {
+            kuji
+        }
+
+        government = {
+            ruler = jap_nanbu_kuji_shinsuke
+            reforms = {
+                daimyo
+            }
+        }
+
+        country_rank = rank_county
+    }
+	NI1 = {
+		type = building
+
+		capital = saitama
+		include = "japanese_clan"
+
+		government = {
+
+			ruler = jap_ni1_akiyasu
+
+			reforms = {
+				japanese_clan
+			}
+		}
+
+		country_rank = rank_county
+	}
+    NI2 = { #Kazuno Narita
+        capital = kazuno
+        include = "japanese_clan"
+
+        own_control_core = {
             kazuno
         }
 
         government = {
+            ruler = jap_ni2_ujimitsu
             reforms = {
                 daimyo
             }
@@ -51135,13 +51187,14 @@ countries = {
 
     KAK = {
         # Kakisaki
-        capital = kameda
+        capital = fukushima
         include = "japanese_clan"
         own_control_core = {
             fukushima kamiiso kameda
         }
         government = {
-            ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+            ruler = jap_kakizaki_sueshige
+            heir = jap_kakizaki_nobuhiro
             reforms = {
                 daimyo
             }
@@ -51194,7 +51247,48 @@ countries = {
         include = "japanese_clan"
 
         own_control_core = {
-            hiyama hanawa hiraka_aomori
+            hiyama
+        }
+
+        our_cores_conquered_by_others = {
+            hanawa hiraka_aomori
+        }
+
+        government = {
+
+            ruler = jap_andou_yoshisue
+
+            reforms = {
+                daimyo
+            }
+        }
+
+        country_rank = rank_county
+    }
+
+	AK3 = {
+		type = building
+
+		capital = kameda
+		include = "japanese_clan"
+
+		government = {
+
+			ruler = jap_andou_masasue
+
+			reforms = {
+				japanese_clan
+			}
+		}
+		country_rank = rank_county
+	}
+
+    KTA = { # Kita
+        capital = hiraka_aomori
+        include = "japanese_clan"
+
+        own_control_core = {
+            hiraka_aomori
         }
 
         government = {
@@ -51210,6 +51304,25 @@ countries = {
     }
 
     # --- AK2 ---
+    HAN = { #Hanawa
+        capital = hanawa
+        include = "japanese_clan"
+
+        own_control_core = {
+            hanawa
+        }
+
+        government = {
+
+            ruler = jap_hanawa_yasunobu
+
+            reforms = {
+                daimyo
+            }
+        }
+
+        country_rank = rank_county
+    }
 
     IMG = {
 
@@ -51281,7 +51394,7 @@ countries = {
         include = "japanese_clan"
 
         own_control_core = {
-            saeki yamagata aki
+            saeki yamagata aki toyota
         }
 
         government = {
@@ -51793,7 +51906,8 @@ countries = {
 
         government = {
 
-            ruler = random
+            ruler = jap_andou_yasusue_minato
+            heir = jap_andou_hirosue
 
             reforms = {
                 daimyo
@@ -51848,7 +51962,8 @@ countries = {
         government = {
             ruler_term = { character = jap_takeda_nobuhide start_date = 1378.5.18 end_date = 1440.8.29 regnal_number = 1 }
             ruler_term = { character = jap_takeda_nobukata start_date = 1440.8.29 regnal_number = 1 }
-            ruler = jap_takeda_nobukata
+            ruler = jap_takeda_nobumasa_wakasa
+            jap_takeda_nobumasa_wakasa
             reforms = {
                 daimyo
             }
@@ -51989,7 +52104,7 @@ countries = {
         include = "japanese_clan"
 
         own_control_core = {
-            joutou asakuchi
+            joutou
         }
 
         government = {
@@ -52045,7 +52160,7 @@ countries = {
     # --- HT3 ---
 
     NB2 = {
-        # Nanbu (Hachinohe)
+        # Nanbu (Nejo)
         capital = shimokita
         include = "japanese_clan"
 
@@ -52054,6 +52169,7 @@ countries = {
         }
 
         government = {
+            ruler = jap_nanbu_masakiyo
             reforms = {
                 daimyo
             }
@@ -52396,15 +52512,18 @@ countries = {
 
     # --- TMD ---
 
-    NMI = {
-        # Namioka
+    KT2 = {
+        # Namioka Kitabatake
         capital = inaka
         include = "japanese_clan"
         own_control_core = {
             inaka
         }
         government = {
-            ruler_term = { character = jap_nanbu_shigetoki start_date = 1315.1.1 end_date = 1333.7.4 regnal_number = 1 }
+            ruler_term = { character = jap_kitabatake_akinari start_date = 1354.5.10 end_date = 1402.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_namioka_morochika start_date = 1402.1.1 end_date = 1420.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_namioka_akimori start_date = 1420.1.1 regnal_number = 1 }
+            ruler = jap_namioka_akimori
             reforms = {
                 daimyo
             }
@@ -52412,7 +52531,7 @@ countries = {
         country_rank = rank_county
     }
 
-    # --- NMI ---
+    # --- KT2 ---
 
     SGO = {
         # Sagoshi
@@ -54118,6 +54237,28 @@ countries = {
 
     # --- HS4 ---
 
+    HS5 = { #Bitchu Hosokawa
+
+        own_control_core = {
+            katou_bicchuu kaya aka asakuchi
+        }
+            capital = asakuchi
+            include = "japanese_clan"
+
+            our_cores_conquered_by_others = {
+                
+            }
+
+            government = {
+                ruler = random
+                reforms = {
+                    daimyo
+                }
+            }
+
+            country_rank = rank_county
+        }
+
     NKI = {
 
         capital = iga
@@ -54469,7 +54610,7 @@ countries = {
 
     HEI = {
 
-        capital = shimohei
+        capital = shimohei kitahei
         include = "japanese_clan"
 
         own_control_core = {
@@ -57207,7 +57348,7 @@ countries = {
             ruler = esen_choros
             heir = amarsanjia_choros
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             centralization_vs_decentralization = 80
             aristocracy_vs_plutocracy = 85
             serfdom_vs_free_subjects = 15
@@ -57244,7 +57385,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = khulan_torghut_fictional
             centralization_vs_decentralization = 80
             aristocracy_vs_plutocracy = 85
@@ -57282,7 +57423,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = tokhta_dorbet_fictional
             centralization_vs_decentralization = 80
             aristocracy_vs_plutocracy = 85
@@ -57317,7 +57458,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = tribe
-            heir_selection = tribal_oldest_male
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = arslan_transbaikal_fictional
             centralization_vs_decentralization = 90
             aristocracy_vs_plutocracy = 95
@@ -57353,7 +57494,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = tribe
-            heir_selection = tribal_oldest_male
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = temur_altai_fictional
             centralization_vs_decentralization = 90
             aristocracy_vs_plutocracy = 95
@@ -57388,7 +57529,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = buyan_hasarid_fictional
             reforms = {
                 legacy_of_khasar
@@ -57432,7 +57573,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = tumen_jalayir_fictional
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -57472,7 +57613,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = quduqa_besud_fictional
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -57512,7 +57653,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = khutughtu_olkhonud_fictional
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -57552,7 +57693,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = sengge_eljigin_fictional
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -57592,7 +57733,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = manggus_baarin_fictional
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -57633,7 +57774,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = nomun_gorlos_fictional
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -57672,7 +57813,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = naiman_aru_fictional
             reforms = {
                 legacy_of_khasar
@@ -57709,7 +57850,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = tribe
-            heir_selection = tribal_oldest_male
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = chimbai_khovsgol_fictional
             centralization_vs_decentralization = 90
             aristocracy_vs_plutocracy = 95
@@ -57742,7 +57883,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = tribe
-            heir_selection = tribal_oldest_male
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = batur_khentii_fictional
             centralization_vs_decentralization = 90
             aristocracy_vs_plutocracy = 95
@@ -57777,7 +57918,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = batu_dorbed_fictional
             reforms = {
                 legacy_of_khasar
@@ -57811,7 +57952,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = tribe
-            heir_selection = tribal_oldest_male
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = oyun_tuva_fictional
             centralization_vs_decentralization = 90
             aristocracy_vs_plutocracy = 95
@@ -57852,7 +57993,7 @@ countries = {
 
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = imp_taisun_khan
             heir = imp_agbarjin
             reforms = {
@@ -57886,7 +58027,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = bolai_asud
             centralization_vs_decentralization = 50
             aristocracy_vs_plutocracy = 40
@@ -57927,7 +58068,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = nandashili_doyan
             country_rank = rank_county
             court_language = mongolian_language
@@ -57967,7 +58108,7 @@ countries = {
         }
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = boshigt_jarud_fictional
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -58010,7 +58151,7 @@ countries = {
         }
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = toghan_bayaut_fictional
             country_rank = rank_duchy
             court_language = mongolian_language
@@ -58049,7 +58190,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = temur_jalaid_fictional
             reforms = {
                 legacy_of_khasar
@@ -64416,12 +64557,6 @@ countries = {
     # OCEANIA
     ###############################################################################
 
-    ## oceania
-    ## =======
-
-    # melanesia_region
-    # ----------------
-
     KAM = {
         #Kaimana
         own_control_core = {
@@ -64439,139 +64574,165 @@ countries = {
         capital = kaimana
     }
 
-    # --- KAM ---
-
-    # micronesia_region
-    # -----------------
-
-    YAP = {
+    YAP = { #Yap
         #https://en.wikipedia.org/wiki/Yapese_Empire
         own_control_core = {
-            yap ulithi_atoll
-            #faraulep_atoll woleai_atoll lamotrek_atoll
+            yap
+        }
+
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        country_rank = rank_empire
+        government = {
+            type = monarchy
+            heir_selection = absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = yap
+    }
+
+    TOG = { #Tu'i Tonga
+        #https://en.wikipedia.org/wiki/Tu%CA%BBi_Tonga_Empire
+
+        own_control_core = {
+            tongatapu niue uvea_atoll
+        }
+
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        country_rank = rank_empire
+        government = {
+            type = monarchy
+            heir_selection = absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = tongatapu
+    }
+
+    SAM = { #Samoa
+        #https://en.wikipedia.org/wiki/History_of_Samoa
+        own_control_core = {
+            savaii upolu
         }
 
         include = "polynesian_monarchy"
         include = "expl_polynesia"
         starting_technology_level = 3
         government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = random
         }
-        capital = yap
+        court_language = tongic_language
+        capital = savaii
     }
 
-    # --- YAP ---
+    RSM = { #Royal Samoa
+        own_control_core = {
+            tutuila
+        }
 
-    # polynesia_region
-    # ----------------
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        country_rank = rank_empire
+        government = {
+            type = monarchy
+            heir_selection = absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = tutuila
+    }
+    POH = { #Pohnpei
+        own_control_core = {
+            pohnpei
+        }
 
-    HAW = {
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        country_rank = rank_county
+        government = {
+            type = theocracy
+            heir_selection = theocratic_elective
+            ruler = random
+        }
+        capital = pohnpei
+    }
+
+    #Hawaii
+    HAW = { #Big Island Hilo
         own_control_core = {
             kohala kona ka_u hilo
         }
 
         include = "polynesian_monarchy"
         include = "expl_polynesia"
-
-        government = {
-            ruler_term = { character = haw_kalapana_pili start_date = 1250.1.1 end_date = 1270.1.1 regnal_number = 1 }
-            ruler_term = { character = haw_kahaimoelea_pili start_date = 1270.1.1 end_date = 1300.1.1 regnal_number = 1 }
-            ruler_term = { character = haw_kalaunuiohua_pili start_date = 1300.1.1 regnal_number = 1 }
-            ruler = random # TODO: add me
-        }
-    }
-
-    # --- HAW ---
-
-    TOG = {
-        #https://en.wikipedia.org/wiki/Tu%CA%BBi_Tonga_Empire
-
-        own_control_core = {
-            tongatapu vauvau haapai
-        }
-
-        include = "polynesian_monarchy"
-        include = "expl_polynesia"
         starting_technology_level = 3
+
         government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = random
         }
-        capital = tongatapu
+        capital = hilo
     }
 
-    # --- TOG ---
-
-    SAM = {
-        #https://en.wikipedia.org/wiki/History_of_Samoa
-        own_control_core = {
-            savaii upolu tutuila
-        }
-
-        include = "polynesian_monarchy"
-        include = "expl_polynesia"
-        starting_technology_level = 3
-        government = {
-            ruler = random
-        }
-        capital = savaii
-    }
-
-    # --- SAM ---
-
-    MUI = {
+    MUI = { #Maui
         own_control_core = {
             maui
         }
 
         include = "polynesian_monarchy"
         include = "expl_polynesia"
+        starting_technology_level = 3
 
         government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = random
         }
+        capital = maui
     }
 
-    # --- MUI ---
-
-    LHN = {
+    LHN = { #Lahaina
         own_control_core = {
             lahaina
         }
 
         include = "polynesian_monarchy"
         include = "expl_polynesia"
+        starting_technology_level = 3
 
         government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = random
         }
+        capital = lahaina
     }
 
-    # --- LHN ---
-
-    MLK = {
+    MLK = { #Moloka'i
         own_control_core = {
             moloka_i
         }
 
         include = "polynesian_monarchy"
         include = "expl_polynesia"
+        starting_technology_level = 3
 
         government = {
             type = tribe
-            heir_selection = matrilineal_non_exclusive
-            ruler_term = { character = mlk_kamauaua_wakea start_date = 1210.1.1 end_date = 1240.1.1 regnal_number = 1 }
-            ruler_term = { character = mlk_keoloewa_wakea start_date = 1240.1.1 end_date = 1270.1.1 regnal_number = 1 }
-            ruler_term = { character = mlk_kapau_wakea start_date = 1270.1.1 end_date = 1300.1.1 regnal_number = 1 }
-            ruler_term = {
-                character = mlk_kapau_wakea start_date = 1300.1.1 end_date = 1330.1.1 regnal_number = 1
-                character = mlk_kamauliwahine_wakea start_date = 1300.1.1 end_date = 1330.1.1 regnal_number = 1
-            }
-            ruler_term = { character = mlk_hualani_wakea start_date = 1330.1.1 regnal_number = 1 }
-            ruler = random # TODO: add me
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
         }
+        capital = moloka_i
     }
-
-    # --- MLK ---
 
     OAH = {
         own_control_core = {
@@ -64580,37 +64741,479 @@ countries = {
 
         include = "polynesian_monarchy"
         include = "expl_polynesia"
+        starting_technology_level = 3
 
         government = {
-            ruler_term = { character = oah_mulielealii_maweke start_date = 1180.1.1 end_date = 1190.1.1 regnal_number = 1 }
-            ruler_term = { character = oah_kumuhonua_maweke start_date = 1190.1.1 end_date = 1230.1.1 regnal_number = 1 }
-            ruler_term = { character = oah_elepuukahonua_maweke start_date = 1230.1.1 end_date = 1260.1.1 regnal_number = 1 }
-            ruler_term = { character = oah_kahokupohakano start_date = 1260.1.1 end_date = 1261.1.1 regnal_number = 1 }
-            ruler_term = { character = oah_hookamalii_maweke start_date = 1261.1.1 end_date = 1285.1.1 regnal_number = 1 }
-            ruler_term = { character = oah_kahai_maweke start_date = 1285.1.1 end_date = 1290.1.1 regnal_number = 1 }
-            ruler_term = { character = oah_nawele_maweke start_date = 1290.1.1 regnal_number = 1 }
-            ruler = random # TODO: add me
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+            capital = o_ahu
         }
     }
 
-    # --- OAH ---
-
-    KAU = {
+    KAU = { #Kaua'i
         own_control_core = {
             kaua_i
         }
 
         include = "polynesian_monarchy"
         include = "expl_polynesia"
+        starting_technology_level = 3
 
         government = {
-            ruler_term = { character = kau_luanuu start_date = 1310.1.1 regnal_number = 1 }
-            ruler = random # TODO: add me
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
         }
+        capital = kaua_i
     }
 
-    # --- KAU ---
+    VAU = { #Vavaʻu
+        own_control_core = {
+            vauvau haapai
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = vauvau
+    }
 
+    KOH = { #Nuku Hiva
+        own_control_core = {
+            nuku_hiva
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = nuku_hiva
+    }
+
+    HIV = { #Hiva Oa
+        own_control_core = {
+            hiva_oa
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = hiva_oa
+    }
+
+    RAO = { #Rarotonga
+        own_control_core = {
+            rarotonga_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = rarotonga_atoll
+    }
+
+    TTI = { #Tahiti
+        own_control_core = {
+            tahiti
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = tahiti
+    }
+
+    HAV = { #Havaii
+        own_control_core = {
+            havaii
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = havaii
+    }
+
+    MAV = { #Mangareva
+        own_control_core = {
+            mangareva
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = mangareva
+    }
+
+    EAS = { #Rapa Nui
+        own_control_core = {
+            rapa_nui
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        capital = rapa_nui
+    }
+
+    MIL = { #Mili
+        own_control_core = {
+            mili_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = mili_atoll
+    }
+
+    ARO = { #Arno
+        own_control_core = {
+            arno_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = arno_atoll
+    }
+
+    MJO = { #Majuro
+        own_control_core = {
+            majuro_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = majuro_atoll
+    }
+
+    MAP = { #Maloelap
+        own_control_core = {
+            maloelap_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = maloelap_atoll
+    }
+
+    WOT = { #Wotje
+        own_control_core = {
+            wotje_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = wotje_atoll
+    }
+
+    JAU = { #Jaluit
+        own_control_core = {
+            jaluit_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = jaluit_atoll
+    }
+
+    AIL = { #Ailinglaplap
+        own_control_core = {
+            ailinglaplap_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = ailinglaplap_atoll
+    }
+
+    KWJ = { #Kwajalein
+        own_control_core = {
+            kwajalein_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = kwajalein_atoll
+    }
+
+    BEL = { #Belau
+        own_control_core = {
+            belau
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = belau
+    }
+
+    ULI = { #Ulithi
+        own_control_core = {
+            ulithi_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = ulithi_atoll
+    }
+
+    GUA = { #Guahan
+        own_control_core = {
+            guahan
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = guahan
+    }
+
+    SAP = { #Saipan
+        own_control_core = {
+            saipan
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = saipan
+    }
+
+    KRE = { #Kosrae
+        own_control_core = {
+            kosrae
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = kosrae
+    }
+
+    KAV = { #Kandavu
+        own_control_core = {
+            kandavu
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = kandavu
+    }
+
+    TVU = { #Taveuni
+        own_control_core = {
+            taveuni
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = thin_nu_waab_language
+        capital = taveuni
+    }
+
+    VAN = { #Vanua Levu
+        own_control_core = {
+            vanua_levu
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = vanua_levu
+    }
+
+    NGA = { #Ngau
+        own_control_core = {
+            ngau
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = ngau
+    }
+
+    KUU = { #Kubuna
+        own_control_core = {
+            kubuna
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = kubuna
+    }
+
+    BUB = { #Yavusa
+        own_control_core = {
+            burebasaga
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = burebasaga
+    }
+
+    VBV = { #Vanua Balavu
+        own_control_core = {
+            vanua_balavu_atoll
+        }
+        include = "polynesian_monarchy"
+        include = "expl_polynesia"
+        starting_technology_level = 3
+        government = {
+            type = tribe
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+        }
+        court_language = tongic_language
+        capital = vanua_balavu_atoll
+    }
 
     ###############################################################################
     # POP-BASED
@@ -73333,57 +73936,6 @@ countries = {
         }
     }
 
-    # --- WAT ---
-
-    BUB = {
-        type = pop
-
-        add_pops_from_locations = {
-            burebasaga kandavu beqa_lagoon
-        }
-
-        include = "polynesian_tribe"
-        include = "expl_polynesia"
-        government = {
-            ruler = random
-        }
-    }
-
-    # --- BUB ---
-
-    KBN = {
-        type = pop
-
-        add_pops_from_locations = {
-            kubuna yasawa ngau
-        }
-
-        include = "polynesian_tribe"
-        include = "expl_polynesia"
-        government = {
-            ruler = random
-        }
-    }
-
-    # --- KBN ---
-
-    TOV = {
-        type = pop
-
-        add_pops_from_locations = {
-            vanua_levu qelelevu_atoll taveuni vanua_balavu_atoll
-            moce_atoll kabara_atoll fulaga_atoll
-
-        }
-
-        include = "polynesian_tribe"
-        include = "expl_polynesia"
-        government = {
-            ruler = random
-        }
-    }
-
-    # --- TOV ---
 
 
     ###############################################################################

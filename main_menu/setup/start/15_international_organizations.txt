@@ -424,8 +424,9 @@ international_organization_manager = {
             HS1 HS2 HS3 HS4
             NB1 NB2
             HT1 HT2
+            AK3 HS5 HAN KTA NI1 NI2 KT1
             # New Countries
-            KAK NMI  NIK  ODE OSA RSU NIH IWA SNO HJO NAK JNB TKA SAT  OYA  ASI MTU 
+            KAK KT2  NIK  ODE OSA RSU NIH IWA SNO HJO NAK JNB TKA SAT  OYA  ASI MTU 
             OCH TSU KKI EDA AKA AMO KOO SAI ICH MSU UKU KMC   TNE
         }
 
@@ -468,8 +469,9 @@ international_organization_manager = {
             NAS HNM UNN  TOY NGN 
             MYH KAG KOZ AKI AHT ARI TMD
             # New Countries
-            KAK NMI  NIK  ODE OSA RSU NIH IWA SNO HJO NAK KYO JNB TKA SAT  OYA  ASI MTU 
+            KAK KT2  NIK  ODE OSA RSU NIH IWA SNO HJO NAK KYO JNB TKA SAT  OYA  ASI MTU 
             OCH TSU KKI EDA AKA AMO KOO SAI ICH MUK MSU UKU KMC   TNE
+            AK3 HS5 HAN KTA NI1 NI2 KT1
 
             # Branch Countries
              UE1 UE2 UE3
@@ -480,6 +482,119 @@ international_organization_manager = {
             HT1 HT2
         }
     }
+
+    #################################################################
+    #                 Japanese Clans With Cadet Branches              #
+    #################################################################
+    # Uesugi
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1250.1.1 # Late 13th Century
+        members = {  UE1 UE2 UE3 }
+        # Nagao clan holds the real power over the Uesugi
+        leader = UE1 # (Should be Nagao)
+
+        main_branch = UE1
+        cadet_branch = {
+            UE2 UE3
+        }
+    }
+
+    # Takeda
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1100.1.1 # Minamoto no Yoshikiyo
+        members = { TK1 TK2 TK3 TK4 }
+        leader = TK1 # Kai
+
+        main_branch = TK1
+        cadet_branch = {
+            TK2 TK3 TK4
+        }
+    }
+
+    # Yamana
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1336.1.1 # Nanboku-cho period
+        members = { YM1 YM2 YM3 }
+        leader = YM1 # Tajima
+
+        main_branch = YM1
+        cadet_branch = { YM2 YM3 }
+    }
+
+    # Nanbu
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { NB1 NB2 NB3 }
+        leader = NB1
+
+        main_branch = NB1
+        cadet_branch = { NB2 NB3 }
+    }
+
+    # Hosokawa
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { HS1 HS2 HS3 HS5 } # HS4 is conquered by 1444
+        leader = HS1 # Kanrei
+
+        main_branch = HS1
+        cadet_branch = {
+            HS2 HS3 HS4 HS5
+        }
+    }
+
+    # Hatakeyama
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { HT1 HT2 HT3 }
+        leader = HT3 # Kawachi
+
+        main_branch = HT3
+        cadet_branch = { HT1 HT2 }
+    }
+
+    #Kitabatake
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { KT1 KT2 }
+        leader = KT1 # Mie
+
+        main_branch = KT1
+        cadet_branch = { KT2 }
+    }
+
+    #Ando
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period
+        members = { AK1 AK2 AK3 }
+        leader = AK1
+
+        main_branch = AK3
+        cadet_branch = { AK1 AK2 }
+    }
+
+    # Narita
+    add_international_organization = {
+        type = jap_branching_clan
+        creation_date = 1180.1.1 # Kamakura period 
+        members = { NI1 NI2 }
+        leader = NI1 # Oshi
+
+        main_branch = NI1
+        cadet_branch = {
+            NI2
+        }
+    }
+
+    # TODO: Add the remaining ones
 
     #################################################################
     #                 Tatar Yoke                                        #
@@ -838,7 +953,24 @@ international_organization_manager = {
         creation_date = 1300.1.1
         members = { JUS NEY YAL }
     }
+    #################################################################
+    #               Tu'i Tonga                                      #
+    #################################################################
+    add_international_organization = {
+        type = tui_tonga
+        creation_date = 950.1.1
+        members = { YAP ULI BEL GUA SAP POH KRE MIL ARO MJO MAP WOT JAU AIL KWJ }
+        leader = YAP
+        tui_tonga_overlord = { YAP }
+    }
 
+    add_international_organization = {
+        type = tui_tonga
+        creation_date = 950.1.1
+        members = { TOG SAM RSM VAU HAV KOH HIV RAO TTI MAV EAS KAV TVU VAN NGA KUU BUB VBV }
+        leader = TOG
+        tui_tonga_overlord = { TOG }
+    }
     #################################################################
     # 				Golden Horde									#
     #################################################################
