@@ -424,8 +424,9 @@ international_organization_manager = {
             HS1 HS2 HS3 HS4
             NB1 NB2
             HT1 HT2
+            AK3 HS5 HAN KTA NI1 NI2 KT1
             # New Countries
-            KAK NMI  NIK  ODE OSA RSU NIH IWA SNO HJO NAK JNB TKA SAT  OYA  ASI MTU 
+            KAK KT2  NIK  ODE OSA RSU NIH IWA SNO HJO NAK JNB TKA SAT  OYA  ASI MTU 
             OCH TSU KKI EDA AKA AMO KOO SAI ICH MSU UKU KMC   TNE
         }
 
@@ -468,8 +469,9 @@ international_organization_manager = {
             NAS HNM UNN  TOY NGN 
             MYH KAG KOZ AKI AHT ARI TMD
             # New Countries
-            KAK NMI  NIK  ODE OSA RSU NIH IWA SNO HJO NAK KYO JNB TKA SAT  OYA  ASI MTU 
+            KAK KT2  NIK  ODE OSA RSU NIH IWA SNO HJO NAK KYO JNB TKA SAT  OYA  ASI MTU 
             OCH TSU KKI EDA AKA AMO KOO SAI ICH MUK MSU UKU KMC   TNE
+            AK3 HS5 HAN KTA NI1 NI2 KT1
 
             # Branch Countries
              UE1 UE2 UE3
@@ -526,11 +528,11 @@ international_organization_manager = {
     add_international_organization = {
         type = jap_branching_clan
         creation_date = 1180.1.1 # Kamakura period
-        members = { NB1 NB2 }
+        members = { NB1 NB2 NB3 }
         leader = NB1
 
         main_branch = NB1
-        cadet_branch = NB2
+        cadet_branch = { NB2 NB3 }
     }
 
     # Hosokawa
@@ -561,11 +563,11 @@ international_organization_manager = {
     add_international_organization = {
         type = jap_branching_clan
         creation_date = 1180.1.1 # Kamakura period
-        members = { KTB NMI }
-        leader = KTB # Mie
+        members = { KT1 KT2 }
+        leader = KT1 # Mie
 
-        main_branch = KTB
-        cadet_branch = { NMI }
+        main_branch = KT1
+        cadet_branch = { KT2 }
     }
 
     #Ando

@@ -50100,7 +50100,7 @@ countries = {
 
     # --- YM1 ---
 
-    KTB = { #Ise Kitabatake
+    KT1 = { #Ise Kitabatake
 
         capital = taki
         include = "japanese_clan"
@@ -50130,7 +50130,7 @@ countries = {
         country_rank = rank_county
     }
 
-    # --- KTB ---
+    # --- KT1 ---
 
     SMZ = { #Shimazu
 
@@ -50336,19 +50336,17 @@ countries = {
 
     # --- HT2 ---
 
-    NB1 = {
-        # Nanbu (Sannohe)
+    NB1 = { # Nanbu (Sannohe)
         capital = nukanobu
         include = "japanese_clan"
 
         own_control_core = {
-            kuji iwate kitahei nukanobu
+            iwate kitahei nukanobu
             shiwa
         }
 
         government = {
-            ruler = jap_nanbu_yoshimasa
-            heir = jap_nanbu_masashige
+            ruler = jap_nanbu_yoshinari
             reforms = {
                 daimyo
             }
@@ -50356,7 +50354,23 @@ countries = {
 
         country_rank = rank_county
     }
+    NB3 = { $Kuji Nanbu
+        capital = kuji
+        include = "japanese_clan"
 
+        own_control_core = {
+            kuji
+        }
+
+        government = {
+            ruler = jap_nanbu_kuji_shinsuke
+            reforms = {
+                daimyo
+            }
+        }
+
+        country_rank = rank_county
+    }
 	NI1 = {
 		type = building
 
@@ -52052,7 +52066,7 @@ countries = {
 
     # --- TMD ---
 
-    NMI = {
+    KT2 = {
         # Namioka Kitabatake
         capital = inaka
         include = "japanese_clan"
@@ -52071,7 +52085,7 @@ countries = {
         country_rank = rank_county
     }
 
-    # --- NMI ---
+    # --- KT2 ---
 
     SHZ = {
         # Shizuzu
