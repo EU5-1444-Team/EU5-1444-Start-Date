@@ -115134,6 +115134,216 @@ character_db={
         tag = NAP
     }
 
+    ### Taranto & Orsinis
+
+    tto_raimondo_orsini_balzo = {
+        first_name = { name = name_raymond }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1350.1.1
+        death_date = 1406.1.17
+        birth = taranto
+        dynasty = orsini_balzo_dynasty
+        tag = TTO      
+    }
+
+    lec_maria_enghien = {
+        first_name = { name = name_mary }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1367.1.1
+        birth = lecce
+        spouse = tto_raimondo_orsini_balzo
+        dynasty = enghien_dynasty
+        tag = LEC
+    }
+
+    tto_maria_orsini_balzo = {
+        first_name = { name = name_mary }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1382.1.1
+        death_date = 1411.1.1
+        birth = taranto
+        father = tto_raimondo_orsini_balzo
+        mother = lec_maria_enghien
+        dynasty = orsini_balzo_dynasty
+        tag = TTO      
+    }
+
+    tto_bartholomew_tristan_clermont_lodeve = {
+        first_name = { name = name_bartholomew.name_tristan }
+        culture = languedocien
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1380.1.1
+        death_date = 1432.1.1
+        birth = clermont
+        dynasty = clermont_lodeve_dynasty
+        tag = TTO   
+    }
+
+    tto_caterina_orsini_balzo_copertino = {
+        first_name = { name = name_catherine }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1384.1.1
+        birth = taranto
+        spouse = tto_bartholomew_clermont_lodeve
+        father = tto_raimondo_orsini_balzo
+        mother = lec_maria_enghien
+        dynasty = orsini_balzo_dynasty
+        tag = TTO      
+    }
+
+    tto_raimondello_clermont_lodeve = {
+        first_name = { name = name_raymond }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1411.1.1
+        death_date = 1443.3.2
+        birth = gallipoliita
+        father = tto_bartholomew_tristan_clermont_lodeve
+        mother = tto_caterina_orsini_balzo_copertino
+        dynasty = clermont_lodeve_dynasty
+        tag = TTO   
+    }
+
+    aia_sancia_clermont_lodeve = {
+        first_name = { name = Sancia }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1413.1.1
+        birth = gallipoliita
+        spouse = aia_francesco_balzo
+        father = tto_bartholomew_tristan_clermont_lodeve
+        mother = tto_caterina_orsini_balzo_copertino
+        dynasty = clermont_lodeve_dynasty
+        tag = AIA   
+    }
+
+    gci_margherita_clermont_lodeve = {
+        first_name = { name = name_margaret }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1417.1.1
+        birth = gallipoliita
+        spouse = gci_antonio_ventimiglia
+        father = tto_bartholomew_tristan_clermont_lodeve
+        mother = tto_caterina_orsini_balzo_copertino
+        dynasty = clermont_lodeve_dynasty
+        tag = GCI   
+    }
+
+    moe_antonia_clermont_lodeve = {
+        first_name = { name = name_antonia }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1420.1.1
+        birth = gallipoliita
+        father = tto_bartholomew_tristan_clermont_lodeve
+        mother = tto_caterina_orsini_balzo_copertino
+        dynasty = clermont_lodeve_dynasty
+        tag = TTO   
+    }
+
+    nap_isabella_clermont_lodeve = {
+        first_name = { name = name_elizabeth }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1424.1.1
+        birth = gallipoliita
+        spouse = nap_ferran_i_trastamara
+        father = tto_bartholomew_tristan_clermont_lodeve
+        mother = tto_caterina_orsini_balzo_copertino
+        dynasty = clermont_lodeve_dynasty
+        tag = NAP   
+    }
+
+    tto_giannantonio_orsini_balzo = {
+        first_name = { name = name_john.name_anthony }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1393.1.1
+        birth = lecce
+        father = tto_raimondo_orsini_balzo
+        mother = lec_maria_enghien
+        dynasty = orsini_balzo_dynasty
+        tag = TTO      
+    }
+
+    tto_anna_colonna = {
+        first_name = { name = name_anna }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1395.1.1
+        birth = taranto
+        spouse = tto_giannantonio_orsini_balzo
+        dynasty = colonna_dynasty
+        tag = TTO      
+    }
+
+    tto_caterina_orsini_balzo_conversano = {
+        first_name = { name = name_catherine }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1430.1.1
+        birth = taranto
+        father = tto_giannantonio_orsini_balzo
+        mother = tto_anna_colonna
+        dynasty = orsini_balzo_dynasty
+        tag = TTO      
+    }
+
+    tto_maria_orsini_balzo_conquesta = {
+        first_name = { name = name_mary }
+        nickname = { name = Conquesta }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1440.1.1
+        birth = taranto
+        father = tto_giannantonio_orsini_balzo
+        mother = tto_anna_colonna
+        dynasty = orsini_balzo_dynasty
+        tag = TTO      
+    }
+
+    tto_gabriele_orsini_balzo = {
+        first_name = { name = name_gabriel }
+        culture = neapolitan
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1396.1.1
+        birth = taranto
+        father = tto_raimondo_orsini_balzo
+        mother = lec_maria_enghien
+        dynasty = orsini_balzo_dynasty
+        tag = TTO      
+    }
+
     ### Portugal
 
     por_fernando_i_portugal = {
