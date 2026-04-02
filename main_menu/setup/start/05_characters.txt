@@ -54494,8 +54494,6 @@ character_db={
         dynasty = kitabatake_dynasty
         tag = KTB
     }
-
-
     jap_kitabatake_akiyoshi = {
         first_name = { name = name_akiyoshi } #顕能
         culture = saigoku_culture
@@ -54507,8 +54505,59 @@ character_db={
         dynasty = kitabatake_dynasty
         tag = KTB
     }
-
-
+    jap_kitabatake_akiyasu = {
+        first_name = { name = name_akiyasu } #顕泰
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1361.1.1
+        death_date = 1413.10.15
+        birth = mie
+        father = jap_kitabatake_akiyoshi
+        dynasty = kitabatake_dynasty
+        tag = KTB
+    }
+    jap_kitabatake_mitsumasa = {
+        first_name = { name = name_mitsumasa } #満雅
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1390.1.1
+        death_date = 1428.12.21
+        birth = mie
+        father = jap_kitabatake_akiyasu
+        dynasty = kitabatake_dynasty
+        tag = KT1
+    }
+    jap_kitabatake_noritomo = {
+        first_name = { name = name_noritomo } #教具
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1423.1.1
+        birth = mie
+        father = jap_kitabatake_mitsumasa
+        dynasty = kitabatake_dynasty
+        tag = KT1
+    }
+    jap_namioka_morochika = {
+        first_name = { name = name_morochika } #師親
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1370.1.1
+        death_date = 1420.1.1
+        birth = inaka
+        father = jap_kitabatake_akinari
+        dynasty = kitabatake_dynasty
+        tag = KT2
+    }
+    jap_namioka_akimori = {
+        first_name = { name = name_akimori } #顕盛
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1405.1.1
+        birth = inaka
+        father = jap_namioka_morochika
+        dynasty = kitabatake_dynasty
+        tag = KT2
+    }
     jap_minamoto_ashikaga_yoshikiyo = {
         first_name = { name = name_yoshikiyo } #義清
         culture = tougoku_culture
@@ -56314,6 +56363,106 @@ character_db={
         tag = TKD
     }
 
+    jap_takeda_yoshinari = {
+        first_name = { name = name_yoshinari } #義成
+        culture = tougoku_culture
+        religion = shinto
+        birth_date = 1340.1.1
+        death_date = 1395.1.1
+        father = jap_takeda_ujinobu
+        dynasty = takeda_dynasty
+        tag = TK3
+    }
+
+    jap_takeda_nobuhide = {
+        first_name = { name = name_nobuhide } #信栄
+        culture = tougoku_culture
+        religion = shinto
+        birth_date = 1370.1.1
+        death_date = 1425.1.1
+        father = jap_takeda_yoshinari
+        dynasty = takeda_dynasty
+        tag = TK3
+    }
+
+    jap_takeda_nobumasa_wakasa = {
+        first_name = { name = name_nobumasa } #信賢
+        culture = tougoku_culture
+        religion = shinto
+        birth_date = 1400.1.1
+        father = jap_takeda_nobuhide
+        dynasty = takeda_dynasty
+        tag = TK3
+    }
+
+    jap_kakizaki_shigesue = {
+        first_name = { name = name_shigesue } #季末
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1315.1.1
+        death_date = 1372.1.1
+        birth = shimokita
+        dynasty = kakizaki_dynasty
+        tag = KAK
+    }
+    jap_kakizaki_akisue = {
+        first_name = { name = name_akisue } #明季
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1342.1.1
+        death_date = 1400.1.1
+        birth = shimokita
+        father = jap_kakizaki_shigesue
+        dynasty = kakizaki_dynasty
+        tag = KAK
+    }
+    jap_kakizaki_iesue = {
+        first_name = { name = name_iesue } #家季
+        culture = touhoku_culture
+        religion = shinto
+        birth = shimokita
+        birth_date = 1370.1.1
+        death_date = 1435.1.1
+        father = jap_kakizaki_akisue
+        dynasty = kakizaki_dynasty
+        tag = KAK
+    }
+    jap_kakizaki_sueshige = {
+        first_name = { name = name_sueshige } #季繁
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1395.1.1
+        father = jap_kakizaki_iesue
+        birth = kameda
+        spouse = "random"
+        dynasty = kakizaki_dynasty
+        tag = KAK
+    }
+    jap_kakizaki_sukehime = {
+        first_name = { name = name_sukehime } #助姫
+        female = yes
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1433.1.1
+        birth = kameda
+        father = jap_kakizaki_sueshige
+        spouse = jap_kakizaki_nobuhiro
+        dynasty = kakizaki_dynasty
+        tag = KAK
+    }
+
+    jap_kakizaki_nobuhiro = {
+        first_name = { name = name_nobuhiro } #信広
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1431.1.1
+        birth = kameda
+        father = jap_takeda_nobumasa_wakasa
+        spouse = jap_kakizaki_sukehime
+        dynasty = kakizaki_dynasty 
+        tag = KAK
+    }
+
 
     jap_shiba_ieuji = {
         first_name = { name = name_ieuji } #家氏
@@ -57767,6 +57916,18 @@ character_db={
         death_date = 1012.7.10
         dynasty = fujiwara_dynasty
         father = jap_fujiwara_hidesato
+        tag = JAP
+    }
+
+    jap_fujiwara_kuniaki = {
+        first_name = { name = name_kuniaki } #国明
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 970.1.1
+        birth = kyoto
+        death_date = 1040.1.1
+        dynasty = fujiwara_dynasty
+        father = jap_fujiwara_chitsune
         tag = JAP
     }
 
@@ -61087,7 +61248,127 @@ character_db={
         father = jap_nanbu_nagatsugu
         tag = NBU
     }
+    jap_nanbu_mitsue = {
+        first_name = { name = name_mitsue } #光経
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1357.1.1 
+        death_date = 1423.4.10
+        birth = nukanobu
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_masayuki_12th_head
+        tag = NB1
+    }
 
+    jap_nanbu_yoshinari = {
+        first_name = { name = name_yoshinari } #義政
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1391.1.1 
+        birth = nukanobu
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_mitsue
+        tag = NB1
+    }
+    jap_nanbu_masatoki = {
+        first_name = { name = name_masatoki } #政時
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1425.1.1 
+        birth = nukanobu
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_yoshinari
+        tag = NB1
+    }
+    jap_nanbu_masamitsu_nejo = {
+        first_name = { name = name_masamitsu } #政光
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1350.1.1 
+        death_date = 1410.1.1
+        birth = shimokita
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_nobumasa
+        tag = NB2
+    }
+
+    jap_nanbu_mitsumasa = {
+        first_name = { name = name_mitsumasa } #光政
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1380.1.1 
+        death_date = 1433.1.1
+        birth = shimokita
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_masamitsu_nejo
+        tag = NB2
+    }
+
+    jap_nanbu_masakiyo = {
+        first_name = { name = name_masakiyo } #政清
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1405.1.1 
+        birth = shimokita
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_mitsumasa
+        tag = NB2
+    }
+    jap_nanbu_hachinohe_masatada = {
+        first_name = { name = name_masatada } #政忠
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1430.1.1 
+        birth = shimokita
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_masakiyo
+        tag = NB2
+    }
+
+    jap_nanbu_masayasu = {
+        first_name = { name = name_masayasu } #政康
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1340.1.1 
+        death_date = 1395.1.1
+        birth = kuji
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_sukemasa
+        tag = NB3
+    }
+
+    jap_nanbu_nobutoki = {
+        first_name = { name = name_nobutoki } #信時
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1375.1.1 
+        death_date = 1430.1.1
+        birth = kuji
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_masayasu
+        tag = NB3
+    }
+
+    jap_nanbu_kuji_shinsuke = {
+        first_name = { name = name_shinsuke } #親助
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1410.1.1 
+        birth = kuji
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_nobutoki
+        tag = NB3
+    }
+    jap_nanbu_kuji_masatsune = {
+        first_name = { name = name_masatsune } #政経
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1432.1.1 
+        birth = kuji
+        dynasty = nanbu_dynasty
+        father = jap_nanbu_kuji_shinsuke
+        tag = NB3
+    }
 
     jap_fujiwara_muchimaro = {
         first_name = { name = name_muchimaro } #武智麻呂
@@ -61100,7 +61381,6 @@ character_db={
         father = jap_fujiwara_fuhito
         tag = JAP
     }
-
     jap_fujiwara_otomaro = {
         first_name = { name = name_otomaro } #乙麻呂
         culture = saigoku_culture
@@ -61798,8 +62078,6 @@ character_db={
         father = jap_date_yukitomo
         tag = DTE
     }
-
-
     jap_andou_munesue = {
         first_name = { name = name_munesue } #宗季
         culture = touhoku_culture
@@ -61810,7 +62088,6 @@ character_db={
         dynasty = andou_dynasty
         tag = AKT
     }
-
     jap_andou_morosue = {
         first_name = { name = name_morosue } #師季
         culture = touhoku_culture
@@ -61823,8 +62100,6 @@ character_db={
         dynasty = andou_dynasty
         tag = AKT
     }
-
-
     jap_andou_iesue = {
         first_name = { name = name_iesue } #家季
         culture = touhoku_culture
@@ -61838,7 +62113,6 @@ character_db={
         tag = AKT
     }
 
-
     jap_andou_norisue = {
         first_name = { name = name_norisue } #法季
         culture = touhoku_culture
@@ -61851,7 +62125,75 @@ character_db={
         dynasty = andou_dynasty
         tag = AKT
     }
+    jap_andou_morisue = {
+        first_name = { name = name_morisue } #盛季
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1345.1.1 # Estimated
+        death_date = 1410.1.1
+        father = jap_andou_norisue
+        dynasty = andou_dynasty
+        tag = AK2
+    }
+    jap_andou_yasusue = {
+        first_name = { name = name_yasusue } #康季
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1375.1.1
+        death_date = 1432.1.1
+        father = jap_andou_morisue
+        dynasty = andou_dynasty
+        tag = AK2
+    }
+    jap_andou_yoshisue = {
+        first_name = { name = name_yoshisue } #義季
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1405.1.1
+        father = jap_andou_yasusue
+        dynasty = andou_dynasty
+        tag = AK2
+    }
+    jap_andou_masasue = {
+        first_name = { name = name_masasue } #政季
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1422.1.1
+        father = jap_andou_yoshisue
+        dynasty = andou_dynasty
+        tag = AK3 # Assigned to Kakizaki/Ezo region during exile
+    }
 
+    # Iesue's Son - The Bridge
+    jap_andou_tsunesue = {
+        first_name = { name = name_tsunesue } #経季
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1330.1.1
+        death_date = 1390.1.1
+        father = jap_andou_iesue # Link to the existing Iesue
+        dynasty = andou_dynasty
+        tag = AK1
+    }
+
+    jap_andou_yasusue_minato = {
+        first_name = { name = name_yasusue } #康季
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1395.1.1
+        father = jap_andou_tsunesue
+        dynasty = andou_dynasty
+        tag = AK1
+    }
+    jap_andou_hirosue = {
+        first_name = { name = name_hirosue } #職季
+        culture = touhoku_culture
+        religion = shinto
+        birth_date = 1425.1.1
+        father = jap_andou_yasusue_minato
+        dynasty = andou_dynasty
+        tag = AK1
+    }
 
     jap_asakura_hirokage = {
         first_name = { name = name_hirokage } #広景
@@ -125039,5 +125381,174 @@ character_db={
         culture = amhara
         religion = miaphysite
         tag = ETH
+    }
+    chukchi_chief_fictional = { 
+        first_name = { name = name_ryntyna  }
+        culture = chukchi_culture
+        religion = chukchi_shamanism
+        birth_date = 1424.1.1
+        adm = 87 dip = 67 mil = 69
+        female = yes
+        birth = v_enyn
+        dynasty = kergytegyn_dynasty
+        tag = CKC
+    }
+    jap_hanawa_yasunobu = {
+        first_name = { name = name_yasunobu } #安信
+        culture = tohoku_culture
+        religion = shinto
+        birth_date = 1415.1.1
+        birth = kazuno
+        dynasty = hanawa_dynasty
+        tag = HAN
+    }
+    jap_kita_nobuchika = {
+        first_name = { name = name_nobuchika }
+        culture = tohoku_culture
+        religion = shinto
+        birth_date = 1415.1.1 #Estimated
+        birth = iwate
+        dynasty = kita_dynasty
+        tag = KTA
+    }
+    jap_ni1_sukemichi = {
+        first_name = { name = name_sukemichi } #助道
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1055.1.1
+        birth = saitama
+        death_date = 1112.1.1
+        dynasty = narita_dynasty
+        father = jap_fujiwara_kuniaki
+        tag = NI1
+    }
+
+    jap_ni1_sukeyasu = {
+        first_name = { name = name_sukeyasu } #助綱
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1120.1.1
+        birth = saitama
+        death_date = 1192.1.1
+        dynasty = narita_dynasty
+        father = jap_ni1_sukemichi
+        tag = NI1
+    }
+
+    jap_ni1_suketaka = {
+        first_name = { name = name_suketaka } #助隆
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1175.1.1
+        birth = saitama
+        death_date = 1230.1.1
+        dynasty = narita_dynasty
+        father = jap_ni1_sukeyasu
+        tag = NI1
+    }
+
+    jap_ni1_suketoki = {
+        first_name = { name = name_suketoki } #助時
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1225.1.1
+        birth = saitama
+        death_date = 1290.1.1
+        dynasty = narita_dynasty
+        father = jap_ni1_suketaka
+        tag = NI1
+    }
+
+    jap_ni1_sukemune = {
+        first_name = { name = name_sukemune } #助宗
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1285.1.1
+        birth = saitama
+        death_date = 1350.1.1
+        dynasty = narita_dynasty
+        father = jap_ni1_suketoki
+        tag = NI1
+    }
+
+    jap_ni1_akiyasu = {
+        first_name = { name = name_akiyasu } #顕泰
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1395.1.1
+        birth = saitama
+        dynasty = narita_dynasty
+        father = jap_ni1_sukemune
+        tag = NI1
+    }
+    jap_ni2_tokimitsu = {
+        first_name = { name = name_tokimitsu } #時光
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1010.1.1
+        birth = kyoto
+        death_date = 1080.1.1
+        dynasty = narita_dynasty
+        father = jap_fujiwara_kuniaki
+        tag = NI2
+    }
+
+    jap_ni2_shigemitsu = {
+        first_name = { name = name_shigemitsu } #茂光
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1105.1.1
+        birth = kazuno
+        death_date = 1180.1.1
+        dynasty = narita_dynasty
+        father = jap_ni2_tokimitsu
+        tag = NI2
+    }
+
+    jap_ni2_yukimitsu = {
+        first_name = { name = name_yukimitsu } #行光
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1160.1.1
+        birth = kazuno
+        death_date = 1220.1.1
+        dynasty = narita_dynasty
+        father = jap_ni2_shigemitsu
+        tag = NI2
+    }
+
+    jap_ni2_norimitsu = {
+        first_name = { name = name_norimitsu } #憲光
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1240.1.1
+        birth = kazuno
+        death_date = 1310.1.1
+        dynasty = narita_dynasty
+        father = jap_ni2_yukimitsu
+        tag = NI2
+    }
+
+    jap_ni2_masumitsu = {
+        first_name = { name = name_masumitsu } #益光
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1320.1.1
+        birth = kazuno
+        death_date = 1390.1.1
+        dynasty = narita_dynasty
+        father = jap_ni2_norimitsu
+        tag = NI2
+    }
+
+    jap_ni2_ujimitsu = {
+        first_name = { name = name_ujimitsu } #氏光
+        culture = saigoku_culture
+        religion = shinto
+        birth_date = 1385.1.1
+        birth = kazuno
+        dynasty = narita_dynasty
+        father = jap_ni2_masumitsu
+        tag = NI2
     }
 }

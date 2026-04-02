@@ -1,0 +1,45 @@
+tui_tonga_contribution = {
+    get_payer_list = {
+        every_international_organization_member = {
+            limit = {
+                NOT = {
+                    is_leader_of_international_organization = root
+                }
+            }
+            add_to_local_variable_list = {
+                name = payers
+                target = this
+            }
+        }
+    }
+    get_payee_list = {
+        leader_country ?= {
+            add_to_local_variable_list = {
+                name = payees
+                target = this
+            }
+        }
+    }
+    price = tui_tonga_contribution_price
+    price_multiplier = {
+        add = {
+            desc = "TUI_TONGA_CONTRIBUTION_PAYMENT_MULTIPLIER"
+            every_international_organization_member = {
+                add = monthly_income_trade_and_tax
+            }
+            multiply = 0.01
+        }
+    }
+    proportion_for_payer = {
+        add = {
+            desc = "tui_tonga_contribution"
+            value = monthly_income_trade_and_tax
+        }
+    }
+    proportion_for_payee = {
+        add = {
+            desc = "tui_tonga_contribution"
+            value = 1
+        }
+    }
+}

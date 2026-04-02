@@ -216,4 +216,47 @@ war_manager = {
 		#either use end_date or start_date = <date> with months = <int>. Can skip months to use NDefines::NDiplomacy::TRUCE_YEARS instead
 		end_date = 1451.1.1
 	}
+
+
+    war = {
+        war_name = {
+            name = "NANBU_ANDO_WAR"
+            ordinal = 1
+            first = {
+                name = "NB1" # Nanbu
+            }
+            second = {
+                name = "AK2" # Tosa Ando
+            }
+        }
+        
+        take_province = {
+            type = take_capital_subjugation
+            casus_belli = cb_subjugation
+            location = hiyama
+        }
+        
+        start_date = 1431.11.11
+        action = 1431.11.11
+        
+        attacker = {
+            country = NB1
+            request = {
+                reason = Instigator
+            }
+        }
+        attacker = {
+            country = NB2
+            request = {
+                reason = Instigator
+            }
+        }
+
+        defender = {
+            country = AK2
+            request = {
+                reason = Target
+            }
+        }
+    }
 }

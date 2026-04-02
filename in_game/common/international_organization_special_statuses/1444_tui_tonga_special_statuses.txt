@@ -1,0 +1,16 @@
+tui_tonga_overlord = {
+    max_countries = 1
+    priority = 10
+    modifier = {
+    }
+    can_bestow_trigger = {
+        is_leader_of_international_organization = international_organization:tui_tonga
+    }
+    auto_bestowal_trigger = {
+        always = yes
+    }
+    auto_rescind_trigger = {
+        NOT = { is_leader_of_international_organization = scope:recipient }
+    }
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+}

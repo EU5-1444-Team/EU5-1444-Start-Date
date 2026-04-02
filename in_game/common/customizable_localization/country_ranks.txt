@@ -240,6 +240,16 @@ country_flavor = {
 		}
 	}
 	text = {
+		localization_key = polynesian_empire
+		trigger = {
+			country_rank_is_empire = yes
+			OR = {
+				culture = { has_culture_group = culture_group:micronesian_group }
+				culture = { has_culture_group = culture_group:polynesian_group }
+			}
+		}
+	}
+	text = {
 		localization_key = rank_kingdom_united_states
 		trigger = {
 			country_rank_is_empire = yes
@@ -858,6 +868,16 @@ country_flavor = {
 			culture = culture:maori_culture
 		}
 	}
+	text = {
+        localization_key = polynesian_kingdom
+        trigger = {
+            country_rank_is_kingdom = yes
+            OR = {
+                culture = { has_culture_group = culture_group:micronesian_group }
+                culture = { has_culture_group = culture_group:polynesian_group }
+            }
+        }
+    }
 	text = {
 		localization_key = rank_kingdom_maya
 		trigger = {
@@ -1538,6 +1558,16 @@ country_flavor = {
 			}
 		}
 	}
+	text = {
+        localization_key = polynesian_duchy
+        trigger = {
+            country_rank_is_duchy = yes
+            OR = {
+                culture = { has_culture_group = culture_group:micronesian_group }
+                culture = { has_culture_group = culture_group:polynesian_group }
+            }
+        }
+    }
 	#Frisian
 	text = {
 		localization_key = rank_duchy_frisian_freedom
@@ -2196,6 +2226,16 @@ country_flavor = {
 			}
 		}
 	}
+	text = {
+        localization_key = polynesian_county
+        trigger = {
+            country_rank_is_county = yes
+            OR = {
+                culture = { has_culture_group = culture_group:micronesian_group }
+                culture = { has_culture_group = culture_group:polynesian_group }
+            }
+        }
+    }
 	text = {
 		localization_key = rank_kingdom_republic_venice
 		trigger = {

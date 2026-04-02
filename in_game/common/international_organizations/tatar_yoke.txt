@@ -45,6 +45,7 @@
 
 	can_lead_trigger = {
 		has_ruler = yes
+		government_type = government_type:steppe_horde
 		ruler ?= {
 			is_adult = yes
 		}
@@ -83,6 +84,7 @@
 	}
 
 	monthly_effect = {
+		# Block 1 - Horde Leadership Transfer
 		if = {
 			limit = {
 				any_international_organization_member = {
@@ -104,46 +106,28 @@
 				}
 			}
 		}
+		
+		# Block 2 - Tax Collector Reassignment
 		if = {
 			limit = {
 				any_international_organization_member = {
-					NOT = { 
-						has_special_status_in_international_organization = {
-							type = special_status:tatar_tax_collector
-							international_organization = root
-						}
-					}
-					culture = { has_culture_group = culture_group:russian_group }
-					great_power_score > {
-						ordered_international_organization_member = {
-							limit = {
-								has_special_status_in_international_organization = {
-									type = special_status:tatar_tax_collector
-									international_organization = root
-								}
-							}
-							order_by = great_power_score
-							max = 1
-						}
+					has_special_status_in_international_organization = {
+						type = special_status:tatar_tax_collector
+						international_organization = root
 					}
 				}
 			}
-			ordered_international_organization_member = {
-				order_by = great_power_score
-				max = 1
-				check_range_bounds = no
+			every_international_organization_member = {
 				limit = {
-					culture = { has_culture_group = culture_group:russian_group }
-					is_member_of_international_organization = root
+					has_special_status_in_international_organization = {
+						type = special_status:tatar_tax_collector
+						international_organization = root
+					}
 				}
 				root = {
-					international_organization_remove_special_status = {
-						type = special_status:tatar_tax_collector
-						country = root.leader_country
-					}
-					international_organization_add_special_status = {
-						type = special_status:tatar_tax_collector
-						country = prev
+					set_variable = {
+						name = current_tax_collector_score
+						value = prev.great_power_score
 					}
 				}
 			}
@@ -151,10 +135,62 @@
 		if = {
 			limit = {
 				any_international_organization_member = {
+					NOT = {
+						has_special_status_in_international_organization = {
+							type = special_status:tatar_tax_collector
+							international_organization = root
+						}
+					}
+					culture = { has_culture_group = culture_group:russian_group }
+					great_power_score > root.var:current_tax_collector_score
+				}
+			}
+			ordered_international_organization_member = {
+				order_by = great_power_score
+				max = 1
+				check_range_bounds = no
+				limit = {
+					culture = { has_culture_group = culture_group:russian_group }
+					NOT = {
+						has_special_status_in_international_organization = {
+							type = special_status:tatar_tax_collector
+							international_organization = root
+						}
+					}
+				}
+				save_scope_as = new_tax_collector
+			}
+			every_international_organization_member = {
+				limit = {
+					has_special_status_in_international_organization = {
+						type = special_status:tatar_tax_collector
+						international_organization = root
+					}
+				}
+				root = {
+					international_organization_remove_special_status = {
+						type = special_status:tatar_tax_collector
+						country = prev
+					}
+				}
+			}
+			root = {
+				international_organization_add_special_status = {
+					type = special_status:tatar_tax_collector
+					country = scope:new_tax_collector
+				}
+			}
+		}
+		
+		# Block 3 - Ugra Dissolution Detection
+		if = {
+			limit = {
+				any_international_organization_member = {
+					NOT = { is_leader_of_international_organization = root }
 					culture = { has_culture_group = culture_group:russian_group }
 					great_power_score > {
 						value = root.leader_country.great_power_score
-						multiply = 1.1
+						multiply = 1.5
 					}
 				}
 			}
@@ -164,16 +200,24 @@
 				check_range_bounds = no
 				limit = {
 					culture = { has_culture_group = culture_group:russian_group }
+					NOT = { is_leader_of_international_organization = root }
 				}
-				save_scope_as = ugra_rus_prince
+				root = {
+					set_variable = {
+						name = ugra_rus_prince
+						value = prev
+					}
+				}
 			}
-			root.leader_country = {
-				save_scope_as = ugra_horde_leader
+			root = {
+				set_variable = {
+					name = ugra_horde_leader
+					value = root.leader_country
+				}
 			}
 			every_international_organization_member = {
 				trigger_event_non_silently = tatar_yoke_events.1
 			}
-			destroy_international_organization = { target = root }
 		}
 	}
 

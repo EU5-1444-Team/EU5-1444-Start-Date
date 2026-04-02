@@ -28,3 +28,15 @@ cb_false_golden_horde_claimant = {
 	speed = 10
 	war_goal_type = false_golden_horde_claimant_wargoal
 }
+cb_enforce_tatar_yoke = {
+    visible = {
+        is_leader_of_international_organization = international_organization:tatar_yoke
+        scope:target = {
+            NOT = { is_member_of_international_organization = international_organization:tatar_yoke }
+        }
+    }
+    allow_creation = {
+    }
+    speed = 10
+    war_goal_type = enforce_tatar_yoke_wargoal
+}

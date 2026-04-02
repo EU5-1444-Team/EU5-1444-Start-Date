@@ -60,3 +60,44 @@ peace_force_renounce_golden_horde_claim = {
 		}
 	}
 }
+peace_enforce_tatar_yoke = {
+    cost = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 5
+        }
+        add = {
+            desc = "game_concept_population"
+            value = scope:loser.total_population
+            multiply = 0.009
+        }
+    }
+    potential = {
+        scope:war = {
+            casus_belli ?= casus_belli:cb_enforce_tatar_yoke
+        }
+        scope:loser = {
+            NOT = { is_member_of_international_organization = international_organization:tatar_yoke }
+        }
+    }
+    allow = {
+    }
+    effect = {
+		international_organization:tatar_yoke = {
+			if = {
+				limit = {
+					scope:loser = {
+						NOT = { is_member_of_international_organization = prev }
+					}
+				}
+				add_country_to_international_organization = scope:loser
+			}
+		}
+	}
+    ai_desire = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 100
+        }
+    }
+}
