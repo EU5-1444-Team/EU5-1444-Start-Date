@@ -28,6 +28,7 @@
 # (no leader) Jin Rebellion       -> rtr_release_tag_CJN
 # (no leader) Min Rebellion       -> rtr_release_tag_CMM
 # (no leader) Yue Rebellion       -> rtr_release_tag_CYU
+# (no leader) Yughur Rebellion     -> rtr_release_tag_SRY
 # (no leader) Liang Rebellion     -> rtr_release_tag_CLN
 # (no leader) Ning Rebellion      -> rtr_release_tag_CNG
 # (no leader) Xi Rebellion        -> rtr_release_tag_CXI
@@ -36,6 +37,7 @@
 # (no leader) Miao Rebellion      -> rtr_release_tag_CMI
 # (no leader) Tung-nen Rebellion  -> rtr_release_tag_CTU
 # (no leader) Liao Rebellion      -> rtr_release_tag_CLY
+# (no leader) Hui Uprising        -> rtr_release_tag_HUZ
 #========================================================
 
 
@@ -61,6 +63,8 @@ scripted_effect rtr_cleanup_variables = {
     if = { limit = { has_variable = rtr_release_tag_CAI } remove_variable = rtr_release_tag_CAI }
     if = { limit = { has_variable = rtr_release_tag_CMI } remove_variable = rtr_release_tag_CMI }
     if = { limit = { has_variable = rtr_release_tag_CTU } remove_variable = rtr_release_tag_CTU }
+    if = { limit = { has_variable = rtr_release_tag_HUZ } remove_variable = rtr_release_tag_HUZ }
+    if = { limit = { has_variable = rtr_release_tag_SRY } remove_variable = rtr_release_tag_SRY }
     if = { limit = { has_variable = rtr_country_additional_releaser_counter } remove_variable = rtr_country_additional_releaser_counter }
     every_country = { limit = { has_variable = rtr_yuan_allegiance } remove_variable = rtr_yuan_allegiance }
     if = { limit = { has_global_variable_list = rtr_loyal_faction } clear_global_variable_list = rtr_loyal_faction }
@@ -89,6 +93,8 @@ scripted_effect rtr_setup_countries_to_release = {
     set_variable = rtr_release_tag_CAI
     set_variable = rtr_release_tag_CMI
     set_variable = rtr_release_tag_CTU
+    set_variable = rtr_release_tag_HUZ
+    set_variable = rtr_release_tag_SRY
     #Determines how many countries China will release later on after the historical ones are done
     set_variable = { name = rtr_country_additional_releaser_counter value = 10 }
 }
@@ -173,6 +179,57 @@ scripted_effect rtr_release_warlord_tag = {
                 change_culture = $culture$
                 rtr_released_country_setup_effects = yes
                 add_accepted_culture = $accepted_culture$
+            }
+        }
+    }
+    custom_description = {
+        text = rtr_lose_competent_characters
+        value = $culture$
+        object = c:$tag$
+        ordered_character = {
+            order_by = total_abilities
+            limit = {
+                culture = $culture$
+                is_ruler = no
+                is_heir = no
+                is_loyal = yes
+                in_cabinet = no
+                is_general = no
+                is_explorer = no
+                is_admiral = no
+                is_consort = no
+            }
+            max = 8
+            check_range_bounds = no
+            move_country = c:$tag$
+        }
+    }
+}
+
+scripted_effect rtr_release_pop_based_tag = {
+    if = {
+        limit = { country_exists = c:$tag$ }
+        custom_tooltip = {
+            text = rtr_release_warlord_country_tt
+            remove_variable = rtr_release_tag_$tag$
+            change_variable = {
+                name = rtr_historical_countries_to_release
+                subtract = 1
+            }
+            c:$tag$ = {
+                save_scope_as = target_country
+                change_country_color = map_$tag$
+                change_culture = $culture$
+                change_country_type = location
+                rtr_released_country_setup_effects = yes
+                change_government_type = government_type:tribe
+                add_accepted_culture = $accepted_culture$
+            }
+            c:CHI = {
+                every_owned_location = {
+                    limit = { is_core_of = c:$tag$ }
+                    change_location_owner = c:$tag$
+                }
             }
         }
     }
@@ -1702,6 +1759,128 @@ red_turban_rebellions.22 = {
         name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CLY culture = culture:jurchen_culture accepted_culture = culture:jurchen_culture }
+        scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
+        change_player = scope:target_country
+        hidden_effect = {
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
+        }
+    }
+}
+
+#========================================================
+# HUZ (Hui) Uprising – No Leader, Hui Culture
+#========================================================
+red_turban_rebellions.23 = {
+    type = country_event
+    category = situation_event
+    title = red_turban_rebellions.23.title
+    desc = red_turban_rebellions.23.desc
+    illustration_tags = {
+        11 = armed
+        11 = exterior
+    }
+    major = yes
+    major_trigger = { rtr_can_see_the_situation = yes }
+
+    trigger = {
+        rtr_can_release_tag = {
+            tag = HUZ
+            location = ningxia
+        }
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+        rtr_create_revolter_capital = { location = ningxia tag = HUZ }
+        rtr_add_core_to_location = { location = jingning tag = HUZ }
+        rtr_add_core_to_location = { location = shuiluo tag = HUZ }
+        rtr_add_core_to_location = { location = longde tag = HUZ }
+        rtr_add_core_to_location = { location = sanchuan tag = HUZ }
+        rtr_add_core_to_location = { location = kaicheng_guyuan tag = HUZ }
+        rtr_add_core_to_location = { location = xianzhou tag = HUZ }
+        rtr_add_core_to_location = { location = zhenrong tag = HUZ }
+        rtr_add_core_to_location = { location = yingli tag = HUZ }
+        rtr_add_core_to_location = { location = mingsha tag = HUZ }
+        rtr_add_core_to_location = { location = lingzhou tag = HUZ }
+        rtr_add_core_to_location = { location = lingwu tag = HUZ }
+        rtr_add_core_to_location = { location = ningxia tag = HUZ }
+        rtr_add_core_to_location = { location = dingyuan_lingzhou tag = HUZ }
+
+    }
+
+    option = {
+        name = red_turban_rebellions.23.a
+        rtr_release_pop_based_tag = { tag = HUZ culture = culture:hui_muslim_culture accepted_culture = culture:zhongyuan_culture }
+        c:HUZ = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = c:HUZ }
+    }
+
+    option = {
+        name = red_turban_rebellions.play_as_tag
+        trigger = { hidden_trigger = { is_ai = no } }
+        rtr_release_pop_based_tag = { tag = HUZ culture = culture:hui_muslim_culture accepted_culture = culture:zhongyuan_culture }
+        scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
+        change_player = scope:target_country
+        hidden_effect = {
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
+        }
+    }
+}
+
+#========================================================
+# SRY (Yughur) Uprising – No Leader, Yughur Culture
+#========================================================
+red_turban_rebellions.24 = {
+    type = country_event
+    category = situation_event
+    title = red_turban_rebellions.24.title
+    desc = red_turban_rebellions.24.desc
+    illustration_tags = {
+        11 = armed
+        11 = exterior
+    }
+    major = yes
+    major_trigger = { rtr_can_see_the_situation = yes }
+
+    trigger = {
+        rtr_can_release_tag = {
+            tag = SRY
+            location = liyuan
+        }
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+        rtr_create_revolter_capital = { location = liyuan tag = SRY }
+        rtr_add_core_to_location = { location = qidaban tag = SRY }
+        rtr_add_core_to_location = { location = liyuan tag = SRY }
+        rtr_add_core_to_location = { location = qilian tag = SRY }
+        rtr_add_core_to_location = { location = anding_suzhou tag = SRY }
+        rtr_add_core_to_location = { location = suzhou_gansu tag = SRY }
+        rtr_add_core_to_location = { location = gaotai tag = SRY }
+        rtr_add_core_to_location = { location = dangcheng tag = SRY }
+        rtr_add_core_to_location = { location = kuyu_shazhou tag = SRY }
+        rtr_add_core_to_location = { location = guazhou tag = SRY }
+        rtr_add_core_to_location = { location = jinta tag = SRY }
+        rtr_add_core_to_location = { location = shazhou tag = SRY }
+        rtr_add_core_to_location = { location = chijin tag = SRY }
+        rtr_add_core_to_location = { location = yangguan tag = SRY }
+        rtr_add_core_to_location = { location = bailongdui tag = SRY }
+    }
+
+    option = {
+        name = red_turban_rebellions.24.a
+        rtr_release_pop_based_tag = { tag = SRY culture = culture:yugur_culture accepted_culture = culture:liang_culture }
+        c:SRY = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = c:SRY }
+    }
+
+    option = {
+        name = red_turban_rebellions.play_as_tag
+        trigger = { hidden_trigger = { is_ai = no } }
+        rtr_release_pop_based_tag = { tag = SRY culture = culture:yugur_culture accepted_culture = culture:liang_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country

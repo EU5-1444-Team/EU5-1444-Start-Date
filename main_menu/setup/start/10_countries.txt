@@ -50335,6 +50335,10 @@ countries = {
             kedang kuntokling liulin
             hezhou dingqiang
             jishi
+
+            # Old Yugur cores
+            qidaban liyuan qilian anding_suzhou dangcheng kuyu_shazhou guazhou jinta shazhou chijin yangguan
+            bailongdui
         }
 
         own_control_integrated = {
@@ -59688,39 +59692,38 @@ countries = {
 
     HUZ = {
         # Hui
-        our_cores_conquered_by_others = {
+        type = pop
+        add_pops_from_locations = {
             jingning shuiluo longde sanchuan kaicheng_guyuan xianzhou
             zhenrong yingli mingsha lingzhou lingwu ningxia dingyuan_lingzhou
         }
         starting_technology_level = 3
         government = {
+            ruler = random
+            type = tribe
             heir_selection = tribal_oldest_male
         }
-        country_rank = rank_county
-        court_language = mongolian_language
         capital = ningxia
+        country_rank = rank_duchy
     }
 
     # --- HUZ ---
 
     SRY = {
         # Yughur
-        own_control_core = {
+        type = pop
+        add_pops_from_locations = {
             qidaban liyuan qilian anding_suzhou dangcheng kuyu_shazhou guazhou jinta shazhou chijin yangguan
-            bailongdui
+            bailongdui suzhou_gansu gaotai
         }
-
-        our_cores_conquered_by_others = { }
         starting_technology_level = 3
-        include = "expl_mongols"
-        include = "asia_advanced_no_pagan_tribe"
         government = {
+            ruler = random
+            type = tribe
             heir_selection = tribal_oldest_male
-            centralization_vs_decentralization = -100
         }
-        country_rank = rank_county
-        court_language = mongolian_language
         capital = liyuan
+        country_rank = rank_duchy
     }
 
     # --- SRY ---
