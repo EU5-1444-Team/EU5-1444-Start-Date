@@ -36,26 +36,14 @@ REPLACE:unification_law = {
 							tag = UDE
 							tag = WRK
 							tag = SFN
+							tag = YER
 						}
 					}
 					form_country = formable_country:YER_f
 				}
 				else_if = {
 					limit = {
-						OR = {
-							tag = ULA
-							tag = YEH
-							tag = HDA
-							tag = HOI
-							tag = EJI
-							tag = NAL
-							tag = NEM
-							tag = SNC
-							tag = TAS
-							tag = WEJ
-							tag = HXI
-							culture ?= culture:haixi_culture
-						}
+						culture ?= culture:haixi_culture
 					}
 					form_country = formable_country:HXI_f
 				}
