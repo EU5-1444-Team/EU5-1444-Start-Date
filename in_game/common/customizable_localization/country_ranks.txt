@@ -607,6 +607,21 @@ country_flavor = {
 		}
 	}
 	text = {
+		localization_key = rank_empire_warring_state
+		trigger = {
+			country_rank_is_empire = yes
+			government_type = government_type:monarchy
+			has_reform = government_reform:warring_state
+		}
+	}
+	text = {
+		localization_key = rank_warring_state
+		trigger = {
+			government_type = government_type:monarchy
+			has_reform = government_reform:warring_state
+		}
+	}
+	text = {
 		localization_key = rank_empire_dynasty
 		trigger = {
 			country_rank_is_empire = yes

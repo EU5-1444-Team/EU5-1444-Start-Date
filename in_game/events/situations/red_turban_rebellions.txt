@@ -825,7 +825,10 @@ red_turban_rebellions.4 = {
     option = {
         name = red_turban_rebellions.4.a
         rtr_release_warlord_tag = { tag = CSH culture = culture:qin_culture accepted_culture = culture:zhongyuan_culture }
-        c:CSH = { rtr_change_allegiance_points = { value = -100 } }
+        c:CSH = { 
+            rtr_change_allegiance_points = { value = -100 }
+            set_country_rank = country_rank:rank_empire
+        }
         rtr_add_country_to_rebels_and_dow_china = { country = c:CSH }
     }
 
@@ -833,7 +836,10 @@ red_turban_rebellions.4 = {
         name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
         rtr_release_warlord_tag = { tag = CSH culture = culture:qin_culture accepted_culture = culture:zhongyuan_culture }
-        scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
+        scope:target_country = { 
+            rtr_change_allegiance_points = { value = -100 }
+            set_country_rank = country_rank:rank_empire
+        }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
         hidden_effect = {
