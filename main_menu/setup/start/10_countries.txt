@@ -50669,7 +50669,7 @@ countries = {
 
     # --- SMZ ---
 
-    KSI = { #Kasai
+    KS1 = { #Soke Kasai
 
         capital = tome
         include = "japanese_clan"
@@ -50693,6 +50693,71 @@ countries = {
             }
         }
 
+        country_rank = rank_county
+    }
+    KS2 = { #Iwai Kasai
+        capital = iwai
+        include = "japanese_clan"
+        own_control_core = { iwai }
+        government = {
+            ruler = random
+            reforms = { daimyo }
+        }
+        country_rank = rank_county
+    }
+
+    KS3 = { #Esashi Kasai
+        capital = esashi
+        include = "japanese_clan"
+        own_control_core = { esashi }
+        government = {
+            ruler = random
+            reforms = { daimyo }
+        }
+        country_rank = rank_county
+    }
+
+    KS4 = { #Isawa Kasai
+        capital = isawa
+        include = "japanese_clan"
+        own_control_core = { isawa }
+        government = {
+            ruler = random
+            reforms = { daimyo }
+        }
+        country_rank = rank_county
+    }
+
+    KS5 = { #Kesen Kasai
+        capital = kesen
+        include = "japanese_clan"
+        own_control_core = { kesen }
+        government = {
+            ruler = random
+            reforms = { daimyo }
+        }
+        country_rank = rank_county
+    }
+
+    KS6 = { #Motoyoshi Kasai
+        capital = motoyoshi
+        include = "japanese_clan"
+        own_control_core = { motoyoshi }
+        government = {
+            ruler = random
+            reforms = { daimyo }
+        }
+        country_rank = rank_county
+    }
+
+    KS7 = { #Oshika Kasai
+        capital = oshika
+        include = "japanese_clan"
+        own_control_core = { oshika }
+        government = {
+            ruler = random
+            reforms = { daimyo }
+        }
         country_rank = rank_county
     }
 
@@ -50770,7 +50835,7 @@ countries = {
 
     # --- KMO ---
 
-    SBA = {
+    SB1 = { # Kanrei Shiba
 
         capital = sakai_echizen
         include = "japanese_clan"
@@ -50782,13 +50847,11 @@ countries = {
         }
 
         government = {
-            ruler_term = { character = jap_shiba_ieuji start_date = 1253.1.1 end_date = 1300.1.1 regnal_number = 1 }
-            ruler_term = { character = jap_shiba_muneie start_date = 1300.1.1 end_date = 1305.1.1 regnal_number = 1 }
-            ruler_term = { character = jap_shiba_muneuji start_date = 1305.1.1 end_date = 1312.12.1 regnal_number = 1 }
-            ruler_term = { character = jap_shiba_takatsune start_date = 1312.12.1 regnal_number = 1 }
 
-            ruler = random # TODO: add me
-
+            ruler = jap_shiba_yoshitake
+            regency = nobles_estate_regency
+            start_regency_date = 1444.11.10
+            end_regency_date = 1452.1.1
             reforms = {
                 daimyo
             }
@@ -50797,7 +50860,7 @@ countries = {
         country_rank = rank_county
     }
 
-    # --- SBA ---
+    # --- SB1 ---
 
     HT1 = {
         # Kishu Hatakeyama
@@ -50914,7 +50977,23 @@ countries = {
         country_rank = rank_county
     }
 
-    # --- NB1 ---
+    SB2 = { # Shiba (Kozuiji)
+        capital = shiwa
+        include = "japanese_clan"
+
+        own_control_core = {
+            shiwa
+        }
+
+        government = {
+            ruler = jap_shiba_mochiyori
+            reforms = {
+                daimyo
+            }
+        }
+
+        country_rank = rank_county
+    }
 
     OUC = {
 
@@ -54666,13 +54745,13 @@ countries = {
 
     # --- KMT ---
 
-    HEI = {
+    HEI = { #Hei Clan
 
-        capital = shimohei kitahei
+        capital = shimohei
         include = "japanese_clan"
 
         own_control_core = {
-            shimohei
+            shimohei kitahei
         }
 
         government = {
@@ -54682,9 +54761,13 @@ countries = {
             ruler_term = { character = jap_hei_tameyori start_date = 1250.1.1 end_date = 1270.1.1 regnal_number = 1 }
             ruler_term = { character = jap_hei_mitsutomo start_date = 1270.1.1 end_date = 1290.1.1 regnal_number = 1 }
             ruler_term = { character = jap_hei_mitsuyori start_date = 1290.1.1 end_date = 1334.1.1 regnal_number = 1 }
-            ruler_term = { character = jap_hei_chikamitsu start_date = 1334.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_hei_chikamitsu start_date = 1334.1.1 end_date = 1355.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_hei_tamenobu start_date = 1355.1.1 end_date = 1380.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_hei_hisatomo start_date = 1380.1.1 end_date = 1410.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_hei_tomoshige start_date = 1410.1.1 end_date = 1435.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_hanawa_kazutomo start_date = 1435.1.1 regnal_number = 1 }
 
-            ruler = random # TODO: add me
+            ruler = jap_hanawa_kazutomo
 
             reforms = {
                 daimyo
@@ -54696,7 +54779,7 @@ countries = {
 
     # --- HEI ---
 
-    ANM = {
+    ANM = { #Asonuma Clan
 
         capital = kamihei
         include = "japanese_clan"
@@ -54712,9 +54795,13 @@ countries = {
             ruler_term = { character = jap_asonuma_kintsuna start_date = 1250.1.1 end_date = 1260.1.1 regnal_number = 1 }
             ruler_term = { character = jap_asonuma_kimisato start_date = 1260.1.1 end_date = 1280.1.1 regnal_number = 1 }
             ruler_term = { character = jap_asonuma_ujitsuna start_date = 1280.1.1 end_date = 1310.1.1 regnal_number = 1 }
-            ruler_term = { character = jap_asonuma_tomotsuna_ii start_date = 1310.1.1 regnal_number = 2 }
+            ruler_term = { character = jap_asonuma_tomotsuna_ii start_date = 1310.1.1 end_date = 1354.10.27 regnal_number = 2 }
+            ruler_term = { character = jap_asonuma_hirotsuna_heir start_date = 1354.10.27 end_date = 1372.12.27 regnal_number = 2 }
+            ruler_term = { character = jap_asonuma_moritsuna start_date = 1372.12.27 end_date = 1400.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_asonuma_uchitsuna start_date = 1400.1.1 end_date = 1425.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_asonuma_chikatsuna start_date = 1425.1.1 regnal_number = 1 }
 
-            ruler = random # TODO: add me
+            ruler = jap_asonuma_chikatsuna
 
             reforms = {
                 daimyo
@@ -54781,7 +54868,7 @@ countries = {
 
     # --- WAG ---
 
-    HIE = {
+    HIE = { #Hienuki
 
         capital = hienuki
         include = "japanese_clan"
@@ -54795,9 +54882,13 @@ countries = {
             ruler_term = { character = jap_hienuki_mitsuie start_date = 1260.1.1 end_date = 1280.1.1 regnal_number = 1 }
             ruler_term = { character = jap_hienuki_shigeyasu start_date = 1280.1.1 end_date = 1310.1.1 regnal_number = 1 }
             ruler_term = { character = jap_hienuki_tamemasa start_date = 1310.1.1 end_date = 1335.1.1 regnal_number = 1 }
-            ruler_term = { character = jap_hienuki_ieshige start_date = 1335.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_hienuki_ieshige start_date = 1335.1.1 end_date = 1373.5.10 regnal_number = 1 }
+            ruler_term = { character = jap_hienuki_shigetou start_date = 1373.5.10 end_date = 1386.12.12 regnal_number = 1 }
+            ruler_term = { character = jap_hienuki_shigeuji start_date = 1386.12.12 end_date = 1410.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_hienuki_mitsutoki start_date = 1410.1.1 end_date = 1435.1.1 regnal_number = 1 }
+            ruler_term = { character = jap_hienuki_mitsumasa start_date = 1435.1.1 regnal_number = 1 }
 
-            ruler = random # TODO: add me
+            ruler = jap_hienuki_mitsumasa
 
             reforms = {
                 daimyo
