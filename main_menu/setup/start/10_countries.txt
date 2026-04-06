@@ -904,10 +904,7 @@ countries = {
 
     AUV = {
         own_control_core = {
-            vic_le_comte
-            thiers #S. Thiers
-            mauriac riom tour_auvergne brioude saint_flour vodable allegre
-            montaigut herment
+            tour_auvergne riom
         }
         starting_technology_level = 3
         include = "expl_western_europe"
@@ -953,10 +950,39 @@ countries = {
         }
 
         county_rank = rank_duchy
-        capital = vic_le_comte
+        capital = tour_auvergne
     }
 
     # --- AUV ---
+
+    DAV = {
+        own_control_core = {
+            vic_le_comte
+            thiers #S. Thiers
+            mauriac brioude saint_flour vodable allegre
+            montaigut herment
+        }
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "catholic_monarchy_no_coast_no_censor"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+
+            reforms = {
+                french_appanage_reform
+            }
+
+            regnal_numbers = {
+            }
+        }
+
+        county_rank = rank_duchy
+        capital = vic_le_comte
+    }
+
+    # --- DAV ---
 
     POI = {
         our_cores_conquered_by_others = {
