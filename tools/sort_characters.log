@@ -1,0 +1,674 @@
+CHARACTER CONSISTENCY REPORT
+Input:  main_menu/setup/start/05_characters.txt
+Total characters parsed: 8963
+Total issues: 658  (11 errors, 141 warnings, 506 info)
+
+──────────────────────────────────────────────────────────────────────
+ERRORS — definite mistakes that need fixing (11)
+──────────────────────────────────────────────────────────────────────
+  DUPLICATE KEY: 'jap_asonuma_chikatsuna' defined more than once
+  DUPLICATE KEY: 'cas_leonor_guzman' defined more than once
+  CHILD BORN BEFORE PARENT: cro_janos_anjou_hungary (born 1354.1.1) — mother ubv_margarete_wittelsbach (born 1442.1.1)
+  CHILD BORN BEFORE PARENT: jap_asonuma_mitsutsuna (born 1185.1.1) — father jap_asonuma_chikatsuna (born 1400.1.1)
+  CHILD BORN BEFORE PARENT: jap_asonuma_kintsuna (born 1190.1.1) — father jap_asonuma_chikatsuna (born 1400.1.1)
+  CHILD BORN BEFORE PARENT: cas_pedro_aguilar (born 1331.12.1) — mother cas_leonor_guzman (born 1426.1.1)
+  CHILD BORN BEFORE PARENT: cas_sancho_alfonso_burgundy (born 1332.12.1) — mother cas_leonor_guzman (born 1426.1.1)
+  CHILD BORN BEFORE PARENT: cas_fernando_alfonso_burgundy (born 1334.11.1) — mother cas_leonor_guzman (born 1426.1.1)
+  CHILD BORN BEFORE PARENT: cas_fadrique_alfonso_burgundy (born 1334.1.13) — mother cas_leonor_guzman (born 1426.1.1)
+  DEATH BEFORE BIRTH: opv_jan_i_premyslid  (born 1322.1.1, died 1301.1.1)
+  CHILD BORN BEFORE PARENT: cas_enrique_ii_trastamara (born 1334.1.13) — mother cas_leonor_guzman (born 1426.1.1)
+
+──────────────────────────────────────────────────────────────────────
+WARNINGS — likely mistakes, worth reviewing (141)
+──────────────────────────────────────────────────────────────────────
+  MISSING FATHER: geo_natia_amirejibi references 'geo_kutsna_mirejibi' which does not exist
+  CHILD BORN AFTER PARENT DEATH: jap_andou_yasusue_minato (born 1395.1.1) — father jap_andou_tsunesue (died 1390.1.1)
+  MISSING FATHER: avv_thado_minbya references 'avv_thado_hsinhtein' which does not exist
+  MISSING SPOUSE: tre_gulkan_eudokia_bagrationi references 'tre_manouel_iii_komnenos' which does not exist
+  NO TAG:         geo_aleksandre_i_kakheti_bagrationi
+  MISSING SPOUSE: hum_jelena_balsic references 'hum_stephen_vukcic_kosaca' which does not exist
+  CHILD BORN AFTER PARENT DEATH: sic_margherita_sicily (born 1331.1.1) — father sic_federico_iii_sicily (died 1328.6.27)
+  CHILD BORN AFTER PARENT DEATH: chp_thibault_iii_blois (born 1179.5.13) — father chp_henri_i_blois (died 1171.8.7)
+  MISSING SPOUSE: eng_mary_de_bohun references 'eng_henry_iv' which does not exist
+  CHILD BORN AFTER PARENT DEATH: yua_toghon_temur (born 1320.5.25) — father kulug_borjigin (died 1311.1.27)
+  MISSING FATHER: por_isabel_braganca_barcelos references 'por_afonso_i_braganca' which does not exist
+  MISSING MOTHER: cli_katarina_brankovic references 'ser_eirene_kantakouzenos' which does not exist
+  CHILD BORN AFTER PARENT DEATH: chg_bayan_quli (born 1325.1.1) — father chg_yasaur (died 1320.1.1)
+  CHILD BORN AFTER PARENT DEATH: chg_tughluq_temur (born 1329.1.1) — father chg_esen_buqa_i (died 1318.9.1)
+  CHILD BORN AFTER PARENT DEATH: cha_po_binasuor (born 1325.1.1) — father cha_jaya_ananda (died 1323.1.16)
+  MISSING SPOUSE: aia_sancia_clermont_lodeve references 'aia_francesco_balzo' which does not exist
+  MISSING SPOUSE: gci_margherita_clermont_lodeve references 'gci_antonio_ventimiglia' which does not exist
+  MISSING MOTHER: bri_jeanne_evreux references 'nav_joan_valois' which does not exist
+  MISSING FATHER: sco_archibald_douglas_5th_earl references 'sco_archibald_douglas_4rd_earl' which does not exist
+  MISSING FATHER: sco_william_douglas_6th_earl references 'sco_archibald_douglas_5rd_earl' which does not exist
+  MISSING SPOUSE: bos_dorottya_garai references 'bos_stefan_tvrtko_ii_kotromanic' which does not exist
+  MISSING SPOUSE: cro_hedvig_garai references 'cro_petar_talovac' which does not exist
+  CHILD BORN AFTER PARENT DEATH: maz_mykolas_zygimantas_gediminid (born 1405.1.1) — father lit_kestutis_gediminds (died 1382.1.1)
+  CHILD BORN AFTER PARENT DEATH: cri_tash_timur_giray (born 1345.1.1) — father urung_timur_borjigin (died 1285.1.1)
+  MISSING MOTHER: hab_friedrich_iii_habsburg references 'hab_cymburgis_piast' which does not exist
+  MISSING MOTHER: sax_margarete_habsburg references 'hab_cymburgis_piast' which does not exist
+  MISSING MOTHER: hab_albrecht_vi_habsburg references 'hab_cymburgis_piast' which does not exist
+  MISSING FATHER: jap_hosokawa_shigeuji references 'jap_oouchi_morimi' which does not exist
+  MISSING FATHER: bre_gerhard_iii_hoya references 'hoy_otto_iii_hoya' which does not exist
+  CHILD BORN AFTER PARENT DEATH: timur_qutlugh_borjigin (born 1370.1.1) — father urung_timur_borjigin (died 1285.1.1)
+  CHILD BORN AFTER PARENT DEATH: dawlat_shaikh_borjigin (born 1385.1.1) — father shiban_borjigin (died 1266.1.1)
+  MISSING FATHER: geo_anna_komnenos references 'tre_alexios_iii_komnenos' which does not exist
+  CHILD BORN AFTER PARENT DEATH: dan_philippa_lancaster (born 1406.5.1) — mother eng_mary_de_bohun (died 1394.6.4)
+  MISSING SPOUSE: dan_philippa_lancaster references 'pom_erik_of_pomerania_gryf' which does not exist
+  MISSING FATHER: eng_jacquetta_luxembourg references 'stp_peter_i_luxembourg' which does not exist
+  MISSING MOTHER: eng_jacquetta_luxembourg references 'stp_marguerite_baux' which does not exist
+  MISSING FATHER: bri_catherine_luxembourg references 'stp_pierre_i_luxembourg' which does not exist
+  MISSING MOTHER: bri_catherine_luxembourg references 'stp_marguerite_balzo' which does not exist
+  MISSING FATHER: jap_matsudaira_nobumitsu references 'jap_matsudaira_yasuchika' which does not exist
+  CHILD BORN AFTER PARENT DEATH: gsw_anna_werle (born 1331.1.1) — father gsw_johann_ii_the_bald (died 1329.10.9)
+  CHILD BORN AFTER PARENT DEATH: jap_nanbu_masayasu (born 1340.1.1) — father jap_nanbu_sukemasa (died 1315.1.1)
+  CHILD BORN AFTER PARENT DEATH: jap_ni1_sukemichi (born 1055.1.1) — father jap_fujiwara_kuniaki (died 1040.1.1)
+  CHILD BORN AFTER PARENT DEATH: jap_ni1_sukeyasu (born 1120.1.1) — father jap_ni1_sukemichi (died 1112.1.1)
+  CHILD BORN AFTER PARENT DEATH: jap_ni1_akiyasu (born 1395.1.1) — father jap_ni1_sukemune (died 1350.1.1)
+  CHILD BORN AFTER PARENT DEATH: jap_ni2_shigemitsu (born 1105.1.1) — father jap_ni2_tokimitsu (died 1080.1.1)
+  CHILD BORN AFTER PARENT DEATH: jap_ni2_norimitsu (born 1240.1.1) — father jap_ni2_yukimitsu (died 1220.1.1)
+  CHILD BORN AFTER PARENT DEATH: jap_ni2_masumitsu (born 1320.1.1) — father jap_ni2_norimitsu (died 1310.1.1)
+  MISSING FATHER: tng_tarabya_of_toungoo references 'tng_tarabya_of_pakhan' which does not exist
+  MISSING SPOUSE: tto_caterina_orsini_balzo_copertino references 'tto_bartholomew_clermont_lodeve' which does not exist
+  MISSING SPOUSE: eng_catherine_percy_grey references 'eng_edmund_grey_1st_earl_kent' which does not exist
+  MISSING MOTHER: hun_jadwiga_piast references 'maz_alexandra_gediminid' which does not exist
+  CHILD BORN AFTER PARENT DEATH: jap_shimazu_munehisa (born 1322.1.1) — mother jap_ootomo_chikatoki_no_musume (died 1315.5.9)
+  CHILD BORN AFTER PARENT DEATH: jap_shimazu_morohisa (born 1325.9.23) — mother jap_ootomo_chikatoki_no_musume (died 1315.5.9)
+  CHILD BORN AFTER PARENT DEATH: jap_shimazu_ujihisa (born 1328.5.21) — mother jap_ootomo_chikatoki_no_musume (died 1315.5.9)
+  CHILD BORN AFTER PARENT DEATH: eng_robert_stafford (born 1425.1.1) — father eng_edmund_stafford (died 1403.7.21)
+  CHILD BORN AFTER PARENT DEATH: eng_thomas_stafford (born 1425.1.1) — father eng_edmund_stafford (died 1403.7.21)
+  CHILD BORN AFTER PARENT DEATH: eng_margaret_stafford (born 1427.1.1) — father eng_edmund_stafford (died 1403.7.21)
+  CHILD BORN AFTER PARENT DEATH: sco_margaret_stewart_galloway (born 1370.1.1) — mother sco_elizabeth_mure (died 1355.4.30)
+  MISSING FATHER: bur_agnes_valois_burgundy_infant references 'bur_philip_iii_valois_burgundy' which does not exist
+  MISSING MOTHER: bri_jeanne_valois references 'fra_isabelle_wittelsbach' which does not exist
+  MISSING MOTHER: fra_louis_guyenne_valois references 'fra_isabelle_wittelsbach' which does not exist
+  MISSING MOTHER: fra_jean_touraine_valois references 'fra_isabelle_wittelsbach' which does not exist
+  MISSING MOTHER: fra_charles_vii_valois references 'fra_isabelle_wittelsbach' which does not exist
+  MISSING MOTHER: orl_isabelle_valois references 'fra_isabelle_wittelsbach' which does not exist
+  MISSING FATHER: mlo_costanza_varano references 'cmr_pier_gentile_varano' which does not exist
+  MISSING SPOUSE: hes_anna_wettin references 'hes_ludwig_i_hessen' which does not exist
+  MISSING FATHER: fra_isabeau_wittelsbach references 'ubv_stephen_iii_wittelsbach' which does not exist
+  MISSING SPOUSE: lor_margarete_wittelsbach references 'lor_charles_vi_lorraine' which does not exist
+  MISSING FATHER: ubv_meinhard_iii_wittelsbach references 'ubv_ludwig_v_wittelsbach' which does not exist
+  MISSING SPOUSE: bos_vojaca references 'bos_stefan_tomas_kotromanic' which does not exist
+  MISSING SPOUSE: nap_jeanne_dapchier references 'nap_hu' which does not exist
+  CHILD BORN AFTER PARENT DEATH: peg_soe_min_wimala_dewi (born 1397.1.1) — father peg_saw_zein (died 1330.4.1)
+  CHILD BORN AFTER PARENT DEATH: peg_soe_min_wimala_dewi (born 1397.1.1) — mother peg_sanda_min_hla (died 1358.5.6)
+  SAME BIRTH_DATE FOR SIBLINGS: frz_guigues_v_albon, frz_renaud_i_albon  (father=frz_guigues_iv_albon, tag=FRZ, date=1226.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: alr_charles_albret_son, alr_gilles_albret_son  (father=alr_charles_ii_albret, tag=ALR, date=1424.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: alr_arnaud_amanieu_albret, alr_louis_albret_bishop  (father=alr_charles_ii_albret, tag=MDM, date=1422.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: thr_francoise_amboise, thr_peronelle_amboise  (father=thr_louis_ii_amboise, tag=THR, date=1427.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: byz_eirene_angelina, byz_irene_komnene_angelina  (father=byz_alexios_iii_angelos, tag=BYZ, date=1174.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: hun_elzbieta, hun_kalman  (father=hun_karoly_robert, tag=HUN, date=1317.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: amg_jean_v_armagnac, amg_marie_armagnac  (father=amg_jean_iv_armagnac, tag=AMG, date=1420.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: cst_jacques_armagnac, cst_jean_armagnac  (father=cst_bernard_armagnac, tag=CST, date=1433.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: lau_albrecht_v_lauenburg, lau_johann_iii_lauenburg  (father=lau_albrecht_iv_lauenburg, tag=LAU, date=1335.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: ast_bernard_i_astarac, ast_sanche_i_astarac  (father=ast_guillaume_astarac, tag=AST, date=1056.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: bah_ghiyasuddin, bah_shamsuddin  (father=bah_mohammed_shah_ii, tag=BAH, date=1380.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: mam_jamal_al_din_yusuf, mam_ramadan  (father=mam_an_nasir_bahri, tag=MAM, date=1320.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: mam_al_amjad_husayn_bahri, mam_al_ashraf  (father=mam_an_nasir_bahri, tag=MAM, date=1334.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: cat_berenguer_ramon_ii_barcelona, cat_ramon_berenguer_ii_barcelona  (father=cat_ramon_berenguer_i_barcelona, tag=CAT, date=1053.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: swe_erik_magnusson, swe_valdemar_magnusson  (father=swe_magnus_ladulas, tag=SWE, date=1282.6.1)
+  SAME BIRTH_DATE FOR SIBLINGS: chg_kebek_borjigin, chg_kebek  (father=duwa_borjigin, tag=CHG, date=1280.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: chg_surguda_borjigin, chg_konchek, chg_yasaur  (father=duwa_borjigin, tag=CHG, date=1285.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: chg_shah_temur_borjigin, chg_shah_temur  (father=chg_yesun_temur, tag=CHG, date=1330.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: por_fernando_ii_braganca_duke, por_joao_braganca_marquis  (father=por_fernando_i_braganca_duke, tag=POR, date=1430.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: dau_anne_viennois, dau_jean_i_viennois  (father=dau_guigues_vii_viennois, tag=DAU, date=1264.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: neg_niccolo_dalle_carceri, neg_rizzardo_dalle_carceri  (father=ver_redondello_dalle_carceri, tag=NEG, date=1199.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: crr_enrichetto_del_carretto, crr_giovanni_del_carretto  (father=crr_giorgio_del_carretto, tag=CRR, date=1330.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: tnt_alberto_castelbarco, tnt_aldrighetto_castelbarco  (father=tnt_guglielmo_azzone_castelbarco, tag=TNT, date=1321.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: fra_guillaume_chateauvillain, fra_jean_iii_chateauvillain  (father=chp_jean_ii_chateauvillain, tag=FRA, date=1310.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: fra_jeanne_chateauvillain_ii, fra_marie_chateauvillain  (father=fra_jean_iii_chateauvillain, tag=FRA, date=1330.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: nam_louis_dampierre, nam_robert_dampierre  (father=nam_jean_i_dampierre, tag=NAM, date=1325.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: ven_leonardo_dandolo, ven_zanetta_dandolo  (father=ven_andrea_dandolo, tag=VEN, date=1328.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: bar_henri_i_scarpone, bar_thiebaut_i_scarpone  (father=bar_renaud_ii_scarpone, tag=BAR, date=1158.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: eta_jean_evreux, eta_louis_evreux  (father=eta_charles_evreux, tag=ETA, date=1336.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: sco_archibald_douglas_moray, sco_james_douglas_9th_earl  (father=sco_james_douglas_7th_earl, tag=GLY, date=1426.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: cas_fadrique_alfonso_burgundy, cas_enrique_ii_trastamara  (father=cas_alfonso_xi_burgundy, tag=CAS, date=1334.1.13)
+  SAME BIRTH_DATE FOR SIBLINGS: sao_bonifacio_fadrique, sao_guglielmo_fadrique  (father=sao_alfons_frederic_de_arago, tag=SAO, date=1325.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: jap_fujiwara_sueshige, jap_fujiwara_washitori  (father=jap_fujiwara_uona, tag=JAP, date=750.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: tir_henry_gorizia, tir_otto_gorizia  (father=tir_meinhard_gorizia, tag=TIR, date=1265.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: sop_bogislaw_viii_stolp, sop_wartislaw_vii_stolp  (father=wol_bogislaw_v_wolgast, tag=SOP, date=1364.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: ste_casimir_v_stettin, ste_otto_ii_stettin  (father=ste_swantibor_iii_stettin, tag=STE, date=1380.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: kar_alaeddin_halil_mirza, kar_suleyman  (father=kar_mahmut, tag=KAR, date=1288.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: mal_sundiata_daughter, mal_wali  (father=mal_sundiata, tag=MAL, date=1240.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: jap_kondou_yoshishige, jap_mutou_yorihira  (father=jap_kondou_kageyori, tag=JAP, date=1140.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: eng_henry_grosmont, eng_maud_lancaster  (father=eng_henry_lancaster, tag=LAN, date=1310.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: gmk_engelbert_iii_von_der_mark, gmk_margarete_von_der_mark  (father=gmk_adolf_ii_von_der_mark, tag=GMK, date=1333.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: gmk_adolf_iii_von_der_mark, gmk_mechthild_von_der_mark  (father=gmk_adolf_ii_von_der_mark, tag=GMK, date=1334.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: oah_keaunui_maweke, oah_mulielealii_maweke  (father=oah_maweke_maweke, tag=OAH, date=1155.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: gsw_bernhard_i_werle, gsw_johann_i_werle  (father=gsw_nikolaus_i_werle, tag=GSW, date=1245.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: gsw_johann_werle_goldberg, gsw_mechthild_werle_goldberg  (father=gsw_johann_iii_werle_goldberg, tag=GSW, date=1329.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: mkl_albrecht_i_mecklenburg, mkl_nikolaus_iii_mecklenburg  (father=mkl_johann_i_mecklenburg, tag=MKL, date=1232.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: eng_edmund_mortimer, eng_laurence_hastings  (father=eng_roger_mortimer_1st_earl_of_march, tag=ENG, date=1302.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: mol_alexandru_ii_musat, mol_anastasia_musat_daughter  (father=mol_ilias_i_musat, tag=MOL, date=1429.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: pin_nawrahta, pin_saw_pale  (father=pin_thihathu, tag=PIN, date=1300.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: jap_nitta_yoshimune, jap_nitta_yoshioki  (father=jap_nitta_yoshisada, tag=NIT, date=1331.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: try_connor_o_donnell, try_connor_o_donnell_wife  (father=try_hugh_o_donnell, tag=TRY, date=1303.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: try_angus_o_donnell, try_sean_o_donnell  (father=try_connor_o_donnell, tag=TRY, date=1328.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: jap_ogasawara_sadamune, jap_ogasawara_sadanaga  (father=jap_ogasawara_munenaga, tag=OGS, date=1292.4.30)
+  SAME BIRTH_DATE FOR SIBLINGS: jap_ootomo_chikatoki_no_musume, jap_ootomo_sadamune  (father=jap_ootomo_chikatoki, tag=OTM, date=1265.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: tur_alaeddin_ali_sehzade_ottomans, tur_hatice_hatun_ottomans  (father=tur_murad_ii_ottomans, tag=TUR, date=1425.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: ven_marsilio_rossi, ven_rolando_rossi, ven_ugolino_rossi  (father=pad_guglielmo_rossi, tag=VEN, date=1287.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: psk_aleksandr_mikhailovich_rurikovich, tve_aleksandr_mikhailovich_rurikovich  (father=tve_mikhail_yaroslavich_rurikovich, tag=PSK, date=1301.10.7)
+  SAME BIRTH_DATE FOR SIBLINGS: bry_dmitry_romanovich_rurikovich, bry_vasily_alexandrovich_rurikovich  (father=smo_alexander_glebovich_rurikovich, tag=SMO, date=1280.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: ver_alberto_scala, ver_mastino_i_scala  (father=ver_jacopino_scala, tag=VER, date=1245.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: mlo_beatrice_scala, ver_fregnano_scala  (father=ver_mastino_ii_scala, tag=VER, date=1331.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: jap_shiba_mitsutane, jap_shiba_yoshishige  (father=jap_shiba_yoshimasa, tag=SB1, date=1371.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: eng_robert_stafford, eng_thomas_stafford  (father=eng_edmund_stafford, tag=ENG, date=1425.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: ven_franceschina_steno, ven_michele_steno  (father=ven_giovanni_steno, tag=VEN, date=1331.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: wls_ednyfed_ap_tudor, wls_goronwy_ap_tudor, wls_rhys_ap_tudor  (father=wls_tudor_ap_goronwy, tag=WLS, date=1334.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: gln_heinrich_i, gln_lambert_iii  (father=gln_ernst_iii, tag=GLN, date=1190.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: bru_magnus_ii_braunschweig_wolfenbuttel, ldb_mathilde_braunschweig_wolfenbuttel  (father=bru_magnus_braunschweig_wolfenbuttel, tag=LDB, date=1328.6.24)
+  SAME BIRTH_DATE FOR SIBLINGS: ven_carlo_zeno, ven_nicolo_zeno  (father=ven_pietro_zeno, tag=VEN, date=1326.1.1)
+  SAME BIRTH_DATE FOR SIBLINGS: zig_adelheid_ziegenhain, zig_gottfried_vii_ziegenhain  (father=zig_johann_i_ziegenhain, tag=ZIG, date=1319.1.1)
+
+──────────────────────────────────────────────────────────────────────
+INFO — minor observations (506)
+──────────────────────────────────────────────────────────────────────
+  NO DYNASTY:     ach_anton_the_flemish
+  NO DYNASTY:     als_berthold_ii_buchegg
+  NO DYNASTY:     als_lamprecht_von_brunn
+  NO DYNASTY:     ama_david_mageraghty
+  NO DYNASTY:     anr_arnau_de_llorda
+  NO DYNASTY:     apr_heinrich_i_von_schonecken
+  NO DYNASTY:     aqu_bertrando_genasio
+  NO DYNASTY:     ara_teresa_entenza
+  NO DYNASTY:     ara_constanca_luna
+  NO DYNASTY:     arb_timbor_rocaberti
+  NO DYNASTY:     ara_sibilla_montcada
+  NO DYNASTY:     arb_guido_cattaneo
+  NO DYNASTY:     arb_beneita
+  NO DYNASTY:     rig_friedrich_von_pernstein
+  NO DYNASTY:     arr_henning_scharpenberg
+  NO DYNASTY:     ars_gerard_dainville
+  NO DYNASTY:     jap_ashina_morimune_spouse
+  NO DYNASTY:     ath_ciara_zorzi
+  NO DYNASTY:     aug_ulrich_von_schonegg
+  NO DYNASTY:     auv_marie_vilemur
+  NO DYNASTY:     avv_shin_myat_hla
+  NO DYNASTY:     aya_chimbo_orma
+  NO DYNASTY:     aya_curi_uqllu
+  NO DYNASTY:     bam_leopold_ii_von_egloffstein
+  NO DYNASTY:     bas_gerhard_von_wippingen
+  NO DYNASTY:     bas_hartung_munch
+  NO DYNASTY:     bas_jean_i_arley
+  NO DYNASTY:     bas_jeanne_pesmes
+  NO DYNASTY:     bch_rudolf_ii_von_montfort
+  NO DYNASTY:     bch_johann_von_pfefferhart
+  NO DYNASTY:     bch_ulrich_von_lenzburg
+  NO DYNASTY:     beu_guillaume_hellande
+  NO DYNASTY:     bid_engelbert_von_dolen
+  NO DYNASTY:     bid_bartholomaus_savijerwe
+  NO DYNASTY:     bid_ludolf_grove
+  NO DYNASTY:     bio_jakob_ii
+  NO DYNASTY:     blb_stefan_ii
+  NO DYNASTY:     blb_johann_deher
+  NO DYNASTY:     blg_samaritani_father
+  NO DYNASTY:     blg_bornio_samaritani
+  NO DYNASTY:     blg_bartolomea_samaritani
+  NO DYNASTY:     blg_brandelisio_gozzadini
+  NO DYNASTY:     blg_pesia
+  NO DYNASTY:     blg_ghixia_azzoguidi
+  NO DYNASTY:     boh_jan_draziche
+  NO DYNASTY:     boh_katerina_vartenberk
+  NO DYNASTY:     boh_jan_volek
+  NO DYNASTY:     boh_kunhuta_sternberg
+  NO DYNASTY:     bos_vojaca
+  NO DYNASTY:     bou_pierre_d_andre
+  NO DYNASTY:     bpr_atula_dewi
+  NO DYNASTY:     brb_jeanne_argies
+  NO DYNASTY:     brb_johanna_van_dinther
+  NO DYNASTY:     brc_heinrich_iv
+  NO DYNASTY:     bre_burchard_grelle
+  NO DYNASTY:     bug_nambi_nantuttululu
+  NO DYNASTY:     bug_nakiwala
+  NO DYNASTY:     bug_naabakyaala_nakku
+  NO DYNASTY:     bur_marguerite_melun
+  NO DYNASTY:     bur_jean_le_fevre_de_saint_remy
+  NO DYNASTY:     bur_georges_chastellain
+  NO DYNASTY:     bur_olivier_la_marche
+  NO DYNASTY:     bxn_matthaus_an_der_Gassen
+  NO DYNASTY:     byz_nikephoros_iii_botaneiates
+  NO DYNASTY:     byz_romanos_iv_diogenes
+  NO DYNASTY:     byz_eudokia_makrembolitissa
+  NO DYNASTY:     byz_alexios_v_doukas
+  NO DYNASTY:     byz_nikephoros_kallistos_xanthopoulos
+  NO DYNASTY:     byz_chandrenos
+  NO DYNASTY:     byz_john_koukouzelis
+  NO DYNASTY:     byz_matthew_blastares
+  NO DYNASTY:     byz_catherine_tarchaneiotes
+  NO DYNASTY:     byz_john_xiv_kalekas
+  NO DYNASTY:     byz_barlaam_of_seminara
+  NO DYNASTY:     byz_nikephoros_gregoras
+  NO DYNASTY:     byz_gregory_palamas
+  NO DYNASTY:     byz_apokauka
+  NO DYNASTY:     byz_theodora
+  NO DYNASTY:     byz_theodora_syrgiannaina
+  NO DYNASTY:     byz_irene_gattilusio
+  NO DYNASTY:     byz_georgios_sphrantzes
+  NO DYNASTY:     byz_loukas_notaras
+  NO DYNASTY:     byz_basileois_bessarion
+  NO DYNASTY:     cam_guillaume_ii_dauxonne
+  NO DYNASTY:     cas_juana_nunez_lara
+  NO DYNASTY:     cas_juana_castro
+  NO DYNASTY:     cas_alvaro_luna
+  NO DYNASTY:     cas_diego_medina
+  NO DYNASTY:     ctv_alfonso_aragon_escobar
+  NO DYNASTY:     ces_onestina_caboldi
+  NO DYNASTY:     ces_cassandra_faggiola
+  NO DYNASTY:     ces_marzia_ubaldini
+  NO DYNASTY:     cha_maha_sawa_mother
+  NO DYNASTY:     cha_jaya_ananda_consort
+  NO DYNASTY:     yua_jinzhier
+  NO DYNASTY:     yua_bayan_merkid
+  NO DYNASTY:     yua_majartai
+  NO DYNASTY:     yua_mailaiti
+  NO DYNASTY:     yua_toqto
+  NO DYNASTY:     yua_gi
+  NO DYNASTY:     yua_bayan_khutugh
+  NO DYNASTY:     mng_yang_pu
+  NO DYNASTY:     mng_zhang_chengxiaozhao
+  NO DYNASTY:     mng_wang_zhen
+  NO DYNASTY:     mng_zhang_gongjingxian
+  NO DYNASTY:     mng_yu_qian
+  NO DYNASTY:     mng_sun_xiaogongzhang
+  NO DYNASTY:     mng_zhou_xiaosu
+  NO DYNASTY:     klm_otto
+  NO DYNASTY:     chl_johann_marienau
+  NO DYNASTY:     chz_tamagusuku_spouse
+  NO DYNASTY:     clo_guillaume_le_tur
+  NO DYNASTY:     cmr_gentilesca
+  NO DYNASTY:     cmr_bellafiore_brunforte
+  NO DYNASTY:     cnd_gulcicek
+  NO DYNASTY:     cnn_toirdelbach_o_conchobair_wife
+  NO DYNASTY:     cnv_palladio_avogadro
+  NO DYNASTY:     com_francoise_fesenzac
+  NO DYNASTY:     cot_bartolomea_ubaldini
+  NO DYNASTY:     crr_agnese_di_valperga
+  NO DYNASTY:     crt_iacopo_barozzi
+  NO DYNASTY:     crt_michel_vitali
+  NO DYNASTY:     crt_marino_badoer
+  NO DYNASTY:     crt_nicolo_zani
+  NO DYNASTY:     dai_le_van_huu
+  NO DYNASTY:     dai_nguyen
+  NO DYNASTY:     dai_trinh_kha
+  NO DYNASTY:     dai_duong_thi_bi
+  NO DYNASTY:     dai_ngo_thi_ngoc_dao
+  NO DYNASTY:     dai_nguyen_thi_anh
+  NO DYNASTY:     dan_saxo_grammaticus
+  NO DYNASTY:     dhm_richard_de_bury
+  NO DYNASTY:     dlh_qutb_ud_in_aibak
+  NO DYNASTY:     dlh_jalalat_ud_din_razia
+  NO DYNASTY:     dlh_naila
+  NO DYNASTY:     mor_ibn_battuta
+  NO DYNASTY:     dzg_meinert_colmer
+  NO DYNASTY:     dzg_martin_cremon
+  NO DYNASTY:     dzg_albrecht_hexer
+  NO DYNASTY:     dzg_reinhold_niederhoff
+  NO DYNASTY:     eic_heinrich_v_schenk_von_reicheneck
+  NO DYNASTY:     eng_idonia_clifford
+  NO DYNASTY:     eng_avice_marmion
+  NO DYNASTY:     eng_mary_steward
+  NO DYNASTY:     eng_catherine_swynford
+  NO DYNASTY:     eng_philippa_de_mohun
+  NO DYNASTY:     eng_edmund_stafford
+  NO DYNASTY:     eng_john_kemp
+  NO DYNASTY:     eng_anne_de_mortimer
+  NO DYNASTY:     eng_william_waynflete
+  NO DYNASTY:     eng_thomas_bourchier
+  NO DYNASTY:     eng_thomas_cook_merchant
+  NO DYNASTY:     eng_william_caxton
+  NO DYNASTY:     epi_eudokia_doukaina_kommene
+  NO DYNASTY:     epi_raimondina_ventimiglia
+  NO DYNASTY:     ere_suli
+  NO DYNASTY:     ere_isfahan
+  NO DYNASTY:     ere_toga
+  NO DYNASTY:     erm_hermann_of_prague
+  NO DYNASTY:     erm_franz_kuhschmalz
+  NO DYNASTY:     eth_belen_saba
+  NO DYNASTY:     eng_elizabeth_de_verdun
+  NO DYNASTY:     fae_diletta_di_cunio
+  NO DYNASTY:     fcb_jeanne_darguel
+  NO DYNASTY:     feo_maria_gabras
+  NO DYNASTY:     feo_mother_of_alexios
+  NO DYNASTY:     fer_domenica_pio
+  NO DYNASTY:     fer_orsolina_macaruffi
+  NO DYNASTY:     fer_lippa_ariosti
+  NO DYNASTY:     fla_jacob_van_artevelde
+  NO DYNASTY:     flo_lisa_donati
+  NO DYNASTY:     flo_giovanna
+  NO DYNASTY:     flo_tobia_romena
+  NO DYNASTY:     flo_coluccio_salutati
+  NO DYNASTY:     flo_piccarda_bueri
+  NO DYNASTY:     flo_antonio_pierozzi
+  NO DYNASTY:     flo_luca_pitti
+  NO DYNASTY:     flo_diotisalvi_neroni
+  NO DYNASTY:     flo_lucrezia_tornabuoni
+  NO DYNASTY:     fra_eschivat_iv_chabanais
+  NO DYNASTY:     pap_innocenzo_vi
+  NO DYNASTY:     fra_isabelle_antoing
+  NO DYNASTY:     fra_jean_louvres
+  NO DYNASTY:     fra_marguerite_nesle
+  NO DYNASTY:     fra_marguerite_noyers
+  NO DYNASTY:     fra_marie_de_chambon
+  NO DYNASTY:     pap_urban_v
+  NO DYNASTY:     fra_roberte_beaumetz
+  NO DYNASTY:     fra_jean_bureau
+  NO DYNASTY:     frm_risabella
+  NO DYNASTY:     gen_giovanni_da_valente
+  NO DYNASTY:     gen_caterina_gattilusio
+  NO DYNASTY:     gen_franca_giudice
+  NO DYNASTY:     gen_marietta_giustiniani
+  NO DYNASTY:     gen_ginevra
+  NO DYNASTY:     gen_manfredina
+  NO DYNASTY:     gen_peretta
+  NO DYNASTY:     gen_richetta_riccio
+  NO DYNASTY:     gen_francesco_giustiniani_garibaldo
+  NO DYNASTY:     pap_niccolo_v
+  NO DYNASTY:     pap_innocenzo_viii
+  NO DYNASTY:     geo_mirian_iii
+  NO DYNASTY:     geo_saint_nino
+  NO DYNASTY:     geo_giovanni_da_firenze
+  NO DYNASTY:     geo_rulers_wife
+  NO DYNASTY:     gph_thang_tong_gyalpo
+  NO DYNASTY:     gph_gedun_drupa
+  NO DYNASTY:     gph_chokyi_dronma
+  NO DYNASTY:     gra_alwa
+  NO DYNASTY:     gra_bahar
+  NO DYNASTY:     gra_qamar
+  NO DYNASTY:     gry_catherine_de_la_tour_chatillon
+  NO DYNASTY:     gsw_richardis
+  NO DYNASTY:     aus_bernhard_gesiter
+  NO DYNASTY:     aus_nikolaus_wien
+  NO DYNASTY:     aus_jakob_linz
+  NO DYNASTY:     aus_johannes_gurk
+  NO DYNASTY:     haw_malamaihanaae
+  NO DYNASTY:     haw_kapo
+  NO DYNASTY:     hhb_margaretha_nassau_hademar
+  NO DYNASTY:     hhb_agnes_schaunberg
+  NO DYNASTY:     hrn_elisabeth_kleef_hulchrath
+  NO DYNASTY:     hsf_ludwig_ii_von_mansbach
+  NO DYNASTY:     hvb_dietrich_i_kothe
+  NO DYNASTY:     hvb_konrad_lintdorf
+  NO DYNASTY:     ijo_isabelle_levis
+  NO DYNASTY:     imo_cianghella_della_tosa
+  NO DYNASTY:     jal_al_hariri
+  NO DYNASTY:     jap_honkouin
+  NO DYNASTY:     jmb_adwayawarman
+  NO DYNASTY:     joe_soheon
+  NO DYNASTY:     kat_voisava_tripalda
+  NO DYNASTY:     ked_tunku_mala
+  NO DYNASTY:     khm_mother_of_noreay_reachea
+  NO DYNASTY:     kie_saint_olga
+  NO DYNASTY:     kor_ui
+  NO DYNASTY:     kor_gongwon
+  NO DYNASTY:     ksh_kota_rani_lohara
+  NO DYNASTY:     kur_johann_ii
+  NO DYNASTY:     kur_johann_iii_tiergart
+  NO DYNASTY:     kyb_anastasia_von_signau
+  NO DYNASTY:     eng_maud_de_chaworth
+  NO DYNASTY:     lao_jean_juvenal_ursins
+  NO DYNASTY:     lbb_heinrich_ii_bocholt
+  NO DYNASTY:     lbb_nicolaus_ii_sachau
+  NO DYNASTY:     lit_vida
+  NO DYNASTY:     lit_mykolas_nemiraitis
+  NO DYNASTY:     lit_sofija_olshansky
+  NO DYNASTY:     liv_heinrich_vincke_overbergen
+  NO DYNASTY:     bid_johannes_ii_creul
+  NO DYNASTY:     loi_thomas_de_rossy
+  NO DYNASTY:     lon_silo_asturias
+  NO DYNASTY:     lsa_othon_de_champvent
+  NO DYNASTY:     lsa_pierre_de_oron
+  NO DYNASTY:     lsa_jean_de_roussillon
+  NO DYNASTY:     lun_marie
+  NO DYNASTY:     mai_heinrich_iii_von_virneburg
+  NO DYNASTY:     maj_ken_dedes
+  NO DYNASTY:     maj_gajah_mada
+  NO DYNASTY:     maj_cakradhara
+  NO DYNASTY:     maj_kudamerta
+  NO DYNASTY:     maj_mpu_prapanca
+  NO DYNASTY:     maj_singhawardhana
+  NO DYNASTY:     maj_bhre_daha
+  NO DYNASTY:     mak_saba_nol
+  NO DYNASTY:     mak_siti
+  NO DYNASTY:     mal_sakura
+  NO DYNASTY:     mal_al_sahili
+  NO DYNASTY:     mam_ashlun_shaktay
+  NO DYNASTY:     mam_al_adil_kitbugha
+  NO DYNASTY:     mam_baybars_ii
+  NO DYNASTY:     mam_lajin_al_mansuri
+  NO DYNASTY:     mam_bayad
+  NO DYNASTY:     mam_narjis
+  NO DYNASTY:     mam_khawand_saba
+  NO DYNASTY:     mam_ardu
+  NO DYNASTY:     mam_qutlughmalik
+  NO DYNASTY:     mam_kuda
+  NO DYNASTY:     mam_khawand_mughal
+  NO DYNASTY:     mam_khawand_zaynab
+  NO DYNASTY:     mam_al_zahir_timurbugha
+  NO DYNASTY:     mam_khawand_zahra
+  NO DYNASTY:     mam_khawand_zaynab_inal
+  NO DYNASTY:     mam_khawand_jawhar_al_handar
+  NO DYNASTY:     mam_khawand_nafisa
+  NO DYNASTY:     mam_khawand_jolban
+  NO DYNASTY:     mam_khawand_jansuwar
+  NO DYNASTY:     man_richilda_ramberti
+  NO DYNASTY:     man_anna_dovara
+  NO DYNASTY:     man_agnese_pico
+  NO DYNASTY:     mds_gertrud_von_virneburg
+  NO DYNASTY:     mds_jutta_von_reuland
+  NO DYNASTY:     mds_adelheid_von_fischbach
+  NO DYNASTY:     mel_robert_rouvres
+  NO DYNASTY:     bnb_helena_rugen
+  NO DYNASTY:     mlk_hinakeha
+  NO DYNASTY:     mlk_lanileo
+  NO DYNASTY:     mlk_laniaiku
+  NO DYNASTY:     mll_isabella_sabran
+  NO DYNASTY:     mlo_benedetto_di_asinago
+  NO DYNASTY:     mlo_galvano_fiamma
+  NO DYNASTY:     blg_brumisunde_langosco
+  NO DYNASTY:     blg_margherita
+  NO DYNASTY:     mlo_francesco_pecorari
+  NO DYNASTY:     mlo_giovanni_balduccio
+  NO DYNASTY:     mlo_pietro_azario
+  NO DYNASTY:     mol_costea_noble
+  NO DYNASTY:     mor_fatima_of_abyssinia
+  NO DYNASTY:     mor_ibn_abi_zar
+  NO DYNASTY:     mos_helena
+  NO DYNASTY:     mos_ulyana
+  NO DYNASTY:     mos_metropolitan_isidor
+  NO DYNASTY:     mos_abbot_jonah
+  NO DYNASTY:     mou_lambert_yvois
+  NO DYNASTY:     mou_frederic_iii
+  NO DYNASTY:     mou_pierre_ii_hazard
+  NO DYNASTY:     mou_bernard_meslin
+  NO DYNASTY:     mou_guy_iii
+  NO DYNASTY:     mou_pierre_iii_hazard
+  NO DYNASTY:     mou_jean_iii_saint_avit
+  NO DYNASTY:     mou_pierre_iv_essone
+  NO DYNASTY:     msp_giovanna_cagnoli
+  NO DYNASTY:     msp_angelica
+  NO DYNASTY:     mua_nang_keo_phimpha
+  NO DYNASTY:     nap_elzear_sabran
+  NO DYNASTY:     nap_sveva_balzo
+  NO DYNASTY:     nap_marguerite_daulnay
+  NO DYNASTY:     nap_giovanni_boccaccio
+  NO DYNASTY:     nap_jeanne_dapchier
+  NO DYNASTY:     pap_urbano_vi
+  NO DYNASTY:     pap_innocenzo_vii
+  NO DYNASTY:     nap_francesco_clergy
+  NO DYNASTY:     nap_fantinus_burghers
+  NO DYNASTY:     neg_isabella
+  NO DYNASTY:     neg_margaretha_van_liedekerke
+  NO DYNASTY:     neg_balzana_gozzadini
+  NO DYNASTY:     neg_helene_charpigny
+  NO DYNASTY:     nid_heilwig_von_isenburg
+  NO DYNASTY:     nmb_withego_i_von_ostrau
+  NO DYNASTY:     nmd_euphemia_wroclaw
+  NO DYNASTY:     nrb_maria_canet
+  NO DYNASTY:     nur_rappold_von_kulsheim
+  NO DYNASTY:     nys_nanker
+  NO DYNASTY:     oah_kekupahaikala
+  NO DYNASTY:     oah_maihikea
+  NO DYNASTY:     oah_naiolaukea
+  NO DYNASTY:     oah_wehelani
+  NO DYNASTY:     oah_hainakolo
+  NO DYNASTY:     oah_hikilena
+  NO DYNASTY:     oah_kaumana_maweke
+  NO DYNASTY:     oah_kalanimoeikawaikai
+  NO DYNASTY:     old_mechthild
+  NO DYNASTY:     ora_johanna_of_montfaucon
+  NO DYNASTY:     ora_catherine_of_brittany
+  NO DYNASTY:     jap_oyama_hidetomo_spouse
+  NO DYNASTY:     pad_furiana_scrovegni
+  NO DYNASTY:     pad_guido_lozzo
+  NO DYNASTY:     pad_agnese
+  NO DYNASTY:     pad_sara_camposampiero
+  NO DYNASTY:     pap_benedict_xi
+  NO DYNASTY:     pap_john_xxii
+  NO DYNASTY:     pap_clement_v
+  NO DYNASTY:     pap_simone_martini
+  NO DYNASTY:     pap_benedetto_xii
+  NO DYNASTY:     pap_guillaume_court
+  NO DYNASTY:     pap_francesco_petrarca
+  NO DYNASTY:     pap_alexandros_v_pisa
+  NO DYNASTY:     pap_bonifacio_ix
+  NO DYNASTY:     pap_giovanni_xxiii_pisa
+  NO DYNASTY:     pap_eugenio_iv
+  NO DYNASTY:     peg_min_bala
+  NO DYNASTY:     peg_binnya_bye
+  NO DYNASTY:     peg_soe_min_wimala_dewi
+  NO DYNASTY:     pin_theinkha_bo
+  NO DYNASTY:     pin_yadanabon
+  NO DYNASTY:     pis_adelasia
+  NO DYNASTY:     pis_idana_guidi_romeo
+  NO DYNASTY:     ple_john_morice
+  NO DYNASTY:     ple_ysaac
+  NO DYNASTY:     pms_bertold_von_riesenburg
+  NO DYNASTY:     pms_kaspar_linke
+  NO DYNASTY:     pol_saint_wojciech
+  NO DYNASTY:     pol_saint_stanislav
+  NO DYNASTY:     pol_wincenty_kadlubek
+  NO DYNASTY:     pol_wincenty_z_kielczy
+  NO DYNASTY:     pol_zbigniew_olesnicki
+  NO DYNASTY:     por_lopo_almeida
+  NO DYNASTY:     rav_caterina_malabocca
+  NO DYNASTY:     rav_lieta_orgogliosi
+  NO DYNASTY:     rdl_elisabeth_von_eisenbach
+  NO DYNASTY:     rdy_annemamba
+  NO DYNASTY:     rei_renaud_chartres
+  NO DYNASTY:     rei_jacques_juvenal_ursins
+  NO DYNASTY:     ret_joan_rethel
+  NO DYNASTY:     rim_bellucia_baligani
+  NO DYNASTY:     rim_taddea_rimini
+  NO DYNASTY:     rim_constanza_ondedei
+  NO DYNASTY:     rim_elisa_valette
+  NO DYNASTY:     rou_marguerite_bommiers
+  NO DYNASTY:     rzb_volrad_von_dem_dorne
+  NO DYNASTY:     rzb_johannes_ii_prohl
+  NO DYNASTY:     scl_jean_ii_rousillon
+  NO DYNASTY:     sco_alyce_de_crawford
+  NO DYNASTY:     sco_alexander_livingstone
+  NO DYNASTY:     sco_james_kennedy
+  NO DYNASTY:     sco_william_crichton
+  NO DYNASTY:     sco_william_turnbull
+  NO DYNASTY:     ser_jelena
+  NO DYNASTY:     sit_boniface_de_challant
+  NO DYNASTY:     sit_aymon_de_chatillon
+  NO DYNASTY:     sit_aymon_iv_de_la_tour_dit_de_chatillon
+  NO DYNASTY:     slt_hugo_von_durrach
+  NO DYNASTY:     slt_konrad_von_durrach
+  NO DYNASTY:     slz_friedrich_von_leibnitz
+  NO DYNASTY:     sms_johann_clare
+  NO DYNASTY:     smd_nikolaus_schlotterkopf
+  NO DYNASTY:     sng_wan_sri_bini
+  NO DYNASTY:     spo_elisabeth_von_katzeneinbogen
+  NO DYNASTY:     spy_gerhard_von_ehrenberg
+  NO DYNASTY:     srb_abd_al_razzaq_ibn_fazlullah
+  NO DYNASTY:     srv_wife_of_khalilullah
+  NO DYNASTY:     stp_jeanne_fiennes
+  NO DYNASTY:     stv_winrich_de_pomerio
+  NO DYNASTY:     stz_agnes_hardeg
+  NO DYNASTY:     tar_uapeani_mother
+  NO DYNASTY:     tar_curatame_mother
+  NO DYNASTY:     tar_pauacume_ii_mother
+  NO DYNASTY:     tar_pauacume_ii_spouse
+  NO DYNASTY:     tep_cuetlaxochitzin
+  NO DYNASTY:     teu_peter_von_dusburg
+  NO DYNASTY:     teu_werner_von_orseln
+  NO DYNASTY:     tgg_adelheid_von_griessenberg
+  NO DYNASTY:     tho_murtagh_o_brien_wife
+  NO DYNASTY:     ths_stefanos_gabrielopoulos
+  NO DYNASTY:     tim_toghay_turkan_aqa
+  NO DYNASTY:     tim_gauhar_shad
+  NO DYNASTY:     tis_ruqaiya_sultan
+  NO DYNASTY:     tnt_nikolaus_brunn
+  NO DYNASTY:     tot_nahuacatl
+  NO DYNASTY:     tot_ixcahuitl
+  NO DYNASTY:     tre_andronikos_i_gidos
+  NO DYNASTY:     tre_irene_trebizond
+  NO DYNASTY:     try_connor_o_donnell_wife
+  NO DYNASTY:     tte_pasquale_vedano
+  NO DYNASTY:     tur_malhun_hatun
+  NO DYNASTY:     tur_rabia_bala_hatun
+  NO DYNASTY:     tur_fulane_hatun
+  NO DYNASTY:     tur_asporcha
+  NO DYNASTY:     tur_nilufer
+  NO DYNASTY:     tur_sister_in_law
+  NO DYNASTY:     tur_spouse_of_pazarli
+  NO DYNASTY:     tur_spouse_of_murad_arslan
+  NO DYNASTY:     tur_spouse_of_savci
+  NO DYNASTY:     tur_spouse_of_nephew
+  NO DYNASTY:     tur_spouse_of_hizir
+  NO DYNASTY:     tur_spouse_of_muhammad
+  NO DYNASTY:     tur_spouse_of_abraham
+  NO DYNASTY:     tur_spouse_of_sahi
+  NO DYNASTY:     tur_gulcicak_hatun_the_concubine
+  NO DYNASTY:     tur_devlet_hatun_the_concubine
+  NO DYNASTY:     tur_aksemseddin
+  NO DYNASTY:     tur_turahan_bey
+  NO DYNASTY:     tur_emine_hatun_the_concubine
+  NO DYNASTY:     tur_ishak_pasha
+  NO DYNASTY:     tur_sinan_pasha
+  NO DYNASTY:     tur_hizir_bey
+  NO DYNASTY:     tur_kasim_bey
+  NO DYNASTY:     tur_semseddin_fenarizade
+  NO DYNASTY:     tur_hamza_bey
+  NO DYNASTY:     tur_molla_gurani
+  NO DYNASTY:     tur_huma_hatun_the_concubine
+  NO DYNASTY:     tur_yakub_celebi_merchant
+  NO DYNASTY:     tur_haci_ivaz
+  NO DYNASTY:     tur_omer_turahanoglu
+  NO DYNASTY:     tur_zaganos_pasha
+  NO DYNASTY:     reg_nikolaus_von_ybbs
+  NO DYNASTY:     ubv_michael_cesena
+  NO DYNASTY:     ubv_johannes_von_gottingen
+  NO DYNASTY:     ubv_william_ockham
+  NO DYNASTY:     urg_arnau_rogier_pallars
+  NO DYNASTY:     vdu_alix_joinville
+  NO DYNASTY:     ven_adriana
+  NO DYNASTY:     ven_fiordilise
+  NO DYNASTY:     ven_agnese_ruggieri
+  NO DYNASTY:     ven_costanza
+  NO DYNASTY:     ven_felipa
+  NO DYNASTY:     ven_lucia_lando
+  NO DYNASTY:     ven_margherita
+  NO DYNASTY:     ven_giovanna
+  NO DYNASTY:     ven_maria
+  NO DYNASTY:     pap_gregorio_xii
+  NO DYNASTY:     ver_guecello_tempesta
+  NO DYNASTY:     ver_stilichia_donigo
+  NO DYNASTY:     ver_agnese_ruggieri
+  NO DYNASTY:     vln_marguerite_vergy
+  NO DYNASTY:     vlt_rainuccio_allegretti
+  NO DYNASTY:     vol_dmytro_dedko
+  NO DYNASTY:     vrd_johannes_hake
+  NO DYNASTY:     vrd_johannes_asel
+  NO DYNASTY:     wal_marghita
+  NO DYNASTY:     wbg_otto_ii_von_wolfskeel
+  NO DYNASTY:     wld_franz_kuebel
+  NO DYNASTY:     jap_yuuki_tomosuke_spouse
+  NO DYNASTY:     zap_huijatoo
+  NO DYNASTY:     zet_busha_zaharia
+  NO DYNASTY:     zur_rudolf_brun
