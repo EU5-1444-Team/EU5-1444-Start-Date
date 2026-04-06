@@ -1945,7 +1945,10 @@ country_flavor = {
 	text = {
 		localization_key = rank_duchy_dauphiny
 		trigger = {
-			tag = DAU
+			OR = {
+				tag = DAU
+				tag = DAV
+			}
 			OR = {
 				country_rank_is_duchy = yes
 				country_rank_is_county = yes
