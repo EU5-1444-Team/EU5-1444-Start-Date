@@ -64,6 +64,7 @@ country_name_construction = {
 		}
 	}
 	text = {
+		# EoC
 		localization_key = country_name_construction_prefix_name
 		trigger = {
 			NOT = {
@@ -78,6 +79,14 @@ country_name_construction = {
 				}
 				is_leader_of_international_organization = international_organization:middle_kingdom
 			}
+		}
+	}
+	text = {
+		# Warring States
+		localization_key = country_name_construction_prefix_name_rank
+		trigger = {
+			has_reform = government_reform:warring_state
+			government_type = government_type:monarchy
 		}
 	}
 	text = {

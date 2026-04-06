@@ -607,6 +607,21 @@ country_flavor = {
 		}
 	}
 	text = {
+		localization_key = rank_empire_warring_state
+		trigger = {
+			country_rank_is_empire = yes
+			government_type = government_type:monarchy
+			has_reform = government_reform:warring_state
+		}
+	}
+	text = {
+		localization_key = rank_warring_state
+		trigger = {
+			government_type = government_type:monarchy
+			has_reform = government_reform:warring_state
+		}
+	}
+	text = {
 		localization_key = rank_empire_dynasty
 		trigger = {
 			country_rank_is_empire = yes
@@ -1930,7 +1945,10 @@ country_flavor = {
 	text = {
 		localization_key = rank_duchy_dauphiny
 		trigger = {
-			tag = DAU
+			OR = {
+				tag = DAU
+				tag = DAV
+			}
 			OR = {
 				country_rank_is_duchy = yes
 				country_rank_is_county = yes

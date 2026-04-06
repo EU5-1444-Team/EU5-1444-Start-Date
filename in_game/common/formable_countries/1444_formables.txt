@@ -46,16 +46,12 @@ UYG_f = {
 
 JNZ_f = {
 	level = 1
-	required_locations_fraction = 0.05
+	required_locations_fraction = 0.1
 	rule = historical
 
 	potential = {
 		NOT = { tag = JNZ }
-		OR = {
-			culture = culture:jurchen_culture
-			culture = culture:haixi_culture
-			culture = culture:hurga_culture
-		}
+		culture = culture:jurchen_culture
 	}
 
 	allow = {
@@ -88,16 +84,12 @@ JNZ_f = {
 
 HXI_f = {
 	level = 1
-	required_locations_fraction = 0.05
+	required_locations_fraction = 0.1
 	rule = historical
 
 	potential = {
 		NOT = { tag = HXI }
-		OR = {
-			culture = culture:jurchen_culture
-			culture = culture:haixi_culture
-			culture = culture:hurga_culture
-		}
+		culture = culture:haixi_culture
 	}
 
 	allow = {
@@ -130,15 +122,14 @@ HXI_f = {
 
 YER_f = {
 	level = 1
-	required_locations_fraction = 0.05
+	required_locations_fraction = 0.1
 	rule = historical
 
 	potential = {
 		NOT = { tag = YER }
 		OR = {
-			culture = culture:jurchen_culture
-			culture = culture:haixi_culture
 			culture = culture:hurga_culture
+			culture = culture:udege_culture
 		}
 	}
 
