@@ -22501,9 +22501,9 @@ countries = {
 
         liturgical_language = church_slavonic_language
 
-        country_rank = rank_duchy
+        country_rank = rank_kingdom
         capital = vidin
-        dynasty = sratsimir_dynasty
+        dynasty = shishman_dynasty
     }
 
     # --- VID ---
@@ -23390,6 +23390,35 @@ countries = {
     }
 
     # --- LOV ---
+
+    DBJ = {
+        # Dobruja
+        our_cores_conquered_by_others = {
+            babadag cernavoda constanta enisala isaccea tulcea harsova
+            karvuna drastar kaliakra kladentsi pangalia tutrakan
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "eastern_european_monarchy_not_present"
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+
+        tolerated_cultures = {
+            wallachian
+        }
+        
+        liturgical_language = church_slavonic_language
+        country_rank = rank_kingdom
+        capital = silistra
+        dynasty = terter_dynasty
+    }
+
+    # --- DBJ ---
 
     BOD = {
         #Bodonitsa
