@@ -36538,7 +36538,8 @@ countries = {
         include = "expl_muslim_mediterranean"
         include = "turkish_beylik"
         government = {
-
+            type = monarchy
+            heir_selection = fratricide_succesion
             ruler = tur_mehmed_ii_ottomans
 
             ruler_term = { character = tur_osman start_date = 1299.1.1 end_date = 1324.1.1 regnal_number = 1 }
@@ -36573,7 +36574,10 @@ countries = {
             reforms = {
                 legacy_of_osman
                 anatolian_beylik
+                leader_of_the_turks
+                basic_timariot_system
             }
+
             privilege = {
                 #Nobles
                 elaborate_court_ceremonies
@@ -36596,6 +36600,7 @@ countries = {
                 market_fairs
                 shipwright_contracts
                 sponsor_maritime_contracts
+                trunk_road_to_erzurum_privilege
 
                 #Peasants
                 partial_yield
@@ -36618,6 +36623,8 @@ countries = {
                 slave_conversion = allow_slave_religion
                 sharia_law = hanafi_policy
                 harem_law = secluded_harem_policy
+                medieval_levy_law = noble_levies
+                distribution_of_power_law = dop_favor_the_ruler
             }
         }
 
