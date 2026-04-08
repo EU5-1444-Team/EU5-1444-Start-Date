@@ -41047,15 +41047,13 @@ countries = {
         #Chukchi
 
         own_control_core = {
-            v_enyn tumanskaya y_lkytveem nyerpicha ugolnye unazigmit nunligran enmyl_yn sigheneg guvrel rykuul
-            valkall_an ervykynnot keniergyn
+            v_enyn tumanskaya y_lkytveem ugolnye unazigmit nunligran enmyl_yn sigheneg guvrel rykuul
+            valkall_an ervykynnot keniergyn tavayveem krasnyano yanrakynnot
         }
 
         discovered_regions = {
-            west_siberia_region
             east_siberia_region
         }
-
 
         starting_technology_level = 3
         include = "eurasian_tribe"
@@ -56197,17 +56195,9 @@ countries = {
     # manchuria_region
     # ----------------
 
-    NAN = {
-        #Nanai
-        own_control_core = {
-            achan boli nemptu
-            arkhara jiajin
-            lahasusu nuoluo shuangyashan
-            wehe
-            tyrma
-            simmi urmi bidzhan bira kukan kur sutara taowen wanhufu futi tulguur
-        }
-
+    NAN = { 
+        own_control_core = { simmi urmi kur }
+        capital = simmi 
         include = "expl_manchurian_tribe"
         include = "yeren_tribe"
         government = {
@@ -56216,7 +56206,71 @@ countries = {
         }
     }
 
-    # --- NAN ---
+    BED = { # Beldy - Middle Amur
+        own_control_core = { bira bidzhan }
+        capital = bira 
+        include = "expl_manchurian_tribe"
+        include = "yeren_tribe"
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+    }
+
+    ACK = { # Akancal - The Achan Region
+        own_control_core = { achan nemptu }
+        capital = achan 
+        include = "expl_manchurian_tribe"
+        include = "yeren_tribe"
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+    }
+
+    SAZ = { # Samar - Southern/Ussuri focus
+        own_control_core = { taowen jiajin }
+        capital = taowen 
+        include = "expl_manchurian_tribe"
+        include = "yeren_tribe"
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+    }
+
+    PAS = { # Passar - Western/Arkhara Basin
+        own_control_core = { arkhara sutara }
+        capital = arkhara 
+        include = "expl_manchurian_tribe"
+        include = "yeren_tribe"
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+    }
+
+    TMA = { # Tumali - Northern Highland/Tyrma River
+        own_control_core = { tyrma }
+        capital = tyrma 
+        include = "expl_manchurian_tribe"
+        include = "yeren_tribe"
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+    }
+
+    DIG = { # Digor
+        own_control_core = { kukan }
+        capital = kukan 
+        include = "expl_manchurian_tribe"
+        include = "yeren_tribe"
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+    }
 
     SYG = {
         #Shenyang
@@ -56252,12 +56306,23 @@ countries = {
     UDE = {
         #Udege
         own_control_core = {
-            alchan katen xunka
-            hulin
-            jixi mishan
-            koppi
-            uninka
-            kema samarginka bikinka imanka vaka anchun yiman anju_nurgan nogule shili
+            koppi uninka samarginka
+        }
+
+        include = "expl_manchurian_tribe"
+        include = "yeren_tribe"
+        capital = samarginka
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+
+    }
+
+    KYN = {
+        #Kanyuga
+        own_control_core = {
+            xunka
         }
 
         include = "expl_manchurian_tribe"
@@ -56268,8 +56333,21 @@ countries = {
         }
 
     }
+    
+    GEK = {
+        #Geonka
+        own_control_core = {
+            kema bikinka
+        }
 
-    # --- UDE ---
+        include = "expl_manchurian_tribe"
+        include = "yeren_tribe"
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+
+    }
 
     TIZ = {
         # Tai’nin Guard
@@ -56362,7 +56440,8 @@ countries = {
 
     NVK = {
         #Nivkh
-        own_control_core = {
+        type = pop
+        add_pops_from_locations = {
             usalgin amgun bitki bulava dzhuk nurgan nanghaer idy_sakhalin porokotan wuliehe
         }
 
@@ -56377,7 +56456,7 @@ countries = {
 
     WRK = {
         #Warkha
-        own_control_core = {
+        our_cores_conquered_by_others = {
             malong mudan_ula
             juru_hoton mulun
             hailang ningguta dongning kaiyuan_warka
@@ -56441,7 +56520,8 @@ countries = {
 
     ORC = {
         #Oroch
-        own_control_core = {
+        type = pop
+        add_pops_from_locations = {
             tumzhdin xungake
             uschu
             datta
@@ -56479,11 +56559,41 @@ countries = {
     }
 
     # --- YEH ---
+    GUW = { #Guwalca
+        own_control_core = {
+            zhalong dalaiketun
+        }
 
+
+        include = "expl_manchurian_tribe"
+        include = "haixi_tribe"
+
+        capital = dalaiketun
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+    }
+
+    NJG = { #Nenjiang
+        own_control_core = {
+            zhaozhou_jurchen talaha sart
+        }
+
+
+        include = "expl_manchurian_tribe"
+        include = "haixi_tribe"
+
+        capital = zhaozhou_jurchen
+        government = {
+            ruler = random
+            heir_selection = ritual_selection
+        }
+    }
     HUR = {
         #Hurga
         own_control_core = {
-            ilan_hala mudan_ula tulguur
+            ilan_hala tulguur
         }
 
         include = "expl_manchurian_tribe"
@@ -56553,9 +56663,9 @@ countries = {
 
     # --- LAL ---
 
-    ULC = {
-        #Ulch
-        own_control_core = {
+    ULC = { #Ulch
+        type = pop
+        add_pops_from_locations = {
             pilda
             deren
         }
@@ -56841,7 +56951,7 @@ countries = {
 
     SFN = {
         # Suifun
-        own_control_core = {
+        our_cores_conquered_by_others = {
             yongmingcheng
         }
 
@@ -57313,7 +57423,7 @@ countries = {
     MAH = {
         #Mahiyan
         own_control_core = {
-            malong
+            malong mudan_ula
         }
 
         include = "expl_manchurian_tribe"

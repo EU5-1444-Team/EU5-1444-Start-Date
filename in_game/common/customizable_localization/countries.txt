@@ -544,7 +544,32 @@ KHL = {
 		fallback = yes
 	}
 }
+KHL_ADJ = {
+	parent = KHL
+	suffix = "_ADJ"
+}
 
+YER = { #Outer Jurchens
+	# Nanai
+	type = country
+	text = {
+		localization_key = nanai_yeren
+		trigger = {
+			culture = culture:hurga_culture
+		}
+	}
+	#Udege
+	text = {
+		localization_key = udege_yeren
+		trigger = {
+			culture = culture:udege_culture
+		}
+	}
+	text = {
+		localization_key = YER
+		fallback = yes
+	}
+}
 KHL_ADJ = {
 	parent = KHL
 	suffix = "_ADJ"
