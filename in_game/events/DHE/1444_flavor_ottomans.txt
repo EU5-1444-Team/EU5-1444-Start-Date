@@ -1,0 +1,92 @@
+namespace = flavor_tur_1444
+# Ottoman title event
+flavor_tur_1444.1 = {
+    hide_portraits = no
+    type = country_event
+    title = flavor_tur_1444.1.title
+    desc = flavor_tur_1444.1.desc
+    trigger = {
+        tag = TUR
+        scope:new_ruler.dynasty = dynasty:ottomans_dynasty
+    }
+    illustration_tags = {
+    }
+    immediate = {
+        scope:new_ruler = {
+            remove_character_modifier = padishah
+            remove_character_modifier = beylerbey
+            remove_character_modifier = caliph
+            remove_character_modifier = kaiser_i_rum
+        }
+    }
+    option = {
+        name = flavor_tur_1444.1.a
+        scope:new_ruler = {
+            add_character_modifier = {
+                modifier = padishah
+                years = -1
+                mode = add_and_extend
+            }
+        }
+    }
+    option = {
+        name = flavor_tur_1444.1.b
+        scope:new_ruler = {
+            add_character_modifier = {
+                modifier = beylerbey
+                years = -1
+                mode = add_and_extend
+            }
+        }
+    }
+    option = {
+        name = flavor_tur_1444.1.c
+        scope:new_ruler = {
+            add_character_modifier = {
+                modifier = caliph
+                years = -1
+                mode = add_and_extend
+            }
+        }
+    }
+    option = {
+        name = flavor_tur_1444.1.d
+        scope:new_ruler = {
+            add_character_modifier = {
+                modifier = kaiser_i_rum
+                years = -1
+                mode = add_and_extend
+            }
+        }
+    }
+}
+
+flavor_tur_1444.2 = {
+    hide_portraits = no
+    type = country_event
+    title = flavor_tur_1444.2.title
+    desc = flavor_tur_1444.2.desc
+    fire_only_once = yes
+    trigger = {
+        tag = TUR
+        c:TUR = {
+            ruler = character:tur_mehmed_ii_ottomans
+            owns = location:constantinople
+        }
+    }
+    illustration_tags = {
+    }
+    option = {
+        name = flavor_tur_1444.2.a
+        scope:new_ruler = {
+            add_character_modifier = {
+                modifier = kaiser_i_rum
+                years = -1
+                mode = add_and_extend
+            }
+        }
+    }
+    option = {
+        name = flavor_tur_1444.2.b
+    }
+}

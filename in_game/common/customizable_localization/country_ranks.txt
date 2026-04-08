@@ -589,6 +589,60 @@ country_flavor = {
 		}
 	}
 	text = {
+		localization_key = rank_sublime_state_padishah
+		trigger = {
+			tag = TUR
+			government_type = government_type:monarchy
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:ottomans_dynasty ?= this
+				has_character_modifier = padishah
+			}
+		}
+	}
+	text = {
+		localization_key = rank_sublime_state_beylerbey
+		trigger = {
+			tag = TUR
+			government_type = government_type:monarchy
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:ottomans_dynasty ?= this
+				has_character_modifier = beylerbey
+			}
+		}
+	}
+	text = {
+		localization_key = rank_sublime_state_caliph
+		trigger = {
+			tag = TUR
+			government_type = government_type:monarchy
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:ottomans_dynasty ?= this
+				has_character_modifier = caliph
+			}
+		}
+	}
+	text = {
+		localization_key = rank_sublime_state_kaiser_i_rum
+		trigger = {
+			tag = TUR
+			government_type = government_type:monarchy
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:ottomans_dynasty ?= this
+				has_character_modifier = kaiser_i_rum
+			}
+		}
+	}
+	text = {
+		localization_key = rank_sublime_state_fallback
+		trigger = {
+			tag = TUR
+			government_type = government_type:monarchy
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:ottomans_dynasty ?= this
+			}
+		}
+	}
+	text = {
 		localization_key = rank_sheep_confederation
 		trigger = {
 			has_reform = government_reform:turkoman_confederation
