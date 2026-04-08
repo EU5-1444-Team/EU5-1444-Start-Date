@@ -34415,7 +34415,7 @@ countries = {
     # --- ALO ---
 
     MAK = {
-        own_control_core = {
+        our_cores_conquered_by_others = {
             ed_debba al_jeblien korti shemkhiya #bayuda_province
             dongola abu_hamed berber kerma karima #makuria_province
             faras daw_sud kalabsha qasr_ibrim sai #nobatia_province
@@ -34428,14 +34428,7 @@ countries = {
         government = {
             heir_selection = matrilineal_non_exclusive
             ruler = random # TODO: add me
-
-            laws = {
-                sharia_law = shafii_policy
-            }
         }
-        religious_school = shafii_school
-        government = { mysticism_vs_jurisprudence = 20 }
-
 
         tolerated_cultures = {
             sudanese_arab
@@ -34446,6 +34439,53 @@ countries = {
     }
 
     # --- MAK ---
+
+    DON = {
+        own_control_core = {
+            ed_debba al_jeblien korti shemkhiya #bayuda_province
+            dongola abu_hamed berber kerma karima #makuria_province
+        }
+
+        starting_technology_level = 3
+        include = "expl_horn_of_africa_no_coast"
+        include = "subsaharan_muslim_monarchy_no_coast"
+        government = {
+            heir_selection = matrilineal_non_exclusive
+            ruler = random # TODO: add me
+        }
+
+        tolerated_cultures = {
+            sudanese_arab
+        }
+
+        country_rank = rank_duchy
+        capital = dongola
+    }
+
+    # --- DON ---
+
+    DWO = {
+        own_control_core = {
+            faras daw_sud kalabsha qasr_ibrim sai #nobatia_province
+        }
+
+        starting_technology_level = 3
+        include = "expl_horn_of_africa_no_coast"
+        include = "subsaharan_muslim_monarchy_no_coast"
+        government = {
+            heir_selection = matrilineal_non_exclusive
+            ruler = random # TODO: add me
+        }
+
+        tolerated_cultures = {
+            sudanese_arab
+        }
+
+        country_rank = rank_duchy
+        capital = daw_sud
+    }
+
+    # --- DWO ---
 
     ABW = {
         own_control_core = {
@@ -36498,7 +36538,8 @@ countries = {
         include = "expl_muslim_mediterranean"
         include = "turkish_beylik"
         government = {
-
+            type = monarchy
+            heir_selection = fratricide_succesion
             ruler = tur_mehmed_ii_ottomans
 
             ruler_term = { character = tur_osman start_date = 1299.1.1 end_date = 1324.1.1 regnal_number = 1 }
@@ -36533,7 +36574,10 @@ countries = {
             reforms = {
                 legacy_of_osman
                 anatolian_beylik
+                leader_of_the_turks
+                basic_timariot_system
             }
+
             privilege = {
                 #Nobles
                 elaborate_court_ceremonies
@@ -36556,6 +36600,7 @@ countries = {
                 market_fairs
                 shipwright_contracts
                 sponsor_maritime_contracts
+                trunk_road_to_erzurum_privilege
 
                 #Peasants
                 partial_yield
@@ -36578,6 +36623,8 @@ countries = {
                 slave_conversion = allow_slave_religion
                 sharia_law = hanafi_policy
                 harem_law = secluded_harem_policy
+                medieval_levy_law = noble_levies
+                distribution_of_power_law = dop_favor_the_ruler
             }
         }
 
