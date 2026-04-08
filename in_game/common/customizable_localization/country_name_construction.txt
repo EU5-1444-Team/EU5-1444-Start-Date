@@ -106,6 +106,30 @@ country_name_construction = {
 		}
 	}
 	text = {
+		#Uriankhai better name
+		localization_key = country_name_uriankhai
+		trigger = {
+			government_type = government_type:tribe
+			OR = {
+				tag = KUH
+ 				tag = KVU
+ 				tag = TBU
+ 				tag = AUK
+			}
+		}
+	}
+	text = {
+		#___ Jurchens
+		localization_key = country_name_jurchens
+		trigger = {
+			OR = {
+				tag = JNZ
+ 				tag = HXI
+ 				tag = YER
+			}
+		}
+	}
+	text = {
 		localization_key = country_name_construction_prefix_rank_of_name_but_map_is_just_prefix_rank
 		trigger = {
 			OR = {

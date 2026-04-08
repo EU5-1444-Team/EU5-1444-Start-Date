@@ -46,19 +46,16 @@ UYG_f = {
 
 JNZ_f = {
 	level = 1
-	required_locations_fraction = 0.1
+	required_locations_fraction = 0.40
 	rule = historical
 
 	potential = {
 		NOT = { tag = JNZ }
+		NOT = { tag = MCH }
 		culture = culture:jurchen_culture
 	}
 
 	allow = {
-		owns = location:fushun_liaoyang
-		owns = location:donggo
-		owns = location:hetu_ala
-		owns = location:wanggika
 	}
 
 	name = JNZ
@@ -67,8 +64,12 @@ JNZ_f = {
 	tag = JNZ
 	color = map_JNZ
 
-	regions = {
-		manchuria_region
+	provinces = {
+		dingliao_province
+		liaoyang_province
+		upper_songhua_province
+		tumen_province
+		mudan_province
 	}
 	form_effect = {
 		if = {
@@ -84,19 +85,16 @@ JNZ_f = {
 
 HXI_f = {
 	level = 1
-	required_locations_fraction = 0.1
+	required_locations_fraction = 0.40
 	rule = historical
 
 	potential = {
 		NOT = { tag = HXI }
+		NOT = { tag = MCH }
 		culture = culture:haixi_culture
 	}
 
 	allow = {
-		owns = location:kaiyuan_jurchen
-		owns = location:yehe
-		owns = location:huifacheng
-		owns = location:girin_ula
 	}
 
 	name = HXI
@@ -104,6 +102,48 @@ HXI_f = {
 	adjective = HXI_ADJ
 	tag = HXI
 	color = map_HXI
+
+	provinces = {
+		yizhou_liaodong_province
+		middle_songhua_province
+		lalin_province
+		hulan_province
+		lower_non_province
+	}
+	form_effect = {
+		if = {
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank_effect = {
+				rank = country_rank:rank_kingdom
+			}
+		}
+	}
+}
+
+YER_f = {
+	level = 1
+	required_locations_fraction = 0.07
+	rule = historical
+
+	potential = {
+		NOT = { tag = YER }
+		NOT = { tag = MCH }
+		OR = {
+			culture = culture:hurga_culture
+			culture = culture:udege_culture
+		}
+	}
+
+	allow = {
+	}
+
+	name = YER
+	flag = YER
+	adjective = YER_ADJ
+	tag = YER
+	color = map_YER
 
 	regions = {
 		manchuria_region
@@ -120,37 +160,32 @@ HXI_f = {
 	}
 }
 
-YER_f = {
-	level = 1
-	required_locations_fraction = 0.1
+REPLACE:MCH_f = {
+	level = 3
+	required_locations_fraction = 0.35
 	rule = historical
-
+	
 	potential = {
-		NOT = { tag = YER }
-		OR = {
-			culture = culture:hurga_culture
-			culture = culture:udege_culture
-		}
+		culture ?= { has_culture_group = culture_group:jurchen_group }
 	}
 
-	allow = {
-		owns = location:achan
-		owns = location:hulin
-		owns = location:mudan_ula
-		owns = location:yongmingcheng
-	}
 
-	name = YER
-	flag = YER
-	adjective = YER_ADJ
-	tag = YER
-	color = map_YER
-
-	regions = {
-		manchuria_region
+	name = MCH
+	flag = MCH
+	adjective = MCH_ADJ
+	tag = MCH
+	color = map_MCH
+	areas = {
+		liaodong_area
+		lower_amur_area
+		middle_amur_area
+		songhua_area
+		songnen_area
+		ussuri_area
 	}
 	form_effect = {
-		if = {
+		trigger_event_non_silently = flavor_mch.50
+	    if = {
 			limit = {
 				country_rank_level < 3
 			}
@@ -398,7 +433,7 @@ HII_f = { #Kingdom of Hawaii
 }
 
 AOT_f = { #Aotearoa
-	level = 2
+	level = 2y
 	required_locations_fraction = 0.8
 	rule = plausible
 	

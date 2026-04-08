@@ -74,14 +74,6 @@ country_flavor = {
 			country_rank_is_empire = yes
 		}
 	}
-	# MYD Theocracy variant
-	text = {
-		localization_key = country_dreaming_land
-		trigger = {
-			tag = MYD
-			government_type = government_type:theocracy
-		}
-	}
 	# Uriankhai Tumen
 	text = {
 		localization_key = uriankhai_tumen
@@ -113,13 +105,15 @@ country_flavor = {
 				tag = JAI
 				tag = KDB
 				tag = AKK
-				tag = DOY
-				tag = FUY
-				tag = TIZ
 				tag = ADQ
 				tag = AGZ
 				tag = MGZ
 				tag = KGZ
+
+				tag = KUH
+ 				tag = KVU
+ 				tag = TBU
+ 				tag = AUK
 			}
 		}
 	}
@@ -145,6 +139,17 @@ country_flavor = {
 				tag = DNC
 				tag = ZAZ
 				tag = KOY
+			}
+		}
+	}
+	text = {
+		localization_key = horde_guard
+		trigger = {
+			government_type = government_type:steppe_horde
+			OR = {
+				tag = DOY
+				tag = FUY
+				tag = TIZ
 			}
 		}
 	}

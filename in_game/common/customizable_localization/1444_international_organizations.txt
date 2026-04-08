@@ -1,46 +1,39 @@
 REPLACE:jurchen_confederation_name = {
-	type = international_organization
+    type = international_organization
 
-	text = {
-		trigger = {
-			leader_country ?= {
-				OR = {
-					tag = NAN
-					tag = UDE
-					tag = WRK
-					tag = SFN
-					tag = YER
-				}
-			}
-		}
-		localization_key = yeren_jurchen_confederation
-	}
+    # Haixi Confederation
+    text = {
+        trigger = {
+            leader_country ?= {
+                culture ?= culture:haixi_culture
+            }
+        }
+        localization_key = haixi_confederation
+    }
 
-	text = {
-		trigger = {
-			leader_country ?= {
-				culture ?= culture:haixi_culture
-			}
-		}
-		localization_key = haixi_jurchen_confederation
-	}
+    # Nanai Confederation (Hurga)
+    text = {
+        trigger = {
+            leader_country ?= {
+                culture ?= culture:hurga_culture
+            }
+        }
+        localization_key = nanai_confederation
+    }
 
-	text = {
-		trigger = {
-			leader_country ?= {
-				culture ?= {
-					OR = {
-						this = culture:jurchen_culture
-						this = culture:hurga_culture
-					}
-				}
-			}
-		}
-		localization_key = jianzhou_jurchen_confederation
-	}
+    # Udege Confederation
+    text = {
+        trigger = {
+            leader_country ?= {
+                culture ?= culture:udege_culture
+            }
+        }
+        localization_key = udege_confederation
+    }
 
-	text = {
-		localization_key = jurchen_confederation
-		fallback = yes
-	}
+    # Default Fallback (Jurchen)
+    text = {
+        localization_key = jurchen_confederation
+        fallback = yes
+    }
 }

@@ -377,3 +377,63 @@ legacy_of_osman = {
 	}
 	years = 2
 }
+haixi_jurchen_reform = {
+	potential = {
+		culture = culture:haixi_culture
+	}
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = haixi_jurchen_reform
+		}
+	}
+	country_modifier = {
+		army_cavalry_build_cost_modifier = -0.25
+		army_cavalry_maintenance_cost_modifier = -0.10
+		monthly_towards_sinicized = societal_value_tiny_monthly_move
+	}
+
+	years = 1
+}
+
+jianzhou_jurchen_reform = {
+	potential = {
+		culture = culture:jurchen_culture
+	}
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = jianzhou_jurchen_reform
+		}
+	}
+	country_modifier = {
+		global_monthly_food_modifier = 0.10
+		monthly_towards_centralization = societal_value_minor_monthly_move
+		monthly_towards_sinicized = societal_value_minor_monthly_move
+	}
+
+	years = 1
+}
+
+yeren_jurchen_reform = {
+	potential = {
+		OR = {
+			culture = culture:hurga_culture
+			culture = culture:udege_culture
+		}
+	}
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = yeren_jurchen_reform
+		}
+	}
+	country_modifier = {
+		declaring_war_cost_modifier = -0.1
+		stability_investment = tiny_stability_investment
+		monthly_towards_unsinicized = societal_value_monthly_move
+		monthly_towards_traditionalist = societal_value_monthly_move
+	}
+
+	years = 1
+}
