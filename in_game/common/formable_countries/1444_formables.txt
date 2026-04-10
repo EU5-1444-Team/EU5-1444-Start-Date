@@ -12,13 +12,18 @@ UYG_f = {
 		culture = culture:aqsulik_culture
 		culture = culture:turpanlik_culture
 		AND = {
-			tag = YRK
+			OR = {
+				tag = YRK
+				tag = CTK
+				tag = HMI
+			}
 			NOT = {
 				is_subject_of = c:CHG
+				is_subject_of = c:CRS
 			}
+		}
 		NOT = {
 			tag = CHG
-		}
 		}
 	}
 

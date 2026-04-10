@@ -1,135 +1,135 @@
-#peace_seize_yuan = {
-#    cost = 45
-#    potential = {
-#        scope:winner = {
-#            is_member_of_international_organization = international_organization:northern_yuan
-#            NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
-#        }
-#        scope:loser = {
-#            is_leader_of_international_organization = international_organization:northern_yuan
-#        }
-#        scope:war = {
-#            casus_belli ?= casus_belli:cb_seize_yuan
-#        }
-#    }
-#    allow = {
-#    }
-#    effect = {
-#        international_organization:northern_yuan = {
-#            set_leader_country = scope:winner
-#            if = {
-#                limit = {
-#                    scope:loser = {
-#                        has_special_status_in_international_organization = {
-#                            type = special_status:protector_general
-#                            international_organization = international_organization:northern_yuan
-#                        }
-#                    }
-#                }
-#                international_organization_remove_special_status = {
-#                    type = special_status:protector_general
-#                    country = scope:loser
-#                }
-#                international_organization_add_special_status = {
-#                    type = special_status:protector_general
-#                    country = scope:winner
-#                }
-#            }
-#        }
-#    }
-#    ai_desire = 100
-#}
-#
-#peace_seize_protector_general = {
-#    cost = 45
-#    potential = {
-#        scope:winner = {
-#            is_member_of_international_organization = international_organization:northern_yuan
-#            NOT = {
-#                has_special_status_in_international_organization = {
-#                    type = special_status:protector_general
-#                    international_organization = international_organization:northern_yuan
-#                }
-#            }
-#        }
-#        scope:loser = {
-#            has_special_status_in_international_organization = {
-#                type = special_status:protector_general
-#                international_organization = international_organization:northern_yuan
-#            }
-#        }
-#        scope:war = {
-#            casus_belli ?= casus_belli:cb_seize_protector_general
-#        }
-#    }
-#    allow = {
-#    }
-#    effect = {
-#        international_organization:northern_yuan = {
-#            international_organization_remove_special_status = {
-#                type = special_status:protector_general
-#                country = scope:loser
-#            }
-#            international_organization_add_special_status = {
-#                type = special_status:protector_general
-#                country = scope:winner
-#            }
-#        }
-#        if = {
-#                limit = {
-#                    scope:loser = { is_leader_of_international_organization = international_organization:northern_yuan }
-#                    scope:winner = {
-#                        ruler_or_heir_if_regent ?= {
-#                            OR = {
-#                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
-#                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
-#                                is_patrilineal_descendant_of = dynasty:giray_dynasty
-#                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
-#                                is_patrilineal_descendant_of = dynasty:khasar_dynasty
-#                            }
-#                        }
-#                    }
-#                }
-#                international_organization:northern_yuan = {
-#                    set_leader_country = scope:winner
-#                }
-#        }
-#    }
-#    ai_desire = 100
-#}
-#
-#peace_northern_yuan_raid = {
-#    blocks_full_annexation = yes
-#    cost = {
-#        add = {
-#            desc = "DIPLOREASON_BASE"
-#            value = 5
-#        }
-#        add = {
-#            desc = "game_concept_prestige"
-#            value = scope:loser.prestige
-#            multiply = 0.5
-#        }
-#    }
-#    effect = {
-#        scope:winner = {
-#            add_prestige = {
-#                value = scope:loser.prestige
-#                multiply = 0.2
-#                min = 5
-#            }
-#        }
-#        scope:loser = {
-#            add_prestige = prestige_extreme_penalty
-#        }
-#    }
-#    ai_desire = {
-#        add = {
-#            desc = "DIPLOREASON_LOWER_PRESTIGE"
-#            value = scope:loser.prestige
-#            subtract = scope:winner.prestige
-#            divide = 5
-#            min = 0
-#        }
-#    }
-#}
+peace_seize_yuan = {
+    cost = 45
+    potential = {
+        scope:winner = {
+            is_member_of_international_organization = international_organization:northern_yuan
+            NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+        }
+        scope:loser = {
+            is_leader_of_international_organization = international_organization:northern_yuan
+        }
+        scope:war = {
+            casus_belli ?= casus_belli:cb_seize_yuan
+        }
+    }
+    allow = {
+    }
+    effect = {
+        international_organization:northern_yuan = {
+            set_leader_country = scope:winner
+            if = {
+                limit = {
+                    scope:loser = {
+                        has_special_status_in_international_organization = {
+                            type = special_status:protector_general
+                            international_organization = international_organization:northern_yuan
+                        }
+                    }
+                }
+                international_organization_remove_special_status = {
+                    type = special_status:protector_general
+                    country = scope:loser
+                }
+                international_organization_add_special_status = {
+                    type = special_status:protector_general
+                    country = scope:winner
+                }
+            }
+        }
+    }
+    ai_desire = 100
+}
+
+peace_seize_protector_general = {
+    cost = 45
+    potential = {
+        scope:winner = {
+            is_member_of_international_organization = international_organization:northern_yuan
+            NOT = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+        }
+        scope:loser = {
+            has_special_status_in_international_organization = {
+                type = special_status:protector_general
+                international_organization = international_organization:northern_yuan
+            }
+        }
+        scope:war = {
+            casus_belli ?= casus_belli:cb_seize_protector_general
+        }
+    }
+    allow = {
+    }
+    effect = {
+        international_organization:northern_yuan = {
+            international_organization_remove_special_status = {
+                type = special_status:protector_general
+                country = scope:loser
+            }
+            international_organization_add_special_status = {
+                type = special_status:protector_general
+                country = scope:winner
+            }
+        }
+        if = {
+                limit = {
+                    scope:loser = { is_leader_of_international_organization = international_organization:northern_yuan }
+                    scope:winner = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                                is_patrilineal_descendant_of = dynasty:khasar_dynasty
+                            }
+                        }
+                    }
+                }
+                international_organization:northern_yuan = {
+                    set_leader_country = scope:winner
+                }
+        }
+    }
+    ai_desire = 100
+}
+
+peace_northern_yuan_raid = {
+    blocks_full_annexation = yes
+    cost = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 5
+        }
+        add = {
+            desc = "game_concept_prestige"
+            value = scope:loser.prestige
+            multiply = 0.5
+        }
+    }
+    effect = {
+        scope:winner = {
+            add_prestige = {
+                value = scope:loser.prestige
+                multiply = 0.2
+                min = 5
+            }
+        }
+        scope:loser = {
+            add_prestige = prestige_extreme_penalty
+        }
+    }
+    ai_desire = {
+        add = {
+            desc = "DIPLOREASON_LOWER_PRESTIGE"
+            value = scope:loser.prestige
+            subtract = scope:winner.prestige
+            divide = 5
+            min = 0
+        }
+    }
+}
