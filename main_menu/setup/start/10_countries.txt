@@ -20652,6 +20652,7 @@ countries = {
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
         government = {
+            ruler = random
             regnal_numbers = {
                 name_ulrick = 1
             }
@@ -27184,6 +27185,7 @@ countries = {
         include = "expl_novgorod"
 
         government = {
+            ruler = random
             type = republic
             heir_selection = veche_selection
             reforms = {
@@ -27602,6 +27604,7 @@ countries = {
             regency = nobles_estate_regency
             start_regency_date = 1331.1.1
             end_regency_date = 1346.1.1
+            ruler = random
 
             ruler_term = { character = kie_yaroslav_the_wise_rurikovich start_date = 978.1.1 end_date = 1010.1.1 regnal_number = 1 }
             ruler_term = { character = rso_boris_vladimirovich_rurikovich start_date = 1010.1.1 end_date = 1015.1.1 regnal_number = 1 }
@@ -41135,6 +41138,7 @@ countries = {
             qocho turpan lukchun pichan toksun
             dashahai
             kumux
+            karasahr bosten aksu bai_xinjiang kumtura qumbash shayar uqturpan
         }
         our_cores_conquered_by_others = {
             akhsikath asht karasuu kasan kerben pop_fargana
@@ -41467,7 +41471,7 @@ countries = {
         own_control_core = {
             vamar vanch muksu daroot_korgon karakol gharm sangvor qalai_khumb
             kham_bahar ragh shiveh shighnan ishkashim zebak jurm fayzabad sar_sang
-            roshtqala qila_panjeh gunt sarhad oksu murghab
+            roshtqala qila_panjeh gunt sarhad oksu murghab akto kizilsu
         }
 
         starting_technology_level = 3
@@ -50435,9 +50439,7 @@ countries = {
             kedang kuntokling liulin
             hezhou dingqiang
             jishi
-
-            # Old Yugur cores
-            qidaban liyuan qilian anding_suzhou dangcheng kuyu_shazhou guazhou jinta shazhou chijin yangguan
+            qidaban liyuan qilian
         }
 
         own_control_integrated = {
@@ -60012,12 +60014,11 @@ countries = {
 
     # --- HUZ ---
 
-    SRY = {
-        # Yughur
+    SRY = { # Yughur
         type = pop
         add_pops_from_locations = {
-            qidaban liyuan qilian anding_suzhou dangcheng kuyu_shazhou guazhou jinta shazhou chijin yangguan
-            bailongdui suzhou_gansu gaotai
+            qidaban liyuan qilian suzhou_gansu gaotai
+            ganzhou hongshui shandan
         }
         starting_technology_level = 3
         government = {
@@ -60530,24 +60531,11 @@ countries = {
     # xinjiang_region
     # ---------------
 
-    YRK = {
-        # Yarkent
+    KDZ = { # Khotan
         own_control_core = {
-            akto kizilsu
-            kashgar artush barchuk maralbexi payzawat tokkuzak yingisar yopurga
-            khotan karakax keriya lop qira
-            yarkand guma kargilik poskam
-            karasahr bosten
-            kurla bugur kuerchu
-            charchan charklik niya qietai tatrang waxxari
-            mazar_tagh tikenliq
-            zarafshan sarikol
-            miran loulan
-            bailongdui
-
-            # Mangalai
-            aksu bai_xinjiang kumtura kucha qumbash shayar uqturpan
+            khotan karakax keriya lop qira mazar_tagh charchan charklik niya qietai tatrang waxxari
         }
+        
         starting_technology_level = 3
         country_rank = rank_kingdom
         court_language = karluk_language
@@ -60559,9 +60547,9 @@ countries = {
 
         government = {
             type = monarchy
-            ruler = sayyid_ali_dughlat_fictional
+            ruler = random
 
-            centralization_vs_decentralization = 10
+            centralization_vs_decentralization = -10
             aristocracy_vs_plutocracy = -20
             serfdom_vs_free_subjects = 60
             traditionalist_vs_innovative = 10
@@ -60575,13 +60563,120 @@ countries = {
             individualism_vs_communalism = 10
             outward_vs_inward = 40
         }
-
         accepted_cultures = {
-            khorezmian_culture
+            moghul_culture
         }
     }
 
-    # --- YRK ---
+    YKD = { # Yarkand
+        own_control_core = {
+            yarkand guma kargilik poskam  zarafshan sarikol
+        }
+
+        starting_technology_level = 3
+        country_rank = rank_kingdom
+        court_language = karluk_language
+        include = "expl_mongols"
+        include = "eurasian_horde_no_muslim"
+        capital = yarkand
+
+        religious_school = hanafi_school
+
+        government = {
+            type = monarchy
+            ruler = sayyid_ali_dughlat_fictional
+
+            centralization_vs_decentralization = -10
+            aristocracy_vs_plutocracy = -20
+            serfdom_vs_free_subjects = 60
+            traditionalist_vs_innovative = 10
+            spiritualist_vs_humanist = -10
+            mercantilism_vs_free_trade = 50
+            offensive_vs_defensive = -20
+            land_vs_naval = -50
+            quality_vs_quantity = 10
+            belligerent_vs_conciliatory = -30
+            capital_economy_vs_traditional_economy = 40
+            individualism_vs_communalism = 10
+            outward_vs_inward = 40
+        }
+        accepted_cultures = {
+            moghul_culture
+        }
+    }
+    KGH = { # Kashgar
+        own_control_core = {
+            yingisar yopurga kashgar artush barchuk maralbexi payzawat tokkuzak
+        }
+        starting_technology_level = 3
+        country_rank = rank_kingdom
+        court_language = karluk_language
+        include = "expl_mongols"
+        include = "eurasian_horde_no_muslim"
+        capital = yarkand
+
+        religious_school = hanafi_school
+
+        government = {
+            type = monarchy
+            ruler = random
+
+            centralization_vs_decentralization = -10
+            aristocracy_vs_plutocracy = -20
+            serfdom_vs_free_subjects = 60
+            traditionalist_vs_innovative = 10
+            spiritualist_vs_humanist = -10
+            mercantilism_vs_free_trade = 50
+            offensive_vs_defensive = -20
+            land_vs_naval = -50
+            quality_vs_quantity = 10
+            belligerent_vs_conciliatory = -30
+            capital_economy_vs_traditional_economy = 40
+            individualism_vs_communalism = 10
+            outward_vs_inward = 40
+        }
+        accepted_cultures = {
+            moghul_culture
+        }
+    }
+    KUC = { # Kucha
+        own_control_core = {
+            kurla bugur kuerchu kucha tikenliq
+        }
+
+        starting_technology_level = 3
+        country_rank = rank_kingdom
+        court_language = karluk_language
+        include = "expl_mongols"
+        include = "eurasian_horde_no_muslim"
+        capital = yarkand
+
+        religious_school = hanafi_school
+
+        government = {
+            type = monarchy
+            ruler = random
+
+            centralization_vs_decentralization = -10
+            aristocracy_vs_plutocracy = -20
+            serfdom_vs_free_subjects = 60
+            traditionalist_vs_innovative = 10
+            spiritualist_vs_humanist = -10
+            mercantilism_vs_free_trade = 50
+            offensive_vs_defensive = -20
+            land_vs_naval = -50
+            quality_vs_quantity = 10
+            belligerent_vs_conciliatory = -30
+            capital_economy_vs_traditional_economy = 40
+            individualism_vs_communalism = 10
+            outward_vs_inward = 40
+        }
+        accepted_cultures = {
+            moghul_culture
+        }
+    }
+
+    # --- DGH ---
 
     KHO = {
         # Khoshut
@@ -60595,7 +60690,7 @@ countries = {
         include = "expl_mongols"
         government = {
             type = steppe_horde
-            heir_selection = cognatic_primogeniture
+            heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = toghtokh_khoshut_fictional
             centralization_vs_decentralization = 80
             aristocracy_vs_plutocracy = 85
@@ -60704,9 +60799,111 @@ countries = {
         court_language = mongolian_language
         capital = hami
     }
+    CGM = { #Chijin Guard
+        type = army
+        own_control_core = {
+            chijin jinta dangcheng kuyu_shazhou
+        }
 
-    # --- HMI ---
+        starting_technology_level = 3
+        include = "expl_mongols"
+        include = "asia_advanced_no_pagan_tribe"
+        government = {
 
+            type = steppe_horde
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+
+            centralization_vs_decentralization = 10
+            aristocracy_vs_plutocracy = 30
+            serfdom_vs_free_subjects = 40
+            traditionalist_vs_innovative = -10
+            spiritualist_vs_humanist = -20
+            mercantilism_vs_free_trade = 30
+            offensive_vs_defensive = -10
+            land_vs_naval = -50
+            quality_vs_quantity = -20
+            belligerent_vs_conciliatory = -10
+            capital_economy_vs_traditional_economy = 10
+            individualism_vs_communalism = 0
+            outward_vs_inward = 20
+            sinicized_vs_unsinicized = 70
+
+        }
+        country_rank = rank_county
+        court_language = mongolian_language
+        capital = chijin
+    }
+    SGM = { #Shazhou Guard
+        type = army
+        own_control_core = {
+            yangguan bailongdui anding_suzhou miran loulan shazhou guazhou
+        }
+
+        starting_technology_level = 3
+        include = "expl_mongols"
+        include = "asia_advanced_no_pagan_tribe"
+        government = {
+
+            type = steppe_horde
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+
+            centralization_vs_decentralization = 10
+            aristocracy_vs_plutocracy = 30
+            serfdom_vs_free_subjects = 40
+            traditionalist_vs_innovative = -10
+            spiritualist_vs_humanist = -20
+            mercantilism_vs_free_trade = 30
+            offensive_vs_defensive = -10
+            land_vs_naval = -50
+            quality_vs_quantity = -20
+            belligerent_vs_conciliatory = -10
+            capital_economy_vs_traditional_economy = 10
+            individualism_vs_communalism = 0
+            outward_vs_inward = 20
+            sinicized_vs_unsinicized = 70
+
+        }
+        country_rank = rank_county
+        court_language = mongolian_language
+        capital = shazhou
+    }
+    HGM = { #Handong Guard
+        type = army
+        own_control_core = {
+            yuka balgatai tsaidam gashun temirlik
+        }
+
+        starting_technology_level = 3
+        include = "expl_mongols"
+        include = "asia_advanced_no_pagan_tribe"
+        government = {
+
+            type = steppe_horde
+            heir_selection = tribal_absolute_cognatic_primogeniture
+            ruler = random
+
+            centralization_vs_decentralization = 10
+            aristocracy_vs_plutocracy = 30
+            serfdom_vs_free_subjects = 40
+            traditionalist_vs_innovative = -10
+            spiritualist_vs_humanist = -20
+            mercantilism_vs_free_trade = 30
+            offensive_vs_defensive = -10
+            land_vs_naval = -50
+            quality_vs_quantity = -20
+            belligerent_vs_conciliatory = -10
+            capital_economy_vs_traditional_economy = 10
+            individualism_vs_communalism = 0
+            outward_vs_inward = 20
+            sinicized_vs_unsinicized = 70
+
+        }
+        country_rank = rank_county
+        court_language = mongolian_language
+        capital = gashun
+    }
 
     ###############################################################################
     # AMERICA

@@ -1,214 +1,230 @@
-#northern_yuan = {
-#    has_target = no
-#    unique = yes
-#    expel_members_who_are_targets_of_other_members = no
-#    disband_if_no_leader = no
-#
-#    show_as_overlord_on_map_trigger = {
-#        always = yes
-#    }
-#
-#    show_on_diplomatic_map = yes
-#
-#    has_leader_country = yes
-#    leader_title_key = "NORTHERN_YUAN_LEADER"
-#    leader_type = character
-#    leader = {
-#        leader_country ?= {
-#            if = {
-#                limit = {
-#                    has_regent = yes
-#                    has_heir = yes
-#                }
-#                heir ?= {
-#                    add_to_list = leaders
-#                }
-#            }
-#            else_if = {
-#                limit = {
-#                    has_ruler = yes
-#                    ruler ?= { is_alive = yes }
-#                }
-#                ruler ?= {
-#                    add_to_list = leaders
-#                }
-#            }
-#        }
-#    }
-#    leader_change_trigger_type = none
-#    leader_change_method = none
-#
-#    can_lead_trigger = {
-#    }
-#
-#    can_declare_war = {
-#        trigger_if = {
-#            limit = {
-#                scope:attacker = { is_member_of_international_organization = scope:recipient }
-#                scope:defender = { is_member_of_international_organization = scope:recipient }
-#            }
-#            OR = {
-#                scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_seize_yuan target = scope:defender } }
-#                scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_seize_protector_general target = scope:defender } }
-#                scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_northern_yuan_raid target = scope:defender } }
-#            }
-#        }
-#    }
-#
-#    land_ownership_rule = northern_yuan_land_ownership
-#    join_defensive_wars_auto_call = {
-#        scope:target ?= {
-#            NOT = {
-#                is_member_of_international_organization = root
-#            }
-#        }
-#    }
-#
-#    gives_military_access_to_all_when_at_war = yes
-#
-#    can_initiate_policy_votes = {
-#        has_special_status_in_international_organization = {
-#            type = special_status:protector_general
-#            international_organization = international_organization:northern_yuan
-#        }
-#    }
-#
-#    modifier = {
-#        block_from_change_to_empire_rank = yes
-#    }
-#
-#    leader_modifier = {
-#        great_power_score_exempt_from_forfeit = 50
-#        monthly_prestige = 0.1
-#    }
-#
-#    create_visible_trigger = {
-#        always = no
-#    }
-#    invite_visible_trigger = {
-#        always = yes
-#    }
-#
-#    can_join_trigger = {
-#        culture = {
-#            has_culture_group = culture_group:mongolian_group
-#        }
-#    }
-#
-#    can_leave_trigger = {
-#        always = no
-#    }
-#
-#    auto_leave_trigger = {
-#        always = no
-#    }
-#
-#    auto_disband_trigger = {
-#        total_members < 1
-#    }
-#
-#    on_joined = {}
-#    on_left = {}
-#
-#    monthly_effect = {
-#        hidden_effect = {
-#            if = {
-#                limit = {
-#                    international_organization_has_leader = no
-#                }
-#                ordered_international_organization_member = {
-#                    order_by = great_power_score
-#                    max = 1
-#                    check_range_bounds = no
-#                    limit = {
-#                        ruler_or_heir_if_regent ?= {
-#                            OR = {
-#                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
-#                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
-#                                is_patrilineal_descendant_of = dynasty:giray_dynasty
-#                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
-#                                is_patrilineal_descendant_of = dynasty:khasar_dynasty
-#                            }
-#                        }
-#                    }
-#                    root = {
-#                        set_leader_country = prev
-#                    }
-#                }
-#                if = {
-#                    limit = {
-#                        international_organization_has_leader = no
-#                    }
-#                    ordered_international_organization_member = {
-#                        order_by = great_power_score
-#                        max = 1
-#                        check_range_bounds = no
-#                        root = {
-#                            set_leader_country = prev
-#                        }
-#                    }
-#                }
-#            }
-#        }
-#    }
-#
-#    variables = {
-#        yeke_mongghul_ulus = {
-#            format = "YEKE_MONGGHUL_ULUS_DISPLAY"
-#            change_format = "VARIABLE_CHANGE_FORMAT"
-#            min = 0
-#            max = 100
-#            monthly_change = {
-#                add = {
-#                    desc = "BASE_DECAY"
-#                    value = -0.1
-#                }
-#                add = {
-#                    desc = "LEADER_PRESTIGE"
-#                    if = {
-#                        limit = { international_organization_has_leader = yes }
-#                        value = leader_country.modifier:monthly_prestige
-#                        multiply = 0.5
-#                    }
-#                }
-#                add = {
-#                    desc = "INTERNAL_WARS"
-#                    every_international_organization_member = {
-#                        limit = {
-#                            at_war = yes
-#                            any_current_war = {
-#                                any_war_participant = {
-#                                    is_member_of_international_organization = root
-#                                    NOT = { this = prev }
-#                                }
-#                            }
-#                        }
-#                        add = -0.5
-#                    }
-#                }
-#                if = {
-#                    limit = { international_organization_has_leader = no }
-#                    add = {
-#                        desc = "NO_LEADER"
-#                        value = -0.5
-#                    }
-#                }
-#            }
-#        }
-#    }
-#
-#    special_statuses_implemented = {
-#        yuan_holder
-#        protector_general
-#    }
-#
-#    ai_desire_to_join = {
-#    }
-#
-#    ai_desire_to_allow_new_member = {
-#        add = {
-#            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
-#            value = 20
-#        }
-#    }
-#}
+northern_yuan = {
+    has_target = no
+    unique = yes
+    expel_members_who_are_targets_of_other_members = no
+    disband_if_no_leader = no
+
+    show_as_overlord_on_map_trigger = {
+        always = yes
+    }
+
+    show_on_diplomatic_map = yes
+
+    has_leader_country = yes
+    leader_title_key = "NORTHERN_YUAN_LEADER"
+    leader_type = character
+    leader = {
+        leader_country ?= {
+            if = {
+                limit = {
+                    has_regent = yes
+                    has_heir = yes
+                }
+                heir ?= {
+                    add_to_list = leaders
+                }
+            }
+            else_if = {
+                limit = {
+                    has_ruler = yes
+                    ruler ?= { is_alive = yes }
+                }
+                ruler ?= {
+                    add_to_list = leaders
+                }
+            }
+        }
+    }
+    leader_change_trigger_type = none
+    leader_change_method = none
+
+    can_lead_trigger = {
+    }
+    payments_implemented = {
+        yuan_tribute
+    }
+
+    can_declare_war = {
+        trigger_if = {
+            limit = {
+                scope:attacker = { is_member_of_international_organization = scope:recipient }
+                scope:defender = { is_member_of_international_organization = scope:recipient }
+            }
+            OR = {
+                scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_seize_yuan target = scope:defender } }
+                scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_seize_protector_general target = scope:defender } }
+                scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_northern_yuan_raid target = scope:defender } }
+            }
+        }
+    }
+
+    land_ownership_rule = northern_yuan_land_ownership
+    
+    join_defensive_wars_auto_call = {
+        scope:target ?= {
+            NOT = {
+                is_member_of_international_organization = root
+            }
+        }
+    }
+
+    gives_military_access_to_all_when_at_war = yes
+
+    can_initiate_policy_votes = {
+        has_special_status_in_international_organization = {
+            type = special_status:protector_general
+            international_organization = international_organization:northern_yuan
+        }
+    }
+
+    modifier = {
+        block_from_change_to_empire_rank = yes
+    }
+
+    leader_modifier = {
+        great_power_score_exempt_from_forfeit = 50
+        monthly_prestige = 0.1
+    }
+
+    create_visible_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = yes
+    }
+
+    can_join_trigger = {
+        culture = {
+            has_culture_group = culture_group:mongolian_group
+        }
+    }
+
+    can_leave_trigger = {
+        always = no
+    }
+
+    auto_leave_trigger = {
+        always = no
+    }
+
+    auto_disband_trigger = {
+        total_members < 1
+    }
+
+    on_joined = {}
+    on_left = {}
+
+    monthly_effect = {
+        hidden_effect = {
+            if = {
+                limit = {
+                    international_organization_has_leader = no
+                }
+                ordered_international_organization_member = {
+                    order_by = great_power_score
+                    max = 1
+                    check_range_bounds = no
+                    limit = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                                is_patrilineal_descendant_of = dynasty:khasar_dynasty
+                            }
+                        }
+                    }
+                    root = {
+                        set_leader_country = prev
+                    }
+                }
+                if = {
+                    limit = {
+                        international_organization_has_leader = no
+                    }
+                    ordered_international_organization_member = {
+                        order_by = great_power_score
+                        max = 1
+                        check_range_bounds = no
+                        root = {
+                            set_leader_country = prev
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    variables = {
+        yeke_mongghul_ulus = {
+            format = "YEKE_MONGGHUL_ULUS_DISPLAY"
+            change_format = "VARIABLE_CHANGE_FORMAT"
+            min = 0
+            max = 100
+            monthly_change = {
+                add = {
+                    desc = "BASE_DECAY"
+                    value = -0.1
+                }
+                add = {
+                    desc = "LEADER_PRESTIGE"
+                    if = {
+                        limit = { international_organization_has_leader = yes }
+                        value = leader_country.modifier:monthly_prestige
+                        multiply = 0.5
+                    }
+                }
+                add = {
+                    desc = "LEADER_MANPOWER"
+                    if = {
+                        limit = { international_organization_has_leader = yes }
+                        value = leader_country.modifier:monthly_manpower
+                        multiply = 0.2
+                    }
+                }
+                add = {
+                    desc = "INTERNAL_WARS"
+                    every_international_organization_member = {
+                        limit = {
+                            at_war = yes
+                            any_current_war = {
+                                any_war_participant = {
+                                    is_member_of_international_organization = root
+                                    NOT = { this = prev }
+                                }
+                            }
+                        }
+                        add = -0.5
+                    }
+                }
+                if = {
+                    limit = { international_organization_has_leader = no }
+                    add = {
+                        desc = "NO_LEADER"
+                        value = -0.5
+                    }
+                }
+            }
+        }
+    }
+
+    special_statuses_implemented = {
+        yuan_holder
+        protector_general
+    }
+
+    ai_desire_to_join = {
+        add = {
+            desc = "SHARED_MONGOL_HERITAGE"
+            value = 50 
+        }
+    }
+
+    ai_desire_to_allow_new_member = {
+        add = {
+            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+            value = 20
+        }
+    }
+}
