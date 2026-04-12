@@ -1,0 +1,91 @@
+flemish_flavor.1 = {
+	type = country_event
+
+	fire_only_once = yes
+	hidden = yes
+
+	dynamic_historical_event = {
+		tag = FLA
+		tag = BRB
+		tag = BEL
+		from = 1700.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	trigger = {
+		current_age = age_6_revolutions
+		OR = {
+			culture = culture:flemish
+			tag = FLA
+			tag = BRB
+			tag = BEL
+		}
+		any_owned_location = {
+			area = area:flanders_area
+			any_pop = {
+				culture = culture:low_franconian
+			}
+		}
+	}
+
+	immediate = {
+		every_owned_location = {
+			limit = {
+				area = area:flanders_area
+			}
+			every_pop = {
+				limit = {
+					culture = culture:low_franconian
+				}
+				change_pop_culture = culture:flemish
+			}
+		}
+	}
+}
+
+dutch_rhenish_flavor.1 = {
+	type = country_event
+
+	fire_only_once = yes
+	hidden = yes
+
+	dynamic_historical_event = {
+		tag = KLE
+		tag = MRS
+		tag = ESS
+		from = 1700.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	trigger = {
+		current_age = age_6_revolutions
+		OR = {
+			culture = culture:dutch_rhenish
+			tag = KLE
+			tag = MRS
+			tag = ESS
+		}
+		any_owned_location = {
+			area = area:rhineland_area
+			any_pop = {
+				culture = culture:low_franconian
+			}
+		}
+	}
+
+	immediate = {
+		every_owned_location = {
+			limit = {
+				area = area:rhineland_area
+			}
+			every_pop = {
+				limit = {
+					culture = culture:low_franconian
+				}
+				change_pop_culture = culture:dutch_rhenish
+			}
+		}
+	}
+}

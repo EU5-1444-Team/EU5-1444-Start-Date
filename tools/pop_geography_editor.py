@@ -18,6 +18,7 @@ BASE_POPS_REL    = Path("game/main_menu/setup/start/06_pops.txt")
 MAX_VISIBLE_ROWS = 3000
 STD_ATTR_ORDER   = ["type", "size", "culture", "religion"]
 FILTER_FIELDS    = ["continent", "superregion", "region", "area", "province", "location"]
+POP_ATTR_FILTER_FIELDS = ["culture", "religion", "type"]
 TABLE_COLUMNS    = (
     ["location"] + STD_ATTR_ORDER
     + ["continent", "superregion", "region", "area", "province", "extra", "differs", "basegame"]
@@ -266,8 +267,15 @@ class PopEditorApp:
         self.filter_vars    = {f: tk.StringVar() for f in FILTER_FIELDS}
         self.include_values = {f: set()          for f in FILTER_FIELDS}
         self.exclude_values = {f: set()          for f in FILTER_FIELDS}
+
+        self.pop_attr_filter_vars    = {f: tk.StringVar() for f in POP_ATTR_FILTER_FIELDS}
+        self.pop_attr_include_values = {f: set()          for f in POP_ATTR_FILTER_FIELDS}
+        self.pop_attr_exclude_values = {f: set()          for f in POP_ATTR_FILTER_FIELDS}
+
         self.batch_add_var  = tk.StringVar(value="0")
         self.batch_mult_var = tk.StringVar(value="1")
+        self.batch_replace_field_var = tk.StringVar(value="culture")
+        self.batch_replace_value_var = tk.StringVar(value="")
         self.status_var     = tk.StringVar(value="Load a pop file to begin.")
         self.path_vars      = {
             "base_game":  tk.StringVar(value=str(base_game_path)),
@@ -281,7 +289,7 @@ class PopEditorApp:
 
     def _build_ui(self) -> None:
         self.root.geometry("1500x850")
-        self.root.rowconfigure(3, weight=1)
+        self.root.rowconfigure(5, weight=1)
         self.root.columnconfigure(0, weight=1)
 
         # path bar
@@ -326,9 +334,35 @@ class PopEditorApp:
         ttk.Button(filter_frame, text="Copy Locations",
                    command=self.copy_matching_locations).grid(row=len(FILTER_FIELDS), column=1, pady=(8, 0), sticky="w")
 
+        # pop attribute filters (culture / religion / type)
+        pop_attr_frame = ttk.LabelFrame(self.root, text="Pop Attribute Filters (Culture / Religion / Type)", padding=8)
+        pop_attr_frame.grid(row=2, column=0, sticky="ew", padx=8, pady=(0, 2))
+        pop_attr_frame.columnconfigure(4, weight=1)
+        for idx, field in enumerate(POP_ATTR_FILTER_FIELDS):
+            ttk.Label(pop_attr_frame, text=field.title()).grid(row=idx, column=0, sticky="w")
+            combo = ttk.Combobox(pop_attr_frame, textvariable=self.pop_attr_filter_vars[field],
+                                 state="readonly", width=24)
+            combo.grid(row=idx, column=1, sticky="ew", padx=(4, 8))
+            combo.bind("<<ComboboxSelected>>", self.on_pop_attr_filter_change)
+            setattr(self, f"pop_attr_{field}_combo", combo)
+            ttk.Button(pop_attr_frame, text="Include",
+                       command=lambda f=field: self.add_pop_attr_selection(f, "include")).grid(
+                row=idx, column=2, padx=(0, 4))
+            ttk.Button(pop_attr_frame, text="Exclude",
+                       command=lambda f=field: self.add_pop_attr_selection(f, "exclude")).grid(
+                row=idx, column=3, padx=(0, 8))
+            summary = ttk.Label(pop_attr_frame, text="", justify="left")
+            summary.grid(row=idx, column=4, sticky="ew")
+            setattr(self, f"pop_attr_{field}_summary", summary)
+            ttk.Button(pop_attr_frame, text="Clear",
+                       command=lambda f=field: self.clear_pop_attr_selection(f)).grid(row=idx, column=5)
+        ttk.Button(pop_attr_frame, text="Clear All",
+                   command=self.clear_pop_attr_filters).grid(
+            row=len(POP_ATTR_FILTER_FIELDS), column=0, pady=(8, 0), sticky="w")
+
         # batch edit
         batch_frame = ttk.LabelFrame(self.root, text="Batch Size Edit", padding=8)
-        batch_frame.grid(row=2, column=0, sticky="ew", padx=8, pady=(0, 4))
+        batch_frame.grid(row=3, column=0, sticky="ew", padx=8, pady=(0, 2))
         batch_frame.columnconfigure(5, weight=1)
         for col, (label, var) in enumerate([("Multiplier", self.batch_mult_var), ("Addition", self.batch_add_var)]):
             ttk.Label(batch_frame, text=label).grid(row=0, column=col * 2, sticky="w")
@@ -340,9 +374,26 @@ class PopEditorApp:
                   text="new_size = old_size * multiplier + addition  (clamped to 0 if negative)").grid(
             row=0, column=5, sticky="w", padx=(12, 0))
 
+        # batch replace (culture / religion / type)
+        replace_frame = ttk.LabelFrame(self.root, text="Batch Culture / Religion / Type Replace", padding=8)
+        replace_frame.grid(row=4, column=0, sticky="ew", padx=8, pady=(0, 4))
+        replace_frame.columnconfigure(5, weight=1)
+        ttk.Label(replace_frame, text="Field").grid(row=0, column=0, sticky="w")
+        field_combo = ttk.Combobox(replace_frame, textvariable=self.batch_replace_field_var,
+                                   values=POP_ATTR_FILTER_FIELDS, state="readonly", width=10)
+        field_combo.grid(row=0, column=1, sticky="w", padx=(4, 12))
+        ttk.Label(replace_frame, text="New value").grid(row=0, column=2, sticky="w")
+        ttk.Entry(replace_frame, textvariable=self.batch_replace_value_var, width=24).grid(
+            row=0, column=3, sticky="w", padx=(4, 12))
+        ttk.Button(replace_frame, text="Apply to Filtered Rows",
+                   command=self.apply_batch_replace).grid(row=0, column=4, sticky="w")
+        ttk.Label(replace_frame,
+                  text="Replaces the chosen field on every currently-visible filtered row.").grid(
+            row=0, column=5, sticky="w", padx=(12, 0))
+
         # table
         table_frame = ttk.Frame(self.root, padding=(8, 4, 8, 8))
-        table_frame.grid(row=3, column=0, sticky="nsew")
+        table_frame.grid(row=5, column=0, sticky="nsew")
         table_frame.rowconfigure(0, weight=1)
         table_frame.columnconfigure(0, weight=1)
         self.tree = ttk.Treeview(table_frame, columns=TABLE_COLUMNS, show="headings", selectmode="browse")
@@ -358,7 +409,7 @@ class PopEditorApp:
         self.tree.bind("<Double-1>", self.begin_edit_cell)
         self.tree.tag_configure("differs", background="#fff1d6")
 
-        ttk.Label(self.root, textvariable=self.status_var, padding=(8, 2)).grid(row=4, column=0, sticky="ew")
+        ttk.Label(self.root, textvariable=self.status_var, padding=(8, 2)).grid(row=6, column=0, sticky="ew")
 
     # ── data loading / saving ─────────────────────────────────────────────────
 
@@ -392,6 +443,7 @@ class PopEditorApp:
 
             self.rebuild_row_metadata()
             self.update_filter_options()
+            self.update_pop_attr_filter_options()
             self.refresh_table()
             self.status_var.set(
                 f"Loaded {len(self.rows)} pop rows from {pops_path.name}; "
@@ -479,6 +531,7 @@ class PopEditorApp:
             if current not in combo["values"]:
                 self.filter_vars[field].set("")
             self._update_summary(field)
+        self.update_pop_attr_filter_options()
 
     def _update_summary(self, field: str) -> None:
         inc = ", ".join(sorted(self.include_values[field])) or "-"
@@ -495,6 +548,10 @@ class PopEditorApp:
             return
         (self.include_values if mode == "include" else self.exclude_values)[field].add(value)
         (self.exclude_values if mode == "include" else self.include_values)[field].discard(value)
+        # Clear the exact-match dropdown so it doesn't override the include/exclude set.
+        # Without this, filter_vars[field] = "brabant" would block flanders rows even
+        # though flanders is also in the include set.
+        self.filter_vars[field].set("")
         self._update_summary(field)
         self.update_filter_options()
         self.refresh_table()
@@ -521,6 +578,7 @@ class PopEditorApp:
     def iter_filtered_rows(self) -> list[PopRow]:
         active = {f: self.filter_vars[f].get() for f in FILTER_FIELDS if self.filter_vars[f].get()}
         has_includes = any(self.include_values.values())
+        has_pop_includes = any(self.pop_attr_include_values.values())
         result = []
         for row in self.rows:
             if active and any(self._geo_value(row, f) != v for f, v in active.items()):
@@ -529,8 +587,117 @@ class PopEditorApp:
                 continue
             if self._row_matches(row, self.exclude_values):
                 continue
+            # pop attribute filters (culture / religion / type)
+            if has_pop_includes:
+                if not any(
+                    row.attrs.get(f) in vals
+                    for f, vals in self.pop_attr_include_values.items() if vals
+                ):
+                    continue
+            if any(
+                row.attrs.get(f) in vals
+                for f, vals in self.pop_attr_exclude_values.items() if vals
+            ):
+                continue
             result.append(row)
         return result
+
+    def update_pop_attr_filter_options(self) -> None:
+        # Collect unique values from all rows that pass geo filters only
+        active = {f: self.filter_vars[f].get() for f in FILTER_FIELDS if self.filter_vars[f].get()}
+        has_includes = any(self.include_values.values())
+        geo_rows = []
+        for row in self.rows:
+            if active and any(self._geo_value(row, f) != v for f, v in active.items()):
+                continue
+            if has_includes and not self._row_matches(row, self.include_values):
+                continue
+            if self._row_matches(row, self.exclude_values):
+                continue
+            geo_rows.append(row)
+        for field in POP_ATTR_FILTER_FIELDS:
+            seen = sorted({
+                row.attrs.get(field, "") for row in geo_rows
+                if row.attrs.get(field)
+                # narrow: row must pass the *other* pop attr filters (not the one we're building)
+                and not any(
+                    vals and row.attrs.get(f) not in vals
+                    for f, vals in self.pop_attr_include_values.items()
+                    if f != field and vals
+                )
+                and not any(
+                    row.attrs.get(f) in vals
+                    for f, vals in self.pop_attr_exclude_values.items()
+                    if f != field and vals
+                )
+            })
+            combo = getattr(self, f"pop_attr_{field}_combo")
+            current = self.pop_attr_filter_vars[field].get()
+            combo["values"] = [""] + seen
+            if current not in combo["values"]:
+                self.pop_attr_filter_vars[field].set("")
+            self._update_pop_attr_summary(field)
+
+    def _update_pop_attr_summary(self, field: str) -> None:
+        inc = ", ".join(sorted(self.pop_attr_include_values[field])) or "-"
+        exc = ", ".join(sorted(self.pop_attr_exclude_values[field])) or "-"
+        getattr(self, f"pop_attr_{field}_summary").configure(text=f"Include: {inc} | Exclude: {exc}")
+
+    def on_pop_attr_filter_change(self, _event=None) -> None:
+        self.update_pop_attr_filter_options()
+        self.refresh_table()
+
+    def add_pop_attr_selection(self, field: str, mode: str) -> None:
+        value = self.pop_attr_filter_vars[field].get()
+        if not value:
+            return
+        (self.pop_attr_include_values if mode == "include" else self.pop_attr_exclude_values)[field].add(value)
+        (self.pop_attr_exclude_values if mode == "include" else self.pop_attr_include_values)[field].discard(value)
+        # Clear dropdown so it doesn't exact-match-filter against the include set
+        self.pop_attr_filter_vars[field].set("")
+        self._update_pop_attr_summary(field)
+        self.update_pop_attr_filter_options()
+        self.refresh_table()
+
+    def clear_pop_attr_selection(self, field: str) -> None:
+        self.pop_attr_include_values[field].clear()
+        self.pop_attr_exclude_values[field].clear()
+        self._update_pop_attr_summary(field)
+        self.update_pop_attr_filter_options()
+        self.refresh_table()
+
+    def clear_pop_attr_filters(self) -> None:
+        for field in POP_ATTR_FILTER_FIELDS:
+            self.pop_attr_filter_vars[field].set("")
+            self.pop_attr_include_values[field].clear()
+            self.pop_attr_exclude_values[field].clear()
+            self._update_pop_attr_summary(field)
+        self.refresh_table()
+
+    def apply_batch_replace(self) -> None:
+        field = self.batch_replace_field_var.get().strip()
+        value = self.batch_replace_value_var.get().strip()
+        if field not in POP_ATTR_FILTER_FIELDS:
+            messagebox.showerror("Invalid field", f"Field must be one of: {', '.join(POP_ATTR_FILTER_FIELDS)}")
+            return
+        if not value:
+            messagebox.showerror("Empty value", "Please enter a replacement value.")
+            return
+        filtered = self.iter_filtered_rows()
+        if not filtered:
+            self.status_var.set("No filtered rows to edit.")
+            return
+        for row in filtered:
+            row.attrs[field] = value
+            # Re-impose STD_ATTR_ORDER
+            row.attrs = OrderedDict(
+                [(k, row.attrs[k]) for k in STD_ATTR_ORDER if k in row.attrs]
+                + [(k, v) for k, v in row.attrs.items() if k not in STD_ATTR_ORDER]
+            )
+        self.rebuild_row_metadata()
+        self.update_pop_attr_filter_options()
+        self.refresh_table()
+        self.status_var.set(f"Set {field} = '{value}' on {len(filtered)} row(s).")
 
     def copy_matching_locations(self) -> None:
         locations = list(dict.fromkeys(row.location for row in self.iter_filtered_rows()))
