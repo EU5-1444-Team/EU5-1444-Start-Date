@@ -30,7 +30,7 @@ if (fs.existsSync(metadataFile)) { // should always exist but just in case somet
     const raw = fs.readFileSync(metadataFile, "utf-8");
     const cleaned = raw.replace(/^\uFEFF/, ""); // Remove UTF-8 BOM if present
     const content = JSON.parse(cleaned);
-    content.name = "1444 Start Date";
+    content.name = "1444 - The Dawn of Discovery";
     fs.writeFileSync(metadataFile, JSON.stringify(content));
 } else {
     throw new Error("Critical Error: .metadata/metadata.json missing or not copied over");
