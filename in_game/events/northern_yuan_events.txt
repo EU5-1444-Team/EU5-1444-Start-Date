@@ -1,282 +1,297 @@
-#namespace = northern_yuan
-#
-## Yuan demands submission of all clans
-#northern_yuan.100 = {
-#    type = country_event
-#    title = northern_yuan.100.title
-#    desc = northern_yuan.100.desc
-#
-#    illustration_tags = {
-#        10 = regular
-#        10 = interior
-#    }
-#
-#    immediate = {
-#        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-#        save_scope_as = target_country
-#        ruler ?= { save_scope_as = target_emperor }
-#    }
-#
-#    option = {
-#        name = northern_yuan.100.a
-#        add_prestige = prestige_ultimate_bonus
-#        custom_tooltip = {
-#            text = northern_yuan.100.ctt
-#            international_organization:northern_yuan = {
-#                every_international_organization_member = {
-#                    limit = {
-#                        NOT = { root = this }
-#                        NOT = { is_subject_of = root }
-#                    }
-#                    trigger_event_silently = { id = northern_yuan.101 }
-#                }
-#            }
-#        }
-#    }
-#}
-#
-## ...and for member clans
-#northern_yuan.101 = {
-#    type = country_event
-#    title = northern_yuan.101.title
-#    desc = northern_yuan.101.desc
-#
-#    illustration_tags = {
-#        10 = angry
-#        10 = interior
-#    }
-#
-#    immediate = {
-#        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-#    }
-#
-#    option = {
-#        name = northern_yuan.101.a
-#        ai_chance = {
-#            factor = 10
-#            modifier = {
-#                factor = 0
-#                opinion = {
-#                    target = international_organization:northern_yuan.leader_country
-#                    value < 0
-#                }
-#            }
-#        }
-#        # Accept — become vassal
-#        international_organization:northern_yuan = {
-#            leader_country = {
-#                make_subject = {
-#                    target = root
-#                    type = subject_type:vassal
-#                }
-#            }
-#        }
-#    }
-#
-#    option = {
-#        name = northern_yuan.101.b
-#        ai_chance = {
-#            factor = 10
-#            modifier = {
-#                factor = 0
-#                opinion = {
-#                    target = international_organization:northern_yuan.leader_country
-#                    value >= 0
-#                }
-#            }
-#        }
-#        # Refuse — leave the org
-#        international_organization:northern_yuan = {
-#            remove_country_from_international_organization = root
-#        }
-#        add_opinion = {
-#            target = international_organization:northern_yuan.leader_country
-#            modifier = opinion_northern_yuan_reform_opposed
-#        }
-#    }
-#}
-#
-## Yuan restored — annex all clans
-#northern_yuan.102 = {
-#    type = country_event
-#    title = northern_yuan.102.title
-#    desc = northern_yuan.102.desc
-#
-#    illustration_tags = {
-#        10 = happy
-#        10 = interior
-#    }
-#
-#    immediate = {
-#        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-#        save_scope_as = target_country
-#        ruler ?= { save_scope_as = target_emperor }
-#    }
-#
-#    option = {
-#        name = northern_yuan.102.a
-#        custom_tooltip = {
-#            text = northern_yuan.102.ctt
-#            international_organization:northern_yuan = {
-#                every_international_organization_member = {
-#                    limit = {
-#                        NOT = { root = this }
-#                    }
-#                    trigger_event_silently = { id = northern_yuan.103 }
-#                }
-#            }
-#        }
-#        root.leader_country = {
-#            form_country = formable_country:YUA_f
-#            set_country_rank_effect = { rank = country_rank:rank_empire }
-#        }
-#        destroy_international_organization = { target = international_organization:northern_yuan }
-#    }
-#}
-#
-## ...and for member clans
-#northern_yuan.103 = {
-#    type = country_event
-#    title = northern_yuan.103.title
-#    desc = northern_yuan.103.desc
-#
-#    illustration_tags = {
-#        10 = happy
-#        10 = interior
-#    }
-#
-#    immediate = {
-#        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-#    }
-#
-#    option = {
-#        name = northern_yuan.103.a
-#        scope:target_country = {
-#            annex_country_diplomatically = { country = root }
-#        }
-#    }
-#}
-#
-## Mongolia united — annex all clans
-#northern_yuan.104 = {
-#    type = country_event
-#    title = northern_yuan.104.title
-#    desc = northern_yuan.104.desc
-#
-#    illustration_tags = {
-#        10 = happy
-#        10 = interior
-#    }
-#
-#    immediate = {
-#        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-#        save_scope_as = target_country
-#        ruler ?= { save_scope_as = target_emperor }
-#    }
-#
-#    option = {
-#        name = northern_yuan.104.a
-#        custom_tooltip = {
-#            text = northern_yuan.104.ctt
-#            international_organization:northern_yuan = {
-#                every_international_organization_member = {
-#                    limit = {
-#                        NOT = { root = this }
-#                    }
-#                    trigger_event_silently = { id = northern_yuan.105 }
-#                }
-#            }
-#        }
-#        root.leader_country = {
-#            form_country = formable_country:MGO_f
-#            set_country_rank_effect = { rank = country_rank:rank_empire }
-#        }
-#        change_yeke_mongghul_ulus = { value = -100 }
-#        destroy_international_organization = { target = international_organization:northern_yuan }
-#    }
-#}
-#
-## ...and for member clans
-#northern_yuan.105 = {
-#    type = country_event
-#    title = northern_yuan.105.title
-#    desc = northern_yuan.105.desc
-#
-#    illustration_tags = {
-#        10 = happy
-#        10 = interior
-#    }
-#
-#    immediate = {
-#        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-#    }
-#
-#    option = {
-#        name = northern_yuan.105.a
-#        scope:target_country = {
-#            annex_country_diplomatically = { country = root }
-#        }
-#    }
-#}
-#
-#northern_yuan.200 = {
-#    type = country_event
-#    title = northern_yuan.200.title
-#    desc = northern_yuan.200.desc
-#
-#    illustration_tags = {
-#        10 = regular
-#        10 = exterior
-#    }
-#
-#    immediate = {
-#        event_illustration_poptype_effect = { foreground = pop_type:soldiers background = pop_type:soldiers }
-#        if = {
-#            limit = { c:KUH = { is_ai = no } }
-#            c:KUH = { save_scope_as = uriankhai_former }
-#        }
-#        else_if = {
-#            limit = { c:KVU = { is_ai = no } }
-#            c:KVU = { save_scope_as = uriankhai_former }
-#        }
-#        else_if = {
-#            limit = { c:TBU = { is_ai = no } }
-#            c:TBU = { save_scope_as = uriankhai_former }
-#        }
-#        else_if = {
-#            limit = { c:AUK = { is_ai = no } }
-#            c:AUK = { save_scope_as = uriankhai_former }
-#        }
-#        else = {
-#            c:KVU = { save_scope_as = uriankhai_former }
-#        }
-#    }
-#
-#    option = {
-#        name = northern_yuan.200.a
-#        custom_tooltip = {
-#            text = northern_yuan.200.ctt
-#            scope:uriankhai_former = {
-#                every_country = {
-#                    limit = {
-#                        OR = {
-#                            tag = KUH
-#                            tag = KVU
-#                            tag = TBU
-#                            tag = AUK
-#                        }
-#                        NOT = { this = scope:uriankhai_former }
-#                    }
-#                    scope:uriankhai_former = {
-#                        annex_country = {
-#                            country = prev
-#                            reason = Diplomatic
-#                        }
-#                    }
-#                }
-#                form_country = formable_country:URZ_f
-#            }
-#        }
-#        change_yeke_mongghul_ulus = { value = 5 }
-#    }
-#}
+namespace = northern_yuan
+
+# Yuan demands submission of all clans
+northern_yuan.100 = {
+    type = country_event
+    title = northern_yuan.100.title
+    desc = northern_yuan.100.desc
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        save_scope_as = target_country
+        ruler_or_regent = { save_scope_as = target_emperor }
+    }
+
+    option = {
+        name = northern_yuan.100.a
+        add_prestige = prestige_ultimate_bonus
+        custom_tooltip = {
+            text = northern_yuan.100.ctt
+            international_organization:northern_yuan = {
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { root = this }
+                        NOT = { is_subject_of = root }
+                    }
+                    trigger_event_silently = { id = northern_yuan.101 }
+                }
+            }
+        }
+    }
+}
+
+# ...and for member clans
+northern_yuan.101 = {
+    type = country_event
+    title = northern_yuan.101.title
+    desc = northern_yuan.101.desc
+
+    illustration_tags = {
+        10 = angry
+        10 = interior
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+    }
+
+    option = {
+        name = northern_yuan.101.a
+        ai_chance = {
+            factor = 10
+            modifier = {
+                factor = 0
+                opinion = {
+                    target = international_organization:northern_yuan.leader_country
+                    value < 100
+                }
+            }
+        }
+        # Accept — become vassal of Taishi
+        every_country_with_special_status_of_type = {
+            type = protector_general
+            international_organization = international_organization:northern_yuan
+            make_subject = {
+                target = root
+                type = subject_type:vassal
+            }
+        }
+    }
+
+    option = {
+        name = northern_yuan.101.b
+        ai_chance = {
+            factor = 10
+            modifier = {
+                factor = 0
+                opinion = {
+                    target = international_organization:northern_yuan.leader_country
+                    value >= 100
+                }
+            }
+        }
+        # Refuse — leave the org
+        international_organization:northern_yuan = {
+            remove_country_from_international_organization = root
+        }
+        add_opinion = {
+            target = international_organization:northern_yuan.leader_country
+            modifier = opinion_northern_yuan_reform_opposed
+        }
+    }
+}
+
+# Yuan restored — annex all clans
+northern_yuan.102 = {
+    type = country_event
+    title = northern_yuan.102.title
+    desc = northern_yuan.102.desc
+
+    illustration_tags = {
+        10 = happy
+        10 = interior
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        # Save the Taishi as the annexer, not Yuan
+        every_country_with_special_status_of_type = {
+            type = protector_general
+            international_organization = international_organization:northern_yuan
+            save_scope_as = target_country
+        }
+        ruler_or_regent = { save_scope_as = target_emperor }
+    }
+
+    option = {
+        name = northern_yuan.102.a
+        custom_tooltip = {
+            text = northern_yuan.102.ctt
+            international_organization:northern_yuan = {
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { scope:target_country = this }
+                    }
+                    trigger_event_silently = { id = northern_yuan.103 }
+                }
+            }
+        }
+        scope:target_country = {
+            form_country = formable_country:YUA_f
+            set_country_rank_effect = { rank = country_rank:rank_empire }
+        }
+        destroy_international_organization = { target = international_organization:northern_yuan }
+    }
+}
+
+# ...and for member clans (Yuan path)
+northern_yuan.103 = {
+    type = country_event
+    title = northern_yuan.103.title
+    desc = northern_yuan.103.desc
+
+    illustration_tags = {
+        10 = happy
+        10 = interior
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+    }
+
+    option = {
+        name = northern_yuan.103.a
+        scope:target_country = {
+            annex_country_diplomatically = { country = root }
+        }
+    }
+}
+
+# Mongolia united — annex all clans
+northern_yuan.104 = {
+    type = country_event
+    title = northern_yuan.104.title
+    desc = northern_yuan.104.desc
+
+    illustration_tags = {
+        10 = happy
+        10 = interior
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        # Save the Taishi as the annexer
+        every_country_with_special_status_of_type = {
+            type = protector_general
+            international_organization = international_organization:northern_yuan
+            save_scope_as = target_country
+        }
+        ruler_or_regent = { save_scope_as = target_emperor }
+    }
+
+    option = {
+        name = northern_yuan.104.a
+        custom_tooltip = {
+            text = northern_yuan.104.ctt
+            international_organization:northern_yuan = {
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { scope:target_country = this }
+                    }
+                    trigger_event_silently = { id = northern_yuan.105 }
+                }
+            }
+        }
+        scope:target_country = {
+            form_country = formable_country:MGO_f
+            set_country_rank_effect = { rank = country_rank:rank_empire }
+        }
+        international_organization:northern_yuan = {
+            set_variable = {
+                name = yeke_mongghul_ulus
+                value = 0
+            }
+        }
+        destroy_international_organization = { target = international_organization:northern_yuan }
+    }
+}
+
+# ...and for member clans (Mongolia path)
+northern_yuan.105 = {
+    type = country_event
+    title = northern_yuan.105.title
+    desc = northern_yuan.105.desc
+
+    illustration_tags = {
+        10 = happy
+        10 = interior
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+    }
+
+    option = {
+        name = northern_yuan.105.a
+        scope:target_country = {
+            annex_country_diplomatically = { country = root }
+        }
+    }
+}
+northern_yuan.200 = {
+    type = country_event
+    title = northern_yuan.200.title
+    desc = northern_yuan.200.desc
+
+    illustration_tags = {
+        10 = regular
+        10 = exterior
+    }
+
+    immediate = {
+        event_illustration_poptype_effect = { foreground = pop_type:soldiers background = pop_type:soldiers }
+        if = {
+            limit = { c:KUH = { is_ai = no } }
+            c:KUH = { save_scope_as = uriankhai_former }
+        }
+        else_if = {
+            limit = { c:KVU = { is_ai = no } }
+            c:KVU = { save_scope_as = uriankhai_former }
+        }
+        else_if = {
+            limit = { c:TBU = { is_ai = no } }
+            c:TBU = { save_scope_as = uriankhai_former }
+        }
+        else_if = {
+            limit = { c:AUK = { is_ai = no } }
+            c:AUK = { save_scope_as = uriankhai_former }
+        }
+        else = {
+            c:KVU = { save_scope_as = uriankhai_former }
+        }
+    }
+
+    option = {
+        name = northern_yuan.200.a
+        custom_tooltip = {
+            text = northern_yuan.200.ctt
+            scope:uriankhai_former = {
+                every_country = {
+                    limit = {
+                        OR = {
+                            tag = KUH
+                            tag = KVU
+                            tag = TBU
+                            tag = AUK
+                        }
+                        NOT = { this = scope:uriankhai_former }
+                        is_subject = no
+                    }
+                    scope:uriankhai_former = {
+                        annex_country = {
+                            country = prev
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                form_country = formable_country:URZ_f
+            }
+        }
+        change_yeke_mongghul_ulus = { value = 5 }
+    }
+}

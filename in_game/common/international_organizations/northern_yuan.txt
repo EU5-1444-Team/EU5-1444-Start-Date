@@ -47,8 +47,8 @@ northern_yuan = {
     can_declare_war = {
         trigger_if = {
             limit = {
-                scope:attacker = { is_member_of_international_organization = scope:recipient }
-                scope:defender = { is_member_of_international_organization = scope:recipient }
+                scope:attacker = { is_member_of_international_organization = international_organization:northern_yuan }
+                scope:defender = { is_member_of_international_organization = international_organization:northern_yuan }
             }
             OR = {
                 scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_seize_yuan target = scope:defender } }
@@ -71,6 +71,7 @@ northern_yuan = {
     gives_military_access_to_all_when_at_war = yes
 
     can_initiate_policy_votes = {
+        is_member_of_international_organization = international_organization:northern_yuan
         has_special_status_in_international_organization = {
             type = special_status:protector_general
             international_organization = international_organization:northern_yuan
@@ -82,7 +83,7 @@ northern_yuan = {
     }
 
     leader_modifier = {
-        great_power_score_exempt_from_forfeit = 50
+        great_power_score_exempt_from_forfeit = 20
         monthly_prestige = 0.1
     }
 
@@ -163,26 +164,84 @@ northern_yuan = {
             min = 0
             max = 100
             monthly_change = {
+                # Base decay
                 add = {
                     desc = "BASE_DECAY"
                     value = -0.1
                 }
+                
+                # Taishi prestige
                 add = {
-                    desc = "LEADER_PRESTIGE"
-                    if = {
-                        limit = { international_organization_has_leader = yes }
-                        value = leader_country.modifier:monthly_prestige
+                    desc = "TAISHI_PRESTIGE"
+                    value = 0
+                    every_country_with_special_status_of_type = {
+                        type = protector_general
+                        add = modifier:monthly_prestige
                         multiply = 0.5
                     }
                 }
+                
+                # Taishi military ruler stat
                 add = {
-                    desc = "LEADER_MANPOWER"
-                    if = {
-                        limit = { international_organization_has_leader = yes }
-                        value = leader_country.modifier:monthly_manpower
+                    desc = "TAISHI_MARTIAL"
+                    value = 0
+                    every_country_with_special_status_of_type = {
+                        type = protector_general
+                        add = {
+                            value = ruler_or_heir_if_regent.mil
+                            subtract = 50
+                            multiply = 0.004
+                        }
+                    }
+                }
+
+                # Taishi Admin ruler stat
+                add = {
+                    desc = "TAISHI_ADMIN"
+                    value = 0
+                    every_country_with_special_status_of_type = {
+                        type = protector_general
+                        add = {
+                            value = ruler_or_heir_if_regent.adm
+                            subtract = 50
+                            multiply = 0.001
+                        }
+                    }
+                }
+                
+                # Taishi tribal cohesion
+                add = {
+                    desc = "TAISHI_COHESION"
+                    value = 0
+                    every_country_with_special_status_of_type = {
+                        type = protector_general
+                        add = modifier:monthly_tribal_cohesion
                         multiply = 0.2
                     }
                 }
+                
+                # Internal peace bonus
+                add = {
+                    desc = "INTERNAL_PEACE"
+                    if = {
+                        limit = {
+                            NOT = {
+                                any_international_organization_member = {
+                                    at_war = yes
+                                    any_current_war = {
+                                        any_war_participant = {
+                                            is_member_of_international_organization = root
+                                            NOT = { this = prev }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        value = 0.05
+                    }
+                }
+                
+                # Internal wars penalty
                 add = {
                     desc = "INTERNAL_WARS"
                     every_international_organization_member = {
@@ -198,11 +257,142 @@ northern_yuan = {
                         add = -0.5
                     }
                 }
+                
+                # Members subjugated by outsiders
+                add = {
+                    desc = "MEMBERS_SUBJUGATED_BY_OUTSIDERS"
+                    every_international_organization_member = {
+                        limit = {
+                            is_subject = yes
+                            NOT = { is_subject_type = tributary }
+                            top_overlord ?= {
+                                NOT = { is_member_of_international_organization = root }
+                            }
+                        }
+                        add = -0.03
+                    }
+                }
+                
+                # Active law tier bonus — tiers 1-9 each contribute
+                add = {
+                    desc = "REFORM_PROGRESS_TIER_1"
+                    if = {
+                        limit = {
+                            OR = {
+                                international_organization_has_policy = policy:formal_kurultai_policy
+                                international_organization_has_policy = policy:loose_acknowledgment_policy
+                            }
+                        }
+                        value = 0.05
+                    }
+                }
+                add = {
+                    desc = "REFORM_PROGRESS_TIER_2"
+                    if = {
+                        limit = {
+                            OR = {
+                                international_organization_has_policy = policy:standardized_tribute_policy
+                                international_organization_has_policy = policy:military_tribute_policy
+                            }
+                        }
+                        value = 0.05
+                    }
+                }
+                add = {
+                    desc = "REFORM_PROGRESS_TIER_3"
+                    if = {
+                        limit = {
+                            OR = {
+                                international_organization_has_policy = policy:yuan_arbitration_policy
+                                international_organization_has_policy = policy:traditional_territories_policy
+                            }
+                        }
+                        value = 0.05
+                    }
+                }
+                add = {
+                    desc = "REFORM_PROGRESS_TIER_4"
+                    if = {
+                        limit = {
+                            OR = {
+                                international_organization_has_policy = policy:standardized_tumen_policy
+                                international_organization_has_policy = policy:yuan_offensive_call_policy
+                            }
+                        }
+                        value = 0.05
+                    }
+                }
+                add = {
+                    desc = "REFORM_PROGRESS_TIER_5"
+                    if = {
+                        limit = {
+                            OR = {
+                                international_organization_has_policy = policy:sinicized_court_policy
+                                international_organization_has_policy = policy:traditional_mongol_court_policy
+                            }
+                        }
+                        value = 0.05
+                    }
+                }
+                add = {
+                    desc = "REFORM_PROGRESS_TIER_6"
+                    if = {
+                        limit = {
+                            OR = {
+                                international_organization_has_policy = policy:administrative_integration_policy
+                                international_organization_has_policy = policy:military_subjugation_policy
+                            }
+                        }
+                        value = 0.05
+                    }
+                }
+                add = {
+                    desc = "REFORM_PROGRESS_TIER_7"
+                    if = {
+                        limit = {
+                            OR = {
+                                international_organization_has_policy = policy:yuan_imperial_authority_policy
+                                international_organization_has_policy = policy:mongol_imperial_authority_policy
+                            }
+                        }
+                        value = 0.1
+                    }
+                }
+                
+                # No leader penalty
                 if = {
                     limit = { international_organization_has_leader = no }
                     add = {
                         desc = "NO_LEADER"
                         value = -0.5
+                    }
+                }
+                add = {
+                    desc = "YUAN_LEGITIMACY_TENSION"
+                    if = {
+                        limit = { international_organization_has_leader = yes }
+                        value = -0.05
+                    }
+                }
+                # Non-Genghisid Taishi penalty
+                add = {
+                    desc = "NON_GENGHISID_TAISHI"
+                    every_country_with_special_status_of_type = {
+                        type = protector_general
+                        limit = {
+                            NOT = {
+                                ruler_or_heir_if_regent ?= {
+                                    OR = {
+                                        is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                        is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                        is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                        is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                                        is_patrilineal_descendant_of = dynasty:khasar_dynasty
+                                    }
+                                }
+                            }
+                        }
+                        add = -0.05
                     }
                 }
             }
