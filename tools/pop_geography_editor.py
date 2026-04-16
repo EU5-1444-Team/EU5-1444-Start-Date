@@ -444,6 +444,10 @@ class PopEditorApp:
         self.batch_mult_var = tk.StringVar(value="1")
         self.batch_replace_field_var = tk.StringVar(value="culture")
         self.batch_replace_value_var = tk.StringVar(value="")
+
+        self.blend_from_culture_var = tk.StringVar()
+        self.blend_to_culture_var = tk.StringVar()
+        self.blend_ratio_var = tk.StringVar(value="50")
         self.status_var     = tk.StringVar(value="Load a pop file to begin.")
         self.path_vars      = {
             "base_game":  tk.StringVar(value=str(base_game_path)),
@@ -457,7 +461,7 @@ class PopEditorApp:
 
     def _build_ui(self) -> None:
         self.root.geometry("1500x850")
-        self.root.rowconfigure(5, weight=1)
+        self.root.rowconfigure(6, weight=1)
         self.root.columnconfigure(0, weight=1)
 
         # path bar
@@ -558,9 +562,27 @@ class PopEditorApp:
                   text="Replaces the chosen field on every currently-visible filtered row.").grid(
             row=0, column=5, sticky="w", padx=(12, 0))
 
+        # blend cultures
+        blend_frame = ttk.LabelFrame(self.root, text="Blend Cultures (Convert % of Source to Target)", padding=8)
+        blend_frame.grid(row=5, column=0, sticky="ew", padx=8, pady=(0, 4))
+        blend_frame.columnconfigure(3, weight=1)
+        ttk.Label(blend_frame, text="From Culture").grid(row=0, column=0, sticky="w")
+        self.blend_from_combo = SearchableCombobox(blend_frame, textvariable=self.blend_from_culture_var, width=18)
+        self.blend_from_combo.grid(row=0, column=1, sticky="w", padx=(4, 12))
+        ttk.Label(blend_frame, text="To Culture").grid(row=0, column=2, sticky="w")
+        self.blend_to_combo = SearchableCombobox(blend_frame, textvariable=self.blend_to_culture_var, width=18)
+        self.blend_to_combo.grid(row=0, column=3, sticky="w", padx=(4, 12))
+        ttk.Label(blend_frame, text="Ratio %").grid(row=0, column=4, sticky="w")
+        ttk.Entry(blend_frame, textvariable=self.blend_ratio_var, width=8).grid(row=0, column=5, sticky="w", padx=(4, 12))
+        ttk.Button(blend_frame, text="Apply to Filtered Rows",
+                  command=self.apply_blend_cultures).grid(row=0, column=6, sticky="w")
+        ttk.Label(blend_frame,
+                  text="Converts ratio% of source culture to target; creates new pop entry if needed.").grid(
+            row=0, column=7, sticky="w", padx=(12, 0))
+
         # table
         table_frame = ttk.Frame(self.root, padding=(8, 4, 8, 8))
-        table_frame.grid(row=5, column=0, sticky="nsew")
+        table_frame.grid(row=6, column=0, sticky="nsew")
         table_frame.rowconfigure(0, weight=1)
         table_frame.columnconfigure(0, weight=1)
         self.tree = ttk.Treeview(table_frame, columns=TABLE_COLUMNS, show="headings", selectmode="browse")
@@ -576,7 +598,7 @@ class PopEditorApp:
         self.tree.bind("<Double-1>", self.begin_edit_cell)
         self.tree.tag_configure("differs", background="#fff1d6")
 
-        ttk.Label(self.root, textvariable=self.status_var, padding=(8, 2)).grid(row=6, column=0, sticky="ew")
+        ttk.Label(self.root, textvariable=self.status_var, padding=(8, 2)).grid(row=7, column=0, sticky="ew")
 
     # ── data loading / saving ─────────────────────────────────────────────────
 
@@ -611,6 +633,7 @@ class PopEditorApp:
             self.rebuild_row_metadata()
             self.update_filter_options()
             self.update_pop_attr_filter_options()
+            self.update_blend_culture_options()
             self.refresh_table()
             self.status_var.set(
                 f"Loaded {len(self.rows)} pop rows from {pops_path.name}; "
@@ -869,6 +892,97 @@ class PopEditorApp:
         self.root.clipboard_clear()
         self.root.clipboard_append("\n".join(locations))
         self.status_var.set(f"Copied {len(locations)} matching locations to the clipboard.")
+
+    def update_blend_culture_options(self) -> None:
+        all_cultures = sorted({
+            row.attrs.get("culture", "")
+            for row in self.rows
+            if row.attrs.get("culture")
+        })
+        self.blend_from_combo["values"] = [""] + all_cultures
+        self.blend_to_combo["values"] = [""] + all_cultures
+
+    def apply_blend_cultures(self) -> None:
+        from_culture = self.blend_from_culture_var.get().strip()
+        to_culture = self.blend_to_culture_var.get().strip()
+        try:
+            ratio = float(self.blend_ratio_var.get().strip())
+        except ValueError:
+            messagebox.showerror("Invalid ratio", "Ratio must be a number.")
+            return
+        if not from_culture or not to_culture:
+            messagebox.showerror("Missing cultures", "Please specify both from and to cultures.")
+            return
+        if ratio <= 0 or ratio > 100:
+            messagebox.showerror("Invalid ratio", "Ratio must be between 0 and 100.")
+            return
+        if from_culture == to_culture:
+            messagebox.showerror("Same culture", "From and to cultures must be different.")
+            return
+
+        active_geo = {f: self.filter_vars[f].get() for f in FILTER_FIELDS if self.filter_vars[f].get()}
+        has_geo_includes = any(self.include_values.values())
+
+        matching_rows = []
+        for row in self.rows:
+            if active_geo and any(self._geo_value(row, f) != v for f, v in active_geo.items()):
+                continue
+            if has_geo_includes and not self._row_matches(row, self.include_values):
+                continue
+            if self._row_matches(row, self.exclude_values):
+                continue
+            matching_rows.append(row)
+
+        if not matching_rows:
+            self.status_var.set("No matching rows to edit.")
+            return
+
+        created = 0
+        converted = 0
+        new_rows_to_add = []
+
+        for row in matching_rows:
+            if row.attrs.get("culture") != from_culture:
+                continue
+            try:
+                old_size = _safe_float(row.attrs.get("size", "0"))
+            except ValueError:
+                continue
+            if old_size <= 0:
+                continue
+
+            new_target_size = old_size * (ratio / 100)
+            new_source_size = old_size * (1 - ratio / 100)
+
+            new_attrs = OrderedDict()
+            new_attrs["size"] = normalize_size(str(new_target_size))
+            new_attrs["culture"] = to_culture
+            for k, v in row.attrs.items():
+                if k not in ("size", "culture"):
+                    new_attrs[k] = v
+            new_row = PopRow(self.next_row_id, row.location, new_attrs)
+            new_rows_to_add.append(new_row)
+            self.next_row_id += 1
+            created += 1
+
+            row.attrs["size"] = normalize_size(str(new_source_size))
+            converted += 1
+
+        self.rows.extend(new_rows_to_add)
+
+        if converted == 0:
+            self.status_var.set(f"No rows with '{from_culture}' found in filtered locations.")
+            return
+
+        self.rebuild_row_metadata()
+        self.update_filter_options()
+        self.update_pop_attr_filter_options()
+        self.update_blend_culture_options()
+        self.refresh_table()
+        self.status_var.set(
+            f"Blended {converted} row(s): {created} new target row(s) created, "
+            f"{ratio}% converted from {from_culture} to {to_culture}."
+        )
 
     # ── table display ─────────────────────────────────────────────────────────
 
