@@ -2698,6 +2698,18 @@ country_flavor = {
 		localization_key = rank_county
 		fallback = yes
 	}
+
+	### 1444 MODDED ###
+
+	text = {
+		localization_key = rank_county_monastery
+		trigger = {
+			government_type:theocracy
+			AND = {
+				tag = AHS
+			}
+		}
+	}
 }
 
 country_flavor_prefix = {

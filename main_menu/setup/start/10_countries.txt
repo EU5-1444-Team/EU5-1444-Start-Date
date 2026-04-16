@@ -696,7 +696,6 @@ countries = {
             moutiers evian
             bage thoire
             faucigny sallanches villars
-            biella vercelli
             martigny
         }
 
@@ -9374,6 +9373,7 @@ countries = {
         own_control_core = {
             pinerolo susa turin lanzo chieri
             cuneo mondovi alba
+            biella vercelli
         }
 
         starting_technology_level = 3
@@ -74523,7 +74523,7 @@ countries = {
         include = "catholic_republic_not_present"
 
         government = {
-            ruler = random # TODO: Add me
+            ruler = flo_cosimo_medici
         }
 
         capital = florence
@@ -74685,10 +74685,33 @@ countries = {
                 gelugpa_institution
             }
         }
+
         include = "expl_china"
     }
 
     # --- GPH ---
+
+    AHS = {
+        # Monastic Community of Mount Athos
+        type = building
+        capital = mount_athos
+        government = {
+            ruler = random
+            type = theocracy
+            heir_selection = theocratic_elective
+            laws = {
+                heir_religion_law = heir_special_succession
+            }
+
+            reforms = {
+            }
+        }
+
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+    }
+
+    # --- AHS ---
 
 
     ###############################################################################

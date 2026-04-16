@@ -1,3 +1,42 @@
+mount_athos_monastery = {
+	is_foreign = yes
+	max_levels = 1
+	pop_type = clergy
+	
+	employment_size = large_religious_building_employment
+	
+	category = religious_category
+	graphical_tags = { medium_religious }
+	
+	rural_settlement = yes
+	town = yes
+	city = yes
+	
+	build_time = religious_building_time
+	
+	price = orthodox_monastery_building
+	
+	country_potential = {
+		religion = religion:orthodox
+	}
+
+	possible_production_methods = {
+		monastery_maintenance
+		composite_nature_maintenance
+		single_nature_maintenance
+		dual_nature_maintenance
+		separate_nature_maintenance
+	}
+	construction_demand = village_construction
+	
+	modifier = {
+		local_clergy_max_literacy = 10
+		local_clergy_food_consumption = 0.2
+		local_pop_conversion_speed_modifier = 0.1
+	}
+}
+
+
 ganden_monastery = {
     is_foreign = yes
     stronger_power_projection = no
