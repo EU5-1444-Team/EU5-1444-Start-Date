@@ -43,6 +43,174 @@ COLUMN_WIDTHS = {
 }
 
 
+# ── searchable combobox ───────────────────────────────────────────────────────
+
+class SearchableCombobox(tk.Frame):
+    """
+    A combobox replacement whose dropdown filters as you type.
+
+    Public interface mirrors ttk.Combobox:
+      .get()            → current text
+      .set(value)       → set text programmatically (clears if value is "")
+      ["values"] = list → update the full option list
+      bind(event, cb)   → <<ComboboxSelected>> fires when user picks a value;
+                          other events forwarded to the inner Entry
+    """
+
+    def __init__(self, master, textvariable: tk.StringVar | None = None,
+                 width: int = 24, **kwargs):
+        super().__init__(master, **kwargs)
+        self._var       = textvariable or tk.StringVar()
+        self._all_values: list[str] = []
+        self._popup: tk.Toplevel | None = None
+        self._selected_callbacks: list = []
+        self._suppress_trace = False
+
+        self._entry = tk.Entry(self, textvariable=self._var, width=width)
+        self._entry.pack(fill="x", expand=True)
+
+        self._var.trace_add("write", self._on_text_change)
+        self._entry.bind("<Down>",     self._open_or_focus)
+        self._entry.bind("<Return>",   self._on_entry_return)
+        self._entry.bind("<Escape>",   lambda _e: self._close_popup())
+        self._entry.bind("<FocusOut>", self._on_focus_out)
+
+    # ── public API ────────────────────────────────────────────────────────────
+
+    def get(self) -> str:
+        return self._var.get()
+
+    def set(self, value: str) -> None:
+        self._suppress_trace = True
+        self._var.set(value)
+        self._suppress_trace = False
+        if self._popup:
+            self._close_popup()
+
+    def __setitem__(self, key, value):
+        if key == "values":
+            self._all_values = list(value)
+            if self._popup:
+                self._refresh_listbox(self._current_filter())
+        else:
+            super().__setitem__(key, value)
+
+    def __getitem__(self, key):
+        if key == "values":
+            return self._all_values
+        return super().__getitem__(key)
+
+    def bind(self, event, callback=None, add=None):
+        if event == "<<ComboboxSelected>>":
+            if callback:
+                self._selected_callbacks.append(callback)
+        else:
+            self._entry.bind(event, callback, add)
+
+    # ── internals ─────────────────────────────────────────────────────────────
+
+    def _current_filter(self) -> str:
+        return self._var.get().lower()
+
+    def _matching(self, filt: str) -> list[str]:
+        if not filt:
+            return self._all_values
+        return [v for v in self._all_values if filt in v.lower()]
+
+    def _on_text_change(self, *_):
+        if self._suppress_trace:
+            return
+        filt = self._current_filter()
+        if self._popup:
+            self._refresh_listbox(filt)
+        elif filt:
+            self._open_popup(filt)
+
+    def _open_or_focus(self, _event=None):
+        if self._popup:
+            self._listbox.focus_set()
+        else:
+            self._open_popup(self._current_filter())
+
+    def _open_popup(self, filt: str = "") -> None:
+        if self._popup:
+            return
+        popup = tk.Toplevel(self._entry)
+        popup.wm_overrideredirect(True)
+        popup.wm_attributes("-topmost", True)
+
+        x = self._entry.winfo_rootx()
+        y = self._entry.winfo_rooty() + self._entry.winfo_height()
+        w = max(self._entry.winfo_width(), 200)
+        popup.wm_geometry(f"{w}x180+{x}+{y}")
+
+        frame = tk.Frame(popup, bd=1, relief="solid")
+        frame.pack(fill="both", expand=True)
+        sb = tk.Scrollbar(frame, orient="vertical")
+        lb = tk.Listbox(frame, yscrollcommand=sb.set, selectmode="browse",
+                        activestyle="dotbox", exportselection=False)
+        sb.config(command=lb.yview)
+        sb.pack(side="right", fill="y")
+        lb.pack(side="left", fill="both", expand=True)
+
+        lb.bind("<Return>",   lambda _e: self._commit_selection())
+        lb.bind("<Double-1>", lambda _e: self._commit_selection())
+        lb.bind("<Escape>",   lambda _e: self._close_popup())
+        lb.bind("<FocusOut>", self._on_listbox_focus_out)
+
+        self._popup   = popup
+        self._listbox = lb
+        self._refresh_listbox(filt)
+
+    def _refresh_listbox(self, filt: str) -> None:
+        matches = self._matching(filt)
+        self._listbox.delete(0, "end")
+        for v in matches:
+            self._listbox.insert("end", v)
+        if matches:
+            self._listbox.selection_set(0)
+            self._listbox.see(0)
+
+    def _commit_selection(self) -> None:
+        sel = self._listbox.curselection()
+        if not sel:
+            return
+        value = self._listbox.get(sel[0])
+        self.set(value)          # uses suppress_trace so popup isn't re-opened
+        self._close_popup()
+        for cb in self._selected_callbacks:
+            try:
+                cb(None)
+            except Exception:
+                pass
+
+    def _close_popup(self) -> None:
+        if self._popup:
+            self._popup.destroy()
+            self._popup = None
+        self._entry.focus_set()
+
+    def _on_entry_return(self, _event=None) -> None:
+        if self._popup:
+            self._commit_selection()
+
+    def _on_focus_out(self, _event=None) -> None:
+        self._entry.after(150, self._maybe_close)
+
+    def _on_listbox_focus_out(self, _event=None) -> None:
+        self._entry.after(150, self._maybe_close)
+
+    def _maybe_close(self) -> None:
+        if not self._popup:
+            return
+        try:
+            focused = self._popup.focus_get()
+        except Exception:
+            focused = None
+        if focused not in (self._entry, self._listbox):
+            self._close_popup()
+
+
 # ── data classes ──────────────────────────────────────────────────────────────
 
 @dataclass
@@ -313,8 +481,7 @@ class PopEditorApp:
         filter_frame.columnconfigure(4, weight=1)
         for idx, field in enumerate(FILTER_FIELDS):
             ttk.Label(filter_frame, text=field.title()).grid(row=idx, column=0, sticky="w")
-            combo = ttk.Combobox(filter_frame, textvariable=self.filter_vars[field],
-                                 state="readonly", width=24)
+            combo = SearchableCombobox(filter_frame, textvariable=self.filter_vars[field], width=24)
             combo.grid(row=idx, column=1, sticky="ew", padx=(4, 8))
             combo.bind("<<ComboboxSelected>>", self.on_filter_change)
             setattr(self, f"{field}_combo", combo)
@@ -329,10 +496,11 @@ class PopEditorApp:
             setattr(self, f"{field}_summary", summary)
             ttk.Button(filter_frame, text="Clear",
                        command=lambda f=field: self.clear_selection(f)).grid(row=idx, column=5)
+        btn_row = len(FILTER_FIELDS)
         ttk.Button(filter_frame, text="Clear All",
-                   command=self.clear_filters).grid(row=len(FILTER_FIELDS), column=0, pady=(8, 0), sticky="w")
+                   command=self.clear_filters).grid(row=btn_row, column=0, pady=(8, 0), sticky="w")
         ttk.Button(filter_frame, text="Copy Locations",
-                   command=self.copy_matching_locations).grid(row=len(FILTER_FIELDS), column=1, pady=(8, 0), sticky="w")
+                   command=self.copy_matching_locations).grid(row=btn_row, column=1, pady=(8, 0), sticky="w", padx=(4, 0))
 
         # pop attribute filters (culture / religion / type)
         pop_attr_frame = ttk.LabelFrame(self.root, text="Pop Attribute Filters (Culture / Religion / Type)", padding=8)
@@ -340,8 +508,7 @@ class PopEditorApp:
         pop_attr_frame.columnconfigure(4, weight=1)
         for idx, field in enumerate(POP_ATTR_FILTER_FIELDS):
             ttk.Label(pop_attr_frame, text=field.title()).grid(row=idx, column=0, sticky="w")
-            combo = ttk.Combobox(pop_attr_frame, textvariable=self.pop_attr_filter_vars[field],
-                                 state="readonly", width=24)
+            combo = SearchableCombobox(pop_attr_frame, textvariable=self.pop_attr_filter_vars[field], width=24)
             combo.grid(row=idx, column=1, sticky="ew", padx=(4, 8))
             combo.bind("<<ComboboxSelected>>", self.on_pop_attr_filter_change)
             setattr(self, f"pop_attr_{field}_combo", combo)
@@ -529,7 +696,7 @@ class PopEditorApp:
             current = self.filter_vars[field].get()
             combo["values"] = [""] + sorted(seen)
             if current not in combo["values"]:
-                self.filter_vars[field].set("")
+                combo.set("")
             self._update_summary(field)
         self.update_pop_attr_filter_options()
 
@@ -548,10 +715,8 @@ class PopEditorApp:
             return
         (self.include_values if mode == "include" else self.exclude_values)[field].add(value)
         (self.exclude_values if mode == "include" else self.include_values)[field].discard(value)
-        # Clear the exact-match dropdown so it doesn't override the include/exclude set.
-        # Without this, filter_vars[field] = "brabant" would block flanders rows even
-        # though flanders is also in the include set.
-        self.filter_vars[field].set("")
+        # Clear via combo.set() so the popup closes and suppress_trace is honoured
+        getattr(self, f"{field}_combo").set("")
         self._update_summary(field)
         self.update_filter_options()
         self.refresh_table()
@@ -565,7 +730,7 @@ class PopEditorApp:
 
     def clear_filters(self) -> None:
         for field in FILTER_FIELDS:
-            self.filter_vars[field].set("")
+            getattr(self, f"{field}_combo").set("")
             self.include_values[field].clear()
             self.exclude_values[field].clear()
             self._update_summary(field)
@@ -635,7 +800,7 @@ class PopEditorApp:
             current = self.pop_attr_filter_vars[field].get()
             combo["values"] = [""] + seen
             if current not in combo["values"]:
-                self.pop_attr_filter_vars[field].set("")
+                combo.set("")
             self._update_pop_attr_summary(field)
 
     def _update_pop_attr_summary(self, field: str) -> None:
@@ -653,8 +818,8 @@ class PopEditorApp:
             return
         (self.pop_attr_include_values if mode == "include" else self.pop_attr_exclude_values)[field].add(value)
         (self.pop_attr_exclude_values if mode == "include" else self.pop_attr_include_values)[field].discard(value)
-        # Clear dropdown so it doesn't exact-match-filter against the include set
-        self.pop_attr_filter_vars[field].set("")
+        # Clear via combo.set() so popup closes and suppress_trace is honoured
+        getattr(self, f"pop_attr_{field}_combo").set("")
         self._update_pop_attr_summary(field)
         self.update_pop_attr_filter_options()
         self.refresh_table()
@@ -668,7 +833,7 @@ class PopEditorApp:
 
     def clear_pop_attr_filters(self) -> None:
         for field in POP_ATTR_FILTER_FIELDS:
-            self.pop_attr_filter_vars[field].set("")
+            getattr(self, f"pop_attr_{field}_combo").set("")
             self.pop_attr_include_values[field].clear()
             self.pop_attr_exclude_values[field].clear()
             self._update_pop_attr_summary(field)
