@@ -18,6 +18,7 @@ BASE_POPS_REL    = Path("game/main_menu/setup/start/06_pops.txt")
 MAX_VISIBLE_ROWS = 3000
 STD_ATTR_ORDER   = ["type", "size", "culture", "religion"]
 FILTER_FIELDS    = ["continent", "superregion", "region", "area", "province", "location"]
+POP_ATTR_FILTER_FIELDS = ["culture", "religion", "type"]
 TABLE_COLUMNS    = (
     ["location"] + STD_ATTR_ORDER
     + ["continent", "superregion", "region", "area", "province", "extra", "differs", "basegame"]
@@ -40,6 +41,174 @@ COLUMN_WIDTHS = {
     "culture": 120,   "religion": 120,    "extra": 300,  "differs": 70,
     "basegame": 360,
 }
+
+
+# ── searchable combobox ───────────────────────────────────────────────────────
+
+class SearchableCombobox(tk.Frame):
+    """
+    A combobox replacement whose dropdown filters as you type.
+
+    Public interface mirrors ttk.Combobox:
+      .get()            → current text
+      .set(value)       → set text programmatically (clears if value is "")
+      ["values"] = list → update the full option list
+      bind(event, cb)   → <<ComboboxSelected>> fires when user picks a value;
+                          other events forwarded to the inner Entry
+    """
+
+    def __init__(self, master, textvariable: tk.StringVar | None = None,
+                 width: int = 24, **kwargs):
+        super().__init__(master, **kwargs)
+        self._var       = textvariable or tk.StringVar()
+        self._all_values: list[str] = []
+        self._popup: tk.Toplevel | None = None
+        self._selected_callbacks: list = []
+        self._suppress_trace = False
+
+        self._entry = tk.Entry(self, textvariable=self._var, width=width)
+        self._entry.pack(fill="x", expand=True)
+
+        self._var.trace_add("write", self._on_text_change)
+        self._entry.bind("<Down>",     self._open_or_focus)
+        self._entry.bind("<Return>",   self._on_entry_return)
+        self._entry.bind("<Escape>",   lambda _e: self._close_popup())
+        self._entry.bind("<FocusOut>", self._on_focus_out)
+
+    # ── public API ────────────────────────────────────────────────────────────
+
+    def get(self) -> str:
+        return self._var.get()
+
+    def set(self, value: str) -> None:
+        self._suppress_trace = True
+        self._var.set(value)
+        self._suppress_trace = False
+        if self._popup:
+            self._close_popup()
+
+    def __setitem__(self, key, value):
+        if key == "values":
+            self._all_values = list(value)
+            if self._popup:
+                self._refresh_listbox(self._current_filter())
+        else:
+            super().__setitem__(key, value)
+
+    def __getitem__(self, key):
+        if key == "values":
+            return self._all_values
+        return super().__getitem__(key)
+
+    def bind(self, event, callback=None, add=None):
+        if event == "<<ComboboxSelected>>":
+            if callback:
+                self._selected_callbacks.append(callback)
+        else:
+            self._entry.bind(event, callback, add)
+
+    # ── internals ─────────────────────────────────────────────────────────────
+
+    def _current_filter(self) -> str:
+        return self._var.get().lower()
+
+    def _matching(self, filt: str) -> list[str]:
+        if not filt:
+            return self._all_values
+        return [v for v in self._all_values if filt in v.lower()]
+
+    def _on_text_change(self, *_):
+        if self._suppress_trace:
+            return
+        filt = self._current_filter()
+        if self._popup:
+            self._refresh_listbox(filt)
+        elif filt:
+            self._open_popup(filt)
+
+    def _open_or_focus(self, _event=None):
+        if self._popup:
+            self._listbox.focus_set()
+        else:
+            self._open_popup(self._current_filter())
+
+    def _open_popup(self, filt: str = "") -> None:
+        if self._popup:
+            return
+        popup = tk.Toplevel(self._entry)
+        popup.wm_overrideredirect(True)
+        popup.wm_attributes("-topmost", True)
+
+        x = self._entry.winfo_rootx()
+        y = self._entry.winfo_rooty() + self._entry.winfo_height()
+        w = max(self._entry.winfo_width(), 200)
+        popup.wm_geometry(f"{w}x180+{x}+{y}")
+
+        frame = tk.Frame(popup, bd=1, relief="solid")
+        frame.pack(fill="both", expand=True)
+        sb = tk.Scrollbar(frame, orient="vertical")
+        lb = tk.Listbox(frame, yscrollcommand=sb.set, selectmode="browse",
+                        activestyle="dotbox", exportselection=False)
+        sb.config(command=lb.yview)
+        sb.pack(side="right", fill="y")
+        lb.pack(side="left", fill="both", expand=True)
+
+        lb.bind("<Return>",   lambda _e: self._commit_selection())
+        lb.bind("<Double-1>", lambda _e: self._commit_selection())
+        lb.bind("<Escape>",   lambda _e: self._close_popup())
+        lb.bind("<FocusOut>", self._on_listbox_focus_out)
+
+        self._popup   = popup
+        self._listbox = lb
+        self._refresh_listbox(filt)
+
+    def _refresh_listbox(self, filt: str) -> None:
+        matches = self._matching(filt)
+        self._listbox.delete(0, "end")
+        for v in matches:
+            self._listbox.insert("end", v)
+        if matches:
+            self._listbox.selection_set(0)
+            self._listbox.see(0)
+
+    def _commit_selection(self) -> None:
+        sel = self._listbox.curselection()
+        if not sel:
+            return
+        value = self._listbox.get(sel[0])
+        self.set(value)          # uses suppress_trace so popup isn't re-opened
+        self._close_popup()
+        for cb in self._selected_callbacks:
+            try:
+                cb(None)
+            except Exception:
+                pass
+
+    def _close_popup(self) -> None:
+        if self._popup:
+            self._popup.destroy()
+            self._popup = None
+        self._entry.focus_set()
+
+    def _on_entry_return(self, _event=None) -> None:
+        if self._popup:
+            self._commit_selection()
+
+    def _on_focus_out(self, _event=None) -> None:
+        self._entry.after(150, self._maybe_close)
+
+    def _on_listbox_focus_out(self, _event=None) -> None:
+        self._entry.after(150, self._maybe_close)
+
+    def _maybe_close(self) -> None:
+        if not self._popup:
+            return
+        try:
+            focused = self._popup.focus_get()
+        except Exception:
+            focused = None
+        if focused not in (self._entry, self._listbox):
+            self._close_popup()
 
 
 # ── data classes ──────────────────────────────────────────────────────────────
@@ -266,8 +435,15 @@ class PopEditorApp:
         self.filter_vars    = {f: tk.StringVar() for f in FILTER_FIELDS}
         self.include_values = {f: set()          for f in FILTER_FIELDS}
         self.exclude_values = {f: set()          for f in FILTER_FIELDS}
+
+        self.pop_attr_filter_vars    = {f: tk.StringVar() for f in POP_ATTR_FILTER_FIELDS}
+        self.pop_attr_include_values = {f: set()          for f in POP_ATTR_FILTER_FIELDS}
+        self.pop_attr_exclude_values = {f: set()          for f in POP_ATTR_FILTER_FIELDS}
+
         self.batch_add_var  = tk.StringVar(value="0")
         self.batch_mult_var = tk.StringVar(value="1")
+        self.batch_replace_field_var = tk.StringVar(value="culture")
+        self.batch_replace_value_var = tk.StringVar(value="")
         self.status_var     = tk.StringVar(value="Load a pop file to begin.")
         self.path_vars      = {
             "base_game":  tk.StringVar(value=str(base_game_path)),
@@ -281,7 +457,7 @@ class PopEditorApp:
 
     def _build_ui(self) -> None:
         self.root.geometry("1500x850")
-        self.root.rowconfigure(3, weight=1)
+        self.root.rowconfigure(5, weight=1)
         self.root.columnconfigure(0, weight=1)
 
         # path bar
@@ -305,8 +481,7 @@ class PopEditorApp:
         filter_frame.columnconfigure(4, weight=1)
         for idx, field in enumerate(FILTER_FIELDS):
             ttk.Label(filter_frame, text=field.title()).grid(row=idx, column=0, sticky="w")
-            combo = ttk.Combobox(filter_frame, textvariable=self.filter_vars[field],
-                                 state="readonly", width=24)
+            combo = SearchableCombobox(filter_frame, textvariable=self.filter_vars[field], width=24)
             combo.grid(row=idx, column=1, sticky="ew", padx=(4, 8))
             combo.bind("<<ComboboxSelected>>", self.on_filter_change)
             setattr(self, f"{field}_combo", combo)
@@ -321,14 +496,40 @@ class PopEditorApp:
             setattr(self, f"{field}_summary", summary)
             ttk.Button(filter_frame, text="Clear",
                        command=lambda f=field: self.clear_selection(f)).grid(row=idx, column=5)
+        btn_row = len(FILTER_FIELDS)
         ttk.Button(filter_frame, text="Clear All",
-                   command=self.clear_filters).grid(row=len(FILTER_FIELDS), column=0, pady=(8, 0), sticky="w")
+                   command=self.clear_filters).grid(row=btn_row, column=0, pady=(8, 0), sticky="w")
         ttk.Button(filter_frame, text="Copy Locations",
-                   command=self.copy_matching_locations).grid(row=len(FILTER_FIELDS), column=1, pady=(8, 0), sticky="w")
+                   command=self.copy_matching_locations).grid(row=btn_row, column=1, pady=(8, 0), sticky="w", padx=(4, 0))
+
+        # pop attribute filters (culture / religion / type)
+        pop_attr_frame = ttk.LabelFrame(self.root, text="Pop Attribute Filters (Culture / Religion / Type)", padding=8)
+        pop_attr_frame.grid(row=2, column=0, sticky="ew", padx=8, pady=(0, 2))
+        pop_attr_frame.columnconfigure(4, weight=1)
+        for idx, field in enumerate(POP_ATTR_FILTER_FIELDS):
+            ttk.Label(pop_attr_frame, text=field.title()).grid(row=idx, column=0, sticky="w")
+            combo = SearchableCombobox(pop_attr_frame, textvariable=self.pop_attr_filter_vars[field], width=24)
+            combo.grid(row=idx, column=1, sticky="ew", padx=(4, 8))
+            combo.bind("<<ComboboxSelected>>", self.on_pop_attr_filter_change)
+            setattr(self, f"pop_attr_{field}_combo", combo)
+            ttk.Button(pop_attr_frame, text="Include",
+                       command=lambda f=field: self.add_pop_attr_selection(f, "include")).grid(
+                row=idx, column=2, padx=(0, 4))
+            ttk.Button(pop_attr_frame, text="Exclude",
+                       command=lambda f=field: self.add_pop_attr_selection(f, "exclude")).grid(
+                row=idx, column=3, padx=(0, 8))
+            summary = ttk.Label(pop_attr_frame, text="", justify="left")
+            summary.grid(row=idx, column=4, sticky="ew")
+            setattr(self, f"pop_attr_{field}_summary", summary)
+            ttk.Button(pop_attr_frame, text="Clear",
+                       command=lambda f=field: self.clear_pop_attr_selection(f)).grid(row=idx, column=5)
+        ttk.Button(pop_attr_frame, text="Clear All",
+                   command=self.clear_pop_attr_filters).grid(
+            row=len(POP_ATTR_FILTER_FIELDS), column=0, pady=(8, 0), sticky="w")
 
         # batch edit
         batch_frame = ttk.LabelFrame(self.root, text="Batch Size Edit", padding=8)
-        batch_frame.grid(row=2, column=0, sticky="ew", padx=8, pady=(0, 4))
+        batch_frame.grid(row=3, column=0, sticky="ew", padx=8, pady=(0, 2))
         batch_frame.columnconfigure(5, weight=1)
         for col, (label, var) in enumerate([("Multiplier", self.batch_mult_var), ("Addition", self.batch_add_var)]):
             ttk.Label(batch_frame, text=label).grid(row=0, column=col * 2, sticky="w")
@@ -340,9 +541,26 @@ class PopEditorApp:
                   text="new_size = old_size * multiplier + addition  (clamped to 0 if negative)").grid(
             row=0, column=5, sticky="w", padx=(12, 0))
 
+        # batch replace (culture / religion / type)
+        replace_frame = ttk.LabelFrame(self.root, text="Batch Culture / Religion / Type Replace", padding=8)
+        replace_frame.grid(row=4, column=0, sticky="ew", padx=8, pady=(0, 4))
+        replace_frame.columnconfigure(5, weight=1)
+        ttk.Label(replace_frame, text="Field").grid(row=0, column=0, sticky="w")
+        field_combo = ttk.Combobox(replace_frame, textvariable=self.batch_replace_field_var,
+                                   values=POP_ATTR_FILTER_FIELDS, state="readonly", width=10)
+        field_combo.grid(row=0, column=1, sticky="w", padx=(4, 12))
+        ttk.Label(replace_frame, text="New value").grid(row=0, column=2, sticky="w")
+        ttk.Entry(replace_frame, textvariable=self.batch_replace_value_var, width=24).grid(
+            row=0, column=3, sticky="w", padx=(4, 12))
+        ttk.Button(replace_frame, text="Apply to Filtered Rows",
+                   command=self.apply_batch_replace).grid(row=0, column=4, sticky="w")
+        ttk.Label(replace_frame,
+                  text="Replaces the chosen field on every currently-visible filtered row.").grid(
+            row=0, column=5, sticky="w", padx=(12, 0))
+
         # table
         table_frame = ttk.Frame(self.root, padding=(8, 4, 8, 8))
-        table_frame.grid(row=3, column=0, sticky="nsew")
+        table_frame.grid(row=5, column=0, sticky="nsew")
         table_frame.rowconfigure(0, weight=1)
         table_frame.columnconfigure(0, weight=1)
         self.tree = ttk.Treeview(table_frame, columns=TABLE_COLUMNS, show="headings", selectmode="browse")
@@ -358,7 +576,7 @@ class PopEditorApp:
         self.tree.bind("<Double-1>", self.begin_edit_cell)
         self.tree.tag_configure("differs", background="#fff1d6")
 
-        ttk.Label(self.root, textvariable=self.status_var, padding=(8, 2)).grid(row=4, column=0, sticky="ew")
+        ttk.Label(self.root, textvariable=self.status_var, padding=(8, 2)).grid(row=6, column=0, sticky="ew")
 
     # ── data loading / saving ─────────────────────────────────────────────────
 
@@ -392,6 +610,7 @@ class PopEditorApp:
 
             self.rebuild_row_metadata()
             self.update_filter_options()
+            self.update_pop_attr_filter_options()
             self.refresh_table()
             self.status_var.set(
                 f"Loaded {len(self.rows)} pop rows from {pops_path.name}; "
@@ -477,8 +696,9 @@ class PopEditorApp:
             current = self.filter_vars[field].get()
             combo["values"] = [""] + sorted(seen)
             if current not in combo["values"]:
-                self.filter_vars[field].set("")
+                combo.set("")
             self._update_summary(field)
+        self.update_pop_attr_filter_options()
 
     def _update_summary(self, field: str) -> None:
         inc = ", ".join(sorted(self.include_values[field])) or "-"
@@ -495,6 +715,8 @@ class PopEditorApp:
             return
         (self.include_values if mode == "include" else self.exclude_values)[field].add(value)
         (self.exclude_values if mode == "include" else self.include_values)[field].discard(value)
+        # Clear via combo.set() so the popup closes and suppress_trace is honoured
+        getattr(self, f"{field}_combo").set("")
         self._update_summary(field)
         self.update_filter_options()
         self.refresh_table()
@@ -508,7 +730,7 @@ class PopEditorApp:
 
     def clear_filters(self) -> None:
         for field in FILTER_FIELDS:
-            self.filter_vars[field].set("")
+            getattr(self, f"{field}_combo").set("")
             self.include_values[field].clear()
             self.exclude_values[field].clear()
             self._update_summary(field)
@@ -521,6 +743,7 @@ class PopEditorApp:
     def iter_filtered_rows(self) -> list[PopRow]:
         active = {f: self.filter_vars[f].get() for f in FILTER_FIELDS if self.filter_vars[f].get()}
         has_includes = any(self.include_values.values())
+        has_pop_includes = any(self.pop_attr_include_values.values())
         result = []
         for row in self.rows:
             if active and any(self._geo_value(row, f) != v for f, v in active.items()):
@@ -529,8 +752,117 @@ class PopEditorApp:
                 continue
             if self._row_matches(row, self.exclude_values):
                 continue
+            # pop attribute filters (culture / religion / type)
+            if has_pop_includes:
+                if not any(
+                    row.attrs.get(f) in vals
+                    for f, vals in self.pop_attr_include_values.items() if vals
+                ):
+                    continue
+            if any(
+                row.attrs.get(f) in vals
+                for f, vals in self.pop_attr_exclude_values.items() if vals
+            ):
+                continue
             result.append(row)
         return result
+
+    def update_pop_attr_filter_options(self) -> None:
+        # Collect unique values from all rows that pass geo filters only
+        active = {f: self.filter_vars[f].get() for f in FILTER_FIELDS if self.filter_vars[f].get()}
+        has_includes = any(self.include_values.values())
+        geo_rows = []
+        for row in self.rows:
+            if active and any(self._geo_value(row, f) != v for f, v in active.items()):
+                continue
+            if has_includes and not self._row_matches(row, self.include_values):
+                continue
+            if self._row_matches(row, self.exclude_values):
+                continue
+            geo_rows.append(row)
+        for field in POP_ATTR_FILTER_FIELDS:
+            seen = sorted({
+                row.attrs.get(field, "") for row in geo_rows
+                if row.attrs.get(field)
+                # narrow: row must pass the *other* pop attr filters (not the one we're building)
+                and not any(
+                    vals and row.attrs.get(f) not in vals
+                    for f, vals in self.pop_attr_include_values.items()
+                    if f != field and vals
+                )
+                and not any(
+                    row.attrs.get(f) in vals
+                    for f, vals in self.pop_attr_exclude_values.items()
+                    if f != field and vals
+                )
+            })
+            combo = getattr(self, f"pop_attr_{field}_combo")
+            current = self.pop_attr_filter_vars[field].get()
+            combo["values"] = [""] + seen
+            if current not in combo["values"]:
+                combo.set("")
+            self._update_pop_attr_summary(field)
+
+    def _update_pop_attr_summary(self, field: str) -> None:
+        inc = ", ".join(sorted(self.pop_attr_include_values[field])) or "-"
+        exc = ", ".join(sorted(self.pop_attr_exclude_values[field])) or "-"
+        getattr(self, f"pop_attr_{field}_summary").configure(text=f"Include: {inc} | Exclude: {exc}")
+
+    def on_pop_attr_filter_change(self, _event=None) -> None:
+        self.update_pop_attr_filter_options()
+        self.refresh_table()
+
+    def add_pop_attr_selection(self, field: str, mode: str) -> None:
+        value = self.pop_attr_filter_vars[field].get()
+        if not value:
+            return
+        (self.pop_attr_include_values if mode == "include" else self.pop_attr_exclude_values)[field].add(value)
+        (self.pop_attr_exclude_values if mode == "include" else self.pop_attr_include_values)[field].discard(value)
+        # Clear via combo.set() so popup closes and suppress_trace is honoured
+        getattr(self, f"pop_attr_{field}_combo").set("")
+        self._update_pop_attr_summary(field)
+        self.update_pop_attr_filter_options()
+        self.refresh_table()
+
+    def clear_pop_attr_selection(self, field: str) -> None:
+        self.pop_attr_include_values[field].clear()
+        self.pop_attr_exclude_values[field].clear()
+        self._update_pop_attr_summary(field)
+        self.update_pop_attr_filter_options()
+        self.refresh_table()
+
+    def clear_pop_attr_filters(self) -> None:
+        for field in POP_ATTR_FILTER_FIELDS:
+            getattr(self, f"pop_attr_{field}_combo").set("")
+            self.pop_attr_include_values[field].clear()
+            self.pop_attr_exclude_values[field].clear()
+            self._update_pop_attr_summary(field)
+        self.refresh_table()
+
+    def apply_batch_replace(self) -> None:
+        field = self.batch_replace_field_var.get().strip()
+        value = self.batch_replace_value_var.get().strip()
+        if field not in POP_ATTR_FILTER_FIELDS:
+            messagebox.showerror("Invalid field", f"Field must be one of: {', '.join(POP_ATTR_FILTER_FIELDS)}")
+            return
+        if not value:
+            messagebox.showerror("Empty value", "Please enter a replacement value.")
+            return
+        filtered = self.iter_filtered_rows()
+        if not filtered:
+            self.status_var.set("No filtered rows to edit.")
+            return
+        for row in filtered:
+            row.attrs[field] = value
+            # Re-impose STD_ATTR_ORDER
+            row.attrs = OrderedDict(
+                [(k, row.attrs[k]) for k in STD_ATTR_ORDER if k in row.attrs]
+                + [(k, v) for k, v in row.attrs.items() if k not in STD_ATTR_ORDER]
+            )
+        self.rebuild_row_metadata()
+        self.update_pop_attr_filter_options()
+        self.refresh_table()
+        self.status_var.set(f"Set {field} = '{value}' on {len(filtered)} row(s).")
 
     def copy_matching_locations(self) -> None:
         locations = list(dict.fromkeys(row.location for row in self.iter_filtered_rows()))
