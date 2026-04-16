@@ -669,13 +669,16 @@ country_flavor = {
 	text = {
 		localization_key = rank_tibetan_monastery
 		trigger = {
-			culture = {
-				has_culture_group = culture_group:tibetan_group
-			}
-			OR = {
+			AND = {
 				has_reform = government_reform:gelugpa_institution
 				tag = GPH
 			}
+		}
+	}
+	text = {
+		localization_key = rank_athos_monastery
+		trigger = {
+			tag = AHS
 		}
 	}
 	text = {
@@ -2700,16 +2703,6 @@ country_flavor = {
 	}
 
 	### 1444 MODDED ###
-
-	text = {
-		localization_key = rank_county_monastery
-		trigger = {
-			government_type = government_type:theocracy
-			AND = {
-				tag = AHS
-			}
-		}
-	}
 }
 
 country_flavor_prefix = {
