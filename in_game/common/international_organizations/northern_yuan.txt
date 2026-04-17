@@ -155,6 +155,25 @@ northern_yuan = {
                 }
             }
         }
+        # Force-rejoin Mongol vassals of the Taishi
+        hidden_effect = {
+            every_country = {
+                limit = {
+                    culture = { has_culture_group = culture_group:mongolian_group }
+                    NOT = { is_member_of_international_organization = international_organization:northern_yuan }
+                    is_subject = yes
+                    top_overlord = {
+                        has_special_status_in_international_organization = {
+                            type = special_status:protector_general
+                            international_organization = international_organization:northern_yuan
+                        }
+                    }
+                }
+                international_organization:northern_yuan = {
+                    add_country_to_international_organization = prev
+                }
+            }
+        }
     }
 
     variables = {

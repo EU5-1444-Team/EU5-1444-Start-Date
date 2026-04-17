@@ -39157,7 +39157,7 @@ countries = {
     # persia_region
     # -------------
 
-    TIM = {
+    TIM = { #Timurid Herat
         own_control_core = {
             herat firozkoh chishti_sarif tulak awbeh karokh pushang
             firuzkuh_afghanistan azab khaysar shindand adraskan
@@ -39167,7 +39167,7 @@ countries = {
             farhadgerd mazdaran mashhad radkan tus
             sarakhs tejend kalat_nader abiward
             dargaz anew konjikala durun
-            pivehzhan kadkan fadisheh nishapur
+            pivehzhan kadkan fadisheh nishapur #!!!!!
             salameh roshtkhar zaveh azghand mahvelat gonabad
             tabas_al_unnab yazduye shahrakht zohan qaen abiz zozan khargerd
             qala_zari mazhan birjand khusf khvor deyhuk nayband
@@ -39228,8 +39228,8 @@ countries = {
             farashband sar_mashhad kazerun borazjan reyshahr
             qala_safid nurabad bandar_rig jannaba bandar_deylam basht
 
-            nardin minudasht aliabad_katul astarabad tammisha mubarakabad incheh_borun etrek gorgan
-            maraveh
+            nardin minudasht aliabad_katul tammisha mubarakabad incheh_borun etrek gorgan
+            maraveh astarabad #!!!!!
 
             qom kahak neyasar kashan maranjab aveh saveh
             khwar eyvanekey damavand rey varamin karaj rahimabad razeqan
@@ -39248,7 +39248,7 @@ countries = {
 
             kabul andarab kahmard bamyan charikar bagram istalif kohi_safi
             gandamak jalalabad alishang panjshir asadabad_kunar parun hajiabad
-            gardez logar chak ghazni zarghun_shahr muqur nawah wazakhwa maruf yakawlang
+            zarghun_shahr muqur nawah wazakhwa maruf yakawlang gardez logar chak ghazni #!!!!!
             chaman arghestan kandahar qalat_ghilji deychopan tarinkot deh_kundi kajran baghran
             doroh
             isfahan
@@ -39291,7 +39291,7 @@ countries = {
 
     # --- TIM ---
 
-    TII = {
+    TII = { #Timurid Irak-i-Ajam
         own_control_core = {
             qom kahak neyasar kashan maranjab aveh saveh
             khwar eyvanekey damavand rey varamin karaj rahimabad razeqan
@@ -39342,7 +39342,7 @@ countries = {
 
     # --- TII ---
 
-    TIF = {
+    TIF = { #Timurid Shiraz
         own_control_core = {
             beyza istakhr aspas shahr_meyan qaryat_al_bidh saadatshahr
             shiraz zarqan abadeh_tashk neyriz kherameh sarvestan
@@ -39385,14 +39385,13 @@ countries = {
 
     # --- TIF ---
 
-    TIK = {
-        #Kandahar
+    TIK = { #Kandahar
         own_control_core = {
             kabul andarab kahmard bamyan charikar bagram istalif kohi_safi
             gandamak jalalabad alishang panjshir asadabad_kunar parun hajiabad
             gardez logar chak ghazni zarghun_shahr muqur nawah wazakhwa maruf yakawlang
             chaman arghestan kandahar qalat_ghilji deychopan tarinkot deh_kundi kajran baghran
-            quetta gulistan shorabak lorelai
+            gulistan shorabak lorelai quetta #!!!!! Kasi Pastun
         }
         own_control_integrated = {
             dir timergara malakand bajaur
@@ -39593,7 +39592,7 @@ countries = {
             farah anardara shahr_sabz
             bost gereshk
             sepeh dowzdab
-            doroh
+            doroh zaranj
         }
 
         own_control_integrated = {
@@ -41345,12 +41344,12 @@ countries = {
 
     # --- TIS ---
 
-    TTK = {
+    TTK = { #Balkh
         own_control_core = {
             kerki andkhoy dawlat_abad maymana qaisar sheberghan
             sar_pol sangcharak chiras boyena_qara balkh aqca
             khamyab kelif termez basand darzanji denov hissar shuman qubodijon
-            aiwanj arkhan taleqan kishim araska farkhor hulbuk vakhs wesgird munk kulob
+            aiwanj arkhan taleqan kishim araska farkhor hulbuk vakhs wesgird munk kulob #!!!!!
             khamyab zadian boyena_qara mazar_i_sharif khulm samangan kunduz baghlan
             ashkamesh
             akhsisek
@@ -44845,6 +44844,27 @@ countries = {
         government = { mysticism_vs_jurisprudence = -15 }
 
     }
+    KIZ = { #Indus Kohistan
+        own_control_core = {
+            jijial kandia dasu tangir
+        }
+
+        capital = kandia
+
+        include = "indian_muslim_monarchy_no_coast_no_censor"
+        government = {
+
+            ruler = random
+
+
+            laws = {
+                sharia_law = hanafi_policy
+            }
+        }
+        religious_school = hanafi_school
+        government = { mysticism_vs_jurisprudence = -15 }
+
+    }
 
     # --- SWT ---
 
@@ -45603,7 +45623,7 @@ countries = {
     # --- KTL ---
 
     CRL = {
-        our_cores_conquered_by_others = {
+        own_control_core = {
             urtsun
         }
 
@@ -59665,9 +59685,6 @@ countries = {
             # chitral mulkhow yarkhun mastuj urtsun
             # Yarkent passageway
             # murgo amtogor raskam sanju
-        }
-        own_control_integrated = {
-            jijial kandia dasu tangir
         }
 
         starting_technology_level = 3

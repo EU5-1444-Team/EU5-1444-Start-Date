@@ -8,7 +8,7 @@ kurultai_law = {
     }
     allow = {
         international_organization:northern_yuan = {
-            var:yeke_mongghul_ulus >= 50
+            var:yeke_mongghul_ulus >= 80
         }
     }
     has_levels = yes
@@ -146,7 +146,7 @@ tribute_system_law = {
         international_organization_type = international_organization_type:northern_yuan
     }
     allow = {
-        root = { var:yeke_mongghul_ulus >= 50 }
+        root = { var:yeke_mongghul_ulus >= 80 }
         OR = {
             international_organization_has_policy = policy:formal_kurultai_policy
             international_organization_has_policy = policy:loose_acknowledgment_policy
@@ -292,7 +292,7 @@ pasture_rights_law = {
         international_organization_type = international_organization_type:northern_yuan
     }
     allow = {
-        root = { var:yeke_mongghul_ulus >= 50 }
+        root = { var:yeke_mongghul_ulus >= 80 }
         OR = {
             international_organization_has_policy = policy:standardized_tribute_policy
             international_organization_has_policy = policy:military_tribute_policy
@@ -437,7 +437,7 @@ military_organization_law = {
         international_organization_type = international_organization_type:northern_yuan
     }
     allow = {
-        root = { var:yeke_mongghul_ulus >= 50 }
+        root = { var:yeke_mongghul_ulus >= 80 }
         OR = {
             international_organization_has_policy = policy:yuan_arbitration_policy
             international_organization_has_policy = policy:traditional_territories_policy
@@ -585,7 +585,7 @@ imperial_court_law = {
         international_organization_type = international_organization_type:northern_yuan
     }
     allow = {
-        root = { var:yeke_mongghul_ulus >= 50 }
+        root = { var:yeke_mongghul_ulus >= 80 }
         OR = {
             international_organization_has_policy = policy:standardized_tumen_policy
             international_organization_has_policy = policy:yuan_offensive_call_policy
@@ -743,7 +743,7 @@ vassal_obligations_law = {
         international_organization_type = international_organization_type:northern_yuan
     }
     allow = {
-        root = { var:yeke_mongghul_ulus >= 50 }
+        root = { var:yeke_mongghul_ulus >= 80 }
         OR = {
             international_organization_has_policy = policy:sinicized_court_policy
             international_organization_has_policy = policy:traditional_mongol_court_policy
@@ -891,11 +891,12 @@ imperial_authority_law = {
         international_organization_type = international_organization_type:northern_yuan
     }
     allow = {
-        root = { var:yeke_mongghul_ulus >= 50 }
+        root = { var:yeke_mongghul_ulus >= 80 }
         OR = {
             international_organization_has_policy = policy:administrative_integration_policy
             international_organization_has_policy = policy:military_subjugation_policy
         }
+        NOT = { has_culture_group = culture_group:jurchen_group }
     }
     custom_tags = { forbids_no_policy }
 
@@ -1039,7 +1040,7 @@ mongol_consolidation_law = {
         international_organization_type = international_organization_type:northern_yuan
     }
     allow = {
-        root = { var:yeke_mongghul_ulus >= 50 }
+        root = { var:yeke_mongghul_ulus >= 80 }
         OR = {
             international_organization_has_policy = policy:yuan_imperial_authority_policy
             international_organization_has_policy = policy:mongol_imperial_authority_policy
@@ -1055,7 +1056,8 @@ mongol_consolidation_law = {
 
     puppet_all_mongols_policy = {
         on_activate = {
-            root.leader_country = {
+                every_country_with_special_status_of_type = {
+                type = protector_general
                 trigger_event_non_silently = northern_yuan.100
             }
         }
@@ -1089,7 +1091,7 @@ yuan_consolidation_law = {
                 }
             }
         }
-        root = { var:yeke_mongghul_ulus >= 50 }
+        root = { var:yeke_mongghul_ulus >= 80 }
         international_organization_has_policy = policy:puppet_all_mongols_policy
         international_organization_has_policy = policy:yuan_imperial_authority_policy
     }
@@ -1103,7 +1105,24 @@ yuan_consolidation_law = {
 
     annex_all_mongols_yuan_policy = {
         on_activate = {
-            root.leader_country = {
+            northern_yuan_legacy_modifier = {
+                if = { limit = { international_organization_has_policy = policy:formal_kurultai_policy } monthly_prestige = 0.03 country_cabinet_efficiency = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:loose_acknowledgment_policy } monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:standardized_tribute_policy } monthly_income_modifier = 0.02 trade_efficiency = 0.02 country_cabinet_efficiency = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:military_tribute_policy } global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:yuan_arbitration_policy } trade_efficiency = 0.02 stability_decay = -0.001 }
+                if = { limit = { international_organization_has_policy = policy:traditional_territories_policy } global_manpower_modifier = 0.03 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:standardized_tumen_policy } discipline = 0.02 army_tradition_from_battle = 0.04 }
+                if = { limit = { international_organization_has_policy = policy:yuan_offensive_call_policy } global_manpower_modifier = 0.04 army_tradition_from_battle = 0.05 }
+                if = { limit = { international_organization_has_policy = policy:sinicized_court_policy } monthly_prestige = 0.04 country_cabinet_efficiency = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:traditional_mongol_court_policy } monthly_prestige = 0.03 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republic_tradition = 0.03 monthly_devotion = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:administrative_integration_policy } monthly_income_modifier = 0.02 stability_decay = -0.001 country_cabinet_efficiency = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:military_subjugation_policy } global_manpower_modifier = 0.05 army_tradition_from_battle = 0.04 }
+                if = { limit = { international_organization_has_policy = policy:yuan_imperial_authority_policy } monthly_prestige = 0.05 monthly_income_modifier = 0.03 country_cabinet_efficiency = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:mongol_imperial_authority_policy } monthly_prestige = 0.03 global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republic_tradition = 0.03 monthly_devotion = 0.03 }
+            }
+            every_country_with_special_status_of_type = {
+                type = protector_general
                 trigger_event_non_silently = northern_yuan.102
             }
         }
@@ -1127,7 +1146,7 @@ mongolia_consolidation_law = {
         international_organization_type = international_organization_type:northern_yuan
     }
     allow = {
-        root = { var:yeke_mongghul_ulus >= 50 }
+        root = { var:yeke_mongghul_ulus >= 80 }
         international_organization_has_policy = policy:puppet_all_mongols_policy
         international_organization_has_policy = policy:mongol_imperial_authority_policy
     }
@@ -1141,7 +1160,24 @@ mongolia_consolidation_law = {
 
     annex_all_mongols_mongolia_policy = {
         on_activate = {
-            root.leader_country = {
+            northern_yuan_legacy_modifier = {
+                if = { limit = { international_organization_has_policy = policy:formal_kurultai_policy } monthly_prestige = 0.03 country_cabinet_efficiency = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:loose_acknowledgment_policy } monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:standardized_tribute_policy } monthly_income_modifier = 0.02 trade_efficiency = 0.02 country_cabinet_efficiency = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:military_tribute_policy } global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:yuan_arbitration_policy } trade_efficiency = 0.02 stability_decay = -0.001 }
+                if = { limit = { international_organization_has_policy = policy:traditional_territories_policy } global_manpower_modifier = 0.03 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:standardized_tumen_policy } discipline = 0.02 army_tradition_from_battle = 0.04 }
+                if = { limit = { international_organization_has_policy = policy:yuan_offensive_call_policy } global_manpower_modifier = 0.04 army_tradition_from_battle = 0.05 }
+                if = { limit = { international_organization_has_policy = policy:sinicized_court_policy } monthly_prestige = 0.04 country_cabinet_efficiency = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:traditional_mongol_court_policy } monthly_prestige = 0.03 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republic_tradition = 0.03 monthly_devotion = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:administrative_integration_policy } monthly_income_modifier = 0.02 stability_decay = -0.001 country_cabinet_efficiency = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:military_subjugation_policy } global_manpower_modifier = 0.05 army_tradition_from_battle = 0.04 }
+                if = { limit = { international_organization_has_policy = policy:yuan_imperial_authority_policy } monthly_prestige = 0.05 monthly_income_modifier = 0.03 country_cabinet_efficiency = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:mongol_imperial_authority_policy } monthly_prestige = 0.03 global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republic_tradition = 0.03 monthly_devotion = 0.03 }
+            }
+            every_country_with_special_status_of_type = {
+                type = protector_general
                 trigger_event_non_silently = northern_yuan.104
             }
         }

@@ -12,9 +12,7 @@ northern_yuan.100 = {
     }
 
     immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        save_scope_as = target_country
-        ruler_or_regent = { save_scope_as = target_emperor }
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }        
     }
 
     option = {
@@ -26,7 +24,10 @@ northern_yuan.100 = {
                 every_international_organization_member = {
                     limit = {
                         NOT = { root = this }
-                        NOT = { is_subject_of = root }
+                        OR = {
+                            is_subject = no
+                            is_subject_type = tributary
+                        }
                     }
                     trigger_event_silently = { id = northern_yuan.101 }
                 }
@@ -35,12 +36,10 @@ northern_yuan.100 = {
     }
 }
 
-# ...and for member clans
 northern_yuan.101 = {
     type = country_event
     title = northern_yuan.101.title
     desc = northern_yuan.101.desc
-
     illustration_tags = {
         10 = angry
         10 = interior
@@ -48,6 +47,18 @@ northern_yuan.101 = {
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        
+        international_organization:northern_yuan = {
+            every_international_organization_member = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                save_scope_as = northern_yuan_boss_scope
+            }
+        }
     }
 
     option = {
@@ -57,19 +68,30 @@ northern_yuan.101 = {
             modifier = {
                 factor = 0
                 opinion = {
-                    target = international_organization:northern_yuan.leader_country
+                    target = scope:northern_yuan_boss_scope
                     value < 100
                 }
             }
-        }
-        # Accept — become vassal of Taishi
-        every_country_with_special_status_of_type = {
-            type = protector_general
-            international_organization = international_organization:northern_yuan
-            make_subject = {
-                target = root
-                type = subject_type:vassal
+            # If I am Oirat, I refuse if the boss is NOT Oirat
+            modifier = {
+                factor = 0
+                culture = culture:oirat_culture
+                scope:northern_yuan_boss_scope = {
+                    NOT = { culture = culture:oirat_culture }
+                }
             }
+            modifier = {
+                factor = 0
+                OR = {
+                    is_subject_of = c:CHI
+                    any_overlord = { tag = CHI } # Catch-all for different subject types
+                }
+            }
+        }
+        
+        make_subject_of = {
+            target = scope:northern_yuan_boss_scope
+            type = subject_type:vassal
         }
     }
 
@@ -80,17 +102,42 @@ northern_yuan.101 = {
             modifier = {
                 factor = 0
                 opinion = {
-                    target = international_organization:northern_yuan.leader_country
+                    target = scope:northern_yuan_boss_scope
                     value >= 100
                 }
             }
+            modifier = {
+                factor = 100
+                culture = culture:oirat_culture
+                scope:northern_yuan_boss_scope = {
+                    NOT = { culture = culture:oirat_culture }
+                }
+            }
+            modifier = {
+                factor = 100
+                OR = {
+                    is_subject_of = c:CHI
+                    any_overlord = { tag = CHI }
+                }
+            }
         }
-        # Refuse — leave the org
+        scope:northern_yuan_boss_scope = {
+            add_casus_belli = {
+                type = casus_belli:cb_subjugation
+                target = root
+                years = 400
+            }
+            add_opinion = {
+                target = root
+                modifier = opinion_northern_yuan_reform_opposed
+            }
+        }
+        
         international_organization:northern_yuan = {
             remove_country_from_international_organization = root
         }
         add_opinion = {
-            target = international_organization:northern_yuan.leader_country
+            target = scope:northern_yuan_boss_scope
             modifier = opinion_northern_yuan_reform_opposed
         }
     }
@@ -109,13 +156,19 @@ northern_yuan.102 = {
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        # Save the Taishi as the annexer, not Yuan
-        every_country_with_special_status_of_type = {
-            type = protector_general
-            international_organization = international_organization:northern_yuan
-            save_scope_as = target_country
+        
+        # Consistent Capture Logic
+        international_organization:northern_yuan = {
+            every_international_organization_member = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                save_scope_as = northern_yuan_boss_scope
+            }
         }
-        ruler_or_regent = { save_scope_as = target_emperor }
     }
 
     option = {
@@ -125,13 +178,22 @@ northern_yuan.102 = {
             international_organization:northern_yuan = {
                 every_international_organization_member = {
                     limit = {
-                        NOT = { scope:target_country = this }
+                        NOT = { this = scope:northern_yuan_boss_scope }
                     }
+                    # We trigger 103 for the clans
                     trigger_event_silently = { id = northern_yuan.103 }
                 }
             }
+            every_country = {
+                limit = {
+                    is_subject_of = scope:northern_yuan_boss_scope
+                    NOT = { this = scope:northern_yuan_boss_scope }
+                    culture_group = culture_group:mongolian_group
+                }
+                trigger_event_silently = { id = northern_yuan.103 } # Or 105
+            }
         }
-        scope:target_country = {
+        scope:northern_yuan_boss_scope = {
             form_country = formable_country:YUA_f
             set_country_rank_effect = { rank = country_rank:rank_empire }
         }
@@ -152,11 +214,24 @@ northern_yuan.103 = {
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        
+        # Redundant check to ensure the scope exists when this event pops
+        international_organization:northern_yuan = {
+            every_international_organization_member = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                save_scope_as = northern_yuan_boss_scope
+            }
+        }
     }
 
     option = {
         name = northern_yuan.103.a
-        scope:target_country = {
+        scope:northern_yuan_boss_scope = {
             annex_country_diplomatically = { country = root }
         }
     }
@@ -175,13 +250,18 @@ northern_yuan.104 = {
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        # Save the Taishi as the annexer
-        every_country_with_special_status_of_type = {
-            type = protector_general
-            international_organization = international_organization:northern_yuan
-            save_scope_as = target_country
+        
+        international_organization:northern_yuan = {
+            every_international_organization_member = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                save_scope_as = northern_yuan_boss_scope
+            }
         }
-        ruler_or_regent = { save_scope_as = target_emperor }
     }
 
     option = {
@@ -191,16 +271,17 @@ northern_yuan.104 = {
             international_organization:northern_yuan = {
                 every_international_organization_member = {
                     limit = {
-                        NOT = { scope:target_country = this }
+                        NOT = { this = scope:northern_yuan_boss_scope }
                     }
                     trigger_event_silently = { id = northern_yuan.105 }
                 }
             }
         }
-        scope:target_country = {
+        scope:northern_yuan_boss_scope = {
             form_country = formable_country:MGO_f
             set_country_rank_effect = { rank = country_rank:rank_empire }
         }
+        # Variable cleanup
         international_organization:northern_yuan = {
             set_variable = {
                 name = yeke_mongghul_ulus
@@ -224,11 +305,23 @@ northern_yuan.105 = {
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        
+        international_organization:northern_yuan = {
+            every_international_organization_member = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                save_scope_as = northern_yuan_boss_scope
+            }
+        }
     }
 
     option = {
         name = northern_yuan.105.a
-        scope:target_country = {
+        scope:northern_yuan_boss_scope = {
             annex_country_diplomatically = { country = root }
         }
     }
