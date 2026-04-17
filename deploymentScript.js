@@ -1,12 +1,15 @@
-const { log } = require("console");
 const fs = require("fs");
+const path = require("path");
 const fileBlacklist = [
     /\.github/,
     /\.git/,
     /media/,
     /.*\.js/,
     /tools/,
-    /.*\.md/
+    /.*\.md/,
+    /.idea/,
+    /TODO/,
+    /.*\.iml/
 ];
 const deployFolder = "../1444StartReadyForPublish";
 
@@ -18,7 +21,6 @@ for (const file of fileList) {
     let isBlacklisted = false;
     for (const blackItem of fileBlacklist) {
         if (blackItem.test(file)) {
-
             isBlacklisted = true;
         }
     }
@@ -35,3 +37,5 @@ if (fs.existsSync(metadataFile)) { // should always exist but just in case somet
 } else {
     throw new Error("Critical Error: .metadata/metadata.json missing or not copied over");
 }
+
+console.log(`Wrote deployment-ready mod to ${path.resolve(deployFolder)}`)
