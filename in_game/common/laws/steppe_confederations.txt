@@ -1,977 +1,887 @@
 mongol_local_administration = {
-	type = international_organization
-	law_category = administrative
-	requires_vote = no
-	potential = {
+    type = international_organization
+    law_category = administrative
+    requires_vote = no
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
-			international_organization_type = international_organization_type:nogai_confederation
-			international_organization_type = international_organization_type:bashkir_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
-	}
-	allow = {
-		leader_country ?= { 
-        	societal_value:centralization_vs_decentralization < 90
-    	}
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country ?= {
-				has_variable = local_adm_law_cooldown_variable
-			}
-		}
-	}
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 90
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= {
+                has_variable = local_adm_law_cooldown_variable
+            }
+        }
+    }
 
-	mongol_tribal_administration_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
+    # Clan elders handle local disputes — no central authority, just tradition
+    mongol_tribal_administration_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = local_adm_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = centralization_vs_decentralization
+                    value = societal_value_minor_move_to_right
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_tribal_cohesion = 0.05
+            discipline = 0.0075
+            global_estate_satisfaction_recovery = 0.02
+            stability_decay = 0.001
+        }
+    }
 
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = local_adm_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-			every_international_organization_member = {
-				change_societal_value = {
-					type = centralization_vs_decentralization
-					value = societal_value_minor_move_to_right
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_towards_decentralization = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-		}
-	}
-
-	mongol_sinicized_administration_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = local_adm_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-			every_international_organization_member = {
-				change_societal_value = {
-					type = centralization_vs_decentralization
-					value = societal_value_minor_move_to_left
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_centralization = societal_value_monthly_move
-			monthly_towards_sinicized = societal_value_monthly_move
-			country_cabinet_efficiency = 0.05
-			monthly_tribal_cohesion = -0.05
-		}
-	}
+    # A Khan-appointed administrator manages each region
+    mongol_sinicized_administration_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = local_adm_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = centralization_vs_decentralization
+                    value = societal_value_minor_move_to_left
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_towards_centralization = societal_value_monthly_move
+            country_cabinet_efficiency = 0.05
+            monthly_tribal_cohesion = -0.03
+            stability_decay = -0.001
+        }
+    }
 }
 
 mongol_tax_obligations = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = no
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
-			international_organization_type = international_organization_type:nogai_confederation
-			international_organization_type = international_organization_type:bashkir_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
-	allow = {
-		leader_country ?= { 
-        	societal_value:centralization_vs_decentralization < 80
-    	}
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country ?= {
-				has_variable = tax_law_cooldown_variable
-			}
-		}
-	}
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 80
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= {
+                has_variable = tax_law_cooldown_variable
+            }
+        }
+    }
 
-	mongol_no_tax_obligations_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
+    # Clans owe nothing — raiding and herding sustain the confederation
+    mongol_no_tax_obligations_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = tax_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_tribal_cohesion = 0.03
+            global_manpower_modifier = 0.05
+            discipline = 0.0075
+            monthly_income_modifier = -0.03
+        }
+    }
 
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = tax_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			global_estate_target_satisfaction = small_permanent_target_satisfaction
-			monthly_tribal_cohesion = 0.01
-			monthly_towards_unsinicized = societal_value_monthly_move
-		}
-	}
+    # A share of livestock and goods flows to the Khan each season
+    mongol_fair_tax_obligations_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = tax_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_income_modifier = 0.04
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_tribal_cohesion = -0.02
+        }
+    }
 
-	mongol_fair_tax_obligations_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = tax_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			tax_income_efficiency = large_tax_income_efficiency_bonus
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = -0.03
-		}
-	}
-
-	mongol_extensive_tax_obligations_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = tax_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			tax_income_efficiency = large_tax_income_efficiency_bonus
-			monthly_tribal_cohesion = -0.05
-			global_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
-			monthly_towards_sinicized = societal_value_monthly_move
-		}
-	}
+    # Systematic extraction — the Khan demands a fixed portion of all production
+    mongol_extensive_tax_obligations_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = tax_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_income_modifier = 0.08
+            tax_income_efficiency = 0.05
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_tribal_cohesion = -0.05
+            global_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+        }
+    }
 }
 
 mongol_court_etiquette = {
-	type = international_organization
-	law_category = estates
-	requires_vote = no
-	potential = {
+    type = international_organization
+    law_category = estates
+    requires_vote = no
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
-			international_organization_type = international_organization_type:nogai_confederation
-			international_organization_type = international_organization_type:bashkir_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
-	}
-	allow = {
-		leader_country ?= { 
-        	societal_value:centralization_vs_decentralization < 70
-    	}
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country ?= {
-				has_variable = court_law_cooldown_variable
-			}
-		}
-	}
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 70
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= {
+                has_variable = court_law_cooldown_variable
+            }
+        }
+    }
 
-	mongol_no_court_etiquette_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = court_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			court_spending_cost = -0.01
-			monthly_tribal_cohesion = 0.02
-			monthly_towards_unsinicized = societal_value_monthly_move
-		}
-	}
+    # The Khan's court is a campfire council — chiefs speak freely, hierarchy is loose
+    mongol_no_court_etiquette_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = court_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_tribal_cohesion = 0.04
+            global_tribes_estate_power = 0.1
+            court_spending_cost = -0.02
+            discipline = 0.0075
+        }
+    }
 
-	mongol_basic_court_etiquette_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = court_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			
-			diplomatic_reputation = diplomatic_reputation_weak_bonus
-			court_spending_cost = -0.01
-			monthly_towards_sinicized = societal_value_monthly_move
-		}
-	}
+    # Rank and precedence are observed — the Khan receives his chiefs with ceremony
+    mongol_basic_court_etiquette_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = court_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_prestige = 0.05
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_tribal_cohesion = -0.02
+        }
+    }
 
-	mongol_sinicized_court_etiquette_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = court_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			court_spending_cost = 0.01
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_prestige = 0.05
-			monthly_tribal_cohesion = -0.05
-		}
-	}
+    # A formal court with fixed roles, titles, and protocols modelled on settled states
+    mongol_sinicized_court_etiquette_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = court_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_prestige = 0.1
+            legitimacy = 0.25
+            country_cabinet_efficiency = 0.03
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_tribal_cohesion = -0.05
+            court_spending_cost = 0.02
+        }
+    }
 }
 
 mongol_formal_script = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = no
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
-			international_organization_type = international_organization_type:nogai_confederation
-			international_organization_type = international_organization_type:bashkir_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
-	allow = {
-		leader_country ?= { 
-        	societal_value:centralization_vs_decentralization < 50
-    	}
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country ?= { has_variable = script_law_cooldown_variable }
-		}
-	}
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 50
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = script_law_cooldown_variable }
+        }
+    }
 
-	mongol_mongol_script_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = script_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-			every_international_organization_member = {
-				change_societal_value = {
-					type = traditionalist_vs_innovative
-					value = societal_value_large_move_to_left
-				}
-			}
-		}
+    # Oral tradition — law and history are passed down through memory and song
+    mongol_mongol_script_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = script_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = traditionalist_vs_innovative
+                    value = societal_value_large_move_to_left
+                }
+            }
+        }
+        country_modifier = {
+            monthly_tribal_cohesion = 0.04
+            monthly_towards_traditionalist = societal_value_monthly_move
+            discipline = 0.0075
+            cultural_tradition_modifier = 0.1
+        }
+    }
 
-		country_modifier = {
-			monthly_towards_traditionalist = societal_value_monthly_move
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-		}
-	}
-
-	mongol_sinicized_script_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = script_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-			every_international_organization_member = {
-				change_societal_value = {
-					type = centralization_vs_decentralization
-					value = societal_value_move_to_left
-				}
-			}
-		}
-	
-		country_modifier = {
-			research_speed_modifier = 0.05
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_towards_centralization = societal_value_minor_monthly_move
-			monthly_tribal_cohesion = -0.05
-		}
-	}
+    # A written script is adopted — records, laws, and correspondence can now be formalized
+    mongol_sinicized_script_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = script_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = centralization_vs_decentralization
+                    value = societal_value_move_to_left
+                }
+            }
+        }
+        country_modifier = {
+            country_cabinet_efficiency = 0.05
+            research_speed_modifier = 0.05
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_tribal_cohesion = -0.04
+            legislative_efficiency = 0.05
+        }
+    }
 }
 
 mongol_legal_framework = {
-	type = international_organization
-	law_category = administrative
-	requires_vote = no
-	potential = {
+    type = international_organization
+    law_category = administrative
+    requires_vote = no
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
-			international_organization_type = international_organization_type:nogai_confederation
-			international_organization_type = international_organization_type:bashkir_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
-	}
-	allow = {
-		leader_country ?= { 
-        	societal_value:centralization_vs_decentralization < 30
-    	}
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country ?= { has_variable = legal_law_cooldown_variable }
-		}
-	}
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 30
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = legal_law_cooldown_variable }
+        }
+    }
 
-	mongol_no_legal_framework_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = legal_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			stability_decay = 0.002
-			monthly_tribal_cohesion = 0.05
-			monthly_towards_unsinicized = societal_value_monthly_move
-		}
-	}
+    # Custom — disputes settled by clan precedent, the Khan mediates but does not command
+    mongol_no_legal_framework_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = legal_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_tribal_cohesion = 0.05
+            global_tribes_estate_power = 0.1
+            stability_decay = 0.002
+            discipline = 0.0075
+        }
+    }
 
-	mongol_basic_legal_framework_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = legal_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
+    # Codified — the Khan's word is law, written and enforced across the confederation
+    mongol_basic_legal_framework_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = legal_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            stability_decay = -0.001
+            global_distance_from_capital_cost_modifier = -0.05
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_tribal_cohesion = -0.03
+            legislative_efficiency = 0.05
+        }
+    }
 
-		country_modifier = {
-			monthly_towards_centralization = societal_value_minor_monthly_move
-			global_distance_from_capital_cost_modifier = -0.05
-			monthly_tribal_cohesion = -0.03
-		}
-	}
-
-	mongol_sinicized_legal_framework_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = legal_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			monthly_towards_centralization = societal_value_minor_monthly_move
-			monthly_towards_sinicized = societal_value_monthly_move
-			global_distance_from_capital_cost_modifier = -0.1
-			monthly_tribal_cohesion = -0.1
-		}
-	}
+    # Institutionalized — a permanent body of law with judges and enforcement mechanisms
+    mongol_sinicized_legal_framework_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = legal_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            stability_decay = -0.003
+            global_distance_from_capital_cost_modifier = -0.1
+            monthly_towards_centralization = societal_value_monthly_move
+            legislative_efficiency = 0.1
+            monthly_tribal_cohesion = -0.08
+        }
+    }
 }
 
 mongol_economic_framework = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = no
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
-			international_organization_type = international_organization_type:nogai_confederation
-			international_organization_type = international_organization_type:bashkir_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
-	}
-	allow = {
-		leader_country ?= { 
-        	societal_value:centralization_vs_decentralization < 10
-    	}
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country ?= { has_variable = economic_framework_cooldown_variable }
-		}
-	}
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 10
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = economic_framework_cooldown_variable }
+        }
+    }
 
-	mongol_shared_crops_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
+    # Subsistence — clans sustain themselves through herding and seasonal migration
+    mongol_shared_crops_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = economic_framework_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            global_monthly_food_modifier = 0.1
+            monthly_tribal_cohesion = 0.04
+            discipline = 0.0075
+            global_pop_food_consumption = -0.05
+        }
+    }
 
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = economic_framework_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_traditional_economy = societal_value_monthly_move
-			global_monthly_food_modifier = 0.1
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-		}
-	}
+    # Settled agriculture is encouraged alongside traditional herding
+    mongol_decentralized_farming_villages = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = economic_framework_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            global_monthly_food_modifier = 0.05
+            global_monthly_prosperity = 0.001
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            stability_investment = small_stability_investment
+            monthly_tribal_cohesion = -0.02
+        }
+    }
 
-	mongol_decentralized_farming_villages = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = economic_framework_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_traditional_economy = societal_value_minor_monthly_move
-			monthly_towards_sinicized = societal_value_monthly_move
-			stability_investment = small_stability_investment
-		}
-	}
-
-	mongol_financed_rgo_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = economic_framework_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			global_max_rgo_size_modifier = 0.2
-			monthly_towards_capital_economy = societal_value_monthly_move
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = -0.05
-		}
-	}
+    # State-directed production — the Khan controls key resources and trade routes
+    mongol_financed_rgo_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = economic_framework_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            global_max_rgo_size_modifier = 0.2
+            monthly_income_modifier = 0.05
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_towards_capital_economy = societal_value_monthly_move
+            monthly_tribal_cohesion = -0.05
+        }
+    }
 }
 
 mongol_trade_relations = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = no
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
-			international_organization_type = international_organization_type:nogai_confederation
-			international_organization_type = international_organization_type:bashkir_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
-	}
-	allow = {
-		leader_country ?= { 
-        	societal_value:centralization_vs_decentralization < -10
-    	}
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country ?= { has_variable = trade_law_cooldown_variable }
-		}
-	}
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < -10
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = trade_law_cooldown_variable }
+        }
+    }
 
-	mongol_clan_trade_only_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = trade_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			global_trade_protection_factor = 0.15
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-			monthly_towards_mercantilism = societal_value_monthly_move
-		}
-	}
+    # Raiding — neighbours are prey, not partners
+    mongol_clan_trade_only_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = trade_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_tribal_cohesion = 0.03
+            global_manpower_modifier = 0.05
+            monthly_towards_belligerent = societal_value_monthly_move
+            discipline = 0.0075
+        }
+    }
 
-	mongol_allow_foreign_exchanges_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = trade_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			monthly_towards_sinicized = societal_value_monthly_move
-			global_monthly_prosperity = 0.001
-			global_institution_growth_modifier = 0.25
-			monthly_tribal_cohesion = -0.05
-		}
-	}
+    # Caravan trade — the confederation opens routes and takes a cut of passing commerce
+    mongol_allow_foreign_exchanges_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = trade_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            trade_efficiency = tiny_trade_efficiency_bonus
+            global_monthly_prosperity = 0.001
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_tribal_cohesion = -0.02
+        }
+    }
 
-	mongol_chinese_tribute_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = trade_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			global_migration_speed_modifier = 0.1
-			monthly_towards_sinicized = societal_value_monthly_move
-			trade_efficiency = tiny_trade_efficiency_bonus
-			monthly_tribal_cohesion = -0.03
-		}
-	}
+    # Tributary integration — the confederation formally plugs into regional trade networks
+    mongol_chinese_tribute_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        years = 5
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = trade_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            trade_efficiency = 0.05
+            monthly_income_modifier = 0.04
+            global_institution_growth_modifier = 0.25
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_tribal_cohesion = -0.04
+        }
+    }
 }
 
 mongol_clan_diplomacy = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = no
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:oirat_confederation
-			international_organization_type = international_organization_type:nogai_confederation
-			international_organization_type = international_organization_type:bashkir_confederation
-		}
-	}
-	allow = {
-		leader_country ?= { 
-        	societal_value:centralization_vs_decentralization < -25
-    	}
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country ?= { has_variable = diplomacy_law_cooldown_variable }
-		}
-	}
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
+        }
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < -25
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = diplomacy_law_cooldown_variable }
+        }
+    }
 
-	mongol_no_embassies_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
+    # Isolation — the confederation deals with outsiders only at sword point
+    mongol_no_embassies_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = diplomacy_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_tribal_cohesion = 0.04
+            global_manpower_modifier = 0.05
+            monthly_towards_belligerent = societal_value_monthly_move
+            monthly_towards_decentralization = societal_value_minor_monthly_move
+        }
+    }
 
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = diplomacy_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_towards_belligerent = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-		}
-	}
+    # Clan envoys — chiefs send their own representatives to neighboring powers
+    mongol_clan_embassies_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = diplomacy_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            diplomatic_capacity = 1
+            improve_relation_impact = 0.1
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_tribal_cohesion = -0.02
+        }
+    }
 
-	mongol_clan_embassies_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = diplomacy_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_sinicized = societal_value_monthly_move
-			diplomatic_capacity = 1
-			antagonism_monthly_change_modifier = 0.03
-			monthly_tribal_cohesion = -0.03
-		}
-	}
-
-	mongol_chinese_embassies_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = diplomacy_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_towards_centralization = societal_value_minor_monthly_move
-			monthly_tribal_cohesion = -0.05
-		}
-	}
+    # Formal diplomacy — the Khan speaks for all clans through a unified diplomatic corps
+    mongol_chinese_embassies_policy = {
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_GOOD_IDEA" value = 20 }
+        }
+        on_activate = {
+            leader_country = {
+                set_variable = {
+                    name = diplomacy_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            diplomatic_capacity = 1
+            diplomatic_reputation = diplomatic_reputation_mild_bonus
+            max_diplomats = 1
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_tribal_cohesion = -0.05
+        }
+    }
 }
 khalkha_unification_law = {
     law_category = centralization
@@ -1026,6 +936,15 @@ khalkha_unification_law = {
             }
 
             disband_international_organization = yes
+            khalkha_confederation_legacy_modifier = {
+                monthly_tribal_cohesion = 0.02
+                monthly_legitimacy = 0.02
+                monthly_republic_tradition = 0.02
+                monthly_devotion = 0.02
+                monthly_prestige = 0.05
+                stability_decay = -0.001
+                trade_efficiency = 0.02
+            }
         }
     }
 }
@@ -1080,6 +999,15 @@ khorchin_unification_law = {
             }
 
             disband_international_organization = yes
+            khalkha_confederation_legacy_modifier = {
+                monthly_tribal_cohesion = 0.02
+                monthly_legitimacy = 0.02
+                monthly_republic_tradition = 0.02
+                monthly_devotion = 0.02
+                monthly_prestige = 0.05
+                stability_decay = -0.001
+                trade_efficiency = 0.02
+            }
         }
     }
 }
@@ -1135,6 +1063,15 @@ oirat_unification_law = {
             }
 
             disband_international_organization = yes
+            khalkha_confederation_legacy_modifier = {
+                monthly_tribal_cohesion = 0.02
+                monthly_legitimacy = 0.02
+                monthly_republic_tradition = 0.02
+                monthly_devotion = 0.02
+                monthly_prestige = 0.05
+                stability_decay = -0.001
+                trade_efficiency = 0.02
+            }
         }
     }
 }
@@ -1190,6 +1127,15 @@ nogai_unification_law = {
             }
 
             disband_international_organization = yes
+            khalkha_confederation_legacy_modifier = {
+                monthly_tribal_cohesion = 0.02
+                monthly_legitimacy = 0.02
+                monthly_republic_tradition = 0.02
+                monthly_devotion = 0.02
+                monthly_prestige = 0.05
+                stability_decay = -0.001
+                trade_efficiency = 0.02
+            }
         }
     }
 }
@@ -1244,6 +1190,15 @@ bashkir_unification_law = {
                 }
             }
             disband_international_organization = yes
+            khalkha_confederation_legacy_modifier = {
+                monthly_tribal_cohesion = 0.02
+                monthly_legitimacy = 0.02
+                monthly_republic_tradition = 0.02
+                monthly_devotion = 0.02
+                monthly_prestige = 0.05
+                stability_decay = -0.001
+                trade_efficiency = 0.02
+            }
         }
     }
 
@@ -1280,6 +1235,15 @@ bashkir_unification_law = {
                 }
             }
             disband_international_organization = yes
+            khalkha_confederation_legacy_modifier = {
+                monthly_tribal_cohesion = 0.02
+                monthly_legitimacy = 0.02
+                monthly_republic_tradition = 0.02
+                monthly_devotion = 0.02
+                monthly_prestige = 0.05
+                stability_decay = -0.001
+                trade_efficiency = 0.02
+            }
         }
     }
 }
