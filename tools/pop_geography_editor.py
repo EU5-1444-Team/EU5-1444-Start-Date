@@ -14,7 +14,6 @@ from tkinter import filedialog, messagebox, ttk
 
 REPO_ROOT        = Path(__file__).resolve().parents[1]
 SETTINGS_PATH    = REPO_ROOT / "tools/settings.json"
-BASE_POPS_REL    = Path("game/main_menu/setup/start/06_pops.txt")
 MAX_VISIBLE_ROWS = 3000
 STD_ATTR_ORDER   = ["type", "size", "culture", "religion"]
 FILTER_FIELDS    = ["continent", "superregion", "region", "area", "province", "location"]
@@ -425,7 +424,7 @@ class PopEditorApp:
         self.location_geo:       dict[str, GeoInfo] = {}
         self.location_order:     list[str] = []
         self.rows:               list[PopRow] = []
-        self.base_location_pops: dict[str, list[OrderedDict]] = {}
+        self.original_location_pops: dict[str, list[OrderedDict]] = {}
         self.row_diff_cache:     dict[int, tuple[bool, str]] = {}
         self.next_row_id = 1
         self.item_to_row:  dict[str, PopRow] = {}
@@ -442,12 +441,22 @@ class PopEditorApp:
 
         self.batch_add_var  = tk.StringVar(value="0")
         self.batch_mult_var = tk.StringVar(value="1")
-        self.batch_replace_field_var = tk.StringVar(value="culture")
-        self.batch_replace_value_var = tk.StringVar(value="")
 
         self.blend_from_culture_var = tk.StringVar()
         self.blend_to_culture_var = tk.StringVar()
-        self.blend_ratio_var = tk.StringVar(value="50")
+        self.blend_from_religion_var = tk.StringVar()
+        self.blend_to_religion_var = tk.StringVar()
+        self.blend_ratio_var = tk.StringVar(value="100")
+
+        self.redist_location_var = tk.StringVar()
+        self.redist_ratio_var = tk.StringVar(value="10")
+
+        self.add_location_var = tk.StringVar()
+        self.add_culture_var = tk.StringVar()
+        self.add_religion_var = tk.StringVar()
+        self.add_type_var = tk.StringVar()
+        self.add_size_var = tk.StringVar(value="1")
+
         self.status_var     = tk.StringVar(value="Load a pop file to begin.")
         self.path_vars      = {
             "base_game":  tk.StringVar(value=str(base_game_path)),
@@ -461,7 +470,7 @@ class PopEditorApp:
 
     def _build_ui(self) -> None:
         self.root.geometry("1500x850")
-        self.root.rowconfigure(6, weight=1)
+        self.root.rowconfigure(9, weight=1)
         self.root.columnconfigure(0, weight=1)
 
         # path bar
@@ -545,25 +554,8 @@ class PopEditorApp:
                   text="new_size = old_size * multiplier + addition  (clamped to 0 if negative)").grid(
             row=0, column=5, sticky="w", padx=(12, 0))
 
-        # batch replace (culture / religion / type)
-        replace_frame = ttk.LabelFrame(self.root, text="Batch Culture / Religion / Type Replace", padding=8)
-        replace_frame.grid(row=4, column=0, sticky="ew", padx=8, pady=(0, 4))
-        replace_frame.columnconfigure(5, weight=1)
-        ttk.Label(replace_frame, text="Field").grid(row=0, column=0, sticky="w")
-        field_combo = ttk.Combobox(replace_frame, textvariable=self.batch_replace_field_var,
-                                   values=POP_ATTR_FILTER_FIELDS, state="readonly", width=10)
-        field_combo.grid(row=0, column=1, sticky="w", padx=(4, 12))
-        ttk.Label(replace_frame, text="New value").grid(row=0, column=2, sticky="w")
-        ttk.Entry(replace_frame, textvariable=self.batch_replace_value_var, width=24).grid(
-            row=0, column=3, sticky="w", padx=(4, 12))
-        ttk.Button(replace_frame, text="Apply to Filtered Rows",
-                   command=self.apply_batch_replace).grid(row=0, column=4, sticky="w")
-        ttk.Label(replace_frame,
-                  text="Replaces the chosen field on every currently-visible filtered row.").grid(
-            row=0, column=5, sticky="w", padx=(12, 0))
-
-        # blend cultures
-        blend_frame = ttk.LabelFrame(self.root, text="Blend Cultures (Convert % of Source to Target)", padding=8)
+        # blend cultures/religions
+        blend_frame = ttk.LabelFrame(self.root, text="Blend (Convert % from Source to Target)", padding=8)
         blend_frame.grid(row=5, column=0, sticky="ew", padx=8, pady=(0, 4))
         blend_frame.columnconfigure(3, weight=1)
         ttk.Label(blend_frame, text="From Culture").grid(row=0, column=0, sticky="w")
@@ -572,17 +564,60 @@ class PopEditorApp:
         ttk.Label(blend_frame, text="To Culture").grid(row=0, column=2, sticky="w")
         self.blend_to_combo = SearchableCombobox(blend_frame, textvariable=self.blend_to_culture_var, width=18)
         self.blend_to_combo.grid(row=0, column=3, sticky="w", padx=(4, 12))
+        ttk.Label(blend_frame, text="From Religion").grid(row=1, column=0, sticky="w")
+        self.blend_from_religion_combo = SearchableCombobox(blend_frame, textvariable=self.blend_from_religion_var, width=18)
+        self.blend_from_religion_combo.grid(row=1, column=1, sticky="w", padx=(4, 12))
+        ttk.Label(blend_frame, text="To Religion").grid(row=1, column=2, sticky="w")
+        self.blend_to_religion_combo = SearchableCombobox(blend_frame, textvariable=self.blend_to_religion_var, width=18)
+        self.blend_to_religion_combo.grid(row=1, column=3, sticky="w", padx=(4, 12))
         ttk.Label(blend_frame, text="Ratio %").grid(row=0, column=4, sticky="w")
         ttk.Entry(blend_frame, textvariable=self.blend_ratio_var, width=8).grid(row=0, column=5, sticky="w", padx=(4, 12))
         ttk.Button(blend_frame, text="Apply to Filtered Rows",
                   command=self.apply_blend_cultures).grid(row=0, column=6, sticky="w")
         ttk.Label(blend_frame,
-                  text="Converts ratio% of source culture to target; creates new pop entry if needed.").grid(
+                  text="Swaps culture and/or religion by ratio; fills both to apply both.").grid(
             row=0, column=7, sticky="w", padx=(12, 0))
+
+        # redistribute
+        redistribute_frame = ttk.LabelFrame(self.root, text="Redistribute / Collect Pops", padding=8)
+        redistribute_frame.grid(row=7, column=0, sticky="ew", padx=8, pady=(0, 4))
+        redistribute_frame.columnconfigure(2, weight=1)
+        ttk.Label(redistribute_frame, text="Source Location").grid(row=0, column=0, sticky="w")
+        self.redist_location_combo = SearchableCombobox(redistribute_frame, textvariable=self.redist_location_var, width=22)
+        self.redist_location_combo.grid(row=0, column=1, sticky="w", padx=(4, 12))
+        ttk.Label(redistribute_frame, text="Ratio %").grid(row=0, column=2, sticky="w")
+        ttk.Entry(redistribute_frame, textvariable=self.redist_ratio_var, width=8).grid(row=0, column=3, sticky="w", padx=(4, 12))
+        ttk.Button(redistribute_frame, text="Redistribute",
+                   command=self.apply_redistribute_to_province).grid(row=0, column=4, sticky="w", padx=(12, 4))
+        ttk.Button(redistribute_frame, text="Collect",
+                   command=self.apply_redistribute_to_location).grid(row=0, column=5, sticky="w")
+        ttk.Label(redistribute_frame,
+                  text="Redistribute: take ratio% from source, distribute to other province locs. Collect: take ratio% from other locs, add to source.").grid(
+            row=0, column=6, sticky="w", padx=(12, 0))
+
+        # add pop
+        add_frame = ttk.LabelFrame(self.root, text="Add New Pop", padding=8)
+        add_frame.grid(row=8, column=0, sticky="ew", padx=8, pady=(0, 4))
+        add_frame.columnconfigure(4, weight=1)
+        ttk.Label(add_frame, text="Location").grid(row=0, column=0, sticky="w")
+        self.add_location_combo = SearchableCombobox(add_frame, textvariable=self.add_location_var, width=18)
+        self.add_location_combo.grid(row=0, column=1, sticky="w", padx=(4, 8))
+        ttk.Label(add_frame, text="Type").grid(row=0, column=2, sticky="w")
+        self.add_type_combo = ttk.Combobox(add_frame, textvariable=self.add_type_var, width=12)
+        self.add_type_combo.grid(row=0, column=3, sticky="w", padx=(4, 8))
+        ttk.Label(add_frame, text="Culture").grid(row=1, column=0, sticky="w")
+        self.add_culture_combo = SearchableCombobox(add_frame, textvariable=self.add_culture_var, width=18)
+        self.add_culture_combo.grid(row=1, column=1, sticky="w", padx=(4, 8))
+        ttk.Label(add_frame, text="Religion").grid(row=1, column=2, sticky="w")
+        self.add_religion_combo = SearchableCombobox(add_frame, textvariable=self.add_religion_var, width=18)
+        self.add_religion_combo.grid(row=1, column=3, sticky="w", padx=(4, 8))
+        ttk.Label(add_frame, text="Size").grid(row=1, column=4, sticky="w")
+        ttk.Entry(add_frame, textvariable=self.add_size_var, width=10).grid(row=1, column=5, sticky="w", padx=(4, 8))
+        ttk.Button(add_frame, text="Add", command=self.apply_add_pop).grid(row=0, column=6, sticky="w", padx=(12, 0))
 
         # table
         table_frame = ttk.Frame(self.root, padding=(8, 4, 8, 8))
-        table_frame.grid(row=6, column=0, sticky="nsew")
+        table_frame.grid(row=9, column=0, sticky="nsew")
         table_frame.rowconfigure(0, weight=1)
         table_frame.columnconfigure(0, weight=1)
         self.tree = ttk.Treeview(table_frame, columns=TABLE_COLUMNS, show="headings", selectmode="browse")
@@ -598,7 +633,7 @@ class PopEditorApp:
         self.tree.bind("<Double-1>", self.begin_edit_cell)
         self.tree.tag_configure("differs", background="#fff1d6")
 
-        ttk.Label(self.root, textvariable=self.status_var, padding=(8, 2)).grid(row=7, column=0, sticky="ew")
+        ttk.Label(self.root, textvariable=self.status_var, padding=(8, 2)).grid(row=10, column=0, sticky="ew")
 
     # ── data loading / saving ─────────────────────────────────────────────────
 
@@ -614,12 +649,10 @@ class PopEditorApp:
             mod_folder = Path(self.path_vars["mod_folder"].get()).expanduser()
             pops_path      = mod_folder / "main_menu/setup/start/06_pops.txt"
             defs_path      = base_game  / "game/in_game/map_data/definitions.txt"
-            base_pops_path = base_game  / BASE_POPS_REL
 
             self.location_geo = parse_definitions(defs_path)
             self.location_order, location_pops = parse_pops(pops_path)
-            _, base_raw = parse_pops(base_pops_path)
-            self.base_location_pops = _normalize_pops(base_raw)
+            self.original_location_pops = _normalize_pops(location_pops)
 
             self.rows = []
             self.next_row_id = 1
@@ -634,10 +667,12 @@ class PopEditorApp:
             self.update_filter_options()
             self.update_pop_attr_filter_options()
             self.update_blend_culture_options()
+            self.update_redistribute_options()
+            self.update_add_pop_options()
             self.refresh_table()
             self.status_var.set(
                 f"Loaded {len(self.rows)} pop rows from {pops_path.name}; "
-                f"basegame compare from {base_pops_path.name}."
+                f"compare to original (on load)."
             )
         except Exception as exc:
             messagebox.showerror("Load failed", str(exc))
@@ -684,12 +719,12 @@ class PopEditorApp:
         positions: dict[str, int] = defaultdict(int)
         for row in self.rows:
             idx = positions[row.location]
-            base_list = self.base_location_pops.get(row.location, [])
+            base_list = self.original_location_pops.get(row.location, [])
             if idx < len(base_list):
                 differs = not pop_attrs_equal(row.attrs, base_list[idx])
                 summary = format_attrs_summary(base_list[idx]) if differs else ""
             else:
-                differs, summary = True, "<missing in basegame>"
+                differs, summary = True, "<missing in original>"
             self.row_diff_cache[row.row_id] = (differs, summary)
             positions[row.location] += 1
 
@@ -862,31 +897,6 @@ class PopEditorApp:
             self._update_pop_attr_summary(field)
         self.refresh_table()
 
-    def apply_batch_replace(self) -> None:
-        field = self.batch_replace_field_var.get().strip()
-        value = self.batch_replace_value_var.get().strip()
-        if field not in POP_ATTR_FILTER_FIELDS:
-            messagebox.showerror("Invalid field", f"Field must be one of: {', '.join(POP_ATTR_FILTER_FIELDS)}")
-            return
-        if not value:
-            messagebox.showerror("Empty value", "Please enter a replacement value.")
-            return
-        filtered = self.iter_filtered_rows()
-        if not filtered:
-            self.status_var.set("No filtered rows to edit.")
-            return
-        for row in filtered:
-            row.attrs[field] = value
-            # Re-impose STD_ATTR_ORDER
-            row.attrs = OrderedDict(
-                [(k, row.attrs[k]) for k in STD_ATTR_ORDER if k in row.attrs]
-                + [(k, v) for k, v in row.attrs.items() if k not in STD_ATTR_ORDER]
-            )
-        self.rebuild_row_metadata()
-        self.update_pop_attr_filter_options()
-        self.refresh_table()
-        self.status_var.set(f"Set {field} = '{value}' on {len(filtered)} row(s).")
-
     def copy_matching_locations(self) -> None:
         locations = list(dict.fromkeys(row.location for row in self.iter_filtered_rows()))
         self.root.clipboard_clear()
@@ -902,22 +912,35 @@ class PopEditorApp:
         self.blend_from_combo["values"] = [""] + all_cultures
         self.blend_to_combo["values"] = [""] + all_cultures
 
+        all_religions = sorted({
+            row.attrs.get("religion", "")
+            for row in self.rows
+            if row.attrs.get("religion")
+        })
+        self.blend_from_religion_combo["values"] = [""] + all_religions
+        self.blend_to_religion_combo["values"] = [""] + all_religions
+
     def apply_blend_cultures(self) -> None:
         from_culture = self.blend_from_culture_var.get().strip()
         to_culture = self.blend_to_culture_var.get().strip()
+        from_religion = self.blend_from_religion_var.get().strip()
+        to_religion = self.blend_to_religion_var.get().strip()
         try:
             ratio = float(self.blend_ratio_var.get().strip())
         except ValueError:
             messagebox.showerror("Invalid ratio", "Ratio must be a number.")
             return
-        if not from_culture or not to_culture:
-            messagebox.showerror("Missing cultures", "Please specify both from and to cultures.")
+        if not from_culture and not from_religion:
+            messagebox.showerror("Missing input", "Please specify at least one of culture or religion to swap.")
             return
         if ratio <= 0 or ratio > 100:
             messagebox.showerror("Invalid ratio", "Ratio must be between 0 and 100.")
             return
-        if from_culture == to_culture:
-            messagebox.showerror("Same culture", "From and to cultures must be different.")
+        if from_culture and to_culture and from_culture == to_culture:
+            messagebox.showerror("Same value", "From and to cultures must be different.")
+            return
+        if from_religion and to_religion and from_religion == to_religion:
+            messagebox.showerror("Same value", "From and to religions must be different.")
             return
 
         active_geo = {f: self.filter_vars[f].get() for f in FILTER_FIELDS if self.filter_vars[f].get()}
@@ -942,7 +965,9 @@ class PopEditorApp:
         new_rows_to_add = []
 
         for row in matching_rows:
-            if row.attrs.get("culture") != from_culture:
+            matches_culture = from_culture and row.attrs.get("culture") == from_culture
+            matches_religion = from_religion and row.attrs.get("religion") == from_religion
+            if not matches_culture and not matches_religion:
                 continue
             try:
                 old_size = _safe_float(row.attrs.get("size", "0"))
@@ -956,9 +981,16 @@ class PopEditorApp:
 
             new_attrs = OrderedDict()
             new_attrs["size"] = normalize_size(str(new_target_size))
-            new_attrs["culture"] = to_culture
+            if to_culture:
+                new_attrs["culture"] = to_culture
+            else:
+                new_attrs["culture"] = row.attrs.get("culture", "")
+            if to_religion:
+                new_attrs["religion"] = to_religion
+            else:
+                new_attrs["religion"] = row.attrs.get("religion", "")
             for k, v in row.attrs.items():
-                if k not in ("size", "culture"):
+                if k not in ("size", "culture", "religion"):
                     new_attrs[k] = v
             new_row = PopRow(self.next_row_id, row.location, new_attrs)
             new_rows_to_add.append(new_row)
@@ -971,7 +1003,7 @@ class PopEditorApp:
         self.rows.extend(new_rows_to_add)
 
         if converted == 0:
-            self.status_var.set(f"No rows with '{from_culture}' found in filtered locations.")
+            self.status_var.set(f"No rows matching from-culture or from-religion in filtered locations.")
             return
 
         self.rebuild_row_metadata()
@@ -981,8 +1013,230 @@ class PopEditorApp:
         self.refresh_table()
         self.status_var.set(
             f"Blended {converted} row(s): {created} new target row(s) created, "
-            f"{ratio}% converted from {from_culture} to {to_culture}."
+            f"{ratio}% converted."
         )
+
+    def update_redistribute_options(self) -> None:
+        all_locations = sorted(self.location_geo.keys())
+        self.redist_location_combo["values"] = [""] + all_locations
+        self.add_location_combo["values"] = [""] + all_locations
+
+    def update_add_pop_options(self) -> None:
+        all_cultures = sorted({
+            row.attrs.get("culture", "")
+            for row in self.rows
+            if row.attrs.get("culture")
+        })
+        self.add_culture_combo["values"] = [""] + all_cultures
+
+        all_religions = sorted({
+            row.attrs.get("religion", "")
+            for row in self.rows
+            if row.attrs.get("religion")
+        })
+        self.add_religion_combo["values"] = [""] + all_religions
+
+        all_types = sorted({
+            row.attrs.get("type", "")
+            for row in self.rows
+            if row.attrs.get("type")
+        })
+        self.add_type_combo["values"] = all_types
+
+    def apply_redistribute_to_province(self) -> None:
+        source_location = self.redist_location_var.get().strip()
+        if not source_location:
+            messagebox.showerror("Missing source", "Please select a source location.")
+            return
+        if source_location not in self.location_geo:
+            messagebox.showerror("Invalid location", f"'{source_location}' not found in definitions.")
+            return
+        try:
+            ratio = float(self.redist_ratio_var.get().strip())
+        except ValueError:
+            messagebox.showerror("Invalid ratio", "Ratio must be a number.")
+            return
+        if ratio <= 0 or ratio > 100:
+            messagebox.showerror("Invalid ratio", "Ratio must be between 0 and 100.")
+            return
+
+        source_province = self.location_geo[source_location].province
+        if not source_province:
+            messagebox.showerror("No province", "Source location has no province defined.")
+            return
+
+        other_locations = [
+            loc for loc, geo in self.location_geo.items()
+            if geo.province == source_province and loc != source_location
+        ]
+        if not other_locations:
+            messagebox.showerror("No other locations", "No other locations in this province.")
+            return
+
+        source_rows = [r for r in self.rows if r.location == source_location]
+        if not source_rows:
+            messagebox.showerror("No pops", "No pops at source location.")
+            return
+
+        new_rows = []
+        redistributed = 0
+
+        for row in source_rows:
+            try:
+                old_size = _safe_float(row.attrs.get("size", "0"))
+            except ValueError:
+                continue
+            if old_size <= 0:
+                continue
+
+            size_per_loc = (old_size * ratio / 100) / len(other_locations)
+            remaining_size = old_size * (1 - ratio / 100)
+
+            row.attrs["size"] = normalize_size(str(remaining_size))
+            redistributed += 1
+
+            for loc in other_locations:
+                new_attrs = OrderedDict(row.attrs)
+                new_attrs["size"] = normalize_size(str(size_per_loc))
+                new_rows.append(PopRow(self.next_row_id, loc, new_attrs))
+                self.next_row_id += 1
+
+        self.rows.extend(new_rows)
+
+        self.rebuild_row_metadata()
+        self.update_filter_options()
+        self.update_pop_attr_filter_options()
+        self.update_blend_culture_options()
+        self.update_redistribute_options()
+        self.refresh_table()
+        self.status_var.set(
+            f"Skimmed {redistributed} row(s) from {source_location} to {len(other_locations)} other province locations ({ratio}% each)."
+        )
+
+    def apply_redistribute_to_location(self) -> None:
+        source_location = self.redist_location_var.get().strip()
+        if not source_location:
+            messagebox.showerror("Missing source", "Please select a source location.")
+            return
+        if source_location not in self.location_geo:
+            messagebox.showerror("Invalid location", f"'{source_location}' not found in definitions.")
+            return
+        try:
+            ratio = float(self.redist_ratio_var.get().strip())
+        except ValueError:
+            messagebox.showerror("Invalid ratio", "Ratio must be a number.")
+            return
+        if ratio <= 0 or ratio > 100:
+            messagebox.showerror("Invalid ratio", "Ratio must be between 0 and 100.")
+            return
+
+        source_province = self.location_geo[source_location].province
+        if not source_province:
+            messagebox.showerror("No province", "Source location has no province defined.")
+            return
+
+        other_locations = [
+            loc for loc, geo in self.location_geo.items()
+            if geo.province == source_province and loc != source_location
+        ]
+        if not other_locations:
+            messagebox.showerror("No other locations", "No other locations in this province.")
+            return
+
+        source_rows = [r for r in self.rows if r.location == source_location]
+        if not source_rows:
+            messagebox.showerror("No pops", "No pops at source location.")
+            return
+
+        collected = 0
+
+        for loc in other_locations:
+            loc_rows = [r for r in self.rows if r.location == loc]
+            for row in loc_rows:
+                try:
+                    old_size = _safe_float(row.attrs.get("size", "0"))
+                except ValueError:
+                    continue
+                if old_size <= 0:
+                    continue
+
+                size_to_move = old_size * ratio / 100
+                new_size = old_size - size_to_move
+                row.attrs["size"] = normalize_size(str(new_size)) if new_size > 0 else "0.000"
+
+                for src_row in source_rows:
+                    src_size = _safe_float(src_row.attrs.get("size", "0"))
+                    src_row.attrs["size"] = normalize_size(str(src_size + size_to_move))
+                collected += 1
+                break
+
+        if collected == 0:
+            messagebox.showerror("No pops", "No pops found at other locations.")
+            return
+
+        self.rebuild_row_metadata()
+        self.update_filter_options()
+        self.update_pop_attr_filter_options()
+        self.update_blend_culture_options()
+        self.refresh_table()
+        self.status_var.set(
+            f"Collected {ratio}% from {len(other_locations)} other locations in province to {source_location}."
+        )
+
+    def apply_add_pop(self) -> None:
+        location = self.add_location_var.get().strip()
+        culture = self.add_culture_var.get().strip()
+        religion = self.add_religion_var.get().strip()
+        pop_type = self.add_type_var.get().strip()
+        try:
+            size = float(self.add_size_var.get().strip())
+        except ValueError:
+            messagebox.showerror("Invalid size", "Size must be a number.")
+            return
+        if not location:
+            messagebox.showerror("Missing location", "Please select a location.")
+            return
+        if not pop_type:
+            messagebox.showerror("Missing type", "Please select a pop type.")
+            return
+        if not culture:
+            messagebox.showerror("Missing culture", "Please enter a culture.")
+            return
+        if not religion:
+            messagebox.showerror("Missing religion", "Please enter a religion.")
+            return
+        if size <= 0:
+            messagebox.showerror("Invalid size", "Size must be greater than 0.")
+            return
+
+        if location not in self.location_geo:
+            messagebox.showerror("Invalid location", f"'{location}' not found.")
+            return
+
+        attrs = OrderedDict()
+        attrs["type"] = pop_type
+        attrs["size"] = normalize_size(str(size))
+        attrs["culture"] = culture
+        attrs["religion"] = religion
+
+        for k, v in STD_ATTR_ORDER:
+            if k in attrs:
+                del attrs[k]
+        for k in STD_ATTR_ORDER:
+            attrs[k] = attrs.pop(k)
+
+        new_row = PopRow(self.next_row_id, location, attrs)
+        self.rows.append(new_row)
+        self.next_row_id += 1
+
+        self.rebuild_row_metadata()
+        self.update_filter_options()
+        self.update_pop_attr_filter_options()
+        self.update_blend_culture_options()
+        self.update_redistribute_options()
+        self.update_add_pop_options()
+        self.refresh_table()
+        self.status_var.set(f"Added new pop at {location}: {pop_type} {culture} {religion} {size}.")
 
     # ── table display ─────────────────────────────────────────────────────────
 
@@ -1138,11 +1392,16 @@ class PopEditorApp:
             self.status_var.set("No filtered rows to edit.")
             return
 
-        changed = clamped = 0
+        changed = clamped = removed = 0
+        rows_to_remove = []
         for row in filtered:
             try:
                 new_size = float(row.attrs.get("size", "")) * multiplier + addition
             except ValueError:
+                continue
+            if new_size <= 0:
+                rows_to_remove.append(row)
+                removed += 1
                 continue
             if new_size < 0:
                 new_size = 0.0
@@ -1150,15 +1409,20 @@ class PopEditorApp:
             row.attrs["size"] = f"{new_size:.3f}"
             changed += 1
 
+        for row in rows_to_remove:
+            self.rows.remove(row)
+
         self.rebuild_row_metadata()
         self.refresh_table()
-        clamp_note = f" {clamped} row(s) clamped to 0." if clamped else ""
-        self.status_var.set(
-            f"Updated size on {changed} row(s) (x{multiplier} +{addition}).{clamp_note}"
-        )
+        parts = [f"Updated size on {changed} row(s)"]
+        if clamped:
+            parts.append(f"{clamped} clamped to 0")
+        if removed:
+            parts.append(f"{removed} removed (size 0)")
+        self.status_var.set(f"{', '.join(parts)}.")
 
 
-# ── entry point ───────────────────────────────────────────────────────────────
+        # ── entry point ───────────────────────────────────────────────────────────────
 
 def main() -> None:
     settings = load_settings() or prompt_for_paths()
