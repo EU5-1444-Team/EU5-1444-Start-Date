@@ -11,6 +11,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 
+try:
+    from tkinter.tix import Balloon
+    HAS_TOOLTIP = True
+except ImportError:
+    HAS_TOOLTIP = False
+    Balloon = None
+
 
 REPO_ROOT        = Path(__file__).resolve().parents[1]
 SETTINGS_PATH    = REPO_ROOT / "tools/settings.json"
@@ -449,7 +456,8 @@ class PopEditorApp:
         self.blend_ratio_var = tk.StringVar(value="100")
 
         self.redist_location_var = tk.StringVar()
-        self.redist_ratio_var = tk.StringVar(value="10")
+        self.redist_value_var = tk.StringVar()
+        self.redist_mode_var = tk.StringVar(value="target")
 
         self.add_location_var = tk.StringVar()
         self.add_culture_var = tk.StringVar()
@@ -467,6 +475,11 @@ class PopEditorApp:
         self.load_data()
 
     # ── UI construction ───────────────────────────────────────────────────────
+
+    def _create_tooltip(self, widget, text):
+        if HAS_TOOLTIP and Balloon:
+            balloon = Balloon(self.root, msg=text)
+            balloon.bind_widget(widget, balloonmsg=widget)
 
     def _build_ui(self) -> None:
         self.root.geometry("1500x850")
@@ -540,80 +553,106 @@ class PopEditorApp:
                    command=self.clear_pop_attr_filters).grid(
             row=len(POP_ATTR_FILTER_FIELDS), column=0, pady=(8, 0), sticky="w")
 
-        # batch edit
-        batch_frame = ttk.LabelFrame(self.root, text="Batch Size Edit", padding=8)
+        # batch edit (single row, no stretch)
+        batch_frame = ttk.LabelFrame(self.root, text="Batch Edit: Size", padding=6)
         batch_frame.grid(row=3, column=0, sticky="ew", padx=8, pady=(0, 2))
-        batch_frame.columnconfigure(5, weight=1)
-        for col, (label, var) in enumerate([("Multiplier", self.batch_mult_var), ("Addition", self.batch_add_var)]):
-            ttk.Label(batch_frame, text=label).grid(row=0, column=col * 2, sticky="w")
-            ttk.Entry(batch_frame, textvariable=var, width=12).grid(
-                row=0, column=col * 2 + 1, sticky="w", padx=(6, 12))
-        ttk.Button(batch_frame, text="Apply to Filtered Rows",
-                   command=self.apply_batch_size_edit).grid(row=0, column=4, sticky="w")
-        ttk.Label(batch_frame,
-                  text="new_size = old_size * multiplier + addition  (clamped to 0 if negative)").grid(
-            row=0, column=5, sticky="w", padx=(12, 0))
 
-        # blend cultures/religions
-        blend_frame = ttk.LabelFrame(self.root, text="Blend (Convert % from Source to Target)", padding=8)
-        blend_frame.grid(row=5, column=0, sticky="ew", padx=8, pady=(0, 4))
-        blend_frame.columnconfigure(3, weight=1)
-        ttk.Label(blend_frame, text="From Culture").grid(row=0, column=0, sticky="w")
-        self.blend_from_combo = SearchableCombobox(blend_frame, textvariable=self.blend_from_culture_var, width=18)
-        self.blend_from_combo.grid(row=0, column=1, sticky="w", padx=(4, 12))
-        ttk.Label(blend_frame, text="To Culture").grid(row=0, column=2, sticky="w")
-        self.blend_to_combo = SearchableCombobox(blend_frame, textvariable=self.blend_to_culture_var, width=18)
-        self.blend_to_combo.grid(row=0, column=3, sticky="w", padx=(4, 12))
-        ttk.Label(blend_frame, text="From Religion").grid(row=1, column=0, sticky="w")
-        self.blend_from_religion_combo = SearchableCombobox(blend_frame, textvariable=self.blend_from_religion_var, width=18)
-        self.blend_from_religion_combo.grid(row=1, column=1, sticky="w", padx=(4, 12))
-        ttk.Label(blend_frame, text="To Religion").grid(row=1, column=2, sticky="w")
-        self.blend_to_religion_combo = SearchableCombobox(blend_frame, textvariable=self.blend_to_religion_var, width=18)
-        self.blend_to_religion_combo.grid(row=1, column=3, sticky="w", padx=(4, 12))
-        ttk.Label(blend_frame, text="Ratio %").grid(row=0, column=4, sticky="w")
-        ttk.Entry(blend_frame, textvariable=self.blend_ratio_var, width=8).grid(row=0, column=5, sticky="w", padx=(4, 12))
-        ttk.Button(blend_frame, text="Apply to Filtered Rows",
-                  command=self.apply_blend_cultures).grid(row=0, column=6, sticky="w")
-        ttk.Label(blend_frame,
-                  text="Swaps culture and/or religion by ratio; fills both to apply both.").grid(
-            row=0, column=7, sticky="w", padx=(12, 0))
+        ttk.Label(batch_frame, text="Multiplier:").grid(row=0, column=0)
+        mult_entry = ttk.Entry(batch_frame, textvariable=self.batch_mult_var, width=8)
+        mult_entry.grid(row=0, column=1, padx=(4, 12))
+        self._create_tooltip(mult_entry, "Multiply size by this (1 = no change)")
 
-        # redistribute
-        redistribute_frame = ttk.LabelFrame(self.root, text="Redistribute / Collect Pops", padding=8)
-        redistribute_frame.grid(row=7, column=0, sticky="ew", padx=8, pady=(0, 4))
-        redistribute_frame.columnconfigure(2, weight=1)
-        ttk.Label(redistribute_frame, text="Source Location").grid(row=0, column=0, sticky="w")
-        self.redist_location_combo = SearchableCombobox(redistribute_frame, textvariable=self.redist_location_var, width=22)
-        self.redist_location_combo.grid(row=0, column=1, sticky="w", padx=(4, 12))
-        ttk.Label(redistribute_frame, text="Ratio %").grid(row=0, column=2, sticky="w")
-        ttk.Entry(redistribute_frame, textvariable=self.redist_ratio_var, width=8).grid(row=0, column=3, sticky="w", padx=(4, 12))
-        ttk.Button(redistribute_frame, text="Redistribute",
-                   command=self.apply_redistribute_to_province).grid(row=0, column=4, sticky="w", padx=(12, 4))
-        ttk.Button(redistribute_frame, text="Collect",
-                   command=self.apply_redistribute_to_location).grid(row=0, column=5, sticky="w")
-        ttk.Label(redistribute_frame,
-                  text="Redistribute: take ratio% from source, distribute to other province locs. Collect: take ratio% from other locs, add to source.").grid(
-            row=0, column=6, sticky="w", padx=(12, 0))
+        ttk.Label(batch_frame, text="Add:").grid(row=0, column=2)
+        add_entry = ttk.Entry(batch_frame, textvariable=self.batch_add_var, width=8)
+        add_entry.grid(row=0, column=3, padx=(4, 12))
+        self._create_tooltip(add_entry, "Add after multiply")
 
-        # add pop
-        add_frame = ttk.LabelFrame(self.root, text="Add New Pop", padding=8)
-        add_frame.grid(row=8, column=0, sticky="ew", padx=8, pady=(0, 4))
-        add_frame.columnconfigure(4, weight=1)
-        ttk.Label(add_frame, text="Location").grid(row=0, column=0, sticky="w")
-        self.add_location_combo = SearchableCombobox(add_frame, textvariable=self.add_location_var, width=18)
-        self.add_location_combo.grid(row=0, column=1, sticky="w", padx=(4, 8))
-        ttk.Label(add_frame, text="Type").grid(row=0, column=2, sticky="w")
-        self.add_type_combo = ttk.Combobox(add_frame, textvariable=self.add_type_var, width=12)
-        self.add_type_combo.grid(row=0, column=3, sticky="w", padx=(4, 8))
-        ttk.Label(add_frame, text="Culture").grid(row=1, column=0, sticky="w")
-        self.add_culture_combo = SearchableCombobox(add_frame, textvariable=self.add_culture_var, width=18)
-        self.add_culture_combo.grid(row=1, column=1, sticky="w", padx=(4, 8))
-        ttk.Label(add_frame, text="Religion").grid(row=1, column=2, sticky="w")
-        self.add_religion_combo = SearchableCombobox(add_frame, textvariable=self.add_religion_var, width=18)
-        self.add_religion_combo.grid(row=1, column=3, sticky="w", padx=(4, 8))
-        ttk.Label(add_frame, text="Size").grid(row=1, column=4, sticky="w")
-        ttk.Entry(add_frame, textvariable=self.add_size_var, width=10).grid(row=1, column=5, sticky="w", padx=(4, 8))
-        ttk.Button(add_frame, text="Add", command=self.apply_add_pop).grid(row=0, column=6, sticky="w", padx=(12, 0))
+        ttk.Button(batch_frame, text="Apply", command=self.apply_batch_size_edit).grid(row=0, column=4, padx=(12, 0))
+
+        # blend (single row)
+        blend_frame = ttk.LabelFrame(self.root, text="Blend: Culture/Religion", padding=6)
+        blend_frame.grid(row=4, column=0, sticky="ew", padx=8, pady=(0, 2))
+
+        ttk.Label(blend_frame, text="Culture from:").grid(row=0, column=0)
+        self.blend_from_combo = SearchableCombobox(blend_frame, textvariable=self.blend_from_culture_var, width=12)
+        self.blend_from_combo.grid(row=0, column=1, padx=(2, 4))
+        self._create_tooltip(self.blend_from_combo, "Source culture")
+
+        ttk.Label(blend_frame, text="to:").grid(row=0, column=2)
+        self.blend_to_combo = SearchableCombobox(blend_frame, textvariable=self.blend_to_culture_var, width=12)
+        self.blend_to_combo.grid(row=0, column=3, padx=(2, 8))
+        self._create_tooltip(self.blend_to_combo, "Target culture")
+
+        ttk.Label(blend_frame, text="Religion from:").grid(row=0, column=4)
+        self.blend_from_religion_combo = SearchableCombobox(blend_frame, textvariable=self.blend_from_religion_var, width=10)
+        self.blend_from_religion_combo.grid(row=0, column=5, padx=(2, 4))
+        self._create_tooltip(self.blend_from_religion_combo, "Source religion")
+
+        ttk.Label(blend_frame, text="to:").grid(row=0, column=6)
+        self.blend_to_religion_combo = SearchableCombobox(blend_frame, textvariable=self.blend_to_religion_var, width=10)
+        self.blend_to_religion_combo.grid(row=0, column=7, padx=(2, 4))
+        self._create_tooltip(self.blend_to_religion_combo, "Target religion")
+
+        ttk.Label(blend_frame, text="Ratio%:").grid(row=0, column=8)
+        ratio_blend_entry = ttk.Entry(blend_frame, textvariable=self.blend_ratio_var, width=5)
+        ratio_blend_entry.grid(row=0, column=9, padx=(2, 8))
+        self._create_tooltip(ratio_blend_entry, "Percentage to convert")
+
+        ttk.Button(blend_frame, text="Apply", command=self.apply_blend_cultures).grid(row=0, column=10, padx=(8, 0))
+
+        # redistribute (single row)
+        redistribute_frame = ttk.LabelFrame(self.root, text="Redistribute: Size", padding=6)
+        redistribute_frame.grid(row=5, column=0, sticky="ew", padx=8, pady=(0, 2))
+
+        ttk.Label(redistribute_frame, text="Source location:").grid(row=0, column=0)
+        self.redist_location_combo = SearchableCombobox(redistribute_frame, textvariable=self.redist_location_var, width=14)
+        self.redist_location_combo.grid(row=0, column=1, padx=(4, 8))
+
+        ttk.Label(redistribute_frame, text="Mode:").grid(row=0, column=2)
+        self.redist_mode_var = tk.StringVar(value="target")
+        mode_combo = ttk.Combobox(redistribute_frame, textvariable=self.redist_mode_var, width=10, state="readonly")
+        mode_combo["values"] = ["target", "amount", "percent"]
+        mode_combo.grid(row=0, column=3, padx=(4, 6))
+        self._create_tooltip(mode_combo, "target=set each loc to value, amount=move this total, percent=move this %")
+
+        ttk.Label(redistribute_frame, text="Value:").grid(row=0, column=4)
+        value_entry = ttk.Entry(redistribute_frame, textvariable=self.redist_value_var, width=8)
+        value_entry.grid(row=0, column=5, padx=(4, 6))
+        self._create_tooltip(value_entry, "Target per location, or total amount, or percentage")
+
+        ttk.Button(redistribute_frame, text="Redistribute", command=self.apply_redistribute_to_province).grid(row=0, column=6, padx=(12, 2))
+        ttk.Button(redistribute_frame, text="Collect", command=self.apply_redistribute_to_location).grid(row=0, column=7, padx=(2, 0))
+
+        # add pop (single row)
+        add_frame = ttk.LabelFrame(self.root, text="Add Pop", padding=6)
+        add_frame.grid(row=6, column=0, sticky="ew", padx=8, pady=(0, 2))
+
+        ttk.Label(add_frame, text="Location:").grid(row=0, column=0)
+        self.add_location_combo = SearchableCombobox(add_frame, textvariable=self.add_location_var, width=12)
+        self.add_location_combo.grid(row=0, column=1, padx=(4, 6))
+        self._create_tooltip(self.add_location_combo, "Location")
+
+        ttk.Label(add_frame, text="Type:").grid(row=0, column=2)
+        self.add_type_combo = ttk.Combobox(add_frame, textvariable=self.add_type_var, width=9)
+        self.add_type_combo.grid(row=0, column=3, padx=(4, 6))
+        self._create_tooltip(self.add_type_combo, "Pop type")
+
+        ttk.Label(add_frame, text="Culture:").grid(row=0, column=4)
+        self.add_culture_combo = SearchableCombobox(add_frame, textvariable=self.add_culture_var, width=10)
+        self.add_culture_combo.grid(row=0, column=5, padx=(4, 6))
+        self._create_tooltip(self.add_culture_combo, "Culture")
+
+        ttk.Label(add_frame, text="Religion:").grid(row=0, column=6)
+        self.add_religion_combo = SearchableCombobox(add_frame, textvariable=self.add_religion_var, width=9)
+        self.add_religion_combo.grid(row=0, column=7, padx=(4, 6))
+        self._create_tooltip(self.add_religion_combo, "Religion")
+
+        ttk.Label(add_frame, text="Size:").grid(row=0, column=8)
+        size_entry = ttk.Entry(add_frame, textvariable=self.add_size_var, width=7)
+        size_entry.grid(row=0, column=9, padx=(4, 6))
+        self._create_tooltip(size_entry, "Size")
+
+        ttk.Button(add_frame, text="Add", command=self.apply_add_pop).grid(row=0, column=10, padx=(8, 0))
 
         # table
         table_frame = ttk.Frame(self.root, padding=(8, 4, 8, 8))
@@ -1051,26 +1090,11 @@ class PopEditorApp:
         if source_location not in self.location_geo:
             messagebox.showerror("Invalid location", f"'{source_location}' not found in definitions.")
             return
-        try:
-            ratio = float(self.redist_ratio_var.get().strip())
-        except ValueError:
-            messagebox.showerror("Invalid ratio", "Ratio must be a number.")
-            return
-        if ratio <= 0 or ratio > 100:
-            messagebox.showerror("Invalid ratio", "Ratio must be between 0 and 100.")
-            return
 
-        source_province = self.location_geo[source_location].province
-        if not source_province:
-            messagebox.showerror("No province", "Source location has no province defined.")
-            return
-
-        other_locations = [
-            loc for loc, geo in self.location_geo.items()
-            if geo.province == source_province and loc != source_location
-        ]
-        if not other_locations:
-            messagebox.showerror("No other locations", "No other locations in this province.")
+        filtered_rows = self.iter_filtered_rows()
+        target_locations = list(dict.fromkeys(r.location for r in filtered_rows if r.location != source_location))
+        if not target_locations:
+            messagebox.showerror("No other locations", "No other locations in scope (check filters).")
             return
 
         source_rows = [r for r in self.rows if r.location == source_location]
@@ -1078,28 +1102,90 @@ class PopEditorApp:
             messagebox.showerror("No pops", "No pops at source location.")
             return
 
+        value_input = self.redist_value_var.get().strip()
+        mode = self.redist_mode_var.get()
+        if not value_input:
+            messagebox.showerror("No input", "Enter a value.")
+            return
+        try:
+            value = float(value_input)
+            if value < 0:
+                messagebox.showerror("Invalid value", "Value must be non-negative.")
+                return
+        except ValueError:
+            messagebox.showerror("Invalid value", "Value must be a number.")
+            return
+        if mode == "percent" and (value <= 0 or value > 100):
+            messagebox.showerror("Invalid %", "Percentage must be between 0 and 100.")
+            return
+
         new_rows = []
         redistributed = 0
+        target_each = value
+        amount = value
+        pct = value
 
-        for row in source_rows:
-            try:
+        if mode == "target":
+            num_targets = len(target_locations)
+            total_needed = target_each * num_targets
+            current_source_total = sum(_safe_float(r.attrs.get("size", "0")) for r in source_rows)
+            excess_to_redistribute = total_needed - current_source_total
+
+            if excess_to_redistribute > current_source_total:
+                messagebox.showerror("Insufficient pops", "Not enough pop at source to reach target.")
+                return
+            for row in source_rows:
                 old_size = _safe_float(row.attrs.get("size", "0"))
-            except ValueError:
-                continue
-            if old_size <= 0:
-                continue
+                if old_size <= 0:
+                    continue
+                row.attrs["size"] = normalize_size(str(old_size - excess_to_redistribute))
+                redistributed += 1
+                break
 
-            size_per_loc = (old_size * ratio / 100) / len(other_locations)
-            remaining_size = old_size * (1 - ratio / 100)
-
-            row.attrs["size"] = normalize_size(str(remaining_size))
-            redistributed += 1
-
-            for loc in other_locations:
-                new_attrs = OrderedDict(row.attrs)
-                new_attrs["size"] = normalize_size(str(size_per_loc))
+            for loc in target_locations:
+                new_attrs = OrderedDict(source_rows[0].attrs)
+                new_attrs["size"] = normalize_size(str(target_each))
                 new_rows.append(PopRow(self.next_row_id, loc, new_attrs))
                 self.next_row_id += 1
+
+        elif mode == "amount":
+            num_targets = len(target_locations)
+            per_loc = amount / num_targets
+            remaining = amount
+
+            for row in source_rows:
+                old_size = _safe_float(row.attrs.get("size", "0"))
+                if old_size <= 0:
+                    continue
+                take = min(old_size, amount)
+                row.attrs["size"] = normalize_size(str(old_size - take))
+                redistributed += 1
+                break
+
+            for loc in target_locations:
+                take = min(per_loc, remaining)
+                remaining -= take
+                new_attrs = OrderedDict(source_rows[0].attrs)
+                new_attrs["size"] = normalize_size(str(take))
+                new_rows.append(PopRow(self.next_row_id, loc, new_attrs))
+                self.next_row_id += 1
+
+        else:  # mode == "manual"
+            pct = float(manual_input)
+            for row in source_rows:
+                old_size = _safe_float(row.attrs.get("size", "0"))
+                if old_size <= 0:
+                    continue
+
+                take = old_size * pct / 100
+                row.attrs["size"] = normalize_size(str(old_size - take))
+                redistributed += 1
+
+                for loc in target_locations:
+                    new_attrs = OrderedDict(row.attrs)
+                    new_attrs["size"] = normalize_size(str(take))
+                    new_rows.append(PopRow(self.next_row_id, loc, new_attrs))
+                    self.next_row_id += 1
 
         self.rows.extend(new_rows)
 
@@ -1109,9 +1195,20 @@ class PopEditorApp:
         self.update_blend_culture_options()
         self.update_redistribute_options()
         self.refresh_table()
-        self.status_var.set(
-            f"Skimmed {redistributed} row(s) from {source_location} to {len(other_locations)} other province locations ({ratio}% each)."
-        )
+
+        if mode == "target":
+            self.status_var.set(
+                f"Redistributed {excess_to_redistribute:.3f} from {source_location} to {len(target_locations)} (target: {target_each:.3f}/loc)."
+            )
+        elif mode == "amount":
+            self.status_var.set(
+                f"Redistributed {amount:.3f} from {source_location} to {len(target_locations)} ({per_loc:.3f}/loc)."
+            )
+        else:
+            self.status_var.set(
+                f"Redistributed {pct}% from {source_location} to {len(target_locations)}."
+            )
+        self.redist_value_var.set("")
 
     def apply_redistribute_to_location(self) -> None:
         source_location = self.redist_location_var.get().strip()
@@ -1121,26 +1218,11 @@ class PopEditorApp:
         if source_location not in self.location_geo:
             messagebox.showerror("Invalid location", f"'{source_location}' not found in definitions.")
             return
-        try:
-            ratio = float(self.redist_ratio_var.get().strip())
-        except ValueError:
-            messagebox.showerror("Invalid ratio", "Ratio must be a number.")
-            return
-        if ratio <= 0 or ratio > 100:
-            messagebox.showerror("Invalid ratio", "Ratio must be between 0 and 100.")
-            return
 
-        source_province = self.location_geo[source_location].province
-        if not source_province:
-            messagebox.showerror("No province", "Source location has no province defined.")
-            return
-
-        other_locations = [
-            loc for loc, geo in self.location_geo.items()
-            if geo.province == source_province and loc != source_location
-        ]
+        filtered_rows = self.iter_filtered_rows()
+        other_locations = list(dict.fromkeys(r.location for r in filtered_rows if r.location != source_location))
         if not other_locations:
-            messagebox.showerror("No other locations", "No other locations in this province.")
+            messagebox.showerror("No other locations", "No other locations in scope (check filters).")
             return
 
         source_rows = [r for r in self.rows if r.location == source_location]
@@ -1148,27 +1230,103 @@ class PopEditorApp:
             messagebox.showerror("No pops", "No pops at source location.")
             return
 
+        value_input = self.redist_value_var.get().strip()
+        mode = self.redist_mode_var.get()
+        if not value_input:
+            messagebox.showerror("No input", "Enter a value.")
+            return
+        try:
+            value = float(value_input)
+            if value < 0:
+                messagebox.showerror("Invalid value", "Value must be non-negative.")
+                return
+        except ValueError:
+            messagebox.showerror("Invalid value", "Value must be a number.")
+            return
+        if mode == "percent" and (value <= 0 or value > 100):
+            messagebox.showerror("Invalid %", "Percentage must be between 0 and 100.")
+            return
+
         collected = 0
+        target_each = value
+        amount = value
+        pct = value
 
-        for loc in other_locations:
-            loc_rows = [r for r in self.rows if r.location == loc]
-            for row in loc_rows:
-                try:
+        if mode == "target":
+            num_sources = len(other_locations)
+            total_needed = target_each * num_sources
+            current_other_total = sum(
+                _safe_float(r.attrs.get("size", "0"))
+                for loc in other_locations
+                for r in self.rows if r.location == loc
+            )
+            excess_to_collect = current_other_total - total_needed
+
+            if excess_to_collect < 0:
+                messagebox.showerror("Insufficient pops", "Not enough pop at other locations to reach target.")
+                return
+
+            remaining = excess_to_collect
+            for loc in other_locations:
+                if remaining <= 0:
+                    break
+                for row in self.rows:
+                    if row.location != loc:
+                        continue
                     old_size = _safe_float(row.attrs.get("size", "0"))
-                except ValueError:
-                    continue
-                if old_size <= 0:
-                    continue
+                    if old_size <= 0:
+                        continue
 
-                size_to_move = old_size * ratio / 100
-                new_size = old_size - size_to_move
-                row.attrs["size"] = normalize_size(str(new_size)) if new_size > 0 else "0.000"
+                    take = min(old_size, remaining)
+                    row.attrs["size"] = normalize_size(str(old_size - take)) if old_size - take > 0 else "0.000"
 
-                for src_row in source_rows:
-                    src_size = _safe_float(src_row.attrs.get("size", "0"))
-                    src_row.attrs["size"] = normalize_size(str(src_size + size_to_move))
-                collected += 1
-                break
+                    for src_row in source_rows:
+                        src_size = _safe_float(src_row.attrs.get("size", "0"))
+                        src_row.attrs["size"] = normalize_size(str(src_size + take))
+                    collected += 1
+                    remaining -= take
+                    break
+
+        elif mode == "amount":
+            remaining = amount
+            for loc in other_locations:
+                if remaining <= 0:
+                    break
+                for row in self.rows:
+                    if row.location != loc:
+                        continue
+                    old_size = _safe_float(row.attrs.get("size", "0"))
+                    if old_size <= 0:
+                        continue
+
+                    take = min(old_size, remaining)
+                    row.attrs["size"] = normalize_size(str(old_size - take)) if old_size - take > 0 else "0.000"
+
+                    for src_row in source_rows:
+                        src_size = _safe_float(src_row.attrs.get("size", "0"))
+                        src_row.attrs["size"] = normalize_size(str(src_size + take))
+                    collected += 1
+                    remaining -= take
+                    break
+
+        else:
+            for loc in other_locations:
+                for row in self.rows:
+                    if row.location != loc:
+                        continue
+                    old_size = _safe_float(row.attrs.get("size", "0"))
+                    if old_size <= 0:
+                        continue
+
+                    take = old_size * pct / 100
+                    new_size = old_size - take
+                    row.attrs["size"] = normalize_size(str(new_size)) if new_size > 0 else "0.000"
+
+                    for src_row in source_rows:
+                        src_size = _safe_float(src_row.attrs.get("size", "0"))
+                        src_row.attrs["size"] = normalize_size(str(src_size + take))
+                    collected += 1
+                    break
 
         if collected == 0:
             messagebox.showerror("No pops", "No pops found at other locations.")
@@ -1179,9 +1337,19 @@ class PopEditorApp:
         self.update_pop_attr_filter_options()
         self.update_blend_culture_options()
         self.refresh_table()
-        self.status_var.set(
-            f"Collected {ratio}% from {len(other_locations)} other locations in province to {source_location}."
-        )
+        if mode == "target":
+            self.status_var.set(
+                f"Collected to {source_location} from {len(other_locations)} (target: {target_each:.3f}/loc)."
+            )
+        elif mode == "amount":
+            self.status_var.set(
+                f"Collected {collected} row(s) to {source_location} from {len(other_locations)}."
+            )
+        else:
+            self.status_var.set(
+                f"Collected {pct}% from {len(other_locations)} to {source_location}."
+            )
+        self.redist_value_var.set("")
 
     def apply_add_pop(self) -> None:
         location = self.add_location_var.get().strip()
