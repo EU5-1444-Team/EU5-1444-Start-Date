@@ -180,6 +180,30 @@ class TestRedistributionLogic(unittest.TestCase):
         self.assertEqual(remaining, 150.0)
         self.assertEqual(per_loc, 150.0)
 
+    def test_redistribute_filtered_scope(self):
+        location_geo = {
+            "area_a_loc1": GeoInfo(continent="E", superregion="W", region="R", area="area_a", province="p1"),
+            "area_a_loc2": GeoInfo(continent="E", superregion="W", region="R", area="area_a", province="p1"),
+            "area_b_loc1": GeoInfo(continent="E", superregion="W", region="R", area="area_b", province="p2"),
+            "area_b_loc2": GeoInfo(continent="E", superregion="W", region="R", area="area_b", province="p2"),
+        }
+        all_rows = [
+            PopRow(1, "area_a_loc1", OrderedDict([("type", "nobles"), ("size", "100"), ("culture", "eng"), ("religion", "cath")])),
+            PopRow(2, "area_a_loc2", OrderedDict([("type", "nobles"), ("size", "200"), ("culture", "eng"), ("religion", "cath")])),
+            PopRow(3, "area_b_loc1", OrderedDict([("type", "nobles"), ("size", "300"), ("culture", "eng"), ("religion", "cath")])),
+            PopRow(4, "area_b_loc2", OrderedDict([("type", "nobles"), ("size", "400"), ("culture", "eng"), ("religion", "cath")])),
+        ]
+
+        source_location = "area_a_loc1"
+        filter_area = "area_a"
+
+        filtered_rows = [r for r in all_rows if r.location in ["area_a_loc1", "area_a_loc2"]]
+        target_locations = list(dict.fromkeys(r.location for r in filtered_rows if r.location != source_location))
+
+        self.assertIn("area_a_loc2", target_locations)
+        self.assertNotIn("area_b_loc1", target_locations)
+        self.assertEqual(len(target_locations), 1)
+
     def test_redistribute_value_exceeds_source(self):
         source_location = "loc_a"
         source_rows = [r for r in self.rows if r.location == source_location]

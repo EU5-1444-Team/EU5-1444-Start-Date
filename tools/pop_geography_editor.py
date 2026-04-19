@@ -246,6 +246,26 @@ class PopRow:
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 
+def _pop_key(attrs: OrderedDict) -> tuple[str, str, str]:
+    return (attrs.get("type", ""), attrs.get("culture", ""), attrs.get("religion", ""))
+
+def _merge_pops(rows: list[PopRow]) -> list[PopRow]:
+    merged: dict[tuple, list[PopRow]] = defaultdict(list)
+    for row in rows:
+        key = (row.location, _pop_key(row.attrs))
+        merged[key].append(row)
+
+    result = []
+    for (location, _), group in merged.items():
+        if len(group) == 1:
+            result.append(group[0])
+        else:
+            total_size = sum(_safe_float(r.attrs.get("size", "0")) for r in group)
+            merged_attrs = OrderedDict(group[0].attrs)
+            merged_attrs["size"] = normalize_size(str(total_size))
+            result.append(PopRow(group[0].row_id, location, merged_attrs))
+    return result
+
 def _safe_float(s: str) -> float:
     try:
         return float(s)
@@ -1056,9 +1076,12 @@ class PopEditorApp:
         )
 
     def update_redistribute_options(self) -> None:
-        all_locations = sorted(self.location_geo.keys())
-        self.redist_location_combo["values"] = [""] + all_locations
-        self.add_location_combo["values"] = [""] + all_locations
+        filtered = self.iter_filtered_rows()
+        filtered_locs = sorted(dict.fromkeys(r.location for r in filtered))
+        self.redist_location_combo["values"] = [""] + filtered_locs
+
+        all_locs = sorted(self.location_geo.keys())
+        self.add_location_combo["values"] = [""] + all_locs
 
     def update_add_pop_options(self) -> None:
         all_cultures = sorted({
@@ -1126,47 +1149,46 @@ class PopEditorApp:
         pct = value
 
         if mode == "target":
-            num_targets = len(target_locations)
-            total_needed = target_each * num_targets
             current_source_total = sum(_safe_float(r.attrs.get("size", "0")) for r in source_rows)
-            excess_to_redistribute = total_needed - current_source_total
+            excess_to_redistribute = current_source_total - target_each
 
-            if excess_to_redistribute > current_source_total:
-                messagebox.showerror("Insufficient pops", "Not enough pop at source to reach target.")
+            if excess_to_redistribute < 0:
+                messagebox.showerror("Insufficient pops", f"Not enough pop at source ({current_source_total:.1f}) to reach target ({target_each:.1f}).")
                 return
+
             for row in source_rows:
                 old_size = _safe_float(row.attrs.get("size", "0"))
                 if old_size <= 0:
                     continue
-                row.attrs["size"] = normalize_size(str(old_size - excess_to_redistribute))
+                ratio_to_keep = target_each / current_source_total if current_source_total > 0 else 0
+                new_size = old_size * ratio_to_keep
+                row.attrs["size"] = normalize_size(str(new_size))
                 redistributed += 1
-                break
 
+            per_target = excess_to_redistribute / len(target_locations) if target_locations else 0
             for loc in target_locations:
                 new_attrs = OrderedDict(source_rows[0].attrs)
-                new_attrs["size"] = normalize_size(str(target_each))
+                new_attrs["size"] = normalize_size(str(per_target))
                 new_rows.append(PopRow(self.next_row_id, loc, new_attrs))
                 self.next_row_id += 1
 
         elif mode == "amount":
-            num_targets = len(target_locations)
-            per_loc = amount / num_targets
-            remaining = amount
+            current_source_total = sum(_safe_float(r.attrs.get("size", "0")) for r in source_rows)
+            amount_to_move = min(amount, current_source_total)
 
             for row in source_rows:
                 old_size = _safe_float(row.attrs.get("size", "0"))
                 if old_size <= 0:
                     continue
-                take = min(old_size, amount)
-                row.attrs["size"] = normalize_size(str(old_size - take))
+                ratio_to_move = amount_to_move / current_source_total if current_source_total > 0 else 0
+                new_size = old_size * (1 - ratio_to_move)
+                row.attrs["size"] = normalize_size(str(new_size))
                 redistributed += 1
-                break
 
+            per_target = amount_to_move / len(target_locations) if target_locations else 0
             for loc in target_locations:
-                take = min(per_loc, remaining)
-                remaining -= take
                 new_attrs = OrderedDict(source_rows[0].attrs)
-                new_attrs["size"] = normalize_size(str(take))
+                new_attrs["size"] = normalize_size(str(per_target))
                 new_rows.append(PopRow(self.next_row_id, loc, new_attrs))
                 self.next_row_id += 1
 
@@ -1188,6 +1210,8 @@ class PopEditorApp:
                     self.next_row_id += 1
 
         self.rows.extend(new_rows)
+
+        self.rows = _merge_pops(self.rows)
 
         self.rebuild_row_metadata()
         self.update_filter_options()
@@ -1253,8 +1277,11 @@ class PopEditorApp:
         pct = value
 
         if mode == "target":
-            num_sources = len(other_locations)
-            total_needed = target_each * num_sources
+            total_needed = target_each
+            if len(other_locations) == 1:
+                per_target = total_needed
+            else:
+                per_target = total_needed / len(other_locations)
             current_other_total = sum(
                 _safe_float(r.attrs.get("size", "0"))
                 for loc in other_locations
@@ -1263,7 +1290,7 @@ class PopEditorApp:
             excess_to_collect = current_other_total - total_needed
 
             if excess_to_collect < 0:
-                messagebox.showerror("Insufficient pops", "Not enough pop at other locations to reach target.")
+                messagebox.showerror("Insufficient pops", f"Not enough pop at other locations ({current_other_total:.1f}) to reach target ({total_needed:.1f}).")
                 return
 
             remaining = excess_to_collect
@@ -1593,6 +1620,70 @@ class PopEditorApp:
         # ── entry point ───────────────────────────────────────────────────────────────
 
 def main() -> None:
+    import argparse
+    parser = argparse.ArgumentParser(description="EU5 Pop Geography Editor")
+    parser.add_argument("--clean", action="store_true", help="Merge pops and remove empty entries in the mod pops file")
+    args = parser.parse_args()
+
+    if args.clean:
+        settings = load_settings()
+        mod_folder = Path(settings.get("mod_folder", REPO_ROOT)).expanduser()
+        path = mod_folder / "main_menu/setup/start/06_pops.txt"
+        if not path.exists():
+            print(f"File not found: {path}")
+            return
+
+        text = path.read_text(encoding="utf-8-sig")
+
+        empty_count = 0
+        new_lines = ["locations = {", ""]
+
+        lines = text.split("\n")
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
+            if line and line.endswith("= {") and not line.startswith("locations"):
+                location = line.split("=")[0].strip()
+                new_lines.append(f"{location} = {{")
+                i += 1
+
+                merged: dict[tuple, float] = {}
+                inline = ""
+
+                while i < len(lines):
+                    l = lines[i].strip()
+                    if l == "}":
+                        i += 1
+                        break
+                    inline += " " + l
+                    if "}" in l:
+                        for pop_match in re.findall(r"define_pop\s*=\s*\{([^}]+)\}", inline):
+                            attrs = dict(re.findall(r"(\w+)\s*=\s*([^\s}]+)", pop_match))
+                            key = (attrs.get("type", ""), attrs.get("culture", ""), attrs.get("religion", ""))
+                            merged[key] = merged.get(key, 0) + float(attrs.get("size", "0"))
+                        inline = ""
+                    i += 1
+
+                for key, size in merged.items():
+                    if size > 0:
+                        new_lines.append(f"\tdefine_pop = {{ type = {key[0]} culture = {key[1]} religion = {key[2]} size = {normalize_size(str(size))} }}")
+                    else:
+                        empty_count += 1
+                new_lines.append("}")
+            else:
+                i += 1
+
+        if empty_count:
+            backup_path = path.with_suffix(path.suffix + ".bak")
+            backup_path.write_text(text, encoding="utf-8")
+
+        path.write_text("\n".join(new_lines) + "\n", encoding="utf-8")
+
+        print(f"Merged and cleaned {path.name}. Removed {empty_count} empty entries.")
+        if empty_count:
+            print(f"Backup saved to {backup_path.name}")
+        return
+
     settings = load_settings() or prompt_for_paths()
     root = tk.Tk()
     PopEditorApp(
