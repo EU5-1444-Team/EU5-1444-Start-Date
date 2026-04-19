@@ -41480,6 +41480,7 @@ countries = {
         government = {
             ruler = random
         }
+        accepted_cultures = { pamiri_culture }
         religious_school = hanafi_school
     }
 
@@ -56492,21 +56493,6 @@ countries = {
 
     # --- FUY ---
 
-    #SOL = { #Solon
-	#	type = pop
-    #
-	#	add_pops_from_locations = {
-	#	}
-    #
-	#	include = "expl_manchurian_tribe"
-	#	include = "asia_tribe"
-	#	government = {
-	#		ruler = random
-	#	}
-	#}
-
-    # --- SOL ---
-
     NVK = {
         #Nivkh
         type = pop
@@ -56522,25 +56508,6 @@ countries = {
     }
 
     # --- NVK ---
-
-    WRK = {
-        #Warkha
-        our_cores_conquered_by_others = {
-            malong mudan_ula
-            juru_hoton mulun
-            hailang ningguta dongning kaiyuan_warka
-            kahari ilan_hala
-        }
-
-        include = "expl_manchurian_tribe"
-        include = "yeren_tribe"
-        government = {
-            ruler = random
-            heir_selection = ritual_selection
-        }
-    }
-
-    # --- WRK ---
 
     ULA = {
         #Ula
@@ -57030,6 +56997,7 @@ countries = {
             ruler = random
             heir_selection = ritual_selection
         }
+        capital = yongmingcheng
     }
 
     # --- SFN ---
@@ -57840,7 +57808,7 @@ countries = {
         }
         country_rank = rank_county
         court_language = mongolian_language
-        capital = tsagaan_usun
+        capital = buren_khem
     }
 
     # --- AUK ---
@@ -58089,7 +58057,7 @@ countries = {
     # --- BAX ---
 
     GOO = {
-        # Gorlos Khalkha
+        # Ikeris Khalkha
         type = army
         own_control_core = {
             chahar ulan_hua ulanchab
@@ -58133,7 +58101,7 @@ countries = {
         # Aru Khorchin
         type = army
         own_control_core = {
-            khalkh buir_nuur tamsabulag barun_xiabaer taluhe ulgain sangiin_dalai menen chono
+            khalkh buir_nuur tamsabulag barun_xiabaer sangiin_dalai menen chono sorin_nuur
         }
 
         our_cores_conquered_by_others = { }
@@ -58235,10 +58203,10 @@ countries = {
     # --- KUH ---
 
     KDB = {
-        # Dörbed Khorchin
+        # Gorlos Khorchin
         type = army
         own_control_core = {
-            uzemchin ulgain tuliemao khuuchid sorin_nuur xinkai haihaer
+            uzemchin tuliemao khuuchid xinkai haihaer taluhe ulgain
         }
 
         our_cores_conquered_by_others = { }
@@ -58510,7 +58478,7 @@ countries = {
         # Jalaid Khorchin
         type = army
         own_control_core = {
-            yingchang pingdisonglin qingzhou_mongol linhuang khuuchid avnagar dongliangting shangdu huanzhou
+            yingchang pingdisonglin qingzhou_mongol linhuang avnagar dongliangting shangdu huanzhou khuuchid
         }
 
         our_cores_conquered_by_others = { }
@@ -65986,12 +65954,14 @@ countries = {
 
     # --- OBD ---
 
-    PLY = {
-        type = pop
+    PLY = { #Pelym
 
-        add_pops_from_locations = {
-            pelym
-            ponil ivdel
+        own_control_core = {
+            pelym turyinskiye_rudniki
+            ponil ivdel gari sosva
+        }
+        own_control_integrated = {
+            novaya_lyalya verkhoturye kushva
         }
 
         discovered_regions = {
@@ -66005,7 +65975,7 @@ countries = {
             west_novgorod_area
         }
 
-        starting_technology_level = 0
+        starting_technology_level = 3
         include = "eurasian_tribe"
         government = {
             type = tribe
@@ -66265,7 +66235,7 @@ countries = {
             ust_ozernoye verkh_chebula mariinsk molchanovo
             kolpashevo kargasok vasyugan upper_ob bolshoy_yugan megion
             surgut bolshoy_balyk irtysh turtas siberia_abalak ust_ishim
-            verkhotomsk tomsk melnikovo
+            verkhotomsk tomsk melnikovo bolotnye kozhevnikovo qashliq
         }
 
         discovered_regions = {
@@ -66319,6 +66289,28 @@ countries = {
         capital = irkutsk
     }
 
+    SYO = {
+        #Soyot
+        type = pop
+
+        add_pops_from_locations = {
+            slyudyanka
+        }
+
+        discovered_regions = {
+            west_siberia_region
+        }
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        include = "expl_mongols"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = slyudyanka
+    }
     # --- BRT ---
 
     HGO = {
@@ -66329,7 +66321,7 @@ countries = {
             krasnoyarsk
             idrinskoye tatarskaya_tesyu kortuz
             novosyolovo uzhur
-            kuznetsk salair askiz abakasnk beya shushenskoye
+            kuznetsk salair askiz abakasnk beya shushenskoye ust_kabyrza
         }
 
         discovered_regions = {
@@ -66418,7 +66410,7 @@ countries = {
         add_pops_from_locations = {
             barnaul kalmanka
             biysk smolenskoye
-            zmeinogorsk shemonayevskoye ust_kalmanka altayskoye onguday ust_koksa mayma
+            zmeinogorsk shemonayevskoye ust_kalmanka altayskoye onguday ust_koksa oskemen
         }
 
         discovered_regions = {
@@ -66439,8 +66431,6 @@ countries = {
         }
         capital = barnaul
     }
-
-    # --- ALT ---
 
     KAZ = {
         # Kazakh Kanate
@@ -66493,6 +66483,221 @@ countries = {
     }
 
     # --- KAZ ---
+
+    KTP = { #Ket People
+        type = pop
+
+        add_pops_from_locations = {
+            ket ust_ozernoye selo_yartsevo sulomay kuzmovka bakhtinsky siberia_bor komsa verkhneimbatsk inbatskoye
+        }
+
+        discovered_regions = {
+            
+            west_siberia_region
+        }
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = ket
+    }
+    YUH = { #Yugh People
+        type = pop
+
+        add_pops_from_locations = {
+            nazimovo kiya yeruda teya tis_reka vangash enashimo vel_mo turama baykit poligus
+        }
+
+        discovered_regions = {
+            west_siberia_region
+        }
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = nazimovo
+    }
+    PKM = { #Pumpkol People
+        type = pop
+
+        add_pops_from_locations = {
+            belya kazhma tokhomo yeniseysk kamensk motygino kardakan bryanka
+        }
+
+        discovered_regions = {
+            west_siberia_region
+        }
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = yeniseysk
+    }
+    ARC = { Arin People
+        type = pop
+
+        add_pops_from_locations = {
+            bolshoy_uluy makovskoe kazachinskoye krasnoyarsk yemelyanovo novosyolovo nazarovo uzhur kortuz taseyevo pashino
+        }
+
+        discovered_regions = {
+            west_siberia_region
+        }
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = bolshoy_uluy
+    }
+    KZT = { Kott People
+        type = pop
+
+        add_pops_from_locations = {
+            kansk ilansky dzerzhinskoye biryusa bratsk chuva nizhneudinsk siberia_kuytun manzaya boguchany chunoyar aban kamenka
+        }
+
+        discovered_regions = {
+            west_siberia_region
+        }
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = aban
+    }
+    SOZ = { #Shor People
+        type = pop
+
+        add_pops_from_locations = {
+            kytmanovo smolenskoye biysk mayma
+        }
+
+        discovered_regions = {
+            west_siberia_region
+            khorasan_region
+        }
+
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = kytmanovo
+    }
+
+    TLU = { #Teleut People
+        type = pop
+
+        add_pops_from_locations = {
+            suzun berdsk chesnokovka krivoshchekovo kamen dovolnoye kolchugino taskayevo bursol salair
+        }
+
+        discovered_regions = {
+            west_siberia_region
+            khorasan_region
+        }
+
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = suzun
+    }
+    KMZ = { #Kumandin People
+        type = pop
+
+        add_pops_from_locations = {
+            butyrskoe barnaul kalmanka
+        }
+
+        discovered_regions = {
+            west_siberia_region
+            khorasan_region
+        }
+
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = kalmanka
+    }
+
+    TBL = { #Tubalar People
+        type = pop
+
+        add_pops_from_locations = {
+            kuchukskoye volchikha butyrskoe
+        }
+
+        discovered_regions = {
+            west_siberia_region
+            khorasan_region
+        }
+
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = kuchukskoye
+    }
+
+    CLK = { #Chelkans People
+        type = pop
+
+        add_pops_from_locations = {
+            siletiteniz zhalauly imakia zhelezin tuzdysor
+        }
+
+        discovered_regions = {
+            west_siberia_region
+            khorasan_region
+        }
+
+
+        starting_technology_level = 0
+        include = "eurasian_tribe"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = zhalauly
+    }
 
     CNR = {
         type = pop
@@ -69015,17 +69220,11 @@ countries = {
         type = pop
 
         add_pops_from_locations = {
-            boorj qorqonaq_yubur
-            bir_amur
-            tehcha
-            dobkuri kuile
-            emuer mohe
-            laha
-            nioman
-            sahar
-            yilaha
-            enhe_hada jiliu lower_gazimur merelka upper_gazimur urov abagaita gegen hasar khirkhira talman_boorj aga
-            unda silkari kara_shilka gromatukha birma tom yor gan
+            yakesa amazar emuer mohe humar bir_amur kuanhe pangu sahar tahe aigun arkhara chenqing nioman xunhe zhanhe
+            gromatukha birma tehcha tom tygde yor mamyn ulma tujun dep dalaiketun yilaha mergen dobkuri gan menlu non
+            enhe_hada jiliu lower_gazimur merelka upper_gazimur urov gegen hasar khirkhira talman_boorj khilgo ude_baikal khudan
+            nibuchu chit ingedei tura qorqonaq_yubur aga boorj unda silkari kara_shilka kuenga uryum baruun_tar_nuur lower_ulz
+            zyyn_tar_nuur kyra
         }
 
         include = "expl_manchurian_tribe"
@@ -69067,7 +69266,21 @@ countries = {
             ruler = random
         }
     }
+    BIH = { #Birar People
+        type = pop
 
+        add_pops_from_locations = {
+            ust_kut reka_tuba nikolsky_pogost irkutsk_kazachinskoye kezhma upper_angara lower_angara educhanka yarkino
+            ika_nepa bur_nepa tokma icheda chambeta sekili chemal chadobets tsentral oskoba irkineieva tayga dyrashnichikha makarikha
+        }
+
+        include = "expl_manchurian_tribe"
+        include = "asia_tribe"
+        government = {
+            ruler = random
+        }
+        capital = ust_kut
+    }
     # --- EVK ---
 
     EVE = {
@@ -69118,10 +69331,8 @@ countries = {
         type = pop
 
         add_pops_from_locations = {
-            humar kuanhe pangu tahe
-            menlu mergen non
-            aigun chenqing xunhe zhanhe
-            yakesa
+            laha mergen dobkuri kuile menlu non yakesa emuer mohe ollo urka tynda urkan humar bir_amur kuanhe pangu sahar tahe
+            aigun chenqing jiajin nioman xunhe zhanhe tehcha tygde hulan hailun ougen taowen dalaiketun nemeri yilaha
         }
 
         include = "expl_manchurian_tribe"
@@ -69138,12 +69349,8 @@ countries = {
         type = pop
 
         add_pops_from_locations = {
-            bayan_ula hulun
-            gorlos
-            kailu xinkai zhengjiatun
-            khalkh
-            hailar xuguit yimin taizhou_jurchen buteha chol hurle qiqihar arun bila nuomin chaghankhot huolin taluhe tuliemao
-            wafang
+            tongliao boduna changchun nongan taizhou_jurchen buteha chol hurle qiqihar arun bila nuomin chaghankhot gorlos huolin taluhe tuliemao wafang
+            zhengjiatun haihaer kailu xinkai buir_nuur khalkh dalai_nuur hailar bayan_ula hulun xuguit yimin abagaita
         }
 
         include = "expl_manchurian_tribe"
