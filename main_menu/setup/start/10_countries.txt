@@ -31089,19 +31089,22 @@ countries = {
             madjul mahres sidi_fredj bou_hajla sfaqes chebba
             kairouan sbiba kasserine subaytila thala
             mahdia sousse el_jem monastir
-            bejaia el_kseur mansouria bouira kalaa_of_ait_abbas setif
-            annaba cheffia jijel el_milia skikda el_kala guelma collo tekouch
+            bouira kalaa_of_ait_abbas setif
+            annaba cheffia skikda el_kala guelma collo tekouch
             bizerte tabarka sejnane mateur beja_TUN souk_el_arba el_kef thagaste
             tunis tebourba el_fahs zaghouan nabeul kelibia hammamet kesra
-            constantine_ALG mila ngaous baghai dufanat bazer_sakhra tiffech tebessa meskiana tijis ikjan
+            constantine_ALG ngaous baghai dufanat bazer_sakhra tiffech tebessa meskiana tijis
             feriana
             bordj_bou_arreridj jama_TUN
             el_ksour medjez_el_bab sbikha
-            azeffoun kuku
         }
 
         own_control_integrated = {
             el_kantara maqqara msila
+        }
+
+        our_cores_conquered_by_others = {
+            ikjan mila el_milia jijel
         }
 
         starting_technology_level = 3
@@ -31271,18 +31274,18 @@ countries = {
         #Tlemcen
         own_control_core = {
             tessala mascara tlemcen
-            mostaganem brashk cherchell tenes
+            mostaganem brashk tenes
             tamazaghrane oran arzew ksar_ibn_senane
-            tamentfoust medea algiers tablat
             tahert djelfa zenina asir_ALG tissemsilt
             el_bayadh ain_sefra naama messaad ksar_el_boukhari el_abiodh_sidi_cheikh brezina
             mazouna miliana qal_at_ibn_salama yellel chlef al_khadra_ALG
             laghouat ksar_el_kaoua medrissa
-            tedelles charef qutb ain_madhi
+            charef qutb ain_madhi
         }
 
         own_core = {
             arshgul madinat_alawiyyin ras_al_ain saida
+            tamentfoust medea algiers tablat cherchell
         }
 
         starting_technology_level = 3
@@ -31414,9 +31417,12 @@ countries = {
     # --- TFL ---
 
     ALG = {
+        own_control_core = {
+            algiers tamentfoust tablat medea cherchell
+        }
+
         our_cores_conquered_by_others = {
-            mostaganem brashk cherchell tenes
-            tamentfoust medea algiers tablat
+            mostaganem brashk tenes 
             mazouna miliana qal_at_ibn_salama yellel chlef
         }
 
@@ -31439,6 +31445,34 @@ countries = {
     }
 
     # --- ALG ---
+
+    BJI = {
+        own_control_core = {
+            bejaia tedelles azeffoun kuku el_kseur mansouria jijel el_milia
+            ikjan mila
+        }
+
+        starting_technology_level = 3
+        include = "expl_muslim_mediterranean"
+        include = "muslim_monarchy_not_present"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+
+            laws = {
+                sharia_law = maliki_policy
+            }
+        }
+        religious_school = maliki_school
+        government = { mysticism_vs_jurisprudence = -5 }
+
+        capital = bejaia
+        dynasty = hafsid_dynasty
+    }
+
+    # --- BJI ---
+    
 
     FZA = {
         own_control_core = {
