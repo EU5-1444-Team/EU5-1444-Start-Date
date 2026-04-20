@@ -1,0 +1,900 @@
+composite_monarchy = {
+    has_target = no
+    unique = no
+    custom_name = composite_monarchy_name
+    show_on_diplomatic_map = yes
+    has_leader_country = yes
+    expel_members_who_are_targets_of_other_members = no
+    disband_if_no_leader = no
+
+    leader_title_key = "COMPOSITE_MONARCHY_LEADER"
+    leader_type = character
+    leader = {
+        leader_country ?= {
+            if = {
+                limit = {
+                    has_regent = yes
+                    has_heir = yes
+                }
+                heir ?= {
+                    add_to_list = leaders
+                }
+            }
+            else_if = {
+                limit = {
+                    has_ruler = yes
+                    ruler ?= {
+                        is_alive = yes
+                    }
+                }
+                ruler ?= {
+                    add_to_list = leaders
+                }
+            }
+        }
+    }
+    leader_change_trigger_type = none
+    leader_change_method = none
+
+    create_visible_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = no
+    }
+
+    can_declare_war = {
+        always = yes
+    }
+
+    can_join_trigger = {
+        always = no
+    }
+    can_leave_trigger = {
+        always = no
+    }
+    auto_leave_trigger = {
+        always = no
+    }
+    auto_disband_trigger = {
+        OR = {
+            total_members < 1
+            AND = {
+                OR = {
+                    leader_country ?= { tag = CAS }
+                    leader_country ?= { tag = ARA }
+                }
+                leader_country ?= {
+                    is_subject = yes
+                    top_overlord = {
+                        tag = SPA
+                    }
+                }
+            }
+        }
+    }
+
+    leader_modifier = {
+        monthly_prestige = 0.05
+        diplomatic_reputation = diplomatic_reputation_weak_bonus
+    }
+
+    monthly_effect = {
+        hidden_effect = {
+            if = {
+                limit = {
+                    international_organization_has_leader = no
+                }
+                ordered_international_organization_member = {
+                    order_by = great_power_score
+                    max = 1
+                    check_range_bounds = no
+                    root = {
+                        set_leader_country = prev
+                    }
+                }
+            }
+        }
+
+        hidden_effect = {
+            leader_country ?= {
+                save_scope_as = composite_monarchy_leader
+            }
+
+            if = {
+                limit = {
+                    OR = {
+                        scope:composite_monarchy_leader = { tag = CAS }
+                        scope:composite_monarchy_leader = { tag = ARA }
+                        scope:composite_monarchy_leader = { tag = SPA }
+                    }
+                }
+
+                if = {
+                    limit = {
+                        NOT = {
+                            scope:composite_monarchy_leader = {
+                                is_member_of_international_organization = root
+                            }
+                        }
+                    }
+                    add_country_to_international_organization = scope:composite_monarchy_leader
+                }
+
+                every_country = {
+                    limit = {
+                        is_subject = yes
+                        top_overlord = {
+                            this = scope:composite_monarchy_leader
+                        }
+                        NOT = {
+                            is_member_of_international_organization = root
+                        }
+                    }
+                    root = {
+                        add_country_to_international_organization = prev
+                    }
+                }
+
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { this = scope:composite_monarchy_leader }
+                        NOT = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                    }
+                    root = {
+                        remove_country_from_international_organization = prev
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    leader_country ?= {
+                        tag = CAS
+                    }
+                }
+
+                scope:composite_monarchy_leader = {
+                    if = {
+                        limit = { has_variable = composite_monarchy_full_crown }
+                        remove_variable = composite_monarchy_full_crown
+                    }
+                    if = {
+                        limit = { root.var:composite_integration >= 100 }
+                        set_variable = composite_monarchy_full_crown
+                    }
+                }
+
+                # Castilian integration ladder
+                # Asturias: annex at 65, release at 40
+                if = {
+                    limit = {
+                        country_exists = c:ATS
+                        c:ATS = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 65
+                    }
+                    remove_country_from_international_organization = c:ATS
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:ATS
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:ATS
+                        c:ATS = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:ATS
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:ATS }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:ATS
+                            }
+                        }
+                        var:composite_integration < 40
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:ATS
+                    }
+                    c:ATS = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:appanage
+                        }
+                    }
+                    add_country_to_international_organization = c:ATS
+                }
+
+                # Vizcaya: annex at 72, release at 45
+                if = {
+                    limit = {
+                        country_exists = c:VIZ
+                        c:VIZ = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 72
+                    }
+                    remove_country_from_international_organization = c:VIZ
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:VIZ
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:VIZ
+                        c:VIZ = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:VIZ
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:VIZ }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:VIZ
+                            }
+                        }
+                        var:composite_integration < 45
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:VIZ
+                    }
+                    c:VIZ = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:fiefdom
+                        }
+                    }
+                    add_country_to_international_organization = c:VIZ
+                }
+
+                # Canary Islands: annex at 78, release at 50
+                if = {
+                    limit = {
+                        country_exists = c:CNY
+                        c:CNY = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 78
+                    }
+                    remove_country_from_international_organization = c:CNY
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:CNY
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:CNY
+                        c:CNY = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:CNY
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:CNY }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:CNY
+                            }
+                        }
+                        var:composite_integration < 50
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:CNY
+                    }
+                    c:CNY = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:vassal
+                        }
+                    }
+                    add_country_to_international_organization = c:CNY
+                }
+
+                # Leon: annex at 85, release at 60
+                if = {
+                    limit = {
+                        country_exists = c:LON
+                        c:LON = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 85
+                    }
+                    remove_country_from_international_organization = c:LON
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:LON
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:LON
+                        c:LON = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:LON
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:LON }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:LON
+                            }
+                        }
+                        var:composite_integration < 60
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:LON
+                    }
+                    c:LON = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:appanage
+                        }
+                    }
+                    add_country_to_international_organization = c:LON
+                }
+
+                # Galicia: annex at 90, release at 55
+                if = {
+                    limit = {
+                        country_exists = c:GLC
+                        c:GLC = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 90
+                    }
+                    remove_country_from_international_organization = c:GLC
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:GLC
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:GLC
+                        c:GLC = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:GLC
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:GLC }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:GLC
+                            }
+                        }
+                        var:composite_integration < 55
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:GLC
+                    }
+                    c:GLC = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:vassal
+                        }
+                    }
+                    add_country_to_international_organization = c:GLC
+                }
+
+                # Granada: annex at 95, release at 50
+                if = {
+                    limit = {
+                        country_exists = c:GRA
+                        c:GRA = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 95
+                    }
+                    remove_country_from_international_organization = c:GRA
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:GRA
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:GRA
+                        c:GRA = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:GRA
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:GRA }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:GRA
+                            }
+                        }
+                        var:composite_integration < 50
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:GRA
+                    }
+                    c:GRA = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:vassal
+                        }
+                    }
+                    add_country_to_international_organization = c:GRA
+                }
+            }
+
+            else_if = {
+                limit = {
+                    leader_country ?= {
+                        tag = ARA
+                    }
+                }
+
+                scope:composite_monarchy_leader = {
+                    if = {
+                        limit = { has_variable = composite_monarchy_full_crown }
+                        remove_variable = composite_monarchy_full_crown
+                    }
+                    if = {
+                        limit = { root.var:composite_integration >= 100 }
+                        set_variable = composite_monarchy_full_crown
+                    }
+                }
+
+                # Aragonese integration ladder
+                # Catalonia: annex at 82, release at 62
+                if = {
+                    limit = {
+                        country_exists = c:CAT
+                        c:CAT = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 82
+                    }
+                    remove_country_from_international_organization = c:CAT
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:CAT
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:CAT
+                        c:CAT = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:CAT
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:CAT }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:CAT
+                            }
+                        }
+                        var:composite_integration < 62
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:CAT
+                    }
+                    c:CAT = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:vassal
+                        }
+                    }
+                    add_country_to_international_organization = c:CAT
+                }
+
+                # Valencia: annex at 86, release at 58
+                if = {
+                    limit = {
+                        country_exists = c:VAL
+                        c:VAL = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 86
+                    }
+                    remove_country_from_international_organization = c:VAL
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:VAL
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:VAL
+                        c:VAL = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:VAL
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:VAL }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:VAL
+                            }
+                        }
+                        var:composite_integration < 58
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:VAL
+                    }
+                    c:VAL = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:vassal
+                        }
+                    }
+                    add_country_to_international_organization = c:VAL
+                }
+
+                # Mallorca: annex at 88, release at 54
+                if = {
+                    limit = {
+                        country_exists = c:MLL
+                        c:MLL = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 88
+                    }
+                    remove_country_from_international_organization = c:MLL
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:MLL
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:MLL
+                        c:MLL = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:MLL
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:MLL }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:MLL
+                            }
+                        }
+                        var:composite_integration < 54
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:MLL
+                    }
+                    c:MLL = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:fiefdom
+                        }
+                    }
+                    add_country_to_international_organization = c:MLL
+                }
+
+                # Sardinia: annex at 90, release at 52
+                if = {
+                    limit = {
+                        country_exists = c:SAR
+                        c:SAR = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 90
+                    }
+                    remove_country_from_international_organization = c:SAR
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:SAR
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:SAR
+                        c:SAR = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:SAR
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:SAR }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:SAR
+                            }
+                        }
+                        var:composite_integration < 52
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:SAR
+                    }
+                    c:SAR = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:vassal
+                        }
+                    }
+                    add_country_to_international_organization = c:SAR
+                }
+
+                # Sicily: annex at 92, release at 50
+                if = {
+                    limit = {
+                        country_exists = c:SIC
+                        c:SIC = {
+                            is_subject = yes
+                            top_overlord = {
+                                this = scope:composite_monarchy_leader
+                            }
+                        }
+                        var:composite_integration >= 92
+                    }
+                    remove_country_from_international_organization = c:SIC
+                    scope:composite_monarchy_leader = {
+                        annex_country = {
+                            country = c:SIC
+                            reason = Diplomatic
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        country_exists = c:SIC
+                        c:SIC = {
+                            is_member_of_international_organization = root
+                            NOT = {
+                                is_subject = yes
+                                top_overlord = {
+                                    this = scope:composite_monarchy_leader
+                                }
+                            }
+                        }
+                    }
+                    remove_country_from_international_organization = c:SIC
+                }
+                if = {
+                    limit = {
+                        NOT = { country_exists = c:SIC }
+                        scope:composite_monarchy_leader = {
+                            any_owned_location = {
+                                is_core_of = c:SIC
+                            }
+                        }
+                        var:composite_integration < 50
+                    }
+                    scope:composite_monarchy_leader = {
+                        create_country_from_cores_in_our_locations = c:SIC
+                    }
+                    c:SIC = {
+                        make_subject_of = {
+                            target = scope:composite_monarchy_leader
+                            type = subject_type:vassal
+                        }
+                    }
+                    add_country_to_international_organization = c:SIC
+                }
+            }
+
+            else_if = {
+                limit = {
+                    leader_country ?= {
+                        tag = SPA
+                    }
+                }
+
+                scope:composite_monarchy_leader = {
+                    if = {
+                        limit = { has_variable = composite_monarchy_full_crown }
+                        remove_variable = composite_monarchy_full_crown
+                    }
+                    if = {
+                        limit = { root.var:composite_integration >= 100 }
+                        set_variable = composite_monarchy_full_crown
+                    }
+                }
+            }
+        }
+    }
+
+    variables = {
+        composite_integration = {
+            format = "COMPOSITE_INTEGRATION_DISPLAY"
+            change_format = "VARIABLE_CHANGE_FORMAT"
+            min = 0
+            max = 100
+            monthly_change = {
+                add = {
+                    desc = "BASE_DECAY"
+                    value = -0.05
+                }
+                add = {
+                    desc = "RULER_ADMIN"
+                    value = 0
+                    leader_country ?= {
+                        add = {
+                            value = ruler_or_heir_if_regent.adm
+                            subtract = 50
+                            multiply = 0.002
+                        }
+                    }
+                }
+                add = {
+                    desc = "LEGITIMACY"
+                    value = 0
+                    leader_country ?= {
+                        add = modifier:legitimacy
+                        multiply = 0.0015
+                    }
+                }
+                add = {
+                    desc = "INTERNAL_PEACE"
+                    if = {
+                        limit = {
+                            NOT = {
+                                any_international_organization_member = {
+                                    at_war = yes
+                                    any_current_war = {
+                                        any_war_participant = {
+                                            is_member_of_international_organization = root
+                                            NOT = {
+                                                this = prev
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        value = 0.05
+                    }
+                }
+            }
+        }
+    }
+
+    ai_desire_to_join = {}
+    ai_desire_to_allow_new_member = {}
+}

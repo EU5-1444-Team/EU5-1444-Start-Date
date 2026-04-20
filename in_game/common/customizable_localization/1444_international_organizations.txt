@@ -37,3 +37,39 @@ REPLACE:jurchen_confederation_name = {
         fallback = yes
     }
 }
+
+composite_monarchy_name = {
+    type = international_organization
+
+    text = {
+        trigger = {
+            leader_country ?= {
+                tag = CAS
+            }
+        }
+        localization_key = crown_of_castile
+    }
+
+    text = {
+        trigger = {
+            leader_country ?= {
+                tag = ARA
+            }
+        }
+        localization_key = crown_of_aragon
+    }
+
+    text = {
+        trigger = {
+            leader_country ?= {
+                tag = SPA
+            }
+        }
+        localization_key = crown_of_spain
+    }
+
+    text = {
+        localization_key = composite_monarchy
+        fallback = yes
+    }
+}

@@ -6531,18 +6531,9 @@ countries = {
 
     ARA = {
         own_control_core = {
-            barcelona berga besalu ripoll castellon_ampurias girona manresa sant_feliu sitges terrassa vic
-            cervera balaguer flix lleida montblanc tarragona tarrega tortosa villafranca_del_penedes
-            agramunt cardona talarn vielha
             huesca ainsa almudevar anso barbastro benabarre ejea_de_los_caballeros fraga jaca monzon sarinena sos
             teruel albarracin alcaniz alfambra cantavieja montalban mora_de_rubielos valderrobres
             zaragoza ariza belchite carinena caspe calatayud daroca pina_de_ebro tarazona zuera
-            castellon_de_la_plana ares_del_maestre llucena morella peniscola
-            jativa alcoy alicante denia elche orihuela
-            valencia gandia ayora bunol chelva lliria
-            palma ciudadela_de_menorca ibiza manacor pollensa #Kingdom of Mallorca
-            puigcerda prades #County of Cerdanya
-            perpignan #County of Roselló
         }
 
         own_control_conquered = {
@@ -6619,9 +6610,9 @@ countries = {
 
         }
 
-        court_language = catalan_dialect
+        court_language = aragonese_dialect
         country_rank = rank_kingdom
-        capital = barcelona
+        capital = zaragoza
         accepted_cultures = { aragonese }
         tolerated_cultures = {
             andalusi
@@ -6866,13 +6857,12 @@ countries = {
     # --- LON ---
 
     CAT = {
-        our_cores_conquered_by_others = {
+        own_control_core = {
             barcelona sitges terrassa villafranca_del_penedes
             girona besalu castellon_ampurias ripoll sant_feliu
             tarragona flix lleida montblanc tarrega tortosa
             vic berga cardona cervera manresa
-            perpignan prades puigcerda
-            seu_durgell agramunt balaguer talarn vielha
+            agramunt balaguer talarn vielha
         }
 
         starting_technology_level = 3
@@ -6887,7 +6877,12 @@ countries = {
 
         capital = barcelona
         government = {
-            ruler = random
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = ara_alfons_v_trastamara
+            active_regent = ara_maria_castile
+            start_regency_date = 1432.1.1
+            heir = ara_juan_ii_trastamara
 
             ruler_term = { character = cat_guifre_i_barcelona start_date = 878.9.11 end_date = 897.8.11 regnal_number = 1 }
             ruler_term = { character = cat_guifre_ii_borrell_barcelona start_date = 897.8.11 end_date = 911.4.26 regnal_number = 2 }
@@ -6925,6 +6920,7 @@ countries = {
                 name_james = 2
             }
         }
+        dynasty = trastamara_dynasty
     }
 
     # --- CAT ---
@@ -7147,7 +7143,7 @@ countries = {
     # --- NAV ---
 
     VAL = {
-        our_cores_conquered_by_others = {
+        own_control_core = {
             castellon_de_la_plana ares_del_maestre llucena morella peniscola
             jativa alcoy alicante denia elche orihuela
             valencia gandia ayora bunol chelva lliria
@@ -7164,14 +7160,20 @@ countries = {
         country_rank = rank_kingdom
         capital = valencia
         government = {
-            ruler = random
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = ara_alfons_v_trastamara
+            active_regent = ara_maria_castile
+            start_regency_date = 1432.1.1
+            heir = ara_juan_ii_trastamara
         }
+        dynasty = trastamara_dynasty
     }
 
     # --- VAL ---
 
     MLL = {
-        our_cores_conquered_by_others = {
+        own_control_core = {
             palma ciudadela_de_menorca ibiza manacor pollensa #Kingdom of Mallorca
             puigcerda prades #County of Cerdanya
             perpignan #County of Roselló
@@ -7188,6 +7190,8 @@ countries = {
         country_rank = rank_kingdom
         capital = palma
         government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
             ruler = random
 
             ruler_term = { character = ara_jacme_i_arago start_date = 1231.1.1 end_date = 1276.7.27 regnal_number = 1 }
@@ -7200,6 +7204,7 @@ countries = {
                 name_sancho = 1
             }
         }
+        dynasty = trastamara_dynasty
 
         tolerated_cultures = {
             languedocien
@@ -8719,7 +8724,8 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = ara_alfons_v_trastamara
+            heir = ara_juan_ii_trastamara
         }
 
         country_rank = rank_kingdom
@@ -8868,8 +8874,8 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = ara_alfons_v_trastamara
+            heir = ara_juan_ii_trastamara
 
             ruler_term = { character = ogk_heinrich_vi_hohenstaufen start_date = 1194.12.25 end_date = 1197.9.28 regnal_number = 2 } # Marital Co-Ruler
 

@@ -1348,8 +1348,14 @@ country_flavor = {
 		trigger = {
 			country_rank_is_kingdom = yes
 			OR = {
-				tag = ARA
-				tag = CAS
+				AND = {
+					tag = ARA
+					has_variable = composite_monarchy_full_crown
+				}
+				AND = {
+					tag = CAS
+					has_variable = composite_monarchy_full_crown
+				}
 				AND = {
 					tag = BOH
 					has_variable = crown_of_bohemia_variable
