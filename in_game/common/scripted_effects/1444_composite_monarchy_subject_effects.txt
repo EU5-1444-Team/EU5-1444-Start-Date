@@ -1,0 +1,73 @@
+# Root = any country.
+# Handles release/annex logic for a subject nation.
+# Parameters:
+#   tag = Country tag to manage (e.g., ATS)
+#   overlord = Scope of the overlord country (e.g., scope:composite_monarchy_leader)
+#   annex_threshold = Integration value to annex (e.g., 65)
+#   release_threshold = Integration value to release (e.g., 40)
+#   subject_type = Subject type to create (e.g., subject_type:appanage)
+composite_monarchy_manage_subject = {
+	if = {
+		limit = {
+			country_exists = $tag$
+			c:$tag$ = {
+				is_subject = yes
+				top_overlord = {
+					this = $overlord$
+				}
+				$overlord$.var:composite_integration >= $annex_threshold$
+			}
+		}
+		c:$tag$ = {
+			remove_from_international_organization = $overlord$
+		}
+		$overlord$ = {
+			annex_country = {
+				country = $tag$
+				reason = Diplomatic
+			}
+		}
+	}
+	if = {
+		limit = {
+			country_exists = $tag$
+			c:$tag$ = {
+				is_member_of_international_organization = $overlord$
+				NOT = {
+					is_subject = yes
+					top_overlord = {
+						this = $overlord$
+					}
+				}
+			}
+		}
+		c:$tag$ = {
+			remove_from_international_organization = $overlord$
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				country_exists = $tag$
+			}
+			$overlord$ = {
+				any_owned_location = {
+					is_core_of = $tag$
+				}
+			}
+			$overlord$.var:composite_integration < $release_threshold$
+		}
+		$overlord$ = {
+			create_country_from_cores_in_our_locations = $tag$
+		}
+		c:$tag$ = {
+			make_subject_of = {
+				target = $overlord$
+				type = fiefdom
+			}
+		}
+		$overlord$ = {
+			add_country_to_international_organization = c:$tag$
+		}
+	}
+}
