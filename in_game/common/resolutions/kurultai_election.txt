@@ -34,25 +34,12 @@ kurultai_election = {
     requires_explicit_votes = no
 
     should_finalize_vote = {
-        OR = {
-            custom_tooltip = {
-                text = OVER_HALF_OF_VOTES
-                scope:recipient = {
-                    international_organization_has_leader = no
-                }
-                scope:highest_vote >= scope:total_votes_needed
+        custom_tooltip = {
+            text = OVER_HALF_OF_VOTES
+            scope:recipient = {
+                international_organization_has_leader = no
             }
-        }
-        hidden_trigger = {
-            trigger_if = {
-                limit = {
-                    scope:recipient = {
-                        international_organization_has_leader = no
-                    }
-                    scope:highest_vote < scope:total_votes_needed
-                }
-                always = no
-            }
+            scope:highest_vote >= scope:total_votes_needed
         }
     }
 
@@ -71,26 +58,7 @@ kurultai_election = {
 
     select_trigger = {
         looking_for_a = country
-        interaction_source_list = {
-            scope:recipient = {
-                every_international_organization_member = {
-                    limit = {
-                        can_lead_international_organization = scope:recipient
-                    }
-                    add_to_list = source
-                }
-            }
-        }
-        ai_interaction_source_list = {
-            scope:recipient = {
-                every_international_organization_member = {
-                    limit = {
-                        can_lead_international_organization = scope:recipient
-                    }
-                    add_to_list = source
-                }
-            }
-        }
+        source = recipient
         target_flag = vote
         allow_self = yes
         name = "election_select_country"
@@ -103,15 +71,7 @@ kurultai_election = {
             data = great_power_score
         }
         visible = {
-            trigger_if = {
-                limit = { exists = scope:actor }
-                OR = {
-                    this = scope:actor
-                    scope:actor = {
-                        knows_country = root
-                    }
-                }
-            }
+            can_lead_international_organization = scope:recipient
         }
     }
 
@@ -128,7 +88,6 @@ kurultai_election = {
         if = {
             limit = { exists = scope:vote }
             scope:vote = {
-                # Hard block - not a member
                 if = {
                     limit = {
                         NOT = { is_member_of_international_organization = scope:recipient }
@@ -139,14 +98,12 @@ kurultai_election = {
                     }
                 }
 
-                # Military strength - core steppe legitimacy
                 add = {
                     desc = "game_concept_great_power_score"
                     value = great_power_score
                     multiply = 0.1
                 }
 
-                # Vote for yourself
                 if = {
                     limit = { this = scope:actor }
                     add = {
@@ -155,7 +112,6 @@ kurultai_election = {
                     }
                 }
 
-                # If others are already voting for you, pile on
                 if = {
                     limit = {
                         this = scope:actor
@@ -181,7 +137,6 @@ kurultai_election = {
                     }
                 }
 
-                # Dynasty/clan loyalty - Chinggisid legitimacy
                 if = {
                     limit = {
                         NOT = { this = scope:actor }
@@ -193,7 +148,6 @@ kurultai_election = {
                     }
                 }
 
-                # Alliance loyalty
                 if = {
                     limit = {
                         NOT = { this = scope:actor }
@@ -205,7 +159,6 @@ kurultai_election = {
                     }
                 }
 
-                # General opinion
                 if = {
                     limit = { NOT = { this = scope:actor } }
                     add = {
@@ -217,7 +170,6 @@ kurultai_election = {
                     }
                 }
 
-                # Prestige
                 add = {
                     desc = "game_concept_prestige"
                     value = prestige
@@ -225,7 +177,6 @@ kurultai_election = {
                     divide = 3
                 }
 
-                # Hard blocks
                 if = {
                     limit = { is_rival_of = scope:actor }
                     add = {

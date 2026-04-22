@@ -18,7 +18,7 @@ kurultai_law = {
     formal_kurultai_policy = {
         level = 1
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 3 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi
@@ -78,7 +78,7 @@ kurultai_law = {
     loose_acknowledgment_policy = {
         level = 1
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 2 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — loose acknowledgment is his preferred model; he controls without obligation
@@ -90,6 +90,7 @@ kurultai_law = {
                 }
             }
             monthly_tribal_cohesion = 0.05
+            monthly_horde_unity = 0.05
             monthly_prestige = 0.08
             diplomatic_capacity = 1
             # MONGOL AUTHORITY — authority gain from Khan acknowledgment; move to scripted effect
@@ -122,6 +123,7 @@ kurultai_law = {
                 }
             }
             monthly_tribal_cohesion = 0.03
+            monthly_horde_unity = 0.03
             monthly_prestige = 0.01
         }
 
@@ -160,7 +162,7 @@ tribute_system_law = {
         level = 2
         payments_implemented = { yuan_tribute }
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 3 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — tribute flows through him; he becomes the economic broker of the steppe
@@ -222,7 +224,7 @@ tribute_system_law = {
     military_tribute_policy = {
         level = 2
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 4 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — military tribute cements his role as warlord-administrator
@@ -235,6 +237,7 @@ tribute_system_law = {
             }
             global_manpower_modifier = 0.12
             monthly_tribal_cohesion = 0.04
+            monthly_horde_unity = 0.04
             army_tradition_from_battle = 0.05
             monthly_towards_unsinicized = societal_value_minor_monthly_move
             # MONGOL AUTHORITY — authority gain from military tribute collection; move to scripted effect
@@ -268,6 +271,7 @@ tribute_system_law = {
             }
             global_manpower_modifier = -0.05
             monthly_tribal_cohesion = 0.02
+            monthly_horde_unity = 0.02
             monthly_towards_unsinicized = societal_value_tiny_monthly_move
         }
 
@@ -305,7 +309,7 @@ pasture_rights_law = {
     yuan_arbitration_policy = {
         level = 2
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 3 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — as arbiter he gains diplomatic leverage and reputation across the steppe
@@ -351,6 +355,7 @@ pasture_rights_law = {
                 }
             }
             monthly_tribal_cohesion = 0.02
+            monthly_horde_unity = 0.02
             global_estate_satisfaction_recovery = 0.01
             monthly_towards_sinicized = societal_value_tiny_monthly_move
         }
@@ -367,7 +372,7 @@ pasture_rights_law = {
     traditional_territories_policy = {
         level = 2
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 2 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — enforcing traditional boundaries is pure steppe power projection
@@ -379,6 +384,7 @@ pasture_rights_law = {
                 }
             }
             monthly_tribal_cohesion = 0.06
+            monthly_horde_unity = 0.06
             global_manpower_modifier = 0.08
             monthly_towards_unsinicized = societal_value_minor_monthly_move
             army_tradition_from_battle = 0.05
@@ -397,6 +403,7 @@ pasture_rights_law = {
                 }
             }
             monthly_tribal_cohesion = 0.02
+            monthly_horde_unity = 0.02
             monthly_towards_unsinicized = societal_value_tiny_monthly_move
             legitimacy = -0.25
         }
@@ -413,6 +420,8 @@ pasture_rights_law = {
                 }
             }
             monthly_tribal_cohesion = 0.04
+            monthly_horde_unity = 0.04
+            
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
 
@@ -451,7 +460,7 @@ military_organization_law = {
         level = 2
         payments_implemented = { yuan_tribute }
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 5 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — the tumen system is his instrument; he controls the confederation's armies
@@ -513,7 +522,7 @@ military_organization_law = {
     yuan_offensive_call_policy = {
         level = 2
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 4 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — the offensive call is his power; war is his political instrument
@@ -561,6 +570,7 @@ military_organization_law = {
             }
             global_manpower_modifier = -0.08
             monthly_tribal_cohesion = -0.02
+            monthly_horde_unity = -0.02
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
 
@@ -598,7 +608,7 @@ imperial_court_law = {
     sinicized_court_policy = {
         level = 2
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 5 }
+            change_yeke_mongghul_ulus = { value = -80 }
             every_international_organization_member = {
                 change_societal_value = {
                     type = sinicized_vs_unsinicized
@@ -666,7 +676,7 @@ imperial_court_law = {
     traditional_mongol_court_policy = {
         level = 2
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 4 }
+            change_yeke_mongghul_ulus = { value = -80 }
             every_international_organization_member = {
                 change_societal_value = {
                     type = sinicized_vs_unsinicized
@@ -685,6 +695,7 @@ imperial_court_law = {
             }
             monthly_prestige = 0.12
             monthly_tribal_cohesion = 0.08
+            monthly_horde_unity = 0.08
             global_manpower_modifier = 0.08
             monthly_towards_unsinicized = societal_value_monthly_move
             # MONGOL AUTHORITY — authority gain from traditional court recognition; move to scripted effect
@@ -702,6 +713,7 @@ imperial_court_law = {
                 }
             }
             monthly_tribal_cohesion = 0.03
+            monthly_horde_unity = 0.03
             monthly_towards_unsinicized = societal_value_minor_monthly_move
             legitimacy = -0.5
             monthly_prestige = -0.03
@@ -719,6 +731,7 @@ imperial_court_law = {
                 }
             }
             monthly_tribal_cohesion = 0.03
+            monthly_horde_unity = 0.03
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
 
@@ -756,7 +769,7 @@ vassal_obligations_law = {
     administrative_integration_policy = {
         level = 2
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 5 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — integration makes him the administrative hub of the entire confederation
@@ -818,7 +831,7 @@ vassal_obligations_law = {
     military_subjugation_policy = {
         level = 2
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 6 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — subjugation is his doctrine; absolute control flows through him
@@ -867,6 +880,7 @@ vassal_obligations_law = {
             reject_subjugation_reasons = -50
             global_manpower_modifier = -0.1
             monthly_tribal_cohesion = -0.03
+            monthly_horde_unity = -0.03
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
 
@@ -902,8 +916,11 @@ imperial_authority_law = {
 
     # Yuan Path — restore the mandate, claim the Chinese imperial throne
     yuan_imperial_authority_policy = {
+        allow = {
+            is_leader_of_international_organization = scope:recipient
+        }
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 10 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — claiming the mandate makes him the empire's real architect
@@ -965,7 +982,7 @@ imperial_authority_law = {
     # Mongolia Path — claim absolute Khan-ship over all Mongols
     mongol_imperial_authority_policy = {
         on_activate = {
-            change_yeke_mongghul_ulus = { value = 10 }
+            change_yeke_mongghul_ulus = { value = -80 }
         }
 
         # Taishi — absolute Khan-ship is his political endgame; war and steppe are his domain
@@ -978,6 +995,7 @@ imperial_authority_law = {
             }
             monthly_prestige = 0.2
             monthly_tribal_cohesion = 0.12
+            monthly_horde_unity = 0.12
             global_manpower_modifier = 0.15
             army_tradition_from_battle = 0.15
             monthly_towards_unsinicized = societal_value_monthly_move
@@ -997,8 +1015,8 @@ imperial_authority_law = {
                 }
             }
             monthly_tribal_cohesion = 0.03
+            monthly_horde_unity = 0.03
             monthly_towards_unsinicized = societal_value_minor_monthly_move
-            legitimacy = -1
             monthly_prestige = -0.05
         }
 
@@ -1016,6 +1034,7 @@ imperial_authority_law = {
             reject_subjugation_reasons = -75
             global_manpower_modifier = -0.1
             monthly_tribal_cohesion = -0.05
+            monthly_horde_unity = -0.05
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
 
@@ -1106,21 +1125,25 @@ yuan_consolidation_law = {
     annex_all_mongols_yuan_policy = {
         on_activate = {
             northern_yuan_legacy_modifier = {
+                game_data = {
+                    category = country
+                }
                 if = { limit = { international_organization_has_policy = policy:formal_kurultai_policy } monthly_prestige = 0.03 country_cabinet_efficiency = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:loose_acknowledgment_policy } monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:loose_acknowledgment_policy } monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.0 monthly_horde_unity = 0.022 }
                 if = { limit = { international_organization_has_policy = policy:standardized_tribute_policy } monthly_income_modifier = 0.02 trade_efficiency = 0.02 country_cabinet_efficiency = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:military_tribute_policy } global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:military_tribute_policy } global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
                 if = { limit = { international_organization_has_policy = policy:yuan_arbitration_policy } trade_efficiency = 0.02 stability_decay = -0.001 }
-                if = { limit = { international_organization_has_policy = policy:traditional_territories_policy } global_manpower_modifier = 0.03 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:traditional_territories_policy } global_manpower_modifier = 0.03 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
                 if = { limit = { international_organization_has_policy = policy:standardized_tumen_policy } discipline = 0.02 army_tradition_from_battle = 0.04 }
                 if = { limit = { international_organization_has_policy = policy:yuan_offensive_call_policy } global_manpower_modifier = 0.04 army_tradition_from_battle = 0.05 }
                 if = { limit = { international_organization_has_policy = policy:sinicized_court_policy } monthly_prestige = 0.04 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:traditional_mongol_court_policy } monthly_prestige = 0.03 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republic_tradition = 0.03 monthly_devotion = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:traditional_mongol_court_policy } monthly_prestige = 0.03 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republican_tradition = 0.03 monthly_devotion = 0.03 monthly_horde_unity = 0.03 }
                 if = { limit = { international_organization_has_policy = policy:administrative_integration_policy } monthly_income_modifier = 0.02 stability_decay = -0.001 country_cabinet_efficiency = 0.03 }
                 if = { limit = { international_organization_has_policy = policy:military_subjugation_policy } global_manpower_modifier = 0.05 army_tradition_from_battle = 0.04 }
                 if = { limit = { international_organization_has_policy = policy:yuan_imperial_authority_policy } monthly_prestige = 0.05 monthly_income_modifier = 0.03 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:mongol_imperial_authority_policy } monthly_prestige = 0.03 global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republic_tradition = 0.03 monthly_devotion = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:mongol_imperial_authority_policy } monthly_prestige = 0.03 global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republican_tradition = 0.03 monthly_devotion = 0.03 monthly_horde_unity = 0.03 }
             }
+            add_country_modifier = { modifier = northern_yuan_legacy_modifier years = -1 mode = add }
             every_country_with_special_status_of_type = {
                 type = protector_general
                 trigger_event_non_silently = northern_yuan.102
@@ -1161,21 +1184,25 @@ mongolia_consolidation_law = {
     annex_all_mongols_mongolia_policy = {
         on_activate = {
             northern_yuan_legacy_modifier = {
+                game_data = {
+                    category = country
+                }
                 if = { limit = { international_organization_has_policy = policy:formal_kurultai_policy } monthly_prestige = 0.03 country_cabinet_efficiency = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:loose_acknowledgment_policy } monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:loose_acknowledgment_policy } monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
                 if = { limit = { international_organization_has_policy = policy:standardized_tribute_policy } monthly_income_modifier = 0.02 trade_efficiency = 0.02 country_cabinet_efficiency = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:military_tribute_policy } global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:military_tribute_policy } global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
                 if = { limit = { international_organization_has_policy = policy:yuan_arbitration_policy } trade_efficiency = 0.02 stability_decay = -0.001 }
-                if = { limit = { international_organization_has_policy = policy:traditional_territories_policy } global_manpower_modifier = 0.03 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republic_tradition = 0.02 monthly_devotion = 0.02 }
+                if = { limit = { international_organization_has_policy = policy:traditional_territories_policy } global_manpower_modifier = 0.03 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
                 if = { limit = { international_organization_has_policy = policy:standardized_tumen_policy } discipline = 0.02 army_tradition_from_battle = 0.04 }
                 if = { limit = { international_organization_has_policy = policy:yuan_offensive_call_policy } global_manpower_modifier = 0.04 army_tradition_from_battle = 0.05 }
                 if = { limit = { international_organization_has_policy = policy:sinicized_court_policy } monthly_prestige = 0.04 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:traditional_mongol_court_policy } monthly_prestige = 0.03 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republic_tradition = 0.03 monthly_devotion = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:traditional_mongol_court_policy } monthly_prestige = 0.03 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republican_tradition = 0.03 monthly_devotion = 0.03 monthly_horde_unity = 0.03 }
                 if = { limit = { international_organization_has_policy = policy:administrative_integration_policy } monthly_income_modifier = 0.02 stability_decay = -0.001 country_cabinet_efficiency = 0.03 }
                 if = { limit = { international_organization_has_policy = policy:military_subjugation_policy } global_manpower_modifier = 0.05 army_tradition_from_battle = 0.04 }
                 if = { limit = { international_organization_has_policy = policy:yuan_imperial_authority_policy } monthly_prestige = 0.05 monthly_income_modifier = 0.03 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:mongol_imperial_authority_policy } monthly_prestige = 0.03 global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republic_tradition = 0.03 monthly_devotion = 0.03 }
+                if = { limit = { international_organization_has_policy = policy:mongol_imperial_authority_policy } monthly_prestige = 0.03 global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republican_tradition = 0.03 monthly_devotion = 0.03 monthly_horde_unity = 0.03 }
             }
+            add_country_modifier = { modifier = northern_yuan_legacy_modifier years = -1 mode = add }
             every_country_with_special_status_of_type = {
                 type = protector_general
                 trigger_event_non_silently = northern_yuan.104
