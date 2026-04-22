@@ -1,4 +1,4 @@
-UYG_f = {
+﻿UYG_f = {
 	level = 2
 	required_locations_fraction = 0.8
 	rule = historical
@@ -696,5 +696,54 @@ POR_f = {
 	}
 	form_effect = {
 		set_country_rank_effect = { rank = country_rank:rank_empire }
+	}
+}
+
+NYE_f = {
+	# Nanyue
+	level = 2
+	required_locations_fraction = 0.8
+	rule = historical
+	potential = {
+		OR = {
+			culture = culture:yuehai_culture
+			culture = culture:xinhui_culture
+			culture = culture:gaozhou_culture
+			culture = culture:huazhou_culture
+			culture = culture:wuchuan_culture
+			culture = culture:yangjiang_culture
+			culture = culture:guangxin_culture
+			culture = culture:tubai_culture
+			culture = culture:yulin_culture
+			culture = culture:guibei_culture
+			culture = culture:guinan_culture
+			culture = culture:malao_culture
+			culture = culture:leizhou_culture
+			culture = culture:qiong_culture
+			culture = culture:cunhua_culture
+			culture = culture:danzhou_culture
+			culture = culture:zhuang_culture
+			culture = culture:hlai_culture
+			culture = culture:vietnamese_culture
+			culture = culture:muong_culture
+		}
+	}
+	allow = {
+		owns = location:thang_long
+		owns = location:guangzhou
+	}
+	name = NYE
+	flag = NYE
+	adjective = NYE_ADJ
+	tag = NYE
+	color = map_NYE
+	areas = {
+		guangxi_area
+		liangjiang_area
+		guangdong_area
+		haibei_hainan_area
+		red_river_delta_area
+	}
+	form_effect = {
 	}
 }
