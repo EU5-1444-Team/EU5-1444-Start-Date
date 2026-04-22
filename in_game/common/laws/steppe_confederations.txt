@@ -25,8 +25,9 @@ mongol_local_administration = {
     }
  
     mongol_tribal_administration_policy = {
+        wants_propose_policy = { add = { value = 100 } }
         wants_this_policy_bias = {
-            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 50 }
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         on_activate = {
             leader_country = {
@@ -59,8 +60,10 @@ mongol_local_administration = {
     }
  
     mongol_sinicized_administration_policy = {
+        wants_propose_policy = { add = { value = 500 } }
         wants_this_policy_bias = {
-            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 }
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
             leader_country = {
@@ -120,8 +123,9 @@ mongol_tax_obligations = {
     }
  
     mongol_no_tax_obligations_policy = {
+        wants_propose_policy = { add = { value = 100 } }
         wants_this_policy_bias = {
-            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 50 }
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         on_activate = {
             leader_country = {
@@ -148,8 +152,10 @@ mongol_tax_obligations = {
     }
  
     mongol_fair_tax_obligations_policy = {
+        wants_propose_policy = { add = { value = 300 } }
         wants_this_policy_bias = {
             subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
             leader_country = {
@@ -175,8 +181,10 @@ mongol_tax_obligations = {
     }
  
     mongol_extensive_tax_obligations_policy = {
+        wants_propose_policy = { add = { value = 500 } }
         wants_this_policy_bias = {
-            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 }
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         years = 5
         on_activate = {
@@ -231,8 +239,9 @@ mongol_court_etiquette = {
     }
  
     mongol_no_court_etiquette_policy = {
+        wants_propose_policy = { add = { value = 100 } }
         wants_this_policy_bias = {
-            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 50 }
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         years = 5
         on_activate = {
@@ -259,8 +268,10 @@ mongol_court_etiquette = {
     }
  
     mongol_basic_court_etiquette_policy = {
+        wants_propose_policy = { add = { value = 300 } }
         wants_this_policy_bias = {
             subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         years = 5
         on_activate = {
@@ -287,8 +298,10 @@ mongol_court_etiquette = {
     }
  
     mongol_sinicized_court_etiquette_policy = {
+        wants_propose_policy = { add = { value = 500 } }
         wants_this_policy_bias = {
-            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 }
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         years = 5
         on_activate = {
@@ -342,8 +355,9 @@ mongol_formal_script = {
     }
  
     mongol_mongol_script_policy = {
+        wants_propose_policy = { add = { value = 100 } }
         wants_this_policy_bias = {
-            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 50 }
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         years = 5
         on_activate = {
@@ -376,8 +390,10 @@ mongol_formal_script = {
     }
  
     mongol_sinicized_script_policy = {
+        wants_propose_policy = { add = { value = 500 } }
         wants_this_policy_bias = {
-            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 }
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         years = 5
         on_activate = {
@@ -436,8 +452,9 @@ mongol_legal_framework = {
     }
  
     mongol_no_legal_framework_policy = {
+        wants_propose_policy = { add = { value = 100 } }
         wants_this_policy_bias = {
-            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 50 }
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         years = 5
         on_activate = {
@@ -464,8 +481,10 @@ mongol_legal_framework = {
     }
  
     mongol_basic_legal_framework_policy = {
+        wants_propose_policy = { add = { value = 300 } }
         wants_this_policy_bias = {
             subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         years = 5
         on_activate = {
@@ -493,8 +512,10 @@ mongol_legal_framework = {
     }
  
     mongol_sinicized_legal_framework_policy = {
+        wants_propose_policy = { add = { value = 500 } }
         wants_this_policy_bias = {
-            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 }
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         years = 5
         on_activate = {
@@ -547,8 +568,9 @@ mongol_economic_framework = {
     }
  
     mongol_shared_crops_policy = {
+        wants_propose_policy = { add = { value = 100 } }
         wants_this_policy_bias = {
-            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 50 }
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         on_activate = {
             leader_country = {
@@ -575,8 +597,10 @@ mongol_economic_framework = {
     }
  
     mongol_decentralized_farming_villages = {
+        wants_propose_policy = { add = { value = 300 } }
         wants_this_policy_bias = {
             subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
             leader_country = {
@@ -604,8 +628,10 @@ mongol_economic_framework = {
     }
  
     mongol_financed_rgo_policy = {
+        wants_propose_policy = { add = { value = 500 } }
         wants_this_policy_bias = {
-            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 }
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
             leader_country = {
@@ -658,8 +684,9 @@ mongol_trade_relations = {
     }
  
     mongol_clan_trade_only_policy = {
+        wants_propose_policy = { add = { value = 100 } }
         wants_this_policy_bias = {
-            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 50 }
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         years = 5
         on_activate = {
@@ -686,8 +713,10 @@ mongol_trade_relations = {
     }
  
     mongol_allow_foreign_exchanges_policy = {
+        wants_propose_policy = { add = { value = 300 } }
         wants_this_policy_bias = {
             subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         years = 5
         on_activate = {
@@ -715,8 +744,10 @@ mongol_trade_relations = {
     }
  
     mongol_chinese_tribute_policy = {
+        wants_propose_policy = { add = { value = 500 } }
         wants_this_policy_bias = {
-            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 }
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         years = 5
         on_activate = {
@@ -769,8 +800,9 @@ mongol_clan_diplomacy = {
     }
  
     mongol_no_embassies_policy = {
+        wants_propose_policy = { add = { value = 100 } }
         wants_this_policy_bias = {
-            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 50 }
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         on_activate = {
             leader_country = {
@@ -797,8 +829,9 @@ mongol_clan_diplomacy = {
     }
  
     mongol_clan_embassies_policy = {
+        wants_propose_policy = { add = { value = 300 } }
         wants_this_policy_bias = {
-            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
             leader_country = {
@@ -825,8 +858,9 @@ mongol_clan_diplomacy = {
     }
  
     mongol_chinese_embassies_policy = {
+        wants_propose_policy = { add = { value = 500 } }
         wants_this_policy_bias = {
-            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
             leader_country = {
@@ -858,23 +892,37 @@ confederation_unification_law = {
     type = international_organization
     requires_vote = yes
     custom_tags = { forbids_no_policy }
-
+ 
     allow = {
-        leader_country ?= { societal_value:centralization_vs_decentralization < 40 }
+        leader_country ?= { societal_value:centralization_vs_decentralization < -40 }
     }
-
+    potential = {
+        OR = {
+            international_organization_type = international_organization_type:khalkha_confederation
+            international_organization_type = international_organization_type:khorchin_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
+        }
+    }
+ 
+    no_unification_policy = {
+        wants_propose_policy = { add = { value = 0 } }
+        wants_this_policy_bias = { add = { desc = "WE_DONT_WANT_UNIFICATION" value = 25 } }
+    }
+ 
     unify_khalkha_policy = {
         potential = {
             international_organization_type = international_organization_type:khalkha_confederation
         }
         
         wants_propose_policy = { add = { value = 500 } }
-        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 } }
-
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
         on_activate = {
             custom_tooltip = khalkha_unification_tt
             root.leader_country = {
                 form_country = formable_country:KHL_f
+                add_reform = government_reform:eastern_steppe_unification_reform
                 if = {
                     limit = { country_rank_level < 3 }
                     set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -885,22 +933,22 @@ confederation_unification_law = {
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
             destroy_international_organization = { target = international_organization:khalkha_confederation }
-            add_country_modifier = { modifier = khalkha_confederation_legacy_modifier years = -1 mode = add_and_extend }
         }
     }
-
+ 
     unify_khorchin_policy = {
         potential = {
             international_organization_type = international_organization_type:khorchin_confederation
         }
-
+ 
         wants_propose_policy = { add = { value = 500 } }
-        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 } }
-
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
         on_activate = {
             custom_tooltip = khorchin_unification_tt
             root.leader_country = {
                 form_country = formable_country:KHA_f
+                add_reform = government_reform:eastern_steppe_unification_reform
                 if = {
                     limit = { country_rank_level < 3 }
                     set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -911,22 +959,22 @@ confederation_unification_law = {
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
             destroy_international_organization = { target = international_organization:khorchin_confederation }
-            add_country_modifier = { modifier = khalkha_confederation_legacy_modifier years = -1 mode = add }
         }
     }
-
+ 
     unify_nogai_policy = {
         potential = {
             international_organization_type = international_organization_type:nogai_confederation
         }
-
+ 
         wants_propose_policy = { add = { value = 500 } }
-        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 } }
-
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
         on_activate = {
             custom_tooltip = nogai_unification_tt
             root.leader_country = {
                 form_country = formable_country:NOG_f
+                add_reform = government_reform:eastern_steppe_unification_reform
                 if = {
                     limit = { country_rank_level < 3 }
                     set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -937,22 +985,22 @@ confederation_unification_law = {
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
             destroy_international_organization = { target = international_organization:nogai_confederation }
-            add_country_modifier = { modifier = khalkha_confederation_legacy_modifier years = -1 mode = add }
         }
     }
-
+ 
     unify_bashkir_tribal_policy = {
         potential = {
             international_organization_type = international_organization_type:bashkir_confederation
         }
-
+ 
         wants_propose_policy = { add = { value = 500 } }
-        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 } }
-
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
         on_activate = {
             custom_tooltip = bashkir_unification_tt
             root.leader_country = {
                 form_country = formable_country:BSH_f
+                add_reform = government_reform:eastern_steppe_unification_reform
                 if = {
                     limit = { country_rank_level < 3 }
                     set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -963,23 +1011,23 @@ confederation_unification_law = {
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
             destroy_international_organization = { target = international_organization:bashkir_confederation }
-            add_country_modifier = { modifier = khalkha_confederation_legacy_modifier years = -1 mode = add }
         }
     }
-
+ 
     unify_bashkir_horde_policy = {
         potential = {
             international_organization_type = international_organization_type:bashkir_confederation
         }
-
+ 
         wants_propose_policy = { add = { value = 500 } }
-        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 50 } }
-
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
         on_activate = {
             custom_tooltip = bashkir_horde_unification_tt
             root.leader_country = {
                 form_country = formable_country:BSH_f
                 change_government_type = government_type:steppe_horde
+                add_reform = government_reform:eastern_steppe_unification_reform
                 if = {
                     limit = { country_rank_level < 3 }
                     set_country_rank_effect = { rank = country_rank:rank_kingdom }
@@ -990,7 +1038,6 @@ confederation_unification_law = {
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
             destroy_international_organization = { target = international_organization:bashkir_confederation }
-            add_country_modifier = { modifier = khalkha_confederation_legacy_modifier years = -1 mode = add }
         }
     }
 }

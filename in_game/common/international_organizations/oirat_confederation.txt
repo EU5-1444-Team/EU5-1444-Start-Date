@@ -50,32 +50,204 @@ oirat_confederation = {
         hidden_effect = {
             if = {
                 limit = {
-                    var:centralisation_oirat <= -100
+                    var:centralisation_oirat >= 75
+                    NOT = { has_global_variable = oirat_active_tier_8 }
                 }
+                remove_global_variable = oirat_active_tier_7
+                set_global_variable = { name = oirat_active_tier_8 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier7
+                    add_country_modifier = { modifier = oirat_centralisation_tier8 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier7
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier8 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= 50
+                    var:centralisation_oirat < 75
+                    NOT = { has_global_variable = oirat_active_tier_7 }
+                }
+                remove_global_variable = oirat_active_tier_6
+                remove_global_variable = oirat_active_tier_8
+                set_global_variable = { name = oirat_active_tier_7 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier6
+                    remove_country_modifier = oirat_centralisation_tier8
+                    add_country_modifier = { modifier = oirat_centralisation_tier7 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier6
+                    remove_country_modifier = oirat_leader_centralisation_tier8
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier7 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= 25
+                    var:centralisation_oirat < 50
+                    NOT = { has_global_variable = oirat_active_tier_6 }
+                }
+                remove_global_variable = oirat_active_tier_5
+                remove_global_variable = oirat_active_tier_7
+                set_global_variable = { name = oirat_active_tier_6 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier5
+                    remove_country_modifier = oirat_centralisation_tier7
+                    add_country_modifier = { modifier = oirat_centralisation_tier6 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier5
+                    remove_country_modifier = oirat_leader_centralisation_tier7
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier6 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= 0
+                    var:centralisation_oirat < 25
+                    NOT = { has_global_variable = oirat_active_tier_5 }
+                }
+                remove_global_variable = oirat_active_tier_4
+                remove_global_variable = oirat_active_tier_6
+                set_global_variable = { name = oirat_active_tier_5 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier4
+                    remove_country_modifier = oirat_centralisation_tier6
+                    add_country_modifier = { modifier = oirat_centralisation_tier5 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier4
+                    remove_country_modifier = oirat_leader_centralisation_tier6
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier5 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= -25
+                    var:centralisation_oirat < 0
+                    NOT = { has_global_variable = oirat_active_tier_4 }
+                }
+                remove_global_variable = oirat_active_tier_3
+                remove_global_variable = oirat_active_tier_5
+                set_global_variable = { name = oirat_active_tier_4 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier3
+                    remove_country_modifier = oirat_centralisation_tier5
+                    add_country_modifier = { modifier = oirat_centralisation_tier4 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier3
+                    remove_country_modifier = oirat_leader_centralisation_tier5
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier4 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= -50
+                    var:centralisation_oirat < -25
+                    NOT = { has_global_variable = oirat_active_tier_3 }
+                }
+                remove_global_variable = oirat_active_tier_2
+                remove_global_variable = oirat_active_tier_4
+                set_global_variable = { name = oirat_active_tier_3 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier2
+                    remove_country_modifier = oirat_centralisation_tier4
+                    add_country_modifier = { modifier = oirat_centralisation_tier3 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier2
+                    remove_country_modifier = oirat_leader_centralisation_tier4
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier3 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= -75
+                    var:centralisation_oirat < -50
+                    NOT = { has_global_variable = oirat_active_tier_2 }
+                }
+                remove_global_variable = oirat_active_tier_1
+                remove_global_variable = oirat_active_tier_3
+                set_global_variable = { name = oirat_active_tier_2 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier1
+                    remove_country_modifier = oirat_centralisation_tier3
+                    add_country_modifier = { modifier = oirat_centralisation_tier2 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier1
+                    remove_country_modifier = oirat_leader_centralisation_tier3
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier2 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat < -75
+                    NOT = { has_global_variable = oirat_active_tier_1 }
+                }
+                remove_global_variable = oirat_active_tier_2
+                set_global_variable = { name = oirat_active_tier_1 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier2
+                    add_country_modifier = { modifier = oirat_centralisation_tier1 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier2
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier1 years = -1 mode = add_and_extend }
+                }
+            }
+
+            # Collapse/formation checks
+            if = {
+                limit = { var:centralisation_oirat <= -100 }
                 destroy_international_organization = { target = international_organization:oirat_confederation }
             }
             if = {
-                limit = {
-                    var:centralisation_oirat >= 100
-                }
+                limit = { var:centralisation_oirat >= 100 }
                 leader_country ?= {
                     form_country = formable_country:OIR_f
                     if = {
                         limit = { country_rank_level < 3 }
                         set_country_rank_effect = { rank = country_rank:rank_kingdom }
                     }
+                    unlock_government_reform_effect = { type = oirat_unification_reform }
+                    add_reform = government_reform:oirat_unification_reform
                 }
                 every_international_organization_member = {
                     limit = { NOT = { this = root.leader_country } }
                     root.leader_country = {
-                        annex_country = {
-                            country = prev
-                            reason = Diplomatic
-                        }
+                        annex_country = { country = prev reason = Diplomatic }
                     }
                 }
                 destroy_international_organization = { target = international_organization:oirat_confederation }
-                add_country_modifier = { modifier = oirat_confederation_legacy_modifier years = -1 mode = add }
             }
         }
     }
@@ -214,256 +386,16 @@ oirat_confederation = {
                         add = -0.03
                     }
                 }
-            }
-        }
-    }
-
-    modifier = {
-        if = {
-            limit = {
-            var:centralisation_oirat >= 75
-            }
-            monthly_tribal_cohesion = 0.03
-            monthly_legitimacy = 0.03
-            monthly_republican_tradition = 0.03
-            monthly_devotion = 0.03
-            monthly_horde_unity = 0.03
-            monthly_towards_centralization = 0.10
-            stability_decay = -0.10
-            levy_combat_efficiency_modifier = 0.10
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= 50
-                    var:centralisation_oirat < 75
+                add = {
+                    desc = "TEMP_VALUE_WHILE_I_BUILD_BETTER_VARIABLES"
+                    if = {
+                        limit = {
+                            NOT = { international_organization_has_leader = no }
+                        }
+                        value = 0.1
+                    }
                 }
             }
-            monthly_tribal_cohesion = 0.02
-            monthly_legitimacy = 0.02
-            monthly_republican_tradition = 0.02
-            monthly_devotion = 0.02
-            monthly_horde_unity = 0.03
-            monthly_towards_centralization = 0.07
-            stability_decay = -0.07
-            levy_combat_efficiency_modifier = 0.07
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= 25
-                    var:centralisation_oirat < 50
-                }
-            }
-            monthly_tribal_cohesion = 0.01
-            monthly_legitimacy = 0.01
-            monthly_republican_tradition = 0.01
-            monthly_devotion = 0.01
-            monthly_horde_unity = 0.03
-            monthly_towards_centralization = 0.04
-            stability_decay = -0.04
-            levy_combat_efficiency_modifier = 0.04
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= 0
-                    var:centralisation_oirat < 25
-                }
-            }
-            monthly_tribal_cohesion = 0.005
-            monthly_legitimacy = 0.005
-            monthly_republican_tradition = 0.005
-            monthly_devotion = 0.005
-            monthly_horde_unity = 0.03
-            monthly_towards_centralization = 0.01
-            stability_decay = -0.01
-            levy_combat_efficiency_modifier = 0.01
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= -25
-                    var:centralisation_oirat < 0
-                }
-            }
-            monthly_tribal_cohesion = -0.01
-            monthly_legitimacy = -0.01
-            monthly_republican_tradition = -0.01
-            monthly_devotion = -0.01
-            monthly_horde_unity = 0.03
-            monthly_towards_centralization = -0.01
-            stability_decay = 0.01
-            levy_combat_efficiency_modifier = -0.01
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= -50
-                    var:centralisation_oirat < -25
-                }
-            }
-            monthly_tribal_cohesion = -0.02
-            monthly_legitimacy = -0.02
-            monthly_republican_tradition = -0.02
-            monthly_devotion = -0.02
-            monthly_horde_unity = 0.03
-            monthly_towards_centralization = -0.04
-            stability_decay = 0.07
-            levy_combat_efficiency_modifier = -0.04
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= -75
-                    var:centralisation_oirat < -50
-                }
-            }
-            monthly_tribal_cohesion = -0.03
-            monthly_legitimacy = -0.03
-            monthly_republican_tradition = -0.03
-            monthly_devotion = -0.03
-            monthly_horde_unity = 0.03
-            monthly_towards_centralization = -0.07
-            stability_decay = 0.10
-            levy_combat_efficiency_modifier = -0.07
-        }
-        if = {
-            limit = {
-            var:centralisation_oirat < -75
-            }
-            monthly_tribal_cohesion = -0.04
-            monthly_legitimacy = -0.04
-            monthly_republican_tradition = -0.04
-            monthly_devotion = -0.04
-            monthly_horde_unity = 0.03
-            monthly_towards_centralization = -0.10
-            stability_decay = 0.15
-            levy_combat_efficiency_modifier = -0.10
-        }
-    }
-
-    leader_modifier = {
-        if = {
-            limit = {
-                var:centralisation_oirat >= 75
-            }
-            monthly_tribal_cohesion = 0.06
-            monthly_legitimacy = 0.06
-            monthly_republican_tradition = 0.06
-            monthly_devotion = 0.06
-            monthly_horde_unity = 0.03
-            discipline = 0.10
-            monthly_prestige = 0.30
-            diplomatic_reputation = 3
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= 50
-                    var:centralisation_oirat < 75
-                }
-            }
-            monthly_tribal_cohesion = 0.04
-            monthly_legitimacy = 0.04
-            monthly_republican_tradition = 0.04
-            monthly_devotion = 0.04
-            monthly_horde_unity = 0.03
-            discipline = 0.07
-            monthly_prestige = 0.20
-            diplomatic_reputation = 2
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= 25
-                    var:centralisation_oirat < 50
-                }
-            }
-            monthly_tribal_cohesion = 0.02
-            monthly_legitimacy = 0.02
-            monthly_republican_tradition = 0.02
-            monthly_devotion = 0.02
-            monthly_horde_unity = 0.03
-            discipline = 0.04
-            monthly_prestige = 0.10
-            diplomatic_reputation = 1
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= 0
-                    var:centralisation_oirat < 25
-                }
-            }
-            monthly_tribal_cohesion = 0.01
-            monthly_legitimacy = 0.01
-            monthly_republican_tradition = 0.01
-            monthly_devotion = 0.01
-            monthly_horde_unity = 0.03
-            discipline = 0.01
-            monthly_prestige = 0.05
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= -25
-                    var:centralisation_oirat < 0
-                }
-            }
-            monthly_tribal_cohesion = -0.02
-            monthly_legitimacy = -0.02
-            monthly_republican_tradition = -0.02
-            monthly_devotion = -0.02
-            monthly_horde_unity = 0.03
-            discipline = -0.02
-            monthly_prestige = -0.10
-            diplomatic_reputation = -1
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= -50
-                    var:centralisation_oirat < -25
-                }
-            }
-            monthly_tribal_cohesion = -0.04
-            monthly_legitimacy = -0.04
-            monthly_republican_tradition = -0.04
-            monthly_devotion = -0.04
-            monthly_horde_unity = 0.03
-            discipline = -0.05
-            monthly_prestige = -0.20
-            diplomatic_reputation = -2
-        }
-        if = {
-            limit = {
-                AND = {
-                    var:centralisation_oirat >= -75
-                    var:centralisation_oirat < -50
-                }
-            }
-            monthly_tribal_cohesion = -0.06
-            monthly_legitimacy = -0.06
-            monthly_republican_tradition = -0.06
-            monthly_devotion = -0.06
-            monthly_horde_unity = 0.03
-            discipline = -0.07
-            monthly_prestige = -0.30
-            diplomatic_reputation = -3
-        }
-        if = {
-            limit = {
-                var:centralisation_oirat < -75
-            }
-            monthly_tribal_cohesion = -0.08
-            monthly_legitimacy = -0.08
-            monthly_republican_tradition = -0.08
-            monthly_devotion = -0.08
-            monthly_horde_unity = 0.03
-            discipline = -0.10
-            monthly_prestige = -0.40
-            diplomatic_reputation = -4
         }
     }
 

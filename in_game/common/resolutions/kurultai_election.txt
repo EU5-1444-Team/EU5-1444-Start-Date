@@ -12,7 +12,7 @@ kurultai_election = {
     ai_tick = monthly
 
     is_live = {
-        scope:recipient = {
+        scope:recipient ?= {
             international_organization_has_leader = no
         }
     }
@@ -34,12 +34,25 @@ kurultai_election = {
     requires_explicit_votes = no
 
     should_finalize_vote = {
-        custom_tooltip = {
-            text = OVER_HALF_OF_VOTES
-            scope:recipient = {
-                international_organization_has_leader = no
+        OR = {
+            custom_tooltip = {
+                text = OVER_HALF_OF_VOTES
+                scope:recipient = {
+                    international_organization_has_leader = no
+                }
+                scope:highest_vote >= scope:total_votes_needed
             }
-            scope:highest_vote >= scope:total_votes_needed
+        }
+        hidden_trigger = {
+            trigger_if = {
+                limit = {
+                    scope:recipient = {
+                        international_organization_has_leader = no
+                    }
+                    scope:highest_vote < scope:total_votes_needed
+                }
+                always = no
+            }
         }
     }
 
@@ -58,7 +71,26 @@ kurultai_election = {
 
     select_trigger = {
         looking_for_a = country
-        source = recipient
+        interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        can_lead_international_organization = scope:recipient
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        ai_interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        can_lead_international_organization = scope:recipient
+                    }
+                    add_to_list = source
+                }
+            }
+        }
         target_flag = vote
         allow_self = yes
         name = "election_select_country"
@@ -71,7 +103,17 @@ kurultai_election = {
             data = great_power_score
         }
         visible = {
-            can_lead_international_organization = scope:recipient
+            trigger_if = {
+                limit = {
+                    exists = scope:actor
+                }
+                OR = {
+                    this = scope:actor
+                    scope:actor = {
+                        knows_country = root
+                    }
+                }
+            }
         }
     }
 
@@ -90,18 +132,19 @@ kurultai_election = {
             scope:vote = {
                 if = {
                     limit = {
-                        NOT = { is_member_of_international_organization = scope:recipient }
+                        is_member_of_international_organization = scope:recipient
                     }
+                    add = {
+                        desc = "game_concept_great_power_score"
+                        value = great_power_score
+                        multiply = 0.1
+                    }
+                }
+                else = {
                     add = {
                         desc = "NOT_A_MEMBER"
                         value = -10000
                     }
-                }
-
-                add = {
-                    desc = "game_concept_great_power_score"
-                    value = great_power_score
-                    multiply = 0.1
                 }
 
                 if = {
@@ -116,14 +159,14 @@ kurultai_election = {
                     limit = {
                         this = scope:actor
                         scope:recipient = {
-                            "active_resolution(resolution:khorchin_kurultai_election)" = {
+                            "active_resolution(resolution:kurultai_election)" = {
                                 any_voter = {
                                     this != scope:actor
                                     save_temporary_scope_as = voter
                                     scope:recipient = {
                                         has_cached_or_cast_vote_for = {
                                             voter = scope:voter
-                                            resolution = resolution:khorchin_kurultai_election
+                                            resolution = resolution:kurultai_election
                                             vote = scope:actor
                                         }
                                     }
@@ -138,24 +181,36 @@ kurultai_election = {
                 }
 
                 if = {
-                    limit = {
-                        NOT = { this = scope:actor }
-                        same_dynasty_as = { target = scope:actor }
-                    }
+                    limit = { is_rival_of = scope:actor }
                     add = {
-                        desc = "opinion_same_dynasty"
-                        value = 75
+                        desc = "game_concept_rival"
+                        value = -1000
                     }
                 }
 
                 if = {
-                    limit = {
-                        NOT = { this = scope:actor }
-                        is_allied_with = { target = scope:actor }
-                    }
+                    limit = { is_at_war_with = scope:actor }
                     add = {
-                        desc = "HAS_ALLIANCE"
-                        value = 50
+                        desc = "game_concept_war"
+                        value = -200
+                    }
+                }
+
+                if = {
+                    limit = { NOT = { this = scope:actor } }
+                    if = {
+                        limit = { is_allied_with = { target = scope:actor } }
+                        add = {
+                            desc = "HAS_ALLIANCE"
+                            value = 50
+                        }
+                    }
+                    if = {
+                        limit = { same_dynasty_as = { target = scope:actor } }
+                        add = {
+                            desc = "opinion_same_dynasty"
+                            value = 75
+                        }
                     }
                 }
 
@@ -175,21 +230,6 @@ kurultai_election = {
                     value = prestige
                     subtract = 50
                     divide = 3
-                }
-
-                if = {
-                    limit = { is_rival_of = scope:actor }
-                    add = {
-                        desc = "game_concept_rival"
-                        value = -1000
-                    }
-                }
-                if = {
-                    limit = { is_at_war_with = scope:actor }
-                    add = {
-                        desc = "game_concept_war"
-                        value = -500
-                    }
                 }
             }
         }
