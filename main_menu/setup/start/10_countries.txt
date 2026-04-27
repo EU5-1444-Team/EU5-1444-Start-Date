@@ -19160,6 +19160,7 @@ countries = {
 
         own_control_integrated = {
             varazdin cakovec
+            kocevje metlika
         }
 
         starting_technology_level = 3
@@ -19187,10 +19188,34 @@ countries = {
 
         country_rank = rank_county
         capital = celje
-
     }
 
     # --- CLI ---
+
+    ZGJ = {
+        #Zagorje
+        our_cores_conquered_by_others = {
+            varazdin cakovec
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "catholic_monarchy_no_coast"
+        government = {
+            ruler = cli_friderik_ii_celjiski
+
+            ruler_term = { character = cli_friderik_ii_celjiski start_date = 1435.10.13 regnal_number = 2 }
+
+            laws = {
+                mining_law = nobles_mining_law
+            }
+        }
+
+        country_rank = rank_county
+        capital = varadzin
+    }
+
+    # --- ZGJ ---
 
     BRN = {
         #Bern
@@ -23079,7 +23104,7 @@ countries = {
 
     ORT = {
         #Ortenburg
-        own_control_core = {
+        our_cores_conquered_by_others = {
             kocevje metlika
         }
 
