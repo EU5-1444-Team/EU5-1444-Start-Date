@@ -64,17 +64,7 @@
 	}
 
 	auto_disband_trigger = {
-		OR = {
-			NOT = {
-				any_international_organization_member = {
-					has_special_status_in_international_organization = {
-						type = special_status:tatar_overlord
-						international_organization = root
-					}
-				}
-			}
-			total_members = 1
-		}
+		total_members = 1
 	}
 
 	on_joined = {
@@ -182,7 +172,7 @@
 			}
 		}
 		
-		# Block 3 - Ugra Dissolution Detection
+		# Block 3 - Great Ugra Stand Dissolution Detection
 		if = {
 			limit = {
 				any_international_organization_member = {

@@ -112,7 +112,29 @@ country_flavor = {
 	text = {
 		localization_key = horde_clan_taishi
 		trigger = {
+			OR = {
+				country_rank_is_duchy = yes
+				country_rank_is_county = yes
+			}
 			government_type = government_type:steppe_horde
+			OR = {
+				tag = OIR
+				tag = CRS
+				tag = DRB
+				tag = KHO
+				tag = TRH
+				tag = KHD
+			}
+		}
+	}
+	text = {
+		localization_key = horde_confederation_taishi
+		trigger = {
+			government_type = government_type:steppe_horde
+			OR = {
+				country_rank_is_kingdom = yes
+				country_rank_is_empire = yes
+			}
 			OR = {
 				tag = OIR
 				tag = CRS

@@ -352,9 +352,9 @@ KAZ_f = {
 	form_effect = {
 	}
 }
-BSH_f = {
+BSH_f = { #Bashkira
     level = 3
-    required_locations_fraction = 0.80
+    required_locations_fraction = 0.70
     rule = historical
 	capital_required = no
     potential = {
@@ -372,6 +372,9 @@ BSH_f = {
         bashkiria_area
         bolghar_area
     }
+	provinces = {
+		khaqmar_province
+	}
     form_effect = {
         if = {
             limit = { country_rank_level < 3 }

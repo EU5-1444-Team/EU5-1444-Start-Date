@@ -508,6 +508,7 @@ international_organization_manager = {
         tatar_tax_collector = {
             MOS
         }
+        tatar_horde_member = { MGH NWM JAK AOG QON JIK KGZ MGZ AGZ KZN SBR CRI }
         variables = {
             seat = sarai_al_jadid
         }
@@ -803,6 +804,9 @@ international_organization_manager = {
         creation_date = 1440.1.1
         members = { CRS DRB KHO TRH KHD }
         leader = CRS
+        variables = {
+            centralisation_oirat = 60
+        }
     }
     add_international_organization = {
         type = khorchin_confederation
@@ -825,7 +829,7 @@ international_organization_manager = {
     #################################################################
     #                   Jurchen Confederations                      #
     #################################################################
-# Jianzhou Confederation (Cleaned of duplicates)
+    # Jianzhou Confederation
     add_international_organization = {
         type = jurchen_confederation
         creation_date = 1300.1.1
@@ -922,11 +926,21 @@ international_organization_manager = {
         provinces = { hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
         hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province }
         locations = { xuanning yizhou_jurchen tongliao ningchang
-            oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat }
+            slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat }
         variables = {
-            yeke_mongghul_ulus = 10
+            yeke_mongghul_ulus = 580
         }
-        laws = {}
+        laws = {
+            preserve_status_quo_policy
+            preserve_northern_yuan_policy
+            preserve_no_authority_policy
+            no_vassal_obligations_policy
+            no_imperial_court_policy
+            no_military_organization_policy
+            no_pasture_rights_policy
+            no_tribute_policy
+            no_kurultai_policy
+        }
     }
 
     #################################################################
