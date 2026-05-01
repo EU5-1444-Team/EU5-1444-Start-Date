@@ -52095,7 +52095,7 @@ character_db={
     ### ilyas_shahi_dynasty | BNG ###
 
     bng_nasiruddin_mahmud_shah = { #Restored Ilyas Shahi dynasty (r.1435-1459)
-        first_name = { name = name_nasir.name_al_din.name_mahmud.name_shah }
+        first_name = { name = Nasir.name_al_din.name_mahmud.name_shah }
         culture = bengali
         religion = sunni
         birth_date = 1400.1.1 #Approximate
@@ -52104,8 +52104,19 @@ character_db={
         tag = BNG
     }
 
+    # Wife of Nasiruddin Mahmud Shah
+    bng_nasiruddin_mahmud_shah_spouse = {
+        first_name = "random"
+        culture = bengali
+        religion = sunni
+        birth_date = 1405.1.1 #Approximate
+        female = yes
+        spouse = bng_nasiruddin_mahmud_shah
+        tag = BNG
+    }
+
     bng_rukunuddin_barbak_shah = { #Ruler (r.1459-1474), son of Mahmud
-        first_name = { name = name_rukun.name_al_din.name_barbak.name_shah }
+        first_name = { name = Rukun.name_al_din.Barbak.name_shah }
         culture = bengali
         religion = sunni
         birth_date = 1420.1.1 #Approximate
@@ -52116,23 +52127,23 @@ character_db={
     }
 
     bng_shamsuddin_yusuf_shah = { #Ruler (r.1474-1481), son of Barbak
-        first_name = { name = name_shams.name_al_din.name_yusuf.name_shah }
+        first_name = { name = name_shams.name_al_din.Yusuf.name_shah }
         culture = bengali
         religion = sunni
-        birth_date = 1440.1.1 #Approximate
+        birth_date = 1430.1.1 #Approximate
         birth = gaur
         father = bng_rukunuddin_barbak_shah
         dynasty = ilyas_shahi_dynasty
         tag = BNG
     }
 
-    bng_jalaluddin_fateh_shah = { #Ruler (r.1481-1487), son of Yusuf
-        first_name = { name = name_jalal.name_al_din.name_fateh.name_shah }
+    bng_jalaluddin_fateh_shah = { #Ruler (r.1481-1487), son of Mahmud Shah
+        first_name = { name = Jalal.name_al_din.name_fateh.name_shah }
         culture = bengali
         religion = sunni
-        birth_date = 1460.1.1 #Approximate
+        birth_date = 1425.1.1 #Approximate (brother of Barbak, son of Mahmud)
         birth = gaur
-        father = bng_shamsuddin_yusuf_shah
+        father = bng_nasiruddin_mahmud_shah
         dynasty = ilyas_shahi_dynasty
         tag = BNG
     }
@@ -52140,7 +52151,7 @@ character_db={
     ### imagawa_dynasty | IMG ###
 
     jap_imagawa_kuniuji = {
-        first_name = { name = name_kuniuji } #国氏
+        first_name = { name = Kuniuji } #国氏
         culture = tougoku_culture
         religion = shinto
         birth_date = 1243.1.1 #Exact date unknown
@@ -72598,6 +72609,29 @@ character_db={
         tag = GUJ
     }
 
+    # Wife of Muhammad Shah II - Bibi Mughlai, daughter of Jam Tughlaq of Samma dynasty
+    guj_muhammad_shah_ii_spouse = {
+        first_name = { name = name_bibi.Mughlai }
+        culture = gujarati
+        religion = sunni
+        birth_date = 1425.1.1 #Approximate
+        female = yes
+        spouse = guj_muhammad_shah_ii
+        tag = GUJ
+    }
+
+    # Sons of Muhammad Shah II
+    guj_ahmad_shah_ii = { #Ruler (r.1451-1458), son of Muhammad II
+        first_name = { name = name_ahmad.name_shah }
+        culture = gujarati
+        religion = sunni
+        birth_date = 1429.1.1 #Per Wikipedia: born 1429
+        father = guj_muhammad_shah_ii
+        dynasty = muzaffarid_gujarat_dynasty
+        tag = GUJ
+    }
+
+    # Daughter of Muhammad Shah II
     ### muzakajt_dynasty | MZK ###
 
     mzk_andrea_ii_muzaka = {
@@ -74838,8 +74872,7 @@ character_db={
     # Mubarak Shah (r. 1399-1402), born Malik Qaranfal
     # Adopted son of Malik Sarwar (not biological), brother of Ibrahim Shah
     jnp_mubarak_shah_sharqi = {
-        first_name = Malik.Qaranfal
-        nickname = { name = nick_shah }
+        first_name = Malik.Qaranfal.name_shah
         culture = awadhi
         religion = sunni
         birth_date = 1350.1.1 #Estimated
@@ -74853,8 +74886,7 @@ character_db={
     # Adopted son of Malik Sarwar (not biological), brother of Mubarak Shah
     # Numismatic evidence: died 1440 (not 1436 per Nizamuddin)
     jnp_ibrahim_shah_sharqi = {
-        first_name = { name = name_ibrahim }
-        nickname = { name = nick_shah }
+        first_name = { name = name_ibrahim.name_shah }
         culture = awadhi
         religion = sunni
         birth_date = 1375.1.1 #Estimated
@@ -74868,8 +74900,7 @@ character_db={
     # Born 16 Apr 1429, eldest son of Ibrahim Shah
     # Alive at 1444.11.11 start date (died 1457.9.12)
     jnp_mahmud_shah_sharqi = { #Ruler
-        first_name = { name = name_mahmud }
-        nickname = { name = nick_shah }
+        first_name = { name = name_mahmud.name_shah }
         culture = awadhi
         religion = sunni
         estate = crown_estate
@@ -74881,17 +74912,14 @@ character_db={
         tag = JNP
     }
 
-    # Husain Shah (r. 1458-1479), son of Mahmud Shah, brother of Muhammad Shah
-    # Born ~1444 (infant in 1444, succeeds in 1458 after Muhammad Shah)
-    jnp_husain_shah_sharqi = {
-        first_name = { name = Husain }
-        nickname = { name = nick_shah }
+    # Wife of Mahmud Shah Sharqi - Bibi Raji, patron of Lal Darwaza Mosque
+    jnp_mahmud_shah_sharqi_spouse = {
+        first_name = { name = name_bibi.Raji }
         culture = awadhi
         religion = sunni
-        birth_date = 1444.1.1 #Estimated: son of Mahmud Shah (b.1429), infant in 1444
-        birth = jaunpur
-        father = jnp_mahmud_shah_sharqi
-        dynasty = sharqi_dynasty
+        birth_date = 1430.1.1 #Approximate
+        female = yes
+        spouse = jnp_mahmud_shah_sharqi
         tag = JNP
     }
 
@@ -106743,15 +106771,40 @@ character_db={
         tag = DLH
     }
 
+    # Wife of Muhammad Shah Sayyid (mother of Alam Shah and Bibi Sayyid)
+    dlh_muhammad_shah_sayyid_spouse = {
+        first_name = "random"
+        culture = dehlavi
+        religion = sunni
+        birth_date = 1400.1.1 #Approximate
+        female = yes
+        spouse = dlh_muhammad_shah_sayyid
+        tag = DLH
+    }
+
+    # Daughter of Muhammad Shah Sayyid (married to Bahlul Lodi)
+    dlh_bibi_sayyid = { #Married to Bahlul Lodi, mother of Sikandar Lodi
+        first_name = { name = name_bibi }
+        culture = dehlavi
+        religion = sunni
+        birth_date = 1420.1.1 #Approximate
+        female = yes
+        father = dlh_muhammad_shah_sayyid
+        mother = dlh_muhammad_shah_sayyid_spouse
+        spouse = srh_bahlul_lodi
+        dynasty = sayyid_dynasty
+        tag = DLH
+    }
+
     dlh_alam_shah_sayyid = { # https://en.wikipedia.org/wiki/Alam_Shah - born 1417, born Ala-ud-Din
-        first_name = { name = Ala.name_al_din.Alam.name_shah }
-        nickname = { name = Alam }
+        first_name = { name = name_ala.name_al_din.Alam.name_shah }
         culture = dehlavi
         religion = sunni
         estate = crown_estate
         birth = delhi
         birth_date = 1417.1.1 # Per Wikipedia: born 1417
         father = dlh_muhammad_shah_sayyid
+        mother = dlh_muhammad_shah_sayyid_spouse
         dynasty = sayyid_dynasty
         tag = DLH
     }
@@ -124828,13 +124881,24 @@ character_db={
 
     ### lodi_dynasty | SRH ###
 
-    srh_bahlul_lodi = { #Governor of Sirhind, founder of Lodi dynasty (r.1451-1489)
+    srh_bahlul_lodi = { #Governor of Sirhind, founder of Lodi dynasty (r.1442-1489)
         first_name = { name = Bahlul }
         culture = afghan_culture
         religion = sunni
         birth_date = 1421.1.1 #c. 1419-1421 (Britannica)
         birth = sirhind
         dynasty = lodi_dynasty
+        tag = SRH
+    }
+
+    # Wife of Bahlul Lodi - Bibi Ambha, daughter of Hindu goldsmith
+    srh_bahlul_lodi_spouse = {
+        first_name = { name = Ambha }
+        culture = afghan_culture
+        religion = sunni
+        birth_date = 1425.1.1 #Approximate
+        female = yes
+        spouse = srh_bahlul_lodi
         tag = SRH
     }
 
