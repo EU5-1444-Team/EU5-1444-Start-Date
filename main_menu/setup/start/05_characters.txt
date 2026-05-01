@@ -52082,7 +52082,7 @@ character_db={
     ### ilyas_shahi_dynasty | STN ###
 
     stn_shamsuddin_ilyas_shah = { #Ruler and founder of Bengal Sultanate
-        first_name = { name = Shamsuddin }
+        first_name = { name = Shams.name_al_din }
         dynasty = ilyas_shahi_dynasty
         culture = bengali
         religion = sunni
@@ -52110,6 +52110,7 @@ character_db={
         culture = bengali
         religion = sunni
         birth_date = 1405.1.1 #Approximate
+        birth = gaur
         female = yes
         spouse = bng_nasiruddin_mahmud_shah
         tag = BNG
@@ -52120,30 +52121,32 @@ character_db={
         culture = bengali
         religion = sunni
         birth_date = 1420.1.1 #Approximate
-        birth = gaur
+        birth = satgaon
         father = bng_nasiruddin_mahmud_shah
+        mother = bng_nasiruddin_mahmud_shah_spouse
         dynasty = ilyas_shahi_dynasty
         tag = BNG
     }
 
     bng_shamsuddin_yusuf_shah = { #Ruler (r.1474-1481), son of Barbak
-        first_name = { name = name_shams.name_al_din.Yusuf.name_shah }
+        first_name = { name = Shams.name_al_din.Yusuf.name_shah }
         culture = bengali
         religion = sunni
-        birth_date = 1430.1.1 #Approximate
-        birth = gaur
+        birth_date = 1440.1.1 #Approximate
+        birth = sonargaon
         father = bng_rukunuddin_barbak_shah
         dynasty = ilyas_shahi_dynasty
         tag = BNG
     }
 
     bng_jalaluddin_fateh_shah = { #Ruler (r.1481-1487), son of Mahmud Shah
-        first_name = { name = Jalal.name_al_din.name_fateh.name_shah }
+        first_name = { name = Jalal.name_al_din.Fateh.name_shah }
         culture = bengali
         religion = sunni
         birth_date = 1425.1.1 #Approximate (brother of Barbak, son of Mahmud)
         birth = gaur
         father = bng_nasiruddin_mahmud_shah
+        mother = bng_nasiruddin_mahmud_shah_spouse
         dynasty = ilyas_shahi_dynasty
         tag = BNG
     }
@@ -72602,7 +72605,7 @@ character_db={
         first_name = { name = name_muhammad.name_shah }
         culture = gujarati
         religion = sunni
-        birth_date = 1420.1.1 #Unknown
+        birth_date = 1409.1.1 #Estimated
         birth = ahmedabad
         father = guj_ahmad_shah_i
         dynasty = muzaffarid_gujarat_dynasty
@@ -72615,6 +72618,7 @@ character_db={
         culture = gujarati
         religion = sunni
         birth_date = 1425.1.1 #Approximate
+        birth = thatta
         female = yes
         spouse = guj_muhammad_shah_ii
         tag = GUJ
@@ -72626,6 +72630,7 @@ character_db={
         culture = gujarati
         religion = sunni
         birth_date = 1429.1.1 #Per Wikipedia: born 1429
+        birth = ahmedabad
         father = guj_muhammad_shah_ii
         dynasty = muzaffarid_gujarat_dynasty
         tag = GUJ
@@ -74859,7 +74864,7 @@ character_db={
     # Malik Sarwar (r. 1394-1399), founder of Sharqi dynasty
     # Eunuch - adopted Mubarak and Ibrahim as sons
     jnp_malik_sarwar = {
-        first_name = Malik.Sarwar
+        first_name = { name = name_Malik.Sarwar }
         culture = awadhi
         religion = sunni
         birth_date = 1320.1.1 #Estimated
@@ -74872,7 +74877,7 @@ character_db={
     # Mubarak Shah (r. 1399-1402), born Malik Qaranfal
     # Adopted son of Malik Sarwar (not biological), brother of Ibrahim Shah
     jnp_mubarak_shah_sharqi = {
-        first_name = Malik.Qaranfal.name_shah
+        first_name = { name = name_Malik.Qaranfal.name_shah }
         culture = awadhi
         religion = sunni
         birth_date = 1350.1.1 #Estimated
@@ -74912,12 +74917,24 @@ character_db={
         tag = JNP
     }
 
+    # Senior court officer used as regent while Mahmud Shah is underage at the 1444 start
+    jnp_malik_nasir = {
+        first_name = { name = name_Malik.Nasir }
+        culture = awadhi
+        religion = sunni
+        estate = nobles_estate
+        birth_date = 1405.1.1 #Estimated
+        birth = jaunpur
+        tag = JNP
+    }
+
     # Wife of Mahmud Shah Sharqi - Bibi Raji, patron of Lal Darwaza Mosque
     jnp_mahmud_shah_sharqi_spouse = {
         first_name = { name = name_bibi.Raji }
         culture = awadhi
         religion = sunni
         birth_date = 1430.1.1 #Approximate
+        birth = jaunpur
         female = yes
         spouse = jnp_mahmud_shah_sharqi
         tag = JNP
@@ -106777,6 +106794,7 @@ character_db={
         culture = dehlavi
         religion = sunni
         birth_date = 1400.1.1 #Approximate
+        birth = delhi
         female = yes
         spouse = dlh_muhammad_shah_sayyid
         tag = DLH
@@ -106788,6 +106806,7 @@ character_db={
         culture = dehlavi
         religion = sunni
         birth_date = 1420.1.1 #Approximate
+        birth = delhi
         female = yes
         father = dlh_muhammad_shah_sayyid
         mother = dlh_muhammad_shah_sayyid_spouse
@@ -124897,6 +124916,7 @@ character_db={
         culture = afghan_culture
         religion = sunni
         birth_date = 1425.1.1 #Approximate
+        birth = sirhind
         female = yes
         spouse = srh_bahlul_lodi
         tag = SRH
