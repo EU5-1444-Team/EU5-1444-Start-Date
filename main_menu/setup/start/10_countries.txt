@@ -5829,7 +5829,7 @@ countries = {
 
         government = {
 
-            ruler = eng_richard_of_york_duke
+            ruler = eng_richard_york_duke
         }
 
         accepted_cultures = {
@@ -5854,7 +5854,7 @@ countries = {
         }
         own_control_conquered = {
             # Scotland
-            ardtornish kintyre ballycastle
+            ardtornish kintyre
         }
 
         our_cores_conquered_by_others = {
@@ -7521,9 +7521,8 @@ countries = {
     ULS = {
         # Ulster
         own_control_core = {
-            downpatrick
+            carrickfergus downpatrick
         }
-
 
         our_cores_conquered_by_others = {
             # Glens
@@ -7536,7 +7535,6 @@ countries = {
             galway athenry tuam
             # MYO Mayo
             erris castlebar ballaghaderreen dunluce
-            carrickfergus
         }
 
         government = {
@@ -7547,7 +7545,7 @@ countries = {
             ruler_term = { character = uls_william_donn_de_burgh_3rd_earl_ulster start_date = 1326.7.29 end_date = 1333.6.6 }
 
             regency = lordship_of_ireland_regency
-            ruler = eng_richard_of_york_duke
+            ruler = eng_richard_york_duke
         }
         tolerated_cultures = { irish }
 
@@ -7631,8 +7629,9 @@ countries = {
 
     TYR = {
         own_control_core = {
-            dungannon magherafelt strabane clogher dunluce
+            dungannon magherafelt strabane clogher
         }
+
         our_cores_conquered_by_others = {
             # CLA Clandeboye
             ballymena belfast iveagh newtownards
@@ -7641,6 +7640,8 @@ countries = {
         include = "gaelic_tribe_no_coast"
         include = "expl_western_europe"
         government = {
+            ruler = tyr_eoghan_mor_mac_niall_o_neill
+
             ruler_term = { character = tyr_muirchertach_mac_lochlainn start_date = 1125.1.1 end_date = 1166.1.1 }
 
             ruler_term = { character = tyr_aodh_meith_o_neill start_date = 1196.1.1 end_date = 1201.1.1 regnal_number = 1 }
@@ -7661,19 +7662,28 @@ countries = {
             ruler_term = { character = tyr_donnell_mac_brian_o_neill start_date = 1290.1.1 end_date = 1291.1.1 regnal_number = 3 }
             ruler_term = { character = tyr_brian_o_neill start_date = 1291.1.1 end_date = 1295.1.1 regnal_number = 2 }
             ruler_term = { character = tyr_donnell_mac_brian_o_neill start_date = 1295.1.1 end_date = 1325.1.1 regnal_number = 3 }
-            ruler_term = { character = tyr_aodh_the_stout_o_neill start_date = 1325.1.1 regnal_number = 3 }
-
-            ruler = random # TODO: add me
+            ruler_term = { character = tyr_aodh_the_stout_o_neill start_date = 1325.1.1 end_date = 1364.1.1 regnal_number = 3 }
+            ruler_term = { character = tyr_niall_mac_aodh_o_neill start_date = 1364.1.1 end_date = 1395.1.1 regnal_number = 3 }
+            ruler_term = { character = tyr_niall_og_mac_niall_o_neill start_date = 1395.1.1 end_date = 1402.1.1 regnal_number = 4 }
+            ruler_term = { character = tyr_brian_og_mac_niall_o_neill start_date = 1402.1.1 end_date = 1403.1.1 regnal_number = 3 }
+            ruler_term = { character = tyr_domhnall_bog_mac_einri_o_neill start_date = 1403.1.1 end_date = 1410.1.1 regnal_number = 4 }
+            ruler_term = { character = tyr_eoghan_mor_mac_niall_o_neill start_date = 1410.1.1 end_date = 1414.1.1 regnal_number = 1 }
+            ruler_term = { character = tyr_domhnall_bog_mac_einri_o_neill start_date = 1414.1.1 end_date = 1419.1.1 regnal_number = 4 }
+            ruler_term = { character = tyr_eoghan_mor_mac_niall_o_neill start_date = 1419.1.1 end_date = 1421.1.1 regnal_number = 1 }
+            ruler_term = { character = tyr_domhnall_bog_mac_einri_o_neill start_date = 1421.1.1 end_date = 1432.1.1 regnal_number = 4 }
+            ruler_term = { character = tyr_eoghan_mor_mac_niall_o_neill start_date = 1419.1.1 end_date = 1432.1.1 regnal_number = 1 }
 
             regnal_numbers = {
-                name_donald = 3
-                name_nigel = 2
+                name_donald = 4
+                name_nigel = 4
                 name_hugh = 3
-                name_brian = 2
+                name_brian = 3
                 name_henry = 1
                 name_connor = 1
             }
         }
+
+        country_rank = rank_duchy
         capital = dungannon
     }
 
@@ -7701,25 +7711,34 @@ countries = {
 
     CLA = {
         own_control_core = {
-            belfast newtownards ballymena carrickfergus
+            belfast newtownards ballymena
         }
         our_cores_conquered_by_others = {
             # TYR Tyrone
             dungannon magherafelt strabane clogher
+            carrickfergus downpatrick
         }
 
         include = "gaelic_tribe"
         include = "expl_western_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = cla_muirchertach_ruadh_o_neill
+
             ruler_term = { character = tyr_brian_o_neill start_date = 1283.1.1 end_date = 1295.1.1 regnal_number = 1 }
-            ruler_term = { character = cla_einri_o_neill start_date = 1295.1.1 regnal_number = 1 }
+            ruler_term = { character = cla_einri_o_neill start_date = 1295.1.1 end_date = 1347.1.1 regnal_number = 1 }
+            ruler_term = { character = cla_muirchertach_ceannfada_o_neill start_date = 1347.1.1 end_date = 1395.1.1 regnal_number = 1 }
+            ruler_term = { character = cla_brian_ballagh_o_neill start_date = 1395.1.1 end_date = 1425.1.1 regnal_number = 1 }
+            ruler_term = { character = cla_muirchertach_ruadh_o_neill start_date = 1425.1.1 end_date = 1444.1.1 regnal_number = 1 }
+            ruler_term = { character = cla_aodh_buidhe_o_neill start_date = 1444.1.1 end_date = 1441.5.2 regnal_number = 2 }
+            ruler_term = { character = cla_muirchertach_ruadh_o_neill start_date = 1441.5.2 regnal_number = 1 }
 
             regnal_numbers = {
                 name_brian = 1
                 name_henry = 1
+                name_hugh = 2
             }
         }
+
         capital = newtownards
     }
 
@@ -7903,19 +7922,49 @@ countries = {
 
     TRY = {
         own_control_core = {
-            donegal kilmacrennan inishowen
+            donegal raphoe
         }
 
         include = "gaelic_tribe"
         include = "expl_western_europe"
         government = {
-            ruler = random # TODO: add me
-            ruler_term = { character = try_connor_o_donnell start_date = 1333.1.1 }
+            ruler = try_neachtan_o_donnell
+
+            ruler_term = { character = try_hugh_o_donnell start_date = 1303.1.1 end_date = 1333.1.1 }
+            ruler_term = { character = try_connor_o_donnell start_date = 1333.1.1 end_date = 1342.1.1 }
+            ruler_term = { character = try_niall_o_donnell start_date = 1342.1.1 end_date = 1348.1.1 }
+            ruler_term = { character = try_angus_o_donnell start_date = 1348.1.1 end_date = 1352.1.1 }
+            ruler_term = { character = try_felim_o_donnell start_date = 1352.1.1 end_date = 1356.1.1 }
+            ruler_term = { character = try_sean_o_donnell start_date = 1352.1.1 end_date = 1356.1.1 }
+            ruler_term = { character = try_niall_garbh_i_o_donnell start_date = 1380.1.1 end_date = 1380.12.1 }
+            ruler_term = { character = try_tairrdelbach_an_fhiona_o_donnell start_date = 1380.12.1 end_date = 1422.1.1 }
+            ruler_term = { character = try_niall_garbh_ii_o_donnell start_date = 1422.1.1 end_date = 1439.1.1 }
+            ruler_term = { character = try_neachtan_o_donnell start_date = 1439.1.1 }
         }
         capital = donegal
     }
 
     # --- TRY ---
+
+    FAD = {
+        own_control_core = {
+            kilmacrennan
+        }
+
+        include = "gaelic_tribe"
+        include = "expl_western_europe"
+        government = {
+            ruler = fad_ruaidhri_suibhne
+
+            ruler_term = { character = fad_toirdhealbhach_ruadh_suibhne start_date = 1399.1.1 end_date = 1439.1.1 }
+            ruler_term = { character = fad_ruaidhri_suibhne start_date = 1439.1.1 }
+        }
+
+        dynasty = suibhne_dynasty
+        capital = donegal
+    }
+
+    # --- FAD ---
 
     CLR = {
         own_control_core = {
@@ -7945,15 +7994,17 @@ countries = {
         include = "gaelic_tribe"
         include = "expl_western_europe"
         government = {
+            ruler = random # TODO: add me
+
             ruler_term = { character = tho_conor_o_brien start_date = 1242.1.1 end_date = 1268.1.1 }
             ruler_term = { character = tho_brian_mac_conor_o_brien start_date = 1268.1.1 end_date = 1276.1.1 }
             ruler_term = { character = tho_turlough_o_brien start_date = 1276.1.1 end_date = 1306.1.1 }
             ruler_term = { character = tho_duncan_mac_turlough_o_brien start_date = 1306.1.1 end_date = 1311.1.1 }
             ruler_term = { character = tho_dermot_mac_duncan_o_brien start_date = 1311.1.1 end_date = 1313.1.1 }
             ruler_term = { character = tho_duncan_mac_donald_o_brien start_date = 1313.1.1 end_date = 1317.1.1 }
-            ruler_term = { character = tho_murtagh_o_brien start_date = 1317.1.1 }
-            ruler = random # TODO: add me
+            ruler_term = { character = tho_murtagh_o_brien start_date = 1317.1.1 }  
         }
+
         capital = ennis
     }
 
@@ -7967,12 +8018,36 @@ countries = {
         include = "gaelic_tribe"
         include = "expl_western_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = kee_aibne_o_cahan
+
+            ruler_term = { character = kee_o_cahan start_date = 1335.1.1 end_date = 1345.1.1 }
+            ruler_term = { character = kee_cumagh_o_cahan start_date = 1345.1.1 end_date = 1386.1.1 }
+            ruler_term = { character = kee_diarmait_o_cahan start_date = 1386.1.1 end_date = 1430.1.1 }
+            ruler_term = { character = kee_aibne_o_cahan start_date = 1430.1.1 } 
         }
+
         capital = derry
     }
 
     # --- KEE ---
+
+    DLU = {
+        own_control_core = {
+            dunluce
+        }
+
+        include = "gaelic_tribe"
+        include = "expl_western_europe"
+        government = {
+            ruler = dlu_sincin_mor_mac_quillan
+
+            ruler_term = { character = dlu_sincin_mor_mac_quillan start_date = 1400.1.1 }
+        }
+
+        capital = dunluce
+    }
+
+    # --- DLU ---
 
     IMA = {
         our_cores_conquered_by_others = {
@@ -8008,7 +8083,7 @@ countries = {
     AMA = {
         #Archbishopric of Armagh
         own_control_core = {
-            armagh oriel
+            armagh
         }
 
         include = "catholic_bishopric"
@@ -8016,8 +8091,13 @@ countries = {
 
         government = {
             type = theocracy
-            ruler = random # TODO: add me
-            ruler_term = { character = ama_david_mageraghty start_date = 1334.7.4 regnal_number = 1 }
+            ruler = ama_john_mey
+
+            ruler_term = { character = ama_david_mageraghty start_date = 1334.7.4 end_date = 1346.5.16 regnal_number = 1 }
+
+            ruler_term = { character = ama_john_prene start_date = 1439.3.24 end_date = 1443.6.1 regnal_number = 1 }
+            ruler_term = { character = ama_john_mey start_date = 1443.8.26 regnal_number = 1 }
+
             reforms = {
             }
         }
@@ -8030,6 +8110,24 @@ countries = {
     }
 
     # --- AMA ---
+
+    FEW = {
+        own_control_core = {
+            oriel
+        }
+
+        include = "gaelic_tribe"
+        include = "expl_western_europe"
+        government = {
+            ruler = few_aodh_o_neill
+
+            ruler_term = { character = few_aodh_o_neill start_date = 1435.1.1 }
+        }
+
+        capital = oriel
+    }
+
+    # --- DLU ---
 
     CNN = {
         # Connacht Connaught
@@ -8207,16 +8305,24 @@ countries = {
 
     INI = {
         # Inishowen
-        our_cores_conquered_by_others = {
+        own_control_core = {
             inishowen
         }
 
         include = "gaelic_tribe"
         include = "expl_western_europe"
         government = {
-            ruler = random
+            ruler = ini_brian_dubh_o_doherty
 
+            ruler_term = { character = ini_mac_lochlainn start_date = 1335.1.1 end_date = 1360.1.1 }
+
+            ruler_term = { character = ini_conor_an_onigh_o_doherty start_date = 1407.1.1 end_date = 1413.1.1 }
+            ruler_term = { character = ini_niall_o_doherty start_date = 1413.1.1 end_date = 1429.1.1 }
+            ruler_term = { character = ini_sean_balbh_o_doherty start_date = 1429.1.1 end_date = 1439.1.1 }
+            ruler_term = { character = ini_donal_mor_o_doherty start_date = 1439.1.1 end_date = 1440.1.1 }
+            ruler_term = { character = ini_brian_dubh_o_doherty start_date = 1440.1.1 }
         }
+
         capital = inishowen
     }
 
@@ -8224,14 +8330,14 @@ countries = {
 
     AMH = {
         # Ardmire
-        own_control_core = {
+        our_cores_conquered_by_others = {
             raphoe
         }
 
         include = "gaelic_tribe_no_coast"
         include = "expl_western_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = random # unknown
 
         }
         capital = raphoe
@@ -8248,7 +8354,11 @@ countries = {
         include = "expl_western_europe"
         government = {
             ruler = random # TODO: add me
+
+            ruler_term = { character = ivg_magennis start_date = 1335.1.1 end_date = 1360.1.1 }
         }
+
+        dynasty = magennis_dynasty
         capital = iveagh
     }
 
@@ -8270,7 +8380,7 @@ countries = {
     # --- TGH ---
 
     GLS = {
-        our_cores_conquered_by_others = {
+        own_control_core = {
             ballycastle
         }
 

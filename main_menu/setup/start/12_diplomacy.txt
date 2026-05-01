@@ -1,5 +1,6 @@
 diplomacy_manager = {
-    #-------England-------
+
+    #------- England -------
 
     dependency = { first = ENG second = WLS subject_type = dominion start_date = 1283.1.1 }
     dependency = { first = ENG second = PLE subject_type = dominion }
@@ -13,6 +14,8 @@ diplomacy_manager = {
     dependency = { first = SCO second = GLY subject_type = vassal }
     dependency = { first = LOI second = ROS subject_type = vassal }
 
+    #------- Wales -------
+
     dependency = { first = WLS second = GWR subject_type = vassal }
     dependency = { first = WLS second = GMG subject_type = vassal }
     dependency = { first = WLS second = MAC subject_type = vassal }
@@ -23,14 +26,15 @@ diplomacy_manager = {
     dependency = { first = WLS second = CMS subject_type = vassal }
     dependency = { first = WLS second = PMB subject_type = vassal }
 
+    #------- Ireland -------
+
     #dependency = { first = PLE second = CLR subject_type = vassal }
     #dependency = { first = PLE second = MYO subject_type = vassal }
     dependency = { first = PLE second = ULS subject_type = vassal }
-    dependency = { first = TYR second = AMA subject_type = vassal }
     #dependency = { first = PLE second = GLE subject_type = vassal }
 
-    dependency = { first = TRY second = AMH subject_type = vassal }
-    dependency = { first = TYR second = KEE subject_type = vassal }
+    dependency = { first = LOI second = GLS subject_type = vassal }
+    dependency = { first = TRY second = FAD subject_type = vassal }
     dependency = { first = MCM second = BEA subject_type = vassal }
 
     scripted_mutual = { first = MYO second = UMH type = alliance }
