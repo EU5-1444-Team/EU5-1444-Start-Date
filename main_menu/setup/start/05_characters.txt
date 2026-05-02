@@ -64070,8 +64070,86 @@ character_db={
         culture = irish
         religion = catholic
         birth_date = 1319.1.1 # unknown
-        death_date = 1385.1.27
+        death_date = 1342.1.1 # unknown
         birth = armagh
+        dynasty = mac_mahon_dynasty
+        tag = OIL
+    }
+
+    oil_ardghal_mac_mahon = {
+        first_name = { name = Ardghal }
+        culture = irish
+        religion = catholic
+        birth_date = 1370.1.1 # unknown
+        death_date = 1416.2.1
+        birth = monaghan
+        dynasty = mac_mahon_dynasty
+        tag = OIL
+    }
+
+    oil_brian_mac_mahon = {
+        first_name = { name = name_brian }
+        culture = irish
+        religion = catholic
+        birth_date = 1391.1.1 # unknown
+        death_date = 1442.1.1
+        birth = monaghan
+        father = oil_ardghal_mac_mahon
+        dynasty = mac_mahon_dynasty
+        tag = OIL
+    }
+
+    oil_feidhlimidh_mac_mahon = {
+        first_name = { name = Feidhlimidh }
+        culture = irish
+        religion = catholic
+        birth_date = 1424.1.1 # unknown
+        birth = monaghan
+        father = oil_brian_mac_mahon
+        dynasty = mac_mahon_dynasty
+        tag = OIL
+    }
+
+    oil_ruaidhri_mac_mahon = {
+        first_name = { name = name_roderick }
+        culture = irish
+        religion = catholic
+        birth_date = 1394.1.1 # unknown
+        birth = monaghan
+        father = oil_ardghal_mac_mahon
+        dynasty = mac_mahon_dynasty
+        tag = OIL
+    }
+
+    oil_aodh_ruadh_mac_mahon = {
+        first_name = { name = name_hugh.Ruadh }
+        culture = irish
+        religion = catholic
+        birth_date = 1420.1.1 # unknown
+        birth = monaghan
+        father = oil_ruaidhri_mac_mahon
+        dynasty = mac_mahon_dynasty
+        tag = OIL
+    }
+
+    oil_eoghan_mac_mahon = {
+        first_name = { name = name_eugene }
+        culture = irish
+        religion = catholic
+        birth_date = 1424.1.1 # unknown
+        birth = monaghan
+        father = oil_ruaidhri_mac_mahon
+        dynasty = mac_mahon_dynasty
+        tag = OIL
+    }
+
+    oil_reamonn_mac_mahon = {
+        first_name = { name = name_raymond }
+        culture = irish
+        religion = catholic
+        birth_date = 1426.1.1 # unknown
+        birth = monaghan
+        father = oil_ruaidhri_mac_mahon
         dynasty = mac_mahon_dynasty
         tag = OIL
     }
@@ -64128,13 +64206,94 @@ character_db={
 
     ### maguire_dynasty | FMA ###
 
+    fma_flaithbertach_maguire = {
+        first_name = { name = Flaithbertach }
+        culture = irish
+        religion = catholic
+        birth_date = 1260.1.1
+        death_date = 1327.1.1
+        birth = enniskillen
+        dynasty = maguire_dynasty
+        tag = FMA 
+    }
+
     fma_ruaidhri_maguire = {
         first_name = { name = name_roderick }
         culture = irish
         religion = catholic
         birth_date = 1294.1.1
-        death_date = 1359.3.25
+        death_date = 1358.1.1
         birth = enniskillen
+        father = fma_flaithbertach_maguire
+        dynasty = maguire_dynasty
+        tag = FMA
+    }
+
+    fma_aodh_ruadh_maguire = {
+        first_name = { name = name_hugh.Ruadh }
+        culture = irish
+        religion = catholic
+        birth_date = 1302.1.1
+        death_date = 1363.1.1
+        birth = enniskillen
+        father = fma_flaithbertach_maguire
+        dynasty = maguire_dynasty
+        tag = FMA
+    }
+
+    fma_pilib_maguire = {
+        first_name = { name = Pilib }
+        culture = irish
+        religion = catholic
+        birth_date = 1325.1.1
+        death_date = 1395.3.16
+        birth = enniskillen
+        father = fma_aodh_ruadh_maguire
+        dynasty = maguire_dynasty
+        tag = FMA
+    }
+
+    fma_tomas_mor_maguire = {
+        first_name = { name = name_thomas.Mór }
+        culture = irish
+        religion = catholic
+        birth_date = 1365.1.1
+        death_date = 1430.11.13
+        birth = enniskillen
+        father = fma_pilib_maguire
+        dynasty = maguire_dynasty
+        tag = FMA
+    }
+
+    fma_tomas_og_maguire = {
+        first_name = { name = name_thomas.Óg }
+        culture = irish
+        religion = catholic
+        birth_date = 1400.1.1
+        birth = enniskillen
+        father = fma_tomas_mor_maguire
+        dynasty = maguire_dynasty
+        tag = FMA
+    }
+
+    fma_eamann_maguire = {
+        first_name = { name = name_edmond }
+        culture = irish
+        religion = catholic
+        birth_date = 1430.1.1
+        birth = enniskillen
+        father = fma_tomas_og_maguire
+        dynasty = maguire_dynasty
+        tag = FMA
+    }
+
+    fma_tomas_og_son_maguire = {
+        first_name = { name = name_thomas.Óg }
+        culture = irish
+        religion = catholic
+        birth_date = 1434.1.1
+        birth = enniskillen
+        father = fma_tomas_og_maguire
         dynasty = maguire_dynasty
         tag = FMA
     }
@@ -76670,7 +76829,7 @@ character_db={
     ### o_cahan_dynasty | KEE ###
 
     kee_o_cahan = {
-        first_name = { name = Diarmait }
+        first_name = { name = name_dermot }
         culture = irish
         religion = catholic
         birth_date = 1290.1.1
@@ -76693,7 +76852,7 @@ character_db={
     }
 
     kee_diarmait_o_cahan = {
-        first_name = { name = Diarmait }
+        first_name = { name = name_dermot }
         culture = irish
         religion = catholic
         birth_date = 1365.1.1
@@ -76824,15 +76983,176 @@ character_db={
 
     ### o_conchobair_dynasty | SLN ###
 
-    sln_maghnus_o_conchobhair = {
+    sln_cathal_o_conchobair = {
+        first_name = { name = Cathal }
+        culture = irish
+        religion = catholic
+        birth_date = 1270.1.1 # unknown
+        death_date = 1324.1.1
+        birth = sligo
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_muirchertach_o_conchobair = {
+        first_name = { name = name_murtagh }
+        culture = irish
+        religion = catholic
+        birth_date = 1275.1.1 # unknown
+        death_date = 1329.1.1
+        birth = sligo
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_maghnus_o_conchobhair = { # Vanilla
         first_name = { name = name_magnus }
         culture = irish
         religion = catholic
         birth_date = 1300.1.1 # unknown
-        death_date = 1362.7.6
+        death_date = 1342.1.1
         birth = sligo
+        father = sln_cathal_o_conchobair
         dynasty = o_conchobair_dynasty
         tag = SLN
+    }
+
+    sln_cathal_og_o_conchobair = {
+        first_name = { name = Cathal.Óg }
+        culture = irish
+        religion = catholic
+        birth_date = 1305.1.1 # unknown
+        death_date = 1362.11.3
+        birth = sligo
+        father = sln_cathal_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_tadhg_o_conchobair = {
+        first_name = { name = Tadhg }
+        culture = irish
+        religion = catholic
+        birth_date = 1335.1.1 # unknown
+        death_date = 1368.1.1
+        birth = sligo
+        father = sln_maghnus_o_conchobhair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_domhnall_o_conchobair = {
+        first_name = { name = name_donald }
+        culture = irish
+        religion = catholic
+        birth_date = 1325.1.1 # unknown
+        death_date = 1395.12.18
+        birth = sligo
+        father = sln_muirchertach_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_muirchertach_bachach_o_conchobair = {
+        first_name = { name = name_murtagh.Bachach }
+        culture = irish
+        religion = catholic
+        birth_date = 1373.1.1 # unknown
+        death_date = 1403.1.1
+        birth = sligo
+        father = sln_domhnall_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_brian_o_conchobair = {
+        first_name = { name = name_brian }
+        culture = irish
+        religion = catholic
+        birth_date = 1382.1.1 # unknown
+        death_date = 1440.1.1
+        birth = sligo
+        father = sln_domhnall_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_maghnus_mac_briain_o_conchobair = {
+        first_name = { name = name_magnus }
+        culture = irish
+        religion = catholic
+        birth_date = 1415.1.1 # unknown
+        birth = sligo
+        father = sln_brian_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_ruaidhri_mac_briain_o_conchobair = {
+        first_name = { name = name_russo }
+        culture = irish
+        religion = catholic
+        birth_date = 1419.1.1 # unknown
+        birth = sligo
+        father = sln_brian_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_eoghan_o_conchobair = {
+        first_name = { name = name_eugene }
+        culture = irish
+        religion = catholic
+        birth_date = 1384.1.1 # unknown
+        death_date = 1444.1.1
+        birth = sligo
+        father = sln_domhnall_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_tadhg_mac_eoghan_o_conchobair = {
+        first_name = { name = Tadhg }
+        culture = irish
+        religion = catholic
+        birth_date = 1413.1.1 # unknown
+        birth = sligo
+        father = sln_eoghan_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_toirdhealbhach_o_conchobair = {
+        first_name = { name = Toirdhealbhach }
+        culture = irish
+        religion = catholic
+        birth_date = 1391.1.1 # unknown
+        birth = sligo
+        father = sln_domhnall_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_ruaidhri_mac_toirdhealbhach_o_conchobair = {
+        first_name = { name = name_russo }
+        culture = irish
+        religion = catholic
+        birth_date = 1418.1.1 # unknown
+        birth = sligo
+        father = sln_toirdhealbhach_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
+    }
+
+    sln_domhnall_mac_muirchertach_o_conchobair = {
+        first_name = { name = name_donald }
+        culture = irish
+        religion = catholic
+        birth_date = 1395.1.1 # unknown
+        birth = sligo
+        father = sln_muirchertach_bachach_o_conchobair
+        dynasty = o_conchobair_dynasty
+        tag = SLN 
     }
 
     ### o_doherty_dynasty | AMH ###
@@ -77025,15 +77345,81 @@ character_db={
 
     ### o_dowd_dynasty | HYM ###
 
-    tgh_o_dowd = {
+    tgh_o_dowd = { # Vanilla
         first_name = { name = name_duncan }# unknown, all made up except the dynasty
         culture = irish
         religion = catholic
         birth_date = 1300.1.1
-        death_date = 1364.3.9
+        death_date = 1360.1.1
         birth = skreen
         dynasty = o_dowd_dynasty
-        tag = HYM
+        tag = TGH
+    }
+
+    tgh_tadgh_riabhach_o_dowd = {
+        first_name = { name = Tadhg.Riabhach }
+        culture = irish
+        religion = catholic
+        birth_date = 1390.1.1
+        death_date = 1432.1.1
+        birth = skreen
+        dynasty = o_dowd_dynasty
+        tag = TGH 
+    }
+
+    tgh_brian_o_dowd = {
+        first_name = { name = name_brian }
+        culture = irish
+        religion = catholic
+        birth_date = 1415.1.1
+        birth = skreen
+        father = tgh_tadgh_riabhach_o_dowd
+        dynasty = o_dowd_dynasty
+        tag = TGH 
+    }
+
+    tgh_tadhg_buidhe_o_dowd = {
+        first_name = { name = Tadhg.Buidhe }
+        culture = irish
+        religion = catholic
+        birth_date = 1418.1.1
+        birth = skreen
+        father = tgh_tadgh_riabhach_o_dowd
+        dynasty = o_dowd_dynasty
+        tag = TGH 
+    }
+
+    tgh_seoan_glas_o_dowd = {
+        first_name = { name = name_john.Glas }
+        culture = irish
+        religion = catholic
+        birth_date = 1421.1.1
+        birth = skreen
+        father = tgh_tadgh_riabhach_o_dowd
+        dynasty = o_dowd_dynasty
+        tag = TGH 
+    }
+
+    tgh_ruaidhri_o_dowd = {
+        first_name = { name = Ruaidhrí }
+        culture = irish
+        religion = catholic
+        birth_date = 1392.1.1
+        death_date = 1430.1.1
+        birth = skreen
+        dynasty = o_dowd_dynasty
+        tag = TGH
+    }
+
+    tgh_maol_ruanaidh_o_dowd = {
+        first_name = { name = Maol.Ruanaidh }
+        culture = irish
+        religion = catholic
+        birth_date = 1418.1.1
+        birth = skreen
+        father = tgh_ruaidhri_o_dowd
+        dynasty = o_dowd_dynasty
+        tag = TGH
     }
 
     ### o_faly_dynasty | FLY ###
@@ -77711,7 +78097,7 @@ character_db={
         tag = TYR 
     }
 
-    tyr_caitriona_mac_mahon = {
+    tyr_caitrina_mac_mahon = {
         first_name = { name = name_catherine }
         culture = irish
         religion = catholic
@@ -77720,6 +78106,7 @@ character_db={
         birth_date = 1381.1.1 # unknown
         death_date = 1427.1.1
         birth = monaghan
+        father = oil_ardghal_mac_mahon
         spouse = tyr_eoghan_mor_mac_niall_o_neill
         dynasty = mac_mahon_dynasty
         tag = TYR 
@@ -77730,7 +78117,7 @@ character_db={
         culture = irish
         religion = catholic
         father = tyr_eoghan_mor_mac_niall_o_neill
-        mother = tyr_caitriona_mac_mahon
+        mother = tyr_caitrina_mac_mahon
         birth_date = 1407.1.1
         death_date = 1436.1.1
         birth = dungannon
@@ -77743,7 +78130,7 @@ character_db={
         culture = irish
         religion = catholic
         father = tyr_eoghan_mor_mac_niall_o_neill
-        mother = tyr_caitriona_mac_mahon
+        mother = tyr_caitrina_mac_mahon
         birth_date = 1408.1.1
         death_date = 1436.1.1
         birth = dungannon
@@ -77756,7 +78143,7 @@ character_db={
         culture = irish
         religion = catholic
         father = tyr_eoghan_mor_mac_niall_o_neill
-        mother = tyr_caitriona_mac_mahon
+        mother = tyr_caitrina_mac_mahon
         birth_date = 1411.1.1
         birth = dungannon
         dynasty = o_neill_dynasty
@@ -77768,7 +78155,7 @@ character_db={
         culture = irish
         religion = catholic
         father = tyr_eoghan_mor_mac_niall_o_neill
-        mother = tyr_caitriona_mac_mahon
+        mother = tyr_caitrina_mac_mahon
         birth_date = 1413.1.1
         birth = dungannon
         dynasty = o_neill_dynasty
@@ -77780,7 +78167,7 @@ character_db={
         culture = irish
         religion = catholic
         father = tyr_eoghan_mor_mac_niall_o_neill
-        mother = tyr_caitriona_mac_mahon
+        mother = tyr_caitrina_mac_mahon
         birth_date = 1414.1.1
         birth = dungannon
         dynasty = o_neill_dynasty
@@ -77792,7 +78179,7 @@ character_db={
         culture = irish
         religion = catholic
         father = tyr_eoghan_mor_mac_niall_o_neill
-        mother = tyr_caitriona_mac_mahon
+        mother = tyr_caitrina_mac_mahon
         birth_date = 1419.1.1
         birth = dungannon
         dynasty = o_neill_dynasty
@@ -77804,7 +78191,7 @@ character_db={
         culture = irish
         religion = catholic
         father = tyr_eoghan_mor_mac_niall_o_neill
-        mother = tyr_caitriona_mac_mahon
+        mother = tyr_caitrina_mac_mahon
         birth_date = 1421.1.1
         birth = dungannon
         dynasty = o_neill_dynasty
@@ -77816,7 +78203,7 @@ character_db={
         culture = irish
         religion = catholic
         father = tyr_eoghan_mor_mac_niall_o_neill
-        mother = tyr_caitriona_mac_mahon
+        mother = tyr_caitrina_mac_mahon
         birth_date = 1423.1.1
         birth = dungannon
         dynasty = o_neill_dynasty
@@ -77836,26 +78223,420 @@ character_db={
 
     ### o_reilly_dynasty | CVN ###
 
-    cvn_risdeard = {
-        first_name = { name = name_richard }
+    cvn_giolla_iosa_ruaidh_o_reilly = {
+        first_name = { name = Giolla.Iosa.name_hugh }
         culture = irish
         religion = catholic
-        birth_date = 1307.1.1 # unknown
-        death_date = 1377.7.25
+        birth_date = 1270.1.1 # unknown
+        death_date = 1327.1.1
         birth = cavan
         dynasty = o_reilly_dynasty
         tag = CVN
     }
 
+    cvn_maelseachleann_o_reilly = {
+        first_name = { name = Maelseachleann }
+        culture = irish
+        religion = catholic
+        birth_date = 1305.1.1 # unknown
+        death_date = 1328.1.1
+        birth = cavan
+        father = cvn_giolla_iosa_ruaidh_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_mathgamain_o_reilly = {
+        first_name = { name = Mathgamain }
+        culture = irish
+        religion = catholic
+        birth_date = 1326.1.1 # unknown
+        death_date = 1360.1.1
+        birth = cavan
+        father = cvn_maelseachleann_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN 
+    }
+
+    cvn_tomas_mor_o_reilly = {
+        first_name = { name = name_thomas.Mór }
+        culture = irish
+        religion = catholic
+        birth_date = 1355.1.1 # unknown
+        death_date = 1392.1.1
+        birth = cavan
+        father = cvn_mathgamain_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN 
+    }
+
+    cvn_risdeard_o_reilly = {
+        first_name = { name = name_richard }
+        culture = irish
+        religion = catholic
+        birth_date = 1358.1.1 # unknown
+        death_date = 1418.1.1
+        birth = cavan
+        father = cvn_mathgamain_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN 
+    }
+
+    cvn_risdeard = { # Vanilla
+        first_name = { name = name_richard }
+        culture = irish
+        religion = catholic
+        birth_date = 1307.1.1 # unknown
+        death_date = 1349.1.1
+        birth = cavan
+        father = cvn_giolla_iosa_ruaidh_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_cu_chonnacht_o_reilly = {
+        first_name = { name = "Cu Chonnacht" }
+        culture = irish
+        religion = catholic
+        birth_date = 1310.1.1 # unknown
+        death_date = 1368.1.1
+        birth = cavan
+        father = cvn_giolla_iosa_ruaidh_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_maolmhordha_o_reilly = {
+        first_name = { name = name_molloy }
+        culture = irish
+        religion = catholic
+        birth_date = 1350.1.1 # unknown
+        death_date = 1411.12.1
+        birth = cavan
+        father = cvn_cu_chonnacht_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_pilib_o_reilly = {
+        first_name = { name = Pilib }
+        culture = irish
+        religion = catholic
+        birth_date = 1315.1.1 # unknown
+        death_date = 1384.1.1
+        birth = cavan
+        father = cvn_giolla_iosa_ruaidh_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_giolla_iosa_o_reilly = {
+        first_name = { name = Giolla.Iosa }
+        culture = irish
+        religion = catholic
+        birth_date = 1342.1.1 # unknown
+        death_date = 1400.12.1
+        birth = cavan
+        father = cvn_pilib_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_seoan_o_reilly = {
+        first_name = { name = name_john }
+        culture = irish
+        religion = catholic
+        birth_date = 1340.1.1 # unknown
+        death_date = 1400.1.1
+        birth = cavan
+        father = cvn_pilib_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_eoghan_na_feosaige_o_reilly = {
+        first_name = { name = name_eugene.na.Feosaige }
+        culture = irish
+        religion = catholic
+        birth_date = 1380.1.1 # unknown
+        birth = cavan
+        father = cvn_seoan_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_seoan_na_einigh_o_reilly = {
+        first_name = { name = name_john.na.Einigh }
+        culture = irish
+        religion = catholic
+        birth_date = 1405.1.1 # unknown
+        birth = cavan
+        father = cvn_eoghan_na_feosaige_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_toirdhealbhaigh_o_reilly = {
+        first_name = { name = Toirdhealbhaigh }
+        culture = irish
+        religion = catholic
+        birth_date = 1425.1.1 # unknown
+        birth = cavan
+        father = cvn_seoan_na_einigh_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_cathal_o_reilly = {
+        first_name = { name = Cathal }
+        culture = irish
+        religion = catholic
+        birth_date = 1410.1.1 # unknown
+        birth = cavan
+        father = cvn_eoghan_na_feosaige_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_seoan_cathal_o_reilly = {
+        first_name = { name = name_john }
+        culture = irish
+        religion = catholic
+        birth_date = 1435.1.1 # unknown
+        birth = cavan
+        father = cvn_cathal_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+    cvn_aodh_o_reilly = {
+        first_name = { name = name_hugh }
+        culture = irish
+        religion = catholic
+        birth_date = 1437.1.1 # unknown
+        birth = cavan
+        father = cvn_cathal_o_reilly
+        dynasty = o_reilly_dynasty
+        tag = CVN
+    }
+
+
     ### o_rourke_dynasty | BFN ###
 
-    bfn_ualgarg_mor_o_ruairc = {
-        first_name = { name = name_ulrick }
+    bfn_domhnall_carrach_o_rourke = {
+        first_name = { name = name_donald.Carrach }
+        culture = irish
+        religion = catholic
+        birth_date = 1270.1.1 # unknown
+        death_date = 1311.1.1
+        birth = dromahair
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_ualgarg_mor_o_ruairc = { # Vanilla
+        first_name = { name = name_ulrick.Mór }
         culture = irish
         religion = catholic
         birth_date = 1296.1.1 # unknown
-        death_date = 1362.2.26
+        death_date = 1346.1.1
         birth = dromahair
+        father = bfn_domhnall_carrach_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_aodh_ban_o_rourke = {
+        first_name = { name = name_hugh.Bán }
+        culture = irish
+        religion = catholic
+        birth_date = 1320.1.1 # unknown
+        death_date = 1352.1.1
+        birth = dromahair
+        father = bfn_ualgarg_mor_o_ruairc
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_tadhg_na_gcaor_o_rourke = {
+        first_name = { name = Tadhg.na.gCaor }
+        culture = irish
+        religion = catholic
+        birth_date = 1327.1.1 # unknown
+        death_date = 1375.1.1
+        birth = dromahair
+        father = bfn_ualgarg_mor_o_ruairc
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_art_o_rourke = {
+        first_name = { name = name_art }
+        culture = irish
+        religion = catholic
+        birth_date = 1362.1.1 # unknown
+        death_date = 1424.1.1
+        birth = dromahair
+        father = bfn_tadhg_na_gcaor_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_lochlann_o_rourke = {
+        first_name = { name = Lochlann }
+        culture = irish
+        religion = catholic
+        birth_date = 1374.1.1 # unknown
+        birth = dromahair
+        father = bfn_tadhg_na_gcaor_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_tigernan_mor_o_rourke = {
+        first_name = { name = Tigernán.Mór }
+        culture = irish
+        religion = catholic
+        birth_date = 1337.1.1 # unknown
+        death_date = 1418.1.1
+        birth = dromahair
+        father = bfn_ualgarg_mor_o_ruairc
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_tigernan_oge_o_rourke = {
+        first_name = { name = Tigernán.Oge }
+        culture = irish
+        religion = catholic
+        birth_date = 1363.1.1 # unknown
+        death_date = 1417.1.1
+        birth = dromahair
+        father = bfn_tigernan_mor_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_donnchadh_tigernan_o_rourke = {
+        first_name = { name = name_duncan }
+        culture = irish
+        religion = catholic
+        birth_date = 1390.1.1 # unknown
+        birth = dromahair
+        father = bfn_tigernan_oge_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_feidhlimidh_o_rourke = {
+        first_name = { name = Feidhlimidh }
+        culture = irish
+        religion = catholic
+        birth_date = 1420.1.1 # unknown
+        birth = dromahair
+        father = bfn_donnchadh_tigernan_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_feidhlimidh_son_o_rourke = {
+        first_name = { name = Feidhlimidh }
+        culture = irish
+        religion = catholic
+        birth_date = 1443.1.1 # unknown
+        birth = dromahair
+        father = bfn_feidhlimidh_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_aodh_buidhe_o_rourke = {
+        first_name = { name = name_hugh.Buidhe }
+        culture = irish
+        religion = catholic
+        birth_date = 1365.1.1 # unknown
+        death_date = 1419.1.1
+        birth = dromahair
+        father = bfn_tigernan_mor_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_tadhg_tigernan_o_rourke = {
+        first_name = { name = Tadhg }
+        culture = irish
+        religion = catholic
+        birth_date = 1368.1.1 # unknown
+        death_date = 1435.1.1
+        birth = dromahair
+        father = bfn_tigernan_mor_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_tigernan_og_tadhg_o_rourke = {
+        first_name = { name = Tigernán.Og }
+        culture = irish
+        religion = catholic
+        birth_date = 1390.1.1 # unknown
+        birth = dromahair
+        father = bfn_tadhg_tigernan_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_eoghan_o_rourke = {
+        first_name = { name = name_eugene }
+        culture = irish
+        religion = catholic
+        birth_date = 1444.1.1 # unknown
+        birth = dromahair
+        father = bfn_tigernan_og_tadhg_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_domhnall_tadhg_o_rourke = {
+        first_name = { name = name_donald }
+        culture = irish
+        religion = catholic
+        birth_date = 1402.1.1 # unknown
+        birth = dromahair
+        father = bfn_tadhg_tigernan_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_donnchadh_bacagh_o_rourke = {
+        first_name = { name = name_duncan.Bacagh }
+        culture = irish
+        religion = catholic
+        birth_date = 1378.1.1 # unknown
+        birth = dromahair
+        father = bfn_tigernan_mor_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_donnchadh_iosc_o_rourke = {
+        first_name = { name = name_duncan.Iosc }
+        culture = irish
+        religion = catholic
+        birth_date = 1395.1.1 # unknown
+        birth = dromahair
+        father = bfn_tigernan_mor_o_rourke
+        dynasty = o_rourke_dynasty
+        tag = BFN
+    }
+
+    bfn_flaithbheartach_o_rourke = {
+        first_name = { name = Flaithbheartach }
+        culture = irish
+        religion = catholic
+        birth_date = 1298.1.1 # unknown
+        death_date = 1352.12.1
+        birth = dromahair
+        father = bfn_domhnall_carrach_o_rourke
         dynasty = o_rourke_dynasty
         tag = BFN
     }
@@ -125059,7 +125840,7 @@ character_db={
     }
 
     fad_ruaidhri_suibhne = {
-        first_name = { name = Ruaidhrí }
+        first_name = { name = name_roderick }
         culture = irish
         religion = catholic
         estate = nobles_estate
@@ -125212,7 +125993,7 @@ character_db={
         birth_date = 1420.1.1 #unknown
         birth = dungannon
         father = tyr_eoghan_mor_mac_niall_o_neill
-        mother = tyr_caitriona_mac_mahon
+        mother = tyr_caitrina_mac_mahon
         dynasty = o_neill_dynasty
         tag = FEW
     }
