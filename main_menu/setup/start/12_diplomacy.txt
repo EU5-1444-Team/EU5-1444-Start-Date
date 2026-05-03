@@ -28,14 +28,15 @@ diplomacy_manager = {
 
     #------- Ireland -------
 
-    #dependency = { first = PLE second = CLR subject_type = vassal }
-    #dependency = { first = PLE second = MYO subject_type = vassal }
     dependency = { first = PLE second = ULS subject_type = vassal }
-    #dependency = { first = PLE second = GLE subject_type = vassal }
+    dependency = { first = PLE second = WMT subject_type = vassal }
 
     dependency = { first = LOI second = GLS subject_type = vassal }
     dependency = { first = TRY second = FAD subject_type = vassal }
-    dependency = { first = MCM second = BEA subject_type = vassal }
+
+    dependency = { first = MCM second = CRB subject_type = appanage }
+    dependency = { first = MCM second = DUH subject_type = appanage }
+    dependency = { first = MCM second = MKY subject_type = appanage }
 
     scripted_mutual = { first = MYO second = UMH type = alliance }
 
