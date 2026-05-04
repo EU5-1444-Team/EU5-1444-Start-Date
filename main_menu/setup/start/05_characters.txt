@@ -20214,7 +20214,7 @@ character_db={
         religion = catholic
         birth_date = 1393.5.23
         birth = kilkenny
-        spouse = ord_elizabeth_fitzgerald_butler
+        spouse = ord_joan_fitzgerald_butler
         father = ord_james_iii_butler
         mother = ord_anne_welles
         dynasty = butler_dynasty
@@ -20233,16 +20233,17 @@ character_db={
         tag = ORD
     }
 
-    ord_elizabeth_fitzgerald_butler = {
-        first_name = { name = name_elizabeth }
+    ord_joan_fitzgerald_butler = {
+        first_name = { name = name_joan }
         culture = anglo_irish
         religion = catholic
         female = yes
         birth_date = 1398.1.1
         birth = kildare
         spouse = ord_james_iv_butler
-        father = kid_gerald_fitzmaurice_fitzgerald
-        dynasty = butler_dynasty
+        father = kid_gerald_fitzmaurice_fitzgerald_5th_earl
+        mother = kid_margaret_rocheford
+        dynasty = fitzgerald_dynasty
         tag = ORD
     }
 
@@ -20263,6 +20264,7 @@ character_db={
         first_name = { name = Avice }
         culture = anglo_irish
         religion = catholic
+        female = yes
         birth_date = 1423.1.1
         birth = stafford
         spouse = ord_james_v_butler
@@ -33358,7 +33360,7 @@ character_db={
         spouse = ple_john_darcy_baron_darcy_de_knayth
         birth = carrickfergus
         birth_date = 1300.1.1
-        death_date = 1350.1.2
+        death_date = 1359.4.23
         father = uls_richard_og_de_burgh_2nd_earl_ulster
         tag = PLE
         dynasty = de_burgh_dynasty
@@ -39621,6 +39623,7 @@ character_db={
 
     dms_gerald_fitzmaurice_fitzgerald = {
         first_name = { name = name_gerald }
+        nickname = { name = "the Poet" }
         culture = anglo_irish
         religion = catholic
         father = dms_maurice_fitzgerald
@@ -39716,19 +39719,6 @@ character_db={
         father = dms_james_fitzgerald_fitzgerald
         mother = dms_mary_de_burgh
         birth_date = 1417.1.1 # unknown
-        birth = kinsale
-        dynasty = fitzgerald_dynasty
-        tag = DMS
-    }
-
-    dms_joan_fitzjames_fitzgerald = {
-        first_name = { name = name_joan }
-        culture = anglo_irish
-        religion = catholic
-        female = yes
-        father = dms_james_fitzgerald_fitzgerald
-        mother = dms_mary_de_burgh
-        birth_date = 1421.1.1 # unknown
         birth = kinsale
         dynasty = fitzgerald_dynasty
         tag = DMS
@@ -39865,7 +39855,7 @@ character_db={
         religion = catholic
         father = kid_maurice_fitzgerald_1184
         birth_date = 1250.1.1 # unknown
-        death_date = 1316.8.1
+        death_date = 1316.9.12
         birth = kildare
         dynasty = fitzgerald_dynasty
         tag = KID
@@ -39884,6 +39874,32 @@ character_db={
         tag = KID
     }
 
+    kid_john_young_fitzthomas_fitzgerald = {
+        first_name = { name = name_john }
+        culture = anglo_irish
+        religion = catholic
+        father = kid_thomas_fitzgerald
+        mother = uls_joan_de_burgh
+        birth_date = 1314.1.1 # unknown
+        death_date = 1323.1.1
+        birth = kildare #unknown
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
+    kid_richard_fitzthomas_fitzgerald_3rd_earl = {
+        first_name = { name = name_richard }
+        culture = anglo_irish
+        religion = catholic
+        father = kid_thomas_fitzgerald
+        mother = uls_joan_de_burgh
+        birth_date = 1317.1.1 # unknown
+        death_date = 1329.7.7
+        birth = kildare #unknown
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
     kid_maurice_fitzgerald = {
         first_name = { name = name_maurice }
         culture = anglo_irish
@@ -39891,8 +39907,156 @@ character_db={
         father = kid_thomas_fitzgerald
         mother = uls_joan_de_burgh
         birth_date = 1318.1.1 # unknown
-        death_date = 1381.7.4
+        death_date = 1390.8.25
         birth = kildare #unknown
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
+    kid_gerald_fitzmaurice_fitzgerald_5th_earl = {
+        first_name = { name = name_gerald }
+        culture = anglo_irish
+        religion = catholic
+        father = kid_maurice_fitzgerald
+        #mother = 
+        birth_date = 1360.1.1 # unknown
+        death_date = 1425.1.1
+        birth = kildare
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
+    kid_margaret_rocheford = {
+        first_name = { name = name_margaret }
+        last_name = { name = Rocheford }
+        culture = anglo_irish
+        religion = catholic
+        female = yes
+        #father =
+        #mother = 
+        birth_date = 1362.1.1 # unknown
+        death_date = 1400.1.1
+        birth = prittlewell
+        spouse = kid_gerald_fitzmaurice_fitzgerald_5th_earl
+        tag = KID
+    }
+
+    kid_thomas_young_fitzgerald_fitzgerald = {
+        first_name = { name = name_thomas }
+        culture = anglo_irish
+        religion = catholic
+        father = kid_gerald_fitzmaurice_fitzgerald_5th_earl
+        mother = kid_margaret_rocheford
+        birth_date = 1395.1.1 # unknown
+        death_date = 1415.1.1 # unknown
+        birth = kildare
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
+    eng_elizabeth_fitzgerald_grey = {
+        first_name = { name = name_elizabeth }
+        culture = anglo_irish
+        religion = catholic
+        female = yes
+        father = kid_gerald_fitzmaurice_fitzgerald_5th_earl
+        birth_date = 1407.1.1 # unknown
+        birth = kildare
+        spouse = eng_john_grey_2nd_baron_codnor
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
+    kid_john_fitzmaurice_fitzgerald_6th_earl = {
+        first_name = { name = name_john }
+        culture = anglo_irish
+        religion = catholic
+        father = kid_maurice_fitzgerald
+        #mother = 
+        birth_date = 1375.1.1 # unknown
+        death_date = 1427.10.17
+        birth = kildare 
+        spouse = kid_john_fitzmaurice_fitzgerald_6th_earl
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
+    kid_margaret_de_la_herne = {
+        first_name = { name = name_margaret }
+        last_name = { name = "de la Herne" }
+        culture = anglo_irish
+        religion = catholic
+        female = yes
+        #father =
+        #mother = 
+        birth_date = 1386.1.1 # unknown
+        death_date = 1409.7.26
+        birth = cheltenham # unknown
+        spouse = kid_john_fitzmaurice_fitzgerald_6th_earl
+        tag = KID
+    }
+
+    kid_thomas_fitzjohn_fitzgerald_7th_earl = {
+        first_name = { name = name_thomas }
+        culture = anglo_irish
+        religion = catholic
+        father = kid_john_fitzmaurice_fitzgerald_6th_earl
+        mother = kid_margaret_de_la_herne
+        birth_date = 1421.1.1 # unknown
+        birth = kildare #unknown
+        spouse = kid_joan_fitzjames_fitzgerald
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
+    kid_joan_fitzjames_fitzgerald = {
+        first_name = { name = name_joan }
+        culture = anglo_irish
+        religion = catholic
+        female = yes
+        father = dms_james_fitzgerald_fitzgerald
+        mother = dms_mary_de_burgh
+        birth_date = 1421.1.1 # unknown
+        birth = kinsale
+        spouse = kid_thomas_fitzjohn_fitzgerald_7th_earl
+        dynasty = fitzgerald_dynasty
+        tag = DMS
+    }
+
+    kid_john_fitzthomas_fitzgerald_osberstown = {
+        first_name = { name = name_john }
+        culture = anglo_irish
+        religion = catholic
+        father = kid_thomas_fitzjohn_fitzgerald_7th_earl
+        mother = dse_doireann_o_moore
+        birth_date = 1440.1.1 # unknown
+        birth = kildare #unknown
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
+    kid_gerald_fitzthomas_fitzgerald_8th_earl = {
+        first_name = { name = name_gerald }
+        nickname = { name = "the Great Earl" }
+        culture = anglo_irish
+        religion = catholic
+        father = kid_thomas_fitzjohn_fitzgerald_7th_earl
+        mother = kid_joan_fitzjames_fitzgerald
+        birth_date = 1444.1.1 # unknown
+        birth = kildare #unknown
+        dynasty = fitzgerald_dynasty
+        tag = KID
+    }
+
+    kid_thomas_fitzmaurice_fitzgerald_sheriff = {
+        first_name = { name = name_thomas }
+        culture = anglo_irish
+        religion = catholic
+        father = kid_maurice_fitzgerald
+        #mother = 
+        birth_date = 1377.1.1 # unknown
+        death_date = 1425.1.1
+        birth = kildare
         dynasty = fitzgerald_dynasty
         tag = KID
     }
@@ -65070,7 +65234,7 @@ character_db={
         birth_date = 1408.1.1 # unknown
         birth = tralee
         spouse = mky_cormac_laidir_mac_cormac_mac_carthaigh
-        father = key_patrick_fitzmaurice_fitzmaurice_7th_baron_kerry
+        father = key_patrick_fitzmaurice_fitzmaurice_7th_baron
         dynasty = fitzmaurice_dynasty
         tag = MKY
     }
@@ -72556,11 +72720,34 @@ character_db={
         birth_date = 1328.11.11
         death_date = 1396.3.19
         father = eng_edmund_mortimer
-        adm = 30 dip = 24 mil = 62
         birth = ludlow
         dynasty = mortimer_dynasty
         tag = MAC
-        child_trait = child_gallant
+    }
+
+    eng_roger_mortimer_4th_earl = {
+        first_name = { name = name_roger }
+        culture = english
+        religion = catholic
+        birth_date = 1374.4.11
+        death_date = 1398.7.20
+        birth = monmouth
+        #father =
+        mother = eng_philippa_plantagenet_clarence
+        dynasty = mortimer_dynasty
+        tag = MAC
+    }
+
+    eng_edmund_mortimer_5th_earl = {
+        first_name = { name = name_edmond }
+        culture = english
+        religion = catholic
+        birth_date = 1391.11.6
+        death_date = 1425.1.18
+        birth = mullingar
+        father = eng_roger_mortimer_4th_earl
+        dynasty = mortimer_dynasty
+        tag = MAC
     }
 
     ### mortimer_dynasty | POS ###
@@ -76602,7 +76789,7 @@ character_db={
         birth_date = 1415.5.3
         birth = durham
         dynasty = neville_dynasty
-        spouse = eng_richard_york_duke
+        spouse = eng_richard_york_3rd_duke
         father = eng_ralph_neville_westmorland
         mother = eng_joan_beaufort_neville
         tag = ENG
@@ -119561,7 +119748,7 @@ character_db={
         tag = ENG
     }
 
-    eng_richard_york_duke = {#leader of York
+    eng_richard_york_3rd_duke = {#leader of York
         first_name = { name = name_richard }
         culture = english
         religion = catholic
@@ -119583,7 +119770,7 @@ character_db={
         birth_date = 1439.8.10
         birth = rouen
         dynasty = york_dynasty
-        father = eng_richard_york_duke
+        father = eng_richard_york_3rd_duke
         mother = eng_cecily_neville
         tag = ENG
     }
@@ -119596,7 +119783,7 @@ character_db={
         birth_date = 1442.4.28
         birth = rouen
         dynasty = york_dynasty
-        father = eng_richard_york_duke
+        father = eng_richard_york_3rd_duke
         mother = eng_cecily_neville
         child_trait = child_intelligent
         tag = ENG
@@ -119610,7 +119797,7 @@ character_db={
         birth_date = 1443.5.17
         birth = rouen
         dynasty = york_dynasty
-        father = eng_richard_york_duke
+        father = eng_richard_york_3rd_duke
         mother = eng_cecily_neville
         tag = ENG
     }
@@ -119624,7 +119811,7 @@ character_db={
         birth_date = 1444.4.22
         birth = rouen
         dynasty = york_dynasty
-        father = eng_richard_york_duke
+        father = eng_richard_york_3rd_duke
         mother = eng_cecily_neville
         tag = ENG
     }
@@ -127840,7 +128027,7 @@ character_db={
         tag = CBS
     }
 
-    key_nicholas_fitzmaurice_fitzmaurice_3rd_baron_kerry = {
+    key_nicholas_fitzmaurice_fitzmaurice_3rd_baron = {
         first_name = { name = name_nicholas }
         culture = anglo_irish
         religion = catholic
@@ -127852,7 +128039,7 @@ character_db={
         tag = KEY
     }
 
-    key_maurice_fitznicholas_fitzmaurice_4th_baron_kerry = {
+    key_maurice_fitznicholas_fitzmaurice_4th_baron = {
         first_name = { name = name_maurice }
         culture = anglo_irish
         religion = catholic
@@ -127860,12 +128047,12 @@ character_db={
         birth_date = 1295.1.1 #unknown
         death_date = 1339.1.1
         birth = tralee
-        father = key_nicholas_fitzmaurice_fitzmaurice_3rd_baron_kerry
+        father = key_nicholas_fitzmaurice_fitzmaurice_3rd_baron
         dynasty = fitzmaurice_dynasty
         tag = KEY
     }
 
-    key_john_fitznicholas_fitzmaurice_5th_baron_kerry = {
+    key_john_fitznicholas_fitzmaurice_5th_baron = {
         first_name = { name = name_john }
         culture = anglo_irish
         religion = catholic
@@ -127873,12 +128060,12 @@ character_db={
         birth_date = 1300.1.1 #unknown
         death_date = 1348.1.1
         birth = tralee
-        father = key_nicholas_fitzmaurice_fitzmaurice_3rd_baron_kerry
+        father = key_nicholas_fitzmaurice_fitzmaurice_3rd_baron
         dynasty = fitzmaurice_dynasty
         tag = KEY
     }
 
-    key_maurice_fitzjohn_fitzmaurice_6th_baron_kerry = {
+    key_maurice_fitzjohn_fitzmaurice_6th_baron = {
         first_name = { name = name_maurice }
         culture = anglo_irish
         religion = catholic
@@ -127886,13 +128073,13 @@ character_db={
         birth_date = 1330.1.1 #unknown
         death_date = 1398.1.1
         birth = tralee
-        father = key_john_fitznicholas_fitzmaurice_5th_baron_kerry
+        father = key_john_fitznicholas_fitzmaurice_5th_baron
         spouse = key_joan_fitzgerald_fitzgerald
         dynasty = fitzmaurice_dynasty
         tag = KEY
     }
 
-    key_patrick_fitzmaurice_fitzmaurice_7th_baron_kerry = {
+    key_patrick_fitzmaurice_fitzmaurice_7th_baron = {
         first_name = { name = name_patrick }
         culture = anglo_irish
         religion = catholic
@@ -127900,33 +128087,33 @@ character_db={
         birth_date = 1360.1.1 #unknown
         death_date = 1410.1.1
         birth = tralee
-        father = key_maurice_fitzjohn_fitzmaurice_6th_baron_kerry
+        father = key_maurice_fitzjohn_fitzmaurice_6th_baron
         mother = key_joan_fitzgerald_fitzgerald
         dynasty = fitzmaurice_dynasty
         tag = KEY
     }
 
-    key_thomas_fitzpatrick_fitzmaurice_8th_baron_kerry = {
+    key_thomas_fitzpatrick_fitzmaurice_8th_baron = {
         first_name = { name = name_thomas }
         culture = anglo_irish
         religion = catholic
         estate = nobles_estate
         birth_date = 1400.1.1 #unknown
         birth = tralee
-        father = key_patrick_fitzmaurice_fitzmaurice_7th_baron_kerry
+        father = key_patrick_fitzmaurice_fitzmaurice_7th_baron
         spouse = key_honor_fitzjames_fitzgerald
         dynasty = fitzmaurice_dynasty
         tag = KEY
     }
 
-    key_edmond_fitzthomas_fitzmaurice_9th_baron_kerry = {
+    key_edmond_fitzthomas_fitzmaurice_9th_baron = {
         first_name = { name = name_edmond }
         culture = anglo_irish
         religion = catholic
         estate = nobles_estate
         birth_date = 1425.1.1 #unknown
         birth = tralee
-        father = key_thomas_fitzpatrick_fitzmaurice_8th_baron_kerry
+        father = key_thomas_fitzpatrick_fitzmaurice_8th_baron
         mother = key_honor_fitzjames_fitzgerald
         dynasty = fitzmaurice_dynasty
         tag = KEY
@@ -127952,10 +128139,10 @@ character_db={
         religion = catholic
         estate = nobles_estate
         female = yes
-        birth_date = 1370.1.1 # unknown
+        birth_date = 1375.1.1 # unknown
         death_date = 1420.1.1 # unknown
         birth = kildare
-        father = kid_maurice_fitzthomas_fitzgerald
+        father = kid_maurice_fitzgerald
         mother = kid_elizabeth_de_burgh
         spouse = crb_domhnall_mac_carthaigh
         dynasty = fitzgerald_dynasty
@@ -128261,5 +128448,41 @@ character_db={
         father = wmt_john_lacy
         dynasty = lacy_dynasty
         tag = WMT
+    }
+
+    dse_antoin_o_moore = {
+        first_name = { name = name_anthony }
+        culture = irish
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1390.1.1 # unknown
+        birth = dunamase
+        dynasty = o_moore_dynasty
+        tag = DSE
+    }
+
+    dse_eoghan_o_moore_fictional = {
+        first_name = { name = name_eugene }
+        culture = irish
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1417.1.1 # unknown
+        birth = dunamase
+        father = dse_antoin_o_moore
+        dynasty = o_moore_dynasty
+        tag = DSE
+    }
+
+    dse_doireann_o_moore = {
+        first_name = { name = Doireann }
+        culture = irish
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1419.1.1 # unknown
+        birth = dunamase
+        father = dse_antoin_o_moore
+        dynasty = o_moore_dynasty
+        tag = DSE
     }
 }

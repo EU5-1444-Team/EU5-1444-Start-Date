@@ -5829,7 +5829,7 @@ countries = {
 
         government = {
 
-            ruler = eng_richard_york_duke
+            ruler = eng_richard_york_3rd_duke
         }
 
         accepted_cultures = {
@@ -7536,13 +7536,19 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            regency = lordship_of_ireland_regency
+            ruler = eng_richard_york_3rd_duke
+
             ruler_term = { character = uls_walter_de_burgh start_date = 1271.7.28 end_date = 1312.1.1 }
             ruler_term = { character = uls_richard_og_de_burgh_2nd_earl_ulster start_date = 1312.1.1 end_date = 1326.7.29 }
             ruler_term = { character = uls_william_donn_de_burgh_3rd_earl_ulster start_date = 1326.7.29 end_date = 1333.6.6 }
-
-            regency = lordship_of_ireland_regency
-            ruler = eng_richard_york_duke
+            ruler_term = { character = uls_elizabeth_de_burgh_4th_countess_ulster start_date = 1333.6.6 end_date = 1363.12.10 }
+            ruler_term = { character = eng_philippa_plantagenet_clarence start_date = 1363.12.10 end_date = 1382.1.5 }
+            ruler_term = { character = eng_roger_mortimer_4th_earl start_date = 1382.1.5 end_date = 1398.7.20 }
+            ruler_term = { character = eng_edmund_mortimer_5th_earl start_date = 1398.7.20 end_date = 1425.1.18 }
+            ruler_term = { character = eng_richard_york_3rd_duke start_date = 1425.1.18 }
         }
+
         tolerated_cultures = { irish }
 
         include = "catholic_monarchy_english_lordship_irish_earldom"
@@ -7631,14 +7637,14 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = key_thomas_fitzpatrick_fitzmaurice_8th_baron_kerry
+            ruler = key_thomas_fitzpatrick_fitzmaurice_8th_baron
             
-            ruler_term = { character = key_nicholas_fitzmaurice_fitzmaurice_3rd_baron_kerry start_date = 1303.1.1 end_date = 1324.1.1 }
-            ruler_term = { character = key_maurice_fitznicholas_fitzmaurice_4th_baron_kerry start_date = 1324.1.1 end_date = 1339.1.1 }
-            ruler_term = { character = key_john_fitznicholas_fitzmaurice_5th_baron_kerry start_date = 1339.1.1 end_date = 1348.1.1 }
-            ruler_term = { character = key_maurice_fitzjohn_fitzmaurice_6th_baron_kerry start_date = 1348.1.1 end_date = 1398.1.1 }
-            ruler_term = { character = key_patrick_fitzmaurice_fitzmaurice_7th_baron_kerry start_date = 1398.1.1 end_date = 1410.1.1 }
-            ruler_term = { character = key_thomas_fitzpatrick_fitzmaurice_8th_baron_kerry start_date = 1410.1.1 }
+            ruler_term = { character = key_nicholas_fitzmaurice_fitzmaurice_3rd_baron start_date = 1303.1.1 end_date = 1324.1.1 }
+            ruler_term = { character = key_maurice_fitznicholas_fitzmaurice_4th_baron start_date = 1324.1.1 end_date = 1339.1.1 }
+            ruler_term = { character = key_john_fitznicholas_fitzmaurice_5th_baron start_date = 1339.1.1 end_date = 1348.1.1 }
+            ruler_term = { character = key_maurice_fitzjohn_fitzmaurice_6th_baron start_date = 1348.1.1 end_date = 1398.1.1 }
+            ruler_term = { character = key_patrick_fitzmaurice_fitzmaurice_7th_baron start_date = 1398.1.1 end_date = 1410.1.1 }
+            ruler_term = { character = key_thomas_fitzpatrick_fitzmaurice_8th_baron start_date = 1410.1.1 }
         }
 
         tolerated_cultures = {
@@ -8081,14 +8087,17 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = kid_thomas_fitzjohn_fitzgerald_7th_earl
 
-            ruler_term = { character = kid_maurice_fitzgerald start_date = 1329.1.1 }
+            ruler_term = { character = kid_john_fitzgerald_1250 start_date = 1316.1.1 end_date = 1316.9.12 }
+            ruler_term = { character = kid_thomas_fitzgerald start_date = 1316.9.12 end_date = 1328.4.9 }
+            ruler_term = { character = kid_richard_fitzthomas_fitzgerald_3rd_earl start_date = 1328.4.9 end_date = 1329.7.7 }
+            ruler_term = { character = kid_maurice_fitzgerald start_date = 1329.7.7 end_date = 1390.8.25 }
+            ruler_term = { character = kid_gerald_fitzmaurice_fitzgerald_5th_earl start_date = 1390.8.25 end_date = 1425.1.1 }
+            ruler_term = { character = kid_john_fitzmaurice_fitzgerald_6th_earl start_date = 1425.1.1 end_date = 1427.10.17 }
+            ruler_term = { character = kid_thomas_fitzjohn_fitzgerald_7th_earl start_date = 1427.10.17 }
 
             regnal_numbers = {
-                name_john = 1
-                name_thomas = 1
-                name_richard = 1
             }
         }
         tolerated_cultures = { irish }
@@ -8558,7 +8567,9 @@ countries = {
         include = "gaelic_tribe_no_coast_no_censor"
         include = "expl_western_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = dse_antoin_o_moore
+
+            ruler_term = { character = dse_antoin_o_moore start_date = 1410.1.1 }
         }
 
         dynasty = o_moore_dynasty
