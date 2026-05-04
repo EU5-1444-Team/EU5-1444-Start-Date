@@ -8101,7 +8101,7 @@ character_db={
 
     ### aspenas_atten_dynasty | SWE ###
 
-    swe_knut_jonsson = {        #https://sv.wikipedia.org/wiki/Knut_Jonsson_(Aspen%C3%A4s%C3%A4tten)
+    swe_knut_jonsson = { #https://sv.wikipedia.org/wiki/Knut_Jonsson_(Aspen%C3%A4s%C3%A4tten)
         first_name = { name = name_canute }
         culture = swedish
         religion = catholic
@@ -11255,7 +11255,7 @@ character_db={
         estate = nobles_estate
         adm = 41 dip = 54 mil = 32
         birth_date = 1283.1.1
-        death_date = 1339.1.18
+        death_date = 1364.1.1
         birth = roxburgh
         father = sco_john_balliol_of_scotland
         mother = sco_isabella_warenne
@@ -13604,7 +13604,7 @@ character_db={
         birth = london
         father = eng_john_beaufort_founder
         mother = eng_margaret_holland_beaufort
-        spouse = sco_james_i_stewart
+        spouse = sco_james_i_stuart
         dynasty = beaufort_dynasty
         tag = SCO
     }
@@ -18126,7 +18126,7 @@ character_db={
         mother = sco_eleanor_douglas
         female = yes
         birth_date = 1333.1.1
-        death_date = 1381.2.9
+        death_date = 1393.1.1
         birth = ayr
         dynasty = bruce_dynasty
         tag = SCO
@@ -20393,7 +20393,7 @@ character_db={
         birth_date = 1395.1.1
         death_date = 1420.1.1
         birth = cavan
-        spouse =o rd_richard_butler_polestown
+        spouse = ord_richard_butler_polestown
         father = cvn_giolla_iosa_o_reilly
         dynasty = o_reilly_dynasty
         tag = ORD
@@ -27310,7 +27310,7 @@ character_db={
         first_name = { name = Prospero }
         culture = median
         religion = catholic
-        estate = clergy_estate_estate
+        estate = clergy_estate
         birth_date = 1410.1.1
         birth = tivoli
         father = pap_lorenzo_onofrio_colonna
@@ -36409,6 +36409,7 @@ character_db={
 
     sco_james_douglas_7th_earl = {
         first_name = { name = name_james }
+        nickname = { name = "the Gross" }
         culture = scottish
         religion = catholic
         birth_date = 1371.1.1
@@ -36427,8 +36428,8 @@ character_db={
         death_date = 1439.6.26
         birth = edinburgh
         dynasty = douglas_dynasty
-        father = sco_archibald_douglas_4rd_earl
-        mother = sco_margaret_stewart_galloway
+        father = sco_archibald_douglas_4th_earl
+        mother = sco_margaret_stuart_douglas
         tag = GLY
     }
 
@@ -36440,7 +36441,20 @@ character_db={
         death_date = 1440.11.24
         birth = dumfries
         dynasty = douglas_dynasty
-        father = sco_archibald_douglas_5rd_earl
+        father = sco_archibald_douglas_5th_earl
+        tag = GLY
+    }
+
+    sco_beatrice_douglas_hay = {
+        first_name = { name = name_beatrix }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1424.1.1
+        birth = kirkcudbright
+        dynasty = douglas_dynasty
+        father = sco_james_douglas_7th_earl
+        mother = sco_beatrice_sinclair_douglas
         tag = GLY
     }
 
@@ -36452,6 +36466,7 @@ character_db={
         birth = kirkcudbright
         dynasty = douglas_dynasty
         father = sco_james_douglas_7th_earl
+        mother = sco_beatrice_sinclair_douglas
         tag = GLY
     }
 
@@ -36463,6 +36478,7 @@ character_db={
         birth = kirkcudbright
         dynasty = douglas_dynasty
         father = sco_james_douglas_7th_earl
+        mother = sco_beatrice_sinclair_douglas
         tag = GLY
     }
 
@@ -36474,6 +36490,7 @@ character_db={
         birth = kirkcudbright
         dynasty = douglas_dynasty
         father = sco_james_douglas_7th_earl
+        mother = sco_beatrice_sinclair_douglas
         tag = GLY
     }
 
@@ -36485,6 +36502,7 @@ character_db={
         birth = kirkcudbright
         dynasty = douglas_dynasty
         father = sco_james_douglas_7th_earl
+        mother = sco_beatrice_sinclair_douglas
         tag = GLY
     }
 
@@ -36496,6 +36514,33 @@ character_db={
         birth = kirkcudbright
         dynasty = douglas_dynasty
         father = sco_james_douglas_7th_earl
+        mother = sco_beatrice_sinclair_douglas
+        tag = GLY
+    }
+
+    sco_janet_douglas_fleming = {
+        first_name = { name = Janet }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1434.1.1
+        birth = kirkcudbright
+        dynasty = douglas_dynasty
+        father = sco_james_douglas_7th_earl
+        mother = sco_beatrice_sinclair_douglas
+        tag = GLY
+    }
+
+    sco_margaret_douglas_borg = {
+        first_name = { name = name_margaret }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1435.1.1
+        birth = kirkcudbright
+        dynasty = douglas_dynasty
+        father = sco_james_douglas_7th_earl
+        mother = sco_beatrice_sinclair_douglas
         tag = GLY
     }
 
@@ -36503,6 +36548,7 @@ character_db={
 
     sco_william_douglas = {
         first_name = { name = name_william }
+        nickname = { name = "le Hardi" }
         culture = scottish
         religion = catholic
         birth_date = 1243.1.1
@@ -36514,6 +36560,7 @@ character_db={
 
     sco_james_douglas = {
         first_name = { name = name_james }
+        nickname = { name = "the Good Sir" }
         culture = scottish
         religion = catholic
         birth_date = 1286.1.1
@@ -36521,7 +36568,6 @@ character_db={
         death_date = 1330.8.25
         dynasty = douglas_dynasty
         father = sco_william_douglas
-        nickname = nick_the_black
         tag = SCO
     }
 
@@ -36537,14 +36583,39 @@ character_db={
         tag = SCO
     }
 
+    sco_hugh_douglas = {
+        first_name = { name = name_hugh }
+        nickname = { name = "the Dull" }
+        culture = scottish
+        religion = catholic
+        birth_date = 1294.1.1
+        death_date = 1340.1.1
+        birth = lanark
+        dynasty = douglas_dynasty
+        father = sco_william_douglas
+        tag = SCO
+    }
+
     sco_john_douglas = {
         first_name = { name = name_john }
         culture = scottish
         religion = catholic
         birth_date = 1310.1.1 #Unknown
-        death_date = 1373.7.20
+        death_date = 1341.1.1 # unknown
         birth = lanark
         father = sco_archibald_douglas
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_william_douglas_liddesdale = {
+        first_name = { name = name_william }
+        nickname = { name = "the Knight of Liddesdale" }
+        culture = scottish
+        religion = catholic
+        birth_date = 1300.1.1
+        death_date = 1353.1.1
+        birth = lanark
         dynasty = douglas_dynasty
         tag = SCO
     }
@@ -36566,8 +36637,8 @@ character_db={
         culture = scottish
         religion = catholic
         female = yes
-        birth_date = 1315.1.1 #Unknown
-        death_date = 1364.5.15
+        birth_date = 1315.1.1 # unknown
+        death_date = 1375.1.1 # unknown
         birth = lanark
         father = sco_archibald_douglas
         spouse = sco_alexander_de_brus
@@ -36580,15 +36651,239 @@ character_db={
         culture = scottish
         religion = catholic
         birth_date = 1323.1.1
-        death_date = 1393.11.5
+        death_date = 1384.5.1
         birth = lanark
         father = sco_archibald_douglas
         dynasty = douglas_dynasty
         tag = SCO
     }
 
+    sco_james_douglas_2nd_earl_douglas = {
+        first_name = { name = name_james }
+        culture = scottish
+        religion = catholic
+        birth_date = 1358.1.1
+        death_date = 1388.8.19
+        birth = lanark
+        father = sco_william_douglas_earl
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_william_douglas_1st_drumlanrig = {
+        first_name = { name = name_william }
+        culture = scottish
+        religion = catholic
+        birth_date = 1378.1.1
+        death_date = 1421.1.1
+        birth = lanark
+        father = sco_james_douglas_2nd_earl_douglas
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_william_douglas_2st_drumlanrig = {
+        first_name = { name = name_william }
+        culture = scottish
+        religion = catholic
+        birth_date = 1400.1.1
+        birth = lanark
+        father = sco_william_douglas_1st_drumlanrig
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_marion_douglas_drumlanrig = {
+        first_name = { name = Marion }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1401.1.1
+        birth = lanark
+        father = sco_william_douglas_1st_drumlanrig
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_archibald_douglas_illegitimate = {
+        first_name = { name = name_archibald }
+        culture = scottish
+        religion = catholic
+        birth_date = 1382.1.1
+        death_date = 1442.1.1
+        birth = lanark
+        father = sco_james_douglas_2nd_earl_douglas
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_isabel_douglas_mar = {
+        first_name = { name = Isabel }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1360.1.1
+        death_date = 1408.1.1
+        birth = lanark
+        father = sco_william_douglas_earl
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_george_douglas_1st_earl_angus = {
+        first_name = { name = name_george }
+        culture = scottish
+        religion = catholic
+
+        birth_date = 1380.1.1
+        death_date = 1403.1.1
+        birth = dunbar
+        father = sco_william_douglas_earl
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_margaret_douglas_bonjedward = {
+        first_name = { name = name_margaret }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1385.1.1
+        birth = dunbar
+        father = sco_william_douglas_earl
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_william_douglas_2nd_earl_angus = {
+        first_name = { name = name_william }
+        culture = scottish
+        religion = catholic
+        birth_date = 1398.1.1
+        death_date = 1437.1.1
+        birth = dunbar
+        spouse = sco_margaret_hay_yester
+        father = sco_george_douglas_1st_earl_angus
+        mother = sco_mary_stewart_douglas_angus
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_elizabeth_douglas_hay = {
+        first_name = { name = name_elizabeth }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1401.1.1
+        birth = dunbar
+        father = sco_george_douglas_1st_earl_angus
+        mother = sco_mary_stewart_douglas_angus
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_alexander_forbes_1st_lord_forbes = {
+        first_name = { name = name_alexander }
+        culture = scottish
+        religion = catholic
+        birth_date = 1380.1.1
+        birth = inverurie
+        spouse = sco_elizabeth_douglas_hay
+        dynasty = forbes_dynasty
+        tag = SCO
+    }
+
+    sco_james_forbes_2nd_lord_forbes = {
+        first_name = { name = name_james }
+        culture = scottish
+        religion = catholic
+        birth_date = 1423.1.1
+        birth = inverurie
+        father = sco_alexander_forbes_1st_lord_forbes
+        mother = sco_elizabeth_douglas_hay
+        dynasty = forbes_dynasty
+        tag = SCO
+    }
+
+    sco_margaret_hay_yester = {
+        first_name = { name = name_margaret }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1403.1.1
+        birth = dunfermline
+        spouse = sco_william_douglas_2nd_earl_angus
+        dynasty = hay_dynasty
+        tag = SCO
+    }
+
+    sco_james_douglas_3rd_earl_angus = {
+        first_name = { name = name_james }
+        culture = scottish
+        religion = catholic
+        birth_date = 1426.1.1
+        birth = dundee
+        father = sco_william_douglas_2nd_earl_angus
+        mother = sco_margaret_hay_yester
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_george_douglas_4th_earl_angus = {
+        first_name = { name = name_george }
+        nickname = { name = "the Great Earl" }
+        culture = scottish
+        religion = catholic
+        birth_date = 1427.1.1
+        birth = dundee
+        father = sco_william_douglas_2nd_earl_angus
+        mother = sco_margaret_hay_yester
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_william_douglas_cluny = {
+        first_name = { name = name_william }
+        nickname = { name = "of Cluny" }
+        culture = scottish
+        religion = catholic
+        birth_date = 1428.1.1
+        birth = dundee
+        father = sco_william_douglas_2nd_earl_angus
+        mother = sco_margaret_hay_yester
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_hugh_douglas_rector = {
+        first_name = { name = name_hugh }
+        culture = scottish
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1429.1.1
+        birth = dundee
+        father = sco_william_douglas_2nd_earl_angus
+        mother = sco_margaret_hay_yester
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
+    sco_helen_douglas_ogilvy = {
+        first_name = { name = name_helen }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1431.1.1
+        birth = dundee
+        father = sco_william_douglas_2nd_earl_angus
+        mother = sco_margaret_hay_yester
+        dynasty = douglas_dynasty
+        tag = SCO
+    }
+
     sco_archibald_douglas_3rd_earl = {
         first_name = { name = name_archibald }
+        nickname = { name = "the Grim" }
         culture = scottish
         religion = catholic
         birth_date = 1330.1.1
@@ -36596,17 +36891,6 @@ character_db={
         birth = lanark
         dynasty = douglas_dynasty
         father = sco_james_douglas
-        tag = SCO
-    }
-
-    sco_george_douglas_4th_earl = {
-        first_name = { name = name_george }
-        nickname = { name "Great Earl" }
-        culture = scottish
-        religion = catholic
-        birth_date = 1427.1.1
-        birth = perth
-        dynasty = douglas_dynasty
         tag = SCO
     }
 
@@ -37416,7 +37700,7 @@ character_db={
         culture = scottish
         religion = catholic
         birth_date = 1285.1.1
-        death_date = 1349.5.7
+        death_date = 1355.1.1
         birth = dunbar
         dynasty = dunbar_dynasty
         tag = SCO
@@ -61802,7 +62086,7 @@ character_db={
 
     bur_jacques_lalaing = {
         first_name = { name = name_james }
-        nick_name = { name = "the Chevalier" }
+        nickname = { name = "the Chevalier" }
         culture = walloon
         religion = catholic
         estate = nobles_estate
@@ -62432,7 +62716,7 @@ character_db={
 
     fla_baudouin_lannoy = {
         first_name = { name = name_baldwin }
-        nick_name = { name = "the Stutterer" }
+        nickname = { name = "the Stutterer" }
         culture = low_franconian
         religion = catholic
         estate = nobles_estate
@@ -65309,6 +65593,7 @@ character_db={
         birth = skye
         dynasty = mac_domhnaill_dynasty # MacDonald
         father = loi_eoin_mac_aonghais
+        mother = loi_margaret_stuart_mac_domhnaill
         tag = LOI
     }
 
@@ -65316,11 +65601,13 @@ character_db={
         first_name = { name = name_mary }
         culture = highland
         religion = catholic
+        female = yes
         birth_date = 1368.1.1
         death_date = 1440.1.1
         birth = dingwall
         spouse = loi_domhnall_mac_eoin
-        dynasty = mac_domhnaill_dynasty # MacDonald
+        father = sco_alexander_leslie
+        dynasty = leslie_dynasty
         tag = LOI
     }
 
@@ -65332,6 +65619,7 @@ character_db={
         birth = dingwall
         dynasty = mac_domhnaill_dynasty # MacDonald
         father = loi_domhnall_mac_eoin
+        mother = loi_mariota_leslie
         tag = LOI
     }
 
@@ -71510,7 +71798,7 @@ character_db={
         female = yes
 		birth = vannes
 		father = bri_francois_i_montfort_brittany
-		mother = bri_isabella_stewart
+		mother = bri_isabella_stuart
 		dynasty = montfort_brittany_dynasty
 		tag = BRI
 	}
@@ -77861,8 +78149,8 @@ character_db={
         first_name = { name = name_euphemia }
         culture = highland
         religion = catholic
-        birth_date = 1321.1.1
-        death_date = 1379.4.14
+        birth_date = 1329.1.1
+        death_date = 1386.1.1
         birth = dingwall
         female = yes
         dynasty = o_bolan_dynasty
@@ -103915,15 +104203,15 @@ character_db={
 
     ### stewart_dynasty | BRI ###
 
-	bri_isabella_stewart = {
+	bri_isabella_stuart = {
 		first_name = { name = name_elizabeth }
 		culture = scottish
 		religion = catholic
 		birth_date = 1426.8.1
 		female = yes
 		birth = perth
-		dynasty = stewart_dynasty
-		father = sco_james_i_stewart
+		dynasty = stuart_dynasty
+		father = sco_james_i_stuart
 		mother = sco_joan_beaufort
 		spouse = bri_francois_i_montfort_brittany
 		tag = BRI
@@ -103931,7 +104219,7 @@ character_db={
 
     ### stewart_dynasty | DAU ###
 
-    fra_margaret_stewart = {
+    fra_margaret_stuart = {
         first_name = { name = name_margaret }
         culture = scottish
         religion = catholic
@@ -103940,25 +104228,24 @@ character_db={
         female = yes
         birth = perth
         spouse = fra_louis_xi_valois
-        father = sco_james_i_stewart
+        father = sco_james_i_stuart
         mother = sco_joan_beaufort
-        dynasty = stewart_dynasty
+        dynasty = stuart_dynasty
         tag = DAU
     }
 
     ### stewart_dynasty | GLY ###
 
-    sco_margaret_stewart_galloway = {
+    sco_margaret_stuart_douglas = {
         first_name = { name = name_margaret }
         culture = english
         religion = catholic
         female = yes
         birth_date = 1370.1.1
         birth = paisley
-        dynasty = stewart_dynasty
+        dynasty = stuart_dynasty
         spouse = sco_archibald_douglas_4th_earl
-        father = sco_robert_iii_stewart
-        mother = sco_elizabeth_mure
+        father = sco_robert_iii_stuart
         tag = GLY
     }
 
@@ -104044,45 +104331,989 @@ character_db={
         birth_date = 1316.3.2
         death_date = 1390.4.19
         birth = glasgow # paisley abbey renfrewshire
-        dynasty = stewart_dynasty
+        dynasty = stuart_dynasty
         father = sco_walter_stewart_6th
         mother = sco_marjorie_bruce
         tag = SCO
     }
 
-    sco_robert_iii_stewart = {
-        first_name = { name = name_robert }
+    sco_robert_iii_stuart = {
+        first_name = { name = name_john }
         culture = scottish
         religion = catholic
         birth_date = 1337.3.5
         death_date = 1406.4.4
-        birth = edinburgh
-        dynasty = stewart_dynasty
+        birth = stirling
+        dynasty = stuart_dynasty
         father = sco_robert_ii
         mother = sco_elizabeth_mure
         tag = SCO
     }
 
-    sco_james_i_stewart = {
+    sco_walter_stuart_fife = {
+        first_name = { name = name_walter }
+        culture = scottish
+        religion = catholic
+        birth_date = 1338.1.1
+        death_date = 1362.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        mother = sco_elizabeth_mure
+        tag = SCO
+    }
+
+    sco_robert_stuart_1st_duke_albany = {
+        first_name = { name = name_robert }
+        culture = scottish
+        religion = catholic
+        birth_date = 1339.1.1
+        death_date = 1420.9.3
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        mother = sco_elizabeth_mure
+        tag = SCO
+    }
+
+    sco_murdoch_stuart_2st_duke_albany = {
+        first_name = { name = Murdoch }
+        culture = scottish
+        religion = catholic
+        birth_date = 1362.1.1
+        death_date = 1425.5.25
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_iseabail_lennox = {
+        first_name = { name = Iseabail }
+        last_name = { name = "of Lennox" }
+        culture = highland
+        religion = catholic
+        female = yes
+        birth_date = 1372.1.1
+        birth = dumbarton
+        spouse = sco_murdoch_stuart_2st_duke_albany
+        tag = SCO
+    }
+
+    sco_robert_stuart_2nd_albany = {
+        first_name = { name = name_robert }
+        culture = scottish
+        religion = catholic
+        birth_date = 1390.1.1
+        death_date = 1421.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_murdoch_stuart_2st_duke_albany
+        mother = sco_iseabail_lennox
+        tag = SCO
+    }
+
+    sco_walter_stuart_albany = {
+        first_name = { name = name_walter }
+        culture = scottish
+        religion = catholic
+        birth_date = 1391.1.1
+        death_date = 1425.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_murdoch_stuart_2st_duke_albany
+        mother = sco_iseabail_lennox
+        tag = SCO
+    }
+
+    sco_janet_erskine_stuart = {
+        first_name = { name = Janet }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1395.1.1
+        birth = paisley
+        dynasty = erskine_dynasty
+        spouse = sco_walter_stuart_albany
+        tag = SCO
+    }
+
+    sco_andrew_stuart_avondale = {
+        first_name = { name = name_andrew }
+        culture = scottish
+        religion = catholic
+        birth_date = 1420.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_walter_stuart_albany
+        mother = sco_janet_erskine_stuart
+        tag = SCO
+    }
+
+    sco_walter_stuart_morphie = {
+        first_name = { name = name_walter }
+        culture = scottish
+        religion = catholic
+        birth_date = 1422.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_walter_stuart_albany
+        mother = sco_janet_erskine_stuart
+        tag = SCO
+    }
+
+    sco_alexander_stuart_albany = {
+        first_name = { name = name_walter }
+        culture = scottish
+        religion = catholic
+        birth_date = 1391.1.1
+        death_date = 1425.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_murdoch_stuart_2st_duke_albany
+        mother = sco_iseabail_lennox
+        tag = SCO
+    }
+
+    sco_james_mor_stuart_albany = {
+        first_name = { name = name_james.Mór }
+        nickname = { name = "the Fat" }
+        culture = scottish
+        religion = catholic
+        birth_date = 1396.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_murdoch_stuart_2st_duke_albany
+        mother = sco_iseabail_lennox
+        tag = ULS
+    }
+
+    sco_james_beag_stuart_albany = {
+        first_name = { name = name_james }
+        nickname = { name = Beag }
+        culture = scottish
+        religion = catholic
+        birth_date = 1424.1.1
+        birth = carrickfergus
+        dynasty = stuart_dynasty
+        father = sco_james_mor_stuart_albany
+        tag = ULS
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1334.1.13
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    sco_murdoch_stuart_albany = {
+        first_name = { name = Murdoch }
+        culture = scottish
+        religion = catholic
+        birth_date = 1427.1.1
+        birth = carrickfergus
+        dynasty = stuart_dynasty
+        father = sco_james_mor_stuart_albany
+        tag = ULS
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1334.1.13
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    sco_arthur_stuart_albany = {
+        first_name = { name = name_arthur }
+        culture = scottish
+        religion = catholic
+        birth_date = 1429.1.1
+        birth = carrickfergus
+        dynasty = stuart_dynasty
+        father = sco_james_mor_stuart_albany
+        tag = ULS
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1334.1.13
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    sco_robert_stuart_albany_mor = {
+        first_name = { name = name_robert }
+        culture = scottish
+        religion = catholic
+        birth_date = 1429.1.1
+        birth = carrickfergus
+        dynasty = stuart_dynasty
+        father = sco_james_mor_stuart_albany
+        tag = ULS
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1334.1.13
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    sco_matilda_stuart_albany = {
+        first_name = { name = name_matilda }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1433.1.1
+        birth = carrickfergus
+        dynasty = stuart_dynasty
+        father = sco_james_mor_stuart_albany
+        tag = ULS
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1334.1.13
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    sco_alexander_stuart_albany_mor = {
+        first_name = { name = name_alexander }
+        culture = scottish
+        religion = catholic
+        birth_date = 1437.1.1
+        birth = carrickfergus
+        dynasty = stuart_dynasty
+        father = sco_james_mor_stuart_albany
+        tag = ULS
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1334.1.13
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    sco_isabel_stuart_albany_buchanan = {
+        first_name = { name = Isabel }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1397.1.1
+        death_date = 1440.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_murdoch_stuart_2st_duke_albany
+        mother = sco_iseabail_lennox
+        tag = ULS
+    }
+
+    sco_janet_stuart_de_leon = {
+        first_name = { name = Janet }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1363.1.1
+        death_date = 1379.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_margaret_stuart_swinton = {
+        first_name = { name = name_margaret }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1364.1.1
+        death_date = 1419.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        spouse = sco_john_swinton_14th
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_john_swinton_14th = {
+        first_name = { name = name_john }
+        culture = scottish
+        religion = catholic
+        birth_date = 1359.1.1
+        death_date = 1402.9.14
+        birth = roxburgh
+        dynasty = swinton_dynasty
+        spouse = sco_margaret_stuart_swinton
+        tag = SCO
+    }
+
+    sco_john_swinton_15th = {
+        first_name = { name = name_john }
+        culture = scottish
+        religion = catholic
+        birth_date = 1390.1.1
+        death_date = 1424.1.1
+        birth = roxburgh
+        dynasty = swinton_dynasty
+        father = sco_john_swinton_14th
+        mother = sco_margaret_stuart_swinton
+        tag = SCO
+    }
+
+    sco_mary_stuart_saltoun = {
+        first_name = { name = name_mary }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1365.1.1
+        death_date = 1420.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_joan_stuart_lorne = {
+        first_name = { name = name_joan }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1366.1.1
+        death_date = 1423.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_beatrice_stuart_douglas = {
+        first_name = { name = name_beatrix }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1368.1.1
+        death_date = 1423.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_isabella_stuart_leslie = {
+        first_name = { name = Isabella }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1370.1.1
+        death_date = 1419.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_john_stuart_buchan = {
+        first_name = { name = name_john }
+        culture = scottish
+        religion = catholic
+        birth_date = 1381.1.1
+        death_date = 1424.8.17
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_andrew_stuart_albany = {
+        first_name = { name = name_andrew }
+        culture = scottish
+        religion = catholic
+        birth_date = 1382.1.1
+        death_date = 1413.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_robert_stuart_albany = {
+        first_name = { name = name_robert }
+        culture = scottish
+        religion = catholic
+        birth_date = 1384.1.1
+        death_date = 1432.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_marjorie_stuart_campbell = {
+        first_name = { name = Marjorie }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1384.1.1
+        death_date = 1432.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        spouse = sco_duncan_campbell_1st_lord_campbell
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_duncan_campbell_1st_lord_campbell = {
+        first_name = { name = name_duncan }
+        culture = scottish
+        religion = catholic
+        birth_date = 1390.1.1
+        birth = oban
+        dynasty = campbell_dynasty
+        spouse = sco_marjorie_stuart_campbell
+        tag = SCO  
+    }
+
+    sco_archibald_campbell_gillespic = {
+        first_name = { name = name_archibald }
+        nickname = { name = Gillespic }
+        culture = scottish
+        religion = catholic
+        birth_date = 1405.1.1
+        death_date = 1440.1.1
+        birth = oban
+        dynasty = campbell_dynasty
+        father = sco_duncan_campbell_1st_lord_campbell
+        spouse = sco_elizabeth_somerville_campbell
+        tag = SCO  
+    }
+
+    sco_john_somerville_3rd_lord_somerville = {
+        first_name = { name = name_john }
+        culture = scottish
+        religion = catholic
+        birth_date = 1400.1.1
+        birth = linlithgow
+        dynasty = somerville_dynasty
+        tag = SCO  
+    }
+
+    sco_elizabeth_somerville_campbell = {
+        first_name = { name = name_elizabeth }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1416.1.1
+        birth = linlithgow
+        dynasty = somerville_dynasty
+        father = sco_john_somerville_3rd_lord_somerville
+        spouse = sco_archibald_campbell_gillespic
+        tag = SCO  
+    }
+
+    sco_colin_campbell_2nd_lord_campbell = {
+        first_name = { name = name_colin }
+        culture = scottish
+        religion = catholic
+        birth_date = 1433.1.1
+        birth = oban
+        dynasty = campbell_dynasty
+        father = sco_archibald_campbell_gillespic
+        spouse = sco_elizabeth_somerville_campbell
+        tag = SCO  
+    }
+
+    sco_elizabeth_stuart_fleming = {
+        first_name = { name = name_elizabeth }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1386.1.1
+        death_date = 1437.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_stuart_1st_duke_albany
+        tag = SCO
+    }
+
+    sco_alexander_stuart_buchan = {
+        first_name = { name = name_alexander }
+        nickname = { name = "the Wolf of Badenoch" }
+        culture = scottish
+        religion = catholic
+        birth_date = 1343.1.1
+        death_date = 1405.1.1
+        birth = edinburgh
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        mother = sco_elizabeth_mure
+        tag = SCO
+    }
+
+    sco_alexander_stuart_mar = {
+        first_name = { name = name_alexander }
+        culture = scottish
+        religion = catholic
+        birth_date = 1375.1.1
+        death_date = 1435.7.1
+        birth = edinburgh
+        dynasty = stuart_dynasty
+        father = sco_alexander_stuart_buchan
+        tag = SCO
+    }
+
+    sco_thomas_stuart_mar = {
+        first_name = { name = name_thomas }
+        culture = scottish
+        religion = catholic
+        birth_date = 1411.1.1
+        death_date = 1432.7.1
+        birth = edinburgh
+        dynasty = stuart_dynasty
+        father = sco_alexander_stuart_mar
+        tag = SCO
+    }
+
+    sco_janet_stuart_mar = {
+        first_name = { name = Janet }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1413.1.1
+        birth = edinburgh
+        dynasty = stuart_dynasty
+        father = sco_alexander_stuart_mar
+        tag = SCO
+    }
+
+    loi_margaret_stuart_mac_domhnaill = {
+        first_name = { name = name_margaret }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1343.1.1
+        death_date = 1410.1.1
+        birth = stirling
+        spouse = loi_eoin_mac_aonghais
+        father = sco_robert_ii
+        mother = sco_elizabeth_mure
+        dynasty = stuart_dynasty
+        tag = SCO
+    }
+
+    sco_john_dunbar_earl_moray = {
+        first_name = { name = name_john }
+        culture = scottish
+        religion = catholic
+        birth_date = 1325.1.1
+        death_date = 1392.1.1
+        birth = stirling
+        spouse = sco_marjorie_stuart_dunbar
+        father = sco_patrick_dunbar
+        dynasty = dunbar_dynasty
+        tag = SCO 
+    }
+
+    sco_marjorie_stuart_dunbar = {
+        first_name = { name = name_margaret }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1344.1.1
+        death_date = 1395.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        spouse = sco_john_dunbar_earl_moray
+        father = sco_robert_ii
+        mother = sco_elizabeth_mure
+        tag = SCO
+    }
+
+    sco_thomas_dunbar_earl_moray = {
+        first_name = { name = name_thomas }
+        culture = scottish
+        religion = catholic
+        birth_date = 1365.1.1
+        death_date = 1420.1.1
+        birth = stirling
+        dynasty = dunbar_dynasty
+        father = sco_john_dunbar_earl_moray
+        mother = sco_marjorie_stuart_dunbar
+        tag = SCO 
+    }
+
+    sco_alexander_dunbar_moray = {
+        first_name = { name = name_alexander }
+        culture = scottish
+        religion = catholic
+        birth_date = 1366.1.1
+        death_date = 1425.1.1
+        birth = stirling
+        dynasty = dunbar_dynasty
+        father = sco_john_dunbar_earl_moray
+        mother = sco_marjorie_stuart_dunbar
+        tag = SCO 
+    }
+
+    sco_james_dunbar_moray = {
+        first_name = { name = name_james  }
+        culture = scottish
+        religion = catholic
+        birth_date = 1367.1.1
+        death_date = 1425.1.1
+        birth = stirling
+        dynasty = dunbar_dynasty
+        father = sco_john_dunbar_earl_moray
+        mother = sco_marjorie_stuart_dunbar
+        tag = SCO 
+    }
+
+    sco_euphemia_dunbar_moray = {
+        first_name = { name = name_euphemia  }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1370.1.1
+        death_date = 1436.1.1
+        birth = stirling
+        dynasty = dunbar_dynasty
+        father = sco_john_dunbar_earl_moray
+        mother = sco_marjorie_stuart_dunbar
+        tag = SCO 
+    }
+
+    sco_elizabeth_stuart_hay = {
+        first_name = { name = name_elizabeth }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1345.1.1
+        death_date = 1408.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        spouse = sco_thomas_hay_7th_lord_erroll
+        father = sco_robert_ii
+        mother = sco_elizabeth_mure
+        tag = SCO
+    }
+
+    sco_thomas_hay_7th_lord_erroll = {
+        first_name = { name = name_thomas }
+        culture = scottish
+        religion = catholic
+        birth_date = 1342.1.1
+        death_date = 1406.7.1
+        birth = dunfermline
+        dynasty = hay_dynasty
+        spouse = sco_elizabeth_stuart_hay
+        tag = SCO
+    }
+
+    sco_william_hay_knight = {
+        first_name = { name = name_william }
+        culture = scottish
+        religion = catholic
+        birth_date = 1375.1.1
+        death_date = 1436.1.1
+        birth = dunfermline
+        dynasty = hay_dynasty
+        father = sco_thomas_hay_7th_lord_erroll
+        mother = sco_elizabeth_stuart_hay
+        tag = SCO
+    }
+
+    sco_gilbert_hay_dronlaw = {
+        first_name = { name = name_gilbert }
+        culture = scottish
+        religion = catholic
+        birth_date = 1377.1.1
+        death_date = 1425.1.1
+        birth = dunfermline
+        dynasty = hay_dynasty
+        father = sco_thomas_hay_7th_lord_erroll
+        mother = sco_elizabeth_stuart_hay
+        tag = SCO
+    }
+
+    sco_isabel_stuart_douglas = {
+        first_name = { name = Isabel }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1346.1.1
+        death_date = 1410.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        spouse = sco_james_douglas_2nd_earl_douglas
+        father = sco_robert_ii
+        mother = sco_elizabeth_mure
+        tag = SCO
+    }
+
+    sco_joanna_stuart_lyon = {
+        first_name = { name = name_joanna }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1347.1.1
+        death_date = 1412.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        spouse = sco_john_lyon_1st_glamis
+        father = sco_robert_ii
+        mother = sco_elizabeth_mure
+        tag = SCO
+    }
+
+    sco_john_lyon_1st_glamis = {
+        first_name = { name = name_joanna }
+        culture = scottish
+        religion = catholic
+        birth_date = 1340.1.1
+        death_date = 1382.11.4
+        birth = forfar
+        dynasty = lyon_dynasty
+        spouse = sco_joanna_stuart_lyon
+        tag = SCO
+    }
+
+    sco_john_lyon_2nd_glamis = {
+        first_name = { name = name_joanna }
+        culture = scottish
+        religion = catholic
+        birth_date = 1377.1.1
+        death_date = 1435.1.1
+        birth = forfar
+        dynasty = lyon_dynasty
+        father = sco_john_lyon_1st_glamis
+        mother = sco_joanna_stuart_lyon
+        tag = SCO
+    }
+
+    sco_patrick_lyon_1st_lord_glamis = {
+        first_name = { name = name_patrick }
+        culture = scottish
+        religion = catholic
+        birth_date = 1402.1.1
+        birth = forfar
+        dynasty = lyon_dynasty
+        father = sco_john_lyon_2nd_glamis
+        tag = SCO
+    }
+
+    sco_alexander_lyon_2nd_lord_glamis = {
+        first_name = { name = name_alexander }
+        culture = scottish
+        religion = catholic
+        birth_date = 1430.1.1
+        birth = forfar
+        dynasty = lyon_dynasty
+        father = sco_patrick_lyon_1st_lord_glamis
+        tag = SCO
+    }
+
+    sco_john_lyon_3rd_lord_glamis = {
+        first_name = { name = name_john }
+        culture = scottish
+        religion = catholic
+        birth_date = 1431.1.1
+        birth = forfar
+        dynasty = lyon_dynasty
+        father = sco_patrick_lyon_1st_lord_glamis
+        tag = SCO
+    }
+
+    sco_catherine_stuart_grugar = {
+        first_name = { name = name_catherine }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1350.1.1
+        death_date = 1415.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        mother = sco_elizabeth_mure
+        tag = SCO
+    }
+
+    sco_david_stuart_strathearn = {
+        first_name = { name = name_david }
+        culture = scottish
+        religion = catholic
+        birth_date = 1356.1.1
+        death_date = 1389.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        mother = ros_euphemia_de_ross
+        tag = SCO
+    }
+
+    sco_euphemia_stuart_strathearn = {
+        first_name = { name = name_euphemia }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1386.1.1
+        death_date = 1434.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_david_stuart_strathearn
+        tag = SCO
+    }
+
+    sco_patrick_graham_menteith = {
+        first_name = { name = name_patrick }
+        culture = scottish
+        religion = catholic
+        birth_date = 1383.1.1
+        death_date = 1434.1.1
+        birth = clackmannan
+        dynasty = graham_dynasty
+        tag = SCO
+    }
+
+    sco_malise_graham_1st_earl_menteith = {
+        first_name = { name = name_malise }
+        culture = scottish
+        religion = catholic
+        birth_date = 1407.1.1
+        birth = clackmannan
+        father = sco_patrick_graham_menteith
+        mother = sco_euphemia_stuart_strathearn
+        dynasty = graham_dynasty
+        tag = SCO
+    }
+
+    sco_patrick_graham_2nd_menteith = {
+        first_name = { name = name_patrick }
+        culture = scottish
+        religion = catholic
+        birth_date = 1430.1.1
+        birth = clackmannan
+        father = sco_malise_graham_1st_earl_menteith
+        dynasty = graham_dynasty
+        tag = SCO
+    }
+
+    sco_alexander_graham_menteith = {
+        first_name = { name = name_alexander }
+        culture = scottish
+        religion = catholic
+        birth_date = 1432.1.1
+        birth = clackmannan
+        father = sco_malise_graham_1st_earl_menteith
+        dynasty = graham_dynasty
+        tag = SCO
+    }
+
+    sco_walter_stuart_atholl = {
+        first_name = { name = name_david }
+        culture = scottish
+        religion = catholic
+        birth_date = 1360.1.1
+        death_date = 1437.3.24
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        mother = ros_euphemia_de_ross
+        tag = SCO
+    }
+
+    sco_david_stuart_atholl = {
+        first_name = { name = name_david }
+        culture = scottish
+        religion = catholic
+        birth_date = 1383.1.1
+        death_date = 1435.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_walter_stuart_atholl
+        tag = SCO
+    }
+
+    sco_alan_stuart_atholl = {
+        first_name = { name = name_alan }
+        culture = scottish
+        religion = catholic
+        birth_date = 1386.1.1
+        death_date = 1431.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_walter_stuart_atholl
+        tag = SCO
+    }
+
+    sco_elizabeth_stuart_lindsay = {
+        first_name = { name = name_elizabeth }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1362.1.1
+        death_date = 1425.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        mother = ros_euphemia_de_ross
+        tag = SCO
+    }
+
+    sco_edigia_stuart_douglas_nithsdale = {
+        first_name = { name = Edigia }
+        culture = scottish
+        religion = catholic
+        female = yes
+        birth_date = 1365.1.1
+        death_date = 1430.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        mother = ros_euphemia_de_ross
+        tag = SCO
+    }
+
+    sco_john_stuart_bute = {
+        first_name = { name = name_john }
+        culture = scottish
+        religion = catholic
+        birth_date = 1360.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        tag = SCO
+    }
+
+    sco_thomas_stuart_archdeacon = {
+        first_name = { name = name_thomas }
+        culture = scottish
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1363.1.1
+        death_date = 1409.1.1
+        birth = stirling
+        dynasty = stuart_dynasty
+        father = sco_robert_ii
+        tag = SCO
+    }
+
+    sco_james_i_stuart = {
         first_name = { name = name_james }
         culture = scottish
         religion = catholic
         birth_date = 1394.7.25
         death_date = 1437.2.21
         birth = dunfermline
-        dynasty = stewart_dynasty
-        father = sco_robert_iii_stewart
+        dynasty = stuart_dynasty
+        father = sco_robert_iii_stuart
         tag = SCO
     }
 
-    sco_james_ii_stewart = {
+    sco_james_ii_stuart = {
         first_name = { name = name_james }
         culture = scottish
         religion = catholic
         birth_date = 1430.10.16
         birth = edinburgh
-        dynasty = stewart_dynasty
-        father = sco_james_i_stewart
+        dynasty = stuart_dynasty
+        father = sco_james_i_stuart
         mother = sco_joan_beaufort
         tag = SCO
     }
@@ -104232,7 +105463,7 @@ character_db={
         culture = highland
         religion = catholic
         birth_date = 1301.1.1
-        death_date = 1361.7.27
+        death_date = 1357.1.1
         birth = strathearn
         dynasty = strathearn_dynasty
         tag = ORK
@@ -119748,16 +120979,28 @@ character_db={
         tag = ENG
     }
 
+    eng_isabel_york_bourchier = {
+        first_name = { name = Isabel }
+        culture = english
+        religion = catholic
+        birth_date = 1409.1.1
+        death_date = 1415.8.5
+        dynasty = york_dynasty
+        father = eng_richard_york_cambridge
+        mother = eng_anne_mortimer_york
+        tag = ENG
+    }
+
     eng_richard_york_3rd_duke = {#leader of York
         first_name = { name = name_richard }
         culture = english
         religion = catholic
-        adm = 68 dip = 61 mil = 73
+        adm = 74 dip = 61 mil = 83
         birth_date = 1411.9.21
         birth = york
         dynasty = york_dynasty
         father = eng_richard_york_cambridge
-        mother = eng_anne_de_mortimer
+        mother = eng_anne_mortimer_york
         tag = ENG
     }
 
@@ -123065,15 +124308,15 @@ character_db={
         tag = ENG
     }
 
-    eng_anne_de_mortimer = {
+    eng_anne_mortimer_york = {
         first_name = { name = name_anna }
-        last_name = { name = Mortimer }
         culture = english
         religion = catholic
         female = yes
         birth_date = 1390.12.27
         death_date = 1411.9.22
         spouse = eng_richard_york_cambridge
+        dynasty = mortimer_dynasty
         tag = ENG
     }
 
@@ -126115,7 +127358,7 @@ character_db={
         estate = burghers_estate # was a very low noble
         birth = bedford
         birth_date = 1290.1.1 # unknown
-        death_date = 1355.9.25
+        death_date = 1355.1.1
         tag = PLE
         adm = 9 # known for his terrible administration
     }
@@ -126126,7 +127369,7 @@ character_db={
         religion = judaism
         estate = burghers_estate
         birth_date = 1290.1.1 # unknown
-        death_date = 1361.1.10
+        death_date = 1361.1.1
         birth = london
         tag = PLE
     }
@@ -128484,5 +129727,81 @@ character_db={
         father = dse_antoin_o_moore
         dynasty = o_moore_dynasty
         tag = DSE
+    }
+
+    ork_henry_ii_sinclair = {
+        first_name = { name = name_henry }
+        culture = scottish
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1375.1.1 # unknown
+        death_date = 1420.1.1
+        birth = edinburgh
+        #father = ork_henry_i_sinclair
+        dynasty = sinclair_dynasty
+        tag = ORK
+    }
+
+    ork_william_sinclair = {
+        first_name = { name = name_william }
+        culture = scottish
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1408.1.1 # unknown
+        birth = edinburgh
+        father = ork_henry_ii_sinclair
+        dynasty = sinclair_dynasty
+        tag = ORK
+    }
+
+    sco_beatrice_sinclair_douglas = {
+        first_name = { name = name_beatrix }
+        culture = scottish
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1409.1.1 # unknown
+        birth = edinburgh
+        father = ork_henry_ii_sinclair
+        spouse = sco_james_douglas_7th_earl
+        dynasty = sinclair_dynasty
+        tag = ORK
+    }
+
+    sco_walter_leslie = {
+        first_name = { name = name_walter }
+        culture = scottish
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1409.1.1 # unknown
+        birth = aberdeen
+        dynasty = leslie_dynasty
+        tag = ROS
+    }
+
+    sco_walter_leslie = {
+        first_name = { name = name_walter }
+        culture = scottish
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1340.1.1 # unknown
+        death_date = 1382.2.27
+        birth = aberdeen
+        dynasty = leslie_dynasty
+        tag = ROS
+    }
+
+    sco_alexander_leslie = {
+        first_name = { name = name_alexander }
+        culture = scottish
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1370.1.1 # unknown
+        death_date = 1402.5.8
+        birth = aberdeen
+        father = sco_walter_leslie
+        dynasty = leslie_dynasty
+        tag = ROS
     }
 }
