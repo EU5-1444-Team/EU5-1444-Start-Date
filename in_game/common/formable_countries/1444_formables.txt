@@ -252,9 +252,9 @@ AFG_f = {
         kandahar_province
 		ghazni_province
     }
-    form_effect = {
-    }
-}
+	form_effect = {
+	}
+ }
 
 KHP_f = {
 	level = 1
@@ -700,8 +700,8 @@ POR_f = {
 }
 
 NYE_f = {
-	# Nanyue
-	level = 2
+	# Nanyue / Nam Việt
+	level = 3
 	required_locations_fraction = 0.8
 	rule = historical
 	potential = {
@@ -744,6 +744,113 @@ NYE_f = {
 		haibei_hainan_area
 		red_river_delta_area
 	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+
+BOA_f = {
+	# Balhae / Bóhǎi
+	level = 2
+	required_locations_fraction = 0.7
+	rule = historical
+	
+	potential = {
+		OR = {
+			culture ?= { has_culture_group = culture_group:jurchen_group }
+			culture = culture:korean_culture
+		}
+	}
+	
+	allow = {
+		NOT = { tag = MCH } # The Jurchen Jin would want to form Qing.
+		NOT = { tag = JOE } # Joseon wouldn't want to form Balhae.
+		owns = location:shangjing
+		owns = location:hamheung
+	}
+	
+	name = BOA
+	flag = BOA
+	adjective = BOA_ADJ
+	tag = BOA
+	color = map_BOA
+	
+	areas = {
+		liaodong_area
+		songhua_area
+		ussuri_area
+		gwanbuk_area
+		gwanseo_area
+	}
+	
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+
+CHI_f = {
+	level = 4
+	required_locations_fraction = 0.7
+	rule = historical
+
+	potential = {
+		culture = {
+			OR = {
+				has_culture_group = culture_group:chinese_group
+				has_culture_group = culture_group:confucian_group
+			}
+		}
+		NOT = { exists = international_organization:middle_kingdom }
+	}
+
+	allow = {
+		NOT = { is_situation_active = situation:red_turban_rebellions }
+	}
+
+	tag = CHI
+
+	regions = {
+		west_china_region east_china_region north_china_region south_china_region
+	}
+	form_effect = {
+		change_government_type = government_type:monarchy
+		rtr_recreate_middle_kingdom = yes
+		set_country_rank_effect = { rank = country_rank:rank_empire }
+	}
+
+}
+
+DNM_f = {
+	# Đại Nam
+	level = 3
+	required_locations_fraction = 0.8
+	rule = historical
+	
+	potential = {
+		culture = culture:vietnamese_culture
+	}
+	
+	allow = {
+	}
+	
+	name = DNM
+	flag = DNM
+	adjective = DNM_ADJ
+	tag = DNM
+	color = map_DNM
+	
+	areas = {
+		red_river_delta_area
+		lower_mekong_area
+		champa_area
+	}
+	
 	form_effect = {
 	}
 }
