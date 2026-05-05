@@ -40,6 +40,7 @@
 # (no leader) Hui Rebellion       -> rtr_release_tag_HUZ
 # (no leader) Han Rebellion       -> rtr_release_tag_CCC
 # (no leader) Zhao Rebellion      -> rtr_release_tag_CZA
+# (no leader) Hlai Rebellion      -> rtr_release_tag_CII
 #========================================================
 
 
@@ -69,6 +70,7 @@ scripted_effect rtr_cleanup_variables = {
     if = { limit = { has_variable = rtr_release_tag_SRY } remove_variable = rtr_release_tag_SRY }
     if = { limit = { has_variable = rtr_release_tag_CCC } remove_variable = rtr_release_tag_CCC }
     if = { limit = { has_variable = rtr_release_tag_CZA } remove_variable = rtr_release_tag_CZA }
+    if = { limit = { has_variable = rtr_release_tag_CII } remove_variable = rtr_release_tag_CII }
     if = { limit = { has_variable = rtr_country_additional_releaser_counter } remove_variable = rtr_country_additional_releaser_counter }
     every_country = { limit = { has_variable = rtr_yuan_allegiance } remove_variable = rtr_yuan_allegiance }
     if = { limit = { has_global_variable_list = rtr_loyal_faction } clear_global_variable_list = rtr_loyal_faction }
@@ -101,6 +103,7 @@ scripted_effect rtr_setup_countries_to_release = {
     set_variable = rtr_release_tag_SRY
     set_variable = rtr_release_tag_CCC
     set_variable = rtr_release_tag_CZA
+    set_variable = rtr_release_tag_CII
     #Determines how many countries China will release later on after the historical ones are done
     set_variable = { name = rtr_country_additional_releaser_counter value = 10 }
 }
@@ -1945,6 +1948,55 @@ red_turban_rebellions.26 = {
     }
 }
 
+#========================================================
+# CII (Hlai) Rebellion – No Leader, Hlai Culture
+#========================================================
+red_turban_rebellions.27 = {
+    type = country_event
+    category = situation_event
+    title = red_turban_rebellions.revolter.title
+    desc = red_turban_rebellions.27.desc
+    illustration_tags = {
+        11 = armed
+        11 = exterior
+    }
+    major = yes
+    major_trigger = { rtr_can_see_the_situation = yes }
+
+    trigger = {
+        rtr_can_release_tag = {
+            tag = CII
+            location = qiongshan
+        }
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+        rtr_create_revolter_capital = { location = qiongshan tag = CII }
+        rtr_add_cores_to_province = { province_definition = wananjun_province tag = CII }
+        rtr_add_cores_to_province = { province_definition = qiongzhou_province tag = CII }
+        rtr_add_cores_to_province = { province_definition = nanningjun_province tag = CII }
+    }
+
+    option = {
+        name = red_turban_rebellions.27.a
+        rtr_release_warlord_tag = { tag = CII culture = culture:hlai_culture accepted_culture = culture:qiong_culture }
+        c:CII = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = c:CII }
+    }
+
+    option = {
+        name = red_turban_rebellions.play_as_tag
+        trigger = { hidden_trigger = { is_ai = no } }
+        rtr_release_warlord_tag = { tag = CII culture = culture:hlai_culture accepted_culture = culture:qiong_culture }
+        scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
+        change_player = scope:target_country
+        hidden_effect = {
+            scope:target_country = { trigger_event_non_silently = { id = red_turban_rebellions.101 days = 1 } }
+        }
+    }
+}
 #Generic Culture Release
 red_turban_rebellions.100 = {
     type = country_event
