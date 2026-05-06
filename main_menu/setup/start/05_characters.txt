@@ -10170,15 +10170,361 @@ character_db={
     }
 
     ### baduspanid_dynasty | BDS ###
+    bds_baduspan_i = {
+        first_name = { name = name_baduspan }
+        culture = mazanderani_culture
+        religion = zoroastrian
+        adm = 5 dip = 5 mil = 5
+        birth_date = 630.1.1
+        death_date = 694.1.1
+        birth = kojur
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_khurzad_ibn_baduspan = {
+        first_name = { name = name_khurzad }
+        culture = mazanderani_culture
+        religion = zoroastrian
+        birth_date = 660.1.1
+        death_date = 723.1.1
+        birth = kojur
+        father = bds_baduspan_i
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_baduspan_ii = {
+        first_name = { name = name_baduspan }
+        culture = mazanderani_culture
+        religion = zoroastrian
+        birth_date = 695.1.1
+        death_date = 762.1.1
+        birth = kojur
+        father = bds_khurzad_ibn_baduspan
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_shahriyar_i = {
+        first_name = { name = name_shahriyar }
+        culture = mazanderani_culture
+        religion = zoroastrian
+        adm = 5 dip = 5 mil = 5
+        birth_date = 730.1.1
+        death_date = 791.1.1
+        birth = kojur
+        father = bds_baduspan_ii
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_vanda_umid = {
+        first_name = { name = name_vanda_umid }
+        culture = mazanderani_culture
+        religion = zoroastrian
+        adm = 5 dip = 5 mil = 5
+        birth_date = 760.1.1
+        death_date = 822.1.1
+        birth = kojur
+        father = bds_shahriyar_i
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_abdallah_ibn_vanda_umid = {
+        first_name = { name = name_abdallah }
+        culture = mazanderani_culture
+        religion = sunni
+        adm = 5 dip = 5 mil = 5
+        birth_date = 795.1.1
+        death_date = 855.1.1
+        birth = kojur
+        father = bds_vanda_umid
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_afridun_ibn_karan = {
+        first_name = { name = name_afridun }
+        culture = mazanderani_culture
+        religion = sunni
+        adm = 5 dip = 5 mil = 5
+        birth_date = 825.1.1
+        death_date = 887.1.1 
+        birth = kojur
+        dynasty = baduspanid_dynasty
+        father = bds_abdallah_ibn_vanda_umid
+        tag = BDS
+    }
+ 
+    bds_hazar_sandan = {
+        first_name = { name = name_hazar_sandan }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 855.1.1
+        death_date = 899.1.1
+        birth = kojur
+        dynasty = baduspanid_dynasty
+        father = bds_afridun_ibn_karan
+        tag = BDS
+    }
+ 
+    bds_shahriyar_iii_ibn_jamshid = {
+        first_name = { name = name_shahriyar }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 870.1.1
+        death_date = 938.1.1
+        birth = kojur
+        dynasty = baduspanid_dynasty
+        father = bds_hazar_sandan
+        tag = BDS
+    }
+ 
+    bds_muhammad_baduspanid = {
+        first_name = { name = name_muhammad }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 905.1.1
+        death_date = 965.1.1
+        birth = kojur
+        father = bds_shahriyar_iii_ibn_jamshid
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_istwandad = {
+        first_name = { name = name_istwandad }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 940.1.1
+        death_date = 974.1.1
+        birth = kojur
+        father = bds_muhammad_baduspanid
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_zarrin_kamar_i = {
+        first_name = { name = name_zarrin_kamar }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 950.1.1
+        death_date = 1010.1.1
+        birth = kojur
+        father = bds_istwandad
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_ba_harb = {
+        first_name = { name = name_ba_harb }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 980.1.1
+        death_date = 1036.1.1
+        birth = kojur
+        father = bds_zarrin_kamar_i
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_fakhr_al_dawla_namavar_i = {
+        first_name = { name = name_fakhr }
+        nickname = { name = nick_al_dawla_namavar }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1010.1.1
+        death_date = 1067.1.1
+        birth = kojur
+        father = bds_ba_harb
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_ardashir_baduspanid = {
+        first_name = { name = name_ardashir }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1040.1.1
+        death_date = 1092.1.1
+        birth = kojur
+        father = bds_fakhr_al_dawla_namavar_i
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_hazarasp_i = {
+        first_name = { name = name_hazarasp }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1060.1.1
+        death_date = 1132.1.1
+        birth = kojur
+        father = bds_ardashir_baduspanid
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_shahrivash = {
+        first_name = { name = name_shahrivash }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1090.1.1
+        death_date = 1168.1.1
+        birth = kojur
+        father = bds_hazarasp_i
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_kai_kaus_i = {
+        first_name = { name = name_kai_kaus }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1130.1.1
+        death_date = 1184.1.1
+        birth = kojur
+        father = bds_shahrivash
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_hazarasp_ii = {
+        first_name = { name = name_hazarasp }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1155.1.1
+        death_date = 1209.1.1
+        birth = kojur
+        father = bds_kai_kaus_i
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_zarrin_kamar_ii = {
+        first_name = { name = name_zarrin_kamar }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1180.1.1
+        death_date = 1213.1.1
+        birth = kojur
+        father = bds_hazarasp_ii
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_bisutun_i = {
+        first_name = { name = name_bisutun }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1190.1.1
+        death_date = 1223.1.1
+        birth = kojur
+        father = bds_zarrin_kamar_ii
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_fakhr_al_dawla_namavar_ii = {
+        first_name = { name = name_fakhr }
+        nickname = { name = nick_al_dawla_namavar }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1200.1.1
+        death_date = 1242.1.1
+        birth = kojur
+        father = bds_bisutun_i
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_hosam_al_dawla_ardashir = {
+        first_name = { name = name_hosam }
+        nickname = { name = nick_al_dawla_ardashir }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1210.1.1
+        death_date = 1242.6.1
+        birth = kojur
+        father = bds_fakhr_al_dawla_namavar_ii
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_shahragim = {
+        first_name = { name = name_shahragim }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1215.1.1
+        death_date = 1272.1.1
+        birth = kojur
+        father = bds_fakhr_al_dawla_namavar_ii
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_namawar_shah_ghazi = {
+        first_name = { name = name_namawar }
+        nickname = { name = nick_shah_ghazi }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1245.1.1
+        death_date = 1301.1.1
+        birth = kojur
+        father = bds_shahragim
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_kay_khusraw = {
+        first_name = { name = name_kay_khusraw }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1270.1.1
+        death_date = 1311.1.1
+        birth = kojur
+        father = bds_namawar_shah_ghazi
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_shams_al_muluk_muhammad = {
+        first_name = { name = name_shams }
+        nickname = { name = nick_al_muluk_muhammad }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1285.1.1
+        death_date = 1317.1.1
+        birth = kojur
+        father = bds_kay_khusraw
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_nasir_al_din_shahriyar = {
+        first_name = { name = name_nasir }
+        nickname = { name = nick_al_din_shahriyar }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1295.1.1
+        death_date = 1325.1.1
+        birth = kojur
+        father = bds_shams_al_muluk_muhammad
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
 
     bds_taj_al_dawla_ziyar = {
         first_name = { name = name_taj }
         nickname = { name = nick_al_dawla_ziyar }
         culture = mazanderani_culture
         religion = shia
-        birth_date = 1270.1.1 #Unknown
+        birth_date = 1270.1.1
         birth = kojur
         death_date = 1333.1.1
+        father = bds_nasir_al_din_shahriyar
         dynasty = baduspanid_dynasty
         tag = BDS
     }
@@ -10188,7 +10534,7 @@ character_db={
         nickname = { name = nick_al_dawla_iskandar }
         culture = mazanderani_culture
         religion = shia
-        birth_date = 1290.1.1 #Unknown
+        birth_date = 1290.1.1
         death_date = 1358.8.6
         birth = kojur
         father = bds_taj_al_dawla_ziyar
@@ -10202,12 +10548,74 @@ character_db={
         nickname = { name = nick_al_dawla_shah_ghazi }
         culture = mazanderani_culture
         religion = shia
-        birth_date = 1310.1.1 #Unknown
+        birth_date = 1310.1.1
         death_date = 1378.3.15
         birth = kojur
         father = bds_taj_al_dawla_ziyar
         dynasty = baduspanid_dynasty
         spouse = "random"
+        tag = BDS
+    }
+        bds_azod_al_dawla_qubad = {
+        first_name = { name = name_azod }
+        nickname = { name = nick_al_dawla_qubad }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1345.1.1
+        death_date = 1381.1.1
+        birth = kojur
+        father = bds_fakhr_al_dawla_shah_ghazi
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_saad_al_dawla_tus = {
+        first_name = { name = name_saad }
+        nickname = { name = nick_al_dawla_tus }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1355.1.1
+        death_date = 1394.1.1
+        birth = kojur
+        father = bds_taj_al_dawla_ziyar
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_bisutun_ii = {
+        first_name = { name = name_bisutun }
+        culture = mazanderani_culture
+        religion = sunni
+        birth_date = 1330.1.1
+        death_date = 1385.1.1
+        birth = kojur
+        father = bds_taj_al_dawla_ziyar 
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_gustahm = {
+        first_name = { name = name_gustahm }
+        culture = mazanderani_culture
+        religion = sunni
+        adm = 34 dip = 66 mil = 67
+        birth_date = 1305.1.1
+        death_date = 1355.1.1 
+        birth = kojur
+        father = bds_taj_al_dawla_ziyar
+        dynasty = baduspanid_dynasty
+        tag = BDS
+    }
+ 
+    bds_kayumarth_i = {
+        first_name = { name = name_kayumarth }
+        culture = mazanderani_culture
+        religion = shia
+        adm = 56 dip = 66 mil = 70
+        birth_date = 1370.1.1
+        birth = kojur
+        father = bds_bisutun_ii
+        dynasty = baduspanid_dynasty
         tag = BDS
     }
 
@@ -70080,32 +70488,225 @@ character_db={
         tag = TUR
     }
 
-    ### mihrabanid_dynasty | MIH ###
+    ### mihrabanid_dynasty | MIH ### Mihrabanid
 
-    mih_qutb_al_din_muhammad = {
-        first_name = { name = name_qutb.name_al_din }
-        nickname = { name = name_muhammad }
-        culture = farsi_culture
-        religion = sunni
-        birth_date = 1300.1.1 #Unknown
-        death_date = 1370.4.6
-        birth = zaranj
-        dynasty = mihrabanid_dynasty
-        tag = MIH
-    }
+	mih_masud = {
+		first_name = { name = name_masud }
+		culture = farsi_culture
+		religion = sunni
+		adm = 62 dip = 58 mil = 71
+		birth_date = 1187.1.1
+		death_date = 1234.1.1
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
 
-    mih_taj_al_din_ibn_qutb_al_din = {
-        first_name = { name = name_taj.name_al_din }
-        nickname = { name = nick_ibn_qutb_al_din }
-        culture = farsi_culture
-        religion = sunni
-        birth_date = 1320.1.1 #Unknown
-        death_date = 1390.9.18
-        birth = zaranj
-        father = mih_qutb_al_din_muhammad
-        dynasty = mihrabanid_dynasty
-        tag = MIH
-    }
+	mih_shams_ali = {
+		first_name = { name = name_ali }
+		nickname = { name = shams_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 55 dip = 62 mil = 60
+		birth_date = 1210.1.1
+		death_date = 1255.1.1
+		father = mih_masud
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_abul_fath = {
+		first_name = { name = name_abul_fath }
+		culture = farsi_culture
+		religion = sunni
+		adm = 15 dip = 66 mil = 32
+		birth_date = 1205.1.1
+		death_date = 1250.1.1
+		father = mih_masud
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_nasir_muhammad = {
+		first_name = { name = name_muhammad }
+		nickname = { name = nasir_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 88 dip = 75 mil = 68
+		birth_date = 1240.1.1
+		death_date = 1318.1.1
+		father = mih_abul_fath
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_nusrat_muhammad = {
+		first_name = { name = name_muhammad }
+		nickname = { name = nusrat_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 52 dip = 50 mil = 55
+		birth_date = 1275.1.1
+		death_date = 1331.1.1
+		father = mih_nasir_muhammad
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_rukn_mahmud = {
+		first_name = { name = name_mahmud }
+		nickname = { name = rukn_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 40 dip = 35 mil = 50
+		birth_date = 1270.1.1
+		death_date = 1325.1.1
+		father = mih_nasir_muhammad
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_qutb_al_din_muhammad = {
+		first_name = { name = name_muhammad }
+		nickname = { name = qutb_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 60 dip = 55 mil = 62
+		birth_date = 1300.1.1
+		death_date = 1346.1.1
+		father = mih_nusrat_muhammad
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_taj_al_din_ibn_qutb_al_din = {
+		first_name = { name = name_muhammad }
+		nickname = { name = taj_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 45 dip = 40 mil = 38
+		birth_date = 1320.1.1
+		death_date = 1351.1.1
+		father = mih_qutb_al_din_muhammad
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_jalal_mahmud = {
+		first_name = { name = name_mahmud }
+		nickname = { name = jalal_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 50 dip = 45 mil = 45
+		birth_date = 1322.1.1
+		death_date = 1352.1.1
+		father = mih_qutb_al_din_muhammad
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_izz_mahmud = {
+		first_name = { name = name_mahmud }
+		nickname = { name = izz_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 58 dip = 60 mil = 64
+		birth_date = 1330.1.1
+		death_date = 1380.1.1
+		father = mih_rukn_mahmud
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_qutb_izz = {
+		first_name = { name = name_muhammad }
+		nickname = { name = qutb_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 40 dip = 40 mil = 45
+		birth_date = 1355.1.1
+		death_date = 1386.1.1
+		father = mih_izz_mahmud
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_masud_shihna = {
+		first_name = { name = name_masud }
+		culture = farsi_culture
+		religion = sunni
+		adm = 64 dip = 21 mil = 1
+		birth_date = 1315.1.1
+		death_date = 1370.1.1
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_shah_i_shahan = {
+		first_name = { name = name_abul_fath }
+		nickname = { name = taj_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 72 dip = 70 mil = 81
+		birth_date = 1349.1.1
+		death_date = 1403.1.1
+		father = mih_masud_shihna
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_qutb_shams = {
+		first_name = { name = name_muhammad }
+		nickname = { name = qutb_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 64 dip = 60 mil = 66
+		birth_date = 1366.1.1
+		death_date = 1419.2.11
+		father = mih_shah_i_shahan
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_shams_ali_ii = {
+		first_name = { name = name_ali }
+		nickname = { name = shams_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 55 dip = 58 mil = 52
+		birth_date = 1387.1.1
+		death_date = 1439.1.1
+		father = mih_qutb_shams
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
+
+	mih_nizam_yahya = {
+		first_name = { name = name_yahya }
+		nickname = { name = nizam_al_din }
+		culture = farsi_culture
+		religion = sunni
+		adm = 68 dip = 62 mil = 70
+		birth_date = 1417.1.1
+		father = mih_shams_ali_ii
+		birth = zaranj
+		dynasty = mihrabanid_dynasty
+		tag = MIH
+	}
 
     ### mikamoto_dynasty | JAP ###
 
@@ -108609,50 +109210,10 @@ character_db={
         ruler_trait = bold_fighter
     }
 
-    ### timurid_dynasty | TIF ###
-
-    tif_ibrahim_father = {
-        first_name = { name = "Ibrahim_Sultan" }
-        culture = khorezmian_culture
-        religion = sunni
-        birth_date = 1394.1.1
-        death_date = 1435.4.3
-        father = tim_shahrukh_mirza
-        dynasty = timurid_dynasty
-        tag = TIF
-    }
-
-    tif_abdullah_mirza = {
-        first_name = { name = "Abdullah" }
-        culture = farsi_culture
-        religion = sunni
-        adm = 30 dip = 35 mil = 30
-        birth_date = 1433.1.1
-        father = tif_ibrahim_father
-        dynasty = timurid_dynasty
-        tag = TIF
-    }
-
-    ### timurid_dynasty | TII ###
-
-    tii_sultan_muhammad = {
-        first_name = { name = name_muhammad }
-        culture = farsi_culture
-        religion = sunni
-        adm = 45 dip = 40 mil = 55
-        birth_date = 1418.1.1
-        father = tim_baysunghur_mirza
-        dynasty = timurid_dynasty
-        tag = TII
-        ruler_trait = expansionist
-        ruler_trait = charismatic_negotiator
-    }
-
-    ### timurid_dynasty | TIM ###
-
-    tim_timur = {
-        first_name = { name = "Timur" }
-        culture = khorezmian_culture
+    ###Timurid Dynasty###
+	tim_timur = {
+        first_name = { name = name_timur }
+        culture = moghul_culture
         religion = sunni
         adm = 75 dip = 85 mil = 99
         birth_date = 1336.4.8
@@ -108665,55 +109226,125 @@ character_db={
         ruler_trait = martial_educator
     }
 
+    # Line of Jahangir
     tim_jahangir_mirza = {
-        first_name = { name = "Jahangir" }
-        culture = khorezmian_culture
+        first_name = { name = name_jahangir }
+        culture = moghul_culture
         religion = sunni
+		adm = 60 dip = 65 mil = 70
         birth_date = 1356.1.1
         death_date = 1376.1.1
-        father = tim_timur
-        dynasty = timurid_dynasty
-        tag = TIM
-    }
-
-    tim_miran_shah = {
-        first_name = { name = "Miran-Shah" }
-        culture = khorezmian_culture
-        religion = sunni
-        birth_date = 1366.1.1
-        death_date = 1408.4.20
+		birth = samarkand
         father = tim_timur
         dynasty = timurid_dynasty
         tag = TIM
     }
 
     tim_muhammad_sultan_mirza = {
-        first_name = { name = "Muhammad_Mirza" }
-        culture = khorezmian_culture
+        first_name = { name = name_muhammad }
+        culture = moghul_culture
         religion = sunni
+		adm = 55 dip = 60 mil = 75
         birth_date = 1375.1.1
         death_date = 1403.3.13
+		birth = samarkand
         father = tim_jahangir_mirza
         dynasty = timurid_dynasty
         tag = TIM
     }
-
-    tim_pir_muhammad_mirza = {
-        first_name = { name = "Pir_Muhammad_Mirza" }
-        culture = khorezmian_culture
+	
+	tim_muhammad_jahangir = {
+        first_name = { name = name_muhammad.name_jahangir }
+        culture = moghul_culture
         religion = sunni
-        birth_date = 1376.1.1
-        death_date = 1407.2.22
-        father = tim_jahangir_mirza
+		adm = 45 dip = 40 mil = 50
+        birth_date = 1395.1.1
+		birth = samarkand
+        father = tim_muhammad_sultan_mirza
+        dynasty = timurid_dynasty
+        tag = TIH
+    }
+	
+	tim_sind_qaydu_bahadur = {
+        first_name = { name = name_sind_qaydu_bahadur }
+        culture = moghul_culture
+        religion = sunni
+		adm = 40 dip = 40 mil = 45
+        birth_date = 1425.1.1
+		birth = samarkand
+        father = tim_muhammad_jahangir
+        dynasty = timurid_dynasty
+        tag = TKK
+    }
+
+    # Line of Miran Shah
+    tim_miran_shah = {
+        first_name = { name = name_miran }
+        culture = moghul_culture
+        religion = sunni
+		adm = 45 dip = 40 mil = 70
+        birth_date = 1366.1.1
+        death_date = 1408.4.20
+		birth = samarkand
+        father = tim_timur
+        dynasty = timurid_dynasty
+        tag = TIM
+		has_patronym = no
+    }
+
+    tim_muhammad_mirza = {
+        first_name = { name = name_muhammad }
+        culture = moghul_culture
+        religion = sunni
+		adm = 40 dip = 40 mil = 45
+        birth_date = 1387.1.1
+        death_date = 1426.1.1
+		birth = samarkand
+        father = tim_miran_shah
         dynasty = timurid_dynasty
         tag = TIM
     }
 
+    tim_abu_said_mirza = {
+        first_name = { name = name_abu_said }
+        culture = moghul_culture
+        religion = sunni
+        adm = 65 dip = 60 mil = 75
+        birth_date = 1424.1.1
+		birth = samarkand
+        father = tim_muhammad_mirza
+        dynasty = timurid_dynasty
+        tag = TIA
+    }
+	tim_umar_shaykh_mirza = {
+        first_name = { name = name_umar.name_shaykh }
+        culture = moghul_culture
+        religion = sunni
+        adm = 50 dip = 55 mil = 60
+        birth_date = 1456.1.1
+		birth = khujand
+        father = tim_abu_said_mirza
+        dynasty = timurid_dynasty
+        tag = TIA
+    }
+	tim_babur = {
+        first_name = { name = name_babur }
+        culture = moghul_culture
+        religion = sunni
+        adm = 80 dip = 75 mil = 85
+        birth_date = 1483.1.1
+		birth = khujand
+        father = tim_umar_shaykh_mirza
+        dynasty = timurid_dynasty
+        tag = TIA
+    }
+
+    # Line of Shah Rukh
     tim_shahrukh_mirza = {
-        first_name = { name = "Shahrukh_Mirza" }
-        culture = khorezmian_culture
+        first_name = { name = name_rukh.name_mirza }
+        culture = moghul_culture
         religion = sunni
-        adm = 70 dip = 75 mil = 50
+        adm = 70 dip = 75 mil = 55
         birth_date = 1377.8.20
         birth = samarkand
         father = tim_timur
@@ -108731,97 +109362,12 @@ character_db={
         }
     }
 
-    tim_khalil_sultan = {
-        first_name = { name = "Khalil_Sultan" }
-        culture = khorezmian_culture
-        religion = sunni
-        birth_date = 1384.1.1
-        death_date = 1411.11.4
-        father = tim_miran_shah
-        dynasty = timurid_dynasty
-        tag = TIM
-    }
-
-    tim_muhammad_mirza = {
-        first_name = { name = "Muhammad_Mirza" }
-        culture = khorezmian_culture
-        religion = sunni
-        birth_date = 1387.1.1 #Unknown
-        death_date = 1426.1.1 #Unknown
-        father = tim_miran_shah
-        dynasty = timurid_dynasty
-        tag = TIM
-    }
-
-    tim_baysunghur_mirza = {
-        first_name = { name = "Baysunghur" }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 80 dip = 85 mil = 40
-        birth_date = 1397.9.6
-        death_date = 1433.12.20
-        birth = herat
-        father = tim_shahrukh_mirza
-        mother = tim_gauhar_shad
-        dynasty = timurid_dynasty
-        tag = TIM
-    }
-
-    tim_ala_al_dawla = {
-        first_name = { name = "Ala_al-Dawla" }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 45 dip = 50 mil = 40
-        birth_date = 1417.1.1
-        birth = herat
-        father = tim_baysunghur_mirza
-        dynasty = timurid_dynasty
-        tag = TIM
-    }
-
-    tig_abul_qasim_babur_mirza = {
-        first_name = { name = Abul-Qasim_Babur }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 50 dip = 65 mil = 60
-        birth_date = 1422.6.7
-        birth = herat
-        father = tim_baysunghur_mirza
-        dynasty = timurid_dynasty
-        tag = TIM
-    }
-
-    tim_abu_said_mirza = {
-        first_name = { name = "Abu_Sa'id" }
-        culture = khorezmian_culture
-        religion = sunni
-        adm = 60 dip = 55 mil = 70
-        birth_date = 1424.1.1
-        father = tim_muhammad_mirza
-        dynasty = timurid_dynasty
-        tag = TIM
-        ruler_trait = tactical_genius
-        ruler_trait = ambitious
-    }
-
-    tim_ibrahim_mirza = {
-        first_name = { name = "Ibrahim_Mirza" }
-        culture = khorezmian_culture
-        religion = sunni
-        birth_date = 1440.1.1
-        birth = herat
-        father = tim_ala_al_dawla
-        dynasty = timurid_dynasty
-        tag = TIM
-    }
-
-    ### timurid_dynasty | TIS ###
-
+    #Line of Ulugh Beg
     tis_ulugh_beg = {
-        first_name = { name = "Ulugh Beg" }
-        culture = khorezmian_culture
+        first_name = { name = name_ulugh.name_beg }
+        culture = moghul_culture
         religion = sunni
-        adm = 50 dip = 40 mil = 25
+        adm = 50 dip = 50 mil = 25
         birth_date = 1394.3.22
         birth = samarkand
         father = tim_shahrukh_mirza
@@ -108832,11 +109378,9 @@ character_db={
         ruler_trait = well_advised
     }
 
-    ### timurid_dynasty | TTK ###
-
     ttk_abd_al_latif = {
-        first_name = { name = Abd_al-Latif }
-        culture = khorezmian_culture
+        first_name = { name = name_abd_al_latif }
+        culture = moghul_culture
         religion = sunni
         adm = 40 dip = 30 mil = 65
         birth_date = 1420.1.1
@@ -108844,9 +109388,239 @@ character_db={
         father = tis_ulugh_beg
         mother = tis_ruqaiya_sultan
         dynasty = timurid_dynasty
-        tag = TTK
+        tag = TIS
         ruler_trait = expansionist
         ruler_trait = cruel
+    }
+
+    #Line of Ibrahim
+    tif_ibrahim_father = {
+        first_name = { name = name_ibrahim }
+        culture = moghul_culture
+        religion = sunni
+		adm = 50 dip = 50 mil = 25
+        birth_date = 1394.1.1
+        death_date = 1435.4.3
+		birth = samarkand
+        father = tim_shahrukh_mirza
+        dynasty = timurid_dynasty
+        tag = TIM
+		has_patronym = no
+    }
+
+    tif_abdullah_mirza = {
+        first_name = { name = name_abdullah }
+        culture = moghul_culture
+        religion = sunni
+        adm = 30 dip = 35 mil = 30
+        birth_date = 1433.1.1
+		birth = shiraz
+        father = tif_ibrahim_father
+        dynasty = timurid_dynasty
+        tag = TIF
+		has_patronym = no
+    }
+
+    #Line of Baysunghur Mirza
+    tim_baysunghur_mirza = {
+        first_name = { name = name_baysunghur }
+        culture = moghul_culture
+        religion = sunni
+        adm = 80 dip = 85 mil = 40
+        birth_date = 1397.9.6
+        death_date = 1433.12.20
+        birth = samarkand
+        father = tim_shahrukh_mirza
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tim_ala_al_dawla = {
+        first_name = { name = name_ala_al.name_dawla }
+        culture = moghul_culture
+        religion = sunni
+        adm = 45 dip = 60 mil = 40
+        birth_date = 1417.1.1
+        birth = herat
+        father = tim_baysunghur_mirza
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    tig_abul_qasim_babur_mirza = {
+        first_name = { name = name_abul_qasim.name_babur }
+        culture = moghul_culture
+        religion = sunni
+        adm = 55 dip = 50 mil = 55
+        birth_date = 1422.1.1
+        birth = herat
+        father = tim_baysunghur_mirza
+        dynasty = timurid_dynasty
+        tag = ASR
+    }
+
+    tii_sultan_muhammad = {
+        first_name = { name = name_muhammad }
+        culture = moghul_culture
+        religion = sunni
+        adm = 45 dip = 40 mil = 55
+        birth_date = 1418.1.1
+		birth = herat
+        father = tim_baysunghur_mirza
+        dynasty = timurid_dynasty
+        tag = TII
+    }
+
+    #Line of Soyurghatmish
+    tim_soyurghatmish = {
+        first_name = { name = name_soyurghatmish }
+        culture = moghul_culture
+        religion = sunni
+        adm = 45 dip = 40 mil = 55
+        birth_date = 1399.1.1
+		death_date = 1426.1.1
+		birth = herat
+        father = tim_shahrukh_mirza
+        mother = tis_malikat_agha
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+    #Line of Muhammad Juki
+	tim_muhammad_juki = {
+        first_name = { name = name_muhammad.name_juki }
+        culture = moghul_culture
+        religion = sunni
+        adm = 50 dip = 45 mil = 55
+        birth_date = 1402.1.1
+        death_date = 1444.9.11
+        birth = samarkand
+        father = tim_shahrukh_mirza
+        mother = tim_gauhar_shad
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+
+	tim_muhammad_qasim = {
+        first_name = { name = name_muhammad.name_qasim }
+        culture = moghul_culture
+        religion = sunni
+        adm = 80 dip = 85 mil = 50
+        birth_date = 1422.1.1
+        birth = samarkand
+        father = tim_muhammad_juki
+        dynasty = timurid_dynasty
+        tag = TBW
+	}
+	
+	tim_abu_bakr = {
+        first_name = { name = name_abu.name_bakr }
+        culture = moghul_culture
+        religion = sunni
+        adm = 80 dip = 85 mil = 55
+        birth_date = 1425.1.1
+        birth = samarkand
+        father = tim_muhammad_juki
+        dynasty = timurid_dynasty
+        tag = TIX
+    }
+
+    #??? Dunno, but cant delete for risk of game not loading
+    tim_pir_muhammad_mirza = {
+        first_name = { name = "Pir_Muhammad_Mirza" }
+        culture = moghul_culture
+        religion = sunni
+		adm = 55 dip = 50 mil = 70
+        birth_date = 1376.1.1
+        death_date = 1407.2.22
+		birth = samarkand
+        father = tim_jahangir_mirza
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+	tim_khalil_sultan = {
+        first_name = { name = "Khalil_Sultan" }
+        culture = moghul_culture
+        religion = sunni
+		adm = 35 dip = 55 mil = 60
+        birth_date = 1384.1.1
+        death_date = 1411.11.4
+        father = tim_miran_shah
+		birth = samarkand
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+	tim_ibrahim_mirza = {
+        first_name = { name = "Ibrahim_Mirza" }
+        culture = moghul_culture
+        religion = sunni
+		adm = 6 dip = 3 mil = 8
+        birth_date = 1440.1.1
+        birth = herat
+        father = tim_ala_al_dawla
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+    tim_muhammad_bin_abi_said_fictional
+    first_name = { name = name_muhammad }
+        culture = moghul_culture
+        religion = sunni
+		adm = 16 dip = 63 mil = 35
+        birth_date = 1420.1.1
+        birth = herat
+        father = tim_soyurghatmish
+        dynasty = timurid_dynasty
+        tag = TIM
+    }
+    #Wives
+	tim_toghay_turkan_aqa = {
+        first_name = { name = name_toghay_turkan_aqa }
+        culture = moghul_culture
+        religion = sunni
+		adm = 35 dip = 40 mil = 5
+		birth_date = 1350.1.1
+        death_date = 1400.1.1
+		birth = samarkand
+        female = yes
+		spouse = tim_timur
+        tag = TIM
+    }
+
+    tim_gauhar_shad = {
+        first_name = { name = name_gauhar_shad }
+        culture = moghul_culture
+        religion = sunni
+        adm = 60 dip = 75 mil = 5
+        birth_date = 1379.1.1
+        birth = herat
+		female = yes
+        spouse = tim_shahrukh_mirza
+        tag = TIM
+    }
+	
+	tis_malikat_agha = {
+        first_name = { name = name_malikat_agha }
+        culture = moghul_culture
+        religion = sunni
+		adm = 40 dip = 45 mil = 5
+		birth_date = 1395.1.1
+		birth = samarkand
+        female = yes
+        spouse = tim_shahrukh_mirza
+        tag = TIM
+    }
+
+    tis_ruqaiya_sultan = {
+        first_name = { name = name_ruqaiya }
+        culture = moghul_culture
+        religion = sunni
+		adm = 60 dip = 75 mil = 5
+		birth_date = 1395.1.1
+		birth = herat
+        female = yes
+        spouse = tis_ulugh_beg
+        tag = TIS
     }
 
     ### tinieres_dynasty | NRB ###
@@ -128108,45 +128882,6 @@ character_db={
         tag = THS
     }
 
-    ### (no dynasty) | TIM ###
-
-    tim_toghay_turkan_aqa = {
-        first_name = { name = "Toghay_Turkan_Aqa" }
-        culture = khorezmian_culture
-        religion = sunni
-        female = yes
-        birth_date = 1350.1.1
-        death_date = 1400.1.1
-        birth = samarkand
-        tag = TIM
-    }
-
-    tim_gauhar_shad = {
-        first_name = { name = "Gauhar_Shad" }
-        culture = khorezmian_culture
-        religion = sunni
-        female = yes
-        adm = 60 dip = 75 mil = 5
-        birth_date = 1379.1.1
-        birth = herat
-        spouse = tim_shahrukh_mirza
-        tag = TIM
-        ruler_trait = lawgiver
-        ruler_trait = righteous
-    }
-
-    ### (no dynasty) | TIS ###
-
-    tis_ruqaiya_sultan = {
-        first_name = { name = "Ruqaiya_Sultan" }
-        culture = khorezmian_culture
-        religion = sunni
-        female = yes
-        spouse = tis_ulugh_beg
-        birth_date = 1395.1.1
-        tag = TIS
-    }
-
     ### (no dynasty) | TNT ###
 
     tnt_nikolaus_brunn = {
@@ -129050,7 +129785,220 @@ character_db={
         birth = zurich
         tag = ZUR
     }
+    ### badakhshan_dynasty | BKH ### Badakhshan
 
+    bkh_sultan_muhammad = {
+        first_name = { name = name_muhammad }
+        culture = pamiri_culture
+        religion = sunni
+        adm = 50 dip = 60 mil = 45
+        birth_date = 1400.1.1
+        birth = kishim
+        dynasty = badakhshan_dynasty
+        tag = BKH
+    }
+
+    bkh_daughter1_unknown_name = {
+        first_name = { name = name_gul }
+        culture = pamiri_culture
+        religion = sunni
+        birth_date = 1430.1.1
+        adm = 72 dip = 64 mil = 78
+        father = bkh_sultan_muhammad
+        female = yes
+        birth = kishim
+        dynasty = badakhshan_dynasty
+        tag = BKH
+    }
+
+    bkh_shahzada_begum = {
+        first_name = { name = name_shahzada }
+        culture = pamiri_culture
+        religion = sunni
+        adm = 55 dip = 48 mil = 62
+        birth_date = 1432.1.1
+        father = bkh_sultan_muhammad
+        female = yes
+        birth = kishim
+        dynasty = badakhshan_dynasty
+        tag = BKH
+    }
+
+    bkh_daughter3_unknown_name = {
+        first_name = { name = name_nazanin }
+        culture = pamiri_culture
+        religion = sunni
+        adm = 32 dip = 44 mil = 38
+        birth_date = 1434.1.1
+        father = bkh_sultan_muhammad
+        female = yes
+        birth = kishim
+        dynasty = badakhshan_dynasty
+        tag = BKH
+    }
+
+    bkh_shah_begum = {
+        first_name = { name = name_shah_begum }
+        culture = pamiri_culture
+        religion = sunni
+        adm = 21 dip = 33 mil = 28
+        birth_date = 1436.1.1
+        father = bkh_sultan_muhammad
+        female = yes
+        birth = kishim
+        dynasty = badakhshan_dynasty
+        tag = BKH
+    }
+
+    bkh_daughter5_unknown_name = {
+        first_name = { name = name_mahpari }
+        culture = pamiri_culture
+        religion = sunni
+        adm = 05 dip = 18 mil = 09
+        birth_date = 1438.1.1
+        father = bkh_sultan_muhammad
+        female = yes
+        birth = kishim
+        dynasty = badakhshan_dynasty
+        tag = BKH
+    }
+
+    bkh_daughter6_unknown_name = {
+        first_name = { name = name_rukhshona }
+        culture = pamiri_culture
+        religion = sunni
+        birth_date = 1440.1.1
+        adm = 02 dip = 08 mil = 04
+        father = bkh_sultan_muhammad
+        female = yes
+        birth = kishim
+        dynasty = badakhshan_dynasty
+        tag = BKH
+    }
+    # Ispahbads
+    ihb_husayn_of_astara = {
+        first_name = { name = name_husayn }
+        nickname = { name = jalal_al_din }
+        culture = talysh_culture
+        religion = shia
+		adm = 45 dip = 40 mil = 70
+        birth_date = 1392.1.1
+		birth = astara
+        dynasty = ispahbads_dynasty
+        tag = IHB
+    }
+
+    #Bi-pish / kar_kiya_dynasty
+    kry_ali_kiya = {
+        first_name = { name = name_ali }
+        nickname = { name = nick_kiya }
+        culture = gilak_culture
+        religion = shia
+        adm = 60 dip = 70 mil = 75
+        birth_date = 1335.1.1
+        death_date = 1389.9.1
+        birth = lahijan
+        dynasty = kar_kiya_dynasty
+        tag = KRY
+    }
+ 
+    kry_hady_kiya = {
+        first_name = { name = name_hady }
+        nickname = { name = nick_kiya }
+        culture = gilak_culture
+        religion = shia
+        adm = 45 dip = 50 mil = 45
+        birth_date = 1360.1.1
+        death_date = 1394.1.1
+        birth = lahijan
+        father = kry_ali_kiya
+        dynasty = kar_kiya_dynasty
+        tag = KRY
+    }
+ 
+    kry_amir_sayyed_mohammad = {
+        first_name = { name = name_mohammad }
+        nickname = { name = nick_amir_sayyed }
+        culture = gilak_culture
+        religion = shia
+        adm = 65 dip = 60 mil = 55
+        birth_date = 1370.1.1
+        death_date = 1430.1.1
+        birth = lahijan
+        father = kry_hady_kiya
+        dynasty = kar_kiya_dynasty
+        tag = KRY
+    }
+ 
+    kry_sayyed_naser_kiya = {
+        first_name = { name = name_naser }
+        nickname = { name = nick_kiya }
+        culture = gilak_culture
+        religion = shia
+        adm = 55 dip = 65 mil = 50
+        birth_date = 1400.1.1
+        birth = lahijan
+        father = kry_amir_sayyed_mohammad
+        dynasty = kar_kiya_dynasty
+        tag = KRY
+    }
+ 
+ 
+    # BIP — ESHAQVAND DYNASTY (Bia-pas / Western Gilan)
+    bip_amira_dubbaj_i = {
+        first_name = { name = name_dubbaj }
+        nickname = { name = nick_amira }
+        culture = gilak_culture
+        religion = sunni
+        adm = 70 dip = 65 mil = 72
+        birth_date = 1355.1.1
+        death_date = 1410.1.1
+        birth = fuman
+        dynasty = eshaqvand_dynasty
+        tag = BIP
+    }
+ 
+    bip_alaud_din_i = {
+        first_name = { name = name_alaud_din }
+        nickname = { name = nick_amira }
+        culture = gilak_culture
+        religion = sunni
+        adm = 50 dip = 55 mil = 45
+        birth_date = 1385.1.1
+        death_date = 1433.1.1
+        birth = fuman
+        father = bip_amira_dubbaj_i
+        dynasty = eshaqvand_dynasty
+        tag = BIP
+    }
+ 
+    bip_amira_dubbaj_ii = {
+        first_name = { name = name_dubbaj }
+        nickname = { name = nick_amira }
+        culture = gilak_culture
+        religion = sunni
+        adm = 45 dip = 48 mil = 42
+        birth_date = 1408.1.1
+        death_date = 1441.1.1
+        birth = fuman
+        father = bip_alaud_din_i
+        dynasty = eshaqvand_dynasty
+        tag = BIP
+    }
+ 
+    bip_alaud_din_ii = {
+        first_name = { name = name_alaud_din }
+        nickname = { name = nick_amira }
+        culture = gilak_culture
+        religion = sunni
+        adm = 62 dip = 70 mil = 58
+        birth_date = 1410.1.1
+        death_date = 1476.1.1
+        birth = fuman
+        father = bip_amira_dubbaj_ii
+        dynasty = eshaqvand_dynasty
+        tag = BIP
+    }
 
     fad_toirdhealbhach_ruadh_suibhne = {
         first_name = { name = Toirdhealbhach.name_russo }

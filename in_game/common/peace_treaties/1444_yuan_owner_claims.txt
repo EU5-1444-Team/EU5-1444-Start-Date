@@ -99,6 +99,10 @@ peace_seize_protector_general = {
 }
 
 peace_northern_yuan_raid = {
+    potential = {
+        scope:winner = { is_member_of_international_organization = international_organization:northern_yuan }
+        scope:loser = { is_member_of_international_organization = international_organization:northern_yuan }
+    }
     blocks_full_annexation = yes
     cost = {
         add = {
@@ -118,9 +122,15 @@ peace_northern_yuan_raid = {
                 multiply = 0.2
                 min = 5
             }
+            add_manpower = {
+                value = scope:loser.monthly_manpower
+                multiply = 0.3
+                min = 50
+            }
         }
         scope:loser = {
             add_prestige = prestige_extreme_penalty
+            add_manpower = { value = scope:loser.monthly_manpower multiply = -3 }
         }
     }
     ai_desire = {

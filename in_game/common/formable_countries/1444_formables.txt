@@ -222,6 +222,9 @@ BAL_f = {
 	areas = {
 		baluchistan_area
 	}
+	provinces = {
+		siwi_province
+	}
 	form_effect = {
 	}
 }
@@ -238,7 +241,6 @@ AFG_f = {
     allow = {
         owns = location:kabul
         owns = location:kandahar 
-		owns = location:balkh
     }
     
     name = AFG
@@ -851,6 +853,140 @@ DNM_f = {
 		champa_area
 	}
 	
+	form_effect = {
+	}
+}TTK_f = { #Balkh
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+	capital_required = yes 
+
+	potential = {
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
+	}
+
+	allow = {
+		owns = location:balkh
+		owns = location:mazar_i_sharif
+	}
+
+	name = TTK
+	flag = TTK
+	adjective = TTK_ADJ
+	tag = TTK
+	color = map_TTK
+
+	provinces = {
+		balkh_province
+		maymana_province
+		kunduz_province
+		kulab_province
+		hissar_province
+		kelif_province
+	}
+	form_effect = {
+		if = {
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+	}
+}
+GII_f = {
+	level = 1
+	required_locations_fraction = 0.5
+	rule = historical
+	capital_required = no
+
+	potential = {
+		OR = {
+			culture = culture:gilak_culture
+			culture = culture:talysh_culture
+		}
+	}
+
+	allow = {
+		owns = location:fuman
+		owns = location:astara
+		owns = location:lahijan
+	}
+	
+	name = GII
+	flag = GII
+	adjective = GII_ADJ
+	tag = GII
+	color = map_gilak
+
+	provinces = {
+		gilan_province
+		talish_province
+	}
+	form_effect = {
+	}
+}
+KRO_f = { #Khorezmia
+	level = 3
+	required_locations_fraction = 0.8
+	rule = historical
+	capital_required = yes 
+
+	potential = {
+		OR = {
+			owns = location:urgench
+			owns = location:khiva
+		}
+		OR = {
+			culture = culture:uzbek_culture
+			culture = culture:khorezmian_culture
+		}
+	}
+
+	allow = {
+		OR = {
+			owns = location:urgench
+			owns = location:khiva
+		}
+		is_subject = no
+	}
+	
+	name = KRO
+	flag = KRO
+	adjective = KRO_ADJ
+	tag = KRO
+	color = map_khorezmian
+
+	provinces = {
+		khiva_province
+		kath_province
+	}
+	form_effect = {
+	}
+}
+MZN_f = { #Mazandaran
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+	capital_required = yes 
+
+	potential = {
+		OR = {
+			culture = culture:gilak_culture
+			culture = culture:talysh_culture
+			culture = culture:mazanderani_culture
+		}
+	}
+
+	allow = {
+	}
+	
+	name = MZN
+	flag = MZN
+	adjective = MZN_ADJ
+	tag = MZN
+	color = map_mazadaran
+
+	areas = {
+		mazandaran_area
+	}
 	form_effect = {
 	}
 }

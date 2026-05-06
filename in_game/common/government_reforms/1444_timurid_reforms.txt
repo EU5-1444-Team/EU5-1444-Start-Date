@@ -3,31 +3,11 @@ timurid_prince = {
 	major = yes
 	
 	potential = {
-		OR = {
-			has_or_had_tag = TIM
-			has_or_had_tag = TIS
-			has_or_had_tag = TTK
-			has_or_had_tag = TII
-			has_or_had_tag = TIG
-			has_or_had_tag = MUG
-			has_or_had_tag = TIK
-			has_or_had_tag = TIX
-			has_or_had_tag = TIF
-		}
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 	}
 	
 	allow = {
-		OR = {
-			has_or_had_tag = TIM
-			has_or_had_tag = TIS
-			has_or_had_tag = TTK
-			has_or_had_tag = TII
-			has_or_had_tag = TIG
-			has_or_had_tag = MUG
-			has_or_had_tag = TIK
-			has_or_had_tag = TIX
-			has_or_had_tag = TIF
-		}
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 	}
 	
 	locked = {
