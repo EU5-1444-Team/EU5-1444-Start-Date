@@ -312,6 +312,23 @@ CHG_ADJ = {
 	suffix = "_ADJ"
 }
 
+
+KRO = {
+	#Khiva Khanate
+	type = country
+	text = {
+		localization_key = khiva_khanate
+		trigger = {
+			culture = culture:uzbek_culture
+		}
+	}
+	text = {
+		localization_key = KRO
+		fallback = yes
+	}
+}
+KRO_ADJ = {	parent = KRO suffix = "_ADJ" }
+
 SCO = {
 	type = country
 	text = {
@@ -699,4 +716,42 @@ NYE = {
 		localization_key = NYE
 		fallback = yes
 	}
+}
+NYE_ADJ = {
+	parent = NYE
+	suffix = "_ADJ"
+}
+IRA = { #Iran
+	type = country
+	text = {
+		# Sassanid
+		localization_key = sassanid_persia
+		trigger = {
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:baduspanid_dynasty ?= this } 
+			religion = zoroastrian
+		}
+	}
+	text = {
+		# Zoroastrian
+		localization_key = zoroastrian_persia
+		trigger = {
+			religion = zoroastrian
+		}
+	}
+	text = {
+		# Iran
+		localization_key = iran_persia_name
+		trigger = {
+			has_variable = user_wants_iran
+		}
+	}
+	text = {
+		# Persia
+		localization_key = IRA
+		fallback = yes
+	}
+}
+IRA_ADJ = {
+	parent = IRA
+	suffix = "_ADJ"
 }
