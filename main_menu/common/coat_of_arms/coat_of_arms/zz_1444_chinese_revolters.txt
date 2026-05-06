@@ -215,18 +215,23 @@ CYU = {
 
 CMI = {
     pattern = "pattern_solid.dds"
-    color1 = map_CMI
-    color2 = rgb { 80 80 120 }
+    color1 = rgb { 6 28 51 }
     colored_emblem = {
-        texture = "ce_border_corners_hmong.dds"
-        color1 = black
-        color2 = black
-        instance = { position = { 0.500 0.500 } scale = { 1.000 1.000 } }
+        texture = "ce_miao.dds"
+        color1 = white
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
     }
     colored_emblem = {
-        texture = "ce_miao_seal_character.dds"
-        color1 = black
-        instance = { position = { 0.500 0.500 } scale = { 0.800 0.800 } }
+        texture = "ce_border_corners_hmong.dds"
+        color1 = white
+        color2 = white
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
     }
 }
 
@@ -280,18 +285,21 @@ CXI = {
 
 CYI = {
     pattern = "pattern_solid.dds"
-    color1 = map_CYI
-    color2 = rgb { 80 80 120 }
-    colored_emblem = {
-        texture = "ce_border_corners_yi.dds"
-        color1 = black
-        color2 = black
-        instance = { position = { 0.500 0.500 } scale = { 1.000 1.000 } }
+    color1 = white
+    textured_emblem = {
+        texture = "te_yi.dds"
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
     }
     colored_emblem = {
-        texture = "ce_yi_seal_character.dds"
+        texture = "ce_border_corners_yi_02.dds"
         color1 = black
-        instance = { position = { 0.500 0.500 } scale = { 0.800 0.800 } }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
     }
 }
 
@@ -313,7 +321,7 @@ CAI = {
 
 CTU = {
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 255 }
+    color1 = white
     colored_emblem = {
         texture = "ce_tungning_seal_character.dds"
         color1 = black
@@ -382,16 +390,5 @@ CZA = {
         texture = "ce_zhao_seal_character.dds"
         color1 = black
         instance = { position = { 0.500 0.500 } scale = { 0.800 0.800 } }
-    }
-}
-
-CII = {
-    pattern = "pattern_solid.dds"
-    color1 = map_CII
-    color2 = rgb { 80 80 120 }
-    colored_emblem = {
-        texture = "ce_border_china_04.dds"
-        color1 = black
-        instance = { position = { 0.500 0.500 } scale = { 1.000 1.000 } }
     }
 }
