@@ -48871,8 +48871,7 @@ countries = {
 
     # --- KTG ---
 
-    MTG = {
-        #Möng Ting
+    MTG = { #Möng Ting
         own_control_core = {
             nam_thing
         }
@@ -51370,11 +51369,9 @@ countries = {
 
     # --- CHI ---
 
-    YGS = {
-        #Yongshun
+    YGS = { #Yongshun
         own_control_core = {
             yongshun_yongshun guzhang shangxi
-            baojing
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -51386,8 +51383,7 @@ countries = {
 
     # --- YGS ---
 
-    ZGL = {
-        #Zhonglu
+    ZGL = { #Zhonglu
         own_control_core = {
             zhonglu lichuan
         }
@@ -51401,8 +51397,7 @@ countries = {
 
     # --- ZGL ---
 
-    RGM = {
-        #Rongmei
+    RGM = { #Rongmei
         own_control_core = {
             rongmei wufeng
         }
@@ -51416,8 +51411,7 @@ countries = {
 
     # --- RGM ---
 
-    TGY = {
-        #Tangya
+    TGY = { #Tangya
         own_control_core = {
             datian_shizhou
         }
@@ -51431,8 +51425,7 @@ countries = {
 
     # --- TGY ---
 
-    GLU = {
-        #Gaoluo
+    GLU = { #Gaoluo
         own_control_core = {
             shinan
         }
@@ -51446,8 +51439,7 @@ countries = {
 
     # --- GLU ---
 
-    TNP = {
-        #Tianping
+    TNP = { #Tianping
         own_control_core = {
             tianping
         }
@@ -51461,8 +51453,7 @@ countries = {
 
     # --- TNP ---
 
-    SGZ = {
-        #Sangzhi
+    SGZ = { #Sangzhi
         own_control_core = {
             shixi
         }
@@ -51476,8 +51467,7 @@ countries = {
 
     # --- SGZ ---
 
-    DWG = {
-        #Dawang
+    DWG = { #Dawang
         own_control_core = {
             sanmao
         }
@@ -51491,9 +51481,8 @@ countries = {
 
     # --- DWG ---
 
-    BJG = {
-        #Baojing
-        our_cores_conquered_by_others = {
+    BJG = { #Baojing
+        own_control_core = {
             baojing
         }
 
@@ -59059,48 +59048,58 @@ countries = {
     # south_china_region
     # ------------------
 
-    CDL = {
-        #Dali
+    YNA = {
+        #Yunnan
+        own_control_core = {
+            kunming lufeng yiliang songming fumin
+            kunyang anning chenggong yimen
+            heyang jiangchuan lunan xinxing
+        }
 
+        include = "south_east_asia_monarchy_no_mandala_no_coast"
+        government = {
+            ruler = random
+        }
+        capital = kunming
+    }
+
+    # --- YNA ---
+
+    CXG = {
+        #Chuxiong
+        own_control_core = {
+            weichu dingyuan_chuxiong zhennan nanan
+        }
+
+        include = "south_east_asia_monarchy_no_mandala_no_coast"
+        government = {
+            ruler = random
+        }
+        capital = weichu
+    }
+
+    # --- CXG ---
+
+    DLI = {
+        #Dali province
         own_control_core = {
             taihe_dali menghua yunlong binchuan yangbei wujing yunnan langqiong
             midu dingbian_shunning
             yongping_yongchang
-
-            # Liang
-            kunming lufeng yiliang kunyang anning chenggong yimen songming fumin
-            zhennan dingyuan_chuxiong weichu nanan
-            heyang jiangchuan lunan xinxing
         }
 
-        own_control_integrated = {
-            luzhang
-        }
-
-        include = "far_east_asia_monarchy_no_coast"
-
-        capital = taihe_dali
-        court_language = southern_mandarin_dialect
+        include = "south_east_asia_monarchy_no_mandala_no_coast"
         government = {
-            ruler_term = { character = cld_duan_guang start_date = 1333.1.1 regnal_number = 1 }
-
-            ruler = random # TODO: add me
+            ruler = random
         }
-        tolerated_cultures = {
-            yi_culture
-        }
-        country_rank = rank_kingdom
+        capital = taihe_dali
     }
 
-    # --- CDL ---
+    # --- DLI ---
 
-    SZH = {
-        #Sizhou
-        our_cores_conquered_by_others = {
+    SZH = { #Sizhou
+        own_control_core = {
             taipengruodong panqiao zhenyuan_sizhou shuitejiang shiqian yinjiang dejiang wuchuan_sinan
-            guzhou yongcong longquanping liping
-            wuluo qiongshui tongren tixi
-            wuzhai xiajiang yanhe tonggu_liping
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59146,12 +59145,9 @@ countries = {
 
     # --- LNG ---
 
-    BZU = {
-        #Bozhou
+    BZU = { #Bozhou
         own_control_core = {
             bozhou wujiang_bozhou shaxi suiyang bochuan zizhou renhuai
-            kaili baini wengshui qijiang rongshan huangping
-            zhenzhou zhengan
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59192,14 +59188,9 @@ countries = {
 
     # --- MMA ---
 
-    QYN = {
-        #Qingyuan
+    QYN = { #Qingyuan
         own_control_core = {
             yishan anhua_huanjiang hechi sien libo
-            donglan zhishan
-            nandan nadi liuzhai
-            xincheng_xincheng
-            yongshun
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59215,16 +59206,12 @@ countries = {
 
     # --- QYN ---
 
-    CHH = {
-        #Chiang Hung
+    CHH = { #Chiang Hung
         own_control_core = {
             jinglong
-            daolong gengdang menghai sime
-            mong_yang
-        }
-
-        our_cores_conquered_by_others = {
-            mengla mengban_jihong yot_ou muang_sing mong_yawng
+            daolong gengdang mengban_jihong menghai mengla sime yot_ou
+            mong_yang mong_yawng
+            muang_sing
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59243,12 +59230,9 @@ countries = {
 
     # --- CHH ---
 
-    LIN = {
-        #Lai'an
+    LIN = { #Lai'an
         own_control_core = {
             baise tangxing tongle sicheng
-            ceheng xilong zhenfeng machang lucheng
-            xilin bada
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59260,8 +59244,7 @@ countries = {
 
     # --- LIN ---
 
-    SXI = {
-        #Shuixi
+    SXI = { #Shuixi
         own_control_core = {
             shuicheng zhijin huozhu caoni cengtai dafang jinji dagu_shunyuan shuixi
         }
@@ -59278,11 +59261,9 @@ countries = {
 
     # --- SXI ---
 
-    SDG = {
-        #Shuidong
+    SDG = { #Shuidong
         own_control_core = {
             suidong dizhai guizhou_guizhou jinzhu xintian longli
-            longchang pingyue weiqing
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59297,11 +59278,9 @@ countries = {
 
     # --- SDG ---
 
-    YNJ = {
-        #Yuanjiang
+    YNJ = { #Yuanjiang
         own_control_core = {
             yuanjiang_yuanjiang malongtalang
-            niuwu puri_simao situo
         }
 
         own_control_integrated = {
@@ -59320,8 +59299,7 @@ countries = {
 
     # --- YNJ ---
 
-    LJG = {
-        #Lijiang
+    LJG = { #Lijiang
         own_control_core = {
             tongan_lijiang jujin
         }
@@ -59344,11 +59322,9 @@ countries = {
 
     # --- LJG ---
 
-    GGX = {
-        #Guangxi
+    GGX = { #Guangxi
         own_control_core = {
             qiubei wucao guangxi weimo jiaha
-            mile shizong
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59363,11 +59339,9 @@ countries = {
 
     # --- GGX ---
 
-    PDN = {
-        #Puding
+    PDN = { #Puding
         own_control_core = {
             dingnan_anshun puding guangsuoling kangzuo xibao zhenning
-            pingba
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59382,11 +59356,9 @@ countries = {
 
     # --- PDN ---
 
-    PAN = {
-        #Pu'an
+    PAN = { #Pu'an
         own_control_core = {
             puan_puan huangcaoba anlong lemin
-            xincheng_annan xinxing_annan annan
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59402,11 +59374,9 @@ countries = {
 
     # --- PAN ---
 
-    TNZ = {
-        #Tianzhou
+    TNZ = { #Tianzhou
         own_control_core = {
             laian_tianzhou bama sienzhou tianzhou baishan
-            anding_mashan duyang
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59418,10 +59388,8 @@ countries = {
 
     # --- TNZ ---
 
-    BZH = {
-        #Běishèng
+    BZH = { #Běishèng
         own_control_core = {
-            yongning_baisheng langqu
             ningfan beisheng jinshajiang
         }
 
@@ -59437,8 +59405,7 @@ countries = {
 
     # --- BZH ---
 
-    TPG = {
-        #Taiping
+    TPG = { #Taiping
         own_control_core = {
             chongshan longzhou_longzhou mingying doukang guwan
         }
@@ -59452,11 +59419,9 @@ countries = {
 
     # --- TPG ---
 
-    GNN = {
-        #Guangnan
+    GNN = { #Guangnan
         own_control_core = {
             guangnan zhehong bangban
-            boai fuzhou_guangnan
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59468,8 +59433,7 @@ countries = {
 
     # --- GNN ---
 
-    MGK = {
-        #Möng Ku
+    MGK = { #Möng Ku
         own_control_core = {
             mengtong baodian zheledian kainan
         }
@@ -59486,8 +59450,7 @@ countries = {
 
     # --- MGK ---
 
-    NGZ = {
-        #Ningzhou
+    NGZ = { #Ningzhou
         own_control_core = {
             xisha tonghai pingdian xie
         }
@@ -59501,10 +59464,9 @@ countries = {
 
     # --- NGZ ---
 
-    QJG = {
-        #Qujing
+    QJG = { #Qujing
         own_control_core = {
-            nanning luliang malong_qujing luoshan_qujing
+            nanning
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59516,11 +59478,9 @@ countries = {
 
     # --- QJG ---
 
-    SMG = {
-        #Siming
+    SMG = { #Siming
         own_control_core = {
             siming pingxiang_pingxiang qianlong_siming
-            shangsi
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -59554,8 +59514,7 @@ countries = {
 
     # --- MLM ---
 
-    MHK = {
-        #Möng Hkeng
+    MHK = { #Möng Hkeng
         own_control_core = {
             kongwei zhenkang ta_shwe_htan
         }
@@ -59572,8 +59531,7 @@ countries = {
 
     # --- MHK ---
 
-    MHN = {
-        #Möng Hten
+    MHN = { #Möng Hten
         own_control_core = {
             shunning baotong youdian
         }
@@ -59590,8 +59548,7 @@ countries = {
 
     # --- MHN ---
 
-    MGN = {
-        #Möng Ngum
+    MGN = { #Möng Ngum
         own_control_core = {
             menglei musuo yinshaluo
         }
@@ -59609,8 +59566,7 @@ countries = {
 
     # --- MGN ---
 
-    MHA = {
-        #Möng Hsa
+    MHA = { #Möng Hsa
         own_control_core = {
             mengding gengma mengmeng
         }
@@ -59624,9 +59580,8 @@ countries = {
 
     # --- MHA ---
 
-    NWU = {
-        #Niuwu
-        our_cores_conquered_by_others = {
+    NWU = { #Niuwu
+        own_control_core = {
             niuwu puri_simao situo
         }
 
@@ -59642,8 +59597,7 @@ countries = {
 
     # --- NWU ---
 
-    YAN = {
-        #Yáo'ān
+    YAN = { #Yáo'ān
         own_control_core = {
             yaozhou dayao juque
         }
@@ -59660,8 +59614,7 @@ countries = {
 
     # --- YAN ---
 
-    WDG = {
-        #Wǔdìng
+    WDG = { #Wǔdìng
         own_control_core = {
             hequ_wuding yuanmou luquan
         }
@@ -59675,8 +59628,7 @@ countries = {
 
     # --- WDG ---
 
-    ZNN = {
-        #Zhen'an
+    ZNN = { #Zhen'an
         own_control_core = {
             zhenan_guishun guishun xiaozhenan
         }
@@ -59690,8 +59642,7 @@ countries = {
 
     # --- ZNN ---
 
-    LZI = {
-        #Liangzhai
+    LZI = { #Liangzhai
         own_control_core = {
             bazhai nanlang xisa
         }
@@ -59705,8 +59656,7 @@ countries = {
 
     # --- LZI ---
 
-    GYT = {
-        #Gyelthang
+    GYT = { #Gyelthang
         own_control_core = {
             nixi xiaodandang dadandang
         }
@@ -59725,8 +59675,7 @@ countries = {
 
     # --- GYT ---
 
-    MWO = {
-        #Möng Wo
+    MWO = { #Möng Wo
         own_control_core = {
             mengban_weiyuan weiyuan
         }
@@ -59744,9 +59693,8 @@ countries = {
 
     # --- MWO ---
 
-    NYZ = {
-        #Níngyuǎnzhōu
-        our_cores_conquered_by_others = {
+    NYZ = { #Níngyuǎnzhōu
+        own_control_core = {
             phong_tho muong_te
         }
 
@@ -59762,8 +59710,7 @@ countries = {
 
     # --- NYZ ---
 
-    NLU = {
-        #Nalou
+    NLU = { #Nalou
         own_control_core = {
             mengding_mengzi
         }
@@ -59784,8 +59731,7 @@ countries = {
 
     # --- NLU ---
 
-    HQG = {
-        #Heqing
+    HQG = { #Heqing
         own_control_core = {
             heqing jianchuan
         }
@@ -59799,8 +59745,7 @@ countries = {
 
     # --- HQG ---
 
-    ZYI = {
-        #Zhanyi
+    ZYI = { #Zhanyi
         own_control_core = {
             zhanyi kedu
         }
@@ -59814,8 +59759,7 @@ countries = {
 
     # --- ZYI ---
 
-    SZI = {
-        #Shezi
+    SZI = { #Shezi
         own_control_core = {
             lihua jiaohua
         }
@@ -59832,8 +59776,7 @@ countries = {
 
     # --- SZI ---
 
-    DYN = {
-        #Duyun
+    DYN = { #Duyun
         own_control_core = {
             duyun pingzhu
         }
@@ -59850,8 +59793,7 @@ countries = {
 
     # --- DYN ---
 
-    NNN = {
-        #Annan
+    NNN = { #Annan
         own_control_core = {
             mengzi
         }
@@ -59865,8 +59807,7 @@ countries = {
 
     # --- NNN ---
 
-    AGN = {
-        #Aning
+    AGN = { #Aning
         own_control_core = {
             ami
         }
@@ -59883,8 +59824,7 @@ countries = {
 
     # --- AGN ---
 
-    JSI = {
-        #Jianshui
+    JSI = { #Jianshui
         own_control_core = {
             jianshui
         }
@@ -59898,8 +59838,7 @@ countries = {
 
     # --- JSI ---
 
-    SPG = {
-        #Shiping
+    SPG = { #Shiping
         own_control_core = {
             shiping
         }
@@ -59913,8 +59852,7 @@ countries = {
 
     # --- SPG ---
 
-    RND = {
-        #Réndé
+    RND = { #Réndé
         own_control_core = {
             rende
         }
@@ -59928,8 +59866,7 @@ countries = {
 
     # --- RND ---
 
-    LXG = {
-        #Luoxiong
+    LXG = { #Luoxiong
         own_control_core = {
             luoxiong
         }
@@ -59946,8 +59883,7 @@ countries = {
 
     # --- LXG ---
 
-    PDG = {
-        #Pingding
+    PDG = { #Pingding
         own_control_core = {
             maxia
         }
@@ -59964,8 +59900,7 @@ countries = {
 
     # --- PDG ---
 
-    LTU = {
-        #Lantu
+    LTU = { #Lantu
         own_control_core = {
             lantu
         }
@@ -60213,12 +60148,9 @@ countries = {
 
     # --- MAR ---
 
-    AMD = {
-        # Amdo
+    AMD = { #Amdo
         own_control_core = {
             chabcha buha caka dulan dungkar_amdo guolimu qardam amnye_machen quge sailahai zeku muxihe
-
-            sanjiaocheng
         }
 
         include = "asia_advanced_no_pagan_tribe"
@@ -60271,11 +60203,10 @@ countries = {
 
     # --- GNJ ---
 
-    GOL = {
-        #Golog
+    GOL = { #Golog
         own_control_core = {
             darlag bayan_har lungkya madoi
-            dzamtang shukjung
+            serta dzamtang nubzur shukjung
             dartang droge metsang takden
         }
 
@@ -60381,8 +60312,7 @@ countries = {
 
     # --- DRG ---
 
-    CKL = {
-        #Minyag (Chakla in 1444)
+    CKL = { #Minyag
         own_control_core = {
             dartsedo lhagang kazhi dzogon zhanggu
         }
@@ -60421,8 +60351,7 @@ countries = {
 
     # --- MGG ---
 
-    HOR = {
-        #Hor States
+    HOR = { #Hor States
         own_control_core = {
             ganze manigango trotsang khordong dawu
         }
@@ -60437,8 +60366,7 @@ countries = {
 
     # --- HOR ---
 
-    GYE = {
-        #Gyelrong
+    GYE = { #Gyelrong
         own_control_core = {
             durgyeling rahor yungdrung geshitsa
         }
@@ -60503,8 +60431,7 @@ countries = {
 
     # --- PUR ---
 
-    NYA = {
-        #Nyarong
+    NYA = { #Nyarong
         own_control_core = {
             nyarong chodrak_kham
         }
@@ -60602,8 +60529,7 @@ countries = {
 
     # --- SNP ---
 
-    LLS = {
-        #Luóluósī
+    LLS = { #Luóluósī
         own_control_core = {
             beishe lizhou_mahu zhenxi_lizhou qiongbu suzhou lugu jianchang_sichuan
         }
@@ -60634,8 +60560,7 @@ countries = {
 
     # --- MNZ ---
 
-    YJI = {
-        #Yánjǐng
+    YJI = { #Yánjǐng
         own_control_core = {
             runyan zuosuo pingchuan
         }
@@ -60656,8 +60581,7 @@ countries = {
 
     # --- YJI ---
 
-    DCN = {
-        #Dongchuan
+    DCN = { #Dongchuan
         own_control_core = {
             dongchuan zhehai qiaojia tangdan
         }
@@ -60671,8 +60595,7 @@ countries = {
 
     # --- DCN ---
 
-    WNG = {
-        #Wumeng
+    WNG = { #Wumeng
         own_control_core = {
             wumeng luozuoguan yongshan daguan
         }
@@ -60689,11 +60612,9 @@ countries = {
 
     # --- WNG ---
 
-    MHU = {
-        #Mahu
+    MHU = { #Mahu
         own_control_core = {
             mabian muchuan mahu
-            leibo
         }
 
         include = "south_east_asia_monarchy_no_mandala_no_coast"
@@ -60708,8 +60629,7 @@ countries = {
 
     # --- MHU ---
 
-    KHG = {
-        #Khagya
+    KHG = { #Khagya
         own_control_core = {
             amchok taktsang sangqu tso_gon
         }
@@ -60728,8 +60648,7 @@ countries = {
 
     # --- KHG ---
 
-    ZNX = {
-        #Zhenxiong
+    ZNX = { #Zhenxiong
         own_control_core = {
             mangbu luojiao guihua
         }
@@ -60746,8 +60665,7 @@ countries = {
 
     # --- ZNX ---
 
-    WSA = {
-        #Wusa
+    WSA = { #Wusa
         own_control_core = {
             wusa zhaoban heizhang
         }
@@ -60761,8 +60679,7 @@ countries = {
 
     # --- WSA ---
 
-    TNQ = {
-        #Tianquan
+    TNQ = { #Tianquan
         own_control_core = {
             diaomen hanyuan shimian
         }
@@ -60781,8 +60698,7 @@ countries = {
 
     # --- TNQ ---
 
-    TSK = {
-        #TSK
+    TSK = { #TSK
         own_control_core = {
             baoning_maozhou maerkang qiongxi
         }
@@ -60817,8 +60733,7 @@ countries = {
 
     # --- TAZ ---
 
-    CLE = {
-        #Chelei
+    CLE = { #Chelei
         own_control_core = {
             gulin yongning
         }
@@ -60835,8 +60750,7 @@ countries = {
 
     # --- CLE ---
 
-    MCI = {
-        #Muchi
+    MCI = { #Muchi
         own_control_core = {
             lushan_yazhou wenchuan
         }
@@ -60855,8 +60769,7 @@ countries = {
 
     # --- MCI ---
 
-    LGZ = {
-        #Longzhou
+    LGZ = { #Longzhou
         own_control_core = {
             jiangyou pingwu
         }
@@ -60895,8 +60808,7 @@ countries = {
 
     # --- HEZ ---
 
-    CGZ = {
-        #Chāngzhōu
+    CGZ = { #Chāngzhōu
         own_control_core = {
             dechang
         }
@@ -60910,8 +60822,7 @@ countries = {
 
     # --- CGZ ---
 
-    XLG = {
-        #Xianlong
+    XLG = { #Xianlong
         own_control_core = {
             mingyi
         }
@@ -60925,8 +60836,7 @@ countries = {
 
     # --- XLG ---
 
-    YNL = {
-        #Yunlian
+    YNL = { #Yunlian
         own_control_core = {
             yunlian
         }
@@ -60943,8 +60853,7 @@ countries = {
 
     # --- YNL ---
 
-    RNG = {
-        #Rong
+    RNG = { #Rong
         own_control_core = {
             rongxian
         }
@@ -60961,8 +60870,7 @@ countries = {
 
     # --- RNG ---
 
-    GNG = {
-        #Gong
+    GNG = { #Gong
         own_control_core = {
             luoji
         }
@@ -60979,8 +60887,7 @@ countries = {
 
     # --- GNG ---
 
-    SZU = {
-        #Shizu
+    SZU = { #Shizu
         own_control_core = {
             shizhu
         }
@@ -60994,8 +60901,7 @@ countries = {
 
     # --- SZU ---
 
-    YYG = {
-        #Youyang
+    YYG = { #Youyang
         own_control_core = {
             youyang
         }
@@ -61009,8 +60915,7 @@ countries = {
 
     # --- YYG ---
 
-    PCD = {
-        #Pingchadong
+    PCD = { #Pingchadong
         own_control_core = {
             xiushan
         }
@@ -61024,8 +60929,7 @@ countries = {
 
     # --- PCD ---
 
-    WMO = {
-        #Weimao
+    WMO = { #Weimao
         own_control_core = {
             wenshan
         }
@@ -61060,8 +60964,7 @@ countries = {
 
     # --- JIZ ---
 
-    BIR = {
-        #Biri
+    BIR = { #Biri
         own_control_core = {
             guide
         }
@@ -78610,9 +78513,8 @@ countries = {
 
     # --- CNA ---
 
-    MLE = {
-        #Mile
-        our_cores_conquered_by_others = {
+    MLE = { #Mile
+        own_control_core = {
             mile
         }
 
@@ -78628,9 +78530,8 @@ countries = {
 
     # --- MLE ---
 
-    LBO = {
-        #Leibo
-        our_cores_conquered_by_others = {
+    LBO = { #Leibo
+        own_control_core = {
             leibo
         }
 
@@ -78643,9 +78544,8 @@ countries = {
 
     # --- LBO ---
 
-    YZO = {
-        #Yizuo
-        our_cores_conquered_by_others = {
+    YZO = { #Yizuo
+        own_control_core = {
             luoshan_qujing
         }
 
@@ -78658,9 +78558,8 @@ countries = {
 
     # --- YZO ---
 
-    MLG = {
-        #Malong
-        our_cores_conquered_by_others = {
+    MLG = { #Malong
+        own_control_core = {
             malong_qujing
         }
 
@@ -78673,9 +78572,8 @@ countries = {
 
     # --- MLG ---
 
-    LLN = {
-        #Luliang
-        our_cores_conquered_by_others = {
+    LLN = { #Luliang
+        own_control_core = {
             luliang
         }
 
@@ -78688,9 +78586,8 @@ countries = {
 
     # --- LLN ---
 
-    SZG = {
-        #Shizong
-        our_cores_conquered_by_others = {
+    SZG = { #Shizong
+        own_control_core = {
             shizong
         }
 
@@ -78703,9 +78600,8 @@ countries = {
 
     # --- SZG ---
 
-    NPG = {
-        #Nanping
-        our_cores_conquered_by_others = {
+    NPG = { #Nanping
+        own_control_core = {
             qijiang
         }
 
@@ -78721,9 +78617,8 @@ countries = {
 
     # --- NPG ---
 
-    ZNZ = {
-        #Zhenzhou
-        our_cores_conquered_by_others = {
+    ZNZ = { #Zhenzhou
+        own_control_core = {
             zhenzhou zhengan
         }
 
@@ -78740,9 +78635,8 @@ countries = {
 
     # --- ZNZ ---
 
-    YNH = {
-        #Yanhe
-        our_cores_conquered_by_others = {
+    YNH = { #Yanhe
+        own_control_core = {
             yanhe
         }
 
@@ -78755,9 +78649,8 @@ countries = {
 
     # --- YNH ---
 
-    TXI = {
-        #Tixi
-        our_cores_conquered_by_others = {
+    TXI = { #Tixi
+        own_control_core = {
             tixi
         }
 
@@ -78770,9 +78663,8 @@ countries = {
 
     # --- TXI ---
 
-    TGR = {
-        #Tongren
-        our_cores_conquered_by_others = {
+    TGR = { #Tongren
+        own_control_core = {
             tongren
         }
 
@@ -78785,9 +78677,8 @@ countries = {
 
     # --- TGR ---
 
-    QGS = {
-        #Qiongshui
-        our_cores_conquered_by_others = {
+    QGS = { #Qiongshui
+        own_control_core = {
             qiongshui
         }
 
@@ -78800,9 +78691,8 @@ countries = {
 
     # --- QGS ---
 
-    WZH = {
-        #Wuzhai
-        our_cores_conquered_by_others = {
+    WZH = { #Wuzhai
+        own_control_core = {
             wuzhai
         }
 
@@ -78815,9 +78705,8 @@ countries = {
 
     # --- WZH ---
 
-    PTZ = {
-        #Pingtouzheke
-        our_cores_conquered_by_others = {
+    PTZ = { #Pingtouzheke
+        own_control_core = {
             wuluo
         }
 
@@ -78830,9 +78719,8 @@ countries = {
 
     # --- PTZ ---
 
-    LGQ = {
-        #Longquan
-        our_cores_conquered_by_others = {
+    LGQ = { #Longquan
+        own_control_core = {
             longquanping
         }
 
@@ -78845,9 +78733,8 @@ countries = {
 
     # --- LGQ ---
 
-    RGS = {
-        #Rongshan
-        our_cores_conquered_by_others = {
+    RGS = { #Rongshan
+        own_control_core = {
             rongshan
         }
 
@@ -78860,9 +78747,8 @@ countries = {
 
     # --- RGS ---
 
-    BNI = {
-        #Baini
-        our_cores_conquered_by_others = {
+    BNI = { #Baini
+        own_control_core = {
             baini
         }
 
@@ -78875,9 +78761,8 @@ countries = {
 
     # --- BNI ---
 
-    COG = {
-        #Caotang
-        our_cores_conquered_by_others = {
+    COG = { #Caotang
+        own_control_core = {
             wengshui
         }
 
@@ -78894,9 +78779,8 @@ countries = {
 
     # --- COG ---
 
-    XNL = {
-        #Xinlong
-        our_cores_conquered_by_others = {
+    XNL = { #Xinlong
+        own_control_core = {
             huangping
         }
 
@@ -78909,9 +78793,8 @@ countries = {
 
     # --- XNL ---
 
-    ALI = {
-        #Kaili
-        our_cores_conquered_by_others = {
+    ALI = { #Kaili
+        own_control_core = {
             kaili
         }
 
@@ -78924,9 +78807,8 @@ countries = {
 
     # --- ALI ---
 
-    PYE = {
-        #Pingyue
-        our_cores_conquered_by_others = {
+    PYE = { #Pingyue
+        own_control_core = {
             pingyue
         }
 
@@ -78942,9 +78824,8 @@ countries = {
 
     # --- PYE ---
 
-    DZH = {
-        #Dizhai
-        our_cores_conquered_by_others = {
+    DZH = { #Dizhai
+        own_control_core = {
             longchang
         }
 
@@ -78957,9 +78838,8 @@ countries = {
 
     # --- DZH ---
 
-    XNG = {
-        #Xianning
-        our_cores_conquered_by_others = {
+    XNG = { #Xianning
+        own_control_core = {
             weiqing
         }
 
@@ -78972,9 +78852,8 @@ countries = {
 
     # --- XNG ---
 
-    PGB = {
-        #Pingba
-        our_cores_conquered_by_others = {
+    PGB = { #Pingba
+        own_control_core = {
             pingba
         }
 
@@ -78987,9 +78866,8 @@ countries = {
 
     # --- PGB ---
 
-    YNN = {
-        #Yongning
-        our_cores_conquered_by_others = {
+    YNN = { #Yongning
+        own_control_core = {
             xincheng_annan xinxing_annan annan
         }
 
@@ -79002,9 +78880,8 @@ countries = {
 
     # --- YNN ---
 
-    NLG = {
-        #Anlong
-        our_cores_conquered_by_others = {
+    NLG = { #Anlong
+        own_control_core = {
             ceheng xilong zhenfeng machang lucheng
         }
 
@@ -79020,9 +78897,8 @@ countries = {
 
     # --- NLG ---
 
-    SHG = {
-        #Shanglin
-        our_cores_conquered_by_others = {
+    SHG = { #Shanglin
+        own_control_core = {
             xilin bada
         }
 
@@ -79035,9 +78911,8 @@ countries = {
 
     # --- SHG ---
 
-    NDN = {
-        #Nandan
-        our_cores_conquered_by_others = {
+    NDN = { #Nandan
+        own_control_core = {
             nandan nadi liuzhai
         }
 
@@ -79050,9 +78925,8 @@ countries = {
 
     # --- NDN ---
 
-    DLN = {
-        #Donglan
-        our_cores_conquered_by_others = {
+    DLN = { #Donglan
+        own_control_core = {
             donglan zhishan
         }
 
@@ -79065,9 +78939,8 @@ countries = {
 
     # --- DLN ---
 
-    XCG = {
-        #Xincheng
-        our_cores_conquered_by_others = {
+    XCG = { #Xincheng
+        own_control_core = {
             xincheng_xincheng
         }
 
@@ -79080,9 +78953,8 @@ countries = {
 
     # --- XCG ---
 
-    YSN = {
-        #Yongshun
-        our_cores_conquered_by_others = {
+    YSN = { #Yongshun
+        own_control_core = {
             yongshun
         }
 
@@ -79095,9 +78967,8 @@ countries = {
 
     # --- YSN ---
 
-    ADG = {
-        #Anding
-        our_cores_conquered_by_others = {
+    ADG = { #Anding
+        own_control_core = {
             anding_mashan
         }
 
@@ -79110,9 +78981,8 @@ countries = {
 
     # --- ADG ---
 
-    DYG = {
-        #Duyang
-        our_cores_conquered_by_others = {
+    DYG = { #Duyang
+        own_control_core = {
             duyang
         }
 
@@ -79125,9 +78995,8 @@ countries = {
 
     # --- DYG ---
 
-    SGS = {
-        #Shangsi
-        our_cores_conquered_by_others = {
+    SGS = { #Shangsi
+        own_control_core = {
             shangsi
         }
 
@@ -79140,9 +79009,8 @@ countries = {
 
     # --- SGS ---
 
-    LZO = {
-        #Luozuo
-        our_cores_conquered_by_others = {
+    LZO = { #Luozuo
+        own_control_core = {
             boai
         }
 
@@ -79155,9 +79023,8 @@ countries = {
 
     # --- LZO ---
 
-    FZH = {
-        #Fuzhou
-        our_cores_conquered_by_others = {
+    FZH = { #Fuzhou
+        own_control_core = {
             fuzhou_guangnan
         }
 
@@ -79170,9 +79037,8 @@ countries = {
 
     # --- FZH ---
 
-    GZH = {
-        #Guzhou
-        our_cores_conquered_by_others = {
+    GZH = { #Guzhou
+        own_control_core = {
             guzhou
         }
 
@@ -79185,9 +79051,8 @@ countries = {
 
     # --- GZH ---
 
-    LPG = {
-        #Liping
-        our_cores_conquered_by_others = {
+    LPG = { #Liping
+        own_control_core = {
             liping
         }
 
@@ -79200,9 +79065,8 @@ countries = {
 
     # --- LPG ---
 
-    ZLD = {
-        #Zhonglindong
-        our_cores_conquered_by_others = {
+    ZLD = { #Zhonglindong
+        own_control_core = {
             tonggu_liping
         }
 
@@ -79215,9 +79079,8 @@ countries = {
 
     # --- ZLD ---
 
-    HZH = {
-        #Hongzhou Poli
-        our_cores_conquered_by_others = {
+    HZH = { #Hongzhou Poli
+        own_control_core = {
             yongcong
         }
 
@@ -79230,9 +79093,8 @@ countries = {
 
     # --- HZH ---
 
-    XSY = {
-        #Xisanyang
-        our_cores_conquered_by_others = {
+    XSY = { #Xisanyang
+        own_control_core = {
             xiajiang
         }
 
@@ -79419,11 +79281,13 @@ countries = {
 
     # --- MGE ---
 
-    YNG = {
-        #Yongning
-        our_cores_conquered_by_others = {
-            yongning_baisheng langqu
-            waerhdje muli kheong
+    YNG = { #Yongning
+        own_control_core = {
+            yongning_baisheng muli kheong langqu
+        }
+
+        own_control_integrated = {
+            waerhdje
         }
 
         include = "asia_advanced_tribe"
