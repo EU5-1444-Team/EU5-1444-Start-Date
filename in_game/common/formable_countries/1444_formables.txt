@@ -862,8 +862,42 @@ DNM_f = {
 	form_effect = {
 	}
 }
+
+CDL_f = {
+	# Dali Kingdom / Dablit Guaif
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+
+	potential = {
+		culture = culture:bai_culture
+	}
+
+	allow = {
+		owns = location:taihe_dali
+	}
+
+	name = CDL
+	flag = CDL
+	adjective = CDL_ADJ
+	tag = CDL
+	color = map_CDL
+
+	areas = {
+		yunnan_area
+		dali_area
+	}
+
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+
 TTK_f = { #Balkh
-	level = 3
+	level = 2
 	required_locations_fraction = 0.5
 	rule = historical
 	capital_required = yes 
