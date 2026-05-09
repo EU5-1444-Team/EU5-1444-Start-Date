@@ -29,6 +29,14 @@ diplomacy_manager = {
     dependency = { first = WLS second = EWY subject_type = vassal }
     dependency = { first = WLS second = CMS subject_type = vassal }
     dependency = { first = WLS second = PMB subject_type = vassal }
+    dependency = { first = WLS second = DEN subject_type = vassal }
+    dependency = { first = WLS second = NEW subject_type = vassal }
+    dependency = { first = WLS second = BFY subject_type = vassal }
+    dependency = { first = MAC second = BUI subject_type = fiefdom }
+    dependency = { first = MAC second = RAD subject_type = fiefdom }
+
+    dependency = { first = LAN second = MMH subject_type = fiefdom }
+    dependency = { first = LAN second = KDY subject_type = fiefdom }
 
     #------- Ireland -------
 
@@ -166,7 +174,6 @@ diplomacy_manager = {
     dependency = { first = ORI second = PLA subject_type = samanta }
     dependency = { first = ORI second = BNA subject_type = samanta }
     dependency = { first = ORI second = KLH subject_type = samanta }
-
 
     dependency = { first = SRM second = JBL subject_type = samanta }
 
@@ -955,7 +962,8 @@ diplomacy_manager = {
     dependency = { first = CRO second = FPN subject_type = vassal }
     dependency = { first = FPN second = KRZ subject_type = vassal }
 
-    dependency = { first = ARA second = HUM subject_type = tributary }
+    scripted_oneway = { first = ARA second = HUM type = guarantee }
+    #dependency = { first = ARA second = HUM subject_type = tributary }
 
     dependency = { first = MAM second = CYP subject_type = tributary }
 
@@ -980,7 +988,7 @@ diplomacy_manager = {
     dependency = { first = TIM second = MIH subject_type = vassal }
     dependency = { first = TIP second = HZP subject_type = vassal }
     dependency = { first = MZN second = BDS subject_type = vassal }
-    dependency = { first = TBW second = BKH subject_type = vassal }
+    dependency = { first = TIM second = BKH subject_type = vassal }
     dependency = { first = MIH second = BLA subject_type = tributary }
     dependency = { first = MIH second = NWI subject_type = tributary }
     dependency = { first = KRM second = BSH subject_type = tributary } 

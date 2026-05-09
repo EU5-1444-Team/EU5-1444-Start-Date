@@ -5798,15 +5798,13 @@ countries = {
         own_control_core = {
             # Principality of Wales
             aberystwyth anglesey cardigan carnarvon harlech conwy carmarthen penllyn
-            monmouth
-            kidwelly
-            flint denbigh
+            flint
         }
         our_cores_conquered_by_others = {
             # Earldom of Chester
 
             # Marcher Lordships
-            brecknock cardiff caerphilly swansea montgomery builth llangollen ewyas machynlleth radnor
+            brecknock cardiff caerphilly swansea montgomery builth llangollen ewyas machynlleth radnor denbigh monmouth kidwelly
         }
 
         include = "catholic_monarchy_english_lordship"
@@ -5814,6 +5812,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            ruler = eng_henry_vi_lancaster
 
             aristocracy_vs_plutocracy = -60
             quality_vs_quantity = 25
@@ -5833,8 +5832,12 @@ countries = {
                 noble_fortification_licenses
                 peasants_yeomanry
             }
-            ruler = eng_henry_vi_lancaster
+
+            ruler_term = { character = eng_edward_the_black_prince start_date = 1343.5.12 end_date = 1376.6.8 }
+            ruler_term = { character = eng_richard_ii_plantagenet start_date = 1376.11.20 end_date = 1377.6.22 }
+            ruler_term = { character = eng_henry_v_lancaster start_date = 1399.10.15 end_date = 1413.3.21 }
         }
+
         country_rank = rank_duchy
         capital = carnarvon
         accepted_cultures = { welsh }
@@ -5930,19 +5933,67 @@ countries = {
         # March Marcher Lordship
         include = "catholic_monarchy_english_lordship_welsh_marcher_lord"
         own_control_core = {
-            radnor builth newport wigmore ludlow
+            wigmore ludlow
         }
-        our_cores_conquered_by_others = {
-            denbigh montgomery
-        }
+
         capital = wigmore
+
         government = {
-            ruler_term = { character = eng_roger_mortimer_1st_earl_of_march start_date = 1330.11.29 end_date = 1330.11.29 regnal_number = 1 }
+            ruler = eng_richard_york_3rd_duke
+
+            ruler_term = { character = eng_roger_mortimer_1st_earl_of_march start_date = 1287.4.25 end_date = 1330.11.29 regnal_number = 1 }
+
+            ruler_term = { character = eng_richard_york_3rd_duke start_date = 1425.1.18 }
         }
+
         tolerated_cultures = { welsh }
     }
 
     # --- MAC ---
+
+    BUI = {
+        # Builth Marcher Lordship
+        include = "catholic_monarchy_english_lordship_welsh_marcher_lord"
+        own_control_core = {
+            builth 
+        }
+
+        capital = builth
+
+        government = {
+            ruler = eng_richard_york_3rd_duke
+
+            ruler_term = { character = eng_roger_mortimer_1st_earl_of_march start_date = 1287.4.25 end_date = 1330.11.29 regnal_number = 1 }
+
+            ruler_term = { character = eng_richard_york_3rd_duke start_date = 1425.1.18 }
+        }
+
+        tolerated_cultures = { welsh }
+    }
+
+    # --- BUI ---
+
+    RAD = {
+        # Builth Marcher Lordship
+        include = "catholic_monarchy_english_lordship_welsh_marcher_lord"
+        own_control_core = {
+            radnor 
+        }
+
+        capital = radnor
+
+        government = {
+            ruler = eng_richard_york_3rd_duke
+
+            ruler_term = { character = eng_roger_mortimer_1st_earl_of_march start_date = 1287.4.25 end_date = 1330.11.29 regnal_number = 1 }
+
+            ruler_term = { character = eng_richard_york_3rd_duke start_date = 1425.1.18 }
+        }
+
+        tolerated_cultures = { welsh }
+    }
+
+    # --- RAD ---
 
     GDD = {
         # Gwynedd
@@ -6122,8 +6173,13 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
             ruler = loi_alasdair_mac_domhnall
-            ruler_term = { character = ros_william_5th_earl start_date = 1336.5.17 end_date = 1372.1.1 }
-
+            ruler_term = { character = ros_hugh_4th_earl start_date = 1323.1.1 end_date = 1333.7.19 }
+            ruler_term = { character = ros_william_5th_earl start_date = 1333.7.19 end_date = 1372.1.1 }
+            ruler_term = { character = ros_euphemia_o_bolan start_date = 1372.1.1 end_date = 1394.1.1 }
+            ruler_term = { character = sco_alexander_leslie start_date = 1394.1.1 end_date = 1402.1.1 }
+            ruler_term = { character = sco_euphemia_leslie start_date = 1402.1.1 end_date = 1415.6.1 }
+            ruler_term = { character = sco_john_stuart_buchan start_date = 1415.6.1 end_date = 1424.8.17 }
+            ruler_term = { character = loi_mariota_leslie start_date = 1424.8.17  end_date = 1436.1.1 }
             ruler_term = { character = loi_alasdair_mac_domhnall start_date = 1436.1.1 }
 
             reforms = {
@@ -6146,9 +6202,12 @@ countries = {
         capital = cardiff
 
         government = {
-            ruler_term = { character = eng_hugh_le_despenser start_date = 1337.1.1 regnal_number = 1 }
+            ruler = eng_henry_beauchamp_1st_duke_warwick
 
-            ruler = random # TODO: add me
+            ruler_term = { character = eng_hugh_le_despenser start_date = 1337.1.1 end_date = 1349.2.8 regnal_number = 1 }
+            ruler_term = { character = eng_henry_beauchamp_1st_duke_warwick start_date = 1439.1.1 }
+
+
         }
         tolerated_cultures = { welsh }
     }
@@ -6192,6 +6251,10 @@ countries = {
 
         government = {
             ruler = eng_henry_vi_lancaster
+
+            ruler_term = { character = eng_edward_the_black_prince start_date = 1343.5.12 end_date = 1376.6.8 }
+            ruler_term = { character = eng_richard_ii_plantagenet start_date = 1376.11.20 end_date = 1377.6.22 }
+            ruler_term = { character = eng_henry_v_lancaster start_date = 1399.10.15 end_date = 1413.3.21 }
         }
 
         tolerated_cultures = {
@@ -6316,19 +6379,45 @@ countries = {
         # Arundel Marcher Lordship
         include = "catholic_monarchy_english_lordship_welsh_marcher_lord_no_coast"
         own_control_core = {
-            llangollen oswestry
+            oswestry
         }
+
         capital = oswestry
 
         government = {
-            ruler_term = { character = eng_richard_fitzalan_ii start_date = 1331.1.1 regnal_number = 1 }
+            ruler = eng_william_fitzalan_9th_earl_arundel
 
-            ruler = random # TODO: add me
+            ruler_term = { character = eng_richard_fitzalan_ii start_date = 1331.1.1 end_date = 1376.1.24 regnal_number = 1 }
+
+            ruler_term = { character = eng_william_fitzalan_9th_earl_arundel start_date = 1438.4.24 }
         }
+
         tolerated_cultures = { welsh }
     }
 
     # --- AUD ---
+
+    BFY = {
+        # Bromfield and Yale Marcher Lordship
+        include = "catholic_monarchy_english_lordship_welsh_marcher_lord_no_coast"
+        own_control_core = {
+            llangollen
+        }
+
+        capital = llangollen
+
+        government = {
+            ruler = eng_william_fitzalan_9th_earl_arundel
+
+            ruler_term = { character = eng_richard_fitzalan_ii start_date = 1331.1.1 end_date = 1376.1.24 regnal_number = 1 }
+
+            ruler_term = { character = eng_william_fitzalan_9th_earl_arundel start_date = 1438.4.24 }
+        }
+
+        tolerated_cultures = { welsh }
+    }
+
+    # --- BFY ---
 
     POS = {
         # Powis Marcher Lordship
@@ -6339,9 +6428,15 @@ countries = {
         capital = machynlleth
 
         government = {
-            ruler_term = { character = eng_john_de_charlton_1st_baron_charlton start_date = 1309.1.1 regnal_number = 1 }
-            ruler = random # TODO: add me
+            ruler = eng_henry_grey_2nd_earl_tankerville
+
+            ruler_term = { character = eng_john_de_charlton_1st_baron_charlton start_date = 1309.1.1 end_date = 1353.1.1 }
+            ruler_term = { character = eng_john_de_charlton_2nd_baron_charlton start_date = 1353.1.1 end_date = 1360.1.1 }
+            ruler_term = { character = eng_john_de_charlton_3rd_baron_charlton start_date = 1360.1.1 end_date = 1374.1.1 }
+
+            ruler_term = { character = eng_henry_grey_2nd_earl_tankerville start_date = 1425.1.1 }
         }
+
         tolerated_cultures = { welsh }
     }
 
@@ -6352,6 +6447,7 @@ countries = {
         our_cores_conquered_by_others = {
             monmouth newport
         }
+
         include = "catholic_monarchy_welsh_releasable"
         capital = monmouth
     }
@@ -6367,9 +6463,12 @@ countries = {
         capital = swansea
 
         government = {
-            ruler_term = { character = eng_john_mowbray start_date = 1331.1.1 regnal_number = 1 }
-            ruler = random # TODO: add me
+            ruler = eng_john_mowbray_3rd_duke_norfolk
+
+            ruler_term = { character = eng_john_mowbray_3rd_baron_mowbray start_date = 1331.1.1 end_date = 1361.10.4 regnal_number = 1 }
+            ruler_term = { character = eng_john_mowbray_3rd_duke_norfolk start_date = 1432.10.19 }
         }
+
         tolerated_cultures = { welsh }
     }
 
@@ -6381,17 +6480,89 @@ countries = {
         own_control_core = {
             brecknock
         }
+
         capital = brecknock
 
         government = {
-            ruler_term = { character = eng_humphrey_de_bohun_6th_earl_of_hereford start_date = 1336.1.20 regnal_number = 1 }
+            ruler = eng_humphrey_stafford_1st_duke_buckingham
 
-            ruler = random # TODO: add me
+            ruler_term = { character = eng_humphrey_de_bohun_6th_earl_of_hereford start_date = 1336.1.20 end_date = 1361.10.15 regnal_number = 1 }
+
+            ruler_term = { character = eng_humphrey_stafford_1st_duke_buckingham start_date = 1438.10.16 }
         }
+
         tolerated_cultures = { welsh }
     }
 
     # --- BRO ---
+
+    NEW = {
+        # Newport Marcher Lordship
+        include = "catholic_monarchy_english_lordship_welsh_marcher_lord"
+        own_control_core = {
+            newport
+        }
+
+        capital = newport
+
+        government = {
+            ruler = eng_humphrey_stafford_1st_duke_buckingham
+
+            ruler_term = { character = eng_humphrey_de_bohun_6th_earl_of_hereford start_date = 1336.1.20 end_date = 1361.10.15 regnal_number = 1 }
+
+            ruler_term = { character = eng_humphrey_stafford_1st_duke_buckingham start_date = 1438.10.16 }
+        }
+
+        tolerated_cultures = { welsh }
+    }
+
+    # --- NEW ---
+
+    MMH = {
+        # Monmouth Marcher Lordship
+        include = "catholic_monarchy_english_lordship_welsh_marcher_lord"
+        own_control_core = {
+            monmouth
+        }
+
+        capital = monmouth
+
+        government = {
+            ruler = eng_henry_vi_lancaster
+
+            ruler_term = { character = eng_john_of_gaunt start_date = 1362.1.1 end_date = 1399.2.3 }
+            ruler_term = { character = eng_henry_iv_lancaster start_date = 1399.10.13 end_date = 1413.3.20 }
+            ruler_term = { character = eng_henry_v_lancaster start_date = 1413.3.12 end_date = 1422.8.31 }
+            ruler_term = { character = eng_henry_vi_lancaster start_date = 1422.9.1 }
+        }
+
+        tolerated_cultures = { welsh }
+    }
+
+    # --- MMH ---
+
+    KDY = {
+        # Kidwelly Marcher Lordship
+        include = "catholic_monarchy_english_lordship_welsh_marcher_lord"
+        own_control_core = {
+            kidwelly
+        }
+
+        capital = kidwelly
+
+        government = {
+            ruler = eng_henry_vi_lancaster
+
+            ruler_term = { character = eng_john_of_gaunt start_date = 1362.1.1 end_date = 1399.2.3 }
+            ruler_term = { character = eng_henry_iv_lancaster start_date = 1399.10.13 end_date = 1413.3.20 }
+            ruler_term = { character = eng_henry_v_lancaster start_date = 1413.3.12 end_date = 1422.8.31 }
+            ruler_term = { character = eng_henry_vi_lancaster start_date = 1422.9.1 }
+        }
+
+        tolerated_cultures = { welsh }
+    }
+
+    # --- KDY ---
 
     EWY = {
         # Ewyas Marcher Lordship
@@ -6402,8 +6573,11 @@ countries = {
         capital = ewyas
 
         government = {
-            ruler_term = { character = eng_bartholomew_burghersh_the_elder start_date = 1316.1.1 regnal_number = 1 }
-            ruler = random # TODO: add me
+            ruler = eng_edward_neville_3rd_baron_bergavenny
+
+            ruler_term = { character = eng_bartholomew_burghersh_the_elder start_date = 1316.1.1 end_date = 1355.8.3 regnal_number = 1 }
+
+            ruler_term = { character = eng_edward_neville_3rd_baron_bergavenny start_date = 1422.1.1 }
         }
         tolerated_cultures = { welsh }
     }
@@ -6419,8 +6593,10 @@ countries = {
         capital = fishguard
 
         government = {
-            ruler_term = { character = eng_james_audley_2nd_baron_audley start_date = 1331.1.1 regnal_number = 1 }
-            ruler = random # TODO: add me
+            ruler = eng_james_tuchet_5th_baron_audley
+
+            ruler_term = { character = eng_james_audley_2nd_baron_audley start_date = 1331.1.1 end_date = 1386.4.1 regnal_number = 1 }
+            ruler_term = { character = eng_james_tuchet_5th_baron_audley start_date = 1408.1.1 }
         }
         tolerated_cultures = { welsh }
     }
@@ -6433,11 +6609,16 @@ countries = {
         own_control_core = {
             pembroke
         }
+
         capital = pembroke
 
         government = {
+            ruler = eng_humphrey_lancaster
 
+            ruler_term = { character = eng_laurence_hastings_1st_earl_of_pembroke start_date = 1324.6.22 end_date = 1348.8.20 regnal_number = 1 }
+            ruler_term = { character = eng_humphrey_lancaster start_date = 1414.1.1 }
         }
+
         tolerated_cultures = { welsh }
     }
 
@@ -6446,14 +6627,18 @@ countries = {
     DEN = {
         # Denbigh Marcher Lordship
         include = "catholic_monarchy_english_lordship_welsh_marcher_lord"
-        our_cores_conquered_by_others = {
+        own_control_core = {
             denbigh
         }
+
         capital = denbigh
 
         government = {
-            ruler_term = { character = eng_william_montague start_date = 1331.1.1 regnal_number = 1 }
-            ruler = random
+            ruler = eng_richard_york_3rd_duke
+
+            ruler_term = { character = eng_william_montague start_date = 1331.1.1 end_date = 1344.1.30 }
+
+            ruler_term = { character = eng_richard_york_3rd_duke start_date = 1425.1.18 }
         }
         tolerated_cultures = { welsh }
     }
@@ -6493,14 +6678,18 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler_term = { character = eng_william_montague start_date = 1333.8.9 regnal_number = 1 }
-            ruler = random # TODO: add me
+            ruler = eng_thomas_stanley_1st_baron_stanley
+
+            ruler_term = { character = eng_william_montague start_date = 1333.8.9 end_date = 1344.1.30 regnal_number = 1 }
+            ruler_term = { character = eng_william_montague_2nd start_date = 1344.1.30 end_date = 1397.6.3 }
+
+            ruler_term = { character = eng_thomas_stanley_1st_baron_stanley start_date = 1437.1.1 }
         }
+
         country_rank = rank_kingdom
         capital = mann
 
         tolerated_cultures = { english }
-        country_rank = rank_county
     }
 
     # --- MNN ---
@@ -8662,9 +8851,14 @@ countries = {
         include = "gaelic_tribe_no_coast_no_censor"
         include = "expl_western_europe"
         government = {
-            ruler_term = { character = fly_muirchertach_og_mac_muircherartaig_o_conchobhair start_date = 1329.1.1 }
-            ruler = random # TODO: add me
+            ruler = fly_an_calbhach_mac_murchada_o_faly
+
+            ruler_term = { character = fly_muirchertach_og_mac_muircherartaig_o_conchobhair start_date = 1329.1.1 end_date = 1384.1.1 }
+            ruler_term = { character = fly_murchad_mac_muircherartaig_og_o_faly start_date = 1384.1.1 end_date = 1421.1.1 }
+            ruler_term = { character = fly_diarmaid_mac_muircherartaig_og_o_faly start_date = 1421.1.1 end_date = 1425.1.1 }
+            ruler_term = { character = fly_an_calbhach_mac_murchada_o_faly start_date = 1425.1.1 }
         }
+
         capital = daingean
     }
 
