@@ -5353,7 +5353,12 @@ countries = {
     ENG = {
         #ENGLAND
         own_control_core = {
-            appleby hythe alnwick barnstaple bedford dunstable birmingham boston bosworth shoreham lewes bristol buckingham bury glossop cambridge canterbury carlisle rochester cheltenham chelmsford chesterfield chichester chippenham cockermouth colchester kettering coventry cirencester derby dorchester dover exeter gloucester grimsby guildford reigate harrow hastings hedingham hertford hull huntingdon ipswich kendal grantham penrith kidderminster leeds leicester lincoln london loughborough lowestoft lynn daventry newark newcastle northampton norwich nottingham oxford plymouth bideford bampton okehampton poole portsmouth amesbury lymington retford rutland salisbury southampton prittlewell kingston stafford stoke stratford trowbridge taunton wells barking weymouth shaftesbury wight winchester windsor worcester yarmouth york scarborough tamworth bedale richmond whitby bridlington selby pontefract skipton wakefield louth thetford fakenham reading tonbridge minehead portishead bath henley royston aylesbury wycombe lavenham abingdon st_albans banbury walden spalding woking morpeth norton ripon doncaster egremont basingstoke
+            appleby hythe alnwick barnstaple bedford dunstable birmingham boston bosworth shoreham lewes bristol 
+            buckingham bury glossop cambridge canterbury carlisle rochester cheltenham chelmsford chesterfield chichester chippenham cockermouth colchester kettering 
+            coventry cirencester derby dorchester dover exeter gloucester grimsby guildford reigate harrow hastings hedingham hertford hull huntingdon ipswich kendal grantham penrith kidderminster leeds 
+            leicester lincoln london loughborough lowestoft lynn daventry newark newcastle northampton norwich nottingham oxford plymouth bideford bampton okehampton poole portsmouth amesbury lymington retford rutland 
+            salisbury southampton prittlewell kingston stafford stoke stratford trowbridge taunton wells barking weymouth shaftesbury wight winchester windsor worcester yarmouth york scarborough tamworth bedale richmond 
+            whitby bridlington selby pontefract skipton wakefield louth thetford fakenham reading tonbridge minehead portishead bath henley royston aylesbury wycombe lavenham abingdon st_albans banbury walden spalding woking morpeth norton ripon doncaster egremont basingstoke
 
             # Earldom of Chester
             #chester macclesfield nantwich
@@ -5372,6 +5377,7 @@ countries = {
         }
 
         own_control_conquered = {
+            roxburgh
         }
 
         include = "catholic_monarchy"
@@ -5518,14 +5524,13 @@ countries = {
     SCO = {
         # Scotland
         own_control_core = {
-            glasgow paisley dumbarton aberdeen dunbar banff dunfermline st_andrews dundee buchan mar inverurie stonehaven clackmannan aberfeldy irvine
-            oban inverary cowal forfar arbroath selkirk scone
+            glasgow paisley dumbarton aberdeen dunbar banff dunfermline st_andrews buchan mar inverurie clackmannan aberfeldy irvine
+            oban inverary cowal selkirk scone
             dornoch durness tongue
-            ayr perth edinburgh stirling roxburgh linlithgow duns dumfries lanark
+            ayr perth edinburgh stirling linlithgow duns dumfries lanark
             strathearn cupar
-            inverness elgin badenoch lochaber
-            urquhart
         }
+
         own_control_conquered = {
             thurso
         }
@@ -5534,6 +5539,9 @@ countries = {
             berwick
             #ross
             dingwall gairloch ullapool
+
+            # Occupied by England and not retaken until ~1460
+            roxburgh
         }
 
         include = "expl_northern_europe"
@@ -5768,6 +5776,30 @@ countries = {
     }
 
     # --- SRT ---
+
+    AGS = {
+        # Angus
+        own_control_core = {
+            dundee forfar arbroath stonehaven
+        }
+
+        include = "expl_northern_europe"
+        starting_technology_level = 3
+        include = "catholic_monarchy_scottish_earldom"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = sco_james_douglas_3rd_earl_angus
+
+            ruler_term = { character = sco_james_douglas_3rd_earl_angus start_date = 1437.1.1 }
+        }
+        
+        country_rank = rank_county
+        capital = dundee
+        accepted_cultures = { highland }
+    }
+
+    # --- AGS ---
 
     NOL = {
         # Northumberland
@@ -6107,16 +6139,21 @@ countries = {
 
     MOY = {
         # Moray
-        our_cores_conquered_by_others = {
-            inverness elgin badenoch lochaber
+        own_control_core = {
+            inverness elgin badenoch lochaber urquhart
         }
+
         government = {
             heir_selection = cognatic_primogeniture
-            ruler_term = { character = moy_john_randolph start_date = 1333.8.9 regnal_number = 1 }
-            ruler = random
+            ruler = sco_elizabeth_dunbar_8th_countess_moray
+
+            ruler_term = { character = moy_john_randolph start_date = 1333.8.9 end_date = 1346.10.17 }
+            ruler_term = { character = sco_elizabeth_dunbar_8th_countess_moray start_date = 1429.1.1 }
         }
+
         include = "catholic_monarchy_scottish_earldom"
         include = "expl_northern_europe"
+
         capital = elgin
         accepted_cultures = { highland }
         court_language = norman_dialect
@@ -6186,6 +6223,7 @@ countries = {
                 celtic_traditions_reform
             }
         }
+
         include = "catholic_monarchy_scottish_earldom"
         capital = dingwall
         accepted_cultures = { scottish }
