@@ -27939,6 +27939,9 @@ countries = {
                 marriage_law = muslim_marriage
                 heir_religion_law = heir_same_religion
             }
+            reforms = {
+                legacy_of_jochi
+            }
         }
     }
 
@@ -30339,6 +30342,9 @@ countries = {
             capital_economy_vs_traditional_economy = -50
             individualism_vs_communalism = -30
             outward_vs_inward = 0
+            reforms = {
+                legacy_of_jochi
+            }
         }
 
         accepted_cultures = {
@@ -30419,6 +30425,9 @@ countries = {
             capital_economy_vs_traditional_economy = -50
             individualism_vs_communalism = -30
             outward_vs_inward = 0
+            reforms = {
+                legacy_of_jochi
+            }
         }
 
         accepted_cultures = {
@@ -30495,6 +30504,9 @@ countries = {
             capital_economy_vs_traditional_economy = -50
             individualism_vs_communalism = -30
             outward_vs_inward = 0
+            reforms = {
+                legacy_of_jochi
+            }
         }
 
         accepted_cultures = {
@@ -30543,6 +30555,9 @@ countries = {
                 sharia_law = hanafi_policy
                 marriage_law = muslim_marriage
                 heir_religion_law = heir_same_religion
+            }
+            reforms = {
+                legacy_of_jochi
             }
             mysticism_vs_jurisprudence = -15
             centralization_vs_decentralization = 30
@@ -39233,8 +39248,8 @@ countries = {
 
     KLR = {
         own_control_core = {
-            badreh darrehshahr gilan_gharb harunabad
-            eyvan ilam
+            bisotun holeylan kermanshah
+            kamyaran muchesh sonqor
         }
 
         include = "expl_middle_east"
@@ -39254,8 +39269,8 @@ countries = {
         tolerated_cultures = {
             lur_culture
         }
-
-        capital = gilan_gharb
+        dynasty = kalhor_dynasty
+        capital = kermanshah
         religious_school = hanafi_school
         government = { mysticism_vs_jurisprudence = -15 }
 
@@ -39807,10 +39822,7 @@ countries = {
             heir_selection = cognatic_primogeniture
             ruler = tim_shahrukh_mirza
             heir = tim_ala_al_dawla
-            ruler_term = { character = tim_timur start_date = 1370.4.9 end_date = 1405.2.18 }
             ruler_term = { character = tim_shahrukh_mirza start_date = 1405.2.20 }
-            ruler_term = { character = tim_miran_shah start_date = 1420.4.9 end_date = 1421.2.18 }
-
         }
 
         accepted_cultures = {
@@ -40154,7 +40166,6 @@ countries = {
             ruler = tim_shahrukh_mirza
             heir = tim_ala_al_dawla
 
-            ruler_term = { character = tim_timur start_date = 1370.4.9 end_date = 1405.2.18 }
             ruler_term = { character = tim_shahrukh_mirza start_date = 1405.2.20 }
 
         }
@@ -40251,7 +40262,7 @@ countries = {
 
     # --- MIH ---
 
-    MSS = {
+    MSS = { #Musha'sha'
         type = location
         own_control_core = {
             abdas al_madar zuwayr
@@ -40277,7 +40288,7 @@ countries = {
             reforms = {
                 feudal_theocracy
             }
-            ruler = random
+            ruler = mss_muhammad_ibn_falah
         }
 
         country_rank = rank_duchy
@@ -40323,42 +40334,6 @@ countries = {
 
     # --- KHT ---
 
-    MKR = {
-        #Makran https://en.wikipedia.org/wiki/Makran
-        own_control_core = {
-            kalmat qasr_e_qand gwatar rask sarbaz
-            gwadar kuddan pasni tump turbat
-            hinglaj ormara
-            bih al_tiz zarabad bent
-        }
-
-        include = "expl_middle_east"
-        starting_technology_level = 3
-        include = "muslim_monarchy_no_abrahamic_dhimmi"
-        government = {
-            type = monarchy
-            heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
-
-            laws = {
-                sharia_law = hanafi_policy
-            }
-        }
-
-        tolerated_cultures = {
-            brahui_culture
-        }
-
-        religious_school = hanafi_school
-        government = { mysticism_vs_jurisprudence = -15 }
-
-        capital = kalmat
-        dynasty = hot_dynasty
-        court_language = persian_language
-    }
-
-    # --- MKR ---
-
     NGD = {
         #Neguderi
         our_cores_conquered_by_others = {
@@ -40397,8 +40372,7 @@ countries = {
 
     # --- NGD ---
 
-    HZP = {
-        #Hazaraspids (Great Lorestan)
+    HZP = { #Hazaraspids (Great Lorestan)
         #Ruler Title: Atabegate (Atabeg)
         own_control_core = {
             izeh andika dehdez lordegan naghan
@@ -40414,55 +40388,18 @@ countries = {
             type = tribe
             heir_selection = cognatic_primogeniture
             ruler = random
-            regnal_numbers = {
-                name_joseph.name_shah = 2
-            }
 
         }
 
         tolerated_cultures = {
             farsi_culture
         }
-
-        religious_school = maturidi_school #Said to be predominant in Persia before the Safavids
+        dynasty = bakhtiari_dynasty
+        religious_school = maturidi_school
         capital = izeh
     }
 
     # --- HZP ---
-
-    KHN = {
-        #Kharan https://en.wikipedia.org/wiki/Kharan,_Pakistan
-        own_control_core = {
-            mastung nushki
-            kharan besima chagai naalbandin washuk
-            khash jaleq ladiz mashkel
-        }
-        our_cores_conquered_by_others = {
-            sepeh dowzdab
-        }
-
-        include = "expl_middle_east"
-        starting_technology_level = 0
-        include = "muslim_tribe_no_coast"
-        government = {
-            type = tribe
-            heir_selection = tribal_oldest_male
-            ruler = random
-
-        }
-
-        tolerated_cultures = {
-            afghan_culture
-            dehwar_culture
-            brahui_culture
-        }
-
-        religious_school = maturidi_school #Said to be predominant in Persia before the Safavids
-        capital = kharan
-        dynasty = nahrui_dynasty
-    }
-
-    # --- KHN ---
 
     LCK = {
         #Khorsidi
@@ -40480,10 +40417,10 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = lck_shah_hosayn
 
             laws = {
-                sharia_law = zaidi_policy
+                sharia_law = shafii_policy
             }
         }
 
@@ -40491,7 +40428,7 @@ countries = {
             farsi_culture
         }
 
-        religious_school = zaidi_school
+        religious_school = shafii_school
         capital = khorramabad
     }
 
@@ -40529,76 +40466,7 @@ countries = {
 
     # --- HDN ---
 
-    BMP = {
-        #Bampur https://en.wikipedia.org/wiki/Bampur
-        own_control_core = {
-            bampur bazman dalgan espakeh fahrej karvandar rameshk
-            qaleh_ganj shahabad_kerman
-            bashagard
-        }
-
-        include = "expl_middle_east"
-        starting_technology_level = 0
-        include = "muslim_tribe_no_coast"
-        government = {
-            type = tribe
-            heir_selection = tribal_oldest_male
-            ruler = random
-
-            laws = {
-                sharia_law = hanafi_policy
-            }
-        }
-
-        tolerated_cultures = {
-            brahui_culture
-        }
-
-        religious_school = hanafi_school
-        government = { mysticism_vs_jurisprudence = -15 }
-
-        capital = bampur
-        dynasty = rind_lashari_dynasty
-        court_language = persian_language
-    }
-
-    # --- BMP ---
-
-    BLA = {
-        #Buleda https://en.wikipedia.org/wiki/Buleda
-        own_control_core = {
-            bannajbur mahgas murt nagh paroom saravan suran
-            buleda irafshan
-        }
-
-        include = "expl_middle_east"
-        starting_technology_level = 0
-        include = "muslim_tribe_no_coast"
-        government = {
-            type = tribe
-            heir_selection = tribal_oldest_male
-            ruler = random
-
-            laws = {
-                sharia_law = hanafi_policy
-            }
-        }
-
-        tolerated_cultures = {
-            dehwar_culture
-        }
-
-        religious_school = hanafi_school
-        government = { mysticism_vs_jurisprudence = -15 }
-
-        capital = buleda
-        dynasty = buledai_dynasty
-        court_language = persian_language
-    }
-
-    # --- BLA ---
-
-    ARD = {
+    ARD = { #Ardalan
         own_control_core = {
             sanandaj hawraman marivan
             bijar dehgolan divandarreh ghorveh
@@ -40617,7 +40485,7 @@ countries = {
                 sharia_law = hanafi_policy
             }
         }
-
+        dynasty = ardalan_dynasty
         capital = sanandaj
         religious_school = hanafi_school
         government = { mysticism_vs_jurisprudence = -15 }
@@ -40714,9 +40582,6 @@ countries = {
     # --- LST ---
 
     KEL = {
-        own_control_core = {
-            kamyaran muchesh sonqor
-        }
 
         our_cores_conquered_by_others = {
             asadabad malayer nahavand
@@ -40829,6 +40694,9 @@ countries = {
 
             laws = {
                 sharia_law = zaizaidi_policydi_law
+            }
+            reforms = {
+                baduspanid_sassanid_legacy
             }
         }
 
@@ -40968,39 +40836,6 @@ countries = {
 
     # --- JUR ---
 
-    KLW = {
-        #Kolwa
-        own_control_core = {
-            zik awaran jhao mashkai
-        }
-
-        include = "expl_middle_east"
-        starting_technology_level = 0
-        include = "muslim_tribe_no_coast"
-        government = {
-            type = tribe
-            heir_selection = tribal_oldest_male
-            ruler = random
-
-            laws = {
-                sharia_law = hanafi_policy
-            }
-        }
-
-        tolerated_cultures = {
-            brahui_culture
-        }
-
-        religious_school = hanafi_school
-        government = { mysticism_vs_jurisprudence = -15 }
-
-        capital = awaran
-        dynasty = bizenjo_dynasty
-        court_language = persian_language
-    }
-
-    # --- KLW ---
-
     QOM = {
         #Qom
         our_cores_conquered_by_others = {
@@ -41093,9 +40928,10 @@ countries = {
 
     # --- KTW ---
 
-    RKL = {
+    RKL = { #Pusht-e-Kuh
         own_control_core = {
-            bisotun holeylan kermanshah
+            badreh darrehshahr gilan_gharb harunabad
+            eyvan ilam
         }
 
         include = "expl_middle_east"
@@ -41105,7 +40941,7 @@ countries = {
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
-            ruler = random # TODO: add me
+            ruler = random
 
             laws = {
                 sharia_law = hanafi_policy
@@ -41113,10 +40949,10 @@ countries = {
         }
 
         tolerated_cultures = {
-            lur_culture
+            kurdish_culture
         }
-
-        capital = kermanshah
+        dynasty = pusht_e_kuh_dynasty
+        capital = gilan_gharb
         religious_school = hanafi_school
         government = { mysticism_vs_jurisprudence = -15 }
 
@@ -41170,10 +41006,10 @@ countries = {
 
             ruler = bip_alaud_din_ii
 
-            ruler_term = { character = bip_amira_dubbaj_i start_date = 1364.1.1 end_date = 1410.1.1  }
-            ruler_term = { character = bip_alaud_din_i start_date = 1410.1.2 end_date = 1433.1.1  }
-            ruler_term = { character = bip_amira_dubbaj_ii start_date = 1433.1.2 end_date = 1441.1.1  }
-            ruler_term = { character = bip_alaud_din_ii start_date = 1441.1.2 }
+            ruler_term = { character = bip_amira_dubbaj_i start_date = 1364.1.1 end_date = 1410.1.1 regnal_number = 1 }
+            ruler_term = { character = bip_alaud_din_i start_date = 1410.1.2 end_date = 1433.1.1 regnal_number = 1 }
+            ruler_term = { character = bip_amira_dubbaj_ii start_date = 1433.1.2 end_date = 1441.1.1 regnal_number = 2 }
+            ruler_term = { character = bip_alaud_din_ii start_date = 1441.1.2 regnal_number = 2 }
     
             laws = {
                 sharia_law = shafii_policy
@@ -41437,35 +41273,6 @@ countries = {
     }
 
     # --- JSK ---
-
-    KLA = {
-        #Kalat https://en.wikipedia.org/wiki/Kalat,_Balochistan
-        own_control_core = {
-            surab kalat
-        }
-
-        include = "expl_middle_east"
-        starting_technology_level = 0
-        include = "muslim_tribe_no_coast"
-        government = {
-            type = tribe
-            heir_selection = tribal_oldest_male
-            ruler = random
-
-            laws = {
-                sharia_law = hanafi_policy
-            }
-        }
-
-        religious_school = hanafi_school
-        government = { mysticism_vs_jurisprudence = -15 }
-
-        capital = kalat
-        dynasty = mirwari_dynasty
-        court_language = persian_language
-    }
-
-    # --- KLA ---
 
     GRG = {
         #Gorgan Placeholder
@@ -41874,7 +41681,7 @@ countries = {
             ruler = chg_esen_buqa_ii
 
             reforms = {
-                legacy_of_genghis
+                legacy_of_chagatai
             }
         }
         country_rank = rank_kingdom
@@ -41988,7 +41795,7 @@ countries = {
     }
 
     # --- TIS ---
-    TIU = { #Urgench Timurids
+    TIU = { #Gurgānj Timurids
         own_control_core = {
             khiva kyat_kala kath nyzvar xojeli urgench vezir
             darganata hazarasp
@@ -42943,7 +42750,7 @@ countries = {
     # -------------------
 
     SBR = {
-        # Sibir Khanate
+        # Sibir Khanate/White Horde
         type = army
         own_control_core = {
             chimgi_tura
@@ -42978,7 +42785,9 @@ countries = {
             capital_economy_vs_traditional_economy = -60
             individualism_vs_communalism = -30
             outward_vs_inward = -20
-
+            reforms = {
+                legacy_of_jochi
+            }
             laws = {
                 legal_code_law = sharia_law_policy
                 sharia_law = hanafi_policy
@@ -43011,6 +42820,9 @@ countries = {
             heir_selection = cognatic_primogeniture
             centralization_vs_decentralization = 100
             ruler = batmunkh_khoid_fictional
+            reforms = {
+                oirat_forest_legacy
+            }
         }
         country_rank = rank_duchy
         court_language = mongolian_language
@@ -46717,48 +46529,334 @@ countries = {
 
     # --- SMA ---
 
-    SIW = {
-        #Rind
+    SIW = {  # Rind
         own_control_core = {
-            siwi dhadar gandava bab_kot jhal
-            mithri sui_pakistan
+            siwi
         }
-
         starting_technology_level = 3
-        include = "indian_muslim_monarchy"
-
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
-            ruler = random
-
+            ruler = rind_shahak_khan
         }
         dynasty = rind_dynasty
-
         religious_school = maturidi_school
         capital = siwi
     }
-    LSH = { #Lashari
-        #Rind, Balochi
+
+    DMK = {  # Domki
         own_control_core = {
-            lahri duki kahan rakni dera_bugti
+            dhadar gandava bab_kot jhal mithri
         }
-
         starting_technology_level = 3
-        include = "indian_muslim_monarchy"
-
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
             ruler = random
-
         }
-        dynasty = lashari_dynasty
+        dynasty = domki_dynasty
+        religious_school = maturidi_school
+        capital = dhadar
+    }
+
+    BGT = {  # Bugti
+        own_control_core = {
+            dera_bugti sui_pakistan rakni
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = bugti_dynasty
+        religious_school = maturidi_school
+        capital = dera_bugti
+    }
+
+    MRR = {  # Marri
+        own_control_core = {
+            kahan duki
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = marri_dynasty
+        religious_school = maturidi_school
+        capital = kahan
+    }
+
+    LGH = {  # Leghari
+        own_control_core = {
+            lahri
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = leghari_dynasty
         religious_school = maturidi_school
         capital = lahri
     }
 
-    # --- SIW ---
+    KLA = {  # Mengal (Brahui)
+        own_control_core = {
+            kalat mastung surab
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_brahui_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = mengal_dynasty
+        religious_school = maturidi_school
+        capital = kalat
+    }
+
+    KHN = {  # Rakhshani
+        own_control_core = {
+            nushki kharan washuk besima
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = rakhshani_dynasty
+        religious_school = maturidi_school
+        capital = kharan
+    }
+
+    NWI = {  # Nosherwani
+        own_control_core = {
+            chagai naalbandin
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = nosherwani_dynasty
+        religious_school = maturidi_school
+        capital = chagai
+    }
+
+    BZJ = {  # Bizenjo
+        own_control_core = {
+            bannajbur murt irafshan
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = bizenjo_dynasty
+        religious_school = maturidi_school
+        capital = bannajbur
+    }
+
+    MKR = {  # Buledi
+        own_control_core = {
+            gwadar pasni ormara hinglaj
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_monarchy_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = makran_jiand
+        }
+        dynasty = buledi_dynasty
+        religious_school = maturidi_school
+        capital = gwadar
+    }
+
+    KTI = {  # Kalmati (Hoth principality)
+        own_control_core = {
+            bent al_tiz zarabad kalmat
+        }
+        our_cores_conquered_by_others = {
+            bandar_e_jask jagin_zir
+        }
+        
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+        dynasty = kalmati_dynasty
+        religious_school = maturidi_school
+        capital = kalmat
+    }
+
+    DSH = {  # Dashti (Rind)
+        own_control_core = {
+            kuddan gwatar
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = dashti_dynasty
+        religious_school = maturidi_school
+        capital = kuddan
+    }
+
+    GSH = {  # Gashkori
+        own_control_core = {
+            sarbaz bih qasr_e_qand
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = gashkori_dynasty
+        religious_school = maturidi_school
+        capital = sarbaz
+
+    }
+
+    SHA = {  # Shirani
+        own_control_core = {
+            turbat rask tump
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = shirani_dynasty
+        religious_school = maturidi_school
+        capital = turbat
+
+    }
+
+    KLW = {  # Lashari
+        own_control_core = {
+            awaran zik jhao mashkai
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = lashari_nodhbandagh
+        }
+        dynasty = lashari_dynasty
+        religious_school = maturidi_school
+        capital = awaran
+    }
+
+    SHW = {  # Shirani
+        own_control_core = {
+            saravan suran mahgas
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = mubaraki_dynasty
+        religious_school = maturidi_school
+        capital = saravan
+    }
+
+    BLA = {  # Rakhshani
+        own_control_core = {
+            khash jaleq ladiz
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = rakhshani_dynasty  # same dynasty as RKH; these are the same tribe's western clans
+        religious_school = maturidi_school
+        capital = khash
+    }
+
+    BMP = {  # Gashkori
+        own_control_core = {
+            bampur espakeh fahrej
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = gashkori_dynasty
+        religious_school = maturidi_school
+        capital = bampur
+    }
+
+    BSH = {  # Bashagard	
+        own_control_core = {
+            bashagard qaleh_ganj shahabad_kerman
+        }
+        starting_technology_level = 3
+        include = "expl_baloch_template"
+        include = "1444_baloch_tribe_template"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        dynasty = bashagard_dynasty
+        religious_school = maturidi_school
+        capital = bashagard
+    }
 
     QUE = { #Kasi Tribe
         own_control_core = {
@@ -58485,6 +58583,9 @@ countries = {
             heir = amarsanjia_choros
             type = steppe_horde
             heir_selection = tribal_absolute_cognatic_primogeniture
+            reforms = {
+                oirat_forest_legacy
+            }
         }
         country_rank = rank_duchy
         court_language = mongolian_language
@@ -58510,6 +58611,9 @@ countries = {
             type = steppe_horde
             heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = khulan_torghut_fictional
+            reforms = {
+                oirat_forest_legacy
+            }
         }
         country_rank = rank_duchy
         court_language = mongolian_language
@@ -58535,6 +58639,9 @@ countries = {
             type = steppe_horde
             heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = tokhta_dorbet_fictional
+            reforms = {
+                oirat_forest_legacy
+            }
         }
         country_rank = rank_duchy
         court_language = mongolian_language
@@ -61093,6 +61200,7 @@ countries = {
 
         religious_school = hanafi_school
 
+        dynasty = dughlat_dynasty
         government = {
             type = monarchy
             ruler = random
@@ -61129,10 +61237,10 @@ countries = {
         capital = yarkand
 
         religious_school = hanafi_school
-
+        dynasty = dughlat_dynasty
         government = {
             type = monarchy
-            ruler = sayyid_ali_dughlat_fictional
+            ruler = random
 
             centralization_vs_decentralization = -10
             aristocracy_vs_plutocracy = -20
@@ -61164,7 +61272,7 @@ countries = {
         capital = yarkand
 
         religious_school = hanafi_school
-
+        dynasty = dughlat_dynasty
         government = {
             type = monarchy
             ruler = random
@@ -61200,7 +61308,7 @@ countries = {
         capital = yarkand
 
         religious_school = hanafi_school
-
+        dynasty = dughlat_dynasty
         government = {
             type = monarchy
             ruler = random
@@ -61241,6 +61349,9 @@ countries = {
             type = steppe_horde
             heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = toghtokh_khoshut_fictional
+            reforms = {
+                oirat_forest_legacy
+            }
         }
         country_rank = rank_duchy
         court_language = mongolian_language
@@ -61314,7 +61425,9 @@ countries = {
             heir_selection = cognatic_primogeniture
             ruler = khalil_sultan_karakhoja
             heir = burege_karakhoja
-
+            reforms = {
+                legacy_of_chagatai
+            }
 
         }
         country_rank = rank_kingdom

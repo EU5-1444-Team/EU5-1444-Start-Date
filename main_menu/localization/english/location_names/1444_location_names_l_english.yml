@@ -1,0 +1,22 @@
+﻿l_english:
+
+# ok, I need you to listen to me very carefully
+#I have a list of province names
+#
+#we're going to go through, and everytime we find a modern name, like krasnyano: "Krasnyano" I want it to be flagged, and then a loc written in this format: krasnyano: "Enypilgin" with the 1444 name for the area
+#I then want the old province name to be written out into this format
+#krasnyano.east_slavic_language: "Krasnyano" or krasnyano.novogrodian_dialect: "Krasnyano" depending on what the culture uses. (We will not use this everywhere, like Khorasani dialect. Just for stuff like scottish_dialect or catalan_dialect where they are british_Language or spanish_language)
+#AND PUT INTO A PILE OF ALL OF THAT LANGUAGE, separate from the main file
+#
+#Do not guess a language ID, Paradox was not clear on some.
+#Always pause, and ask me for the correct key
+#
+#If you dont understand a province name, it gets skipped. We are not worrying about slight spelling differences, special characters, or _'s. Just if the name itself is using a modern name
+#Also dont worry about something like lahore: "Lahore", and whether it's supposed to be a hindustani_language, or dravidan_language, etc. As long as it isn't an English colonial name, etc
+#Also ignore anything like Gavleborg. It might not be city correct, but doing gavlebord.swedish_dialect will always replace the new name, since Sweden.
+#Ditch anything you didn't change, like stockholm: "stockholm "
+#
+#Also, when it matters for the timeframe: krasnyano.kipchak_language: "Krasnyano" if it matters, in this case Uzbek. This is mostly for big culture migrations. We're not doing temporary stuff like Swedish Warsaw, or little flavour like Danish Stockholm
+#
+#Do you understand?
+#We'll go in groups of 100, so this will take ~2840 inputs to go through the list entierly (It wont, because we'll skip any and all lake/sea/ocean tiles). Dont try and search who owns what, work of feels of the area
