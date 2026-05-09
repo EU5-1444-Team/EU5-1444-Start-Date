@@ -363,3 +363,27 @@ JEV = {
 		}
 	}
 }
+
+DLH = {
+	flag_definition = {
+		coa = DLH
+		priority = 1
+	}
+	flag_definition = {
+		coa = DLH_lodi
+		priority = 2
+		trigger = {
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:lodi_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:lodi_dynasty
+				}
+			}
+		}
+	}
+}
