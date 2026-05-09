@@ -21,6 +21,14 @@ country_name_construction = {
 	text = {
 		localization_key = country_name_construction_name
 		trigger = {
+			tag = CDL
+			culture = culture:bai_culture
+
+		}
+	}
+	text = {
+		localization_key = country_name_construction_name
+		trigger = {
 			tag = SBR
 			government_type = government_type:steppe_horde
 			OR = {
@@ -143,12 +151,7 @@ country_name_construction = {
 		#Dughlat
 		localization_key = country_name_dughlats
 		trigger = {
-			OR = {
-				tag = KUC
- 				tag = KDZ
- 				tag = YKD
-				tag = KGH
-			}
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:dughlat_dynasty ?= this } 
 		}
 	}
 	# Uriankhai Tumen

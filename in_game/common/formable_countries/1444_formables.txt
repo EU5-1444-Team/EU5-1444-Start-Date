@@ -207,7 +207,10 @@ BAL_f = {
 	rule = historical
 
 	potential = {
-		culture = culture:baloch_culture
+		OR = { 
+			culture = culture:baloch_culture
+			culture = culture:brahui_culture
+		}
 	}
 
 	allow = {
@@ -222,6 +225,11 @@ BAL_f = {
 	areas = {
 		baluchistan_area
 	}
+	provinces = {
+		sibi_province
+		koh_e_sulayman_province
+		kahnuj_province
+	}
 	form_effect = {
 	}
 }
@@ -230,6 +238,7 @@ AFG_f = {
     level = 2
     required_locations_fraction = 0.5
     rule = historical
+	#potential_requires_own = no
 
     potential = {
         culture = culture:afghan_culture 
@@ -238,7 +247,6 @@ AFG_f = {
     allow = {
         owns = location:kabul
         owns = location:kandahar 
-		owns = location:balkh
     }
     
     name = AFG
@@ -252,9 +260,9 @@ AFG_f = {
         kandahar_province
 		ghazni_province
     }
-    form_effect = {
-    }
-}
+	form_effect = {
+	}
+ }
 
 KHP_f = {
 	level = 1
@@ -700,8 +708,8 @@ POR_f = {
 }
 
 NYE_f = {
-	# Nanyue
-	level = 2
+	# Nanyue / Nam Việt
+	level = 3
 	required_locations_fraction = 0.8
 	rule = historical
 	potential = {
@@ -743,6 +751,282 @@ NYE_f = {
 		guangdong_area
 		haibei_hainan_area
 		red_river_delta_area
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+
+BOA_f = {
+	# Balhae / Bóhǎi
+	level = 2
+	required_locations_fraction = 0.7
+	rule = historical
+	
+	potential = {
+		OR = {
+			culture ?= { has_culture_group = culture_group:jurchen_group }
+			culture = culture:korean_culture
+		}
+	}
+	
+	allow = {
+		NOT = { tag = MCH } # The Jurchen Jin would want to form Qing.
+		NOT = { tag = JOE } # Joseon wouldn't want to form Balhae.
+		owns = location:shangjing
+		owns = location:hamheung
+	}
+	
+	name = BOA
+	flag = BOA
+	adjective = BOA_ADJ
+	tag = BOA
+	color = map_BOA
+	
+	areas = {
+		liaodong_area
+		songhua_area
+		ussuri_area
+		gwanbuk_area
+		gwanseo_area
+	}
+	
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+
+CHI_f = {
+	level = 4
+	required_locations_fraction = 0.7
+	rule = historical
+
+	potential = {
+		culture = {
+			OR = {
+				has_culture_group = culture_group:chinese_group
+				has_culture_group = culture_group:confucian_group
+			}
+		}
+		NOT = { exists = international_organization:middle_kingdom }
+	}
+
+	allow = {
+		NOT = { is_situation_active = situation:red_turban_rebellions }
+	}
+
+	tag = CHI
+
+	regions = {
+		west_china_region east_china_region north_china_region south_china_region
+	}
+	form_effect = {
+		change_government_type = government_type:monarchy
+		rtr_recreate_middle_kingdom = yes
+		set_country_rank_effect = { rank = country_rank:rank_empire }
+	}
+
+}
+
+DNM_f = {
+	# Đại Nam
+	level = 3
+	required_locations_fraction = 0.8
+	rule = historical
+	
+	potential = {
+		culture = culture:vietnamese_culture
+	}
+	
+	allow = {
+	}
+	
+	name = DNM
+	flag = DNM
+	adjective = DNM_ADJ
+	tag = DNM
+	color = map_DNM
+	
+	areas = {
+		red_river_delta_area
+		lower_mekong_area
+		champa_area
+	}
+	
+	form_effect = {
+	}
+}
+
+CDL_f = {
+	# Dali Kingdom / Dablit Guaif
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+
+	potential = {
+		culture = culture:bai_culture
+	}
+
+	allow = {
+		owns = location:taihe_dali
+	}
+
+	name = CDL
+	flag = CDL
+	adjective = CDL_ADJ
+	tag = CDL
+	color = map_CDL
+
+	areas = {
+		yunnan_area
+		dali_area
+	}
+
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+
+TTK_f = { #Balkh
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+	capital_required = yes 
+
+	potential = {
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
+	}
+
+	allow = {
+		owns = location:balkh
+		owns = location:mazar_i_sharif
+	}
+
+	name = TTK
+	flag = TTK
+	adjective = TTK_ADJ
+	tag = TTK
+	color = map_TTK
+
+	provinces = {
+		balkh_province
+		maymana_province
+		kunduz_province
+		kulab_province
+		hissar_province
+		kelif_province
+	}
+	form_effect = {
+		if = {
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+	}
+}
+GII_f = {
+	level = 1
+	required_locations_fraction = 0.5
+	rule = historical
+	capital_required = no
+	#potential_requires_own = no
+	potential = {
+		OR = {
+			culture = culture:gilak_culture
+			culture = culture:talysh_culture
+		}
+	}
+
+	allow = {
+		owns = location:fuman
+		owns = location:astara
+		owns = location:lahijan
+	}
+	
+	name = GII
+	flag = GII
+	adjective = GII_ADJ
+	tag = GII
+	color = map_gilak
+
+	provinces = {
+		gilan_province
+	}
+	form_effect = {
+	}
+}
+KRO_f = { #Khorezmia
+	level = 3
+	required_locations_fraction = 0.8
+	rule = historical
+	capital_required = yes 
+
+	potential = {
+		OR = {
+			owns = location:urgench
+			owns = location:khiva
+		}
+		OR = {
+			culture = culture:uzbek_culture
+			culture = culture:khorezmian_culture
+		}
+	}
+
+	allow = {
+		OR = {
+			owns = location:urgench
+			owns = location:khiva
+		}
+		is_subject = no
+	}
+	
+	name = KRO
+	flag = KRO
+	adjective = KRO_ADJ
+	tag = KRO
+	color = map_khorezmian
+
+	provinces = {
+		khiva_province
+		kath_province
+	}
+	form_effect = {
+	}
+}
+MZN_f = { #Mazandaran
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+	capital_required = yes
+	#potential_requires_own = no
+
+	potential = {
+		OR = {
+			culture = culture:gilak_culture
+			culture = culture:talysh_culture
+			culture = culture:mazanderani_culture
+		}
+	}
+
+	allow = {
+	}
+	
+	name = MZN
+	flag = MZN
+	adjective = MZN_ADJ
+	tag = MZN
+	color = map_mazadaran
+
+	areas = {
+		mazandaran_area
 	}
 	form_effect = {
 	}

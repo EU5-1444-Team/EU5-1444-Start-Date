@@ -312,6 +312,23 @@ CHG_ADJ = {
 	suffix = "_ADJ"
 }
 
+
+KRO = {
+	#Khiva Khanate
+	type = country
+	text = {
+		localization_key = khiva_khanate
+		trigger = {
+			culture = culture:uzbek_culture
+		}
+	}
+	text = {
+		localization_key = KRO
+		fallback = yes
+	}
+}
+KRO_ADJ = {	parent = KRO suffix = "_ADJ" }
+
 SCO = {
 	type = country
 	text = {
@@ -595,6 +612,61 @@ UYG_ADJ = {
 	parent = UYG
 	suffix = "_ADJ"
 }
+IRA = { #Iran
+	type = country
+	text = {
+		# Sassanid
+		localization_key = sassanid_persia
+		trigger = {
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:baduspanid_dynasty ?= this } 
+			religion.group = religion_group:zoroastrian_group
+		}
+	}
+	text = {
+		# Zoroastrian
+		localization_key = zoroastrian_persia
+		trigger = {
+			religion.group = religion_group:zoroastrian_group
+		}
+	}
+	text = {
+		# Iran
+		localization_key = iran_persia_name
+		trigger = {
+			has_variable = user_wants_iran
+		}
+	}
+	text = {
+		# Persia
+		localization_key = IRA
+		fallback = yes
+	}
+}
+IRA_ADJ = {
+	parent = IRA
+	suffix = "_ADJ"
+}
+
+BAL = {
+	# Baluchistan
+	type = country
+	text = {
+		# Kalat
+		localization_key = baluchi_kalat
+		trigger = {
+			culture = culture:brahui_culture
+		}
+	}
+	text = {
+		# Baluchistan
+		localization_key = BAL
+		fallback = yes
+	}
+}
+BAL_ADJ = {
+	parent = BAL
+	suffix = "_ADJ"
+}
 
 UZB = {
 	# Shaybanids 
@@ -639,6 +711,26 @@ SBR = {
 
 SBR_ADJ = {
 	parent = SBR
+	suffix = "_ADJ"
+}
+MKR = {
+	#Makran
+	type = country
+	text = {
+		localization_key = MKR_Makran
+		trigger = {
+			owns = location:gwatar
+			owns = location:gwadar
+		}
+	}
+	text = {
+		localization_key = MKR
+		fallback = yes
+	}
+}
+
+MKR_ADJ = {
+	parent = MKR
 	suffix = "_ADJ"
 }
 
@@ -699,4 +791,25 @@ NYE = {
 		localization_key = NYE
 		fallback = yes
 	}
+}
+
+BOA = {
+	# Bóhǎi
+	type = country
+	text = {
+		# Balhae
+		localization_key = BOA_korean
+		trigger = {
+			culture = culture:korean_culture
+		}
+	}
+	text = {
+		# Bóhǎi
+		localization_key = BOA
+		fallback = yes
+	}
+}
+NYE_ADJ = {
+	parent = NYE
+	suffix = "_ADJ"
 }

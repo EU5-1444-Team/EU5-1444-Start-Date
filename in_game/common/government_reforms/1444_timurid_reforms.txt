@@ -3,31 +3,11 @@ timurid_prince = {
 	major = yes
 	
 	potential = {
-		OR = {
-			has_or_had_tag = TIM
-			has_or_had_tag = TIS
-			has_or_had_tag = TTK
-			has_or_had_tag = TII
-			has_or_had_tag = TIG
-			has_or_had_tag = MUG
-			has_or_had_tag = TIK
-			has_or_had_tag = TIX
-			has_or_had_tag = TIF
-		}
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 	}
 	
 	allow = {
-		OR = {
-			has_or_had_tag = TIM
-			has_or_had_tag = TIS
-			has_or_had_tag = TTK
-			has_or_had_tag = TII
-			has_or_had_tag = TIG
-			has_or_had_tag = MUG
-			has_or_had_tag = TIK
-			has_or_had_tag = TIX
-			has_or_had_tag = TIF
-		}
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 	}
 	
 	locked = {
@@ -48,48 +28,32 @@ timurid_prince = {
 	
 	years = 2
 }
-oirat_unification_reform = {
-    potential = {
-        has_or_had_tag = OIR
-    }
-    unique = yes
+baduspanid_sassanid_legacy = {
+	unique = yes
     major = yes
-    years = 0.1
-    
-    country_modifier = {
-        monthly_tribal_cohesion = 0.02
-        monthly_legitimacy = 0.02
-        monthly_republic_tradition = 0.02
-        monthly_devotion = 0.02
-        monthly_horde_unity = 0.02
-        monthly_prestige = 0.05
-        stability_decay = -0.001
-        trade_efficiency = 0.02
-        government_reform_slots = 1
+    potential = {
+        ruler_or_heir_if_regent.dynasty ?= { dynasty:baduspanid_dynasty ?= this } 
     }
-}
-eastern_steppe_unification_reform = {
-	potential = {
-		OR = {
-			has_or_had_tag = KHL
-			has_or_had_tag = KHA
-			has_or_had_tag = NOG
-			has_or_had_tag = URZ
-			has_or_had_tag = BSH
+	allow = {
+        ruler_or_heir_if_regent.dynasty ?= { dynasty:baduspanid_dynasty ?= this } 
+    }
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = baduspanid_sassanid_legacy
 		}
 	}
-	unique = yes
-	major = yes
-	years = 0.1
-	country_modifier = {
-		monthly_tribal_cohesion = 0.02
-		monthly_legitimacy = 0.02
-		monthly_republic_tradition = 0.02
-		monthly_devotion = 0.02
-		monthly_horde_unity = 0.02
-		monthly_prestige = 0.05
-		stability_decay = -0.001
-		trade_efficiency = 0.02
-		government_reform_slots = 1
-	}
+    
+    country_modifier = {
+        monthly_legitimacy = 0.1
+        monthly_prestige = 0.05
+        monthly_devotion = 0.03
+        cultural_tradition = 0.2
+        diplomatic_reputation = diplomatic_reputation_mild_bonus
+        tolerance_heathen = 1
+        tolerance_heretic = 1
+        stability_decay = 0.001
+        government_reform_slots = 1
+    }
+	years = 2
 }
