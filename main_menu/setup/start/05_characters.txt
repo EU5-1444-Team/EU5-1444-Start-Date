@@ -53924,11 +53924,12 @@ character_db={
 
     ### ilyas_shahi_dynasty | BNG ###
 
-    bng_nasiruddin_mahmud_shah = { #Restored Ilyas Shahi dynasty (r.1435-1459)
+    bng_nasiruddin_mahmud_shah = { #Restored Ilyas Shahi dynasty (r.1436-1459)
         first_name = { name = Nasir.name_al_din.name_mahmud.name_shah }
         culture = bengali
         religion = sunni
-        birth_date = 1400.1.1 #Approximate
+        estate = crown_estate
+        birth_date = 1400.1.1 #Approximate; "born in the 14th century" per Wikipedia
         birth = gaur
         dynasty = ilyas_shahi_dynasty
         tag = BNG
@@ -53951,7 +53952,7 @@ character_db={
         culture = bengali
         religion = sunni
         birth_date = 1420.1.1 #Approximate
-        birth = satgaon
+        birth = gaur
         father = bng_nasiruddin_mahmud_shah
         mother = bng_nasiruddin_mahmud_shah_spouse
         dynasty = ilyas_shahi_dynasty
@@ -53963,20 +53964,19 @@ character_db={
         culture = bengali
         religion = sunni
         birth_date = 1440.1.1 #Approximate
-        birth = sonargaon
+        birth = gaur
         father = bng_rukunuddin_barbak_shah
         dynasty = ilyas_shahi_dynasty
         tag = BNG
     }
 
-    bng_jalaluddin_fateh_shah = { #Ruler (r.1481-1487), son of Mahmud Shah
+    bng_jalaluddin_fateh_shah = { #Ruler (r.1481-1487), son of Barbak Shah
         first_name = { name = Jalal.name_al_din.Fateh.name_shah }
         culture = bengali
         religion = sunni
-        birth_date = 1425.1.1 #Approximate (brother of Barbak, son of Mahmud)
+        birth_date = 1442.1.1 #Approximate; son of Barbak (b.~1420)
         birth = gaur
-        father = bng_nasiruddin_mahmud_shah
-        mother = bng_nasiruddin_mahmud_shah_spouse
+        father = bng_rukunuddin_barbak_shah
         dynasty = ilyas_shahi_dynasty
         tag = BNG
     }
@@ -77463,26 +77463,21 @@ character_db={
         tag = JNP
     }
 
-    # Senior court officer used as regent while Mahmud Shah is underage at the 1444 start
-    jnp_malik_nasir = {
-        first_name = { name = name_Malik.Nasir }
-        culture = awadhi
-        religion = sunni
-        estate = nobles_estate
-        birth_date = 1405.1.1 #Estimated
-        birth = jaunpur
-        tag = JNP
-    }
-
-    # Wife of Mahmud Shah Sharqi - Bibi Raji, patron of Lal Darwaza Mosque
+    # Wife of Mahmud Shah Sharqi - Bibi Raji, daughter of Muhammad Shah (Sayyid dynasty)
+    # Married to Mahmud (then Mahmud Khan) in 1437 as a peace alliance
+    # Patron of Lal Darwaza Mosque; later placed son Husain Shah on throne (1458)
+    # Birth c.1422 estimated: married ~1437, plausible at ~15
     jnp_mahmud_shah_sharqi_spouse = {
         first_name = { name = name_bibi.Raji }
-        culture = awadhi
+        culture = dehlavi
         religion = sunni
-        birth_date = 1430.1.1 #Approximate
-        birth = jaunpur
+        birth_date = 1422.1.1 #Estimated; married 1437, must predate that plausibly
+        birth = delhi
         female = yes
+        father = dlh_muhammad_shah_sayyid
+        mother = dlh_muhammad_shah_sayyid_spouse
         spouse = jnp_mahmud_shah_sharqi
+        dynasty = sayyid_dynasty
         tag = JNP
     }
 
