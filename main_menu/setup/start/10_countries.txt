@@ -2886,7 +2886,7 @@ countries = {
 
         starting_technology_level = 3
         include = "expl_western_europe"
-        include = "catholic_monarchy"
+        include = "catholic_republic_no_coast"
         country_rank = rank_county
         government = {
             type = republic
@@ -8170,10 +8170,6 @@ countries = {
             quality_vs_quantity = 25
             offensive_vs_defensive = 75
 
-            parliament = {
-                parliament_type = estate_parliament
-            }
-
             privilege = {
                 noble_fortification_licenses
             }
@@ -10350,7 +10346,7 @@ countries = {
         include = "expl_silk_road_center"
         include = "expl_silk_road_east"
         include = "expl_indian_trade_route"
-        include = "catholic_republic"
+        include = "catholic_monarchy"
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
@@ -10857,7 +10853,7 @@ countries = {
         include = "expl_silk_road_center"
         include = "expl_silk_road_east"
         include = "expl_indian_trade_route"
-        include = "catholic_republic_no_coast"
+        include = "catholic_monarchy_no_coast"
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
@@ -16362,10 +16358,6 @@ countries = {
             individualism_vs_communalism = 100
             outward_vs_inward = 50
 
-            parliament = {
-                parliament_type = estate_parliament
-            }
-
             laws = {
                 censorship = limited_censorship
                 republican_foundation_law = republicanism_policy
@@ -16733,8 +16725,7 @@ countries = {
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "expl_northern_europe"
-        include = "catholic_republic"
-        include = "german_principality"
+        include = "catholic_german_republic"
         government = {
             type = republic
             ruler = random
@@ -28214,9 +28205,7 @@ countries = {
             #ruler_term = { character = psk_aleksandr_mikhailovich_rurikovich start_date = 1325.1.1 end_date = 1327.1.1 regnal_number = 1 }
 
             ruler_term = { character = mos_ivan_i_danilovich_kalita_rurikovich start_date = 1328.1.1 regnal_number = 1 }
-            parliament = {
-                parliament_type = estate_parliament
-            }
+
             centralization_vs_decentralization = 65
             aristocracy_vs_plutocracy = 30
             serfdom_vs_free_subjects = -20
@@ -28721,9 +28710,7 @@ countries = {
             reforms = {
                 veche_republic
             }
-            parliament = {
-                parliament_type = estate_parliament
-            }
+
             ruler = random # TODO: add me
 
             ruler_term = { character = psk_aleksandr_mikhailovich_rurikovich start_date = 1327.1.1 end_date = 1330.1.1 regnal_number = 1 }
@@ -31583,9 +31570,7 @@ countries = {
             heir_selection = cognatic_primogeniture
             reforms = {
             }
-            parliament = {
-                parliament_type = estate_parliament
-            }
+
             ruler = random
 
             centralization_vs_decentralization = 65
@@ -35792,12 +35777,11 @@ countries = {
             ruler_term = { character = mal_qu start_date = 1300.1.1 end_date = 1305.1.1 regnal_number = 1 }
             ruler_term = { character = mal_muhammad_qu start_date = 1305.1.1 end_date = 1312.1.1 regnal_number = 1 }
             ruler_term = { character = mal_musa_keita start_date = 1312.1.1 regnal_number = 1 }
-            parliament = {
-                parliament_type = council
-            }
+
             reforms = {
                 manden_kurufa_reform
             }
+
             laws = {
                 administrative_system = feudal_administration
                 immigration_law = open_borders_law
@@ -36918,9 +36902,7 @@ countries = {
             type = monarchy
             ruler = random # TODO: add me
             heir_selection = cognatic_primogeniture
-            parliament = {
-                parliament_type = council
-            }
+
             reforms = {
                 kilwan_trade_communities
                 control_of_the_mahdali_coinage_reform
@@ -48119,7 +48101,7 @@ countries = {
         include = "indian_muslim_monarchy"
 
         government = {
-            type = republic
+            type = monarchy
             ruler = random
             heir_selection = abbot_elective
 
@@ -60510,10 +60492,6 @@ countries = {
                 feudal_theocracy
             }
 
-            parliament = {
-                parliament_type = council
-            }
-
             laws = {
                 censorship = limited_censorship
                 education_masses_law = basic_religious_education
@@ -60597,10 +60575,6 @@ countries = {
 
             reforms = {
                 feudal_theocracy
-            }
-
-            parliament = {
-                parliament_type = council
             }
 
             laws = {
@@ -62294,7 +62268,7 @@ countries = {
             choccalpata paqwayranra
         }
 
-        include = "andean_tribe"
+        include = "andean_monarchy"
         include = "expl_andean"
         government = {
             ruler = random
@@ -62329,7 +62303,7 @@ countries = {
             qullaw_area
         }
 
-        include = "andean_tribe"
+        include = "andean_monarchy"
         capital = yanahuara
         government = {
             ruler = random
@@ -63299,84 +63273,6 @@ countries = {
 
             type = tribe
             heir_selection = tribal_oldest_male
-
-            centralization_vs_decentralization = 80
-            traditionalist_vs_innovative = -70
-            spiritualist_vs_humanist = -60
-            aristocracy_vs_plutocracy = -80
-            serfdom_vs_free_subjects = 50
-            mercantilism_vs_free_trade = 50
-            belligerent_vs_conciliatory = 100
-            quality_vs_quantity = -75
-            offensive_vs_defensive = 50
-            land_vs_naval = -90
-            capital_economy_vs_traditional_economy = 100
-            individualism_vs_communalism = 60
-            outward_vs_inward = 50
-
-            parliament = {
-                parliament_type = assembly
-            }
-
-            laws = {
-                marriage_law = polygyny
-                heir_religion_law = heir_same_religion
-            }
-
-            reforms = {
-                agricultural_cultivation
-            }
-            privilege = {
-                #nobles
-                nobility_council
-                nobles_land_rights
-                tribal_autonomy
-
-                #clergy
-                embellish_great_works_of_faith
-
-                #burghers
-                urban_development_grants
-                market_fairs
-
-                #Commoners
-                peasants_autonomous_villages
-                communal_lands
-                allow_hunting
-                partial_yield
-                peasants_free_peasantry
-
-                tribes_tribal_levies
-                tribes_allow_gatherings
-            }
-        }
-
-        discovered_areas = {
-            #east_coast_region
-            illinois_area
-            wisconsin_area
-            indiana_area
-            kentucky_area
-            tennessee_area
-            #louisiana_region
-            missouri_area
-            iowa_area
-            arkansas_area
-            central_plains_area
-        }
-
-        tolerated_cultures = {
-            tsawi_culture
-            ponca_culture
-            kaskankaham_culture
-            kahokiaki_culture
-        }
-
-        currency_data = {
-            gold = 180
-            stability = 20
-            prestige = 5
-            tribal_cohesion = 80
         }
 
         court_language = dhegiha_language
@@ -64470,7 +64366,7 @@ countries = {
             cupilco zahuatan tonala_coatzacoalco
         }
 
-        include = "amerindian_mesoamerican_tribe_not_nahuatl"
+        include = "amerindian_advanced_monarchy_not_nahuatl"
         include = "expl_mesoamerica"
         government = {
             ruler = random
@@ -64486,7 +64382,7 @@ countries = {
             cupilco
         }
 
-        include = "amerindian_mesoamerican_tribe_not_nahuatl"
+        include = "amerindian_advanced_monarchy_not_nahuatl"
         include = "expl_mesoamerica"
         government = {
             ruler = random
@@ -64502,7 +64398,7 @@ countries = {
             zahuatan
         }
 
-        include = "amerindian_mesoamerican_tribe_not_nahuatl"
+        include = "amerindian_advanced_monarchy_not_nahuatl"
         include = "expl_mesoamerica"
         government = {
             ruler = random
@@ -64996,7 +64892,7 @@ countries = {
             quechula
         }
 
-        include = "amerindian_mesoamerican_tribe_not_nahuatl"
+        include = "amerindian_advanced_monarchy_not_nahuatl"
         include = "expl_mesoamerica"
         government = {
             ruler = random
@@ -70933,12 +70829,11 @@ countries = {
         }
 
         include = "asia_tribe"
-        country_rank = rank_kingdom
         court_language = karluk_language
         include = "expl_mongols"
-        include = "eurasian_horde_no_muslim"
         starting_technology_level = 3
         capital = naryn
+        
         government = {
             ruler = random
             type = tribe
@@ -70953,12 +70848,12 @@ countries = {
         }
 
         include = "asia_tribe"
-        country_rank = rank_county
         court_language = west_iranian_language
         include = "expl_timurids_template"
         starting_technology_level = 3
         religious_school = maturidi_school
         capital = kajran
+        
         government = {
             ruler = random
             type = tribe
@@ -78833,10 +78728,6 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            parliament = {
-                parliament_type = council
-            }
-
 
             aristocracy_vs_plutocracy = -60
             centralization_vs_decentralization = -60
@@ -79031,15 +78922,14 @@ countries = {
             capital_economy_vs_traditional_economy = 80
             individualism_vs_communalism = 20
             outward_vs_inward = 50
-            parliament = {
-                parliament_type = council
-            }
+
             laws = {
                 medieval_levy_law = peasant_levies
                 marriage_law = monogamous_marriage
                 heir_religion_law = heir_any_religion
                 legal_code_law = traditional_law_policy
             }
+
             privilege = {
                 #Burghers
 
@@ -79950,13 +79840,12 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            parliament = {
-                parliament_type = council
-            }
+
             laws = {
                 marriage_law = monogamous_marriage
                 heir_religion_law = heir_same_religion
             }
+
             centralization_vs_decentralization = 100
             aristocracy_vs_plutocracy = -60
             serfdom_vs_free_subjects = 20
