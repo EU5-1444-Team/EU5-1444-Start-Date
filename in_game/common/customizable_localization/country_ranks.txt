@@ -112,7 +112,29 @@ country_flavor = {
 	text = {
 		localization_key = horde_clan_taishi
 		trigger = {
+			OR = {
+				country_rank_is_duchy = yes
+				country_rank_is_county = yes
+			}
 			government_type = government_type:steppe_horde
+			OR = {
+				tag = OIR
+				tag = CRS
+				tag = DRB
+				tag = KHO
+				tag = TRH
+				tag = KHD
+			}
+		}
+	}
+	text = {
+		localization_key = horde_confederation_taishi
+		trigger = {
+			government_type = government_type:steppe_horde
+			OR = {
+				country_rank_is_kingdom = yes
+				country_rank_is_empire = yes
+			}
 			OR = {
 				tag = OIR
 				tag = CRS
@@ -138,6 +160,10 @@ country_flavor = {
 		localization_key = horde_guard
 		trigger = {
 			government_type = government_type:steppe_horde
+			OR = {
+				country_rank_is_county = yes
+				country_rank_is_duchy = yes
+			}
 			OR = {
 				tag = DOY
 				tag = FUY
@@ -199,6 +225,25 @@ country_flavor = {
 			country_rank_is_county = yes
 			government_type = government_type:republic
 			court_language ?= language:maya_language
+		}
+	}
+	# Timurid Empire
+	text = {
+		localization_key = rank_empire_timurid_prince
+		trigger = {
+			country_rank_is_empire = yes
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
+			NOT = {
+				tag = TIM
+			}
+		}
+	}
+	text = {
+		localization_key = rank_empire_timurid_prince_gurkani
+		trigger = {
+			country_rank_is_empire = yes
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
+			tag = TIM
 		}
 	}
 	text = {
@@ -659,6 +704,16 @@ country_flavor = {
 		}
 	}
 	text = {
+		localization_key = rank_sublime_state
+		trigger = {
+			tag = TUR
+			government_type = government_type:monarchy
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:ottomans_dynasty ?= this
+			}
+		}
+	}
+	text = {
 		localization_key = rank_tibetan_monastery
 		trigger = {
 			AND = {
@@ -822,17 +877,6 @@ country_flavor = {
 			}
 		}
 	}
-	# Timurid Empire
-	text = {
-		localization_key = rank_empire_timurid_prince
-		trigger = {
-			country_rank_is_empire = yes
-			has_reform = government_reform:timurid_prince
-			NOT = {
-				tag = TIM
-			}
-		}
-	}
 	text = {
 		localization_key = rank_empire
 		trigger = {
@@ -863,6 +907,14 @@ country_flavor = {
 			country_rank_is_kingdom = yes
 			government_type = government_type:republic
 			is_revolutionary = yes
+		}
+	}
+	#Timurid Sultanate
+	text = {
+		localization_key = rank_kingdom_timurid_prince
+		trigger = {
+			country_rank_is_kingdom = yes
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 		}
 	}
 	text = {
@@ -1427,14 +1479,6 @@ country_flavor = {
 			culture.language ?= language:east_slavic_language
 		}
 	}
-	#Timurid Sultanate
-	text = {
-		localization_key = rank_kingdom_timurid_prince
-		trigger = {
-			country_rank_is_kingdom = yes
-			has_reform = government_reform:timurid_prince
-		}
-	}
 	text = {
 		localization_key = rank_duchy_nutsaldom
 		trigger = {
@@ -1529,6 +1573,14 @@ country_flavor = {
 			country_rank_is_duchy = yes
 			government_type = government_type:republic
 			tag = NED
+		}
+	}
+	# Timurid Duchy
+	text = {
+		localization_key = rank_duchy_timurid_prince
+		trigger = {
+			country_rank_is_duchy = yes
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 		}
 	}
 	text = {
@@ -1831,14 +1883,6 @@ country_flavor = {
 					culture.language = language:persian_language
 				}
 			}
-		}
-	}
-	# Timurid Duchy
-	text = {
-		localization_key = rank_duchy_timurid_prince
-		trigger = {
-			country_rank_is_duchy = yes
-			has_reform = government_reform:timurid_prince
 		}
 	}
 	#--- Dynasties ----
@@ -2206,6 +2250,14 @@ country_flavor = {
 			country_rank_is_county = yes
 			government_type = government_type:republic
 			is_revolutionary = yes
+		}
+	}
+	#Timurid County
+	text = {
+		localization_key = rank_county_timurid_prince
+		trigger = {
+			country_rank_is_county = yes
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 		}
 	}
 	text = {

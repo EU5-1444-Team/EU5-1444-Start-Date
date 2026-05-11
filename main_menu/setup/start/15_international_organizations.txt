@@ -25,7 +25,9 @@ international_organization_manager = {
             CAR DUI
             BRS VER BGM ADI COH ROC NUL VCL CBG GGN
         }
+
         leader = STY
+
         regions = { south_german_region }
         areas = {
             #North Germany
@@ -73,6 +75,7 @@ international_organization_manager = {
             slawno slupsk miastko nowoszczecin drawsko choszczno
             tolmin gorizia
         }
+        
         emperor = { STY }
         elector = {
             # The 4 secular
@@ -350,7 +353,7 @@ international_organization_manager = {
         members = {
             #PLE
             #
-            CLA MCM BEA TYR LEI TRY OIL CMA FMA BFN THO SLN FLY CNN HYM ANN KEE IVG FCL CVN AMH
+            CLA MCM BEA TYR LEI TRY OIL CMA FMA BFN THO SLN FLY CNN HYM ANN KEE IVG FCL CVN AMH FAD INI DLU FEW GLS CBS TGH UMH CRB MKY DUH IMA DSE OSS ELY NEN 
         }
         regions = { ireland_region }
         areas = { }
@@ -396,33 +399,33 @@ international_organization_manager = {
             # leader
             PLE
             # core earldoms
-            DMS ORD KID ULS
+            KID ULS WMT
             # lapsed earldoms
-            CLR MYO
+            CLR MYO KYY DMS ORD DCI CWM
             # bishop
             AMA
             # gaelic
-            #CLA MCM BEA TYR LEI TRY OIL CMA  FMA BFN  THO SLN FLY ARD CNN HYM ANN KEE IVG   FCL    CVN AMH MTH
+            #CLA MCM BEA TYR LEI TRY OIL CMA  FMA BFN  THO SLN FLY ARD CNN HYM ANN KEE IVG FCL CVN AMH MTH
         }
         lord_of_ireland = { PLE }
         lieutenant = { } # was not one of the Earls in 1337
         loyalist = {
             # core earldoms
-            DMS ORD KID ULS
+            KID ULS WMT
         }
         regions = { ireland_region }
 
 
         laws = {
-            lordship_of_ireland_rule_laudabiliter_policy
+            lordship_of_ireland_rule_statutes_of_kilkenny_policy
         }
 
         ruler_term = { character = eng_john_lackland start_date = 1177.1.1 end_date = 1216.10.19 regnal_number = 1 }  # became Lord of Ireland before being King of England
-        ruler_term = { character = eng_edward_iii start_date = 1327.1.25 end_date = 1377.6.12 regnal_number = 3 }
-        ruler_term = { character = eng_richard_ii start_date = 1327.7.16 end_date = 1399.10.1 regnal_number = 2 }
-        ruler_term = { character = eng_henry_iv start_date = 1399.10.13 end_date = 1413.3.20 regnal_number = 3 }
-        ruler_term = { character = eng_henry_v start_date = 1413.3.12 end_date = 1422.8.31 regnal_number = 3 }
-        ruler_term = { character = eng_henry_vi start_date = 1422.9.1 regnal_number = 0 }
+        ruler_term = { character = eng_edward_iii start_date = 1327.1.25 end_date = 1377.6.21 regnal_number = 3 }
+        ruler_term = { character = eng_richard_ii_plantagenet start_date = 1377.6.12 end_date = 1399.10.1 regnal_number = 2 }
+        ruler_term = { character = eng_henry_iv_lancaster start_date = 1399.10.13 end_date = 1413.3.20 regnal_number = 4 }
+        ruler_term = { character = eng_henry_v_lancaster start_date = 1413.3.12 end_date = 1422.8.31 regnal_number = 5 }
+        ruler_term = { character = eng_henry_vi_lancaster start_date = 1422.9.1 regnal_number = 6 }
         variables = {
         }
     }
@@ -535,6 +538,7 @@ international_organization_manager = {
         tatar_tax_collector = {
             MOS
         }
+        tatar_horde_member = { MGH NWM JAK AOG QON JIK KGZ MGZ AGZ KZN SBR CRI }
         variables = {
             seat = sarai_al_jadid
         }
@@ -612,191 +616,215 @@ international_organization_manager = {
         league_backer_circassia = { GEN }
     }
 
-    #################################################################
-    #               Autocephalous Patriarchates                     #
-    #################################################################
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 330.1.1
-        members = {
-            BYZ EPI TRE VBK NOV SER WAL
-            PSK ORE SMO MOS UGL TPS BLO YAR RSO
-            TVE KAS KLN ZUB GLM RZH VYA TRB BRY CHR STS NVS
-            RYL NSL KCH KZK TRS RYA PRK MOG
-            VOL KIE POK PNK SSK MSV DRU
-            FEO
-        }
-        variables = {
-            religion = religion:orthodox
-            seat = location:constantinople
-        }
-        laws = {
-            dual_nature
-            high_christology
-            byzantine_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-        }
-    }
+	#################################################################
+	# 				Autocephalous Patriarchates						#
+	#################################################################
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 330.1.1
+		members = { 
+			BYZ EPI TRE VBK NOV SER SMC WAL 
+			PSK ORE SMO FMB MOS VLR UGL YRV TPS BLO YAR RSO 
+			TVE KAS KLN ZUB DMI GLM RZH VYA TRB BRY CHR STS NVS 
+			RYL NSL KCH KZK TRS RYA PRK SKY NZH GRS SZL MRM KOS MOG
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 1235.1.1
-        members = {  }
-        variables = {
-            religion = religion:orthodox
-            seat = location:tarnovo
-        }
-        laws = {
-            dual_nature
-            high_christology
-            byzantine_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-        }
-    }
+			BIA BLD HTN HSC IAS SRC SSI
+			VOL HAL KIE POK TUV PNK SSK MSV NRK DRU
+			FEO			
+		}
+		variables = { 
+			religion = religion:orthodox
+			seat = location:constantinople
+		}
+		laws = {
+			dual_nature
+			high_christology
+			byzantine_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			cooperation_between_patriarchs_tenet
+			caesaropapism_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 1010.1.1
-        members = { GEO  SME ALN SMS }
-        variables = {
-            religion = religion:orthodox
-            seat = location:tbilisi
-        }
-        laws = {
-            dual_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 1235.1.1
+		members = { BUL }
+		variables = { 
+			religion = religion:orthodox
+			seat = location:tarnovo
+		}
+		laws = {
+			dual_nature
+			high_christology
+			byzantine_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			cooperation_between_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 431.1.1
-        members = { }
-        variables = {
-            religion = religion:orthodox
-            seat = location:nicosia_cyp
-        }
-        laws = {
-            dual_nature
-            high_christology
-            catholic_influenced_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 1010.1.1
+		members = { GEO AAI SME CPA HTY HYT KDA KIP TEM ALN SMS }
+		variables = { 
+			religion = religion:orthodox
+			seat = location:tbilisi
+		}
+		laws = {
+			dual_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			cooperation_between_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 301.1.1
-        members = {  ATZ KCN   }
-        variables = {
-            religion = religion:miaphysite
-            seat = location:sis
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 431.1.1
+		members = { }
+		variables = { 
+			religion = religion:orthodox
+			seat = location:nicosia_cyp
+		}
+		laws = {
+			dual_nature
+			high_christology
+			catholic_influenced_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			cooperation_between_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 519.1.1
-        members = { }
-        variables = {
-            religion = religion:miaphysite
-            seat = location:antioch
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 301.1.1
+		members = { ARM ATZ KCN SYU VDZ CIL }
+		variables = { 
+			religion = religion:miaphysite
+			seat = location:sis
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 451.1.1
-        members = { ETH }
-        variables = {
-            religion = religion:miaphysite
-            seat = location:alexandria
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 519.1.1
+		members = { }
+		variables = { 
+			religion = religion:miaphysite
+			seat = location:antioch
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 410.1.1
-        members = { }
-        variables = {
-            religion = religion:nestorianism
-            seat = location:mosul
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 451.1.1
+		members = { ETH }
+		variables = { 
+			religion = religion:miaphysite
+			seat = location:alexandria
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 1122.1.1
-        members = { }
-        variables = {
-            religion = religion:nestorianism
-            seat = location:kollam
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 410.1.1
+		members = { }
+		variables = { 
+			religion = religion:nestorianism
+			seat = location:mosul
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
+
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 1122.1.1
+		members = { }
+		variables = { 
+			religion = religion:nestorianism
+			seat = location:kollam
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
     #################################################################
     #                   Tribal Confederation                        #
@@ -806,16 +834,19 @@ international_organization_manager = {
         creation_date = 1142.1.1
         members = { ONO KKA ONY GYO ONN }
     }
-    add_international_organization = {
-        type = tribal_confederation
-        creation_date = 1100.1.1
-        members = { HNK PCR SRA URC }
-    }
+    
     add_international_organization = {
         type = tribal_confederation
         creation_date = 1337.1.1
         members = { AFR SDQ }
     }
+
+    add_international_organization = {
+        type = tribal_confederation
+        creation_date = 1100.1.1
+        members = { HNK PCR SRA URC }
+    }
+    
     #################################################################
     #                   Horde Confederations                      #
     #################################################################
@@ -830,6 +861,9 @@ international_organization_manager = {
         creation_date = 1440.1.1
         members = { CRS DRB KHO TRH KHD }
         leader = CRS
+        variables = {
+            centralisation_oirat = 60
+        }
     }
     add_international_organization = {
         type = khorchin_confederation
@@ -852,7 +886,7 @@ international_organization_manager = {
     #################################################################
     #                   Jurchen Confederations                      #
     #################################################################
-# Jianzhou Confederation (Cleaned of duplicates)
+    # Jianzhou Confederation
     add_international_organization = {
         type = jurchen_confederation
         creation_date = 1300.1.1
@@ -949,11 +983,21 @@ international_organization_manager = {
         provinces = { hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
         hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province }
         locations = { xuanning yizhou_jurchen tongliao ningchang
-            oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat }
+            slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat }
         variables = {
-            yeke_mongghul_ulus = 10
+            yeke_mongghul_ulus = 580
         }
-        laws = {}
+        laws = {
+            preserve_status_quo_policy
+            preserve_northern_yuan_policy
+            preserve_no_authority_policy
+            no_vassal_obligations_policy
+            no_imperial_court_policy
+            no_military_organization_policy
+            no_pasture_rights_policy
+            no_tribute_policy
+            no_kurultai_policy
+        }
     }
 
     #################################################################

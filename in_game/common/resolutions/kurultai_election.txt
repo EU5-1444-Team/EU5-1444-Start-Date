@@ -12,7 +12,7 @@ kurultai_election = {
     ai_tick = monthly
 
     is_live = {
-        scope:recipient = {
+        scope:recipient ?= {
             international_organization_has_leader = no
         }
     }
@@ -104,7 +104,9 @@ kurultai_election = {
         }
         visible = {
             trigger_if = {
-                limit = { exists = scope:actor }
+                limit = {
+                    exists = scope:actor
+                }
                 OR = {
                     this = scope:actor
                     scope:actor = {
@@ -128,25 +130,23 @@ kurultai_election = {
         if = {
             limit = { exists = scope:vote }
             scope:vote = {
-                # Hard block - not a member
                 if = {
                     limit = {
-                        NOT = { is_member_of_international_organization = scope:recipient }
+                        is_member_of_international_organization = scope:recipient
                     }
+                    add = {
+                        desc = "game_concept_great_power_score"
+                        value = great_power_score
+                        multiply = 0.1
+                    }
+                }
+                else = {
                     add = {
                         desc = "NOT_A_MEMBER"
                         value = -10000
                     }
                 }
 
-                # Military strength - core steppe legitimacy
-                add = {
-                    desc = "game_concept_great_power_score"
-                    value = great_power_score
-                    multiply = 0.1
-                }
-
-                # Vote for yourself
                 if = {
                     limit = { this = scope:actor }
                     add = {
@@ -155,19 +155,18 @@ kurultai_election = {
                     }
                 }
 
-                # If others are already voting for you, pile on
                 if = {
                     limit = {
                         this = scope:actor
                         scope:recipient = {
-                            "active_resolution(resolution:khorchin_kurultai_election)" = {
+                            "active_resolution(resolution:kurultai_election)" = {
                                 any_voter = {
                                     this != scope:actor
                                     save_temporary_scope_as = voter
                                     scope:recipient = {
                                         has_cached_or_cast_vote_for = {
                                             voter = scope:voter
-                                            resolution = resolution:khorchin_kurultai_election
+                                            resolution = resolution:kurultai_election
                                             vote = scope:actor
                                         }
                                     }
@@ -181,31 +180,40 @@ kurultai_election = {
                     }
                 }
 
-                # Dynasty/clan loyalty - Chinggisid legitimacy
                 if = {
-                    limit = {
-                        NOT = { this = scope:actor }
-                        same_dynasty_as = { target = scope:actor }
-                    }
+                    limit = { is_rival_of = scope:actor }
                     add = {
-                        desc = "opinion_same_dynasty"
-                        value = 75
+                        desc = "game_concept_rival"
+                        value = -1000
                     }
                 }
 
-                # Alliance loyalty
                 if = {
-                    limit = {
-                        NOT = { this = scope:actor }
-                        is_allied_with = { target = scope:actor }
-                    }
+                    limit = { is_at_war_with = scope:actor }
                     add = {
-                        desc = "HAS_ALLIANCE"
-                        value = 50
+                        desc = "game_concept_war"
+                        value = -200
                     }
                 }
 
-                # General opinion
+                if = {
+                    limit = { NOT = { this = scope:actor } }
+                    if = {
+                        limit = { is_allied_with = { target = scope:actor } }
+                        add = {
+                            desc = "HAS_ALLIANCE"
+                            value = 50
+                        }
+                    }
+                    if = {
+                        limit = { same_dynasty_as = { target = scope:actor } }
+                        add = {
+                            desc = "opinion_same_dynasty"
+                            value = 75
+                        }
+                    }
+                }
+
                 if = {
                     limit = { NOT = { this = scope:actor } }
                     add = {
@@ -217,28 +225,11 @@ kurultai_election = {
                     }
                 }
 
-                # Prestige
                 add = {
                     desc = "game_concept_prestige"
                     value = prestige
                     subtract = 50
                     divide = 3
-                }
-
-                # Hard blocks
-                if = {
-                    limit = { is_rival_of = scope:actor }
-                    add = {
-                        desc = "game_concept_rival"
-                        value = -1000
-                    }
-                }
-                if = {
-                    limit = { is_at_war_with = scope:actor }
-                    add = {
-                        desc = "game_concept_war"
-                        value = -500
-                    }
                 }
             }
         }

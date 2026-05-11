@@ -5,8 +5,8 @@
 timurid_dynasty = {
     # Timurids - Timur's annulets tamgha
     pattern = "pattern_solid.dds"
-    color1 = hsv360 { 204 70 15 }  # Dark blue, almost black
-    color2 = hsv360 { 0 80 70 }     # Red for the circles
+    color1 = hsv360 { 204 70 15 }
+    color2 = hsv360 { 0 80 70 }
 
     colored_emblem = {
         texture = "ce_roundel.dds"
@@ -196,6 +196,217 @@ nwm_dynasty = {
         }
     }
 }
+
+### Ireland ###
+
+fitzmaurice_dynasty = {
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "black"
+
+	colored_emblem = {
+		texture = "ce_saltire_shield.dds"
+		color1 = color2
+		color2 = color1
+	}
+}
+
+lacy_dynasty = {
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "purple"
+    color3 = "red"
+
+	colored_emblem = {
+		texture = "ce_lion_rampant_shield.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color1
+		instance = { position = { 0.5 0.475 } scale = { 0.9 0.9 } }						
+	}
+}
+
+### England ###
+
+lancaster_old_dynasty = { # Lancaster - Earls, 1st cadet branch
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "yellow"
+	color3 = "blue_light"
+	color4 = "blue_secondary"	
+	
+	colored_emblem = {
+		texture = "ce_lions_03_passant_guardant_shield.dds"
+		color1 = color2
+		color2 = color3
+		color3 = color1
+		instance = { position = { 0.5 0.475 } scale = { 0.90 0.90 } }		
+	}			
+	colored_emblem = {
+		texture = "ce_label_03_shield.dds"
+		color1 = color4
+		color2 = color4
+		instance = { position = { 0.5 0.6 }  scale = { 1.0 1.0 } }
+	}	
+	colored_emblem = {
+		texture = "ce_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.5 0.29 }  scale = { 0.08 0.08 } }
+		instance = { position = { 0.5 0.36 }  scale = { 0.08 0.08 } }		
+		instance = { position = { 0.5 0.43 }  scale = { 0.08 0.08 } }		
+		instance = { position = { 0.314 0.29 }  scale = { 0.08 0.08 } }
+		instance = { position = { 0.314 0.36 }  scale = { 0.08 0.08 } }		
+		instance = { position = { 0.314 0.43 }  scale = { 0.08 0.08 } }		
+		instance = { position = { 0.686 0.29 }  scale = { 0.08 0.08 } }
+		instance = { position = { 0.686 0.36 }  scale = { 0.08 0.08 } }		
+		instance = { position = { 0.686 0.43 }  scale = { 0.08 0.08 } }			
+	}	
+}
+
+lancaster_dynasty = { # Lancaster - Royals, 2nd founding
+    pattern = "pattern_quarterly_shield.dds"
+    color1 = "blue"
+    color2 = "red"
+    color3 = "white"
+    color4 = "black"
+    color5 = "yellow"
+
+    colored_emblem = {
+        texture = "ce_lion_passant_guardant_long_thin.dds"
+        color1 = color5
+        color2 = color1
+        color3 = color2
+        instance = { position = { 0.62 0.13 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.62 0.25 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.62 0.40 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.365 0.57 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.365 0.69 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.39 0.81 } scale = { 0.2 0.2 } }
+    }
+    colored_emblem = {
+        texture = "ce_semy_fleur_de_lis.dds"
+        color1 = color5
+        color2 = color5
+        instance = { position = { 0.2 0.18 } scale = { 0.6 0.6} }
+        instance = { position = { 0.8 0.77 } scale = { 0.6 0.6} }
+    }
+    colored_emblem = {
+        texture = "ce_label_03_shield.dds"
+        color1 = color3
+        color2 = color3
+        instance = { position = { 0.5 0.6 }  scale = { 1.0 1.0 } }
+    }
+    colored_emblem = {
+        texture = "ce_ermine_spot.dds"
+        color1 = color4
+        color2 = color4
+        instance = { position = { 0.5 0.29 }  scale = { 0.08 0.08 } }
+        instance = { position = { 0.5 0.36 }  scale = { 0.08 0.08 } }
+        instance = { position = { 0.5 0.43 }  scale = { 0.08 0.08 } }
+        instance = { position = { 0.314 0.29 }  scale = { 0.08 0.08 } }
+        instance = { position = { 0.314 0.36 }  scale = { 0.08 0.08 } }
+        instance = { position = { 0.314 0.43 }  scale = { 0.08 0.08 } }
+        instance = { position = { 0.686 0.29 }  scale = { 0.08 0.08 } }
+        instance = { position = { 0.686 0.36 }  scale = { 0.08 0.08 } }
+        instance = { position = { 0.686 0.43 }  scale = { 0.08 0.08 } }
+    }
+}
+
+york_dynasty = { # York (official COA)
+    pattern = "pattern_quarterly_shield.dds"
+    color1 = "blue"
+    color2 = "red"
+    color3 = "white"
+    color4 = "yellow"
+
+    colored_emblem = {
+        texture = "ce_lion_passant_guardant_long_thin.dds"
+        color1 = color4
+        color2 = color1
+        color3 = color2
+        instance = { position = { 0.62 0.13 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.62 0.25 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.62 0.40 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.365 0.57 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.365 0.69 } scale = { 0.27 0.27 } }
+        instance = { position = { 0.39 0.81 } scale = { 0.2 0.2 } }
+    }
+    colored_emblem = {
+        texture = "ce_semy_fleur_de_lis.dds"
+        color1 = color4
+        color2 = color4
+        instance = { position = { 0.2 0.18 } scale = { 0.6 0.6} }
+        instance = { position = { 0.8 0.77 } scale = { 0.6 0.6} }
+    }
+    colored_emblem = {
+        texture = "ce_label_03_shield.dds"
+        color1 = color3
+        color2 = color3
+        instance = { position = { 0.5 0.6 }  scale = { 1.0 1.0 } }
+    }
+    colored_emblem = {
+        texture = "ce_frame_circle_mississippi.dds"
+        color1 = color2
+        color2 = color2
+        instance = { position = { 0.5 0.29 }  scale = { 0.06 0.06 } }
+        instance = { position = { 0.5 0.36 }  scale = { 0.06 0.06 } }
+        instance = { position = { 0.5 0.43 }  scale = { 0.06 0.06 } }
+        instance = { position = { 0.314 0.29 }  scale = { 0.06 0.06 } }
+        instance = { position = { 0.314 0.36 }  scale = { 0.06 0.06 } }
+        instance = { position = { 0.314 0.43 }  scale = { 0.06 0.06 } }
+        instance = { position = { 0.686 0.29 }  scale = { 0.06 0.06 } }
+        instance = { position = { 0.686 0.36 }  scale = { 0.06 0.06 } }
+        instance = { position = { 0.686 0.43 }  scale = { 0.06 0.06 } }
+    }
+}
+
+york_dynasty_badge = { # York (badge variant)
+	pattern = "pattern_vertical_split_01.dds"
+	color1 = "blue"
+	color2 = "red"
+	color3 = "white"
+	color4 = "green_light"
+	color5 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_rose_double.dds"
+		color1 = color3
+		color2 = color4
+		color3 = color5
+		instance = { position = { 0.5 0.46 } scale = { 0.95 0.95 } }				
+	}
+}
+
+### Scotland ###
+
+stuart_dynasty = {
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "red"
+	color3 = "blue_mid"
+    color4 = "blue"
+    color5 = "white"
+
+	colored_emblem = {
+		texture = "ce_lion_rampant_shield.dds"
+		color1 = color2
+		color2 = color3
+		color3 = color1
+		instance = { position = { 0.495 0.48 } scale = { 0.65 0.7 } }			
+	}
+	colored_emblem = {
+		texture = "ce_double_tressure_fleury_shield.dds"
+		color1 = color2
+		color2 = color2		
+	}
+	colored_emblem = {
+		texture = "ce_fess_checky_shield.dds"
+		color1 = color4
+		color2 = color5
+	}
+}
+
 ### France ###
 
 valois_anjou_dynasty = {
@@ -1227,6 +1438,73 @@ terter_dynasty = {
         instance = {
             position = { 0.500 0.500 }
             scale = { 0.9 0.9 }
+        }
+    }
+}
+
+sharqi_dynasty = {
+	pattern = "pattern_solid.dds"
+	color1 = hsv360 	{	12	85	45	} 
+	color2 = "yellow"
+	color3 = hsv360 	{	230	40	60	} 
+
+	colored_emblem = {
+		texture = "ce_sharqi.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.5 0.5 } scale = { 0.90 0.75 } }		
+	}
+}
+
+ilyas_shahi_dynasty = {
+    pattern = "pattern_solid.dds"
+    color1 = white
+    colored_emblem = {
+        texture = "ce_ilyas_shahi.dds"
+        color1 = red
+        instance = {
+            position = { 0.470 0.500 }
+            scale = { 0.900 0.900 }
+        }
+    }
+}
+
+sayyid_dynasty = {
+    pattern = "pattern_solid.dds"
+    color1 = hsv360 	{	0		0		80	}
+    colored_emblem = {
+        texture = "ce_pale_offset.dds"
+        color1 = black
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 0.500 1.000 }
+        }
+    }
+}
+
+lodi_dynasty = {
+    pattern = "pattern_solid.dds"
+    color1 = rgb { 11 109 51 }
+    colored_emblem = {
+        texture = "ce_pale_offset.dds"
+        color1 = black
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 0.500 1.000 }
+        }
+    }
+}
+
+muzaffarid_gujarat_dynasty = {
+    pattern = "pattern_horizontal_split_01.dds"
+    color1 = rgb { 203 0 0 }
+    color2 = rgb { 255 203 0 }
+    colored_emblem = {
+        texture = "ce_crescent_decrescent.dds"
+        color1 = rgb { 255 255 255 }
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 0.70 0.70 }
         }
     }
 }

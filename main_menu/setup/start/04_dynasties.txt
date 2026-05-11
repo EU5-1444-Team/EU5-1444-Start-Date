@@ -750,6 +750,79 @@ dynasty_manager = {
         home = hereford
     }
 
+    # Roman and Early Byzantine Imperial Dynasties
+
+	julio_claudian_dynasty = {
+		name = { name = julio_claudian_dynasty }
+		home = rome
+	}
+
+	flavian_dynasty = {
+		name = { name = flavian_dynasty }
+		home = rome
+	}
+
+	nerva_antonine_dynasty = {
+		name = { name = nerva_antonine_dynasty }
+		home = rome
+	}
+
+	severan_dynasty = { 
+		name = { name = severan_dynasty }
+		home = rome
+	}
+
+	constantinian_dynasty = {
+		name = { name = constantinian_dynasty }
+		home = constantinople
+	}
+
+	theodosian_dynasty = { 
+		name = { name = theodosian_dynasty }
+		home = constantinople
+	}
+
+	leonid_dynasty = { 
+		name = { name = leonid_dynasty }
+		home = constantinople
+	}
+
+	justinianic_dynasty = { 
+		name = { name = justinianic_dynasty }
+		home = constantinople
+	}
+
+	heraclian_dynasty = { 
+		name = { name = heraclian_dynasty }
+		home = constantinople
+	}
+
+	isaurian_dynasty = { 
+		name = { name = isaurian_dynasty }
+		home = constantinople
+	}
+
+	nikephorian_dynasty = { 
+		name = { name = nikephorian_dynasty }
+		home = constantinople
+	}
+
+	amorian_dynasty = {
+		name = { name = amorian_dynasty }
+		home = constantinople
+	}
+
+	macedonian_dynasty = { 
+		name = { name = macedonian_dynasty }
+		home = constantinople
+		male_names = {
+			name_basil name_constantine name_leon name_michael name_romanos name_alexander
+		}
+		female_names = {
+			name_zoe name_theodora name_irene name_anna
+		}
+	}
+
     #Balkans
 
     angelos_dynasty = {
@@ -1474,6 +1547,11 @@ dynasty_manager = {
         name = { name = foscari_dynasty }
         home = venice
     }
+
+    frangipani_dynasty = {
+		name = { name = frangipani_dynasty }
+		home = rome
+	}
 
     fregoso_dynasty = {
         name = { name = fregoso_dynasty }
@@ -2640,6 +2718,20 @@ dynasty_manager = {
         name = { name = sayn_dynasty }
         home = altenkirchen
         dynasty_name_type = location
+    }
+
+    sayyid_dynasty = {
+        name = { name = sayyid_dynasty }
+        dynasty_name_type = descendant
+        home = delhi
+    }
+
+    lodi_dynasty = {
+        # https://en.wikipedia.org/wiki/Lodi_dynasty
+        # Founded by Bahlul Khan Lodi, rose to power from Sirhind/Punjab region
+        name = { name = lodi_dynasty }
+        dynasty_name_type = location
+        home = sirhind
     }
 
     wassenberg_dynasty = {
@@ -7852,9 +7944,12 @@ dynasty_manager = {
         home = tabriz
     }
 
-    muzaffarid_dynasty = {
-        name = { name = muzaffarid_dynasty }
-        home = yazd
+    muzaffarid_gujarat_dynasty = {
+        # https://en.wikipedia.org/wiki/Gujarat_Sultanate
+        # Gujarat Sultanate - founded by Muzaffar Shah I (Zafar Khan) in 1391
+        name = { name = muzaffarid_gujarat_dynasty }
+        dynasty_name_type = location
+        home = ahmedabad
     }
 
     injuid_dynasty = {
@@ -8054,17 +8149,22 @@ dynasty_manager = {
         name = { name = ughanid_dynasty }
         home = qatruyeh
     }
-
     naservand_dynasty = {
         name = { name = naservand_dynasty }
         home = lahijan
     }
-
     eshaqvand_dynasty = {
         name = { name = eshaqvand_dynasty }
+        home = lahijan
+    }
+    kar_kiya_dynasty = {
+        name = { name = kar_kiya_dynasty }
         home = fuman
     }
-
+    ispahbads_dynasty = {
+        name = { name = ispahbads_dynasty }
+        home = astara
+    }
     asil_dynasty = {
         name = { name = asil_dynasty }
         home = qom
@@ -8763,6 +8863,12 @@ dynasty_manager = {
         home = baghdad
     }
 
+    sharqi_dynasty = {
+        name = { name = sharqi_dynasty }
+        dynasty_name_type = location
+        home = jaunpur
+    }
+
     thakur_dynasty = {
         name = { name = thakur_dynasty }
         home = madhubani
@@ -9148,9 +9254,142 @@ dynasty_manager = {
 
     ### England
 
+    lancaster_old_dynasty = {
+        name = { name = lancaster_dynasty }   
+        home = lancaster 
+    }
+
     woodville_dynasty = {
         name = { name = woodville_dynasty }   
         home = northampton 
+    }
+
+    ros_dynasty = {
+        name = { name = ros_dynasty }   
+        home = lincoln
+        dynasty_name_type = location_ancient
+    }
+
+    stanley_dynasty = {
+        name = { name = stanley_dynasty }   
+        home = liverpool
+    }
+
+    bourchier_dynasty = {
+        name = { name = bourchier_dynasty }   
+        home = colchester
+    }
+
+    ### Wales
+
+    tuchet_dynasty = {
+        name = { name = tuchet_dynasty }   
+        home = stafford 
+    }
+
+    ### Scotland
+    
+    stuart_dynasty = {
+        name = { name = stuart_dynasty }
+        home = edinburgh
+		male_names = {
+			name_alexander name_charles name_henry name_james name_john name_robert
+		}
+		female_names = {
+			name_anna name_catherine name_egidia name_elizabeth name_joanna name_margaret name_mary
+		}
+    }
+
+    leslie_dynasty = {
+        name = { name = leslie_dynasty }   
+        home = aberdeen
+    }
+
+    sinclair_dynasty = {
+        name = { name = sinclair_dynasty }   
+        home = edinburgh
+    }
+
+    hay_dynasty = {
+        name = { name = hay_dynasty }   
+        home = dunfermline
+        dynasty_name_type = location_ancient
+    }
+
+    forbes_dynasty = {
+        name = { name = forbes_dynasty }   
+        home = inverurie
+    }
+
+    lyon_dynasty = {
+        name = { name = lyon_dynasty }   
+        home = forfar
+    }
+
+    graham_dynasty = {
+        name = { name = graham_dynasty }   
+        home = clackmannan
+    }
+
+    swinton_dynasty = {
+        name = { name = swinton_dynasty }   
+        home = roxburgh
+    }
+
+    somerville_dynasty = {
+        name = { name = somerville_dynasty }   
+        home = linlithgow
+    }
+
+    erskine_dynasty = {
+        name = { name = erskine_dynasty }   
+        home = paisley
+    }
+
+    ### Ireland
+
+    suibhne_dynasty = {
+        name = { name = name_sween }   
+        home = oban
+        dynasty_name_type = patronym
+    }
+
+    mac_quillan_dynasty = {
+        name = { name = mac_quillan_dynasty }   
+        home = dunluce
+        dynasty_name_type = patronym
+    }
+
+    fitzmaurice_dynasty = {
+        name = { name = name_maurice }   
+        home = tralee
+        dynasty_name_type = patronym
+        male_names = {
+            name_thomas name_maurice name_gerald
+        }
+    }
+
+    o_kennedy_dynasty = {
+        name = { name = name_kennedy }   
+        home = nenagh
+        dynasty_name_type = descendant
+    }
+
+    o_moore_dynasty = {
+        name = { name = name_moore }   
+        home = nenagh
+        dynasty_name_type = descendant
+    }
+
+    plunket_dynasty = {
+        name = { name = plunket_dynasty }   
+        home = navan
+    }
+
+    lacy_dynasty = {
+        name = { name = lacy_dynasty }
+        home = mullingar
+        dynasty_name_type = location_ancient
     }
 
     ### Netherlands
@@ -9170,6 +9409,11 @@ dynasty_manager = {
     cirksena_dynasty = {
         name = { name = cirksena_dynasty }
         home = emden     
+    }
+
+    borselen_dynasty = {
+        name = { name = borselen_dynasty }
+        home = middelburg  
     }
 
     ### France
@@ -9278,12 +9522,6 @@ dynasty_manager = {
         name = { name = clermont_lodeve_dynasty }
         dynasty_name_type = location
         home = lodeve        
-    }
-
-    enghien_dynasty = {
-        name = { name = enghien_dynasty }
-        dynasty_name_type = location
-        home = enghien
     }
 
     ### Brittany
@@ -9619,5 +9857,101 @@ dynasty_manager = {
     kakizaki_dynasty = {
         name = { name = kakizaki_dynasty }
         home = kameda
+    }
+    badakhshan_dynasty = {
+        name = { name = badakhshan_dynasty }
+        home = kishim
+    }
+    kasi_dynasty = {
+        name = { name = kasi_dynasty }
+        home = quetta
+    }
+    ardalan_dynasty = {
+        name = { name = ardalan_dynasty }
+        home = sanandaj
+    }
+    kalhor_dynasty = {
+        name = { name = kalhor_dynasty }
+        home = kermanshah
+    }
+    pusht_e_kuh_dynasty = {
+        name = { name = pusht_e_kuh_dynasty }
+        home = gilan_gharb
+    }
+    bakhtiari_dynasty = {
+        name = { name = bakhtiari_dynasty }
+        home = izeh
+    }
+    musha_sha_iyya_dynasty = {
+        name = { name = musha_sha_iyya_dynasty }
+        home = hoveyzeh
+    }
+    lashari_dynasty = {
+        name = { name = lashari_dynasty }
+        home = awaran
+    }
+    rind_dynasty = {
+        name = { name = rind_dynasty }
+        home = siwi
+    }
+    domki_dynasty = {
+        name = { name = domki_dynasty }
+        home = dhadar
+    }
+    bugti_dynasty = {
+        name = { name = bugti_dynasty }
+        home = dera_bugti
+    }
+    marri_dynasty = {
+        name = { name = marri_dynasty }
+        home = kahan
+    }
+    leghari_dynasty = {
+        name = { name = leghari_dynasty }
+        home = lahri
+    }
+    mengal_dynasty = {
+        name = { name = mengal_dynasty }
+        home = kalat
+    }
+    rakhshani_dynasty = {
+        name = { name = rakhshani_dynasty }
+        home = kharan
+    }
+    nosherwani_dynasty = {
+        name = { name = nosherwani_dynasty }
+        home = chagai
+    }
+    bizenjo_dynasty = {
+        name = { name = bizenjo_dynasty }
+        home = khash
+    }
+    buledi_dynasty = {
+        name = { name = buledi_dynasty }
+        home = turbat
+    }
+    kalmati_dynasty = {
+        name = { name = kalmati_dynasty }
+        home = kalmat
+    }
+    dashti_dynasty = {
+        name = { name = dashti_dynasty }
+        home = kuddan
+    }
+    gashkori_dynasty = {
+        name = { name = gashkori_dynasty }
+        home = sarbaz
+    }
+    shirani_dynasty = {
+        name = { name = shirani_dynasty }
+        home = bent
+    }
+    mubaraki_dynasty = {
+        name = { name = mubaraki_dynasty }
+        home = saravan
+    }
+    bashagard_dynasty = {
+        name = { name = bashagard_dynasty }
+        home = bashagard
     }
 }

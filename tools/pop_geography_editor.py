@@ -1192,20 +1192,20 @@ class PopEditorApp:
                 new_rows.append(PopRow(self.next_row_id, loc, new_attrs))
                 self.next_row_id += 1
 
-        else:  # mode == "manual"
-            pct = float(manual_input)
+        else:  # mode == "percent"
             for row in source_rows:
                 old_size = _safe_float(row.attrs.get("size", "0"))
                 if old_size <= 0:
                     continue
 
-                take = old_size * pct / 100
-                row.attrs["size"] = normalize_size(str(old_size - take))
+                take_total = old_size * pct / 100
+                per_target = take_total / len(target_locations) if target_locations else 0
+                row.attrs["size"] = normalize_size(str(old_size - take_total))
                 redistributed += 1
 
                 for loc in target_locations:
                     new_attrs = OrderedDict(row.attrs)
-                    new_attrs["size"] = normalize_size(str(take))
+                    new_attrs["size"] = normalize_size(str(per_target))
                     new_rows.append(PopRow(self.next_row_id, loc, new_attrs))
                     self.next_row_id += 1
 
@@ -1226,7 +1226,7 @@ class PopEditorApp:
             )
         elif mode == "amount":
             self.status_var.set(
-                f"Redistributed {amount:.3f} from {source_location} to {len(target_locations)} ({per_loc:.3f}/loc)."
+                f"Redistributed {amount:.3f} from {source_location} to {len(target_locations)} ({per_target:.3f}/loc)."
             )
         else:
             self.status_var.set(
@@ -1277,42 +1277,42 @@ class PopEditorApp:
         pct = value
 
         if mode == "target":
-            total_needed = target_each
-            if len(other_locations) == 1:
-                per_target = total_needed
-            else:
-                per_target = total_needed / len(other_locations)
-            current_other_total = sum(
-                _safe_float(r.attrs.get("size", "0"))
+            # "target" = leave `value` at each other location; collect surplus to source
+            current_other_by_loc = {
+                loc: sum(_safe_float(r.attrs.get("size", "0")) for r in self.rows if r.location == loc)
                 for loc in other_locations
-                for r in self.rows if r.location == loc
+            }
+            total_to_collect = sum(
+                max(0.0, current_other_by_loc[loc] - target_each)
+                for loc in other_locations
             )
-            excess_to_collect = current_other_total - total_needed
 
-            if excess_to_collect < 0:
-                messagebox.showerror("Insufficient pops", f"Not enough pop at other locations ({current_other_total:.1f}) to reach target ({total_needed:.1f}).")
+            if total_to_collect <= 0:
+                messagebox.showerror(
+                    "Nothing to collect",
+                    f"All other locations are already at or below the target ({target_each:.3f})."
+                )
                 return
 
-            remaining = excess_to_collect
             for loc in other_locations:
-                if remaining <= 0:
-                    break
+                loc_total = current_other_by_loc[loc]
+                excess = max(0.0, loc_total - target_each)
+                if excess <= 0:
+                    continue
+                remaining_to_take = excess
                 for row in self.rows:
-                    if row.location != loc:
+                    if row.location != loc or remaining_to_take <= 0:
                         continue
                     old_size = _safe_float(row.attrs.get("size", "0"))
                     if old_size <= 0:
                         continue
-
-                    take = min(old_size, remaining)
-                    row.attrs["size"] = normalize_size(str(old_size - take)) if old_size - take > 0 else "0.000"
-
+                    take = min(old_size, remaining_to_take)
+                    row.attrs["size"] = normalize_size(str(old_size - take))
                     for src_row in source_rows:
                         src_size = _safe_float(src_row.attrs.get("size", "0"))
                         src_row.attrs["size"] = normalize_size(str(src_size + take))
                     collected += 1
-                    remaining -= take
-                    break
+                    remaining_to_take -= take
 
         elif mode == "amount":
             remaining = amount
@@ -1320,23 +1320,20 @@ class PopEditorApp:
                 if remaining <= 0:
                     break
                 for row in self.rows:
-                    if row.location != loc:
+                    if row.location != loc or remaining <= 0:
                         continue
                     old_size = _safe_float(row.attrs.get("size", "0"))
                     if old_size <= 0:
                         continue
-
                     take = min(old_size, remaining)
-                    row.attrs["size"] = normalize_size(str(old_size - take)) if old_size - take > 0 else "0.000"
-
+                    row.attrs["size"] = normalize_size(str(old_size - take))
                     for src_row in source_rows:
                         src_size = _safe_float(src_row.attrs.get("size", "0"))
                         src_row.attrs["size"] = normalize_size(str(src_size + take))
                     collected += 1
                     remaining -= take
-                    break
 
-        else:
+        else:  # mode == "percent"
             for loc in other_locations:
                 for row in self.rows:
                     if row.location != loc:
@@ -1344,16 +1341,13 @@ class PopEditorApp:
                     old_size = _safe_float(row.attrs.get("size", "0"))
                     if old_size <= 0:
                         continue
-
                     take = old_size * pct / 100
                     new_size = old_size - take
-                    row.attrs["size"] = normalize_size(str(new_size)) if new_size > 0 else "0.000"
-
+                    row.attrs["size"] = normalize_size(str(new_size))
                     for src_row in source_rows:
                         src_size = _safe_float(src_row.attrs.get("size", "0"))
                         src_row.attrs["size"] = normalize_size(str(src_size + take))
                     collected += 1
-                    break
 
         if collected == 0:
             messagebox.showerror("No pops", "No pops found at other locations.")
@@ -1366,11 +1360,12 @@ class PopEditorApp:
         self.refresh_table()
         if mode == "target":
             self.status_var.set(
-                f"Collected to {source_location} from {len(other_locations)} (target: {target_each:.3f}/loc)."
+                f"Collected to {source_location} from {len(other_locations)} location(s) "
+                f"(leaving {target_each:.3f} at each)."
             )
         elif mode == "amount":
             self.status_var.set(
-                f"Collected {collected} row(s) to {source_location} from {len(other_locations)}."
+                f"Collected {amount:.3f} to {source_location} from {len(other_locations)} location(s)."
             )
         else:
             self.status_var.set(
@@ -1414,11 +1409,11 @@ class PopEditorApp:
         attrs["culture"] = culture
         attrs["religion"] = religion
 
-        for k, v in STD_ATTR_ORDER:
-            if k in attrs:
-                del attrs[k]
-        for k in STD_ATTR_ORDER:
-            attrs[k] = attrs.pop(k)
+        # Re-impose standard attribute order
+        attrs = OrderedDict(
+            [(k, attrs[k]) for k in STD_ATTR_ORDER if k in attrs]
+            + [(k, v) for k, v in attrs.items() if k not in STD_ATTR_ORDER]
+        )
 
         new_row = PopRow(self.next_row_id, location, attrs)
         self.rows.append(new_row)

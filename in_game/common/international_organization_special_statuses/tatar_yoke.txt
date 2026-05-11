@@ -62,3 +62,32 @@ tatar_tax_collector = {
 
 	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER1_COLOR
 }
+tatar_horde_member = {
+	priority = 10
+
+	modifier = {
+		global_monthly_development = 0.001
+	}
+
+	can_bestow_trigger = {
+		culture = {
+			has_culture_group = culture_group:tatar_group
+		}
+		culture = culture:yerle_qaliq_culture
+		NOT = {
+            is_leader_of_international_organization = international_organization:tatar_yoke
+        }
+	}
+
+	auto_bestowal_trigger = {
+		always = yes
+	}
+	auto_rescind_trigger = {
+		OR = {
+			NOT = { culture = { has_culture_group = culture_group:tatar_group }	culture = culture:yerle_qaliq_culture }
+			is_leader_of_international_organization = international_organization:tatar_yoke
+		}
+    }
+
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+}
