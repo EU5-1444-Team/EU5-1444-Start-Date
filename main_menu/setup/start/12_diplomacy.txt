@@ -288,6 +288,7 @@ diplomacy_manager = {
     #dependency = { first = FRA second = BRI subject_type = tributary }
 
     #dependency = { first = PRO second = ORA subject_type = tributary }
+    scripted_oneway = { first = PRO second = ORA type = guarantee }
 
     #-------Italy-------
     dependency = { first = VEN second = VER subject_type = vassal }
@@ -341,7 +342,8 @@ diplomacy_manager = {
     dependency = { first = PAP second = ANC subject_type = vassal }
     dependency = { first = PAP second = RIM subject_type = vassal }
     dependency = { first = PAP second = VNS subject_type = fiefdom }
-    dependency = { first = PAP second = BLG subject_type = tributary }
+    #dependency = { first = PAP second = BLG subject_type = tributary }
+    #dependency = { first = PAP second = FER subject_type = tributary }
 
     dependency = { first = NAP second = TTO subject_type = vassal }
     dependency = { first = NAP second = LEC subject_type = vassal }
@@ -367,7 +369,8 @@ diplomacy_manager = {
     dependency = { first = CAS second = VIZ subject_type = fiefdom }
     dependency = { first = CAS second = CNY subject_type = vassal }
 
-    dependency = { first = ARA second = NAV subject_type = tributary }
+    #dependency = { first = ARA second = NAV subject_type = tributary }
+    scripted_oneway = { first = ARA second = NAV type = guarantee }
     dependency = { first = ARA second = URG subject_type = vassal }
 
     dependency = { first = POR second = BGZ subject_type = appanage }
@@ -423,8 +426,10 @@ diplomacy_manager = {
 
     dependency = { first = SIT second = VLA subject_type = vassal }
 
-    dependency = { first = POL second = SOP subject_type = tributary }
-    dependency = { first = POL second = SGD subject_type = tributary }
+    #dependency = { first = POL second = SOP subject_type = tributary }
+    #dependency = { first = POL second = SGD subject_type = tributary }
+    scripted_oneway = { first = POL second = SOP type = guarantee }
+    scripted_oneway = { first = POL second = SGD type = guarantee }
 
     #------Byzantium--------
 
@@ -506,7 +511,8 @@ diplomacy_manager = {
     dependency = { first = QAR second = SLI subject_type = vassal }
     dependency = { first = QAR second = ZBR subject_type = vassal }
     dependency = { first = MAM second = KIL subject_type = vassal }
-    dependency = { first = MAM second = DUL subject_type = tributary }
+    #dependency = { first = MAM second = DUL subject_type = tributary }
+    scripted_oneway = { first = MAM second = DUL type = guarantee }
     dependency = { first = AQQ second = EGL subject_type = vassal }
     dependency = { first = AQQ second = BIN subject_type = vassal }
     dependency = { first = AQQ second = HZR subject_type = vassal }
@@ -602,40 +608,40 @@ diplomacy_manager = {
     dependency = { first = AZT second = CUL subject_type = vassal }
     dependency = { first = AZT second = CTL subject_type = vassal }
     dependency = { first = AZT second = TPX subject_type = vassal }
-    dependency = { first = AZT second = HJZ subject_type = tributary }
-    dependency = { first = AZT second = CLL subject_type = tributary }
-    dependency = { first = AZT second = TCC subject_type = tributary }
-    dependency = { first = AZT second = TLZ subject_type = tributary }
-    dependency = { first = AZT second = TPY subject_type = tributary }
+    dependency = { first = AZT second = HJZ subject_type = vassal }
+    dependency = { first = AZT second = CLL subject_type = vassal }
+    dependency = { first = AZT second = TCC subject_type = vassal }
+    dependency = { first = AZT second = TLZ subject_type = vassal }
+    dependency = { first = AZT second = TPY subject_type = vassal }
 
     dependency = { first = OZL second = MCC subject_type = vassal } #Huastec
     dependency = { first = OZL second = TZH subject_type = vassal }
     dependency = { first = OZL second = HYC subject_type = vassal }
-    dependency = { first = OZL second = TTC subject_type = tributary }
-    dependency = { first = OZL second = OXT subject_type = tributary }
-    dependency = { first = OZL second = TUT subject_type = tributary }
-    dependency = { first = OZL second = PPT subject_type = tributary }
-    dependency = { first = OZL second = TYL subject_type = tributary }
+    dependency = { first = OZL second = TTC subject_type = vassal }
+    dependency = { first = OZL second = OXT subject_type = vassal }
+    dependency = { first = OZL second = TUT subject_type = vassal }
+    dependency = { first = OZL second = PPT subject_type = vassal }
+    dependency = { first = OZL second = TYL subject_type = vassal }
 
     dependency = { first = COI second = TPL subject_type = vassal } #Coiztlahuacan
     dependency = { first = COI second = CCN subject_type = vassal }
     dependency = { first = COI second = IXL subject_type = vassal }
-    dependency = { first = COI second = TZL subject_type = tributary }
-    dependency = { first = COI second = TOH subject_type = tributary }
-    dependency = { first = COI second = OZU subject_type = tributary }
+    dependency = { first = COI second = TZL subject_type = vassal }
+    dependency = { first = COI second = TOH subject_type = vassal }
+    dependency = { first = COI second = OZU subject_type = vassal }
 
-    dependency = { first = CIH second = YPZ subject_type = tributary } #Other Centralisations
-    dependency = { first = CIH second = AYO subject_type = tributary }
+    dependency = { first = CIH second = YPZ subject_type = vassal } #Other Centralisations
+    dependency = { first = CIH second = AYO subject_type = vassal }
 
     dependency = { first = XAL second = AZL subject_type = vassal }
     dependency = { first = XAL second = SNT subject_type = vassal }
-    dependency = { first = XAL second = TZZ subject_type = tributary }
-    dependency = { first = XAL second = TAA subject_type = tributary }
-    dependency = { first = XAL second = GCH subject_type = tributary }
+    dependency = { first = XAL second = TZZ subject_type = vassal }
+    dependency = { first = XAL second = TAA subject_type = vassal }
+    dependency = { first = XAL second = GCH subject_type = vassal }
 
-    dependency = { first = MIX second = MHT subject_type = tributary }
-    dependency = { first = MIX second = YCH subject_type = tributary }
-    dependency = { first = MIX second = QIG subject_type = tributary }
+    dependency = { first = MIX second = MHT subject_type = vassal }
+    dependency = { first = MIX second = YCH subject_type = vassal }
+    dependency = { first = MIX second = QIG subject_type = vassal }
     dependency = { first = MIX second = YAU subject_type = vassal }
 
     dependency = { first = KIC second = TZU subject_type = vassal }
@@ -884,7 +890,7 @@ diplomacy_manager = {
     #------------Arabia-------------
     dependency = { first = MAM second = MDA subject_type = vassal }
     dependency = { first = MAM second = MEC subject_type = vassal }
-    dependency = { first = ORM second = JRW subject_type = tributary }
+    #dependency = { first = ORM second = JRW subject_type = tributary }
 
     scripted_mutual = { first = QHT second = DWS type = alliance }
 
@@ -967,7 +973,8 @@ diplomacy_manager = {
     scripted_oneway = { first = ARA second = HUM type = guarantee }
     #dependency = { first = ARA second = HUM subject_type = tributary }
 
-    dependency = { first = MAM second = CYP subject_type = tributary }
+    scripted_oneway = { first = MAM second = CYP type = guarantee }
+    #dependency = { first = MAM second = CYP subject_type = tributary }
 
     # ----- TIMURID EMPIRE (1444) ------
     dependency = { first = TIM second = KRM subject_type = timurid_appanage }
