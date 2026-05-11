@@ -21013,13 +21013,167 @@ character_db={
         tag = ENG
     }
 
+    eng_john_talbot_1st_earl_shrewsbury = {
+        first_name = { name = name_john }
+        nickname = { name = "the Terror of the French" }
+        culture = english
+        religion = catholic
+        birth_date = 1387.1.1
+        birth = shrewsbury
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
     eng_john_talbot_2nd_earl_shrewsbury = {
         first_name = { name = name_john }
         culture = english
         religion = catholic
         birth_date = 1413.12.1
         birth = sheffield
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_maud_neville_6th_baroness_furnivall
         spouse = eng_elizabeth_butler_talbot
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_thomas_talbot_infant = {
+        first_name = { name = name_thomas }
+        culture = english
+        religion = catholic
+        birth_date = 1416.6.19
+        death_date = 1416.8.10
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_maud_neville_6th_baroness_furnivall
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_katherine_talbot_eyton = {
+        first_name = { name = name_catherine }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1418.1.1
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_maud_neville_6th_baroness_furnivall
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_christopher_talbot_young = {
+        first_name = { name = name_christopher }
+        culture = english
+        religion = catholic
+        birth_date = 1419.1.1
+        death_date = 1443.8.10
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_maud_neville_6th_baroness_furnivall
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_joan_talbot_berkeley = {
+        first_name = { name = name_joan }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1422.1.1
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_maud_neville_6th_baroness_furnivall
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_anne_talbot_bottreaux = {
+        first_name = { name = name_anna }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1423.1.1
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_maud_neville_6th_baroness_furnivall
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_margaret_beauchamp_talbot = {
+        first_name = { name = name_margaret }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1404.1.1
+        birth = shrewsbury
+        spouse = eng_john_talbot_1st_earl_shrewsbury
+        father = eng_richard_beauchamp_13th_earl_warwick
+        mother = eng_elizabeth_berkeley_beauchamp
+        dynasty = beauchamp_dynasty
+        tag = ENG
+    }
+
+    eng_john_talbot_1st_viscount_lisle = {
+        first_name = { name = name_john }
+        culture = english
+        religion = catholic
+        birth_date = 1426.1.1
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_margaret_beauchamp_talbot
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_louis_talbot_penyard = {
+        first_name = { name = name_louis }
+        culture = english
+        religion = catholic
+        birth_date = 1429.1.1
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_margaret_beauchamp_talbot
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_humphrey_talbot_calais = {
+        first_name = { name = name_humphrey }
+        culture = english
+        religion = catholic
+        birth_date = 1432.1.1
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_margaret_beauchamp_talbot
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_eleanor_talbot_butler = {
+        first_name = { name = name_eleanor }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1436.2.1
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_margaret_beauchamp_talbot
+        dynasty = talbot_dynasty
+        tag = ENG
+    }
+
+    eng_elizabeth_talbot_mowbray = {
+        first_name = { name = name_elizabeth }
+        culture = english
+        religion = catholic
+        female = yes
+        birth_date = 1442.12.1
+        birth = shrewsbury
+        father = eng_john_talbot_1st_earl_shrewsbury
+        mother = eng_margaret_beauchamp_talbot
         dynasty = talbot_dynasty
         tag = ENG
     }
@@ -63058,7 +63212,7 @@ character_db={
         spouse = eng_john_of_gaunt
         father = eng_henry_grosmont
         mother = eng_isabel_beaumont
-        dynasty = lancaster_dynasty
+        dynasty = lancaster_old_dynasty
         tag = ENG
     }
 
@@ -63204,7 +63358,7 @@ character_db={
         birth_date = 1245.1.16
         birth = london
         death_date = 1296.6.5
-        dynasty = lancaster_dynasty
+        dynasty = lancaster_old_dynasty
         father = eng_henry_iii
         tag = LAN
     }
@@ -63216,7 +63370,7 @@ character_db={
         birth_date = 1281.1.1
         death_date = 1345.9.22
         birth = lancaster
-        dynasty = lancaster_dynasty
+        dynasty = lancaster_old_dynasty
         father = eng_edmund_crouchback
         spouse = eng_maud_de_chaworth
         tag = LAN
@@ -63230,7 +63384,7 @@ character_db={
         birth_date = 1305.1.1
         death_date = 1358.4.17
         birth = lancaster
-        dynasty = lancaster_dynasty
+        dynasty = lancaster_old_dynasty
         father = eng_henry_lancaster
         mother = eng_maud_de_chaworth
         spouse = eng_thomas_wake
@@ -63244,7 +63398,7 @@ character_db={
         birth_date = 1310.1.1
         death_date = 1361.3.23
         birth = lancaster
-        dynasty = lancaster_dynasty
+        dynasty = lancaster_old_dynasty
         father = eng_henry_lancaster
         mother = eng_maud_de_chaworth
         tag = LAN
@@ -63258,7 +63412,7 @@ character_db={
         birth_date = 1310.1.1
         death_date = 1373.10.25
         birth = lancaster
-        dynasty = lancaster_dynasty
+        dynasty = lancaster_old_dynasty
         father = eng_henry_lancaster
         mother = eng_maud_de_chaworth
         tag = LAN
@@ -63272,7 +63426,7 @@ character_db={
         birth_date = 1312.1.1
         death_date = 1360.7.12
         birth = lancaster
-        dynasty = lancaster_dynasty
+        dynasty = lancaster_old_dynasty
         father = eng_henry_lancaster
         mother = eng_maud_de_chaworth
         spouse = eng_john_mowbray
@@ -63287,7 +63441,7 @@ character_db={
         birth_date = 1318.9.11
         death_date = 1386.4.6
         birth = lancaster
-        dynasty = lancaster_dynasty
+        dynasty = lancaster_old_dynasty
         father = eng_henry_lancaster
         mother = eng_maud_de_chaworth
         tag = LAN
@@ -63301,7 +63455,7 @@ character_db={
         birth_date = 1320.1.1
         death_date = 1362.9.1
         birth = lancaster
-        dynasty = lancaster_dynasty
+        dynasty = lancaster_old_dynasty
         spouse = eng_henry_percy_iii
         father = eng_henry_lancaster
         mother = eng_maud_de_chaworth
@@ -78338,14 +78492,14 @@ character_db={
         tag = ENG
     }
 
-    eng_maud_neville_talbot = {
+    eng_maud_neville_6th_baroness_furnivall = {
         first_name = { name = Maud }
         culture = english
         religion = catholic
         female = yes
         birth_date = 1397.1.1
-        death_date = 1422.11.30
-        spouse = eng_john_talbot_shrewsbury
+        death_date = 1422.5.31
+        spouse = eng_john_talbot_1st_earl_shrewsbury
         dynasty = neville_dynasty
         tag = ENG
     }
@@ -78435,34 +78589,6 @@ character_db={
         spouse = eng_richard_york_3rd_duke
         father = eng_ralph_neville_westmorland
         mother = eng_joan_beaufort_neville
-        tag = ENG
-    }
-
-     eng_philip_young_neville = {
-        first_name = { name = name_philip }
-        culture = english
-        religion = catholic
-        birth_date = 1419.4.1
-        dynasty = neville_dynasty
-        tag = ENG
-    }
-
-    eng_peter_young_neville = {
-        first_name = { name = name_peter }
-        culture = english
-        religion = catholic
-        birth_date = 1420.1.1
-        dynasty = neville_dynasty
-        tag = ENG
-    }
-
-    eng_young_elizabeth_neville = {
-        first_name = { name = name_elizabeth }
-        female = yes
-        culture = english
-        religion = catholic
-        birth_date = 1426.10.1
-        dynasty = neville_dynasty
         tag = ENG
     }
 
