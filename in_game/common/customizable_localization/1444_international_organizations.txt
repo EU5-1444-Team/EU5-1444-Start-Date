@@ -38,38 +38,46 @@ REPLACE:jurchen_confederation_name = {
     }
 }
 
+dynasty_clan_name = {
+    type = international_organization
+    text = {
+        localization_key = DYNASTY_CLAN_NAME
+        fallback = yes
+    }
+}
+
+dynasty_family_name = {
+    type = international_organization
+    text = {
+        localization_key = DYNASTY_FAMILY_NAME
+        fallback = yes
+    }
+}
+
+dynasty_circle_name = {
+    type = international_organization
+    text = {
+        localization_key = DYNASTY_CIRCLE_NAME
+        fallback = yes
+    }
+}
+
 composite_monarchy_name = {
     type = international_organization
-
     text = {
+        localization_key = ROYAUME_DE_FRANCE
         trigger = {
-            leader_country ?= {
-                tag = CAS
-            }
+            leader_country ?= { tag = FRA }
         }
-        localization_key = crown_of_castile
     }
-
     text = {
+        localization_key = MAMLAKAT_I_GURKANI
         trigger = {
-            leader_country ?= {
-                tag = ARA
-            }
+            leader_country ?= { tag = TIM }
         }
-        localization_key = crown_of_aragon
     }
-
     text = {
-        trigger = {
-            leader_country ?= {
-                tag = SPA
-            }
-        }
-        localization_key = crown_of_spain
-    }
-
-    text = {
-        localization_key = composite_monarchy
+        localization_key = COMPOSITE_MONARCHY_NAME
         fallback = yes
     }
 }
