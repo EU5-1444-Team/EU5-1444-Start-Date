@@ -53,7 +53,18 @@ northern_yuan = {
             OR = {
                 scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_seize_yuan target = scope:defender } }
                 scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_seize_protector_general target = scope:defender } }
-                scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_northern_yuan_raid target = scope:defender } }
+                if = {
+                    limit = {
+                        NOT = {
+                            OR = {
+                                has_special_status_in_international_organization = { type = special_status:protector_general international_organization = international_organization:northern_yuan }
+                                international_organization_has_policy = policy:administrative_integration_policy
+                                international_organization_has_policy = policy:military_subjugation_policy
+                            }
+                        }
+                    }
+                    scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_northern_yuan_raid target = scope:defender } }
+                }
             }
         }
     }
@@ -84,7 +95,6 @@ northern_yuan = {
 
     leader_modifier = {
         great_power_score_exempt_from_forfeit = 20
-        monthly_prestige = 0.1
     }
 
     create_visible_trigger = {

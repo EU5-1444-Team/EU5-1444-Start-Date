@@ -1,4 +1,4 @@
-legacy_of_genghis = {
+﻿legacy_of_genghis = {
 	age = age_1_traditions
 	major = yes
 	unique = yes
@@ -32,7 +32,10 @@ legacy_of_genghis = {
 		diplomatic_reputation = diplomatic_reputation_moderate_bonus
 		subject_loyalty = 0.05
 		improve_relation_impact = 0.1
-		monthly_legitimacy = 0.3
+		monthly_horde_unity = 0.03
+        monthly_tribal_cohesion = 0.03
+        monthly_legitimacy = 0.03
+        monthly_devotion = 0.03
 		army_cavalry_maintenance_cost_modifier = -0.1
 		monthly_towards_aristocracy = societal_value_monthly_move
 		government_reform_slots = 1
@@ -80,7 +83,10 @@ mongol_khagan = {
         diplomatic_reputation = diplomatic_reputation_severe_bonus
         army_cavalry_maintenance_cost_modifier = -0.1
         global_crown_estate_power = 0.2
-		monthly_legitimacy = 0.5
+		monthly_horde_unity = 0.06
+        monthly_tribal_cohesion = 0.06
+        monthly_legitimacy = 0.06
+        monthly_devotion = 0.06
 		government_reform_slots = 1
     }
     years = 2
@@ -236,7 +242,10 @@ legacy_of_chagatai = {
 	}
 	country_modifier = {
         diplomatic_reputation = diplomatic_reputation_minor_bonus
-		monthly_legitimacy = 0.3
+		monthly_horde_unity = 0.03
+        monthly_tribal_cohesion = 0.03
+        monthly_legitimacy = 0.03
+        monthly_devotion = 0.03
 		trade_efficiency = 0.05
 		global_monthly_prosperity = 0.01
 		army_cavalry_maintenance_cost_modifier = -0.1
@@ -271,7 +280,10 @@ legacy_of_jochi = {
 		}
 	}
 	country_modifier = {
-		monthly_legitimacy = 0.3
+		monthly_horde_unity = 0.03
+        monthly_tribal_cohesion = 0.03
+        monthly_legitimacy = 0.03
+        monthly_devotion = 0.03
 		subject_loyalty = 0.05
 		trade_income = 0.05
 		tax_income_efficiency = 0.05
@@ -281,4 +293,45 @@ legacy_of_jochi = {
 		government_reform_slots = 1
 	}
 	years = 2
+}
+legacy_of_kublai_khan_reform = {
+    unique = yes
+    major = yes
+    potential = {
+        has_or_had_tag = YUA
+    }
+    allow = {
+        has_or_had_tag = YUA
+    }
+    country_modifier = {
+        monthly_prestige = 0.10
+        country_cabinet_efficiency = 0.08
+        monthly_income_modifier = 0.06
+        stability_decay = 0.05
+        diplomatic_reputation = diplomatic_reputation_mild_bonus
+        research_speed = 0.05
+        government_reform_slots = 1
+    }
+    years = 0.1
+}
+
+legacy_of_the_steppe_reform = {
+    unique = yes
+    major = yes
+    potential = {
+        has_or_had_tag = MGA
+    }
+    allow = {
+        has_or_had_tag = MGA
+	}
+    country_modifier = {
+        monthly_prestige = 0.08
+        global_manpower_modifier = 0.12
+        army_tradition_from_battle = 0.10
+        cultural_tradition = 0.08
+		global_distance_from_capital_speed_propagation = 0.2
+        monthly_towards_unsinicized = societal_value_minor_monthly_move
+        government_reform_slots = 1
+    }
+    years = 0.1
 }

@@ -16,9 +16,7 @@ init_dynasty_clans = {
 		}
 		every_country = {
 			limit = {
-				ruler ?= {
-					dynasty = dynasty:habsburg_dynasty
-				}
+				ruler_or_heir_if_regent.dynasty ?= { dynasty:habsburg_dynasty ?= this }
 			}
 			dynasty_io_find_or_create = {
 				io_type = international_organization_type:habsburg_family
@@ -58,7 +56,7 @@ refresh_dynasty_clan = {
 		if = {
 			limit = {
 				scope:new_ruler ?= {
-					dynasty = dynasty:habsburg_dynasty
+					ruler_or_heir_if_regent.dynasty ?= { dynasty:habsburg_dynasty ?= this }
 				}
 			}
 			dynasty_io_find_or_create = {
