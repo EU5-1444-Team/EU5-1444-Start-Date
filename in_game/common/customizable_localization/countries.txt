@@ -468,85 +468,6 @@ HIN_ADJ = {
 	suffix = "_ADJ"
 }
 
-MYD = {
-	#Dreaming Land
-	type = country
-	# Theocratic variant
-	text = {
-		localization_key = dreaming_land
-		trigger = {
-			government_type = government_type:theocracy
-		}
-	}
-	# Default fallback
-	text = {
-		localization_key = MYD
-		fallback = yes
-	}
-}
-
-MYD_ADJ = {
-	parent = MYD
-	suffix = "_ADJ"
-}
-
-AFZ = {
-	type = country
-	# AFZ with Fiji variant (Empire only)
-	text = {
-		localization_key = rank_empire_commonwealth_fiji
-		trigger = {
-			country_rank_is_empire = yes
-			owns = location:burebasaga
-		}
-	}
-	# Default fallback (works for both Empire without Fiji AND lower ranks)
-	text = {
-		localization_key = AFZ
-		fallback = yes
-	}
-}
-
-AFZ_ADJ = {
-	parent = AFZ
-	suffix = "_ADJ"
-}
-
-PAE = {
-	type = country
-	text = {
-		localization_key = rank_empire_pacific_empire
-		trigger = {
-			country_rank_is_empire = yes
-			government_type = government_type:monarchy
-		}
-	}
-	text = {
-		localization_key = rank_empire_pacific_republic
-		trigger = {
-			country_rank_is_empire = yes
-			government_type = government_type:republic
-		}
-	}
-	text = {
-		localization_key = rank_empire_pacific_theocracy
-		trigger = {
-			country_rank_is_empire = yes
-			government_type = government_type:theocracy
-		}
-	}
-	# Default fallback (covers non-empire ranks and any other government types)
-	text = {
-		localization_key = PAE
-		fallback = yes
-	}
-}
-
-PAE_ADJ = {
-	parent = PAE
-	suffix = "_ADJ"
-}
-
 KHL = {
 	# Imperial Khalkha
 	type = country
@@ -587,8 +508,8 @@ YER = { #Outer Jurchens
 		fallback = yes
 	}
 }
-KHL_ADJ = {
-	parent = KHL
+YER_ADJ = {
+	parent = YER
 	suffix = "_ADJ"
 }
 

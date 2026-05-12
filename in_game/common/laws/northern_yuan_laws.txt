@@ -1,5 +1,6 @@
+###################################
 # TIER 1 — KURULTAI LAW
- 
+###################################
 kurultai_law = {
     law_category = administrative
     type = international_organization
@@ -14,15 +15,11 @@ kurultai_law = {
     }
     has_levels = yes
     custom_tags = { forbids_no_policy }
- 
+
     no_kurultai_policy = {
-        level = 1
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
         wants_propose_policy = {
@@ -32,19 +29,14 @@ kurultai_law = {
             add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
         }
     }
- 
-    # Yuan Path — formal imperial legitimacy, prestige over the steppe
+
     formal_kurultai_policy = {
-        level = 1
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -53,12 +45,12 @@ kurultai_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            monthly_prestige = 0.1
-            diplomatic_reputation = diplomatic_reputation_weak_bonus
-            legitimacy = 0.5
-            diplomatic_capacity = 1
+            monthly_prestige = 0.15
+            diplomatic_reputation = diplomatic_reputation_mild_bonus
+            diplomatic_capacity = 2
+            max_diplomats = 1
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -71,9 +63,14 @@ kurultai_law = {
                 }
             }
             monthly_prestige = 0.05
-            legitimacy = 0.25
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
+            monthly_legitimacy = -0.05
+            monthly_devotion = -0.05
+            monthly_horde_unity = -0.05
+            monthly_tribal_cohesion = -0.05
+            monthly_republican_tradition = -0.05
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -85,10 +82,10 @@ kurultai_law = {
                     }
                 }
             }
-            monthly_prestige = 0.02
-            global_estate_satisfaction_recovery = 0.01
+            monthly_prestige = 0.03
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
             if = {
@@ -120,19 +117,14 @@ kurultai_law = {
             add = { desc = "POLICY_MILD_CENTRALIZATION" value = 5 }
         }
     }
- 
-    # Mongolia Path — loose steppe acknowledgment, traditional authority
+
     loose_acknowledgment_policy = {
-        level = 1
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -141,12 +133,15 @@ kurultai_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            monthly_tribal_cohesion = 0.05
+            monthly_legitimacy = 0.05
+            monthly_devotion = 0.05
             monthly_horde_unity = 0.05
+            monthly_tribal_cohesion = 0.05
+            monthly_republican_tradition = 0.05
             monthly_prestige = 0.08
             diplomatic_capacity = 1
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -158,10 +153,14 @@ kurultai_law = {
                     }
                 }
             }
-            monthly_prestige = 0.02
-            legitimacy = -0.25
+            monthly_prestige = -0.05
+            monthly_legitimacy = 0.02
+            monthly_devotion = 0.02
+            monthly_horde_unity = 0.02
+            monthly_tribal_cohesion = 0.02
+            monthly_republican_tradition = 0.02
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -173,11 +172,13 @@ kurultai_law = {
                     }
                 }
             }
-            monthly_tribal_cohesion = 0.03
+            monthly_legitimacy = 0.03
+            monthly_devotion = 0.03
             monthly_horde_unity = 0.03
-            monthly_prestige = 0.01
+            monthly_tribal_cohesion = 0.03
+            monthly_republican_tradition = 0.03
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
         }
@@ -190,7 +191,6 @@ kurultai_law = {
 ###################################
 # TIER 2 — TRIBUTE SYSTEM LAW
 ###################################
- 
 tribute_system_law = {
     law_category = socioeconomic
     type = international_organization
@@ -207,15 +207,11 @@ tribute_system_law = {
     }
     has_levels = yes
     custom_tags = { forbids_no_policy }
- 
+
     no_tribute_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
         wants_propose_policy = {
@@ -225,19 +221,15 @@ tribute_system_law = {
             add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
         }
     }
- 
+
     standardized_tribute_policy = {
-        level = 2
         payments_implemented = { yuan_tribute }
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -246,13 +238,12 @@ tribute_system_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            monthly_income_modifier = 0.08
-            country_cabinet_efficiency = 0.05
-            tax_income_efficiency = 0.05
-            trade_efficiency = 0.03
+            monthly_income_modifier = 0.12
+            tax_income_efficiency = 0.08
+            trade_efficiency = 0.06
             monthly_towards_sinicized = societal_value_minor_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -264,11 +255,16 @@ tribute_system_law = {
                     }
                 }
             }
-            monthly_income_modifier = 0.03
-            monthly_prestige = 0.02
+            monthly_income_modifier = 0.04
+            tax_income_efficiency = 0.02
+            monthly_legitimacy = -0.03
+            monthly_devotion = -0.03
+            monthly_horde_unity = -0.03
+            monthly_tribal_cohesion = -0.03
+            monthly_republican_tradition = -0.03
             monthly_towards_sinicized = societal_value_minor_monthly_move
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -281,10 +277,10 @@ tribute_system_law = {
                 }
             }
             monthly_income_modifier = -0.03
+            trade_efficiency = 0.02
             monthly_towards_sinicized = societal_value_tiny_monthly_move
-            global_estate_satisfaction_recovery = 0.01
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
             if = {
@@ -316,18 +312,14 @@ tribute_system_law = {
             add = { desc = "POLICY_MILD_CENTRALIZATION" value = -10 }
         }
     }
- 
+
     military_tribute_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -336,13 +328,12 @@ tribute_system_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            global_manpower_modifier = 0.12
-            monthly_tribal_cohesion = 0.04
-            monthly_horde_unity = 0.04
-            army_tradition_from_battle = 0.05
+            global_levy_size_modifier = 0.15
+            army_maintenance_cost = -0.08
+            global_levy_recruitment_speed_modifier = 0.10
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -354,10 +345,12 @@ tribute_system_law = {
                     }
                 }
             }
-            global_manpower_modifier = 0.03
+            global_levy_size_modifier = 0.05
+            army_maintenance_cost = -0.03
+            monthly_prestige = -0.05
             monthly_towards_unsinicized = societal_value_tiny_monthly_move
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -369,12 +362,11 @@ tribute_system_law = {
                     }
                 }
             }
-            global_manpower_modifier = -0.05
-            monthly_tribal_cohesion = 0.02
-            monthly_horde_unity = 0.02
+            global_levy_size_modifier = 0.05
+            army_maintenance_cost = -0.02
             monthly_towards_unsinicized = societal_value_tiny_monthly_move
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
         }
@@ -387,7 +379,6 @@ tribute_system_law = {
 ###################################
 # TIER 3 — PASTURE RIGHTS LAW
 ###################################
- 
 pasture_rights_law = {
     law_category = administrative
     type = international_organization
@@ -404,15 +395,11 @@ pasture_rights_law = {
     }
     has_levels = yes
     custom_tags = { forbids_no_policy }
- 
+
     no_pasture_rights_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
         wants_propose_policy = {
@@ -422,18 +409,14 @@ pasture_rights_law = {
             add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
         }
     }
- 
+
     yuan_arbitration_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -442,13 +425,13 @@ pasture_rights_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            diplomatic_reputation = diplomatic_reputation_mild_bonus
-            legitimacy = 0.5
-            subject_loyalty = 5
-            monthly_prestige = 0.08
+            stability_cost = -0.10
+            stability_decay = 0.05
+            global_estate_satisfaction_recovery = 0.03
+            stability_investment = 0.10
             monthly_towards_sinicized = societal_value_minor_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -460,11 +443,16 @@ pasture_rights_law = {
                     }
                 }
             }
-            monthly_prestige = 0.05
-            diplomatic_reputation = diplomatic_reputation_weak_bonus
-            monthly_towards_sinicized = societal_value_minor_monthly_move
+            stability_cost = -0.05
+            stability_decay = 0.02
+            monthly_legitimacy = -0.03
+            monthly_devotion = -0.03
+            monthly_horde_unity = -0.03
+            monthly_tribal_cohesion = -0.03
+            monthly_republican_tradition = -0.03
+            monthly_towards_sinicized = societal_value_tiny_monthly_move
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -476,12 +464,11 @@ pasture_rights_law = {
                     }
                 }
             }
-            monthly_tribal_cohesion = 0.02
-            monthly_horde_unity = 0.02
-            global_estate_satisfaction_recovery = 0.01
+            stability_cost = -0.03
+            global_estate_satisfaction_recovery = 0.02
             monthly_towards_sinicized = societal_value_tiny_monthly_move
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
             if = {
@@ -513,18 +500,14 @@ pasture_rights_law = {
             add = { desc = "POLICY_MILD_CENTRALIZATION" value = -10 }
         }
     }
- 
+
     traditional_territories_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -533,13 +516,13 @@ pasture_rights_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            monthly_tribal_cohesion = 0.06
-            monthly_horde_unity = 0.06
-            global_manpower_modifier = 0.08
+            global_population_growth = 0.001
+            global_monthly_food_modifier = 0.08
+            global_levy_size_modifier = 0.08
+            levy_recovery_modifier = 0.10
             monthly_towards_unsinicized = societal_value_minor_monthly_move
-            army_tradition_from_battle = 0.05
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -551,12 +534,12 @@ pasture_rights_law = {
                     }
                 }
             }
-            monthly_tribal_cohesion = 0.02
-            monthly_horde_unity = 0.02
+            global_population_growth = 0.0005
+            global_monthly_food_modifier = 0.03
+            monthly_prestige = -0.05
             monthly_towards_unsinicized = societal_value_tiny_monthly_move
-            legitimacy = -0.25
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -568,11 +551,12 @@ pasture_rights_law = {
                     }
                 }
             }
-            monthly_tribal_cohesion = 0.04
-            monthly_horde_unity = 0.04
-            monthly_towards_unsinicized = societal_value_minor_monthly_move
+            global_population_growth = 0.0005
+            global_monthly_food_modifier = 0.03
+            levy_recovery_modifier = 0.05
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
         }
@@ -585,7 +569,6 @@ pasture_rights_law = {
 ###################################
 # TIER 4 — MILITARY ORGANIZATION LAW
 ###################################
- 
 military_organization_law = {
     law_category = military
     type = international_organization
@@ -602,15 +585,11 @@ military_organization_law = {
     }
     has_levels = yes
     custom_tags = { forbids_no_policy }
- 
+
     no_military_organization_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
         wants_propose_policy = {
@@ -620,19 +599,15 @@ military_organization_law = {
             add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
         }
     }
- 
+
     standardized_tumen_policy = {
-        level = 2
         payments_implemented = { yuan_tribute }
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -641,13 +616,13 @@ military_organization_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            global_manpower_modifier = 0.15
-            army_tradition_from_battle = 0.1
-            discipline = 0.03
-            land_morale = 0.05
+            discipline = 0.05
+            army_tradition_from_battle = 0.10
+            monthly_army_tradition = 0.10
+            army_infantry_build_cost_modifier = -0.10
             monthly_towards_sinicized = societal_value_minor_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -659,11 +634,16 @@ military_organization_law = {
                     }
                 }
             }
-            monthly_prestige = 0.05
-            legitimacy = 0.25
+            discipline = 0.02
+            army_tradition_from_battle = 0.04
+            monthly_legitimacy = -0.03
+            monthly_devotion = -0.03
+            monthly_horde_unity = -0.03
+            monthly_tribal_cohesion = -0.03
+            monthly_republican_tradition = -0.03
             monthly_towards_sinicized = societal_value_minor_monthly_move
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -675,11 +655,11 @@ military_organization_law = {
                     }
                 }
             }
-            global_manpower_modifier = -0.05
-            army_tradition_from_battle = 0.05
-            monthly_towards_sinicized = societal_value_minor_monthly_move
+            discipline = 0.02
+            army_tradition_from_battle = 0.03
+            monthly_towards_sinicized = societal_value_tiny_monthly_move
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
             if = {
@@ -711,18 +691,14 @@ military_organization_law = {
             add = { desc = "POLICY_CENTRALIZATION" value = -20 }
         }
     }
- 
+
     yuan_offensive_call_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -731,13 +707,14 @@ military_organization_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            global_manpower_modifier = 0.18
-            army_tradition_from_battle = 0.15
-            land_morale = 0.05
-            monthly_towards_belligerent = societal_value_monthly_move
+            army_cavalry_power = 0.10
+            land_morale = 0.08
+            land_morale_recovery = 0.05
+            army_tradition_from_battle = 0.10
+            monthly_towards_belligerent = societal_value_minor_monthly_move
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -749,11 +726,12 @@ military_organization_law = {
                     }
                 }
             }
-            global_manpower_modifier = 0.03
-            monthly_towards_unsinicized = societal_value_minor_monthly_move
-            legitimacy = -0.25
+            army_cavalry_power = 0.04
+            land_morale = 0.03
+            monthly_prestige = -0.05
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -765,12 +743,11 @@ military_organization_law = {
                     }
                 }
             }
-            global_manpower_modifier = -0.08
-            monthly_tribal_cohesion = -0.02
-            monthly_horde_unity = -0.02
-            monthly_towards_unsinicized = societal_value_minor_monthly_move
+            army_cavalry_power = 0.05
+            land_morale = 0.04
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
         }
@@ -783,7 +760,6 @@ military_organization_law = {
 ###################################
 # TIER 5 — IMPERIAL COURT LAW
 ###################################
- 
 imperial_court_law = {
     law_category = estates
     type = international_organization
@@ -800,15 +776,11 @@ imperial_court_law = {
     }
     has_levels = yes
     custom_tags = { forbids_no_policy }
- 
+
     no_imperial_court_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
         wants_propose_policy = {
@@ -818,15 +790,11 @@ imperial_court_law = {
             add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
         }
     }
- 
+
     sinicized_court_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
             every_international_organization_member = {
                 change_societal_value = {
@@ -835,7 +803,7 @@ imperial_court_law = {
                 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -844,13 +812,13 @@ imperial_court_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            monthly_prestige = 0.12
-            country_cabinet_efficiency = 0.08
-            legitimacy = 0.5
-            diplomatic_reputation = diplomatic_reputation_mild_bonus
+            country_cabinet_efficiency = 0.10
+            government_reform_slots = 1
+            research_speed = 0.05
+            legislative_efficiency = 0.08
             monthly_towards_sinicized = societal_value_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -862,11 +830,16 @@ imperial_court_law = {
                     }
                 }
             }
-            monthly_prestige = 0.08
-            legitimacy = 0.5
+            country_cabinet_efficiency = 0.04
+            research_speed = 0.02
+            monthly_legitimacy = -0.05
+            monthly_devotion = -0.05
+            monthly_horde_unity = -0.05
+            monthly_tribal_cohesion = -0.05
+            monthly_republican_tradition = -0.05
             monthly_towards_sinicized = societal_value_monthly_move
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -878,10 +851,11 @@ imperial_court_law = {
                     }
                 }
             }
+            country_cabinet_efficiency = 0.02
+            research_speed = 0.01
             monthly_towards_sinicized = societal_value_minor_monthly_move
-            global_estate_satisfaction_recovery = 0.01
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
             if = {
@@ -913,15 +887,11 @@ imperial_court_law = {
             add = { desc = "POLICY_CENTRALIZATION" value = -20 }
         }
     }
- 
+
     traditional_mongol_court_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
             every_international_organization_member = {
                 change_societal_value = {
@@ -930,7 +900,7 @@ imperial_court_law = {
                 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -939,13 +909,13 @@ imperial_court_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            monthly_prestige = 0.12
-            monthly_tribal_cohesion = 0.08
-            monthly_horde_unity = 0.08
-            global_manpower_modifier = 0.08
+            global_estate_power = -0.10
+            global_estate_target_satisfaction = 0.10
+            cultural_tradition = 0.10
+            global_estate_power = 0.05
             monthly_towards_unsinicized = societal_value_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -957,13 +927,12 @@ imperial_court_law = {
                     }
                 }
             }
-            monthly_tribal_cohesion = 0.03
-            monthly_horde_unity = 0.03
+            global_estate_power = -0.04
+            cultural_tradition = 0.04
+            monthly_prestige = -0.05
             monthly_towards_unsinicized = societal_value_minor_monthly_move
-            legitimacy = -0.5
-            monthly_prestige = -0.03
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -975,11 +944,12 @@ imperial_court_law = {
                     }
                 }
             }
-            monthly_tribal_cohesion = 0.03
-            monthly_horde_unity = 0.03
+            global_estate_power = -0.05
+            global_estate_target_satisfaction = 0.05
+            cultural_tradition = 0.03
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
         }
@@ -992,7 +962,6 @@ imperial_court_law = {
 ###################################
 # TIER 6 — VASSAL OBLIGATIONS LAW
 ###################################
- 
 vassal_obligations_law = {
     law_category = administrative
     type = international_organization
@@ -1009,16 +978,15 @@ vassal_obligations_law = {
     }
     has_levels = yes
     custom_tags = { forbids_no_policy }
- 
+
     no_vassal_obligations_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
+        }
+        join_offensive_wars_can_call = {
+            always = yes
         }
         wants_propose_policy = {
             subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
@@ -1027,18 +995,17 @@ vassal_obligations_law = {
             add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
         }
     }
- 
+
     administrative_integration_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+        join_offensive_wars_always = {
+            always = yes
+        }
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -1047,13 +1014,13 @@ vassal_obligations_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            global_distance_from_capital_cost_modifier = -0.15
-            country_cabinet_efficiency = 0.08
             diplomatic_reputation = diplomatic_reputation_mild_bonus
-            monthly_income_modifier = 0.05
+            war_declaration_stab_hit_tolerance = 1
+            war_declaration_war_exhaustion_tolerance = 5
+            max_war_exhaustion = 10
             monthly_towards_sinicized = societal_value_minor_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -1065,11 +1032,15 @@ vassal_obligations_law = {
                     }
                 }
             }
-            monthly_prestige = 0.05
-            legitimacy = 0.25
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
+            monthly_legitimacy = -0.05
+            monthly_devotion = -0.05
+            monthly_horde_unity = -0.05
+            monthly_tribal_cohesion = -0.05
+            monthly_republican_tradition = -0.05
             monthly_towards_sinicized = societal_value_minor_monthly_move
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -1081,11 +1052,11 @@ vassal_obligations_law = {
                     }
                 }
             }
-            reject_subjugation_reasons = -25
-            monthly_towards_sinicized = societal_value_minor_monthly_move
-            global_estate_satisfaction_recovery = 0.01
+            monthly_war_exhaustion = 0.05
+            antagonism_received_modifier = 0.10
+            monthly_towards_sinicized = societal_value_tiny_monthly_move
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
             if = {
@@ -1117,18 +1088,17 @@ vassal_obligations_law = {
             add = { desc = "POLICY_HEAVY_CENTRALIZATION" value = -30 }
         }
     }
- 
+
     military_subjugation_policy = {
-        level = 2
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+        join_offensive_wars_always = {
+            always = yes
+        }
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -1137,13 +1107,13 @@ vassal_obligations_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            global_manpower_modifier = 0.18
             army_tradition_from_battle = 0.15
+            monthly_army_tradition = 0.10
             land_morale = 0.05
-            subject_loyalty = 5
+            monthly_towards_belligerent = societal_value_minor_monthly_move
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -1155,11 +1125,12 @@ vassal_obligations_law = {
                     }
                 }
             }
-            global_manpower_modifier = 0.05
+            army_tradition_from_battle = 0.05
+            land_morale = 0.02
+            monthly_prestige = -0.08
             monthly_towards_unsinicized = societal_value_minor_monthly_move
-            legitimacy = -0.5
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -1171,13 +1142,11 @@ vassal_obligations_law = {
                     }
                 }
             }
-            reject_subjugation_reasons = -50
-            global_manpower_modifier = -0.1
-            monthly_tribal_cohesion = -0.03
-            monthly_horde_unity = -0.03
-            monthly_towards_unsinicized = societal_value_minor_monthly_move
+            army_tradition_from_battle = 0.05
+            monthly_war_exhaustion = 0.08
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
         }
@@ -1190,7 +1159,6 @@ vassal_obligations_law = {
 ###################################
 # TIER 7 — IMPERIAL AUTHORITY LAW
 ###################################
- 
 imperial_authority_law = {
     law_category = centralization
     type = international_organization
@@ -1207,6 +1175,7 @@ imperial_authority_law = {
         NOT = { has_culture_group = culture_group:jurchen_group }
     }
     custom_tags = { forbids_no_policy }
+
     preserve_no_authority_policy = {
         wants_propose_policy = {
             subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
@@ -1215,20 +1184,17 @@ imperial_authority_law = {
             add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
         }
     }
- 
+
     yuan_imperial_authority_policy = {
         allow = {
             is_leader_of_international_organization = scope:recipient
         }
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -1237,14 +1203,14 @@ imperial_authority_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            monthly_prestige = 0.2
-            legitimacy = 1
+            monthly_prestige = 0.20
+            stability_decay = 0.08
+            stability_cost = -0.15
+            country_cabinet_efficiency = 0.08
             diplomatic_reputation = diplomatic_reputation_strong_bonus
-            country_cabinet_efficiency = 0.1
-            monthly_income_modifier = 0.08
             monthly_towards_sinicized = societal_value_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -1256,11 +1222,15 @@ imperial_authority_law = {
                     }
                 }
             }
-            monthly_prestige = 0.15
-            legitimacy = 1
+            monthly_prestige = 0.08
+            monthly_legitimacy = -0.10
+            monthly_devotion = -0.10
+            monthly_horde_unity = -0.10
+            monthly_tribal_cohesion = -0.10
+            monthly_republican_tradition = -0.10
             monthly_towards_sinicized = societal_value_monthly_move
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -1272,11 +1242,11 @@ imperial_authority_law = {
                     }
                 }
             }
-            reject_subjugation_reasons = -50
+            stability_cost = -0.05
+            global_estate_satisfaction_recovery = 0.02
             monthly_towards_sinicized = societal_value_minor_monthly_move
-            global_estate_satisfaction_recovery = 0.01
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
             if = {
@@ -1308,17 +1278,14 @@ imperial_authority_law = {
             add = { desc = "POLICY_HEAVY_CENTRALIZATION" value = -40 }
         }
     }
- 
+
     mongol_imperial_authority_policy = {
         on_activate = {
             international_organization:northern_yuan = {
-                change_variable = {
-                    name = yeke_mongghul_ulus
-                    add = -80
-                }
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
             }
         }
- 
+
         # Taishi
         country_modifier = {
             potential_trigger = {
@@ -1327,15 +1294,14 @@ imperial_authority_law = {
                     international_organization = international_organization:northern_yuan
                 }
             }
-            monthly_prestige = 0.2
-            monthly_tribal_cohesion = 0.12
-            monthly_horde_unity = 0.12
+            monthly_prestige = 0.20
             global_manpower_modifier = 0.15
             army_tradition_from_battle = 0.15
+            reject_subjugation_reasons = 50
             monthly_towards_unsinicized = societal_value_monthly_move
-            monthly_towards_belligerent = societal_value_monthly_move
+            monthly_towards_belligerent = societal_value_minor_monthly_move
         }
- 
+
         # Yuan Emperor
         country_modifier = {
             potential_trigger = {
@@ -1347,12 +1313,11 @@ imperial_authority_law = {
                     }
                 }
             }
-            monthly_tribal_cohesion = 0.03
-            monthly_horde_unity = 0.03
+            global_manpower_modifier = 0.05
+            monthly_prestige = -0.10
             monthly_towards_unsinicized = societal_value_minor_monthly_move
-            monthly_prestige = -0.05
         }
- 
+
         # Members
         country_modifier = {
             potential_trigger = {
@@ -1365,12 +1330,10 @@ imperial_authority_law = {
                 }
             }
             reject_subjugation_reasons = -75
-            global_manpower_modifier = -0.1
-            monthly_tribal_cohesion = -0.05
-            monthly_horde_unity = -0.05
+            global_manpower_modifier = 0.05
             monthly_towards_unsinicized = societal_value_minor_monthly_move
         }
- 
+
         wants_propose_policy = {
             add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
         }
@@ -1475,24 +1438,7 @@ northern_yuan_consolidation_law = {
             international_organization_has_policy = policy:yuan_imperial_authority_policy
         }
         on_activate = {
-            northern_yuan_legacy_modifier = {
-                game_data = { category = country }
-                # Scaled modifiers based on existing policies
-                if = { limit = { international_organization_has_policy = policy:formal_kurultai_policy } monthly_prestige = 0.03 country_cabinet_efficiency = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:loose_acknowledgment_policy } monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:standardized_tribute_policy } monthly_income_modifier = 0.02 trade_efficiency = 0.02 country_cabinet_efficiency = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:military_tribute_policy } global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:yuan_arbitration_policy } trade_efficiency = 0.02 stability_decay = -0.001 }
-                if = { limit = { international_organization_has_policy = policy:traditional_territories_policy } global_manpower_modifier = 0.03 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:standardized_tumen_policy } discipline = 0.02 army_tradition_from_battle = 0.04 }
-                if = { limit = { international_organization_has_policy = policy:yuan_offensive_call_policy } global_manpower_modifier = 0.04 army_tradition_from_battle = 0.05 }
-                if = { limit = { international_organization_has_policy = policy:sinicized_court_policy } monthly_prestige = 0.04 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:traditional_mongol_court_policy } monthly_prestige = 0.03 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republican_tradition = 0.03 monthly_devotion = 0.03 monthly_horde_unity = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:administrative_integration_policy } monthly_income_modifier = 0.02 stability_decay = -0.001 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:military_subjugation_policy } global_manpower_modifier = 0.05 army_tradition_from_battle = 0.04 }
-                if = { limit = { international_organization_has_policy = policy:yuan_imperial_authority_policy } monthly_prestige = 0.05 monthly_income_modifier = 0.03 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:mongol_imperial_authority_policy } monthly_prestige = 0.03 global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republican_tradition = 0.03 monthly_devotion = 0.03 monthly_horde_unity = 0.03 }
-            }
+            add_reform = government_reform:legacy_of_kublai_khan_reform
             every_country_with_special_status_of_type = {
                 type = protector_general
                 add_country_modifier = { modifier = northern_yuan_legacy_modifier years = -1 mode = add }
@@ -1538,24 +1484,7 @@ northern_yuan_consolidation_law = {
             international_organization_has_policy = policy:mongol_imperial_authority_policy
         }
         on_activate = {
-            northern_yuan_legacy_modifier = {
-                game_data = { category = country }
-                # Modifiers identical to the above (Preserving your original logic)
-                if = { limit = { international_organization_has_policy = policy:formal_kurultai_policy } monthly_prestige = 0.03 country_cabinet_efficiency = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:loose_acknowledgment_policy } monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:standardized_tribute_policy } monthly_income_modifier = 0.02 trade_efficiency = 0.02 country_cabinet_efficiency = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:military_tribute_policy } global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:yuan_arbitration_policy } trade_efficiency = 0.02 stability_decay = -0.001 }
-                if = { limit = { international_organization_has_policy = policy:traditional_territories_policy } global_manpower_modifier = 0.03 monthly_tribal_cohesion = 0.02 monthly_legitimacy = 0.02 monthly_republican_tradition = 0.02 monthly_devotion = 0.02 monthly_horde_unity = 0.02 }
-                if = { limit = { international_organization_has_policy = policy:standardized_tumen_policy } discipline = 0.02 army_tradition_from_battle = 0.04 }
-                if = { limit = { international_organization_has_policy = policy:yuan_offensive_call_policy } global_manpower_modifier = 0.04 army_tradition_from_battle = 0.05 }
-                if = { limit = { international_organization_has_policy = policy:sinicized_court_policy } monthly_prestige = 0.04 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:traditional_mongol_court_policy } monthly_prestige = 0.03 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republican_tradition = 0.03 monthly_devotion = 0.03 monthly_horde_unity = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:administrative_integration_policy } monthly_income_modifier = 0.02 stability_decay = -0.001 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:military_subjugation_policy } global_manpower_modifier = 0.05 army_tradition_from_battle = 0.04 }
-                if = { limit = { international_organization_has_policy = policy:yuan_imperial_authority_policy } monthly_prestige = 0.05 monthly_income_modifier = 0.03 country_cabinet_efficiency = 0.03 }
-                if = { limit = { international_organization_has_policy = policy:mongol_imperial_authority_policy } monthly_prestige = 0.03 global_manpower_modifier = 0.04 monthly_tribal_cohesion = 0.03 monthly_legitimacy = 0.03 monthly_republican_tradition = 0.03 monthly_devotion = 0.03 monthly_horde_unity = 0.03 }
-            }
+            add_reform = government_reform:legacy_of_the_steppe_reform
             every_country_with_special_status_of_type = {
                 type = protector_general
                 add_country_modifier = { modifier = northern_yuan_legacy_modifier years = -1 mode = add }
