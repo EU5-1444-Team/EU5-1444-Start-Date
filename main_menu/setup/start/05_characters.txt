@@ -8365,7 +8365,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1274.1.1 # Unknown
-        death_date = 1331.1.1
+        death_date = 1326.1.1
         birth = mirande
         father = ast_centule_iii_astarac
         #mother = Assalide d'Albret
@@ -8379,7 +8379,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1296.1.1 # Unknown
-        death_date = 1326.1.1
+        death_date = 1331.1.1
         birth = mirande
         father = ast_bernard_v_astarac
         mother = ast_mathe_foix
@@ -8393,10 +8393,36 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1323.1.1 # Unknown
-        death_date = 1394.12.7
+        death_date = 1363.1.1
         birth = mirande
         father = ast_amanieu_astarac
         mother = mfa_cecilia_comminges
+        dynasty = astarac_dynasty
+        tag = AST
+    }
+
+    ast_joan_iii_astarac = {
+        first_name = { name = name_john }
+        culture = gascon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1390.1.1 # Unknown
+        birth = mirande
+        #father = 
+        #mother =
+        dynasty = astarac_dynasty
+        tag = AST
+    }
+
+    ast_joan_iv_astarac = {
+        first_name = { name = name_john }
+        culture = gascon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1435.1.1 # Unknown
+        birth = mirande
+        father = ast_joan_iii_astarac
+        #mother =
         dynasty = astarac_dynasty
         tag = AST
     }
@@ -111235,8 +111261,8 @@ character_db={
         dynasty = timurid_dynasty
         tag = TIM
     }
-    tim_muhammad_bin_abi_said_fictional
-    first_name = { name = name_muhammad }
+    tim_muhammad_bin_abi_said_fictional = {
+        first_name = { name = name_muhammad }
         culture = moghul_culture
         religion = sunni
 		adm = 16 dip = 63 mil = 35
@@ -134065,6 +134091,31 @@ character_db={
 		tag = ARM
 	}
 
+    auv_agne_iv_de_la_tour_d_auvergne = {
+		first_name = { name = name_anna }
+		culture = auvergnat
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1422.1.1 #Unknown
+		birth = tour_auvergne
+        spouse = tue_anais_roger_de_beaufort
+        dynasty = de_la_tour_d_auvergne_dynasty
+		tag = TUE
+    }
+
+    tue_anais_roger_de_beaufort = {
+		first_name = { name = name_anna }
+		culture = limousin
+		religion = catholic
+        female = yes
+        estate = nobles_estate
+		birth_date = 1418.1.1 #Unknown
+		birth = turenne
+        spouse = auv_agne_iv_de_la_tour_d_auvergne
+        dynasty = roger_de_beaufort_dynasty
+		tag = TUE
+    }
+
     #Musha'sha
     mss_muhammad_ibn_falah = {
         first_name = { name = name_muhammad}
@@ -134078,7 +134129,7 @@ character_db={
         tag = MSS
     }
     rind_shahak_khan = {
-        first_name = { name_shahak }
+        first_name = { name = name_shahak }
         culture = baloch_culture
         religion = sunni
         adm = 40 dip = 35 mil = 55
@@ -134088,7 +134139,7 @@ character_db={
         tag = SIW
     }
     lashari_nodhbandagh = {
-        first_name = { name_nodhbandagh }
+        first_name = { name = name_nodhbandagh }
         culture = baloch_culture
         religion = sunni
         adm = 30 dip = 45 mil = 50
@@ -134098,7 +134149,7 @@ character_db={
         tag = KLW
     }
     makran_jiand = {
-        first_name = { name_jiand }
+        first_name = { name = name_jiand }
         culture = baloch_culture
         religion = sunni
         adm = 35 dip = 40 mil = 50

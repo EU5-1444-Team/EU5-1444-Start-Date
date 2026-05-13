@@ -4393,7 +4393,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = ast_joan_iii_astarac
 
             ruler_term = { character = ast_arnaud_garcia_astarac start_date = 920.1.1 end_date = 960.1.1 regnal_number = 1 }
             ruler_term = { character = ast_garcia_arnaud_astarac start_date = 960.1.1 end_date = 975.1.1 regnal_number = 1 }
@@ -4411,6 +4411,8 @@ countries = {
             ruler_term = { character = ast_centule_iii_astarac start_date = 1291.1.1 end_date = 1300.1.1 regnal_number = 3 }
             ruler_term = { character = ast_bernard_v_astarac start_date = 1300.1.1 end_date = 1331.1.1 regnal_number = 5 }
 
+            ruler_term = { character = ast_joan_iii_astarac start_date = 1410.1.1 regnal_number = 3 }
+
             regnal_numbers = {
                 name_arnold = 2
                 name_garcia = 1
@@ -4419,6 +4421,7 @@ countries = {
                 name_bernard = 5
                 name_bohemond = 1
                 name_centule = 3
+                name_john = 3
             }
 
             reforms = {
@@ -4486,21 +4489,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = per_charles_i_de_perigord
+            ruler = tue_anais_roger_de_beaufort
+
+            ruler_term = { character = tue_anais_roger_de_beaufort start_date = 1444.1.1 }
 
             regnal_numbers = {
-                #Émenon = 1
-                #Vulgrin = 1
-                name_william = 3
-                name_bernard = 1
-                name_arnold = 1
-                name_ralph = 1
-                name_richard = 1
-                name_boson = 4
-                name_elias = 9
-                name_albert = 2
-                name_archibald = 4
-                name_roger.name_bernard = 1
             }
 
             reforms = {
@@ -26871,8 +26864,9 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = hun_janos_hunyadi
         }
+
         capital = mihalt
     }
 
@@ -31018,6 +31012,12 @@ countries = {
             capital_economy_vs_traditional_economy = -10
             individualism_vs_communalism = -10
             outward_vs_inward = 30
+        }
+        timed_modifier = {
+            modifier = "azov_campaign"
+            start_date = 1444.11.11
+            date = 1450.1.1
+            size = 1
         }
     }
 
@@ -51908,17 +51908,9 @@ countries = {
             rma_culture
             shu_culture
             tubai_culture
-            jurchen_culture
-            daur_culture
-            sibe_culture
-            tumed_culture
-            kharchin_culture
-            oirat_culture
             amdowa_culture
             monguor_culture
             yugur_culture
-            tuvan_culture
-            uyghur_culture
             hlai_culture
         }
         flag = "CHI_Ming"
