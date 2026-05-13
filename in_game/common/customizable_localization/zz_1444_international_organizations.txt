@@ -1,0 +1,107 @@
+REPLACE:jurchen_confederation_name = {
+    type = international_organization
+
+    # Haixi Confederation
+    text = {
+        trigger = {
+            leader_country ?= {
+                culture ?= culture:haixi_culture
+            }
+        }
+        localization_key = haixi_confederation
+    }
+
+    # Nanai Confederation (Hurga)
+    text = {
+        trigger = {
+            leader_country ?= {
+                culture ?= culture:hurga_culture
+            }
+        }
+        localization_key = nanai_confederation
+    }
+
+    # Udege Confederation
+    text = {
+        trigger = {
+            leader_country ?= {
+                culture ?= culture:udege_culture
+            }
+        }
+        localization_key = udege_confederation
+    }
+
+    # Default Fallback (Jurchen)
+    text = {
+        localization_key = jurchen_confederation
+        fallback = yes
+    }
+}
+
+dynasty_clan_name = {
+    type = international_organization
+    text = {
+        localization_key = DYNASTY_CLAN_NAME
+        fallback = yes
+    }
+}
+
+dynasty_family_name = {
+    type = international_organization
+    text = {
+        localization_key = DYNASTY_FAMILY_NAME
+        fallback = yes
+    }
+}
+
+dynasty_circle_name = {
+    type = international_organization
+    text = {
+        localization_key = DYNASTY_CIRCLE_NAME
+        fallback = yes
+    }
+}
+
+middle_kingdom_name = {
+    type = international_organization
+    text = {
+        localization_key = ZHONG_GUO
+        trigger = {
+            leader_country ?= { culture = { has_culture_group = culture_group:chinese_group } }
+        }
+    }
+    text = {
+        localization_key = CEFENG_TISHI
+        trigger = {
+            leader_country ?= { culture = { has_culture_group = culture_group:jurchen_group } }
+        }
+    }
+    text = {
+        localization_key = DAI_ON_ULUS
+        trigger = {
+            leader_country ?= { culture = { has_culture_group = culture_group:mongolian_group } }
+        }
+    }
+    text = {
+        localization_key = TRUNG_QUOC
+        trigger = {
+            leader_country ?= { culture = vietnamese_culture }
+        }
+    }
+    text = {
+        localization_key = JUNGGUK
+        trigger = {
+            leader_country ?= { culture = korean_culture }
+        }
+    }
+    text = {
+        localization_key = CHUGOKU
+        trigger = {
+            leader_country ?= { culture = { has_culture_group = culture_group:japanese_group } }
+        }
+    }
+    text = {
+        localization_key = MIDDLE_KINGDOM
+        fallback = yes
+    }
+}
