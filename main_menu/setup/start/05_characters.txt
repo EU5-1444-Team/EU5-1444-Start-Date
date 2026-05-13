@@ -8365,7 +8365,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1274.1.1 # Unknown
-        death_date = 1331.1.1
+        death_date = 1326.1.1
         birth = mirande
         father = ast_centule_iii_astarac
         #mother = Assalide d'Albret
@@ -8379,7 +8379,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1296.1.1 # Unknown
-        death_date = 1326.1.1
+        death_date = 1331.1.1
         birth = mirande
         father = ast_bernard_v_astarac
         mother = ast_mathe_foix
@@ -8393,10 +8393,36 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1323.1.1 # Unknown
-        death_date = 1394.12.7
+        death_date = 1363.1.1
         birth = mirande
         father = ast_amanieu_astarac
         mother = mfa_cecilia_comminges
+        dynasty = astarac_dynasty
+        tag = AST
+    }
+
+    ast_joan_iii_astarac = {
+        first_name = { name = name_john }
+        culture = gascon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1390.1.1 # Unknown
+        birth = mirande
+        #father = 
+        #mother =
+        dynasty = astarac_dynasty
+        tag = AST
+    }
+
+    ast_joan_iv_astarac = {
+        first_name = { name = name_john }
+        culture = gascon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1435.1.1 # Unknown
+        birth = mirande
+        father = ast_joan_iii_astarac
+        #mother =
         dynasty = astarac_dynasty
         tag = AST
     }
@@ -12256,7 +12282,7 @@ character_db={
         estate = nobles_estate
         adm = 6 dip = 6 mil = 17
         birth_date = 1332.1.1
-        death_date = 1396.7.20
+        death_date = 1412.3.5
         birth = tarragona # Unknown
         father = ara_pere_iv_ribagorza
         mother = ara_joana_foix
@@ -12273,7 +12299,7 @@ character_db={
         adm = 3 dip = 3 mil = 1
         female = yes
         birth_date = 1333.1.1
-        death_date = 1382.2.6
+        death_date = 1417.12.26
         birth = tarragona
         father = ara_pere_iv_ribagorza
         mother = ara_joana_foix
@@ -12303,7 +12329,7 @@ character_db={
         estate = nobles_estate
         adm = 1 dip = 0 mil = 0
         birth_date = 1335.1.1
-        death_date = 1388.1.8
+        death_date = 1395.1.1 # unknown
         birth = tarragona # Unknown
         father = ara_pere_iv_ribagorza
         mother = ara_joana_foix
@@ -12812,7 +12838,7 @@ character_db={
         adm = 51 dip = 63 mil = 12
         female = yes
         birth_date = 1284.1.1
-        death_date = 1340.6.11
+        death_date = 1345.7.28
         birth = palma
         father = mll_jacme_ii_mallorca
         mother = mll_esclarmonda_foix
@@ -12828,7 +12854,7 @@ character_db={
         estate = clergy_estate
         adm = 24 dip = 59 mil = 21
         birth_date = 1288.1.1
-        death_date = 1347.1.7
+        death_date = 1343.1.1
         birth = perpignan
         father = mll_jacme_ii_mallorca
         mother = mll_esclarmonda_foix
@@ -15179,15 +15205,152 @@ character_db={
 
     ### bisset_dynasty | GLN ###
 
-    gln_bisset = {
+    gls_bisset = {
         first_name = { name = name_john } # unknown, all made up except the dynasty
         culture = scottish
         religion = catholic
         birth_date = 1300.1.1
-        death_date = 1356.12.27
+        death_date = 1360.1.1
         birth = ballycastle
         dynasty = bisset_dynasty
-        tag = GLN
+        tag = GLS
+    }
+
+    gls_margaret_bisset = {
+        first_name = { name = name_margaret } # unknown, all made up except the dynasty
+        culture = irish
+        religion = catholic
+        female = yes
+        birth_date = 1370.1.1
+        death_date = 1430.1.1
+        birth = ballycastle
+        dynasty = bisset_dynasty
+        tag = GLS
+    }
+
+    gls_domhnall_balloch_mac_domhnaill = {
+        first_name = { name = name_donald.Balloch }
+        culture = irish
+        religion = catholic
+        birth_date = 1390.1.1
+        birth = ballycastle
+        dynasty = mac_domhnaill_dynasty # MacDonald
+        spouse = gls_siobhan_o_neill_mac_domhnaill
+        father = loi_eoin_mor_mac_eoin_mac_domhnaill
+        mother = gls_margaret_bisset
+        tag = GLS 
+    }
+
+    gls_siobhan_o_neill_mac_domhnaill = {
+        first_name = { name = name_joanna }
+        culture = irish
+        religion = catholic
+        female = yes
+        birth_date = 1395.1.1
+        birth = belfast
+        spouse = gls_domhnall_balloch_mac_domhnaill
+        dynasty = o_neill_dynasty
+        tag = GLS 
+    }
+
+    gls_ranald_bane_mac_domhnaill_1st_largie = {
+        first_name = { name = Ranald.Bane }
+        culture = irish
+        religion = catholic
+        birth_date = 1400.1.1
+        birth = ballycastle
+        dynasty = mac_domhnaill_dynasty # MacDonald
+        father = loi_eoin_mor_mac_eoin_mac_domhnaill
+        tag = GLS
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 968.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    gls_domhnall_mac_domhnaill_2nd_largie = {
+        first_name = { name = name_donald }
+        culture = irish
+        religion = catholic
+        birth_date = 1420.1.1
+        birth = ballycastle
+        dynasty = mac_domhnaill_dynasty # MacDonald
+        father = gls_ranald_bane_mac_domhnaill_1st_largie
+        tag = GLS
+    }
+
+    gls_alexander_mac_domhnaill_3rd_largie = {
+        first_name = { name = name_alexander }
+        culture = irish
+        religion = catholic
+        birth_date = 1422.1.1
+        birth = ballycastle
+        dynasty = mac_domhnaill_dynasty # MacDonald
+        father = gls_ranald_bane_mac_domhnaill_1st_largie
+        tag = GLS
+    }
+
+    gls_john_mac_domhnaill = {
+        first_name = { name = name_john }
+        culture = irish
+        religion = catholic
+        birth_date = 1424.1.1
+        birth = ballycastle
+        dynasty = mac_domhnaill_dynasty # MacDonald
+        father = gls_ranald_bane_mac_domhnaill_1st_largie
+        tag = GLS
+    }
+
+    gls_marion_mac_domhnaill_cortynvale = {
+        first_name = { name = name_marianne }
+        culture = irish
+        religion = catholic
+        female = yes
+        birth_date = 1425.1.1
+        birth = ballycastle
+        dynasty = mac_domhnaill_dynasty # MacDonald
+        father = gls_ranald_bane_mac_domhnaill_1st_largie
+        tag = GLS
+    }
+
+    gls_seoan_mor_mac_domhnaill = {
+        first_name = { name = name_john.Mór }
+        culture = irish
+        religion = catholic
+        birth_date = 1420.1.1
+        birth = ballycastle
+        dynasty = mac_domhnaill_dynasty # MacDonald
+        spouse = gls_sabina_o_neill_mac_domhnaill
+        father = gls_domhnall_balloch_mac_domhnaill
+        mother = gls_siobhan_o_neill_mac_domhnaill
+        tag = GLS 
+    }
+
+    gls_sabina_o_neill_mac_domhnaill = {
+        first_name = { name = Sabina }
+        culture = irish
+        religion = catholic
+        female = yes
+        birth_date = 1422.1.1
+        birth = belfast
+        dynasty = o_neill_dynasty # MacDonald
+        spouse = gls_seoan_mor_mac_domhnaill
+        #father = Felim O'Neill of Clanboye
+        tag = GLS 
+    }
+
+    gls_seoan_cathanach_mac_domhnaill = {
+        first_name = { name = name_john.Cathanach }
+        culture = irish
+        religion = catholic
+        birth_date = 1444.1.1
+        birth = ballycastle
+        dynasty = mac_domhnaill_dynasty # MacDonald
+        father = gls_seoan_mor_mac_domhnaill
+        mother = gls_sabina_o_neill_mac_domhnaill
+        tag = GLS 
     }
 
     ### bjalbo_atten_dynasty | DAN ###
@@ -28533,7 +28696,7 @@ character_db={
         adm = 48 dip = 51 mil = 31
         female = yes
         birth_date = 1321.1.1 # Around 1320, first son in 1340
-        death_date = 1376.6.17
+        death_date = 1384.6.16
         birth = muret
         father = com_bernard_viii_comminges
         mother = com_mathe_lisle_jourdain
@@ -28551,7 +28714,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1300.1.1
-        death_date = 1360.7.28
+        death_date = 1360.1.1
         birth = muret
         father = com_bernard_vii_comminges
         mother = com_laure_montfort
@@ -28832,7 +28995,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1282.1.1
-        death_date = 1350.1.23
+        death_date = 1341.1.1
         birth = muret
         father = com_bernard_vii_comminges
         mother = com_laure_montfort
@@ -28846,7 +29009,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1325.1.1 # Unknown
-        death_date = 1390.10.20
+        death_date = 1375.1.1
         birth = muret
         father = com_pierre_raymond_i_comminges
         mother = com_francoise_fesenzac
@@ -28862,7 +29025,7 @@ character_db={
         adm = 6 dip = 6 mil = 2
         female = yes
         birth_date = 1332.1.1 # Married 1350
-        death_date = 1391.7.15
+        death_date = 1376.1.1
         birth = muret
         father = com_bernard_viii_comminges
         mother = com_mathe_lisle_jourdain
@@ -28878,7 +29041,7 @@ character_db={
         adm = 1 dip = 1 mil = 0
         female = yes
         birth_date = 1334.1.1 # Married 1350
-        death_date = 1383.1.20
+        death_date = 1394.1.1 # unknown
         birth = muret
         father = com_bernard_viii_comminges
         mother = com_mathe_lisle_jourdain
@@ -28894,7 +29057,7 @@ character_db={
         estate = nobles_estate
         adm = 1 dip = 0 mil = 0
         birth_date = 1336.5.1
-        death_date = 1404.7.22
+        death_date = 1339.1.1
         birth = muret
         father = com_bernard_viii_comminges
         mother = com_mathe_lisle_jourdain
@@ -28912,7 +29075,7 @@ character_db={
         adm = 36 dip = 25 mil = 12
         female = yes
         birth_date = 1300.1.1
-        death_date = 1348.11.21
+        death_date = 1360.1.1 # unknown
         birth = muret
         father = com_bernard_vii_comminges
         mother = com_laure_montfort
@@ -28930,7 +29093,7 @@ character_db={
         estate = clergy_estate
         adm = 52 dip = 57 mil = 19
         birth_date = 1285.1.1
-        death_date = 1338.4.26
+        death_date = 1365.1.1 # unknown
         birth = muret
         father = com_bernard_vii_comminges
         mother = com_laure_montfort
@@ -34614,8 +34777,64 @@ character_db={
         culture = limousin
         religion = catholic
         birth_date = 1305.1.1
-        death_date = 1371.8.26
+        death_date = 1356.1.1
         birth = rochechouart
+        dynasty = de_rochechouart_dynasty
+        tag = RCC
+    }
+
+    rcc_louis_de_rochechouart = {
+        first_name = { name = name_louis }
+        culture = limousin
+        religion = catholic
+        birth_date = 1355.1.1
+        death_date = 1394.1.1
+        birth = rochechouart
+        dynasty = de_rochechouart_dynasty
+        tag = RCC
+    }
+
+    rcc_jean_ii_de_rochechouart = {
+        first_name = { name = name_jean }
+        culture = limousin
+        religion = catholic
+        birth_date = 1375.1.1
+        death_date = 1415.1.1
+        birth = rochechouart
+        father = rcc_louis_de_rochechouart
+        dynasty = de_rochechouart_dynasty
+        tag = RCC
+    }
+
+    rcc_geoffroy_de_rochechouart = {
+        first_name = { name = name_godfrey }
+        culture = limousin
+        religion = catholic
+        birth_date = 1400.1.1
+        birth = rochechouart
+        father = rcc_jean_ii_de_rochechouart
+        dynasty = de_rochechouart_dynasty
+        tag = RCC
+    }
+
+    rcc_foucaud_de_rochechouart = {
+        first_name = { name = Foucaud }
+        culture = limousin
+        religion = catholic
+        birth_date = 1420.1.1
+        birth = rochechouart
+        father = rcc_geoffroy_de_rochechouart
+        dynasty = de_rochechouart_dynasty
+        tag = RCC
+    }
+
+    rcc_anne_de_rochechouart = {
+        first_name = { name = name_anna }
+        culture = limousin
+        religion = catholic
+        birth_date = 1444.1.1
+        birth = rochechouart
+        father = rcc_foucaud_de_rochechouart
         dynasty = de_rochechouart_dynasty
         tag = RCC
     }
@@ -41270,7 +41489,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1310.1.1
-        death_date = 1374.2.22
+        death_date = 1350.1.1
         birth = foix
         father = foi_gaston_i_foix
         mother = foi_jeanne_artois
@@ -41285,7 +41504,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1316.1.1 # Married 1331
-        death_date = 1377.8.8
+        death_date = 1358.1.1
         birth = foix
         father = foi_gaston_i_foix
         mother = foi_jeanne_artois
@@ -41301,7 +41520,7 @@ character_db={
         estate = nobles_estate
         adm = 3 dip = 3 mil = 3
         birth_date = 1333.1.1
-        death_date = 1397.12.19
+        death_date = 1381.1.1
         birth = seu_durgell
         father = ara_roger_bernard_iii_foix
         mother = ara_constanca_luna
@@ -41316,7 +41535,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1334.1.1
-        death_date = 1391.9.10
+        death_date = 1394.1.1
         birth = seu_durgell
         father = ara_roger_bernard_iii_foix
         mother = ara_constanca_luna
@@ -41331,7 +41550,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1336.1.1
-        death_date = 1388.2.20
+        death_date = 1396.1.1
         birth = seu_durgell
         father = ara_roger_bernard_iii_foix
         mother = ara_constanca_luna
@@ -41366,7 +41585,7 @@ character_db={
         estate = nobles_estate
         adm = 13 dip = 4 mil = 29
         birth_date = 1330.1.1
-        death_date = 1389.6.10
+        death_date = 1391.1.1
         birth = pau
         father = foi_gaston_ii_foix
         #mother = Marie de Sans (Mistress)
@@ -41566,7 +41785,7 @@ character_db={
         estate = nobles_estate
         adm = 31 dip = 41 mil = 69
         birth_date = 1308.1.1
-        death_date = 1363.5.22
+        death_date = 1343.9.26
         birth = foix
         father = foi_gaston_i_foix
         mother = foi_jeanne_artois
@@ -41580,14 +41799,54 @@ character_db={
         culture = languedocien
         religion = catholic
         estate = nobles_estate
-        birth_date = 1331.1.1
-        death_date = 1388.12.7
+        birth_date = 1331.4.30
+        death_date = 1391.8.1
         birth = orthez
         father = foi_gaston_ii_foix
         mother = foi_alienor_comminges
         dynasty = foix_dynasty
         tag = FOI
         child_trait = child_gifted
+    }
+
+    foi_gaston_iv_foix = {
+        first_name = { name = name_gaston }
+        culture = languedocien
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1422.11.27
+        birth = orthez
+        spouse = foi_eleanor_trastamara
+        #father = foi_joan_i_foix
+        #mother = foi_jeanne_albret
+        dynasty = foix_dynasty
+        tag = FOI
+    }
+
+    foi_gaston_v_foix = {
+        first_name = { name = name_gaston }
+        culture = languedocien
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1443.1.1
+        birth = orthez
+        father = foi_gaston_iv_foix
+        mother = foi_eleanor_trastamara
+        dynasty = foix_dynasty
+        tag = FOI
+    }
+
+    foi_joan_foix_narbonne = {
+        first_name = { name = name_john }
+        culture = languedocien
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1444.1.1
+        birth = orthez
+        father = foi_gaston_iv_foix
+        mother = foi_eleanor_trastamara
+        dynasty = foix_dynasty
+        tag = FOI
     }
 
     ### foix_dynasty | FRA ###
@@ -41598,7 +41857,7 @@ character_db={
         religion = catholic
         estate = clergy_estate
         birth_date = 1311.1.1
-        death_date = 1371.6.14
+        death_date = 1371.1.1
         birth = foix
         father = foi_gaston_i_foix
         mother = foi_jeanne_artois
@@ -41652,7 +41911,7 @@ character_db={
         adm = 68 dip = 59 mil = 15
         female = yes
         birth_date = 1282.1.1
-        death_date = 1324.9.1
+        death_date = 1324.1.1 # unknown
         birth = foix
         father = foi_roger_bernard_iii_foix
         #mother = Margarida de Montcada
@@ -63870,7 +64129,7 @@ character_db={
         estate = clergy_estate
         adm = 59 dip = 57 mil = 20
         birth_date = 1293.1.1 # Unknown
-        death_date = 1355.3.27
+        death_date = 1353.1.1
         birth = narbonne
         father = nrb_amalric_ii_lara
         mother = nrb_jeanne_lisle_jourdain
@@ -64925,7 +65184,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1306.1.1
-        death_date = 1371.9.3
+        death_date = 1366.1.1
         birth = lisle_jourdain
         dynasty = lisle_jourdain_dynasty
         father = ijo_bernard_iv_lisle_jourdain
@@ -65086,7 +65345,7 @@ character_db={
         estate = nobles_estate
         adm = 50 dip = 39 mil = 50
         birth_date = 1275.1.1
-        death_date = 1343.10.28
+        death_date = 1340.1.1
         birth = lisle_jourdain
         father = ijo_jourdain_v_lisle_jourdain
         #mother = Guillemette de Durfort
@@ -65100,7 +65359,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1310.1.1
-        death_date = 1379.3.21
+        death_date = 1349.1.1
         birth = lisle_jourdain
         father = ijo_bernard_iv_lisle_jourdain
         mother = ijo_marguerite_foix
@@ -65114,7 +65373,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1314.1.1
-        death_date = 1376.5.15
+        death_date = 1375.1.1
         birth = lisle_jourdain
         father = ijo_bernard_iv_lisle_jourdain
         mother = ijo_marguerite_foix
@@ -65128,7 +65387,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1330.1.1
-        death_date = 1392.2.12
+        death_date = 1365.1.1
         birth = lisle_jourdain
         father = ijo_bertrand_i_lisle_jourdain
         mother = ijo_isabelle_levis
@@ -66712,6 +66971,20 @@ character_db={
         death_date = 1423.1.1
         birth = skye
         dynasty = mac_domhnaill_dynasty # MacDonald
+        father = loi_eoin_mac_aonghais
+        mother = loi_margaret_stuart_mac_domhnaill
+        tag = LOI
+    }
+
+    loi_eoin_mor_mac_eoin_mac_domhnaill = {
+        first_name = { name = name_john.Mór }
+        culture = highland
+        religion = catholic
+        birth_date = 1354.1.1
+        death_date = 1427.1.1
+        birth = skye
+        dynasty = mac_domhnaill_dynasty # MacDonald
+        spouse = gls_margaret_bisset
         father = loi_eoin_mac_aonghais
         mother = loi_margaret_stuart_mac_domhnaill
         tag = LOI
@@ -88289,7 +88562,7 @@ character_db={
         estate = clergy_estate
         adm = 50 dip = 90 mil = 13
         birth_date = 1301.1.1
-        death_date = 1365.3.26
+        death_date = 1364.1.1
         birth = perigueux
         father = per_helie_ix_perigord
         mother = per_brunissende_foix
@@ -88575,13 +88848,166 @@ character_db={
         estate = nobles_estate
         adm = 39 dip = 39 mil = 13
         birth_date = 1299.1.1
-        death_date = 1368.10.14
+        death_date = 1361.1.1
         birth = perigueux
         father = per_helie_ix_perigord
         mother = per_brunissende_foix
         dynasty = perigord_dynasty
         tag = PER
         ruler_trait = craven
+    }
+
+    per_jean_i_chatillon_penthievre = {
+        first_name = { name = name_john }
+        culture = gallo
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1345.2.5
+        death_date = 1404.1.16
+        birth = rennes
+        spouse = per_marguerite_clisson_perigord
+        father = per_jean_i_chatillon_penthievre
+        dynasty = chatillon_penthievre_dynasty
+        tag = PER
+    }
+
+    per_marguerite_clisson_perigord = {
+        first_name = { name = name_margaret }
+        last_name = { name = "de Clisson" }
+        culture = gallo
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1365.1.1
+        death_date = 1425.1.1
+        birth = rennes
+        spouse = per_jean_i_chatillon_penthievre
+        #father = Olivier V de Clisson
+        tag = PER
+    }
+
+    per_olivier_chatillon_penthievre = {
+        first_name = { name = name_oliver }
+        culture = gallo
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1387.1.1
+        death_date = 1433.9.28
+        birth = rennes
+        father = per_jean_i_chatillon_penthievre
+        mother = per_marguerite_clisson_perigord
+        dynasty = chatillon_penthievre_dynasty
+        tag = PER
+    }
+
+    per_jean_ii_chatillon_penthievre = {
+        first_name = { name = name_john }
+        nickname = { name = "de L'Aigle" }
+        culture = gallo
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1390.1.1
+        birth = rennes
+        father = per_jean_i_chatillon_penthievre
+        mother = per_marguerite_clisson_perigord
+        dynasty = chatillon_penthievre_dynasty
+        tag = PER
+    }
+
+    per_charles_chatillon_penthievre_avaugour = {
+        first_name = { name = name_charles }
+        culture = gallo
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1392.1.1
+        birth = rennes
+        father = per_jean_i_chatillon_penthievre
+        mother = per_marguerite_clisson_perigord
+        dynasty = chatillon_penthievre_dynasty
+        tag = PER
+    }
+
+    per_isabeau_de_vivonne = {
+        first_name = { name = name_elizabeth }
+        last_name { name = "de Vivonne" }
+        culture = french
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1405.1.1
+        birth = blois
+        tag = PER
+    }
+
+    per_nicole_chatillon_penthievre = {
+        first_name = { name = Nicole }
+        culture = gallo
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1424.1.1
+        birth = rennes
+        father = per_charles_chatillon_penthievre_avaugour
+        mother = per_isabeau_de_vivonne
+        dynasty = chatillon_penthievre_dynasty
+        tag = PER
+    }
+
+    lmg_guillaume_chatillon_penthievre = {
+        first_name = { name = name_william }
+        culture = gallo
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1394.1.1
+        birth = rennes
+        spouse = lmg_isabelle_de_la_tour_d_auvergne
+        father = per_jean_i_chatillon_penthievre
+        mother = per_marguerite_clisson_perigord
+        dynasty = chatillon_penthievre_dynasty
+        tag = LMG
+    }
+
+    lmg_isabelle_de_la_tour_d_auvergne = {
+        first_name = { name = name_elizabeth }
+        culture = auvergnat
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1400.1.1
+        birth = tour_auvergne
+        spouse = lmg_guillaume_chatillon_penthievre
+        #father = 
+        #mother = 
+        dynasty = de_la_tour_d_auvergne_dynasty
+        tag = LMG
+    }
+
+    lmg_frances_chatillon_penthievre = {
+        first_name = { name = name_frances }
+        culture = auvergnat
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1425.1.1
+        birth = tour_auvergne
+        father = lmg_guillaume_chatillon_penthievre
+        mother = lmg_isabelle_de_la_tour_d_auvergne
+        dynasty = chatillon_penthievre_dynasty
+        tag = LMG
+    }
+
+    per_joan_chatillon_penthievre_belleville = {
+        first_name = { name = name_joan }
+        culture = gallo
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1398.1.1
+        birth = rennes
+        father = per_jean_i_chatillon_penthievre
+        mother = per_marguerite_clisson_perigord
+        dynasty = chatillon_penthievre_dynasty
+        tag = PER
     }
 
     ### phagmodrupa_dynasty | PHA ###
@@ -110835,8 +111261,8 @@ character_db={
         dynasty = timurid_dynasty
         tag = TIM
     }
-    tim_muhammad_bin_abi_said_fictional
-    first_name = { name = name_muhammad }
+    tim_muhammad_bin_abi_said_fictional = {
+        first_name = { name = name_muhammad }
         culture = moghul_culture
         religion = sunni
 		adm = 16 dip = 63 mil = 35
@@ -112414,6 +112840,21 @@ character_db={
         tag = NAV
     }
 
+    nav_joanna_trastmara_young = {
+        first_name = { name = name_joanna }
+        culture = aragonese
+        religion = catholic
+        birth_date = 1423.1.1
+        death_date = 1425.8.22
+        birth = pamplona
+        female = yes
+        spouse = cas_enrique_iv_trastamara
+        father = ara_juan_ii_trastamara
+        mother = nav_blanca_i_evreux
+        dynasty = trastamara_dynasty
+        tag = NAV
+    }
+
     nav_blanche_ii_trastmara = {
         first_name = { name = name_blanche }
         culture = aragonese
@@ -112428,18 +112869,18 @@ character_db={
         tag = NAV
     }
 
-    nav_eleanor_trastmara = {
+    foi_eleanor_trastmara = {
         first_name = { name = name_eleanor }
         culture = aragonese
         religion = catholic
-        birth_date = 1425.2.2
+        birth_date = 1426.2.2
         birth = olite
         female = yes
-        #spouse = foi_gaston_iv_foix
+        spouse = foi_gaston_iv_foix
         father = ara_juan_ii_trastamara
         mother = nav_blanca_i_evreux
         dynasty = trastamara_dynasty
-        tag = NAV
+        tag = FOI
     }
 
     ### trastamara_dynasty | POR ###
@@ -124575,7 +125016,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1310.1.1
-        death_date = 1371.8.16
+        death_date = 1353.1.1
         birth = lliria
         spouse = ara_roger_bernard_iii_foix
         tag = ARA
@@ -126051,7 +126492,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1305.1.1 # Unknown
-        death_date = 1368.4.12
+        death_date = 1365.1.1
         birth = auch
         spouse = com_pierre_raymond_i_comminges
         tag = COM
@@ -127487,7 +127928,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1312.1.1 # Married 1328
-        death_date = 1362.11.15
+        death_date = 1372.1.1 # unknown
         birth = mirepoix
         #father = Eustache de Lévis
         #mother = Béatrix de Thurey
@@ -133650,6 +134091,31 @@ character_db={
 		tag = ARM
 	}
 
+    auv_agne_iv_de_la_tour_d_auvergne = {
+		first_name = { name = name_anna }
+		culture = auvergnat
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1422.1.1 #Unknown
+		birth = tour_auvergne
+        spouse = tue_anais_roger_de_beaufort
+        dynasty = de_la_tour_d_auvergne_dynasty
+		tag = TUE
+    }
+
+    tue_anais_roger_de_beaufort = {
+		first_name = { name = name_anna }
+		culture = limousin
+		religion = catholic
+        female = yes
+        estate = nobles_estate
+		birth_date = 1418.1.1 #Unknown
+		birth = turenne
+        spouse = auv_agne_iv_de_la_tour_d_auvergne
+        dynasty = roger_de_beaufort_dynasty
+		tag = TUE
+    }
+
     #Musha'sha
     mss_muhammad_ibn_falah = {
         first_name = { name = name_muhammad}
@@ -133663,7 +134129,7 @@ character_db={
         tag = MSS
     }
     rind_shahak_khan = {
-        first_name = { name_shahak }
+        first_name = { name = name_shahak }
         culture = baloch_culture
         religion = sunni
         adm = 40 dip = 35 mil = 55
@@ -133673,7 +134139,7 @@ character_db={
         tag = SIW
     }
     lashari_nodhbandagh = {
-        first_name = { name_nodhbandagh }
+        first_name = { name = name_nodhbandagh }
         culture = baloch_culture
         religion = sunni
         adm = 30 dip = 45 mil = 50
@@ -133683,7 +134149,7 @@ character_db={
         tag = KLW
     }
     makran_jiand = {
-        first_name = { name_jiand }
+        first_name = { name = name_jiand }
         culture = baloch_culture
         religion = sunni
         adm = 35 dip = 40 mil = 50

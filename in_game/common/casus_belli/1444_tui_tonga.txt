@@ -1,5 +1,5 @@
 cb_tui_tonga_force_entry = {
-    visible = {
+    create_visible  = {
         is_leader_of_international_organization = international_organization:tui_tonga
         scope:target = {
             NOT = { is_member_of_international_organization = international_organization:tui_tonga }
@@ -12,7 +12,7 @@ cb_tui_tonga_force_entry = {
 }
 
 cb_tui_tonga_seize_leadership = {
-    visible = {
+    create_visible  = {
         exists = international_organization:tui_tonga
         is_member_of_international_organization = international_organization:tui_tonga
         NOT = { is_leader_of_international_organization = international_organization:tui_tonga }

@@ -68,6 +68,10 @@ countries = {
             grancey
             st_affrique millau
             villefranche peyrusse
+
+            muret aspet
+            saint_gaudens #Vic. des Quatre Valles
+            saint_lizier
         }
 
         our_cores_conquered_by_others = {
@@ -363,7 +367,12 @@ countries = {
             ruler_term = { character = eng_john_lackland start_date = 1199.5.27 end_date = 1204.4.28 regnal_number = 1 }
             # Annexed to France 1204-1332
 
-            ruler_term = { character = fra_jean_ii_valois start_date = 1332.2.17 regnal_number = 2 }
+            ruler_term = { character = fra_jean_ii_valois start_date = 1332.2.17 end_date = 1350.8.22 regnal_number = 2 }
+            ruler_term = { character = fra_charles_v_valois start_date = 1350.8.22 end_date = 1364.4.8 regnal_number = 1 }
+
+            ruler_term = { character = eng_henry_vi_lancaster start_date = 1350.8.22 end_date = 1364.4.8 regnal_number = 1 }
+
+            ruler_term = { character = eng_henry_vi_lancaster start_date = 1422.9.1 regnal_number = 3 }
 
             regnal_numbers = {
                 #Rollo = 1
@@ -374,6 +383,7 @@ countries = {
                 name_stephen = 1
                 name_godfrey = 1
                 name_john = 2
+                name_charles = 1
             }
 
             laws = {
@@ -1406,7 +1416,9 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = per_charles_i_de_perigord
+            ruler = lmg_guillaume_chatillon_penthievre
+
+            ruler_term = { character = lmg_guillaume_chatillon_penthievre start_date = 1404.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 #Émenon = 1
@@ -2164,11 +2176,13 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = foi_gaston_iv_foix
 
             ruler_term = { character = foi_roger_bernard_iii_foix start_date = 1240.4.26 end_date = 1302.3.3 regnal_number = 1 }
             ruler_term = { character = foi_gaston_i_foix start_date = 1302.3.3 end_date = 1315.12.13 regnal_number = 8 }
-            ruler_term = { character = foi_gaston_ii_foix start_date = 1315.12.13 regnal_number = 9 }
+            ruler_term = { character = foi_gaston_ii_foix start_date = 1315.12.13 end_date = 1343.9.26 regnal_number = 2 }
+
+            ruler_term = { character = foi_gaston_iv_foix start_date = 1436.5.4 regnal_number = 4 }
 
             regnal_numbers = {
                 name_centule.name_lupus = 1
@@ -2247,7 +2261,7 @@ countries = {
     # --- LYO ---
 
     COM = {
-        own_control_core = {
+        our_cores_conquered_by_others = {
             muret aspet
             saint_gaudens #Vic. des Quatre Valles
         }
@@ -2510,8 +2524,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = foi_gaston_iv_de_foix
-            heir = nrb_gaston_de_foix
+            ruler = foi_gaston_iv_foix
 
             ruler_term = { character = foi_bernard_roger_foix start_date = 1012.1.1 end_date = 1034.1.1 regnal_number = 1 }
             ruler_term = { character = foi_roger_i_foix start_date = 1034.1.1 end_date = 1064.1.1 regnal_number = 1 }
@@ -2523,14 +2536,16 @@ countries = {
             ruler_term = { character = foi_roger_iv_foix start_date = 1241.5.26 end_date = 1265.2.24 regnal_number = 4 }
             ruler_term = { character = foi_roger_bernard_iii_foix start_date = 1265.2.24 end_date = 1302.3.3 regnal_number = 3 }
             ruler_term = { character = foi_gaston_i_foix start_date = 1302.3.3 end_date = 1315.12.13 regnal_number = 1 }
-            ruler_term = { character = foi_gaston_ii_foix start_date = 1315.12.13 regnal_number = 2 }
+            ruler_term = { character = foi_gaston_ii_foix start_date = 1315.12.13 end_date = 1343.9.26 regnal_number = 2 }
+
+            ruler_term = { character = foi_gaston_iv_foix start_date = 1436.5.4 regnal_number = 4 }
 
             regnal_numbers = {
                 name_bernard.name_roger = 1
                 name_roger = 4
                 name_roger.name_bernard = 3
                 name_raymond.name_roger = 1
-                name_gaston = 2
+                name_gaston = 4
             }
 
             reforms = {
@@ -2557,11 +2572,13 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = foi_gaston_iv_foix
 
             ruler_term = { character = foi_roger_bernard_iii_foix start_date = 1240.4.26 end_date = 1302.3.3 regnal_number = 1 }
             ruler_term = { character = foi_gaston_i_foix start_date = 1302.3.3 end_date = 1315.12.13 regnal_number = 1 }
-            ruler_term = { character = foi_gaston_ii_foix start_date = 1315.12.13 regnal_number = 2 }
+            ruler_term = { character = foi_gaston_ii_foix start_date = 1315.12.13 end_date = 1343.9.26 regnal_number = 2 }
+
+            ruler_term = { character = foi_gaston_iv_foix start_date = 1436.5.4 regnal_number = 4 }
 
             regnal_numbers = {
                 name_aetius = 1
@@ -2583,7 +2600,7 @@ countries = {
                 name_haimo = 1
                 name_margaret = 1
                 name_roger.name_bernard = 1
-                name_gaston = 2
+                name_gaston = 4
             }
 
             reforms = {
@@ -2913,7 +2930,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = per_charles_i_de_perigord
+            ruler = per_jean_ii_chatillon_penthievre
 
             ruler_term = {
                 character = per_boson_i_perigord start_date = 975.1.1 end_date = 979.1.1 regnal_number = 1
@@ -2940,7 +2957,9 @@ countries = {
             ruler_term = { character = per_archambaud_iii_perigord start_date = 1251.1.1 end_date = 1294.1.1 regnal_number = 3 }
             ruler_term = { character = per_helie_ix_perigord start_date = 1294.1.1 end_date = 1311.1.1 regnal_number = 9 }
             ruler_term = { character = per_archambaud_iv_perigord start_date = 1311.1.1 end_date = 1334.1.1 regnal_number = 4 }
-            ruler_term = { character = per_roger_bernard_perigord start_date = 1334.1.1 end_date = 1368.10.14 regnal_number = 1 }
+            ruler_term = { character = per_roger_bernard_perigord start_date = 1334.1.1 end_date = 1361.1.1 regnal_number = 1 }
+
+            ruler_term = { character = per_jean_ii_chatillon_penthievre start_date = 1437.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 #Émenon = 1
@@ -3309,9 +3328,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = rcc_geoffrey_de_rochechouart
 
-            ruler_term = { character = rcc_jean_de_rochechouart start_date = 1318.1.1 regnal_number = 1 }
+            ruler_term = { character = rcc_jean_de_rochechouart start_date = 1318.1.1 end_date = 1356.1.1 regnal_number = 1 }
+
+            ruler_term = { character = rcc_geoffrey_de_rochechouart start_date = 1415.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_aimeric = 11
@@ -3453,11 +3474,13 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = foi_gaston_iv_foix
 
             ruler_term = { character = foi_roger_bernard_iii_foix start_date = 1240.4.26 end_date = 1302.3.3 regnal_number = 1 }
             ruler_term = { character = foi_gaston_i_foix start_date = 1302.3.3 end_date = 1315.12.13 regnal_number = 8 }
-            ruler_term = { character = foi_gaston_ii_foix start_date = 1315.12.13 regnal_number = 9 }
+            ruler_term = { character = foi_gaston_ii_foix start_date = 1315.12.13 end_date = 1343.9.26 regnal_number = 2 }
+
+            ruler_term = { character = foi_gaston_iv_foix start_date = 1436.5.4 regnal_number = 4 }
 
             regnal_numbers = {
                 name_centule.name_lupus = 1
@@ -4014,6 +4037,10 @@ countries = {
         country_rank = rank_county
         government = {
             type = monarchy
+            ruler = thr_louis_ii_amboise
+
+            ruler_term = { character = thr_louis_ii_amboise start_date = 1328.1.1 regnal_number = 2 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -4064,6 +4091,10 @@ countries = {
         country_rank = rank_county
         government = {
             type = monarchy
+            ruler = foi_gaston_iv_foix
+
+            ruler_term = { character = foi_gaston_iv_foix start_date = 1436.5.4 regnal_number = 4 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -4079,7 +4110,7 @@ countries = {
 
     COE = {
         #Couserans
-        own_control_core = {
+        our_cores_conquered_by_others = {
             saint_lizier
         }
 
@@ -4114,6 +4145,14 @@ countries = {
         country_rank = rank_county
         government = {
             type = monarchy
+            ruler = foi_gaston_iv_foix
+
+            ruler_term = { character = foi_roger_bernard_iii_foix start_date = 1240.4.26 end_date = 1302.3.3 regnal_number = 1 }
+            ruler_term = { character = foi_gaston_i_foix start_date = 1302.3.3 end_date = 1315.12.13 regnal_number = 8 }
+            ruler_term = { character = foi_gaston_ii_foix start_date = 1315.12.13 end_date = 1343.9.26 regnal_number = 2 }
+
+            ruler_term = { character = foi_gaston_iv_foix start_date = 1436.5.4 regnal_number = 4 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -4354,7 +4393,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = ast_joan_iii_astarac
 
             ruler_term = { character = ast_arnaud_garcia_astarac start_date = 920.1.1 end_date = 960.1.1 regnal_number = 1 }
             ruler_term = { character = ast_garcia_arnaud_astarac start_date = 960.1.1 end_date = 975.1.1 regnal_number = 1 }
@@ -4372,6 +4411,8 @@ countries = {
             ruler_term = { character = ast_centule_iii_astarac start_date = 1291.1.1 end_date = 1300.1.1 regnal_number = 3 }
             ruler_term = { character = ast_bernard_v_astarac start_date = 1300.1.1 end_date = 1331.1.1 regnal_number = 5 }
 
+            ruler_term = { character = ast_joan_iii_astarac start_date = 1410.1.1 regnal_number = 3 }
+
             regnal_numbers = {
                 name_arnold = 2
                 name_garcia = 1
@@ -4380,6 +4421,7 @@ countries = {
                 name_bernard = 5
                 name_bohemond = 1
                 name_centule = 3
+                name_john = 3
             }
 
             reforms = {
@@ -4447,21 +4489,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = per_charles_i_de_perigord
+            ruler = tue_anais_roger_de_beaufort
+
+            ruler_term = { character = tue_anais_roger_de_beaufort start_date = 1444.1.1 }
 
             regnal_numbers = {
-                #Émenon = 1
-                #Vulgrin = 1
-                name_william = 3
-                name_bernard = 1
-                name_arnold = 1
-                name_ralph = 1
-                name_richard = 1
-                name_boson = 4
-                name_elias = 9
-                name_albert = 2
-                name_archibald = 4
-                name_roger.name_bernard = 1
             }
 
             reforms = {
@@ -5447,6 +5479,7 @@ countries = {
             reforms = {
                 magna_carta_reform
             }
+
             privilege = {
                 #nobles
                 auxilium_et_consilium
@@ -5470,6 +5503,7 @@ countries = {
                 peasants_allowed_weapons_privilege
                 peasants_no_poll_tax_privilege
             }
+
             laws = {
                 distribution_of_power_law = dop_law_english_parliament
                 language_of_pleading = language_of_pleading_court
@@ -5500,6 +5534,7 @@ countries = {
         accepted_cultures = {
             northumbrian
         }
+
         tolerated_cultures = { cornish welsh }
 
         court_language = norman_dialect
@@ -9097,8 +9132,13 @@ countries = {
         include = "expl_western_europe"
 
         government = {
-            ruler = random
+            ruler = gls_domhnall_balloch_mac_domhnaill
+
+            ruler_term = { character = gls_bisset start_date = 1320.1.1 end_date = 1360.1.1 }
+            ruler_term = { character = gls_margaret_bisset start_date = 1420.1.1 end_date = 1430.1.1 }
+            ruler_term = { character = gls_domhnall_balloch_mac_domhnaill start_date = 1430.1.1 }
         }
+
         tolerated_cultures = { irish }
         capital = ballycastle
     }
@@ -26876,8 +26916,9 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = hun_janos_hunyadi
         }
+
         capital = mihalt
     }
 
@@ -31023,6 +31064,12 @@ countries = {
             capital_economy_vs_traditional_economy = -10
             individualism_vs_communalism = -10
             outward_vs_inward = 30
+        }
+        timed_modifier = {
+            modifier = "azov_campaign"
+            start_date = 1444.11.11
+            date = 1450.1.1
+            size = 1
         }
     }
 
@@ -51913,17 +51960,9 @@ countries = {
             rma_culture
             shu_culture
             tubai_culture
-            jurchen_culture
-            daur_culture
-            sibe_culture
-            tumed_culture
-            kharchin_culture
-            oirat_culture
             amdowa_culture
             monguor_culture
             yugur_culture
-            tuvan_culture
-            uyghur_culture
             hlai_culture
         }
         flag = "CHI_Ming"

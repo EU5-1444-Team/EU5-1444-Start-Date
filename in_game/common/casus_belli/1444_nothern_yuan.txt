@@ -1,5 +1,5 @@
 cb_seize_yuan = {
-    visible = {
+    create_visible  = {
         exists = international_organization:northern_yuan
         is_member_of_international_organization = international_organization:northern_yuan
         NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
@@ -30,7 +30,7 @@ cb_seize_yuan = {
 }
 
 cb_seize_protector_general = {
-    visible = {
+    create_visible  = {
         exists = international_organization:northern_yuan
         is_member_of_international_organization = international_organization:northern_yuan
         NOT = {
@@ -65,7 +65,7 @@ cb_seize_protector_general = {
 }
 
 cb_northern_yuan_raid = {
-    visible = {
+    create_visible  = {
         exists = international_organization:northern_yuan
         is_member_of_international_organization = international_organization:northern_yuan
         scope:target = {

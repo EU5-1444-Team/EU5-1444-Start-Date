@@ -55,9 +55,7 @@ refresh_dynasty_clan = {
 		}
 		if = {
 			limit = {
-				scope:new_ruler ?= {
-					ruler_or_heir_if_regent.dynasty ?= { dynasty:habsburg_dynasty ?= this }
-				}
+				ruler_or_heir_if_regent.dynasty ?= { dynasty:habsburg_dynasty ?= this }
 			}
 			dynasty_io_find_or_create = {
 				io_type = international_organization_type:habsburg_family
