@@ -1,256 +1,236 @@
 composite_monarchy = {
-	has_target = no
-	unique = no
-	custom_name = composite_monarchy_name
-	show_on_diplomatic_map = yes
-	has_leader_country = yes
-	expel_members_who_are_targets_of_other_members = no
-	disband_if_no_leader = no
-	leader_title_key = "COMPOSITE_MONARCHY_LEADER"
-	leader_type = character
-	leader = {
-		leader_country ?= {
-			if = {
-				limit = {
-					has_regent = yes
-					has_heir = yes
-				}
-				heir ?= {
-					add_to_list = leaders
-				}
-			}
-			else_if = {
-				limit = {
-					has_ruler = yes
-					ruler ?= {
-						is_alive = yes
-					}
-				}
-				ruler ?= {
-					add_to_list = leaders
-				}
-			}
-		}
-	}
-	leader_change_trigger_type = fixed
-	leader_change_method = none
-	create_visible_trigger = {
-		always = no
-	}
-	invite_visible_trigger = {
-		always = no
-	}
-	can_declare_war = {
-		always = yes
-	}
-	can_join_trigger = {
-		always = no
-	}
-	can_leave_trigger = {
-		always = no
-	}
-	auto_leave_trigger = {
-		always = no
-	}
-	auto_disband_trigger = {
-		OR = {
-			total_members < 1
-			AND = {
-				OR = {
-					leader_country ?= {
-						tag = CAS
-					}
-					leader_country ?= {
-						tag = ARA
-					}
-				}
-				leader_country ?= {
-					is_subject = yes
-					top_overlord = {
-						tag = SPA
-					}
-				}
-			}
-		}
-	}
-	leader_modifier = {
-		monthly_prestige = 0.05
-		diplomatic_reputation = diplomatic_reputation_weak_bonus
-	}
-	monthly_effect = {
-		hidden_effect = {
-			leader_country ?= {
-				save_scope_as = composite_monarchy_leader
-				if = {
-					limit = {
-						has_variable = composite_monarchy_full_crown
-					}
-					remove_variable = composite_monarchy_full_crown
-				}
-				if = {
-					limit = {
-						var:composite_integration >= 100
-					}
-					set_variable = composite_monarchy_full_crown
-				}
-				every_country = {
-					limit = {
-						is_subject = yes
-						NOT = {
-							is_subject_type = tributary
-						}
-						top_overlord = {
-							this = scope:composite_monarchy_leader
-						}
-						NOT = {
-							is_member_of_international_organization = root
-						}
-					}
-					root = {
-						add_country_to_international_organization = prev
-					}
-				}
-				every_international_organization_member = {
-					limit = {
-						NOT = {
-							this = scope:composite_monarchy_leader
-						}
-						OR = {
-							NOT = {
-								is_subject = yes
-							}
-							is_subject_type = tributary
-							AND = {
-								is_subject = yes
-								NOT = {
-									top_overlord = {
-										this = scope:composite_monarchy_leader
-									}
-								}
-							}
-						}
-					}
-					root = {
-						remove_country_from_international_organization = prev
-					}
-				}
-				composite_monarchy_manage_subject = {
-					tag = ATS
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 65
-					release_threshold = 40
-				}
-				composite_monarchy_manage_subject = {
-					tag = VIZ
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 72
-					release_threshold = 45
-				}
-				composite_monarchy_manage_subject = {
-					tag = CNY
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 78
-					release_threshold = 50
-				}
-				composite_monarchy_manage_subject = {
-					tag = LON
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 85
-					release_threshold = 60
-				}
-				composite_monarchy_manage_subject = {
-					tag = GLC
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 90
-					release_threshold = 55
-				}
-				composite_monarchy_manage_subject = {
-					tag = GRA
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 95
-					release_threshold = 50
-				}
-				composite_monarchy_manage_subject = {
-					tag = CAT
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 82
-					release_threshold = 62
-				}
-				composite_monarchy_manage_subject = {
-					tag = VAL
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 86
-					release_threshold = 58
-				}
-				composite_monarchy_manage_subject = {
-					tag = MLL
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 88
-					release_threshold = 54
-				}
-				composite_monarchy_manage_subject = {
-					tag = SAR
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 90
-					release_threshold = 52
-				}
-				composite_monarchy_manage_subject = {
-					tag = SIC
-					overlord = scope:composite_monarchy_leader
-					annex_threshold = 92
-					release_threshold = 50
-				}
-			}
-			if = {
-				limit = {
-					has_variable = composite_monarchy_full_crown
-				}
-				remove_variable = composite_monarchy_full_crown
-			}
-			if = {
-				limit = {
-					var:composite_integration >= 100
-				}
-				set_variable = composite_monarchy_full_crown
-			}
-		}
-	}
-	variables = {
-		composite_integration = {
-			format = "COMPOSITE_INTEGRATION_DISPLAY"
-			change_format = "VARIABLE_CHANGE_FORMAT"
-			min = 0
-			max = 100
-			monthly_change = {
-				add = {
-					desc = "BASE_DECAY"
-					value = -0.05
-				}
-				add = {
-					desc = MODIFIER_TYPE_NAME_adm
-					value = 0
-					leader_country ?= {
-						add = {
-							value = ruler_or_heir_if_regent.adm
-							subtract = 50
-							multiply = 0.002
-						}
-					}
-				}
-				add = {
-					desc = "LEGITIMACY"
-					value = 0
-					leader_country ?= {
-						add = modifier:legitimacy
-						subtract = 50
-						multiply = 0.0015
-					}
-				}
-			}
-		}
-	}
-	ai_desire_to_join = {
-	}
-	ai_desire_to_allow_new_member = {
-	}
+    has_target = no
+    unique = no
+    custom_name = composite_monarchy_name
+    show_on_diplomatic_map = yes
+    has_leader_country = yes
+    expel_members_who_are_targets_of_other_members = no
+    disband_if_no_leader = no
+    leader_title_key = "COMPOSITE_MONARCHY_LEADER"
+    leader_type = character
+    leader = {
+        leader_country ?= {
+            if = {
+                limit = {
+                    has_regent = yes
+                    has_heir = yes
+                }
+                heir ?= {
+                    add_to_list = leaders
+                }
+            }
+            else_if = {
+                limit = {
+                    has_ruler = yes
+                    ruler ?= {
+                        is_alive = yes
+                    }
+                }
+                ruler ?= {
+                    add_to_list = leaders
+                }
+            }
+        }
+    }
+    leader_change_trigger_type = fixed
+    leader_change_method = none
+    create_visible_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = no
+    }
+    can_declare_war = {
+        always = yes
+    }
+    can_join_trigger = {
+        always = no
+    }
+    can_leave_trigger = {
+        always = no
+    }
+    auto_leave_trigger = {
+        always = no
+    }
+    auto_disband_trigger = {
+        OR = {
+            total_members < 1
+            AND = {
+                OR = {
+                    leader_country ?= {
+                        tag = CAS
+                    }
+                    leader_country ?= {
+                        tag = ARA
+                    }
+                }
+                leader_country ?= {
+                    is_subject = yes
+                    top_overlord = {
+                        tag = SPA
+                    }
+                }
+            }
+        }
+    }
+    leader_modifier = {
+        monthly_prestige = 0.05
+        diplomatic_reputation = diplomatic_reputation_weak_bonus
+    }
+    monthly_effect = {
+        hidden_effect = {
+            leader_country ?= {
+                save_scope_as = composite_monarchy_leader
+                if = {
+                    limit = {
+                        has_variable = composite_monarchy_full_crown
+                    }
+                    remove_variable = composite_monarchy_full_crown
+                }
+                if = {
+                    limit = {
+                        var:composite_integration >= 100
+                    }
+                    set_variable = composite_monarchy_full_crown
+                }
+                every_country = {
+                    limit = {
+                        is_subject = yes
+                        NOT = {
+                            is_subject_type = tributary
+                        }
+                        top_overlord = {
+                            this = scope:composite_monarchy_leader
+                        }
+                        NOT = {
+                            is_member_of_international_organization = root
+                        }
+                    }
+                    root = {
+                        add_country_to_international_organization = prev
+                    }
+                }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = {
+                            this = scope:composite_monarchy_leader
+                        }
+                        OR = {
+                            NOT = {
+                                is_subject = yes
+                            }
+                            is_subject_type = tributary
+                            AND = {
+                                is_subject = yes
+                                NOT = {
+                                    top_overlord = {
+                                        this = scope:composite_monarchy_leader
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    root = {
+                        remove_country_from_international_organization = prev
+                    }
+                }
+                composite_monarchy_manage_subject = {
+                    tag = ATS
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 65
+                    release_threshold = 40
+                }
+                composite_monarchy_manage_subject = {
+                    tag = VIZ
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 72
+                    release_threshold = 45
+                }
+                composite_monarchy_manage_subject = {
+                    tag = CNY
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 78
+                    release_threshold = 50
+                }
+                composite_monarchy_manage_subject = {
+                    tag = LON
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 85
+                    release_threshold = 60
+                }
+                composite_monarchy_manage_subject = {
+                    tag = GLC
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 90
+                    release_threshold = 55
+                }
+                composite_monarchy_manage_subject = {
+                    tag = GRA
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 95
+                    release_threshold = 50
+                }
+                composite_monarchy_manage_subject = {
+                    tag = CAT
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 82
+                    release_threshold = 62
+                }
+                composite_monarchy_manage_subject = {
+                    tag = VAL
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 86
+                    release_threshold = 58
+                }
+                composite_monarchy_manage_subject = {
+                    tag = MLL
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 88
+                    release_threshold = 54
+                }
+                composite_monarchy_manage_subject = {
+                    tag = SAR
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 90
+                    release_threshold = 52
+                }
+                composite_monarchy_manage_subject = {
+                    tag = SIC
+                    overlord = scope:composite_monarchy_leader
+                    annex_threshold = 92
+                    release_threshold = 50
+                }
+            }
+            if = {
+                limit = {
+                    has_variable = composite_monarchy_full_crown
+                }
+                remove_variable = composite_monarchy_full_crown
+            }
+            if = {
+                limit = {
+                    var:composite_integration >= 100
+                }
+                set_variable = composite_monarchy_full_crown
+            }
+        }
+    }
+    variables = {
+        composite_integration = {
+            format = "COMPOSITE_INTEGRATION_DISPLAY"
+            change_format = "VARIABLE_CHANGE_FORMAT"
+            min = 0
+            max = 100
+            monthly_change = {
+                add = {
+                    desc = "BASE_DECAY"
+                    value = -0.1
+                }
+            }
+        }
+    }
+    ai_desire_to_join = {
+    }
+    ai_desire_to_allow_new_member = {
+    }
 }
