@@ -217,6 +217,7 @@ diplomacy_manager = {
     dependency = { first = FRA second = THR subject_type = vassal }
     dependency = { first = FRA second = LVL subject_type = vassal }
     dependency = { first = FRA second = LMG subject_type = vassal }
+    dependency = { first = FRA second = PER subject_type = vassal }
     dependency = { first = FRA second = VNT subject_type = vassal }
     dependency = { first = FRA second = TUE subject_type = vassal }
     dependency = { first = FRA second = VRT subject_type = vassal }
@@ -271,7 +272,6 @@ diplomacy_manager = {
     dependency = { first = FRA second = DRE subject_type = vassal }
     dependency = { first = THR second = MOI subject_type = fiefdom }
     dependency = { first = BRR second = BIG subject_type = fiefdom }
-    dependency = { first = LMG second = PER subject_type = fiefdom }
     dependency = { first = BOU second = CMB subject_type = fiefdom }
     dependency = { first = BOU second = CBU subject_type = fiefdom }
     dependency = { first = BOU second = BJU subject_type = fiefdom }
@@ -362,6 +362,9 @@ diplomacy_manager = {
     dependency = { first = GEN second = ROC subject_type = vassal }
     dependency = { first = GEN second = NUL subject_type = vassal }
     dependency = { first = GEN second = VCL subject_type = vassal }
+
+    scripted_mutual = { first = PAP second = NAP type = guarantee }
+    scripted_mutual = { first = NAP second = PAP type = guarantee }
 
     #-------Iberia-------
 
