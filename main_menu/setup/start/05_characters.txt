@@ -68480,7 +68480,7 @@ character_db={
         estate = nobles_estate
         adm = 36 dip = 56 mil = 83
         birth_date = 1299.1.1
-        death_date = 1365.9.17
+        death_date = 1364.8.15
         birth = rimini
         father = rim_pandolfo_i_malatesta
         mother = rim_taddea_rimini
@@ -68618,7 +68618,7 @@ character_db={
         estate = nobles_estate
         adm = 32 dip = 28 mil = 36
         birth_date = 1325.1.1
-        death_date = 1383.10.17
+        death_date = 1373.1.1
         birth = rimini
         father = rim_malatesta_iii_malatesta
         mother = rim_constanza_ondedei
@@ -68649,7 +68649,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1327.6.1
-        death_date = 1386.12.14
+        death_date = 1372.7.17
         birth = rimini
         father = rim_malatesta_iii_malatesta
         mother = rim_constanza_ondedei
@@ -103369,7 +103369,7 @@ character_db={
         tag = MLO
     }
 
-    mlo_alessandro_sforza = {
+    pes_alessandro_sforza = {
         first_name = { name = name_alexander }
         culture = emilian
         religion = catholic
@@ -103378,7 +103378,239 @@ character_db={
         birth = imola
         father = mlo_muzio_attendolo_sforza
         dynasty = sforza_dynasty
+        tag = PES
+    }
+
+    pes_ginevra_sforza = {
+        first_name = { name = Ginevra }
+        culture = emilian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        adm = 87 dip = 72 mil = 52
+        birth_date = 1440.1.1
+        birth = pesaro
+        father = pes_alessandro_sforza
+        dynasty = sforza_dynasty
+        tag = PES
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1300.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    pes_antonia_sforza = {
+        first_name = { name = name_antonia }
+        culture = emilian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1444.1.1
+        birth = pesaro
+        father = pes_alessandro_sforza
+        dynasty = sforza_dynasty
+        tag = PES
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1300.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    mlo_bartolomeo_sforza_celano = {
+        first_name = { name = name_bartholomew }
+        culture = emilian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1420.1.1
+        death_date = 1435.1.1
+        birth = pontedera
+        father = mlo_muzio_attendolo_sforza
+        dynasty = sforza_dynasty
         tag = MLO
+    }
+
+    mlo_gabriele_sforza_archbishop = {
+        first_name = { name = name_gabriel }
+        culture = emilian
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1423.6.15
+        birth = pontedera
+        father = mlo_muzio_attendolo_sforza
+        dynasty = sforza_dynasty
+        tag = MLO
+    }
+
+    crm_mansuelo_sforza_abbot = {
+        first_name = { name = name_gabriel }
+        culture = emilian
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1400.1.1
+        birth = pontedera
+        father = mlo_muzio_attendolo_sforza
+        dynasty = sforza_dynasty
+        tag = CRM
+    }
+
+    mlo_bosio_sforza_cotignola = {
+        first_name = { name = Bosio }
+        culture = emilian
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1410.1.1
+        birth = pontedera
+        father = mlo_muzio_attendolo_sforza
+        dynasty = sforza_dynasty
+        tag = MLO
+    }
+
+    nap_elisa_sforza_sanseverino = {
+        first_name = { name = name_elisa }
+        culture = emilian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1402.1.1
+        birth = pontedera
+        father = mlo_muzio_attendolo_sforza
+        dynasty = sforza_dynasty
+        tag = NAP
+    }
+
+    rav_antonia_sforza_barbiano = {
+        first_name = { name = name_elisa }
+        culture = emilian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1402.1.1
+        birth = pontedera
+        father = mlo_muzio_attendolo_sforza
+        dynasty = sforza_dynasty
+        tag = RAV
+    }
+
+    mlo_leone_sforza_condottiero = {
+        first_name = { name = name_leon }
+        culture = emilian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1406.5.1
+        death_date = 1440.9.1
+        birth = pontedera
+        father = mlo_muzio_attendolo_sforza
+        dynasty = sforza_dynasty
+        tag = MLO
+    }
+
+    mlo_giovanni_sforza_condottiero = {
+        first_name = { name = name_john }
+        culture = emilian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1407.1.1
+        birth = pontedera
+        father = mlo_muzio_attendolo_sforza
+        dynasty = sforza_dynasty
+        tag = CRM
+    }
+
+    nap_isolea_sforza_acquaviva = {
+        first_name = { name = Isolea }
+        culture = emilian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1427.1.1
+        birth = fermo
+        father = mlo_francesco_i_sforza
+        dynasty = sforza_dynasty
+        tag = NAP
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1300.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    rim_polissena_sforza_malatesta = {
+        first_name = { name = Polissena }
+        culture = emilian
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1427.1.1
+        birth = fermo
+        father = mlo_francesco_i_sforza
+        dynasty = sforza_dynasty
+        tag = NAP
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1300.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    mlo_sforza_secundo_sforza_borgonuovo = {
+        first_name = { name = Sforza.Secundo }
+        culture = emilian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1433.1.1
+        birth = fermo
+        father = mlo_francesco_i_sforza
+        dynasty = sforza_dynasty
+        tag = CRM
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1300.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    pea_drusiana_sforza_piccinino = {
+        first_name = { name = Drusiana }
+        culture = emilian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1437.1.1
+        birth = fermo
+        father = mlo_francesco_i_sforza
+        dynasty = sforza_dynasty
+        tag = CRM
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1300.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    fer_tristano_sforza = {
+        first_name = { name = name_tristan }
+        culture = emilian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1424.1.1
+        birth = fermo
+        father = mlo_francesco_i_sforza
+        dynasty = sforza_dynasty
+        tag = FER
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1300.1.1
+            date = 9999.1.1
+            size = 1
+        }
     }
 
     mlo_galeazzo_maria_sforza = {

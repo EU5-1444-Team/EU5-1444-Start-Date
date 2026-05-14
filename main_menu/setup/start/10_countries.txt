@@ -9466,7 +9466,6 @@ countries = {
         own_control_integrated = {
             lodi como
             berceto parma sandonnino
-            casalmaggiore cremona soncino
         }
 
         our_cores_conquered_by_others = {
@@ -10645,8 +10644,8 @@ countries = {
     # --- BGM ---
 
     CRM = {
-        our_cores_conquered_by_others = {
-            casalmaggiore cremona soncino lodi
+        own_control_core = {
+            casalmaggiore cremona soncino
         }
 
         starting_technology_level = 3
@@ -10655,18 +10654,18 @@ countries = {
         include = "expl_silk_road_center"
         include = "expl_silk_road_east"
         include = "expl_indian_trade_route"
-        include = "catholic_republic_not_present"
+        include = "catholic_monarchy"
         government = {
-            type = republic
-            heir_selection = podesta_elective
-
-            reforms = {
-                signoria_reform
-            }
-
-            ruler = random
+            type = monarchy
+            ruler = mlo_francesco_i_sforza
 
             ruler_term = { character = par_oberto_ii_pallavicini start_date = 1259.1.1 end_date = 1265.1.1 regnal_number = 2 }
+
+            ruler_term = { character = mlo_francesco_i_sforza start_date = 1443.1.1 regnal_number = 0 }
+
+            reforms = {
+            }       
+
         }
         country_rank = rank_county
         capital = cremona
@@ -13120,17 +13119,15 @@ countries = {
         include = "expl_silk_road_center"
         include = "expl_silk_road_east"
         include = "expl_indian_trade_route"
-        include = "catholic_republic"
+        include = "catholic_monarchy"
         government = {
-            type = republic
-            heir_selection = podesta_elective
+            type = monarchy
+            ruler = pes_alessandro_sforza
 
             reforms = {
-                signoria_reform
             }
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            
 
             ruler_term = { character = pes_gianciotto_malatesta start_date = 1285.1.1 end_date = 1304.1.1 regnal_number = 0 }
             ruler_term = { character = rim_pandolfo_i_malatesta start_date = 1304.1.1 end_date = 1306.1.1 regnal_number = 1 }
@@ -24773,7 +24770,8 @@ countries = {
             wschowa
         }
 
-        own_control_integrated = {
+        own_control_conquered = {
+            lubica
         }
 
         our_cores_conquered_by_others = {
@@ -26597,7 +26595,7 @@ countries = {
             bratislava samorin nitra hlohovec holic
             hont balassagyarmat stary_tekov banska_bystrica
             trencin oravsky_podzamok turciansky_svaty_martin liptovsky_mikulas
-            gemer rimavska_sobota levoca lubica presov turna
+            gemer rimavska_sobota levoca presov turna
             zemplin kosice humenne uzhorod beregovo
             lugoj
             bihar beius crasna
@@ -26613,6 +26611,10 @@ countries = {
 
         own_control_integrated = {
             olsnica jaszbereny virovitica
+        }
+
+        own_control_conquered = {
+            lubica
         }
 
         starting_technology_level = 3
