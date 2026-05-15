@@ -208,6 +208,16 @@ character_db={
         tag = MTZ
     }
 
+    mtz_konrad_ii_bayer_boppart = {
+        first_name = { name = name_conrad }
+        last_name = { name = Bayer_von_Boppart }
+        culture = rhine_franconian
+        religion = catholic
+        birth_date = 1387.1.1
+        birth = katzenelnbogen
+        tag = MTZ
+    }
+
     ### adorno_dynasty | GEN ###
 
     gen_barisone_adorno = {
@@ -9680,13 +9690,32 @@ character_db={
         estate = clergy_estate
         adm = 50 dip = 41 mil = 49
         birth_date = 1254.1.1
-        death_date = 1296.1.1
+        death_date = 1296.1.1 
         birth = valenciennes
         father = hai_jean_i_avesnes
         #mother = Aleid van Holland
         dynasty = avesnes_dynasty
         tag = CAM
         ruler_trait = malevolent
+    }
+
+    cam_jean_valois_burgundy = {
+        first_name = { name = name_john }
+        culture = burgundian
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1404.1.1
+        birth = dijon
+        father = bur_jean_i_valois_burgundy
+        #mother = Agnes de Croÿ
+        dynasty = valois_burgundy_dynasty
+        tag = CAM
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1297.1.1
+            date = 9999.1.1
+            size = 1
+        }
     }
 
     ### avesnes_dynasty | ENG ###
@@ -35189,7 +35218,7 @@ character_db={
     }
 
     rcc_jean_ii_de_rochechouart = {
-        first_name = { name = name_jean }
+        first_name = { name = name_john }
         culture = limousin
         religion = catholic
         birth_date = 1375.1.1
@@ -50350,10 +50379,20 @@ character_db={
         culture = lower_saxon
         religion = catholic
         birth_date = 1300.1.1
-        death_date = 1362.12.14
+        death_date = 1362.1.17
         birth = cologne
         dynasty = heinsberg_dynasty
         tag = CHN
+    }
+
+    lie_johann_heinsberg = {
+        first_name = { name = name_john }
+        culture = lower_saxon
+        religion = catholic
+        birth_date = 1397.1.1
+        birth = borgloon
+        dynasty = heinsberg_dynasty
+        tag = LIE
     }
 
     ### henneberg_dynasty | ANS ###
@@ -69873,7 +69912,7 @@ character_db={
         culture = westphalian
         religion = catholic
         birth_date = 1288.8.1
-        death_date = 1348.1.17
+        death_date = 1344.1.1
         birth = hamm
         dynasty = mark_dynasty
         father = gmk_eberhard_i_von_der_mark
@@ -108383,7 +108422,17 @@ character_db={
         tag = SCO
     }
 
-    zee_mary_stuart_buchan = {
+    gpe_hendrik_ii_borselen = {
+        first_name = { name = name_henry }
+        culture = low_franconian
+        religion = catholic
+        birth_date = 1404.1.1
+        birth = middelburg
+        dynasty = borselen_dynasty
+        tag = GPE 
+    }
+
+    gpe_mary_stuart_buchan = {
         first_name = { name = name_mary }
         culture = scottish
         religion = catholic
@@ -108391,21 +108440,22 @@ character_db={
         birth_date = 1434.1.1
         birth = edinburgh
         dynasty = stuart_dynasty
-        spouse = zee_wolfert_vi_borselen
+        spouse = gpe_wolfert_vi_borselen
         father = sco_james_i_stuart
         mother = sco_joan_beaufort
         tag = SCO
     }
 
-    zee_wolfert_vi_borselen = {
+    gpe_wolfert_vi_borselen = {
         first_name = { name = Wolfert }
         culture = low_franconian
         religion = catholic
         birth_date = 1430.1.1
         birth = middelburg
+        spouse = gpe_mary_stuart_buchan
+        father = gpe_hendrik_ii_borselen
         dynasty = borselen_dynasty
-        spouse = zee_mary_stuart_buchan
-        tag = ZEE
+        tag = GPE
     }
 
     sco_annabella_stuart_savoy = {
@@ -126740,7 +126790,7 @@ character_db={
         estate = clergy_estate
         adm = 39 dip = 74 mil = 29
         birth_date = 1294.1.1
-        death_date = 1344.1.1
+        death_date = 1342.1.1
         birth = montreuil
         tag = CAM
     }
@@ -129801,7 +129851,7 @@ character_db={
         estate = clergy_estate
         adm = 46 dip = 50 mil = 22
         birth_date = 1270.1.1 # Died 1345
-        death_date = 1337.8.6
+        death_date = 1345.1.1
         birth = mouzon
         tag = MOU
     }
@@ -129813,7 +129863,7 @@ character_db={
         estate = clergy_estate
         adm = 63 dip = 48 mil = 6
         birth_date = 1272.1.1 # Died 1347
-        death_date = 1336.2.27
+        death_date = 1347.1.1
         birth = mouzon
         tag = MOU
     }
@@ -129826,7 +129876,7 @@ character_db={
         estate = clergy_estate
         adm = 65 dip = 60 mil = 25
         birth_date = 1273.1.1 # Died 1348
-        death_date = 1336.3.9
+        death_date = 1348.1.1
         birth = mouzon
         tag = MOU
     }
@@ -129839,7 +129889,7 @@ character_db={
         estate = clergy_estate
         adm = 55 dip = 59 mil = 13
         birth_date = 1279.1.1 # Died 1354
-        death_date = 1343.6.22
+        death_date = 1354.1.1
         birth = saint_brieuc
         tag = MOU
     }
@@ -129851,7 +129901,7 @@ character_db={
         estate = clergy_estate
         adm = 53 dip = 55 mil = 8
         birth_date = 1280.1.1 # Died 1355
-        death_date = 1351.3.22
+        death_date = 1355.1.1
         birth = mouzon
         tag = MOU
     }
@@ -129864,7 +129914,7 @@ character_db={
         estate = clergy_estate
         adm = 64 dip = 48 mil = 26
         birth_date = 1285.1.1 # Died 1360
-        death_date = 1341.1.11
+        death_date = 1360.1.1
         birth = mouzon
         tag = MOU
     }
@@ -129877,7 +129927,7 @@ character_db={
         estate = clergy_estate
         adm = 62 dip = 57 mil = 13
         birth_date = 1303.1.1 # Died 1378
-        death_date = 1359.10.28
+        death_date = 1378.1.1
         birth = vendome
         tag = MOU
     }
@@ -129890,8 +129940,19 @@ character_db={
         estate = clergy_estate
         adm = 57 dip = 47 mil = 17
         birth_date = 1319.1.1 # Died 1394
-        death_date = 1391.8.15
+        death_date = 1394.1.1
         birth = corbeil
+        tag = MOU
+    }
+
+    mou_vautier_i_viricle = {
+        first_name = { name = Vautier }
+        last_name = { name = Viricle }
+        culture = french
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1390.1.1
+        birth = mouzon
         tag = MOU
     }
 
@@ -130970,14 +131031,25 @@ character_db={
 
     scl_jean_ii_rousillon = {
         first_name = { name = name_john }
-        last_name = { name = roussillon }
+        last_name = { name = Roussillon }
         birth = avignon
         birth_date = 1280.1.1
-        death_date = 1349.6.21
+        death_date = 1348.1.1
         culture = vivaro_alpine
         religion = catholic
         estate = clergy_estate
         adm = 45 dip = 39 mil = 39
+        tag = SCL
+    }
+
+    scl_etienne_fauquier = {
+        first_name = { name = name_stephen }
+        last_name = { name = Fauquier }
+        birth = vesoul
+        birth_date = 1400.1.1
+        culture = franc_comtois
+        religion = catholic
+        estate = clergy_estate
         tag = SCL
     }
 
@@ -131249,7 +131321,18 @@ character_db={
         religion = catholic
         estate = clergy_estate
         birth_date = 1292.1.1
-        death_date = 1354.6.7
+        death_date = 1360.1.1 # Unknown
+        birth = stavelot
+        tag = STV
+    }
+
+    stv_henri_merode = {
+        first_name = { name = name_henry }
+        last_name = { name = "de Mérode" }
+        culture = walloon
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1394.1.1
         birth = stavelot
         tag = STV
     }
@@ -135053,7 +135136,7 @@ character_db={
 		tag = AUM 
     }
 
-    aum_antoine_lorraine = {
+    vad_antoine_lorraine = {
 		first_name = { name = name_anthony }
 		culture = lorrain
 		religion = catholic
@@ -135075,7 +135158,7 @@ character_db={
         estate = nobles_estate
 		birth_date = 1420.1.1
 		birth = nancy
-        father = aum_antoine_lorraine
+        father = vad_antoine_lorraine
         mother = aum_marie_harcourt
         dynasty = lorraine_dynasty
 		tag = AUM 
@@ -135089,7 +135172,7 @@ character_db={
         estate = nobles_estate
 		birth_date = 1426.1.1
 		birth = nancy
-        father = aum_antoine_lorraine
+        father = vad_antoine_lorraine
         mother = aum_marie_harcourt
         dynasty = lorraine_dynasty
 		tag = AUM 
@@ -135102,7 +135185,7 @@ character_db={
         estate = nobles_estate
 		birth_date = 1428.1.1
 		birth = nancy
-        father = aum_antoine_lorraine
+        father = vad_antoine_lorraine
         mother = aum_marie_harcourt
         dynasty = lorraine_dynasty
 		tag = AUM 
@@ -135115,7 +135198,7 @@ character_db={
         estate = nobles_estate
 		birth_date = 1430.1.1
 		birth = nancy
-        father = aum_antoine_lorraine
+        father = vad_antoine_lorraine
         mother = aum_marie_harcourt
         dynasty = lorraine_dynasty
 		tag = AUM 
@@ -135128,7 +135211,7 @@ character_db={
         estate = clergy_estate
 		birth_date = 1432.1.1
 		birth = nancy
-        father = aum_antoine_lorraine
+        father = vad_antoine_lorraine
         mother = aum_marie_harcourt
         dynasty = lorraine_dynasty
 		tag = TUL 
@@ -135359,6 +135442,76 @@ character_db={
         mother = rou_jeanne_i_pierrepoint
         dynasty = commercy_dynasty
 		tag = ROU
+    }
+
+    lgr_philippe_vienne = {
+        first_name = { name = name_philip }
+        last_name = { name = "de Vienne" }
+		culture = champenais
+		religion = catholic
+        estate = clergy_estate
+		birth_date = 1395.1.1
+		birth = vienne
+		tag = LGR
+    }
+
+    vdu_guillaume_fillastre = {
+        first_name = { name = name_william }
+        last_name = { name = Fillastre }
+		culture = champenais
+		religion = catholic
+        estate = clergy_estate
+		birth_date = 1404.1.1
+		birth = chalons_champagne
+		tag = VDU
+    }
+
+    toi_jean_chevrot = {
+        first_name = { name = name_john }
+        last_name = { name = Chevrot }
+		culture = arpitan
+		religion = catholic
+        estate = clergy_estate
+		birth_date = 1395.1.1
+		birth = poligny
+		tag = TOI
+    }
+
+    boz_jan_i_glymes = {
+        first_name = { name = name_john }
+		culture = brabantish
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1388.1.1
+        death_date = 1427.1.1
+		birth = bergen_zoom
+        dynasty = glymes_dynasty
+		tag = BOZ
+    }
+
+    boz_jan_ii_glymes = {
+        first_name = { name = name_john }
+		culture = brabantish
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1417.1.1
+		birth = bergen_zoom
+        spouse = boz_margaretha_rouveroy
+        father = boz_jan_i_glymes
+        dynasty = glymes_dynasty
+		tag = BOZ
+    }
+
+    boz_margaretha_rouveroy = {
+        first_name = { name = name_margaret }
+        last_name = { name = "de Rouveroy" }
+		culture = picard
+		religion = catholic
+        estate = nobles_estate
+        spouse = boz_jan_ii_glymes
+		birth_date = 1420.1.1
+		birth = maubeuge
+		tag = BOZ
     }
     
     #Musha'sha

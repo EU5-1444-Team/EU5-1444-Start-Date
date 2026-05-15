@@ -1089,7 +1089,7 @@ countries = {
         own_control_core = {
             neufchateau_des_vosges #France
             #HRE
-            mirecourt nancy saint_die
+            nancy saint_die
             wallerfangen
             darney arches
             luneville morhange sarreguemines
@@ -1143,6 +1143,37 @@ countries = {
     }
 
     # --- LOR ---
+
+    VAD = {
+        own_control_core = {
+            mirecourt
+        }
+
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "catholic_monarchy_no_coast"
+        country_rank = rank_county
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = vad_antoine_lorraine
+
+            ruler_term = { character = vad_antoine_lorraine start_date = 1415.1.1 regnal_number = 1 }
+
+            regnal_numbers = {
+
+            }
+        }
+
+        tolerated_cultures = {
+            rhine_franconian
+            moselle_franconian
+        }
+
+        capital = mirecourt
+    }
+
+    # --- VAD ---
 
     BOU = {
         own_control_core = {
@@ -1797,7 +1828,7 @@ countries = {
         include = "expl_northern_europe"
         capital = metz
         government = {
-            ruler = random # TODO: add me
+            ruler = mtz_konrad_ii_bayer_boppart
 
             reforms = {
                 prince_bishopric_reform
@@ -1812,6 +1843,9 @@ countries = {
             ruler_term = { character = lor_gerard_alsace start_date = 1048.11.11 end_date = 1070.4.14 regnal_number = 5 }
 
             ruler_term = { character = dau_henri_dauphin start_date = 1319.5.4 end_date = 1325.8.25 regnal_number = 1 }
+            ruler_term = { character = mtz_aymar_adhemar_de_la_garde start_date = 1327.1.1 end_date = 1361.5.12 regnal_number = 1 }
+
+            ruler_term = { character = mtz_konrad_ii_bayer_boppart start_date = 1416.1.1 regnal_number = 2 }
 
             regnal_numbers = {
                 name_clement = 1
@@ -2808,6 +2842,10 @@ countries = {
         include = "catholic_monarchy_no_coast"
         government = {
             type = monarchy
+            ruler = lgr_philippe_vienne
+
+            ruler_term = { character = lgr_philippe_vienne start_date = 1433.1.1 regnal_number = 0 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -3254,10 +3292,12 @@ countries = {
 
         starting_technology_level = 3
         include = "expl_western_europe"
-        include = "catholic_german_republic_no_coast"
+        include = "catholic_german_bishopric"
         include = "expl_northern_europe"
         government = {
-            ruler = random
+            ruler = vdu_guillaume_fillastre
+
+            ruler_term = { character = vdu_guillaume_fillastre start_date = 1437.1.1 regnal_number = 0 }
 
             laws = {
                 mining_law = nobles_mining_law
@@ -3320,7 +3360,11 @@ countries = {
         }
 
         government = {
-            ruler = random # TODO: add me
+            ruler = scl_etienne_fauquier
+
+            ruler_term = { character = scl_jean_ii_rousillon start_date = 1326.1.1 end_date = 1348.1.1 regnal_number = 2 }
+
+            ruler_term = { character = scl_etienne_fauquier start_date = 1444.11.1 regnal_number = 0 }
         }
 
         include = "catholic_abbey"
@@ -3903,7 +3947,7 @@ countries = {
             ruler = stp_louis_luxembourg
 
             ruler_term = { character = stp_louis_luxembourg start_date = 1433.8.31 regnal_number = 1 }
-            
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -3925,6 +3969,10 @@ countries = {
         include = "catholic_monarchy_no_coast"
         government = {
             type = monarchy
+            ruler = vad_antoine_lorraine
+
+            ruler_term = { character = vad_antoine_lorraine start_date = 1415.1.1 regnal_number = 1 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -3946,6 +3994,10 @@ countries = {
         include = "catholic_monarchy_no_coast"
         government = {
             type = monarchy
+            ruler = gpe_hendrik_ii_borselen
+
+            ruler_term = { character = gpe_hendrik_ii_borselen start_date = 1409.1.1 regnal_number = 2 }
+
             reforms = {
                 french_ducal_vassal_reform
             }
@@ -5394,9 +5446,11 @@ countries = {
         country_rank = rank_county
         capital = mouzon
         government = {
-            ruler = random # TODO: add me
+            ruler = mou_vautier_i_viricle
 
-            ruler_term = { character = mou_lambert_yvois start_date = 1332.1.1 regnal_number = 1 }
+            ruler_term = { character = mou_lambert_yvois start_date = 1332.1.1 end_date = 1345.1.1 regnal_number = 1 }
+
+            ruler_term = { character = mou_vautier_i_viricle start_date = 1435.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 #Lieutald = 1
@@ -5441,11 +5495,13 @@ countries = {
         include = "expl_northern_europe"
         capital = cambrai
         government = {
-            ruler = random # TODO: add me
+            ruler = cam_jean_valois_burgundy
 
             ruler_term = { character = cam_guillaume_i_avesnes start_date = 1286.1.1 end_date = 1296.1.1 regnal_number = 1 }
             ruler_term = { character = auv_gui_auvergne start_date = 1324.1.1 end_date = 1336.1.1 regnal_number = 1 }
-            ruler_term = { character = cam_guillaume_ii_dauxonne start_date = 1336.1.1 regnal_number = 2 }
+            ruler_term = { character = cam_guillaume_ii_dauxonne start_date = 1336.1.1 end_date = 1342.1.1 regnal_number = 2 }
+
+            ruler_term = { character = cam_jean_valois_burgundy start_date = 1439.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 #Vaast = 1
@@ -6315,10 +6371,11 @@ countries = {
 
         government = {
             heir_selection = cognatic_primogeniture
-            ruler = sco_elizabeth_dunbar_8th_countess_moray
+            ruler = sco_elspeth_dunbar_8th_countess_moray
 
             ruler_term = { character = moy_john_randolph start_date = 1333.8.9 end_date = 1346.10.17 }
-            ruler_term = { character = sco_elizabeth_dunbar_8th_countess_moray start_date = 1429.1.1 }
+            
+            ruler_term = { character = sco_elspeth_dunbar_8th_countess_moray start_date = 1429.1.1 }
         }
 
         include = "catholic_monarchy_scottish_earldom"
@@ -7743,7 +7800,7 @@ countries = {
             }
         }
 
-        country_rank = rank_country
+        country_rank = rank_county
         capital = seu_durgell
     }
 
@@ -14222,6 +14279,7 @@ countries = {
     LUX = {
         own_control_core = {
             luxembourg arlon bastogne bitburg la_roche orchimont neufchateau_luxembourg st_vith thionville vianden
+            montmedy
         }
 
         starting_technology_level = 3
@@ -14984,16 +15042,18 @@ countries = {
 
     LIE = {
         own_control_core = {
-            liege dinant walcourt hasselt bree borgloon
+            liege dinant walcourt
         }
 
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "catholic_bishopric_no_coast"
         government = {
-            ruler = random # TODO: add me
+            ruler = lie_johann_heinsberg
 
-            ruler_term = { character = lie_adolf_ii_von_der_mark start_date = 1313.1.1 regnal_number = 3 }
+            ruler_term = { character = lie_adolf_ii_von_der_mark start_date = 1313.1.1 end_date = 1344.1.1 regnal_number = 3 }
+
+            ruler_term = { character = lie_johann_heinsberg start_date = 1419.1.1 regnal_number = 0 }
 
             regnal_numbers = {
                 name_adolf = 2
@@ -15777,7 +15837,7 @@ countries = {
 
     LOO = {
         #Loon
-        our_cores_conquered_by_others = {
+        own_control_core = {
             hasselt bree borgloon
         }
 
@@ -15786,9 +15846,11 @@ countries = {
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
         government = {
+            ruler = lie_johann_heinsberg
 
-            ruler = random
-            ruler_term = { character = loo_dietrich_iv_von_heinsberg start_date = 1336.1.1 regnal_number = 4 }
+            ruler_term = { character = loo_dietrich_iv_von_heinsberg start_date = 1336.1.1 end_date = 1362.1.17 regnal_number = 4 }
+
+            ruler_term = { character = lie_johann_heinsberg start_date = 1419.1.1 regnal_number = 0 }
 
             regnal_numbers = {
                 name_theodoric = 1
@@ -15798,6 +15860,7 @@ countries = {
             capital_economy_vs_traditional_economy = -10
             land_vs_naval = -20
         }
+
         country_rank = rank_county
         capital = hasselt
         dynasty = heinsberg_dynasty
@@ -16822,7 +16885,10 @@ countries = {
         include = "catholic_monarchy"
         include = "german_principality"
         government = {
-            ruler = random
+            ruler = boz_jan_ii_glymes
+
+            ruler_term = { character = boz_jan_i_glymes start_date = 1419.1.1 death_date = 1427.1.1 regnal_number = 1 }
+            ruler_term = { character = boz_jan_ii_glymes start_date = 1427.1.1 regnal_number = 2 }
 
             aristocracy_vs_plutocracy = 20
             mercantilism_vs_free_trade = 30
@@ -16851,6 +16917,10 @@ countries = {
         include = "expl_western_europe"
         include = "catholic_bishopric_no_coast"
         government = {
+            ruler = toi_jean_chevrot
+
+            ruler_term = { character = toi_jean_chevrot start_date = 1437.1.1 regnal_number = 0 }
+
             reforms = {
                 prince_bishopric_reform
             }
@@ -16879,9 +16949,11 @@ countries = {
         include = "expl_western_europe"
         include = "catholic_monarchy_no_coast"
         government = {
-            ruler = random # TODO: add me
+            ruler = lie_johann_heinsberg
 
-            ruler_term = { character = lie_adolf_ii_von_der_mark start_date = 1313.1.1 regnal_number = 3 }
+            ruler_term = { character = lie_adolf_ii_von_der_mark start_date = 1313.1.1 end_date = 1344.1.1 regnal_number = 3 }
+
+            ruler_term = { character = lie_johann_heinsberg start_date = 1419.1.1 regnal_number = 0 }
 
             regnal_numbers = {
                 name_adolf = 2
@@ -18619,7 +18691,7 @@ countries = {
 
     CHN = {
         #Chiny - union under Loon
-        own_control_core = {
+        our_cores_conquered_by_others = {
             montmedy
         }
 
@@ -18633,7 +18705,7 @@ countries = {
         government = {
             ruler = random # TODO: add me
 
-            ruler_term = { character = loo_dietrich_iv_von_heinsberg start_date = 1336.1.1 regnal_number = 1 }
+            ruler_term = { character = loo_dietrich_iv_von_heinsberg start_date = 1336.1.1 end_date = loo_dietrich_iv_von_heinsberg regnal_number = 1 }
 
             aristocracy_vs_plutocracy = -20
             capital_economy_vs_traditional_economy = -10
@@ -18878,12 +18950,17 @@ countries = {
         include = "expl_northern_europe"
         capital = stavelot
         government = {
-            ruler = random # TODO: add me
+            ruler = stv_henri_merode
+
+            ruler_term = { character = stv_winrich_de_pomerio start_date = 1328.1.1 end_date = 1360.1.1 }
+
+            ruler_term = { character = stv_henri_merode start_date = 1426.1.1 }
 
             spiritualist_vs_humanist = -70
             aristocracy_vs_plutocracy = -20
             land_vs_naval = -20
         }
+
         country_rank = rank_county
     }
 
