@@ -1577,7 +1577,7 @@ character_db={
         estate = nobles_estate
         adm = 48 dip = 42 mil = 64
         birth_date = 1299.4.19
-        death_date = 1354.7.26
+        death_date = 1358.6.23
         birth = montbrison
         father = frz_jean_i_albon
         mother = frz_alix_de_la_tour
@@ -9331,7 +9331,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1312.1.1
-        death_date = 1377.10.21
+        death_date = 1386.3.24
         birth = riom
         father = auv_robert_vii_auvergne
         mother = auv_marie_termonde
@@ -9356,6 +9356,114 @@ character_db={
         child_trait = child_ambitious
     }
 
+    auv_bertrand_v_de_la_tour_d_auvergne = {
+        first_name = { name = name_bertrand }
+        culture = auvergnat
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1399.1.1
+        birth = tour_auvergne
+        spouse = auv_jacquette_peschin
+        #father = auv_bertrand_iv_de_la_tour_d_auvergne
+        #mother = auv_marie_auvergne_montgascon
+        dynasty = de_la_tour_d_auvergne_dynasty
+        tag = AUV
+    }
+
+    auv_jacquette_peschin = {
+        first_name = { name = name_jacqueline }
+        last_name = { name = "du Peschin" }
+        culture = french
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1400.1.1 # Unknown
+        birth = montargis
+        spouse = auv_bertrand_v_de_la_tour_d_auvergne
+        #father =
+        #mother = 
+        tag = AUV
+    }
+
+    auv_bertrand_vi_de_la_tour_d_auvergne = {
+        first_name = { name = name_bertrand }
+        culture = auvergnat
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1417.1.1
+        birth = tour_auvergne
+        father = auv_bertrand_v_de_la_tour_d_auvergne
+        mother = auv_jacquette_peschin
+        dynasty = de_la_tour_d_auvergne_dynasty
+        tag = AUV
+    }
+
+    auv_isabelle_de_la_tour_d_auvergne_limousin = {
+        first_name = { name = name_elizabeth }
+        culture = auvergnat
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1420.1.1
+        birth = tour_auvergne
+        father = auv_bertrand_v_de_la_tour_d_auvergne
+        mother = auv_jacquette_peschin
+        dynasty = de_la_tour_d_auvergne_dynasty
+        tag = AUV
+    }
+
+    auv_louise_de_la_tour_d_auvergne_crequy = {
+        first_name = { name = name_louise }
+        culture = auvergnat
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1420.1.1
+        birth = tour_auvergne
+        father = auv_bertrand_v_de_la_tour_d_auvergne
+        mother = auv_jacquette_peschin
+        dynasty = de_la_tour_d_auvergne_dynasty
+        tag = AUV
+    }
+
+    fra_jean_crequy = {
+        first_name = { name = name_john }
+        last_name = { name = "de Créquy" }
+        culture = picard
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1395.1.1
+        birth = montreuil
+        tag = FRA
+    }
+
+    auv_blanche_de_la_tour_d_auvergne_cusset = {
+        first_name = { name = name_blanche }
+        culture = auvergnat
+        religion = catholic
+        female = yes
+        estate = clergy_estate
+        birth_date = 1423.1.1
+        birth = tour_auvergne
+        father = auv_bertrand_v_de_la_tour_d_auvergne
+        mother = auv_jacquette_peschin
+        dynasty = de_la_tour_d_auvergne_dynasty
+        tag = BOU
+    }
+
+    auv_geoffroy_de_la_tour_d_auvergne_montgascon = {
+        first_name = { name = name_godfrey }
+        culture = auvergnat
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1425.1.1
+        birth = tour_auvergne
+        father = auv_bertrand_v_de_la_tour_d_auvergne
+        mother = auv_jacquette_peschin
+        dynasty = de_la_tour_d_auvergne_dynasty
+        tag = AUV
+    }
+
     ### auvergne_dynasty | BGN ###
 
     auv_gui_auvergne = { # Would become a Cardinal
@@ -9365,7 +9473,7 @@ character_db={
         estate = clergy_estate
         adm = 70 dip = 80 mil = 16
         birth_date = 1313.1.1
-        death_date = 1374.6.25
+        death_date = 1373.11.25
         birth = riom
         father = auv_robert_vii_auvergne
         mother = auv_marie_termonde
@@ -11933,15 +12041,15 @@ character_db={
 
     ### balzo_dynasty | NAP ###
 
-    nap_margherita_balzo = {
+    nap_margherita_baux = {
         first_name = { name = name_margaret }
-        dynasty = baux_dynasty
         culture = neapolitan
         religion = catholic
+        female = yes
         estate = nobles_estate
         father = nap_oldjohn_balzo
-        female = yes
-        birth_date = 1394.11.25
+        birth_date = 1394.1.1
+        dynasty = baux_dynasty
         tag = NAP
     }
 
@@ -18348,7 +18456,7 @@ character_db={
         estate = nobles_estate
         adm = 24 dip = 57 mil = 40
         birth_date = 1311.1.1
-        death_date = 1372.12.27
+        death_date = 1356.9.19
         birth = clermont
         father = bou_louis_i_bourbon
         mother = bou_marie_avesnes
@@ -18363,7 +18471,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1315.1.1
-        death_date = 1383.7.7
+        death_date = 1362.1.1
         birth = clermont
         father = bou_louis_i_bourbon
         mother = bou_marie_avesnes
@@ -18379,12 +18487,296 @@ character_db={
         estate = nobles_estate
         adm = 38 dip = 29 mil = 70
         birth_date = 1321.1.1
-        death_date = 1376.5.11
+        death_date = 1362.4.6
         birth = clermont
         father = bou_louis_i_bourbon
         mother = bou_marie_avesnes
         dynasty = bourbon_dynasty # Should be dynasty = bourbon_marche_dynasty # Founder of La Marche line of the House of Bourbon
         tag = BOU
+    }
+
+    bou_jean_i_bourbon = {
+        first_name = { name = name_john }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1381.1.1
+        death_date = 1434.1.1
+        birth = bourbon
+        #father =
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_marie_valois_berry = {
+        first_name = { name = name_marie }
+        culture = berrichon
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1375.1.1
+        death_date = 1434.6.1
+        birth = berry
+        father = ber_jean_valois_berry
+        dynasty = valois_dynasty
+        tag = BOU 
+    }
+
+    bou_charles_i_bourbon = {
+        first_name = { name = name_charles }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1401.1.1
+        birth = bourbon
+        spouse = bou_agnes_valois_burgundy
+        father = bou_jean_i_bourbon
+        mother = bou_marie_valois_berry
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_jean_ii_bourbon = {
+        first_name = { name = name_john }
+        nickname = { name = nick_the_good }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1426.1.1
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    lor_marie_bourbon = {
+        first_name = { name = name_mary }
+        culture = berrichon
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1428.1.1
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = LOR
+    }
+
+    bou_philippe_bourbon_beaujeau = {
+        first_name = { name = name_philip }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1430.1.1
+        death_date = 1440.1.1
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    lyo_charles_ii_bourbon = {
+        first_name = { name = name_charles }
+        culture = berrichon
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1433.1.1
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = LYO
+    }
+
+    bou_isabelle_bourbon_burgundy = {
+        first_name = { name = name_elizabeth }
+        culture = berrichon
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1434.1.1
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_pierre_ii_bourbon = {
+        first_name = { name = name_peter }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1438.1.1
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_louis_bourbon_liege = {
+        first_name = { name = name_louis }
+        culture = berrichon
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1438.1.1
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = BUR
+    }
+
+    bou_marguerite_bourbon_savoy = {
+        first_name = { name = name_margaret }
+        culture = berrichon
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1439.2.5
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_catherine_bourbon_guelders = {
+        first_name = { name = name_catherine }
+        culture = berrichon
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1440.1.1
+        birth = liege
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_joanna_bourbon_orange = {
+        first_name = { name = name_joanna }
+        culture = berrichon
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1442.1.1
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_jacques_bourbon_young = {
+        first_name = { name = name_james }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1444.1.1
+        birth = bourbon
+        father = bou_charles_i_bourbon
+        mother = bou_agnes_valois_burgundy
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    frz_louis_i_bourbon = {
+        first_name = { name = name_louis }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1403.1.1
+        death_date = 1412.1.1
+        birth = bourbon
+        father = bou_jean_i_bourbon
+        mother = bou_marie_valois_berry
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_louis_i_bourbon_montpensier = {
+        first_name = { name = name_louis }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1405.1.1
+        birth = bourbon
+        spouse = bou_gabrielle_de_la_tour_d_auvergne_montpensier
+        father = bou_jean_i_bourbon
+        mother = bou_marie_valois_berry
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_gabrielle_de_la_tour_d_auvergne_montpensier = {
+        first_name = { name = Gabrielle }
+        culture = auvergnat
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1419.1.1
+        birth = tour_auvergne
+        spouse = bou_louis_i_bourbon_montpensier
+        father = auv_bertrand_v_de_la_tour_d_auvergne
+        mother = auv_jacquette_peschin
+        dynasty = de_la_tour_d_auvergne_dynasty
+        tag = BOU
+    }
+
+    bou_gilbert_bourbon_montpensier = {
+        first_name = { name = name_gilbert }
+        culture = berrichon
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1443.1.1
+        birth = riom
+        father = bou_louis_i_bourbon_montpensier
+        mother = bou_gabrielle_de_la_tour_d_auvergne_montpensier
+        dynasty = bourbon_dynasty
+        tag = BOU
+    }
+
+    bou_marguerite_bourbon_villandrando = {
+        first_name = { name = name_margaret }
+        culture = berrichon
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1408.1.1
+        birth = bourbon
+        father = bou_jean_i_bourbon
+        dynasty = bourbon_dynasty
+        tag = BOU
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1317.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    vly_jean_bourbon = {
+        first_name = { name = name_john }
+        culture = berrichon
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1410.1.1
+        birth = bourbon
+        father = bou_jean_i_bourbon
+        dynasty = bourbon_dynasty
+        tag = VLY
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1317.1.1
+            date = 9999.1.1
+            size = 1
+        }
     }
 
     ### bourbon_dynasty | CST ###
@@ -18413,7 +18805,7 @@ character_db={
         adm = 36 dip = 42 mil = 20
         female = yes
         birth_date = 1318.1.1
-        death_date = 1379.12.9
+        death_date = 1387.1.1
         birth = clermont
         father = bou_louis_i_bourbon
         mother = bou_marie_avesnes
@@ -18449,7 +18841,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1312.1.1
-        death_date = 1363.5.19
+        death_date = 1402.1.1
         birth = clermont
         father = bou_louis_i_bourbon
         mother = bou_marie_avesnes
@@ -22243,7 +22635,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1314.1.1
-        death_date = 1369.2.6
+        death_date = 1374.1.1 # Unknown
         birth = charolles
         father = bou_robert_clermont
         #mother = Jeanne de Dargies
@@ -28533,7 +28925,7 @@ character_db={
         culture = westphalian
         religion = catholic
         birth_date = 1260.1.1
-        death_date = 1322.4.22
+        death_date = 1342.1.1
         birth = saarbrucken
         father = saa_simon_iv_saarbrucken
         dynasty = commercy_dynasty
@@ -28557,7 +28949,7 @@ character_db={
         culture = westphalian
         religion = catholic
         birth_date = 1310.1.1
-        death_date = 1382.6.21
+        death_date = 1381.3.11
         birth = saarbrucken
         father = saa_simon_saarbrucken
         mother = saa_marguerite_savoy_vaud
@@ -28572,7 +28964,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1311.1.1
-        death_date = 1384.7.2
+        death_date = 1371.1.1 # Unknown
         birth = saarbrucken
         father = saa_simon_saarbrucken
         mother = saa_marguerite_savoy_vaud
@@ -28604,7 +28996,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1312.1.1
-        death_date = 1377.2.20
+        death_date = 1372.1.1 # Unknown
         birth = saarbrucken
         father = saa_simon_saarbrucken
         mother = saa_marguerite_savoy_vaud
@@ -28621,7 +29013,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1286.1.1
-        death_date = 1356.4.17
+        death_date = 1346.1.1 # Unknown
         birth = saarbrucken
         father = saa_johann_i_saarbrucken
         dynasty = commercy_dynasty
@@ -28634,7 +29026,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1333.1.1
-        death_date = 1396.12.13
+        death_date = 1355.1.1
         birth = verdun
         father = saa_johann_saarbrucken
         mother = vdu_alix_joinville
@@ -28648,7 +29040,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1335.1.1
-        death_date = 1391.12.14
+        death_date = 1384.4.28
         birth = verdun
         father = saa_johann_saarbrucken
         mother = vdu_alix_joinville
@@ -28662,7 +29054,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1337.1.1
-        death_date = 1395.3.21
+        death_date = 1366.1.1
         birth = verdun
         father = saa_johann_saarbrucken
         mother = vdu_alix_joinville
@@ -73440,6 +73832,7 @@ character_db={
 		religion = catholic
 		estate = nobles_estate
 		birth_date = 1396.1.1
+        death_date = 1438.6.2
 		birth = vannes
 		father = bri_jean_iv_montfort_brittany
 		mother = bri_jeanne_evreux
@@ -90641,7 +91034,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1295.1.1 # Unknown
-        death_date = 1360.11.6
+        death_date = 1346.8.26
         birth = roucy
         father = rou_jean_iv_pierrepont
         mother = rou_jeanne_dreux
@@ -90655,7 +91048,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1310.1.1 # Parents married 1308
-        death_date = 1378.9.20
+        death_date = 1364.1.1
         birth = roucy
         father = rou_jean_v_pierrepont
         mother = rou_marguerite_bommiers
@@ -90669,7 +91062,7 @@ character_db={
         religion = catholic
         estate = nobles_estate
         birth_date = 1312.1.1 # Third child
-        death_date = 1376.11.1
+        death_date = 1372.1.1 # Unknown
         birth = roucy
         father = rou_jean_v_pierrepont
         mother = rou_marguerite_bommiers
@@ -90684,7 +91077,7 @@ character_db={
         estate = nobles_estate
         adm = 59 dip = 76 mil = 43
         birth_date = 1314.1.1 # Fourth child
-        death_date = 1376.11.22
+        death_date = 1392.1.1
         birth = roucy
         father = rou_jean_v_pierrepont
         mother = rou_marguerite_bommiers
@@ -90699,7 +91092,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1318.1.1 # Sixth child
-        death_date = 1367.10.16
+        death_date = 1378.1.1 # Unknown
         birth = roucy
         father = rou_jean_v_pierrepont
         mother = rou_marguerite_bommiers
@@ -90716,7 +91109,7 @@ character_db={
         estate = nobles_estate
         female = yes
         birth_date = 1316.1.1 # Fifth child
-        death_date = 1376.1.1
+        death_date = 1376.1.1 # Unknown
         birth = roucy
         father = rou_jean_v_pierrepont
         mother = rou_marguerite_bommiers
@@ -134767,8 +135160,207 @@ character_db={
         dynasty = lascaris_ventimiglia_dynasty
 		tag = VMG 
     }
-    
 
+    lyo_geoffroy_ii_versailles = {
+        first_name = { name = name_godfrey }
+        last_name = { name = "de Versailles" }
+		culture = french
+		religion = catholic
+        estate = clergy_estate
+		birth_date = 1385.1.1 # unknown
+		birth = corbeil
+		tag = VIV  
+    }
+
+    cmt_martin_gouge_charpaignes = {
+        first_name = { name = name_martin.Gouge }
+        last_name = { name = "de Charpaignes" }
+		culture = berrichon
+		religion = catholic
+        estate = clergy_estate
+		birth_date = 1375.1.1 # unknown
+		birth = bourges
+		tag = CMT
+        timed_modifier = {
+            modifier = "sickly_character"
+            start_date = 1440.1.1
+            end_date = 9999.1.1
+            size = 1
+        } 
+    }
+
+    cmt_jacme_comborn = {
+        first_name = { name = name_james }
+        last_name = { name = "de Comborn" }
+		culture = limousin
+		religion = catholic
+        estate = clergy_estate
+		birth_date = 1405.1.1 # unknown
+		birth = limoges
+		tag = CMT
+    }
+
+    jer_jean_payn = {
+        first_name = { name = name_john }
+        last_name = { name = Payn }
+		culture = norman
+		religion = catholic
+        estate = clergy_estate
+		birth_date = 1405.1.1 # unknown
+		birth = jersey
+		tag = JER
+    }
+
+    mrl_jeanne_de_bar = {
+        first_name = { name = name_joan }
+		culture = champenais
+		religion = catholic
+        female = yes
+        estate = nobles_estate
+		birth_date = 1415.1.1
+		birth = bar_le_duc
+        dynasty = de_bar_dynasty
+        spouse = stp_louis_luxembourg
+        #father = mrl_robert_de_bar
+        #mother = fra_jeanne_bethune
+		tag = MRL
+    }
+
+    stp_louis_luxembourg = {
+        first_name = { name = name_louis }
+		culture = picard
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1418.1.1
+		birth = saint_pol
+        dynasty = luxembourg_dynasty
+        spouse = mrl_jeanne_de_bar
+        #father = stp_pierre_luxembourg
+        mother = nap_margherita_baux
+		tag = STP
+    }
+
+    mrl_jean_luxembourg = {
+        first_name = { name = name_joan }
+		culture = picard
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1440.1.1
+		birth = saint_pol
+        dynasty = luxembourg_dynasty
+        father = stp_louis_luxembourg
+        mother = mrl_jeanne_de_bar
+		tag = MRL
+    }
+
+    mrl_jacqueline_luxembourg = {
+        first_name = { name = name_jacqueline }
+		culture = picard
+		religion = catholic
+        female = yes
+        estate = nobles_estate
+		birth_date = 1444.1.1
+		birth = saint_pol
+        dynasty = luxembourg_dynasty
+        father = stp_louis_luxembourg
+        mother = mrl_jeanne_de_bar
+		tag = MRL
+    }
+
+    noy_jean_mailly = {
+        first_name = { name = name_john }
+        last_name = { name = "de Mailly" }
+		culture = berrichon
+		religion = catholic
+        estate = clergy_estate
+		birth_date = 1400.1.1
+		birth = saint_pol
+		tag = NOY
+    }
+
+    rou_jeanne_i_pierrepoint = {
+        first_name = { name = name_joan }
+		culture = champenais
+		religion = catholic
+        female = yes
+        estate = nobles_estate
+		birth_date = 1400.1.1
+		birth = roucy
+        spouse = rou_robert_iii_commercy
+        #father =
+        #mother =
+        dynasty = pierrepoint_dynasty
+		tag = ROU
+    }
+
+    rou_robert_iii_commercy = {
+        first_name = { name = name_robert }
+		culture = rhine_franconian
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1400.1.1
+		birth = saarbrucken
+        spouse = rou_jeanne_i_pierrepoint
+        #father =
+        #mother =
+        dynasty = commercy_dynasty
+		tag = ROU
+    }
+
+    rou_jean_vii_commercy = {
+        first_name = { name = name_john }
+		culture = champenais
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1419.1.1
+		birth = saarbrucken
+        father = rou_robert_iii_commercy
+        mother = rou_jeanne_i_pierrepoint
+        dynasty = commercy_dynasty
+		tag = ROU
+    }
+
+    rou_ame_ii_commercy = {
+        first_name = { name = Amé }
+		culture = champenais
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1420.1.1
+		birth = saarbrucken
+        father = rou_robert_iii_commercy
+        mother = rou_jeanne_i_pierrepoint
+        dynasty = commercy_dynasty
+		tag = ROU
+    }
+
+    rou_marie_commercy_bailleul = {
+        first_name = { name = name_mary }
+		culture = champenais
+		religion = catholic
+        female = yes
+        estate = nobles_estate
+		birth_date = 1422.1.1
+		birth = saarbrucken
+        father = rou_robert_iii_commercy
+        mother = rou_jeanne_i_pierrepoint
+        dynasty = commercy_dynasty
+		tag = ROU
+    }
+
+    rou_jeanne_commercy_cany = {
+        first_name = { name = name_joan }
+		culture = champenais
+		religion = catholic
+        female = yes
+        estate = nobles_estate
+		birth_date = 1423.1.1
+		birth = saarbrucken
+        father = rou_robert_iii_commercy
+        mother = rou_jeanne_i_pierrepoint
+        dynasty = commercy_dynasty
+		tag = ROU
+    }
+    
     #Musha'sha
     mss_muhammad_ibn_falah = {
         first_name = { name = name_muhammad}
