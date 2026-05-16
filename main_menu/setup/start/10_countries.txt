@@ -24299,13 +24299,16 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            ruler = mzk_gjin_ii_muzakajt
 
-            ruler = random # TODO: add me
-
-            ruler_term = { character = mzk_andrea_ii_muzaka start_date = 1331.1.1 regnal_number = 2 }
+            ruler_term = { character = mzk_andrea_ii_muzaka start_date = 1331.1.1 end_date = 1372.1.1 regnal_number = 2 }
+            ruler_term = { character = mzk_gjin_muzaka start_date = 1372.1.1 end_date = 1389.1.1 regnal_number = 1 }
+            ruler_term = { character = mzk_andrea_iii_muzakajt start_date = 1389.1.1 end_date = 1405.1.1 regnal_number = 3 }
+            ruler_term = { character = mzk_gjin_ii_muzakajt start_date = 1405.1.1 regnal_number = 2 }
 
             regnal_numbers = {
-                name_andrew = 2
+                name_andrew = 3
+                name_john = 2
             }
         }
 
@@ -24684,7 +24687,7 @@ countries = {
 
     THP = {
         own_control_core = {
-            tirana
+            tirana kavaje
         }
 
         starting_technology_level = 3
@@ -24697,14 +24700,18 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            ruler = thp_andrea_ii_thopia
 
-            ruler = random # TODO: add me
+            ruler_term = { character = thp_tanush_thopia start_date = 1328.2.1 end_date = 1340.1.1 regnal_number = 1 }
+            ruler_term = { character = thp_andrea_thopia start_date = 1340.1.1 end_date = 1352.1.1 regnal_number = 1 }
+            ruler_term = { character = thp_karl_thopia start_date = 1352.1.1 end_date = 1388.1.1 regnal_number = 1 }
+            ruler_term = { character = thp_gjergj_thopia start_date = 1388.1.1 end_date = 1392.10.26 regnal_number = 1 }
 
-            ruler_term = { character = thp_tanush_thopia start_date = 1328.2.1 regnal_number = 1 }
-
+            ruler_term = { character = thp_tanush_thopia_scuria start_date = 1415.1.1 end_date = 1430.1.1 regnal_number = 0 }
+            ruler_term = { character = thp_andrea_ii_thopia start_date = 1430.1.1 regnal_number = 2 }
         }
 
-        capital = kruje
+        capital = tirana
         dynasty = thopia_dynasty
     }
 
@@ -24726,9 +24733,13 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = random
+             ruler = ant_gjergj_arianiti
 
             ruler_term = { character = nap_charles_i_anjou start_date = 1272.2.1 end_date = 1285.1.7 regnal_number = 1 }
+
+            ruler_term = { character = ant_golem_arianiti start_date = 1325.1.1 end_date = 1375.1.1 }
+            ruler_term = { character = ant_komin_spata_arianiti start_date = 1375.1.1 end_date = 1405.1.1 }
+            ruler_term = { character = ant_gjergj_arianiti start_date = 1405.1.1 }
 
         }
 
@@ -24739,7 +24750,7 @@ countries = {
     # --- ANT ---
 
     MTR = {
-        own_control_core = {
+        our_cores_conquered_by_others = {
             kavaje
         }
 
@@ -24756,7 +24767,9 @@ countries = {
 
             ruler = random # TODO: add me
 
-            ruler_term = { character = mtr_pal_mataranga start_date = 1300.1.1 regnal_number = 1 }
+            ruler_term = { character = mtr_pal_mataranga start_date = 1300.1.1 end_date = 1340.1.1 regnal_number = 1 }
+            ruler_term = { character = mtr_gjin_mataranga start_date = 1340.1.1 end_date = 1355.1.1 regnal_number = 1 }
+            ruler_term = { character = mtr_pal_ii_mataranga start_date = 1355.1.1 end_date = 1358.1.1 regnal_number = 2 }
         }
 
         capital = kavaje
