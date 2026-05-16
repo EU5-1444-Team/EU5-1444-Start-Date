@@ -357,11 +357,10 @@ diplomacy_manager = {
     dependency = { first = SIC second = MCA subject_type = vassal }
     dependency = { first = SIC second = GCI subject_type = vassal }
 
-    dependency = { first = GEN second = COH subject_type = vassal }
     dependency = { first = GEN second = ADI subject_type = vassal }
-    dependency = { first = GEN second = ROC subject_type = vassal }
-    dependency = { first = GEN second = NUL subject_type = vassal }
-    dependency = { first = GEN second = VCL subject_type = vassal }
+    dependency = { first = ARA second = ROC subject_type = vassal }
+    #dependency = { first = ARA second = NUL subject_type = vassal }
+    #dependency = { first = GEN second = VCL subject_type = vassal }
 
     scripted_oneway = { first = PAP second = NAP type = guarantee }
     scripted_oneway = { first = NAP second = PAP type = guarantee }
@@ -964,6 +963,8 @@ diplomacy_manager = {
     dependency = { first = ARA second = ORN subject_type = vassal }
 
     dependency = { first = TUR second = WAL subject_type = tributary }
+    dependency = { first = TUR second = SER subject_type = tributary }
+    dependency = { first = TUR second = THL subject_type = uc_bey }
 
     dependency = { first = HUN second = TRA subject_type = vassal }
     dependency = { first = TRA second = SZE subject_type = fiefdom }

@@ -7242,7 +7242,7 @@ countries = {
             ruler_term = { character = por_dinis_i_portugal start_date = 1279.2.16 end_date = 1325.1.7 regnal_number = 1 }
             ruler_term = { character = por_afonso_iv_portugal start_date = 1325.1.7 end_date = 1357.5.28 regnal_number = 4 }
 
-            ruler_term = { character = por_peter_i_portugal start_date = 1357.5.28 end_date = 1367.1.18 regnal_number = 1 }
+            ruler_term = { character = por_pedro_i_portugal start_date = 1357.5.28 end_date = 1367.1.18 regnal_number = 1 }
             ruler_term = { character = por_fernando_i_portugal start_date = 1367.1.18 end_date = 1383.10.22 regnal_number = 1 }
             ruler_term = { character = cas_beatriz_portugal start_date = 1383.10.22 end_date = 1385.4.6 }
             ruler_term = { character = por_joao_i_avis start_date = 1385.4.6 end_date = 1433.8.14 regnal_number = 1 }
@@ -9762,7 +9762,7 @@ countries = {
         own_control_core = {
             albenga genoa lavagna sarzana #Liguria
             # own_control_integrated, but culture accepted
-            bastia calvi bonifacio #Corsica
+            bastia calvi bonifacio aleria #Corsica
         }
 
         own_control_integrated = {
@@ -9845,7 +9845,7 @@ countries = {
             }
             ruler_term = { character = gen_galeotto_spinola start_date = 1337.1.1 end_date = 1338.1.1 regnal_number = 0 }
 
-            ruler_term = { character = gen_raffaele_adorno start_date = 1443.1.28 regnal_number = 0 }
+            ruler_term = { character = gen_raffaelo_adorno start_date = 1443.1.28 regnal_number = 0 }
 
             laws = {
                 republican_foundation_law = republicanism_policy
@@ -11041,12 +11041,14 @@ countries = {
         include = "expl_indian_trade_route"
         include = "catholic_republic"
         government = {
-            type = republic
-            heir_selection = oligarchic_elective
+            type = monarchy
 
             ruler = random # TODO: add me
 
-            ruler_term = { character = frm_mercenario_monteverde start_date = 1331.1.1 regnal_number = 0 }
+            ruler_term = { character = frm_mercenario_monteverde start_date = 1331.1.1 end_date = 1340.2.20 regnal_number = 0 }
+
+            ruler_term = { character = mlo_francesco_i_sforza start_date = 1441.1.1 regnal_number = 0 }
+
         }
 
         tolerated_cultures = {
@@ -11103,7 +11105,7 @@ countries = {
 
             ruler_term = { character = ven_marsilio_rossi start_date = 1333.1.1 end_date = 1335.1.1 regnal_number = 0 }
 
-            ruler_term = { character = ver_mastino_ii_scala start_date = 1335.1.1 regnal_number = 0 }
+            ruler_term = { character = ver_mastino_ii_scala start_date = 1335.1.1 end_date = 1337.1.1 regnal_number = 0 }
 
             regnal_numbers = {
                 name_boniface = 2
@@ -11340,8 +11342,7 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = sal_ludovico_i_del_vasto
 
             ruler_term = { character = sal_manfredo_i_del_vasto start_date = 1142.1.1 end_date = 1175.1.1 regnal_number = 1 }
             ruler_term = { character = sal_manfredo_ii_del_vasto start_date = 1175.1.1 end_date = 1215.1.1 regnal_number = 2 }
@@ -11350,12 +11351,16 @@ countries = {
             ruler_term = { character = sal_manfredo_iv_del_vasto start_date = 1296.1.1 end_date = 1330.1.1 regnal_number = 4 }
             ruler_term = { character = sal_manfredo_del_vasto start_date = 1330.1.1 end_date = 1332.7.29 regnal_number = 5 }
             ruler_term = { character = sal_federico_del_vasto start_date = 1332.7.29 end_date = 1336.6.29 regnal_number = 1 }
-            ruler_term = { character = sal_tommaso_del_vasto start_date = 1336.6.29 regnal_number = 2 }
+            ruler_term = { character = sal_tommaso_del_vasto start_date = 1336.6.29 end_date = 1357.8.18 regnal_number = 2 }
+            ruler_term = { character = sal_federico_ii_del_vasto start_date = 1357.8.18 end_date = 1396.1.1 regnal_number = 2 }
+
+            ruler_term = { character = sal_ludovico_i_del_vasto start_date = 1416.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_manfred = 5
                 name_thomas = 2
                 name_frederick = 1
+                name_louis = 1
             }
 
             reforms = {
@@ -11630,13 +11635,18 @@ countries = {
             ruler_term = { character = crr_enrico_ii_del_carretto start_date = 1185.1.1 end_date = 1231.1.1 regnal_number = 2 }
             ruler_term = { character = crr_giacomo_i_del_carretto start_date = 1231.1.1 end_date = 1268.10.21 regnal_number = 1 }
             ruler_term = { character = crr_antonio_del_carretto start_date = 1268.10.21 end_date = 1313.1.1 regnal_number = 1 }
-            ruler_term = { character = crr_giorgio_del_carretto start_date = 1313.1.1 regnal_number = 1 }
+            ruler_term = { character = crr_giorgio_del_carretto start_date = 1313.1.1 end_date = 1359.1.1 regnal_number = 1 }
+            ruler_term = { character = crr_lazzarino_del_carretto start_date = 1359.1.1 end_date = 1392.5.1 regnal_number = 1 }
+            ruler_term = { character = crr_lazzarino_ii_carretto start_date = 1392.5.1 end_date = 1412.1.1 regnal_number = 2 }
+            ruler_term = { character = crr_galeotto_i_carretto start_date = 1412.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_henry = 2
                 name_james = 1
                 name_anthony = 1
                 name_george = 1
+                name_lazarus = 2
+                name_galehaut = 1
             }
 
             laws = {
@@ -12107,8 +12117,13 @@ countries = {
         include = "catholic_republic_no_coast"
         government = {
             type = republic
-            heir_selection = oligarchic_elective #Priors
-            ruler = random
+            heir_selection = signoria_selection
+            ruler = pea_braccio_i_baglioni
+
+            reforms = {
+                dynastic_signoria_reform
+            }
+            
         }
 
         tolerated_cultures = {
@@ -12371,7 +12386,7 @@ countries = {
 
     ATI = {
         own_control_core = {
-            asti
+            asti ceva
         }
 
         starting_technology_level = 3
@@ -12380,16 +12395,14 @@ countries = {
         include = "expl_silk_road_center"
         include = "expl_silk_road_east"
         include = "expl_indian_trade_route"
-        include = "catholic_republic_no_coast"
+        include = "catholic_monarchy_no_coast"
         government = {
-            type = republic
-            heir_selection = oligarchic_elective
-            ruler = random
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = orl_charles_i_valois_orleans
 
-            ruler_term = {
-                start_date = 1191.1.1 end_date = 1192.1.1
-                character = cev_guglielmo_i_di_ceva regnal_number = 0
-            }
+            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1389.1.1 end_date = 1407.11.23 regnal_number = 1 }
+            ruler_term = { character = orl_charles_i_valois_orleans start_date = 1407.11.23 regnal_number = 1 }
         }
 
         tolerated_cultures = {
@@ -12430,7 +12443,7 @@ countries = {
     # --- CDC ---
 
     CEV = {
-        own_control_core = {
+        our_cores_conquered_by_others = {
             ceva
         }
 
@@ -12509,7 +12522,7 @@ countries = {
                 character = cev_federico_i_di_ceva start_date = 1324.12.30 end_date = 1336.12.31 regnal_number = 1
                 character = cev_emerico_di_ceva start_date = 1324.12.30 end_date = 1336.12.31 regnal_number = 1
             }
-            ruler_term = { character = cev_bonifacio_ii_di_ceva start_date = 1337.1.1 regnal_number = 2 }
+            ruler_term = { character = cev_bonifacio_ii_di_ceva start_date = 1337.1.1 end_date = 1356.1.1 regnal_number = 2 }
 
             regnal_numbers = {
                 name_william = 6
@@ -12634,28 +12647,6 @@ countries = {
 
     # --- CNV ---
 
-    COH = {
-        own_control_core = {
-            aleria
-        }
-
-        starting_technology_level = 3
-        include = "expl_mediterranean"
-        include = "expl_silk_road_west"
-        include = "expl_silk_road_center"
-        include = "expl_silk_road_east"
-        include = "expl_indian_trade_route"
-        include = "catholic_monarchy_not_present"
-        government = {
-            type = monarchy
-            heir_selection = cognatic_primogeniture
-            ruler = random
-        }
-        capital = aleria
-    }
-
-    # --- COH ---
-
     ADI = {
         own_control_core = {
             corte
@@ -12667,7 +12658,7 @@ countries = {
         include = "expl_silk_road_center"
         include = "expl_silk_road_east"
         include = "expl_indian_trade_route"
-        include = "catholic_monarchy_not_present"
+        include = "catholic_monarchy"
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
@@ -12689,12 +12680,18 @@ countries = {
         include = "expl_silk_road_center"
         include = "expl_silk_road_east"
         include = "expl_indian_trade_route"
-        include = "catholic_monarchy_not_present"
+        include = "catholic_monarchy"
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = cor_paolo_i_della_rocca
+
+            ruler_term = { character = cor_arrigu_della_rocca start_date = 1373.1.1 end_date = 1401.6.1 regnal_number = 0 }
+
+            ruler_term = { character = cor_paolo_i_della_rocca start_date = 1420.1.1 regnal_number = 1 }
         }
+
+        dynasty = della_rocca_dynasty
         capital = sartene
     }
 
@@ -12715,9 +12712,13 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = cor_orlando_ii_ornano
+
+            ruler_term = { character = cor_orlando_ii_ornano start_date = 1430.1.1 regnal_number = 2 }
         }
+
         capital = ajaccio
+        dynasty = ornano_dynasty
     }
 
     # --- NUL ---
@@ -12737,7 +12738,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = cor_rinuccio_leca
         }
         capital = vico
     }
@@ -13195,7 +13196,9 @@ countries = {
             type = monarchy
             heir_selection = salic_law
 
-            ruler = random
+            ruler = nap_nicolo_cantelmo
+
+            ruler_term = { character = nap_nicolo_cantelmo start_date = 1443.1.1 }
 
             centralization_vs_decentralization = 30
             traditionalist_vs_innovative = -30
@@ -13296,13 +13299,17 @@ countries = {
         include = "expl_silk_road_center"
         include = "expl_silk_road_east"
         include = "expl_indian_trade_route"
-        include = "catholic_republic_not_present"
+        include = "catholic_monarchy"
         government = {
-            type = republic
-            heir_selection = podesta_elective
+            type = monarchy
+            ruler = pio_paola_colonna
+
+            ruler_term = { character = pio_iacopo_i_appiani start_date = 1392.1.1 end_date = 1398.1.1 regnal_number = 1 }
+            ruler_term = { character = pio_gherardo_appiani start_date = 1398.1.1 end_date = 1405.1.1 regnal_number = 1 }
+            ruler_term = { character = pio_iacopo_ii_appiani start_date = 1405.1.1 end_date = 1441.12.27 regnal_number = 2 }
+            ruler_term = { character = pio_paola_colonna start_date = 1441.12.27 regnal_number = 0 }
 
             reforms = {
-                signoria_reform
             }
             ruler = random
         }
@@ -13518,18 +13525,18 @@ countries = {
         include = "expl_northern_europe"
         capital = bellinzona
         government = {
-            type = republic
-            heir_selection = podesta_elective
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
 
             reforms = {
-                signoria_reform
             }
-            ruler = random
 
             ruler_term = { character = lca_lotario_i_rusconi start_date = 1282.1.1 end_date = 1291.1.1 regnal_number = 0 }
             # Vitale Family 1291-1313
-            ruler_term = { character = lca_franchino_i_rusconi start_date = 1313.1.1 regnal_number = 0 }
+            ruler_term = { character = lca_franchino_i_rusconi start_date = 1313.1.1 end_date 1339.1.1 regnal_number = 0 }
         }
+
         country_rank = rank_county
     }
 
@@ -23734,7 +23741,6 @@ countries = {
     # --- CRO ---
 
     THS = {
-        # Revolter
         our_cores_conquered_by_others = {
             demetrias elassona farsala karditsa larissa stomio trikala
             loidoriki neopatras tyrnavos
@@ -23783,6 +23789,43 @@ countries = {
         liturgical_language = greek_language
 
         capital = neopatras
+    }
+
+    # --- THS ---
+
+    THL = {
+        own_control_integrated = {
+            demetrias elassona farsala karditsa larissa stomio trikala
+            loidoriki neopatras tyrnavos
+            salona zetounion bodonitsa
+            karpenisi pyli
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "turkish_beylik"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = tur_turahan_beg_turahanoglu
+
+            reforms = {
+                uc_bey_reform
+            }
+
+
+            regnal_numbers = {
+            }
+        }
+
+        country_rank = rank_duchy
+        liturgical_language = greek_language
+
+        capital = larissa
     }
 
     # --- THS ---
@@ -26770,7 +26813,7 @@ countries = {
             olsnica jaszbereny virovitica
         }
 
-        own_control_conquered = {
+        our_cores_conquered_by_others = {
             lubica
         }
 
@@ -37961,8 +38004,7 @@ countries = {
         own_control_integrated = {
             kastoria
             bukelon ustra ormenio
-            demetrias farsala elassona larissa siatista stomio trikala tyrnavos pyli karditsa grevena servia ostrovo
-            neopatras zetounion bodonitsa salona loidoriki
+            siatista grevena servia ostrovo
             sredets samokov plovdiv stipon ovech
             hiambouli lardeja boruy
             tarnovo drastar tutrakan cherven razgrad shumen aytos targoviste_BUL sliven kran
@@ -37976,7 +38018,7 @@ countries = {
             dospat bansko krupnik melnik nevrokop
             tsepina
             beden haskovo perperek smolyan stanimaka
-            parga ioannina konitsa argyrokastro avlonya karpenisi
+            parga ioannina konitsa argyrokastro avlonya
             rusokastro
             tulcea enisala isaccea
         }
