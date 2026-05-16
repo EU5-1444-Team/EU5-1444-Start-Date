@@ -5272,7 +5272,7 @@ character_db={
     }
 
     ant_angjelina_arianiti = {
-        first_name = { name = name_angelina }
+        first_name = { name = Angjelina }
         culture = albanian
         religion = orthodox
         female = yes
@@ -39820,11 +39820,185 @@ character_db={
 
     ### dukagjini_dynasty | DGJ ###
 
-    dgj_nicholas_dukagjini = {
+    dgj_tanush_dukagjini_fictional = {
+        first_name = { name = name_tanush }
+        culture = albanian
+        religion = catholic
+        birth_date = 1315.1.1 # Unknown
+        death_date = 1350.1.1 # Unknown
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_pal_i_dukagjini = {
+        first_name = { name = name_paul }
+        culture = albanian
+        religion = catholic
+        birth_date = 1340.1.1
+        death_date = 1393.1.1
+        father = dgj_tanush_dukagjini_fictional
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_progon_dukagjini = {
+        first_name = { name = Progon }
+        culture = albanian
+        religion = catholic
+        birth_date = 1380.1.1
+        death_date = 1394.1.1
+        father = dgj_pal_i_dukagjini
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_tanush_dukagjini = {
+        first_name = { name = name_tanush }
+        nickname = { name = "the Little"}
+        culture = albanian
+        religion = catholic
+        birth_date = 1381.1.1
+        death_date = 1413.1.1
+        father = dgj_pal_i_dukagjini
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_pal_ii_dukagjini = {
+        first_name = { name = name_paul }
+        culture = albanian
+        religion = catholic
+        birth_date = 1383.1.1
+        spouse = dgj_elena_arianiti
+        father = dgj_pal_i_dukagjini
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_andrea_dukagjini = {
+        first_name = { name = name_andrew }
+        culture = albanian
+        religion = catholic
+        birth_date = 1384.1.1
+        death_date = 1416.1.1
+        father = dgj_pal_i_dukagjini
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_gjon_dukagjini = {
+        first_name = { name = name_john }
+        culture = albanian
+        religion = catholic
+        birth_date = 1388.1.1
+        father = dgj_pal_i_dukagjini
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_elena_arianiti = { # Made-up name
+        first_name = { name = name_helen }
+        culture = albanian
+        religion = catholic
+        birth_date = 1405.1.1
+        spouse = dgj_pal_ii_dukagjini
+        father = ant_komin_spata_arianiti
+        dynasty = arianiti_dynasty
+        tag = DGJ
+    }
+
+    dgj_nikolla_ii_dukagjini = {
+        first_name = { name = name_nicholas }
+        culture = albanian
+        religion = catholic
+        birth_date = 1421.1.1
+        father = dgj_pal_ii_dukagjini
+        mother = dgj_elena_arianiti
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_leke_iii_dukagjini_pal = {
+        first_name = { name = Lekë }
+        culture = albanian
+        religion = catholic
+        birth_date = 1422.1.1
+        father = dgj_pal_ii_dukagjini
+        mother = dgj_elena_arianiti
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_progon_dukagjini_pal = {
+        first_name = { name = Progon }
+        culture = albanian
+        religion = catholic
+        birth_date = 1423.1.1
+        father = dgj_pal_ii_dukagjini
+        mother = dgj_elena_arianiti
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_gjergj_dukagjini_pal = {
+        first_name = { name = name_george }
+        culture = albanian
+        religion = catholic
+        birth_date = 1424.1.1
+        father = dgj_pal_ii_dukagjini
+        mother = dgj_elena_arianiti
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_leke_i_dukagjini = {
+        first_name = { name = Lekë }
+        culture = albanian
+        religion = catholic
+        birth_date = 1342.1.1
+        death_date = 1392.1.1
+        father = dgj_tanush_dukagjini_fictional
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_gjergj_dukagjini = {
+        first_name = { name = name_george }
+        culture = albanian
+        religion = catholic
+        birth_date = 1370.1.1
+        death_date = 1415.1.1
+        father = dgj_leke_i_dukagjini
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_nikolla_dukagjini = {
         first_name = { name = name_nicholas }
         culture = albanian
         religion = catholic
         birth_date = 1398.1.1
+        father = dgj_gjergj_dukagjini
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_draga_dukagjini = {
+        first_name = { name = Draga }
+        culture = albanian
+        religion = catholic
+        birth_date = 1420.1.1
+        father = dgj_nikolla_dukagjini
+        dynasty = dukagjini_dynasty
+        tag = DGJ
+    }
+
+    dgj_gjergj_dukagjini_nikolla = {
+        first_name = { name = name_george }
+        culture = albanian
+        religion = catholic
+        birth_date = 1422.1.1
+        father = dgj_nikolla_dukagjini
         dynasty = dukagjini_dynasty
         tag = DGJ
     }
@@ -59808,6 +59982,72 @@ character_db={
         tag = KAT
     }
 
+    kat_aleksander_i_kastrioti = {
+        first_name = { name = name_alexander }
+        culture = albanian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1374.1.1
+        death_date = 1410.1.1
+        birth = kruje
+        father = kat_pal_i_kastrioti
+        dynasty = kastrioti_dynasty
+        tag = KAT
+    }
+
+    kat_konstandin_i_kastrioti = {
+        first_name = { name = name_constantine }
+        culture = albanian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1375.1.1
+        death_date = 1418.1.1
+        birth = kruje
+        father = kat_pal_i_kastrioti
+        dynasty = kastrioti_dynasty
+        tag = KAT
+    }
+
+    kat_reposh_kastrioti = {
+        first_name = { name = Reposh }
+        culture = albanian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1401.1.1
+        death_date = 1430.1.1
+        birth = debar
+        father = kat_gjon_i_kastrioti
+        mother = kat_voisava_tripalda
+        dynasty = kastrioti_dynasty
+        tag = KAT
+    }
+
+    kat_kostandin_kastrioti_reposh = {
+        first_name = { name = name_constantine }
+        culture = albanian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1425.1.1
+        birth = debar
+        father = kat_reposh_kastrioti
+        dynasty = kastrioti_dynasty
+        tag = KAT
+    }
+
+    kat_kostandin_kastrioti_gjon = {
+        first_name = { name = name_constantine }
+        culture = albanian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1402.1.1
+        death_date = 1435.1.1
+        birth = debar
+        father = kat_gjon_i_kastrioti
+        mother = kat_voisava_tripalda
+        dynasty = kastrioti_dynasty
+        tag = KAT
+    }
+
     kat_stanish_kastrioti = {
         first_name = { name = Stanish }
         culture = albanian
@@ -59835,7 +60075,7 @@ character_db={
         tag = KAT
     }
 
-    kat_skanderbeg_kastrioti = { # The man, the myth - https://en.wikipedia.org/wiki/Skanderbeg
+    kat_gjergj_skanderbeg_kastrioti = { # The man, the myth - https://en.wikipedia.org/wiki/Skanderbeg
         first_name = { name = name_george }
         nickname = { name = "Skanderbeg" }
         culture = albanian
@@ -59868,7 +60108,7 @@ character_db={
     }
 
     kat_mamica_kastrioti = {
-        first_name = { name = name_mary }
+        first_name = { name = Mamica }
         culture = albanian
         religion = catholic
         estate = nobles_estate
@@ -77255,7 +77495,7 @@ character_db={
         birth_date = 1337.1.1
         death_date = 1389.1.1
         birth = berat
-        father = mzk_andrea_ii_muzakajt
+        father = mzk_andrea_ii_muzaka
         mother = mzk_efimia_mataranga
         dynasty = muzakajt_dynasty
         tag = MZK
@@ -77266,9 +77506,9 @@ character_db={
         culture = albanian
         religion = orthodox
         birth_date = 1365.1.1
-        death_date = 1405.1.1
+        death_date = 1415.1.1
         birth = berat
-        father = mzk_gjin_muzakajt
+        father = mzk_gjin_muzaka
         dynasty = muzakajt_dynasty
         tag = MZK
     }
@@ -77289,6 +77529,7 @@ character_db={
         first_name = { name = Kirana }
         last_name = { name = Zenebishi }
         culture = albanian
+        female = yes
         religion = orthodox
         female = yes
         birth_date = 1398.1.1
@@ -77340,10 +77581,9 @@ character_db={
         culture = albanian
         religion = orthodox
         female = yes
-        birth_date = 1410.1.1
+        birth_date = 1408.1.1
         birth = berat
-        father = mzk_gjin_ii_muzakajt
-        mother = mzk_kirana_zenebishi
+        father = mzk_andrea_iii_muzakajt
         dynasty = muzakajt_dynasty
         tag = ANT
     }
@@ -77424,18 +77664,6 @@ character_db={
         tag = MZK
     }
 
-    ant_maria_muzakajt_arianiti = {
-        first_name = { name = name_mary }
-        culture = albanian
-        religion = orthodox
-        female = yes
-        birth_date = 1405.1.1
-        birth = berat
-        father = mzk_andrea_iii_muzakajt
-        dynasty = muzakajt_dynasty
-        tag = MZK
-    }
-
     mzk_teodor_ii_muzakajt = {
         first_name = { name = name_theodore }
         culture = albanian
@@ -77443,7 +77671,7 @@ character_db={
         birth_date = 1337.1.1
         death_date = 1389.6.15
         birth = berat
-        father = mzk_andrea_ii_muzakajt
+        father = mzk_andrea_ii_muzaka
         mother = mzk_efimia_mataranga
         dynasty = muzakajt_dynasty
         tag = MZK
@@ -77484,14 +77712,14 @@ character_db={
         health_trait = blind
     }
 
-    mzk_stoya_muzakajt = {
-        first_name = { name = Stoya }
+    mzk_stoje_muzakajt = {
+        first_name = { name = Stojë }
         culture = albanian
         religion = catholic
         birth_date = 1339.1.1
         death_date = 1384.1.1
         birth = berat
-        father = mzk_andrea_ii_muzakajt
+        father = mzk_andrea_ii_muzaka
         mother = mzk_efimia_mataranga
         dynasty = muzakajt_dynasty
         tag = MZK
@@ -77501,10 +77729,11 @@ character_db={
         first_name = { name = Komita }
         culture = albanian
         religion = catholic
+        female = yes
         birth_date = 1339.1.1
         death_date = 1384.1.1
         birth = berat
-        father = mzk_andrea_ii_muzakajt
+        father = mzk_andrea_ii_muzaka
         mother = mzk_efimia_mataranga
         dynasty = muzakajt_dynasty
         tag = MZK
@@ -77514,10 +77743,11 @@ character_db={
         first_name = { name = Kirana }
         culture = albanian
         religion = catholic
+        female = yes
         birth_date = 1341.1.1
         death_date = 1380.1.1
         birth = berat
-        father = mzk_andrea_ii_muzakajt
+        father = mzk_andrea_ii_muzaka
         mother = mzk_efimia_mataranga
         dynasty = muzakajt_dynasty
         tag = MZK
@@ -112362,10 +112592,11 @@ character_db={
         tag = THP
     }
 
-    thp_helena_thopia = {
+    thp_elena_thopia = {
         first_name = { name = name_helen }
         culture = albanian
         religion = catholic
+        female = yes
         birth_date = 1372.1.1
         death_date = 1410.1.1
         birth = kruje
@@ -112378,6 +112609,7 @@ character_db={
         first_name = { name = Voisava }
         culture = albanian
         religion = catholic
+        female = yes
         birth_date = 1373.1.1
         death_date = 1420.1.1
         birth = kruje
@@ -136865,7 +137097,108 @@ character_db={
 		tag = PEA
     }
 
-    t
+    zhr_nikolle_zahariajt = {
+        first_name = { name = name_nicholas }
+		culture = albanian
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1340.1.1
+        death_date = 1388.1.1
+		birth = koman
+        dynasty = zahariajt_dynasty
+		tag = ZHR
+    }
+
+    zhr_koja_zahariajt = {
+        first_name = { name = Koja }
+		culture = albanian
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1370.1.1
+        death_date = 1442.1.1
+		birth = koman
+        father = zhr_nikolle_zahariajt
+        dynasty = zahariajt_dynasty
+		tag = ZHR
+    }
+
+    zhr_bosa_dukagjini = {
+        first_name = { name = Bosa }
+		culture = albanian
+		religion = catholic
+        female = yes
+        estate = nobles_estate
+		birth_date = 1372.1.1
+		birth = koman
+        father = dgj_leke_i_dukagjini
+        dynasty = dukagjini_dynasty
+		tag = ZHR
+    }
+
+    zhr_leke_zahariajt = {
+        first_name = { name = Lekë }
+		culture = albanian
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1395.1.1
+		birth = koman
+        father = zhr_koja_zahariajt
+        mother = zhr_bosa_dukagjini
+        dynasty = zahariajt_dynasty
+		tag = ZHR
+    }
+
+    zet_bolja_zahariajt = {
+        first_name = { name = Bolja }
+		culture = albanian
+		religion = catholic
+        female = yes
+        estate = nobles_estate
+		birth_date = 1396.1.1
+        death_date = 1421.4.1
+		birth = koman
+        father = zhr_koja_zahariajt
+        mother = zhr_bosa_dukagjini
+        dynasty = zahariajt_dynasty
+		tag = ZET
+    }
+
+    zhr_koja_ii_zahariajt = {
+        first_name = { name = Koja }
+		culture = albanian
+		religion = catholic
+        estate = nobles_estate
+		birth_date = 1444.1.1
+		birth = koman
+        father = zhr_leke_zahariajt
+        dynasty = zahariajt_dynasty
+		tag = ZHR
+    }
+
+    kat_pal_ii_gropa = {
+        first_name = { name = name_paul }
+		culture = albanian
+		religion = orthodox
+        estate = nobles_estate
+		birth_date = 1360.1.1
+        death_date = 1412.1.1
+		birth = ohrid
+        dynasty = gropa_dynasty
+		tag = KAT
+    }
+
+    kat_zaharia_gropa = {
+        first_name = { name = Zaharia }
+		culture = albanian
+		religion = orthodox
+        adm = 65 dip = 61 mil = 82
+        estate = nobles_estate
+		birth_date = 1404.1.1
+		birth = ohrid
+        father = kat_pal_ii_gropa
+        dynasty = gropa_dynasty
+		tag = KAT
+    }
     
     #Musha'sha
     mss_muhammad_ibn_falah = {

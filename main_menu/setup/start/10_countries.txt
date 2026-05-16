@@ -22867,7 +22867,11 @@ countries = {
             edirne kirklareli luleburgaz
             servia ostrovo kastoria hatera veria edessa kassandreia polygyros thessaloniki
             kilkis giannitsa gynaikokastro serres rentina kavala mount_athos drama xanthia komotini
-            traianopolis demotica
+            traianopolis demotica eregli
+            biga uskudar ormenio bukelon ustra siatista grevena
+            prosek veles shtip skopje kumanovo kratovo
+            demetrias elassona farsala karditsa larissa stomio trikala
+            loidoriki neopatras tyrnavos
         }
 
         starting_technology_level = 3
@@ -24148,7 +24152,7 @@ countries = {
 
     DGJ = {
         own_control_core = {
-            koman dukagjini has
+            dukagjini has
         }
 
         own_control_integrated = {
@@ -24165,8 +24169,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            ruler = dgj_pal_ii_dukagjini
 
-            ruler = dgj_nicholas_dukagjini
+            ruler_term = { character = dgj_pal_i_dukagjini start_date = 1387.1.1 death_date 1393.1.1 regnal_number = 1 }
+            ruler_term = { character = dgj_tanush_dukagjini start_date = 1393.1.1 death_date 1413.1.1 regnal_number = 1 }
+            ruler_term = { character = dgj_pal_ii_dukagjini start_date = 1413.1.1 regnal_number = 2 }
 
         }
 
@@ -24175,6 +24182,35 @@ countries = {
     }
 
     # --- DGJ ---
+
+    ZHR = {
+        own_control_core = {
+            koman
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+
+            ruler = zhr_leke_zahariajt
+
+            ruler_term = { character = zhr_koja_zahariajt start_date = 1396.1.1 end_date = 1442.1.1 regnal_number = 1 }
+            ruler_term = { character = zhr_leke_zahariajt start_date = 1442.1.1 regnal_number = 1 }
+
+        }
+
+        capital = koman
+        dynasty = zacharia_dynasty
+    }
+
+    # --- ZHR ---
 
     FPN = {
         own_control_core = {
@@ -24303,8 +24339,8 @@ countries = {
 
             ruler_term = { character = mzk_andrea_ii_muzaka start_date = 1331.1.1 end_date = 1372.1.1 regnal_number = 2 }
             ruler_term = { character = mzk_gjin_muzaka start_date = 1372.1.1 end_date = 1389.1.1 regnal_number = 1 }
-            ruler_term = { character = mzk_andrea_iii_muzakajt start_date = 1389.1.1 end_date = 1405.1.1 regnal_number = 3 }
-            ruler_term = { character = mzk_gjin_ii_muzakajt start_date = 1405.1.1 regnal_number = 2 }
+            ruler_term = { character = mzk_andrea_iii_muzakajt start_date = 1389.1.1 end_date = 1415.1.1 regnal_number = 3 }
+            ruler_term = { character = mzk_gjin_ii_muzakajt start_date = 1415.1.1 regnal_number = 2 }
 
             regnal_numbers = {
                 name_andrew = 3
@@ -24342,16 +24378,29 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = kat_skanderbeg_kastrioti
+            ruler = kat_gjergj_skanderbeg_kastrioti
 
             ruler_term = { character = kat_pal_i_kastrioti start_date = 1389.1.1 end_date = 1407.1.1 regnal_number = 1 }
             ruler_term = { character = kat_gjon_i_kastrioti start_date = 1407.1.1 end_date = 1439.1.1 regnal_number = 1 }
-            ruler_term = { character = kat_skanderbeg_kastrioti start_date = 1439.1.1 regnal_number = 1 }
+            ruler_term = { character = kat_gjergj_skanderbeg_kastrioti start_date = 1439.1.1 regnal_number = 1 }
 
             reforms = {
                 local_army_organization
                 garrison_system
             }
+
+            centralization_vs_decentralization = -50
+            traditionalist_vs_innovative = -60
+            spiritualist_vs_humanist = -60
+            aristocracy_vs_plutocracy = -70
+            serfdom_vs_free_subjects = -60
+            mercantilism_vs_free_trade = -70
+            belligerent_vs_conciliatory = -10
+            quality_vs_quantity = -20
+            offensive_vs_defensive = 50
+            land_vs_naval = -20
+            capital_economy_vs_traditional_economy = 60
+            individualism_vs_communalism = 30
         }
 
         capital = kruje
@@ -24687,7 +24736,7 @@ countries = {
 
     THP = {
         own_control_core = {
-            tirana kavaje
+            tirana
         }
 
         starting_technology_level = 3
@@ -24719,7 +24768,7 @@ countries = {
 
     ANT = {
         own_control_core = {
-            elbasan
+            elbasan kavaje
         }
 
         starting_technology_level = 3
