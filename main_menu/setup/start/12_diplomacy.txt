@@ -353,7 +353,7 @@ diplomacy_manager = {
     dependency = { first = NAP second = AIA subject_type = vassal }
     dependency = { first = NAP second = SRR subject_type = vassal }
     dependency = { first = NAP second = RSA subject_type = vassal }
-
+    
     dependency = { first = SIC second = MCA subject_type = vassal }
     dependency = { first = SIC second = GCI subject_type = vassal }
 
@@ -362,9 +362,7 @@ diplomacy_manager = {
     #dependency = { first = ARA second = NUL subject_type = vassal }
     #dependency = { first = GEN second = VCL subject_type = vassal }
 
-    scripted_oneway = { first = PAP second = NAP type = guarantee }
-    scripted_oneway = { first = NAP second = PAP type = guarantee }
-
+    scripted_mutual = { first = NAP second = PAP type = non_aggression_pact }
     #-------Iberia-------
 
     dependency = { first = CAS second = ATS subject_type = appanage }
