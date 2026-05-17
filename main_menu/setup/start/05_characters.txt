@@ -45407,7 +45407,7 @@ character_db={
         religion = orthodox
         adm = 41 dip = 41 mil = 37
         birth_date = 1307.1.1
-        death_date = 1374.7.21
+        death_date = 1367.1.1
         birth = theodoro
         dynasty = gabras_dynasty
         tag = FEO
@@ -45421,7 +45421,7 @@ character_db={
         father = feo_demetrios_gabras
         mother = feo_maria_gabras
         birth_date = 1327.1.1
-        death_date = 1395.11.12
+        death_date = 1397.1.1
         birth = theodoro
         dynasty = gabras_dynasty
         tag = FEO
@@ -45431,22 +45431,103 @@ character_db={
         first_name = { name = name_stephen }
         culture = gothic_culture
         religion = orthodox
-        birth_date = 1395.1.1 # Estimated
+        birth_date = 1365.1.1 # Estimated
+        death_date = 1405.1.1
         birth = theodoro
+        father = feo_basilios_gabras
         dynasty = gabras_dynasty
         tag = FEO
     }
 
-    feo_alexios_gabras = {
+    feo_alexios_i_gabras = {
         first_name = { name = name_alexis }
         culture = gothic_culture
         religion = orthodox
-        birth_date = 1426.1.1 # Estimated
+        birth_date = 1385.1.1 # Estimated
         birth = theodoro
         dynasty = gabras_dynasty
         father = feo_stephen_gabras
         mother = feo_mother_of_alexios
         tag = FEO
+    }
+
+    tre_maria_gabras = {
+        first_name = { name = name_mary }
+        culture = gothic_culture
+        religion = orthodox
+        female = yes
+        birth_date = 1408.1.1
+        birth = theodoro
+        father = feo_alexios_i_gabras
+        dynasty = gabras_dynasty
+        tag = TRE
+    }
+
+    feo_johann_gabras = {
+        first_name = { name = name_john }
+        culture = gothic_culture
+        religion = orthodox
+        birth_date = 1410.1.1
+        birth = theodoro
+        father = feo_alexios_i_gabras
+        dynasty = gabras_dynasty
+        tag = FEO
+    }
+
+    feo_alexios_ii_gabras = {
+        first_name = { name = name_alexis }
+        culture = gothic_culture
+        religion = orthodox
+        birth_date = 1443.1.1
+        birth = theodoro
+        father = feo_johann_gabras
+        dynasty = gabras_dynasty
+        tag = FEO
+    }
+
+    feo_olubei_gabras = {
+        first_name = { name = Olubei }
+        culture = gothic_culture
+        religion = orthodox
+        birth_date = 1412.1.1
+        birth = theodoro
+        father = feo_alexios_i_gabras
+        dynasty = gabras_dynasty
+        tag = FEO
+    }
+
+    feo_isaac_gabras = {
+        first_name = { name = name_isaac }
+        culture = gothic_culture
+        religion = orthodox
+        birth_date = 1432.1.1
+        birth = theodoro
+        father = feo_olubei_gabras
+        dynasty = gabras_dynasty
+        tag = FEO
+    }
+
+    feo_alexander_gabras = {
+        first_name = { name = name_alexander }
+        culture = gothic_culture
+        religion = orthodox
+        birth_date = 1435.1.1
+        birth = theodoro
+        father = feo_olubei_gabras
+        dynasty = gabras_dynasty
+        tag = FEO
+    }
+
+    feo_gregor_gabras_monk = {
+        first_name = { name = name_gregory }
+        culture = gothic_culture
+        religion = orthodox
+        father = feo_stephen_gabras
+        birth_date = 1387.1.1
+        estate = clergy_estate
+        birth = theodoro
+        dynasty = gabras_dynasty
+        tag = MOS
     }
 
     ### gabrielli_dynasty | FLO ###
@@ -63268,7 +63349,7 @@ character_db={
         father = tre_alexios_i_komnenos
         #mother = Theodora Auxouchina
         spouse = tre_andronikos_i_gidos
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = BYZ
     }
 
@@ -63281,7 +63362,7 @@ character_db={
         birth = trebizond
         father = tre_ioannes_ii_komnenos
         mother = tre_eudokia_palaiologina
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = BYZ
     }
 
@@ -63294,7 +63375,7 @@ character_db={
         birth = constantinople
         father = tre_michael_komnenos
         #mother = Daughter of Konstantinos Akropolites
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = BYZ
     }
 
@@ -63326,7 +63407,7 @@ character_db={
         birth = constantinople
         father = byz_manouel_komnenos
         #mother = Rusudan of Georgia
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty # Founder of the Great Komnenos line
+        dynasty = megas_komnenos_dynasty
         tag = TRE
     }
 
@@ -63339,7 +63420,7 @@ character_db={
         birth = trebizond
         father = tre_alexios_i_komnenos
         #mother = Theodora Auxouchina
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
     }
 
@@ -63353,7 +63434,7 @@ character_db={
         birth = trebizond
         father = tre_alexios_i_komnenos
         #mother = Theodora Auxouchina
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
         ruler_trait = midas_touched
     }
@@ -63367,7 +63448,7 @@ character_db={
         birth = trebizond
         father = tre_manouel_i_komnenos
         #mother = Anna Xylaloe
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
     }
 
@@ -63381,7 +63462,7 @@ character_db={
         birth = trebizond
         father = tre_manouel_i_komnenos
         #mother = Rusudan of Georgia
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
     }
 
@@ -63394,7 +63475,7 @@ character_db={
         birth = trebizond
         father = tre_manouel_i_komnenos
         #mother = Irene Syrikaina
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
         ruler_trait = calm
     }
@@ -63409,7 +63490,7 @@ character_db={
         birth = trebizond
         father = tre_manouel_i_komnenos
         #mother = Irene Syrikaina
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
         ruler_trait = righteous
     }
@@ -63425,7 +63506,7 @@ character_db={
         father = tre_ioannes_ii_komnenos
         mother = tre_eudokia_palaiologina
         spouse = sme_jiajak
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
         ruler_trait = incorruptible
         ruler_trait = righteous
@@ -63440,7 +63521,7 @@ character_db={
         birth = trebizond
         father = tre_alexios_ii_komnenos
         mother = sme_jiajak
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
         ruler_trait = sinner
     }
@@ -63454,7 +63535,7 @@ character_db={
         birth = trebizond
         father = tre_alexios_ii_komnenos
         mother = sme_jiajak
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
         ruler_trait = sinner
     }
@@ -63470,7 +63551,7 @@ character_db={
         birth = trebizond
         father = tre_alexios_ii_komnenos
         mother = sme_jiajak
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
     }
 
@@ -63483,7 +63564,7 @@ character_db={
         birth = trebizond
         father = tre_andronikos_iii_komnenos
         #mother = Unknown
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
     }
 
@@ -63497,7 +63578,7 @@ character_db={
         birth = trebizond
         father = tre_basil_komnenos
         mother = tre_irene_palaiologos
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
     }
 
@@ -63510,7 +63591,7 @@ character_db={
         birth = trebizond
         father = tre_basil_komnenos
         mother = tre_irene_trebizond
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
     }
 
@@ -63525,7 +63606,7 @@ character_db={
         birth = trebizond
         father = tre_basil_komnenos
         mother = tre_irene_trebizond
-        dynasty = komnenos_dynasty # Should be dynasty = megas_komnenos_dynasty
+        dynasty = megas_komnenos_dynasty
         tag = TRE
     }
 
@@ -129775,7 +129856,7 @@ character_db={
         female = yes
         spouse = feo_demetrios_gabras
         birth_date = 1307.1.1
-        death_date = 1365.9.17
+        death_date = 1357.1.1
         birth = theodoro
         tag = FEO
     }
