@@ -1,0 +1,415 @@
+# area preference definitions - pure data, no country or allowed fields.
+# Use add_area_preference = <key> in on_game_start, missions, or events to assign them.
+#
+# example = {
+#	preference_type = exploration / conquest
+#	modifier = 2 (can be below 1 to reduce desire)
+#	area = atlantic_north_atlantic_current_area
+#	region = east_coast_region
+#	continent = bla_bla
+#	sub_continent = bla
+#}
+
+
+england_explore_usa = {
+	preference_type = exploration
+	modifier = 2
+
+	area = atlantic_north_atlantic_current_area
+	area = atlantic_irminger_area
+	area = labrador_sea_area
+	area = atlantic_labrador_area
+	area = azores_sea_area
+
+	region = canada_region
+	region = east_coast_region
+}
+
+england_explore_india = {
+	preference_type = exploration
+	modifier = 2
+
+	area = nw_africa_coast_area
+	area = west_africa_coastline
+	area = gulf_of_africa_sea
+	area = central_africa_coastline_area
+	area = southern_africa_coast_area
+	area = mozambique_channel_area
+	area = somali_sea_area
+	area = indian_horn_area
+	area = deccan_sea_zones_area
+}
+
+#PORTUGAL
+portugal_explore_asia = {
+	preference_type = exploration
+	modifier = 0.75
+	continent = africa
+	sub_continent = south_asia
+}
+
+portugal_explore_middle_east = {
+	preference_type = exploration
+	modifier = 0.95
+	sub_continent = middle_east
+}
+
+portugal_explore_brazil = {
+	preference_type = exploration
+	modifier = 3
+	region = brazil_region
+
+	#Add Naval Regions on the way to preferred land
+	area = nw_africa_coast_area
+	area = atlantic_north_equatorial_area
+	area = west_africa_coastline
+	area = atlantic_equatorial_countercurrent_area
+	area = guayana_sea_zones_area
+	area = azores_sea_area
+	area = azores_area
+}
+
+castile_explore_america = {
+	preference_type = exploration
+	modifier = 3
+	sub_continent = south_america
+	region = mesoamerica_region
+	region = central_america_region
+	region = aridoamerica_region
+
+	#Add Naval Regions on the way to preferred land
+	area = azores_sea_area
+	area = azores_area
+	area = nw_africa_coast_area
+	area = west_africa_coastline
+	area = atlantic_north_equatorial_area
+	area = antilles_sea_area
+	area = east_caribbean_sea_area
+	area = west_caribbean_sea_area
+	area = gulf_of_mexico_area
+	area = bahamas_sea_area
+}
+
+castile_explore_staging = {
+	preference_type = exploration
+	modifier = 2.5
+
+	#area preference for staging colonies needed to extend range
+	area = cuba_area
+	area = hispaniola_area
+}
+
+#adding brazil as a negative after adding south america as a positive will override what came before
+castile_explore_brazil = {
+	preference_type = exploration
+	modifier = -0.5
+	region = brazil_region
+}
+
+
+#SWEDEN
+sweden_colonize_finland = {
+	preference_type = exploration
+	modifier = 3.0
+	area = finland_area
+}
+
+sweden_colonize_norrland = {
+	preference_type = exploration
+	modifier = 2.0
+	area = norrland_area
+}
+
+#NORWAY
+norway_colonize_nord_norge = {
+	preference_type = exploration
+	modifier = 2.0
+	area = nord_norge_area
+}
+
+##################
+##### CONQUEST ###
+##################
+
+naples_conquer_siciliy = {
+	preference_type = conquest
+	modifier = 10.0
+
+	area = apulia_area
+	area = campania_area
+	area = basilicata_area
+	area = abruzzo_area
+	area = sicily_area
+}
+
+siciliy_conquer_naples = {
+	preference_type = conquest
+	modifier = 10.0
+
+	area = apulia_area
+	area = campania_area
+	area = basilicata_area
+	area = abruzzo_area
+	area = sicily_area
+}
+
+castile_conquer_spain = {
+	preference_type = conquest
+	modifier = 10.0
+
+	area = granada_area
+	area = andalusia_area
+	area = murcia_area
+	area = valencia_area
+	area = aragon_area
+	area = catalonia_area
+	area = navarre_area
+}
+
+ottoman_expansion_anatolia = {
+	preference_type = conquest
+	modifier = 10.0
+
+	region = anatolia_region
+	region = caucasus_region
+}
+
+ottoman_expansion_balkan = {
+	preference_type = conquest
+	modifier = 10
+
+	region = balkan_region
+}
+
+ottoman_expansion_caucasus = {
+	preference_type = conquest
+	modifier = 10
+
+	region = caucasus_region
+}
+
+
+russia_conquer_region = {
+	preference_type = conquest
+	modifier = 10
+	region = russian_region
+	region = steppes_region
+	region = ural_region
+}
+
+lithuania_conquer_livonia = {
+	preference_type = conquest
+	modifier = 10
+	area = baltic_area
+}
+
+lithuania_conquer_ruthenia = {
+	preference_type = conquest
+	modifier = 5
+	region = ruthenia_region
+	area = zaporizhzhia_area
+}
+
+poland_conquer_prussia = {
+	preference_type = conquest
+	modifier = 5
+	area = prussia_area
+}
+
+poland_conquer_ruthenia = {
+	preference_type = conquest
+	modifier = 2.5
+	region = ruthenia_region
+	area = zaporizhzhia_area
+}
+
+england_conquer_britain = {
+	preference_type = conquest
+	modifier = 5
+	region = great_britain_region
+}
+
+pale_conquer_ireland = {
+	preference_type = conquest
+	modifier = 10
+	region = ireland_region
+}
+
+scotland_conquer_scotland = {
+	preference_type = conquest
+	modifier = 5
+	area = scottish_lowlands_area
+	area = scottish_highlands_area
+	area = hebrides_area
+	area = northern_isles_area
+}
+
+byzantium_conquer_anatolia = {
+	preference_type = conquest
+	modifier = 5
+	region = anatolia_region
+}
+
+byzantium_conquer_balkans = {
+	preference_type = conquest
+	modifier = 5
+	region = balkan_region
+}
+
+byzantium_conquer_italy = {
+	preference_type = conquest
+	modifier = 2.5
+	region = italy_region
+}
+
+############
+### 1444 ###
+############
+
+conquer_tibet = {
+	preference_type = conquest
+	modifier = 10
+	region = tibet_region
+}
+
+colonize_tibet = {
+	preference_type = exploration
+	modifier = 3.0
+	region = tibet_region
+}
+
+ming_joseon_dont_colonise_anything = {
+	preference_type = exploration
+	modifier = 0.1
+	sub_continent = east_asia
+}
+
+ming_joseon_dont_conquer_anything = {
+	preference_type = conquest
+	modifier = 0.1
+	sub_continent = east_asia
+}
+
+conquer_china = {
+	preference_type = conquest
+	modifier = 10
+	region = west_china_region
+	region = east_china_region
+	region = north_china_region
+	region = south_china_region
+}
+
+conquer_korea = {
+	preference_type = conquest
+	modifier = 10
+	region = korea_region
+}
+
+conquer_bengal = {
+	preference_type = conquest
+	modifier = 10
+	region = bengal_region
+}
+
+conquer_khorasan = {
+	preference_type = conquest
+	modifier = 10
+	region = khorasan_region
+}
+
+uzbek_conquer_bukhara = {
+	preference_type = conquest
+	modifier = 100
+	province = bukhara_province
+}
+
+conquer_burma = {
+	preference_type = conquest
+	modifier = 10
+	area = arakhan_area
+	area = irrawaddy_area
+	area = hill_area
+	area = kachin_area
+	area = shan_highland_area
+	area = irrawaddy_delta_area
+}
+
+dai_viet_conquer_southern_china = {
+	preference_type = conquest
+	modifier = 5
+	area = liangjiang_area
+	area = guangxi_area
+	area = guangdong_area
+	area = haibei_hainan_area
+}
+
+dai_viet_conquer_champa_khmer = {
+	preference_type = conquest
+	modifier = 10
+	area = champa_area
+	area = lower_mekong_area
+}
+
+conquer_indochina = {
+	preference_type = conquest
+	modifier = 10
+	region = indochina_region
+}
+
+conquer_manchuria = {
+	preference_type = conquest
+	modifier = 10
+	region = manchuria_region
+}
+
+conquer_france = {
+	preference_type = conquest
+	modifier = 10
+	region = france_region
+}
+
+conquer_netherlands = {
+	preference_type = conquest
+	modifier = 10
+	area = holland_area
+	area = friesland_area
+	area = brabant_area
+	area = flanders_area
+	area = wallonia_area
+}
+
+conquer_india = {
+	preference_type = conquest
+	modifier = 10
+	sub_continent = south_asia
+}
+
+mughals_conquer_persia = {
+	preference_type = conquest
+	modifier = 5
+	sub_continent = south_asia
+}
+
+conquer_persia = {
+	preference_type = conquest
+	modifier = 10
+	region = persia_region
+}
+
+conquer_caucasus = {
+	preference_type = conquest
+	modifier = 10
+	region = caucasus_region
+}
+
+conquer_pontic_steppe = {
+	preference_type = conquest
+	modifier = 10
+	region = steppes_region
+}
+
+conquer_carpathia = {
+	preference_type = conquest
+	modifier = 10
+	region = carpathia_region
+}
