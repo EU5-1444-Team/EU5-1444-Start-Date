@@ -774,7 +774,10 @@ country_flavor = {
 	text = {
 		localization_key = rank_kingdom_tsar
 		trigger = {
-			tag = VID
+			OR = {
+				tag = VID
+				tag = BUL
+			}
 		}
 	}
 	text = {
@@ -2046,6 +2049,8 @@ country_flavor = {
 				tag = FEO
 				tag = SLJ
 				tag = PIO
+				tag = RSA
+				tag = TTO
 				culture = culture:armenian_culture
 			}
 			OR = {

@@ -496,9 +496,16 @@ diplomacy_manager = {
     #Balkans:
     dependency = { first = WAL second = OLT subject_type = vassal }
 
-    scripted_mutual = { first = KAT second = ZET type = alliance }
+    scripted_mutual = { first = KAT second = ZET type = alliance } # Kastrioti-Crnojevići Alliance
+
+    scripted_mutual = { first = BYZ second = TRE type = alliance } 
+    scripted_oneway = { first = GEN second = BYZ type = guarantee } # Sent ships and support
+    scripted_oneway = { first = VEN second = BYZ type = guarantee } # Sent ships and support
 
     #Anatolia
+    dependency = { first = TUR second = CND subject_type = vassal }
+    dependency = { first = KAR second = ALY subject_type = vassal }
+
     dependency = { first = BIT second = HZN subject_type = vassal }
     dependency = { first = QAR second = ATZ subject_type = vassal }
     dependency = { first = QAR second = DML subject_type = vassal }
@@ -513,6 +520,8 @@ diplomacy_manager = {
     dependency = { first = QAR second = ZBR subject_type = vassal }
     dependency = { first = MAM second = KIL subject_type = vassal }
     #dependency = { first = MAM second = DUL subject_type = tributary }
+    dependency = { first = MAM second = DUL subject_type = vassal }
+    dependency = { first = MAM second = CYP subject_type = vassal }
     scripted_oneway = { first = MAM second = DUL type = guarantee }
     dependency = { first = AQQ second = EGL subject_type = vassal }
     dependency = { first = AQQ second = BIN subject_type = vassal }
@@ -526,9 +535,10 @@ diplomacy_manager = {
     dependency = { first = QAR second = DMB subject_type = vassal }
     dependency = { first = CND second = BFR subject_type = vassal }
 
-    scripted_mutual = { first = BYZ second = TRE type = alliance }
-    #scripted_mutual = { first = MAM second = CND type = alliance }
-    #scripted_mutual = { first = MAM second = KAR type = alliance }
+    
+
+    scripted_mutual = { first = MAM second = KAR type = alliance } # Mamluk-Karamanid historical alliance
+
     scripted_mutual = { first = MKW second = ZZR type = alliance }
 
     #-------------Caucasus------------
@@ -961,9 +971,12 @@ diplomacy_manager = {
     dependency = { first = ARA second = SAR subject_type = fiefdom }
     dependency = { first = SAR second = ORN subject_type = vassal }
 
+    dependency = { first = SER second = ZET subject_type = vassal }
+
     dependency = { first = TUR second = WAL subject_type = tributary }
     dependency = { first = TUR second = SER subject_type = tributary }
     dependency = { first = TUR second = THL subject_type = uc_bey }
+    dependency = { first = TUR second = USK subject_type = uc_bey }
 
     dependency = { first = HUN second = TRA subject_type = vassal }
     dependency = { first = TRA second = SZE subject_type = fiefdom }
@@ -982,9 +995,6 @@ diplomacy_manager = {
 
     scripted_oneway = { first = ARA second = HUM type = guarantee }
     #dependency = { first = ARA second = HUM subject_type = tributary }
-
-    scripted_oneway = { first = MAM second = CYP type = guarantee }
-    #dependency = { first = MAM second = CYP subject_type = tributary }
 
     # ----- TIMURID EMPIRE (1444) ------
     dependency = { first = TIM second = KRM subject_type = timurid_appanage }

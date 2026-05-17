@@ -22868,10 +22868,10 @@ countries = {
             servia ostrovo kastoria hatera veria edessa kassandreia polygyros thessaloniki
             kilkis giannitsa gynaikokastro serres rentina kavala mount_athos drama xanthia komotini
             traianopolis demotica eregli
-            biga uskudar ormenio bukelon ustra siatista grevena
+            biga uskudar silli ormenio bukelon ustra siatista grevena
             prosek veles shtip skopje kumanovo kratovo
             demetrias elassona farsala karditsa larissa stomio trikala
-            loidoriki neopatras tyrnavos
+            loidoriki neopatras tyrnavos salona zetounion bodonitsa
         }
 
         starting_technology_level = 3
@@ -23188,17 +23188,16 @@ countries = {
         starting_technology_level = 3
         include = "expl_mediterranean"
         include = "eastern_european_monarchy"
-        country_rank = rank_kingdom
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-
-            ruler = random
-            consort = random
+            ruler = bul_fruzhin_sratsimir_lovech
 
             ruler_term = { character = bul_michael_shishman start_date = 1323.8.15 end_date = 1330.7.31 regnal_number = 3 }
             ruler_term = { character = bul_ivan_stefan start_date = 1330.8.15 end_date = 1331.3.1 }
-            ruler_term = { character = bul_ivan_alexander start_date = 1331.3.1 }
+            ruler_term = { character = bul_ivan_alexander start_date = 1331.3.1 end_date = 1371.2.17 }
+
+            ruler_term = { character = bul_fruzhin_sratsimir_lovech start_date = 1422.9.17 }
 
             regnal_numbers = {
                 name_peter = 2
@@ -23219,6 +23218,7 @@ countries = {
 
         liturgical_language = church_slavonic_language
 
+        country_rank = rank_kingdom
         capital = tarnovo
         dynasty = sratsimir_dynasty
     }
@@ -23533,10 +23533,10 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            ruler = byz_konstantinos_xi_palaiologos
+            heir = moe_thomas_palaiologos
 
-            ruler = moe_thomas_palaiologos
-
-            ruler_term = { character = moe_thomas_palaiologos start_date = 1428.1.1 regnal_number = 1 }
+            ruler_term = { character = byz_konstantinos_xi_palaiologos start_date = 1428.5.1 regnal_number = 1 }
 
             regnal_numbers = {
             }
@@ -23826,13 +23826,47 @@ countries = {
             }
         }
 
-        country_rank = rank_duchy
+        country_rank = rank_county
         liturgical_language = greek_language
 
         capital = larissa
     }
 
     # --- THS ---
+
+    USK = {
+        own_control_integrated = {
+            skopje kumanovo shtip kratovo kocani
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "turkish_beylik"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = tur_ishak_beg_turahanoglu
+
+            reforms = {
+                uc_bey_reform
+            }
+
+
+            regnal_numbers = {
+            }
+        }
+
+        country_rank = rank_county
+        liturgical_language = greek_language
+
+        capital = skopje
+    }
+
+    # --- USK ---
 
     CRT = {
         #Candia https://en.wikipedia.org/wiki/Kingdom_of_Candia
@@ -23981,7 +24015,7 @@ countries = {
 
             ruler_term = { character = ath_gautier_v_brienne start_date = 1308.10.5 end_date = 1311.3.15 regnal_number = 1 }
 
-            ruler_term = { character = arg_gautier_vi_brienne start_date = 1311.3.15 end_date = 1311.3.15 regnal_number = 2 }
+            ruler_term = { character = arg_gautier_vi_brienne start_date = 1311.3.15 end_date = 1356.9.19 regnal_number = 2 }
 
             regnal_numbers = {
                 name_otto = 2
@@ -24024,7 +24058,7 @@ countries = {
             ruler_term = { character = ath_gautier_v_brienne start_date = 1308.10.5 end_date = 1311.3.15 regnal_number = 1 }
 
             ruler_term = { character = ath_manfred start_date = 1312.1.1 end_date = 1317.11.9 regnal_number = 1 }
-            ruler_term = { character = ath_william start_date = 1317.11.9 end_date = 1383.8.22 regnal_number = 2 }
+            ruler_term = { character = ath_william start_date = 1317.11.9 end_date = 1338.8.22 regnal_number = 2 }
 
             regnal_numbers = {
                 name_otto = 1
@@ -24429,8 +24463,17 @@ countries = {
         include = "expl_indian_trade_route"
 
         government = {
-            ruler = random # TODO: add me
-            ruler_term = { character = kni_helion_de_villeneuve start_date = 1319.6.18 }
+            ruler = kni_jean_de_lastic
+            ruler_term = { character = kni_helion_de_villeneuve start_date = 1319.6.18 end_date = 1346.5.27 }
+            ruler_term = { character = kni_dieudonne_de_gozon start_date = 1346.5.27 end_date = 1353.1.1 }
+            ruler_term = { character = kni_pierre_de_corneillan start_date = 1353.1.1 end_date = 1355.8.24 }
+            ruler_term = { character = kni_roger_de_pins start_date = 1355.8.24 end_date = 1365.5.28 }
+            ruler_term = { character = kni_rraymond_berengar start_date = 1365.5.28 end_date = 1374.1.1 }
+            ruler_term = { character = kni_robert_de_juilly start_date = 1374.1.1 end_date = 1377.7.29 }
+            ruler_term = { character = kni_juan_fernandez_de_heredia start_date = 1377.7.29 end_date = 1396.1.1 }
+            ruler_term = { character = kni_philibert_de_naillac start_date = 1396.1.1 end_date = 1421.1.1 }
+            ruler_term = { character = kni_anton_flavian_de_ripa start_date = 1421.1.1 end_date = 1437.1.1 }
+            ruler_term = { character = kni_jean_de_lastic start_date = 1437.1.1 }
 
             reforms = {
                 crusade_sea_reform
@@ -24617,7 +24660,7 @@ countries = {
             ruler = random
             designated_heir_reason = sibling_of_ruler
 
-            ruler_term = { character = ath_william start_date = 1319.1.1 regnal_number = 1 }
+            ruler_term = { character = ath_william start_date = 1319.1.1 end_date = 1338.8.22 regnal_number = 1 }
 
             regnal_numbers = {
                 name_william = 1
@@ -24880,7 +24923,9 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = bul_fruzhin_lovech
+            ruler = bul_fruzhin_sratsimir_lovech
+
+            ruler_term = { character = bul_fruzhin_sratsimir_lovech start_date = 1402.1.1 }
 
             regnal_numbers = {
             }
@@ -24892,7 +24937,7 @@ countries = {
 
         liturgical_language = church_slavonic_language
 
-        country_rank = rank_duchy
+        country_rank = rank_county
         capital = lovech
         dynasty = sratsimir_dynasty
     }
@@ -24962,7 +25007,8 @@ countries = {
                 character = bod_bartolomeo_zaccaria start_date = 1327.1.1 end_date = 1334.1.1 regnal_number = 1 # Marital Co-Ruler
             }
             ruler_term = { character = bod_guglielma_pallavicini start_date = 1334.1.1 end_date = 1335.1.1 regnal_number = 1 }
-            ruler_term = { character = bod_niccolo_i_zorzi start_date = 1335.1.1 regnal_number = 1 }
+            ruler_term = { character = bod_niccolo_i_zorzi start_date = 1335.1.1 end_date = 1345.1.1 regnal_number = 1 }
+
             regnal_numbers = {
                 name_wido = 1
                 name_hubert = 1
@@ -32555,7 +32601,7 @@ countries = {
         government = {
             ruler = random
             ruler_term = { character = bkz_sayf_al_din_abu_abdallah_muhammad start_date = 1317.1.1 end_date = 1333.1.1 regnal_number = 2 }
-            ruler_term = { character = bkz_alam_al_din_ali start_date = 1333.1.1 regnal_number = 1 }
+            ruler_term = { character = bkz_alam_al_din_ali start_date = 1333.1.1 end_date = 1365.1.1 regnal_number = 1 }
         }
         religious_school = maliki_school
         government = { mysticism_vs_jurisprudence = -5 }
@@ -38070,24 +38116,23 @@ countries = {
             sredets samokov plovdiv stipon ovech
             hiambouli lardeja boruy
             tarnovo drastar tutrakan cherven razgrad shumen aytos targoviste_BUL sliven kran
-            nikopol pleven vratsa kutlovitsa vidin oryahovo bozhenitsa hotalich tryavna
+            nikopol pleven vratsa kutlovitsa oryahovo bozhenitsa hotalich tryavna
             varna karvuna pangalia kaliakra
-            harsova
             archar lom gigen dobrolak svoge kostenets strelcha ruse kladentsi lyaskovets veliki_preslav ktenia constantia_bul elhovo
-            babadag cernavoda constanta
-            visesav kozelj svrljig pirot tsaribrod
+            tsaribrod
             zemlungrad dupnitsa
             dospat bansko krupnik melnik nevrokop
             tsepina
             beden haskovo perperek smolyan stanimaka
             parga ioannina konitsa argyrokastro avlonya
             rusokastro
-            tulcea enisala isaccea
         }
 
         own_control_conquered = {
             velbuzd
-            skopje kumanovo veles prosek shtip kratovo kocani strumica
+            veles prosek strumica
+            vidin visesav kozelj svrljig pirot
+            babadag cernavoda constanta harsova tulcea enisala isaccea
             ohrid tetovo bitola prilep kicevo florina kleisoura_epirus
             giurgiu
         }
@@ -38280,11 +38325,14 @@ countries = {
         include = "expl_muslim_mediterranean"
         include = "turkish_beylik"
         government = {
+            ruler = kar_ibraham_ii_karamanids
+
             ruler_term = { character = kar_mahmut start_date = 1300.1.1 end_date = 1312.1.1 }
             ruler_term = { character = kar_musa start_date = 1312.1.1 end_date = 1318.1.1 }
-            ruler_term = { character = kar_ibrahim start_date = 1318.1.1 end_date = 1332.1.1 }
-            ruler_term = { character = kar_alaeddin_halil_mirza start_date = 1332.1.1 }
-            ruler = random # TODO: add me
+            ruler_term = { character = kar_ibrahim start_date = 1318.1.1 end_date = 1332.1.1 regnal_number = 1 }
+            ruler_term = { character = kar_alaeddin_halil_mirza start_date = 1332.1.1 end_date = 1340.1.1 }
+        
+            ruler_term = { character = kar_ibraham_ii_karamanids start_date = 1423.1.1 regnal_number = 2}
 
             privilege = {
                 sponsor_maritime_contracts
@@ -38298,6 +38346,7 @@ countries = {
             turkoman_culture
         }
 
+        country_rank = rank_duchy
         capital = konya
         religious_school = maturidi_school #Widespread among the Turks together with Hanafi
     }
@@ -38327,8 +38376,12 @@ countries = {
         include = "turkish_beylik_no_coast_no_greek"
 
         government = {
-            ruler_term = { character = dul_karaca start_date = 1337.1.1 }
-            ruler = random # TODO: add me
+            ruler = dul_suleyman_beg_dulkadirids
+
+            ruler_term = { character = dul_karaca start_date = 1337.1.1 end_date = 1353.12.11 }
+
+            ruler_term = { character = dul_suleyman_beg_dulkadirids start_date = 1442.10.1 }
+            
             privilege = {
                 dhimmi_abrahamic_communities
             }
@@ -38338,6 +38391,7 @@ countries = {
             }
         }
 
+        country_rank = rank_duchy
         capital = elbistan
         religious_school = ismaili_school
         tolerated_cultures = {
@@ -38493,9 +38547,15 @@ countries = {
         include = "turkish_beylik"
 
         government = {
+            ruler = cnd_kemaleddin_ismail_candarids
+
             ruler_term = { character = cnd_yaman start_date = 1291.1.1 end_date = 1309.1.1 }
-            ruler_term = { character = cnd_suleyman start_date = 1309.1.1 }
-            ruler = random # TODO: add me
+            ruler_term = { character = cnd_suleyman start_date = 1309.1.1 end_date = 1340.1.1 }
+            ruler_term = { character = cnd_ibrahim start_date = 1340.1.1 end_date = 1346.1.1 }
+
+            ruler_term = { character = cnd_mubariz_al_din_isfendiyar_candarids start_date = 1385.1.1 end_date = 1440.1.1 }
+            ruler_term = { character = cnd_taceddin_ibrahim_ii_candarids start_date = 1440.1.1 end_date = 1443.1.1 }
+            ruler_term = { character = cnd_kemaleddin_ismail_candarids start_date = 1443.1.1 }
 
             #Naval Beylik
             land_vs_naval = 40
@@ -38504,9 +38564,9 @@ countries = {
                 sponsor_maritime_contracts
                 dhimmi_abrahamic_communities
             }
-
         }
 
+        country_rank = rank_duchy
         capital = kastamonu
         religious_school = mevlevi_school
         tolerated_cultures = {
@@ -38596,9 +38656,15 @@ countries = {
         include = "turkish_beylik"
 
         government = {
+            ruler = ram_dundar_beg_ramazanids
+
+            ruler_term = { character = ram_dundar_beg_ramazanids start_date = 1439.1.1 }
         }
 
+        country_rank = rank_duchy
+        dynasty = ramazanids_dynasty
         capital = adana
+
         religious_school = ismaili_school
         tolerated_cultures = {
             armenian_culture
@@ -38998,10 +39064,13 @@ countries = {
         include = "expl_muslim_mediterranean"
         include = "turkish_beylik_no_mining"
         government = {
-            ruler_term = { character = kar_mahmut start_date = 1293.1.1 end_date = 1308.1.1 }
-            ruler_term = { character = aly_yusuf start_date = 1308.1.1 }
-            ruler = random # TODO: add me
+            ruler = aly_lufti_karamanids
 
+            ruler_term = { character = kar_mahmut start_date = 1293.1.1 end_date = 1308.1.1 }
+            ruler_term = { character = aly_yusuf start_date = 1308.1.1 end_date = 1337.1.1 }
+
+            ruler_term = { character = aly_lufti_karamanids start_date = 1430.1.1 }
+            
             privilege = {
                 sponsor_maritime_contracts
                 dhimmi_abrahamic_communities
@@ -39029,7 +39098,9 @@ countries = {
         include = "expl_muslim_mediterranean"
         include = "turkish_beylik_no_mining_no_education"
         government = {
-            ruler = random
+            ruler = cnd_hizir_beg_candarids
+
+            ruler_term = { character = cnd_hizir_beg_candarids start_date = 1419.1.1 }
 
             privilege = {
                 sponsor_maritime_contracts
