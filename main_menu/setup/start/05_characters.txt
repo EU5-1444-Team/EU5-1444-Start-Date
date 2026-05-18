@@ -181,13 +181,68 @@ character_db={
 
     ### acciaioli_dynasty | ATH ###
 
+    flo_jacobo_acciaioli = {
+        first_name = { name = name_james }
+        culture = tuscan
+        religion = catholic
+        birth_date = 1300.1.1 # Estimated
+        death_date = 1365.1.1 # Estimated
+        birth = florence
+        dynasty = acciaioli_dynasty
+    }
+
+    ath_nerio_i_acciaioli = {
+        first_name = { name = Nerio }
+        culture = tuscan
+        religion = catholic
+        birth_date = 1338.1.1 # Estimated
+        death_date = 1394.11.25
+        father = flo_jacobo_acciaioli
+        dynasty = acciaioli_dynasty
+        tag = ATH
+    }
+
+    ath_donato_acciaioli = {
+        first_name = { name = name_donato }
+        culture = tuscan
+        religion = catholic
+        birth_date = 1335.1.1 # Estimated
+        death_date = 1400.1.1 # Estimated
+        birth = florence
+        father = flo_jacobo_acciaioli
+        dynasty = acciaioli_dynasty
+        tag = ATH
+    }
+
+    ath_antonio_i_acciaioli = {
+        first_name = { name = name_anthony }
+        culture = tuscan
+        religion = catholic
+        birth_date = 1370.1.1 # Estimated
+        death_date = 1435.1.1
+        father = ath_nerio_i_acciaioli
+        dynasty = acciaioli_dynasty
+        tag = ATH
+    }
+
+    ath_francesco_sykaminon_acciaioli = {
+        first_name = { name = name_francis }
+        culture = tuscan
+        religion = catholic
+        birth_date = 1385.1.1 # Estimated
+        death_date = 1419.1.1
+        father = ath_donato_acciaioli
+        dynasty = acciaioli_dynasty
+        tag = ATH
+    }
+
     ath_nerio_ii_acciaioli = {
         first_name = { name = Nerio }
         culture = tuscan
         religion = catholic
         birth_date = 1416.1.1 # Estimated
+        father = ath_francesco_sykaminon_acciaioli
         dynasty = acciaioli_dynasty
-        # father = ath_antonio_i_acciaioli
         tag = ATH
     }
 
@@ -202,7 +257,18 @@ character_db={
         tag = ATH
     }
 
-    ### acciaioli_dynasty | FLO ###
+    ### acciaioli_dynasty | FLO (Cassano branch) ###
+
+    flo_jacopo_acciaiuoli = {
+        first_name = { name = name_james }
+        culture = tuscan
+        religion = catholic
+        birth_date = 1370.1.1 # Estimated
+        death_date = 1410.1.1 # Estimated
+        birth = florence
+        father = ath_donato_acciaioli
+        dynasty = acciaioli_dynasty
+    }
 
     flo_angelo_acciaioli = {
         first_name = { name = name_angel }
@@ -212,6 +278,7 @@ character_db={
         adm = 61 dip = 73 mil = 51
         birth_date = 1402.1.1
         birth = cassano
+        father = flo_jacopo_acciaiuoli
         dynasty = acciaioli_dynasty
         tag = FLO
     }
@@ -220,13 +287,14 @@ character_db={
 
     flo_niccolo_acciaioli = {
         first_name = { name = name_nicholas }
-        dynasty = acciaioli_dynasty
         culture = tuscan
         religion = catholic
         adm = 47 dip = 57 mil = 74
         birth_date = 1310.1.1
         death_date = 1378.4.3
         birth = florence
+        father = acc_acciaiolo_acciaioli
+        dynasty = acciaioli_dynasty
         tag = NAP
     }
 
@@ -48341,6 +48409,7 @@ character_db={
         estate = nobles_estate
         adm = 60 dip = 70 mil = 40
         birth_date = 1392.1.1
+        death_date = 1456.1.1
         birth = chios
         dynasty = giustiniani_dynasty
         tag = CPO
