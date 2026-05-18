@@ -31648,6 +31648,19 @@ character_db={
 		tag = VEN
 	}
 
+    ### bembo_dynasty | CFU ###
+
+    cfu_pietro_bembo = {
+        first_name = { name = name_peter }
+        culture = venetian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1405.1.1 # Estimated
+        birth = venice
+        dynasty = bembo_dynasty
+        tag = CFU
+    }
+
     ### cornaro_dynasty | NEG ###
 
     neg_andrea_cornaro = { # Northern Triarchy (Oreos)
@@ -45647,7 +45660,7 @@ character_db={
         death_date = 1442.6.20
         birth = genoa
         father = gen_pietro_campofregoso_doge
-        mother = mother = gen_benedetta_doria_campofregoso
+        mother = gen_benedetta_doria_campofregoso
         dynasty = fregoso_dynasty
         tag = GEN
     }
@@ -120797,11 +120810,56 @@ character_db={
 
     ### tocco_dynasty | EPI ###
 
+    epi_guglielmo_tocco = {
+        first_name = { name = name_william }
+        culture = neapolitan
+        religion = catholic
+        birth_date = 1290.1.1  # estimated
+        death_date = 1335.9.22
+        birth = melfi
+        dynasty = tocco_dynasty
+        tag = CFU
+    }
+
+    epi_leonardo_i_tocco = {
+        first_name = { name = name_leonard }
+        culture = neapolitan
+        religion = catholic
+        birth_date = 1320.1.1  # estimated
+        death_date = 1376.1.1
+        father = epi_guglielmo_tocco
+        dynasty = tocco_dynasty
+        tag = EPI
+    }
+
+    epi_carlo_i_tocco = {
+        first_name = { name = name_charles }
+        culture = neapolitan
+        religion = catholic
+        birth_date = 1374.1.1  # estimated
+        death_date = 1429.7.4
+        father = epi_leonardo_i_tocco
+        dynasty = tocco_dynasty
+        tag = EPI
+    }
+
+    epi_leonardo_ii_tocco = {
+        first_name = { name = name_leonard }
+        culture = neapolitan
+        religion = catholic
+        birth_date = 1375.1.1
+        death_date = 1419.1.1
+        father = epi_leonardo_i_tocco
+        dynasty = tocco_dynasty
+        tag = EPI
+    }
+
     epi_carlo_ii_tocco = {
         first_name = { name = name_charles }
         culture = neapolitan
         religion = catholic
         birth_date = 1400.1.1  # estimated
+        father = epi_leonardo_ii_tocco
         dynasty = tocco_dynasty
         tag = EPI
     }

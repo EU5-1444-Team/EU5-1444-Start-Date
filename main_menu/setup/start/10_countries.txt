@@ -9492,8 +9492,8 @@ countries = {
         }
 
         own_control_integrated = {
-            corfu modon kythira mykonos karpathos argos nafplio
-            nafpaktos butrint
+            modon kythira mykonos karpathos argos nafplio
+            nafpaktos
             kotor shkoder bar_cg durres
         }
 
@@ -23675,6 +23675,8 @@ countries = {
 
             # ruler_term = { character = epi_theodoros_synadenos start_date = 1336.1.1 regnal_number = 0 } # As Governor of Epirus
 
+            ruler_term = { character = epi_carlo_i_tocco start_date = 1411.1.1 end_date = 1429.7.4 regnal_number = 1 }
+
             # regnal_numbers = {
             #     name_michael = 2
             #     name_theodore = 1
@@ -23691,8 +23693,8 @@ countries = {
                 # name_thomas = 1
                 # name_nicholas = 1
                 # name_john = 1
-                Carlo = 1
-                Leonardo = 2
+                name_charles = 1
+                name_leonard = 2
             }
         }
 
@@ -24576,6 +24578,9 @@ countries = {
             # ruler_term = { character = alb_john_gravina start_date = 1324.1.1 end_date = 1336.4.5 regnal_number = 3 }
             # ruler_term = { character = ach_robert_taranto start_date = 1336.4.5 end_date = 1357.1.1 regnal_number = 1 }
 
+            ruler_term = { character = epi_leonardo_i_tocco start_date = 1357.1.1 end_date = 1376.1.1 regnal_number = 1 }
+            ruler_term = { character = epi_carlo_i_tocco start_date = 1376.1.1 end_date = 1429.7.4 regnal_number = 1 }
+
             regnal_numbers = {
                 #Margaritus = 1
                 # name_matthew = 2
@@ -24583,8 +24588,8 @@ countries = {
                 # name_john = 3
                 # name_charles = 1
                 # name_robert = 1
-                Carlo = 1
-                Leonardo = 2
+                name_charles = 1
+                name_leonard = 2
             }
         }
 
@@ -24598,6 +24603,41 @@ countries = {
     }
 
     # --- CEP ---
+
+    CFU = {
+        #Bailate of Corfu
+        own_control_core = {
+            corfu butrint
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "catholic_republic"
+        government = {
+            type = republic
+            heir_selection = cognatic_primogeniture
+
+            ruler = cfu_pietro_bembo
+
+            ruler_term = { character = epi_guglielmo_tocco start_date = 1330.1.1 end_date = 1335.9.22 }
+
+            regnal_numbers = {
+            }
+        }
+
+        tolerated_cultures = {
+            greek_culture
+        }
+
+        country_rank = rank_county
+        capital = corfu
+    }
+
+    # --- CFU ---
 
     MZK = {
         own_control_core = {
