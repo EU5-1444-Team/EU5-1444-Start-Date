@@ -23711,6 +23711,42 @@ countries = {
 
     # --- EPI ---
 
+    ZGR = {
+        # https://en.wikipedia.org/wiki/Koinon_of_the_Zagorisians
+        # Autonomous vassal of the Ottomans since 1431
+        own_control_core = {
+            konitsa
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "eastern_european_monarchy_not_present"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+
+            ruler = random
+
+            regnal_numbers = {
+            }
+        }
+
+        tolerated_cultures = {
+            greek_culture
+        }
+
+        country_rank = rank_county
+        liturgical_language = greek_language
+
+        capital = konitsa
+    }
+
+    # --- ZGR ---
+
     HUM = {
         # Hum
         own_control_core = {
@@ -38416,7 +38452,7 @@ countries = {
             dospat bansko krupnik melnik nevrokop
             tsepina
             beden haskovo perperek smolyan stanimaka
-            parga ioannina konitsa argyrokastro avlonya
+            parga ioannina argyrokastro avlonya
             rusokastro
         }
 
