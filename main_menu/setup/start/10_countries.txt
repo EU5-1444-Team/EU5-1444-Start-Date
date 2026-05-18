@@ -822,7 +822,7 @@ countries = {
             gray vesoul dole
             pontarlier poligny orgelet ornans baume montbozon
             # own_control_integrated, but culture accepted
-            luxeuil salins_les_bains
+            salins_les_bains
         }
         starting_technology_level = 3
         include = "expl_western_europe"
@@ -3377,6 +3377,25 @@ countries = {
 
     # --- SCL ---
 
+    LXL = {
+        own_control_core = {
+            luxeuil
+        }
+
+        government = {
+            ruler = random
+        }
+
+        include = "catholic_abbey"
+        include = "expl_mediterranean"
+
+        court_language = latin_language
+        country_rank = rank_county
+        capital = luxeuil
+    }
+
+    # --- LXL ---
+
     PVR = {
         #Penthièvre
         own_control_core = {
@@ -3546,7 +3565,7 @@ countries = {
     # --- CLT ---
 
     AUX = {
-        our_cores_conquered_by_others = {
+        own_control_core = {
             auxerre
         }
 
@@ -3556,7 +3575,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = bur_philippe_iii_valois_burgundy
             reforms = {
                 french_appanage_reform
             }
@@ -3585,7 +3604,10 @@ countries = {
             }
 
             ruler_term = { character = aux_guillaume_vi_chalon start_date = 1290.1.1 end_date = 1304.1.1 regnal_number = 6 }
-            ruler_term = { character = aux_jean_ii_chalon start_date = 1304.1.1 regnal_number = 2 }
+            ruler_term = { character = aux_jean_ii_chalon start_date = 1304.1.1 end_date = 1350.1.1 regnal_number = 2 }
+
+            ruler_term = { character = bur_jean_i_valois_burgundy start_date = 1404.4.27 end_date = 1419.9.10 regnal_number = 1 }
+            ruler_term = { character = bur_philippe_iii_valois_burgundy start_date = 1419.9.10 regnal_number = 3 }
 
             regnal_numbers = {
                 name_richard = 1
@@ -9682,8 +9704,6 @@ countries = {
                 name_matthew = 2
             }
 
-            reforms = { dynastic_signoria_reform }
-
             centralization_vs_decentralization = 60
             aristocracy_vs_plutocracy = -50
             serfdom_vs_free_subjects = -40
@@ -9766,10 +9786,8 @@ countries = {
         }
 
         own_control_integrated = {
-            samos ikaria foca #Aegean Sea
             castelsardo #Sardinia
-            amasra #Black Sea
-            chios molyvos mitilene enez thasos famagusta
+            enez famagusta
         }
 
         our_cores_conquered_by_others = {
@@ -24184,6 +24202,113 @@ countries = {
 
     # --- NAX ---
 
+    LES = {
+        #https://en.wikipedia.org/wiki/Dorino_I_Gattilusio
+        own_control_core = {
+            mitilene molyvos
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+
+            ruler = random # TODO: add me
+            consort = random # TODO: add me
+
+            regnal_numbers = {
+            }
+        }
+
+        tolerated_cultures = {
+            greek_culture
+        }
+
+        country_rank = rank_county
+        capital = mitilene
+        dynasty = gattilusio_dynasty
+    }
+
+    # --- LES ---
+
+    GTS = {
+        #https://en.wikipedia.org/wiki/Francesco_III_Gattilusio
+        own_control_core = {
+            thasos
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+
+            ruler = random # TODO: add me
+            consort = random # TODO: add me
+
+            regnal_numbers = {
+            }
+        }
+
+        tolerated_cultures = {
+            greek_culture
+        }
+        
+        country_rank = rank_county
+        capital = thasos
+        dynasty = gattilusio_dynasty
+    }
+
+    # --- GTS ---
+
+    CPO = {
+        #https://en.wikipedia.org/wiki/Maona_of_Chios_and_Phocaea
+        own_control_core = {
+            chios samos ikaria foca #Aegean Sea
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "catholic_republic"
+        government = {
+            type = republic
+            heir_selection = cognatic_primogeniture
+
+            ruler = random # TODO: add me
+            consort = random # TODO: add me
+
+            regnal_numbers = {
+            }
+
+            reforms = { dynastic_signoria_reform }
+        }
+
+        tolerated_cultures = {
+            greek_culture
+        }
+        
+        country_rank = rank_county
+        capital = chios
+        dynasty = gattilusio_dynasty
+    }
+
+    # --- GTS ---
+
     DGJ = {
         own_control_core = {
             dukagjini has
@@ -31699,6 +31824,7 @@ countries = {
         }
 
         own_control_integrated = {
+            amasra #Black Sea
         }
 
         starting_technology_level = 3
@@ -38602,7 +38728,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = tre_ioannis_iv_megas_komnenos
 
             ruler_term = { character = tre_alexios_i_komnenos start_date = 1204.4.1 end_date = 1222.2.1 regnal_number = 1 }
 
@@ -38619,12 +38745,20 @@ countries = {
             ruler_term = { character = tre_andronikos_iii_komnenos start_date = 1330.5.3 end_date = 1332.1.8 regnal_number = 3 }
             ruler_term = { character = tre_manouel_ii_komnenos start_date = 1332.1.8 end_date = 1332.9.23 regnal_number = 2 }
             ruler_term = { character = tre_basil_komnenos start_date = 1332.9.23 end_date = 1340.4.6 regnal_number = 1 }
+            ruler_term = { character = tre_irene_palaiologos start_date = 1340.4.6 end_date = 1341.7.17 regnal_number = 1 }
+            ruler_term = { character = tre_anna_anachoutlou start_date = 1340.4.6 end_date = 1342.9.3 regnal_number = 1 }
+            ruler_term = { character = tre_ioannes_iii_komnenos start_date = 1342.9.4 end_date = 1344.5.3 regnal_number = 3 }
+            ruler_term = { character = tre_michael_komnenos start_date = 1344.5.3 end_date = 1349.12.13 regnal_number = 1 }
+            ruler_term = { character = tre_alexis_iii_megas_komnenos start_date = 1349.12.22 end_date = 1390.3.20 regnal_number = 3 }
+            ruler_term = { character = tre_manouel_iii_megas_komnenos start_date = 1390.3.20 end_date = 1417.3.5 regnal_number = 3 }
+            ruler_term = { character = tre_alexis_iv_megas_komnenos start_date = 1417.3.5 end_date = 1429.4.26 regnal_number = 4 }
+            ruler_term = { character = tre_ioannis_iv_megas_komnenos start_date = 1429.4.26 regnal_number = 4 }
 
             regnal_numbers = {
-                name_alexis = 2
+                name_alexis = 4
                 name_andronikos = 3
-                name_john = 2
-                name_emmanuel = 2
+                name_john = 4
+                name_emmanuel = 3
                 name_george = 1
                 name_theodora = 1
                 name_basil = 1
