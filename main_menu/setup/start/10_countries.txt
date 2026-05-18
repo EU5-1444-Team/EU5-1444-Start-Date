@@ -9787,7 +9787,7 @@ countries = {
 
         own_control_integrated = {
             castelsardo #Sardinia
-            enez famagusta
+            famagusta
         }
 
         our_cores_conquered_by_others = {
@@ -24307,7 +24307,43 @@ countries = {
         dynasty = gattilusio_dynasty
     }
 
-    # --- GTS ---
+    # --- CPO ---
+
+    AIN = {
+        own_control_core = {
+            enez
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+
+            ruler = random # TODO: add me
+            consort = random # TODO: add me
+
+            regnal_numbers = {
+            }
+
+            reforms = { dynastic_signoria_reform }
+        }
+
+        tolerated_cultures = {
+            greek_culture
+        }
+        
+        country_rank = rank_county
+        capital = enez
+        dynasty = gattilusio_dynasty
+    }
+
+    # --- AIN ---
 
     DGJ = {
         own_control_core = {
