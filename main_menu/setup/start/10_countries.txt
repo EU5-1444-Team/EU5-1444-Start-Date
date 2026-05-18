@@ -24289,10 +24289,16 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = les_dorino_i_gattilusio
+            consort = les_orietta_doria
+            heir = les_domenico_gattilusio
+
+            ruler_term = { character = les_francesco_i_gattilusio start_date = 1354.7.12 end_date = 1384.8.6 regnal_number = 1 }
+            ruler_term = { character = les_francesco_ii_gattilusio start_date = 1384.8.6 end_date = 1404.10.26 regnal_number = 2 }
+            ruler_term = { character = les_dorino_i_gattilusio start_date = 1428.1.1 regnal_number = 1 }
 
             regnal_numbers = {
+                name_francis = 2
             }
         }
 
@@ -24324,10 +24330,12 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = gts_francesco_iii_gattilusio
+
+            ruler_term = { character = gts_francesco_iii_gattilusio start_date = 1444.11.11 regnal_number = 3 }
 
             regnal_numbers = {
+                name_francis = 3
             }
         }
 
@@ -24359,8 +24367,7 @@ countries = {
             type = republic
             heir_selection = cognatic_primogeniture
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = cpo_andreolo_giustiniani
 
             regnal_numbers = {
             }
@@ -24374,12 +24381,12 @@ countries = {
         
         country_rank = rank_county
         capital = chios
-        dynasty = gattilusio_dynasty
     }
 
     # --- CPO ---
 
     AIN = {
+        #https://en.wikipedia.org/wiki/Palamede_Gattilusio
         own_control_core = {
             enez
         }
@@ -24395,8 +24402,9 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = ain_palamede_gattilusio
+
+            ruler_term = { character = ain_palamede_gattilusio start_date = 1384.8.6 regnal_number = 1 }
 
             regnal_numbers = {
             }

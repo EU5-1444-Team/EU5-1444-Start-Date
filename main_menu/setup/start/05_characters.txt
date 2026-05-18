@@ -343,6 +343,7 @@ character_db={
         birth = genoa
         father = gen_giacomo_adorno
         #mother = Jacopina
+        spouse = gen_caterina_gattilusio
         dynasty = adorno_dynasty
         tag = GEN
     }
@@ -48133,6 +48134,188 @@ character_db={
 		tag = AJU
 	}
 
+    ### gattilusio_dynasty | LES ###
+
+    les_francesco_i_gattilusio = {
+        first_name = { name = name_francis }
+        culture = ligurian
+        religion = catholic
+        estate = nobles_estate
+        adm = 70 dip = 60 mil = 75
+        birth_date = 1325.1.1 # Estimated
+        death_date = 1384.8.6
+        birth = genoa
+        spouse = les_maria_palaiologina
+        dynasty = gattilusio_dynasty
+        tag = LES
+    }
+
+    les_maria_palaiologina = {
+        first_name = { name = name_mary }
+        culture = greek_culture
+        religion = orthodox
+        female = yes
+        birth_date = 1335.1.1
+        death_date = 1401.1.1
+        birth = constantinople
+        dynasty = palaiologos_dynasty
+        tag = LES
+    }
+
+    les_francesco_ii_gattilusio = {
+        first_name = { name = name_francis }
+        culture = ligurian
+        religion = catholic
+        estate = nobles_estate
+        adm = 55 dip = 50 mil = 60
+        birth_date = 1355.1.1 # Estimated
+        death_date = 1404.10.26
+        birth = mitilene
+        father = les_francesco_i_gattilusio
+        mother = les_maria_palaiologina
+        dynasty = gattilusio_dynasty
+        tag = LES
+    }
+
+    les_dorino_i_gattilusio = { #Ruler
+        first_name = { name = Dorino }
+        culture = ligurian
+        religion = catholic
+        estate = nobles_estate
+        adm = 65 dip = 70 mil = 55
+        birth_date = 1395.1.1 # Estimated
+        birth = mitilene
+        father = les_francesco_ii_gattilusio
+        dynasty = gattilusio_dynasty
+        tag = LES
+    }
+
+    les_orietta_doria = {
+        first_name = { name = Orietta }
+        culture = ligurian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1400.1.1 # Estimated
+        birth = genoa
+        spouse = les_dorino_i_gattilusio
+        dynasty = doria_dynasty
+        tag = LES
+    }
+
+    gts_francesco_iii_gattilusio = { #Ruler of GTS
+        first_name = { name = name_francis }
+        culture = ligurian
+        religion = catholic
+        estate = nobles_estate
+        adm = 45 dip = 55 mil = 40
+        birth_date = 1420.1.1 # Estimated
+        birth = mitilene
+        father = les_dorino_i_gattilusio
+        mother = les_orietta_doria
+        dynasty = gattilusio_dynasty
+        tag = GTS
+    }
+
+    les_domenico_gattilusio = {
+        first_name = { name = name_dominic }
+        culture = ligurian
+        religion = catholic
+        estate = nobles_estate
+        adm = 50 dip = 45 mil = 60
+        birth_date = 1422.1.1 # Estimated
+        birth = mitilene
+        father = les_dorino_i_gattilusio
+        mother = les_orietta_doria
+        dynasty = gattilusio_dynasty
+        tag = LES
+    }
+
+    les_niccolo_gattilusio = {
+        first_name = { name = name_nicholas }
+        culture = ligurian
+        religion = catholic
+        estate = nobles_estate
+        adm = 40 dip = 35 mil = 65
+        birth_date = 1425.1.1 # Estimated
+        birth = mitilene
+        father = les_dorino_i_gattilusio
+        mother = les_orietta_doria
+        dynasty = gattilusio_dynasty
+        tag = LES
+    }
+
+    les_ginevra_gattilusio = {
+        first_name = { name = Ginevra }
+        culture = ligurian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1425.1.1 # Estimated
+        birth = mitilene
+        father = les_dorino_i_gattilusio
+        mother = les_orietta_doria
+        dynasty = gattilusio_dynasty
+        tag = LES
+    }
+
+    les_caterina_gattilusio = {
+        first_name = { name = name_catherine }
+        culture = ligurian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1420.1.1 # Estimated
+        death_date = 1442.7.1
+        birth = mitilene
+        father = les_dorino_i_gattilusio
+        mother = les_orietta_doria
+        dynasty = gattilusio_dynasty
+        tag = LES
+    }
+
+    ### gattilusio_dynasty | AIN ###
+
+    ain_palamede_gattilusio = { #Ruler
+        first_name = { name = Palamede }
+        culture = ligurian
+        religion = catholic
+        estate = nobles_estate
+        adm = 55 dip = 60 mil = 45
+        birth_date = 1380.1.1 # Estimated
+        birth = enez
+        father = les_francesco_ii_gattilusio
+        dynasty = gattilusio_dynasty
+        tag = AIN
+    }
+
+    ain_dorino_ii_gattilusio = {
+        first_name = { name = Dorino }
+        culture = ligurian
+        religion = catholic
+        estate = nobles_estate
+        adm = 40 dip = 50 mil = 35
+        birth_date = 1420.1.1 # Estimated
+        birth = enez
+        father = ain_palamede_gattilusio
+        dynasty = gattilusio_dynasty
+        tag = AIN
+    }
+
+    ### giustiniani_dynasty | CPO ###
+
+    cpo_andreolo_giustiniani = { #Ruler
+        first_name = { name = Andreolo }
+        culture = ligurian
+        religion = catholic
+        estate = nobles_estate
+        adm = 60 dip = 70 mil = 40
+        birth_date = 1392.1.1
+        birth = chios
+        dynasty = giustiniani_dynasty
+        tag = CPO
+    }
+
     ### gediminid_dynasty | KIE ###
 
     kie_vladimir_olgerdovich_gediminid = {
@@ -66841,6 +67024,7 @@ character_db={
 		birth = trebizond
 		father = tre_alexis_iv_megas_komnenos
 		mother = tre_theodora_megas_kantakouzenos_ii
+		spouse = tre_maria_gattilusio
 		dynasty = megas_komnenos_dynasty
 		tag = TRE
     }
@@ -66853,7 +67037,7 @@ character_db={
 		birth_date = 1410.1.1
 		birth = trebizond
         spouse = tre_alexandros_skantarios_megas_komnenos
-		#father = Dorino I of Lesbos
+		father = les_dorino_i_gattilusio
 		dynasty = gattilusio_dynasty
 		tag = TRE
     }
@@ -94468,6 +94652,7 @@ character_db={
         birth = constantinople
         father = byz_andronikos_iv_palaiologos
         mother = byz_keratsa_sratsimir
+        spouse = byz_irene_gattilusio
         dynasty = palaiologos_dynasty
         tag = BYZ
     }
@@ -136645,15 +136830,16 @@ character_db={
 
     byz_irene_gattilusio = {
         first_name = { name = name_irene }
-        last_name = { name = Gattilusio }
-        culture = greek_culture
-        religion = orthodox
+        culture = ligurian
+        religion = catholic
         estate = nobles_estate
         birth_date = 1385.1.1
         death_date = 1440.1.1
         birth = molyvos
         female = yes
+        father = les_francesco_ii_gattilusio
         spouse = byz_ioannes_vii_palaiologos
+        dynasty = gattilusio_dynasty
         tag = BYZ
     }
 
@@ -138247,7 +138433,6 @@ character_db={
 
 	gen_caterina_gattilusio = {
 		first_name = { name = name_catherine }
-		last_name = { name = Gattilusio }
 		culture = ligurian
 		religion = catholic
 		estate = burghers_estate
@@ -138258,7 +138443,8 @@ character_db={
 		birth = genoa
 		#father = Domenico Gattilusio
 		#mother = Siffredina
-		#spouse = gen_guglielmo_adorno
+		spouse = gen_guglielmo_adorno
+		dynasty = gattilusio_dynasty
 		tag = GEN
 	}
 
