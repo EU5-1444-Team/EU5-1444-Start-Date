@@ -23247,7 +23247,7 @@ countries = {
         own_control_core = {
             peja
             budimlja brskovo mitrovica pristina novo_brdo
-            vranje prijepolje visegrad
+            vranje prijepolje
             glubocica nis prokuplje stalac ravno jagodina
             krusevac kucevo branicevo rudnik smederevo krupanj valjevo uzice
             gradac zica trgoviste_SER sjenica
@@ -23263,6 +23263,7 @@ countries = {
             pljevlja soko_grad onogost
             podgorica gradina
             prizren
+            visegrad
         }
 
         starting_technology_level = 3
@@ -23325,9 +23326,8 @@ countries = {
 
     BOS = {
         own_control_core = {
-            vrhbosna srebrenica
-            jajce zenica kljuc
-            olovo borac
+            vrhbosna
+            zenica
             trebinje gacko mostar nevesinje drijeva metkovic
             ustikolina konjic makarska
             pljevlja soko_grad onogost
@@ -23350,7 +23350,7 @@ countries = {
 
             ruler_term = { character = bos_stephen_kotromanic_father start_date = 1287.1.1 end_date = 1312.5.1 regnal_number = 1 }
             ruler_term = { character = bos_mladen_subic start_date = 1312.5.1 end_date = 1322.3.15 regnal_number = 2 }
-            ruler_term = { character = bos_stephen_kotromanic start_date = 1322.3.15 regnal_number = 2 }
+            ruler_term = { character = bos_stephen_kotromanic start_date = 1322.3.15 end_date = 1353.9.1 regnal_number = 2 }
 
             regnal_numbers = {
                 name_stephen = 1
@@ -23386,7 +23386,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = bos_stefan_tomas_i_kotromanic
+
+            ruler_term = { character = bos_stephen_kotromanic_father start_date = 1287.1.1 end_date = 1312.5.1 regnal_number = 1 }
+            ruler_term = { character = bos_mladen_subic start_date = 1312.5.1 end_date = 1322.3.15 regnal_number = 2 }
+            ruler_term = { character = bos_stephen_kotromanic start_date = 1322.3.15 end_date = 1353.9.1 regnal_number = 2 }
 
             regnal_numbers = {
             }
@@ -23405,6 +23409,68 @@ countries = {
     }
 
     # --- SLJ ---
+
+    PVC = {
+        own_control_core = {
+            olovo srebrenica borac visegrad
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+
+            regnal_numbers = {
+            }
+
+        }
+
+        tolerated_cultures = {
+            serbian
+        }
+
+        country_rank = rank_county
+        liturgical_language = church_slavonic_language
+
+        capital = olovo
+        dynasty = pavlovic_dynasty
+    }
+
+    # --- PVC ---
+
+    DJK = {
+        own_control_core = {
+            jajce kljuc
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+
+            regnal_numbers = {
+            }
+
+        }
+
+        tolerated_cultures = {
+            serbian
+        }
+
+        country_rank = rank_county
+        liturgical_language = church_slavonic_language
+
+        capital = jajce
+        dynasty = hrvatinic_dynasty
+    }
+
+    # --- DJK ---
 
     ACH = {
         #https://en.wikipedia.org/wiki/Principality_of_Achaea
@@ -52528,7 +52594,7 @@ countries = {
             ruler_term = { character = mng_zhu_di start_date = 1402.7.13 end_date = 1424.8.12 regnal_name = Yongle }
             ruler_term = { character = mng_zhu_gaochi start_date = 1424.8.12 end_date = 1425.5.29 regnal_name = Hongxi }
             ruler_term = { character = mng_zhu_zhanji start_date = 1425.5.29 end_date = 1435.1.31 regnal_name = Xuande }
-            ruler_term = { character = mng_zhu_qizhen start_date = 1435.1.31 regnal_name = Yingzong }
+            ruler_term = { character = mng_zhu_qizhen start_date = 1435.1.31 }
 
             sinicized_vs_unsinicized = 100
 
