@@ -45686,6 +45686,7 @@ character_db={
         father = gen_bartolomeo_campofregoso
         dynasty = fregoso_dynasty
         tag = GEN
+        spouse = ain_ginevra_gattilusio
     }
 
     gen_paolo_campofregoso_37th_doge = {
@@ -48257,6 +48258,7 @@ character_db={
         mother = les_orietta_doria
         dynasty = gattilusio_dynasty
         tag = LES
+        spouse = nax_giacomo_ii_crispo
     }
 
     les_caterina_gattilusio = {
@@ -48272,6 +48274,7 @@ character_db={
         mother = les_orietta_doria
         dynasty = gattilusio_dynasty
         tag = LES
+        spouse = byz_konstantinos_xi_palaiologos
     }
 
     ### gattilusio_dynasty | AIN ###
@@ -48300,6 +48303,20 @@ character_db={
         father = ain_palamede_gattilusio
         dynasty = gattilusio_dynasty
         tag = AIN
+    }
+
+    ain_ginevra_gattilusio = {
+        first_name = { name = Ginevra }
+        culture = ligurian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1425.1.1 # Estimated
+        birth = enez
+        father = ain_palamede_gattilusio
+        dynasty = gattilusio_dynasty
+        tag = AIN
+        spouse = gen_lodovico_i_campofregoso_32nd_doge
     }
 
     ### giustiniani_dynasty | CPO ###
@@ -94715,6 +94732,7 @@ character_db={
         father = byz_manuel_ii_palaiologos
         mother = byz_jelena_dragas_dejanovic
         dynasty = palaiologos_dynasty
+        spouse = les_caterina_gattilusio
         ruler_trait = bold_fighter
         general_trait = inspirational_leader_general
         tag = BYZ
@@ -107963,6 +107981,60 @@ character_db={
 		dynasty = sanudo_dynasty
 		tag = NAX
 	}
+
+    ### crispo_dynasty | NAX ###
+
+    nax_francesco_i_crispo = {
+        first_name = { name = name_francis }
+        culture = venetian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1350.1.1 # Estimated
+        death_date = 1397.1.1
+        birth = naxos
+        dynasty = crispo_dynasty
+        tag = NAX
+    }
+
+    nax_giacomo_i_crispo = {
+        first_name = { name = name_james }
+        culture = venetian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1370.1.1 # Estimated
+        death_date = 1418.1.1
+        birth = naxos
+        father = nax_francesco_i_crispo
+        dynasty = crispo_dynasty
+        tag = NAX
+    }
+
+    nax_giovanni_ii_crispo = {
+        first_name = { name = name_john }
+        culture = venetian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1385.1.1 # Estimated
+        death_date = 1433.1.1
+        birth = naxos
+        father = nax_giacomo_i_crispo
+        dynasty = crispo_dynasty
+        tag = NAX
+    }
+
+    nax_giacomo_ii_crispo = {
+        first_name = { name = name_james }
+        culture = venetian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1405.1.1 # Estimated
+        birth = naxos
+        father = nax_giovanni_ii_crispo
+        dynasty = crispo_dynasty
+        tag = NAX
+        spouse = les_ginevra_gattilusio
+        ruler_trait = charismatic_negotiator
+    }
 
     ### saqiyya_dynasty | SYY ###
 
