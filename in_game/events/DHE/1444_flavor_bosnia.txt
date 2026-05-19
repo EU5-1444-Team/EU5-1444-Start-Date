@@ -1,4 +1,4 @@
-namespace = 1444_flavor_bosnia
+﻿namespace = 1444_flavor_bosnia
 
 1444_flavor_bosnia.1 = {
 	type = country_event
@@ -14,11 +14,11 @@ namespace = 1444_flavor_bosnia
 	}
 
 	trigger = {
-		ruler ?= character:bos_thomas_kotromanic
+		ruler ?= character:bos_stefan_tomas_i_kotromanic
 		ruler = {
 			first_spouse = character:bos_vojaca
 		}
-		character:hum_catherine_of_bosnia ?= {
+		character:hum_katarina_kosaca ?= {
 			is_alive = yes
 			has_available_marriage_slot = yes
 		}
@@ -29,7 +29,7 @@ namespace = 1444_flavor_bosnia
 			foreground = estate_type:nobles_estate
 			background = estate_type:clergy_estate
 		}
-		character:hum_catherine_of_bosnia ?= {
+		character:hum_katarina_kosaca ?= {
 			save_scope_as = target_catherine
 		}
 	}

@@ -1,4 +1,4 @@
-country_flavor = {
+﻿country_flavor = {
 	type = country
 	text = {
 		localization_key = country_rank_people
@@ -1955,7 +1955,7 @@ country_flavor = {
 		trigger = {
 			tag = MOR
 			ruler_or_heir_if_regent.dynasty ?= {
-				dynastsaadisid_dynasty ?= this
+				dynasty:saadisid_dynasty ?= this
 			}
 			country_rank_is_duchy = yes
 			religion.group = religion_group:muslim
@@ -2587,7 +2587,7 @@ country_flavor = {
 			country_rank_is_empire = yes
 			OR = {
 				religion = religion:sunni
-				religion = religion:shiite
+				religion = religion:shia
 			}
 			OR = {
 				government_type = government_type:theocracy
@@ -2599,7 +2599,7 @@ country_flavor = {
 		localization_key = rank_kingdom_holy_state
 		trigger = {
 			country_rank_is_kingdom = yes
-			religion = religion:shiite
+			religion = religion:shia
 			OR = {
 				government_type = government_type:theocracy
 				has_reform = government_reform:feudal_theocracy

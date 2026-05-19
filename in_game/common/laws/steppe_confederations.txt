@@ -1,4 +1,4 @@
-mongol_local_administration = {
+﻿mongol_local_administration = {
     type = international_organization
     law_category = administrative
     requires_vote = yes
@@ -30,7 +30,7 @@ mongol_local_administration = {
             add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = local_adm_law_cooldown_variable
                     value = yes
@@ -66,7 +66,7 @@ mongol_local_administration = {
             add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = local_adm_law_cooldown_variable
                     value = yes
@@ -128,7 +128,7 @@ mongol_tax_obligations = {
             add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = tax_law_cooldown_variable
                     value = yes
@@ -147,7 +147,7 @@ mongol_tax_obligations = {
             monthly_horde_unity = 0.03
             global_manpower_modifier = 0.05
             discipline = 0.0075
-            monthly_income_modifier = -0.03
+            monthly_gold_income = -0.03
         }
     }
  
@@ -158,7 +158,7 @@ mongol_tax_obligations = {
             add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = tax_law_cooldown_variable
                     value = yes
@@ -174,7 +174,7 @@ mongol_tax_obligations = {
         }
         years = 5
         country_modifier = {
-            monthly_income_modifier = 0.04
+            monthly_gold_income = 0.04
             monthly_towards_centralization = societal_value_minor_monthly_move
             monthly_horde_unity = -0.02
         }
@@ -188,7 +188,7 @@ mongol_tax_obligations = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = tax_law_cooldown_variable
                     value = yes
@@ -203,7 +203,7 @@ mongol_tax_obligations = {
             }
         }
         country_modifier = {
-            monthly_income_modifier = 0.08
+            monthly_gold_income = 0.08
             tax_income_efficiency = 0.05
             monthly_towards_centralization = societal_value_monthly_move
             monthly_horde_unity = -0.05
@@ -245,7 +245,7 @@ mongol_court_etiquette = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = court_law_cooldown_variable
                     value = yes
@@ -262,7 +262,7 @@ mongol_court_etiquette = {
         country_modifier = {
             monthly_horde_unity = 0.04
             global_tribes_estate_power = 0.1
-            court_spending_cost = -0.02
+            court_spending_cost_modifier = -0.02
             discipline = 0.0075
         }
     }
@@ -275,7 +275,7 @@ mongol_court_etiquette = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = court_law_cooldown_variable
                     value = yes
@@ -305,7 +305,7 @@ mongol_court_etiquette = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = court_law_cooldown_variable
                     value = yes
@@ -321,11 +321,11 @@ mongol_court_etiquette = {
         }
         country_modifier = {
             monthly_prestige = 0.1
-            legitimacy = 0.25
+            monthly_legitimacy = 0.25
             country_cabinet_efficiency = 0.03
             monthly_towards_centralization = societal_value_monthly_move
             monthly_horde_unity = -0.05
-            court_spending_cost = 0.02
+            court_spending_cost_modifier = 0.02
         }
     }
 }
@@ -361,7 +361,7 @@ mongol_formal_script = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = script_law_cooldown_variable
                     value = yes
@@ -397,7 +397,7 @@ mongol_formal_script = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = script_law_cooldown_variable
                     value = yes
@@ -458,7 +458,7 @@ mongol_legal_framework = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = legal_law_cooldown_variable
                     value = yes
@@ -488,7 +488,7 @@ mongol_legal_framework = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = legal_law_cooldown_variable
                     value = yes
@@ -504,7 +504,7 @@ mongol_legal_framework = {
         }
         country_modifier = {
             stability_decay = -0.001
-            global_distance_from_capital_cost_modifier = -0.05
+            global_distance_from_capital_speed_propagation = -0.05
             monthly_towards_centralization = societal_value_minor_monthly_move
             monthly_horde_unity = -0.03
             legislative_efficiency = 0.05
@@ -519,7 +519,7 @@ mongol_legal_framework = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = legal_law_cooldown_variable
                     value = yes
@@ -535,7 +535,7 @@ mongol_legal_framework = {
         }
         country_modifier = {
             stability_decay = -0.003
-            global_distance_from_capital_cost_modifier = -0.1
+            global_distance_from_capital_speed_propagation = -0.1
             monthly_towards_centralization = societal_value_monthly_move
             legislative_efficiency = 0.1
             monthly_horde_unity = -0.08
@@ -573,7 +573,7 @@ mongol_economic_framework = {
             add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = economic_framework_cooldown_variable
                     value = yes
@@ -603,7 +603,7 @@ mongol_economic_framework = {
             add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = economic_framework_cooldown_variable
                     value = yes
@@ -634,7 +634,7 @@ mongol_economic_framework = {
             add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = economic_framework_cooldown_variable
                     value = yes
@@ -651,7 +651,7 @@ mongol_economic_framework = {
         years = 5
         country_modifier = {
             global_max_rgo_size_modifier = 0.2
-            monthly_income_modifier = 0.05
+            monthly_gold_income = 0.05
             monthly_towards_centralization = societal_value_monthly_move
             monthly_towards_capital_economy = societal_value_monthly_move
             monthly_horde_unity = -0.05
@@ -690,7 +690,7 @@ mongol_trade_relations = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = trade_law_cooldown_variable
                     value = yes
@@ -720,7 +720,7 @@ mongol_trade_relations = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = trade_law_cooldown_variable
                     value = yes
@@ -735,7 +735,7 @@ mongol_trade_relations = {
             }
         }
         country_modifier = {
-            trade_efficiency = tiny_trade_efficiency_bonus
+            trade_land_efficiency = tiny_trade_land_efficiency_bonus
             global_monthly_prosperity = 0.001
             diplomatic_reputation = diplomatic_reputation_weak_bonus
             monthly_towards_centralization = societal_value_minor_monthly_move
@@ -751,7 +751,7 @@ mongol_trade_relations = {
         }
         years = 5
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = trade_law_cooldown_variable
                     value = yes
@@ -766,8 +766,8 @@ mongol_trade_relations = {
             }
         }
         country_modifier = {
-            trade_efficiency = 0.05
-            monthly_income_modifier = 0.04
+            trade_land_efficiency = 0.05
+            monthly_gold_income = 0.04
             global_institution_growth_modifier = 0.25
             monthly_towards_centralization = societal_value_monthly_move
             monthly_horde_unity = -0.04
@@ -805,7 +805,7 @@ mongol_clan_diplomacy = {
             add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = diplomacy_law_cooldown_variable
                     value = yes
@@ -834,7 +834,7 @@ mongol_clan_diplomacy = {
             add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = diplomacy_law_cooldown_variable
                     value = yes
@@ -863,7 +863,7 @@ mongol_clan_diplomacy = {
             add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
         }
         on_activate = {
-            leader_country = {
+            leader_country ?= {
                 set_variable = {
                     name = diplomacy_law_cooldown_variable
                     value = yes
@@ -932,7 +932,9 @@ confederation_unification_law = {
                 limit = { NOT = { this = root.leader_country } }
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
-            destroy_international_organization = { target = international_organization:khalkha_confederation }
+            root.leader_country = {
+                destroy_international_organization = { target = international_organization:khalkha_confederation }
+            }
         }
     }
  
@@ -958,7 +960,9 @@ confederation_unification_law = {
                 limit = { NOT = { this = root.leader_country } }
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
-            destroy_international_organization = { target = international_organization:khorchin_confederation }
+            root.leader_country = {
+                destroy_international_organization = { target = international_organization:khorchin_confederation }
+            }
         }
     }
  
@@ -984,7 +988,9 @@ confederation_unification_law = {
                 limit = { NOT = { this = root.leader_country } }
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
-            destroy_international_organization = { target = international_organization:nogai_confederation }
+            root.leader_country = {
+                destroy_international_organization = { target = international_organization:nogai_confederation }
+            }
         }
     }
  
@@ -1010,7 +1016,9 @@ confederation_unification_law = {
                 limit = { NOT = { this = root.leader_country } }
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
-            destroy_international_organization = { target = international_organization:bashkir_confederation }
+            root.leader_country = {
+                destroy_international_organization = { target = international_organization:bashkir_confederation }
+            }
         }
     }
  
@@ -1037,7 +1045,9 @@ confederation_unification_law = {
                 limit = { NOT = { this = root.leader_country } }
                 root.leader_country = { annex_country = { country = prev reason = Diplomatic } }
             }
-            destroy_international_organization = { target = international_organization:bashkir_confederation }
+            root.leader_country = {
+                destroy_international_organization = { target = international_organization:bashkir_confederation }
+            }
         }
     }
 }

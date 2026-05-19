@@ -1,4 +1,4 @@
-namespace = northern_yuan
+﻿namespace = northern_yuan
 
 # Yuan demands submission of all clans
 northern_yuan.100 = {
@@ -85,7 +85,7 @@ northern_yuan.101 = {
                 factor = 0
                 OR = {
                     is_subject_of = c:CHI
-                    any_overlord = { tag = CHI } # Catch-all for different subject types
+                    any_overlord_or_above = { tag = c:CHI } # Catch-all for different subject types
                 }
             }
         }
@@ -118,7 +118,7 @@ northern_yuan.101 = {
                 factor = 100
                 OR = {
                     is_subject_of = c:CHI
-                    any_overlord = { tag = CHI }
+                    any_overlord_or_above = { tag = c:CHI }
                 }
             }
         }
@@ -189,7 +189,7 @@ northern_yuan.102 = {
                 limit = {
                     is_subject_of = scope:northern_yuan_boss_scope
                     NOT = { this = scope:northern_yuan_boss_scope }
-                    culture_group = culture_group:mongolian_group
+                    culture = { has_culture_group = culture_group:mongolian_group }
                 }
                 trigger_event_silently = { id = northern_yuan.103 } # Or 105
             }

@@ -1,25 +1,25 @@
-#change_yeke_mongghul_ulus = {
-#    international_organization:northern_yuan = {
-#        custom_description = {
-#            text = change_yeke_mongghul_ulus_text
-#            value = $value$
-#        }
-#
-#        change_variable = {
-#            name = yeke_mongghul_ulus
-#            add = $value$
-#        }
-#
-#        if = {
-#            limit = { has_variable = yeke_mongghul_ulus }
-#            if = {
-#                limit = { var:yeke_mongghul_ulus > 100 }
-#                set_variable = { name = yeke_mongghul_ulus value = 100 }
-#            }
-#            if = {
-#                limit = { var:yeke_mongghul_ulus < 0 }
-#                set_variable = { name = yeke_mongghul_ulus value = 0 }
-#            }
-#        }
-#    }
-#}
+﻿change_yeke_mongghul_ulus = {
+    international_organization:northern_yuan = {
+        custom_description = {
+            text = change_yeke_mongghul_ulus_effect_text
+            value = $value$
+        }
+
+        change_variable = {
+            name = yeke_mongghul_ulus
+            add = $value$
+        }
+
+        if = {
+            limit = { has_variable = yeke_mongghul_ulus }
+            if = {
+                limit = { var:yeke_mongghul_ulus > 100 }
+                set_variable = { name = yeke_mongghul_ulus value = 100 }
+            }
+            if = {
+                limit = { var:yeke_mongghul_ulus < 0 }
+                set_variable = { name = yeke_mongghul_ulus value = 0 }
+            }
+        }
+    }
+}

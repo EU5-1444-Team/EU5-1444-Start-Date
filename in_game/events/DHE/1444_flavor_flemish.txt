@@ -1,13 +1,18 @@
+﻿namespace = flemish_flavor
+namespace = brabantish_flavor
+namespace = dutch_rhenish_flavor
+
 flemish_flavor.1 = {
 	type = country_event
 
 	fire_only_once = yes
 	hidden = yes
 
+	title = flemish_flavor.1.title
+
 	dynamic_historical_event = {
 		tag = FLA
 		tag = BRB
-		tag = BEL
 		from = 1700.1.1
 		to = 1836.1.1
 		monthly_chance = 10
@@ -19,7 +24,6 @@ flemish_flavor.1 = {
 			culture = culture:flemish
 			tag = FLA
 			tag = BRB
-			tag = BEL
 		}
 		any_owned_location = {
 			area = area:flanders_area
@@ -49,6 +53,8 @@ brabantish_flavor.1 = {
 
 	fire_only_once = yes
 	hidden = yes
+
+	title = brabantish_flavor.1.title
 
 	dynamic_historical_event = {
 		tag = BRB
@@ -131,6 +137,8 @@ dutch_rhenish_flavor.1 = {
 
 	fire_only_once = yes
 	hidden = yes
+
+	title = dutch_rhenish_flavor.1.title
 
 	dynamic_historical_event = {
 		tag = KLE

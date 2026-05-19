@@ -1,4 +1,4 @@
-cb_seize_yuan = {
+﻿cb_seize_yuan = {
     create_visible  = {
         exists = international_organization:northern_yuan
         is_member_of_international_organization = international_organization:northern_yuan
@@ -7,7 +7,7 @@ cb_seize_yuan = {
             is_leader_of_international_organization = international_organization:northern_yuan
         }
     }
-    allow_creation = {
+    create_enabled = {
         is_member_of_international_organization = international_organization:northern_yuan
         NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
         ruler_or_heir_if_regent ?= {
@@ -46,7 +46,7 @@ cb_seize_protector_general = {
             }
         }
     }
-    allow_creation = {
+    create_enabled = {
         is_member_of_international_organization = international_organization:northern_yuan
         NOT = {
             has_special_status_in_international_organization = {
@@ -73,7 +73,7 @@ cb_northern_yuan_raid = {
             NOT = { this = root }
         }
     }
-    allow_creation = {
+    create_enabled = {
         NOT = { has_truce_with = scope:target }
     }
     war_goal_type = northern_yuan_raid_wargoal

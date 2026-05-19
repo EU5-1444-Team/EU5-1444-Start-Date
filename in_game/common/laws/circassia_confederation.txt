@@ -1,4 +1,4 @@
-circassia_defense_law = {
+﻿circassia_defense_law = {
 	law_category = military
 	type = international_organization
 	potential = {
@@ -11,7 +11,7 @@ circassia_defense_law = {
 	}
 	circassia_defense_policy = {
 		allow = {
-			NOT = { tag = GEN }
+			scope:actor ?= { NOT = { tag = GEN } }
 		}
 		join_defensive_wars_always = {
 			custom_tooltip = {
@@ -28,9 +28,8 @@ circassia_defense_law = {
 			}
 			international_organization:circassia_confederation ?= {
 				NOT = {
-					has_special_status_in_international_organization = {
-						type = special_status:league_backer_circassia
-						international_organization = root
+					any_country_with_special_status_of_type = {
+						type = league_backer_circassia
 					}
 				}
 			}
@@ -49,9 +48,8 @@ circassia_defense_law = {
 				}
 			}
 			international_organization:circassia_confederation ?= {
-				has_special_status_in_international_organization = {
-					type = special_status:league_backer_circassia
-					international_organization = root
+				any_country_with_special_status_of_type = {
+					type = league_backer_circassia
 				}
 			}
 			scope:target ?= {
@@ -80,7 +78,7 @@ circassia_offense_law = {
 	}
 	circassia_offensive_coordination_policy = {
 		allow = {
-			NOT = { tag = GEN }
+			scope:actor ?= { NOT = { tag = GEN } }
 		}
 		join_offensive_wars_can_call = {
 			custom_tooltip = {
@@ -97,9 +95,8 @@ circassia_offense_law = {
 			}
 			international_organization:circassia_confederation ?= {
 				NOT = {
-					has_special_status_in_international_organization = {
-						type = special_status:league_backer_circassia
-						international_organization = root
+					any_country_with_special_status_of_type = {
+						type = league_backer_circassia
 					}
 				}
 			}
@@ -110,7 +107,7 @@ circassia_offense_law = {
 	}
 	circassia_no_offense_policy = {
 		allow = {
-			NOT = { tag = GEN }
+			scope:actor ?= { NOT = { tag = GEN } }
 		}
 		wants_propose_policy = {
 			subtract = { value = 1000 }
@@ -131,7 +128,7 @@ circassia_genoese_governance_law = {
 	}
 	no_genoese_local_governors_policy = {
 		allow = {
-			NOT = { tag = GEN }
+			scope:actor ?= { NOT = { tag = GEN } }
 		}
 		wants_propose_policy = {
 			subtract = { value = 1000 }
@@ -139,7 +136,7 @@ circassia_genoese_governance_law = {
 	}
 	genoese_local_governors_policy = {
 		allow = {
-			NOT = { tag = GEN }
+			scope:actor ?= { NOT = { tag = GEN } }
 			country_exists = c:GEN
 			c:GEN = {
 				is_member_of_international_organization = international_organization:circassia_confederation
@@ -174,7 +171,7 @@ circassia_genoese_governance_law = {
 		}
 		wants_this_policy_bias = {
 			if = {
-				limit = { tag = GEN }
+				limit = { scope:actor ?= { tag = GEN } }
 				subtract = {
 					desc = "POLICY_RESTRICTS_SOVEREIGNTY"
 					value = 85
@@ -302,7 +299,7 @@ circassia_unification_law = {
 	}
 	preserve_circassia_confederation_policy = {
 		allow = {
-			NOT = { tag = GEN }
+			scope:actor ?= { NOT = { tag = GEN } }
 		}
 		wants_propose_policy = {
 			subtract = { value = 1000 }
@@ -310,7 +307,7 @@ circassia_unification_law = {
 	}
 	unify_circassia_policy = {
 		allow = {
-			NOT = { tag = GEN }
+			scope:actor ?= { NOT = { tag = GEN } }
 		}
 		wants_propose_policy = {
 			add = { value = 500 }
@@ -349,8 +346,10 @@ circassia_unification_law = {
 					}
 				}
 			}
-			destroy_international_organization = {
-				target = root
+			leader_country = {
+				destroy_international_organization = {
+					target = international_organization:circassia_confederation
+				}
 			}
 		}
 		years = 10
