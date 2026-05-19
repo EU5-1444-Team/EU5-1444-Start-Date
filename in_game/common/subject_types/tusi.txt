@@ -1,4 +1,4 @@
-tusi = {
+﻿tusi = {
     subject_pays = subject_pays_vassal
     color = subject_tusi
     level = 1
@@ -124,7 +124,10 @@ tusi = {
     }
 
     on_enable = {
-        set_court_language = scope:future_overlord.court_dialect
+        if = {
+            limit = { exists = scope:future_overlord.court_dialect }
+            set_court_language = scope:future_overlord.court_dialect
+        }
     }
 
     diplo_chance_accept_subject = {

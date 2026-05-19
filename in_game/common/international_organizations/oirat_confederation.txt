@@ -1,4 +1,4 @@
-oirat_confederation = {
+﻿oirat_confederation = {
     has_target = no
     unique = yes
     expel_members_who_are_targets_of_other_members = no
@@ -228,7 +228,9 @@ oirat_confederation = {
             # Collapse/formation checks
             if = {
                 limit = { var:centralisation_oirat <= -100 }
-                destroy_international_organization = { target = international_organization:oirat_confederation }
+                leader_country = {
+                    destroy_international_organization = { target = international_organization:oirat_confederation }
+                }
             }
             if = {
                 limit = { var:centralisation_oirat >= 100 }
@@ -247,7 +249,9 @@ oirat_confederation = {
                         annex_country = { country = prev reason = Diplomatic }
                     }
                 }
-                destroy_international_organization = { target = international_organization:oirat_confederation }
+                leader_country = {
+                    destroy_international_organization = { target = international_organization:oirat_confederation }
+                }
             }
         }
     }

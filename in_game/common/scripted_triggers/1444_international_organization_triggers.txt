@@ -1,4 +1,4 @@
-has_active_main_branch = {
+﻿has_active_main_branch = {
     international_organization_has_policy = policy:union_establish_seniority_policy
     trigger_if = {
         limit = { has_special_status_available = special_status:main_branch }
@@ -22,25 +22,5 @@ country_is_main_branch = {
 law_can_be_initiated_by_members = {
 	custom_description = {
 		text = law_can_be_initiated_by_members_text
-		OR = {
-            # Catholic Church laws
-            this = law:cc_indulgences
-            this = law:cc_papal_authority
-            this = law:cc_veneration_of_saints_and_reliquaries
-            this = law:cc_simony
-            this = law:cc_society_of_jesus
-            this = law:cc_witchcraft
-            this = law:cc_marriage_of_priest
-            # Northern Yuan laws
-            this = law:kurultai_law
-            this = law:tribute_system_law
-            this = law:pasture_rights_law
-            this = law:military_organization_law
-            this = law:imperial_court_law
-            this = law:vassal_obligations_law
-            this = law:imperial_authority_law
-            this = law:mongol_consolidation_law
-            this = law:mongolia_consolidation_law
-        }
     }
 }

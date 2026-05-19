@@ -29,14 +29,14 @@
 	}
 
 	country_modifier = {
-		diplomatic_reputation = diplomatic_reputation_moderate_bonus
+		diplomatic_reputation = diplomatic_reputation_mild_bonus
 		subject_loyalty = 0.05
 		improve_relation_impact = 0.1
 		monthly_horde_unity = 0.03
         monthly_tribal_cohesion = 0.03
         monthly_legitimacy = 0.03
         monthly_devotion = 0.03
-		army_cavalry_maintenance_cost_modifier = -0.1
+		army_light_cavalry_maintenance_cost_modifier = -0.1
 		monthly_towards_aristocracy = societal_value_monthly_move
 		government_reform_slots = 1
 	}
@@ -50,7 +50,7 @@ mongol_khagan = {
     potential = {
 		country_rank_is_empire = yes
         OR = {
-			has_culture_group = culture_group:mongolian_group
+			culture = { has_culture_group = culture_group:mongolian_group }
 			ruler_or_heir_if_regent.dynasty ?= { dynasty:chagatayid_dynasty ?= this }
 			ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this }
 			ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this }
@@ -60,7 +60,7 @@ mongol_khagan = {
     allow = {
 		country_rank_is_empire = yes
         OR = {
-			has_culture_group = culture_group:mongolian_group
+			culture = { has_culture_group = culture_group:mongolian_group }
 			ruler_or_heir_if_regent.dynasty ?= { dynasty:chagatayid_dynasty ?= this }
 			ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this }
 			ruler_or_heir_if_regent.dynasty ?= { dynasty:borjigin_dynasty ?= this }
@@ -81,7 +81,7 @@ mongol_khagan = {
 	}
     country_modifier = {
         diplomatic_reputation = diplomatic_reputation_severe_bonus
-        army_cavalry_maintenance_cost_modifier = -0.1
+        army_light_cavalry_maintenance_cost_modifier = -0.1
         global_crown_estate_power = 0.2
 		monthly_horde_unity = 0.06
         monthly_tribal_cohesion = 0.06
@@ -116,8 +116,8 @@ legacy_of_khasar = {
 		}
 	}
 	country_modifier = {
-        army_cavalry_power = 0.05
-		army_infantry_power = 0.05
+        army_light_cavalry_power = 0.05
+		army_light_infantry_power = 0.05
 		army_tradition_from_battle = 0.5
 		monthly_army_tradition = 0.05
 		army_food_gathering_modifier = 0.1
@@ -172,12 +172,12 @@ oirat_unification_reform = {
     country_modifier = {
         monthly_tribal_cohesion = 0.02
         monthly_legitimacy = 0.02
-        monthly_republic_tradition = 0.02
+        monthly_republican_tradition = 0.02
         monthly_devotion = 0.02
         monthly_horde_unity = 0.02
         monthly_prestige = 0.05
         stability_decay = -0.001
-        trade_efficiency = 0.02
+        trade_land_efficiency = 0.02
         government_reform_slots = 1
     }
 	years = 0.1
@@ -206,12 +206,12 @@ eastern_steppe_unification_reform = {
 	country_modifier = {
 		monthly_tribal_cohesion = 0.02
 		monthly_legitimacy = 0.02
-		monthly_republic_tradition = 0.02
+		monthly_republican_tradition = 0.02
 		monthly_devotion = 0.02
 		monthly_horde_unity = 0.02
 		monthly_prestige = 0.05
 		stability_decay = -0.001
-		trade_efficiency = 0.02
+		trade_land_efficiency = 0.02
 		government_reform_slots = 1
 	}
 	years = 0.1
@@ -241,14 +241,14 @@ legacy_of_chagatai = {
 		}
 	}
 	country_modifier = {
-        diplomatic_reputation = diplomatic_reputation_minor_bonus
+        diplomatic_reputation = diplomatic_reputation_weak_bonus
 		monthly_horde_unity = 0.03
         monthly_tribal_cohesion = 0.03
         monthly_legitimacy = 0.03
         monthly_devotion = 0.03
-		trade_efficiency = 0.05
+		trade_land_efficiency = 0.05
 		global_monthly_prosperity = 0.01
-		army_cavalry_maintenance_cost_modifier = -0.1
+		army_light_cavalry_maintenance_cost_modifier = -0.1
 		cultural_influence = 0.05
 		monthly_towards_aristocracy = societal_value_monthly_move
 		government_reform_slots = 1
@@ -287,8 +287,8 @@ legacy_of_jochi = {
 		subject_loyalty = 0.05
 		trade_income = 0.05
 		tax_income_efficiency = 0.05
-		army_cavalry_maintenance_cost_modifier = -0.1
-		diplomatic_reputation = diplomatic_reputation_minor_bonus
+		army_light_cavalry_maintenance_cost_modifier = -0.1
+		diplomatic_reputation = diplomatic_reputation_weak_bonus
 		monthly_towards_aristocracy = societal_value_monthly_move
 		government_reform_slots = 1
 	}
@@ -306,7 +306,7 @@ legacy_of_kublai_khan_reform = {
     country_modifier = {
         monthly_prestige = 0.10
         country_cabinet_efficiency = 0.08
-        monthly_income_modifier = 0.06
+        monthly_gold_income = 0.06
         stability_decay = 0.05
         diplomatic_reputation = diplomatic_reputation_mild_bonus
         research_speed = 0.05

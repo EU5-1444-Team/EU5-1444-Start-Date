@@ -1,4 +1,4 @@
-league_of_lezhe_defense_law = {
+﻿league_of_lezhe_defense_law = {
 	law_category = military
 	type = international_organization
 	potential = {
@@ -11,8 +11,10 @@ league_of_lezhe_defense_law = {
 	}
 	league_of_lezhe_defense_policy = {
 		allow = {
-			NOT = {
-				tag = VEN
+			scope:actor ?= {
+				NOT = {
+					tag = VEN
+				}
 			}
 		}
 		# Albanian League members defend each other.
@@ -31,9 +33,8 @@ league_of_lezhe_defense_law = {
 			}
 			international_organization:league_of_lezhe ?= {
 				NOT = {
-					has_special_status_in_international_organization = {
-						type = special_status:league_backer
-						international_organization = root
+					any_country_with_special_status_of_type = {
+						type = league_backer
 					}
 				}
 			}
@@ -53,9 +54,8 @@ league_of_lezhe_defense_law = {
 				}
 			}
 			international_organization:league_of_lezhe ?= {
-				has_special_status_in_international_organization = {
-					type = special_status:league_backer
-					international_organization = root
+				any_country_with_special_status_of_type = {
+					type = league_backer
 				}
 			}
 			scope:target ?= {
@@ -83,8 +83,10 @@ league_of_lezhe_offense_law = {
 	}
 	league_of_lezhe_offensive_coordination_policy = {
 		allow = {
-			NOT = {
-				tag = VEN
+			scope:actor ?= {
+				NOT = {
+					tag = VEN
+				}
 			}
 		}
 		# Offensive coordination is available only among League members, not the League Backer.
@@ -103,9 +105,8 @@ league_of_lezhe_offense_law = {
 			}
 			international_organization:league_of_lezhe ?= {
 				NOT = {
-					has_special_status_in_international_organization = {
-						type = special_status:league_backer
-						international_organization = root
+					any_country_with_special_status_of_type = {
+						type = league_backer
 					}
 				}
 			}
@@ -118,8 +119,10 @@ league_of_lezhe_offense_law = {
 	}
 	league_of_lezhe_no_offense_policy = {
 		allow = {
-			NOT = {
-				tag = VEN
+			scope:actor ?= {
+				NOT = {
+					tag = VEN
+				}
 			}
 		}
 		wants_propose_policy = {
@@ -143,8 +146,10 @@ league_of_lezhe_venetian_governance_law = {
 	}
 	no_venetian_local_governors_policy = {
 		allow = {
-			NOT = {
-				tag = VEN
+			scope:actor ?= {
+				NOT = {
+					tag = VEN
+				}
 			}
 		}
 		wants_propose_policy = {
@@ -153,10 +158,56 @@ league_of_lezhe_venetian_governance_law = {
 			}
 		}
 	}
+	on_fully_activated = {
+		if = {
+			limit = {
+				country_exists = c:VEN
+				c:VEN = {
+					is_member_of_international_organization = international_organization:league_of_lezhe
+					any_owned_location = {
+						area = area:albania_area
+					}
+				}
+			}
+			area:albania_area = {
+				every_location_in_area = {
+					limit = {
+						owner = c:VEN
+					}
+					create_country_from_location = {
+						make_subject_of = {
+							target = c:VEN
+							type = subject_type:governorate
+						}
+						change_country_name = lezhe_governorate_name
+						change_country_adjective = lezhe_governorate_name_ADJ
+						save_scope_as = lezhe_venetian_governor_country
+					}
+					if = {
+						limit = {
+							exists = scope:lezhe_venetian_governor_country
+						}
+						scope:lezhe_venetian_governor_country = {
+							every_owned_location = {
+								limit = {
+									owner ?= scope:lezhe_venetian_governor_country
+								}
+								add_core = scope:lezhe_venetian_governor_country
+								change_integration_level = core
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	months = 6
 	venetian_local_governors_policy = {
 		allow = {
-			NOT = {
-				tag = VEN
+			scope:actor ?= {
+				NOT = {
+					tag = VEN
+				}
 			}
 			country_exists = c:VEN
 			c:VEN = {
@@ -199,7 +250,7 @@ league_of_lezhe_venetian_governance_law = {
 		wants_this_policy_bias = {
 			if = {
 				limit = {
-					tag = VEN
+					scope:actor ?= { tag = VEN }
 				}
 				subtract = {
 					desc = "POLICY_RESTRICTS_SOVEREIGNTY"
@@ -243,19 +294,14 @@ league_of_lezhe_venetian_governance_law = {
 					limit = {
 						any_owned_location = {
 							area = area:albania_area
-							province_average_control < 0.6
-						}
-					}
-					add = {
-						desc = "VOTE_BASE_VALUE"
-						value = 50
+			province = { province_average_control < 0.6 }
 					}
 				}
 				if = {
 					limit = {
 						any_owned_location = {
 							area = area:albania_area
-							province_average_control > 0.85
+							province = { province_average_control > 0.85 }
 						}
 					}
 					subtract = {
@@ -356,8 +402,10 @@ league_of_lezhe_unification_law = {
 	}
 	preserve_league_of_lezhe_policy = {
 		allow = {
-			NOT = {
-				tag = VEN
+			scope:actor ?= {
+				NOT = {
+					tag = VEN
+				}
 			}
 		}
 		wants_propose_policy = {
@@ -366,10 +414,51 @@ league_of_lezhe_unification_law = {
 			}
 		}
 	}
+	on_fully_activated = {
+		custom_tooltip = league_of_lezhe_unification_tt
+		every_international_organization_member = {
+			limit = {
+				NOT = {
+					this = root.leader_country
+				}
+				NOT = {
+					has_special_status_in_international_organization = {
+						type = special_status:league_backer
+						international_organization = root
+					}
+				}
+			}
+			root.leader_country = {
+				annex_country = {
+					country = prev
+					reason = Diplomatic
+				}
+			}
+		}
+		root.leader_country = {
+			form_country = formable_country:ALB_f
+			if = {
+				limit = {
+					country_rank_level < 3
+				}
+				set_country_rank_effect = {
+					rank = country_rank:rank_kingdom
+				}
+			}
+		}
+		leader_country = {
+			destroy_international_organization = {
+				target = international_organization:league_of_lezhe
+			}
+		}
+	}
+	years = 10
 	unify_albania_policy = {
 		allow = {
-			NOT = {
-				tag = VEN
+			scope:actor ?= {
+				NOT = {
+					tag = VEN
+				}
 			}
 		}
 		wants_propose_policy = {
@@ -415,8 +504,10 @@ league_of_lezhe_unification_law = {
 					}
 				}
 			}
-			destroy_international_organization = {
-				target = root
+			leader_country = {
+				destroy_international_organization = {
+					target = international_organization:league_of_lezhe
+				}
 			}
 		}
 		years = 10

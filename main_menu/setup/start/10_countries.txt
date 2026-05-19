@@ -967,7 +967,7 @@ countries = {
             }
         }
 
-        county_rank = rank_duchy
+        country_rank = rank_duchy
         capital = tour_auvergne
     }
 
@@ -998,7 +998,7 @@ countries = {
             }
         }
 
-        county_rank = rank_duchy
+        country_rank = rank_duchy
         capital = vic_le_comte
     }
 
@@ -1024,7 +1024,7 @@ countries = {
             }
         }
 
-        county_rank = rank_county
+        country_rank = rank_county
         capital = clermont
     }
 
@@ -2008,7 +2008,7 @@ countries = {
             ruler_term = { character = bls_hugues_ii_chatillon start_date = 1292.1.29 end_date = 1307.1.1 regnal_number = 2 }
             ruler_term = { character = bls_guy_i_chatillon start_date = 1307.1.1 end_date = 1342.8.12 regnal_number = 1 }
 
-            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1392.36.4 end_date = 1407.11.23 regnal_number = 1 }
+            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1392.3.6 end_date = 1407.11.23 regnal_number = 1 }
             ruler_term = { character = orl_charles_i_valois_orleans start_date = 1407.11.23 }
 
             regnal_numbers = {
@@ -2223,7 +2223,7 @@ countries = {
             ruler_term = { character = nav_philip_iii_evreux start_date = 1336.3.14 end_date = 1362.6.14 regnal_number = 1 }
 
             ruler_term = { character = ber_jean_valois_berry start_date = 1356.1.1 end_date = 1374.1.1 regnal_number = 1 }
-            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1392.36.4 end_date = 1407.11.23 regnal_number = 1 }
+            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1392.3.6 end_date = 1407.11.23 regnal_number = 1 }
             ruler_term = { character = ang_jean_ii_valois_angouleme start_date = 1336.3.14 end_date = 1362.6.14 regnal_number = 1 }
 
             regnal_numbers = {
@@ -2478,7 +2478,7 @@ countries = {
             ruler = orl_charles_i_valois_orleans
 
             ruler_term = { character = fra_philip_valois start_date = 1344.1.1 end_date = 1375.9.1 regnal_number = 1 }
-            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1392.36.4 end_date = 1407.11.23 regnal_number = 1 }
+            ruler_term = { character = orl_louis_i_valois_orleans start_date = 1392.3.6 end_date = 1407.11.23 regnal_number = 1 }
             ruler_term = { character = orl_charles_i_valois_orleans start_date = 1407.11.23 }
         }
 
@@ -4136,32 +4136,6 @@ countries = {
     }
 
     # --- CBU ---
-
-    NOY = {
-        #Noyon
-        own_control_core = {
-            noyon
-        }
-
-        starting_technology_level = 3
-        include = "expl_western_europe"
-        include = "catholic_bishopric_no_coast"
-        country_rank = rank_county
-        government = {
-            ruler = random
-
-            reforms = {
-                prince_bishopric_reform
-            }
-        }
-
-        tolerated_cultures = {
-        }
-
-        capital = noyon
-    }
-
-    # --- NOY ---
 
     PRG = {
         #Perche-Gouët
@@ -7963,7 +7937,7 @@ countries = {
 
     # --- VSE ---
 
-    VIZ = {
+        VIZ = {
         own_control_core = {
             bilbao durango valmaseda
         }
@@ -7981,7 +7955,6 @@ countries = {
             regnal_numbers = {
             }
             reforms = {
-                portuguese_monarchy_reform
             }
         }
 
@@ -48043,7 +48016,7 @@ countries = {
         }
         starting_technology_level = 3
         include = "expl_baloch_template"
-        include = "1444_brahui_tribe_template"
+        include = "1444_baloch_tribe_template"
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
@@ -48053,6 +48026,8 @@ countries = {
         religious_school = maturidi_school
         capital = kalat
     }
+
+    # --- KLA ---
 
     KHN = {  # Rakhshani
         own_control_core = {
@@ -53359,7 +53334,7 @@ countries = {
 
         country_rank = rank_county
     }
-    NB3 = { $Kuji Nanbu
+    NB3 = { # Kuji Nanbu
         capital = kuji
         include = "japanese_clan"
 
@@ -55632,29 +55607,6 @@ countries = {
 
     # --- OKU ---
 
-    OKU = {
-        # Okura
-        capital = hita
-        include = "japanese_clan"
-
-        own_control_core = {
-            hita
-        }
-
-        government = {
-
-            ruler = random
-
-            reforms = {
-                daimyo
-            }
-        }
-
-        country_rank = rank_county
-    }
-
-    # --- OKU ---
-
     SGA = {
         # Shiga
         capital = naoiri
@@ -56160,29 +56112,6 @@ countries = {
     }
 
     # --- CKU ---
-
-    NSN = {
-        # Nishina
-        capital = azumi
-        include = "japanese_clan"
-
-        own_control_core = {
-            azumi
-        }
-
-        government = {
-
-            ruler = random
-
-            reforms = {
-                daimyo
-            }
-        }
-
-        country_rank = rank_county
-    }
-
-    # --- NSN ---
 
     NSN = {
         # Nishina
@@ -60825,7 +60754,7 @@ countries = {
         }
 
         own_control_integrated = {
-            gongshan adeqiu linxi zhuluo lanzhou_lanzhou zhiziluo
+            gongshan adeqiu linxi zhuluo lanzhou_lanzhou zhiziluo luzhang
         }
 
         include = "asia_advanced_tribe"
@@ -61662,7 +61591,7 @@ countries = {
 
     AMD = { #Amdo
         own_control_core = {
-            chabcha buha caka dulan dungkar_amdo guolimu qardam amnye_machen quge sailahai zeku muxihe
+            chabcha buha caka dulan dungkar_amdo guolimu qardam amnye_machen quge sailahai zeku muxihe sanjiaocheng
         }
 
         include = "asia_advanced_no_pagan_tribe"
@@ -62836,7 +62765,7 @@ countries = {
             ruler_term = { character = csu_inka_roqa start_date = 1350.1.1 end_date = 1380.1.1 regnal_number = 1 } # Edited CSU as well incase someone changes tag
             ruler_term = { character = csu_yawar_waqaq start_date = 1380.1.1 end_date = 1410.1.1 regnal_number = 1 }
             ruler_term = { character = csu_viracocha_inka start_date = 1410.1.1 end_date = 1438.1.1 regnal_number = 1 }
-            ruler_tern = { character = csu_pachacuti start_date = 1438.1.1 regnal_number = 1 }
+            ruler_term = { character = csu_pachacuti start_date = 1438.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_manco = 1
@@ -63231,7 +63160,7 @@ countries = {
             ruler_term = { character = csu_inka_roqa start_date = 1350.1.1 end_date = 1380.1.1 regnal_number = 1 } # Edited CSU as well incase someone changes tag
             ruler_term = { character = csu_yawar_waqaq start_date = 1380.1.1 end_date = 1410.1.1 regnal_number = 1 }
             ruler_term = { character = csu_viracocha_inka start_date = 1410.1.1 end_date = 1438.1.1 regnal_number = 1 }
-            ruler_tern = { character = csu_pachacuti start_date = 1438.1.1 regnal_number = 1 }
+            ruler_term = { character = csu_pachacuti start_date = 1438.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_manco = 1
@@ -79695,23 +79624,7 @@ countries = {
 
     # --- CSH ---
 
-    CXI = {
-        #Xí
-        our_cores_conquered_by_others = { }
-        include = "chinese_monarchy"
-        include = "expl_silk_road_west"
-        include = "expl_silk_road_center"
-        include = "expl_silk_road_east"
-        government = {
-            type = monarchy
-        }
-        court_language = shu_language
-        liturgical_language = classical_chinese_language
-        country_rank = rank_kingdom
-        capital = chengdu
-    }
 
-    # --- CXI ---
 
     CTG = {
         #Tûng-nèn

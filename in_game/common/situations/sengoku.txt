@@ -40,7 +40,7 @@
 	}
 	on_start = {
 		c:JAP ?= {
-			change_country_tag = ASK
+			form_country = formable_country:ASK_f
 		}
 		international_organization:japanese_shogunate = {
 			if = {
@@ -344,7 +344,7 @@
 					change_country_name = JAP
 					change_country_adjective = JAP_ADJ
 				}
-				change_country_tag = JAP
+				form_country = formable_country:JAP_f
 			}
 		}
 		else = {
@@ -356,7 +356,7 @@
 					change_country_name = JAP
 					change_country_adjective = JAP_ADJ
 				}
-				change_country_tag = JAP
+				form_country = formable_country:JAP_f
 				international_organization:japanese_shogunate ?= {
 					set_leader_country = prev
 				}

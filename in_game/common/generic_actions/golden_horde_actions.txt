@@ -1,11 +1,11 @@
-claim_golden_horde = {
+﻿claim_golden_horde = {
 	type = internationalorganization
 	ai_tick = daily
 	ai_tick_frequency = 40
 	automation_tick = never
 	automation_tick_frequency = 12
 	potential = {
-		scope:actor = { international_organization_type = international_organization_type:golden_horde }
+		exists = international_organization:golden_horde
 	}
 	allow = {
 		scope:actor = {
@@ -25,7 +25,7 @@ claim_golden_horde = {
 					OR = {
 						is_patrilineal_descendant_of = dynasty:giray_dynasty
 						is_patrilineal_descendant_of = dynasty:jochi_dynasty
-						primary_culture = culture:cuman_culture
+						culture = culture:cuman_culture
 					}
 				}
 				any_character = { 

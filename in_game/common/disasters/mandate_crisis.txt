@@ -1,4 +1,4 @@
-mandate_crisis = {
+﻿mandate_crisis = {
 
     image = "gfx/interface/illustrations/situation/red_turban_rebellions.dds"
 
@@ -20,7 +20,6 @@ mandate_crisis = {
     }
 
     can_end = {
-        disaster:mandate_crisis = { years_since_disaster_start > 20 }
         OR = {
             NOT = { exists = international_organization:middle_kingdom }
             trigger_if = {
