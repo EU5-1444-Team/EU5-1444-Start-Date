@@ -4548,7 +4548,7 @@ character_db={
 		estate = nobles_estate
 		adm = 27 dip = 43 mil = 67
 		birth_date = 1320.1.1
-		death_date = 1362.526
+		death_date = 1362.5.26
 		birth = taranto
 		father = alb_filippo_i_taranto
 		mother = ach_catherine_valois
@@ -8303,12 +8303,21 @@ character_db={
 		culture = saxon
 		religion = catholic
 		birth_date = 1287.1.1
-		death_date = 1399.12.31
-
+		death_date = 1342.5.19
 		birth = dresden
 		father = swb_albrecht_ii_askanier
 		mother = swb_agnes_habsburg
 		dynasty = askanier_dynasty
+		tag = PSS
+	}
+
+    pss_leonhard_von_laiming  = { #Ruler
+		first_name = { name = name_leonard }
+        last_name = { name = "von Laiming" }
+		culture = danube_bavarian
+		religion = catholic
+		birth_date = 1381.1.1
+		birth = rosenheim
 		tag = PSS
 	}
 
@@ -15791,12 +15800,22 @@ character_db={
 		religion = catholic
 		estate = nobles_estate
 		birth_date = 1290.1.1 #unknown
-		death_date = 1399.12.31
-
+		death_date = 1350.1.1 # Unknown
 		birth = venice #review
 		dynasty = belegno_dynasty
 		tag = RAG
 	}
+
+    rag_ivan_menze = { # Rector in October 1444
+        first_name = { name = name_john }
+		culture = dalmatian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1380.1.1 #unknown
+		birth = ragusa #review
+        dynasty = menze_dynasty
+		tag = RAG
+    }
 
     ### belforti_dynasty | VLT ###
 
@@ -117996,6 +118015,29 @@ character_db={
         tag = HUN
     }
 
+    hun_janos_szekely = {
+        first_name = { name = name_john }
+        culture = szekely_culture
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1404.1.1 # Unknown
+        birth = cristuru_secuiesc
+        dynasty = szekely_dynasty
+        tag = KNS
+    }
+
+    hun_tomas_szekely = {
+        first_name = { name = name_thomas }
+        culture = szekely_culture
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1426.1.1 # Unknown
+        birth = cristuru_secuiesc
+        father = hun_janos_szekely
+        dynasty = szekely_dynasty
+        tag = HUN
+    }
+
     ### tadjeddinids_dynasty | ERE ###
 
 	tdj_tajeddin = {
@@ -142159,15 +142201,27 @@ character_db={
 
 	slz_friedrich_von_leibnitz = { #Ruler
 		first_name = { name = name_frederick }
+        last_name = { name = "von Leibnitz" }
 		culture = danube_bavarian
 		religion = catholic
 		estate = clergy_estate
 		birth_date = 1275.1.1
-		death_date = 1399.12.31
-
+		death_date = 1338.1.1
 		birth = salzburg
 		tag = SLZ
 	}
+
+    slz_friedrich_iv_truchess_von_emmerberg = {
+        first_name = { name = name_frederick }
+        nickname = { name = Truchseß }
+        last_name = { name = "von Emmerberg" }
+		culture = danube_bavarian
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1390.1.1 # Estimated
+		birth = salzburg
+		tag = SLZ
+    }
 
     ### (no dynasty) | SMD ###
 
@@ -143483,5 +143537,318 @@ character_db={
 		birth = zurich
 		tag = ZUR
 	}
+
+    pvc_radoslav_pavlovic = {
+        first_name = { name = Radoslav }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1400.1.1 # Estimated
+        death_date = 1441.1.1
+        birth = olovo
+        spouse = pvc_teodora_vukcic_kosaca
+        dynasty = pavlovic_dynasty
+        tag = PVC
+    }
+
+    pvc_teodora_vukcic_kosaca = { # Sister of Stjepan Vukčić Kosača
+        first_name = { name = name_theodora }
+        nickname = { name = Vukčić }
+        culture = bosnian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1405.1.1 # Estimated
+        birth = trebinje
+        spouse = pvc_radoslav_pavlovic
+        dynasty = kosaca_dynasty
+        tag = PVC
+    }
+
+    pvc_ivanis_pavlovic = {
+        first_name = { name = Ivaniš }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1423.6.1
+        birth = olovo
+        father = pvc_radoslav_pavlovic
+        mother = pvc_teodora_vukcic_kosaca
+        dynasty = pavlovic_dynasty
+        tag = PVC
+    }
+
+    pvc_petar_ii_pavlovic = {
+        first_name = { name = name_peter }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1425.4.1
+        birth = olovo
+        father = pvc_radoslav_pavlovic
+        mother = pvc_teodora_vukcic_kosaca
+        dynasty = pavlovic_dynasty
+        tag = PVC
+    }
+
+    pvc_nikolla_pavlovic = {
+        first_name = { name = name_nicholas }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1427.1.1 # Estimated
+        birth = olovo
+        father = pvc_radoslav_pavlovic
+        mother = pvc_teodora_vukcic_kosaca
+        dynasty = pavlovic_dynasty
+        tag = PVC
+    }
+
+    djk_juraj_vojsalic_hrvatinic = {
+        first_name = { name = name_george }
+        nickname = { name = Vojsalić }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1365.1.1 # Estimated
+        death_date = 1439.1.1
+        birth = jajce
+        dynasty = hrvatinic_dynasty
+        tag = DJK
+    }
+
+    djk_petar_vojsalic_hrvatinic = {
+        first_name = { name = name_peter }
+        nickname = { name = Vojsalić }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1395.1.1 # Estimated
+        birth = jajce
+        father = djk_juraj_vojsalic_hrvatinic
+        dynasty = hrvatinic_dynasty
+        tag = DJK
+    }
+
+    djk_matija_vojsalic_hrvatinic = {
+        first_name = { name = name_matthew }
+        nickname = { name = Vojsalić }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1420.1.1 # Estimated
+        birth = jajce
+        father = djk_petar_vojsalic_hrvatinic
+        dynasty = hrvatinic_dynasty
+        tag = DJK
+    }
+
+    djk_pavao_jurjevic_hrvatinic = {
+        first_name = { name = Pavao }
+        nickname = { name = Jurjević }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1397.1.1 # Estimated
+        birth = jajce
+        father = djk_juraj_vojsalic_hrvatinic
+        dynasty = hrvatinic_dynasty
+        tag = DJK
+    }
+
+    djk_nikolla_jurjevic_hrvatinic = {
+        first_name = { name = name_nicholas }
+        nickname = { name = Jurjević }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1397.1.1 # Estimated
+        birth = jajce
+        father = djk_juraj_vojsalic_hrvatinic
+        dynasty = hrvatinic_dynasty
+        tag = DJK
+    }
+
+    djk_vlatko_jurjevic_hrvatinic = {
+        first_name = { name = Vlatko }
+        nickname = { name = Jurjević }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1399.1.1 # Estimated
+        birth = jajce
+        father = djk_juraj_vojsalic_hrvatinic
+        dynasty = hrvatinic_dynasty
+        tag = DJK
+    }
+
+    djk_juraj_jurjevic_hrvatinic = {
+        first_name = { name = name_george }
+        nickname = { name = Jurjević }
+        culture = bosnian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1402.1.1 # Estimated
+        birth = jajce
+        father = djk_juraj_vojsalic_hrvatinic
+        dynasty = hrvatinic_dynasty
+        tag = DJK
+    }
+
+    cro_luka_talovac = {
+        first_name = { name = name_lucas }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1360.1.1 # Estimated
+        death_date = 1415.1.1 # Unknown
+        birth = slano
+        dynasty = talovac_dynasty
+        tag = CRO
+    }
+
+    cro_matko_talovac = {
+        first_name = { name = name_matthew }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1395.1.1 # Estimated
+        birth = slano
+        father = cro_luka_talovac
+        dynasty = talovac_dynasty
+        tag = CRO
+    }
+
+    cro_petar_talovac = {
+        first_name = { name = name_peter }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1396.1.1 # Estimated
+        birth = slano
+        father = cro_luka_talovac
+        dynasty = talovac_dynasty
+        tag = CRO
+    }
+
+    cro_franko_talovac = {
+        first_name = { name = name_francis }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1397.1.1 # Estimated
+        birth = slano
+        father = cro_luka_talovac
+        dynasty = talovac_dynasty
+        tag = CRO
+    }
+
+    cro_ivan_talovac = {
+        first_name = { name = name_john }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1399.1.1 # Estimated
+        birth = slano
+        father = cro_luka_talovac
+        dynasty = talovac_dynasty
+        tag = CRO
+    }
+
+    cro_ivan_v_frankopan = {
+        first_name = { name = name_john }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1330.1.1 # Estimated
+        death_date = 1393.1.1
+        birth = krk
+        dynasty = frankopan_dynasty
+        tag = CRO
+    }
+
+    cro_nikola_iv_frankopan = {
+        first_name = { name = name_john }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1360.1.1 # Estimated
+        death_date = 1432.6.2
+        birth = krk
+        father = cro_ivan_v_frankopan
+        dynasty = frankopan_dynasty
+        tag = CRO
+    }
+
+    cro_ivan_vi_frankopan = {
+        first_name = { name = name_john }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1390.1.1 # Estimated
+        death_date = 1436.1.1
+        birth = krk
+        father = cro_nikola_iv_frankopan
+        dynasty = frankopan_dynasty
+        tag = CRO
+    }
+
+    cro_stjepan_iii_frankopan = {
+        first_name = { name = name_stephen }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1392.1.1 # Estimated
+        birth = krk
+        father = cro_nikola_iv_frankopan
+        dynasty = frankopan_dynasty
+        tag = CRO
+    }
+
+    cro_ivan_vii_frankopan = {
+        first_name = { name = name_john }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1395.1.1 # Estimated
+        birth = krk
+        father = cro_nikola_iv_frankopan
+        dynasty = frankopan_dynasty
+        tag = CRO
+    }
+
+    cro_nikola_v_frankopan = {
+        first_name = { name = name_nicholas }
+        culture = croatian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1397.1.1 # Estimated
+        birth = krk
+        father = cro_nikola_iv_frankopan
+        dynasty = frankopan_dynasty
+        tag = CRO
+    }
+
+    fre_konrad_iv_von_klingenburg = {
+        first_name = { name = name_conrad }
+        last_name = { name = "von Klingenburg" }
+        culture = east_franconian
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1275.1.1 # Estimated
+        birth = miltenburg
+        tag = FRE
+    }
+
+    fre_heinrich_ii_von_schlick = {
+        first_name = { name = name_henry }
+        last_name = { name = "von Schlick" }
+        culture = upper_palatine
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1378.1.1 # Estimated
+        birth = cheb
+        tag = FRE
+    }
 
 }
