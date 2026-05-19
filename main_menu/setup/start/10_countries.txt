@@ -10888,7 +10888,9 @@ countries = {
             type = monarchy
             heir_selection = salic_law
 
-            ruler = random
+            ruler = rsa_giovanni_antonio_marzano
+
+            ruler_term = { character = rsa_giovanni_antonio_marzano start_date = 1400.1.1 regnal_number = 0 }
 
             centralization_vs_decentralization = 30
             traditionalist_vs_innovative = -30
@@ -11061,7 +11063,7 @@ countries = {
         government = {
             type = monarchy
 
-            ruler = random # TODO: add me
+            ruler = mlo_francesco_i_sforza
 
             ruler_term = { character = frm_mercenario_monteverde start_date = 1331.1.1 end_date = 1340.2.20 regnal_number = 0 }
 
@@ -11914,6 +11916,25 @@ countries = {
 
     # --- NVR ---
 
+    MTC = {
+        own_control_core = {
+            venafro
+        }
+
+        government = {
+            ruler = random
+        }
+
+        include = "catholic_abbey"
+        include = "expl_mediterranean"
+
+        court_language = latin_language
+        country_rank = rank_county
+        capital = venafro
+    }
+
+    # --- MTC ---
+
     TTO = {
         own_control_core = {
             taranto martinafr
@@ -12097,8 +12118,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            ruler = nap_francesco_baux_3rd_duke_andria
 
-            ruler = random
+            ruler_term = { character = nap_francesco_baux_1st_duke_andria start_date = 1347.9.15 end_date = 1422.4.23 regnal_number = 1 }
+            ruler_term = { character = nap_gugliemo_baux_2nd_duke_andria start_date = 1422.4.23 end_date = 1444.1.1 regnal_number = 1 }
+            ruler_term = { character = nap_francesco_baux_3rd_duke_andria start_date = 1444.1.1 regnal_number = 2 }
 
             centralization_vs_decentralization = 30
             traditionalist_vs_innovative = -30
@@ -12604,14 +12628,13 @@ countries = {
         include = "catholic_republic_no_coast"
         government = {
             type = republic
-            heir_selection = podesta_elective
+            heir_selection = signoria_selection
 
             reforms = {
-                signoria_reform
+                dynastic_signoria_reform
             }
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = cmr_rodolfo_iv_da_varano
 
             ruler_term = { character = cmr_gentile_i_varano start_date = 1259.1.1 end_date = 1284.1.1 regnal_number = 1 }
 
@@ -12624,7 +12647,10 @@ countries = {
                 character = cmr_berardo_i_varano start_date = 1325.1.1 end_date = 1329.3.1 regnal_number = 1 # Junior Co-Ruler until 1316
                 character = cmr_gentile_ii_varano start_date = 1325.1.1 end_date = 1329.3.1 regnal_number = 2
             }
-            ruler_term = { character = cmr_gentile_ii_varano start_date = 1329.3.1 regnal_number = 2 }
+            ruler_term = { character = cmr_gentile_ii_varano start_date = 1329.3.1 end_date = 1338.1.1 regnal_number = 2 }
+
+            ruler_term = { character = cmr_rodolfo_iii_da_varano start_date = 1393.1.1 end_date = 1425.1.1 regnal_number = 3 }
+            ruler_term = { character = cmr_rodolfo_iv_da_varano start_date = 1425.1.1 regnal_number = 4 }
         }
 
         tolerated_cultures = {
@@ -13253,8 +13279,17 @@ countries = {
         include = "catholic_republic_no_coast"
         government = {
             type = republic
-            heir_selection = oligarchic_elective #Priors
-            ruler = random
+            heir_selection = signoria_selection
+            ruler = orv_arrigo_monaldeschi_della_vipera
+
+            ruler_term = { character = orv_ermanno_monaldeschi_della_cervara start_date = 1334.1.1 end_date = 1338.1.1 regnal_number = 0 }
+
+            ruler_term = { character = orv_gentile_monaldeschi_della_sala start_date = 1347.1.1 end_date = 1443.1.1 regnal_number = 0 }
+            ruler_term = { character = orv_arrigo_monaldeschi_della_vipera start_date = 1443.1.1 regnal_number = 0 }
+
+            reforms = {
+                dynastic_signoria_reform
+            }
         }
 
         tolerated_cultures = {
@@ -13262,6 +13297,7 @@ countries = {
         }
 
         capital = orvietano
+        dynasty = monaldeschi_dynasty
     }
 
     # --- ORV ---
@@ -13459,12 +13495,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
+            ruler = ptg_aldobrando_paioletti_ii_orsini_aldobrandeschi
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler_term = { character = ptg_guido_orsini start_date = 1336.1.1 end_date = 1350.1.1 }
 
-            ruler_term = { character = ptg_guido_orsini start_date = 1336.1.1 }
-
+            ruler_term = { character = ptg_aldobrando_paioletti_ii_orsini_aldobrandeschi start_date = 1425.1.1 }
         }
 
         tolerated_cultures = {
@@ -13473,7 +13508,7 @@ countries = {
 
         country_rank = rank_county
         capital = pitigliano
-        dynasty = orsini_dynasty
+        dynasty = orsini_aldobrandeschi_dynasty
     }
 
     # --- PTG ---
