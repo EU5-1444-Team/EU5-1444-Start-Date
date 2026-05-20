@@ -9451,7 +9451,7 @@ countries = {
         own_control_core = {
             chioggia venice mestre
             pag brac
-            este monselice padova
+            monselice padova
             legnago peschiera verona
             # own_control_integrated, but culture accepted
             bassano schio vicenza
@@ -9472,9 +9472,11 @@ countries = {
         }
 
         own_control_conquered = {
-            asola brescia palazzolo salo_ita breno nozza
-            bergamo cortenuova clusone zogno
             lezha
+        }
+
+        our_cores_conquered_by_others = {
+            este
         }
 
         include = "expl_mediterranean"
@@ -10525,6 +10527,8 @@ countries = {
         include = "catholic_monarchy"
         government = {
             type = monarchy
+            
+            ruler = fer_leonello_deste
 
             reforms = {
             }
@@ -10533,6 +10537,9 @@ countries = {
 
             ruler_term = { character = fer_obizzo_ii_este start_date = 1288.1.1 end_date = 1293.2.13 regnal_number = 0 }
             ruler_term = { character = fer_azzo_viii_este start_date = 1293.2.13 end_date = 1306.1.1 regnal_number = 0 }
+
+            ruler_term = { character = fer_niccolo_iii_deste start_date = 1393.7.30 end_date = 1441.12.26 regnal_number = 3 }
+            ruler_term = { character = fer_leonello_deste start_date = 1441.12.26 regnal_number = 0 }
         }
 
         capital = modena
@@ -10554,6 +10561,10 @@ countries = {
         include = "catholic_monarchy"
         government = {
             type = monarchy
+
+            ruler = gst_guido_torelli
+
+            ruler_term = { character = gst_guido_torelli start_date = 1428.1.1 regnal_number = 1 }
 
             reforms = {
             }
@@ -10593,7 +10604,7 @@ countries = {
     # --- MDL ---
 
     BRS = {
-        our_cores_conquered_by_others = {
+        own_control_core = {
             asola brescia palazzolo salo_ita breno nozza
         }
 
@@ -10640,7 +10651,7 @@ countries = {
             reforms = {
             }
 
-            ruler = random
+            ruler = fer_leonello_deste
 
             ruler_term = { character = fer_azzo_vi_este start_date = 1209.1.1 end_date = 1212.11.1 regnal_number = 6 }
             ruler_term = { character = fer_aldobrandino_i_este start_date = 1212.11.1 end_date = 1215.10.10 regnal_number = 1 }
@@ -10662,6 +10673,9 @@ countries = {
                 character = fer_nicolo_i_este start_date = 1335.12.31 end_date = 1336.12.31 regnal_number = 1 # Junior Co-Ruler
             }
             ruler_term = { character = fer_obizzo_iii_este start_date = 1337.1.1 end_date = 1352.3.20 regnal_number = 3 }
+
+            ruler_term = { character = fer_niccolo_iii_deste start_date = 1393.7.30 end_date = 1441.12.26 regnal_number = 3 }
+            ruler_term = { character = fer_leonello_deste start_date = 1441.12.26 regnal_number = 0 }
         }
 
         tolerated_cultures = {
@@ -10673,6 +10687,35 @@ countries = {
     }
 
     # --- FER ---
+
+    ESE = {
+        own_control_core = {
+            este
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+
+            ruler = ven_taddeo_deste
+
+            ruler_term = { character = ven_taddeo_deste start_date = 1420.1.1 regnal_number = 0 }
+
+            reforms = {
+            }
+
+        }
+
+        capital = este
+    }
+
+    # --- ESE ---
 
     SIE = {
         own_control_core = {
@@ -10747,7 +10790,7 @@ countries = {
     # --- SPL ---
 
     BGM = {
-        our_cores_conquered_by_others = {
+        own_control_core = {
             bergamo cortenuova clusone zogno
         }
 
@@ -10765,6 +10808,7 @@ countries = {
             reforms = {
                 signoria_reform
             }
+
             ruler = random
 
         }
@@ -12653,9 +12697,11 @@ countries = {
         }
 
         government = {
-            ruler = random # TODO: add me
+            ruler = cnv_giovanni_parella_di_san_martino
 
-            ruler_term = { character = cnv_palladio_avogadro start_date = 1326.10.20 regnal_number = 1 }
+            ruler_term = { character = cnv_palladio_avogadro start_date = 1326.10.20 end_date = 1346.1.1 regnal_number = 1 }
+
+            ruler_term = { character = cnv_giovanni_parella_di_san_martino start_date = 1437.3.6 regnal_number = 0 }
         }
 
         tolerated_cultures = {
@@ -13069,8 +13115,7 @@ countries = {
             type = monarchy
             heir_selection = salic_law
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = msp_antonio_alberico_i_malaspina
 
             ruler_term = { character = msp_obizzo_i_malaspina start_date = 1141.1.1 end_date = 1185.1.1 regnal_number = 2 }
             ruler_term = { character = msp_obizzone_ii_malaspina start_date = 1185.1.1 end_date = 1193.1.1 regnal_number = 2 }
@@ -13078,7 +13123,9 @@ countries = {
             ruler_term = { character = msp_corrado_i_malaspina start_date = 1199.1.1 end_date = 1254.1.1 regnal_number = 1 }
             ruler_term = { character = msp_moroello_ii_malaspina start_date = 1254.1.1 end_date = 1284.1.1 regnal_number = 2 }
             ruler_term = { character = msp_franceschino_i_malaspina start_date = 1284.1.1 end_date = 1320.1.1 regnal_number = 1 }
-            ruler_term = { character = msp_morello_iii_malaspina start_date = 1320.1.1 regnal_number = 3 }
+            ruler_term = { character = msp_morello_iii_malaspina start_date = 1320.1.1 end_date = 1365.1.1 regnal_number = 3 }
+
+            ruler_term = { character = msp_antonio_alberico_i_malaspina start_date = 1398.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_albert = 1
@@ -13115,9 +13162,9 @@ countries = {
         government = {
             type = monarchy
             heir_selection = salic_law
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = msp_antonio_alberico_i_malaspina
 
+            ruler_term = { character = msp_antonio_alberico_i_malaspina start_date = 1442.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_albert = 1
@@ -20638,9 +20685,11 @@ countries = {
 
         government = {
 
-            ruler = random # TODO: add me
+            ruler = tnt_benedikt_trento
 
-            ruler_term = { character = tnt_nikolaus_brunn start_date = 1336.6.1 regnal_number = 1 }
+            ruler_term = { character = tnt_nikolaus_brunn start_date = 1338.1.1 end_date = 1347.1.1 regnal_number = 1 }
+
+            ruler_term = { character = tnt_benedikt_trento start_date = 1444.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_albert = 3
