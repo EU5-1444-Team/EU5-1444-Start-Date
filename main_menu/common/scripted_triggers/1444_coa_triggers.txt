@@ -110,3 +110,18 @@ coa_def_valois_anjou_dynasty_trigger = {
 coa_def_valois_burgundy_dynasty_trigger = {
 	scope:actor.ruler.dynasty ?= { dynasty:valois_burgundy_dynasty ?= this }
 }
+
+ # Zyrph's Edits
+
+coa_def_BRB_ownership_trigger = {
+	scope:actor ?= {
+		OR = {
+			owns = location:brussels
+			any_subject = { owns = location:brussels }
+		}	
+		OR = {
+			NOT = { country_exists = c:BRB }
+			any_subject_or_below = { this = c:BRB }
+		}
+	}
+}

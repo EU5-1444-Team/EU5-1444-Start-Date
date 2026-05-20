@@ -248,7 +248,9 @@ ANJ = { # Anjou
 	}
 }
 
-BUR = { # Burgundy
+# Zyrph's Burgundy
+
+REPLACE:BUR = { # Burgundy
 	# BUR - Ancient : Barry OB & border G
 	# BUR_Valois - Younger (15th c.) Qtly Bourgogne & Touraine
 
@@ -257,20 +259,125 @@ BUR = { # Burgundy
 		priority = 1
 	}
 	flag_definition = {
+		coa = BUR_FLA
+		priority = 11
+		trigger = {
+			coa_def_flanders_ownership_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = BUR_BRB_LIM
+		priority = 12
+		trigger = {
+			coa_def_flanders_ownership_trigger = yes
+			coa_def_limburg_ownership_trigger = yes
+			coa_def_BRB_ownership_trigger = yes
+		}
+	}
+	flag_definition = {
 		coa = BUR_habsburg
-		priority = 40
+		priority = 13
 		trigger = {
 			coa_def_habsburg_dynasty_trigger = yes
 		}
 	}
 	flag_definition = {
-		coa = BUR_Valois
-		priority = 50
+		coa = BUR_FLA_Hab
+		priority = 14
 		trigger = {
-            OR = {
-			    coa_def_valois_dynasty_trigger = yes
-                coa_def_valois_burgundy_dynasty_trigger = yes
-            }
+			coa_def_habsburg_dynasty_trigger = yes
+			coa_def_flanders_ownership_trigger = yes
+		}
+	}
+		flag_definition = {
+		coa = BUR_BRB_LIM_hab
+		priority = 15
+		trigger = {
+			coa_def_habsburg_dynasty_trigger = yes
+			coa_def_flanders_ownership_trigger = yes
+			coa_def_limburg_ownership_trigger = yes
+			coa_def_BRB_ownership_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = BUR_Valois
+		priority = 20
+		trigger = {
+			OR = {
+				coa_def_valois_dynasty_trigger = yes
+				coa_def_valois_burgundy_dynasty_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = BUR_valois_flander
+		priority = 21
+		trigger = {
+			OR = {
+				coa_def_valois_dynasty_trigger = yes
+				coa_def_valois_burgundy_dynasty_trigger = yes
+			}
+			coa_def_flanders_ownership_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = BUR_valois_BRB_LIM
+		priority = 22
+		trigger = {
+			OR = {
+				coa_def_valois_dynasty_trigger = yes
+				coa_def_valois_burgundy_dynasty_trigger = yes
+			}
+			coa_def_flanders_ownership_trigger = yes
+			coa_def_limburg_ownership_trigger = yes
+			coa_def_BRB_ownership_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = BUR_cross
+		priority = 30
+		trigger = {
+			coa_def_discovery_age_3_trigger = yes
+			is_subject = no
+		}
+	}
+	flag_definition = {
+		coa = BUR_cross_split
+		priority = 35
+		trigger = {
+			coa_def_discovery_age_3_trigger = yes
+            coa_def_spanish_cross_trigger = yes
+			coa_def_SPA_is_monarchy_trigger = yes
+			is_subject = no
+		}
+	}
+	flag_definition = {
+		coa = BUR_cross_absolute
+		priority = 40
+		trigger = {
+			coa_def_absolute_monarchy_trigger = yes
+			is_subject = no
+		}
+	}
+	flag_definition = {
+		coa = BUR_cross_absolute_habs
+		priority = 41
+		trigger = {
+			coa_def_habsburg_dynasty_trigger = yes
+			coa_def_absolute_monarchy_trigger = yes
+			is_subject = no
+		}
+	}
+	flag_definition = {
+		coa = BUR_cross_absolute_valois
+		priority = 42
+		trigger = {
+			OR = {
+				coa_def_valois_dynasty_trigger = yes
+				coa_def_valois_burgundy_dynasty_trigger = yes
+			}
+			coa_def_absolute_monarchy_trigger = yes
+			is_subject = no
 		}
 	}
 }
