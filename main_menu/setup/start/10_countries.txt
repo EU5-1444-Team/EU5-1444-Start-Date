@@ -10580,6 +10580,8 @@ countries = {
         government = {
             type = monarchy
 
+            ruler = mdl_giovanni_i_pico
+
             reforms = {
             }
 
@@ -10981,14 +10983,13 @@ countries = {
 
         government = {
             type = republic
-            heir_selection = podesta_elective
+            heir_selection = signoria_selection
 
             reforms = {
-                signoria_reform
+                dynastic_signoria_reform
             }
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = blg_annibale_i_bentivoglio
 
             ruler_term = { character = ven_reniero_zeno start_date = 1231.1.1 end_date = 1232.1.1 }
             ruler_term = { character = ven_reniero_zeno start_date = 1239.1.1 end_date = 1240.1.1 }
@@ -11001,10 +11002,12 @@ countries = {
             ruler_term = { character = imo_lippo_ii_alidosi start_date = 1334.1.1 end_date = 1334.6.2 regnal_number = 0 }
 
             ruler_term = {
-                character = blg_taddeo_pepoli start_date = 1334.6.2 regnal_number = 0
+                character = blg_taddeo_pepoli start_date = 1334.6.2 end_date = 1347.1.1 regnal_number = 0
                 #character = blg_brandelisio_gozzadini start_date = 1334.6.2 regnal_number = 0
                 #character = blg_bornio_samaritani start_date = 1334.6.2 regnal_number = 0
             }
+
+            ruler_term = { character = blg_annibale_i_bentivoglio start_date = 1443.1.1 regnal_number = 1 }
 
         }
 
@@ -11426,8 +11429,7 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = urb_federico_iii_da_montefeltro
 
             ruler_term = { character = urb_bonconte_i_montefeltro start_date = 1234.1.1 end_date = 1242.1.1 regnal_number = 1 }
             ruler_term = { character = urb_montefeltrano_ii_montefeltro start_date = 1242.1.1 end_date = 1254.1.1 regnal_number = 2 }
@@ -11435,15 +11437,19 @@ countries = {
             # Annexed by Papal State 1285-1296
             ruler_term = { character = urb_federico_i_montefeltro start_date = 1296.1.1 end_date = 1322.1.1 regnal_number = 1 }
             # Annexed by Papal State 1322-1323
-            ruler_term = { character = urb_sighinolfo_montefeltro start_date = 1323.4.26 regnal_number = 1 }
+            ruler_term = { character = urb_sighinolfo_montefeltro start_date = 1323.4.26 end_date = 1364.1.1 regnal_number = 1 }
             #ruler_term = { character = urb_guido_novello_montefeltro start_date = 1323.4.26 regnal_number = 2 } # Junior Count
             #ruler_term = { character = urb_galasso_montefeltro start_date = 1323.4.26 regnal_number = 1 } # Junior Count
+
+            ruler_term = { character = urb_guidantonio_da_montefeltro start_date = 1403.1.1 end_date = 1443.1.1 regnal_number = 1 }
+            ruler_term = { character = urb_oddantonio_da_montefeltro start_date = 1443.1.1 end_date = 1444.7.22 regnal_number = 1 }
+            ruler_term = { character = urb_federico_iii_da_montefeltro start_date = 1444.7.22 regnal_number = 3 }
 
             regnal_numbers = {
                 name_bonconte = 1
                 name_montefeltrano = 2
                 name_wido = 2
-                name_frederick = 2
+                name_frederick = 3
                 name_galahad = 1
                 name_siginulf = 1
                 name_anthony = 1
@@ -11454,6 +11460,7 @@ countries = {
             median
         }
 
+        country_rank = rank_duchy
         capital = urbino
         dynasty = da_montefeltro_dynasty
     }
@@ -11585,19 +11592,21 @@ countries = {
         include = "catholic_republic"
         government = {
             type = republic
-            heir_selection = podesta_elective
+            heir_selection = signoria_selection
+
+            ruler = ces_domenico_malatesta
 
             reforms = {
-                signoria_reform
+                dynastic_signoria_reform
             }
-
-            ruler = random # TODO: add me
 
             ruler_term = { character = urb_guido_i_montefeltro start_date = 1275.1.1 end_date = 1278.1.1 regnal_number = 1 }
 
             ruler_term = { character = urb_guido_i_montefeltro start_date = 1281.1.1 end_date = 1283.1.1 regnal_number = 1 }
 
-            ruler_term = { character = ces_francesco_ii_ordelaffi start_date = 1333.1.1 regnal_number = 2 }
+            ruler_term = { character = ces_francesco_ii_ordelaffi start_date = 1333.1.1 end_date = 1530.6.26 regnal_number = 2 }
+
+            ruler_term = { character = ces_domenico_malatesta start_date = 1429.1.1 regnal_number = 0 }
         }
 
         tolerated_cultures = {
@@ -11622,8 +11631,7 @@ countries = {
         include = "expl_indian_trade_route"
         include = "catholic_monarchy"
         government = {
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = crr_galeotto_i_carretto
 
             ruler_term = { character = crr_enrico_i_del_carretto start_date = 1162.1.1 end_date = 1185.1.1 regnal_number = 1 }
             ruler_term = { character = crr_enrico_ii_del_carretto start_date = 1185.1.1 end_date = 1231.1.1 regnal_number = 2 }
@@ -11896,7 +11904,9 @@ countries = {
         }
 
         government = {
-            ruler = random
+            ruler = mtc_antonio_carafa
+
+            ruler_term = { character = mtc_antonio_carafa start_date = 1444.1.1 }
         }
 
         include = "catholic_abbey"
@@ -12310,7 +12320,7 @@ countries = {
         government = {
             type = republic
             heir_selection = oligarchic_elective
-            ruler = random
+            ruler = random # Oligarchy
 
             ruler_term = { character = fer_azzo_vi_este start_date = 1209.1.1 end_date = 1212.11.1 regnal_number = 0 }
             ruler_term = { character = fer_aldobrandino_i_este start_date = 1212.11.1 end_date = 1215.10.10 regnal_number = 0 }
@@ -12446,7 +12456,7 @@ countries = {
         government = {
             type = republic
             heir_selection = oligarchic_elective
-            ruler = random
+            ruler = random # Chaos under local oligarchs (Vitelli and Giustini families)
         }
 
         tolerated_cultures = {
@@ -12815,6 +12825,11 @@ countries = {
         government = {
             type = republic
             heir_selection = oligarchic_elective
+            ruler = mlo_francesco_i_sforza
+
+            reforms = {
+                signoria_reform
+            }
 
             ruler_term = { character = fab_alberghetto_i_chiavelli start_date = 1289.1.1 end_date = 1304.1.1 regnal_number = 1 }
             ruler_term = { character = fab_tommaso_i_chiavelli start_date = 1313.1.1 end_date = 1317.1.1 regnal_number = 1 }
@@ -12824,6 +12839,8 @@ countries = {
 
             }
             ruler_term = { character = fab_alberghetto_ii_chiavelli start_date = 1325.1.1 end_date = 1327.1.1 regnal_number = 2 }
+
+            ruler_term = { character = mlo_francesco_i_sforza start_date = 1436.1.1 regnal_number = 1 }
         }
         capital = fabriano
     }
@@ -12844,18 +12861,19 @@ countries = {
         include = "catholic_republic_no_coast"
         government = {
             type = republic
-            heir_selection = podesta_elective
+            heir_selection = signoria_selection
 
             reforms = {
-                signoria_reform
+                dynastic_signoria_reform
             }
 
-            ruler = random # TODO: add me
-            consort = for_cia_ubaldini
+            ruler = fae_astorre_ii_manfredi
 
             ruler_term = { character = fae_francesco_manfredi start_date = 1313.1.1 end_date = 1327.1.1 regnal_number = 0 }
             ruler_term = { character = fae_alberghettino_ii_manfredi start_date = 1327.1.1 end_date = 1329.1.1 regnal_number = 2 }
-            ruler_term = { character = fae_ricciardo_manfredi start_date = 1329.1.1 regnal_number = 0 }
+            ruler_term = { character = fae_ricciardo_manfredi start_date = 1329.1.1 end_date = 1340.1.1 regnal_number = 0 }
+
+            ruler_term = { character = fae_astorre_ii_manfredi start_date = 1443.1.1 regnal_number = 2 }
         }
 
         tolerated_cultures = {
@@ -12939,14 +12957,13 @@ countries = {
         include = "catholic_republic_no_coast"
         government = {
             type = republic
-            heir_selection = podesta_elective
+            heir_selection = signoria_selection
 
             reforms = {
-                signoria_reform
+                dynastic_signoria_reform
             }
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = fae_astorre_ii_manfredi
 
             ruler_term = { character = imo_lippo_i_alidosi start_date = 1278.1.1 end_date = 1288.1.1 regnal_number = 1 }
             # Annexed to Papal States 1288-1290
@@ -12957,6 +12974,8 @@ countries = {
             ruler_term = { character = imo_alidosio_alidosi start_date = 1302.1.1 end_date = 1311.1.1 regnal_number = 0 }
             # Annexed to Papal States 1311-1334
             ruler_term = { character = imo_lippo_ii_alidosi start_date = 1334.1.1 regnal_number = 2 }
+
+            ruler_term = { character = fae_astorre_ii_manfredi start_date = 1439.1.1 regnal_number = 2 }
         }
 
         tolerated_cultures = {
@@ -13295,15 +13314,13 @@ countries = {
             reforms = {
             }
 
-            
-
             ruler_term = { character = pes_gianciotto_malatesta start_date = 1285.1.1 end_date = 1304.1.1 regnal_number = 0 }
             ruler_term = { character = rim_pandolfo_i_malatesta start_date = 1304.1.1 end_date = 1306.1.1 regnal_number = 1 }
             # Annexed by Papal States from 1306 to 1320
             ruler_term = { character = rim_pandolfo_i_malatesta start_date = 1320.1.1 end_date = 1326.4.6 regnal_number = 1 }
             ruler_term = { character = rim_malatesta_iii_malatesta start_date = 1326.4.6 end_date = 1333.1.1 regnal_number = 1 }
             # Annexed by Papal States from 1330 to 1333
-            ruler_term = { character = rim_malatesta_iii_malatesta start_date = 1333.1.1 regnal_number = 1 }
+            ruler_term = { character = rim_malatesta_iii_malatesta start_date = 1333.1.1 end_date = 1364.8.18 regnal_number = 3 }
         }
 
         tolerated_cultures = {
@@ -13400,8 +13417,7 @@ countries = {
                 dynastic_signoria_reform
             }
 
-            ruler = random # TODO: add me
-            consort = random # TODO: add me
+            ruler = rim_sigismondo_pandolfo_malatesta
 
             ruler_term = { character = rim_malatesta_di_pennabili start_date = 1239.1.1 end_date = 1240.1.1 regnal_number = 0 } # As Podestá
 
@@ -13417,7 +13433,9 @@ countries = {
             ruler_term = { character = rim_ferrantino_malatesta start_date = 1326.8.1 end_date = 1331.1.1 regnal_number = 0 }
             # Annexed by Papal States from 1331 to 1334
             ruler_term = { character = rim_ferrantino_malatesta start_date = 1334.1.1 end_date = 1335.1.1 regnal_number = 0 }
-            ruler_term = { character = rim_malatesta_iii_malatesta start_date = 1335.1.1 regnal_number = 3 }
+            ruler_term = { character = rim_malatesta_iii_malatesta start_date = 1335.1.1 end_date = 1364.8.18 regnal_number = 3 }
+
+            ruler_term = { character = rim_sigismondo_pandolfo_malatesta start_date = 1432.1.1 regnal_number = 0 }
         }
 
         tolerated_cultures = {

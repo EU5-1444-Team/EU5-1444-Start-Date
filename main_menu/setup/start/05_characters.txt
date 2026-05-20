@@ -33508,8 +33508,7 @@ character_db={
 		religion = catholic
 		adm = 36 dip = 57 mil = 87
 		birth_date = 1285.1.1
-		death_date = 1399.12.31
-
+		death_date = 1364.1.1
 		birth = urbino
 		father = urb_federico_i_montefeltro
 		dynasty = da_montefeltro_dynasty
@@ -33522,7 +33521,6 @@ character_db={
 		religion = catholic
 		birth_date = 1296.1.1
 		death_date = 1399.12.31
-
 		birth = urbino
 		father = urb_federico_i_montefeltro
 		dynasty = da_montefeltro_dynasty
@@ -33549,7 +33547,6 @@ character_db={
 		religion = catholic
 		birth_date = 1298.1.1 # Unknown
 		death_date = 1399.12.31
-
 		birth = urbino
 		father = urb_federico_i_montefeltro
 		dynasty = da_montefeltro_dynasty
@@ -33562,8 +33559,7 @@ character_db={
 		religion = catholic
 		adm = 38 dip = 63 mil = 87
 		birth_date = 1314.1.1
-		death_date = 1399.12.31
-
+		death_date = 1370.1.1
 		birth = urbino
 		father = urb_sighinolfo_montefeltro
 		mother = urb_margherita_gabrielli
@@ -33642,6 +33638,52 @@ character_db={
 		dynasty = da_montefeltro_dynasty
 		tag = URB
 	}
+
+    urb_guidantonio_da_montefeltro = {
+        first_name = { name = "Guidantonio" }
+		culture = emilian
+		religion = catholic
+		birth_date = 1377.1.1
+        death_date = 1443.1.1
+		birth = urbino
+		dynasty = da_montefeltro_dynasty
+		tag = URB
+    }
+
+    urb_oddantonio_da_montefeltro = {
+        first_name = { name = Oddantonio }
+		culture = emilian
+		religion = catholic
+		birth_date = 1428.1.1
+        death_date = 1444.7.22
+		birth = urbino
+		father = urb_guidantonio_da_montefeltro
+		dynasty = da_montefeltro_dynasty
+		tag = URB
+    }
+
+    urb_federico_iii_da_montefeltro = {
+        first_name = { name = name_frederick }
+		culture = emilian
+		religion = catholic
+		birth_date = 1422.6.7
+		birth = urbino
+		father = urb_guidantonio_da_montefeltro
+		dynasty = da_montefeltro_dynasty
+		tag = URB
+    }
+
+    urb_sveva_da_montefeltro_sforza = {
+        first_name = { name = Sveva }
+		culture = emilian
+		religion = catholic
+        female = yes
+		birth_date = 1434.1.1
+		birth = urbino
+		father = urb_guidantonio_da_montefeltro
+		dynasty = da_montefeltro_dynasty
+		tag = URB
+    }
 
     ### da_varano_dynasty | CMR ###
 
@@ -48365,7 +48407,7 @@ character_db={
     }
 
     les_ginevra_gattilusio = {
-        first_name = { name = Ginevra }
+        first_name = { name = name_jennifer }
         culture = ligurian
         religion = catholic
         female = yes
@@ -48424,7 +48466,7 @@ character_db={
     }
 
     ain_ginevra_gattilusio = {
-        first_name = { name = Ginevra }
+        first_name = { name = name_jennifer }
         culture = ligurian
         religion = catholic
         female = yes
@@ -67100,6 +67142,7 @@ character_db={
         first_name = { name = name_theodora }
 		culture = greek_culture
 		religion = orthodox
+        female = yes
 		birth_date = 1439.1.1
 		birth = trebizond
 		father = tre_ioannis_iv_megas_komnenos
@@ -74507,7 +74550,6 @@ character_db={
 		estate = nobles_estate
 		birth_date = 1327.1.1 # Unknown
 		death_date = 1399.12.31
-
 		birth = cesena
 		father = ces_ramberto_i_malatesta
 		mother = ces_cassandra_faggiola
@@ -74576,7 +74618,6 @@ character_db={
 		female = yes
 		birth_date = 1320.1.1
 		death_date = 1399.12.31
-
 		birth = rimini
 		father = rim_malatesta_iii_malatesta
 		mother = rim_constanza_ondedei
@@ -74783,8 +74824,7 @@ character_db={
 		estate = nobles_estate
 		adm = 36 dip = 56 mil = 83
 		birth_date = 1299.1.1
-		death_date = 1399.12.31
-
+		death_date = 1364.8.18
 		birth = rimini
 		father = rim_pandolfo_i_malatesta
 		mother = rim_taddea_rimini
@@ -74801,7 +74841,6 @@ character_db={
 		adm = 51 dip = 51 mil = 71
 		birth_date = 1300.1.1
 		death_date = 1399.12.31
-
 		birth = rimini
 		father = rim_pandolfo_i_malatesta
 		mother = rim_taddea_rimini
@@ -75020,6 +75059,93 @@ character_db={
 		tag = RIM
 	}
 
+    rim_sigismondo_pandolfo_malatesta = {
+        first_name = { name = name_sigmund }
+		nickname = { name = Pandolfo }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1417.6.19
+		birth = brescia
+        father = rim_pandolfo_iii_malatesta
+        spouse = rim_polissena_sforza_malatesta
+		dynasty = malatesta_dynasty
+		tag = RIM
+    }
+
+    rim_ginevra_deste_malatesta = {
+        first_name = { name = name_jennifer }
+		culture = emilian
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1419.3.24
+        death_date = 1440.10.12
+		birth = ferrara
+        father = fer_niccolo_iii_deste
+		dynasty = deste_dynasty
+		tag = RIM
+    }
+
+    rim_vannetta_dei_toschi = {
+        first_name = { name = Vannetta }
+        last_name = { name = "dei Toschi" }
+		culture = emilian
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1419.1.1
+		birth = rimini
+		tag = RIM
+    }
+
+    rim_galeotto_roberto_malatesta_infant = {
+        first_name = { name = name_galehaut.name_robert }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1438.1.1
+        death_date = 1438.2.1
+		birth = rimini
+        father = rim_sigismondo_pandolfo_malatesta
+        mother = rim_ginevra_deste_malatesta
+		dynasty = malatesta_dynasty
+		tag = RIM
+    }
+
+    rim_roberto_malatesta_bastard = {
+        first_name = { name = name_robert }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1441.1.1
+		birth = rimini
+        father = rim_sigismondo_pandolfo_malatesta
+        mother = rim_vannetta_dei_toschi
+		dynasty = malatesta_dynasty
+		tag = RIM
+        timed_modifier = {
+            modifier = "bastard"
+            start_date = 1317.1.1
+            date = 9999.1.1
+            size = 1
+        }
+    }
+
+    rim_giovanna_malatesta = {
+        first_name = { name = name_joanna }
+		culture = emilian
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1444.1.1
+		birth = rimini
+        father = rim_sigismondo_pandolfo_malatesta
+        mother = rim_polissena_sforza_malatesta
+		dynasty = malatesta_dynasty
+		tag = RIM
+    }
+
     ### malla_nepal_dynasty | KTU ###
 
 	ktu_jayari_malla = { #https://en.wikipedia.org/wiki/Jayari_Malla
@@ -75087,8 +75213,7 @@ character_db={
 		estate = nobles_estate
 		adm = 75 dip = 63 mil = 72
 		birth_date = 1287.1.1
-		death_date = 1399.12.31
-
+		death_date = 1340.1.1
 		birth = faenza
 		father = fae_francesco_manfredi
 		mother = fae_rengarda_malatesta
@@ -75178,6 +75303,149 @@ character_db={
 		tag = FAE
 		child_trait = child_intelligent
 	}
+
+    fae_gian_galeazzo_i_manfredi = {
+        first_name = { name = name_john.name_galahad }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1375.1.1
+        death_date = 1417.1.1
+		birth = faenza
+		dynasty = manfredi_dynasty
+		tag = FAE
+    }
+
+    fae_astorre_ii_manfredi = {
+        first_name = { name = Astorre }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1412.12.8
+		birth = faenza
+        spouse = fae_giovanna_barbiano
+        father = fae_gian_galeazzo_i_manfredi
+		dynasty = manfredi_dynasty
+		tag = FAE
+    }
+
+    ven_alberico_barbiano = {
+        first_name = { name = name_alberic }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1344.1.1
+        death_date = 1409.4.1
+		birth = ravenna
+		dynasty = barbiano_dynasty
+		tag = VEN
+    }
+
+    fae_giovanna_barbiano = {
+        first_name = { name = name_joanna }
+		culture = emilian
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1408.1.1
+		birth = ravenna
+        spouse = fae_astorre_ii_manfredi
+        father = ven_alberico_barbiano
+		dynasty = barbiano_dynasty
+		tag = FAE
+    }
+
+    fae_carlo_ii_manfredi = {
+        first_name = { name = name_charles }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1439.1.1
+		birth = faenza
+        father = fae_astorre_ii_manfredi
+        mother = fae_giovanna_barbiano
+		dynasty = manfredi_dynasty
+		tag = FAE
+    }
+
+    fae_galeotto_manfredi = {
+        first_name = { name = name_galehaut }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1440.1.1
+		birth = faenza
+        father = fae_astorre_ii_manfredi
+        mother = fae_giovanna_barbiano
+		dynasty = manfredi_dynasty
+		tag = FAE
+    }
+
+    imo_guidantonio_manfredi = {
+        first_name = { name = Guidantonio }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1407.1.1
+		birth = faenza
+        spouse = imo_agnese_da_montefeltro
+        father = fae_gian_galeazzo_i_manfredi
+		dynasty = manfredi_dynasty
+		tag = FLO
+    }
+
+    imo_bianchina_trinci = {
+        first_name = { name = name_blanche }
+		culture = median
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1407.1.1
+        death_date = 1441.1.1
+		birth = perugia
+        father = pea_niccolo_trinci
+		dynasty = trinci_dynasty
+		tag = IMO
+    }
+
+    imo_agnese_da_montefeltro = {
+        first_name = { name = name_agnes }
+		culture = emilian
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1410.1.1 # Unknown (review) 
+		birth = montefeltro
+        spouse = imo_guidantonio_manfredi
+        father = urb_guidantonio_da_montefeltro
+		dynasty = da_montefeltro_dynasty
+		tag = FLO
+    }
+
+    imo_taddeo_manfredi = {
+        first_name = { name = Taddeo }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1431.1.1
+		birth = faenza
+        father = imo_guidantonio_manfredi
+        mother = imo_bianchina_trinci
+		dynasty = manfredi_dynasty
+		tag = FLO
+    }
+
+    fae_gian_galeazzo_ii_manfredi = {
+        first_name = { name = name_john.name_galahad }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1417.1.1
+		birth = faenza
+        father = fae_gian_galeazzo_i_manfredi
+		dynasty = manfredi_dynasty
+		tag = FAE
+    }
 
     ### manfredi_dynasty | FLO ###
 
@@ -91974,8 +92242,7 @@ character_db={
 		estate = nobles_estate
 		adm = 42 dip = 60 mil = 53
 		birth_date = 1310.1.1
-		death_date = 1399.12.31
-
+		death_date = 1374.1.1
 		birth = cesena
 		father = ces_sinibaldo_ordelaffi
 		mother = ces_onestina_caboldi
@@ -91990,8 +92257,7 @@ character_db={
 		religion = catholic
 		estate = nobles_estate
 		birth_date = 1336.1.1
-		death_date = 1399.12.31
-
+		death_date = 1386.10.28
 		birth = cesena
 		father = ces_francesco_ii_ordelaffi
 		mother = ces_marzia_ubaldini
@@ -92006,13 +92272,65 @@ character_db={
 		estate = nobles_estate
 		birth_date = 1337.1.1
 		death_date = 1399.12.31
-
 		birth = cesena
 		father = ces_francesco_ii_ordelaffi
 		mother = ces_marzia_ubaldini
 		dynasty = ordelaffi_dynasty
 		tag = CES
 	}
+
+    rim_pandolfo_iii_malatesta = {
+        first_name = { name = Pandolfo }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1369.1.1
+		death_date = 1427.10.3
+		birth = rimini
+		dynasty = malatesta_dynasty
+		tag = RIM
+    }
+
+    rim_galeotto_roberto_malatesta = {
+        first_name = { name = name_galehaut.name_robert }
+        nickname = { name = "the Blessed" }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1411.1.1
+		death_date = 1432.1.1
+		birth = rimini
+        father = rim_pandolfo_iii_malatesta
+		dynasty = malatesta_dynasty
+		tag = RIM
+    }
+
+    ces_domenico_malatesta = {
+        first_name = { name = name_dominic }
+		culture = emilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1418.8.5
+		birth = brescia
+        spouse = ces_violante_da_montefeltro
+        father = rim_pandolfo_iii_malatesta
+		dynasty = malatesta_dynasty
+		tag = CES
+    }
+
+    ces_violante_da_montefeltro = {
+        first_name = { name = name_yolande }
+		culture = emilian
+		religion = catholic
+        female = yes
+		birth_date = 1430.1.1
+		birth = urbino
+        spouse = ces_domenico_malatesta
+		father = urb_guidantonio_da_montefeltro
+		dynasty = da_montefeltro_dynasty
+		tag = CES
+    }
+
 
     ### orleans_longueville_dynasty | DUO ###
 
@@ -95752,8 +96070,7 @@ character_db={
 		estate = burghers_estate
 		adm = 78 dip = 85 mil = 55
 		birth_date = 1288.1.1
-		death_date = 1399.12.31
-
+		death_date = 1347.1.1
 		birth = bologna
 		father = blg_romeo_pepoli
 		#mother = Azzolina Tettalasini
@@ -95979,6 +96296,142 @@ character_db={
 		dynasty = pepoli_dynasty
 		tag = BLG
 	}
+
+    blg_giovanni_i_bentivoglio = {
+        first_name = { name = name_john }
+		culture = emilian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1358.1.1
+		death_date = 1402.6.26
+		birth = bologna
+		dynasty = bentivoglio_dynasty
+		tag = BLG
+    }
+
+    blg_antongaleazzo_bentivoglio = {
+        first_name = { name = name_anthony.name_galahad }
+		culture = emilian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1385.1.1
+		death_date = 1435.1.1
+		birth = bologna
+        father = blg_giovanni_i_bentivoglio
+		dynasty = bentivoglio_dynasty
+		tag = BLG
+    }
+
+    blg_annibale_i_bentivoglio = {
+        first_name = { name = Annibale }
+		culture = emilian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1415.8.1
+		birth = bologna
+        spouse = blg_donnina_visconti_bentivoglio
+        father = blg_antongaleazzo_bentivoglio
+		dynasty = bentivoglio_dynasty
+		tag = BLG
+    }
+
+    mlo_lancilotto_visconti = {
+        first_name = { name = Lancilotto }
+		culture = lombard
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1370.1.1
+        death_date = 1441.1.1
+		birth = milan
+        father = mlo_bernabo_visconti
+		dynasty = vicsonti_dynasty
+		tag = BLG
+    }
+
+    blg_donnina_visconti_bentivoglio = {
+        first_name = { name = Donnina }
+		culture = lombard
+		religion = catholic
+        female = yes
+		estate = burghers_estate
+		birth_date = 1420.1.1
+		birth = milan
+        spouse = blg_annibale_i_bentivoglio
+        father = mlo_lancilotto_visconti
+		dynasty = visconti_dynasty
+		tag = BLG
+    }
+
+    blg_giovanni_ii_bentivoglio = {
+        first_name = { name = name_john }
+		culture = emilian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1443.2.12
+		birth = bologna
+        father = blg_annibale_i_bentivoglio
+        mother = blg_donnina_visconti_bentivoglio
+		dynasty = bentivoglio_dynasty
+		tag = BLG
+    }
+
+    blg_ercole_bentivoglio = {
+        first_name = { name = Ercole }
+		culture = emilian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1388.1.1 # Unknown
+		death_date = 1433.1.1 # Unknown
+		birth = bologna
+        father = blg_giovanni_i_bentivoglio
+		dynasty = bentivoglio_dynasty
+		tag = BLG
+    }
+
+    blg_sante_bentivoglio = {
+        first_name = { name = Sante }
+		culture = emilian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1426.1.1
+		birth = bologna
+        father = blg_ercole_bentivoglio
+		dynasty = bentivoglio_dynasty
+		tag = BLG
+    }
+
+    blg_bettozzo_carietoli = {
+        first_name = { name = Bettozzo }
+		culture = emilian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1417.1.1 # Unknown
+		birth = bologna
+		dynasty = carietoli_dynasty
+		tag = BLG
+    }
+
+    blg_tideo_marescotti = {
+        first_name = { name = Tideo }
+		culture = emilian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1406.1.1 # Unknown
+		birth = bologna
+		dynasty = marescotti_dynasty
+		tag = BLG
+    }
+
+    blg_galeazzo_marescotti = {
+        first_name = { name = name_galahad }
+		culture = emilian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1407.1.1 # Unknown
+		birth = bologna
+		dynasty = marescotti_dynasty
+		tag = BLG
+    }
 
     ### pepoli_dynasty | FER ###
 
@@ -98229,17 +98682,6 @@ character_db={
     }
 
     ### piccolomini_dynasty | SIE ###
-
-    pap_pio_ii = {
-        first_name = { name = Enea }
-        culture = tuscan
-        religion = catholic
-        estate = clergy_estate
-        birth_date = 1405.10.18
-        birth = montalcino
-        dynasty = piccolomini_dynasty
-        tag = SIE
-    }
 
     pap_pio_iii = {
         first_name = { name = name_francis }
@@ -112029,6 +112471,53 @@ character_db={
         }
     }
 
+    mlo_niccolo_piccinino = {
+        first_name = { name = name_nicholas }
+        culture = median
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1386.1.1
+        death_date = 1444.10.15
+        birth = perugia
+        dynasty = piccinino_dynasty
+        tag = MLO
+    }
+
+    mlo_francesco_piccinino = { # Adopted
+        first_name = { name = name_francis }
+        culture = median
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1407.1.1
+        birth = perugia
+        father = mlo_niccolo_piccinino
+        dynasty = piccinino_dynasty
+        tag = MLO
+    }
+
+    mlo_jacopo_piccinino = {
+        first_name = { name = name_james }
+        culture = median
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1423.1.1
+        birth = perugia
+        father = mlo_niccolo_piccinino
+        dynasty = piccinino_dynasty
+        tag = MLO
+    }
+
+    flo_micheletto_attendolo = {
+        first_name = { name = name_michael }
+        last_name = { name = Attendolo }
+        culture = emilian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1370.1.1
+        birth = ravenna
+        tag = FLO
+    }
+
     ### sforza_dynasty | FER ###
 
     fer_tristano_sforza = {
@@ -112183,7 +112672,7 @@ character_db={
         birth = fermo
         father = mlo_francesco_i_sforza
         dynasty = sforza_dynasty
-        tag = NAP
+        tag = RIM
         timed_modifier = {
             modifier = "bastard"
             start_date = 1300.1.1
@@ -137323,7 +137812,6 @@ character_db={
 		female = yes
 		birth_date = 1317.6.21
 		death_date = 1399.12.31
-
 		birth = cesena
 		#father = Vanni Ubaldini
 		#mother = Andrea Pagani
@@ -144149,6 +144637,103 @@ character_db={
         birth = andria
         dynasty = baux_dynasty
         tag = AIA
+    }
+
+    mtc_antonio_carafa = {
+        first_name = { name = name_anthony }
+        last_name = { name = Carafa }
+        culture = neapolitan
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1390.1.1
+        birth = venafro
+        tag = MTC
+    }
+
+    mdl_paolo_pico = {
+        first_name = { name = name_paul }
+        culture = lombard
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1300.1.1
+        death_date = 1354.1.1
+        birth = mirandola
+        dynasty = pico_dynasty
+        tag = MDL   
+    }
+
+    mdl_francesco_ii_pico = {
+        first_name = { name = name_francis }
+        culture = lombard
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1330.1.1
+        death_date = 1399.1.1
+        birth = mirandola
+        father = mdl_paolo_pico
+        dynasty = pico_dynasty
+        tag = MDL
+    }
+
+    mdl_giovanni_i_pico = {
+        first_name = { name = name_john }
+        culture = lombard
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1380.1.1 
+        birth = mirandola
+        father = mdl_francesco_ii_pico
+        dynasty = pico_dynasty
+        tag = MDL
+    }
+
+    mdl_caterina_bevilacqua = {
+        first_name = { name = name_catherine }
+        last_name = { name = Bevilacqua }
+        culture = lombard
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1390.1.1 
+        birth = mirandola
+        tag = MDL
+    }
+
+    mdl_gianfrancesco_pico = {
+        first_name = { name = name_john.name_francis }
+        culture = lombard
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1415.1.1
+        birth = mirandola
+        father = mdl_giovanni_i_pico
+        mother = mdl_caterina_bevilacqua
+        dynasty = pico_dynasty
+        tag = MDL
+    }
+
+    mdl_niccolo_pico = {
+        first_name = { name = name_nicholas }
+        culture = lombard
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1417.1.1
+        birth = mirandola
+        father = mdl_giovanni_i_pico
+        mother = mdl_caterina_bevilacqua
+        dynasty = pico_dynasty
+        tag = MDL
+    }
+
+    mdl_francesco_iii_pico = {
+        first_name = { name = name_francis }
+        culture = lombard
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1373.1.1 # Unknown
+        birth = mirandola
+        dynasty = pico_dynasty
+        tag = MDL
     }
 
 }
