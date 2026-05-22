@@ -187,7 +187,8 @@ class DropGraphicsView(QGraphicsView):
 
 APP_DIR = Path(__file__).resolve().parents[1]
 DEFAULT_BASE = ""  # leave empty; user picks
-SETTINGS_FILE = APP_DIR / "settings.json"
+# settings.json lives in the same directory as this script (tools/ folder)
+SETTINGS_FILE = Path(__file__).resolve().parent / "settings.json"
 CANVAS_W, CANVAS_H = 384, 256
 
 # Helper: load image via PIL (works with pillow-dds plugin if installed)
