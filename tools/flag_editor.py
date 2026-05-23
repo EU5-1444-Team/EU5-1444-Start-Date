@@ -208,33 +208,48 @@ def load_image(path: Path):
 
 
 def pil2pixmap(img: Image.Image):
+    img = img.convert("RGBA")
     data = img.tobytes("raw", "RGBA")
     qimg = QImage(data, img.width, img.height, QImage.Format_RGBA8888)
+    if qimg.isNull():
+        # Fallback for platforms where RGBA8888 isn't supported
+        data = img.tobytes("raw", "BGRA")
+        qimg = QImage(data, img.width, img.height, QImage.Format_ARGB32)
     return QPixmap.fromImage(qimg)
 
 
 def _get_cache_dir() -> Path:
-    if platform.system() == "Windows":
-        base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
-        return base / "eu5-flag-editor" / "cache" / "thumbs"
-    elif platform.system() == "Darwin":
-        return Path.home() / "Library" / "Caches" / "eu5-flag-editor" / "thumbs"
-    base = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache"))
-    return base / "eu5-flag-editor" / "thumbs"
+    try:
+        if platform.system() == "Windows":
+            base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+            return base / "eu5-flag-editor" / "cache" / "thumbs"
+        elif platform.system() == "Darwin":
+            return Path.home() / "Library" / "Caches" / "eu5-flag-editor" / "thumbs"
+        base = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache"))
+        return base / "eu5-flag-editor" / "thumbs"
+    except Exception:
+        return Path(tempfile.gettempdir()) / "eu5-flag-editor" / "thumbs"
 
-THUMB_CACHE_DIR = _get_cache_dir()
-THUMB_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+try:
+    THUMB_CACHE_DIR = _get_cache_dir()
+    THUMB_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+except Exception:
+    THUMB_CACHE_DIR = Path(tempfile.gettempdir()) / "eu5-flag-editor" / "thumbs"
+    try:
+        THUMB_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        THUMB_CACHE_DIR = None
 
 
 def _thumb_cache_key(path: Path, size: tuple[int, int]):
-    """Return a cache filename derived from path, mtime and target size."""
     try:
         mtime = int(path.stat().st_mtime)
     except Exception:
         mtime = 0
     key = f"{str(path.resolve())}|{mtime}|{size[0]}x{size[1]}"
     h = hashlib.sha1(key.encode("utf-8")).hexdigest()
-    return THUMB_CACHE_DIR / f"{h}.png"
+    cache_parent = THUMB_CACHE_DIR if THUMB_CACHE_DIR is not None else Path(tempfile.gettempdir()) / "eu5-flag-editor" / "thumbs"
+    return cache_parent / f"{h}.png"
 
 
 def get_cached_pixmap(path: Path, max_size: tuple[int, int]):
@@ -1056,20 +1071,25 @@ class MainWindow(QMainWindow):
             results = {}
 
             def scan_root(root_path):
-                # Check both the exact subpath and, if subpath starts with 'game',
-                # the subpath without the leading 'game' component (mods often omit it).
                 found = {}
                 p = root_path / subpath
                 if p.exists():
-                    for f in p.iterdir():
+                    try:
+                        entries = list(p.iterdir())
+                    except Exception:
+                        entries = []
+                    for f in entries:
                         if f.suffix.lower() in [".dds", ".png", ".tga"]:
                             found[f.name] = f.resolve()
-                # try alternative location: drop leading 'game' if present
                 parts = subpath.parts
                 if parts and parts[0] == "game":
                     alt = root_path.joinpath(*parts[1:])
                     if alt.exists():
-                        for f in alt.iterdir():
+                        try:
+                            entries = list(alt.iterdir())
+                        except Exception:
+                            entries = []
+                        for f in entries:
                             if f.suffix.lower() in [".dds", ".png", ".tga"]:
                                 found[f.name] = f.resolve()
                 return found
@@ -2900,67 +2920,19 @@ class MainWindow(QMainWindow):
 def main():
     app = QApplication(sys.argv)
     win = MainWindow()
-
-    # enable drops on view by customizing mime handling
-    # implement drop on view via overriding methods
-    def view_dragEnter(e):
-        if e.mimeData().hasFormat("application/x-eu5-asset"):
-            # suppressed debug
-            e.acceptProposedAction()
-        else:
-            e.ignore()
-
-    def view_dragMove(e):
-        if e.mimeData().hasFormat("application/x-eu5-asset"):
-            # debug
-            # print('view_dragMove')
-            e.acceptProposedAction()
-        else:
-            e.ignore()
-
-    def view_drop(e):
-        md = e.mimeData().data("application/x-eu5-asset")
-        try:
-            payload = json.loads(bytes(md).decode("utf-8"))
-            path = Path(payload["path"])
-            # suppressed debug
-            typ = payload.get("type", "colored")
-            pil = load_image(path)
-            # create item
-            it = EmblemItem(path, pil, texture_type=typ)
-            # get event position in view coordinates (Qt6 has position())
-            if hasattr(e, "position"):
-                evpos = e.position()
-                vx, vy = evpos.x(), evpos.y()
-            else:
-                vp = e.pos()
-                vx, vy = vp.x(), vp.y()
-            scene_pos = win.view.mapToScene(int(vx), int(vy))
-            it.setPos(
-                scene_pos - QPointF(it.pixmap().width() / 2, it.pixmap().height() / 2)
-            )
-            win.scene.addItem(it)
-            e.acceptProposedAction()
-        except Exception:
-            e.ignore()
-
     win.show()
     sys.exit(app.exec())
 
 
-# allow Delete key to remove selected emblem when main window has focus
-def _install_delete_shortcut(win: MainWindow):
-    # we can override keyPressEvent on the view
-    orig_key = win.view.keyPressEvent
-
-    def keyPressEvent(ev):
-        if ev.key() == Qt.Key_Delete:
-            win.delete_selected()
-            return
-        orig_key(ev)
-
-    win.view.keyPressEvent = keyPressEvent
-
-
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        import traceback
+        tb = traceback.format_exc()
+        try:
+            app = QApplication(sys.argv)
+            QMessageBox.critical(None, "EU5 Flag Editor Error", tb)
+        except Exception:
+            print(f"FATAL:\n{tb}")
+        sys.exit(1)
