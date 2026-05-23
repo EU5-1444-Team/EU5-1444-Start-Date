@@ -5418,10 +5418,17 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
+            ruler = slm_ferry_ii_salm
+
+            ruler_term = { character = slm_henri_vi_salm start_date = 1336.1.1 end_date = 1360.1.1 regnal_number = 6 }
+
+            ruler_term = { character = slm_ferry_ii_salm start_date = 1431.9.2 regnal_number = 2 }
+
             regnal_numbers = {
                 name_henry = 6
+                name_frederick = 2
             }
-            ruler = random # TODO: add me
+            
 
             laws = {
                 mining_law = nobles_mining_law
@@ -13720,8 +13727,8 @@ countries = {
             leipzig chemnitz altenburg
             wittenberg belzig schweinitz bitterfeld torgau liebenwerda
             schleiz
-            glauchau
         }
+
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "catholic_monarchy_no_coast"
@@ -17734,7 +17741,7 @@ countries = {
 
     GLA = {
         #Glauchau
-        our_cores_conquered_by_others = {
+        own_control_core = {
             glauchau
         }
 
@@ -21129,9 +21136,12 @@ countries = {
         include = "catholic_german_bishopric_no_coast"
         include = "expl_northern_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = als_ruprecht_wittelsbach_simmern_zweibrucken
 
-            ruler_term = { character = als_berthold_ii_buchegg start_date = 1328.11.6 regnal_number = 2 }
+            ruler_term = { character = als_berthold_ii_buchegg start_date = 1328.11.6 end_date = 1353.11.25 regnal_number = 2 }
+
+            ruler_term = { character = als_berthold_iials_ruprecht_wittelsbach_simmern_zweibrucken_buchegg start_date = 1440.12.1 }
+
             #The city itself is however under the Burghers' control
             reforms = {
                 prince_bishopric_reform
@@ -21244,7 +21254,13 @@ countries = {
         dynasty = montfort_bregenz_dynasty
         capital = bregenz
         government = {
-            ruler = random # TODO: add me
+            ruler = mbz_elisabeth_montfort_bregenz
+
+            ruler_term = { character = mbz_ulrich_montfort start_date = 1260.9.15 end_date = 1287.4.7 regnal_number = 1 }
+            ruler_term = { character = mbz_hugo_montfort start_date = 1287.4.7 end_date = 1338.7.26 regnal_number = 4 }
+
+            ruler_term = { character = mbz_wilhelm_vii_montfort_bregenz start_date = 1387.12.20 end_date = 1422.3.6 regnal_number = 4 }
+            ruler_term = { character = mbz_elisabeth_montfort_bregenz start_date = 1422.3.6 regnal_number = 0 }
         }
 
         tolerated_cultures = {
@@ -22226,7 +22242,11 @@ countries = {
         include = "expl_western_europe"
         include = "expl_northern_europe"
         include = "catholic_german_bishopric_no_coast"
-        government = { ruler = random }
+        government = { 
+            ruler = mur_thierry_domont 
+        
+            ruler_term = { character = mur_thierry_domont start_date = 1433.1.1 regnal_number = 0 }
+        }
         country_rank = rank_county
         capital = murbach
     }
@@ -22324,7 +22344,13 @@ countries = {
         include = "expl_northern_europe"
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
-        government = { ruler = random }
+        government = { 
+            ruler = fur_konrad_iii_furstenberg
+
+            ruler_term = { character = fur_heinrich_v_furstenberg start_date = 1408.8.15 end_date = 1441.3.30 regnal_number = 5 }
+            ruler_term = { character = fur_konrad_iii_furstenberg start_date = 1441.3.30 regnal_number = 3 }
+        }
+        
         country_rank = rank_county
         capital = furstenberg
     }
@@ -22378,7 +22404,16 @@ countries = {
         include = "expl_northern_europe"
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
-        government = { ruler = random }
+        government = { 
+            active_regent = neu_jean_fribourg
+            start_regency_date = 1441.6.21
+            end_regency_date = 1445.1.1
+            heir = sab_rudolf_iv_hachberg_sausenberg
+
+            ruler_term = { character = sab_wilhelm_hachberg_sausenberg start_date = 1428.1.1 end_date = 1441.6.21 regnal_number = 0 }
+            ruler_term = { character = sab_rudolf_iv_hachberg_sausenberg start_date = 1441.6.21 regnal_number = 4 }
+        
+        }
         tolerated_cultures = {
         }
         country_rank = rank_county

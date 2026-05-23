@@ -30701,7 +30701,6 @@ character_db={
 		female = yes
 		birth_date = 1312.1.1
 		death_date = 1399.12.31
-
 		birth = saarbrucken
 		father = saa_simon_saarbrucken
 		mother = saa_marguerite_savoy_vaud
@@ -80939,7 +80938,7 @@ character_db={
         religion = catholic
         birth_date = 1225.1.1
         birth = feldkirch
-        death_date = 1287.1.1
+        death_date = 1287.4.7
         father = mfk_hugo_ii_montfort
         dynasty = montfort_bregenz_dynasty
         tag = MBZ
@@ -80950,13 +80949,87 @@ character_db={
 		culture = danube_bavarian
 		religion = catholic
 		birth_date = 1280.1.1
-		death_date = 1399.12.31
-
+		death_date = 1338.7.26
 		birth = bregenz
 		father = mbz_ulrich_montfort
 		dynasty = montfort_bregenz_dynasty
 		tag = MBZ
 	}
+
+    mbz_wilhelm_vii_montfort_bregenz = {
+        first_name = { name = name_william }
+		culture = danube_bavarian
+		religion = catholic
+		birth_date = 1375.1.1
+        death_date = 1422.1.1
+		birth = bregenz
+		#father = 
+		dynasty = montfort_bregenz_dynasty
+		tag = MBZ
+    }
+
+    sab_wilhelm_hachberg_sausenberg = {
+        first_name = { name = name_william }
+		culture = rhine_alemannic
+		religion = catholic
+		birth_date = 1406.7.11
+		birth = mullheim
+        spouse = mbz_elisabeth_montfort_bregenz
+		#father = 
+		dynasty = hachberg_sausenberg_dynasty
+		tag = SAB
+    }
+
+    mbz_elisabeth_montfort_bregenz = {
+        first_name = { name = name_elizabeth }
+		culture = danube_bavarian
+		religion = catholic
+        female = yes
+		birth_date = 1399.1.1
+		birth = bregenz
+        spouse = sab_wilhelm_hachberg_sausenberg
+		father = mbz_wilhelm_vii_montfort_bregenz
+		dynasty = montfort_bregenz_dynasty
+		tag = MBZ
+    }
+
+    sab_ursula_hachberg_sausenberg = {
+        first_name = { name = name_ursina }
+		culture = rhine_alemannic
+		religion = catholic
+        female = yes
+		birth_date = 1422.1.1
+		birth = mullheim
+        father = sab_wilhelm_hachberg_sausenberg
+        mother = mbz_elisabeth_montfort_bregenz
+		dynasty = hachberg_sausenberg_dynasty
+		tag = SAB
+    }
+
+    sab_rudolf_iv_hachberg_sausenberg = {
+        first_name = { name = name_rudolf }
+		culture = rhine_alemannic
+		religion = catholic
+		birth_date = 1426.1.1
+		birth = mullheim
+        father = sab_wilhelm_hachberg_sausenberg
+        mother = mbz_elisabeth_montfort_bregenz
+		dynasty = hachberg_sausenberg_dynasty
+		tag = SAB
+    }
+
+    sab_hugo_hachberg_sausenberg = {
+        first_name = { name = name_hugh }
+		culture = rhine_alemannic
+		religion = catholic
+		birth_date = 1427.1.1
+        death_date = 1444.1.1
+		birth = mullheim
+        father = sab_wilhelm_hachberg_sausenberg
+        mother = mbz_elisabeth_montfort_bregenz
+		dynasty = hachberg_sausenberg_dynasty
+		tag = SAB
+    }
 
     ### montfort_brittany_dynasty | ARG ###
 
@@ -108900,8 +108973,7 @@ character_db={
 		culture = lorrain
 		religion = catholic
 		birth_date = 1316.1.1
-		death_date = 1399.12.31
-
+		death_date = 1360.1.1
 		birth = salm
 		dynasty = salm_dynasty
 		father = slm_henri_v_salm
@@ -108913,16 +108985,27 @@ character_db={
 		culture = lorrain
 		religion = catholic
 		estate = nobles_estate
-		adm = 1 dip = 0 mil = 0
 		birth_date = 1334.1.1
 		death_date = 1399.12.31
-
 		birth = salm
 		father = slm_henri_vi_salm
 		mother = slm_mathilde_saarbrucken
 		dynasty = salm_dynasty
 		tag = SLM
 	}
+
+    slm_ferry_ii_salm = {
+        first_name = { name = name_frederick }
+		culture = lorrain
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1415.1.1
+		birth = salm
+		#father = slm_theobald_ii_salm
+		#mother = slm_marguerite_lorrane_vaudemont
+		dynasty = salm_dynasty
+		tag = SLM
+    }
 
     ### sambuvarayar_dynasty | SMV ###
 
@@ -131868,7 +131951,7 @@ character_db={
 
     ### wittelsbach_dynasty | ALS ###
 
-    als_ruprecht_wittelsbach_simmern_zweibrucken_bishop = {
+    als_ruprecht_wittelsbach_simmern_zweibrucken = {
         first_name = { name = name_robert }
         culture = rhine_franconian
         religion = catholic
@@ -131881,7 +131964,7 @@ character_db={
         tag = ALS
     }
 
-    als_stephen_wittelsbach_simmern_zweibrucken_bishop = {
+    als_stephan_wittelsbach_simmern_zweibrucken = {
         first_name = { name = name_stephen }
         culture = rhine_franconian
         religion = catholic
@@ -136710,8 +136793,7 @@ character_db={
 		estate = clergy_estate
 		adm = 66 dip = 45 mil = 66
 		birth_date = 1279.2.12
-		death_date = 1399.12.31
-
+		death_date = 1353.11.25
 		birth = solothurn #Buchegg
 		ruler_trait = bold_fighter
 		tag = ALS
@@ -136725,8 +136807,7 @@ character_db={
 		estate = clergy_estate
 		adm = 45 dip = 45 mil = 9
 		birth_date = 1325.1.1
-		death_date = 1399.12.31
-
+		death_date = 1374.4.20
 		birth = haguenau
 		tag = ALS
 		child_trait = child_gregarious
@@ -142185,7 +142266,7 @@ character_db={
 
     mtz_konrad_ii_bayer_boppart = {
         first_name = { name = name_conrad }
-        last_name = { name = Bayer_von_Boppart }
+        last_name = { name = "Bayer von Boppart" }
         culture = rhine_franconian
         religion = catholic
         birth_date = 1387.1.1
@@ -146170,5 +146251,67 @@ character_db={
 		tag = MSO
     }
 
+    mbz_johann_i_konigsegg = {
+        first_name = { name = name_john }
+		culture = high_alemannic
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1420.1.1 # Estimated
+        adm = 58 dip = 67 mil = 80
+		birth = immenstadt
+        dynasty = konigsegg_dynasty
+		tag = MBZ
+        general_trait = goal_oriented
+    }
+
+    mur_thierry_domont = {
+        first_name = { name = name_theodoric }
+        last_name = { name = "de Domont" }
+		culture = french
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1395.1.1
+		birth = paris
+		tag = MUR
+    }
+
+    fur_heinrich_v_furstenberg = {
+        first_name = { name = name_henry }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1380.1.1
+        death_date = 1441.8.10
+		birth = furstenberg
+        dynasty = furstenberg_dynasty
+		tag = FUR
+    }
+
+    fur_johann_iii_furstenberg = {
+        first_name = { name = name_john }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1410.1.1
+        death_date = 1443.3.30
+		birth = furstenberg
+        father = fur_heinrich_v_furstenberg
+        #mother = Verena of Baden-Hachberg
+        dynasty = furstenberg_dynasty
+		tag = FUR
+    }
+
+    fur_konrad_iii_furstenberg = {
+        first_name = { name = name_conrad }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1430.1.1
+		birth = furstenberg
+        father = fur_heinrich_v_furstenberg
+        #mother = Elisabeth of Lupfen
+        dynasty = furstenberg_dynasty
+		tag = FUR
+    }
 
 }
