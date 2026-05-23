@@ -9616,6 +9616,18 @@ character_db={
 
     ### auersperg_dynasty | HAB ###
 
+    hab_diepold_auersperg = {
+        first_name = { name = name_theobald }
+        dynasty = auersperg_dynasty
+        estate = nobles_estate
+        culture = danube_bavarian
+        religion = catholic
+        birth_date = 1360.1.1
+        death_date = 1428.1.1
+        birth = ljubljana
+        tag = STY
+    }
+
     hab_volkhard_v_auersperg = {
         first_name = { name = Volkhard }
         dynasty = auersperg_dynasty
@@ -9623,7 +9635,58 @@ character_db={
         culture = danube_bavarian
         religion = catholic
         birth_date = 1401.1.1
-        tag = HAB
+        birth = ljubljana
+        father = hab_diepold_auersperg
+        tag = STY
+    }
+
+    hab_johann_auersperg = {
+        first_name = { name = name_john }
+        dynasty = auersperg_dynasty
+        estate = nobles_estate
+        culture = danube_bavarian
+        religion = catholic
+        birth_date = 1428.1.1
+        birth = kranj
+        father = hab_volkhard_v_auersperg
+        tag = STY
+    }
+
+    hab_wilhelm_auersperg = {
+        first_name = { name = name_william }
+        dynasty = auersperg_dynasty
+        estate = nobles_estate
+        culture = danube_bavarian
+        religion = catholic
+        birth_date = 1431.1.1
+        birth = kranj
+        father = hab_volkhard_v_auersperg
+        tag = STY
+    }
+
+    hab_georg_auersperg = {
+        first_name = { name = name_george }
+        dynasty = auersperg_dynasty
+        estate = nobles_estate
+        culture = danube_bavarian
+        religion = catholic
+        birth_date = 1435.1.1
+        birth = kranj
+        father = hab_volkhard_v_auersperg
+        tag = STY
+    }
+
+    hab_susanne_auersperg = {
+        first_name = { name = name_susan }
+        dynasty = auersperg_dynasty
+        estate = nobles_estate
+        female = yes
+        culture = danube_bavarian
+        religion = catholic
+        birth_date = 1438.1.1
+        birth = kranj
+        father = hab_volkhard_v_auersperg
+        tag = STY
     }
 
     hab_engelhard_auersperg = {
@@ -9632,8 +9695,10 @@ character_db={
         estate = nobles_estate
         culture = danube_bavarian
         religion = catholic
-        birth_date = 1404.4.1
-        tag = HAB
+        birth_date = 1404.1.1
+        birth = ljubljana
+        father = hab_diepold_auersperg
+        tag = STY
     }
 
     hab_pankraz_ii_auersperg = {
@@ -9642,8 +9707,22 @@ character_db={
         culture = danube_bavarian
         estate = nobles_estate
         religion = catholic
-        birth_date = 1441.6.1
-        tag = HAB
+        birth_date = 1441.1.1
+        birth = ljubljana
+        father = hab_engelhard_auersperg
+        tag = STY
+    }
+
+    hab_volkhard_viii_auersperg = {
+        first_name = { name = Volkhard }
+        dynasty = auersperg_dynasty
+        culture = danube_bavarian
+        estate = nobles_estate
+        religion = catholic
+        birth_date = 1443.1.1
+        birth = ljubljana
+        father = hab_engelhard_auersperg
+        tag = STY
     }
 
     ### auvergne_dynasty | AUV ###
@@ -140558,48 +140637,6 @@ character_db={
         tag = GUJ
     }
 
-    ### (no dynasty) | HAB ###
-
-    aus_bernhard_gesiter = {
-        first_name = { name = Bernhard_Siegmund }
-        last_name  = { name = Gesiter }
-        culture = danube_bavarian
-        religion = catholic
-        estate = clergy_estate
-        birth_date = 1395.1.1
-        tag = HAB
-    }
-
-    aus_nikolaus_wien = {
-        first_name = { name = Nikolaus }
-        last_name  = { name = name_wynn }
-        culture = danube_bavarian
-        religion = catholic
-        estate = clergy_estate
-        birth_date = 1405.1.1
-        tag = HAB
-    }
-
-    aus_jakob_linz = {
-        first_name = { name = Jakobus }
-        last_name  = { name = Linzee }
-        culture = sephardi
-        religion = catholic
-        estate = burghers_estate
-        birth_date = 1408.1.1
-        tag = HAB
-    }
-
-    aus_johannes_gurk = {
-        first_name = { name = Johannes }
-        last_name  = { name = Magurk }
-        culture = danube_bavarian
-        religion = catholic
-        estate = clergy_estate
-        birth_date = 1408.1.1
-        tag = HAB
-    }
-
     ### (no dynasty) | HAW ###
 
     haw_malamaihanaae = { #https://en.wikipedia.org/wiki/Malama%CA%BBihana%CA%BBae
@@ -146469,7 +146506,7 @@ character_db={
 		tag = NEL
     }
 
-    wds_reinprecht_iv_waldsee = {
+    hab_reinprecht_iv_waldsee = {
         first_name = { name = Reinprecht }
 		culture = swabian
 		religion = catholic
@@ -146479,10 +146516,10 @@ character_db={
         #father = Reinprecht II Waldsee
         #mother = 
         dynasty = waldsee_dynasty
-		tag = WDS
+		tag = HAB
     }
 
-    wds_katarina_rosenberg = {
+    hab_katerina_rosenberg = {
         first_name = { name = name_catherine }
 		culture = czech
 		religion = catholic
@@ -146490,37 +146527,37 @@ character_db={
 		estate = nobles_estate
 		birth_date = 1410.1.1
 		birth = krumlov
-        spouse = wds_reinprecht_v_waldsee
+        spouse = hab_reinprecht_iv_waldsee
         #father =
         #mother = 
         dynasty = rosenberg_dynasty
-		tag = WDS
+		tag = HAB
     }
 
-    wds_reinprecht_v_waldsee = {
+    hab_reinprecht_v_waldsee = {
         first_name = { name = Reinprecht }
 		culture = swabian
 		religion = catholic
 		estate = nobles_estate
 		birth_date = 1438.1.1
 		birth = waldsee
-        father = wds_reinprecht_iv_waldsee
-        mother = wds_katarina_rosenberg
+        father = hab_reinprecht_iv_waldsee
+        mother = hab_katerina_rosenberg
         dynasty = waldsee_dynasty
-		tag = WDS
+		tag = HAB
     }
 
-    wds_wolfgang_v_waldsee = {
+    hab_wolfgang_v_waldsee = {
         first_name = { name = Wolfgang }
 		culture = swabian
 		religion = catholic
 		estate = nobles_estate
 		birth_date = 1439.1.1
 		birth = waldsee
-        father = wds_reinprecht_iv_waldsee
-        mother = wds_katarina_rosenberg
+        father = hab_reinprecht_iv_waldsee
+        mother = hab_katerina_rosenberg
         dynasty = waldsee_dynasty
-		tag = WDS
+		tag = HAB
     }
 
     ell_johann_von_holzingen = {

@@ -19778,6 +19778,7 @@ countries = {
                 austrian_archduchy_reform
                 imperator_romanorum
             }
+            
             privilege = {
                 #nobles
                 auxilium_et_consilium
@@ -19872,13 +19873,14 @@ countries = {
         own_control_core = {
             bonndorf villingen waldshut #Landgraviate of Breisgau
             ensisheim #Lordship of Upper Alsace
-            fribourg
+            fribourg # County of Fribourg
             frauenfeld #Lordship of Thurgau
             krumbach gunzburg #Margraviate of Burgau
             belfort ferrette
             hohenberg horb
-            freiburg
-            bludenz feldkirch
+            freiburg # County of Freiburg
+            bludenz feldkirch # County of Feldkirch
+            waldsee saulgau #Lordship of Waldsee
         }
 
         starting_technology_level = 3
@@ -19949,6 +19951,10 @@ countries = {
             ruler_term = { character = hab_ernst_habsburg start_date = 1406.7.15 end_date = 1424.6.10 regnal_number = 1 }
             ruler_term = { character = hab_friedrich_iii_habsburg start_date = 1424.6.10 regnal_number = 3 }
 
+            reforms = {
+                feudal_nobility
+                diplomatic_traditions
+            }
 
             regnal_numbers = {
                 name_odoacer = 2
@@ -21132,7 +21138,7 @@ countries = {
 
     WDS = {
         #Waldsee
-        own_control_core = {
+        our_cores_conquered_by_others = {
             waldsee saulgau #Lordship of Waldsee
         }
 
@@ -21141,9 +21147,7 @@ countries = {
         include = "german_principality"
         include = "expl_northern_europe"
         government = {
-            ruler = wds_reinprecht_iv_waldsee
-
-            ruler_term = { character = wds_reinprecht_iv_waldsee start_date = 1422.1.1 regnal_number = 4 }
+            ruler = random
         }
 
         country_rank = rank_county
