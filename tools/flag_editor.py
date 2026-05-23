@@ -793,11 +793,15 @@ class MainWindow(QMainWindow):
         self.resize(1000, 600)
         self.settings = self.load_settings()
         self.assets = {"patterns": {}, "colored_emblems": {}, "textured_emblems": {}}
-        # per-texture saved emblem colors: name -> [c1,c2,c3] tuples or None
         self.emblem_saved_colors = {}
         self.setup_ui()
         if self.settings.get("base_game"):
-            self.scan_assets()
+            try:
+                self.scan_assets()
+            except Exception:
+                # Asset scanning failed (e.g. game path doesn't exist on this OS,
+                # permission denied, corrupt files). Window still opens with empty lists.
+                pass
 
     def load_settings(self):
         if SETTINGS_FILE.exists():
@@ -2919,20 +2923,20 @@ class MainWindow(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
-    win = MainWindow()
-    win.show()
-    sys.exit(app.exec())
-
-
-if __name__ == "__main__":
     try:
-        main()
+        win = MainWindow()
+        win.show()
+        return app.exec()
     except Exception:
         import traceback
         tb = traceback.format_exc()
         try:
-            app = QApplication(sys.argv)
+            # Use the existing QApplication instance to show the error
             QMessageBox.critical(None, "EU5 Flag Editor Error", tb)
         except Exception:
             print(f"FATAL:\n{tb}")
-        sys.exit(1)
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
