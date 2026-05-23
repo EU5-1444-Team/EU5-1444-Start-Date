@@ -18450,6 +18450,7 @@ countries = {
             reforms = {
                 abbey_reform
             }
+
             laws = {
                 heir_religion_law = heir_special_succession
             }
@@ -21006,29 +21007,6 @@ countries = {
 
     # --- BAS ---
 
-    GHB = {
-        # League of God's House (Gotteshausbund)
-        own_control_core = {
-            chur zuoz tarasp
-        }
-        starting_technology_level = 3
-        include = "expl_western_europe"
-        include = "expl_northern_europe"
-        include = "catholic_republic"
-        government = {
-            type = republic
-            heir_selection = oligarchic_elective
-            ruler = random
-        }
-
-        accepted_cultures = {
-            romansh
-        }
-        capital = chur
-    }
-
-    # --- GHB ---
-
     ANS = {
         #Ansbach
         own_control_core = {
@@ -21361,7 +21339,7 @@ countries = {
         include = "expl_northern_europe"
         include = "swiss_monarchy"
         government = {
-            ruler = random # TODO: add me
+            ruler = gry_francois_i_gruyere
 
             ruler_term = { character = gry_guillaume_ii_de_gruyere start_date = 1136.1.1 end_date = 1145.1.1 regnal_number = 2 }
             ruler_term = { character = gry_rodolphe_i_de_gruyere start_date = 1145.1.1 end_date = 1196.1.1 regnal_number = 1 }
@@ -21369,7 +21347,10 @@ countries = {
             ruler_term = { character = gry_rodolphe_i_de_gruyere start_date = 1200.1.1 end_date = 1224.1.1 regnal_number = 2 }
             ruler_term = { character = gry_rodolphe_ii_de_gruyere start_date = 1224.1.1 end_date = 1270.1.1 regnal_number = 3 }
             ruler_term = { character = gry_pierre_ii_de_gruyere start_date = 1270.1.1 end_date = 1307.1.1 regnal_number = 2 }
-            ruler_term = { character = gry_pierre_iii_de_gruyere start_date = 1307.1.1 regnal_number = 3 }
+            ruler_term = { character = gry_pierre_iii_de_gruyere start_date = 1307.1.1 end_date = 1342.10.26 regnal_number = 3 }
+            ruler_term = { character = gry_pierre_iv_de_gruyere start_date = 1342.10.26 end_date = 1365.4.19 regnal_number = 4 }
+
+            ruler_term = { character = gry_francois_i_gruyere start_date = 1433.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_peter = 3
@@ -21576,10 +21557,17 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
+            ruler = wer_heinrich_x_werdenburg
+
+            ruler_term = { character = wer_hugo_ii_werdenberg start_date = 1280.1.1 end_date = 1305.1.1 }
+
+            ruler_term = { character = wer_heinrich_x_werdenburg start_date = 1436.1.1 }
+
             regnal_numbers = {
                 name_hugh = 2
+                name_henry = 10
             }
-            ruler = random # TODO: add me
+            
         }
 
         tolerated_cultures = {
@@ -21654,7 +21642,7 @@ countries = {
         include = "expl_northern_europe"
         include = "swiss_republic"
         government = {
-            ruler = random # TODO: add me
+            ruler = zur_heinrich_schwend
 
             ruler_term = { character = zur_rudolf_brun start_date = 1336.6.8 end_date = 1360.9.17 }
 
@@ -21680,8 +21668,13 @@ countries = {
         include = "expl_northern_europe"
         include = "swiss_republic"
         government = {
-            ruler = random
+            ruler = syz_itelhans_reding_elder
+
+            ruler_term = { character = syz_itelhans_reding_elder start_date = 1411.1.1 end_date = 1428.1.1 }
+
+            ruler_term = { character = syz_itelhans_reding_elder start_date = 1432.1.1 }
         }
+
         country_rank = rank_county
         capital = schwyz
     }
@@ -21696,12 +21689,12 @@ countries = {
 
         starting_technology_level = 3
         include = "expl_western_europe"
-        include = "catholic_bishopric_not_present"
+        include = "swiss_republic"
         include = "expl_northern_europe"
         government = {
-            #Controlled by the Säckingen Abbey for the most part until 1387
             ruler = random
         }
+
         country_rank = rank_county
         capital = glarus
     }
@@ -21801,12 +21794,14 @@ countries = {
         include = "german_principality"
         include = "swiss_monarchy"
         government = {
-            ruler = random # TODO: add me
+            ruler = neu_jean_fribourg
 
             ruler_term = { character = neu_bertoldo_i_neuchatel start_date = 1225.1.1 end_date = 1259.1.1 }
             ruler_term = { character = neu_rodolphe_iii_neuchatel start_date = 1259.1.1 end_date = 1263.1.1 }
             ruler_term = { character = neu_amadeus_neuchatel start_date = 1263.1.1 end_date = 1288.2.3 }
-            ruler_term = { character = neu_rodolphe_iv_neuchatel start_date = 1288.2.3 }
+            ruler_term = { character = neu_rodolphe_iv_neuchatel start_date = 1288.2.3 end_date = 1343.1.1 }
+
+            ruler_term = { character = neu_jean_fribourg start_date = 1424.1.1 }
 
             laws = {
                 mining_law = nobles_mining_law
@@ -21877,12 +21872,14 @@ countries = {
         capital = kyburg
         dynasty = neu_kyburg_dynasty
         government = {
-            ruler = random # TODO: add me
+            ruler = hab_siegmund_habsburg
 
             ruler_term = { character = kyb_eberhard_i_kyburg start_date = 1269.1.1 end_date = 1284.1.1 }
             ruler_term = { character = kyb_hartmann_kyburg start_date = 1284.1.1 end_date = 1301.1.1 }
             ruler_term = { character = kyb_hartmann_ii_kyburg start_date = 1301.1.1 end_date = 1322.10.31 }
-            ruler_term = { character = kyb_eberhard_ii_kyburg start_date = 1322.10.31 }
+            ruler_term = { character = kyb_eberhard_ii_kyburg start_date = 1322.10.31 end_date = 1357.4.27 }
+
+            ruler_term = { character = hab_siegmund_habsburg start_date = 1442.1.1 }
         }
         country_rank = rank_county
     }
@@ -21900,7 +21897,7 @@ countries = {
         include = "catholic_monarchy_no_coast"
         include = "expl_northern_europe"
         include = "german_principality"
-        include = "swiss_monarchy"
+        include = "swiss_republic"
         government = {
             regnal_numbers = {
                 name_peter = 3
@@ -21914,11 +21911,12 @@ countries = {
             ruler_term = { character = trn_aymon_ii_turn start_date = 1265.1.1 end_date = 1276.1.1 }
             ruler_term = { character = trn_peter_ii_turn start_date = 1276.1.1 end_date = 1308.1.1 }
             ruler_term = { character = trn_johann_turn start_date = 1308.1.1 end_date = 1324.1.1 }
-            ruler_term = { character = trn_peter_iii_turn start_date = 1324.1.1 }
+            ruler_term = { character = trn_peter_iii_turn start_date = 1324.1.1 end_date = 1359.1.1 }
+            ruler_term = { character = trn_anton_turn start_date = 1359.1.1 end_date = 1400.1.1 }
         }
+
         country_rank = rank_county
         capital = frutigen
-        dynasty = turn_dynasty
     }
 
     # --- TRN ---
@@ -21934,10 +21932,17 @@ countries = {
         include = "catholic_monarchy_no_coast"
         include = "expl_northern_europe"
         include = "german_principality"
-        include = "swiss_monarchy"
+        include = "swiss_theocracy"
         government = {
-            ruler = random
+            ruler = lsa_giorgio_di_saluzzo
+
+            ruler_term = { character = lsa_giorgio_di_saluzzo start_date = 1440.4.1 }
+
+            reforms = {
+                abbey_reform
+            }
         }
+        
         country_rank = rank_county
         capital = interlaken
     }
@@ -21955,7 +21960,7 @@ countries = {
         include = "catholic_monarchy_no_coast"
         include = "expl_northern_europe"
         include = "german_principality"
-        include = "swiss_monarchy"
+        include = "swiss_republic"
         government = {
             ruler = random
         }
@@ -22021,9 +22026,12 @@ countries = {
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "expl_northern_europe"
-        include = "swiss_republic"
+        include = "swiss_monarchy"
+
         government = {
-            ruler = random
+            ruler = mso_enrico_sax_misox
+
+            ruler_term = { character = mso_enrico_sax_misox start_date = 1437.1.1 regnal_number = 1 }
 
             laws = {
                 mining_law = burghers_mining_law
@@ -22078,9 +22086,7 @@ countries = {
             reforms = {
                 landgraviate
             }
-            regency = consort_regency
-            start_regency_date = 1334.1.1
-            end_regency_date = 1346.1.1
+            
             ruler_term = { character = leu_ulrich_leuchtenberg start_date = 1293.1.1 end_date = 1334.1.1 regnal_number = 1 }
         }
 
@@ -22126,14 +22132,17 @@ countries = {
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
         government = {
-            ruler = random # TODO: add me
+            ruler = tgg_elisabeth_matsch
 
             ruler_term = { character = tgg_diethelm_i_von_toggenburg start_date = 1176.1.1 end_date = 1206.1.1 regnal_number = 1 }
             ruler_term = { character = tgg_diethelm_ii_von_toggenburg start_date = 1206.1.1 end_date = 1235.1.25 regnal_number = 2 }
             ruler_term = { character = tgg_kraft_i_von_toggenburg start_date = 1235.1.25 end_date = 1249.7.15 regnal_number = 3 }
             ruler_term = { character = tgg_friedrich_iii_von_toggenburg start_date = 1249.7.15 end_date = 1309.1.17 regnal_number = 3 }
             ruler_term = { character = tgg_friedrich_iv_von_toggenburg start_date = 1309.1.17 end_date = 1315.11.15 regnal_number = 4 }
-            ruler_term = { character = tgg_diethelm_v_von_toggenburg start_date = 1315.11.15 regnal_number = 5 }
+            ruler_term = { character = tgg_diethelm_v_von_toggenburg start_date = 1315.11.15 end_date = 1337.9.21 regnal_number = 5 }
+
+            ruler_term = { character = tgg_friedrich_vii_von_toggenburg start_date = 1400.11.7 end_date = 1436.4.30 regnal_number = 7 }
+            ruler_term = { character = tgg_elisabeth_matsch start_date = 1436.4.30 regnal_number = 0 }
         }
         tolerated_cultures = {
             romansh
@@ -80745,16 +80754,21 @@ countries = {
 
     HLE = {
         # God's House League (South Germany)
-        own_control_core = { }
+        own_control_core = {
+            chur zuoz tarasp
+        }
+
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "expl_northern_europe"
-        include = "catholic_republic_not_present"
+        include = "catholic_republic"
+
         government = {
             type = republic
             heir_selection = oligarchic_elective
             ruler = random
         }
+
         capital = chur
     }
 

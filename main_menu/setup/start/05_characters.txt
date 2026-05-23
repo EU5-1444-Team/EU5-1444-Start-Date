@@ -52355,8 +52355,7 @@ character_db={
 		religion = catholic
 		birth = gruyere
 		birth_date = 1279.1.1
-		death_date = 1399.12.31
-
+		death_date = 1342.10.26
 		father = gry_pierre_the_younger_de_gruyere
 		dynasty = gruyere_dynasty
 		tag = GRY
@@ -52367,8 +52366,7 @@ character_db={
 		culture = high_alemannic
 		religion = catholic
 		birth_date = 1280.1.1
-		death_date = 1399.12.31
-
+		death_date = 1365.4.19
 		birth = gruyere
 		father = gry_rodolphe_de_gruyere
 		dynasty = gruyere_dynasty
@@ -52381,7 +52379,6 @@ character_db={
 		religion = catholic
 		birth_date = 1315.1.1
 		death_date = 1399.12.31
-
 		birth = gruyere
 		father = gry_pierre_iii_de_gruyere
 		mother = gry_catherine_de_la_tour_chatillon
@@ -52403,6 +52400,42 @@ character_db={
 		dynasty = gruyere_dynasty
 		tag = GRY
 	}
+
+    gry_francois_i_gruyere = {
+        first_name = { name = name_francis }
+		culture = arpitan
+		religion = catholic
+		birth_date = 1417.1.1
+		birth = gruyere
+		#father = Antoine de Gruyere
+		dynasty = gruyere_dynasty
+		tag = GRY
+    }
+
+    gry_bonne_costa = {
+        first_name = { name = name_bonne }
+        dynasty = { name = Costa }
+		culture = piedmontese
+		religion = catholic
+        female = yes
+		birth_date = 1419.1.1
+		birth = cuneo
+        spouse = gry_francois_i_gruyere
+		#father = Louis Costa
+		tag = GRY
+    }
+
+    gry_louis_gruyere = {
+        first_name = { name = name_louis }
+		culture = arpitan
+		religion = catholic
+		birth_date = 1444.1.1
+		birth = gruyere
+		father = gry_francois_i_gruyere
+        mother = gry_bonne_costa
+		dynasty = gruyere_dynasty
+		tag = GRY
+    }
 
     ### gryf_dynasty | BTH ###
 
@@ -86741,13 +86774,12 @@ character_db={
         tag = KYB
     }
 
-	kyb_eberhard_ii_kyburg = { #Ruler
+	kyb_eberhard_ii_kyburg = { #Ruler https://www.geni.com/people/Eberhard-II-count-of-Habsburg-Laufenburg/6000000008439890827
 		first_name = { name = name_everard }
 		culture = high_alemannic
 		religion = catholic
 		birth_date = 1299.1.1
-		death_date = 1399.12.31
-
+		death_date = 1357.4.27
 		birth = burgdorf_emmental
 		father = kyb_hartmann_kyburg
 		dynasty = neu_kyburg_dynasty
@@ -86759,8 +86791,7 @@ character_db={
 		culture = high_alemannic
 		religion = catholic
 		birth_date = 1328.1.1
-		death_date = 1399.12.31
-
+		death_date = 1395.1.1
 		birth = burgdorf_emmental
 		father = kyb_eberhard_ii_kyburg
 		mother = kyb_anastasia_von_signau
@@ -86872,8 +86903,7 @@ character_db={
 		culture = franc_comtois
 		religion = catholic
 		birth_date = 1274.9.25
-		death_date = 1399.12.31
-
+		death_date = 1343.1.1
 		birth = neuchatel
 		dynasty = neuchatel_dynasty
 		father = neu_amadeus_neuchatel
@@ -86886,7 +86916,6 @@ character_db={
 		religion = catholic
 		birth_date = 1305.1.1
 		death_date = 1399.12.31
-
 		birth = neuchatel
 		dynasty = neuchatel_dynasty
 		father = neu_rodolphe_iv_neuchatel
@@ -124680,8 +124709,7 @@ character_db={
 		culture = high_alemannic
 		religion = catholic
 		birth_date = 1299.1.1
-		death_date = 1399.12.31
-
+		death_date = 1359.1.1 # Unknown
 		birth = frutigen
 		father = trn_johann_turn
 		dynasty = turn_dynasty
@@ -124693,8 +124721,7 @@ character_db={
 		culture = high_alemannic
 		religion = catholic
 		birth_date = 1336.1.1
-		death_date = 1399.12.31
-
+		death_date = 1405.5.25
 		birth = frutigen
 		father = trn_peter_iii_turn
 		mother = trn_agnes_von_grandson
@@ -128760,8 +128787,7 @@ character_db={
 		culture = high_alemannic
 		religion = catholic
 		birth_date = 1280.1.1  # Estimated
-		death_date = 1399.12.31
-
+		death_date = 1337.9.21
 		birth = toggenburg
 		father = tgg_friedrich_iv_von_toggenburg
 		dynasty = von_toggenburg_dynasty
@@ -128797,6 +128823,30 @@ character_db={
 		dynasty = von_toggenburg_dynasty
 		tag = TGG
 	}
+
+    tgg_friedrich_vii_von_toggenburg = {
+        first_name = { name = name_frederick }
+		culture = high_alemannic
+		religion = catholic
+		birth_date = 1372.1.1 # Estimated
+		death_date = 1436.4.20
+		birth = toggenburg
+		#father = tgg_diethelm_vi_von_toggenburg
+		#mother = Katharina of Werdenberg-Heiligenberg
+		dynasty = von_toggenburg_dynasty
+		tag = TGG
+    }
+
+    tgg_elisabeth_matsch = {
+        first_name = { name = name_elizabeth }
+		culture = high_alemannic
+		religion = catholic
+        female = yes
+		birth_date = 1379.1.1 # Estimated
+		birth = toggenburg
+		dynasty = matsch_dynasty
+		tag = TGG
+    }
 
     ### von_veldenz_dynasty | VEL ###
 
@@ -131287,11 +131337,58 @@ character_db={
 		religion = catholic
 		birth_date = 1305.1.1
 		death_date = 1399.12.31
-
 		birth = werdenberg
 		father = wer_hugo_ii_werdenberg
 		tag = WER
 	}
+
+    wer_heinrich_x_werdenburg = {
+        first_name = { name = name_henry }
+		dynasty = werdenberg_dynasty
+		culture = danube_bavarian
+		religion = catholic
+		birth_date = 1385.1.1
+		birth = werdenberg
+		#father =
+		tag = WER
+    }
+
+    wer_agnes_matsch = {
+        first_name = { name = name_agnes }
+		culture = southern_bavarian
+		religion = catholic
+        female = yes
+		birth_date = 1406.1.1
+		birth = silandro
+		#father =
+        spouse = wer_heinrich_x_werdenburg
+        dynasty = matsch_dynasty
+		tag = WER
+    }
+
+    wer_wilhelm_ii_werdenburg = {
+        first_name = { name = name_william }
+		dynasty = werdenberg_dynasty
+		culture = danube_bavarian
+		religion = catholic
+		birth_date = 1439.1.1
+		birth = werdenberg
+		father = wer_heinrich_x_werdenburg
+        mother = wer_agnes_matsch
+		tag = WER
+    }
+
+    wer_georg_ii_werdenburg = {
+        first_name = { name = name_george }
+		dynasty = werdenberg_dynasty
+		culture = danube_bavarian
+		religion = catholic
+		birth_date = 1442.1.1
+		birth = werdenberg
+		father = wer_heinrich_x_werdenburg
+        mother = wer_agnes_matsch
+		tag = WER
+    }
 
     ### wessex_dynasty | ENG ###
 
@@ -143532,7 +143629,6 @@ character_db={
 		mil = 67
 		birth_date = 1290.1.1 #unknown
 		death_date = 1399.12.31
-
 		birth = solothurn
 		tag = SLT
 	}
@@ -143548,7 +143644,6 @@ character_db={
 		mil = 54
 		birth_date = 1294.1.1 #unknown
 		death_date = 1399.12.31
-
 		birth = solothurn
 		tag = SLT
 	}
@@ -146014,4 +146109,66 @@ character_db={
 		birth = bern
 		tag = BRN
     }
+
+    brn_rudolf_hofmeister = {
+        first_name = { name = name_rudolf }
+		last_name = { name = Hofmeister }
+		culture = high_alemannic
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1377.1.1
+		birth = bern
+		tag = BRN
+    }
+
+    neu_jean_fribourg = {
+        first_name = { name = name_john }
+		culture = arpitan
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1396.5.26
+		birth = neuchatel
+        dynasty = fribourg_dynasty
+		tag = NEU
+    }
+
+    syz_itelhans_reding_elder = {
+        first_name = { name = Itelhans }
+        last_name = { name = Reding }
+        nickname = { name = nick_the_elder }
+		culture = high_alemannic
+		religion = catholic
+		estate = nobles_estate
+        adm = 72 dip = 63 mil = 78
+		birth_date = 1370.1.1
+		birth = schwyz
+		tag = SYZ
+        general_trait = glory_seeker
+    }
+
+    syz_itelhans_reding_younger = {
+        first_name = { name = Itelhans }
+        last_name = { name = Reding }
+        nickname = { name = nick_the_younger }
+		culture = high_alemannic
+		religion = catholic
+		estate = nobles_estate
+        father = syz_itelhans_reding_elder
+		birth_date = 1400.1.1 # Estimated
+		birth = schwyz
+		tag = SYZ
+    }
+
+    mso_enrico_sax_misox = {
+        first_name = { name = name_henry }
+		culture = lombard
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1418.1.1 # Estimated
+		birth = mesocco
+        dynasty = sax_misox_dynasty
+		tag = MSO
+    }
+
+
 }

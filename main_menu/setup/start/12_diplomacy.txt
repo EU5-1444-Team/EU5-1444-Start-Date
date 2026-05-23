@@ -428,10 +428,16 @@ diplomacy_manager = {
 
     dependency = { first = SIT second = VLA subject_type = vassal }
 
+    dependency = { first = BRN second = TRN subject_type = vassal }
+
     #dependency = { first = POL second = SOP subject_type = tributary }
     #dependency = { first = POL second = SGD subject_type = tributary }
     scripted_oneway = { first = POL second = SOP type = guarantee }
     scripted_oneway = { first = POL second = SGD type = guarantee }
+
+    scripted_mutual = { first = BUR second = NEU type = alliance }
+    scripted_mutual = { first = FAU second = ZUR type = alliance }
+    scripted_mutual = { first = FAU second = TGG type = alliance }
 
     #------Byzantium--------
 
