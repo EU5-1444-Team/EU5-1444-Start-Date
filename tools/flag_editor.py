@@ -2,6 +2,7 @@
 """EU5 Flag Editor - simple PySide6 app
 See README.md for usage/requirements.
 """
+from __future__ import annotations  # enables X|Y union syntax and built-in generics on Python 3.8+
 import sys
 import os
 import json
@@ -805,12 +806,12 @@ class MainWindow(QMainWindow):
 
     def load_settings(self):
         if SETTINGS_FILE.exists():
-            return json.loads(SETTINGS_FILE.read_text())
+            return json.loads(SETTINGS_FILE.read_text(encoding="utf-8"))
         return {"base_game": "", "mod_folder": ""}
 
     def save_settings(self):
         SETTINGS_FILE.parent.mkdir(parents=True, exist_ok=True)
-        SETTINGS_FILE.write_text(json.dumps(self.settings, indent=2))
+        SETTINGS_FILE.write_text(json.dumps(self.settings, indent=2), encoding="utf-8")
 
     def setup_ui(self):
         central = QWidget()
@@ -1738,7 +1739,7 @@ class MainWindow(QMainWindow):
         self.update_emblem_pixmap(it)
 
     def parse_named_colors(self, path: Path):
-        text = Path(path).read_text()
+        text = Path(path).read_text(encoding="utf-8-sig")  # utf-8-sig strips BOM if present
         colors = {}
         # simple regex for lines like: name = hsv360 { 0 0 92 } or name = rgb { 1 0 1 }
         pattern = re.compile(
@@ -1830,10 +1831,9 @@ class MainWindow(QMainWindow):
         # collect current pattern filename (if any)
         # use selected pattern if present, otherwise prompt
         pattern_name = None
+        name = "TAG"  # default CoA key
         if getattr(self, "current_pattern_name", None):
             pattern_name = self.current_pattern_name
-            # default CoA key (tag) — user indicated tag is not important
-            name = "TAG"
         # build block
         lines = [f"{name} = {{"]
         # pattern: prompt user for file name or leave blank
