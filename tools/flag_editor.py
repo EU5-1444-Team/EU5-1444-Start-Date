@@ -5,6 +5,8 @@ See README.md for usage/requirements.
 import sys
 import os
 import json
+import tempfile
+import platform
 from pathlib import Path
 from functools import partial
 
@@ -211,8 +213,16 @@ def pil2pixmap(img: Image.Image):
     return QPixmap.fromImage(qimg)
 
 
-# Thumbnail cache directory (user cache under home)
-THUMB_CACHE_DIR = Path.home() / ".cache" / "eu5-flag-editor" / "thumbs"
+def _get_cache_dir() -> Path:
+    if platform.system() == "Windows":
+        base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+        return base / "eu5-flag-editor" / "cache" / "thumbs"
+    elif platform.system() == "Darwin":
+        return Path.home() / "Library" / "Caches" / "eu5-flag-editor" / "thumbs"
+    base = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache"))
+    return base / "eu5-flag-editor" / "thumbs"
+
+THUMB_CACHE_DIR = _get_cache_dir()
 THUMB_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -2842,14 +2852,14 @@ class MainWindow(QMainWindow):
         except Exception:
             pass
 
-        # optional debug: dump the resulting emblem PIL to /tmp for inspection
+        # optional debug: dump the resulting emblem PIL to a temp dir for inspection
         try:
             if os.environ.get("EU5_FLAG_DUMP_EMBLEM"):
                 texname = item.image_path.name.replace(".dds", "")
                 import time
 
                 ts = int(time.time() * 1000)
-                outp = Path(f"/tmp/emblem_debug_{texname}_{ts}.png")
+                outp = Path(tempfile.gettempdir()) / f"emblem_debug_{texname}_{ts}.png"
                 try:
                     pil.save(outp)
                     print(f"[DumpEmblem] saved {outp}")
