@@ -133244,7 +133244,7 @@ character_db={
     }
 
     ubv_wilhelm_iii_wittelsbach = {
-        first_name = { name = name_ernest }
+        first_name = { name = name_william }
         culture = danube_bavarian
         religion = catholic
         estate = nobles_estate
@@ -133270,16 +133270,44 @@ character_db={
         tag = UBV
     }
 
+    ubv_margarete_kleve = {
+        first_name = { name = name_margaret }
+        culture = dutch_rhenish
+        religion = catholic
+        estate = nobles_estate
+        female = yes
+        birth_date = 1416.2.23
+        birth = kleve
+        father = kle_adolf_i_kleve
+        mother = kle_marie_valois_burgundy
+        dynasty = kleve_dynasty
+        tag = UBV
+    }
+
     ubv_adolf_wittelsbach = {
         first_name = { name = name_adolf }
         culture = danube_bavarian
         religion = catholic
         estate = nobles_estate
         birth_date = 1434.1.7
-        death_date = 1444.10.24
+        death_date = 1441.10.24
         birth = munich
         father = ubv_wilhelm_iii_wittelsbach
-        #mother = Margaret of Cleves
+        mother = ubv_margarete_kleve
+        dynasty = wittelsbach_dynasty
+        tag = UBV
+    }
+
+    ubv_wilhelm_wittelsbach_young = {
+        first_name = { name = name_william }
+        culture = danube_bavarian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1435.1.1
+        death_date = 1435.2.1
+        birth = munich
+        father = ubv_wilhelm_iii_wittelsbach
+        mother = ubv_margarete_kleve
         dynasty = wittelsbach_dynasty
         tag = UBV
     }
@@ -136918,7 +136946,7 @@ character_db={
 		estate = clergy_estate
 		birth_date = 1401.11.1
 		birth = padua
-		tag = AQU
+		tag = VEN
     }
 
     ### (no dynasty) | ARA ###
@@ -137108,11 +137136,21 @@ character_db={
 		religion = catholic
 		estate = clergy_estate
 		birth_date = 1287.1.1
-		death_date = 1399.12.31
-
+		death_date = 1337.12.1
 		birth = augsburg
 		tag = AUG
 	}
+
+    aug_peter_schaumberg = {
+        first_name = { name = name_peter }
+		culture = east_franconian
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1388.2.22
+		birth = kronach
+        dynasty = schaumberg_dynasty
+		tag = AUG
+    }
 
     ### (no dynasty) | AUV ###
 
@@ -146114,6 +146152,33 @@ character_db={
         tag = LXL
     }
 
+    wur_eberhard_iv_wurttemberg = {
+        first_name = { name = name_everard }
+        culture = swabian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1388.1.1
+        death_date = 1419.7.2
+        birth = stuttgart
+        dynasty = wurttemberg_dynasty
+        tag = URA
+    }
+
+    ktz_anna_wurttemberg = {
+        first_name = { name = name_anna }
+        culture = swabian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1408.1.1
+        birth = stuttgart
+        spouse = ktz_philipp_katzenelnbogen
+        father = wur_eberhard_iv_wurttemberg
+        mother = mtb_henriette_montfaucon
+        dynasty = wurttemberg_dynasty
+        tag = KTZ
+    }
+
     wur_ludwig_i_wurttemberg_urach = {
         first_name = { name = name_louis }
         culture = swabian
@@ -146126,6 +146191,33 @@ character_db={
         mother = mtb_henriette_montfaucon
         dynasty = wurttemberg_dynasty
         tag = URA
+    }
+
+    wur_ulrich_v_wurttemberg_stuttgart = {
+        first_name = { name = name_ulrick }
+        culture = swabian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1413.1.1
+        birth = stuttgart
+        father = wur_eberhard_iv_wurttemberg
+        mother = mtb_henriette_montfaucon
+        dynasty = wurttemberg_dynasty
+        tag = STT
+    }
+
+    wur_katarina_wurttemberg_stuttgart = {
+        first_name = { name = name_catherine }
+        culture = swabian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1441.12.7
+        birth = stuttgart
+        father = wur_ulrich_v_wurttemberg_stuttgart
+        mother = ubv_margarete_kleve
+        dynasty = wurttemberg_dynasty
+        tag = STT
     }
 
     hes_mechthild_wurttemberg = {
@@ -146312,6 +146404,145 @@ character_db={
         #mother = Elisabeth of Lupfen
         dynasty = furstenberg_dynasty
 		tag = FUR
+    }
+
+    agc_peter_von_argon = {
+        first_name = { name = name_peter }
+        last_name = { name = "von Argon" }
+		culture = swabian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1400.1.1 # Estimated
+		birth = augsburg
+		tag = AGC
+    }
+
+    nur_werner_von_parsberg = {
+        first_name = { name = name_werner }
+        last_name = { name = "von Parsberg" }
+		culture = east_franconian
+		religion = catholic
+		estate = burghers_estate
+		birth_date = 1398.1.1 # Estimated
+		birth = nuremberg
+		tag = NUR
+    }
+
+    nel_johann_iv_nellenburg = {
+        first_name = { name = name_john }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1390.1.1
+        death_date = 1438.2.25
+		birth = stockach
+        #father = nel_johann_iii_nellenburg
+        #mother = Margaret of Nellenburg
+        dynasty = nellenburg_dynasty
+		tag = NEL
+    }
+
+    nel_johann_v_nellenburg = {
+        first_name = { name = name_john }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1420.1.1 
+		birth = stockach
+        father = nel_johann_iv_nellenburg
+        #mother = Margaret of Nellenburg
+        dynasty = nellenburg_dynasty
+		tag = NEL
+    }
+
+    nel_dorothea_nellenburg = {
+        first_name = { name = Dorothea }
+		culture = swabian
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1422.1.1 
+		birth = stockach
+        father = nel_johann_iv_nellenburg
+        #mother = Margaret of Nellenburg
+        dynasty = nellenburg_dynasty
+		tag = NEL
+    }
+
+    wds_reinprecht_iv_waldsee = {
+        first_name = { name = Reinprecht }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1405.1.1
+		birth = waldsee
+        #father = Reinprecht II Waldsee
+        #mother = 
+        dynasty = waldsee_dynasty
+		tag = WDS
+    }
+
+    wds_katarina_rosenberg = {
+        first_name = { name = name_catherine }
+		culture = czech
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1410.1.1
+		birth = krumlov
+        spouse = wds_reinprecht_v_waldsee
+        #father =
+        #mother = 
+        dynasty = rosenberg_dynasty
+		tag = WDS
+    }
+
+    wds_reinprecht_v_waldsee = {
+        first_name = { name = Reinprecht }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1438.1.1
+		birth = waldsee
+        father = wds_reinprecht_iv_waldsee
+        mother = wds_katarina_rosenberg
+        dynasty = waldsee_dynasty
+		tag = WDS
+    }
+
+    wds_wolfgang_v_waldsee = {
+        first_name = { name = Wolfgang }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1439.1.1
+		birth = waldsee
+        father = wds_reinprecht_iv_waldsee
+        mother = wds_katarina_rosenberg
+        dynasty = waldsee_dynasty
+		tag = WDS
+    }
+
+    ell_johann_von_holzingen = {
+        first_name = { name = name_john }
+        last_name = { name = "von Holzingen" }
+		culture = swabian
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1385.1.1 # Estimated
+		birth = ellwangen
+		tag = ELL
+    }
+
+    ell_johann_von_hurheim = {
+        first_name = { name = name_john }
+        last_name = { name = "von Hürnheim" }
+		culture = swabian
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1400.1.1 # Estimated
+		birth = ellwangen
+		tag = ELL
     }
 
 }

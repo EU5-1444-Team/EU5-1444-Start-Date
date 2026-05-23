@@ -9482,6 +9482,7 @@ countries = {
         }
 
         own_control_conquered = {
+            aquileia tolmezzo pordenone spilimbergo udine gemona cividale
             lezha
         }
 
@@ -10172,7 +10173,7 @@ countries = {
     # --- FLO ---
 
     AQU = {
-        own_control_core = {
+        our_cores_conquered_by_others = {
             aquileia tolmezzo pordenone spilimbergo udine gemona cividale
         }
 
@@ -19873,7 +19874,6 @@ countries = {
             ensisheim #Lordship of Upper Alsace
             fribourg
             frauenfeld #Lordship of Thurgau
-            schaffhausen
             krumbach gunzburg #Margraviate of Burgau
             belfort ferrette
             hohenberg horb
@@ -20693,11 +20693,14 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
+            ruler = wur_ulrich_v_wurttemberg_stuttgart
+
+            ruler_term = { character = wur_ulrich_v_wurttemberg_stuttgart start_date = 1442.1.25 }
+
             regnal_numbers = {
                 name_ulrick = 2
                 name_everard = 2
             }
-            ruler = random
         }
 
         tolerated_cultures = {
@@ -20807,7 +20810,11 @@ countries = {
         include = "catholic_german_bishopric_no_coast"
         include = "expl_northern_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = aug_peter_schaumberg
+
+            ruler_term = { character = aug_ulrich_von_schonegg start_date = 1331.1.1 end_date = 1337.12.1 regnal_number = 2 }
+
+            ruler_term = { character = aug_peter_schaumberg start_date = 1424.2.27 regnal_number = 0 }
 
             reforms = {
                 prince_bishopric_reform
@@ -21066,7 +21073,6 @@ countries = {
         #Baden
         own_control_core = {
             baden durlach
-            hachberg
         }
 
         starting_technology_level = 3
@@ -21104,7 +21110,6 @@ countries = {
         #Waldburg
         own_control_core = {
             waldburg
-            waldsee saulgau #Lordship of Waldsee
         }
 
         starting_technology_level = 3
@@ -21124,6 +21129,28 @@ countries = {
     }
 
     # --- WDB ---
+
+    WDS = {
+        #Waldsee
+        own_control_core = {
+            waldsee saulgau #Lordship of Waldsee
+        }
+
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "german_principality"
+        include = "expl_northern_europe"
+        government = {
+            ruler = wds_reinprecht_iv_waldsee
+
+            ruler_term = { character = wds_reinprecht_iv_waldsee start_date = 1422.1.1 regnal_number = 4 }
+        }
+
+        country_rank = rank_county
+        capital = waldsee
+    }
+
+    # --- WDS ---
 
     ALS = {
         #Strasbourg
@@ -21544,7 +21571,9 @@ countries = {
         include = "expl_northern_europe"
         include = "catholic_free_city_no_coast"
         government = {
-            ruler = random
+            ruler = agc_peter_von_argon
+
+            ruler_term = { character = agc_peter_von_argon start_date = 1444.1.1 }
         }
 
         tolerated_cultures = {
@@ -22350,7 +22379,7 @@ countries = {
             ruler_term = { character = fur_heinrich_v_furstenberg start_date = 1408.8.15 end_date = 1441.3.30 regnal_number = 5 }
             ruler_term = { character = fur_konrad_iii_furstenberg start_date = 1441.3.30 regnal_number = 3 }
         }
-        
+
         country_rank = rank_county
         capital = furstenberg
     }
@@ -22376,7 +22405,7 @@ countries = {
 
     HAC = {
         # Hachberg (Baden) (South Germany)
-        our_cores_conquered_by_others = {
+        own_control_core = {
             hachberg
         }
         starting_technology_level = 3
@@ -22384,10 +22413,20 @@ countries = {
         include = "expl_northern_europe"
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
-        government = { ruler = random }
+        government = { 
+            active_regent = neu_jean_fribourg
+            start_regency_date = 1441.6.21
+            end_regency_date = 1445.1.1
+            heir = sab_rudolf_iv_hachberg_sausenberg
+
+            ruler_term = { character = sab_wilhelm_hachberg_sausenberg start_date = 1428.1.1 end_date = 1441.6.21 regnal_number = 0 }
+            ruler_term = { character = sab_rudolf_iv_hachberg_sausenberg start_date = 1441.6.21 regnal_number = 4 }
+        }
+
         tolerated_cultures = {
             high_alemannic
         }
+
         country_rank = rank_county
         capital = hachberg
     }
@@ -22447,9 +22486,17 @@ countries = {
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "expl_northern_europe"
-        include = "catholic_monarchy_no_coast"
-        include = "german_principality"
-        government = { ruler = random }
+        include = "catholic_german_bishopric_no_coast"
+        government = { 
+            ruler = ell_johann_von_holzingen
+
+            ruler_term = { character = ell_johann_von_holzingen start_date = 1427.1.1 regnal_number = 0 }
+
+            reforms = {
+                abbey_reform
+            }
+        }
+
         country_rank = rank_county
         capital = ellwangen
     }
@@ -22525,7 +22572,13 @@ countries = {
         include = "expl_northern_europe"
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
-        government = { ruler = random }
+        government = { 
+            ruler = nel_johann_v_nellenburg
+
+             ruler_term = { character = nel_johann_v_nellenburg start_date = 1438.2.25 regnal_number = 5 }
+            
+        }
+        
         tolerated_cultures = {
         }
         country_rank = rank_county
@@ -22584,9 +22637,9 @@ countries = {
         government = {
             type = republic
             heir_selection = republic_4_year_terms
-            ruler = random # TODO: add me
+            ruler = nur_werner_von_parsberg
 
-            ruler_term = { character = nur_rappold_von_kulsheim start_date = 1337.1.1 } #no Imperial Advocate between 1336 and 1338
+            ruler_term = { character = nur_rappold_von_kulsheim start_date = 1337.1.1 end_date = 1341.1.1 } #no Imperial Advocate between 1336 and 1338
         }
         country_rank = rank_county
         capital = nuremberg
@@ -22714,6 +22767,30 @@ countries = {
 
         country_rank = rank_county
         capital = konstanz
+    }
+
+    # --- KNZ ---
+
+    SCF = {
+        #Schaffhausen
+        own_control_core = {
+            schaffhausen
+        }
+
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "catholic_free_city_no_coast"
+        include = "expl_northern_europe"
+        government = {
+            ruler = random
+        }
+
+        tolerated_cultures = {
+            swabian
+        }
+
+        country_rank = rank_county
+        capital = schaffhausen
     }
 
     # --- KNZ ---
