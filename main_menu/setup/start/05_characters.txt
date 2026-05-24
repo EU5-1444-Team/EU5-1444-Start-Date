@@ -48363,12 +48363,22 @@ character_db={
 		religion = romuva
 		birth_date = 1308.1.1
 		death_date = 1399.12.31
-
 		birth = vilnius
 		dynasty = gediminid_dynasty
 		father = lit_gediminas_gediminids
 		tag = LIT
 	}
+    vol_teodoras_liubartaitis_gediminid = {
+        first_name = { name = name_teodoras }
+        last_name = { name = Liubartaitis }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1351.1.1
+        death_date = 1431.6.1
+        father = lit_liubartas_gediminds
+        dynasty = gediminid_dynasty
+        tag = VOL
+    }
 
     lit_andrius_gediminds = { #https://en.wikipedia.org/wiki/Andrei_of_Polotsk
         first_name = { name = name_andrew }
@@ -48539,6 +48549,8 @@ character_db={
         birth_date = 1371.1.1
         birth = trakai
         father = lit_vytautas_gediminid
+        mother = kie_uliana_olshanska_alseniskiai
+        spouse = mos_vasily_ii_rurikovich
         dynasty = gediminid_dynasty
         tag = MOS
     }
@@ -48607,13 +48619,48 @@ character_db={
 		culture = aukstaitian
 		religion = romuva
 		birth_date = 1330.1.1
-		death_date = 1399.12.31
-
-		birth = vilnius #Unknown
+		death_date = 1375.1.1
+		birth = vilnius
 		dynasty = gediminid_dynasty
 		father = nrk_karijotas_gediminds
 		tag = NRK
 	}
+    pod_aleksander_koriatovych_gediminid = {
+        first_name = { name = name_alexander }
+        last_name = { name = Koriatovych }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1332.1.1
+        death_date = 1380.1.1
+        father = nrk_karijotas_gediminds
+        dynasty = gediminid_dynasty
+        birth = vilnius
+        tag = POD
+    }
+    pod_konstantin_koriatovych_gediminid = {
+        first_name = { name = name_konstantin }
+        last_name = { name = Koriatovych }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1335.1.1
+        death_date = 1390.1.1
+        father = nrk_karijotas_gediminds
+        dynasty = gediminid_dynasty
+        birth = vilnius
+        tag = POD
+    }
+    pod_fedir_gediminid = {
+        first_name = { name = name_theodore }
+        last_name = { name = Koriatovych }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1339.1.1
+        death_date = 1414.1.1
+        father = nrk_karijotas_gediminds
+        dynasty = gediminid_dynasty
+        birth = vilnius
+        tag = POD
+    }
 
     ### gediminid_dynasty | ORE ###
 
@@ -82123,6 +82170,7 @@ character_db={
         religion = orthodox
         birth_date = 1426.1.1
         father = mol_ilias_i_musat
+        mother = kie_maria_andrievna_alseniskiai
         dynasty = musat_dynasty
         tag = MOL
     }
@@ -82133,6 +82181,7 @@ character_db={
         religion = orthodox
         birth_date = 1429.1.1
         father = mol_ilias_i_musat
+        mother = kie_maria_andrievna_alseniskiai
         dynasty = musat_dynasty
         tag = MOL
     }
@@ -82144,6 +82193,7 @@ character_db={
         female = yes
         birth_date = 1429.1.1
         father = mol_ilias_i_musat
+        mother = kie_maria_andrievna_alseniskiai
         dynasty = musat_dynasty
         tag = MOL
     }
@@ -90541,19 +90591,35 @@ character_db={
 
     ### olelkovich_dynasty | KIE ###
 
+    kie_volodymyr_olgerdovych_gediminid = {
+        first_name = { name = name_volodymyr }
+        last_name = { name = Olgerdovych }
+        culture = ruthenian_culture
+        religion = orthodox
+        birth_date = 1340.1.1
+        death_date = 1399.1.1 #Unknown
+        birth = kyiv
+        father = lit_algirdas_gediminds
+        mother = lit_maria_of_vitebsk
+        dynasty = gediminid_dynasty
+        tag = KIE
+    }
+
     kie_alexandras_olelkovich = {
         first_name = { name = name_alexander }
+        last_name = { name = Olgerdovych }
         culture = aukstaitian
         religion = orthodox
         birth_date = 1401.1.1
         birth = slutsk
-        #father = Vladimir Olelkovich
+        father = kie_volodymyr_olgerdovych_gediminid
         dynasty = olelkovich_dynasty
         tag = KIE
     }
 
     kie_simeon_olelkovich = {
         first_name = { name = name_simeon }
+        last_name = { name = Olgerdovych }
         culture = aukstaitian
         religion = orthodox
         birth_date = 1420.1.1
@@ -90566,6 +90632,7 @@ character_db={
 
     kie_mikhailo_olelkovich = {
         first_name = { name = name_michael }
+        last_name = { name = Olgerdovych }
         culture = aukstaitian
         religion = orthodox
         birth_date = 1422.1.1
@@ -90578,6 +90645,7 @@ character_db={
 
     kie_eudokia_olelkovich = {
         first_name = { name = name_eudokia }
+        last_name = { name = Olgerdovych }
         culture = aukstaitian
         religion = orthodox
         female = yes
@@ -90593,6 +90661,7 @@ character_db={
 
     maz_barbara_olelkovich = {
         first_name = { name = Barbara }
+        last_name = { name = Olgerdovych }
         culture = aukstaitian
         religion = orthodox
         female = yes
@@ -90600,8 +90669,9 @@ character_db={
         birth = kyiv
         father = kie_alexandras_olelkovich
         mother = kie_anastasia_rurikovich
+        spouse = war_boleslaw_iv_piast
         dynasty = olelkovich_dynasty
-        tag = MAZ
+        tag = CZK
     }
 
     ### onggirat_dynasty | FUY ###
@@ -96606,6 +96676,17 @@ character_db={
 	}
 
     ### piast_dynasty | CZK ###
+    maz_boleslaw_i_piast = { #Brother of Siemowit
+        first_name = { name = name_boleslav }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1208.1.1
+        birth = warsaw
+        death_date = 1248.1.1
+        dynasty = piast_dynasty
+        father = maz_konrad_i_piast
+        tag = CZK
+    }
 
     czk_siemowit_i_piast = { #Grandfather of Ruler
         first_name = { name = name_siemowit }
@@ -96636,7 +96717,7 @@ character_db={
 		culture = mazovian
 		religion = catholic
 		birth_date = 1284.1.1
-		death_date = 1399.12.31
+		death_date = 1341.1.1
 
 		birth = warsaw
 		dynasty = piast_dynasty
@@ -96649,7 +96730,7 @@ character_db={
 		culture = mazovian
 		religion = catholic
 		birth_date = 1320.1.1
-		death_date = 1399.12.31
+		death_date = 1381.12.31
 
 		birth = warsaw
 		dynasty = piast_dynasty
@@ -96671,7 +96752,6 @@ character_db={
 		mother = czk_maria_rurikovich
 		tag = CZK
 	}
-
     maz_siemowit_iv_piast = {
         first_name = { name = name_siemowit }
         culture = mazovian
@@ -96681,6 +96761,96 @@ character_db={
         birth = warsaw
         dynasty = piast_dynasty
         father = czk_siemowit_iii_piast
+        tag = CZK
+    }
+    plk_wladyslaw_i_piast = {
+        first_name = { name = name_vladislav }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1406.9.1
+        birth = warsaw
+        dynasty = piast_dynasty
+        father = maz_siemowit_iv_piast
+        mother = maz_aleksandra_gediminid
+        tag = PLK
+    }
+    raw_siemowit_v_piast = {
+        first_name = { name = name_siemowit }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1389.9.1
+        death_date = 1442.2.17
+        birth = warsaw
+        dynasty = piast_dynasty
+        father = maz_siemowit_iv_piast
+        mother = maz_aleksandra_gediminid
+        tag = RAW
+    }
+    raw_margareta_piast = {
+        first_name = { name = name_margaret }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1438.1.1
+        birth = warsaw
+        dynasty = piast_dynasty
+        father = raw_siemowit_v_piast
+        mother = raw_margaret_premyslid
+        tag = RAW
+    }
+    blz_kazimierz_ii_piast = {
+        first_name = { name = name_casimir }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1401.1.1
+        death_date = 1442.9.15
+        birth = warsaw
+        dynasty = piast_dynasty
+        father = maz_siemowit_iv_piast
+        mother = maz_aleksandra_gediminid
+        tag = BLZ
+    }
+    maz_trojden_ii_piast = {
+        first_name = { name = name_trojden }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1403.1.1
+        death_date = 1427.7.25
+        birth = warsaw
+        dynasty = piast_dynasty
+        father = maz_siemowit_iv_piast
+        mother = maz_aleksandra_gediminid
+        tag = CZK
+    }
+    war_janusz_i_piast = {
+        first_name = { name = name_janusz }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1347.1.1
+        death_date = 1429.1.21
+        birth = warsaw
+        dynasty = piast_dynasty
+        father = czk_siemowit_iii_piast
+        tag = CZK
+    }
+    war_boleslaw_nothrone_piast = {
+        first_name = { name = name_boleslav }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1385.1.1
+        death_date = 1424.5.4
+        birth = warsaw
+        dynasty = piast_dynasty
+        father = war_janusz_i_piast
+        tag = CZK
+    }
+    war_boleslaw_iv_piast = {
+        first_name = { name = name_boleslav }
+        culture = mazovian
+        religion = catholic
+        birth_date = 1421.1.1
+        birth = warsaw
+        dynasty = piast_dynasty
+        father = war_boleslaw_nothrone_piast
         tag = CZK
     }
 
@@ -97138,13 +97308,35 @@ character_db={
 		culture = silesian
 		religion = catholic
 		birth_date = 1308.1.1
-		death_date = 1399.12.31
+		death_date = 1372.9.29
 
 		birth = oswiecim
 		father = osw_wladyslaw_piast
 		dynasty = piast_dynasty
-		tag = OSW
+		tag = OSW   
 	}
+    osw_jan_ii_piast = {
+        first_name = { name = name_john }
+        culture = silesian
+        religion = catholic
+        birth_date = 1330.1.1
+        death_date = 1376.2.19
+        birth = oswiecim
+        father = osw_jan_piast
+        dynasty = piast_dynasty
+        tag = OSW
+    }
+    osw_jan_iii_piast = {
+        first_name = { name = name_john }
+        culture = silesian
+        religion = catholic
+        birth_date = 1370.1.1
+        death_date = 1405.8.19
+        birth = oswiecim
+        father = osw_jan_ii_piast
+        dynasty = piast_dynasty
+        tag = OSW
+    }
 
     ### piast_dynasty | PLK ###
 
@@ -97532,7 +97724,6 @@ character_db={
 		religion = catholic
 		birth_date = 1290.1.1
 		death_date = 1399.12.31
-
 		birth = tesin
 		father = tes_miszko_piast
 		dynasty = piast_dynasty
@@ -97596,6 +97787,82 @@ character_db={
 		dynasty = piast_dynasty
 		tag = TES
 	}
+    tes_boleslaw_i_ii_piast = {
+        first_name = { name = name_boleslav }
+        culture = silesian
+        religion = catholic
+        birth_date = 1363.1.1
+        death_date = 1431.5.6
+        birth = tesin
+        father = tes_przemyslaus_i_piast
+        dynasty = piast_dynasty
+        tag = TES
+    }
+    tes_waclaw_i_piast = {
+        first_name = { name = name_vaclav }
+        culture = silesian
+        religion = catholic
+        birth_date = 1415.1.1
+        birth = tesin
+        father = tes_boleslaw_i_ii_piast
+        dynasty = piast_dynasty
+        tag = TES
+    }
+    osw_przemyslaw_piast = {
+        first_name = { name = name_premislav }
+        culture = silesian
+        religion = catholic
+        birth_date = 1362.1.1
+        death_date = 1406.1.1
+        birth = oswiecim
+        father = tes_przemyslaus_i_piast
+        dynasty = piast_dynasty
+        tag = OSW
+    }
+    osw_kazimierz_i_piast = {
+        first_name = { name = name_casimir }
+        culture = silesian
+        religion = catholic
+        birth_date = 1396.1.1
+        death_date = 1434.4.7
+        birth = oswiecim
+        father = osw_przemyslaw_piast
+        dynasty = piast_dynasty
+        tag = OSW
+    }
+    osw_waclaw_i_piast = {
+        first_name = { name = name_vaclav }
+        culture = silesian
+        religion = catholic
+        birth_date = 1418.1.1
+        death_date = 1468.7.29
+        birth = oswiecim
+        father = osw_kazimierz_i_piast
+        dynasty = piast_dynasty
+        tag = OSW
+    }
+    osw_przemyslaw_ii_piast = {
+        first_name = { name = name_premislav }
+        culture = silesian
+        religion = catholic
+        birth_date = 1425.1.1
+        death_date = 1484.12.1
+        birth = oswiecim
+        father = osw_kazimierz_i_piast
+        dynasty = piast_dynasty
+        tag = OSW
+    }
+    osw_jan_iv_piast = {
+        first_name = { name = name_john }
+        culture = silesian
+        religion = catholic
+        birth_date = 1428.1.1
+        death_date = 1497.2.21
+        birth = oswiecim
+        father = osw_kazimierz_i_piast
+        dynasty = piast_dynasty
+        tag = OSW
+    }
 
     ### piast_dynasty | UBV ###
 
@@ -97650,7 +97917,7 @@ character_db={
 		culture = mazovian
 		religion = orthodox
 		birth_date = 1305.1.1
-		death_date = 1399.12.31
+		death_date = 1340.4.7
 
 		birth = warsaw
 		dynasty = piast_dynasty
@@ -99669,6 +99936,27 @@ character_db={
 		mother = opv_anna_raciborz
 		tag = OPV
 	}
+    opv_jan_ii_premyslid = {
+        first_name = { name = name_john }
+        culture = silesian
+        religion = catholic
+        birth_date = 1365.1.1
+        death_date = 1424.7.22
+        birth = opava
+        dynasty = premyslid_dynasty
+        father = opv_jan_i_premyslid
+        tag = OPV
+    }
+    raw_margaret_premyslid = {
+        first_name = { name = name_margaret }
+        culture = silesian
+        religion = catholic
+        birth_date = 1410.1.1
+        birth = opava
+        dynasty = premyslid_dynasty
+        father = opv_jan_ii_premyslid
+        tag = RAW
+    }
 
     ### pugal_dynasty | PGL ###
 
@@ -105501,16 +105789,50 @@ character_db={
         tag = SMO
     }
 
-	smo_ivan_alexandrovich_rurikovich = { #Ruler
+	smo_ivan_alexandrovich_rurikovich = {
 		first_name = { name = name_john}
 		last_name = { name = Alexandrovich }
 		culture = smolenskian_culture
 		religion = orthodox
 		birth_date = 1283.1.1
-		death_date = 1399.12.31
-
+		death_date = 1359.1.1
 		birth = smolensk
 		father = smo_alexander_glebovich_rurikovich
+		dynasty = rurikovich_dynasty
+		tag = SMO
+	}
+    smo_sviatoslav_iv = {
+		first_name = { name = name_sviatoslav }
+		culture = smolenskian_culture
+		religion = orthodox
+		birth_date = 1318.1.1
+		death_date = 1386.4.29
+		birth = smolensk
+		father = smo_ivan_alexandrovich_rurikovich
+		dynasty = rurikovich_dynasty
+		tag = SMO
+	}
+    smo_gleb_ii_svyatoslavich = {
+		first_name = { name = name_gleb }
+		last_name = { name = Svyatoslavich }
+		culture = smolenskian_culture
+		religion = orthodox
+		birth_date = 1355.1.1
+		death_date = 1399.9.12
+		birth = smolensk
+		father = smo_sviatoslav_iv
+		dynasty = rurikovich_dynasty
+		tag = SMO
+	}
+    smo_yuri_svyatoslavich_rurikovich = {
+		first_name = { name = name_yuri }
+		last_name = { name = Svyatoslavich }
+		culture = smolenskian_culture
+		religion = orthodox
+		birth_date = 1355.1.1
+		death_date = 1407.9.14
+		birth = smolensk
+		father = smo_sviatoslav_iv
 		dynasty = rurikovich_dynasty
 		tag = SMO
 	}
@@ -139084,18 +139406,117 @@ character_db={
         birth = vilnius
         tag = LIT
     }
-
+    #alseniske_dynasty
+    kie_ivan_algimantaitis_alseniskiai = {
+        first_name = { name = name_john }
+        last_name = { name = Algimantaitis }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1344.1.1
+        death_date = 1402.1.1
+        dynasty = alseniske_dynasty
+        tag = KIE
+    }
+    kie_uliana_olshanska_alseniskiai = {
+        first_name = { name = name_juliana }
+        last_name = { name = Olshanska }
+        culture = aukstaitian
+        religion = orthodox
+        female = yes
+        birth_date = 1375.1.1
+        father = kie_ivan_algimantaitis_alseniskiai
+        spouse = lit_vytautas_gediminid
+        dynasty = alseniske_dynasty
+        tag = LIT
+    }
+    kie_andrei_ivanovich_alseniskiai = {
+        first_name = { name = name_andrew }
+        last_name = { name = Ivanovich }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1374.1.1
+        death_date = 1418.1.1
+        father = kie_ivan_algimantaitis_alseniskiai
+        dynasty = alseniske_dynasty
+        tag = KIE
+    }
+    kie_aleksander_ivanovich_alseniskiai = {
+        first_name = { name = name_alexander }
+        last_name = { name = Ivanovich }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1364.1.1
+        death_date = 1408.1.1
+        father = kie_ivan_algimantaitis_alseniskiai
+        dynasty = alseniske_dynasty
+        tag = KIE
+    }
+    kie_simonas_ivanovich_alseniskiai = {
+        first_name = { name = name_simon }
+        last_name = { name = Ivanovich }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1370.1.1
+        death_date = 1433.1.1
+        father = kie_ivan_algimantaitis_alseniskiai
+        dynasty = alseniske_dynasty
+        tag = KIE
+    }
+    kie_mikhail_ivanovich_alseniskiai = {
+        first_name = { name = name_michael }
+        last_name = { name = Ivanovich }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1380.1.1
+        death_date = 1433.1.1
+        father = kie_ivan_algimantaitis_alseniskiai
+        dynasty = alseniske_dynasty
+        tag = KIE
+    }
     lit_sofija_olshansky = {
         first_name = { name = name_sophia }
-        last_name = { name = Alšėniškė }
         culture = aukstaitian
         religion = catholic
         female = yes
         birth_date = 1405.1.1
         birth = vilnius
-        #father = Andrew Olshansky
-        #mother = Alexandra Drucka
-        tag = LIT
+        father = kie_andrei_ivanovich_alseniskiai
+        spouse = lit_jogalia_jagiellon
+        dynasty = alseniske_dynasty
+        tag = POL
+    }
+    kie_maria_andrievna_alseniskiai = {
+        first_name = { name = name_maria }
+        last_name = { name = Andrievna }
+        culture = aukstaitian
+        religion = orthodox
+        female = yes
+        birth_date = 1400.1.1
+         father = kie_andrei_ivanovich_alseniskiai
+        spouse = mol_ilias_i_musat
+        dynasty = alseniske_dynasty
+        tag = MOL
+    }
+    kie_vasilisa_andrievna_alseniskiai = {
+        first_name = { name = name_vasilisa }
+        last_name = { name = Andrievna }
+        culture = aukstaitian
+        religion = orthodox
+        female = yes
+        birth_date = 1403.1.1
+        father = kie_andrei_ivanovich_alseniskiai
+        dynasty = alseniske_dynasty
+        tag = KIE
+    }
+    kie_yuri_semenovich_alseniskiai = {
+        first_name = { name = name_george }
+        last_name = { name = Semenovich }
+        culture = aukstaitian
+        religion = orthodox
+        birth_date = 1405.1.1
+        father = kie_simonas_ivanovich_alseniskiai
+        dynasty = alseniske_dynasty
+        tag = KIE
     }
 
     ### (no dynasty) | LIV ###
