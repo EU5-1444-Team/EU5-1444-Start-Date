@@ -10963,7 +10963,6 @@ character_db={
 		birth = hasankeyf
 		birth_date = 1319.1.1
 		death_date = 1399.12.31
-
 		culture = kurdish_culture
 		religion = sunni
 		tag = HSN
@@ -139586,8 +139585,29 @@ character_db={
 		religion = catholic
 		estate = clergy_estate
 		birth_date = 1295.1.1
-		death_date = 1399.12.31
+		death_date = 1344.1.1
+		birth = eichstatt
+		tag = EIC
+	}
 
+    eic_albrecht_ii_reichberg = {
+		first_name = { name = name_albert }
+		culture = swabian
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1385.1.1
+		birth = eichstatt
+        dynasty = rechberg_dynasty
+		tag = EIC
+	}
+
+    eic_johann_iii_von_eich = {
+		first_name = { name = name_albert }
+        last_name = { name = "von Eich" }
+		culture = upper_palatine
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1400.1.1
 		birth = eichstatt
 		tag = EIC
 	}
@@ -146580,6 +146600,283 @@ character_db={
 		birth_date = 1400.1.1 # Estimated
 		birth = ellwangen
 		tag = ELL
+    }
+
+    hlf_ulrich_v_helfenstein_wiesensteig ={
+        first_name = { name = name_ulrick }
+        nickname = { name = nick_the_elder }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1314.1.1 # Estimated
+        death_date = 1372.4.7
+		birth = helfenstein
+        dynasty = helfenstein_dynasty
+		tag = HLW
+    }
+
+    hlf_friedrich_i_helfenstein_wiesensteig ={
+        first_name = { name = name_frederick }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1360.1.1 # Estimated
+        death_date = 1438.8.20
+		birth = helfenstein
+        father = hlf_ulrich_v_helfenstein_wiesensteig
+        dynasty = helfenstein_dynasty
+		tag = HLW
+    }
+
+    hlf_konrad_i_helfenstein_wiesensteig ={
+        first_name = { name = name_conrad }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1361.1.1 # Estimated
+        death_date = 1402.1.1
+		birth = helfenstein
+        father = hlf_ulrich_v_helfenstein_wiesensteig
+        dynasty = helfenstein_dynasty
+		tag = HLW
+    }
+
+    hlf_ulrich_viii_helfenstein_wiesensteig ={
+        first_name = { name = name_conrad }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1362.1.1 # Estimated
+        death_date = 1375.1.1
+		birth = helfenstein
+        father = hlf_ulrich_v_helfenstein_wiesensteig
+        dynasty = helfenstein_dynasty
+		tag = HLW
+    }
+
+    hlf_friedrich_ii_helfenstein_wiesensteig ={
+        first_name = { name = name_frederick }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1408.1.1
+		birth = helfenstein
+        father = hlf_friedrich_i_helfenstein_wiesensteig
+        dynasty = helfenstein_dynasty
+		tag = HLW
+    }
+
+    hlf_ulrich_ix_helfenstein_wiesensteig ={
+        first_name = { name = name_ulrick }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1410.1.1
+		birth = helfenstein
+        father = hlf_friedrich_i_helfenstein_wiesensteig
+        dynasty = helfenstein_dynasty
+		tag = HLW
+    }
+
+    hlf_ludwig_iii_helfenstein_wiesensteig ={
+        first_name = { name = name_louis }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1415.1.1
+		birth = helfenstein
+        father = hlf_friedrich_i_helfenstein_wiesensteig
+        dynasty = helfenstein_dynasty
+		tag = HLW
+    }
+
+    hlf_ulrich_vi_helfenstein_blaubeuren ={
+        first_name = { name = name_ulrick }
+        nickname = { name = nick_the_younger }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1320.1.1 # Estimated
+        death_date = 1361.5.13
+		birth = heidenheim
+        dynasty = helfenstein_dynasty
+		tag = HLB
+    }
+
+    hlf_ulrich_vii_helfenstein_blaubeuren ={
+        first_name = { name = name_ulrick }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1350.1.1 # Estimated
+        death_date = 1375.7.3
+        father = hlf_ulrich_vi_helfenstein_blaubeuren
+		birth = heidenheim
+        dynasty = helfenstein_dynasty
+		tag = HLB
+    }
+
+    hlf_anna_helfenstein_blaubeuren ={
+        first_name = { name = name_anna }
+		culture = swabian
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1351.1.1 # Estimated
+        death_date = 1392.11.18
+        father = hlf_ulrich_vi_helfenstein_blaubeuren
+		birth = heidenheim
+        dynasty = helfenstein_dynasty
+		tag = HLB
+    }
+
+    hlf_johann_ii_helfenstein_blaubeuren ={
+        first_name = { name = name_john }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1365.1.1 # Estimated
+        death_date = 1444.2.27
+        father = hlf_ulrich_vii_helfenstein_blaubeuren
+		birth = heidenheim
+        dynasty = helfenstein_dynasty
+		tag = HLB
+    }
+
+    hlf_ulrich_x_helfenstein_blaubeuren ={
+        first_name = { name = name_ulrick }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1410.1.1 # Estimated
+        father = hlf_johann_ii_helfenstein_blaubeuren
+		birth = heidenheim
+        dynasty = helfenstein_dynasty
+		tag = HLB
+    }
+
+    hlf_konrad_ii_helfenstein_blaubeuren ={
+        first_name = { name = name_conrad }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1411.1.1 # Estimated
+        father = hlf_johann_ii_helfenstein_blaubeuren
+		birth = heidenheim
+        dynasty = helfenstein_dynasty
+		tag = HLB
+    }
+
+    hlf_ursula_seckendorf = {
+        first_name = { name = name_ursina }
+        last_name = { name = "von Seckendorf" }
+		culture = swabian
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1412.1.1 # Estimated
+        spouse = hlf_konrad_ii_helfenstein_blaubeuren
+		birth = heidenheim
+		tag = HLB
+    }
+
+    hlf_georg_i_helfenstein_blaubeuren ={
+        first_name = { name = name_george }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1440.1.1 # Estimated
+        father = hlf_konrad_ii_helfenstein_blaubeuren
+        mother = hlf_ursula_seckendorf
+		birth = heidenheim
+        dynasty = helfenstein_dynasty
+		tag = HLB
+    }
+
+    kir_eberhard_vi_kirchberg = {
+        first_name = { name = name_everard }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1385.1.1 # Estimated
+        death_date = 1440.5.15
+		birth = erbach_swabia
+        dynasty = kirchberg_dynasty
+		tag = KIR
+    }
+
+    kir_eberhard_vii_kirchberg = {
+        first_name = { name = name_everard }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1415.1.1 # Estimated
+		birth = erbach_swabia
+        father = kir_eberhard_vi_kirchberg
+        dynasty = kirchberg_dynasty
+		tag = KIR
+    }
+
+    kir_konrad_viii_kirchberg = {
+        first_name = { name = name_everard }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1416.1.1 # Estimated
+		birth = erbach_swabia
+        father = kir_eberhard_vi_kirchberg
+        dynasty = kirchberg_dynasty
+		tag = KIR
+    }
+
+    kir_anna_furstenberg = {
+        first_name = { name = name_anna }
+		culture = swabian
+		religion = catholic
+        female = yes
+		estate = nobles_estate
+		birth_date = 1418.1.1 # Estimated
+        spouse = kir_konrad_viii_kirchberg
+		birth = furstenberg
+        dynasty = furstenberg_dynasty
+		tag = KIR
+    }
+
+    kir_konrad_ix_kirchberg = {
+        first_name = { name = name_conrad }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1440.1.1 # Estimated
+		birth = erbach_swabia
+        father = kir_konrad_viii_kirchberg
+        mother = kir_anna_furstenberg
+        dynasty = kirchberg_dynasty
+		tag = KIR
+    }
+
+    kir_wilhelm_iii_kirchberg = {
+        first_name = { name = name_william }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1441.1.1 # Estimated
+		birth = erbach_swabia
+        father = kir_konrad_viii_kirchberg
+        mother = kir_anna_furstenberg
+        dynasty = kirchberg_dynasty
+		tag = KIR
+    }
+
+    rhb_johannes_i_rechberg = {
+        first_name = { name = Johannes }
+		culture = swabian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1420.1.1 # Estimated
+		birth = illereichen
+        dynasty = rechberg_dynasty
+		tag = RHB
     }
 
 }

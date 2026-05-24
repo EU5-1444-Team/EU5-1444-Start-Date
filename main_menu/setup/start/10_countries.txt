@@ -21258,7 +21258,11 @@ countries = {
         include = "catholic_german_bishopric_no_coast"
         include = "expl_northern_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = eic_albrecht_ii_reichberg
+
+            ruler_term = { character = eic_heinrich_v_schenk_von_reicheneck start_date = 1329.1.1 end_date = 1344.1.1 regnal_number = 5 }
+
+            ruler_term = { character = eic_albrecht_ii_reichberg start_date = 1429.1.1 regnal_number = 2 }
         }
 
         tolerated_cultures = {
@@ -21416,41 +21420,146 @@ countries = {
 
     HLF = {
         # Helfenstein (South Germany)
-        own_control_core = {
+        our_cores_conquered_by_others = {
             helfenstein heidenheim
         }
+
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "expl_northern_europe"
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
-        government = { ruler = random }
-        tolerated_cultures = {
+        government = { 
+            ruler = random 
         }
+
+        tolerated_cultures = {
+
+        }
+
         country_rank = rank_county
         capital = helfenstein
     }
 
     # --- HLF ---
 
-    KIR = {
-        # Kirchberg (South Germany)
+    HLW = {
+        # Helfenstein-Wiesensteig
         own_control_core = {
-            erbach_swabia illereichen
+            helfenstein
         }
+        
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "expl_northern_europe"
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
-        government = { ruler = random }
-        tolerated_cultures = {
+        government = { 
+            ruler = hlf_friedrich_ii_helfenstein_wiesensteig 
+
+            ruler_term = { character = hlf_friedrich_ii_helfenstein_wiesensteig start_date = 1438.8.20 regnal_number = 2 }
+
+            reforms = {
+                feudal_nobility
+                joint_ruling_monarchy
+            }
         }
+
+        tolerated_cultures = {
+
+        }
+
+        country_rank = rank_county
+        capital = helfenstein
+    }
+
+    # --- HLW ---
+
+    HLB = {
+        # Helfenstein-Blaubeuren
+        own_control_core = {
+            heidenheim
+        }
+        
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "expl_northern_europe"
+        include = "catholic_monarchy_no_coast"
+        include = "german_principality"
+        government = { 
+            ruler = hlf_ulrich_x_helfenstein_blaubeuren
+
+            ruler_term = { character = hlf_ulrich_x_helfenstein_blaubeuren start_date = 1444.2.27 regnal_number = 10 }
+
+            reforms = {
+                feudal_nobility
+                joint_ruling_monarchy
+            }
+        }
+
+        tolerated_cultures = {
+
+        }
+
+        country_rank = rank_county
+        capital = heidenheim
+    }
+
+    # --- HLB ---
+
+    KIR = {
+        # Kirchberg (South Germany)
+        own_control_core = {
+            erbach_swabia
+        }
+
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "expl_northern_europe"
+        include = "catholic_monarchy_no_coast"
+        include = "german_principality"
+        government = { 
+            ruler = kir_eberhard_vii_kirchberg 
+
+            ruler_term = { character = kir_eberhard_vii_kirchberg start_date = 1440.5.15 regnal_number = 7 }
+        }
+
+        tolerated_cultures = {
+
+        }
+
         country_rank = rank_county
         capital = erbach_swabia
     }
 
     # --- KIR ---
+
+    RHB = {
+        # Rechberg (South Germany)
+        own_control_core = {
+            illereichen
+        }
+        
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "expl_northern_europe"
+        include = "catholic_monarchy_no_coast"
+        include = "german_principality"
+        government = { 
+            ruler = rhb_johannes_i_rechberg 
+
+            ruler_term = { character = rhb_johannes_i_rechberg start_date = 1437.1.1 regnal_number = 1 }
+        }
+
+        tolerated_cultures = {
+
+        }
+
+        country_rank = rank_county
+        capital = illereichen
+    }
+
+    # --- RHB ---
 
     MSB = {
         #Mosbach
