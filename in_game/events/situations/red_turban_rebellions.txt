@@ -619,6 +619,7 @@ scripted_effect rtr_resolve_rebellion_effect = {
 ###########################################################
 
 scripted_trigger rtr_can_release_tag = {
+    has_variable = rtr_historical_countries_to_release
     var:rtr_historical_countries_to_release > 0
     has_variable = rtr_release_tag_$tag$
     NOT = { country_exists = c:$tag$ }
@@ -1214,13 +1215,13 @@ red_turban_rebellions.12 = {
     trigger = {
         rtr_can_release_tag = {
             tag = CJN
-            location = taiyuan
+            location = qixian_taiyuan
         }
     }
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
-        rtr_create_revolter_capital = { location = taiyuan tag = CJN }
+        rtr_create_revolter_capital = { location = qixian_taiyuan tag = CJN }
         rtr_add_cores_to_area = { area = shanxi_area tag = CJN }
         rtr_add_cores_to_area = { area = datong_area tag = CJN }
     }

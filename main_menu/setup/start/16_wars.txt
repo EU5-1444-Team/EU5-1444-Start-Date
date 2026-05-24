@@ -1,5 +1,6 @@
 war_manager = {
-    civil_war = {
+
+    civil_war = { #Lodi-Sayyid War
         war_name = {
             name = "CIVIL_WAR_NAME"
             ordinal = 1
@@ -57,7 +58,126 @@ war_manager = {
     #     }
     # }
 
-	war = {
+    war = { #Siena-Pitigliano War
+		war_name={
+			name="Old Zurich War"
+			ordinal=1
+			first = {
+				name="BRN"
+			}
+			SECOND = {
+				name="TGG"
+			}
+		}
+		
+		take_province = {
+			type = take_capital_subjugation
+			casus_belli = cb_subjugation
+			location = toggenburg
+		}
+		
+		start_date = 1440.11.2
+		action = 1444.11.11
+		attacker = {
+			country = BRN #Bern
+			request = {
+				reason = Instigator
+			}
+		}
+
+		attacker = {
+			country = SLT #Solothurn
+			request = {
+				reason = Instigator
+			}
+		}
+
+        attacker = {
+			country = TRN #Turn
+			request = {
+				reason = Instigator
+			}
+		}
+
+        attacker = {
+			country = LCU #Lucerne
+			request = {
+				reason = Instigator
+			}
+		}
+
+        attacker = {
+			country = INT #Interlaken
+			request = {
+				reason = Instigator
+			}
+		}
+
+        attacker = {
+			country = OBW #Oberwalden
+			request = {
+				reason = Instigator
+			}
+		}
+
+        attacker = {
+			country = URI #Uri
+			request = {
+				reason = Instigator
+			}
+		}
+
+        attacker = {
+			country = AGU #Aargau
+			request = {
+				reason = Instigator
+			}
+		}
+
+        attacker = {
+			country = SYZ #Schwyz
+			request = {
+				reason = Instigator
+			}
+		}
+
+        attacker = {
+			country = GLR #Glarus
+			request = {
+				reason = Instigator
+			}
+		}
+
+		defender = {
+			country = TGG #Toggenburg
+			request = {
+				reason = Target
+			}
+		}
+
+        defender = {
+			country = ZUR #Zurich
+			request = {
+				reason = Target
+			}
+		}
+
+        defender = {
+			country = KYB #Kyburg
+			request = {
+				reason = Target
+			}
+		}
+
+        defender = {
+			country = FAU #Further Austria
+			request = {
+				reason = Target
+			}
+		}
+	}
+
+	war = { #Siena-Pitigliano War
 		war_name={
 			name="NORMAL_WAR_NAME"
 			ordinal=1

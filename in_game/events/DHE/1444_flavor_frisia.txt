@@ -1,4 +1,4 @@
-namespace = flavor_frisia
+﻿namespace = flavor_frisia
 flavor_frisia.1 = {
 	type = country_event
 	title = flavor_frisia.1.t
@@ -150,111 +150,112 @@ flavor_frisia.2 = {
 	}
 }
 
-flavor_frisia.3 = {
-	type = country_event
-	title = flavor_frisia.3.t
-	desc = flavor_frisia.3.d
-	fire_only_once = yes
-	illustration_tags = {
-		10 = angry
-		10 = exterior
-	}
-	trigger = {
-		tag = SCH
-		OR = {
-			location:husum = {
-				owner = root
-				any_pop = {
-					culture = culture:frisian
-				}
-			}
-			location:tonder = {
-				owner = root
-				any_pop = {
-					culture = culture:frisian
-				}
-			}
-		}
-		unique_international_organization_type_exists = international_organization_type:frisian_freedom
-		international_organization:frisian_freedom = {
-			international_organization_has_leader = yes
-		}
-	}
-	dynamic_historical_event = {
-		tag = SCH
-		from = 1444.11.11
-		to = 1500.1.1
-		monthly_chance = 2
-	}
-	immediate = {
-		event_illustration_estate_effect = {
-			foreground = estate_type:nobles_estate
-			background = estate_type:nobles_estate
-		}
-	}
-	option = {
-		name = flavor_frisia.3.a
-		# Autonomy - make vassal
-		create_country_from_cores_in_our_locations = c:NFR
-		c:NFR = {
-			make_subject_of = {
-				target = root
-				type = subject_type:vassal
-			}
-		}
-		international_organization:frisian_freedom = {
-			add_country_to_international_organization = c:NFR
-		}
-		ai_chance = {
-			base = 40
-		}
-	}
-	option = {
-		name = flavor_frisia.3.b
-		# Complete independence
-		create_country_from_cores_in_our_locations = c:NFR
-		international_organization:frisian_freedom = {
-			add_country_to_international_organization = c:NFR
-		}
-		ai_chance = {
-			base = 10
-		}
-	}
-	option = {
-		name = flavor_frisia.3.c
-		# Independence war
-		create_country_from_cores_in_our_locations = c:NFR
-		c:NFR = {
-			make_subject_of = {
-				target = root
-				type = subject_type:vassal
-			}
-			declare_war_with_cb = {
-				target = root
-				type = casus_belli:cb_independence_war
-			}
-			"war_with_country(root)" = {
-				save_scope_as = new_nfr_independence_war
-			}
-		}
-		international_organization:frisian_freedom = {
-			add_country_to_international_organization = c:NFR
-		}
-		if = {
-			limit = {
-				exists = scope:new_nfr_independence_war
-			}
-			international_organization:frisian_freedom = {
-				every_international_organization_member = {
-					join_war_with = {
-						target = c:NFR
-						war = scope:new_nfr_independence_war
-					}
-				}
-			}
-		}
-		ai_chance = {
-			base = 50
-		}
-	}
-}
+# DISABLED: flavor_frisia.3 references unknown country tag 'SCH'
+# flavor_frisia.3 = {
+# 	type = country_event
+# 	title = flavor_frisia.3.t
+# 	desc = flavor_frisia.3.d
+# 	fire_only_once = yes
+# 	illustration_tags = {
+# 		10 = angry
+# 		10 = exterior
+# 	}
+# 	trigger = {
+# 		tag = SCH
+# 		OR = {
+# 			location:husum = {
+# 				owner = root
+# 				any_pop = {
+# 					culture = culture:frisian
+# 				}
+# 			}
+# 			location:tonder = {
+# 				owner = root
+# 				any_pop = {
+# 					culture = culture:frisian
+# 				}
+# 			}
+# 		}
+# 		unique_international_organization_type_exists = international_organization_type:frisian_freedom
+# 		international_organization:frisian_freedom = {
+# 			international_organization_has_leader = yes
+# 		}
+# 	}
+# 	dynamic_historical_event = {
+# 		tag = SCH
+# 		from = 1444.11.11
+# 		to = 1500.1.1
+# 		monthly_chance = 2
+# 	}
+# 	immediate = {
+# 		event_illustration_estate_effect = {
+# 			foreground = estate_type:nobles_estate
+# 			background = estate_type:nobles_estate
+# 		}
+# 	}
+# 	option = {
+# 		name = flavor_frisia.3.a
+# 		# Autonomy - make vassal
+# 		create_country_from_cores_in_our_locations = c:NFR
+# 		c:NFR = {
+# 			make_subject_of = {
+# 				target = root
+# 				type = subject_type:vassal
+# 			}
+# 		}
+# 		international_organization:frisian_freedom = {
+# 			add_country_to_international_organization = c:NFR
+# 		}
+# 		ai_chance = {
+# 			base = 40
+# 		}
+# 	}
+# 	option = {
+# 		name = flavor_frisia.3.b
+# 		# Complete independence
+# 		create_country_from_cores_in_our_locations = c:NFR
+# 		international_organization:frisian_freedom = {
+# 			add_country_to_international_organization = c:NFR
+# 		}
+# 		ai_chance = {
+# 			base = 10
+# 		}
+# 	}
+# 	option = {
+# 		name = flavor_frisia.3.c
+# 		# Independence war
+# 		create_country_from_cores_in_our_locations = c:NFR
+# 		c:NFR = {
+# 			make_subject_of = {
+# 				target = root
+# 				type = subject_type:vassal
+# 			}
+# 			declare_war_with_cb = {
+# 				target = root
+# 				type = casus_belli:cb_independence_war
+# 			}
+# 			"war_with_country(root)" = {
+# 				save_scope_as = new_nfr_independence_war
+# 			}
+# 		}
+# 		international_organization:frisian_freedom = {
+# 			add_country_to_international_organization = c:NFR
+# 		}
+# 		if = {
+# 			limit = {
+# 				exists = scope:new_nfr_independence_war
+# 			}
+# 			international_organization:frisian_freedom = {
+# 				every_international_organization_member = {
+# 					join_war_with = {
+# 						target = c:NFR
+# 						war = scope:new_nfr_independence_war
+# 					}
+# 				}
+# 			}
+# 		}
+# 		ai_chance = {
+# 			base = 50
+# 		}
+# 	}
+# }

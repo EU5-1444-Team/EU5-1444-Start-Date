@@ -1,0 +1,155 @@
+﻿non_aggression_pact = { 
+	type = diplomacy
+	relation_type = mutual
+    uses_diplo_capacity = mutual
+    block_when_at_war = yes
+    break_on_war = yes
+    break_on_becoming_subject = yes
+    annulled_by_peace_treaty = yes
+    annullment_favours_required = 10
+    disallow_war = yes
+    category = {
+        offer = CATEGORY_FRIENDLY_ACTIONS
+        cancellation = CATEGORY_HOSTILE_ACTIONS
+        request = CATEGORY_FRIENDLY_ACTIONS
+        break = CATEGORY_HOSTILE_ACTIONS
+    }
+
+    relation_type_for_ai = friendly
+    show_break_alert = yes
+	
+	diplomatic_capacity_cost = non_aggression_pact_upkeep_cost
+
+    offer_enabled = {
+        scope:actor = {
+            not = { has_blocked_treaties = scope:recipient }
+            has_limited_diplomacy = no
+            not = { is_rival_of = scope:recipient }
+            not = { is_subject_of = scope:recipient }
+        }
+        scope:recipient = {
+            not = { has_blocked_treaties = scope:actor }
+            has_limited_diplomacy = no
+            not = { is_rival_of = scope:actor }
+            not = { is_subject_of = scope:actor }
+        }
+    }
+
+    request_enabled = {
+        scope:actor = {
+            not = { has_blocked_treaties = scope:recipient }
+            has_limited_diplomacy = no
+            not = { is_rival_of = scope:recipient }
+            not = { is_subject_of = scope:recipient }
+        }
+        scope:recipient = {
+            not = { has_blocked_treaties = scope:actor }
+            has_limited_diplomacy = no
+            not = { is_rival_of = scope:actor }
+            not = { is_subject_of = scope:actor }
+        }
+    }
+
+    will_expire_trigger = {
+        OR = {
+            scope:first = {
+                is_rival_of = scope:second
+            }
+            scope:second = {
+                is_rival_of = scope:first
+            }
+            scope:first = {
+                is_subject_of = scope:second
+            }
+            scope:second = {
+                is_subject_of = scope:first
+            }
+        }
+    }
+
+    wants_to_give_diplo_chance = {
+        base = -20
+        actor_is_rival = -100
+        actor_overlord_is_rival = -100
+        recipient_is_rival = -100
+        recipient_overlord_is_rival = -100
+        trust_in_actor = 1
+        opinion = 0.1
+        positive_opinion = 0.3
+        negative_opinion = -1
+        border_distance = -0.05
+        same_court_language = 15
+        diplomatic_reputation = 3
+        relative_strength = 25
+        common_threat = 0.4
+        same_religion = 5
+        different_religion = -35
+        same_culture = 5
+        war_exhaustion = -3
+        low_manpower = -40
+        culture_view = 10
+        religion_view = 10
+        conflicting_interests = 1
+    }
+
+    wants_to_give = {
+        scope:actor = {
+            add = {
+                desc = "COALITION_GRADE_ANTAGONISM_TOWARDS_THEM"
+                value = {
+                    every_country_with_coalition_grade_antagonism_against_us = {                    
+                        limit = {
+                            not = { is_subject_or_below_of = prev }
+                        }
+                        add = {
+                            value = -10
+                        }
+                    }
+                }
+            }
+        }
+
+        add = {
+            desc = "COMMON_RIVALS"
+            value = "scope:recipient.num_of_common_rivals(scope:actor)"
+            max = 3
+            multiply = 5
+        }
+    }
+
+    wants_to_keep_diplo_chance = {
+        recipient_is_rival = -100
+        recipient_overlord_is_rival = -100
+        trust_in_recipient = 1
+        border_distance = -0.05
+        same_court_language = 15
+        common_threat = 0.4
+        reverse_relative_strength = 25
+    }
+
+    wants_to_keep = {
+        add = {
+            desc = "DIPLOREASON_NEGATIVE_OPINION"
+            value = "scope:actor.opinion(scope:recipient)"
+            max = 0        
+        }
+        add = {
+            desc = "DIPLOREASON_POSITIVE_OPINION"
+            value = "scope:actor.opinion(scope:recipient)"
+            multiply = 0.3
+            min = 0       
+        }
+    }
+
+    cancel_effect = {
+        scope:actor = {
+            add_truce_with = { target = scope:recipient }
+        }
+    }
+
+    break_effect = {
+        scope:actor = {
+            add_truce_with = { target = scope:recipient }
+        }
+    }
+}

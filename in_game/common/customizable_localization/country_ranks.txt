@@ -1,4 +1,4 @@
-country_flavor = {
+﻿country_flavor = {
 	type = country
 	text = {
 		localization_key = country_rank_people
@@ -748,6 +748,24 @@ country_flavor = {
 		}
 	}
 	text = {
+		localization_key = rank_county_bailate
+		trigger = {
+			tag = CFU
+		}
+	}
+	text = {
+		localization_key = rank_county_koinon
+		trigger = {
+			tag = ZGR
+		}
+	}
+	text = {
+		localization_key = rank_county_maona
+		trigger = {
+			tag = CPO
+		}
+	}
+	text = {
 		localization_key = rank_triarchy
 		trigger = {
 			tag = NEG
@@ -774,7 +792,10 @@ country_flavor = {
 	text = {
 		localization_key = rank_kingdom_tsar
 		trigger = {
-			tag = VID
+			OR = {
+				tag = VID
+				tag = BUL
+			}
 		}
 	}
 	text = {
@@ -1501,6 +1522,15 @@ country_flavor = {
 		}
 	}
 	text = {
+		localization_key = rank_duchy_russian_city_state
+		trigger = {
+			country_rank_is_duchy = yes
+			OR = {
+				tag = PSK
+			}
+		}
+	}
+	text = {
 		localization_key = rank_county_nutsaldom
 		trigger = {
 			country_rank_is_county = yes
@@ -1931,7 +1961,7 @@ country_flavor = {
 		trigger = {
 			tag = MOR
 			ruler_or_heir_if_regent.dynasty ?= {
-				dynastsaadisid_dynasty ?= this
+				dynasty:saadisid_dynasty ?= this
 			}
 			country_rank_is_duchy = yes
 			religion.group = religion_group:muslim
@@ -2045,11 +2075,15 @@ country_flavor = {
 				tag = ANT
 				tag = MZK
 				tag = DGJ
+				tag = ZHR
 				tag = GUI
 				tag = ODI
 				tag = SVT
 				tag = FEO
 				tag = SLJ
+				tag = PIO
+				tag = RSA
+				tag = TTO
 				culture = culture:armenian_culture
 			}
 			OR = {
@@ -2109,6 +2143,9 @@ country_flavor = {
 						tag = MNN
 						tag = PLE
 						tag = VIZ
+						tag = GTS
+						tag = LES
+						tag = AIN
 					}
 				}
 			}
@@ -2556,7 +2593,7 @@ country_flavor = {
 			country_rank_is_empire = yes
 			OR = {
 				religion = religion:sunni
-				religion = religion:shiite
+				religion = religion:shia
 			}
 			OR = {
 				government_type = government_type:theocracy
@@ -2568,7 +2605,7 @@ country_flavor = {
 		localization_key = rank_kingdom_holy_state
 		trigger = {
 			country_rank_is_kingdom = yes
-			religion = religion:shiite
+			religion = religion:shia
 			OR = {
 				government_type = government_type:theocracy
 				has_reform = government_reform:feudal_theocracy

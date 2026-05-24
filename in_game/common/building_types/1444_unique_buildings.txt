@@ -1,4 +1,4 @@
-mount_athos_monastery = {
+﻿mount_athos_monastery = {
 	is_foreign = yes
 	max_levels = 1
 	pop_type = clergy
@@ -11,6 +11,7 @@ mount_athos_monastery = {
 	rural_settlement = yes
 	town = yes
 	city = yes
+    megalopolis = yes
 	
 	build_time = religious_building_time
 	
@@ -51,6 +52,7 @@ ganden_monastery = {
     rural_settlement = yes
     town = yes
     city = yes
+    megalopolis = yes
 
     ai_foreign_ignore_naval_range = yes
 
@@ -123,9 +125,11 @@ ordos_garrison = { #Ming's frontier garrisons
                     is_member_of_international_organization = international_organization:middle_kingdom
                 }
                 AND = {
-                    OR = {
-                        province_definition = province_definition:hetao_province
-                        province_definition = province_definition:ordos_province
+                    location = {
+                        OR = {
+                            province_definition = province_definition:hetao_province
+                            province_definition = province_definition:ordos_province
+                        }
                     }
                     NOT = { has_global_variable = esen_captured_yingzong_emperor }
                 }

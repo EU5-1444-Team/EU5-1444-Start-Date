@@ -1,3 +1,5 @@
+﻿namespace = tatar_yoke_events
+
 tatar_yoke_events.1 = {
     type = country_event
     title = tatar_yoke_events.1.title
@@ -21,11 +23,15 @@ tatar_yoke_events.1 = {
             foreground = estate_type:nobles_estate
             background = estate_type:nobles_estate
         }
-        international_organization:tatar_yoke = {
-            var:ugra_rus_prince = { save_scope_as = ugra_rus_prince }
-            var:ugra_horde_leader = { save_scope_as = ugra_horde_leader }
-        }
-    }
+		international_organization:tatar_yoke = {
+			var:ugra_rus_prince = { save_scope_as = ugra_rus_prince }
+			var:ugra_horde_leader = { save_scope_as = ugra_horde_leader }
+		}
+		if = {
+			limit = { is_leader_of_international_organization = international_organization:tatar_yoke }
+			destroy_international_organization = { target = international_organization:tatar_yoke }
+		}
+	}
     
     illustration_tags = {
         10 = regular
@@ -33,25 +39,19 @@ tatar_yoke_events.1 = {
     }
     
     option = {
-        option = {
-            name = tatar_yoke_events.1.a_rus
-            trigger = {
-                NOT = { culture = { has_culture_group = culture_group:tatar_group } }
-            }
-            add_prestige = prestige_extreme_bonus
-            add_legitimacy = legitimacy_mild_bonus
+        name = tatar_yoke_events.1.a_rus
+        trigger = {
+            NOT = { culture = { has_culture_group = culture_group:tatar_group } }
         }
-        option = {
-            name = tatar_yoke_events.1.a_horde
-            trigger = {
-                culture = { has_culture_group = culture_group:tatar_group }
-            }
-            add_prestige = prestige_mild_penalty
-            add_stability = stability_mild_penalty
+        add_prestige = prestige_extreme_bonus
+        add_legitimacy = legitimacy_mild_bonus
+    }
+    option = {
+        name = tatar_yoke_events.1.a_horde
+        trigger = {
+            culture = { has_culture_group = culture_group:tatar_group }
         }
-        if = {
-            limit = { is_leader_of_international_organization = international_organization:tatar_yoke }
-            destroy_international_organization = { target = international_organization:tatar_yoke }
-        }
+        add_prestige = prestige_mild_penalty
+        add_stability = stability_mild_penalty
     }
 }

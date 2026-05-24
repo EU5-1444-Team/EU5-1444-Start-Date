@@ -1,4 +1,4 @@
-frisian_freedom_defense_law = {
+﻿frisian_freedom_defense_law = {
 	law_category = military
 	type = international_organization
 	potential = {
@@ -132,8 +132,10 @@ frisian_freedom_unification_law = {
 					}
 				}
 			}
-			destroy_international_organization = {
-				target = root
+			leader_country = {
+				destroy_international_organization = {
+					target = international_organization:frisian_freedom
+				}
 			}
 		}
 		years = 10
@@ -155,13 +157,12 @@ frisian_freedom_culture_law = {
 		allow = {
 			always = yes
 		}
-		on_activated = {
+		on_activate = {
 			every_international_organization_member = {
 				limit = {
 					NOT = { culture = culture:frisian }
 				}
-				# verify exact effect name in basegame files
-				change_primary_culture = culture:frisian
+				change_culture = culture:frisian
 			}
 		}
 		wants_propose_policy = {
