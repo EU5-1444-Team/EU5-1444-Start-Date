@@ -190,7 +190,7 @@ ENG = { # England
 	}
 }
 
-ANJ = { # Anjou
+REPLACE:ANJ = { # Anjou
 	flag_definition = {
 		coa = ANJ
 		priority = 1
@@ -204,7 +204,7 @@ ANJ = { # Anjou
 	}
 	flag_definition = {
 		coa = ANJ_valois
-		priority = 3
+		priority = 5
 		trigger = {
             OR = {
 			    coa_def_valois_dynasty_trigger = yes
@@ -490,6 +490,515 @@ DLH = {
 					has_heir = yes
 					heir.dynasty ?= dynasty:lodi_dynasty
 				}
+			}
+		}
+	}
+}
+
+GOT = {
+	flag_definition = {
+		coa = GOT
+		priority = 1
+	}
+	flag_definition = {
+		coa = GOT_SWE
+		priority = 10
+		trigger = {
+			coa_def_SWE_ensign_trigger = yes
+		}
+	}
+}
+REPLACE:NAP = { # Naples
+	flag_definition = {
+		coa = NAP_civic
+		priority = 1
+	}
+	flag_definition = {
+		coa = NAP_hauteville
+		priority = 2
+		trigger = {
+			coa_def_monarchy_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NAP_simple
+		priority = 5
+		trigger = {
+			OR = {
+				coa_def_iberian_trigger = yes
+				coa_def_italian_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = NAP
+		priority = 10
+		trigger = {
+			OR = {
+				coa_def_french_trigger = yes
+				coa_def_french_ruler_trigger = yes
+				coa_def_FRA_ensign_trigger = yes
+				coa_def_capetian_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = NAP_anjou_hungary
+		priority = 19
+		trigger = {
+			OR = {
+				coa_def_hungarian_trigger = yes
+				coa_def_hungarian_ruler_trigger = yes
+				coa_def_HUN_ensign_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = NAP_valois
+		priority = 20
+		trigger = {
+				coa_def_valois_dynasty_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NAP_valois
+		priority = 23
+		trigger = {
+				coa_def_valois_anjou_dynasty_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NAP_aragonese_quarterly
+		priority = 21
+		trigger = {
+			OR = {
+				coa_def_ARA_ensign_trigger = yes
+				coa_def_CAS_ensign_trigger = yes
+				coa_def_aragon_dynasty_trigger = yes
+				coa_def_castile_dynasty_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = NAP_habsburg
+		priority = 22
+		trigger = {
+			OR = {
+				coa_def_HAB_ensign_trigger = yes
+				coa_def_habsburg_dynasty_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = NAP_civic
+		priority = 100
+		trigger = {
+			coa_def_republic_trigger = yes
+		}
+	}		
+	flag_definition = {
+		coa = NAP_civic_orle
+		priority = 101
+		trigger = {
+			coa_def_republic_trigger = yes
+			coa_def_date_after_1600 = yes
+		}
+	}	
+	flag_definition = {
+		coa = NAP_revolutionary_republic
+		priority = 200
+		trigger = {
+			coa_def_revolutionary_republic_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NAP_horse
+		priority = 201
+		trigger = {
+			coa_def_revolutionary_republic_trigger = yes
+			coa_def_FRA_ensign_trigger = yes
+		}
+	}	
+}
+REPLACE:FRA = { # France
+	flag_definition = {
+		coa = FRA
+		subject_canton = FRA
+		priority = 1
+	}
+	flag_definition = {
+		coa = FRA_renaissance
+		subject_canton = FRA_renaissance
+		priority = 2
+	}
+	flag_definition = {
+		coa = FRA_white
+		subject_canton = FRA_white
+		priority = 3
+		trigger = {
+			coa_def_absolutism_age_5_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_absolute_monarchy
+		subject_canton = FRA_white
+		priority = 10
+		trigger = {
+			coa_def_absolutism_age_5_trigger = yes
+			coa_def_absolute_monarchy_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_merchant
+		subject_canton = FRA_republic
+		priority = 99
+		trigger = {
+			coa_def_republic_trigger = yes
+			# TODO
+		}
+	}	
+	flag_definition = {
+		coa = FRA_republic
+		subject_canton = FRA_republic
+		priority = 100
+		trigger = {
+			coa_def_republic_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FRA_revolutionary_republic
+		subject_canton = FRA_revolutionary_republic
+		priority = 200
+		trigger = {
+			coa_def_revolutionary_republic_trigger = yes
+		}
+	}
+}
+REPLACE:ENG = { # England
+	# NB: all subject cantons need to be defined for this tag
+	flag_definition = {
+		coa = ENG
+		subject_canton = ENG
+		coa_with_overlord_canton = ENG_subject
+		allow_overlord_canton = yes
+		priority = 15
+		trigger = {
+			OR = {
+			    coa_def_date_after_1600 = yes
+				coa_def_republic_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = ENG_quarterly_france
+		subject_canton = ENG
+		allow_overlord_canton = yes
+		priority = 11
+		trigger = {
+			coa_def_monarchy_trigger = yes		
+			NOT = { has_variable = has_had_war_of_the_roses_disaster }
+			NOT = { coa_def_capetian_trigger = yes }
+		}
+	}
+		flag_definition = {
+		coa = ENG_monarchy
+		subject_canton = ENG
+		allow_overlord_canton = no
+		priority = 12
+		trigger = {
+         is_subject = yes
+			coa_def_monarchy_trigger = yes
+			NOT = { has_variable = has_had_war_of_the_roses_disaster }
+		}
+	}
+	flag_definition = {
+		coa = ENG_quarterly_france_ancient
+		subject_canton = ENG
+		allow_overlord_canton = yes
+		priority = 5
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			NOT = { has_variable = has_had_war_of_the_roses_disaster }
+			NOT = { coa_def_capetian_trigger = yes }
+		}
+	}
+	flag_definition = {
+		coa = ENG_capetian
+		subject_canton = ENG
+		allow_overlord_canton = no
+		priority = 16
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			coa_def_capetian_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = ENG_tudor
+		subject_canton = ENG
+		allow_overlord_canton = no
+		priority = 13
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:tudor_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:tudor_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:tudor_dynasty
+				}
+			}
+		}
+	}
+	flag_definition = {
+		coa = ENG_yorkist
+		subject_canton = ENG
+		allow_overlord_canton = no
+		priority = 13
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:york_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:york_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:york_dynasty
+				}
+			}
+		}
+	}
+	flag_definition = {
+		coa = ENG_lancastrian
+		subject_canton = ENG
+		allow_overlord_canton = no
+		priority = 13
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:lancaster_dynasty
+			has_variable = has_had_war_of_the_roses_disaster
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:lancaster_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:lancaster_dynasty
+				}
+			}
+		}
+	}
+	flag_definition = {
+		coa = ENG_revolutionary_republic
+		subject_canton = ENG
+		priority = 200
+		trigger = {
+			coa_def_revolutionary_republic_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = ENG_commonwealth
+		subject_canton = ENG
+		allow_overlord_canton = no
+		priority = 20
+		trigger = {
+			coa_def_republic_trigger = yes
+			coa_def_own_ireland = yes
+		}
+	}
+}
+REPLACE:DAN = { # Denmark
+	flag_definition = {
+		coa = DAN
+		priority = 10
+		trigger = {
+			OR = {
+				coa_def_reformation_age_4_trigger = yes
+				coa_def_republic_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = DAN_lions
+		priority = 1
+		trigger = {
+			coa_def_monarchy_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = DAN_wittelsbach
+		priority = 5
+		trigger = {
+			OR = {
+				coa_def_wittelsbach_palatinate_dynasty_trigger = yes
+				coa_def_wittelsbach_dynasty_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = DAN_arms
+		priority = 40
+		trigger = {
+			coa_def_absolutism_age_5_trigger = yes
+			coa_def_absolute_monarchy_trigger = yes
+		}
+	}
+}
+REPLACE:NOR = { # Norway
+	flag_definition = {
+		coa = NOR
+		subject_canton = NOR
+		priority = 1
+	}
+	flag_definition = {
+		coa = NOR_late
+		subject_canton = NOR_late
+		priority = 2
+		trigger = {
+			coa_def_discovery_age_3_trigger = yes
+		}		
+	}	
+	flag_definition = {
+		coa = NOR_wittelsbach
+		subject_canton = NOR
+		priority = 5
+			trigger = {
+			OR = {
+				coa_def_wittelsbach_palatinate_dynasty_trigger = yes
+				coa_def_wittelsbach_dynasty_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = NOR_cross_lion
+		priority = 100
+		trigger = {
+			coa_def_republic_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NOR_cross
+		allow_overlord_canton = yes
+		priority = 110
+		trigger = {
+			coa_def_monarchy_trigger = no
+			coa_def_christian_trigger = yes
+			coa_def_absolutism_age_5_trigger = yes
+		}
+	}	
+}
+REPLACE:SWE = { # Sweden
+	flag_definition = {
+		coa = SWE
+		priority = 1
+	}
+	flag_definition = {
+		coa = SWE_quarterly
+		subject_canton = SWE
+		priority = 10
+		trigger = {
+			coa_def_bjalbo_dynasty_trigger = yes
+			coa_def_discovery_age_3_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = SWE_quarterly_mecklenburg
+		subject_canton = SWE
+		priority = 12
+		trigger = {
+			coa_def_mecklenburg_dynasty_trigger = yes
+			coa_def_discovery_age_3_trigger = yes
+		}
+	}	
+	flag_definition = {
+		coa = SWE_wittelsbach
+		subject_canton = SWE
+		priority = 15
+			trigger = {
+			OR = {
+				coa_def_wittelsbach_palatinate_dynasty_trigger = yes
+				coa_def_wittelsbach_dynasty_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = SWE_cross
+		priority = 50
+		trigger = {
+			OR = {
+				coa_def_reformation_age_4_trigger = yes
+				coa_def_republic_trigger = yes
+			}
+			coa_def_absolute_monarchy_trigger = no # keeping quarterly designs for absolute
+		}
+	}
+}
+SCA = { 
+	flag_definition = {
+		coa = SCA
+		priority = 21
+		trigger = {
+			OR = {
+				coa_def_reformation_age_4_trigger = yes
+				coa_def_republic_trigger = yes
+			}
+		coa_def_absolute_monarchy_trigger = no
+		}
+	}
+	flag_definition = {
+		coa = SCA_denmark
+		priority = 17
+		trigger = {
+			coa_def_danish_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = SCA_sweden
+		priority = 17
+		trigger = {
+			coa_def_swedish_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = SCA_skane
+		priority = 18
+		trigger = {
+			coa_def_SKE_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = SCA_norway
+		priority = 17
+		trigger = {
+			coa_def_norwegian_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = SCA_erik
+		priority = 20
+		trigger = {
+			OR = {
+				coa_def_pomeranian_ruler_trigger = yes
+				coa_def_pomeranian_trigger = yes
+				coa_def_gryf_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = SCA_wittelsbach
+		priority = 25
+		trigger = {
+			OR = {
+				coa_def_wittelsbach_palatinate_dynasty_trigger = yes
+				coa_def_wittelsbach_dynasty_trigger = yes
 			}
 		}
 	}
