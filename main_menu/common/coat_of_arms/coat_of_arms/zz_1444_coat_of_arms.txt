@@ -2583,3 +2583,346 @@ BUR_FLA_Hab = { #Burgundy  Flanders Habsburg
         parent = "sub_FLA_shield" 
     }
 }
+NAP_valois = { #Naples Valois 
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red"
+	color4 = "white"
+	
+    sub = {
+        parent = "sub_NAP_basic" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "KOJ" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+ sub = {
+        parent = "sub_div_quarterly_mid" 
+    }
+}
+NAP_anjou_valois = { # Naples Valois-Anjou
+	pattern = "pattern_tricolor_vertical_01.dds"
+	color1 = "white"
+	color2 = "yellow"
+	color3 = "blue"
+	color4 = "red_secondary"
+	color5 = "red"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = color3
+		color2 = color3
+		mask = { 2 }
+	}
+	colored_emblem = {
+		texture = "ce_semis_fleur_lis_shield.dds"
+		color1 = color2
+		color2 = color2
+		mask = { 2 }
+	}
+	colored_emblem = {
+		texture = "ce_label_05_long.dds"
+		color1 = color4
+		color2 = color4
+		instance = { position = { 0.5 0.45 }  scale = { 0.67 0.85 } }
+		mask = { 2 }
+	}
+
+	colored_emblem = {
+		texture = "ce_semis_fleur_lis_shield.dds"
+		color1 = color2
+		color2 = color2
+        mask = {3}
+	}
+	colored_emblem = {
+		texture = "ce_border_thin.dds"
+		color1 = color5
+		mask = { 3 }
+	}
+	colored_emblem = {
+		texture = "ce_cross_jerusalem_long.dds"
+		color1 = "yellow_mid"
+		color2 = "yellow_mid"
+		instance = { position = { 0.17 0.5 }  scale = { 0.9 0.9 } }
+	}
+	colored_emblem = {
+		texture = "ce_divider_threeway.dds"
+		color1 = "black"
+	}
+}
+DAN_lions = { # Denmark estriden arms
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	colored_emblem = {
+		texture = "rp_lion_passant_guardant_long_thin_crowned.dds"
+		color1 = "blue"
+		color2 = "red"
+		color3 = "yellow_dark"
+		instance = { position = { 0.5 0.20 } scale = { 1.0 0.9 } }
+		instance = { position = { 0.5 0.5 } scale = { 1.0 0.9 } }
+		instance = { position = { 0.5 0.80 } scale = { 1.0 0.9 } }
+	}
+	colored_emblem = {
+		texture = "rp_waterlillies_denmark.dds"
+		color1 = "red"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }
+	}
+}
+DAN_wittelsbach = { # Christopher III
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "blue"
+	color3 = "white"
+    sub = {
+        parent = "DAN_lions" # Q1 Denmark
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_wends" # Q1 Wends
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.51 } }
+    }
+    sub = {
+        parent = "PAL" # Q2 Palatinate
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.0 } }
+    }
+    sub = {
+        parent = "BAV" # Q2 Bavaria
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.51 } }
+    }
+    sub = {
+        parent = "sub_red_cross"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }	
+}
+NOR_wittelsbach = { # Christopher III Norway
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "blue"
+	color3 = "white"
+    sub = {
+        parent = "NOR" # Q1 NOR
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.51 } }
+    }
+    sub = {
+        parent = "PAL" # Q2 Palatinate
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.0 } }
+    }
+    sub = {
+        parent = "BAV" # Q2 Bavaria
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.51 } }
+    }
+    sub = {
+        parent = "sub_white_cross"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }	
+}
+SWE_wittelsbach = { # Christopher III Norway
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "blue"
+	color3 = "white"
+    sub = {
+        parent = "SWE" # Q1 SWE
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "SWE" # Q1 SWE
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.51 } }
+    }
+    sub = {
+        parent = "PAL" # Q2 Palatinate
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.0 } }
+    }
+    sub = {
+        parent = "BAV" # Q2 Bavaria
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.51 } }
+    }
+    sub = {
+        parent = "sub_quarterly_overall_cross_patty"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+}
+SCA_wittelsbach = { # Christopher III Norway
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "blue"
+	color3 = "white"
+    sub = {
+        parent = "DAN_lions" # Q1 Denmark
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "NOR" # Q1 NOR
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.51 } }
+    }
+    sub = {
+        parent = "SWE" # Q2 Sweden
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.0 } }
+    }
+    sub = {
+        parent = "sub_blue_griffin" # Q2 Griffin
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.51 } }
+    }
+    sub = {
+        parent = "sub_white_cross"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_PAL_coa"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+}
+SCA_denmark = { # Denmark Scandi
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "blue"
+	color3 = "white"
+    sub = {
+        parent = "DAN_lions" # Q1 Denmark
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "DAN_lions" # Q1 Denmark
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.51 } }
+    }
+    sub = {
+        parent = "NOR" # Q2 Norway
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.0 } }
+    }
+    sub = {
+        parent = "SWE" # Q2 Sweden
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.51 } }
+    }
+    sub = {
+        parent = "sub_white_cross"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_SCA_coa"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+}
+SCA_skane = { # Skane Scandi
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "blue"
+	color3 = "white"
+    sub = {
+        parent = "SKE" # Q1 Skane
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "DAN_lions" # Q1 Denmark
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.51 } }
+    }
+    sub = {
+        parent = "NOR" # Q2 Norway
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.0 } }
+    }
+    sub = {
+        parent = "SWE" # Q2 Swedeb
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.51 } }
+    }
+    sub = {
+        parent = "sub_white_cross"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_SCA_coa"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+}
+SCA_norway = { # Denmark Scandi
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "blue"
+	color3 = "white"
+    sub = {
+        parent = "NOR" # Q1 Denmark
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "NOR" # Q1 Wends
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.51 } }
+    }
+    sub = {
+        parent = "DAN_lions" # Q2 Palatinate
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.0 } }
+    }
+    sub = {
+        parent = "SWE" # Q2 Bavaria
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.51 } }
+    }
+    sub = {
+        parent = "sub_red_cross2"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_SCA_coa"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+}
+SCA_sweden = { # Denmark Scandi
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "blue"
+	color3 = "white"
+    sub = {
+        parent = "SWE" # Q1 Sweden
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "SWE_bjalbo_simple" # Q1 Sweden Lions
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.51 } }
+    }
+    sub = {
+        parent = "DAN_lions" # Q2 Denmark
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.0 } }
+    }
+    sub = {
+        parent = "NOR" # Q2 Norway
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.51 } }
+    }
+    sub = {
+        parent = "sub_quarterly_overall_cross_patty"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_SCA_coa"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+}
+SCA_erik = { # Denmark Scandi
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "blue"
+	color3 = "white"
+    sub = {
+        parent = "DAN_lions" # Q1 Denmark
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_POM_inverse" # Q1 Wends
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.51 } }
+    }
+    sub = {
+        parent = "SWE" # Q2 Palatinate
+		instance = { scale = { 0.49 0.49 } offset = { 0.51 0.0 } }
+    }
+    sub = {
+        parent = "SWE_bjalbo_simple" # Q2 Bavaria
+		instance = { scale = { 0.49 0.49 } offset = { 0.0 0.51 } }
+    }
+    sub = {
+        parent = "sub_red_cross"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_NOR_coa"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+}
