@@ -26173,7 +26173,7 @@ countries = {
 
     # --- LIV ---
 
-    MAZ = {
+    CZK = { #Warsaw Masovia
         #https://en.wikipedia.org/wiki/Duchy_of_Masovia
         own_control_core = {
             warsaw grojec czersk liw nur kamieniec garwolin tarczyn zambrow ostroleka zakroczym przasnysz rozan lomza kolno ciechanow
@@ -26187,7 +26187,12 @@ countries = {
             type = monarchy
             heir_selection = semi_salic_law
 
-            ruler = random # TODO: add me
+            ruler = war_boleslaw_iv_piast
+
+            ruler_term = { character = czk_trojden_i_piast start_date = 1313.1.1 end_date = 1341.3.13 regnal_number = 1 }
+            ruler_term = { character = czk_siemowit_iii_piast start_date = 1341.3.13 end_date = 1381.6.16 regnal_number = 1 }
+            ruler_term = { character = war_janusz_i_piast start_date = 1381.6.16 end_date = 1429.12.8 regnal_number = 1 }
+            ruler_term = { character = war_boleslaw_iv_piast start_date = 1429.12.8 regnal_number = 1 }
 
             regnal_numbers = {
             }
@@ -26225,7 +26230,7 @@ countries = {
         dynasty = piast_dynasty
     }
 
-    # --- MAZ ---
+    # --- CZK ---
 
     SXM = {
         #Samogitia - Eldership
@@ -26344,62 +26349,62 @@ countries = {
 
     # --- SDZ ---
 
-    CZK = {
-        #https://en.wikipedia.org/wiki/Duchy_of_Masovia
-        our_cores_conquered_by_others = {
-            warsaw grojec czersk liw nur kamieniec garwolin tarczyn
-        }
-
-        starting_technology_level = 3
-        include = "expl_eastern_europe"
-        include = "eastern_european_catholic_monarchy_no_coast"
-        include = "eastern_european_catholic"
-        government = {
-            type = monarchy
-            heir_selection = semi_salic_law
-
-            ruler = random
-            ruler_term = { character = czk_boleslaw_ii_piast start_date = 1275.1.20 end_date = 1313.4.20 regnal_number = 2 }
-            ruler_term = { character = czk_trojden_i_piast start_date = 1313.4.20 regnal_number = 1 }
-            regnal_numbers = {
-                name_boleslav = 2
-                Trojden = 1
-            }
-
-            centralization_vs_decentralization = 80
-            traditionalist_vs_innovative = 20
-            spiritualist_vs_humanist = 10
-            aristocracy_vs_plutocracy = -90
-            serfdom_vs_free_subjects = -70
-            mercantilism_vs_free_trade = -70
-            belligerent_vs_conciliatory = 0
-            quality_vs_quantity = 0
-            offensive_vs_defensive = -70
-            land_vs_naval = -60
-            capital_economy_vs_traditional_economy = 90
-            individualism_vs_communalism = -20
-            outward_vs_inward = 0
-
-            privilege = {
-                #Burghers
-                novi_fori
-                urban_development_grants
-
-                #Commoners
-                peasants_free_peasantry
-            }
-        }
-
-        tolerated_cultures = {
-            low_franconian
-        }
-
-        country_rank = rank_duchy
-        capital = warsaw
-        dynasty = piast_dynasty
-    }
-
-    # --- CZK ---
+#    CZK = {
+#        #https://en.wikipedia.org/wiki/Duchy_of_Masovia
+#        our_cores_conquered_by_others = {
+#            warsaw grojec czersk liw nur kamieniec garwolin tarczyn
+#        }
+#
+#        starting_technology_level = 3
+#        include = "expl_eastern_europe"
+#        include = "eastern_european_catholic_monarchy_no_coast"
+#        include = "eastern_european_catholic"
+#        government = {
+#            type = monarchy
+#            heir_selection = semi_salic_law
+#
+#            ruler = random
+#            ruler_term = { character = czk_boleslaw_ii_piast start_date = 1275.1.20 end_date = 1313.4.20 regnal_number = 2 }
+#            ruler_term = { character = czk_trojden_i_piast start_date = 1313.4.20 regnal_number = 1 }
+#            regnal_numbers = {
+#                name_boleslav = 2
+#                Trojden = 1
+#            }
+#
+#            centralization_vs_decentralization = 80
+#            traditionalist_vs_innovative = 20
+#            spiritualist_vs_humanist = 10
+#            aristocracy_vs_plutocracy = -90
+#            serfdom_vs_free_subjects = -70
+#            mercantilism_vs_free_trade = -70
+#            belligerent_vs_conciliatory = 0
+#            quality_vs_quantity = 0
+#            offensive_vs_defensive = -70
+#            land_vs_naval = -60
+#            capital_economy_vs_traditional_economy = 90
+#            individualism_vs_communalism = -20
+#            outward_vs_inward = 0
+#
+#            privilege = {
+#                #Burghers
+#                novi_fori
+#                urban_development_grants
+#
+#                #Commoners
+#                peasants_free_peasantry
+#            }
+#        }
+#
+#        tolerated_cultures = {
+#            low_franconian
+#        }
+#
+#        country_rank = rank_duchy
+#        capital = warsaw
+#        dynasty = piast_dynasty
+#    }
+#
+#    # --- CZK ---
 
     BIO = {
         own_control_core = {
@@ -26431,7 +26436,7 @@ countries = {
 
     # --- BIO ---
 
-    PLK = {
+    PLK = { #Płock/Plock
         #https://en.wikipedia.org/wiki/Duchy_of_Masovia
         own_control_core = {
             plock sierpc szrensk plonsk
@@ -26448,10 +26453,12 @@ countries = {
         government = {
             type = monarchy
             heir_selection = semi_salic_law
-            ruler = random
+            ruler = plk_wladyslaw_i_piast
 
-            ruler_term = { character = czk_boleslaw_ii_piast start_date = 1275.1.20 end_date = 1313.4.20 regnal_number = 2 }
-            ruler_term = { character = plk_waclaw_piast start_date = 1313.4.20 end_date = 1336.5.23 regnal_number = 1 }
+            ruler_term = { character = plk_waclaw_piast start_date = 1313.1.1 end_date = 1336.1.1 regnal_number = 1 }
+            ruler_term = { character = plk_boleslaw_iii_piast start_date = 1336.1.1 end_date = 1351.8.20 regnal_number = 1 }
+            # Płock held by Poland 1351-1370, then unified Masovia under Siemowit III 1370-1381, then Siemowit IV 1381-1434
+            ruler_term = { character = plk_wladyslaw_i_piast start_date = 1434.8.31 regnal_number = 1 }
             regnal_numbers = {
                 name_boleslav = 2
                 name_siemowit = 1
@@ -26895,7 +26902,7 @@ countries = {
 
     # --- NYS ---
 
-    RAW = {
+    RAW = { #Rawa
         #https://en.wikipedia.org/wiki/Duchy_of_Masovia
         own_control_core = {
             rawa sochaczew biala_rawska
@@ -26909,9 +26916,12 @@ countries = {
             type = monarchy
             heir_selection = youngest_son_of_ruler
 
-            ruler = random # TODO: add me
-            ruler_term = { character = czk_boleslaw_ii_piast start_date = 1275.1.20 end_date = 1313.4.20 regnal_number = 2 }
-            ruler_term = { character = raw_siemowit_ii_piast start_date = 1313.4.20 regnal_number = 2 }
+            ruler = plk_wladyslaw_i_piast
+            ruler_term = { character = raw_siemowit_ii_piast start_date = 1313.1.1 end_date = 1345.2.18 regnal_number = 1 }
+            ruler_term = { character = czk_kazimierz_iii_piast start_date = 1345.1.1 end_date = 1355.12.5 regnal_number = 1 }
+            # Rawa merged into unified Masovia 1355-1381, then to Siemowit IV 1381-1434
+            ruler_term = { character = raw_siemowit_v_piast start_date = 1434.8.31 end_date = 1442.2.17 regnal_number = 1 }
+            ruler_term = { character = plk_wladyslaw_i_piast start_date = 1442.2.17 regnal_number = 1 }
             regnal_numbers = {
                 name_boleslav = 2
                 name_siemowit = 2
@@ -27165,13 +27175,14 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = osw_jan_iv_piast
             ruler_term = { character = osw_wladyslaw_piast start_date = 1315.1.1 end_date = 1324.5.15 regnal_number = 1 }
-            ruler_term = { character = osw_jan_piast start_date = 1324.5.15 regnal_number = 1 }
-            regnal_numbers = {
-                name_john = 1
-                name_vladislav = 1
-            }
+            ruler_term = { character = osw_jan_piast start_date = 1327.1.1 end_date = 1372.9.29 regnal_number = 1 }
+            ruler_term = { character = osw_jan_ii_piast start_date = 1372.9.29 end_date = 1376.2.19 regnal_number = 2 }
+            ruler_term = { character = osw_jan_iii_piast start_date = 1376.2.19 end_date = 1405.8.19 regnal_number = 3 }
+            ruler_term = { character = osw_przemyslaw_piast start_date = 1405.8.19 end_date = 1406.1.1 regnal_number = 1 }
+            ruler_term = { character = osw_kazimierz_i_piast start_date = 1406.1.1 end_date = 1434.4.7 regnal_number = 1 }
+            ruler_term = { character = osw_jan_iv_piast start_date = 1445.1.19 regnal_number = 4 }
         }
 
         tolerated_cultures = {
@@ -27238,7 +27249,7 @@ countries = {
 
     # --- WRC ---
 
-    GTN = {
+    GTN = { #Gostynin
         own_control_core = {
             gostynin gabin
         }
@@ -27251,7 +27262,8 @@ countries = {
             type = monarchy
             heir_selection = youngest_son_of_ruler
 
-            ruler = random
+            ruler = raw_margaret_premyslid
+            ruler_term = { character = raw_margaret_premyslid start_date = 1442.2.17 regnal_number = 1 }
 
             centralization_vs_decentralization = 80
             traditionalist_vs_innovative = 20
@@ -27594,23 +27606,21 @@ countries = {
         }
         starting_technology_level = 3
         include = "catholic_bishopric_no_coast"
+        include = "catholic_bishopric_no_coast"
         include = "expl_northern_europe"
         country_rank = rank_duchy
 
         government = {
             type = theocracy
-            heir_selection = cognatic_primogeniture
             ruler = pol_zbigniew_olesnicki
-
-            ruler_term = { character = tes_kazimir_piast start_date = 1337.1.1 regnal_number = 1 }
-
-            regnal_numbers = {
-                Kazimir = 1
-            }
+            ruler_term = { character = tes_kazimir_piast start_date = 1337.1.1 end_date = 1358.9.29 regnal_number = 1 }
+            ruler_term = { character = tes_przemyslaus_i_piast start_date = 1368.1.1 end_date = 1410.5.23 regnal_number = 1 }
+            ruler_term = { character = tes_boleslaw_i_ii_piast start_date = 1410.5.23 end_date = 1431.5.6 regnal_number = 1 }
+            ruler_term = { character = tes_waclaw_i_piast start_date = 1431.5.6 end_date = 1443.12.24 regnal_number = 1 }
+            ruler_term = { character = pol_zbigniew_olesnica start_date = 1443.12.24 regnal_number = 1 }
         }
 
         tolerated_cultures = {
-            silesian
             lesser_polish
         }
 
@@ -29825,7 +29835,7 @@ countries = {
         include = "expl_eastern_europe"
         include = "lithuanian_monarchy"
         government = {
-            ruler = random # TODO: add me
+            ruler = lit_kazimieras_iv_jagiellon
 
             ruler_term = { character = smo_stanislav_vladimirovich_rurikovich start_date = 988.1.1 end_date = 1015.1.1 regnal_number = 1 }
             ruler_term = { character = smo_vyacheslav_yaroslavich_rurikovich start_date = 1054.2.20 end_date = 1057.1.1 regnal_number = 1 }
@@ -29842,7 +29852,16 @@ countries = {
             ruler_term = { character = msv_mikhail_rostislavich_rurikovich start_date = 1278.1.1 end_date = 1279.1.1 regnal_number = 1 }
             ruler_term = { character = yar_fyodor_rostislavich_cherny_rurikovich start_date = 1279.1.1 end_date = 1297.1.1 regnal_number = 1 }
             ruler_term = { character = smo_alexander_glebovich_rurikovich start_date = 1297.1.1 end_date = 1314.1.1 regnal_number = 1 }
-            ruler_term = { character = smo_ivan_alexandrovich_rurikovich start_date = 1314.1.1 regnal_number = 1 }
+            ruler_term = { character = smo_ivan_alexandrovich_rurikovich start_date = 1313.1.1 end_date = 1359.1.1 }
+            ruler_term = { character = smo_sviatoslav_iv_ivanovich_rurikovich start_date = 1359.1.1 end_date = 1386.4.29 }
+            ruler_term = { character = smo_yuri_svyatoslavich_rurikovich start_date = 1386.4.29 end_date = 1392.1.1 }
+            ruler_term = { character = smo_gleb_ii_svyatoslavich start_date = 1392.1.1 end_date = 1399.9.12 regnal_number = 2 }
+            ruler_term = { character = smo_yuri_svyatoslavich_rurikovich start_date = 1401.1.1 end_date = 1404.1.1 }
+            ruler_term = { character = lit_vytautas_gediminid start_date = 1404.1.1 end_date = 1420.8.1 regnal_number = 1 }
+            ruler_term = { character = lit_svitrigaila_gediminid start_date = 1420.8.1 end_date = 1432.10.27 regnal_number = 2 }
+            ruler_term = { character = lit_zygimantas_gediminid start_date = 1432.10.27 end_date = 1440.3.20 regnal_number = 1 }
+            ruler_term = { character = lit_kazimieras_iv_jagiellon start_date = 1440.3.20 regnal_number = 1 }
+
             regnal_numbers = {
                 Iwan = 1
             }
@@ -30964,10 +30983,12 @@ countries = {
             ruler_term = { character = kie_vladimir_ivan_ivanovich_rurikovich start_date = 1271.9.9 end_date = 1301.1.1 regnal_number = 1 }
             ruler_term = { character = kie_stanislav_ivanovich_rurikovich start_date = 1301.1.1 end_date = 1321.1.1 regnal_number = 1 }
             ruler_term = { character = kie_mindaugas_holshanski start_date = 1321.1.1 end_date = 1324.1.1 regnal_number = 1 }
-            ruler_term = { character = kie_algimantas start_date = 1324.1.1 end_date = 1331.1.1 regnal_number = 1 }
-            ruler_term = { character = kie_teodoras_ivanovich_rurikovich start_date = 1331.1.1 end_date = 1362.1.1 regnal_number = 1 }
-
-            ruler_term = { character = kie_alexandras_olelkovich start_date = 1443.1.1 regnal_number = 0 }
+            ruler_term = { character = kie_teodoras_ivanovich_rurikovich start_date = 1324.1.1 end_date = 1362.10.1 regnal_number = 1 }
+            ruler_term = { character = kie_skirgalia_gediminid start_date = 1395.1.1 end_date = 1397.1.8 regnal_number = 1 }
+            ruler_term = { character = kie_ivan_algimantaitis_alseniskiai start_date = 1397.1.8 end_date = 1399.1.1 regnal_number = 1 }
+            ruler_term = { character = kie_andrei_ivanovich_alseniskiaii start_date = 1399.1.1 end_date = 1420.1.1 regnal_number = 1 }
+            ruler_term = { character = kie_mikhail_ivanovich_alseniskiai start_date = 1420.1.1 end_date = 1443.1.1 regnal_number = 3 }
+            ruler_term = { character = kie_alexandras_olelkovich start_date = 1443.1.1 regnal_number = 1 }
 
             privilege = {
                 #Clergy
@@ -31081,6 +31102,12 @@ countries = {
             ruler_term = { character = vol_yuri_i_rurikovich start_date = 1301.1.1 end_date = 1308.1.1 regnal_number = 1 }
             ruler_term = { character = vol_andrii_rurikovich start_date = 1308.1.1 end_date = 1323.1.1 regnal_number = 1 }
             ruler_term = { character = vol_boleslaw_jerzy_ii_piast start_date = 1323.1.1 end_date = 1340.1.1 regnal_number = 2 regnal_name = name_george }
+            ruler_term = { character = dmytro_dedko_rurikovich start_date = 1340.1.1 end_date = 1349.1.1 regnal_number = 1 }
+            ruler_term = { character = pol_casimir_iii_piast start_date = 1349.1.1 end_date = 1370.11.5 regnal_number = 3 }
+            ruler_term = { character = hun_lajos_i start_date = 1370.11.17 end_date = 1382.9.10 regnal_number = 1 }
+            ruler_term = { character = pol_jadwiga_anjou_hungary start_date = 1384.10.16 end_date = 1399.7.17 regnal_number = 1 }
+            ruler_term = { character = lit_jogalia_jagiellon start_date = 1399.7.17 end_date = 1434.6.1 regnal_number = 2 regnal_name = name_vladislav }
+            ruler_term = { character = pol_wladyslaw_iii_jagiellon start_date = 1434.7.25 end_date = 1444.11.10 regnal_number = 3 }
 
             privilege = {
                 #Burghers
@@ -31122,7 +31149,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random # TODO: add me
+            ruler = lit_svitrigaila_gediminid
 
             ruler_term = {
                 character = rso_boris_vladimirovich_rurikovich start_date = 987.1.1 end_date = 1010.1.1 regnal_number = 1
@@ -31143,7 +31170,14 @@ countries = {
             ruler_term = { character = vol_leo_i_rurikovich start_date = 1264.1.1 end_date = 1301.1.1 regnal_number = 1 }
             ruler_term = { character = vol_yuri_i_rurikovich start_date = 1301.1.1 end_date = 1308.1.1 regnal_number = 1 }
             ruler_term = { character = vol_andrii_rurikovich start_date = 1308.1.1 end_date = 1323.1.1 regnal_number = 1 }
-            ruler_term = { character = vol_boleslaw_jerzy_ii_piast start_date = 1323.1.1 regnal_number = 2 regnal_name = name_george }
+
+            ruler_term = { character = vol_boleslaw_jerzy_ii_piast start_date = 1325.1.1 end_date = 1340.4.7 regnal_number = 2 regnal_name = name_george }
+            ruler_term = { character = lit_liubartas_gediminds start_date = 1340.4.7 end_date = 1385.1.1 regnal_number = 1 } ####
+            ruler_term = { character = vol_teodoras_liubartaitis_gediminid start_date = 1385.1.1 end_date = 1387.1.1 regnal_number = 1 } ####
+            ruler_term = { character = lit_vytautas_gediminid start_date = 1387.1.1 end_date = 1393.1.1 regnal_number = 1 }
+            ruler_term = { character = kie_skirgalia_gediminid start_date = 1393.1.1 end_date = 1397.1.8 regnal_number = 1 } ####
+            ruler_term = { character = lit_vytautas_gediminid start_date = 1397.1.8 end_date = 1430.10.27 regnal_number = 2 }
+            ruler_term = { character = lit_svitrigaila_gediminid start_date = 1434.1.1 regnal_number = 1 }
 
             privilege = {
                 #Burghers
@@ -31193,6 +31227,7 @@ countries = {
 
         tolerated_cultures = {
             severian
+            ruthenian
         }
 
         capital = chornukhy
@@ -31299,6 +31334,10 @@ countries = {
             torhovytsia teplyk tsybuliv uman zavallia
             vinnytsia buzhskyi pohrebyshche sokilets
         }
+        our_cores_conquered_by_others = {
+            ushytsia khmilnyk letychiv mezhybozhe mohyliv_podilskyi rov
+            bakota horodok kamianets_podilskyi zalishchyky hotin
+        }
 
         starting_technology_level = 3
         include = "expl_eastern_europe"
@@ -31307,6 +31346,14 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
             ruler = random
+            ruler_term = { character = nrk_koriatovich_gediminds start_date = 1363.1.1 end_date = 1375.1.1 regnal_number = 1 }
+            ruler_term = { character = pod_aleksander_koriatovych_gediminid start_date = 1375.1.1 end_date = 1380.1.1 regnal_number = 1 }
+            ruler_term = { character = pod_konstantin_koriatovych_gediminid start_date = 1380.1.1 end_date = 1389.1.1 regnal_number = 1 }
+            ruler_term = { character = pod_fedir_gediminid start_date = 1389.1.1 end_date = 1393.1.1 regnal_number = 1 }
+            ruler_term = { character = lit_vytautas_gediminid start_date = 1393.1.1 end_date = 1399.8.12 regnal_number = 1 }
+            ruler_term = { character = lit_svitrigaila_gediminid start_date = 1399.8.12 end_date = 1401.1.1 regnal_number = 1 }
+            ruler_term = { character = lit_vytautas_gediminid start_date = 1401.1.1 end_date = 1430.10.27 regnal_number = 2 }
+            ruler_term = { character = lit_svitrigaila_gediminid start_date = 1430.10.27 regnal_number = 1 }
 
             privilege = {
                 #Burghers
@@ -31483,8 +31530,7 @@ countries = {
 
     # --- POK ---
 
-    POE = {
-        #Podole
+    POE = { #Podole
         own_control_core = {
             ushytsia khmilnyk letychiv mezhybozhe mohyliv_podilskyi rov
             bakota horodok kamianets_podilskyi zalishchyky
@@ -31493,6 +31539,11 @@ countries = {
         own_control_conquered = {
             hotin
         }
+        our_cores_conquered_by_others = {
+            bratslav balta bershad drahushiv karabul savran
+            torhovytsia teplyk tsybuliv uman zavallia
+            vinnytsia buzhskyi pohrebyshche sokilets
+        }
 
         starting_technology_level = 3
         include = "expl_eastern_europe"
@@ -31500,7 +31551,20 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+
+            heir = lit_kazimieras_iv_jagiellon
+            active_regent = pol_zbigniew_olesnicki
+            regency = nobles_estate_regency
+            start_regency_date = 1444.11.10
+            end_regency_date = 1447.6.25
+
+            ruler_term = { character = nrk_koriatovich_gediminds start_date = 1363.1.1 end_date = 1375.1.1 regnal_number = 1 }
+            ruler_term = { character = pod_aleksander_koriatovych_gediminid start_date = 1375.1.1 end_date = 1380.1.1 regnal_number = 1 }
+            ruler_term = { character = pod_konstantin_koriatovych_gediminid start_date = 1380.1.1 end_date = 1389.1.1 regnal_number = 1 }
+            ruler_term = { character = pod_fedir_gediminid start_date = 1389.1.1 end_date = 1393.1.1 regnal_number = 1 }
+            ruler_term = { character = pol_jadwiga_anjou_hungary start_date = 1393.1.1 end_date = 1399.7.17 regnal_number = 1 }
+            ruler_term = { character = lit_jogalia_jagiellon start_date = 1399.7.17 end_date = 1434.6.1 regnal_number = 2 regnal_name = name_vladislav }
+            ruler_term = { character = pol_wladyslaw_iii_jagiellon start_date = 1434.7.25 end_date = 1444.11.10 regnal_number = 3 }
 
             privilege = {
                 #Burghers
@@ -31554,7 +31618,7 @@ countries = {
 
     # --- NRK ---
 
-    BRY = {
+    BRY = { #Bryansk
         own_control_core = {
             bryansk foshnya pochep
             dmitriyev boldyzh
@@ -31568,14 +31632,22 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            ruler = random # TODO: add me
+            ruler = lit_kazimieras_iv_jagiellon
 
             ruler_term = { character = bry_roman_mikhailovich_rurikovich start_date = 1240.1.1 end_date = 1288.1.1 regnal_number = 1 }
             ruler_term = { character = bry_oleg_romanovich_rurikovich start_date = 1288.1.1 end_date = 1309.1.1 regnal_number = 1 }
             ruler_term = { character = bry_svyatoslav_glebovich_rurikovich start_date = 1309.1.1 end_date = 1310.1.1 regnal_number = 1 }
             ruler_term = { character = bry_vasily_alexandrovich_rurikovich start_date = 1310.1.1 end_date = 1314.1.1 regnal_number = 1 }
             ruler_term = { character = bry_vasily_alexandrovich_rurikovich start_date = 1314.1.1 end_date = 1333.1.1 regnal_number = 1 }
-            ruler_term = { character = bry_gleb_svyatoslavich_rurikovich start_date = 1333.1.1 regnal_number = 1 }
+            ruler_term = { character = bry_gleb_svyatoslavich_rurikovich start_date = 1333.1.1 end_date = 1356.1.1 regnal_number = 1 }
+
+            ruler_term = { character = lit_dmitrijus_gediminids start_date = 1356.1.1 end_date = 1399.8.12 regnal_number = 1 }
+            ruler_term = { character = smo_yuri_svyatoslavich start_date = 1399.8.12 end_date = 1404.1.1 regnal_number = 1 }
+            ruler_term = { character = lit_svitrigaila_gediminid start_date = 1404.1.1 end_date = 1409.5.1 regnal_number = 1 }
+            ruler_term = { character = lit_vytautas_gediminid start_date = 1409.5.1 end_date = 1420.8.1 regnal_number = 1 }
+            ruler_term = { character = lit_svitrigaila_gediminid start_date = 1420.8.1 end_date = 1432.10.27 regnal_number = 2 }
+            ruler_term = { character = lit_zygimantas_gediminid start_date = 1432.10.27 end_date = 1440.3.20 regnal_number = 1 }
+            ruler_term = { character = lit_kazimieras_iv_jagiellon start_date = 1440.3.20 regnal_number = 1 }
         }
 
         liturgical_language = church_slavonic_language
@@ -31757,7 +31829,7 @@ countries = {
     # --- NVS ---
 
     BLZ = {
-        #Bełz
+        #Bełz/Belz
         own_control_core = {
             #Halych
             belz grabowiec sokal lubaczow busk
@@ -31769,7 +31841,10 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = plk_wladyslaw_i_piast
+            ruler_term = { character = maz_siemowit_iv_piast start_date = 1388.1.1 end_date = 1426.1.21 regnal_number = 1 }
+            ruler_term = { character = blz_kazimierz_ii_piast start_date = 1434.8.31 end_date = 1442.9.15 regnal_number = 1 }
+            ruler_term = { character = plk_wladyslaw_i_piast start_date = 1442.9.15 regnal_number = 1 }
 
             privilege = {
                 #Burghers
@@ -62818,7 +62893,7 @@ countries = {
         court_language = karluk_language
         include = "expl_moghulistan_template"
         include = "eurasian_horde_no_muslim"
-        capital = yarkand
+        capital = khotan
 
         religious_school = hanafi_school
 
@@ -62891,7 +62966,7 @@ countries = {
         court_language = karluk_language
         include = "expl_moghulistan_template"
         include = "eurasian_horde_no_muslim"
-        capital = yarkand
+        capital = kashgar
 
         religious_school = hanafi_school
         dynasty = dughlat_dynasty
@@ -62927,7 +63002,7 @@ countries = {
         court_language = karluk_language
         include = "expl_moghulistan_template"
         include = "eurasian_horde_no_muslim"
-        capital = yarkand
+        capital = kucha
 
         religious_school = hanafi_school
         dynasty = dughlat_dynasty
