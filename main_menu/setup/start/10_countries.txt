@@ -174,6 +174,7 @@ countries = {
             reforms = {
                 french_feudal_nobility
                 ancient_french_taxation
+                gabelle
             }
 
             laws = {
@@ -209,6 +210,18 @@ countries = {
             poitevin
             saintongeais
             berrichon
+        }
+
+        variables = {
+            data = {
+                {
+                    flag = "enabled_fouage_tax"
+                    data = {
+                        type = value
+                        identity = 1
+                    }
+                }
+            }
         }
 
         country_rank = rank_kingdom
@@ -714,6 +727,7 @@ countries = {
             bage thoire
             faucigny sallanches villars
             martigny
+            annecy la_roche_sur_foron
         }
 
         starting_technology_level = 3
@@ -2173,7 +2187,7 @@ countries = {
 
     GNV = {
         own_control_core = {
-            geneve annecy la_roche_sur_foron
+            geneve
         }
 
         starting_technology_level = 3
@@ -2195,7 +2209,7 @@ countries = {
 
         dynasty = geneve_dynasty
         country_rank = rank_county
-        capital = annecy
+        capital = geneve
     }
 
     # --- GNV ---
@@ -20497,9 +20511,7 @@ countries = {
             type = monarchy
             heir_selection = cognatic_primogeniture
 
-            regency = consort_regency
-            start_regency_date = 1327.1.1
-            end_regency_date = 1340.1.1
+            ruler = gor_heinrich_vi_gorz
 
             ruler_term = { character = gor_meinhard_iii_gorizia start_date = 1231.1.1 end_date = 1258.7.22 regnal_number = 3 }
             ruler_term = {
@@ -20513,11 +20525,18 @@ countries = {
             }
             ruler_term = { character = gor_henry_iii_gorizia start_date = 1320.1.1 end_date = 1323.4.24 regnal_number = 3 }
             ruler_term = { character = gor_albert_ii_gorizia start_date = 1323.4.24 end_date = 1327.1.1 regnal_number = 2 }
+            ruler_term = { character = gor_henry_iv_gorizia start_date = 1327.1.1 end_date = 1338.3.17 regnal_number = 4 }
+
+            ruler_term = { character = gor_heinrich_vi_gorz start_date = 1385.5.6 regnal_number = 6 }
+
+            reforms = {
+                feudal_nobility
+            }
 
             regnal_numbers = {
                 name_meinhard = 5
                 name_albert = 2
-                name_henry = 3
+                name_henry = 6
                 name_john.name_henry = 1
             }
         }
@@ -21087,14 +21106,18 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
+            ruler = bde_jakob_i_baden
+
+            ruler_term = { character = bde_friedrich_ii_baden start_date = 1291.6.22 end_date = 1333.6.22 regnal_number = 2 }
+            ruler_term = { character = bde_hermann_ix_baden start_date = 1333.6.22 end_date = 1353.4.13 regnal_number = 9 }
+
+            ruler_term = { character = bde_jakob_i_baden start_date = 1431.4.5 regnal_number = 1 }
+
             regnal_numbers = {
                 name_herman = 9
                 name_frederick = 2
+                name_james = 1
             }
-            ruler = random # TODO: add me
-            ruler_term = { character = bde_friedrich_ii_baden start_date = 1291.6.22 end_date = 1333.6.22 regnal_number = 2 }
-            ruler_term = { character = bde_hermann_ix_baden start_date = 1333.6.22 regnal_number = 9 }
-
 
             reforms = {
                 margraviate
@@ -22339,16 +22362,18 @@ countries = {
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
         government = {
-            ruler = random # TODO: add me
+            ruler = lic_ludwig_v_lichtenberg
 
             ruler_term = { character = lic_ludwig_i_von_lichtenberg start_date = 1206.1.1 end_date = 1252.1.1 regnal_number = 1 }
             ruler_term = { character = lic_heinrich_ii_von_lichtenberg start_date = 1252.1.1 end_date = 1269.1.1 regnal_number = 2 }
             ruler_term = { character = lic_ludwig_ii_von_lichtenberg start_date = 1269.1.1 end_date = 1271.1.1 regnal_number = 2 }
             ruler_term = { character = lic_johann_i_von_lichtenberg start_date = 1271.1.1 end_date = 1315.8.22 regnal_number = 1 }
-            ruler_term = { character = lic_johann_ii_von_lichtenberg start_date = 1315.8.22 regnal_number = 2 }
+            ruler_term = { character = lic_johann_ii_von_lichtenberg start_date = 1315.8.22 end_date = 1350.1.1 regnal_number = 2 }
+
+            ruler_term = { character = lic_ludwig_v_lichtenberg start_date = 1434.9.6 regnal_number = 5 }
 
             regnal_numbers = {
-                name_louis = 2
+                name_louis = 5
                 name_henry = 2
                 name_john = 2
             }
@@ -22920,10 +22945,17 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
+            ruler = oet_wilhelm_i_oettingen
+
+            ruler_term = { character = oet_ludwig_xiii_oettingen start_date = 1357.10.4 end_date = 1370.5.1 regnal_number = 8 }
+            ruler_term = { character = oet_ludwig_ix_oettingen start_date = 1370.5.1 end_date = 1440.10.28 regnal_number = 9 }
+            ruler_term = { character = oet_wilhelm_i_oettingen start_date = 1440.10.28 regnal_number = 1 }
+
             regnal_numbers = {
-                name_louis = 4
+                name_louis = 9
+                name_frederick = 3
             }
-            ruler = random # TODO: add me
+            
         }
 
         tolerated_cultures = {
@@ -22993,7 +23025,13 @@ countries = {
         include = "expl_northern_europe"
         capital = bruchsal
         government = {
-            ruler = random # TODO: add me
+            ruler = spy_reinhard_von_helmstatt
+
+            ruler_term = { character = spy_gerhard_von_ehrenberg start_date = 1336.1.1 end_date = 1363.1.1 regnal_number = 0 }
+
+            ruler_term = { character = spy_raban_von_helmstatt start_date = 1396.1.1 end_date = 1438.1.1 regnal_number = 0 }
+            ruler_term = { character = spy_reinhard_von_helmstatt start_date = 1438.1.1 regnal_number = 0 }
+
             reforms = {
                 prince_bishopric_reform
             }
@@ -23131,7 +23169,11 @@ countries = {
         }
         capital = tirschenreuth
         government = {
-            ruler = random # TODO: add me
+            ruler = wld_johann_vi_wendel
+
+            ruler_term = { character = wld_franz_kuebel start_date = 1337.1.1 end_date = 1347.1.1 regnal_number = 0 }
+
+            ruler_term = { character = wld_johann_vi_wendel start_date = 1433.1.1 regnal_number = 6 }
         }
         country_rank = rank_county
     }
@@ -23150,8 +23192,8 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
-
             ruler = random # TODO: add me
+
             ruler_term = { character = erb_eberhard_v_erbach start_date = 1290.1.1 end_date = 1303.1.1 regnal_number = 5 }
             ruler_term = { character = erb_konrad_iii_erbach start_date = 1303.1.1 regnal_number = 3 }
 
@@ -23236,9 +23278,11 @@ countries = {
             vize
             sporades
         }
+
         own_control_conquered = {
-            burgas sozopol anhialo
+            burgas sozopol anhialo rusokastro aytos
         }
+
         our_cores_conquered_by_others = {
             #Vardar Province - lost in 1285
             kocani strumica
@@ -38949,7 +38993,7 @@ countries = {
             siatista grevena servia ostrovo
             sredets samokov plovdiv stipon ovech
             hiambouli lardeja boruy
-            tarnovo drastar tutrakan cherven razgrad shumen aytos targoviste_BUL sliven kran
+            tarnovo drastar tutrakan cherven razgrad shumen targoviste_BUL sliven kran
             nikopol pleven vratsa kutlovitsa oryahovo bozhenitsa hotalich tryavna
             varna karvuna pangalia kaliakra
             archar lom gigen dobrolak svoge kostenets strelcha ruse kladentsi lyaskovets veliki_preslav ktenia constantia_bul elhovo
@@ -38959,7 +39003,6 @@ countries = {
             tsepina
             beden haskovo perperek smolyan stanimaka
             parga ioannina argyrokastro avlonya
-            rusokastro
         }
 
         own_control_conquered = {
