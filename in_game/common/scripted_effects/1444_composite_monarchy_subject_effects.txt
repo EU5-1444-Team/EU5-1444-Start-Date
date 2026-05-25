@@ -1,3 +1,24 @@
+# Changes the composite_monarchy integration level
+change_composite_integration = {
+	hidden_effect = {
+		if = {
+			limit = { NOT = { has_variable = composite_integration } }
+			set_variable = { name = composite_integration value = $value$ }
+		}
+		else = {
+			change_variable = { name = composite_integration add = $value$ }
+			if = {
+				limit = { var:composite_integration < 0 }
+				set_variable = { name = composite_integration value = 0 }
+			}
+			if = {
+				limit = { var:composite_integration > 100 }
+				set_variable = { name = composite_integration value = 100 }
+			}
+		}
+	}
+}
+
 # Root = any country.
 # Handles release/annex logic for a subject nation.
 # Parameters:

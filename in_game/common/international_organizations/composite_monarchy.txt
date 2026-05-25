@@ -1,11 +1,13 @@
 composite_monarchy = {
     has_target = no
     unique = no
-    custom_name = composite_monarchy_name
-    show_on_diplomatic_map = yes
-    has_leader_country = yes
     expel_members_who_are_targets_of_other_members = no
     disband_if_no_leader = no
+    has_leader_country = yes
+    custom_name = composite_monarchy_name
+
+    leader_change_trigger_type = fixed
+    leader_change_method = none
     leader_title_key = "COMPOSITE_MONARCHY_LEADER"
     leader_type = character
     leader = {
@@ -32,17 +34,67 @@ composite_monarchy = {
             }
         }
     }
-    leader_change_trigger_type = fixed
-    leader_change_method = none
+
+    laws = {
+        composite_monarchy_foundation_law = composite_maintain_autonomy_policy
+        composite_monarchy_inheritance_law = composite_separate_succession_policy
+        composite_monarchy_administration_law = composite_regional_administration_policy
+        composite_monarchy_treasury_law = composite_local_treasury_policy
+        composite_monarchy_military_law = composite_regional_forces_policy
+        composite_monarchy_unification_law = composite_crown_unification_policy
+    }
+    special_statuses_implemented = {
+    }
+
+    annexation_min_years_before = {
+        value = 50
+        add = scope:recipient.modifier:years_to_annex_members
+    }
+    can_annex_members = {
+        leader_country ?= {
+            this = root
+        }
+        var:composite_integration >= 100
+    }
+    can_annex_visible = {
+        leader_country ?= {
+            this = root
+        }
+        has_variable = composite_monarchy_full_crown
+    }
+
+    #Baseline of a composite monarchy, will never change
+    join_defensive_wars_always = {
+        always = yes
+    }
+
+    can_initiate_policy_votes = {
+        scope:recipient = {
+            leader_country ?= root
+        }
+    }
+
+    can_declare_war = {
+        always = yes
+    }
+
+    modifier = {
+    }
+    leader_modifier = {
+        monthly_prestige = 0.05
+        diplomatic_reputation = diplomatic_reputation_weak_bonus
+    }
+
+    fog_of_war_lifted = yes
+    show_on_diplomatic_map = yes
+
     create_visible_trigger = {
         always = no
     }
     invite_visible_trigger = {
         always = no
     }
-    can_declare_war = {
-        always = yes
-    }
+
     can_join_trigger = {
         always = no
     }
@@ -73,12 +125,43 @@ composite_monarchy = {
             }
         }
     }
-    leader_modifier = {
-        monthly_prestige = 0.05
-        diplomatic_reputation = diplomatic_reputation_weak_bonus
+
+    on_joined = {
     }
+    on_left = {
+    }
+
+    # Set starting integration for 1444
+    on_creation = {
+        set_variable = {
+            name = composite_integration
+            value = 30
+        }
+    }
+
     monthly_effect = {
         hidden_effect = {
+            # Apply monthly integration from active policies
+            if = {
+                limit = { modifier:composite_integration_monthly > 0 }
+                change_composite_integration = { value = modifier:composite_integration_monthly }
+            }
+            # Apply base decay
+            if = {
+                limit = { has_variable = composite_integration }
+                change_variable = {
+                    name = composite_integration
+                    add = -0.1
+                }
+                if = {
+                    limit = { var:composite_integration < 0 }
+                    set_variable = { name = composite_integration value = 0 }
+                }
+            }
+            else = {
+                set_variable = { name = composite_integration value = 0 }
+            }
+
             leader_country ?= {
                 save_scope_as = composite_monarchy_leader
                 if = {
@@ -221,12 +304,6 @@ composite_monarchy = {
             change_format = "VARIABLE_CHANGE_FORMAT"
             min = 0
             max = 100
-            monthly_change = {
-                add = {
-                    desc = "BASE_DECAY"
-                    value = -0.1
-                }
-            }
         }
     }
     ai_desire_to_join = {

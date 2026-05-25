@@ -1,0 +1,542 @@
+#Composite Monarchy Foundation Law
+composite_monarchy_foundation_law = {
+	type = international_organization
+	law_category = foundation
+	potential = { 
+		international_organization_type = international_organization_type:composite_monarchy
+	}
+	allow = {
+		international_organization_lifetime >= 5
+	}
+	locked = {
+		international_organization_has_law = law:composite_monarchy_foundation_law
+		international_organization_has_policy = policy:composite_maintain_autonomy_policy
+	}
+	custom_tags = { forbids_no_policy }
+
+	composite_maintain_autonomy_policy = {
+		wants_propose_policy = {
+			subtract = {
+				desc = "VOTE_BASE_VALUE"
+				value = 100
+			}
+		}
+	}
+
+	composite_unite_crowns_policy = {
+		allow = {
+			scope:recipient = { leader_country ?= { exists = root } }
+		}
+		on_activate = {
+			change_composite_integration = { value = 5 }
+		}
+		on_deactivate = {
+			change_composite_integration = { value = -5 }
+		}
+		country_modifier = {
+			monthly_legitimacy = 0.05
+		}
+		wants_propose_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+			else = {
+				subtract = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+}
+
+#Composite Monarchy Inheritance Law
+composite_monarchy_inheritance_law = {
+	type = international_organization
+	law_category = centralization
+	potential = { 
+		international_organization_type = international_organization_type:composite_monarchy
+	}
+	allow = {
+		international_organization_lifetime >= 10
+		international_organization_has_law = law:composite_monarchy_foundation_law
+	}
+	locked = {
+		international_organization_has_policy = policy:composite_common_succession_policy
+	}
+	custom_tags = { forbids_no_policy }
+
+	composite_separate_succession_policy = {
+		wants_propose_policy = {
+			subtract = {
+				desc = "VOTE_BASE_VALUE"
+				value = 100
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+
+	composite_common_succession_policy = {
+		allow = {
+			scope:recipient = { leader_country ?= { exists = root } }
+			international_organization_has_policy = policy:composite_unite_crowns_policy
+		}
+		on_activate = {
+			change_composite_integration = { value = 5 }
+		}
+		on_deactivate = {
+			change_composite_integration = { value = -5 }
+		}
+		country_modifier = {
+			monthly_legitimacy = 0.05
+		}
+		wants_propose_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+			else = {
+				subtract = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_IS_LEADER"
+					value = 1000
+				}
+			}
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+}
+
+#Composite Monarchy Administration Law
+composite_monarchy_administration_law = {
+	type = international_organization
+	law_category = centralization
+	potential = { 
+		international_organization_type = international_organization_type:composite_monarchy
+	}
+	allow = {
+		international_organization_lifetime >= 20
+		international_organization_has_law = law:composite_monarchy_inheritance_law
+	}
+	locked = {
+		international_organization_has_policy = policy:composite_unified_administration_policy
+	}
+	custom_tags = { forbids_no_policy }
+
+	composite_regional_administration_policy = {
+		wants_propose_policy = {
+			subtract = {
+				desc = "VOTE_BASE_VALUE"
+				value = 100
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+
+	composite_unified_administration_policy = {
+		allow = {
+			scope:recipient = { leader_country ?= { exists = root } }
+			international_organization_has_policy = policy:composite_common_succession_policy
+		}
+		on_activate = {
+			change_composite_integration = { value = 10 }
+		}
+		on_deactivate = {
+			change_composite_integration = { value = -10 }
+		}
+		country_modifier = {
+			monthly_legitimacy = 0.05
+			state_maintenance_modifier = -0.1
+		}
+		wants_propose_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+			else = {
+				subtract = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_IS_LEADER"
+					value = 1000
+				}
+			}
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+}
+
+#Composite Monarchy Treasury Law
+composite_monarchy_treasury_law = {
+	type = international_organization
+	law_category = centralization
+	potential = { 
+		international_organization_type = international_organization_type:composite_monarchy
+	}
+	allow = {
+		international_organization_lifetime >= 30
+		international_organization_has_law = law:composite_monarchy_administration_law
+	}
+	locked = {
+		international_organization_has_policy = policy:composite_unified_treasury_policy
+	}
+	custom_tags = { forbids_no_policy }
+
+	composite_local_treasury_policy = {
+		wants_propose_policy = {
+			subtract = {
+				desc = "VOTE_BASE_VALUE"
+				value = 100
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+
+	composite_shared_treasury_policy = {
+		allow = {
+			scope:recipient = { leader_country ?= { exists = root } }
+			international_organization_has_policy = policy:composite_unified_administration_policy
+		}
+		on_activate = {
+			change_composite_integration = { value = 5 }
+		}
+		on_deactivate = {
+			change_composite_integration = { value = -5 }
+		}
+		country_modifier = {
+			monthly_tax_income = 0.1
+		}
+		wants_propose_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+			else = {
+				subtract = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_IS_LEADER"
+					value = 1000
+				}
+			}
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+
+	composite_unified_treasury_policy = {
+		allow = {
+			scope:recipient = { leader_country ?= { exists = root } }
+			international_organization_has_policy = policy:composite_shared_treasury_policy
+		}
+		payments_implemented = { composite_contribution }
+		on_activate = {
+			change_composite_integration = { value = 10 }
+		}
+		on_deactivate = {
+			change_composite_integration = { value = -10 }
+		}
+		country_modifier = {
+			monthly_tax_income = 0.15
+		}
+		wants_propose_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+			else = {
+				subtract = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_IS_LEADER"
+					value = 1000
+				}
+			}
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+}
+
+#Composite Monarchy Military Law
+composite_monarchy_military_law = {
+	type = international_organization
+	law_category = federal
+	potential = { 
+		international_organization_type = international_organization_type:composite_monarchy
+	}
+	allow = {
+		international_organization_lifetime >= 25
+	}
+	locked = {
+	}
+
+	composite_regional_forces_policy = {
+		wants_propose_policy = {
+			subtract = {
+				desc = "VOTE_BASE_VALUE"
+				value = 100
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+
+	composite_royal_army_policy = {
+		allow = { policy_is_voting_target = { policy = policy:composite_royal_army_policy } }
+		on_activate = {
+			change_composite_integration = { value = 5 }
+		}
+		on_deactivate = {
+			change_composite_integration = { value = -5 }
+		}
+		join_offensive_wars_auto_call = {
+			always = yes
+		}
+		country_modifier = {
+			discipline = 0.05
+		}
+		wants_propose_policy = {
+			if = {
+				limit = {
+					scope:recipient = { NOT = { leader_country ?= root } }
+				}
+				subtract = {
+					desc = "DIPLOREASON_IS_NOT_LEADER_COUNTRY"
+					value = 1000
+				}
+			}
+			else = {
+				add = {
+					desc = "BIAS_FROM_RULER_TRAITS"
+					value = modifier:bias_for_militarist_policies
+				}
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -50
+			}
+		}
+		wants_keep_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 20
+			}
+		}
+	}
+}
+
+#Composite Monarchy Unification Law
+composite_monarchy_unification_law = {
+	type = international_organization
+	law_category = centralization
+	potential = { 
+		international_organization_type = international_organization_type:composite_monarchy
+	}
+	allow = {
+		international_organization_lifetime >= 40
+		international_organization_has_law = law:composite_monarchy_treasury_law
+	}
+	locked = {
+	}
+
+	composite_crown_unification_policy = {
+		allow = {
+			scope:recipient = { leader_country ?= { exists = root } }
+			international_organization_has_policy = policy:composite_unified_treasury_policy
+		}
+		on_activate = {
+			change_composite_integration = { value = 15 }
+		}
+		on_deactivate = {
+			change_composite_integration = { value = -15 }
+		}
+		allow_member_annexation = yes
+		international_organization_modifier = {
+			annexation_speed = 1
+		}
+		wants_propose_policy = {
+			if = {
+				limit = {
+					scope:recipient = { leader_country ?= root }
+				}
+				add = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+			else = {
+				subtract = {
+					desc = "VOTE_BASE_VALUE"
+					value = 50
+				}
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "VOTE_BASE_VALUE"
+				value = -25
+			}
+		}
+		wants_keep_policy = {
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+}
