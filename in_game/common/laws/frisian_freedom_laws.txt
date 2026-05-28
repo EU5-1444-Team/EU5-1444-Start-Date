@@ -111,17 +111,17 @@ frisian_freedom_unification_law = {
 			every_international_organization_member = {
 				limit = {
 					NOT = {
-						this = root.leader_country
+						this = leader_country
 					}
 				}
-				root.leader_country = {
+				leader_country = {
 					annex_country = {
 						country = prev
 						reason = Diplomatic
 					}
 				}
 			}
-			root.leader_country = {
+			leader_country = {
 				form_country = formable_country:FRI_f
 				if = {
 					limit = {
@@ -131,8 +131,6 @@ frisian_freedom_unification_law = {
 						rank = country_rank:rank_kingdom
 					}
 				}
-			}
-			leader_country = {
 				destroy_international_organization = {
 					target = international_organization:frisian_freedom
 				}
