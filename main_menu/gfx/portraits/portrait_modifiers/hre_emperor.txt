@@ -1,0 +1,135 @@
+capes = {
+	hre_emperor = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = capes
+				template = european_royalty
+				accessory = male_capes_german_royal_ermine
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				exists = this
+				OR = {
+					AND = { # alive HRE emperor or centralized HRE ruler
+						is_ruler = yes
+						any_ruling_countries = {
+							OR = {
+								is_leader_of_international_organization = international_organization:hre
+								has_reform = government_reform:holy_imperial_monarchy_reform
+							}
+							NOR = {
+								government_type = government_type:theocracy
+								government_type = government_type:republic
+							}
+						}
+					}
+					AND = { # dead HRE emperor or centralized HRE ruler
+						any_ruling_countries = {
+							OR = {
+								is_leader_of_international_organization = international_organization:hre
+								has_reform = government_reform:holy_imperial_monarchy_reform
+							}
+						}
+						is_alive = no
+					}
+				}
+			}
+		}
+	}
+}
+
+neckware_outer = {
+	hre_emperor = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = neckware_outer
+				template = european_royalty
+				accessory = male_neckwear_german_out_royal_livery_collar
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				exists = this
+				OR = {
+					AND = { # alive HRE emperor or centralized HRE ruler
+						is_ruler = yes
+						any_ruling_countries = {
+							OR = {
+								is_leader_of_international_organization = international_organization:hre
+								has_reform = government_reform:holy_imperial_monarchy_reform
+							}
+							NOR = {
+								government_type = government_type:theocracy
+								government_type = government_type:republic
+							}
+						}
+					}
+					AND = { # dead HRE emperor or centralized HRE ruler
+						any_ruling_countries = {
+							OR = {
+								is_leader_of_international_organization = international_organization:hre
+								has_reform = government_reform:holy_imperial_monarchy_reform
+							}
+						}
+						is_alive = no
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				portrait_early_trigger = yes
+			}
+		}
+	}
+}
+
+headwear = {
+	hre_emperor = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headwear
+				template = european_imperial
+				range = { 0 1 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				exists = this
+				OR = {
+					AND = { # alive HRE emperor or centralized HRE ruler
+						is_ruler = yes
+						any_ruling_countries = {
+							OR = {
+								is_leader_of_international_organization = international_organization:hre
+								has_reform = government_reform:holy_imperial_monarchy_reform
+							}
+							NOR = {
+								government_type = government_type:theocracy
+								government_type = government_type:republic
+							}
+						}
+					}
+					AND = { # dead HRE emperor or centralized HRE ruler
+						any_ruling_countries = {
+							OR = {
+								is_leader_of_international_organization = international_organization:hre
+								has_reform = government_reform:holy_imperial_monarchy_reform
+							}
+						}
+						is_alive = no
+					}
+				}
+			}
+		}
+	}
+}
