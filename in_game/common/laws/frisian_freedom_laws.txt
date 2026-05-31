@@ -73,11 +73,6 @@ frisian_freedom_unification_law = {
 	potential = {
 		international_organization_type = international_organization_type:frisian_freedom
 	}
-	allow = {
-		any_international_organization_member = {
-			count >= 2
-		}
-	}
 	custom_tags = {
 		forbids_no_policy
 	}
@@ -108,32 +103,8 @@ frisian_freedom_unification_law = {
 		}
 		on_fully_activated = {
 			custom_tooltip = frisian_freedom_unification_tt
-			every_international_organization_member = {
-				limit = {
-					NOT = {
-						this = leader_country
-					}
-				}
-				leader_country = {
-					annex_country = {
-						country = prev
-						reason = Diplomatic
-					}
-				}
-			}
 			leader_country = {
-				form_country = formable_country:FRI_f
-				if = {
-					limit = {
-						country_rank_level < 3
-					}
-					set_country_rank_effect = {
-						rank = country_rank:rank_kingdom
-					}
-				}
-				destroy_international_organization = {
-					target = international_organization:frisian_freedom
-				}
+				trigger_event_silently = { id = frisian_freedom_unification.1 }
 			}
 		}
 		years = 10

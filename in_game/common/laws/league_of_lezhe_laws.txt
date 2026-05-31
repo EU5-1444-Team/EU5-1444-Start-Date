@@ -392,40 +392,8 @@ league_of_lezhe_unification_law = {
         }
         on_fully_activated = {
             custom_tooltip = league_of_lezhe_unification_tt
-            every_international_organization_member = {
-                limit = {
-                    NOT = {
-                        this = root.leader_country
-                    }
-                    NOT = {
-                        has_special_status_in_international_organization = {
-                            type = special_status:league_backer
-                            international_organization = root
-                        }
-                    }
-                }
-                root.leader_country = {
-                    annex_country = {
-                        country = prev
-                        reason = Diplomatic
-                    }
-                }
-            }
-            root.leader_country = {
-                form_country = formable_country:ALB_f
-                if = {
-                    limit = {
-                        country_rank_level < 3
-                    }
-                    set_country_rank_effect = {
-                        rank = country_rank:rank_kingdom
-                    }
-                }
-            }
             leader_country = {
-                destroy_international_organization = {
-                    target = international_organization:league_of_lezhe
-                }
+                trigger_event_silently = { id = io_unification.60 }
             }
         }
         years = 10
