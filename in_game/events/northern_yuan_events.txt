@@ -144,69 +144,12 @@ northern_yuan.101 = {
     }
 }
 
-# Yuan restored — annex all clans
-northern_yuan.102 = {
-    type = country_event
-    title = northern_yuan.102.title
-    desc = northern_yuan.102.desc
-
-    illustration_tags = {
-        10 = happy
-        10 = interior
-    }
-
-    immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        
-        # Consistent Capture Logic
-        international_organization:northern_yuan = {
-            every_international_organization_member = {
-                limit = {
-                    has_special_status_in_international_organization = {
-                        type = special_status:protector_general
-                        international_organization = international_organization:northern_yuan
-                    }
-                }
-                save_scope_as = northern_yuan_boss_scope
-            }
-        }
-    }
-
-    option = {
-        name = northern_yuan.102.a
-        custom_tooltip = {
-            text = northern_yuan.102.ctt
-            international_organization:northern_yuan = {
-                every_international_organization_member = {
-                    limit = {
-                        NOT = { this = scope:northern_yuan_boss_scope }
-                    }
-                    # We trigger 103 for the clans
-                    trigger_event_silently = { id = northern_yuan.103 }
-                }
-            }
-            every_country = {
-                limit = {
-                    is_subject_of = scope:northern_yuan_boss_scope
-                    NOT = { this = scope:northern_yuan_boss_scope }
-                    culture = { has_culture_group = culture_group:mongolian_group }
-                }
-                trigger_event_silently = { id = northern_yuan.103 } # Or 105
-            }
-        }
-        scope:northern_yuan_boss_scope = {
-            form_country = formable_country:YUA_f
-            set_country_rank_effect = { rank = country_rank:rank_empire }
-        }
-        destroy_international_organization = { target = international_organization:northern_yuan }
-    }
-}
-
 # ...and for member clans (Yuan path)
 northern_yuan.103 = {
     type = country_event
     title = northern_yuan.103.title
     desc = northern_yuan.103.desc
+    outcome = neutral
 
     illustration_tags = {
         10 = happy
@@ -215,81 +158,19 @@ northern_yuan.103 = {
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        
-        # Redundant check to ensure the scope exists when this event pops
-        international_organization:northern_yuan = {
-            every_international_organization_member = {
-                limit = {
-                    has_special_status_in_international_organization = {
-                        type = special_status:protector_general
-                        international_organization = international_organization:northern_yuan
-                    }
-                }
-                save_scope_as = northern_yuan_boss_scope
-            }
-        }
     }
 
     option = {
         name = northern_yuan.103.a
-        scope:northern_yuan_boss_scope = {
-            annex_country_diplomatically = { country = root }
-        }
-    }
-}
 
-# Mongolia united — annex all clans
-northern_yuan.104 = {
-    type = country_event
-    title = northern_yuan.104.title
-    desc = northern_yuan.104.desc
-
-    illustration_tags = {
-        10 = happy
-        10 = interior
-    }
-
-    immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        
-        international_organization:northern_yuan = {
-            every_international_organization_member = {
-                limit = {
-                    has_special_status_in_international_organization = {
-                        type = special_status:protector_general
-                        international_organization = international_organization:northern_yuan
-                    }
-                }
-                save_scope_as = northern_yuan_boss_scope
+        if = {
+            limit = {
+                country_type = location
+            }
+            scope:target_country = {
+                annex_country_diplomatically = { country = root }
             }
         }
-    }
-
-    option = {
-        name = northern_yuan.104.a
-        custom_tooltip = {
-            text = northern_yuan.104.ctt
-            international_organization:northern_yuan = {
-                every_international_organization_member = {
-                    limit = {
-                        NOT = { this = scope:northern_yuan_boss_scope }
-                    }
-                    trigger_event_silently = { id = northern_yuan.105 }
-                }
-            }
-        }
-        scope:northern_yuan_boss_scope = {
-            form_country = formable_country:MGO_f
-            set_country_rank_effect = { rank = country_rank:rank_empire }
-        }
-        # Variable cleanup
-        international_organization:northern_yuan = {
-            set_variable = {
-                name = yeke_mongghul_ulus
-                value = 0
-            }
-        }
-        destroy_international_organization = { target = international_organization:northern_yuan }
     }
 }
 
@@ -298,6 +179,7 @@ northern_yuan.105 = {
     type = country_event
     title = northern_yuan.105.title
     desc = northern_yuan.105.desc
+    outcome = neutral
 
     illustration_tags = {
         10 = happy
@@ -306,24 +188,18 @@ northern_yuan.105 = {
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        
-        international_organization:northern_yuan = {
-            every_international_organization_member = {
-                limit = {
-                    has_special_status_in_international_organization = {
-                        type = special_status:protector_general
-                        international_organization = international_organization:northern_yuan
-                    }
-                }
-                save_scope_as = northern_yuan_boss_scope
-            }
-        }
     }
 
     option = {
         name = northern_yuan.105.a
-        scope:northern_yuan_boss_scope = {
-            annex_country_diplomatically = { country = root }
+
+        if = {
+            limit = {
+                country_type = location
+            }
+            scope:target_country = {
+                annex_country_diplomatically = { country = root }
+            }
         }
     }
 }

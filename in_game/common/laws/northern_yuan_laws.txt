@@ -1442,11 +1442,8 @@ northern_yuan_consolidation_law = {
         on_activate = {
             leader_country = {
                 add_reform = government_reform:legacy_of_kublai_khan_reform
-            }
-            every_country_with_special_status_of_type = {
-                type = protector_general
                 add_country_modifier = { modifier = northern_yuan_legacy_modifier years = -1 mode = add }
-                trigger_event_non_silently = northern_yuan.102
+                trigger_event_non_silently = { id = io_unification.110 }
             }
         }
         wants_propose_policy = {
@@ -1490,12 +1487,8 @@ northern_yuan_consolidation_law = {
         on_activate = {
             leader_country = {
                 add_reform = government_reform:legacy_of_the_steppe_reform
-            }
-            every_country_with_special_status_of_type = {
-                type = protector_general
                 add_country_modifier = { modifier = northern_yuan_legacy_modifier years = -1 mode = add }
-                # Triggering the Mongolia-specific event
-                trigger_event_non_silently = northern_yuan.104
+                trigger_event_non_silently = { id = io_unification.120 }
             }
         }
         wants_propose_policy = {
