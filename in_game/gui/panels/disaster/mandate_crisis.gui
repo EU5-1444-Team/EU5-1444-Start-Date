@@ -1,0 +1,377 @@
+disaster_panel = {
+
+	##################################### TOP HEADER #####################################
+
+	blockoverride "disaster_subheader" {}
+
+	##################################### MAIN IMAGE #####################################
+
+	blockoverride "main_image" {
+		widget = {
+			layoutpolicy_horizontal = expanding
+			size = { -1 220 }
+			scissor = yes
+
+			using = two_countries_header_template
+
+			blockoverride "two_countries_header_image" {
+				background = {
+					texture = "[GetDisasterIllustration(DisasterView.GetDisaster.Self)]"
+					texture_density = 2
+					spriteType = stretched
+					spriteborder = { 0 0 }
+				}
+			}
+
+			blockoverride "FirstCountryContext" {
+				datacontext = "[DisasterView.GetDisaster.GetOwner]"
+			}
+
+			blockoverride "SecondCountryContext" {
+				datacontext = "[GetUniqueInternationalOrganization('red_turban_rebels').GetLeaderCountry]"
+			}
+
+			blockoverride "first_character_portrait_anchor" {
+				parentanchor = bottom|left
+			}
+
+			blockoverride "second_character_portrait_anchor" {
+				parentanchor = bottom|right
+			}
+
+			blockoverride "character_religion_visibility" {
+				visible = no
+			}
+
+			blockoverride "character_name_maximumsize" {
+				maximumsize = { 270 -1 }
+			}
+
+			blockoverride "country_header_extra" {
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					margin = { 10 10 }
+					spacing = 8
+
+					expand = {}
+				}
+			}
+		}
+	}
+
+	##################################### TAB NAME #####################################
+
+	blockoverride "disaster_secondary_tab" {
+		margin_top = 10
+		spacing = 5
+		disaster_card_expandable = {
+			blockoverride "header_button_onclick" {
+				onclick = "[LateralView.Vars.Toggle( 'requirements_toggled' )]"
+			}
+			blockoverride "header_text" {
+				text = "END_REQUIREMENTS"
+			}
+			blockoverride "header_icon" {
+				texture = "gfx/interface/icons/disasters/end_requirements_green.dds"
+			}
+			blockoverride "bottom_content" {
+				TooltipRequirementsList = {
+					textcontext = "[DisasterView.GetDisaster.GetType.GetEndConditions]"
+				}
+			}
+			blockoverride "bottom_content_onclick" {
+				visible = "[LateralView.Vars.Exists( 'requirements_toggled' )]"
+			}
+			blockoverride "icon_replace_visible_yes" {
+				visible = "[LateralView.Vars.Exists( 'requirements_toggled' )]"
+			}
+			blockoverride "icon_replace_visible_not" {
+				visible = "[Not(LateralView.Vars.Exists( 'requirements_toggled' ))]"
+			}
+		}
+	}
+
+	##################################### MAIN CONTENT #####################################
+
+	blockoverride "disaster_main_content_subheader" {}
+	blockoverride "disaster_monthly_outcomes" {}
+	blockoverride "disaster_description" {}
+
+	blockoverride "main_content" {
+		vbox = {
+			margin_top = 10
+			spacing = 5
+
+			disaster_fancy_two_line_card = {
+				visible = "[GetUniqueInternationalOrganization('red_turban_rebels').HasValidLeaderCountry]"
+				block "card_datacontext" { }
+
+				blockoverride "left_flag_properties" {
+					datacontext = "[DisasterView.GetDisaster.GetOwner]"
+					visible = "[Country.IsValid]"
+				}
+				blockoverride "left_bottom_flag" { }
+				blockoverride "left_top_text" {
+					margin_top = 10
+					margin_bottom = -10
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					visible = "[DisasterView.GetDisaster.GetOwner.IsValid]"
+					text = "[DisasterView.GetDisaster.GetOwner.GetName]"
+				}
+				blockoverride "left_bottom_text" {
+					visible = "[GetUniqueInternationalOrganization('red_turban_rebels').HasValidLeaderCountry]"
+					margin_top = 5
+					text = "YUA_STR_TT"
+					tooltipwidget = {
+						ContextualTooltipType = {
+							blockoverride "title_icon" {
+								country_flag_small = {
+										datacontext = "[DisasterView.GetDisaster.GetOwner]"
+								}
+							}
+							blockoverride "title_text" {
+								text = "RELATIVE_MILITARY_STRENGTH_YUA_TT_TITLE"
+							}
+							blockoverride "tooltip_content" {
+								TooltipStringPairList = {
+									blockoverride "block_title" {
+										text = "RELATIVE_MILITARY_STRENGTH_YUA_TT_TEXT"
+									}
+									textcontext = "YUA_STR_DESC"
+								}
+							}
+						}
+					}
+				}
+
+				blockoverride "right_flag_properties" {
+					datacontext = "[GetUniqueInternationalOrganization('red_turban_rebels').GetLeaderCountry]"
+					visible = "[Country.IsValid]"
+				}
+				blockoverride "right_bottom_flag" { }
+				blockoverride "right_top_text" {
+					margin_top = 10
+					margin_bottom = -10
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					visible = "[GetUniqueInternationalOrganization('red_turban_rebels').GetLeaderCountry.IsValid]"
+					text = "[GetUniqueInternationalOrganization('red_turban_rebels').GetLeaderCountry.GetName]"
+				}
+				blockoverride "right_bottom_text" {
+					text = "REB_STR_TT"
+					margin_top = 5
+					tooltipwidget = {
+						ContextualTooltipType = {
+							blockoverride "title_icon" {
+								country_flag_small = {
+									datacontext = "[GetUniqueInternationalOrganization('red_turban_rebels').GetLeaderCountry]"
+								}
+							}
+							blockoverride "title_text" {
+								text = "RELATIVE_MILITARY_STRENGTH_REB_TT_TITLE"
+							}
+							blockoverride "tooltip_content" {
+								TooltipStringPairList = {
+									blockoverride "block_title" {
+										text = "RELATIVE_MILITARY_STRENGTH_REB_TT_TEXT"
+									}
+									textcontext = "REB_STR_DESC"
+								}
+							}
+						}
+					}
+				}
+
+				blockoverride "center_visible_trigger" { }
+				blockoverride "center_content" {
+					button = {
+						visible = "[GetUniqueInternationalOrganization('red_turban_rebels').Exists]"
+						datacontext = "[GetUniqueInternationalOrganization('red_turban_rebels')]"
+						texture = "[GetUniqueInternationalOrganization('red_turban_rebels').GetIcon]"
+						texture_density = 2
+						size = { 45 45 }
+						glow = {
+							name = "drop_shadow"
+							glow_radius = 3
+							color = { 0.0 0.0 0.0 1.0 }
+							alpha = 0.6
+						}
+						onclick = "[OpenInternationalOrganizationView(GetUniqueInternationalOrganization('red_turban_rebels').Self)]"
+						tooltipwidget = {
+							using = InternationalOrganization_tooltip
+						}
+						onmousehierarchyenter = "[PdxGuiWidget.SetHighlightInternationalOrganization(GetUniqueInternationalOrganization('red_turban_rebels').Self)]"
+					}
+				}
+			}
+
+			disaster_card_expandable = {
+				blockoverride "header_button_onclick" {
+					onclick = "[LateralView.Vars.Toggle( 'chi_supporters_toggled' )]"
+				}
+				blockoverride "bottom_content_onclick" {
+					visible = "[LateralView.Vars.Exists( 'chi_supporters_toggled' )]"
+				}
+				blockoverride "icon_replace_visible_yes" {
+					visible = "[LateralView.Vars.Exists( 'chi_supporters_toggled' )]"
+				}
+				blockoverride "icon_replace_visible_not" {
+					visible = "[Not(LateralView.Vars.Exists( 'chi_supporters_toggled' ))]"
+				}
+				blockoverride "header_icon" {
+						country_flag_small = {
+							parentanchor = center
+							datacontext = "[DisasterView.GetDisaster.GetOwner]"
+						}
+					}
+				blockoverride "header_text" {
+					margin_left = 5
+					text = "RTR_LOYALISTS_TITLE"
+				}
+				blockoverride "header_content_rest" { }
+				blockoverride "bottom_content" {
+					scrollarea = {
+						layoutpolicy_horizontal = expanding
+						autoresizescrollarea = yes
+						scrollbarpolicy_horizontal = always_off
+						scrollbar_vertical = {
+							using = Scrollbar_Vertical
+						}
+
+						scrollwidget = {
+							dynamicgridbox = {
+								flipdirection = yes
+								datamodel_wrap = 13
+								maxhorizontalslots = 13
+								datamodel = "[GetGlobalList('rtr_loyal_faction')]"
+								item = {
+									country_flag_small = {
+										datacontext = "[Scope.GetCountry]"
+										blockoverride "click" {
+											onclick = "[OpenDiplomacy(Country.Self)]"
+										}
+										tooltipwidget = {
+											using = CountryTooltip
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			disaster_card_expandable = {
+				visible = "[GetUniqueInternationalOrganization('red_turban_rebels').HasValidLeaderCountry]"
+				blockoverride "header_button_onclick" {
+					onclick = "[LateralView.Vars.Toggle( 'rebels_toggled' )]"
+				}
+				blockoverride "bottom_content_onclick" {
+					visible = "[LateralView.Vars.Exists( 'rebels_toggled' )]"
+				}
+				blockoverride "icon_replace_visible_yes" {
+					visible = "[LateralView.Vars.Exists( 'rebels_toggled' )]"
+				}
+				blockoverride "icon_replace_visible_not" {
+					visible = "[Not(LateralView.Vars.Exists( 'rebels_toggled' ))]"
+				}
+				blockoverride "header_icon" {
+					country_flag_small = {
+						parentanchor = center
+						datacontext = "[GetUniqueInternationalOrganization('red_turban_rebels').GetLeaderCountry]"
+					}
+				}
+				blockoverride "header_text" {
+					margin_left = 5
+					text = "RTR_REBELS_TITLE"
+				}
+				blockoverride "header_content_rest" { }
+				blockoverride "bottom_content" {
+					scrollarea = {
+						layoutpolicy_horizontal = expanding
+						autoresizescrollarea = yes
+						scrollbarpolicy_horizontal = always_off
+						scrollbar_vertical = {
+							using = Scrollbar_Vertical
+						}
+
+						scrollwidget = {
+							dynamicgridbox = {
+								flipdirection = yes
+								datamodel_wrap = 13
+								maxhorizontalslots = 13
+								datamodel = "[GetUniqueInternationalOrganization('red_turban_rebels').GetMembers]"
+								item = {
+									country_flag_small = {
+										datacontext = "[Scope.GetCountry]"
+										blockoverride "click" {
+											onclick = "[OpenDiplomacy(Country.Self)]"
+										}
+										tooltipwidget = {
+											using = CountryTooltip
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			disaster_card_expandable = {
+				blockoverride "header_button_onclick" {
+					onclick = "[LateralView.Vars.Toggle( 'neutral_toggled' )]"
+				}
+				blockoverride "bottom_content_onclick" {
+					visible = "[LateralView.Vars.Exists( 'neutral_toggled' )]"
+				}
+				blockoverride "icon_replace_visible_yes" {
+					visible = "[LateralView.Vars.Exists( 'neutral_toggled' )]"
+				}
+				blockoverride "icon_replace_visible_not" {
+					visible = "[Not(LateralView.Vars.Exists( 'neutral_toggled' ))]"
+				}
+				blockoverride "header_icon" {
+					texture = "gfx/interface/icons/flat_icons/neutral.dds"
+				}
+				blockoverride "header_text" {
+					margin_left = 5
+					text = "RTR_NEUTRALS_TITLE"
+				}
+				blockoverride "header_content_rest" { }
+				blockoverride "bottom_content" {
+					scrollarea = {
+						layoutpolicy_horizontal = expanding
+						autoresizescrollarea = yes
+						scrollbarpolicy_horizontal = always_off
+						scrollbar_vertical = {
+							using = Scrollbar_Vertical
+						}
+
+						scrollwidget = {
+							dynamicgridbox = {
+								flipdirection = yes
+								datamodel_wrap = 13
+								maxhorizontalslots = 13
+								datamodel = "[GetGlobalList('rtr_neutral_faction')]"
+								item = {
+									country_flag_small = {
+										datacontext = "[Scope.GetCountry]"
+										blockoverride "click" {
+											onclick = "[OpenDiplomacy(Country.Self)]"
+										}
+										tooltipwidget = {
+											using = CountryTooltip
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

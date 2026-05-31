@@ -1,0 +1,99 @@
+﻿timurid_appanage = {
+	subject_pays = subject_pays_tributary
+	color = subject_timurid_appanage
+	level = 0
+	annullment_favours_required = 999
+
+	join_offensive_wars_always = {
+		NOT = {
+			scope:actor ?= {
+				is_subject_of = scope:recipient
+			}
+		}
+	}
+	join_defensive_wars_always = {
+		scope:actor ?= {
+				is_subject_of = scope:recipient
+			}
+	}
+
+	has_overlords_ruler = no
+	can_be_annexed = no
+	overlord_can_cancel = no
+	subject_can_cancel = no
+
+	has_limited_diplomacy = no
+
+	allow_declaring_wars = { always = yes }
+
+	can_change_rank = yes
+	can_change_heir_selection = yes
+
+	diplomatic_capacity_cost_scale = 0.0
+
+	food_access = yes
+
+	strength_vs_overlord = 2
+
+	great_power_score_transfer = 0.1
+
+	institution_spread_to_overlord = monthly_institution_spread_severe
+	institution_spread_to_subject = monthly_institution_spread_severe
+
+	use_overlord_map_color = yes
+	use_overlord_map_name = yes
+
+	creation_visible = {
+		always = no
+	}
+
+	subject_creation_enabled = {
+		always = no
+	}
+
+	release_country_enabled = {
+		always = no
+	}
+
+	visible_through_diplomacy = {
+		always = no
+	}
+
+	visible_through_treaty = {
+		always = no
+	}
+
+	enabled_through_diplomacy = {
+		always = no
+	}
+
+	on_enable = {
+	}
+
+	on_disable = {
+	}
+
+	diplo_chance_accept_subject = {
+		base = -9999
+	}
+
+	diplo_chance_accept_overlord = {
+		base = -9999
+	}
+
+	ai_wants_to_be_overlord = {
+		scope:subject = {
+			add = {
+				desc = "TIMURID_APPANAGE_WANTS_OVERLORD"
+				value = 0
+			}
+		}
+	}
+
+	ai_wants_to_be_subject = {
+		add = {
+			desc = "TIMURID_APPANAGE_WANTS_SUBJECT"
+			value = 0
+		}
+	}
+}

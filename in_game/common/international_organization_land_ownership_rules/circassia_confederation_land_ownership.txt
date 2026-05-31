@@ -1,0 +1,59 @@
+﻿circassia_confederation_land_ownership = {
+	modifier = {
+	}
+	can_add_trigger = {
+		always = yes
+	}
+	can_remove_trigger = {
+		always = yes
+	}
+	can_add_location_trigger = {
+		is_land = yes
+		is_passable = yes
+		owner ?= {
+			is_member_of_international_organization = scope:recipient
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer_circassia
+					international_organization = scope:recipient
+				}
+			}
+		}
+		OR = {
+			region = region:steppes_region
+			any_neighbor_location = {
+				is_owned_by_international_organization = scope:recipient
+			}
+		}
+	}
+	can_remove_location_trigger = {
+		OR = {
+			owner ?= {
+				NOT = {
+					is_member_of_international_organization = scope:recipient
+				}
+			}
+			owner ?= {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer_circassia
+					international_organization = scope:recipient
+				}
+			}
+			AND = {
+				NOT = { region = region:steppes_region }
+				owner ?= {
+					NOT = {
+						is_leader_of_international_organization = scope:recipient
+					}
+				}
+			}
+		}
+	}
+	on_added = {
+	}
+	on_removed = {
+	}
+	ai_desire_to_add = {
+	}
+	allow_control_propagation = yes
+}

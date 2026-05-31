@@ -1,0 +1,153 @@
+﻿frisian_freedom_defense_law = {
+	law_category = military
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:frisian_freedom
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	frisian_freedom_defense_policy = {
+		allow = {
+			always = yes
+		}
+		# Frisian Freedom members defend each other.
+		join_defensive_wars_always = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+}
+
+frisian_freedom_offense_law = {
+	law_category = military
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:frisian_freedom
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	frisian_freedom_offensive_coordination_policy = {
+		allow = {
+			always = yes
+		}
+		join_offensive_wars_can_call = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+	frisian_freedom_no_offense_policy = {
+		allow = {
+			always = yes
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+}
+
+frisian_freedom_unification_law = {
+	law_category = centralization
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:frisian_freedom
+	}
+	custom_tags = {
+		forbids_no_policy
+	}
+	preserve_frisian_freedom_policy = {
+		allow = {
+			always = yes
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+	unify_frisia_policy = {
+		allow = {
+			always = yes
+		}
+		wants_propose_policy = {
+			add = {
+				value = 500
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				value = prev_opinion_of_this
+				multiply = 0.3
+			}
+		}
+		on_fully_activated = {
+			custom_tooltip = frisian_freedom_unification_tt
+			leader_country = {
+				trigger_event_silently = { id = frisian_freedom_unification.1 }
+			}
+		}
+		years = 10
+	}
+}
+
+frisian_freedom_culture_law = {
+	law_category = administrative
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:frisian_freedom
+	}
+	allow = {
+		always = yes
+	}
+	locked = {
+	}
+	frisian_culture_policy = {
+		allow = {
+			always = yes
+		}
+		on_activate = {
+			every_international_organization_member = {
+				limit = {
+					NOT = { culture = culture:frisian }
+				}
+				change_culture = culture:frisian
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+	frisian_culture_optional_policy = {
+		allow = {
+			always = yes
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+}

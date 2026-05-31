@@ -1,1129 +1,992 @@
-local_administration = {
-	type = international_organization
-	law_category = administrative
-	requires_vote = no
-	potential = {
+﻿mongol_local_administration = {
+    type = international_organization
+    law_category = administrative
+    requires_vote = yes
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
-            international_organization_type = international_organization_type:oirat_confederation
-        }
-	}
-	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country = {
-				has_variable = local_adm_law_cooldown_variable
-			}
-		}
-	}
-
-	tribal_administration_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = local_adm_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-			every_international_organization_member = {
-				change_societal_value = {
-					type = centralization_vs_decentralization
-					value = societal_value_minor_move_to_right
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_towards_decentralization = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-		}
-	}
-
-	sinicized_administration_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = local_adm_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-			every_international_organization_member = {
-				change_societal_value = {
-					type = centralization_vs_decentralization
-					value = societal_value_minor_move_to_left
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_centralization = societal_value_monthly_move
-			monthly_towards_sinicized = societal_value_monthly_move
-			country_cabinet_efficiency = 0.05
-			monthly_tribal_cohesion = -0.05
-		}
-	}
-}
-
-tax_obligations = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
-        OR = {
-            international_organization_type = international_organization_type:khalkha_confederation
-            international_organization_type = international_organization_type:khorchin_confederation
-            international_organization_type = international_organization_type:oirat_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
-	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country = {
-				has_variable = tax_law_cooldown_variable
-			}
-		}
-	}
-
-	no_tax_obligations_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = tax_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			global_estate_target_satisfaction = small_permanent_target_satisfaction
-			monthly_tribal_cohesion = 0.01
-			monthly_towards_unsinicized = societal_value_monthly_move
-		}
-	}
-
-	fair_tax_obligations_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = tax_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			tax_income_efficiency = large_tax_income_efficiency_bonus
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = -0.03
-		}
-	}
-
-	extensive_tax_obligations_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = tax_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			tax_income_efficiency = large_tax_income_efficiency_bonus
-			monthly_tribal_cohesion = -0.05
-			global_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
-			monthly_towards_sinicized = societal_value_monthly_move
-		}
-	}
-}
-
-court_etiquette = {
-	type = international_organization
-	law_category = estates
-	requires_vote = no
-	potential = {
-        OR = {
-            international_organization_type = international_organization_type:khalkha_confederation
-            international_organization_type = international_organization_type:khorchin_confederation
-            international_organization_type = international_organization_type:oirat_confederation
-        }
-	}
-	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country = {
-				has_variable = court_law_cooldown_variable
-			}
-		}
-	}
-
-	no_court_etiquette_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = court_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			court_spending_cost = -0.01
-			monthly_tribal_cohesion = 0.02
-			monthly_towards_unsinicized = societal_value_monthly_move
-		}
-	}
-
-	basic_court_etiquette_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = court_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			
-			diplomatic_reputation = diplomatic_reputation_weak_bonus
-			court_spending_cost = -0.01
-			monthly_towards_sinicized = societal_value_monthly_move
-		}
-	}
-
-	sinicized_court_etiquette_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = court_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			court_spending_cost = 0.01
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_prestige = 0.05
-			monthly_tribal_cohesion = -0.05
-		}
-	}
-}
-
-formal_script = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
-        OR = {
-            international_organization_type = international_organization_type:khalkha_confederation
-            international_organization_type = international_organization_type:khorchin_confederation
-            international_organization_type = international_organization_type:oirat_confederation
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 90
         }
     }
-	allow = {
-		leader_country = { tribal_cohesion > 5 }
-
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country = { has_variable = script_law_cooldown_variable }
-		}
-	}
-
-	mongol_script_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = script_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-			every_international_organization_member = {
-				change_societal_value = {
-					type = traditionalist_vs_innovative
-					value = societal_value_large_move_to_left
-				}
-			}
-		}
-
-		country_modifier = {
-			monthly_towards_traditionalist = societal_value_monthly_move
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-		}
-	}
-
-	sinicized_script_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = script_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-			every_international_organization_member = {
-				change_societal_value = {
-					type = centralization_vs_decentralization
-					value = societal_value_move_to_left
-				}
-			}
-		}
-	
-		country_modifier = {
-			research_speed_modifier = 0.05
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_towards_centralization = societal_value_minor_monthly_move
-			monthly_tribal_cohesion = -0.05
-		}
-	}
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= {
+                has_variable = local_adm_law_cooldown_variable
+            }
+        }
+    }
+ 
+    mongol_tribal_administration_policy = {
+        wants_propose_policy = { add = { value = 100 } }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = local_adm_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = centralization_vs_decentralization
+                    value = societal_value_minor_move_to_right
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_horde_unity = 0.05
+            discipline = 0.0075
+            global_estate_satisfaction_recovery = 0.02
+            stability_decay = 0.001
+        }
+    }
+ 
+    mongol_sinicized_administration_policy = {
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = local_adm_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = centralization_vs_decentralization
+                    value = societal_value_minor_move_to_left
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_towards_centralization = societal_value_monthly_move
+            country_cabinet_efficiency = 0.05
+            monthly_horde_unity = -0.03
+            stability_decay = -0.001
+        }
+    }
 }
-
-legal_framework = {
-	type = international_organization
-	law_category = administrative
-	requires_vote = no
-	potential = {
+ 
+mongol_tax_obligations = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = yes
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
-            international_organization_type = international_organization_type:oirat_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
-	}
-	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country = { has_variable = legal_law_cooldown_variable }
-		}
-	}
-
-	no_legal_framework_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = legal_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			stability_decay = 0.002
-			monthly_tribal_cohesion = 0.05
-			monthly_towards_unsinicized = societal_value_monthly_move
-		}
-	}
-
-	basic_legal_framework_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = legal_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-
-		country_modifier = {
-			monthly_towards_centralization = societal_value_minor_monthly_move
-			global_distance_from_capital_cost_modifier = -0.05
-			monthly_tribal_cohesion = -0.03
-		}
-	}
-
-	sinicized_legal_framework_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = legal_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			monthly_towards_centralization = societal_value_minor_monthly_move
-			monthly_towards_sinicized = societal_value_monthly_move
-			global_distance_from_capital_cost_modifier = -0.1
-			monthly_tribal_cohesion = -0.1
-		}
-	}
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 80
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= {
+                has_variable = tax_law_cooldown_variable
+            }
+        }
+    }
+ 
+    mongol_no_tax_obligations_policy = {
+        wants_propose_policy = { add = { value = 100 } }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = tax_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_horde_unity = 0.03
+            global_manpower_modifier = 0.05
+            discipline = 0.0075
+            monthly_gold_income = -0.03
+        }
+    }
+ 
+    mongol_fair_tax_obligations_policy = {
+        wants_propose_policy = { add = { value = 300 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = tax_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_gold_income = 0.04
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_horde_unity = -0.02
+        }
+    }
+ 
+    mongol_extensive_tax_obligations_policy = {
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = tax_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_gold_income = 0.08
+            tax_income_efficiency = 0.05
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_horde_unity = -0.05
+            global_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+        }
+    }
 }
-
-economic_framework = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
+ 
+mongol_court_etiquette = {
+    type = international_organization
+    law_category = estates
+    requires_vote = yes
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
-            international_organization_type = international_organization_type:oirat_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
-	}
-	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country = { has_variable = economic_framework_cooldown_variable }
-		}
-	}
-
-	shared_crops_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = economic_framework_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_traditional_economy = societal_value_monthly_move
-			global_monthly_food_modifier = 0.1
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-		}
-	}
-
-	decentralized_farming_villages = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = economic_framework_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_traditional_economy = societal_value_minor_monthly_move
-			monthly_towards_sinicized = societal_value_monthly_move
-			stability_investment = small_stability_investment
-		}
-	}
-
-	financed_rgo_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = economic_framework_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			global_max_rgo_size_modifier = 0.2
-			monthly_towards_capital_economy = societal_value_monthly_move
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = -0.05
-		}
-	}
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 70
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= {
+                has_variable = court_law_cooldown_variable
+            }
+        }
+    }
+ 
+    mongol_no_court_etiquette_policy = {
+        wants_propose_policy = { add = { value = 100 } }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = court_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_horde_unity = 0.04
+            global_tribes_estate_power = 0.1
+            court_spending_cost_modifier = -0.02
+            discipline = 0.0075
+        }
+    }
+ 
+    mongol_basic_court_etiquette_policy = {
+        wants_propose_policy = { add = { value = 300 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = court_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_prestige = 0.05
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_horde_unity = -0.02
+        }
+    }
+ 
+    mongol_sinicized_court_etiquette_policy = {
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = court_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_prestige = 0.1
+            monthly_legitimacy = 0.25
+            country_cabinet_efficiency = 0.03
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_horde_unity = -0.05
+            court_spending_cost_modifier = 0.02
+        }
+    }
 }
-
-trade_relations = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
+ 
+mongol_formal_script = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = yes
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
-            international_organization_type = international_organization_type:oirat_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
-	}
-	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country = { has_variable = trade_law_cooldown_variable }
-		}
-	}
-
-	clan_trade_only_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = trade_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			global_trade_protection_factor = 0.15
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-			monthly_towards_mercantilism = societal_value_monthly_move
-		}
-	}
-
-	allow_foreign_exchanges_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = trade_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			monthly_towards_sinicized = societal_value_monthly_move
-			global_monthly_prosperity = 0.001
-			global_institution_growth_modifier = 0.25
-			monthly_tribal_cohesion = -0.05
-		}
-	}
-
-	chinese_tribute_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-		years = 5
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = trade_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-	
-		country_modifier = {
-			global_migration_speed_modifier = 0.1
-			monthly_towards_sinicized = societal_value_monthly_move
-			trade_efficiency = tiny_trade_efficiency_bonus
-			monthly_tribal_cohesion = -0.03
-		}
-	}
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 50
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = script_law_cooldown_variable }
+        }
+    }
+ 
+    mongol_mongol_script_policy = {
+        wants_propose_policy = { add = { value = 100 } }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = script_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = traditionalist_vs_innovative
+                    value = societal_value_large_move_to_left
+                }
+            }
+        }
+        country_modifier = {
+            monthly_horde_unity = 0.04
+            monthly_towards_traditionalist = societal_value_monthly_move
+            discipline = 0.0075
+            cultural_tradition_modifier = 0.1
+        }
+    }
+ 
+    mongol_sinicized_script_policy = {
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = script_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = centralization_vs_decentralization
+                    value = societal_value_move_to_left
+                }
+            }
+        }
+        country_modifier = {
+            country_cabinet_efficiency = 0.05
+            research_speed_modifier = 0.05
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_horde_unity = -0.04
+            legislative_efficiency = 0.05
+        }
+    }
 }
-
-clan_diplomacy = {
-	type = international_organization
-	law_category = socioeconomic
-	requires_vote = no
-	potential = {
+ 
+mongol_legal_framework = {
+    type = international_organization
+    law_category = administrative
+    requires_vote = yes
+    potential = {
         OR = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
-            international_organization_type = international_organization_type:oirat_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
-	}
-	allow = {
-		leader_country ?= { tribal_cohesion > 10 }
-	}
-	locked = {
-		custom_tooltip = {
-			text = 5_years_cd
-			leader_country = { has_variable = diplomacy_law_cooldown_variable }
-		}
-	}
-
-	no_embassies_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = diplomacy_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_unsinicized = societal_value_monthly_move
-			monthly_towards_belligerent = societal_value_monthly_move
-			monthly_tribal_cohesion = 0.03
-		}
-	}
-
-	clan_embassies_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = diplomacy_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_sinicized = societal_value_monthly_move
-			diplomatic_capacity = 1
-			antagonism_monthly_change_modifier = 0.03
-			monthly_tribal_cohesion = -0.03
-		}
-	}
-
-	chinese_embassies_policy = {
-		wants_this_policy_bias = {
-			add = {
-				desc = "POLICY_BIAS_GOOD_IDEA"
-				value = 20
-			}
-		}
-
-		on_activate = {
-			leader_country = { 
-				set_variable = {
-					name = diplomacy_law_cooldown_variable
-					value = yes
-					years = 5
-				}
-				add_tribal_cohesion = tribal_cohesion_weak_penalty
-				if = {
-					limit = {
-						ruler_or_regent ?= { has_variable = difficult_sinicization_variable }
-					}
-					add_tribal_cohesion = tribal_cohesion_mild_penalty
-					add_stability = stability_mild_penalty
-				}
-			}
-		}
-		years = 5
-		country_modifier = {
-			monthly_towards_sinicized = societal_value_monthly_move
-			monthly_towards_centralization = societal_value_minor_monthly_move
-			monthly_tribal_cohesion = -0.05
-		}
-	}
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 30
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = legal_law_cooldown_variable }
+        }
+    }
+ 
+    mongol_no_legal_framework_policy = {
+        wants_propose_policy = { add = { value = 100 } }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = legal_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_horde_unity = 0.05
+            global_tribes_estate_power = 0.1
+            stability_decay = 0.002
+            discipline = 0.0075
+        }
+    }
+ 
+    mongol_basic_legal_framework_policy = {
+        wants_propose_policy = { add = { value = 300 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = legal_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            stability_decay = -0.001
+            global_distance_from_capital_speed_propagation = -0.05
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_horde_unity = -0.03
+            legislative_efficiency = 0.05
+        }
+    }
+ 
+    mongol_sinicized_legal_framework_policy = {
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = legal_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            stability_decay = -0.003
+            global_distance_from_capital_speed_propagation = -0.1
+            monthly_towards_centralization = societal_value_monthly_move
+            legislative_efficiency = 0.1
+            monthly_horde_unity = -0.08
+        }
+    }
 }
-khalkha_unification_law = {
+ 
+mongol_economic_framework = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = yes
+    potential = {
+        OR = {
+            international_organization_type = international_organization_type:khalkha_confederation
+            international_organization_type = international_organization_type:khorchin_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
+        }
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < 10
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = economic_framework_cooldown_variable }
+        }
+    }
+ 
+    mongol_shared_crops_policy = {
+        wants_propose_policy = { add = { value = 100 } }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = economic_framework_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            global_monthly_food_modifier = 0.1
+            monthly_horde_unity = 0.04
+            discipline = 0.0075
+            global_pop_food_consumption = -0.05
+        }
+    }
+ 
+    mongol_decentralized_farming_villages = {
+        wants_propose_policy = { add = { value = 300 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = economic_framework_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            global_monthly_food_modifier = 0.05
+            global_monthly_prosperity = 0.001
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            stability_investment = small_stability_investment
+            monthly_horde_unity = -0.02
+        }
+    }
+ 
+    mongol_financed_rgo_policy = {
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = economic_framework_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            global_max_rgo_size_modifier = 0.2
+            monthly_gold_income = 0.05
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_towards_capital_economy = societal_value_monthly_move
+            monthly_horde_unity = -0.05
+        }
+    }
+}
+ 
+mongol_trade_relations = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = yes
+    potential = {
+        OR = {
+            international_organization_type = international_organization_type:khalkha_confederation
+            international_organization_type = international_organization_type:khorchin_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
+        }
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < -10
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = trade_law_cooldown_variable }
+        }
+    }
+ 
+    mongol_clan_trade_only_policy = {
+        wants_propose_policy = { add = { value = 100 } }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = trade_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            monthly_horde_unity = 0.03
+            global_manpower_modifier = 0.05
+            monthly_towards_belligerent = societal_value_monthly_move
+            discipline = 0.0075
+        }
+    }
+ 
+    mongol_allow_foreign_exchanges_policy = {
+        wants_propose_policy = { add = { value = 300 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = trade_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            trade_land_efficiency = tiny_trade_land_efficiency_bonus
+            global_monthly_prosperity = 0.001
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_horde_unity = -0.02
+        }
+    }
+ 
+    mongol_chinese_tribute_policy = {
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = {
+            subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = 25 }
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        years = 5
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = trade_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        country_modifier = {
+            trade_land_efficiency = 0.05
+            monthly_gold_income = 0.04
+            global_institution_growth_modifier = 0.25
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_horde_unity = -0.04
+        }
+    }
+}
+ 
+mongol_clan_diplomacy = {
+    type = international_organization
+    law_category = socioeconomic
+    requires_vote = yes
+    potential = {
+        OR = {
+            international_organization_type = international_organization_type:khalkha_confederation
+            international_organization_type = international_organization_type:khorchin_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
+        }
+    }
+    allow = {
+        leader_country ?= {
+            societal_value:centralization_vs_decentralization < -25
+        }
+    }
+    locked = {
+        custom_tooltip = {
+            text = 5_years_cd
+            leader_country ?= { has_variable = diplomacy_law_cooldown_variable }
+        }
+    }
+ 
+    mongol_no_embassies_policy = {
+        wants_propose_policy = { add = { value = 100 } }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_BIAS_TRIBAL_TRADITION" value = 25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = diplomacy_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            monthly_horde_unity = 0.04
+            global_manpower_modifier = 0.05
+            monthly_towards_belligerent = societal_value_monthly_move
+            monthly_towards_decentralization = societal_value_minor_monthly_move
+        }
+    }
+ 
+    mongol_clan_embassies_policy = {
+        wants_propose_policy = { add = { value = 300 } }
+        wants_this_policy_bias = {
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = diplomacy_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            diplomatic_capacity = 1
+            improve_relation_impact = 0.1
+            monthly_towards_centralization = societal_value_minor_monthly_move
+            monthly_horde_unity = -0.02
+        }
+    }
+ 
+    mongol_chinese_embassies_policy = {
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = {
+            add = { desc = "WE_DONT_WANT_UNIFICATION" value = -25 }
+        }
+        on_activate = {
+            leader_country ?= {
+                set_variable = {
+                    name = diplomacy_law_cooldown_variable
+                    value = yes
+                    years = 5
+                }
+                add_tribal_cohesion = tribal_cohesion_weak_penalty
+                if = {
+                    limit = { ruler_or_regent ?= { has_variable = difficult_sinicization_variable } }
+                    add_tribal_cohesion = tribal_cohesion_mild_penalty
+                    add_stability = stability_mild_penalty
+                }
+            }
+        }
+        years = 5
+        country_modifier = {
+            diplomatic_capacity = 1
+            diplomatic_reputation = diplomatic_reputation_mild_bonus
+            max_diplomats = 1
+            monthly_towards_centralization = societal_value_monthly_move
+            monthly_horde_unity = -0.05
+        }
+    }
+}
+confederation_unification_law = {
     law_category = centralization
     type = international_organization
-
-    potential = {
-        international_organization_type = international_organization_type:khalkha_confederation
-    }
-
-    allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
-
+    requires_vote = yes
     custom_tags = { forbids_no_policy }
-
-    no_unification_policy = {
-        wants_propose_policy = {
-            subtract = { value = 1000 }
+ 
+    allow = {
+        leader_country ?= { societal_value:centralization_vs_decentralization < -40 }
+    }
+    potential = {
+        OR = {
+            international_organization_type = international_organization_type:khalkha_confederation
+            international_organization_type = international_organization_type:khorchin_confederation
+            international_organization_type = international_organization_type:nogai_confederation
+            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
-
+ 
+    no_unification_policy = {
+        wants_propose_policy = { add = { value = 0 } }
+        wants_this_policy_bias = { add = { desc = "WE_DONT_WANT_UNIFICATION" value = 25 } }
+    }
+ 
     unify_khalkha_policy = {
-        wants_propose_policy = {
-            add = { value = 500 }
+        potential = {
+            international_organization_type = international_organization_type:khalkha_confederation
         }
-
-        wants_this_policy_bias = {
-            add = {
-                value = prev_opinion_of_this
-                multiply = 0.3
-            }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
-            }
-        }
-
+        
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
         on_activate = {
             custom_tooltip = khalkha_unification_tt
-
-            root.leader_country = {
-                form_country = KHL
-                if = {
-			        limit = { country_rank_level < 3 }
-			        set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		        }            }
-
-            every_international_organization_member = {
-                limit = { NOT = { this = root.leader_country } }
-                root.leader_country = {
-                    annex_country = {
-                        country = prev
-                        reason = Diplomatic
-                    }
-                }
+            leader_country = {
+                trigger_event_silently = { id = io_unification.10 }
             }
-
-            disband_international_organization = yes
         }
     }
-}
-khorchin_unification_law = {
-    law_category = centralization
-    type = international_organization
-
-    potential = {
-        international_organization_type = international_organization_type:khorchin_confederation
-    }
-
-    allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
-
-    custom_tags = { forbids_no_policy }
-
-    no_unification_policy = {
-        wants_propose_policy = {
-            subtract = { value = 1000 }
-        }
-    }
-
+ 
     unify_khorchin_policy = {
-        wants_propose_policy = {
-            add = { value = 500 }
+        potential = {
+            international_organization_type = international_organization_type:khorchin_confederation
         }
-
-        wants_this_policy_bias = {
-            add = {
-                value = prev_opinion_of_this
-                multiply = 0.3
-            }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
-            }
-        }
-
+ 
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
         on_activate = {
             custom_tooltip = khorchin_unification_tt
-
-            root.leader_country = {
-                form_country = KHA
-                if = {
-			        limit = { country_rank_level < 3 }
-			        set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		        }            }
-            every_international_organization_member = {
-                limit = { NOT = { this = root.leader_country } }
-                root.leader_country = {
-                    annex_country = {
-                        country = prev
-                        reason = Diplomatic
-                    }
-                }
-            }
-
-            disband_international_organization = yes
-        }
-    }
-}
-oirat_unification_law = {
-    law_category = centralization
-    type = international_organization
-
-    potential = {
-        international_organization_type = international_organization_type:oirat_confederation
-    }
-
-    allow = {
-        international_organization = {
-            total_members >= 2
-        }
-    }
-
-    custom_tags = { forbids_no_policy }
-
-    no_unification_policy = {
-        wants_propose_policy = {
-            subtract = { value = 1000 }
-        }
-    }
-
-    unify_oirat_policy = {
-        wants_propose_policy = {
-            add = { value = 500 }
-        }
-
-        wants_this_policy_bias = {
-            add = {
-                value = prev_opinion_of_this
-                multiply = 0.3
-            }
-            add = {
-                value = root.relative_strength(scope:recipient)
-                multiply = 50
+            leader_country = {
+                trigger_event_silently = { id = io_unification.20 }
             }
         }
-
+    }
+ 
+    unify_nogai_policy = {
+        potential = {
+            international_organization_type = international_organization_type:nogai_confederation
+        }
+ 
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
         on_activate = {
-            custom_tooltip = oirat_unification_tt
-
-            root.leader_country = {
-                form_country = OIR
-                if = {
-			        limit = { country_rank_level < 3 }
-			        set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		        }
+            custom_tooltip = nogai_unification_tt
+            leader_country = {
+                trigger_event_silently = { id = io_unification.30 }
             }
-            every_international_organization_member = {
-                limit = { NOT = { this = root.leader_country } }
-                root.leader_country = {
-                    annex_country = {
-                        country = prev
-                        reason = Diplomatic
-                    }
-                }
+        }
+    }
+ 
+    unify_bashkir_tribal_policy = {
+        potential = {
+            international_organization_type = international_organization_type:bashkir_confederation
+        }
+ 
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
+        on_activate = {
+            custom_tooltip = bashkir_unification_tt
+            leader_country = {
+                trigger_event_silently = { id = io_unification.40 }
             }
-
-            disband_international_organization = yes
+        }
+    }
+ 
+    unify_bashkir_horde_policy = {
+        potential = {
+            international_organization_type = international_organization_type:bashkir_confederation
+        }
+ 
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+ 
+        on_activate = {
+            custom_tooltip = bashkir_horde_unification_tt
+            leader_country = {
+                trigger_event_silently = { id = io_unification.50 }
+            }
         }
     }
 }

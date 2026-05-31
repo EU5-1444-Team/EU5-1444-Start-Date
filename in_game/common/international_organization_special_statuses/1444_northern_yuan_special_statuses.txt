@@ -1,0 +1,38 @@
+﻿yuan_holder = {
+    max_countries = 1
+    priority = 20
+    leader = yes
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+    
+    can_bestow_trigger = {
+        is_leader_of_international_organization = scope:recipient
+    }
+    auto_bestowal_trigger = {
+        is_leader_of_international_organization = scope:recipient
+    }
+    auto_rescind_trigger = {
+        NOT = { is_leader_of_international_organization = scope:recipient }
+    }
+    special_status_power = {
+        value = 75
+    }
+}
+
+protector_general = {
+    max_countries = 1
+    priority = 15
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER2_COLOR
+    
+    can_bestow_trigger = {
+        is_member_of_international_organization = scope:recipient
+    }
+    auto_bestowal_trigger = {
+        always = no
+    }
+    auto_rescind_trigger = {
+        NOT = { is_member_of_international_organization = scope:recipient }
+    }
+    special_status_power = {
+        value = 150
+    }
+}

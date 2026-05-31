@@ -1,0 +1,42 @@
+﻿cb_unify_golden_horde = {
+	create_visible  = {
+		has_special_status_in_international_organization = {
+			type = special_status:golden_horde_claimant
+			international_organization = international_organization:golden_horde
+		}
+		scope:target = {
+			is_member_of_international_organization = international_organization:golden_horde
+		}
+	}
+	create_enabled = {
+	}
+	speed = 10
+	war_goal_type = unify_golden_horde_wargoal
+}
+cb_false_golden_horde_claimant = {
+	create_visible  = {
+		is_member_of_international_organization = international_organization:golden_horde
+		scope:target = {
+			has_special_status_in_international_organization = {
+				type = special_status:golden_horde_claimant
+				international_organization = international_organization:golden_horde
+			}
+		}
+	}
+	create_enabled = {
+	}
+	speed = 10
+	war_goal_type = false_golden_horde_claimant_wargoal
+}
+cb_enforce_tatar_yoke = {
+    create_visible  = {
+        is_leader_of_international_organization = international_organization:tatar_yoke
+        scope:target = {
+            NOT = { is_member_of_international_organization = international_organization:tatar_yoke }
+        }
+    }
+    create_enabled = {
+    }
+    speed = 10
+    war_goal_type = enforce_tatar_yoke_wargoal
+}

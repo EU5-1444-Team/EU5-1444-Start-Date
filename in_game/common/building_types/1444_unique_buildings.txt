@@ -1,3 +1,43 @@
+﻿mount_athos_monastery = {
+	is_foreign = yes
+	max_levels = 1
+	pop_type = clergy
+	
+	employment_size = large_religious_building_employment
+	
+	category = religious_category
+	graphical_tags = { medium_religious }
+	
+	rural_settlement = yes
+	town = yes
+	city = yes
+    megalopolis = yes
+	
+	build_time = religious_building_time
+	
+	price = orthodox_monastery_building
+	
+	country_potential = {
+		religion = religion:orthodox
+	}
+
+	possible_production_methods = {
+		monastery_maintenance
+		composite_nature_maintenance
+		single_nature_maintenance
+		dual_nature_maintenance
+		separate_nature_maintenance
+	}
+	construction_demand = village_construction
+	
+	modifier = {
+		local_clergy_max_literacy = 10
+		local_clergy_food_consumption = 0.2
+		local_pop_conversion_speed_modifier = 0.1
+	}
+}
+
+
 ganden_monastery = {
     is_foreign = yes
     stronger_power_projection = no
@@ -12,6 +52,7 @@ ganden_monastery = {
     rural_settlement = yes
     town = yes
     city = yes
+    megalopolis = yes
 
     ai_foreign_ignore_naval_range = yes
 
@@ -47,4 +88,138 @@ ganden_monastery = {
 
     construction_demand = cathedral_construction
     graphical_tags = { large_religious }
+}
+
+ordos_garrison = { #Ming's frontier garrisons
+    is_foreign = yes
+    stronger_power_projection = no
+    max_levels = 1
+    pop_type = soldiers
+    
+    category = defense_category
+    
+    employment_size = stockade_employment
+    
+    rural_settlement = yes
+    town = yes
+    city = yes
+    megalopolis = yes
+    
+    build_time = small_fort_building
+    expensive = yes
+    
+    country_potential = {
+        is_leader_of_international_organization = international_organization:middle_kingdom
+    }
+    
+    allow = {
+        owner = {
+            is_member_of_international_organization = international_organization:middle_kingdom
+        }
+    }
+    
+    remove_if = {
+        NOT = {
+            OR = {
+                owner = {
+                    is_member_of_international_organization = international_organization:middle_kingdom
+                }
+                AND = {
+                    location = {
+                        OR = {
+                            province_definition = province_definition:hetao_province
+                            province_definition = province_definition:ordos_province
+                        }
+                    }
+                    NOT = { has_global_variable = esen_captured_yingzong_emperor }
+                }
+            }
+        }
+    }
+    
+    unique_production_methods = {
+        stockade_maintenance = {
+            lumber = 0.1
+            weaponry = 0.02
+            tar = 0.02
+            category = building_maintenance
+        }
+    }
+    construction_demand = stockade_construction
+    
+    modifier = {
+        local_garrison_size = 0.1
+        local_unrest = -0.025
+        local_nobles_estate_power = 0.5
+    }
+    
+    raw_modifier = {
+        fort_level = 1
+        local_nobles_desired_pop = 0.005
+        pure_tooltip_entry = pte_no_propagating_zone_of_control
+    }
+}
+REPLACE:ruined_great_wall_of_china = { #Han Wall
+	is_special = yes
+	is_foreign = no
+	pop_type = soldiers
+	max_levels = 1
+	
+	employment_size = 0
+	category = defense_category
+	
+	rural_settlement = yes
+	town = yes
+	city = yes
+	megalopolis = yes
+	build_time = huge_unique_build_time
+	country_potential = {
+		always = no
+	}
+	allow = {
+		always = no
+	}
+	expensive = yes
+	construction_demand = ruined_great_wall_of_china_construction
+}
+REPLACE:repaired_great_wall_of_china = { #Ming Wall
+	is_special = yes
+	is_foreign = no
+	pop_type = soldiers
+	max_levels = 1
+	
+	employment_size = great_wall_of_china_employment
+	category = defense_category
+	
+	
+	rural_settlement = yes
+	town = yes
+	city = yes
+	megalopolis = yes
+	build_time = huge_unique_build_time
+
+
+	country_potential = {
+		tag = CHI
+	}
+	allow = {
+		OR = {
+			is_historical_route_of_great_wall = yes
+		}
+	}
+
+	expensive = yes
+	possible_production_methods = {
+		repaired_great_wall_of_china_maintenance
+	}
+	construction_demand = repaired_great_wall_of_china_construction
+
+	modifier = {
+		local_garrison_size = 0.2
+	}
+	
+	raw_modifier = {
+		fort_level = 1
+		propagating_zone_of_control = yes
+	}
 }

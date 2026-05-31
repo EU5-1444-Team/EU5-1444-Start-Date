@@ -1,71 +1,440 @@
-oirat_confederation = {
+﻿oirat_confederation = {
     has_target = no
     unique = yes
-
-    custom_name = oirat_confederation_name
+    expel_members_who_are_targets_of_other_members = no
+    disband_if_no_leader = no
     show_on_diplomatic_map = yes
 
     has_leader_country = yes
-    leader_type = country
-    leader_change_method = mongol_election
+    leader_type = character
+    leader_title_key = "OIRAT_LEADER"
+    leader_change_trigger_type = rulerchange
+    leader_change_method = vote
+    leadership_election_resolution = kurultai_election
+
+    leader = {
+        leader_country ?= {
+            if = {
+                limit = {
+                    has_regent = yes
+                    has_heir = yes
+                }
+                heir ?= {
+                    add_to_list = leaders
+                }
+            }
+            else_if = {
+                limit = {
+                    has_ruler = yes
+                    ruler ?= { is_alive = yes }
+                }
+                ruler ?= {
+                    add_to_list = leaders
+                }
+            }
+        }
+    }
+
+    leader_score = {
+        value = great_power_score
+    }
 
     create_visible_trigger = { always = no }
     invite_visible_trigger = { always = yes }
-
     can_declare_war = { always = yes }
 
     laws = {
-        mutual_defense_law = assured_defense_policy
-        mutual_offense_law = possible_offense_policy
     }
 
-    modifier = {
-        monthly_tribal_cohesion = 0.03
-    }
-
-    leader_modifier = {
-        global_manpower_modifier = 0.1
-        slave_raid_efficiency = 0.3
-    }
-    
     monthly_effect = {
-        every_country = {
-            limit = {
-                culture = culture:oirat_culture
-                NOT = { is_member_of_international_organization = root }
+        hidden_effect = {
+            if = {
+                limit = {
+                    var:centralisation_oirat >= 75
+                    NOT = { has_global_variable = oirat_active_tier_8 }
+                }
+                remove_global_variable = oirat_active_tier_7
+                set_global_variable = { name = oirat_active_tier_8 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier7
+                    add_country_modifier = { modifier = oirat_centralisation_tier8 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier7
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier8 years = -1 mode = add_and_extend }
+                }
             }
-            root = {
-                add_country_to_international_organization = prev
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= 50
+                    var:centralisation_oirat < 75
+                    NOT = { has_global_variable = oirat_active_tier_7 }
+                }
+                remove_global_variable = oirat_active_tier_6
+                remove_global_variable = oirat_active_tier_8
+                set_global_variable = { name = oirat_active_tier_7 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier6
+                    remove_country_modifier = oirat_centralisation_tier8
+                    add_country_modifier = { modifier = oirat_centralisation_tier7 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier6
+                    remove_country_modifier = oirat_leader_centralisation_tier8
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier7 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= 25
+                    var:centralisation_oirat < 50
+                    NOT = { has_global_variable = oirat_active_tier_6 }
+                }
+                remove_global_variable = oirat_active_tier_5
+                remove_global_variable = oirat_active_tier_7
+                set_global_variable = { name = oirat_active_tier_6 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier5
+                    remove_country_modifier = oirat_centralisation_tier7
+                    add_country_modifier = { modifier = oirat_centralisation_tier6 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier5
+                    remove_country_modifier = oirat_leader_centralisation_tier7
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier6 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= 0
+                    var:centralisation_oirat < 25
+                    NOT = { has_global_variable = oirat_active_tier_5 }
+                }
+                remove_global_variable = oirat_active_tier_4
+                remove_global_variable = oirat_active_tier_6
+                set_global_variable = { name = oirat_active_tier_5 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier4
+                    remove_country_modifier = oirat_centralisation_tier6
+                    add_country_modifier = { modifier = oirat_centralisation_tier5 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier4
+                    remove_country_modifier = oirat_leader_centralisation_tier6
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier5 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= -25
+                    var:centralisation_oirat < 0
+                    NOT = { has_global_variable = oirat_active_tier_4 }
+                }
+                remove_global_variable = oirat_active_tier_3
+                remove_global_variable = oirat_active_tier_5
+                set_global_variable = { name = oirat_active_tier_4 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier3
+                    remove_country_modifier = oirat_centralisation_tier5
+                    add_country_modifier = { modifier = oirat_centralisation_tier4 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier3
+                    remove_country_modifier = oirat_leader_centralisation_tier5
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier4 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= -50
+                    var:centralisation_oirat < -25
+                    NOT = { has_global_variable = oirat_active_tier_3 }
+                }
+                remove_global_variable = oirat_active_tier_2
+                remove_global_variable = oirat_active_tier_4
+                set_global_variable = { name = oirat_active_tier_3 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier2
+                    remove_country_modifier = oirat_centralisation_tier4
+                    add_country_modifier = { modifier = oirat_centralisation_tier3 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier2
+                    remove_country_modifier = oirat_leader_centralisation_tier4
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier3 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat >= -75
+                    var:centralisation_oirat < -50
+                    NOT = { has_global_variable = oirat_active_tier_2 }
+                }
+                remove_global_variable = oirat_active_tier_1
+                remove_global_variable = oirat_active_tier_3
+                set_global_variable = { name = oirat_active_tier_2 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier1
+                    remove_country_modifier = oirat_centralisation_tier3
+                    add_country_modifier = { modifier = oirat_centralisation_tier2 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier1
+                    remove_country_modifier = oirat_leader_centralisation_tier3
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier2 years = -1 mode = add_and_extend }
+                }
+            }
+            else_if = {
+                limit = {
+                    var:centralisation_oirat < -75
+                    NOT = { has_global_variable = oirat_active_tier_1 }
+                }
+                remove_global_variable = oirat_active_tier_2
+                set_global_variable = { name = oirat_active_tier_1 days = -1 }
+                every_international_organization_member = {
+                    limit = {
+                        NOT = { is_leader_of_international_organization = international_organization:oirat_confederation }
+                    }
+                    remove_country_modifier = oirat_centralisation_tier2
+                    add_country_modifier = { modifier = oirat_centralisation_tier1 years = -1 mode = add_and_extend }
+                }
+                leader_country ?= {
+                    remove_country_modifier = oirat_leader_centralisation_tier2
+                    add_country_modifier = { modifier = oirat_leader_centralisation_tier1 years = -1 mode = add_and_extend }
+                }
+            }
+
+            # Collapse/formation checks
+            if = {
+                limit = { var:centralisation_oirat <= -100 }
+                leader_country = {
+                    destroy_international_organization = { target = international_organization:oirat_confederation }
+                }
+            }
+            if = {
+                limit = { var:centralisation_oirat >= 100 }
+                leader_country = {
+                    trigger_event_silently = { id = io_unification.80 }
+                }
             }
         }
+    }
+    variables = {
+        centralisation_oirat = {
+            format = "CENTRALISATION_OIRAT_DISPLAY"
+            change_format = "VARIABLE_CHANGE_FORMAT"
+            min = -100
+            max = 100
+            monthly_change = {
+                add = {
+                    desc = "BASE_DECAY_HIGH"
+                    if = {
+                        limit = {
+                            var:centralisation_oirat >= 75
+                        }
+                        value = -0.3
+                    }
+                }
+                add = {
+                    desc = "BASE_DECAY_MID_HIGH"
+                    if = {
+                        limit = {
+                            AND = {
+                                var:centralisation_oirat >= 50
+                                var:centralisation_oirat < 75
+                            }
+                        }
+                        value = -0.2
+                    }
+                }
+                add = {
+                    desc = "BASE_DECAY_MID"
+                    if = {
+                        limit = {
+                            AND = {
+                                var:centralisation_oirat >= 25
+                                var:centralisation_oirat < 50
+                            }
+                        }
+                        value = -0.15
+                    }
+                }
+                add = {
+                    desc = "BASE_DECAY_LOW"
+                    if = {
+                        limit = {
+                            var:centralisation_oirat < 25
+                        }
+                        value = -0.1
+                    }
+                }
+
+                # --- LEADERSHIP VACUUM ---
+                add = {
+                    desc = "NO_LEADER_KURULTAI"
+                    if = {
+                        limit = {
+                            international_organization_has_leader = no
+                        }
+                        value = -0.5
+                    }
+                }
+                add = {
+                    desc = "TAISHI_MARTIAL"
+                    if = {
+                        limit = { international_organization_has_leader = yes }
+                        value = 0
+                        leader_country ?= {
+                            add = {
+                                value = ruler_or_heir_if_regent.mil
+                                subtract = 50
+                                multiply = 0.004
+                            }
+                        }
+                    }
+                }
+                add = {
+                    desc = "TAISHI_ADMIN"
+                    if = {
+                        limit = { international_organization_has_leader = yes }
+                        value = 0
+                        leader_country ?= {
+                            add = {
+                                value = ruler_or_heir_if_regent.adm
+                                subtract = 50
+                                multiply = 0.001
+                            }
+                        }
+                    }
+                }
+                add = {
+                    desc = "INTERNAL_PEACE"
+                    if = {
+                        limit = {
+                            NOT = {
+                                any_international_organization_member = {
+                                    at_war = yes
+                                    any_current_war = {
+                                        any_war_participant = {
+                                            is_member_of_international_organization = root
+                                            NOT = { this = prev }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        value = 0.05
+                    }
+                }
+                add = {
+                    desc = "INTERNAL_WARS"
+                    every_international_organization_member = {
+                        limit = {
+                            at_war = yes
+                            any_current_war = {
+                                any_war_participant = {
+                                    is_member_of_international_organization = root
+                                    NOT = { this = prev }
+                                }
+                            }
+                        }
+                        add = -0.5
+                    }
+                }
+                add = {
+                    desc = "MEMBERS_SUBJUGATED_BY_OUTSIDERS"
+                    every_international_organization_member = {
+                        limit = {
+                            is_subject = yes
+                            NOT = { is_subject_type = tributary }
+                            top_overlord ?= {
+                                NOT = { is_member_of_international_organization = root }
+                            }
+                        }
+                        add = -0.03
+                    }
+                }
+                add = {
+                    desc = "TEMP_VALUE_WHILE_I_BUILD_BETTER_VARIABLES"
+                    if = {
+                        limit = {
+                            NOT = { international_organization_has_leader = no }
+                        }
+                        value = 0.1
+                    }
+                }
+            }
+        }
+    }
+
+    can_lead_trigger = {
+        is_member_of_international_organization = scope:recipient
+        culture = culture:oirat_culture
+        has_ruler = yes
+        ruler ?= { is_alive = yes }
     }
 
     can_join_trigger = {
-        NOT = {
-            is_member_of_international_organization_of_type = oirat_confederation
-        }
-        government_type = government_type:steppe_horde
         culture = culture:oirat_culture
     }
 
+    can_leave_trigger = {
+        always = no
+    }
+
     auto_leave_trigger = {
-        NOT = {
-            culture = culture:oirat_culture
-        }
+        NOT = { culture = culture:oirat_culture }
     }
 
     auto_disband_trigger = {
         total_members < 2
     }
 
+    on_joined = { }
+    on_left = { }
+
     ai_desire_to_join = {
-        add = {
-            value = "scope:actor.relative_strength(root)"
-            multiply = 50
+        if = {
+            limit = { culture = culture:oirat_culture }
+            add = {
+                desc = "SHARED_MONGOL_HERITAGE"
+                value = 50
+            }
         }
+        if = {
+            limit = { AND= { is_subject_type = tributary top_overlord ?= { tag = CHI } } }
+            add = {
+                desc = "WE_ARE_LOYAL_TO_MING"
+                value = -1000
+            }
+        }
+    }
+
+    ai_desire_to_allow_new_member = {
         add = {
-            value = prev_opinion_of_this
-            multiply = 0.2
+            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+            value = 20
         }
     }
 }

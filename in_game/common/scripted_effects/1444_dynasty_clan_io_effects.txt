@@ -1,0 +1,41 @@
+﻿# Root = any country.
+# Finds the IO of the given type for root's ruling dynasty, or creates one.
+dynasty_io_find_or_create = {
+	save_scope_as = dynasty_io_candidate
+	if = {
+		limit = {
+			has_ruler = yes
+			ruler = {
+				has_dynasty = yes
+			}
+		}
+		ruler.dynasty = {
+			save_scope_as = dynasty_io_target_dynasty
+		}
+		if = {
+			limit = {
+				any_international_organization = {
+					international_organization_type = $io_type$
+					var:dynasty_io_dynasty = scope:dynasty_io_target_dynasty
+				}
+			}
+			random_international_organization = {
+				limit = {
+					international_organization_type = $io_type$
+					var:dynasty_io_dynasty = scope:dynasty_io_target_dynasty
+				}
+				add_country_to_international_organization = scope:dynasty_io_candidate
+			}
+		}
+		else = {
+			create_international_organization = {
+				type = $io_type$
+				set_variable = {
+					name = dynasty_io_dynasty
+					value = scope:dynasty_io_target_dynasty
+				}
+				add_country_to_international_organization = scope:dynasty_io_candidate
+			}
+		}
+	}
+}

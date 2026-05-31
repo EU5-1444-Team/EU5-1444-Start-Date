@@ -1,4 +1,4 @@
-has_active_main_branch = {
+﻿has_active_main_branch = {
     international_organization_has_policy = policy:union_establish_seniority_policy
     trigger_if = {
         limit = { has_special_status_available = special_status:main_branch }
@@ -17,5 +17,10 @@ country_is_main_branch = {
     country_has_special_status = {
         type = special_status:main_branch
         country = $country$
+    }
+}
+law_can_be_initiated_by_members = {
+	custom_description = {
+		text = law_can_be_initiated_by_members_text
     }
 }

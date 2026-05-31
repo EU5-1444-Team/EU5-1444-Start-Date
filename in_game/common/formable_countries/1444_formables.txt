@@ -1,4 +1,4 @@
-UYG_f = {
+﻿UYG_f = {
 	level = 2
 	required_locations_fraction = 0.8
 	rule = historical
@@ -12,20 +12,25 @@ UYG_f = {
 		culture = culture:aqsulik_culture
 		culture = culture:turpanlik_culture
 		AND = {
-			tag = YRK
+			OR = {
+				tag = YRK
+				tag = CTK
+				tag = HMI
+			}
 			NOT = {
 				is_subject_of = c:CHG
+				is_subject_of = c:CRS
 			}
+		}
 		NOT = {
 			tag = CHG
-		}
 		}
 	}
 
 	allow = {
 		owns = location:turpan
 		owns = location:urumqi
-		owns = location:yarkent
+		owns = location:yarkand
 		owns = location:kashgar
 		owns = location:khotan
 		owns = location:aksu
@@ -44,13 +49,168 @@ UYG_f = {
 	}
 }
 
+JNZ_f = {
+	level = 1
+	required_locations_fraction = 0.40
+	rule = historical
+
+	potential = {
+		NOT = { tag = JNZ }
+		NOT = { tag = MCH }
+		culture = culture:jurchen_culture
+	}
+
+	allow = {
+	}
+
+	name = JNZ
+	flag = JNZ
+	adjective = JNZ_ADJ
+	tag = JNZ
+	color = map_JNZ
+
+	provinces = {
+		dingliao_province
+		liaoyang_province
+		upper_songhua_province
+		tumen_province
+		mudan_province
+	}
+	form_effect = {
+		if = {
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank_effect = {
+				rank = country_rank:rank_kingdom
+			}
+		}
+	}
+}
+
+HXI_f = {
+	level = 1
+	required_locations_fraction = 0.40
+	rule = historical
+
+	potential = {
+		NOT = { tag = HXI }
+		NOT = { tag = MCH }
+		culture = culture:haixi_culture
+	}
+
+	allow = {
+	}
+
+	name = HXI
+	flag = HXI
+	adjective = HXI_ADJ
+	tag = HXI
+	color = map_HXI
+
+	provinces = {
+		yizhou_liaodong_province
+		middle_songhua_province
+		lalin_province
+		hulan_province
+		lower_non_province
+	}
+	form_effect = {
+		if = {
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank_effect = {
+				rank = country_rank:rank_kingdom
+			}
+		}
+	}
+}
+
+YER_f = {
+	level = 1
+	required_locations_fraction = 0.07
+	rule = historical
+
+	potential = {
+		NOT = { tag = YER }
+		NOT = { tag = MCH }
+		OR = {
+			culture = culture:hurga_culture
+			culture = culture:udege_culture
+		}
+	}
+
+	allow = {
+	}
+
+	name = YER
+	flag = YER
+	adjective = YER_ADJ
+	tag = YER
+	color = map_YER
+
+	regions = {
+		manchuria_region
+	}
+	form_effect = {
+		if = {
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank_effect = {
+				rank = country_rank:rank_kingdom
+			}
+		}
+	}
+}
+
+REPLACE:MCH_f = {
+	level = 3
+	required_locations_fraction = 0.35
+	rule = historical
+	
+	potential = {
+		culture ?= { has_culture_group = culture_group:jurchen_group }
+	}
+
+
+	name = MCH
+	flag = MCH
+	adjective = MCH_ADJ
+	tag = MCH
+	color = map_MCH
+	areas = {
+		liaodong_area
+		lower_amur_area
+		middle_amur_area
+		songhua_area
+		songnen_area
+		ussuri_area
+	}
+	form_effect = {
+		trigger_event_non_silently = flavor_mch.50
+	    if = {
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank_effect = {
+				rank = country_rank:rank_kingdom
+			}
+		}
+	}
+}
+
 BAL_f = {
 	level = 2
 	required_locations_fraction = 0.6
 	rule = historical
 
 	potential = {
-		culture = culture:baloch_culture
+		OR = { 
+			culture = culture:baloch_culture
+			culture = culture:brahui_culture
+		}
 	}
 
 	allow = {
@@ -65,6 +225,11 @@ BAL_f = {
 	areas = {
 		baluchistan_area
 	}
+	provinces = {
+		sibi_province
+		koh_e_sulayman_province
+		kahnuj_province
+	}
 	form_effect = {
 	}
 }
@@ -73,6 +238,7 @@ AFG_f = {
     level = 2
     required_locations_fraction = 0.5
     rule = historical
+	#potential_requires_own = no
 
     potential = {
         culture = culture:afghan_culture 
@@ -81,7 +247,6 @@ AFG_f = {
     allow = {
         owns = location:kabul
         owns = location:kandahar 
-		owns = location:balkh
     }
     
     name = AFG
@@ -95,9 +260,9 @@ AFG_f = {
         kandahar_province
 		ghazni_province
     }
-    form_effect = {
-    }
-}
+	form_effect = {
+	}
+ }
 
 KHP_f = {
 	level = 1
@@ -150,50 +315,67 @@ UTS_f = {
 		tsang_area
 	}
 	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_kingdom }
 	}
 }
 
-#TIX_f = {
-#	level = 3
-#	required_locations_fraction = 1.0
-#	rule = historical
-#	
-#	potential = {
-#		OR = {
-#			tag = c:TIS
-#			tag = c:TIG
-#			tag = c:TTK
-#			tag = c:TIK
-#			tag = c:TIF
-#			tag = c:TII
-#		}
-#	}
-#	
-#    allow = {
-#        owns = location:burebasaga
-#	}
-#	
-#	name = TIX
-#	flag = TIX
-#	adjective = TIX_ADJ
-#	tag = TIX
-#	color = dark_burgundy
-#	
-#	 provinces = {
-#		herat_province
-#	}
-#	
-#	form_effect = {
-#		if = {
-#			limit = { country_rank_level < 4 }
-#			set_country_rank_effect = { rank = country_rank:rank_empire }
-#		}
-#	}
-#}
+CAZ_f = { #Carolinias
+	level = 2
+	required_locations_fraction = 0.8
+	rule = plausible
+	
+	potential = {
+		OR = {
+			culture = culture:yap_culture
+			culture = culture:chamoru_culture
+		}
+	}
+
+	allow = {
+	}
+	
+	name = CAZ
+	flag = CAZ
+	adjective = CAZ_ADJ
+	tag = CAZ
+	color = map_CAZ
+	areas = {
+		belau_area
+		chuuk_area
+		marianas_area
+	}
+	form_effect = {
+	}
+}
+
+AKO_f = { #Aleon Kein Ad
+	level = 2
+	required_locations_fraction = 0.8
+	rule = plausible
+	
+	potential = {
+		culture = culture:kajoor_ri_majel_culture
+	}
+
+	allow = {
+	}
+	
+	name = AKO
+	flag = AKO
+	adjective = AKO_ADJ
+	tag = AKO
+	color = map_AKO
+	areas = {
+		ratak_area
+		ralik_area
+	}
+	form_effect = {
+	}
+}
 
 VIT_f = { #Viti
 	level = 2
-	required_locations_fraction = 1.0
+	required_locations_fraction = 0.8
 	rule = plausible
 	
 	potential = {
@@ -201,7 +383,6 @@ VIT_f = { #Viti
 	}
 
 	allow = {
-        owns = location:burebasaga
 	}
 	
 	name = VIT
@@ -218,7 +399,7 @@ VIT_f = { #Viti
 
 HII_f = { #Kingdom of Hawaii
 	level = 2
-	required_locations_fraction = 0.9
+	required_locations_fraction = 0.8
 	rule = historical
 	
 	potential = {
@@ -226,7 +407,6 @@ HII_f = { #Kingdom of Hawaii
 	}
 
 	allow = {
-		owns = location:o_ahu
 	}
 	
 	name = HII
@@ -238,13 +418,16 @@ HII_f = { #Kingdom of Hawaii
 		hawaii_area
 	}
 	form_effect = {
-		set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
 	}
 }
 
 AOT_f = { #Aotearoa
-	level = 2
-	required_locations_fraction = 1.0
+	level = 2y
+	required_locations_fraction = 0.8
 	rule = plausible
 	
 	potential = {
@@ -252,7 +435,6 @@ AOT_f = { #Aotearoa
 	}
 
 	allow = {
-		has_advance = maori_he_whakaputanga_advance
 	}
 	
 	name = AOT
@@ -267,42 +449,7 @@ AOT_f = { #Aotearoa
 	}
 }
 
-SOI_f = { #Solomon Islands
-	level = 2
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		or = {
-			culture = { has_culture_group = culture_group:micronesian_group }
-			culture = culture:naasioi
-		}
-	}
-
-	allow = {
-        owns = location:naasioi
-	}
-	
-	name = SOI
-	flag = SOI
-	adjective = SOI_ADJ
-	tag = SOI
-	color = map_SOI
-	provinces = {
-		bougainville_province
-		tinputz_province
-		choiseul_province
-		roviana_province
-		isatabu_province
-		malaita_province
-		mu_ngava_province
-	}
-	form_effect = {
-	}
-}
-
-POF_f = { #Tahiti
+POF_f = { #Maohi
 	level = 2
 	required_locations_fraction = 0.7
 	rule = plausible
@@ -311,11 +458,12 @@ POF_f = { #Tahiti
 		OR = {
 			culture = culture:maohi_culture
 			culture = culture:tuamotus_culture
+			culture = culture:mangareva_culture
+			culture = culture:enana_culture
 		}
 	}
 
 	allow = {
-        owns = location:tahiti
 	}
 	
 	name = POF
@@ -327,124 +475,39 @@ POF_f = { #Tahiti
 		totaiete_ma_area
 		palliser_area
 		raeffsky_area
+		kuki_airani_area
 		tuamotu_area
+		te_henua_enana_area
 	}
 	form_effect = {
 	}
 }
 
-VAN_f = { #Vanuatu
+HMZ_f = { #Hamoa
 	level = 2
-	required_locations_fraction = 0.9
-	capital_required = yes 
+	required_locations_fraction = 1
 	rule = plausible
 	
 	potential = {
-		culture = { has_culture_group = culture_group:micronesian_group }
-	}
-
-	allow = {
-        owns = location:malakula
-	}
-	
-	name = VAN
-	flag = VAN
-	adjective = VAN_ADJ
-	tag = VAN
-	color = map_VAN
-	areas = {
-		vanuatu_area
-	}
-	form_effect = {
-	}
-}
-
-
-NCD_f = { #Kanak
-	level = 2
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		culture = { has_culture_group = culture_group:micronesian_group }
-	}
-
-	allow = {
-        owns = location:numee
-	}
-	
-	name = NCD
-	flag = NCD
-	adjective = NCD_ADJ
-	tag = NCD
-	color = map_NCD
-	areas = {
-		kanaky_area
-	}
-	form_effect = {
-	}
-}
-
-NZL_f = { #New Zealand
-	level = 2
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		owns = location:wellington
-		NOT = { culture = culture:maori_culture }
-	}
-
-	allow = {
-        owns = location:wellington
-	}
-	
-	name = NZL
-	flag = NZL
-	adjective = NZL_ADJ
-	tag = NZL
-	color = map_NZL
-	regions = {
-		new_zealand_region
-	}
-	form_effect = {
-	}
-}
-
-PAU_f = { #Papua
-	level = 3
-	required_locations_fraction = 0.8
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		or = {
-			owns = location:waima
-			owns = location:kaimana
-			owns = location:asmat
+		OR = {
+			culture = culture:tagata_samoa_culture
+			culture = culture:tonga_oceania_culture
 		}
-
 	}
 
 	allow = {
-    	owns = location:waima
-		owns = location:kaimana
-		owns = location:asmat
 	}
 	
-	name = PAU
-	flag = PAU
-	adjective = PAU_ADJ
-	tag = PAU
-	color = map_PAU
+	name = HMZ
+	flag = HMZ
+	adjective = HMZ_ADJ
+	tag = HMZ
+	color = map_HMZ
 	areas = {
-		momase_area
-		milne_area
-		kerema_area
-		anim_ha_area
-		wanin_area
+		tonga_area
+		samoa_area
+		niue_area
+		futuna_area
 	}
 	form_effect = {
 	}
@@ -461,10 +524,6 @@ PYN_f = { #Polynesia
 	}
 
 	allow = {
-        owns = location:tahiti
-		owns = location:o_ahu
-		owns = location:tongatapu
-		owns = location:savaii
 	}
 	
 	name = PYN
@@ -476,13 +535,17 @@ PYN_f = { #Polynesia
 		polynesia_region
 	}
 	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
 	}
 }
 
 
-MIA_f = { #Micronesia
+MIN_f = { #Micronesia
 	level = 3
-	required_locations_fraction = 0.86
+	required_locations_fraction = 0.80
 	capital_required = yes 
 	rule = plausible
 	
@@ -491,26 +554,32 @@ MIA_f = { #Micronesia
 	}
 
 	allow = {
-		owns = location:tabiteuea_atoll
-		owns = location:chuuk
-		owns = location:yap
+
 	}
 	
-	name = MIA
-	flag = MIA
-	adjective = MIA_ADJ
-	tag = MIA
-	color = map_MIA
-	regions = {
-		micronesia_region
+	name = MIN
+	flag = MIN
+	adjective = MIN_ADJ
+	tag = MIN
+	color = map_MIN
+	areas = {
+		ratak_area
+		ralik_area
+		belau_area
+		chuuk_area
+		marianas_area
 	}
 	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
 	}
 }
 
-MEL_f = { #Melanesia
+MLN_f = { #Melanesia
 	level = 3
-	required_locations_fraction = 0.3
+	required_locations_fraction = 0.80
 	capital_required = yes 
 	rule = plausible
 	
@@ -519,78 +588,32 @@ MEL_f = { #Melanesia
 	}
 
 	allow = {
-        owns = location:burebasaga
-		owns = location:numee
-		owns = location:naasioi
+
 	}
 	
-	name = MEL
-	flag = MEL
-	adjective = MEL_ADJ
-	tag = MEL
-	color = map_MEL
-	regions = {
-		melanesia_region
+	name = MLN
+	flag = MLN
+	adjective = MLN_ADJ
+	tag = MLN
+	color = map_MLN
+	areas = {
+		fiji_area
+		tinputz_area
+		vanuatu_area
+		kanaky_area
+		bismarck_area
 	}
 	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
 	}
 }
 
-MYD_f = { #Makarr Yindi
-	level = 3
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		owns = location:eora
-	}
-
-	allow = {
-        owns = location:eora
-	}
-	
-	name = MYD
-	flag = MYD
-	adjective = MYD_ADJ
-	tag = MYD
-	color = map_MYD
-	regions = {
-		australia_region
-	}
-	form_effect = {
-	}
-}
-
-ATA_f = { #Colonial Australia
-	level = 3
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = historical
-	
-	potential = {
-		owns = location:eora
-	}
-
-	allow = {
-        owns = location:eora
-	}
-	
-	name = ATA
-	flag = ATA
-	adjective = ATA_ADJ
-	tag = ATA
-	color = map_ATA
-	regions = {
-		australia_region
-	}
-	form_effect = {
-	}
-}
-
-PAE_f = { #Pacific
+OCE_f = { #Oceania
 	level = 4
-	required_locations_fraction = 0.6
+	required_locations_fraction = 0.7
 	capital_required = yes 
 	rule = historical
 	
@@ -602,48 +625,6 @@ PAE_f = { #Pacific
 	}
 
 	allow = {
-       	owns = location:o_ahu
-		owns = location:wellington
-		owns = location:yap
-		owns = location:burebasaga
-	}
-	
-	name = PAE
-	flag = PAE
-	adjective = PAE_ADJ
-	tag = PAE
-	color = map_PAE
-	regions = {
-		new_zealand_region
-		micronesia_region
-		melanesia_region
-		polynesia_region
-	}
-	form_effect = {
-		if = {
-			limit = { country_rank_level < 4 }
-			set_country_rank_effect = { rank = country_rank:rank_empire }
-		}
-	}
-}
-
-OCE_f = { #Oceania
-	level = 4
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = historical
-	
-	potential = {
-		owns = location:eora
-	}
-
-	allow = {
-       	owns = location:o_ahu
-		owns = location:wellington
-		owns = location:yap
-		owns = location:burebasaga
-		owns = location:eora
-		owns = location:waima
 	}
 	
 	name = OCE
@@ -656,7 +637,6 @@ OCE_f = { #Oceania
 		micronesia_region
 		melanesia_region
 		polynesia_region
-		australia_region
 	}
 	form_effect = {
 		if = {
@@ -666,89 +646,388 @@ OCE_f = { #Oceania
 	}
 }
 
-AFZ_f = { #Greater Australian Commonwealth
-	level = 4
-	required_locations_fraction = 0.9
-	capital_required = yes 
+FRI_f = {
+	level = 1
+	required_locations_fraction = 0.6
 	rule = historical
-	
+
 	potential = {
-		owns = location:eora
+		culture = culture:frisian
 	}
 
 	allow = {
-		owns = location:wellington
-		owns = location:eora
 	}
-	
-	name = AFZ
-	flag = AFZ
-	adjective = AFZ_ADJ
-	tag = AFZ
-	color = map_AFZ
-	regions = {
-		new_zealand_region
-		australia_region
-	}
+
+	name = FRI
+	flag = FRI
+	adjective = FRI_ADJ
+	tag = FRI
+	color = map_FRI
+
 	areas = {
-		fiji_area
+		friesland_area
+	}
+	provinces = {
+		south_holland_province
+		north_holland_province
+	}
+	locations = {
+		elsfleth
+		ritzebuttel
+		husum tonder
+	}
+	form_effect = {
+	}
+}
+
+POR_f = {
+	level = 2
+	required_locations_fraction = 0.8
+	rule = historical
+
+	potential = {
+		culture = culture:portuguese
+	}
+
+	allow = {
+	}
+
+	name = POR
+	flag = POR
+	adjective = POR_ADJ
+	tag = POR
+	color = map_POR
+
+	areas = {
+		south_portugal_area
+		north_portugal_area
+	}
+	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_empire }
+	}
+}
+
+NYE_f = {
+	# Nanyue / Nam Việt
+	level = 3
+	required_locations_fraction = 0.8
+	rule = historical
+	potential = {
+		OR = {
+			culture = culture:yuehai_culture
+			culture = culture:xinhui_culture
+			culture = culture:gaozhou_culture
+			culture = culture:huazhou_culture
+			culture = culture:wuchuan_culture
+			culture = culture:yangjiang_culture
+			culture = culture:guangxin_culture
+			culture = culture:tubai_culture
+			culture = culture:yulin_culture
+			culture = culture:guibei_culture
+			culture = culture:guinan_culture
+			culture = culture:malao_culture
+			culture = culture:leizhou_culture
+			culture = culture:qiong_culture
+			culture = culture:cunhua_culture
+			culture = culture:danzhou_culture
+			culture = culture:zhuang_culture
+			culture = culture:hlai_culture
+			culture = culture:vietnamese_culture
+			culture = culture:muong_culture
+		}
+	}
+	allow = {
+		owns = location:thang_long
+		owns = location:guangzhou
+	}
+	name = NYE
+	flag = NYE
+	adjective = NYE_ADJ
+	tag = NYE
+	color = map_NYE
+	areas = {
+		guangxi_area
+		liangjiang_area
+		guangdong_area
+		haibei_hainan_area
+		red_river_delta_area
 	}
 	form_effect = {
 		if = {
-			limit = { country_rank_level < 4 }
-			set_country_rank_effect = { rank = country_rank:rank_empire }
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
 		}
 	}
 }
 
-GAN_f = { #Greater Austonesia
-	level = 4
-	required_locations_fraction = 0.9
-	capital_required = yes 
+BOA_f = {
+	# Balhae / Bóhǎi
+	level = 2
+	required_locations_fraction = 0.7
 	rule = historical
 	
 	potential = {
-		AND = {
-			owns = location:eora
-			owns = location:o_ahu
-			owns = location:basai
+		OR = {
+			culture ?= { has_culture_group = culture_group:jurchen_group }
+			culture = culture:korean_culture
 		}
 	}
+	
 	allow = {
-       	owns = location:o_ahu
-		owns = location:wellington
-		owns = location:yap
-		owns = location:burebasaga
-		owns = location:eora
-		owns = location:waima
-		owns = location:basai
-		owns = location:maynila
-		owns = location:malacca
-		owns = location:vijaya
-		owns = location:cibuaya
+		NOT = { tag = MCH } # The Jurchen Jin would want to form Qing.
+		NOT = { tag = JOE } # Joseon wouldn't want to form Balhae.
+		owns = location:shangjing
+		owns = location:hamheung
 	}
 	
-	name = GAN
-	flag = GAN
-	adjective = GAN_ADJ
-	tag = GAN
-	color = map_GAN
-	regions = {
-		new_zealand_region
-		australia_region
-		polynesia_region
-		micronesia_region
-		melanesia_region
-		madagascar_region
-	}
+	name = BOA
+	flag = BOA
+	adjective = BOA_ADJ
+	tag = BOA
+	color = map_BOA
+	
 	areas = {
+		liaodong_area
+		songhua_area
+		ussuri_area
+		gwanbuk_area
+		gwanseo_area
+	}
+	
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+
+CHI_f = {
+	level = 4
+	required_locations_fraction = 0.7
+	rule = historical
+
+	potential = {
+		culture = {
+			OR = {
+				has_culture_group = culture_group:chinese_group
+				has_culture_group = culture_group:confucian_group
+			}
+		}
+		NOT = { exists = international_organization:middle_kingdom }
+	}
+
+	allow = {
+		NOT = { is_situation_active = situation:red_turban_rebellions }
+	}
+
+	tag = CHI
+
+	regions = {
+		west_china_region east_china_region north_china_region south_china_region
+	}
+	form_effect = {
+		change_government_type = government_type:monarchy
+		rtr_recreate_middle_kingdom = yes
+		set_country_rank_effect = { rank = country_rank:rank_empire }
+	}
+
+}
+
+DNM_f = {
+	# Đại Nam
+	level = 3
+	required_locations_fraction = 0.8
+	rule = historical
+	
+	potential = {
+		culture = culture:vietnamese_culture
+	}
+	
+	allow = {
+	}
+	
+	name = DNM
+	flag = DNM
+	adjective = DNM_ADJ
+	tag = DNM
+	color = map_DNM
+	
+	areas = {
+		red_river_delta_area
+		lower_mekong_area
 		champa_area
-		taiwan_area
+	}
+	
+	form_effect = {
+	}
+}
+
+CDL_f = {
+	# Dali Kingdom / Dablit Guaif
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+
+	potential = {
+		culture = culture:bai_culture
+	}
+
+	allow = {
+		owns = location:taihe_dali
+	}
+
+	name = CDL
+	flag = CDL
+	adjective = CDL_ADJ
+	tag = CDL
+	color = map_CDL
+
+	areas = {
+		yunnan_area
+		dali_area
+	}
+
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+
+TTK_f = { #Balkh
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+	capital_required = yes 
+
+	potential = {
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
+	}
+
+	allow = {
+		owns = location:balkh
+		owns = location:mazar_i_sharif
+	}
+
+	name = TTK
+	flag = TTK
+	adjective = TTK_ADJ
+	tag = TTK
+	color = map_TTK
+
+	provinces = {
+		balkh_province
+		maymana_province
+		kunduz_province
+		kulab_province
+		hissar_province
+		kelif_province
 	}
 	form_effect = {
 		if = {
-			limit = { country_rank_level < 4 }
-			set_country_rank_effect = { rank = country_rank:rank_empire }
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+	}
+}
+GII_f = {
+	level = 1
+	required_locations_fraction = 0.5
+	rule = historical
+	capital_required = no
+	#potential_requires_own = no
+	potential = {
+		OR = {
+			culture = culture:gilak_culture
+			culture = culture:talysh_culture
 		}
+	}
+
+	allow = {
+		owns = location:fuman
+		owns = location:astara
+		owns = location:lahijan
+	}
+	
+	name = GII
+	flag = GII
+	adjective = GII_ADJ
+	tag = GII
+	color = map_gilak
+
+	provinces = {
+		gilan_province
+	}
+	form_effect = {
+	}
+}
+KRO_f = { #Khorezmia
+	level = 3
+	required_locations_fraction = 0.8
+	rule = historical
+	capital_required = yes 
+
+	potential = {
+		OR = {
+			owns = location:urgench
+			owns = location:khiva
+		}
+		OR = {
+			culture = culture:uzbek_culture
+			culture = culture:khorezmian_culture
+		}
+	}
+
+	allow = {
+		OR = {
+			owns = location:urgench
+			owns = location:khiva
+		}
+		is_subject = no
+	}
+	
+	name = KRO
+	flag = KRO
+	adjective = KRO_ADJ
+	tag = KRO
+	color = map_khorezmian
+
+	provinces = {
+		khiva_province
+		kath_province
+	}
+	form_effect = {
+	}
+}
+MZN_f = { #Mazandaran
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+	capital_required = yes
+	#potential_requires_own = no
+
+	potential = {
+		OR = {
+			culture = culture:gilak_culture
+			culture = culture:talysh_culture
+			culture = culture:mazanderani_culture
+		}
+	}
+
+	allow = {
+	}
+	
+	name = MZN
+	flag = MZN
+	adjective = MZN_ADJ
+	tag = MZN
+	color = map_mazadaran
+
+	areas = {
+		mazandaran_area
+	}
+	form_effect = {
 	}
 }

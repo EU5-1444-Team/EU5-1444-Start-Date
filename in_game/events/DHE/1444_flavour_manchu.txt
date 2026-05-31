@@ -1,0 +1,43 @@
+﻿namespace = flavor_mch
+
+# Proclaim the Later Jin
+flavor_mch.50 = {
+    type = country_event
+    title = flavor_mch.5.title
+    desc = flavor_mch.5.desc
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+    }
+
+    option = {
+        name = flavor_mch.5.a
+
+        change_country_name = MCH_LATER_JIN
+        add_legitimacy = legitimacy_extreme_bonus
+         change_government_type = government_type:monarchy
+
+        change_societal_value = {
+            type = sinicized_vs_unsinicized
+            value = societal_value_large_move_to_left
+        }
+
+        set_variable = unlocked_warring_state
+        add_reform = government_reform:warring_state
+    }
+
+    option = {
+        name = flavor_mch.5.b
+
+        add_prestige = prestige_mild_bonus
+         change_government_type = government_type:steppe_horde
+        culture = {
+            add_cultural_tradition = cultural_tradition_mild_bonus
+        }
+    }
+}

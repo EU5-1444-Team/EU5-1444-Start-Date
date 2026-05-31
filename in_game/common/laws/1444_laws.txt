@@ -1,0 +1,19 @@
+﻿INJECT:marriage_law = {
+    polyandry = {
+		potential = {
+			OR = {
+				is_country_religion_pagan = yes
+				religion.group = religion_group:buddhist
+				culture = { has_culture_group = culture_group:tibetan_group }
+			}
+		}
+		country_modifier = {
+			female_spouses = 1
+			male_spouses = 4
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+}

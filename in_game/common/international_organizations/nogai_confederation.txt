@@ -1,0 +1,111 @@
+﻿nogai_confederation = {
+    has_target = no
+    unique = yes
+    expel_members_who_are_targets_of_other_members = no
+    disband_if_no_leader = no
+    show_on_diplomatic_map = yes
+
+    has_leader_country = yes
+    leader_type = character
+    leader_title_key = "NOGAI_LEADER"
+    leader_change_trigger_type = rulerchange
+    leader_change_method = vote
+    leadership_election_resolution = kurultai_election
+
+    leader = {
+        leader_country ?= {
+            if = {
+                limit = {
+                    has_regent = yes
+                    has_heir = yes
+                }
+                heir ?= {
+                    add_to_list = leaders
+                }
+            }
+            else_if = {
+                limit = {
+                    has_ruler = yes
+                    ruler ?= { is_alive = yes }
+                }
+                ruler ?= {
+                    add_to_list = leaders
+                }
+            }
+        }
+    }
+
+    leader_score = {
+        value = great_power_score
+    }
+
+    create_visible_trigger = { always = no }
+    invite_visible_trigger = { always = yes }
+    can_declare_war = { always = yes }
+
+    laws = {
+        mongol_local_administration = mongol_tribal_administration_policy
+        mongol_tax_obligations = mongol_no_tax_obligations_policy
+        mongol_court_etiquette = mongol_no_court_etiquette_policy
+        mongol_formal_script = mongol_mongol_script_policy
+        mongol_legal_framework = mongol_no_legal_framework_policy
+        mongol_economic_framework = mongol_shared_crops_policy
+        mongol_trade_relations = mongol_clan_trade_only_policy
+        mongol_clan_diplomacy = mongol_no_embassies_policy
+    }
+
+    modifier = {
+        monthly_tribal_cohesion = 0.03
+    }
+
+    monthly_effect = {
+    }
+
+    leader_modifier = {
+        global_manpower_modifier = 0.1
+        slave_raid_efficiency = 0.3
+    }
+
+    can_lead_trigger = {
+        is_member_of_international_organization = scope:recipient
+        culture = culture:nogai
+        has_ruler = yes
+        ruler ?= { is_alive = yes }
+    }
+
+    can_join_trigger = {
+        culture = culture:nogai
+    }
+
+    can_leave_trigger = {
+        always = no
+    }
+
+    auto_leave_trigger = {
+        NOT = { culture = culture:nogai }
+    }
+
+    auto_disband_trigger = {
+        total_members < 2
+    }
+
+    on_joined = { }
+    on_left = { }
+
+    ai_desire_to_join = {
+        if = {
+            limit = { culture = culture:nogai }
+            add = {
+                desc = "SHARED_MONGOL_HERITAGE"
+                value = 50
+            }
+        }
+    }
+
+    ai_desire_to_allow_new_member = {
+        add = {
+            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+            value = 20
+        }
+    }
+}

@@ -1,0 +1,93 @@
+﻿tatar_overlord = {
+	max_countries = 1
+	priority = 10
+
+	modifier = {
+		
+	}
+
+	can_bestow_trigger = {
+		is_leader_of_international_organization = international_organization:tatar_yoke
+	}
+
+	auto_bestowal_trigger = {
+		always = yes
+	}
+	auto_rescind_trigger = {
+        NOT = { is_leader_of_international_organization = scope:recipient }
+    }
+
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+}
+
+tatar_tax_collector = {
+	max_countries = 1
+	priority = 5
+
+	modifier = {
+		rural_migration_attraction = 0.1
+		non_rural_migration_attraction = 0.1
+		global_monthly_development = 0.002
+	}
+
+	can_bestow_trigger = {
+		is_subject = no
+		is_member_of_international_organization = scope:recipient
+		scope:recipient = {
+			NOT = {
+				country_has_special_status = { type = special_status:tatar_tax_collector country = root }
+			}
+		}
+	}
+
+	auto_bestowal_trigger = {
+
+	}
+
+	auto_rescind_trigger = {
+		OR = {
+			NOT = { is_member_of_international_organization = scope:recipient }
+		}
+	}
+
+	on_bestowed_effect = {
+		
+	}
+	
+	on_rescinded_effect = {
+
+	}
+
+	special_status_power = great_power_score
+
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER1_COLOR
+}
+tatar_horde_member = {
+	priority = 10
+
+	modifier = {
+		global_monthly_development = 0.001
+	}
+
+	can_bestow_trigger = {
+		culture = {
+			has_culture_group = culture_group:tatar_group
+		}
+		culture = culture:yerle_qaliq_culture
+		NOT = {
+            is_leader_of_international_organization = international_organization:tatar_yoke
+        }
+	}
+
+	auto_bestowal_trigger = {
+		always = yes
+	}
+	auto_rescind_trigger = {
+		OR = {
+			NOT = { culture = { has_culture_group = culture_group:tatar_group }	culture = culture:yerle_qaliq_culture }
+			is_leader_of_international_organization = international_organization:tatar_yoke
+		}
+    }
+
+	map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+}

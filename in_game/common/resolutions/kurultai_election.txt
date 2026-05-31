@@ -1,0 +1,240 @@
+﻿kurultai_election = {
+    loc = kurultai_election
+    potential = { always = yes }
+    allow = { }
+
+    can_vote = {
+        scope:actor = {
+            is_member_of_international_organization = scope:recipient
+        }
+    }
+
+    ai_tick = monthly
+
+    is_live = {
+        scope:recipient ?= {
+            international_organization_has_leader = no
+        }
+    }
+
+    votes = {
+        add = {
+            desc = "[elector|e]"
+            value = 1
+        }
+    }
+
+    total_votes_needed = {
+        add = {
+            value = scope:total_votes_available
+            multiply = 0.5
+        }
+    }
+
+    requires_explicit_votes = no
+
+    should_finalize_vote = {
+        OR = {
+            custom_tooltip = {
+                text = OVER_HALF_OF_VOTES
+                scope:recipient = {
+                    international_organization_has_leader = no
+                }
+                scope:highest_vote >= scope:total_votes_needed
+            }
+        }
+        hidden_trigger = {
+            trigger_if = {
+                limit = {
+                    scope:recipient = {
+                        international_organization_has_leader = no
+                    }
+                    scope:highest_vote < scope:total_votes_needed
+                }
+                always = no
+            }
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = international_organization
+        target_flag = recipient
+        name = "choose_international_organization"
+        column = {
+            data = name
+        }
+        visible = {
+            always = no
+        }
+        enabled = { }
+    }
+
+    select_trigger = {
+        looking_for_a = country
+        interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        can_lead_international_organization = scope:recipient
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        ai_interaction_source_list = {
+            scope:recipient = {
+                every_international_organization_member = {
+                    limit = {
+                        can_lead_international_organization = scope:recipient
+                    }
+                    add_to_list = source
+                }
+            }
+        }
+        target_flag = vote
+        allow_self = yes
+        name = "election_select_country"
+        none_available_msg_key = "election_select_no_countries"
+        default_sort = great_power_score
+        column = {
+            data = name
+        }
+        column = {
+            data = great_power_score
+        }
+        visible = {
+            trigger_if = {
+                limit = {
+                    exists = scope:actor
+                }
+                OR = {
+                    this = scope:actor
+                    scope:actor = {
+                        knows_country = root
+                    }
+                }
+            }
+        }
+    }
+
+    effect = {
+        if = {
+            limit = { exists = scope:vote }
+            scope:recipient = { set_leader_country = scope:vote }
+        }
+    }
+
+    vote_effect = { }
+
+    ai_will_do = {
+        if = {
+            limit = { exists = scope:vote }
+            scope:vote = {
+                if = {
+                    limit = {
+                        is_member_of_international_organization = scope:recipient
+                    }
+                    add = {
+                        desc = "game_concept_great_power_score"
+                        value = great_power_score
+                        multiply = 0.1
+                    }
+                }
+                else = {
+                    add = {
+                        desc = "NOT_A_MEMBER"
+                        value = -10000
+                    }
+                }
+
+                if = {
+                    limit = { this = scope:actor }
+                    add = {
+                        desc = "LEADERSHIP_VOTE_FOR_SELF"
+                        value = 25
+                    }
+                }
+
+                if = {
+                    limit = {
+                        this = scope:actor
+                        scope:recipient = {
+                            "active_resolution(resolution:kurultai_election)" = {
+                                any_voter = {
+                                    this != scope:actor
+                                    save_temporary_scope_as = voter
+                                    scope:recipient = {
+                                        has_cached_or_cast_vote_for = {
+                                            voter = scope:voter
+                                            resolution = resolution:kurultai_election
+                                            vote = scope:actor
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    add = {
+                        desc = "LEADERSHIP_VOTE_FOR_SELF_OTHER_VOTERS"
+                        value = 150
+                    }
+                }
+
+                if = {
+                    limit = { is_rival_of = scope:actor }
+                    add = {
+                        desc = "game_concept_rival"
+                        value = -1000
+                    }
+                }
+
+                if = {
+                    limit = { is_at_war_with = scope:actor }
+                    add = {
+                        desc = "game_concept_war"
+                        value = -200
+                    }
+                }
+
+                if = {
+                    limit = { NOT = { this = scope:actor } }
+                    if = {
+                        limit = { is_allied_with = { target = scope:actor } }
+                        add = {
+                            desc = "HAS_ALLIANCE"
+                            value = 50
+                        }
+                    }
+                    if = {
+                        limit = { same_dynasty_as = { target = scope:actor } }
+                        add = {
+                            desc = "opinion_same_dynasty"
+                            value = 75
+                        }
+                    }
+                }
+
+                if = {
+                    limit = { NOT = { this = scope:actor } }
+                    add = {
+                        desc = "game_concept_opinion"
+                        scope:actor = {
+                            value = this_opinion_of_prev
+                            divide = 3
+                        }
+                    }
+                }
+
+                add = {
+                    desc = "game_concept_prestige"
+                    value = prestige
+                    subtract = 50
+                    divide = 3
+                }
+            }
+        }
+        else = {
+            value = 0
+        }
+    }
+}

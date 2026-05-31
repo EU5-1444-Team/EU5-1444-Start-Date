@@ -1,0 +1,71 @@
+﻿peace_tui_tonga_force_entry = {
+    cost = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 5
+        }
+        add = {
+            desc = "game_concept_population"
+            value = scope:loser.total_population
+            multiply = 0.009
+        }
+    }
+    potential = {
+        scope:war = {
+            casus_belli ?= casus_belli:cb_tui_tonga_force_entry
+        }
+        scope:loser = {
+            NOT = { is_member_of_international_organization = international_organization:tui_tonga }
+        }
+    }
+    allow = {
+    }
+    effect = {
+        international_organization:tui_tonga = {
+            if = {
+                limit = {
+                    scope:loser = {
+                        NOT = { is_member_of_international_organization = prev }
+                    }
+                }
+                add_country_to_international_organization = scope:loser
+            }
+        }
+    }
+    ai_desire = {
+        add = {
+            desc = "BASE"
+            value = 100
+        }
+    }
+}
+
+peace_tui_tonga_seize_leadership = {
+    cost = {
+        add = {
+            desc = "DIPLOREASON_BASE"
+            value = 15
+        }
+    }
+    potential = {
+        scope:war = {
+            casus_belli ?= casus_belli:cb_tui_tonga_seize_leadership
+        }
+        scope:loser = {
+            is_leader_of_international_organization = international_organization:tui_tonga
+        }
+    }
+    allow = {
+    }
+    effect = {
+        international_organization:tui_tonga = {
+            set_leader_country = scope:winner
+        }
+    }
+    ai_desire = {
+        add = {
+            desc = "BASE"
+            value = 100
+        }
+    }
+}

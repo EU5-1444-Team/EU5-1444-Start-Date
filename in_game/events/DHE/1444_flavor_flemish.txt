@@ -1,0 +1,181 @@
+﻿namespace = flemish_flavor
+namespace = brabantish_flavor
+namespace = dutch_rhenish_flavor
+
+flemish_flavor.1 = {
+	type = country_event
+
+	fire_only_once = yes
+	hidden = yes
+
+	title = flemish_flavor.1.title
+
+	dynamic_historical_event = {
+		tag = FLA
+		tag = BRB
+		from = 1700.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	trigger = {
+		current_age = age_6_revolutions
+		OR = {
+			culture = culture:flemish
+			tag = FLA
+			tag = BRB
+		}
+		any_owned_location = {
+			area = area:flanders_area
+			any_pop = {
+				culture = culture:low_franconian
+			}
+		}
+	}
+
+	immediate = {
+		every_owned_location = {
+			limit = {
+				area = area:flanders_area
+			}
+			every_pop = {
+				limit = {
+					culture = culture:low_franconian
+				}
+				change_pop_culture = culture:flemish
+			}
+		}
+	}
+}
+
+brabantish_flavor.1 = {
+	type = country_event
+
+	fire_only_once = yes
+	hidden = yes
+
+	title = brabantish_flavor.1.title
+
+	dynamic_historical_event = {
+		tag = BRB
+		tag = BDA
+		tag = BOZ
+		tag = CJK
+		from = 1700.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	trigger = {
+		current_age = age_6_revolutions
+		OR = {
+			culture = culture:brabantish
+			tag = BRB
+			tag = BDA
+			tag = BOZ
+			tag = CJK
+		}
+		OR = {
+			own_entire_province = province_definition:brabant_province
+			own_entire_province = province_definition:kempenland_province
+			own_entire_province = province_definition:antwerp_province
+		}
+		OR = {
+			"culture_percentage_in_country(culture:low_franconian)" > 0.0
+			"culture_percentage_in_country(culture:flemish)" > 0.0
+		}
+	}
+
+	immediate = {
+		province_definition:brabant_province = {
+			every_location_in_province_definition = {
+				limit = { owner ?= root }
+				every_pop = {
+					limit = {
+						OR = {
+							culture = culture:low_franconian
+							culture = culture:flemish
+						}
+					}
+					change_pop_culture = culture:brabantish
+				}
+			}
+		}
+		province_definition:kempenland_province = {
+			every_location_in_province_definition = {
+				limit = { owner ?= root }
+				every_pop = {
+					limit = {
+						OR = {
+							culture = culture:low_franconian
+							culture = culture:flemish
+						}
+					}
+					change_pop_culture = culture:brabantish
+				}
+			}
+		}
+		province_definition:antwerp_province = {
+			every_location_in_province_definition = {
+				limit = { owner ?= root }
+				every_pop = {
+					limit = {
+						OR = {
+							culture = culture:low_franconian
+							culture = culture:flemish
+						}
+					}
+					change_pop_culture = culture:brabantish
+				}
+			}
+		}
+	}
+}
+
+dutch_rhenish_flavor.1 = {
+	type = country_event
+
+	fire_only_once = yes
+	hidden = yes
+
+	title = dutch_rhenish_flavor.1.title
+
+	dynamic_historical_event = {
+		tag = KLE
+		tag = MRS
+		tag = ESS
+		from = 1700.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	trigger = {
+		current_age = age_6_revolutions
+		OR = {
+			culture = culture:dutch_rhenish
+			tag = KLE
+			tag = MRS
+			tag = ESS
+		}
+		any_owned_location = {
+			area = area:rhineland_area
+			any_pop = {
+				culture = culture:low_franconian
+			}
+		}
+	}
+
+	immediate = {
+		every_owned_location = {
+			limit = {
+				area = area:rhineland_area
+			}
+			every_pop = {
+				limit = {
+					culture = culture:low_franconian
+				}
+				change_pop_culture = culture:dutch_rhenish
+			}
+		}
+	}
+}

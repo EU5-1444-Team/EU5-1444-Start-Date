@@ -1,98 +1,337 @@
-legacy_of_genghis = {
+﻿legacy_of_genghis = {
 	age = age_1_traditions
-	government = steppe_horde
 	major = yes
+	unique = yes
 
 	potential = {
 		OR = {
 			culture = culture:mongolian_culture
 			culture = culture:khalkha_culture
-			ruler ?= { 
-				has_dynasty = yes
-				dynasty ?= dynasty:borjigin_dynasty
-			}
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:borjigin_dynasty ?= this }
 		}
-		country_type = army
+	}
+
+	allow = {
+		OR = {
+			culture = culture:mongolian_culture
+			culture = culture:khalkha_culture
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:borjigin_dynasty ?= this }
+		}
+		NOT = { has_reform = government_reform:mongol_khagan }
 	}
 	
 	locked = {
 		OR = {
 			culture = culture:mongolian_culture
-			ruler ?= { dynasty ?= dynasty:borjigin_dynasty }
+			culture = culture:khalkha_culture
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:borjigin_dynasty ?= this }
 		}
-		country_type = army
 	}
 
-	
 	country_modifier = {
-		army_cavalry_maintenance_cost_modifier = -0.1
-		court_spending_cost = -0.02
+		diplomatic_reputation = diplomatic_reputation_mild_bonus
+		subject_loyalty = 0.05
+		improve_relation_impact = 0.1
+		monthly_horde_unity = 0.03
+        monthly_tribal_cohesion = 0.03
+        monthly_legitimacy = 0.03
+        monthly_devotion = 0.03
+		army_light_cavalry_maintenance_cost_modifier = -0.1
 		monthly_towards_aristocracy = societal_value_monthly_move
+		government_reform_slots = 1
 	}
-
 	years = 2
+}
+mongol_khagan = {
+	age = age_1_traditions
+	major = yes
+	unique = yes
+
+    potential = {
+		country_rank_is_empire = yes
+        OR = {
+			culture = { has_culture_group = culture_group:mongolian_group }
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:chagatayid_dynasty ?= this }
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this }
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this }
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:borjigin_dynasty ?= this }
+		}
+    }
+    allow = {
+		country_rank_is_empire = yes
+        OR = {
+			culture = { has_culture_group = culture_group:mongolian_group }
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:chagatayid_dynasty ?= this }
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this }
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:borjigin_dynasty ?= this }
+		}
+		OR = {
+			NOT = { culture = culture:oirat_culture }
+			AND = {
+				culture = culture:oirat_culture
+				has_variable = esen_commited_feast_of_princes
+			}
+		}
+    }
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = mongol_khagan
+		}
+	}
+    country_modifier = {
+        diplomatic_reputation = diplomatic_reputation_severe_bonus
+        army_light_cavalry_maintenance_cost_modifier = -0.1
+        global_crown_estate_power = 0.2
+		monthly_horde_unity = 0.06
+        monthly_tribal_cohesion = 0.06
+        monthly_legitimacy = 0.06
+        monthly_devotion = 0.06
+		government_reform_slots = 1
+    }
+    years = 2
 }
 legacy_of_khasar = {
 	age = age_1_traditions
-	government = steppe_horde
 	major = yes
+	unique = yes
 
 	potential = {
 		OR = {
 			culture = culture:khorchin_culture
-			ruler ?= { 
-				has_dynasty = yes
-				dynasty ?= dynasty:borjigin_dynasty
-			}
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:khasar_dynasty ?= this } 
 		}
-		country_type = army
+	}
+	allow = {
+		OR = {
+			culture = culture:khorchin_culture
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:khasar_dynasty ?= this } 
+		}
+		NOT = { has_reform = government_reform:mongol_khagan }
+	}
+	locked = {
+		OR = {
+			culture = culture:khorchin_culture
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:khasar_dynasty ?= this } 
+		}
+	}
+	country_modifier = {
+        army_light_cavalry_power = 0.05
+		army_light_infantry_power = 0.05
+		army_tradition_from_battle = 0.5
+		monthly_army_tradition = 0.05
+		army_food_gathering_modifier = 0.1
+		monthly_towards_aristocracy = societal_value_monthly_move
+		nobles_estate_target_satisfaction = medium_permanent_target_satisfaction
+		government_reform_slots = 1
+	}
+	years = 2
+}
+oirat_forest_legacy = {
+	age = age_1_traditions
+	major = yes
+	unique = yes
+
+    potential = {
+        culture = culture:oirat_culture
+    }
+	allow = {
+		culture = culture:oirat_culture
+		NOT = { has_reform = government_reform:mongol_khagan }
 	}
 	
 	locked = {
-		OR = {
-			culture = culture:mongolian_culture
-			ruler ?= { dynasty ?= dynasty:borjigin_dynasty }
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = oirat_forest_legacy
 		}
-		country_type = army
 	}
-
-	
-	country_modifier = {
-        nobles_estate_target_satisfaction = medium_permanent_target_satisfaction
-        army_cavalry_maintenance_cost_modifier = -0.1
-        monthly_towards_aristocracy = societal_value_monthly_move
-	}
-
+    country_modifier = {
+        monthly_horde_unity = 0.02
+        monthly_tribal_cohesion = 0.02
+        monthly_legitimacy = 0.05
+        monthly_devotion = 0.02
+        army_food_gathering_modifier = 0.15
+        land_unit_attrition = -0.05
+        global_levy_size_modifier = 0.05
+        government_reform_slots = 1
+    }
 	years = 2
 }
-mongol_khagan = {
+oirat_unification_reform = {
+	unique = yes
+	major = yes
+
+    potential = {
+        has_or_had_tag = OIR
+    }
+	allow = {
+        has_or_had_tag = OIR
+	}
+    
+    country_modifier = {
+        monthly_tribal_cohesion = 0.02
+        monthly_legitimacy = 0.02
+        monthly_republican_tradition = 0.02
+        monthly_devotion = 0.02
+        monthly_horde_unity = 0.02
+        monthly_prestige = 0.05
+        stability_decay = -0.001
+        trade_land_efficiency = 0.02
+        government_reform_slots = 1
+    }
+	years = 0.1
+}
+eastern_steppe_unification_reform = {
+	unique = yes
+	major = yes
+	potential = {
+		OR = {
+			has_or_had_tag = KHL
+			has_or_had_tag = KHA
+			has_or_had_tag = NOG
+			has_or_had_tag = URZ
+			has_or_had_tag = BSH
+		}
+	}
+	allow = {
+		OR = {
+			has_or_had_tag = KHL
+			has_or_had_tag = KHA
+			has_or_had_tag = NOG
+			has_or_had_tag = URZ
+			has_or_had_tag = BSH
+		}
+	}
+	country_modifier = {
+		monthly_tribal_cohesion = 0.02
+		monthly_legitimacy = 0.02
+		monthly_republican_tradition = 0.02
+		monthly_devotion = 0.02
+		monthly_horde_unity = 0.02
+		monthly_prestige = 0.05
+		stability_decay = -0.001
+		trade_land_efficiency = 0.02
+		government_reform_slots = 1
+	}
+	years = 0.1
+}
+legacy_of_chagatai = {
+	age = age_1_traditions
+	major = yes
+	unique = yes
+
+	potential = {
+		OR = {
+			culture = culture:moghul_culture
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:chagatayid_dynasty ?= this } 
+		}
+	}
+	allow = {
+		OR = {
+			culture = culture:moghul_culture
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:chagatayid_dynasty ?= this } 
+		}
+		NOT = { has_reform = government_reform:mongol_khagan }
+	}
+	locked = {
+		OR = {
+			culture = culture:moghul_culture
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:chagatayid_dynasty ?= this } 
+		}
+	}
+	country_modifier = {
+        diplomatic_reputation = diplomatic_reputation_weak_bonus
+		monthly_horde_unity = 0.03
+        monthly_tribal_cohesion = 0.03
+        monthly_legitimacy = 0.03
+        monthly_devotion = 0.03
+		trade_land_efficiency = 0.05
+		global_monthly_prosperity = 0.01
+		army_light_cavalry_maintenance_cost_modifier = -0.1
+		cultural_influence = 0.05
+		monthly_towards_aristocracy = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+	years = 2
+}
+legacy_of_jochi = {
+	age = age_1_traditions
+	major = yes
+	unique = yes
+
+	potential = {
+		OR = {
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this } 
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this } 
+		}
+	}
+	allow = {
+		OR = {
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this } 
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this } 
+		}
+		NOT = { has_reform = government_reform:mongol_khagan }
+	}
+	locked = {
+		OR = {
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:jochi_dynasty ?= this } 
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:giray_dynasty ?= this } 
+		}
+	}
+	country_modifier = {
+		monthly_horde_unity = 0.03
+        monthly_tribal_cohesion = 0.03
+        monthly_legitimacy = 0.03
+        monthly_devotion = 0.03
+		subject_loyalty = 0.05
+		trade_income = 0.05
+		tax_income_efficiency = 0.05
+		army_light_cavalry_maintenance_cost_modifier = -0.1
+		diplomatic_reputation = diplomatic_reputation_weak_bonus
+		monthly_towards_aristocracy = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+	years = 2
+}
+legacy_of_kublai_khan_reform = {
+    unique = yes
     major = yes
     potential = {
-        culture = culture:mongolian_culture
+        has_or_had_tag = YUA
     }
     allow = {
-        OR = {
-            AND = {
-                has_ruler = no
-                heir ?= { dynasty ?= dynasty:borjigin_dynasty }
-            }
-            ruler ?= { dynasty ?= dynasty:borjigin_dynasty }
-        }
-    }
-    locked = {
-        OR = {
-            AND = {
-                has_regent = yes
-                heir ?= { dynasty = dynasty:borjigin_dynasty }
-            }
-            ruler ?= { dynasty = dynasty:borjigin_dynasty }
-        }
+        has_or_had_tag = YUA
     }
     country_modifier = {
-        diplomatic_reputation = diplomatic_reputation_severe_bonus
-        army_cavalry_maintenance_cost_modifier = -0.1
-        global_crown_estate_power = 0.2
-		monthly_legitimacy = 0.5
+        monthly_prestige = 0.10
+        country_cabinet_efficiency = 0.08
+        monthly_gold_income = 0.06
+        stability_decay = 0.05
+        diplomatic_reputation = diplomatic_reputation_mild_bonus
+        research_speed = 0.05
+        government_reform_slots = 1
     }
-    years = 2
+    years = 0.1
+}
+
+legacy_of_the_steppe_reform = {
+    unique = yes
+    major = yes
+    potential = {
+        has_or_had_tag = MGA
+    }
+    allow = {
+        has_or_had_tag = MGA
+	}
+    country_modifier = {
+        monthly_prestige = 0.08
+        global_manpower_modifier = 0.12
+        army_tradition_from_battle = 0.10
+        cultural_tradition = 0.08
+		global_distance_from_capital_speed_propagation = 0.2
+        monthly_towards_unsinicized = societal_value_minor_monthly_move
+        government_reform_slots = 1
+    }
+    years = 0.1
 }

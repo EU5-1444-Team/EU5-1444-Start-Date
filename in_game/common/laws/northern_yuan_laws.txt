@@ -1,0 +1,1508 @@
+﻿###################################
+# TIER 1 — KURULTAI LAW
+###################################
+kurultai_law = {
+    law_category = administrative
+    type = international_organization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:northern_yuan
+    }
+    allow = {
+        international_organization:northern_yuan = {
+            var:yeke_mongghul_ulus >= 80
+        }
+    }
+    has_levels = yes
+    custom_tags = { forbids_no_policy }
+
+    no_kurultai_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+        wants_propose_policy = {
+            subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
+        }
+    }
+
+    formal_kurultai_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            monthly_prestige = 0.15
+            diplomatic_reputation = diplomatic_reputation_mild_bonus
+            diplomatic_capacity = 2
+            max_diplomats = 1
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            monthly_prestige = 0.05
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
+            monthly_legitimacy = -0.05
+            monthly_devotion = -0.05
+            monthly_horde_unity = -0.05
+            monthly_tribal_cohesion = -0.05
+            monthly_republican_tradition = -0.05
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            monthly_prestige = 0.03
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+            if = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                if = {
+                    limit = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                            }
+                        }
+                    }
+                    add = { desc = "POLICY_GENGHISID_PREFERS_YUAN" value = 25 }
+                }
+                else = {
+                    subtract = { desc = "POLICY_NON_GENGHISID_OPPOSES_YUAN" value = 25 }
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_MILD_CENTRALIZATION" value = 5 }
+        }
+    }
+
+    loose_acknowledgment_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            monthly_legitimacy = 0.05
+            monthly_devotion = 0.05
+            monthly_horde_unity = 0.05
+            monthly_tribal_cohesion = 0.05
+            monthly_republican_tradition = 0.05
+            monthly_prestige = 0.08
+            diplomatic_capacity = 1
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            monthly_prestige = -0.05
+            monthly_legitimacy = 0.02
+            monthly_devotion = 0.02
+            monthly_horde_unity = 0.02
+            monthly_tribal_cohesion = 0.02
+            monthly_republican_tradition = 0.02
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            monthly_legitimacy = 0.03
+            monthly_devotion = 0.03
+            monthly_horde_unity = 0.03
+            monthly_tribal_cohesion = 0.03
+            monthly_republican_tradition = 0.03
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 20 }
+        }
+    }
+}
+ 
+###################################
+# TIER 2 — TRIBUTE SYSTEM LAW
+###################################
+tribute_system_law = {
+    law_category = socioeconomic
+    type = international_organization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:northern_yuan
+    }
+    allow = {
+        root = { var:yeke_mongghul_ulus >= 80 }
+        OR = {
+            international_organization_has_policy = policy:formal_kurultai_policy
+            international_organization_has_policy = policy:loose_acknowledgment_policy
+        }
+    }
+    has_levels = yes
+    custom_tags = { forbids_no_policy }
+
+    no_tribute_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+        wants_propose_policy = {
+            subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
+        }
+    }
+
+    standardized_tribute_policy = {
+        payments_implemented = { yuan_tribute }
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            monthly_gold_income = 0.12
+            tax_income_efficiency = 0.08
+            trade_land_efficiency = 0.06
+            monthly_towards_sinicized = societal_value_minor_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            monthly_gold_income = 0.04
+            tax_income_efficiency = 0.02
+            monthly_legitimacy = -0.03
+            monthly_devotion = -0.03
+            monthly_horde_unity = -0.03
+            monthly_tribal_cohesion = -0.03
+            monthly_republican_tradition = -0.03
+            monthly_towards_sinicized = societal_value_minor_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            monthly_gold_income = -0.03
+            trade_land_efficiency = 0.02
+            monthly_towards_sinicized = societal_value_tiny_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+            if = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                if = {
+                    limit = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                            }
+                        }
+                    }
+                    add = { desc = "POLICY_GENGHISID_PREFERS_YUAN" value = 25 }
+                }
+                else = {
+                    subtract = { desc = "POLICY_NON_GENGHISID_OPPOSES_YUAN" value = 25 }
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_MILD_CENTRALIZATION" value = -10 }
+        }
+    }
+
+    military_tribute_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            global_levy_size_modifier = 0.15
+            army_maintenance_efficiency = -0.08
+            global_levy_recruitment_speed_modifier = 0.10
+            monthly_towards_unsinicized = societal_value_minor_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            global_levy_size_modifier = 0.05
+            army_maintenance_efficiency = -0.03
+            monthly_prestige = -0.05
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            global_levy_size_modifier = 0.05
+            army_maintenance_efficiency = -0.02
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 10 }
+        }
+    }
+}
+ 
+###################################
+# TIER 3 — PASTURE RIGHTS LAW
+###################################
+pasture_rights_law = {
+    law_category = administrative
+    type = international_organization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:northern_yuan
+    }
+    allow = {
+        root = { var:yeke_mongghul_ulus >= 80 }
+        OR = {
+            international_organization_has_policy = policy:standardized_tribute_policy
+            international_organization_has_policy = policy:military_tribute_policy
+        }
+    }
+    has_levels = yes
+    custom_tags = { forbids_no_policy }
+
+    no_pasture_rights_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+        wants_propose_policy = {
+            subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
+        }
+    }
+
+    yuan_arbitration_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            stability_cost = -0.10
+            stability_decay = 0.05
+            global_estate_satisfaction_recovery = 0.03
+            stability_investment = 0.10
+            monthly_towards_sinicized = societal_value_minor_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            stability_cost = -0.05
+            stability_decay = 0.02
+            monthly_legitimacy = -0.03
+            monthly_devotion = -0.03
+            monthly_horde_unity = -0.03
+            monthly_tribal_cohesion = -0.03
+            monthly_republican_tradition = -0.03
+            monthly_towards_sinicized = societal_value_tiny_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            stability_cost = -0.03
+            global_estate_satisfaction_recovery = 0.02
+            monthly_towards_sinicized = societal_value_tiny_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+            if = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                if = {
+                    limit = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                            }
+                        }
+                    }
+                    add = { desc = "POLICY_GENGHISID_PREFERS_YUAN" value = 25 }
+                }
+                else = {
+                    subtract = { desc = "POLICY_NON_GENGHISID_OPPOSES_YUAN" value = 25 }
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_MILD_CENTRALIZATION" value = -10 }
+        }
+    }
+
+    traditional_territories_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            global_population_growth = 0.001
+            global_monthly_food_modifier = 0.08
+            global_levy_size_modifier = 0.08
+            levy_recovery_modifier = 0.10
+            monthly_towards_unsinicized = societal_value_minor_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            global_population_growth = 0.0005
+            global_monthly_food_modifier = 0.03
+            monthly_prestige = -0.05
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            global_population_growth = 0.0005
+            global_monthly_food_modifier = 0.03
+            levy_recovery_modifier = 0.05
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 10 }
+        }
+    }
+}
+ 
+###################################
+# TIER 4 — MILITARY ORGANIZATION LAW
+###################################
+military_organization_law = {
+    law_category = military
+    type = international_organization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:northern_yuan
+    }
+    allow = {
+        root = { var:yeke_mongghul_ulus >= 80 }
+        OR = {
+            international_organization_has_policy = policy:yuan_arbitration_policy
+            international_organization_has_policy = policy:traditional_territories_policy
+        }
+    }
+    has_levels = yes
+    custom_tags = { forbids_no_policy }
+
+    no_military_organization_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+        wants_propose_policy = {
+            subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
+        }
+    }
+
+    standardized_tumen_policy = {
+        payments_implemented = { yuan_tribute }
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            discipline = 0.05
+            army_tradition_from_battle = 0.10
+            monthly_army_tradition = 0.10
+            army_light_infantry_build_cost_modifier = -0.10
+            monthly_towards_sinicized = societal_value_minor_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            discipline = 0.02
+            army_tradition_from_battle = 0.04
+            monthly_legitimacy = -0.03
+            monthly_devotion = -0.03
+            monthly_horde_unity = -0.03
+            monthly_tribal_cohesion = -0.03
+            monthly_republican_tradition = -0.03
+            monthly_towards_sinicized = societal_value_minor_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            discipline = 0.02
+            army_tradition_from_battle = 0.03
+            monthly_towards_sinicized = societal_value_tiny_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+            if = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                if = {
+                    limit = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                            }
+                        }
+                    }
+                    add = { desc = "POLICY_GENGHISID_PREFERS_YUAN" value = 25 }
+                }
+                else = {
+                    subtract = { desc = "POLICY_NON_GENGHISID_OPPOSES_YUAN" value = 25 }
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_CENTRALIZATION" value = -20 }
+        }
+    }
+
+    yuan_offensive_call_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            army_light_cavalry_power = 0.10
+            land_morale = 0.08
+            land_morale_recovery = 0.05
+            army_tradition_from_battle = 0.10
+            monthly_towards_belligerent = societal_value_minor_monthly_move
+            monthly_towards_unsinicized = societal_value_minor_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            army_light_cavalry_power = 0.04
+            land_morale = 0.03
+            monthly_prestige = -0.05
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            army_light_cavalry_power = 0.05
+            land_morale = 0.04
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 20 }
+        }
+    }
+}
+ 
+###################################
+# TIER 5 — IMPERIAL COURT LAW
+###################################
+imperial_court_law = {
+    law_category = estates
+    type = international_organization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:northern_yuan
+    }
+    allow = {
+        root = { var:yeke_mongghul_ulus >= 80 }
+        OR = {
+            international_organization_has_policy = policy:standardized_tumen_policy
+            international_organization_has_policy = policy:yuan_offensive_call_policy
+        }
+    }
+    has_levels = yes
+    custom_tags = { forbids_no_policy }
+
+    no_imperial_court_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+        wants_propose_policy = {
+            subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
+        }
+    }
+
+    sinicized_court_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = sinicized_vs_unsinicized
+                    value = societal_value_minor_move_to_left
+                }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            country_cabinet_efficiency = 0.10
+            government_reform_slots = 1
+            research_speed = 0.05
+            legislative_efficiency = 0.08
+            monthly_towards_sinicized = societal_value_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            country_cabinet_efficiency = 0.04
+            research_speed = 0.02
+            monthly_legitimacy = -0.05
+            monthly_devotion = -0.05
+            monthly_horde_unity = -0.05
+            monthly_tribal_cohesion = -0.05
+            monthly_republican_tradition = -0.05
+            monthly_towards_sinicized = societal_value_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            country_cabinet_efficiency = 0.02
+            research_speed = 0.01
+            monthly_towards_sinicized = societal_value_minor_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+            if = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                if = {
+                    limit = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                            }
+                        }
+                    }
+                    add = { desc = "POLICY_GENGHISID_PREFERS_YUAN" value = 25 }
+                }
+                else = {
+                    subtract = { desc = "POLICY_NON_GENGHISID_OPPOSES_YUAN" value = 25 }
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_CENTRALIZATION" value = -20 }
+        }
+    }
+
+    traditional_mongol_court_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+            every_international_organization_member = {
+                change_societal_value = {
+                    type = sinicized_vs_unsinicized
+                    value = societal_value_minor_move_to_right
+                }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            global_estate_power = -0.10
+            global_estate_target_satisfaction = 0.10
+            cultural_tradition = 0.10
+            global_estate_power = 0.05
+            monthly_towards_unsinicized = societal_value_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            global_estate_power = -0.04
+            cultural_tradition = 0.04
+            monthly_prestige = -0.05
+            monthly_towards_unsinicized = societal_value_minor_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            global_estate_power = -0.05
+            global_estate_target_satisfaction = 0.05
+            cultural_tradition = 0.03
+            monthly_towards_unsinicized = societal_value_minor_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 20 }
+        }
+    }
+}
+ 
+###################################
+# TIER 6 — VASSAL OBLIGATIONS LAW
+###################################
+vassal_obligations_law = {
+    law_category = administrative
+    type = international_organization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:northern_yuan
+    }
+    allow = {
+        root = { var:yeke_mongghul_ulus >= 80 }
+        OR = {
+            international_organization_has_policy = policy:sinicized_court_policy
+            international_organization_has_policy = policy:traditional_mongol_court_policy
+        }
+    }
+    has_levels = yes
+    custom_tags = { forbids_no_policy }
+
+    no_vassal_obligations_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+        join_offensive_wars_can_call = {
+            always = yes
+        }
+        wants_propose_policy = {
+            subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
+        }
+    }
+
+    administrative_integration_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+        join_offensive_wars_always = {
+            always = yes
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            diplomatic_reputation = diplomatic_reputation_mild_bonus
+            war_declaration_stab_hit_tolerance = 1
+            war_declaration_war_exhaustion_tolerance = 5
+            max_war_exhaustion = 10
+            monthly_towards_sinicized = societal_value_minor_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            diplomatic_reputation = diplomatic_reputation_weak_bonus
+            monthly_legitimacy = -0.05
+            monthly_devotion = -0.05
+            monthly_horde_unity = -0.05
+            monthly_tribal_cohesion = -0.05
+            monthly_republican_tradition = -0.05
+            monthly_towards_sinicized = societal_value_minor_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            monthly_war_exhaustion = 0.05
+            antagonism_received_modifier = 0.10
+            monthly_towards_sinicized = societal_value_tiny_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+            if = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                if = {
+                    limit = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                            }
+                        }
+                    }
+                    add = { desc = "POLICY_GENGHISID_PREFERS_YUAN" value = 25 }
+                }
+                else = {
+                    subtract = { desc = "POLICY_NON_GENGHISID_OPPOSES_YUAN" value = 25 }
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_HEAVY_CENTRALIZATION" value = -30 }
+        }
+    }
+
+    military_subjugation_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+        join_offensive_wars_always = {
+            always = yes
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            army_tradition_from_battle = 0.15
+            monthly_army_tradition = 0.10
+            land_morale = 0.05
+            monthly_towards_belligerent = societal_value_minor_monthly_move
+            monthly_towards_unsinicized = societal_value_minor_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            army_tradition_from_battle = 0.05
+            land_morale = 0.02
+            monthly_prestige = -0.08
+            monthly_towards_unsinicized = societal_value_minor_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            army_tradition_from_battle = 0.05
+            monthly_war_exhaustion = 0.08
+            monthly_towards_unsinicized = societal_value_tiny_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 30 }
+        }
+    }
+}
+ 
+###################################
+# TIER 7 — IMPERIAL AUTHORITY LAW
+###################################
+imperial_authority_law = {
+    law_category = centralization
+    type = international_organization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:northern_yuan
+    }
+    allow = {
+        root = { var:yeke_mongghul_ulus >= 80 }
+        OR = {
+            international_organization_has_policy = policy:administrative_integration_policy
+            international_organization_has_policy = policy:military_subjugation_policy
+        }
+        scope:actor ?= { NOT = { has_culture_group = culture_group:jurchen_group } }
+    }
+    custom_tags = { forbids_no_policy }
+
+    preserve_no_authority_policy = {
+        wants_propose_policy = {
+            subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
+        }
+    }
+
+    yuan_imperial_authority_policy = {
+        allow = {
+            scope:actor ?= {
+                is_leader_of_international_organization = scope:recipient
+            }
+        }
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            monthly_prestige = 0.20
+            stability_decay = 0.08
+            stability_cost = -0.15
+            country_cabinet_efficiency = 0.08
+            diplomatic_reputation = 3
+            monthly_towards_sinicized = societal_value_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            monthly_prestige = 0.08
+            monthly_legitimacy = -0.10
+            monthly_devotion = -0.10
+            monthly_horde_unity = -0.10
+            monthly_tribal_cohesion = -0.10
+            monthly_republican_tradition = -0.10
+            monthly_towards_sinicized = societal_value_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            stability_cost = -0.05
+            global_estate_satisfaction_recovery = 0.02
+            monthly_towards_sinicized = societal_value_minor_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+            if = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                if = {
+                    limit = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                            }
+                        }
+                    }
+                    add = { desc = "POLICY_GENGHISID_PREFERS_YUAN" value = 25 }
+                }
+                else = {
+                    subtract = { desc = "POLICY_NON_GENGHISID_OPPOSES_YUAN" value = 25 }
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_HEAVY_CENTRALIZATION" value = -40 }
+        }
+    }
+
+    mongol_imperial_authority_policy = {
+        on_activate = {
+            international_organization:northern_yuan = {
+                change_variable = { name = yeke_mongghul_ulus add = -80 }
+            }
+        }
+
+        # Taishi
+        country_modifier = {
+            potential_trigger = {
+                has_special_status_in_international_organization = {
+                    type = special_status:protector_general
+                    international_organization = international_organization:northern_yuan
+                }
+            }
+            monthly_prestige = 0.20
+            global_manpower_modifier = 0.15
+            army_tradition_from_battle = 0.15
+            reject_subjugation_reasons = 50
+            monthly_towards_unsinicized = societal_value_monthly_move
+            monthly_towards_belligerent = societal_value_minor_monthly_move
+        }
+
+        # Yuan Emperor
+        country_modifier = {
+            potential_trigger = {
+                is_leader_of_international_organization = international_organization:northern_yuan
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            global_manpower_modifier = 0.05
+            monthly_prestige = -0.10
+            monthly_towards_unsinicized = societal_value_minor_monthly_move
+        }
+
+        # Members
+        country_modifier = {
+            potential_trigger = {
+                NOT = { is_leader_of_international_organization = international_organization:northern_yuan }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+            }
+            reject_subjugation_reasons = -75
+            global_manpower_modifier = 0.05
+            monthly_towards_unsinicized = societal_value_minor_monthly_move
+        }
+
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 40 }
+        }
+    }
+}
+ 
+###################################
+# TIER 8 — MONGOL CONSOLIDATION LAW
+###################################
+ 
+mongol_consolidation_law = {
+    law_category = centralization
+    type = international_organization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:northern_yuan
+    }
+    allow = {
+        root = { var:yeke_mongghul_ulus >= 80 }
+        OR = {
+            international_organization_has_policy = policy:yuan_imperial_authority_policy
+            international_organization_has_policy = policy:mongol_imperial_authority_policy
+        }
+    }
+    custom_tags = { forbids_no_policy }
+ 
+    preserve_northern_yuan_policy = {
+        wants_propose_policy = {
+            subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
+        }
+    }
+ 
+    puppet_all_mongols_policy = {
+        on_activate = {
+            every_country_with_special_status_of_type = {
+                type = protector_general
+                trigger_event_non_silently = northern_yuan.100
+            }
+            international_organization:northern_yuan = {
+                change_variable = {
+                    name = yeke_mongghul_ulus
+                    add = -80
+                }
+            }
+        }
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_TOTAL_SUBJUGATION" value = -50 }
+        }
+    }
+}
+ ###################################
+# TIER 9 — NORTHERN YUAN CONSOLIDATION LAW
+###################################
+
+northern_yuan_consolidation_law = {
+    law_category = centralization
+    type = international_organization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:northern_yuan
+    }
+    
+    allow = {
+        root = { var:yeke_mongghul_ulus >= 80 }
+        international_organization_has_policy = policy:puppet_all_mongols_policy
+    }
+    
+    custom_tags = { forbids_no_policy }
+
+    # PRESERVE STATUS QUO
+    preserve_status_quo_policy = {
+        wants_propose_policy = {
+            subtract = { desc = "POLICY_BIAS_LEADER_OPPOSES" value = 500 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_ANCIENT_TRADITION" value = 50 }
+        }
+    }
+
+    # ANNEX ALL MONGOLS (YUAN PATH)
+    annex_all_mongols_yuan_policy = {
+        allow = {
+            root = {
+                ruler_or_heir_if_regent = {
+                    OR = {
+                        is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                        is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                        is_patrilineal_descendant_of = dynasty:giray_dynasty
+                        is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                    }
+                }
+            }
+            international_organization_has_policy = policy:yuan_imperial_authority_policy
+        }
+        on_activate = {
+            leader_country = {
+                add_reform = government_reform:legacy_of_kublai_khan_reform
+            }
+            every_country_with_special_status_of_type = {
+                type = protector_general
+                add_country_modifier = { modifier = northern_yuan_legacy_modifier years = -1 mode = add }
+                trigger_event_non_silently = northern_yuan.102
+            }
+        }
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+            if = {
+                limit = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:protector_general
+                        international_organization = international_organization:northern_yuan
+                    }
+                }
+                if = {
+                    limit = {
+                        ruler_or_heir_if_regent ?= {
+                            OR = {
+                                is_patrilineal_descendant_of = dynasty:borjigin_dynasty
+                                is_patrilineal_descendant_of = dynasty:jochi_dynasty
+                                is_patrilineal_descendant_of = dynasty:giray_dynasty
+                                is_patrilineal_descendant_of = dynasty:chagatayid_dynasty
+                            }
+                        }
+                    }
+                    add = { desc = "POLICY_GENGHISID_PREFERS_YUAN" value = 25 }
+                }
+                else = {
+                    subtract = { desc = "POLICY_NON_GENGHISID_OPPOSES_YUAN" value = 25 }
+                }
+            }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_TOTAL_SUBJUGATION" value = -50 }
+        }
+    }
+
+    # ANNEX ALL MONGOLS (MONGOLIA PATH)
+    annex_all_mongols_mongolia_policy = {
+        allow = {
+            # Specifically requires the Mongol Authority policy instead of Yuan
+            international_organization_has_policy = policy:mongol_imperial_authority_policy
+        }
+        on_activate = {
+            leader_country = {
+                add_reform = government_reform:legacy_of_the_steppe_reform
+            }
+            every_country_with_special_status_of_type = {
+                type = protector_general
+                add_country_modifier = { modifier = northern_yuan_legacy_modifier years = -1 mode = add }
+                # Triggering the Mongolia-specific event
+                trigger_event_non_silently = northern_yuan.104
+            }
+        }
+        wants_propose_policy = {
+            add = { desc = "POLICY_BIAS_LEADER_WANTS" value = 50 }
+        }
+        wants_this_policy_bias = {
+            add = { desc = "POLICY_TOTAL_SUBJUGATION" value = -50 }
+        }
+    }
+}

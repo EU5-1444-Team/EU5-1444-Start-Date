@@ -1,4 +1,4 @@
-#            | existing country | releasing a country | country formation |
+﻿#            | existing country | releasing a country | country formation |
 # |==========|==================|=====================|===================|
 # |root      | definition       | definition          | definition        |
 # |----------|------------------|---------------------|-------------------|
@@ -109,4 +109,44 @@ coa_def_valois_anjou_dynasty_trigger = {
 
 coa_def_valois_burgundy_dynasty_trigger = {
 	scope:actor.ruler.dynasty ?= { dynasty:valois_burgundy_dynasty ?= this }
+}
+coa_def_wittelsbach_palatinate_dynasty_trigger = {
+	scope:actor.ruler.dynasty ?= { dynasty:wittelsbach_palatinate_dynasty ?= this }
+}
+coa_def_wittelsbach_dynasty_trigger = {
+	scope:actor.ruler.dynasty ?= { dynasty:wittelsbach_dynasty ?= this }
+}
+coa_def_pomeranian_trigger = { # Breton
+	scope:actor ?= {
+		exists = culture
+		OR = {
+			culture = culture:eastern_pomeranian
+			culture = culture:western_pomeranian
+		}
+	}
+}
+coa_def_gryf_trigger = {
+	scope:actor.ruler.dynasty ?= { dynasty:gryf_dynasty ?= this }
+}
+coa_def_pomeranian_ruler_trigger = { # Breton
+	scope:actor ?= {
+		OR = {
+          scope:actor.ruler.culture ?= culture:eastern_pomeranian
+          scope:actor.ruler.culture ?= culture:western_pomeranian
+		}
+	}
+}
+ # Zyrph's Edits
+
+coa_def_BRB_ownership_trigger = {
+	scope:actor ?= {
+		OR = {
+			owns = location:brussels
+			any_subject = { owns = location:brussels }
+		}	
+		OR = {
+			NOT = { country_exists = c:BRB }
+			any_subject_or_below = { this = c:BRB }
+		}
+	}
 }

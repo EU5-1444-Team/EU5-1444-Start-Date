@@ -1,0 +1,69 @@
+﻿tui_tonga = {
+    has_target = no
+    unique = yes
+    expel_members_who_are_targets_of_other_members = no
+    show_on_diplomatic_map = yes
+    has_leader_country = yes
+    leader_type = country
+    leader_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+
+    land_ownership_rule = tui_tonga_land_ownership
+
+    create_visible_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = no
+    }
+    can_declare_war = {
+        always = yes
+    }
+
+    can_join_trigger = {
+        always = no
+    }
+    can_leave_trigger = {
+        always = no
+    }
+    auto_leave_trigger = {
+        always = no
+    }
+    auto_disband_trigger = {
+        total_members < 1
+    }
+
+    modifier = {
+    }
+    leader_modifier = {
+        monthly_prestige = 0.1
+    }
+    non_leader_modifier = {
+        monthly_legitimacy = 0.1
+        monthly_tribal_cohesion = 0.1
+        monthly_devotion = 0.1
+        monthly_republican_tradition = 0.1
+    }
+
+    payments_implemented = {
+        tui_tonga_contribution
+    }
+
+    special_statuses_implemented = {
+        tui_tonga_overlord
+    }
+
+    on_joined = {
+    }
+    on_left = {
+    }
+
+    variables = {
+    }
+
+    ai_desire_to_join = {
+    }
+    ai_desire_to_allow_new_member = {
+    }
+    ai_issue_voting_bias = {
+    }
+}

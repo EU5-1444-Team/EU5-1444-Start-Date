@@ -1,0 +1,64 @@
+﻿# TODO: Remove ability for the Qoyunlus to pick the Anatolian Beylik reform
+
+turkoman_confederation = {
+	major = yes
+	unique = yes
+	government = tribe
+
+	potential = {
+		OR = {
+			tag = AQQ
+			tag = QAR
+		}
+	}
+
+	allow = {
+		OR = {
+			tag = AQQ
+			tag = QAR
+		}
+		culture = culture:turkoman_culture
+	}
+
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = turkoman_confederation
+		}
+	}
+
+	country_modifier = {
+		army_light_cavalry_power = 0.1
+		wrong_culture_levy_size = 0.25
+		tribes_estate_max_tax = 0.25
+		cultures_capacity = 2
+		government_reform_slots = 1
+	}
+
+	years = 2
+}
+
+REPLACE:feudal_theocracy = {
+	unique = yes
+	major = yes
+	years = 1
+	government = monarchy
+	potential = {
+		OR = {
+			religion.group = religion_group:muslim
+			religion.group = religion_group:buddhist
+		}
+	}
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = feudal_theocracy
+		}
+	}
+	country_modifier = {
+		global_pop_conversion_speed_modifier = 0.3
+		global_clergy_estate_power = 0.2
+		clergy_estate_target_satisfaction = medium_permanent_target_satisfaction
+		monthly_towards_spiritualist = societal_value_monthly_move
+	}
+}

@@ -1,0 +1,253 @@
+﻿league_of_lezhe_election = {
+	loc = election
+	potential = {
+		always = yes
+	}
+	allow = {
+	}
+	ai_tick = monthly
+	is_live = {
+		scope:recipient = {
+			international_organization_has_leader = no
+		}
+	}
+	can_vote = {
+		scope:actor = {
+			is_member_of_international_organization = scope:recipient
+			is_subject = no
+			has_ruler = yes
+			ruler ?= {
+				is_alive = yes
+			}
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:league_backer
+					international_organization = scope:recipient
+				}
+			}
+			NOT = {
+				has_special_status_in_international_organization = {
+					type = special_status:venetian_governorate
+					international_organization = scope:recipient
+				}
+			}
+		}
+	}
+	votes = {
+		add = {
+			desc = "[elector|e]"
+			value = 1
+		}
+	}
+	total_votes_needed = {
+		add = {
+			value = scope:total_votes_available
+			multiply = 0.5
+		}
+	}
+	requires_explicit_votes = no
+	should_finalize_vote = {
+		custom_tooltip = {
+			text = OVER_HALF_OF_VOTES
+			scope:recipient = {
+				not = {
+					exists = leader_country
+				}
+			}
+			scope:highest_vote >= scope:total_votes_needed
+		}
+	}
+	select_trigger = {
+		looking_for_a = international_organization
+		target_flag = recipient
+		name = "choose_international_organization"
+		column = {
+			data = name
+		}
+		visible = {
+			international_organization_type = international_organization_type:league_of_lezhe
+		}
+		enabled = {
+		}
+	}
+	select_trigger = {
+		looking_for_a = country
+		source = recipient
+		target_flag = vote
+		allow_self = yes
+		name = "election_select_country"
+		none_available_msg_key = "election_select_no_countries"
+		default_sort = great_power_score
+		column = {
+			data = name
+		}
+		column = {
+			data = great_power_score
+		}
+		visible = {
+			can_lead_international_organization = scope:recipient
+		}
+		enabled = {
+			OR = {
+				NOT = {
+					exists = scope:actor
+				}
+				NOR = {
+					is_rival_of = scope:actor
+					is_enemy_of = scope:actor
+					is_at_war_with = scope:actor
+				}
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				exists = scope:vote
+			}
+			scope:recipient = {
+				set_leader_country = scope:vote
+			}
+		}
+	}
+	ai_will_do = {
+		scope:vote = {
+			add = {
+				desc = "[great_power_score|e]"
+				value = great_power_score
+			}
+			if = {
+				limit = {
+					this = scope:actor
+				}
+				add = {
+					desc = "LEADERSHIP_VOTE_FOR_SELF"
+					value = 25
+				}
+			}
+			else = {
+				add = {
+					if = {
+						limit = {
+							is_allied_with = {
+								target = scope:actor
+							}
+						}
+						desc = "game_concept_alliance"
+						value = 100
+					}
+				}
+				add = {
+					if = {
+						limit = {
+							any_rival = {
+								is_rival_of = scope:actor
+							}
+						}
+						desc = "LEADERSHIP_RIVAL_OF_RIVAL"
+						value = 100
+					}
+					else_if = {
+						limit = {
+							any_rival = {
+								is_enemy_of = scope:actor
+							}
+						}
+						desc = "LEADERSHIP_RIVAL_OF_ENEMY"
+						value = 50
+					}
+					else_if = {
+						limit = {
+							any_enemy = {
+								is_rival_of = scope:actor
+							}
+						}
+						desc = "LEADERSHIP_ENEMY_OF_RIVAL"
+						value = 50
+					}
+					else_if = {
+						limit = {
+							any_enemy = {
+								is_enemy_of = scope:actor
+							}
+						}
+						desc = "LEADERSHIP_ENEMY_OF_ENEMY"
+						value = 50
+					}
+				}
+				add = {
+					if = {
+						limit = {
+							capital.area = scope:actor.capital.area
+						}
+						desc = "LEADERSHIP_VOTE_SAME_AREA"
+						value = 75
+					}
+				}
+				add = {
+					if = {
+						limit = {
+							culture != scope:actor.culture
+						}
+						desc = "[primary_culture|e]"
+						value = -25
+					}
+				}
+				add = {
+					if = {
+						limit = {
+							culture.language != scope:actor.culture.language
+						}
+						desc = "[common_language|e]"
+						value = -25
+					}
+				}
+				add = {
+					if = {
+						limit = {
+							religion != scope:actor.religion
+						}
+						desc = "[religion|e]"
+						value = -100
+					}
+				}
+				add = {
+					if = {
+						limit = {
+							NOT = {
+								this = scope:actor
+							}
+						}
+						if = {
+							limit = {
+								scope:actor = {
+									this_opinion_of_prev < 0
+								}
+							}
+							desc = "LEADERSHIP_VOTE_NEGATIVE_OPINION"
+							value = -200
+						}
+						else = {
+							desc = "[opinion|e]"
+							scope:actor = {
+								value = this_opinion_of_prev
+								divide = 2
+							}
+						}
+					}
+				}
+				add = {
+					if = {
+						limit = {
+							NOT = {
+								this = scope:actor
+							}
+						}
+						desc = "MODIFIER_TYPE_NAME_reasons_to_elect"
+						value = scope:actor.modifier:reasons_to_elect
+					}
+				}
+			}
+		}
+	}
+}

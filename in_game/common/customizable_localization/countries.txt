@@ -1,6 +1,5 @@
 ﻿ADU = {
 	type = country
-
 	text = {
 		localization_key = ADU_arabic
 		trigger = {
@@ -16,11 +15,14 @@
 		fallback = yes
 	}
 }
-ADU_ADJ = { parent = ADU suffix = "_ADJ" }
+
+ADU_ADJ = {
+	parent = ADU
+	suffix = "_ADJ"
+}
 
 BYZ = {
 	type = country
-
 	text = {
 		localization_key = BYZ_eastern_rome
 		trigger = {
@@ -30,35 +32,38 @@ BYZ = {
 			}
 		}
 	}
-	
 	text = {
 		localization_key = BYZ
 		fallback = yes
 	}
 }
-BYZ_ADJ = { parent = BYZ suffix = "_ADJ" }
+
+BYZ_ADJ = {
+	parent = BYZ
+	suffix = "_ADJ"
+}
 
 ENG = {
 	type = country
-
 	text = {
 		localization_key = ENG_latin
 		trigger = {
 			court_language ?= language:latin_language
 		}
 	}
-
 	text = {
 		localization_key = ENG
 		fallback = yes
 	}
 }
-ENG_ADJ = { parent = ENG suffix = "_ADJ" }
 
+ENG_ADJ = {
+	parent = ENG
+	suffix = "_ADJ"
+}
 
 EUR = {
 	type = country
-
 	text = {
 		localization_key = EUR_english
 		trigger = {
@@ -68,25 +73,25 @@ EUR = {
 			}
 		}
 	}
-	
 	text = {
 		localization_key = EUR
 		fallback = yes
 	}
 }
-EUR_ADJ = { parent = EUR suffix = "_ADJ" }
+
+EUR_ADJ = {
+	parent = EUR
+	suffix = "_ADJ"
+}
 
 GBR = {
 	type = country
-
-
 	text = {
 		localization_key = GBR_latin
 		trigger = {
 			court_language ?= language:latin_language
 		}
 	}
-
 	text = {
 		localization_key = GBR_welsh
 		trigger = {
@@ -96,14 +101,12 @@ GBR = {
 			}
 		}
 	}
-
 	text = {
 		localization_key = GBR_and_ireland
 		trigger = {
 			coa_def_GBR_uk_trigger = yes
 		}
 	}
-
 	text = {
 		localization_key = GBR_ireland_and_great_britain
 		trigger = {
@@ -111,17 +114,19 @@ GBR = {
 			coa_def_irish_trigger = yes
 		}
 	}
-
 	text = {
 		localization_key = GBR
 		fallback = yes
 	}
 }
-GBR_ADJ = { parent = GBR suffix = "_ADJ" }
+
+GBR_ADJ = {
+	parent = GBR
+	suffix = "_ADJ"
+}
 
 GTH = {
 	type = country
-
 	text = {
 		# Great Horde
 		localization_key = GTH_horde
@@ -129,79 +134,62 @@ GTH = {
 			government_type = government_type:steppe_horde
 		}
 	}
-
 	text = {
 		# X of Sarai
 		localization_key = GTH
 		fallback = yes
 	}
 }
-GTH_ADJ = { parent = GTH suffix = "_ADJ" }
 
+GTH_ADJ = {
+	parent = GTH
+	suffix = "_ADJ"
+}
 
 GLH = {
-    type = country
-    text = {
-		# Cumania
-        localization_key = GLH_cuman
-        trigger = {
-			culture = culture:cuman_culture
-        }
-    }
+	type = country
 	text = {
-		# Kipchak Khanate
+		# Cumania
+		localization_key = GLH_cuman
+		trigger = {
+			culture = culture:cuman_culture
+		}
+	}
+	text = {
+		# Golden Horde
+		localization_key = GLH_horde
+		trigger = {
+			OR = {
+				ruler_or_heir_if_regent.dynasty ?= {
+					dynasty:jochi_dynasty ?= this
+				}
+				ruler_or_heir_if_regent.dynasty ?= {
+					dynasty:giray_dynasty ?= this
+				}
+			}
+		}
+	}
+	text = {
+		# Kipchak Fallback
 		localization_key = GLH_kipchak
 		trigger = {
-			AND = {
-				government_type = government_type:steppe_horde
-				court_language = language:kipchak_language
-				OR = {
-					culture = culture:crimean
-					culture = culture:kazani
-					culture = culture:astrakhani
-					culture = culture:bashkir
-					culture = culture:mishar
-					culture = culture:nogai
-					culture = culture:kazakh_culture
-					culture = culture:kyrgyz_culture
-					culture = culture:kumyk_culture
-					culture = culture:karachay_culture
-					culture = culture:balkar_culture
-					culture = culture:yerle_qaliq_culture
-				}
-			}
+			government_type = government_type:steppe_horde
 		}
 	}
 	text = {
-		# Ulug Ulus
-		localization_key = GLH_mongol
-		trigger = {
-			AND = {
-				government_type = government_type:steppe_horde
-				culture = {
-					has_culture_group = culture_group:mongolian_group
-				}
-			}
-		}
-	}
-    text = {
-		# Golden Horde
-        localization_key = GLH_horde
-        trigger = {
-            government_type = government_type:steppe_horde
-        }
-    }
-    text = {
 		# Jochid X
-        localization_key = GLH
-        fallback = yes
-    }
+		localization_key = GLH
+		fallback = yes
+	}
 }
-GLH_ADJ = { parent = GLH suffix = "_ADJ" }
+
+GLH_ADJ = {
+	parent = GLH
+	suffix = "_ADJ"
+}
 
 ILK = {
 	type = country
-
 	text = {
 		# Hülegü Ulus
 		localization_key = ILK_mongol
@@ -211,127 +199,150 @@ ILK = {
 			}
 		}
 	}
-	
 	text = {
 		localization_key = ILK
 		fallback = yes
 	}
 }
 
-
 HEN = {
 	type = country
-
 	text = {
 		localization_key = HEN_welsh
 		trigger = {
 			court_language ?= language:brythonic_language
 		}
 	}
-	
 	text = {
 		localization_key = HEN
 		fallback = yes
 	}
 }
-HEN_ADJ = { parent = HEN suffix = "_ADJ" }
 
+HEN_ADJ = {
+	parent = HEN
+	suffix = "_ADJ"
+}
 
 IRE = {
 	type = country
-
 	text = {
 		localization_key = IRE_gaelic
 		trigger = {
 			court_language ?= language:gaelic_language
 		}
 	}
-
 	text = {
 		localization_key = IRE
 		fallback = yes
 	}
 }
-IRE_ADJ = { parent = IRE suffix = "_ADJ" }
 
+IRE_ADJ = {
+	parent = IRE
+	suffix = "_ADJ"
+}
 
 PAP = {
 	type = country
-
 	text = {
 		localization_key = PAP_papacy
 		trigger = {
 			has_reform = government_reform:papacy_reform
 		}
 	}
-	
 	text = {
 		localization_key = PAP
 		fallback = yes
 	}
 }
-PAP_ADJ = { parent = PAP suffix = "_ADJ" }
 
+PAP_ADJ = {
+	parent = PAP
+	suffix = "_ADJ"
+}
 
 PLC = {
 	type = country
-
 	text = {
 		localization_key = PLC_ruthenian
 		trigger = {
 			has_estate_privilege = estate_privilege:plc_cossack_treaty_of_hadiach
 		}
 	}
-
 	text = {
 		localization_key = PLC_lithuania_poland
 		trigger = {
-			culture = { has_culture_group = culture_group:lithuanian_group }
+			culture = {
+				has_culture_group = culture_group:lithuanian_group
+			}
 		}
 	}
-
 	text = {
 		localization_key = PLC
 		fallback = yes
 	}
 }
-PLC_ADJ = { parent = PLC suffix = "_ADJ" }
 
-CHG = { #Moghulistan to Chagatai
-    type = country
-    text = {
-        localization_key = unified_chagatai
-        trigger = {
-            owns = location:yarkand
-            owns = location:samarkand
-            owns = location:turpan
-			owns = location:almaliq
-        }
-    }
-    text = {
-        localization_key = CHG
-        fallback = yes
-    }
+PLC_ADJ = {
+	parent = PLC
+	suffix = "_ADJ"
 }
-CHG_ADJ = { parent = CHG suffix = "_ADJ" }
+
+CHG = {
+	#Moghulistan to Chagatai
+	type = country
+	text = {
+		localization_key = unified_chagatai
+		trigger = {
+			owns = location:yarkand
+			owns = location:samarkand
+			owns = location:turpan
+			owns = location:almaliq
+		}
+	}
+	text = {
+		localization_key = CHG
+		fallback = yes
+	}
+}
+
+CHG_ADJ = {
+	parent = CHG
+	suffix = "_ADJ"
+}
+
+
+KRO = {
+	#Khiva Khanate
+	type = country
+	text = {
+		localization_key = khiva_khanate
+		trigger = {
+			culture = culture:uzbek_culture
+		}
+	}
+	text = {
+		localization_key = KRO
+		fallback = yes
+	}
+}
+KRO_ADJ = {	parent = KRO suffix = "_ADJ" }
 
 SCO = {
 	type = country
-
 	text = {
 		localization_key = SCO_roman
 		trigger = {
 			culture.language = language:latin_language
 		}
 	}
-
 	text = {
 		localization_key = SCO_latin
 		trigger = {
 			court_language ?= language:latin_language
 		}
 	}
-
 	text = {
 		localization_key = SCO_gaelic
 		trigger = {
@@ -341,235 +352,385 @@ SCO = {
 			}
 		}
 	}
-
 	text = {
 		localization_key = SCO_scots
 		trigger = {
 			culture = culture:scottish
 		}
 	}
-
 	text = {
 		localization_key = SCO_scotch
 		trigger = {
 			culture = culture:english
 		}
 	}
-	
 	text = {
 		localization_key = SCO
 		fallback = yes
 	}
 }
-SCO_ADJ = { parent = SCO suffix = "_ADJ" }
 
+SCO_ADJ = {
+	parent = SCO
+	suffix = "_ADJ"
+}
 
 SMI = {
 	type = country
-
 	text = {
 		localization_key = SMI_english
 		trigger = {
 			court_language ?= language:english_language
 		}
 	}
-
 	text = {
 		localization_key = SMI_scandinavian
 		trigger = {
 			court_language ?= language:scandinavian_language
 		}
 	}
-	
 	text = {
 		localization_key = SMI
 		fallback = yes
 	}
 }
-SMI_ADJ = { parent = SMI suffix = "_ADJ" }
 
+SMI_ADJ = {
+	parent = SMI
+	suffix = "_ADJ"
+}
 
 SPA = {
 	type = country
-
 	text = {
 		localization_key = SPA_latin
 		trigger = {
 			court_language ?= language:latin_language
 		}
 	}
-	
 	text = {
 		localization_key = SPA
 		fallback = yes
 	}
 }
-SPA_ADJ = { parent = SPA suffix = "_ADJ" }
 
+SPA_ADJ = {
+	parent = SPA
+	suffix = "_ADJ"
+}
 
 WLS = {
 	type = country
-
 	text = {
 		localization_key = WLS_welsh
 		trigger = {
 			OR = {
-				culture ?= { language ?= language:brythonic_language }				
+				culture ?= {
+					language ?= language:brythonic_language
+				}
 				court_language ?= language:brythonic_language
 			}
 		}
 	}
-
 	text = {
 		localization_key = WLS_latin
 		trigger = {
 			court_language ?= language:latin_language
 		}
 	}
-	
 	text = {
 		localization_key = WLS
 		fallback = yes
 	}
 }
-WLS_ADJ = { parent = WLS suffix = "_ADJ" }
+
+WLS_ADJ = {
+	parent = WLS
+	suffix = "_ADJ"
+}
 
 HIN = {
 	type = country
-
 	text = {
 		localization_key = HIN_bharat
 		trigger = {
 			religion.group = religion_group:dharmic
 		}
 	}
-	
 	text = {
 		localization_key = HIN
 		fallback = yes
 	}
 }
-HIN_ADJ = { parent = HIN suffix = "_ADJ" }
 
-MYD = { #Dreaming Land
-    type = country
-    
-    # Theocratic variant
-    text = {
-        localization_key = dreaming_land
-        trigger = {
-            government_type = government_type:theocracy
-        }
-    }
-    
-    # Default fallback
-    text = {
-        localization_key = MYD
-        fallback = yes
-    }
+HIN_ADJ = {
+	parent = HIN
+	suffix = "_ADJ"
 }
-MYD_ADJ = { parent = MYD suffix = "_ADJ" }
 
-AFZ = {
-    type = country
-    
-    # AFZ with Fiji variant (Empire only)
-    text = {
-        localization_key = rank_empire_commonwealth_fiji
-        trigger = {
-            country_rank_is_empire = yes
-            owns = location:burebasaga
-        }
-    }
-    
-    # Default fallback (works for both Empire without Fiji AND lower ranks)
-    text = {
-        localization_key = AFZ
-        fallback = yes
-    }
-}
-AFZ_ADJ = { parent = AFZ suffix = "_ADJ" }
-
-PAE = {
-    type = country
-    
-    text = {
-        localization_key = rank_empire_pacific_empire
-        trigger = {
-            country_rank_is_empire = yes
-            government_type = government_type:monarchy
-        }
-    }
-    
-    text = {
-        localization_key = rank_empire_pacific_republic
-        trigger = {
-            country_rank_is_empire = yes
-            government_type = government_type:republic
-        }
-    }
-    
-    text = {
-        localization_key = rank_empire_pacific_theocracy
-        trigger = {
-            country_rank_is_empire = yes
-            government_type = government_type:theocracy
-        }
-    }
-    
-    # Default fallback (covers non-empire ranks and any other government types)
-    text = {
-        localization_key = PAE
-        fallback = yes
-    }
-}
-PAE_ADJ = { parent = PAE suffix = "_ADJ" }
-
-KHL = { # Imperial Khalkha
-    type = country
-    text = {
-        localization_key = chahar_khalkha
-        trigger = {
-    		culture = culture:mongolian_culture
+KHL = {
+	# Imperial Khalkha
+	type = country
+	text = {
+		localization_key = chahar_khalkha
+		trigger = {
+			culture = culture:mongolian_culture
 		}
-    }
-    text = {
-        localization_key = KHL
-        fallback = yes
-    }
+	}
+	text = {
+		localization_key = KHL
+		fallback = yes
+	}
 }
-KHL_ADJ = { parent = KHL suffix = "_ADJ" }
+KHL_ADJ = {
+	parent = KHL
+	suffix = "_ADJ"
+}
 
-YUA = { # Northern Yuan
-    type = country
-    text = {
-        localization_key = n_yuan
-        trigger = {
-    		NOT = {
-				owns = location:dadu
+YER = { #Outer Jurchens
+	# Nanai
+	type = country
+	text = {
+		localization_key = nanai_yeren
+		trigger = {
+			culture = culture:hurga_culture
+		}
+	}
+	#Udege
+	text = {
+		localization_key = udege_yeren
+		trigger = {
+			culture = culture:udege_culture
+		}
+	}
+	text = {
+		localization_key = YER
+		fallback = yes
+	}
+}
+YER_ADJ = {
+	parent = YER
+	suffix = "_ADJ"
+}
+
+UYG = {
+	# Altishahr / Uyghuristan
+	type = country
+	text = {
+		localization_key = UYG
+		trigger = {
+			religion.group = religion_group:muslim
+		}
+	}
+	# Default fallback: Altishahr
+	text = {
+		localization_key = UYG_non_islamic
+		fallback = yes
+	}
+}
+
+UYG_ADJ = {
+	parent = UYG
+	suffix = "_ADJ"
+}
+IRA = { #Iran
+	type = country
+	text = {
+		# Sassanid
+		localization_key = sassanid_persia
+		trigger = {
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:baduspanid_dynasty ?= this } 
+			religion.group = religion_group:zoroastrian_group
+		}
+	}
+	text = {
+		# Zoroastrian
+		localization_key = zoroastrian_persia
+		trigger = {
+			religion.group = religion_group:zoroastrian_group
+		}
+	}
+	text = {
+		# Iran
+		localization_key = iran_persia_name
+		trigger = {
+			has_variable = user_wants_iran
+		}
+	}
+	text = {
+		# Persia
+		localization_key = IRA
+		fallback = yes
+	}
+}
+IRA_ADJ = {
+	parent = IRA
+	suffix = "_ADJ"
+}
+
+BAL = {
+	# Baluchistan
+	type = country
+	text = {
+		# Kalat
+		localization_key = baluchi_kalat
+		trigger = {
+			culture = culture:brahui_culture
+		}
+	}
+	text = {
+		# Baluchistan
+		localization_key = BAL
+		fallback = yes
+	}
+}
+BAL_ADJ = {
+	parent = BAL
+	suffix = "_ADJ"
+}
+
+UZB = {
+	# Shaybanids 
+	type = country
+	text = {
+		localization_key = starting_uzbek
+		trigger = {
+			is_subject = yes
+		}
+	}
+	text = {
+		localization_key = UZB
+		fallback = yes
+	}
+}
+
+UZB_ADJ = {
+	parent = UZB
+	suffix = "_ADJ"
+}
+
+SBR = {
+	#White Horde
+	type = country
+	text = {
+		localization_key = SBR_horde
+		trigger = {
+			government_type = government_type:steppe_horde
+			OR = {
+				c:UZB ?= {
+					is_subject_of = root
+				}
+				owns = location:sighnaq
 			}
 		}
-    }
-    text = {
-        localization_key = YUA
-        fallback = yes
-    }
+	}
+	text = {
+		localization_key = SBR
+		fallback = yes
+	}
 }
-YUA_ADJ = { parent = YUA suffix = "_ADJ" }
 
-UYG = { # Altishahr / Uyghuristan
-    type = country
-
-    text = {
-        localization_key = UYG
-        trigger = {
-            religion.group = religion_group:muslim
-        }
-    }
-    # Default fallback: Altishahr
-    text = {
-        localization_key = UYG_non_islamic
-        fallback = yes
-    }
+SBR_ADJ = {
+	parent = SBR
+	suffix = "_ADJ"
 }
-UYG_ADJ = { parent = UYG suffix = "_ADJ" }
+MKR = {
+	#Makran
+	type = country
+	text = {
+		localization_key = MKR_Makran
+		trigger = {
+			owns = location:gwatar
+			owns = location:gwadar
+		}
+	}
+	text = {
+		localization_key = MKR
+		fallback = yes
+	}
+}
+
+MKR_ADJ = {
+	parent = MKR
+	suffix = "_ADJ"
+}
+
+PHA = {
+	# Phagmodrupa
+	type = country
+	text = {
+		localization_key = PHA_phagmodrupa
+		trigger = {
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:phagmodrupa_dynasty ?= this
+			}
+		}
+	}
+	text = {
+		localization_key = PHA
+		fallback = yes
+	}
+}
+PHA_ADJ = {
+	parent = PHA
+	suffix = "_ADJ"
+}
+
+RIN = {
+	# Rinpungpa
+	type = country
+	text = {
+		localization_key = RIN_rinpungpa
+		trigger = {
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:rinpungpa_dynasty ?= this
+			}
+		}
+	}
+	text = {
+		localization_key = RIN
+		fallback = yes
+	}
+}
+RIN_ADJ = {
+	parent = RIN
+	suffix = "_ADJ"
+}
+
+NYE = {
+	# Nányuè
+	type = country
+	text = {
+		# Nam Việt
+		localization_key = NYE_vietnamese
+		trigger = {
+			culture = culture:vietnamese_culture
+		}
+	}
+	text = {
+		# Nányuè
+		localization_key = NYE
+		fallback = yes
+	}
+}
+
+BOA = {
+	# Bóhǎi
+	type = country
+	text = {
+		# Balhae
+		localization_key = BOA_korean
+		trigger = {
+			culture = culture:korean_culture
+		}
+	}
+	text = {
+		# Bóhǎi
+		localization_key = BOA
+		fallback = yes
+	}
+}
+NYE_ADJ = {
+	parent = NYE
+	suffix = "_ADJ"
+}

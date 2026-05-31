@@ -13,25 +13,28 @@ international_organization_manager = {
         map_color = hsv360 { 40 50 70 }
 
         members = {
-            UBV HAB LBV SLZ TIR BRC BAM PSS FRE TNT CLI ORT PAL REG BOH BRA TRI AUG WUR MAG HES MAI LOR HAI ALS TUL VDU MTZ SLM  ASD ATI CEV  CNV MTB BLL BNT HBG
+            UBV HAB LBV SLZ TIR BRC BAM PSS FRE TNT CLI PAL REG BOH BRA TRI AUG MAG HES MAI LOR HAI ALS TUL VDU MTZ SLM  ASD ATI CEV  CNV MTB BLL BNT HBG
             CRR FLO GEN LUC MAN MFA MLO  MSP PAR PIE PIS SAL SAV GNV SIE PTG HOL BRB LUX LIE CHN LIM NAM VBG HRN CJK BSC SCL MOU ORA BXN
-            UTR DIT HSA LUB LBB THU BRE BRM BRG SAA STE HNB SPY PLN  SOR RUP HVB SWR MKL RZB WOL KMM LAU HAM HBS BBG ANH  MFE MRB NMB QUB  SWZ PRO
+            UTR DIT HSA LUB LBB THU BRE BRM BRG SAA STE HNB SPY PLN  SOR RUP HVB SWR MKL RZB WOL KMM LAU HAM HBS BBG ANH  MFE MRB NMB QUB SWZ 
             FLD SHS NHS MLH ERF HSF PDB ZIG HNA BUD WTZ DIE FRN ERB WRM SYE ZWE LNN  SYN KOL  APR AAC JUL GEL GMK WTG DTM ESS MRS KLE  LPP HOX RVB MDN OSN TCK MUN OSW
-            LUN BRU GBH HDH GOS SCB HOY NIE DPH VRD RTB OLD ZAG JAW LGC OEL OPL TES BYM RCB MVA AGC WER MBZ MFK BCH STG ZUR SYZ LCA URI OBW LCU SIT BRN SLT NEU BAS LSA KYB ANS
-            EIC WEI NUR WBG RIE MSB UFF ROT DNB MEM KMP ULM KNZ OET SWH HBR BDE WDB RVA BIB UBL HHB FBG OFB WLD PRZ BRD GOR FCB ALL ZEE CAM STV HTR HPL NWG SWD
-            SCI ZIE BRZ NMS STZ NMD WRC GLO NYS OPV PDK VUD BMS BLB HSP BSK MSO WGO BHL GLN AOS RBG FLK NSI RDL NID MDS LDA TGG GRY VEL PSZ SFC CFC MUR HAG MUL LIC WDE NSH NSS
-            BLM DIS EVS FUR GRK HAC JEV SAW SAB THD WIE ELL HEH HLF HOH KIR NEL TUB KTZ NSW LEU FRI STY MOD PIO SAX SOP ING TRN GLR
-            CTB BTH SAD KUL NMK STT URA BTC AGU ZUT BDA BOZ INT SGL ZEH GHB TRR SRO TIC AGE NVR CRM VLA NIC
+            LUN BRU GBH HDH GOS SCB HOY NIE DPH VRD RTB OLD ZAG JAW LGC OEL OPL TES BYM RCB MVA AGC WER MBZ STG ZUR SYZ URI OBW LCU SIT BRN SLT NEU BAS LSA KYB ANS
+            EIC WEI NUR WBG RIE MSB UFF ROT DNB MEM KMP ULM KNZ OET SWH HBR BDE WDB RVA BIB UBL OFB WLD GOR FCB ALL ZEE CAM STV HTR HPL NWG SWD
+            SCI ZIE BRZ NMS STZ NMD WRC GLO NYS OPV PDK VUD BMS BLB HSP BSK MSO WGO BHL AOS RBG FLK NSI RDL NID MDS LDA TGG GRY PSZ SFC CFC MUR HAG MUL LIC WDE NSH NSS
+            FUR GRK JEV SAW SAB WIE ELL HLF KIR NEL KTZ NSW LEU STY MOD PIO SAX SOP ING TRN GLR
+            CTB BTH SGD SAD KUL NMK STT URA BTC AGU ZUT BDA BOZ INT SGL ZEH TRR SRO TIC AGE NVR CRM VLA NIC
             CAR DUI
+            BRS VER BGM ADI COH ROC NUL VCL CBG GGN
         }
+
         leader = STY
+
         regions = { south_german_region }
         areas = {
             #North Germany
             brabant_area friesland_area holland_area wallonia_area holstein_area brandenburg_area rhineland_area
             hesse_area westphalia_area lower_saxony_area upper_saxony_area mecklenburg_area
             #France
-            alsace_area franche_comte_area savoy_area
+            alsace_area franche_comte_area
             #Italy
             liguria_area lombardy_area piemonte_area
             #Poland
@@ -39,7 +42,7 @@ international_organization_manager = {
         }
         provinces = {
             #Burgundy
-            bresse_province
+            bresse_province savoy_province
             #Emilia Romagna
             piacenza_province parma_province reggioem_province modena_province
             #Lorraine
@@ -50,8 +53,6 @@ international_organization_manager = {
             nice_province
             #Tuscany
             florence_province grosseto_province lucca_province pisa_province siena_province
-            #Veneto
-            belluno_province friuli_province verona_province vicenza_province
             #Slovenia
             lower_styria_province lower_carniola_province upper_carniola_province
         }
@@ -62,16 +63,17 @@ international_organization_manager = {
             clermont_en_argonne saint_mihiel
             auxonne louhans
             trevoux villars
-            apt forcalquier orange
+            orange
             arezzo cortona
             modigliana
-            padova este monselice
-            pazin
+            buzet pazin
             rijeka
             oswiecim zywiec
             slawno slupsk miastko nowoszczecin drawsko choszczno
-            tolmin gorizia
+            tolmin gorizia trieste
+            sansepolcro
         }
+        
         emperor = { STY }
         elector = {
             # The 4 secular
@@ -89,24 +91,24 @@ international_organization_manager = {
         free_city = {
             AAC BRM FRN GOS HAM KNZ MEM NUR REG ROT RVA ULM SYE LUB DTM AGC KMP WTZ WRM BRN BSC ZUR LDA SFC CFC MUL
             #Should be but can't because they only have "rural settlements"
-            # MLH BIB NHS OFB SWH WDB WEI SLT TUL
+            MLH BIB NHS OFB SWH WDB WEI SLT TUL SCF
         }
         imperial_peasant_republic = {
             FRI DIT
         }
         imperial_prelate = {
-            EIC WBG AUG PSS SLZ BAM BCH SIT BAS LSA FRE BRC SPY WLD ALS MTZ HVB RZB KMM HBS MRB NMB FLD HSF PDB APR
+            EIC WBG AUG PSS SLZ BAM SIT BAS LSA FRE BRC SPY WLD ALS MTZ HVB RZB KMM HBS MRB NMB FLD HSF PDB APR
             ESS HOX MDN OSN MUN HDH VRD UTR CAM STV BRE MOU MAG BMS BLB MUR HAG
         }
         imperial_prince = {
-            HAB LBV TNT CLI ORT WUR HES LOR SLM CEV MTB BNT CRR FLO MFA MSP
+            HAB LBV TNT CLI HES LOR SLM CEV MTB BNT CRR FLO MFA MSP
             PIE SAL SAV GNV PTG HOL BRB LUX LIE CHN LIM NAM VBG HRN CJK ORA
             BXN HSA LBB THU BRG SAA STE HNB PLN GLA SOR RUP SWR MKL WOL LAU BBG ANH BNB MFE QUB
             WMA SWZ SHS ERF ZIG HNA BUD DIE ERB ZWE LNN SPO SYN DUN JUL GEL GMK WTG MRS KLE ANB LPP GLN
-            RVB TCK OSW LUN BRU GBH SCB HOY NIE DPH RTB OLD ZAG JAW LGC OEL OPL TES BYM RCB MVA WER MBZ MFK
+            RVB TCK OSW LUN BRU GBH SCB HOY NIE DPH RTB OLD ZAG JAW LGC OEL OPL TES BYM RCB MVA WER MBZ
             KYB ANS RIE MSB UFF DNB OET HBR BDE   BSK AOS
-            PRZ BRD GOR FCB ALL ZEE HTR HPL NWG SWD SCI ZIE BRZ NMS STZ NMD WRC GLO NYS OPV PDK VUD HSP WGO BHL
-            RBG FLK NSI RDL NID MDS TGG GRY  PSZ LIC WDE MSO NSH NSS BLM DIS EVS FUR GRK  JEV SAW SAB  WIE
+            GOR FCB ALL ZEE HTR HPL NWG SWD SCI ZIE BRZ NMS STZ NMD WRC GLO NYS OPV PDK VUD HSP WGO BHL
+            RBG FLK NSI RDL NID MDS TGG GRY  PSZ LIC WDE MSO NSH NSS FUR GRK  JEV SAW SAB  WIE
             ELL  HLF  KIR NEL  LEU
         }
 
@@ -176,7 +178,7 @@ international_organization_manager = {
             imperial_authority = 5
         }
     }
-
+    
     #################################################################
     #               Catholic Church                                 #
     #################################################################
@@ -233,15 +235,21 @@ international_organization_manager = {
             #Emperor
             CHI
             #Tributaries
-            CHA DAI JOE SIB HDA HOI ULA DNG JEC JUS NEY YAL WGG YEH JEC JUS NEY YAL WGG KHA HMI SRY TUO AYU MUA RYU
+            CHA DAI JOE SIB HDA DNG JEC JUS NEY YAL WGG YEH KHA HMI SRY AYU MUA RYU SSH HOI ULA CGM SGM HGM MPH
             #Vassals
-            MMA CHH CDL LJG
+            MMA CHH LJG
             MLM
             #Tusi
             GYT TNQ MCI WMO TSK LGZ KHG BIR MHK MHN MTG MGN MHA MWO MGK YNJ  NLU YJI BZH YAN HQG NNN AGN JSI SPG NGZ
             LLS CGZ XLG WDG RND DCN WNG MHU YNL ZNX WSA ZYI QJG LXG GGX SXI CLE BZU RNG GNG SZU ZGL TGY
-            GLU RGM TNP SGZ DWG YGS YYG PCD SZH SDG PDG PDN PAN
+            GLU RGM TNP SGZ DWG YGS YYG PCD SDG PDG PDN PAN
             LIN QYN TNZ ZNN TPG SMG GNN LZI SZI DYN LTU AMD
+            DOY TIZ FUY
+            DLI SZH HOR NYA GYE GOL CKL NYZ
+            YNA CXG YNG NWU LBO YZO MLG LLN SZG MLE BJG
+            NPG ZNZ RGS BNI COG XNL ALI PYE DZH XNG PGB
+            YNN NLG SHG NDN DLN XCG YSN ADG DYG SGS LZO FZH
+            YNH TXI TGR QGS WZH PTZ LGQ GZH LPG ZLD HZH XSY
         }
 
         # If changed, apply changes too to set_up_proper_china_for_middle_kingdom effect
@@ -321,7 +329,7 @@ international_organization_manager = {
         members = {
             #PLE
             #
-            CLA MCM BEA TYR LEI TRY OIL CMA FMA BFN THO SLN FLY CNN HYM ANN KEE IVG FCL CVN AMH
+            CLA MCM BEA TYR LEI TRY OIL CMA FMA BFN THO SLN FLY CNN HYM ANN KEE IVG FCL CVN FAD INI DLU FEW GLS CBS TGH UMH CRB MKY DUH IMA DSE OSS ELY NEN 
         }
         regions = { ireland_region }
         areas = { }
@@ -367,33 +375,33 @@ international_organization_manager = {
             # leader
             PLE
             # core earldoms
-            DMS ORD KID ULS
+            KID ULS WMT
             # lapsed earldoms
-            CLR MYO
+            CLR MYO KYY DMS ORD DCI CWM
             # bishop
             AMA
             # gaelic
-            #CLA MCM BEA TYR LEI TRY OIL CMA  FMA BFN  THO SLN FLY ARD CNN HYM ANN KEE IVG   FCL    CVN AMH MTH
+            #CLA MCM BEA TYR LEI TRY OIL CMA  FMA BFN  THO SLN FLY ARD CNN HYM ANN KEE IVG FCL CVN AMH MTH
         }
         lord_of_ireland = { PLE }
         lieutenant = { } # was not one of the Earls in 1337
         loyalist = {
             # core earldoms
-            DMS ORD KID ULS
+            KID ULS WMT
         }
         regions = { ireland_region }
 
 
         laws = {
-            lordship_of_ireland_rule_laudabiliter_policy
+            lordship_of_ireland_rule_statutes_of_kilkenny_policy
         }
 
         ruler_term = { character = eng_john_lackland start_date = 1177.1.1 end_date = 1216.10.19 regnal_number = 1 }  # became Lord of Ireland before being King of England
-        ruler_term = { character = eng_edward_iii start_date = 1327.1.25 end_date = 1377.6.12 regnal_number = 3 }
-        ruler_term = { character = eng_richard_ii start_date = 1327.7.16 end_date = 1399.10.1 regnal_number = 2 }
-        ruler_term = { character = eng_henry_iv start_date = 1399.10.13 end_date = 1413.3.20 regnal_number = 3 }
-        ruler_term = { character = eng_henry_v start_date = 1413.3.12 end_date = 1422.8.31 regnal_number = 3 }
-        ruler_term = { character = eng_henry_vi start_date = 1422.9.1 regnal_number = 0 }
+        ruler_term = { character = eng_edward_iii start_date = 1327.1.25 end_date = 1377.6.21 regnal_number = 3 }
+        ruler_term = { character = eng_richard_ii_plantagenet start_date = 1377.6.12 end_date = 1399.10.1 regnal_number = 2 }
+        ruler_term = { character = eng_henry_iv_lancaster start_date = 1399.10.13 end_date = 1413.3.20 regnal_number = 4 }
+        ruler_term = { character = eng_henry_v_lancaster start_date = 1413.3.12 end_date = 1422.8.31 regnal_number = 5 }
+        ruler_term = { character = eng_henry_vi_lancaster start_date = 1422.9.1 regnal_number = 6 }
         variables = {
         }
     }
@@ -410,8 +418,8 @@ international_organization_manager = {
             YMT
         
             #Clans
-            NKI KTB IMG SBA CBA STK KGK TKI  OYM TGS YSM  MTD
-            SHN OTM SMZ MGM KSI SOM DTE ASN  UTN IIX AKJ ISK MSD OUC KKC ASO
+            NKI IMG CBA STK KGK TKI  OYM TGS YSM  MTD
+            SHN OTM SMZ MGM SOM DTE ASN  UTN IIX AKJ ISK MSD OUC KKC ASO
             SGR KMT SOU ANM TZW WAG HIE DHJ  TMR   SUW RKK ITO ODA 
             NAS HNM UNN  TOY NGN 
             MYH KAG KOZ AKI AHT ARI TMD
@@ -422,8 +430,9 @@ international_organization_manager = {
             HS1 HS2 HS3 HS4
             NB1 NB2
             HT1 HT2
+            AK3 HS5 HAN KTA NI1 NI2 KT1
             # New Countries
-            KAK NMI  NIK  ODE OSA RSU NIH IWA SNO HJO NAK JNB TKA SAT  OYA  ASI MTU 
+            KAK KT2  NIK  ODE OSA RSU NIH IWA SNO HJO NAK JNB TKA SAT  OYA  ASI MTU 
             OCH TSU KKI EDA AKA AMO KOO SAI ICH MSU UKU KMC   TNE
         }
 
@@ -432,7 +441,7 @@ international_organization_manager = {
         }
 
         shugo_daimyo = {
-            HS1 NKI KTB IMG TK1 SBA CBA STK KGK TKI  OYM TGS YSM  YM1 MTD HT1
+            HS1 NKI IMG TK1 CBA STK KGK TKI  OYM TGS YSM  YM1 MTD HT1
             SHN OTM SMZ
         }
 
@@ -460,14 +469,15 @@ international_organization_manager = {
             JAP
             YMT
             
-            NKI KTB IMG SBA CBA STK KGK TKI  OYM TGS YSM  MTD
-            SHN OTM SMZ MGM KSI SOM DTE ASN  UTN IIX AKJ ISK MSD OUC KKC ASO
+            NKI KTB IMG CBA STK KGK TKI  OYM TGS YSM  MTD
+            SHN OTM SMZ MGM SOM DTE ASN  UTN IIX AKJ ISK MSD OUC KKC ASO
             SGR KMT SOU ANM TZW WAG HIE DHJ  TMR   SUW RKK ITO ODA 
             NAS HNM UNN  TOY NGN 
             MYH KAG KOZ AKI AHT ARI TMD
             # New Countries
-            KAK NMI  NIK  ODE OSA RSU NIH IWA SNO HJO NAK KYO JNB TKA SAT  OYA  ASI MTU 
+            KAK KT2  NIK  ODE OSA RSU NIH IWA SNO HJO NAK JNB TKA SAT  OYA  ASI MTU 
             OCH TSU KKI EDA AKA AMO KOO SAI ICH MUK MSU UKU KMC   TNE
+            AK3 HS5 HAN KTA NI1 NI2 KT1
 
             # Branch Countries
              UE1 UE2 UE3
@@ -480,116 +490,32 @@ international_organization_manager = {
     }
 
     #################################################################
-    #                 Japanese Clans With Cadet Branches              #
-    #################################################################
-    # Uesugi
-    add_international_organization = {
-        type = jap_branching_clan
-        creation_date = 1250.1.1 # Late 13th Century
-        members = {  UE1 UE2 UE3 }
-        # Nagao clan holds the real power over the Uesugi
-        leader = UE1 # (Should be Nagao)
-
-        main_branch = UE1
-        cadet_branch = {
-            UE2 UE3
-        }
-    }
-
-    # Takeda
-    add_international_organization = {
-        type = jap_branching_clan
-        creation_date = 1100.1.1 # Minamoto no Yoshikiyo
-        members = { TK1 TK2 TK3 TK4 }
-        leader = TK1 # Kai
-
-        main_branch = TK1
-        cadet_branch = {
-            TK2 TK3 TK4
-        }
-    }
-
-    # Yamana
-    add_international_organization = {
-        type = jap_branching_clan
-        creation_date = 1336.1.1 # Nanboku-cho period
-        members = { YM1 YM2 YM3 }
-        leader = YM1 # Tajima
-
-        main_branch = YM1
-        cadet_branch = { YM2 YM3 }
-    }
-
-    # Nanbu
-    add_international_organization = {
-        type = jap_branching_clan
-        creation_date = 1180.1.1 # Kamakura period
-        members = { NB1 NB2 }
-        leader = NB1
-
-        main_branch = NB1
-        cadet_branch = NB2
-    }
-
-    # Hosokawa
-    add_international_organization = {
-        type = jap_branching_clan
-        creation_date = 1180.1.1 # Kamakura period
-        members = { HS1 HS2 HS3 } # HS4 is conquered by 1444
-        leader = HS1 # Kanrei
-
-        main_branch = HS1
-        cadet_branch = {
-            HS2 HS3 HS4
-        }
-    }
-
-    # Hatakeyama
-    add_international_organization = {
-        type = jap_branching_clan
-        creation_date = 1180.1.1 # Kamakura period
-        members = { HT1 HT2 HT3 }
-        leader = HT3 # Kawachi
-
-        main_branch = HT3
-        cadet_branch = { HT1 HT2 }
-    }
-
-    # TODO: Add the remaining ones
-
-    #################################################################
     #                 Tatar Yoke                                        #
     #################################################################
     add_international_organization = {
         type = tatar_yoke
         creation_date = 1240.1.1
         members = {
-            #The Golden Horde
-            GLH
+            #The Khanates
+            KZN SBR CRI
+            #Golden Pretenders
+            KGZ MGZ AGZ
+            #Nogai
+            MGH NWM JAK AOG QON JIK
             #Tax Collector
             MOS
             #Member
             BLO GLM RSO RYA TRS TVE YAR
-            KAS KLN MOG PRK UGL ZUB
+            KAS KLN MOG PRK UGL ZUB VOV NZH VYT KOY
         }
         tatar_overlord = {
-            GLH
+            KZN
         }
         tatar_tax_collector = {
             MOS
         }
-        ruler_term = { character = jochi_borjigin start_date = 1207.1.1 end_date = 1227.1.1 regnal_number = 1 }
-        ruler_term = { character = batu_borjigin start_date = 1227.1.1 end_date = 1255.1.1 regnal_number = 1 }
-        ruler_term = { character = sartaq_borjigin start_date = 1255.1.1 end_date = 1256.1.1 regnal_number = 1 }
-        ruler_term = { character = ulaghchi_borjigin start_date = 1256.1.1 end_date = 1257.1.1 regnal_number = 1 }
-        ruler_term = { character = berke_borjigin start_date = 1257.1.1 end_date = 1266.1.1 regnal_number = 1 }
-        ruler_term = { character = mongke_temur_borjigin start_date = 1266.1.1 end_date = 1280.1.1 regnal_number = 1 }
-        ruler_term = { character = tode_mongke_borjigin start_date = 1280.1.1 end_date = 1287.1.1 regnal_number = 1 }
-        ruler_term = { character = tole_buqa_borjigin start_date = 1287.1.1 end_date = 1291.1.1 regnal_number = 1 }
-        ruler_term = { character = toqta_borjigin start_date = 1291.1.1 end_date = 1312.1.1 regnal_number = 1 }
-        ruler_term = { character = glh_giyas_al_din_mohammed_oz_beg_borjigin start_date = 1313.1.1 regnal_number = 1 }
         variables = {
-            seat = c:GLH.capital
+            seat = sarai_al_jadid
         }
     }
 
@@ -599,7 +525,7 @@ international_organization_manager = {
     add_international_organization = {
         type = swiss_confederation
         creation_date = 1307.9.15
-        members = { BRN LCU SYZ URI OBW ZUR SLT GLR TGG TRN GRY INT }
+        members = { BRN LCU SYZ URI OBW SLT GLR TGG TRN GRY INT AGU }
         areas = {
             central_switzerland_area
             eastern_switzerland_area
@@ -619,7 +545,7 @@ international_organization_manager = {
     add_international_organization = {
         type = league_of_lezhe
         creation_date = 1444.3.2
-        members = { KAT DGJ THP MZK ANT MTR VEN }
+        members = { KAT DGJ THP MZK ANT MTR VEN ZHR }
         areas = {
             albania_area
         }
@@ -628,190 +554,253 @@ international_organization_manager = {
     }
 
     #################################################################
-    #               Autocephalous Patriarchates                     #
+    #               Frisian Freedom                                 #
     #################################################################
     add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 330.1.1
-        members = {
-            BYZ EPI TRE VBK NOV SER WAL
-            PSK ORE SMO MOS UGL TPS BLO YAR RSO
-            TVE KAS KLN ZUB GLM RZH VYA TRB BRY CHR STS NVS
-            RYL NSL KCH KZK TRS RYA PRK MOG
-            VOL KIE POK PNK SSK MSV DRU
-            FEO
+        type = frisian_freedom
+        creation_date = 1248.1.1
+        members = { WSG OSO ZVW OMM EFR EMD GRO }
+        leader = GRO
+        areas = {
+            friesland_area
         }
-        variables = {
-            religion = religion:orthodox
-            seat = location:constantinople
+        provinces = {
+            south_holland_province
+            north_holland_province
         }
-        laws = {
-            dual_nature
-            high_christology
-            byzantine_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
+        locations = {
+            elsfleth
+            ritzebuttel
+            husum tonder
         }
     }
 
+    #################################################################
+    #               Adyghe Xabze                                    #
+    #################################################################
     add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 1235.1.1
-        members = {  }
-        variables = {
-            religion = religion:orthodox
-            seat = location:tarnovo
+        type = circassia_confederation
+        creation_date = 1444.1.1
+        members = { ZHA TEM BSS KDA GEN }
+        areas = {
+            matrega_area
         }
-        laws = {
-            dual_nature
-            high_christology
-            byzantine_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
+        provinces = {
+            balzimachi
         }
+        leader = ZHA
+        league_backer_circassia = { GEN }
     }
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 1010.1.1
-        members = { GEO  SME ALN SMS }
-        variables = {
-            religion = religion:orthodox
-            seat = location:tbilisi
-        }
-        laws = {
-            dual_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-        }
-    }
+	#################################################################
+	# 				Autocephalous Patriarchates						#
+	#################################################################
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 330.1.1
+		members = { 
+			BYZ EPI TRE VBK NOV SER SMC WAL 
+			PSK ORE SMO FMB MOS VLR UGL YRV TPS BLO YAR RSO 
+			TVE KAS KLN ZUB DMI GLM RZH VYA TRB BRY CHR STS NVS 
+			RYL NSL KCH KZK TRS RYA PRK SKY NZH GRS SZL MRM KOS MOG
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 431.1.1
-        members = { }
-        variables = {
-            religion = religion:orthodox
-            seat = location:nicosia_cyp
-        }
-        laws = {
-            dual_nature
-            high_christology
-            catholic_influenced_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-        }
-    }
+			BIA BLD HTN HSC IAS SRC SSI
+			VOL HAL KIE POK TUV PNK SSK MSV NRK DRU
+			FEO			
+		}
+		variables = { 
+			religion = religion:orthodox
+			seat = location:constantinople
+		}
+		laws = {
+			dual_nature
+			high_christology
+			byzantine_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			cooperation_between_patriarchs_tenet
+			caesaropapism_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 301.1.1
-        members = {  ATZ KCN   }
-        variables = {
-            religion = religion:miaphysite
-            seat = location:sis
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 1235.1.1
+		members = { BUL }
+		variables = { 
+			religion = religion:orthodox
+			seat = location:tarnovo
+		}
+		laws = {
+			dual_nature
+			high_christology
+			byzantine_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			cooperation_between_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 519.1.1
-        members = { }
-        variables = {
-            religion = religion:miaphysite
-            seat = location:antioch
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 1010.1.1
+		members = { GEO AAI SME CPA HTY HYT KDA KIP TEM ALN SMS }
+		variables = { 
+			religion = religion:orthodox
+			seat = location:tbilisi
+		}
+		laws = {
+			dual_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			cooperation_between_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 451.1.1
-        members = { ETH }
-        variables = {
-            religion = religion:miaphysite
-            seat = location:alexandria
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 431.1.1
+		members = { }
+		variables = { 
+			religion = religion:orthodox
+			seat = location:nicosia_cyp
+		}
+		laws = {
+			dual_nature
+			high_christology
+			catholic_influenced_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			cooperation_between_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 410.1.1
-        members = { }
-        variables = {
-            religion = religion:nestorianism
-            seat = location:mosul
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 301.1.1
+		members = { ARM ATZ KCN SYU VDZ CIL }
+		variables = { 
+			religion = religion:miaphysite
+			seat = location:sis
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
-    add_international_organization = {
-        type = autocephalous_patriarchate
-        creation_date = 1122.1.1
-        members = { }
-        variables = {
-            religion = religion:nestorianism
-            seat = location:kollam
-        }
-        laws = {
-            composite_nature
-            high_christology
-            local_traditions_and_rites
-            accept_essence_tenet
-            accept_person_tenet
-            accept_prosopon_tenet
-            allow_christological_debates_tenet
-            allow_double_sabbath_tenet
-        }
-    }
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 519.1.1
+		members = { }
+		variables = { 
+			religion = religion:miaphysite
+			seat = location:antioch
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
+
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 451.1.1
+		members = { ETH }
+		variables = { 
+			religion = religion:miaphysite
+			seat = location:alexandria
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
+
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 410.1.1
+		members = { }
+		variables = { 
+			religion = religion:nestorianism
+			seat = location:mosul
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
+
+	add_international_organization = {
+		type = autocephalous_patriarchate
+		creation_date = 1122.1.1
+		members = { }
+		variables = { 
+			religion = religion:nestorianism
+			seat = location:kollam
+		}
+		laws = {
+			composite_nature
+			high_christology
+			local_traditions_and_rites
+			accept_essence_tenet
+			accept_person_tenet
+			accept_prosopon_tenet
+			allow_christological_debates_tenet
+			allow_double_sabbath_tenet
+			independent_acting_patriarchs_tenet
+			independent_authorities_tenet
+		}
+	}
 
     #################################################################
     #                   Tribal Confederation                        #
@@ -821,34 +810,164 @@ international_organization_manager = {
         creation_date = 1142.1.1
         members = { ONO KKA ONY GYO ONN }
     }
-    add_international_organization = {
-        type = tribal_confederation
-        creation_date = 1100.1.1
-        members = { HNK PCR SRA URC }
-    }
+    
     add_international_organization = {
         type = tribal_confederation
         creation_date = 1337.1.1
         members = { AFR SDQ }
     }
-
+    
+    #################################################################
+    #                   Horde Confederations                      #
+    #################################################################
+    add_international_organization = {
+        type = khalkha_confederation
+        creation_date = 1440.1.1
+        members = { JAA BZZ OLK ELJ GOO BAX JAR BYT IMP }
+        leader = IMP
+    }
+    add_international_organization = {
+        type = oirat_confederation
+        creation_date = 1440.1.1
+        members = { CRS DRB KHO TRH KHD }
+        leader = CRS
+        variables = {
+            centralisation_oirat = 60
+        }
+    }
+    add_international_organization = {
+        type = khorchin_confederation
+        creation_date = 1440.1.1
+        members = { QAS JAI KDB AKK }
+        leader = QAS
+    }
+    add_international_organization = {
+        type = nogai_confederation
+        creation_date = 1440.1.1
+        members = { MGH JIK JAK AOG QON NWM }
+        leader = MGH
+    }
+    add_international_organization = {
+        type = bashkir_confederation
+        creation_date = 1440.1.1
+        members = { TBN YRA BZY USH YNI }
+        leader = TBN
+    }
     #################################################################
     #                   Jurchen Confederations                      #
     #################################################################
+    # Jianzhou Confederation
     add_international_organization = {
         type = jurchen_confederation
         creation_date = 1300.1.1
-        members = { SSH DNG JEC WGG }
+        members = { HIY HJN MAO URY YAL HUL ODO JUS JEC SSH NEY ASU DLA FLN HNC HOT ITU MAH MUH SHI TOD SUI AAR AID HLN HUI WGG DNG}
+        leader = SSH
     }
+
+    # Haixi Confederation
     add_international_organization = {
         type = jurchen_confederation
         creation_date = 1300.1.1
-        members = { HDA HOI ULA YEH }
+        members = { ULA YEH HDA HOI EJI NAL NEM SNC TAS WEJ MIC BAY LAL LLU WUY YIM NJG GUW }
+        leader = HDA
     }
+    # Udege Confederation
     add_international_organization = {
         type = jurchen_confederation
         creation_date = 1300.1.1
-        members = { JUS NEY YAL }
+        members = { UDE HRO USS IMN YOO SMN ILU SIR JHT MRE KYN GEK YRN }
+        leader = UDE
+    }
+    # Nanai Confederation
+    add_international_organization = {
+        type = jurchen_confederation
+        creation_date = 1300.1.1
+        members = { NAN HIJ GIL NRO FUT HUR WEK TOX BED ACK SAZ PAS DIG TMA }
+        leader = NAN
+    }
+    #################################################################
+    #               Tu'i Tonga                                      #
+    #################################################################
+    add_international_organization = {
+        type = tui_tonga
+        creation_date = 950.1.1
+        members = { YAP ULI PLU GUA SAP POH KRE MIL ARO MJO MAP WOT JAU AIL KWJ }
+        leader = YAP
+        tui_tonga_overlord = { YAP }
+    }
+
+    add_international_organization = {
+        type = tui_tonga
+        creation_date = 950.1.1
+        members = { TOG SAM RSM VAU HAV KOH HIV RAO TTI MAV EAS KAV TVU VAN NGA KUU BUB VBV }
+        leader = TOG
+        tui_tonga_overlord = { TOG }
+    }
+    #################################################################
+    # 				Golden Horde									#
+    #################################################################
+    add_international_organization = {
+        type = golden_horde
+        creation_date = 1242.1.1
+        members = { 
+            KZN
+            UZB
+            CRI
+            SBR
+            KAZ
+            KGZ
+            MGZ
+            AGZ
+            MGH JAK AOG QON NWM JIK
+        }
+        
+        laws = {
+        }
+        golden_horde_claimant = {
+            KGZ MGZ AGZ
+        }
+        
+    }
+
+    #################################################################
+    #               Northern Yuan                                   #
+    #################################################################
+    add_international_organization = {
+        type = northern_yuan
+        creation_date = 1368.1.1
+        members = {
+            IMP
+            CRS DRB KHO TRH KHD
+            TVA
+            JAA BZZ OLK ELJ GOO BAX JAR BYT
+            QAS JAI KDB AKK
+            FUY TIZ DOY ADQ
+            AUK KUH KVU TBU HMI
+            CGM SGM HGM
+        }
+        leader = IMP
+        yuan_holder = { IMP }
+        protector_general = { CRS }
+        regions = { mongolia_region }
+        areas = { yanbei_area }
+        provinces = { hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province }
+        locations = { xuanning yizhou_jurchen tongliao ningchang
+            slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat }
+        variables = {
+            yeke_mongghul_ulus = 580
+        }
+        laws = {
+            preserve_status_quo_policy
+            preserve_northern_yuan_policy
+            preserve_no_authority_policy
+            no_vassal_obligations_policy
+            no_imperial_court_policy
+            no_military_organization_policy
+            no_pasture_rights_policy
+            no_tribute_policy
+            no_kurultai_policy
+        }
     }
 
     #################################################################
@@ -1536,7 +1655,7 @@ international_organization_manager = {
         creation_date = 1073.1.1
         members = {
             #Clear
-            GUG MGG LGT LNG
+            GUG MGG LGT
 
             #Unclear
             KTU #Newar Buddhism
@@ -1558,7 +1677,7 @@ international_organization_manager = {
         creation_date = 1409.1.1
         members = {
             #Clear
-            RIN GAN PHA LTN DRG NCN
+            RIN PHA LTN DRG NCN
         }
         laws = { 
             gelug_policy
@@ -1738,5 +1857,43 @@ international_organization_manager = {
             smartism
         }
         icon = smartism
+    }
+
+    ### Kalmar Union ###
+
+    add_international_organization = {
+        type = union
+        creation_date = 1397.1.1
+        members = { DAN SWE NOR }
+        leader = DAN
+
+        laws = {
+            union_establish_seniority_policy
+            union_sovereign_succession_law
+            union_federal_legislature_policy
+        }
+
+        ruler_term = { character = dan_margrete_i_estridsen start_date = 1397.1.1 end_date = 1412.10.28 regnal_number = 1 }
+        ruler_term = { character = dan_erich_gryf start_date = 1412.10.28 end_date = 1439.9.24 regnal_number = 7 }
+        ruler_term = { character = dan_christoph_iii_wittelsbach start_date = 1440.4.9 regnal_number = 3 }
+    }
+
+    ### Polish-Lithuanian Union ###
+
+    add_international_organization = {
+        type = union
+        creation_date = 1385.8.14
+        members = { POL LIT }
+        leader = POL
+
+        laws = {
+            union_establish_seniority_policy
+            union_sovereign_succession_law
+            union_federal_legislature_policy
+        }
+
+        ruler_term = { character = lit_jogalia_jagiellon start_date = 1385.8.14 end_date = 1434.6.1 regnal_number = 2 regnal_name = name_vladislav }
+        ruler_term = { character = pol_wladyslaw_iii_jagiellon start_date = 1434.7.25 end_date = 1444.11.10 regnal_number = 3 }
+        ruler_term = { character = lit_kazimieras_iv_jagiellon start_date = 1440.11.10 regnal_number = 4 }
     }
 }

@@ -1,33 +1,13 @@
-timurid_prince = {
+﻿timurid_prince = {
 	unique = yes
 	major = yes
 	
 	potential = {
-		OR = {
-			has_or_had_tag = TIM
-			has_or_had_tag = TIS
-			has_or_had_tag = TTK
-			has_or_had_tag = TII
-			has_or_had_tag = TIG
-			has_or_had_tag = MUG
-			has_or_had_tag = TIK
-			has_or_had_tag = TIX
-			has_or_had_tag = TIF
-		}
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 	}
 	
 	allow = {
-		OR = {
-			has_or_had_tag = TIM
-			has_or_had_tag = TIS
-			has_or_had_tag = TTK
-			has_or_had_tag = TII
-			has_or_had_tag = TIG
-			has_or_had_tag = MUG
-			has_or_had_tag = TIK
-			has_or_had_tag = TIX
-			has_or_had_tag = TIF
-		}
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 	}
 	
 	locked = {
@@ -46,5 +26,34 @@ timurid_prince = {
 		government_reform_slots = 1
 	}
 	
+	years = 2
+}
+baduspanid_sassanid_legacy = {
+	unique = yes
+    major = yes
+    potential = {
+        ruler_or_heir_if_regent.dynasty ?= { dynasty:baduspanid_dynasty ?= this } 
+    }
+	allow = {
+        ruler_or_heir_if_regent.dynasty ?= { dynasty:baduspanid_dynasty ?= this } 
+    }
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = baduspanid_sassanid_legacy
+		}
+	}
+    
+    country_modifier = {
+        monthly_legitimacy = 0.1
+        monthly_prestige = 0.05
+        monthly_devotion = 0.03
+        cultural_tradition = 0.2
+        diplomatic_reputation = diplomatic_reputation_mild_bonus
+        tolerance_heathen = 1
+        tolerance_heretic = 1
+        stability_decay = 0.001
+        government_reform_slots = 1
+    }
 	years = 2
 }

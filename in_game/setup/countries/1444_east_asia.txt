@@ -1,4 +1,4 @@
-JOE = { # Joseon
+﻿JOE = { # Joseon
     color = rgb { 26  53  177 }
     culture_definition = korean_culture
     religion_definition = sanjiao
@@ -67,14 +67,6 @@ BYT = { # Bayaut
     color = rgb { 120 180 160 }
     culture_definition = khalkha_culture
     religion_definition = tengri
-    description_category = military
-}
-
-KHA = { # Khorchin
-    color = map_KHA
-    culture_definition = khorchin_culture
-    religion_definition = tengri
-
     description_category = military
 }
 
@@ -156,9 +148,9 @@ TVA = { # Tuvans
     religion_definition = tengri
 }
 
-FUY = { # Fuyu Guard
+REPLACE:FUY = { # Fuyu Guard
     color = rgb { 180 120 60 }
-    culture_definition = kharchin_culture
+    culture_definition = uriankhai_culture
     religion_definition = tengri
     description_category = military
 }
@@ -179,7 +171,7 @@ DOY = { # Doyan Guard
 
 ADQ = { # Asud (Alans)
     color = rgb { 140 140 160 }
-    culture_definition = avar_culture
+    culture_definition = asud_culture
     religion_definition = tengri
     description_category = military
 }
@@ -223,7 +215,7 @@ TBU = { # Amur Uriankhai
 HMI = { # Kara Del
     color = rgb { 118  193  177 }
 
-    culture_definition = moghul_culture
+    culture_definition = turpanlik_culture
     religion_definition = tengri
 
     description_category = military
@@ -247,9 +239,10 @@ TUO = {
     religion_definition = tengri
 
     description_category = military
+    is_historic = yes
 }
 
-CHG = { # Chagatai
+REPLACE:CHG = { # Chagatai
 	color = map_CHG
 	color2 = rgb { 16 41 202 }
 
@@ -260,16 +253,17 @@ CHG = { # Chagatai
 	difficulty = 4
 }
 
-YRK = { # Yarkent
+DGH = { # Duglat
     color = rgb { 255 245 220 }
 
     culture_definition = moghul_culture
     religion_definition = sunni
+    is_historic = yes
 
     description_category = military
 }
 
-CHI = {
+REPLACE:CHI = {
     #Míng
     color = rgb { 179 128 104 }
     culture_definition = jianghuai_culture
@@ -279,7 +273,7 @@ CHI = {
     difficulty = 3
 }
 
-MNG = {
+REPLACE:MNG = {
     #Míng
     color = rgb { 179 128 104 }
     culture_definition = jianghuai_culture
@@ -287,15 +281,17 @@ MNG = {
 
     description_category = diplomatic
     difficulty = 3
+    is_historic = yes
 }
 
-YUA = {
+REPLACE:YUA = {
     # Northern Yuan
     color = rgb { 108  153  65 }
 
     culture_definition = mongolian_culture
     religion_definition = tibetan_buddhism
     description_category = military
+    is_historic = yes
 }
 
 RYU = {
@@ -306,29 +302,120 @@ RYU = {
     religion_definition = utaki_religion
 }
 
-OIR = {
+REPLACE:OIR = {
     # Oirat
     color = rgb { 204  184  177 }
 
     culture_definition = oirat_culture
     religion_definition = tengri
     description_category = military
+    is_historic = yes
 }
 
 HUZ = {
     # Hui
-    color = map_hui_muslim
+    color = rgb { 219 44 21 }
 
     culture_definition = hui_muslim_culture
     religion_definition = sunni
-    description_category = diplomatic
+    is_historic = yes
+}
+
+HXI = {
+    # Haixi
+    color = map_HXI
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+    description_category = military
+    is_historic = yes
+}
+
+JNZ = {
+    # Jianzhou
+    color = map_JNZ
+
+    culture_definition = jurchen_culture
+    religion_definition = tungusic_shamanism
+    description_category = military
+    is_historic = yes
+}
+
+REPLACE:EJI = { #Ejimi
+    color = map_EJI
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+
+REPLACE:HDA = { #Hada
+    color = map_HDA
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+
+HOI = { #Hoifa
+    color = map_HOI
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+
+NAL = { #Nalaji
+    color = map_NAL
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+
+NEM = { #Nemer
+    color = map_NEM
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+
+SNC = { #Sancaha
+    color = map_SNC
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+
+TAS = { #Tashan
+    color = map_TAS
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+
+REPLACE:ULA = { #Ula
+    color = map_ULA
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+
+WEJ = { #Weji
+    color = map_WEJ
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+
+REPLACE:YEH = { #Yehe
+    color = map_YEH
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
 }
 
 SFN = {
     # Suifun
-    color = rgb { 153 186 242 }
+    color = map_SUI
 
-    culture_definition = jurchen_culture
+    culture_definition = hurga_culture
 	religion_definition = tungusic_shamanism
 }
 
@@ -336,16 +423,15 @@ NAN = { #Nanai
 	color = map_nanai
 	color2 = rgb { 16 41 202 }
 
-	culture_definition = dakelh_culture
+	culture_definition = hurga_culture
 	religion_definition = tungusic_shamanism
 }
 
-SOL = { #Solon
-	color = map_solon
-	color2 = rgb { 16 41 202 }
+REPLACE:UDE = { #Udege
+    color = map_udege
 
-	culture_definition = dakelh_culture
-	religion_definition = tungusic_shamanism
+    culture_definition = udege_culture
+    religion_definition = tungusic_shamanism
 }
 
 WRK = { #Warkha
@@ -354,4 +440,329 @@ WRK = { #Warkha
 
 	culture_definition = jurchen_culture
 	religion_definition = tungusic_shamanism
+    is_historic = yes
+}
+
+#YER = {
+#    # Yeren
+#    color = map_YER
+#
+#    culture_definition = hurga_culture
+#    religion_definition = tungusic_shamanism
+#    description_category = military
+#    is_historic = yes
+#}
+GUW = { #Guwalca
+    color = rgb { 237 214 184 }
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+NJG = { #Nenjiang
+    color = rgb { 112 90 103 }
+
+    culture_definition = haixi_culture
+    religion_definition = tungusic_shamanism
+}
+KYN = { # Kanyuga
+    color = rgb { 60 95 110 }
+    culture_definition = udege_culture
+    religion_definition = tungusic_shamanism
+}
+GEK = { # Geonka
+    color = rgb { 85 105 75 }
+    culture_definition = udege_culture
+    religion_definition = tungusic_shamanism
+}
+BED = { # Beldy
+    color = rgb { 170 110 80 }
+    culture_definition = hurga_culture
+    religion_definition = tungusic_shamanism
+}
+ACK = { # Akancal
+    color = rgb { 190 145 70 }
+    culture_definition = hurga_culture
+    religion_definition = tungusic_shamanism
+}
+SAZ = { # Samar
+    color = rgb { 145 90 130 }
+    culture_definition = hurga_culture
+    religion_definition = tungusic_shamanism
+}
+PAS = { # Passar
+    color = rgb { 130 150 90 }
+    culture_definition = hurga_culture
+    religion_definition = tungusic_shamanism
+}
+DIG = { # Digor
+    color = rgb { 100 130 150 }
+    culture_definition = hurga_culture
+    religion_definition = tungusic_shamanism
+}
+TMA = { # Tumali
+    color = rgb { 155 155 135 }
+    culture_definition = hurga_culture
+    religion_definition = tungusic_shamanism
+}
+REPLACE:FUT = { #Futi
+	color = map_FUT
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = hurga_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:HRO = { #Horo
+	color = map_HRO
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:USS = { #Ussuri
+	color = map_USS
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:SMN = { #Shilimian
+	color = map_SMN
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:IMN = { #Imanka
+	color = map_IMN
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:MRE = { #Muren
+	color = map_MRE
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:JHT = { #Juru Hoton
+	color = map_JHT
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:ILU = { #Ilu
+	color = map_ILU
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:SIR = { #Sirin
+	color = map_SIR
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:YRN = { #Yaran
+	color = map_YRN
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:YOO = { #Yoose
+	color = map_YOO
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = udege_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:MIC = { #Michen
+	color = map_MIC
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = haixi_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:BAY = { #Bayan
+	color = map_BAY
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = haixi_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:LAL = { #Lalin
+	color = map_LAL
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = haixi_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:LLU = { #Lalu
+	color = map_LLU
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = haixi_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:WUY = { #Wuyemu
+	color = map_WUY
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = haixi_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:YIM = { #Yimahu
+	color = map_YIM
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = haixi_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:ASU = { #Asu
+	color = map_ASU
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = jurchen_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:FLN = { #Fulun
+	color = map_FLN
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = jurchen_culture
+	religion_definition = tungusic_shamanism
+}
+REPLACE:DLA = { #Dala
+	color = map_DLA
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = jurchen_culture
+	religion_definition = tungusic_shamanism
+}
+CTK = { #Turpan Khanate
+    color = rgb { 112 128 144 }
+    culture_definition = turpanlik_culture
+    religion_definition = sunni
+    is_historic = yes
+}
+YKD = { # Yarkand Dughlat
+    color = rgb { 184 200 242 }
+    culture_definition = yarkandi_culture
+    religion_definition = sunni
+}
+KDZ = { # Khotan
+    color = rgb { 198 185 232 }
+    culture_definition = khotani_culture
+    religion_definition = sunni
+}
+KGH = { # Kashgar
+    color = rgb { 197 184 214 }
+    culture_definition = kashgari_culture
+    religion_definition = sunni
+}
+KUC = { # Kucha
+    color = rgb { 237 203 224 }
+    culture_definition = aqsulik_culture
+    religion_definition = sunni
+}
+CGM = { #Chijin Guard
+    color = rgb { 244 201 159 }
+    culture_definition = oirat_culture
+    religion_definition = tibetan_buddhism
+}
+SGM = { #Shazhou Guard
+    color = rgb { 211 206 146 }
+    culture_definition = oirat_culture
+    religion_definition = tibetan_buddhism
+}
+HGM = { #Handong Guard
+    color = rgb { 201 197 112 }
+    culture_definition = oirat_culture
+    religion_definition = tibetan_buddhism
+}
+KTP = { #Ket People
+    color = map_ket
+    culture_definition = ket_culture
+    religion_definition = shamanism
+}
+SOZ = { #Shor People
+    color = map_shor
+    culture_definition = shor_culture
+    religion_definition = shamanism
+}
+TLU = { #Teleut People
+    color = map_teleut
+    culture_definition = teleut_culture
+    religion_definition = tengri
+}
+YUH = { #Yugh People
+    color = map_yugh
+    culture_definition = yugh_culture
+    religion_definition = shamanism
+}
+ARC = { #Arin People
+    color = map_yarin
+    culture_definition = arin_culture
+    religion_definition = shamanism
+}
+PKM = { #Pumpokol People
+    color = map_pumpokol
+    culture_definition = pumpokol_culture
+    religion_definition = shamanism
+}
+KZT = { #Kott People
+    color = map_kott
+    culture_definition = kott_culture
+    religion_definition = shamanism
+}
+KMZ = { #Kumandin People
+    color = map_kumandin
+    culture_definition = kumandin_culture
+    religion_definition = shamanism
+}
+TBL = { #Tubalar People
+    color = map_tubalar
+    culture_definition = tubalar_culture
+    religion_definition = tengri
+}
+ CLK = { #Chelkans People
+    color = map_chelkans
+    culture_definition = chelkans_culture
+    religion_definition = shamanism
+}
+SYO = { #Soyot People
+    color = map_soyot
+    culture_definition = soyot_culture
+    religion_definition = tengri
+}
+BIH = { #Birar People
+    color = map_sym
+    culture_definition = sym_culture
+    religion_definition = tungusic_shamanism
+}
+YNA = { #Yunnan
+	color = rgb { 142 112 88}
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = yi_culture
+	religion_definition = bimoism
+}
+CXG = { #Chuxiong
+	color = rgb { 195 195 100 }
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = yi_culture
+	religion_definition = bimoism
+}
+DLI = { #Dali Province
+	color =  rgb { 245 245 245 }
+	color2 = rgb { 16 41 202 }
+
+	culture_definition = bai_culture
+	religion_definition = mahayana #Azhaliism
 }

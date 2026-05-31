@@ -1,0 +1,32 @@
+﻿namespace = flavor_ira
+
+flavor_ira.250 = { # A New Name
+    type = country_event
+    title = flavor_ira.250.title
+    desc = flavor_ira.250.desc
+    hide_portraits = yes
+
+    fire_only_once = yes
+
+    dynamic_historical_event = {
+        tag = IRA
+        from = 1445.1.1
+        to = 1850.1.1
+        monthly_chance = 100
+    }
+
+    trigger = {
+        country_exists = c:IRA
+    }
+
+    immediate = {
+    }
+
+    option = {
+        name = flavor_ira.250.a
+    }
+    option = {
+        name = flavor_ira.250.b
+        set_variable = user_wants_iran
+    }
+}

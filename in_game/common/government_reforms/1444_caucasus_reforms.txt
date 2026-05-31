@@ -1,0 +1,100 @@
+﻿# TODO: Make the reforms unique
+
+nutsaldom = {
+	government = tribe
+	major = yes
+	unique = yes
+
+	potential = {
+		has_or_had_tag = AVR
+		government_type = government_type:tribe
+	}
+	allow = {
+	}
+
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = nutsaldom
+		}
+	}
+
+	country_modifier = {
+		global_garrison_size_modifier = 0.25
+		global_hostile_attrition = 1
+		fort_maintenance_cost = -0.1
+		fort_limit_modifier = 0.25
+		land_morale_modifier = 0.1
+		monthly_towards_defensive = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+
+	years = 2
+}
+
+shamkhalate = {
+	government = tribe
+	major = yes
+	unique = yes
+
+	potential = {
+		OR = {
+			has_or_had_tag = TRK
+			has_or_had_tag = GZK
+		}
+		government_type = government_type:tribe
+	}
+	allow = {
+	}
+
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = shamkhalate
+		}
+	}
+
+	country_modifier = {
+		global_garrison_size_modifier = 0.25
+		global_hostile_attrition = 1
+		fort_maintenance_cost = -0.1
+		fort_limit_modifier = 0.25
+		land_morale_modifier = 0.1
+		monthly_towards_defensive = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+
+	years = 2
+}
+
+utsmiate = {
+	government = tribe
+	major = yes
+	unique = yes
+
+	potential = {
+		has_or_had_tag = KAI
+		government_type = government_type:tribe
+	}
+	allow = {
+	}
+
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = utsmiate
+		}
+	}
+
+	country_modifier = {
+		global_garrison_size_modifier = 0.25
+		global_hostile_attrition = 1
+		fort_maintenance_cost = -0.1
+		fort_limit_modifier = 0.25
+		land_morale_modifier = 0.1
+		monthly_towards_defensive = societal_value_monthly_move
+		government_reform_slots = 1
+	}
+
+	years = 2
+}

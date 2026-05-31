@@ -1,0 +1,61 @@
+﻿habsburg_family = {
+	# Fill in whatever you need here, membership is handled through events, so no need to set that up yourself
+	has_target = no
+	unique = no
+	custom_name = dynasty_circle_name
+	expel_members_who_are_targets_of_other_members = no
+	disband_if_no_leader = no
+	show_on_diplomatic_map = yes
+	has_leader_country = yes
+	leader_type = country
+	leader_change_trigger_type = rulerchange
+	leader_change_method = score
+	leader_score = {
+		value = great_power_score
+	}
+	create_visible_trigger = {
+		always = no
+	}
+	invite_visible_trigger = {
+		always = no
+	}
+	can_declare_war = {
+		always = yes
+	}
+	can_join_trigger = {
+		always = no
+	}
+	can_leave_trigger = {
+		always = no
+	}
+	auto_leave_trigger = {
+		OR = {
+			has_ruler = no
+			ruler = {
+				has_dynasty = no
+			}
+			NOT = {
+				ruler = {
+					dynasty = dynasty:habsburg_dynasty
+				}
+			}
+		}
+	}
+	auto_disband_trigger = {
+		always = no
+	}
+	on_joined = {
+	}
+	on_left = {
+	}
+	ai_desire_to_join = {
+		add = {
+			value = 0
+		}
+	}
+	ai_desire_to_allow_new_member = {
+		add = {
+			value = 0
+		}
+	}
+}
