@@ -17,7 +17,7 @@
 		add = {
 			desc = "[crown_power|e]"
 			value = "estate_power(estate_type:crown_estate)"
-			multiply = 0.125
+			multiply = 0.5
 		}
 		if = {
 			limit = {
@@ -25,7 +25,7 @@
 			}
 			add = {
 				desc = "nahuatl_temple_expansion_modifier"
-				value = 0.33
+				value = 0.5
 			}
 		}
 		if = {
@@ -33,7 +33,7 @@
 			add = {
 				desc = "[ruler|e] [total_ability|e]"
 				value = ruler.total_abilities
-				multiply = 0.002
+				multiply = 0.0033
 			}
 		}
 		min = 0
@@ -69,7 +69,7 @@ elevate_patron_god = {
 		add = {
 			desc = "[crown_power|e]"
 			value = "estate_power(estate_type:crown_estate)"
-			multiply = 0.2
+			multiply = 0.33
 		}
 		add = {
 			desc = "clergy_estate_power"
@@ -113,7 +113,7 @@ elevate_patron_god = {
 		add = 1
 	}
 }
-
+ # main_menu\localization, loading_screen\localization
 establish_cihuacoatl = {
 	monthly_progress = {
 		add = {
@@ -123,7 +123,7 @@ establish_cihuacoatl = {
 		add = {
 			desc = "[crown_power|e]"
 			value = "estate_power(estate_type:crown_estate)"
-			multiply = 0.2
+			multiply = 0.33
 		}
 		if = {
 			limit = { societal_value:centralization_vs_decentralization > 0 }
@@ -167,11 +167,32 @@ establish_cihuacoatl = {
 	}
 	
 	modifier_while_progressing = {
-		court_spending_cost = 0.02
+		court_spending_cost = 0.025
 	}
 
 	modifier_on_completion = {
 		country_cabinet_efficiency = 0.1
+	}
+	
+	effect_on_completion = { #creates a "Serpent Woman" as thats what the reform is about
+		create_character = {
+			religion = scope:actor.religion
+			culture = scope:actor.culture
+			estate = estate_type:clergy_estate
+			age = 20
+			female = yes
+			add_character_modifier = {
+				modifier = granted_cabinet_right
+				years = -1
+			}
+			add_adm = 20
+			add_dip = 20
+			add_mil = 20
+			save_scope_as = nahua_needs_dynasty
+		}
+		scope:nahua_needs_dynasty = {
+			found_dynasty = random
+		}
 	}
 
 	ai_will_do = {
@@ -188,7 +209,7 @@ expand_cuahpipiltin = {
 		add = {
 			desc = "[crown_power|e]"
 			value = "estate_power(estate_type:crown_estate)"
-			multiply = 0.2
+			multiply = 0.33
 		}
 		add = {
 			desc = "NUMBER_OF_SUBJECTS"
@@ -217,6 +238,7 @@ expand_cuahpipiltin = {
 
 	modifier_on_completion = {
 		global_manpower_modifier = 0.1
+		noble_estate_levy_size = 0.05
 	}
 
 	ai_will_do = {
@@ -233,7 +255,7 @@ increase_militarism = {
 		add = {
 			desc = "[crown_power|e]"
 			value = "estate_power(estate_type:crown_estate)"
-			multiply = 0.2
+			multiply = 0.33
 		}
 		add = {
 			desc = "game_concept_doom"
@@ -268,7 +290,7 @@ increase_militarism = {
 			limit = { has_ruler = yes }
 			add = {
 				desc = "[ruler|e] [total_ability|e]"
-				value = ruler.total_ability
+				value = ruler.total_abilities
 				multiply = 0.002
 			}
 		}
@@ -277,25 +299,14 @@ increase_militarism = {
 	
 	modifier_while_progressing = {
 		army_maintenance_cost = 0.2
+		global_levy_size_modifier = -0.25
 	}
 
 	modifier_on_completion = {
-		army_tradition_decay = -0.001
+		army_tradition_decay = -0.0015
 	}
 
 	effect_on_completion = {
-		#if = {
-		#	limit = {
-		#		NOT = {
-		#			any location in region:mesoamerica_region
-		#			has instition proffesional armies
-		#		}
-		#	}
-		#	capital = spawn institution = proffesional armies
-		#}
-		#else = {
-		#	add institution progress of 50%
-		#}
 		if = {
 			limit = {
 				NOT = {
@@ -335,7 +346,7 @@ raise_sacrifice_rate = {
 		add = {
 			desc = "[crown_power|e]"
 			value = "estate_power(estate_type:crown_estate)"
-			multiply = 0.2
+			multiply = 0.33
 		}
 		add = {
 			desc = "SCOPE_CLERGY_ESTATE_SATISFACTION"
