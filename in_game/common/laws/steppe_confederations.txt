@@ -921,23 +921,29 @@ confederation_unification_law = {
         on_activate = {
             custom_tooltip = khalkha_unification_tt
             leader_country = {
-                trigger_event_silently = { id = io_unification.10 }
+trigger_event_non_silently = { id = io_unification.10 }
+                }
             }
         }
-    }
- 
-    unify_khorchin_policy = {
+    },
+    law_consolidate_khorchin = {
+        #category
+        category = unification
+        #left picture
+        picture = "gfx/events/steppe_horde2.dds"
+        #is a law
+        type = law
+        #icon
+        icon = "gfx/icons/laws.dds"
+        #potential
         potential = {
-            international_organization_type = international_organization_type:khorchin_confederation
+            exists = international_organization:khorchin_confederation
+            is_leader_of = international_organization:khorchin_confederation
         }
- 
-        wants_propose_policy = { add = { value = 500 } }
-        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
- 
-        on_activate = {
-            custom_tooltip = khorchin_unification_tt
+
+        on_fully_activated = {
             leader_country = {
-                trigger_event_silently = { id = io_unification.20 }
+                trigger_event_non_silently = { id = io_unification.20 }
             }
         }
     }
@@ -953,7 +959,7 @@ confederation_unification_law = {
         on_activate = {
             custom_tooltip = nogai_unification_tt
             leader_country = {
-                trigger_event_silently = { id = io_unification.30 }
+                trigger_event_non_silently = { id = io_unification.30 }
             }
         }
     }
@@ -969,7 +975,7 @@ confederation_unification_law = {
         on_activate = {
             custom_tooltip = bashkir_unification_tt
             leader_country = {
-                trigger_event_silently = { id = io_unification.40 }
+                trigger_event_non_silently = { id = io_unification.40 }
             }
         }
     }
@@ -985,7 +991,7 @@ confederation_unification_law = {
         on_activate = {
             custom_tooltip = bashkir_horde_unification_tt
             leader_country = {
-                trigger_event_silently = { id = io_unification.50 }
+                trigger_event_non_silently = { id = io_unification.50 }
             }
         }
     }

@@ -1,17 +1,31 @@
 namespace = io_unification
 
 # Common member annexation event (reused via trigger_event_silently)
-# scope:unification_leader must be saved by the triggering event
+# scope:target_country must be saved by the triggering event
 io_unification.1 = {
 	type = country_event
-	hidden = yes
+	title = io_unification.1.title
+	desc = io_unification.1.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
 
 	option = {
 		name = io_unification.1.a
-		scope:unification_leader = {
-			annex_country = {
-				country = root
-				reason = Diplomatic
+
+		if = {
+			limit = {
+				country_type = location
+			}
+			scope:target_country = {
+				annex_country_diplomatically = { country = root }
 			}
 		}
 	}
@@ -20,263 +34,556 @@ io_unification.1 = {
 # Khalkha unification
 io_unification.10 = {
 	type = country_event
-	hidden = yes
+	title = io_unification.10.title
+	desc = io_unification.10.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
 
 	immediate = {
-		save_scope_as = unification_leader
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
 	}
 
 	option = {
 		name = io_unification.10.a
-		international_organization:khalkha_confederation = {
-			every_international_organization_member = {
-				limit = { NOT = { this = root } }
-				trigger_event_silently = { id = io_unification.1 }
-			}
-		}
-		scope:unification_leader = {
-			form_country = formable_country:KHL_f
-			add_reform = government_reform:eastern_steppe_unification_reform
-			if = {
-				limit = { country_rank_level < 3 }
-				set_country_rank_effect = {
-					rank = country_rank:rank_kingdom
+		form_country = formable_country:KHL_f
+		add_reform = government_reform:eastern_steppe_unification_reform
+		if = {
+			limit = { exists = international_organization:khalkha_confederation }
+			custom_tooltip = {
+				text = io_unification.10.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:khalkha_confederation = {
+						every_international_organization_member = {
+							limit = { NOT = { this = scope:target_country } }
+							trigger_event_silently = { id = io_unification.1 }
+						}
+					}
 				}
 			}
+			destroy_international_organization = { target = international_organization:khalkha_confederation }
 		}
-		destroy_international_organization = { target = international_organization:khalkha_confederation }
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank = country_rank:rank_kingdom
+		}
 	}
 }
 
 # Khorchin unification
 io_unification.20 = {
 	type = country_event
-	hidden = yes
+	title = io_unification.20.title
+	desc = io_unification.20.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
 
 	immediate = {
-		save_scope_as = unification_leader
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
 	}
 
 	option = {
 		name = io_unification.20.a
-		international_organization:khorchin_confederation = {
-			every_international_organization_member = {
-				limit = { NOT = { this = root } }
-				trigger_event_silently = { id = io_unification.1 }
-			}
-		}
-		scope:unification_leader = {
-			form_country = formable_country:KHA_f
-			add_reform = government_reform:eastern_steppe_unification_reform
-			if = {
-				limit = { country_rank_level < 3 }
-				set_country_rank_effect = {
-					rank = country_rank:rank_kingdom
+		form_country = formable_country:KHA_f
+		add_reform = government_reform:eastern_steppe_unification_reform
+		if = {
+			limit = { exists = international_organization:khorchin_confederation }
+			custom_tooltip = {
+				text = io_unification.20.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:khorchin_confederation = {
+						every_international_organization_member = {
+							limit = { NOT = { this = scope:target_country } }
+							trigger_event_silently = { id = io_unification.1 }
+						}
+					}
 				}
 			}
+			destroy_international_organization = { target = international_organization:khorchin_confederation }
 		}
-		destroy_international_organization = { target = international_organization:khorchin_confederation }
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank = country_rank:rank_kingdom
+		}
 	}
 }
 
 # Nogai unification
 io_unification.30 = {
 	type = country_event
-	hidden = yes
+	title = io_unification.30.title
+	desc = io_unification.30.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
 
 	immediate = {
-		save_scope_as = unification_leader
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
 	}
 
 	option = {
 		name = io_unification.30.a
-		international_organization:nogai_confederation = {
-			every_international_organization_member = {
-				limit = { NOT = { this = root } }
-				trigger_event_silently = { id = io_unification.1 }
-			}
-		}
-		scope:unification_leader = {
-			form_country = formable_country:NOG_f
-			add_reform = government_reform:eastern_steppe_unification_reform
-			if = {
-				limit = { country_rank_level < 3 }
-				set_country_rank_effect = {
-					rank = country_rank:rank_kingdom
+		form_country = formable_country:NOG_f
+		add_reform = government_reform:eastern_steppe_unification_reform
+		if = {
+			limit = { exists = international_organization:nogai_confederation }
+			custom_tooltip = {
+				text = io_unification.30.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:nogai_confederation = {
+						every_international_organization_member = {
+							limit = { NOT = { this = scope:target_country } }
+							trigger_event_silently = { id = io_unification.1 }
+						}
+					}
 				}
 			}
+			destroy_international_organization = { target = international_organization:nogai_confederation }
 		}
-		destroy_international_organization = { target = international_organization:nogai_confederation }
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank = country_rank:rank_kingdom
+		}
 	}
 }
 
 # Bashkir tribal unification
 io_unification.40 = {
 	type = country_event
-	hidden = yes
+	title = io_unification.40.title
+	desc = io_unification.40.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
 
 	immediate = {
-		save_scope_as = unification_leader
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
 	}
 
 	option = {
 		name = io_unification.40.a
-		international_organization:bashkir_confederation = {
-			every_international_organization_member = {
-				limit = { NOT = { this = root } }
-				trigger_event_silently = { id = io_unification.1 }
-			}
-		}
-		scope:unification_leader = {
-			form_country = formable_country:BSH_f
-			add_reform = government_reform:eastern_steppe_unification_reform
-			if = {
-				limit = { country_rank_level < 3 }
-				set_country_rank_effect = {
-					rank = country_rank:rank_kingdom
+		form_country = formable_country:BSH_f
+		add_reform = government_reform:eastern_steppe_unification_reform
+		if = {
+			limit = { exists = international_organization:bashkir_confederation }
+			custom_tooltip = {
+				text = io_unification.40.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:bashkir_confederation = {
+						every_international_organization_member = {
+							limit = { NOT = { this = scope:target_country } }
+							trigger_event_silently = { id = io_unification.1 }
+						}
+					}
 				}
 			}
+			destroy_international_organization = { target = international_organization:bashkir_confederation }
 		}
-		destroy_international_organization = { target = international_organization:bashkir_confederation }
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank = country_rank:rank_kingdom
+		}
 	}
 }
 
 # Bashkir horde unification
 io_unification.50 = {
 	type = country_event
-	hidden = yes
+	title = io_unification.50.title
+	desc = io_unification.50.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
 
 	immediate = {
-		save_scope_as = unification_leader
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
 	}
 
 	option = {
 		name = io_unification.50.a
-		international_organization:bashkir_confederation = {
-			every_international_organization_member = {
-				limit = { NOT = { this = root } }
-				trigger_event_silently = { id = io_unification.1 }
-			}
-		}
-		scope:unification_leader = {
-			form_country = formable_country:BSH_f
-			change_government_type = government_type:steppe_horde
-			add_reform = government_reform:eastern_steppe_unification_reform
-			if = {
-				limit = { country_rank_level < 3 }
-				set_country_rank_effect = {
-					rank = country_rank:rank_kingdom
+		form_country = formable_country:BSH_f
+		change_government_type = government_type:steppe_horde
+		add_reform = government_reform:eastern_steppe_unification_reform
+		if = {
+			limit = { exists = international_organization:bashkir_confederation }
+			custom_tooltip = {
+				text = io_unification.50.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:bashkir_confederation = {
+						every_international_organization_member = {
+							limit = { NOT = { this = scope:target_country } }
+							trigger_event_silently = { id = io_unification.1 }
+						}
+					}
 				}
 			}
+			destroy_international_organization = { target = international_organization:bashkir_confederation }
 		}
-		destroy_international_organization = { target = international_organization:bashkir_confederation }
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank = country_rank:rank_kingdom
+		}
 	}
 }
 
 # League of Lezhe unification
 io_unification.60 = {
 	type = country_event
-	hidden = yes
+	title = io_unification.60.title
+	desc = io_unification.60.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
 
 	immediate = {
-		save_scope_as = unification_leader
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
 	}
 
 	option = {
 		name = io_unification.60.a
-		international_organization:league_of_lezhe = {
-			every_international_organization_member = {
-				limit = {
-					NOT = { this = root }
-					NOT = {
-						has_special_status_in_international_organization = {
-							type = special_status:league_backer
-							international_organization = international_organization:league_of_lezhe
+		form_country = formable_country:ALB_f
+		if = {
+			limit = { exists = international_organization:league_of_lezhe }
+			custom_tooltip = {
+				text = io_unification.60.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:league_of_lezhe = {
+						every_international_organization_member = {
+							limit = {
+								NOT = { this = scope:target_country }
+								NOT = {
+									has_special_status_in_international_organization = {
+										type = special_status:league_backer
+										international_organization = international_organization:league_of_lezhe
+									}
+								}
+							}
+							trigger_event_silently = { id = io_unification.1 }
 						}
 					}
 				}
-				trigger_event_silently = { id = io_unification.1 }
 			}
+			destroy_international_organization = { target = international_organization:league_of_lezhe }
 		}
-		scope:unification_leader = {
-			form_country = formable_country:ALB_f
-			if = {
-				limit = { country_rank_level < 3 }
-				set_country_rank_effect = {
-					rank = country_rank:rank_kingdom
-				}
-			}
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank = country_rank:rank_kingdom
 		}
-		destroy_international_organization = { target = international_organization:league_of_lezhe }
 	}
 }
 
 # Circassia unification
 io_unification.70 = {
 	type = country_event
-	hidden = yes
+	title = io_unification.70.title
+	desc = io_unification.70.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
 
 	immediate = {
-		save_scope_as = unification_leader
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
 	}
 
 	option = {
 		name = io_unification.70.a
-		international_organization:circassia_confederation = {
-			every_international_organization_member = {
-				limit = {
-					NOT = { this = root }
-					NOT = {
-						has_special_status_in_international_organization = {
-							type = special_status:league_backer_circassia
-							international_organization = international_organization:circassia_confederation
+		form_country = formable_country:CIR_f
+		if = {
+			limit = { exists = international_organization:circassia_confederation }
+			custom_tooltip = {
+				text = io_unification.70.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:circassia_confederation = {
+						every_international_organization_member = {
+							limit = {
+								NOT = { this = scope:target_country }
+								NOT = {
+									has_special_status_in_international_organization = {
+										type = special_status:league_backer_circassia
+										international_organization = international_organization:circassia_confederation
+									}
+								}
+							}
+							trigger_event_silently = { id = io_unification.1 }
 						}
 					}
 				}
-				trigger_event_silently = { id = io_unification.1 }
 			}
+			destroy_international_organization = { target = international_organization:circassia_confederation }
 		}
-		scope:unification_leader = {
-			form_country = formable_country:CIR_f
-			if = {
-				limit = { country_rank_level < 3 }
-				set_country_rank_effect = {
-					rank = country_rank:rank_kingdom
-				}
-			}
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank = country_rank:rank_kingdom
 		}
-		destroy_international_organization = { target = international_organization:circassia_confederation }
 	}
 }
 
 # Oirat unification
 io_unification.80 = {
 	type = country_event
-	hidden = yes
+	title = io_unification.80.title
+	desc = io_unification.80.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
 
 	immediate = {
-		save_scope_as = unification_leader
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
 	}
 
 	option = {
 		name = io_unification.80.a
-		international_organization:oirat_confederation = {
-			every_international_organization_member = {
-				limit = { NOT = { this = root } }
-				trigger_event_silently = { id = io_unification.1 }
-			}
-		}
-		scope:unification_leader = {
-			form_country = formable_country:OIR_f
-			unlock_government_reform_effect = { type = oirat_unification_reform }
-			add_reform = government_reform:oirat_unification_reform
-			if = {
-				limit = { country_rank_level < 3 }
-				set_country_rank_effect = {
-					rank = country_rank:rank_kingdom
+		form_country = formable_country:OIR_f
+		unlock_government_reform_effect = { type = oirat_unification_reform }
+		add_reform = government_reform:oirat_unification_reform
+		if = {
+			limit = { exists = international_organization:oirat_confederation }
+			custom_tooltip = {
+				text = io_unification.80.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:oirat_confederation = {
+						every_international_organization_member = {
+							limit = { NOT = { this = scope:target_country } }
+							trigger_event_silently = { id = io_unification.1 }
+						}
+					}
 				}
 			}
+			destroy_international_organization = { target = international_organization:oirat_confederation }
 		}
-		destroy_international_organization = { target = international_organization:oirat_confederation }
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank = country_rank:rank_kingdom
+		}
+	}
+}
+
+# Jurchen unification
+io_unification.90 = {
+	type = country_event
+	title = io_unification.90.title
+	desc = io_unification.90.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+		if = {
+			limit = {
+				OR = {
+					tag = NAN
+					tag = UDE
+					tag = WRK
+					tag = SFN
+					tag = YER
+				}
+			}
+			form_country = formable_country:YER_f
+		}
+		else_if = {
+			limit = {
+				culture ?= culture:haixi_culture
+			}
+			form_country = formable_country:HXI_f
+		}
+		else = {
+			form_country = formable_country:JNZ_f
+		}
+	}
+
+	option = {
+		name = io_unification.90.a
+		trigger_event_non_silently = jurchen_confederation_events.17
+	}
+}
+
+# Frisian Freedom unification
+io_unification.100 = {
+	type = country_event
+	title = io_unification.100.title
+	desc = io_unification.100.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+	}
+
+	option = {
+		name = io_unification.100.a
+		form_country = formable_country:FRI_f
+		if = {
+			limit = { exists = international_organization:frisian_freedom }
+			custom_tooltip = {
+				text = io_unification.100.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:frisian_freedom = {
+						every_international_organization_member = {
+							limit = {
+								NOT = { this = scope:target_country }
+							}
+							trigger_event_silently = { id = io_unification.1 }
+						}
+					}
+				}
+			}
+			destroy_international_organization = { target = international_organization:frisian_freedom }
+		}
+		if = {
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank = country_rank:rank_kingdom
+		}
+	}
+}
+
+# Northern Yuan unification (Yuan path)
+io_unification.110 = {
+	type = country_event
+	title = io_unification.110.title
+	desc = io_unification.110.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+	}
+
+	option = {
+		name = io_unification.110.a
+		form_country = formable_country:YUA_f
+		if = {
+			limit = { exists = international_organization:northern_yuan }
+			custom_tooltip = {
+				text = io_unification.110.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:northern_yuan = {
+						every_international_organization_member = {
+							limit = {
+								NOT = { this = scope:target_country }
+							}
+							trigger_event_silently = { id = northern_yuan.103 }
+						}
+					}
+					every_country = {
+						limit = {
+							is_subject_of = scope:target_country
+							NOT = { this = scope:target_country }
+							culture = { has_culture_group = culture_group:mongolian_group }
+						}
+						trigger_event_silently = { id = northern_yuan.103 }
+					}
+				}
+			}
+			destroy_international_organization = { target = international_organization:northern_yuan }
+		}
+		set_country_rank = country_rank:rank_empire
+	}
+}
+
+# Northern Yuan unification (Mongolia path)
+io_unification.120 = {
+	type = country_event
+	title = io_unification.120.title
+	desc = io_unification.120.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+	}
+
+	option = {
+		name = io_unification.120.a
+		form_country = formable_country:MGO_f
+		if = {
+			limit = { exists = international_organization:northern_yuan }
+			custom_tooltip = {
+				text = io_unification.120.ctt
+				if = {
+					limit = { exists = scope:target_country }
+					international_organization:northern_yuan = {
+						every_international_organization_member = {
+							limit = {
+								NOT = { this = scope:target_country }
+							}
+							trigger_event_silently = { id = northern_yuan.105 }
+						}
+					}
+				}
+			}
+			international_organization:northern_yuan = {
+				set_variable = {
+					name = yeke_mongghul_ulus
+					value = 0
+				}
+			}
+			destroy_international_organization = { target = international_organization:northern_yuan }
+		}
+		set_country_rank = country_rank:rank_empire
 	}
 }
