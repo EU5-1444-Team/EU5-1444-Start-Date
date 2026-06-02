@@ -24250,7 +24250,7 @@ countries = {
 
     # --- TRO ---
 
-    SNI = {
+    SVN = {
         own_control_core = {
             #Banate of Croatia
             bjelovar koprivnica kutina pakrac vaska
@@ -24283,7 +24283,7 @@ countries = {
         country_rank = rank_duchy
     }
 
-    # --- SNI ---
+    # --- SVN ---
 
     CRO = {
         own_control_core = {
@@ -26223,8 +26223,8 @@ countries = {
 
     # --- LIV ---
 
-    CZK = { #Warsaw Masovia
-        #https://en.wikipedia.org/wiki/Duchy_of_Masovia
+    WRS = { #Duchy of Warsaw (not to be confused with Mazovia)
+        #https://en.wikipedia.org/wiki/Duchy_of_Warsaw_(Middle_Ages)
         own_control_core = {
             warsaw grojec czersk liw nur kamieniec garwolin tarczyn zambrow ostroleka zakroczym przasnysz rozan lomza kolno ciechanow
         }
@@ -26237,12 +26237,11 @@ countries = {
             type = monarchy
             heir_selection = semi_salic_law
 
-            ruler = war_boleslaw_iv_piast
+            ruler = wrs_boleslaw_iv_piast
 
-            ruler_term = { character = czk_trojden_i_piast start_date = 1313.1.1 end_date = 1341.3.13 regnal_number = 1 }
-            ruler_term = { character = czk_siemowit_iii_piast start_date = 1341.3.13 end_date = 1381.6.16 regnal_number = 1 }
-            ruler_term = { character = war_janusz_i_piast start_date = 1381.6.16 end_date = 1429.12.8 regnal_number = 1 }
-            ruler_term = { character = war_boleslaw_iv_piast start_date = 1429.12.8 regnal_number = 1 }
+            ruler_term = { character = czk_siemowit_iii_piast start_date = 1355.1.1 end_date = 1370.1.1 regnal_number = 3 }
+            ruler_term = { character = wrs_janusz_i_piast start_date = 1381.6.16 end_date = 1429.12.8 regnal_number = 1 }
+            ruler_term = { character = wrs_boleslaw_iv_piast start_date = 1429.12.8 regnal_number = 4 }
 
             regnal_numbers = {
             }
@@ -26280,7 +26279,7 @@ countries = {
         dynasty = piast_dynasty
     }
 
-    # --- CZK ---
+    # --- WRS ---
 
     SXM = {
         #Samogitia - Eldership
@@ -26399,62 +26398,64 @@ countries = {
 
     # --- SDZ ---
 
-#    CZK = {
-#        #https://en.wikipedia.org/wiki/Duchy_of_Masovia
-#        our_cores_conquered_by_others = {
-#            warsaw grojec czersk liw nur kamieniec garwolin tarczyn
-#        }
-#
-#        starting_technology_level = 3
-#        include = "expl_eastern_europe"
-#        include = "eastern_european_catholic_monarchy_no_coast"
-#        include = "eastern_european_catholic"
-#        government = {
-#            type = monarchy
-#            heir_selection = semi_salic_law
-#
-#            ruler = random
-#            ruler_term = { character = czk_boleslaw_ii_piast start_date = 1275.1.20 end_date = 1313.4.20 regnal_number = 2 }
-#            ruler_term = { character = czk_trojden_i_piast start_date = 1313.4.20 regnal_number = 1 }
-#            regnal_numbers = {
-#                name_boleslav = 2
-#                Trojden = 1
-#            }
-#
-#            centralization_vs_decentralization = 80
-#            traditionalist_vs_innovative = 20
-#            spiritualist_vs_humanist = 10
-#            aristocracy_vs_plutocracy = -90
-#            serfdom_vs_free_subjects = -70
-#            mercantilism_vs_free_trade = -70
-#            belligerent_vs_conciliatory = 0
-#            quality_vs_quantity = 0
-#            offensive_vs_defensive = -70
-#            land_vs_naval = -60
-#            capital_economy_vs_traditional_economy = 90
-#            individualism_vs_communalism = -20
-#            outward_vs_inward = 0
-#
-#            privilege = {
-#                #Burghers
-#                novi_fori
-#                urban_development_grants
-#
-#                #Commoners
-#                peasants_free_peasantry
-#            }
-#        }
-#
-#        tolerated_cultures = {
-#            low_franconian
-#        }
-#
-#        country_rank = rank_duchy
-#        capital = warsaw
-#        dynasty = piast_dynasty
-#    }
-#
-#    # --- CZK ---
+    CZK = {
+        #https://en.wikipedia.org/wiki/Duchy_of_Masovia
+        our_cores_conquered_by_others = {
+            czersk grojec liw garwolin
+        }
+
+        starting_technology_level = 3
+        include = "expl_eastern_europe"
+        include = "eastern_european_catholic_monarchy_no_coast"
+        include = "eastern_european_catholic"
+        government = {
+            type = monarchy
+            heir_selection = semi_salic_law
+
+            ruler = random
+
+            ruler_term = { character = czk_boleslaw_ii_piast start_date = 1275.1.20 end_date = 1313.4.20 regnal_number = 2 }
+            ruler_term = { character = czk_trojden_i_piast start_date = 1313.4.20 regnal_number = 1 }
+            
+            regnal_numbers = {
+                name_boleslav = 2
+                Trojden = 1
+            }
+
+            centralization_vs_decentralization = 80
+            traditionalist_vs_innovative = 20
+            spiritualist_vs_humanist = 10
+            aristocracy_vs_plutocracy = -90
+            serfdom_vs_free_subjects = -70
+            mercantilism_vs_free_trade = -70
+            belligerent_vs_conciliatory = 0
+            quality_vs_quantity = 0
+            offensive_vs_defensive = -70
+            land_vs_naval = -60
+            capital_economy_vs_traditional_economy = 90
+            individualism_vs_communalism = -20
+            outward_vs_inward = 0
+
+            privilege = {
+                #Burghers
+                novi_fori
+                urban_development_grants
+
+                #Commoners
+                peasants_free_peasantry
+            }
+        }
+
+        tolerated_cultures = {
+            low_franconian
+        }
+
+        country_rank = rank_duchy
+        capital = warsaw
+        dynasty = piast_dynasty
+    }
+
+    # --- CZK ---
 
     BIO = {
         own_control_core = {
