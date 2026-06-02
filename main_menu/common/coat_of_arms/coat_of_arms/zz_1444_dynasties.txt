@@ -5,8 +5,8 @@
 timurid_dynasty = {
     # Timurids - Timur's annulets tamgha
     pattern = "pattern_solid.dds"
-    color1 = hsv360 { 204 70 15 }
-    color2 = hsv360 { 0 80 70 }
+    color1 = "black"
+    color2 = "red"
 
     colored_emblem = {
         texture = "ce_roundel.dds"
@@ -71,29 +71,27 @@ chagataid_dynasty = { # Chagatai
 
 jochi_dynasty = { #Jochi
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 255 255 }
+    color1 = "white"
     colored_emblem = {
         texture = "ce_tamgha_batu.dds"
-        color1 = rgb { 255 255 0 }
+        color1 = "yellow_pale"
         instance = {
-            position = { 0.500 0.500 }
-            scale = { 1.000 1.000 }
+            position = { 0.500 0.45 }
+            scale = { 0.8 0.8 }
         }
     }
 }
 giray_dynasty = { #Giray Crimeans
-    pattern = "pattern_tricolor_horizontal_01.dds"
-    color1 = rgb { 0 100 0 }
-    color2 = rgb { 0 100 255 }
-    color3 = rgb { 0 100 255 }
-    colored_emblem = {
-        texture = "ce_tamgha_giray_wide.dds"
-        color1 = rgb { 255 255 255 }
-        instance = {
-            position = { 0.500 0.500 }
-            scale = { 1.000 1.000 }
-        }
-    }
+	pattern = "pattern_solid.dds"
+	color1 = "blue_light"
+	color2 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_tamgha_giray_wide.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.5 0.45 } scale = { 0.5 0.5 } }
+	}
 }
 manghit_dynasty = { #Nogai Clans
     pattern = "pattern_solid.dds"
@@ -533,22 +531,10 @@ valois_angouleme_dynasty = {
 
 valois_burgundy_dynasty = {
     pattern = "pattern_solid.dds"
-    color1 = "blue"
-    color2 = "yellow"
-    color3 = "red"
-    color4 = "white"
-
-    sub = {
-        parent = "sub_touraine"
-        instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
-        instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    textured_emblem = {
+        texture = "te_burgundy_dynasty.dds"
     }
-    sub = {
-        parent = "sub_burgundy"
-        instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
-        instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
-    }
-}	
+}
 
 montfort_brittany_dynasty = {
 	pattern = "pattern_solid.dds"
@@ -1342,25 +1328,25 @@ derbent_dynasty = {
 
 aq_qoyunlu_dynasty = {
     pattern = "pattern_solid.dds"
-    color1 = rgb { 0 0 170 }
+    color1 = "blue_dark"
     colored_emblem = {
         texture = "ce_akkoyunlu.dds"
-        color1 = rgb { 255 255 255 }
+        color1 = "white"
         instance = {
-            position = { 0.5 0.5 }
-            scale = { 0.5 0.5 }
+            position = { 0.5 0.45 }
+            scale = { 0.6 0.7 }
         }
     }
 }
 
 qara_qoyunlu_dynasty = {
     pattern = "pattern_solid.dds"
-    color1 = rgb { 0 151 196 }
+    color1 = "blue_sky"
     colored_emblem = {
         texture = "ce_karakoyunlu.dds"
-        color1 = rgb { 0 0 0 }
+        color1 = "black"
         instance = {
-            position = { 0.5 0.5 }
+            position = { 0.5 0.45 }
             scale = { 1.4 1.4 }
         }
     }
