@@ -191,6 +191,7 @@ ENG = { # England
 }
 
 REPLACE:ANJ = { # Anjou
+REPLACE:ANJ = { # Anjou
 	flag_definition = {
 		coa = ANJ
 		priority = 1
@@ -204,6 +205,7 @@ REPLACE:ANJ = { # Anjou
 	}
 	flag_definition = {
 		coa = ANJ_valois
+		priority = 5
 		priority = 5
 		trigger = {
             OR = {
@@ -968,6 +970,13 @@ SCA = {
 		}
 	}
 	flag_definition = {
+		coa = SCA_skane
+		priority = 18
+		trigger = {
+			coa_def_SKE_trigger = yes
+		}
+	}
+	flag_definition = {
 		coa = SCA_norway
 		priority = 17
 		trigger = {
@@ -995,32 +1004,4 @@ SCA = {
 			}
 		}
 	}
-}
-REPLACE:NEV = { # Nevers
-	flag_definition = {
-		coa = NEV
-		priority = 1
-	}
-	flag_definition = {
-		coa = NEV_flanders
-		priority = 10
-		trigger = {
-			coa_def_dampierre_flanders_dynasty_trigger = yes
-		}
-	}
-	flag_definition = {
-		coa = NEV_Valois
-		priority = 11
-		trigger = {
-			coa_def_valois_burgundy_dynasty_trigger = yes
-			coa_def_BUR_ensign_trigger = yes
-		}
-	}
-	flag_definition = {
-		coa = FCB_emperor
-		priority = 0 # Commented out for now (update to DH if restored)
-		trigger = {
-			coa_def_hre_emperor_trigger = yes
-		}
-	}	
 }
