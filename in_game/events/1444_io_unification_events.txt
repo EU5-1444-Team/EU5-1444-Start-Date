@@ -31,8 +31,7 @@ io_unification.1 = {
 	}
 }
 
-# Khalkha unification
-io_unification.10 = {
+io_unification.10 = { # Khalkha unification
 	type = country_event
 	title = io_unification.10.title
 	desc = io_unification.10.desc
@@ -68,15 +67,10 @@ io_unification.10 = {
 			}
 			destroy_international_organization = { target = international_organization:khalkha_confederation }
 		}
-		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank = country_rank:rank_kingdom
-		}
 	}
 }
 
-# Khorchin unification
-io_unification.20 = {
+io_unification.20 = { # Khorchin unification
 	type = country_event
 	title = io_unification.20.title
 	desc = io_unification.20.desc
@@ -119,8 +113,7 @@ io_unification.20 = {
 	}
 }
 
-# Nogai unification
-io_unification.30 = {
+io_unification.30 = { # Nogai unification
 	type = country_event
 	title = io_unification.30.title
 	desc = io_unification.30.desc
@@ -156,15 +149,10 @@ io_unification.30 = {
 			}
 			destroy_international_organization = { target = international_organization:nogai_confederation }
 		}
-		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank = country_rank:rank_kingdom
-		}
 	}
 }
 
-# Bashkir tribal unification
-io_unification.40 = {
+io_unification.40 = { # Bashkir tribal unification
 	type = country_event
 	title = io_unification.40.title
 	desc = io_unification.40.desc
@@ -200,15 +188,10 @@ io_unification.40 = {
 			}
 			destroy_international_organization = { target = international_organization:bashkir_confederation }
 		}
-		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank = country_rank:rank_kingdom
-		}
 	}
 }
 
-# Bashkir horde unification
-io_unification.50 = {
+io_unification.50 = { # Bashkir horde unification
 	type = country_event
 	title = io_unification.50.title
 	desc = io_unification.50.desc
@@ -354,8 +337,7 @@ io_unification.70 = {
 	}
 }
 
-# Oirat unification
-io_unification.80 = {
+io_unification.80 = { # Oirat unification
 	type = country_event
 	title = io_unification.80.title
 	desc = io_unification.80.desc
@@ -391,10 +373,6 @@ io_unification.80 = {
 				}
 			}
 			destroy_international_organization = { target = international_organization:oirat_confederation }
-		}
-		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank = country_rank:rank_kingdom
 		}
 	}
 }
@@ -490,8 +468,7 @@ io_unification.100 = {
 	}
 }
 
-# Northern Yuan unification (Yuan path)
-io_unification.110 = {
+io_unification.110 = { # Northern Yuan unification (Yuan path)
 	type = country_event
 	title = io_unification.110.title
 	desc = io_unification.110.desc
@@ -536,12 +513,10 @@ io_unification.110 = {
 			}
 			destroy_international_organization = { target = international_organization:northern_yuan }
 		}
-		set_country_rank = country_rank:rank_empire
 	}
 }
 
-# Northern Yuan unification (Mongolia path)
-io_unification.120 = {
+io_unification.120 = { # Northern Yuan unification (Mongolia path)
 	type = country_event
 	title = io_unification.120.title
 	desc = io_unification.120.desc
@@ -576,14 +551,7 @@ io_unification.120 = {
 					}
 				}
 			}
-			international_organization:northern_yuan = {
-				set_variable = {
-					name = yeke_mongghul_ulus
-					value = 0
-				}
-			}
 			destroy_international_organization = { target = international_organization:northern_yuan }
 		}
-		set_country_rank = country_rank:rank_empire
 	}
 }

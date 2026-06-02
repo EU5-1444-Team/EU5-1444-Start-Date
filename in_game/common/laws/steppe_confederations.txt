@@ -921,27 +921,21 @@ confederation_unification_law = {
         on_activate = {
             custom_tooltip = khalkha_unification_tt
             leader_country = {
-trigger_event_non_silently = { id = io_unification.10 }
-                }
+                trigger_event_non_silently = { id = io_unification.10 }
             }
         }
-    },
-    law_consolidate_khorchin = {
-        #category
-        category = unification
-        #left picture
-        picture = "gfx/events/steppe_horde2.dds"
-        #is a law
-        type = law
-        #icon
-        icon = "gfx/icons/laws.dds"
-        #potential
+    }
+
+    unify_khorchin_policy = {
         potential = {
             exists = international_organization:khorchin_confederation
-            is_leader_of = international_organization:khorchin_confederation
         }
 
-        on_fully_activated = {
+        wants_propose_policy = { add = { value = 500 } }
+        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
+
+        on_activate = {
+            custom_tooltip = khalkha_unification_tt
             leader_country = {
                 trigger_event_non_silently = { id = io_unification.20 }
             }
