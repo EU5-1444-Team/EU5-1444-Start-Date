@@ -6510,7 +6510,7 @@ character_db= {
         birth_date = 1206.1.1
         death_date = 1270.5.3
         birth = buda
-        #spouse = maria_laskarina
+        spouse = hun_maria_laskarina
         father = hun_andrew_ii_arpad
         #mother = gertrude_of_merania
         dynasty = arpad_dynasty
@@ -21426,6 +21426,20 @@ character_db= {
         ruler_trait = greedy
     }
 
+    cas_alfonso_molina = { # Infante of Leon, Lord of Molina; son of Alfonso IX of Leon
+		first_name = { name = name_alphonse }
+		culture = castilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1202.1.1
+		death_date = 1272.1.6
+		birth = leon
+        father = lon_alfonso_ix_burgundy
+        mother = cas_berenguela_i_burgundy
+		dynasty = molina_dynasty
+		tag = CAS
+	}
+
     cas_maria_molina = {
         first_name = { name = name_mary }
         culture = castilian
@@ -21436,10 +21450,10 @@ character_db= {
         birth_date = 1264.1.1
         death_date = 1321.7.1
         birth = molina_de_aragon
-        #father = cas_alfonso_molina
+        father = cas_alfonso_molina
         #mother = cas_mayor_alfonso_meneses
         spouse = cas_sancho_iv_burgundy
-        dynasty = burgundy_castile_dynasty # Should be dynasty = molina_dynasty
+        dynasty = molina_dynasty
         tag = CAS
         ruler_trait = intricate_web_weaver
         ruler_trait = charismatic_negotiator
@@ -26408,9 +26422,8 @@ character_db= {
 		female = yes
 		birth_date = 1320.1.1
 		death_date = 1399.12.31
-
 		birth = villalba # Portugal
-		#father = cas_pedro_fernandez_castro
+		father = cas_pedro_fernandez_castro
 		#mother = por_aldonca_lourenco_valadares # Mistress
 		dynasty = castro_dynasty
 		tag = CAS
@@ -53270,16 +53283,28 @@ character_db= {
 
     ### guzman_dynasty | CAS ###
 
+    cas_alvar_perez_guzman = { # 13th-c. ricohombre of Castile, House of Guzman, father of Pedro Nunez Guzman II
+		first_name = { name = name_alvar }
+		culture = castilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1240.1.1 # estimated
+		death_date = 1278.1.1 # estimated
+		birth = sevilla
+		dynasty = guzman_dynasty
+		tag = CAS
+	}
+
     cas_pedro_nunez_guzman_ii = {
         first_name = { name = name_peter }
         culture = castilian
         religion = catholic
         estate = nobles_estate
         adm = 40 dip = 27 mil = 57
-        birth_date = 1280.1.1
+        birth_date = 1270.1.1
         death_date = 1324.1.1 # Was not alive in 1324
         birth = sevilla
-        #father = cas_alvar_perez_guzman
+        father = cas_alvar_perez_guzman
         #mother = María González Girón
         dynasty = guzman_dynasty
         tag = CAS
@@ -70734,6 +70759,19 @@ character_db= {
 
     ### lara_dynasty | CAS ###
 
+    cas_manrique_perez_lara = { # First Lord of Molina; killed at the Battle of Huete, 3 June 1164
+		first_name = { name = Manrique }
+		culture = castilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1100.1.1 # estimated
+		death_date = 1164.6.3
+		birth = molina_de_aragon
+		father = cas_pedro_gonzalez_lara
+		dynasty = lara_dynasty
+		tag = CAS
+	}
+
     cas_pedro_manrique_lara = {
         first_name = { name = name_peter }
         culture = castilian
@@ -70743,7 +70781,7 @@ character_db= {
         birth_date = 1140.1.1 # First appeareance in documents in 1158
         death_date = 1202.1.1
         birth = molina_de_aragon
-        #father = cas_manrique_perez_lara
+        father = cas_manrique_perez_lara
         #mother = Ermessende de Narbonne
         dynasty = lara_dynasty
         tag = CAS
@@ -96450,7 +96488,6 @@ character_db= {
 		religion = orthodox
 		birth_date = 1295.1.1
 		death_date = 1399.12.31
-
 		birth = constantinople
 		father = byz_andronikos_ii_palaiologos
 		mother = byz_eirene_di_monferrato
@@ -138176,7 +138213,7 @@ character_db= {
 
     bas_jean_i_arley = { #Previous Ruler
         first_name = { name = name_john }
-        culture = french
+        culture = burgundian
         religion = catholic
         birth_date = 1270.1.1 #unknown
         death_date = 1335.1.1
@@ -138193,7 +138230,6 @@ character_db= {
 		female = yes
 		birth_date = 1309.1.1 # Married 1324
 		death_date = 1399.12.31
-
 		birth = vesoul
 		#father = Guillaume VIII de Pesmes
 		spouse = bas_othon_ii_grandson
@@ -138301,12 +138337,11 @@ character_db= {
 
 	blb_stefan_ii = { #Ruler
 		first_name = { name = name_stephen }
-		culture = polabian
+		culture = german_silesian
 		religion = catholic
 		estate = clergy_estate
 		birth_date = 1280.1.1
 		death_date = 1399.12.31
-
 		birth = lebus
 		tag = BLB
 	}
@@ -139578,6 +139613,70 @@ character_db= {
 
     ### (no dynasty) | CAS ###
 
+    cas_pedro_gonzalez_lara = { # Count of Lara; founder of the family's prominence; died 16 Oct 1130
+		first_name = { name = name_peter }
+		culture = castilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1080.1.1 # estimated; first attested as alferez in 1088
+		death_date = 1130.10.16
+		birth = burgos
+		dynasty = lara_dynasty
+		tag = CAS
+	}
+
+	cas_nuno_perez_lara = { # Tutor of Alfonso VIII of Castile; died 3 Aug 1177
+		first_name = { name = name_nuno }
+		culture = castilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1120.1.1 # estimated
+		death_date = 1177.8.3
+		birth = burgos
+		father = cas_pedro_gonzalez_lara
+		dynasty = lara_dynasty
+		tag = CAS
+	}
+
+	cas_gonzalo_nunez_lara = { # Late 12th- to early 13th-c. Lara magnate, son of Nuno Perez
+		first_name = { name = name_gonzalo }
+		culture = castilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1175.1.1 # estimated
+		death_date = 1225.1.1 # estimated
+		birth = burgos
+		father = cas_nuno_perez_lara
+		dynasty = lara_dynasty
+		tag = CAS
+	}
+
+	cas_nuno_gonzalez_lara = { # "el Bueno"; closest friend of Alfonso X; killed at the Battle of Ecija, 8 Sep 1275
+		first_name = { name = name_nuno }
+		culture = castilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1220.1.1 # estimated
+		death_date = 1275.9.8
+		birth = burgos
+		father = cas_gonzalo_nunez_lara
+		dynasty = lara_dynasty
+		tag = CAS
+	}
+
+	cas_juan_nunez_i_lara = { # "El Gordo" — head of the House of Lara, died Cordoba April 1294
+		first_name = { name = name_john }
+		culture = castilian
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1238.1.1 # exact year unknown; estimated from first documented activity in the 1260s
+		death_date = 1294.4.1
+		birth = molina_de_aragon
+		father = cas_nuno_gonzalez_lara
+		dynasty = lara_dynasty
+		tag = CAS
+	}
+
 	cas_juana_nunez_lara = {
 		first_name = { name = name_joanna }
 		last_name = { name = Lara }
@@ -139589,12 +139688,24 @@ character_db= {
 		female = yes
 		birth_date = 1285.1.1
 		death_date = 1399.12.31
-
 		birth = palencia
-		#father = cas_juan_nunez_i_lara
+		father = cas_juan_nunez_i_lara
 		#mother = cas_teresa_haro
 		spouse = cas_fernando_lacerda_jr
-		#dynasty = lara_dynasty
+		dynasty = lara_dynasty
+		tag = CAS
+	}
+
+    cas_pedro_fernandez_castro = { # "el de la Guerra"; Lord of Lemos and Sarria, Mayordomo Mayor of Castile
+		first_name = { name = name_peter }
+		last_name = { name = de_Castro }
+		culture = galician
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1290.1.1 # estimated
+		death_date = 1342.1.1 # died on campaign in Algarve / Salado context
+		birth = villalba
+		dynasty = castro_dynasty
 		tag = CAS
 	}
 
@@ -139609,11 +139720,10 @@ character_db= {
 		female = yes
 		birth_date = 1330.1.1 # Younger than her brother
 		death_date = 1399.12.31
-
 		birth = villalba # Galicia
-		#father = cas_pedro_fernandez_castro
+		father = cas_pedro_fernandez_castro
 		#mother = cas_isabel_ponce_leon
-		#dynasty = castro_dynasty
+		dynasty = castro_dynasty
 		tag = CAS
 		child_trait = child_gregarious
 	}
