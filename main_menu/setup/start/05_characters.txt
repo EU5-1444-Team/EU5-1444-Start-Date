@@ -2,7 +2,7 @@
 
 # ONLY ADD CHARACTERS BELOW LINE 100964 !!!
 
-character_db={
+character_db= {
 
     ### abbasid_dynasty | MAM ###
 
@@ -53778,12 +53778,6 @@ character_db={
         dynasty = habsburg_dynasty
         child_trait = child_intelligent
         tag = HAB
-        timed_modifier = {
-            modifier = "sickly_character"
-            start_date = 1440.1.1
-            date = 1458.1.1
-            size = 1
-        }
     }
 
     ### habsburg_dynasty | LBV ###
@@ -59407,8 +59401,8 @@ character_db={
 		birth_date = 1250.1.1
 		death_date = 1399.12.31
 
- father = hsl_narasimha_iii_hoysala
- dynasty = hoysala_dynasty
+        father = hsl_narasimha_iii_hoysala
+        dynasty = hoysala_dynasty
 		tag = HSL
 	}
 
@@ -94922,7 +94916,7 @@ character_db={
 		dynasty = ottomans_dynasty
 		birth = sogut
 		birth_date = 1307.1.1
-		death_date = 167.1.1
+		death_date = 1367.1.1 # Unknown
 		culture = turkish_culture
 		religion = sunni
 		female = yes
@@ -95192,7 +95186,7 @@ character_db={
         birth = bursa
         dynasty = ottomans_dynasty
         father = tur_murad
-        mother = tur_gulcicak_hatun_the_concubine
+        mother = tur_gulcicek_hatun_concubine
         tag = TUR
         ruler_trait = conqueror
         ruler_trait = bold_fighter
@@ -95222,7 +95216,7 @@ character_db={
         birth = bursa
         dynasty = ottomans_dynasty
         father = tur_bayezid_i_padishah
-        mother = tur_devlet_hatun_the_concubine
+        mother = tur_devlet_hatun_concubine
         tag = TUR
         ruler_trait = conqueror
         ruler_trait = pious
@@ -95252,45 +95246,118 @@ character_db={
         birth = amasya
         dynasty = ottomans_dynasty
         father = tur_mehmed_i_padishah
-        mother = tur_emine_hatun_the_concubine
+        mother = tur_emine_hatun_concubine
         tag = TUR
         ruler_trait = just
         ruler_trait = pious
         ruler_trait = strict
-        timed_modifier = {
-        modifier = "sickly_character"
-            start_date = 1444.11.11
-            date = 9999.1.1
-            size = 1
-        }
     }
 
-    tur_selcuk_hatun_the_princess = {
-        first_name = { name = Selcuk }
-        adm = 65 dip = 70 mil = 62
+    cnd_selcuk_hatun_ottomans = {
+        first_name = { name = Selçuk }
+        nickname = { name = Hatun }
         culture = turkish_culture
         religion = sunni
         female = yes
-        birth_date = 1407.8.4
+        birth_date = 1407.1.1
+        birth = merzifon
         dynasty = ottomans_dynasty
         father = tur_mehmed_i_padishah
         tag = TUR
     }
 
-    tur_kucuk_brother_mustafa = {
+    cnd_orhan_bey_candarids = {
+        first_name = { name = Orhan }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1426.1.1
+        death_date = 1431.1.1
+        birth = kastamonu
+        dynasty = candarids_dynasty
+        father = cnd_taceddin_ibrahim_ii_candarids
+        mother = cnd_selcuk_hatun_ottomans
+        tag = TUR
+    }
+
+    cnd_yusuf_bey_candarids = {
+        first_name = { name = name_joseph }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1427.1.1
+        death_date = 1427.2.1
+        birth = kastamonu
+        dynasty = candarids_dynasty
+        father = cnd_taceddin_ibrahim_ii_candarids
+        mother = cnd_selcuk_hatun_ottomans
+        tag = TUR
+    }
+
+    cnd_ishak_bali_candarids = {
+        first_name = { name = Ishak }
+        nickname = { name = Bali }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1430.1.1
+        death_date = 1436.1.1
+        birth = kastamonu
+        dynasty = candarids_dynasty
+        father = cnd_taceddin_ibrahim_ii_candarids
+        mother = cnd_selcuk_hatun_ottomans
+        tag = TUR
+    }
+
+    tur_kucuk_mustafa_ottomans = {
         first_name = { name = name_mustafa }
-        nickname = { name = the_desposed }
+        nickname = { name = Küçük }
         adm = 52 dip = 70 mil = 60
         culture = turkish_culture
         religion = sunni
-        birth_date = 1408.3.25
-        death_date = 1423.4.15
+        birth_date = 1408.1.1
+        death_date = 1423.1.1
         birth = bursa
         dynasty = ottomans_dynasty
         father = tur_mehmed_i_padishah
-        mother = tur_emine_hatun_the_concubine
         tag = TUR
         ruler_trait = silver_tongue
+    }
+
+    tur_mahmud_celebi_ottomans = {
+        first_name = { name = name_mahmud }
+        nickname = { name = Çelebi }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1413.1.1
+        death_date = 1429.8.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_mehmed_i_padishah
+        tag = TUR
+    }
+
+    tur_yusuf_celebi_ottomans = {
+        first_name = { name = name_joseph }
+        nickname = { name = Çelebi }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1414.1.1
+        death_date = 1429.8.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_mehmed_i_padishah
+        tag = TUR
+    }
+
+    tur_ahmet_celebi_ottomans_infant = {
+        first_name = { name = name_ahmad }
+        nickname = { name = Çelebi }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1415.1.1
+        death_date = 1415.2.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_mehmed_i_padishah
+        tag = TUR
     }
 
     cnd_hatice_hatun_ottomans = {
@@ -95303,7 +95370,20 @@ character_db={
         birth = edirne
         dynasty = ottomans_dynasty
         father = tur_murad_ii_ottomans
-        mother = tur_huma_hatun_the_concubine
+        mother = tur_huma_hatun_concubine
+        tag = TUR
+    }
+
+    tur_buyuk_ahmet_ottomans = {
+        first_name = { name = name_ahmad }
+        nickname = { name = Büyük }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1419.1.1
+        death_date = 1437.1.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_murad_ii_ottomans
         tag = TUR
     }
 
@@ -95320,6 +95400,95 @@ character_db={
         tag = TUR
     }
 
+    tur_yeni_hatun = {
+        first_name = { name = Yeni }
+        nickname = { name = Hatun }
+        culture = turkish_culture
+        religion = sunni
+        female = yes
+        birth_date = 1426.1.1
+        birth = bursa
+        tag = TUR
+    }
+
+    tur_giyasuddin_sehzade_ottomans = {
+        first_name = { name = Giyaşüddin }
+        nickname = { name = Şehzade }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1441.1.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_alaeddin_ali_sehzade_ottomans
+        mother = tur_yeni_hatun
+        tag = TUR
+    }
+
+    tur_taceddin_sehzade_ottomans = {
+        first_name = { name = Taceddin }
+        nickname = { name = Şehzade }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1442.1.1
+        death_date = 1443.1.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_alaeddin_ali_sehzade_ottomans
+        mother = tur_yeni_hatun
+        tag = TUR
+    }
+
+    tur_isfendiyar_sehzade_ottomans_infant = {
+        first_name = { name = Isfendiyâr }
+        nickname = { name = Şehzade }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1425.1.1
+        death_date = 1425.12.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_murad_ii_ottomans
+        tag = TUR
+    }
+
+    tur_huseyin_sehzade_ottomans = {
+        first_name = { name = name_hasan }
+        nickname = { name = Şehzade }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1427.1.1
+        death_date = 1439.1.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_murad_ii_ottomans
+        tag = TUR
+    }
+
+    tur_orhan_sehzade_ottomans = {
+        first_name = { name = Orhan }
+        nickname = { name = Şehzade }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1428.1.1
+        death_date = 1441.1.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_murad_ii_ottomans
+        tag = TUR
+    }
+
+    tur_hasan_sehzade_ottomans = {
+        first_name = { name = Hasan }
+        nickname = { name = Şehzade }
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1434.1.1
+        birth = bursa
+        dynasty = ottomans_dynasty
+        father = tur_murad_ii_ottomans
+        tag = TUR
+    }
+
     tur_fatma_hatun_ottomans = {
         first_name = { name = Fatma }
         last_name = { name = Hatun }
@@ -95330,13 +95499,26 @@ character_db={
         birth = edirne
         dynasty = ottomans_dynasty
         father = tur_murad_ii_ottomans
-        mother = tur_huma_hatun_the_concubine
+        mother = tur_huma_hatun_concubine
+        tag = TUR
+    }
+
+    tur_selcuk_sahzade_ottomans = {
+        first_name = { name = Selçuk }
+        last_name = { name = Şahzade }
+        culture = turkish_culture
+        religion = sunni
+        female = yes
+        birth_date = 1431.1.1
+        birth = edirne
+        dynasty = ottomans_dynasty
+        father = tur_murad_ii_ottomans
         tag = TUR
     }
 
     tur_mehmed_ii_ottomans = { # Ruler of the Ottomans in 1444
         first_name = { name = name_muhammad }
-        nickname = { name = nick_the_conquerer }
+        nickname = { name = Fâtih }
         adm = 95 dip = 100 mil = 90
         culture = turkish_culture
         religion = sunni
@@ -95344,7 +95526,7 @@ character_db={
         birth = edirne
         dynasty = ottomans_dynasty
         father = tur_murad_ii_ottomans
-        mother = tur_huma_hatun_the_concubine
+        mother = tur_huma_hatun_concubine
         tag = TUR
         ruler_trait = conqueror
         ruler_trait = martial_educator
@@ -96484,12 +96666,6 @@ character_db={
         mother = byz_jelena_dragas_dejanovic
         dynasty = palaiologos_dynasty
         tag = BYZ
-        timed_modifier = { #Dies in 1448 for Constantine XI to take the throne
-            modifier = "sickly_character"
-            start_date = 1444.1.1
-            date = 9999.1.1
-            size = 1
-        }
     }
 
     moe_theodoros_ii_palaiologos = {
@@ -122861,12 +123037,6 @@ character_db={
         ruler_trait = righteous
         ruler_trait = lawgiver
         ruler_trait = careful
-        timed_modifier = {
-            modifier = "sickly_character"
-            start_date = 1440.1.1
-            date = 1447.3.13
-            size = 1
-        }
     }
 
 	tim_khalil_sultan = {
@@ -124573,12 +124743,6 @@ character_db={
         spouse = cas_juan_ii_trastamara
         dynasty = trastamara_dynasty
         tag = CAS
-        timed_modifier = {
-        modifier = "sickly_character"
-            start_date = 1444.11.11
-            date = 9999.1.1
-            size = 1
-        }
     }
 
     cas_juan_ii_trastamara = { #ruler
@@ -124593,12 +124757,6 @@ character_db={
         tag = CAS
         ruler_trait = tolerant
         fertility = 0
-        timed_modifier = {
-        modifier = "sickly_character"
-            start_date = 1444.11.11
-            date = 9999.1.1
-            size = 1
-        }
     }
 
     cas_enrique_iv_trastamara = { #son of ruler
@@ -134108,12 +134266,6 @@ character_db={
         mother = ubv_anna_welf
         dynasty = wittelsbach_dynasty
         tag = UBV
-        timed_modifier = {
-        modifier = "sickly_character"
-            start_date = 1444.11.11
-            date = 9999.1.1
-            size = 1
-        }
     }
 
     ubv_elisabeth_munich_wittelsbach = {
@@ -139854,12 +140006,6 @@ character_db={
 		birth_date = 1375.1.1 # unknown
 		birth = bourges
 		tag = CMT
-        timed_modifier = {
-            modifier = "sickly_character"
-            start_date = 1440.1.1
-            date = 9999.1.1
-            size = 1
-        }
     }
 
     cmt_jacme_comborn = {
@@ -145307,33 +145453,33 @@ character_db={
 		birth = sogut
 		birth_date = 1313.1.1
 		death_date = 1399.12.31
-
 		culture = turkish_culture
 		religion = sunni
 		female = yes
 		tag = TUR
 	}
 
-    tur_gulcicak_hatun_the_concubine = {
-        first_name = { name = Gulcicak }
-        last_name = { name = Hatun }
+    tur_gulcicek_hatun_concubine = {
+        first_name = { name = Gülçiçek }
+        nickname = { name = Hatun }
         culture = greek_culture
         religion = sunni
         female = yes
-        birth_date = 1335.12.25
-        death_date = 1400.2.3
+        birth_date = 1335.1.1
+        death_date = 1400.1.1
+        birth = izmit
         spouse = tur_murad
         tag = TUR
     }
 
-    tur_devlet_hatun_the_concubine = {
+    tur_devlet_hatun_concubine = {
         first_name = { name = Devlet }
-        last_name = { name = Hatun }
+        nickname = { name = Hatun }
         culture = greek_culture
         religion = sunni
         female = yes
-        birth_date = 1369.6.18
-        death_date = 1422.5.10
+        birth_date = 1369.1.1
+        death_date = 1422.1.1
         spouse = tur_bayezid_i_padishah
         tag = TUR
     }
@@ -145348,14 +145494,17 @@ character_db={
         tag = TUR
     }
 
-    tur_emine_hatun_the_concubine = {#grandmother of Mehmed II
+    tur_emine_hatun_concubine = {#grandmother of Mehmed II
         first_name = { name = Emine }
-        last_name = { name = Hatun }
-        culture = greek_culture
+        nickname = { name = Hatun }
+        culture = turkish_culture
         religion = sunni
         female = yes
-        birth_date = 1392.1.7
+        birth_date = 1386.1.1
+        birth = elbistan
         spouse = tur_mehmed_i_padishah
+        father = dul_nasir_al_din_mehmed_beg_dulkadirids
+        dynasty = dulkadirids_dynasty
         tag = TUR
     }
 
@@ -145370,14 +145519,13 @@ character_db={
         tag = TUR
     }
 
-    tur_huma_hatun_the_concubine = {#mother of Mehmed II
-        first_name = { name = Huma }
-        last_name = { name = Hatun }
-        adm = 80 dip = 80 mil = 80
+    tur_huma_hatun_concubine = { #mother of Mehmed II
+        first_name = { name = Hüma }
+        nickname = { name = Hatun }
         culture = greek_culture
         religion = sunni
         female = yes
-        birth_date = 1410.7.26
+        birth_date = 1410.1.1
         spouse = tur_murad_ii_ottomans
         tag = TUR
     }
