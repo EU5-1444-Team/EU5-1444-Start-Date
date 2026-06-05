@@ -17846,7 +17846,7 @@ character_db= {
 
 	chagatai_khan = {
 		first_name = { name = name_Chagatai }
-		dynasty = borjigin_dynasty
+		dynasty = chagatayid_dynasty
 		culture = moghul_culture
 		religion = tengri
 		adm = 81 dip = 74 mil = 85
@@ -18371,7 +18371,7 @@ character_db= {
 
 	jochi_borjigin = {
 		first_name = { name = name_Jochi }
-		dynasty = borjigin_dynasty
+		dynasty = jochi_dynasty
 		culture = mongolian_culture
 		religion = tengri
 		adm = 76 dip = 71 mil = 88
@@ -19007,7 +19007,7 @@ character_db= {
 
 	qasar_borjigin = {
 		first_name = { name = name_Khasar }
-		dynasty = borjigin_dynasty
+		dynasty = khasar_dynasty
 		culture = mongolian_culture
 		religion = tengri
 		adm = 65 dip = 72 mil = 98
@@ -49867,7 +49867,7 @@ character_db= {
 		father = pok_narimantas_gediminds
 		adm = 55 dip = 54 mil = 68
 		birth_date = 1317.1.1
-		death_date = 1399.12.31
+		death_date = 1372.12.31
 
 		birth = polotsk
 		dynasty = gediminid_dynasty
@@ -105780,13 +105780,54 @@ character_db= {
 		culture = muscovite
 		religion = orthodox
 		birth_date = 1305.10.7
-		death_date = 1399.12.31
+		death_date = 1368.1.1
 
 		birth = tver
 		father = tve_mikhail_yaroslavich_rurikovich
 		dynasty = rurikovich_dynasty
 		tag = KAS
 	}
+    mos_vasilisa_semyonovna_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = Semyonovna }
+        culture = muscovite
+        religion = orthodox
+        female = yes
+        birth_date = 1337.1.1
+        death_date = 1370.1.1
+        birth = moscow
+        father = mos_simeon_ivanovich_gordyy_rurikovich
+        spouse = kai_vasily_mikhailovich_rurikovich 
+        dynasty = rurikovich_dynasty
+        tag = MOS
+    }
+
+    kas_mikhail_vasilievich_rurikovich = {
+        first_name = { name = name_michael }
+        last_name = { name = Vasilievich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1352.1.1
+        death_date = 1373.12.20
+        birth = kashin
+        father = kas_vasily_mikhailovich_rurikovich
+        mother = mos_vasilisa_semyonovna_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = KAS
+    }
+
+    kas_vasily_mikhailovich_ii_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = Mikhailovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1360.1.1
+        death_date = 1382.5.6
+        birth = kashin
+        father = kas_mikhail_vasilievich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = KAS
+    }
 
     ### rurikovich_dynasty | KCH ###
 
@@ -105857,6 +105898,54 @@ character_db= {
 		dynasty = rurikovich_dynasty
 		tag = KCH
 	}
+    mok_yury_svyatoslavovich_rurikovich = {
+        first_name = { name = name_george }
+        last_name = { name = Svyatoslavovich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1355.1.1
+        death_date = 1410.1.1
+        birth = mosalsk
+        father = kch_svyatoslav_mstislavich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MOK
+    }
+
+    mok_vladimir_yuryevich_rurikovich = {
+        first_name = { name = name_michael }
+        last_name = { name = Yuryevich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1385.1.1
+        birth = mosalsk
+        father = mok_yury_svyatoslavovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MOK
+    }
+
+    mok_vasily_yuryevich_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = Yuryevich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1388.1.1
+        birth = mosalsk
+        father = mok_yury_svyatoslavovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MOK
+    }
+
+    mok_semyon_yuryevich_klubok_rurikovich = {
+        first_name = { name = name_simeon }
+        last_name = { name = Klubok }
+        culture = severian
+        religion = orthodox
+        birth_date = 1392.1.1
+        birth = mosalsk
+        father = mok_yury_svyatoslavovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MOK
+    }
 
     ### rurikovich_dynasty | KIE ###
 
@@ -106656,6 +106745,43 @@ character_db= {
 		dynasty = rurikovich_dynasty
 		tag = MOG
 	}
+    mog_fyodor_mikhailovich_rurikovich = {
+        first_name = { name = name_theodore }
+        last_name = { name = Mikhailovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1345.1.1
+        death_date = 1408.1.1
+        birth = mologa
+        father = mog_mikhail_davidovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MOG
+    }
+
+    mog_dmitry_fyodorovich_perina_rurikovich = {
+        first_name = { name = name_demetrius }
+        last_name = { name = Perina }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1375.1.1
+        death_date = 1430.1.1
+        birth = mologa
+        father = mog_fyodor_mikhailovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MOG
+    }
+
+    mog_pyotr_dmitrievich_rurikovich = {
+        first_name = { name = name_peter }
+        last_name = { name = Dmitrievich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1410.1.1
+        birth = mologa
+        father = mog_dmitry_fyodorovich_perina_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MOG
+    }
 
     ### rurikovich_dynasty | MOS ###
 
@@ -106834,9 +106960,19 @@ character_db= {
         birth = moscow
         father = mos_yuri_of_zvenigorod_rurikovich
         dynasty = rurikovich_dynasty
-        tag = MOS
+        tag = UGL
     }
-
+    zve_ivan_shemyaka_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = name_george }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1437.3.1
+        birth = zvenigorod
+        father = mos_dmitry_shemyaka_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = UGL
+    }
     mos_dmitry_krasny_rurikovich = {
         first_name = { name = name_demetrius }
         last_name = { name = Krasny }
@@ -106844,6 +106980,7 @@ character_db= {
         culture = muscovite
         religion = orthodox
         birth_date = 1420.7.4
+        birth_date = 1440.9.22
         birth = moscow
         father = mos_yuri_of_zvenigorod_rurikovich
         dynasty = rurikovich_dynasty
@@ -107115,6 +107252,81 @@ character_db= {
         dynasty = rurikovich_dynasty
         tag = NOV
     }
+    nov_andrey_ivanovich_boretsky = {
+        first_name = { name = name_andrew }
+        last_name = { name = Ivanovich }
+        culture = novgorodian
+        religion = orthodox
+        birth_date = 1370.1.1
+        death_date = 1425.1.1
+        birth = novgorod
+        dynasty = boretsky_dynasty
+        tag = NOV
+    }
+
+    nov_isak_andreevich_boretsky = {
+        first_name = { name = name_isaac }
+        last_name = { name = Andreevich }
+        culture = novgorodian
+        religion = orthodox
+        birth_date = 1400.1.1
+        birth = novgorod
+        father = nov_andrey_ivanovich_boretsky
+        dynasty = boretsky_dynasty
+        tag = NOV
+    }
+
+    nov_marfa_boretskaya = {
+        first_name = { name = name_martha }
+        last_name = { name = Boretskaya }
+        culture = novgorodian
+        religion = orthodox
+        female = yes
+        birth_date = 1410.1.1
+        birth = novgorod
+        spouse = nov_isak_andreevich_boretsky
+        dynasty = boretsky_dynasty
+        tag = NOV
+    }
+
+    nov_dmitry_isakovich_boretsky = {
+        first_name = { name = name_demetrius }
+        last_name = { name = Isakovich }
+        culture = novgorodian
+        religion = orthodox
+        birth_date = 1435.1.1
+        birth = novgorod
+        father = nov_isak_andreevich_boretsky
+        mother = nov_marfa_boretskaya
+        dynasty = boretsky_dynasty
+        tag = NOV
+    }
+
+    nov_fyodor_isakovich_boretsky = {
+        first_name = { name = name_theodore }
+        last_name = { name = Isakovich }
+        culture = novgorodian
+        religion = orthodox
+        birth_date = 1438.1.1
+        birth = novgorod
+        father = nov_isak_andreevich_boretsky
+        mother = nov_marfa_boretskaya
+        dynasty = boretsky_dynasty
+        tag = NOV
+    }
+
+    nov_ksenia_isakovna_boretskaya = {
+        first_name = { name = name_xenia }
+        last_name = { name = Isakovna }
+        culture = novgorodian
+        religion = orthodox
+        female = yes
+        birth_date = 1440.1.1
+        birth = novgorod
+        father = nov_isak_andreevich_boretsky
+        dynasty = boretsky_dynasty
+        tag = NOV
+    }
 
     ### rurikovich_dynasty | NSL ###
 
@@ -107150,13 +107362,137 @@ character_db= {
 		culture = severian
 		religion = orthodox
 		birth_date = 1300.1.1 #Unknown
-		death_date = 1399.12.31
-
+		death_date = 1375.1.1
 		birth = novosil
 		father = nsl_alexander_semyonovich_rurikovich
 		dynasty = rurikovich_dynasty
 		tag = NSL
 	}
+    nsl_roman_semyonovich_rurikovich = {
+		first_name = { name = name_roman }
+		last_name = { name = Semyonovich }
+		culture = severian
+		religion = orthodox
+		birth_date = 1346.1.1
+		death_date = 1402.1.1
+		birth = novosil
+		father = nsl_semyon_alexandrovich_rurikovich
+		dynasty = rurikovich_dynasty
+		tag = NSL
+	}
+    ody_yury_romanovich_rurikovich = {
+        first_name = { name = name_george }
+        last_name = { name = Romanovich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1375.1.1
+        death_date = 1427.1.1
+        birth = odoyev
+        father = nsl_roman_semyonovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = ODY
+    }
+    vty_lev_romanovich_rurikovich = {
+        first_name = { name = name_leo }
+        last_name = { name = Romanovich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1378.1.1
+        death_date = 1430.1.1
+        birth = vorotynsk
+        father = nsl_roman_semyonovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = VTY
+    }
+    blv_vasily_romanovich_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = Romanovich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1380.1.1
+        death_date = 1482.1.1
+        birth = belyov
+        father = nsl_roman_semyonovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BLV
+    }
+    ody_ivan_yuryevich_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = Yuryevich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1405.1.1
+        birth = odoyev
+        father = ody_yury_romanovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = ODY
+    }
+    ody_vasily_yuryevich_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = Yuryevich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1408.1.1
+        birth = odoyev
+        father = ody_yury_romanovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = ODY
+    }
+    ody_fyodor_yuryevich_rurikovich = {
+        first_name = { name = name_theodore }
+        last_name = { name = Yuryevich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1411.1.1
+        birth = odoyev
+        father = ody_yury_romanovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = ODY
+    }
+    ody_semyon_yuryevich_rurikovich = {
+        first_name = { name = name_simeon }
+        last_name = { name = Yuryevich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1415.1.1
+        birth = odoyev
+        father = ody_yury_romanovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = ODY
+    }
+    vty_vasily_lvovich_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = Lvovich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1408.1.1
+        birth = vorotynsk
+        father = vty_lev_romanovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = VTY
+    }
+    vty_fyodor_lvovich_rurikovich = {
+        first_name = { name = name_theodore }
+        last_name = { name = Lvovich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1412.1.1
+        birth = vorotynsk
+        father = vty_lev_romanovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = VTY
+    }
+    blv_mikhail_vasilievich_rurikovich = {
+        first_name = { name = name_michael }
+        last_name = { name = Vasilievich }
+        culture = severian
+        religion = orthodox
+        birth_date = 1430.1.1
+        birth = belyov
+        father = blv_vasily_romanovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BLV
+    }
 
     ### rurikovich_dynasty | NVS ###
 
@@ -107495,7 +107831,6 @@ character_db= {
 		religion = orthodox
 		birth_date = 1281.1.1
 		death_date = 1399.12.31
-
 		birth = ryazan
 		father = rya_yaroslav_romanovich_rurikovich
 		dynasty = rurikovich_dynasty
@@ -107529,6 +107864,81 @@ character_db= {
 		dynasty = rurikovich_dynasty
 		tag = PRK
 	}
+    rya_fyodor_olgovich_rurikovich = {
+        first_name = { name = name_theodore }
+        last_name = { name = Olgovich }
+        culture = ryazanian
+        religion = orthodox
+        birth_date = 1380.1.1
+        death_date = 1417.1.1
+        birth = ryazan
+        father = rya_oleg_ii_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = RYA
+    }
+
+    rya_ivan_fyodorovich_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = Fyodorovich }
+        culture = ryazanian
+        religion = orthodox
+        birth_date = 1400.1.1
+        birth = ryazan
+        father = rya_fyodor_olgovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = RYA
+    }
+
+    prk_vladimir_yaroslavich_rurikovich = {
+        first_name = { name = name_michael }
+        last_name = { name = Yaroslavich }
+        culture = ryazanian
+        religion = orthodox
+        birth_date = 1330.1.1
+        death_date = 1373.3.1
+        birth = pronsk
+        father = prk_yaroslav_alexandrovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = PRK
+    }
+
+    prk_daniil_vladimirovich_rurikovich = {
+        first_name = { name = name_daniel }
+        last_name = { name = Vladimirovich }
+        culture = ryazanian
+        religion = orthodox
+        birth_date = 1355.1.1
+        death_date = 1390.1.1
+        birth = pronsk
+        father = prk_vladimir_yaroslavich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = PRK
+    }
+
+    prk_ivan_vladimirovich_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = Vladimirovich }
+        culture = ryazanian
+        religion = orthodox
+        birth_date = 1358.1.1
+        death_date = 1430.1.1
+        birth = pronsk
+        father = prk_vladimir_yaroslavich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = PRK
+    }
+
+    prk_fyodor_ivanovich_rurikovich = {
+        first_name = { name = name_theodore }
+        last_name = { name = Ivanovich }
+        culture = ryazanian
+        religion = orthodox
+        birth_date = 1400.1.1
+        birth = pronsk
+        father = prk_ivan_vladimirovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = PRK
+    }
 
     ### rurikovich_dynasty | PSK ###
 
@@ -107566,7 +107976,7 @@ character_db= {
 		culture = muscovite
 		religion = orthodox
 		birth_date = 1301.10.7
-		death_date = 1399.12.31
+		death_date = 1339.10.28
 
 		birth = tver
 		father = tve_mikhail_yaroslavich_rurikovich
@@ -107589,20 +107999,20 @@ character_db= {
         tag = PSK
     }
 
-	tve_uliana_alexnadrovna_rurikovich = {	#Daughter of Ruler in Exile
-		first_name = { name = name_michael }
-		last_name = { name = Alexnadrovna }
-		culture = muscovite
-		religion = orthodox
-		female = yes
-		birth_date = 1325.1.1
-		death_date = 1399.12.31
-
-		birth = tver
-		father = tve_aleksandr_mikhailovich_rurikovich
-		dynasty = rurikovich_dynasty
-		tag = PSK
-	}
+#	tve_uliana_alexnadrovna_rurikovich = {	#Daughter of Ruler in Exile
+#		first_name = { name = name_michael }
+#		last_name = { name = Alexnadrovna }
+#		culture = muscovite
+#		religion = orthodox
+#		female = yes
+#		birth_date = 1325.1.1
+#		death_date = 1399.12.31
+#
+#		birth = tver
+#		father = tve_aleksandr_mikhailovich_rurikovich
+#		dynasty = rurikovich_dynasty
+#		tag = PSK
+#	}
 
 	tve_mikhail_ii_alexandrovich_rurikovich = {	#Son of Ruler in Exile
 		first_name = { name = name_michael }
@@ -107610,13 +108020,101 @@ character_db= {
 		culture = muscovite
 		religion = orthodox
 		birth_date = 1333.1.1
-		death_date = 1399.12.31
+		death_date = 1399.8.26
 
 		birth = tver
 		father = tve_aleksandr_mikhailovich_rurikovich
 		dynasty = rurikovich_dynasty
 		tag = PSK
 	}
+    tve_vsevolod_alexandrovich_rurikovich = {
+        first_name = { name = name_vsevolod }
+        last_name = { name = Alexandrovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1328.1.1
+        death_date = 1368.1.1
+        birth = tver
+        father = tve_aleksandr_mikhailovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = TVE
+    }
+
+    zub_ivan_yuryevich_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = Yuryevich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1420.1.1
+        birth = zubtsov
+        father = tve_yury_alexandrovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = ZUB
+    }
+
+    tve_vasily_mikhailovich_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = Mikhailovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1305.1.1
+        death_date = 1368.1.1
+        birth = tver
+        father = tve_mikhail_yaroslavich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = TVE
+    }
+
+    tve_ivan_mikhailovich_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = Mikhailovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1357.1.1
+        death_date = 1425.1.1
+        birth = tver
+        father = tve_mikhail_ii_alexandrovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = TVE
+    }
+
+    tve_alexander_ivanovich_rurikovich = {
+        first_name = { name = name_alexander }
+        last_name = { name = Ivanovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1400.1.1
+        death_date = 1425.1.1
+        birth = tver
+        father = tve_ivan_mikhailovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = TVE
+    }
+
+    tve_yury_alexandrovich_rurikovich = {
+        first_name = { name = name_george }
+        last_name = { name = Alexandrovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1395.1.1
+        death_date = 1426.1.1
+        birth = tver
+        father = tve_ivan_mikhailovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = TVE
+    }
+
+    tve_boris_alexandrovich_rurikovich = {
+        first_name = { name = name_boris }
+        last_name = { name = Alexandrovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1400.1.1
+        birth = tver
+        father = tve_ivan_mikhailovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = TVE
+    }
 
     ### rurikovich_dynasty | RSO ###
 
@@ -107796,6 +108294,81 @@ character_db= {
 		dynasty = rurikovich_dynasty
 		tag = RSO
 	}
+    brv_konstantin_vasilievich_rurikovich = {
+        first_name = { name = name_constantine }
+        last_name = { name = Vasilievich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1300.1.1
+        death_date = 1331.1.1
+        birth = rostov
+        father = rso_vasily_konstantinovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BRV
+    }
+
+    brv_andrey_konstantinovich_rurikovich = {
+        first_name = { name = name_andrew }
+        last_name = { name = Konstantinovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1325.1.1
+        death_date = 1409.1.1
+        birth = rostov
+        father = brv_konstantin_vasilievich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BRV
+    }
+
+    brv_andrey_andreevich_fictional_rurikovich = {
+        first_name = { name = name_andrew }
+        last_name = { name = Andreevich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1370.1.1
+        death_date = 1420.1.1
+        birth = rostov
+        father = brv_andrey_konstantinovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BRV
+    }
+
+    brv_ivan_andreevich_fictional_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = Andreevich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1372.1.1
+        death_date = 1422.1.1
+        birth = rostov
+        father = brv_andrey_konstantinovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BRV
+    }
+
+    brv_vladimir_andreevich_rurikovich = {
+        first_name = { name = name_michael }
+        last_name = { name = Andreevich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1417.1.1
+        birth = rostov
+        father = brv_andrey_andreevich_fictional_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BRV
+    }
+
+    brv_ivan_ivanovich_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = Ivanovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1421.1.1
+        birth = rostov
+        father = brv_ivan_andreevich_fictional_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BRV
+    }
 
     ### rurikovich_dynasty | RYA ###
 
@@ -107923,7 +108496,6 @@ character_db= {
 		religion = orthodox
 		birth_date = 1300.1.1
 		death_date = 1399.12.31
-
 		birth = ryazan
 		father = rya_ivan_yaroslavich_rurikovich
 		dynasty = rurikovich_dynasty
@@ -107935,8 +108507,7 @@ character_db= {
 		culture = ryazanian
 		religion = orthodox
 		birth_date = 1327.1.1
-		death_date = 1399.12.31
-
+		death_date = 1402.12.31
 		birth = ryazan
 		father = rya_ivan_ii_korotopol_rurikovich
 		dynasty = rurikovich_dynasty
@@ -108640,13 +109211,27 @@ character_db= {
 		culture = muscovite
 		religion = orthodox
 		birth_date = 1306.1.1
-		death_date = 1399.12.31
+		death_date = 1345.1.1
 
 		birth = tver
 		father = tve_mikhail_yaroslavich_rurikovich
 		dynasty = rurikovich_dynasty
 		tag = TVE
 	}
+
+    tve_semyon_konstantinovich_rurikovich = {
+        first_name = { name = name_simeon }
+        last_name = { name = Konstantinovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1340.1.1
+        death_date = 1365.12.31
+        birth = klin
+        father = tve_konstantin_mikhailovich_rurikovich
+        mother = mos_sophia_yuriovna_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = KLN
+    }
 
     ### rurikovich_dynasty | VBK ###
 
@@ -109026,7 +109611,7 @@ character_db= {
 		culture = muscovite
 		religion = orthodox
 		birth_date = 1311.1.1
-		death_date = 1399.12.31
+		death_date = 1345.1.1
 
 		birth = yaroslavl
 		father = yar_david_fyodorovich_rurikovich
@@ -109049,6 +109634,57 @@ character_db= {
 		dynasty = rurikovich_dynasty
 		tag = YAR
 	}
+
+    yar_vasily_vasilievich_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = Vasilievich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1339.1.1
+        death_date = 1380.1.1
+        birth = yaroslavl
+        father = yar_vasili_davidovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = YAR
+    }
+
+    yar_ivan_vasilievich_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = Vasilievich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1370.1.1
+        death_date = 1426.1.1
+        birth = yaroslavl
+        father = yar_vasily_vasilievich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = YAR
+    }
+
+    yar_fyodor_ivanovich_rurikovich = {
+        first_name = { name = name_theodore }
+        last_name = { name = Ivanovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1400.1.1
+        death_date = 1435.1.1
+        birth = yaroslavl
+        father = yar_ivan_vasilievich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = YAR
+    }
+
+    yar_alexander_fyodorovich_rurikovich = {
+        first_name = { name = name_alexander }
+        last_name = { name = Bryukhatiy }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1425.1.1
+        birth = yaroslavl
+        father = yar_fyodor_ivanovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = YAR
+    }
 
     ### rurikovich_dynasty | YRV ###
 
@@ -136149,6 +136785,7 @@ character_db= {
         birth = moscow
         female = yes
         spouse = mos_vasily_ii_rurikovich
+        father = bok_yaroslav_vladimirovich_rurikovich
         dynasty = yaroslavl_dynasty
         tag = MOS
     }
@@ -147934,5 +148571,163 @@ character_db= {
         dynasty = rechberg_dynasty
 		tag = RHB
     }
+    srp_vladimir_the_brave_rurikovich = {
+        first_name = { name = name_michael }
+        last_name = { name = name_andrew }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1353.7.15
+        death_date = 1410.5.12
+        birth = serpukhov
+        father = mos_dmitry_donskoy_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = SRP
+    }
 
+    srp_ivan_vladimirovich_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = vladimirovich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1375.3.8
+        birth = serpukhov
+        father = srp_vladimir_the_brave_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = SRP
+    }
+
+    srp_yaroslav_vladimirovich_rurikovich = {
+        first_name = { name = name_yaroslav }
+        last_name = { name = name_michael }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1378.9.2
+        death_date = 1426.1.1
+        birth = serpukhov
+        father = srp_vladimir_the_brave_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = SRP
+    }
+
+    srp_vasily_yaroslavich_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = name_yaroslav }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1427.4.3
+        birth = serpukhov
+        father = srp_yaroslav_vladimirovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = SRP
+    }
+    bok_yaroslav_vladimirovich_rurikovich = {
+        first_name = { name = name_yaroslav }
+        last_name = { name = name_michael }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1376.2.14
+        death_date = 1426.1.1
+        birth = borovsk
+        father = srp_vladimir_the_brave_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BOK
+    }
+    bok_vasily_yaroslavich_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = name_yaroslav }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1416.1.1
+        birth = borovsk
+        father = bok_yaroslav_vladimirovich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BOK
+    }
+    mzo_ivan_andreevich_rurikovich = {
+        first_name = { name = name_john }
+        last_name = { name = name_andrew }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1430.1.1
+        birth = mozhaysk
+        father = mos_vasily_i_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MZO
+    }
+
+    mzo_mikhail_ivanovich_rurikovich = {
+        first_name = { name = name_michael }
+        last_name = { name = name_john }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1432.6.1
+        birth = mozhaysk
+        father = mzo_ivan_andreevich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MZO
+    }
+    blo_andrey_dmitrievich_rurikovich = {
+        first_name = { name = name_andrew }
+        last_name = { name = name_demetrius }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1382.8.10
+        death_date = 1432.7.9
+        birth = moscow
+        father = mos_dmitry_donskoy_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BLO
+    }
+
+    blo_mikhail_andreevich_rurikovich = {
+        first_name = { name = name_michael }
+        last_name = { name = name_andrew }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1432.1.1
+        birth = beloozero
+        father = blo_andrey_dmitrievich_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = BLO
+    }
+    ply_asyka = {
+        first_name = { name = name_asyka }
+        culture = mansi_culture
+        religion = obian_paganism
+        birth_date = 1427.1.1
+        birth = pelym
+        dynasty = alabin_dynasty
+        tag = PLY
+    }
+    mos_yermolay_rurikovich = {
+        first_name = { name = name_yermolay }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1400.1.1
+        birth = moscow
+        dynasty = rurikovich_dynasty
+        tag = MOS
+    }
+    mos_mikhail_yermolayevich_rurikovich = {
+        first_name = { name = name_michael }
+        last_name = { name = Yermolayevich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1428.1.1
+        birth = moscow
+        father = mos_yermolay_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MOS
+    }
+    mos_vasily_yermolayevich_rurikovich = {
+        first_name = { name = name_basil }
+        last_name = { name = Yermolayevich }
+        culture = muscovite
+        religion = orthodox
+        birth_date = 1425.1.1
+        birth = moscow
+        father = mos_yermolay_rurikovich
+        dynasty = rurikovich_dynasty
+        tag = MOS
+    }
 }

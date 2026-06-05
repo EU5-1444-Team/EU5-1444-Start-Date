@@ -1,0 +1,197 @@
+namespace = flavor_uralic
+
+flavor_uralic.1 = { # Pelym Absorbs Kondia
+    type = country_event
+    title = flavor_uralic.1.title
+    desc = flavor_uralic.1.desc
+    hide_portraits = yes
+
+    fire_only_once = yes
+
+    dynamic_historical_event = {
+        tag = PLY
+        from = 1480.1.1
+        to = 1550.1.1
+        monthly_chance = 1
+    }
+
+    trigger = {
+        has_or_had_tag = PLY
+        c:KND = { exists = yes }
+    }
+
+    option = {
+        name = flavor_uralic.1.a
+        text = flavor_uralic.1.ctt
+        c:KND ?= { trigger_event_silently = { id = flavor_uralic.2 days = { 1 2 } } }
+    }
+}
+
+flavor_uralic.2 = { # Kondia accepts or refuses
+    type = country_event
+    title = flavor_uralic.2.title
+    desc = flavor_uralic.2.desc
+    hide_portraits = yes
+
+    fire_only_once = yes
+
+    trigger = {
+        has_or_had_tag = KND
+    }
+
+    immediate = {
+        c:PLY ?= {
+			save_scope_as = target_country
+            ruler = {
+			    save_scope_as = pelym_character
+		    }
+		}
+    }
+
+    option = {
+        name = flavor_uralic.2.a
+        ai_chance = {
+			factor = 1
+		}
+
+        set_new_ruler = scope:pelym_character
+        make_subject_of = {
+            target = c:PLY
+            type = subject_type:fiefdom
+        }
+    }
+    option = {
+        name = flavor_uralic.2.b
+        ai_chance = {
+			factor = 0
+		}
+        set_new_ruler = scope:pelym_character
+        scope:target_country = {
+			make_subject_of = {
+				target = ROOT
+				type = subject_type:fiefdom
+			}
+        }
+    }
+}
+
+flavor_uralic.3 = { # The Ultimatum arrives
+    type = country_event
+    title = flavor_uralic.3.title
+    desc = flavor_uralic.3.desc
+    hide_portraits = yes
+
+    fire_only_once = no
+
+    trigger = {
+        OR= {
+            has_or_had_tag = PRM
+            has_or_had_tag = LPM
+        }
+    }
+
+    option = {
+        name = flavor_uralic.3.a
+        ai_chance = {
+			factor = 1
+		}
+
+        if = {
+			limit = {
+                tag = PRM
+            }
+            if = {
+                limit = {
+                    character:mos_mikhail_yermolayevich_rurikovich = {
+                        is_alive = yes
+                    }
+                }
+                character:mos_mikhail_yermolayevich_rurikovich = { move_country = root }
+                set_new_ruler = character:mos_mikhail_yermolayevich_rurikovich
+            }
+            make_subject_of = {
+                target = c:MOS
+                type = subject_type:vassal
+            }
+            set_variable = {
+				name = muscovite_domination
+				value = 1
+			}
+            change_government_type = government_type:monarchy
+            change_religion = religion:orthodox
+        }
+        if = {
+			limit = {
+                tag = LPM
+            }
+            if = {
+                limit = {
+                    character:mos_yermolay_rurikovich = {
+                        is_alive = yes
+                    }
+                }
+                character:mos_yermolay_rurikovich = { move_country = root }
+                set_new_ruler = character:mos_yermolay_rurikovich
+            }
+            if = {
+                limit = {
+                    character:mos_vasily_yermolayevich_rurikovich = {
+                        is_alive = yes
+                    }
+                }
+                character:mos_vasily_yermolayevich_rurikovich = { move_country = root }
+                if = {
+                    limit = {
+                        character:mos_yermolay_rurikovich = {
+                            is_alive = no
+                        }
+                    }
+                    set_new_ruler = character:mos_vasily_yermolayevich_rurikovich
+                }
+            }
+            make_subject_of = {
+                target = c:MOS
+                type = subject_type:vassal
+            }
+            set_variable = {
+				name = muscovite_domination
+				value = 1
+			}
+            change_government_type = government_type:monarchy
+            change_religion = religion:orthodox
+        }
+    }
+
+    option = {
+        name = flavor_uralic.3.b
+        ai_chance = {
+			factor = 0
+		}
+		add_prestige = prestige_extreme_bonus
+		add_legitimacy = legitimacy_extreme_bonus
+		add_stability = stability_extreme_bonus
+        if = {
+			limit = {
+                tag = LPM
+            }
+            c:MOS ?= {
+                cancel_subject = c:LPM
+                add_casus_belli = {
+                    target = c:LPM
+                    type = casus_belli:cb_subjugation
+                }
+            }
+        }
+        if = {
+			limit = {
+                tag = PRM
+            }
+            c:MOS ?= {
+                add_casus_belli = {
+                    target = c:PRM
+                    type = casus_belli:cb_subjugation
+                }
+            }
+        }
+    }
+}
