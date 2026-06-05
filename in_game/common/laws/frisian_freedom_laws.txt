@@ -85,6 +85,11 @@ frisian_freedom_unification_law = {
 				value = 1000
 			}
 		}
+		wants_this_policy_bias = {
+			add = {
+				value = 5
+			}
+		}
 	}
 	unify_frisia_policy = {
 		allow = {
@@ -96,9 +101,8 @@ frisian_freedom_unification_law = {
 			}
 		}
 		wants_this_policy_bias = {
-			add = {
-				value = prev_opinion_of_this
-				multiply = 0.3
+			subtract = {
+				value = 5
 			}
 		}
 		on_fully_activated = {
