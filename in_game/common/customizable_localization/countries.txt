@@ -629,11 +629,58 @@ SBR = {
 		fallback = yes
 	}
 }
-
 SBR_ADJ = {
 	parent = SBR
 	suffix = "_ADJ"
 }
+
+VLR = { #Vladimir-Suzdal
+	type = country
+	text = {
+		localization_key = greater_vladimir
+		trigger = {
+			owns = location:suzdal
+		}
+	}
+	text = {
+		localization_key = VLR
+		fallback = yes
+	}
+}
+VLR_ADJ = {	parent = VLR suffix = "_ADJ" }
+
+RSO = { #Unified Rostov
+	type = country
+	text = {
+		localization_key = united_rostov
+		trigger = {
+			owns = location:rostov
+			owns = location:borisogleb
+		}
+	}
+	text = {
+		localization_key = RSO
+		fallback = yes
+	}
+}
+RSO_ADJ = {	parent = RSO suffix = "_ADJ" }
+
+BRV = { #Unified Rostov
+	type = country
+	text = {
+		localization_key = united_rostov
+		trigger = {
+			owns = location:rostov
+			owns = location:borisogleb
+		}
+	}
+	text = {
+		localization_key = BRV
+		fallback = yes
+	}
+}
+BRV_ADJ = {	parent = BRV suffix = "_ADJ" }
+
 MKR = {
 	#Makran
 	type = country
@@ -649,7 +696,6 @@ MKR = {
 		fallback = yes
 	}
 }
-
 MKR_ADJ = {
 	parent = MKR
 	suffix = "_ADJ"
