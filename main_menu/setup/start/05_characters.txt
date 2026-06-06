@@ -23833,7 +23833,7 @@ character_db= {
 
     ### candarli_dynasty | TUR ###
 
-    tur_halil_pasha_candarli = {
+    tur_halil_pasa_candarli = {
         first_name = { name = name_khalil }
         nickname = { name = Pasha }
         culture = turkish_culture
@@ -23846,14 +23846,14 @@ character_db= {
         tag = TUR
     }
 
-    tur_ibrahim_pasha_candarli = {
+    tur_ibrahim_pasa_candarli = {
         first_name = { name = name_abraham }
         culture = turkish_culture
         religion = sunni
         estate = nobles_estate
         birth_date = 1429.1.1
         birth = edirne
-        father = tur_halil_pasha_candarli
+        father = tur_halil_pasa_candarli
         dynasty = candarli_dynasty
         tag = TUR
     }
@@ -42847,18 +42847,6 @@ character_db= {
 		dynasty = eiso_dynasty
 		tag = CHZ
 	}
-
-    ### ellangallur_dynasty | TUR ###
-
-    tur_ali_evrenosoglu = {
-        first_name = { name = name_ali }
-        dynasty = ellangallur_dynasty
-        estate = nobles_estate
-        culture = turkish_culture
-        religion = sunni
-        birth_date = 1410.1.1
-        tag = TUR
-    }
 
     ### ema_dynasty | EMA ###
 
@@ -64093,18 +64081,6 @@ character_db= {
 		tag = MLB
 	}
 
-    ### kangleipak_dynasty | TUR ###
-
-    tur_yakub_young_evrenos = {
-        first_name = { name = name_jalal }
-        dynasty = kangleipak_dynasty
-        estate = nobles_estate
-        culture = turkish_culture
-        religion = sunni
-        birth_date = 1420.11.1
-        tag = TUR
-    }
-
     ### kantakouzenos_dynasty | BYZ ###
 
     byz_kantakouzenos_ancestor = { #Placeholder
@@ -79632,14 +79608,235 @@ character_db= {
 
     ### mihaloglu_dynasty | TUR ###
 
-    tur_ahmed_young_mihaloglu = {
-        first_name = { name = name_ahmad }
-        dynasty = mihaloglu_dynasty
-        estate = nobles_estate
-        culture = greek_culture
-        religion = sunni
-        birth_date = 1423.2.9
-        tag = TUR
+    tur_kose_mihal_mihalogu = {
+        first_name = { name = name_michael }
+        nickname = { name = Köse }
+		culture = greek_culture
+		religion = sunni
+		birth_date = 1290.1.1 # Unknown
+		death_date = 1340.1.1
+		birth = bilecik
+		dynasty = mihaloglu_dynasty
+		tag = TUR
+    }
+
+    tur_mehmed_bey_mihalogu = {
+        first_name = { name = name_muhammad }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1335.1.1 # Unknown
+		death_date = 1423.1.1
+		birth = bilecik
+        father = tur_kose_mihal_mihalogu
+		dynasty = mihaloglu_dynasty
+		tag = TUR
+    }
+
+    tur_mihal_bey_ghazi_mihalogu = {
+        first_name = { name = name_michael }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1380.1.1 # Unknown
+		death_date = 1390.1.1 # Unknown
+		birth = bilecik
+        father = tur_mehmed_bey_mihalogu
+		dynasty = mihaloglu_dynasty
+		tag = TUR
+    }
+
+    tur_hizir_bey_ghazi_mihalogu = {
+        first_name = { name = Hızır }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1383.1.1 # Unknown
+		birth = bilecik
+        father = tur_mehmed_bey_mihalogu
+		dynasty = mihaloglu_dynasty
+		tag = TUR
+    }
+
+    tur_hizir_bey_mihalogu = {
+        first_name = { name = Hızır }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1383.1.1 # Unknown
+		birth = bilecik
+        father = tur_mehmed_bey_mihalogu
+		dynasty = mihaloglu_dynasty
+		tag = TUR
+    }
+
+    tur_ali_bey_mihalogu = {
+        first_name = { name = name_ali }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1425.1.1
+		birth = akhisar
+        father = tur_hizir_bey_mihalogu
+		dynasty = mihaloglu_dynasty
+		tag = TUR
+    }
+
+    tur_mahitab_hatun_craiovesti = {
+        first_name = { name = name_mary }
+        nickname = { name = Hatun }
+		culture = wallachian
+		religion = sunni
+        female = yes
+		birth_date = 1427.1.1
+		birth = turnu_magurele
+        spouse = tur_ali_bey_mihalogu
+        father = wal_nagoe_craiovesti
+		dynasty = craiovesti_dynasty
+		tag = TUR
+    }
+
+    tur_iskender_bey_mihalogu = {
+        first_name = { name = name_alexander }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1427.1.1
+		birth = akhisar
+        father = tur_hizir_bey_mihalogu
+		dynasty = mihaloglu_dynasty
+		tag = TUR
+    }
+
+    tur_bali_bey_mihalogu = {
+        first_name = { name = Bali }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1428.1.1 # Unknown
+		birth = akhisar
+        father = tur_hizir_bey_mihalogu
+		dynasty = mihaloglu_dynasty
+		tag = TUR
+    }
+
+    tur_mehmed_bey_mihalogu_son = {
+        first_name = { name = name_muhammad }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1430.1.1 # Unknown
+		birth = akhisar
+        father = tur_hizir_bey_mihalogu
+		dynasty = mihaloglu_dynasty
+		tag = TUR
+    }
+
+    tur_evrenos_bey_evrenosoglu = {
+        first_name = { name = Evrenos }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1370.1.1 # Unknown
+        death_date = 1417.1.1
+		birth = bursa
+		dynasty = evrenosoglu_dynasty
+		tag = TUR
+    }
+
+    tur_khidr_shah_bey_evrenosoglu = {
+        first_name = { name = "Khidr-Shah" }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1400.1.1 # Unknown
+		birth = bursa
+        father = tur_evrenos_bey_evrenosoglu
+		dynasty = evrenosoglu_dynasty
+		tag = TUR
+    }
+
+    tur_isa_bey_evrenosoglu = {
+        first_name = { name = name_jesus }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1402.1.1 # Unknown
+		birth = bursa
+        father = tur_evrenos_bey_evrenosoglu
+		dynasty = evrenosoglu_dynasty
+		tag = TUR
+    }
+
+    tur_suleyman_bey_evrenosoglu = {
+        first_name = { name = name_salomon }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1403.1.1 # Unknown
+		birth = bursa
+        father = tur_evrenos_bey_evrenosoglu
+		dynasty = evrenosoglu_dynasty
+		tag = TUR
+    }
+
+    tur_ali_bey_evrenosoglu = {
+        first_name = { name = name_ali }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1404.1.1 # Unknown
+		birth = bursa
+        father = tur_evrenos_bey_evrenosoglu
+		dynasty = evrenosoglu_dynasty
+		tag = TUR
+    }
+
+    tur_yaqub_bey_evrenosoglu = {
+        first_name = { name = name_james }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1405.1.1 # Unknown
+		birth = bursa
+        father = tur_evrenos_bey_evrenosoglu
+		dynasty = evrenosoglu_dynasty
+		tag = TUR
+    }
+
+    tur_barak_bey_evrenosoglu = {
+        first_name = { name = Barak }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1406.1.1 # Unknown
+		birth = bursa
+        father = tur_evrenos_bey_evrenosoglu
+		dynasty = evrenosoglu_dynasty
+		tag = TUR
+    }
+
+    tur_begdje_bey_evrenosoglu = {
+        first_name = { name = Begdje }
+        nickname = { name = Bey }
+		culture = turkish_culture
+		religion = sunni
+		birth_date = 1407.1.1 # Unknown
+		birth = bursa
+        father = tur_evrenos_bey_evrenosoglu
+		dynasty = evrenosoglu_dynasty
+		tag = TUR
+    }
+
+    tur_molla_gurani = {
+        first_name = { name = Molla }
+        last_name = { name = Gürâni }
+		culture = kurdish_culture
+		religion = sunni
+        estate = clergy_estate
+		birth_date = 1406.8.28
+		birth = sahrazur
+		tag = TUR
     }
 
     ### mihrabanid_dynasty | MIH ###
@@ -128140,18 +128337,6 @@ character_db= {
         tag = BYZ
     }
 
-    ### vatatzes_dynasty | TUR ###
-
-    tur_yakub_pasha = {
-        first_name = { name = Yakub }
-        dynasty = vatatzes_dynasty
-        estate = nobles_estate
-        culture = greek_culture
-        religion = sunni
-        birth_date = 1402.1.1
-        tag = TUR
-    }
-
     ### velasco_dynasty | CAS ###
 
     cas_enrique_velasco = {
@@ -145595,8 +145780,7 @@ character_db= {
     }
 
     tur_aksemseddin = {
-        first_name = { name = Laksam }
-        last_name = { name = Semseddin }
+        first_name = { name = Akşemseddin }
         culture = turkish_culture
         religion = sunni
         estate = clergy_estate
@@ -145618,17 +145802,6 @@ character_db= {
         tag = TUR
     }
 
-    tur_semseddin_fenarizade = {
-        first_name = { name = Semseddin }
-        last_name = { name = Fenek }
-        adm = 64 dip = 68 mil = 53
-        culture = turkish_culture
-        religion = sunni
-        estate = clergy_estate
-        birth_date = 1408.1.1
-        tag = TUR
-    }
-
     tur_huma_hatun_concubine = { #mother of Mehmed II
         first_name = { name = Hüma }
         nickname = { name = Hatun }
@@ -145640,47 +145813,23 @@ character_db= {
         tag = TUR
     }
 
-    tur_yakub_celebi_merchant = {
-        first_name = { name = Yakub }
-        last_name = { name = Sah_Celebi }
-        adm = 65 dip = 90 mil = 35
-        culture = turkish_culture
-        religion = sunni
-        estate = burghers_estate
-        birth_date = 1412.1.1
-        tag = TUR
-    }
-
-    tur_haci_ivaz = {
-        first_name = { name = Haci }
-        last_name = { name = name_eschivat }
-        adm = 85 dip = 78 mil = 60
-        culture = turkish_culture
-        religion = sunni
-        estate = burghers_estate
-        birth_date = 1415.1.1
-        tag = TUR
-    }
-
-    tur_omer_turahanoglu = {
-        first_name = { name = Omer }
-        nickname = { name = Beğ }
+    tur_zaganos_pasa = {
+        first_name = { name = Zağanos }
+        nickname = { name = Paşa }
         estate = nobles_estate
-        adm = 100 dip = 56 mil = 78
-        culture = turkish_culture
-        religion = sunni
-        birth_date = 1420.6.1
-        tag = TUR
-    }
-
-    tur_zaganos_pasha = {
-        first_name = { name = Zagranos }
-        nickname = { name = Pasha }
-        estate = nobles_estate
-        adm = 86 dip = 95 mil = 80
         culture = turkish_culture
         religion = sunni
         birth_date = 1426.1.1
+        tag = TUR
+    }
+
+    tur_ishak_pasa = {
+        first_name = { name = İshak }
+        nickname = { name = Paşa }
+        estate = nobles_estate
+        culture = turkish_culture
+        religion = sunni
+        birth_date = 1422.1.1 # Unknown
         tag = TUR
     }
 
