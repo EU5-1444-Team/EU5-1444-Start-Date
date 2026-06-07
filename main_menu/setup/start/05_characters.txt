@@ -63433,8 +63433,7 @@ character_db= {
 		culture = westphalian
 		religion = catholic
 		birth_date = 1304.1.1
-		death_date = 1399.12.31
-
+		death_date = 1349.8.14
 		birth = duren
 		father = jul_gerhard_v_julich
 		mother = jul_elisabeth_van_brabant
@@ -73792,8 +73791,7 @@ character_db= {
 		estate = clergy_estate
 		adm = 62 dip = 84 mil = 38
 		birth_date = 1285.1.1
-		death_date = 1399.12.31
-
+		death_date = 1354.1.21
 		birth = luxembourg
 		father = lux_henry_vi_luxembourg
 		mother = lux_beatrice_avesnes
@@ -73801,6 +73799,17 @@ character_db= {
 		tag = TRI
 		ruler_trait = midas_touched
 		ruler_trait = silver_tongue
+	}
+
+    tri_jakob_von_sierck = {
+		first_name = { name = name_james }
+        last_name = { name = "von Sierck" }
+		culture = moselle_franconian
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1398.8.1
+		birth = thionville
+		tag = TRI
 	}
 
     ### lyon_dynasty | SCO ###
@@ -83008,6 +83017,19 @@ character_db= {
 
     ### mors_dynasty | MUN ###
 
+    kol_dietrich_ii_mors = {
+        first_name = { name = name_theodoric }
+        culture = ripuarian_franconian
+        religion = catholic
+        estate = clergy_estate
+        birth_date = 1385.1.1
+        birth = mors
+        father = mrs_friedrich_iii_mors
+        #mother =
+        dynasty = mors_dynasty
+        tag = KOL
+    }
+
     mun_heinrich_ii_moers = {
         first_name = { name = name_henry }
         culture = ripuarian_franconian
@@ -83015,7 +83037,7 @@ character_db= {
         estate = clergy_estate
         birth_date = 1395.1.1
         birth = mors
-        #father =
+        father = mrs_friedrich_iii_mors
         #mother =
         dynasty = mors_dynasty
         tag = MUN
@@ -83028,7 +83050,7 @@ character_db= {
         estate = clergy_estate
         birth_date = 1400.1.1
         birth = mors
-        #father =
+        father = mrs_friedrich_iii_mors
         #mother =
         dynasty = mors_dynasty
         tag = MUN
@@ -129565,12 +129587,22 @@ character_db= {
 		culture = saxon
 		religion = catholic
 		birth_date = 1270.1.1
-		death_date = 1399.12.31
-
+		death_date = 1341.1.1
 		birth = rochlitz
 		dynasty = von_colditz_dynasty
 		tag = BMS
 	}
+
+    bms_johann_hoffmann_von_schweidnitz = {
+        first_name = { name = name_john }
+        nickname = { name = Hoffmann }
+        last_name = { name = "von Schweidnitz" }
+		culture = german_silesian
+		religion = catholic
+		birth_date = 1375.1.1
+		birth = swidnica
+		tag = BMS
+    }
 
     ### von_gleichen_dynasty | GLN ###
 
@@ -138263,12 +138295,12 @@ character_db= {
 
     aug_peter_schaumberg = {
         first_name = { name = name_peter }
+        last_name = { name = Schaumberg }
 		culture = east_franconian
 		religion = catholic
 		estate = clergy_estate
 		birth_date = 1388.2.22
 		birth = kronach
-        dynasty = schaumberg_dynasty
 		tag = AUG
     }
 
@@ -142623,12 +142655,35 @@ character_db= {
 		religion = catholic
 		estate = clergy_estate
 		birth_date = 1295.1.1
-		death_date = 1399.12.31
-
+		death_date = 1337.1.1
 		birth = mayen #Virneburg actually
 		#dynasty = virneburg_dynasty
 		tag = MAI
 	}
+
+    mai_dietrich_schenk_erbach = {
+        first_name = { name = name_theodoric }
+        nickname = { name = Schenk }
+		culture = rhine_franconian
+		religion = catholic
+		estate = clergy_estate
+		birth_date = 1390.1.1
+		birth = erbach
+		#dynasty = erbach_dynasty
+		tag = MAI
+    }
+
+    mrs_friedrich_iii_mors = {
+        first_name = { name = name_frederick }
+		culture = dutch_rhenish
+		religion = catholic
+		estate = nobles_estate
+		birth_date = 1354.1.1
+		death_date = 1417.1.1
+		birth = mors
+		#dynasty = mors_dynasty
+		tag = MRS
+    }
 
     ### (no dynasty) | MAJ ###
 
