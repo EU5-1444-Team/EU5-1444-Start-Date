@@ -14401,7 +14401,7 @@ countries = {
 
     LUX = {
         own_control_core = {
-            luxembourg arlon bastogne bitburg la_roche orchimont neufchateau_luxembourg st_vith thionville vianden
+            luxembourg arlon bastogne bitburg la_roche orchimont neufchateau_luxembourg st_vith thionville
             montmedy
         }
 
@@ -14446,6 +14446,37 @@ countries = {
     }
 
     # --- LUX ---
+
+    VIA = {
+        own_control_core = {
+            vianden
+        }
+
+        starting_technology_level = 3
+        include = "expl_western_europe"
+        include = "catholic_monarchy_no_coast"
+        include = "german_principality"
+        government = {
+            ruler = random # TODO: add mee
+
+            regnal_numbers = {
+            }
+
+            aristocracy_vs_plutocracy = -20
+            capital_economy_vs_traditional_economy = -10
+            land_vs_naval = -20
+            outward_vs_inward = -40
+        }
+
+        country_rank = rank_county
+        capital = vianden
+
+        tolerated_cultures = {
+            walloon
+        }
+    }
+
+    # --- VIA ---
 
     BRU = {
         #Brunswick (Wolfenbüttel)
@@ -18386,8 +18417,13 @@ countries = {
         include = "catholic_abbey"
         include = "expl_northern_europe"
         government = {
-            ruler = random # TODO: add me
+            ruler = apr_johann_ii_von_esche
+
+            ruler_term = { character = apr_heinrich_i_von_schonecken start_date = 1322.1.1 end_date = 1342.1.1 regnal_number = 1 }
+
+            ruler_term = { character = apr_johann_ii_von_esche start_date = 1433.1.1 regnal_number = 2 }
         }
+
         tolerated_cultures = {
         }
         country_rank = rank_county
