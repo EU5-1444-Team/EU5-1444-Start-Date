@@ -29722,10 +29722,6 @@ countries = {
             dmitrov rogachevo
         }
 
-        own_control_integrated = {
-            tarusa kaluga volkona
-            rzhev bor_volgo khotoshino molodoi_tud fomin_gorodok
-        }
         own_control_conquered = {
             kadom ardatov klepiki
             kasimov azeevo
@@ -30225,8 +30221,11 @@ countries = {
     }
 
     TRS = { #Tarusa
+        own_control_core = {
+            tarusa kaluga volkona
+        }
         our_cores_conquered_by_others = {
-            tarusa kaluga obolensk volkona
+            obolensk
         }
 
         starting_technology_level = 3
@@ -30235,15 +30234,17 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = mos_vasily_ii_rurikovich
 
             ruler_term = { character = trs_yuri_mikhailovich_rurikovich start_date = 1246.1.1 end_date = 1300.1.1 regnal_number = 1 }
             ruler_term = { character = trs_konstantin_yurievich_rurikovich start_date = 1300.1.1 end_date = 1350.1.1 regnal_number = 1 }
             ruler_term = { character = mos_simeon_ivanovich_gordyy_rurikovich start_date = 1350.3.31 regnal_number = 1 end_date = 1353.4.27 }
             ruler_term = { character = mos_ivan_ii_ivanovich_rurikovich start_date = 1353.4.27 regnal_number = 1 end_date = 1359.11.13 regnal_number = 2 }
             ruler_term = { character = mos_dmitry_donskoy_rurikovich start_date = 1359.11.13 regnal_number = 1 end_date = 1389.5.19 }
+            ruler_term = { character = mos_vasily_i_rurikovich start_date = 1389.5.19 end_date = 1425.2.27 regnal_number = 1 }
+            ruler_term = { character = mos_vasily_ii_rurikovich start_date = 1425.2.27 regnal_number = 2 }
         }
-        #
+
         liturgical_language = church_slavonic_language
 
         accepted_cultures = {
@@ -30991,7 +30992,7 @@ countries = {
     # --- PZL ---
 
     RZH = { #Rzhev
-        our_cores_conquered_by_others = {
+        own_control_core = {
             rzhev bor_volgo khotoshino molodoi_tud fomin_gorodok
         }
 
@@ -31001,11 +31002,14 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = mos_dmitry_shemyaka_rurikovich
 
             ruler_term = { character = fmb_yuri_konstantinovich_rurikovich start_date = 1235.1.1 end_date = 1274.1.1 regnal_number = 1 }
             ruler_term = { character = rzh_yuri_yurievich_rurikovich start_date = 1274.1.1 end_date = 1315.1.1 regnal_number = 1 }
-            ruler_term = { character = rzh_fedor_yurievich_rurikovich start_date = 1315.1.1 regnal_number = 1 }
+            ruler_term = { character = rzh_fedor_yurievich_rurikovich start_date = 1315.1.1 end_date = 1350.1.1 regnal_number = 1 }
+            ruler_term = { character = mos_vasily_i_rurikovich start_date = 1389.5.19 end_date = 1425.2.27 regnal_number = 1 }
+            ruler_term = { character = mos_vasily_ii_rurikovich start_date = 1425.2.27 end_date = 1434.6.5 regnal_number = 2 }
+            ruler_term = { character = mos_dmitry_shemyaka_rurikovich start_date = 1434.6.5 regnal_number = 1 }
         }
 
         liturgical_language = church_slavonic_language
