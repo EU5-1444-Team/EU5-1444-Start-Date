@@ -238,7 +238,7 @@ AFG_f = {
     level = 2
     required_locations_fraction = 0.5
     rule = historical
-	#potential_requires_own = no
+	potential_requires_own = no
 
     potential = {
         culture = culture:afghan_culture 
@@ -937,7 +937,7 @@ GII_f = {
 	required_locations_fraction = 0.5
 	rule = historical
 	capital_required = no
-	#potential_requires_own = no
+	potential_requires_own = no
 	potential = {
 		OR = {
 			culture = culture:gilak_culture
@@ -1006,7 +1006,7 @@ MZN_f = { #Mazandaran
 	required_locations_fraction = 0.5
 	rule = historical
 	capital_required = yes
-	#potential_requires_own = no
+	potential_requires_own = no
 
 	potential = {
 		OR = {
@@ -1028,6 +1028,41 @@ MZN_f = { #Mazandaran
 	areas = {
 		mazandaran_area
 	}
+	form_effect = {
+	}
+}
+NSL_f = { #Novosil
+    level = 1
+    required_locations_fraction = 0.3
+    rule = historical
+	potential_requires_own = no
+
+    potential = {
+        OR = {
+			tag = BLV
+			tag = VTY
+			tag = ODY
+			tag = MOK
+			tag = KZK
+		}
+    }
+
+    allow = {
+        owns = location:vorotynsk 
+		owns = location:belyov
+		owns = location:odoyev
+		owns = location:novosil
+    }
+    
+    name = NSL
+    flag = NSL
+    adjective = NSL_ADJ
+    tag = NSL
+    color = map_NSL
+
+    areas = {
+        oka_area
+    }
 	form_effect = {
 	}
 }

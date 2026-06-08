@@ -152,7 +152,6 @@
 			OR = {
 				tag = DNC
 				tag = ZAZ
-				tag = KOY
 			}
 		}
 	}
@@ -648,6 +647,7 @@
 				culture = {
 					has_culture_group = culture_group:russian_group
 				}
+				has_variable = muscovite_domination
 			}
 		}
 	}
@@ -1411,8 +1411,11 @@
 		trigger = {
 			country_rank_is_kingdom = yes
 			government_type = government_type:monarchy
-			culture = {
-				has_culture_group = culture_group:russian_group
+			OR = {
+				has_variable = muscovite_domination
+				culture = {
+					has_culture_group = culture_group:russian_group
+				}
 			}
 		}
 	}
@@ -2091,8 +2094,11 @@
 		trigger = {
 			country_rank_is_duchy = yes
 			government_type = government_type:monarchy
-			culture = {
-				has_culture_group = culture_group:russian_group
+			OR = {
+				has_variable = muscovite_domination
+				culture = {
+					has_culture_group = culture_group:russian_group
+				}
 			}
 		}
 	}

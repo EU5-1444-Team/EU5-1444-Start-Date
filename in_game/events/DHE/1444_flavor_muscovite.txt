@@ -1,0 +1,39 @@
+namespace = flavor_muscovy
+
+flavor_muscovy.100 = { # Muscovy demands the absolute submission of Perm
+    type = country_event
+    title = flavor_muscovy.100.title
+    desc = flavor_muscovy.100.desc
+    hide_portraits = yes
+
+    fire_only_once = yes
+
+    dynamic_historical_event = {
+        tag = MOS
+        from = 1450.1.1
+        to = 1500.1.1
+        monthly_chance = 2
+    }
+
+    trigger = {
+        has_or_had_tag = MOS
+        OR = {
+            AND = {
+                c:PRM = { exists = yes }
+                c:PRM = { is_subject = no }
+            }
+            c:LPM = { exists = yes }
+        }
+    }
+
+    option = {
+        name = flavor_muscovy.100.a
+        text = flavor_muscovy.100.ctt
+        c:PRM ?= {
+            trigger_event_silently = { id = flavor_uralic.3 days = { 31 62 } }
+        }
+        c:LPM ?= {
+            trigger_event_silently = { id = flavor_uralic.3 days = { 31 62 } }
+        }
+    }
+}
