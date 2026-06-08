@@ -1,4 +1,4 @@
-﻿
+﻿@semy = 0.27
 KAT = {
     # Kastrioti Principality
 	pattern = "pattern_solid.dds"
@@ -35,7 +35,7 @@ DGJ = { # Dukagjini
 	color3 = "black"
 	
 	colored_emblem = {
-		texture = "ce_eagle.dds"
+		texture = "ce_eagle_wide.dds"
 		color1 = color2
 		color2 = color2
 		color3 = color2
@@ -79,18 +79,19 @@ HUM = {
         }
     }
 }
-CEP = {
+EPI_tocco = {
 	# Cephalonia
     pattern = "pattern_vertical_split_01.dds"
     color1 = white
     color2 = red
     colored_emblem = {
-        texture = "ce_bars_05_dancetty_shield.dds"
+        texture = "ce_bars_04_dancetty.dds"
         color1 = blue
         instance = {
             position = { 0.250 0.500 }
             scale = { 0.500 1.000 }
         }
+        mask {1}
     }
     colored_emblem = {
         texture = "ce_eagle_doubleheaded_crowned_wide.dds"
@@ -102,8 +103,53 @@ CEP = {
             scale = { 0.600 1.000 }
         }
     }
+    sub = {
+        parent = "sub_taranto_canton" 
+		instance = { scale = { 0.4 0.5 } offset = { 0.0 0.0 } }
+    }
 }
-
+EPI_tocco2 = {
+	# Cephalonia
+    pattern = "pattern_vertical_split_01.dds"
+    color1 = white
+    color2 = black
+    colored_emblem = {
+        texture = "ce_bars_04_dancetty.dds"
+        color1 = blue
+        instance = {
+            position = { 0.250 0.6500 }
+            scale = { 0.500 0.75 }
+        }
+        mask {1}
+    }
+    colored_emblem = {
+        texture = "ce_lion_rampant_wide.dds"
+        color1 = yellow
+        color2 = yellow
+        color3 = black
+        instance = {
+            position = { 0.750 0.500 }
+            scale = { 0.9 1.1 }
+        }
+    }
+    sub = {
+        parent = "sub_tocco_chief" 
+		instance = { scale = { 0.5 0.3 } offset = { 0.0 0.0 } }
+    }
+}
+CEP_tocco = {
+	# Cephalonia
+    pattern = "pattern_solid.dds"
+    color1 = white
+    colored_emblem = {
+        texture = "ce_bars_04_dancetty.dds"
+        color1 = blue
+    }
+    sub = {
+        parent = "sub_taranto_canton" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+    }
+}
 CHG = {
     # Moghulistan/Chagatai
 	pattern = "pattern_solid.dds"
@@ -348,10 +394,10 @@ KAZ = {
 SBR = {
     # Sibir
     pattern = "pattern_solid.dds"
-    color1 = rgb { 0 171 194 }
+    color1 = rgb { 0 140 160 }
     colored_emblem = {
         texture = "ce_sibir.dds"
-        color1 = rgb { 251 215 7 }
+        color1 ="yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -440,12 +486,12 @@ IMP = { #Imperials
 }
 KHL = { #Khalkha
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 255 215 0 }
+    color1 = "red"
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_soyombo.dds"
-        color1 = rgb { 255 215 0 }
-        color2 = rgb { 255 215 0 }
+        color1 = "yellow"
+        color2 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 0.900 0.900 }
@@ -455,11 +501,11 @@ KHL = { #Khalkha
 OIR = { #Oirat
     pattern = "pattern_fringe.dds"
     color1 = "white"
-    color2 = rgb { 255 215 0 }
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_soyombo.dds"
-        color1 = rgb { 255 215 0 }
-        color2 = rgb { 255 215 0 }
+        color1 = "yellow"
+        color2 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 0.900 0.900 }
@@ -468,12 +514,12 @@ OIR = { #Oirat
 }
 KHA = { #Khorchin
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 23 19 143 }
-    color2 = rgb { 203 0 0 }
+    color1 = "blue"
+    color2 = "red_light"
     colored_emblem = {
         texture = "ce_soyombo.dds"
-        color1 = rgb { 203 0 0 }
-        color2 = rgb { 203 0 0 }
+        color1 = "red_light"
+        color2 = "red_light"
         instance = {
             position = { 0.500 0.500 }
             scale = { 0.900 0.900 }
@@ -496,7 +542,7 @@ CHAHAR = {
 }
 URZ = { #Uriankhai
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 37 83 29 }
+    color1 = "green"
     color2 = "white"
     colored_emblem = {
         texture = "ce_soyombo.dds"
@@ -510,13 +556,13 @@ URZ = { #Uriankhai
 }
 MGA = { #Mongolia Future
     pattern = "pattern_tricolor_vertical_01.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 28 39 255 }
-    color3 = rgb { 255 0 0 }
+    color1 = "red"
+    color2 = "blue_sky"
+    color3 = "red"
     colored_emblem = {
         texture = "ce_soyombo.dds"
-        color1 = rgb { 255 215 0 }
-        color2 = rgb { 255 215 0 }
+        color1 = "yellow"
+        color2 = "yellow"
         instance = {
             position = { 0.159 0.262 }
             scale = { 0.500 0.500 }
@@ -525,11 +571,11 @@ MGA = { #Mongolia Future
 }
 BAX = { # Baarin Khalkha
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 255 215 0 }
+    color1 = "red"
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_tamgha_adamyi.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -538,11 +584,11 @@ BAX = { # Baarin Khalkha
 }
 GOO = { # Gorlos Khalkha
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 255 215 0 }
+    color1 = "red"
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_tamgha_ariq_buga.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -551,11 +597,11 @@ GOO = { # Gorlos Khalkha
 }
 ELJ = { # Eljigin Khalkha
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 255 215 0 }
+    color1 = "red"
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_tamgha_buiwan.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.586 }
             scale = { 1.000 1.000 }
@@ -564,11 +610,11 @@ ELJ = { # Eljigin Khalkha
 }
 OLK = { # Olkhonud Khalkha
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 255 215 0 }
+    color1 = "red"
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_tamgha_doger.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -577,11 +623,11 @@ OLK = { # Olkhonud Khalkha
 }
 BZZ = { # Besud Khalkha
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 255 215 0 }
+    color1 = "red"
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_tamgha_giray_03.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.496 }
             scale = { 0.900 0.900 }
@@ -590,11 +636,11 @@ BZZ = { # Besud Khalkha
 }
 JAA = { # Jalayir Khalkha
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 255 215 0 }
+    color1 = "red"
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_tamgha_jalayir.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -603,11 +649,11 @@ JAA = { # Jalayir Khalkha
 }
 BYT = { # Bayaut Khalkha
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 255 215 0 }
+    color1 = "red"
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_tamgha_kyrgyz_03.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -616,11 +662,11 @@ BYT = { # Bayaut Khalkha
 }
 JAR = { # Jarud Khalkha
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 255 0 0 }
-    color2 = rgb { 255 215 0 }
+    color1 = "red"
+    color2 = "yellow"
     colored_emblem = {
         texture = "ce_tamgha_samsun.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -642,7 +688,7 @@ ADQ = { #Asud
 DOY = { #Doyan Guard
     pattern = "pattern_fringe.dds"
     color1 = rgb { 136 106 88 }
-    color2 = rgb { 255 215 0 }
+    color2 = "black"
     colored_emblem = {
         texture = "ce_tamgha_altai_13.dds"
         color1 = "black"
@@ -655,7 +701,7 @@ DOY = { #Doyan Guard
 FUY = { #Fuyu Guard
     pattern = "pattern_fringe.dds"
     color1 = rgb { 136 106 88 }
-    color2 = rgb { 255 215 0 }
+    color2 = "black"
     colored_emblem = {
         texture = "ce_tamgha_altai_11.dds"
         color1 = "black"
@@ -668,7 +714,7 @@ FUY = { #Fuyu Guard
 TIZ = { #Tai’nin Guard
     pattern = "pattern_fringe.dds"
     color1 = rgb { 136 106 88 }
-    color2 = rgb { 255 215 0 }
+    color2 = "black"
     colored_emblem = {
         texture = "ce_tamgha_bao.dds"
         color1 = "black"
@@ -680,7 +726,7 @@ TIZ = { #Tai’nin Guard
 }
 AUK = { #Altai Uriankhai
     pattern = "pattern_solid.dds"
-    color1 = rgb { 37 83 29 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_tamgha_altai_02.dds"
         color1 = "white"
@@ -692,7 +738,7 @@ AUK = { #Altai Uriankhai
 }
 KUH = { #Khentii Uriankhai
     pattern = "pattern_solid.dds"
-    color1 = rgb { 37 83 29 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_tamgha_altai_08.dds"
         color1 = "white"
@@ -704,7 +750,7 @@ KUH = { #Khentii Uriankhai
 }
 TBU = { #Amur Uriankhai
     pattern = "pattern_solid.dds"
-    color1 = rgb { 37 83 29 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_tamgha_altai_15.dds"
         color1 = "white"
@@ -716,7 +762,7 @@ TBU = { #Amur Uriankhai
 }
 KVU = { #Khövsgöl Uriankhai
     pattern = "pattern_solid.dds"
-    color1 = rgb { 37 83 29 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_tamgha_altai_10.dds"
         color1 = "white"
@@ -728,11 +774,11 @@ KVU = { #Khövsgöl Uriankhai
 }
 QAS = { #Hasarids
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 23 19 143 }
-    color2 = rgb { 203 0 0 }
+    color1 = "blue"
+    color2 = "red_light"
     colored_emblem = {
         texture = "ce_tamgha_mongol_double_bow_03.dds"
-        color1 = rgb { 203 0 0 }
+        color1 = "red_light"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -741,11 +787,11 @@ QAS = { #Hasarids
 }
 JAI = { #Jalaids
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 23 19 143 }
-    color2 = rgb { 203 0 0 }
+    color1 = "blue"
+    color2 = "red_light"
     colored_emblem = {
         texture = "ce_tamgha_mongol_alkh.dds"
-        color1 = rgb { 203 0 0 }
+        color1 = "red_light"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -754,11 +800,11 @@ JAI = { #Jalaids
 }
 KDB = { #Dörbeds
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 23 19 143 }
-    color2 = rgb { 203 0 0 }
+    color1 = "blue"
+    color2 = "red_light"
     colored_emblem = {
         texture = "ce_tamgha_kaidu.dds"
-        color1 = rgb { 203 0 0 }
+        color1 = "red_light"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -767,11 +813,11 @@ KDB = { #Dörbeds
 }
 AKK = { #Aru
     pattern = "pattern_fringe.dds"
-    color1 = rgb { 23 19 143 }
-    color2 = rgb { 203 0 0 }
+    color1 = "blue"
+    color2 = "red_light"
     colored_emblem = {
         texture = "ce_tamgha_holog.dds"
-        color1 = rgb { 203 0 0 }
+        color1 = "red_light"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -783,7 +829,7 @@ CRS = { #Choros
     color1 = "white"
     colored_emblem = {
         texture = "ce_tamgha_khas_02.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -795,7 +841,7 @@ DRB = {  #Dörbet
     color1 = "white"
     colored_emblem = {
         texture = "ce_tamgha_seree_iljigin.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -807,7 +853,7 @@ KHO = {  #Khoshut
     color1 = "white"
     colored_emblem = {
         texture = "ce_tamgha_ram_horn.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -819,7 +865,7 @@ KHD = {  #Khoid
     color1 = "white"
     colored_emblem = {
         texture = "ce_tamgha_tatar_tama.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -831,7 +877,7 @@ TRH = {  #Torghut
     color1 = "white"
     colored_emblem = {
         texture = "ce_tamgha_tatar_dulat.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -843,7 +889,7 @@ TVA = { #Tuva
     color1 = rgb { 73 255 255 }
     colored_emblem = {
         texture = "ce_tamgha_oirat_buily.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -864,7 +910,7 @@ YKZ = { # Yenisei Kirgyz
 }
 KYZ = { #Kyrgyz Pop
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 0 0 }
+    color1 = "red"
     textured_emblem = {
         texture = "te_krygz.dds"
         instance = {
@@ -1112,7 +1158,7 @@ ZHA = {
     color1 = "green_secondary"
     colored_emblem = {
         texture = "ce_tamgha_circassian_06.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -1125,7 +1171,7 @@ ZHA = {
 #    color1 = "green_secondary"
 #    colored_emblem = {
 #        texture = "ce_tamgha_circassian_01.dds"
-#        color1 = rgb { 255 215 0 }
+#        color1 = "yellow"
 #        instance = {
 #            position = { 0.500 0.500 }
 #            scale = { 1.000 1.000 }
@@ -1138,7 +1184,7 @@ BSS = {
     color1 = "green_secondary"
     colored_emblem = {
         texture = "ce_tamgha_circassian_04.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -1151,7 +1197,7 @@ BSS = {
 #    color1 = "green_secondary"
 #    colored_emblem = {
 #        texture = "ce_tamgha_circassian_09.dds"
-#        color1 = rgb { 255 215 0 }
+#        color1 = "yellow"
 #        instance = {
 #            position = { 0.500 0.500 }
 #            scale = { 1.000 1.000 }
@@ -1161,7 +1207,7 @@ BSS = {
 
 YRA = { #Yurmaty Bashkirs
     pattern = "pattern_solid.dds"
-    color1 = rgb { 71 107 37 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_bashkir_ornament.dds"
         color1 = "white"
@@ -1174,11 +1220,11 @@ YRA = { #Yurmaty Bashkirs
 }
 BZY = { #Burzyan Bashkirs
     pattern = "pattern_solid.dds"
-    color1 = rgb { 71 107 37 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_bashkir_ornament.dds"
         color1 = "black"
-        color2 = rgb { 255 255 127 }
+        color2 = "yellow_pale"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -1187,11 +1233,11 @@ BZY = { #Burzyan Bashkirs
 }
 USH = { #Ushergan Bashkirs
     pattern = "pattern_solid.dds"
-    color1 = rgb { 71 107 37 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_bashkir_ornament.dds"
         color1 = "black"
-        color2 = rgb { 170 170 255 }
+        color2 = rgb { 140 140 215 }
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -1200,11 +1246,11 @@ USH = { #Ushergan Bashkirs
 }
 YNI = { #Yenei Bashkirs
     pattern = "pattern_solid.dds"
-    color1 = rgb { 71 107 37 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_bashkir_ornament.dds"
         color1 = "black"
-        color2 = rgb { 0 85 0 }
+        color2 = "green_light"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -1213,10 +1259,10 @@ YNI = { #Yenei Bashkirs
 }
 TBN = { #Tabyn Bashkirs
     pattern = "pattern_solid.dds"
-    color1 = rgb { 71 107 37 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_bashkir_ornament.dds"
-        color1 = rgb { 255 215 0 }
+        color1 = "yellow"
         color2 = "black"
         instance = {
             position = { 0.500 0.500 }
@@ -1226,11 +1272,11 @@ TBN = { #Tabyn Bashkirs
 }
 BSH = { #Bashkiria
     pattern = "pattern_solid.dds"
-    color1 = rgb { 71 107 37 }
+    color1 = "green"
     colored_emblem = {
         texture = "ce_bashkir_ornament.dds"
         color1 = "black"
-        color2 = rgb { 255 215 0 }
+        color2 = "yellow"
         instance = {
             position = { 0.500 0.500 }
             scale = { 1.000 1.000 }
@@ -1297,7 +1343,7 @@ FEO = { # Theodoro
 
 GZK = {
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 0 0 }
+    color1 = "red"
     colored_emblem = {
         texture = "ce_per_fess_indented_shield.dds"
         color1 = "green_light"
@@ -1328,7 +1374,7 @@ GZK = {
 
 TBA = {
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 0 0 }
+    color1 = "red"
     colored_emblem = {
         texture = "ce_tabasaran.dds"
         color1 = "red_light"
@@ -1902,7 +1948,7 @@ COB = {
 URG = {
     # Urgell
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 0 0 }
+    color1 = "red"
     colored_emblem = {
         texture = "ce_checky_07.dds"
         color1 = black
@@ -2085,7 +2131,7 @@ KYY = { # Kerry
 DNM = {
     # Dai Nam / Nguyen Dynasty
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 0 0 }
+    color1 = "red"
     colored_emblem = {
         texture = "ce_tricolor_stripes_horizontal_05.dds"
         color1 = red
@@ -2194,7 +2240,7 @@ CPO = {
 
 AIN = {
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 0 0 }
+    color1 = "red"
     colored_emblem = {
         texture = "ce_papelonny_inverted_shield.dds"
         color1 = red
@@ -2217,7 +2263,7 @@ AIN = {
 
 GTS = {
     pattern = "pattern_solid.dds"
-    color1 = rgb { 255 0 0 }
+    color1 = "red"
     colored_emblem = {
         texture = "ce_papelonny_inverted_shield.dds"
         color1 = red
