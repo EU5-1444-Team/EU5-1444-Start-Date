@@ -1875,6 +1875,32 @@
 		}
 	}
 	text = {
+		localization_key = rank_duchy_bosnian_banate
+		trigger = {
+			OR = {
+				country_rank_is_county = yes
+				country_rank_is_duchy = yes
+			}
+			OR = {
+				tag = BOS
+				tag = BGD
+				tag = SVR
+			}
+			
+			is_subject = yes
+			court_language ?= language:serbo_croatian_language
+		}
+	}
+	
+	text = {
+		localization_key = rank_duchy_karvuna_despotate
+		trigger = {
+			country_rank_is_duchy = yes
+			tag = KVN
+			is_subject = yes
+		}
+	}
+	text = {
 		localization_key = rank_duchy_voivode
 		trigger = {
 			country_rank_is_duchy = yes
@@ -2152,6 +2178,7 @@
 			OR = {
 				tag = FLO
 				tag = TUS
+				tag = LIT
 			}
 			has_variable = flo_grand_duchy_tus_flag
 		}
