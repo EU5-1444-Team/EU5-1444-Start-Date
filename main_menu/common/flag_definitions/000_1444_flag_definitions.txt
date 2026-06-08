@@ -909,3 +909,76 @@ REPLACE:NEV = { # Nevers
 		}
 	}	
 }
+REPLACE:EPI = { # Epirus
+	flag_definition = {
+		coa = EPI
+		priority = 1
+	}
+	flag_definition = {
+		coa = BYZ_eagle
+		priority = 10
+		trigger = {
+			NOT = { country_exists = c:BYZ }
+			coa_def_kingdom_or_higher_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = BYZ_eagle_crowned
+		priority = 10
+		trigger = {
+			NOT = { country_exists = c:BYZ }
+			coa_def_empire_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = EPI_tocco
+		priority = 20
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:tocco_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:tocco_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:tocco_dynasty
+				}
+			}
+		}
+	}
+}
+REPLACE:CEP = { # Cephalonia
+	flag_definition = {
+		coa = CEP
+		priority = 1
+	}
+	flag_definition = {
+		coa = CEP_angevine
+		priority = 100
+		trigger = {
+			coa_def_angevine_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = CEP_tocco
+		priority = 11
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:tocco_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:tocco_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:tocco_dynasty
+				}
+			}
+		}
+	}
+}
