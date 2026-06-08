@@ -1,3 +1,23 @@
+REPLACE:livonian_confederation = {
+	unique = yes
+	potential = {
+		has_or_had_tag = LIV
+	}
+
+	allow = {
+		num_subjects >= 1
+	}
+
+	country_modifier = {
+		monthly_towards_decentralization = societal_value_large_monthly_move
+		subject_opinions = 25
+		diplomatic_capacity_modifier = 0.25
+		country_cabinet_efficiency = 0.1
+	}
+
+	years = 1
+}
+
 REPLACE:gabelle = {
 	unique = yes
 	potential = {
