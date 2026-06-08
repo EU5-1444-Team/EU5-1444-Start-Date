@@ -33065,7 +33065,6 @@ character_db= {
 		religion = catholic
 		birth_date = 1302.1.1
 		death_date = 1399.12.31
-
 		birth = cuijk
 		dynasty = cuijk_dynasty
 		father = cjk_jan_i_van_cuijk
@@ -33078,7 +33077,6 @@ character_db= {
 		religion = catholic
 		birth_date = 1305.1.1
 		death_date = 1399.12.31
-
 		birth = cuijk
 		dynasty = cuijk_dynasty
 		father = cjk_jan_i_van_cuijk
@@ -42793,13 +42791,97 @@ character_db= {
 
     ### egmond_dynasty | GEL ###
 
-    gel_arnold_egmond = {
+    gel_arnout_egmond = {
         first_name = { name = name_arnold }
         culture = low_franconian
         religion = catholic
         estate = nobles_estate
         birth_date = 1410.7.10
         birth = alkmaar
+        dynasty = egmond_dynasty
+        tag = GEL
+    }
+
+    gel_katarina_mark = {
+        first_name = { name = name_catherine }
+        culture = dutch_rhenish
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1417.2.10
+        birth = kleve
+        spouse = gel_arnout_egmond
+        father = kle_adolf_i_mark
+        #mother = 
+        dynasty = mark_dynasty
+        tag = GEL
+    }
+
+    gel_maria_egmond_stuart = {
+        first_name = { name = name_mary }
+        culture = low_franconian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1433.1.17
+        birth = cuijk
+        father = gel_arnout_egmond
+        mother = gel_katarina_mark
+        dynasty = egmond_dynasty
+        tag = GEL
+    }
+
+    gel_willem_egmond_infant = {
+        first_name = { name = name_william }
+        culture = low_franconian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1434.1.1
+        death_date = 1434.2.1
+        birth = gelre
+        father = gel_arnout_egmond
+        mother = gel_katarina_mark
+        dynasty = egmond_dynasty
+        tag = GEL
+    }
+
+    gel_margaret_egmond_simmern = {
+        first_name = { name = name_margaret }
+        culture = low_franconian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1436.1.1
+        birth = gelre
+        father = gel_arnout_egmond
+        mother = gel_katarina_mark
+        dynasty = egmond_dynasty
+        tag = GEL
+    }
+
+    gel_adolf_egmond = {
+        first_name = { name = name_adolf }
+        culture = low_franconian
+        religion = catholic
+        estate = nobles_estate
+        birth_date = 1438.2.12
+        birth = cuijk
+        father = gel_arnout_egmond
+        mother = gel_katarina_mark
+        dynasty = egmond_dynasty
+        tag = GEL
+    }
+
+    gel_katarina_egmond_bourbon = {
+        first_name = { name = name_catherine }
+        culture = low_franconian
+        religion = catholic
+        female = yes
+        estate = nobles_estate
+        birth_date = 1439.1.1
+        birth = gelre
+        father = gel_arnout_egmond
+        mother = gel_katarina_mark
         dynasty = egmond_dynasty
         tag = GEL
     }
@@ -58475,8 +58557,7 @@ character_db= {
 		culture = low_franconian
 		religion = catholic
 		birth_date = 1302.1.1
-		death_date = 1399.12.31
-
+		death_date = 1343.1.1
 		birth = weert
 		dynasty = horne_dynasty
 		father = hrn_gerard_i_van_horne
@@ -58490,7 +58571,6 @@ character_db= {
 		female = yes
 		birth_date = 1320.1.1
 		death_date = 1399.12.31
-
 		birth = weert
 		dynasty = horne_dynasty
 		father = hrn_willem_iv_van_horne
@@ -58503,8 +58583,7 @@ character_db= {
 		culture = low_franconian
 		religion = catholic
 		birth_date = 1321.1.1
-		death_date = 1399.12.31
-
+		death_date = 1345.1.1
 		birth = weert
 		dynasty = horne_dynasty
 		father = hrn_willem_iv_van_horne
@@ -58519,7 +58598,6 @@ character_db= {
 		female = yes
 		birth_date = 1322.1.1
 		death_date = 1399.12.31
-
 		birth = weert
 		dynasty = horne_dynasty
 		father = hrn_willem_iv_van_horne
@@ -58534,7 +58612,6 @@ character_db= {
 		female = yes
 		birth_date = 1326.1.1
 		death_date = 1399.12.31
-
 		birth = weert
 		dynasty = horne_dynasty
 		father = hrn_willem_iv_van_horne
@@ -58549,7 +58626,6 @@ character_db= {
 		female = yes
 		birth_date = 1330.1.1
 		death_date = 1399.12.31
-
 		birth = weert
 		dynasty = horne_dynasty
 		father = hrn_willem_iv_van_horne
@@ -58562,14 +58638,35 @@ character_db= {
 		culture = low_franconian
 		religion = catholic
 		birth_date = 1335.1.1
-		death_date = 1399.12.31
-
+		death_date = 1357.1.1
 		birth = weert
 		dynasty = horne_dynasty
 		father = hrn_willem_iv_van_horne
 		mother = hrn_elisabeth_kleef_hulchrath
 		tag = HRN
 	}
+
+    hrn_jakob_i_horne = {
+        first_name = { name = name_james }
+		culture = limburgish
+		religion = catholic
+		birth_date = 1410.1.1 # Unknown
+		birth = weert
+		dynasty = horne_dynasty
+		father = hrn_willem_vii_horne
+		tag = HRN
+    }
+
+    hrn_jakob_ii_horne = {
+        first_name = { name = name_james }
+		culture = limburgish
+		religion = catholic
+		birth_date = 1444.1.1 # Unknown
+		birth = weert
+		dynasty = horne_dynasty
+		father = hrn_jakob_i_horne
+		tag = HRN
+    }
 
     ### hosokawa_dynasty | HS1 ###
 

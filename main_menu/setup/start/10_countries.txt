@@ -14671,7 +14671,7 @@ countries = {
     BRB = {
         own_control_core = {
             brussels nivelles leuven mechelen antwerp turnhout eindhoven
-            hertogenbosch helmond
+            hertogenbosch helmond cuijk
         }
 
         starting_technology_level = 3
@@ -14955,10 +14955,12 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
+            ruler = gel_arnout_egmond
 
-            ruler = gel_arnold_van_egmont
             ruler_term = { character = gel_reinoud_i_van_gelre start_date = 1271.1.10 end_date = 1326.1.1 regnal_number = 1 }
-            ruler_term = { character = gel_reinoud_ii_van_gelre start_date = 1326.1.1 regnal_number = 2 }
+            ruler_term = { character = gel_reinoud_ii_van_gelre start_date = 1326.1.1 end_date = 1343.10.12 regnal_number = 2 }
+
+            ruler_term = { character = gel_arnout_egmond start_date = 1423.6.25 regnal_number = 0 }
 
             regnal_numbers = {
                 name_reginald = 2
@@ -16539,10 +16541,12 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
+            ruler = gel_arnout_egmond
 
-            ruler = gel_arnold_van_egmont
             ruler_term = { character = gel_reinoud_i_van_gelre start_date = 1271.1.10 end_date = 1326.1.1 regnal_number = 1 }
-            ruler_term = { character = gel_reinoud_ii_van_gelre start_date = 1326.1.1 regnal_number = 2 }
+            ruler_term = { character = gel_reinoud_ii_van_gelre start_date = 1326.1.1 end_date = 1343.10.12 regnal_number = 2 }
+
+            ruler_term = { character = gel_arnout_egmond start_date = 1423.6.25 regnal_number = 0 }
 
             regnal_numbers = {
                 name_reginald = 2
@@ -19062,14 +19066,17 @@ countries = {
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
         government = {
+            ruler = hrn_jakob_i_horne
 
-            ruler = random # TODO: add me
             ruler_term = { character = hrn_gerard_i_van_horne start_date = 1301.1.1 end_date = 1330.1.1 regnal_number = 1 }
-            ruler_term = { character = hrn_willem_iv_van_horne start_date = 1330.1.1 regnal_number = 4 }
+            ruler_term = { character = hrn_willem_iv_van_horne start_date = 1330.1.1 end_date = 1343.1.1 regnal_number = 4 }
+
+            ruler_term = { character = hrn_jakob_i_horne start_date = 1440.1.1 regnal_number = 1 }
 
             regnal_numbers = {
                 name_gerard = 1
                 name_william = 4
+                name_james = 1
             }
 
             aristocracy_vs_plutocracy = -20
@@ -19086,7 +19093,7 @@ countries = {
 
     CJK = {
         #Cuijk
-        own_control_core = {
+        our_cores_conquered_by_others = {
             cuijk
         }
 
@@ -19095,10 +19102,10 @@ countries = {
         include = "catholic_monarchy_no_coast"
         include = "german_principality"
         government = {
-
             ruler = random # TODO: add me
+
             ruler_term = { character = cjk_jan_i_van_cuijk start_date = 1285.1.1 end_date = 1320.1.1 regnal_number = 1 }
-            ruler_term = { character = cjk_otto_van_cuijk start_date = 1320.1.1 regnal_number = 1 }
+            ruler_term = { character = cjk_otto_van_cuijk start_date = 1320.1.1 end_date = 1337.1.1 regnal_number = 1 } # unknown
 
             regnal_numbers = {
                 name_otto = 1
@@ -19109,6 +19116,7 @@ countries = {
             capital_economy_vs_traditional_economy = -10
             land_vs_naval = -20
         }
+
         country_rank = rank_county
         capital = cuijk
         dynasty = cuijk_dynasty
