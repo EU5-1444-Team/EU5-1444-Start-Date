@@ -982,3 +982,53 @@ REPLACE:CEP = { # Cephalonia
 		}
 	}
 }
+KRZ = { # KRK
+	flag_definition = {
+		coa = KRZ
+		priority = 1
+	}
+	flag_definition = {
+		coa = KRZ_frankopan
+		priority = 11
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:frankopan_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:frankopan_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:frankopan_dynasty
+				}
+			}
+		}
+	}
+}
+FPN = { # Senj
+	flag_definition = {
+		coa = FPN
+		priority = 1
+	}
+	flag_definition = {
+		coa = FPN_frankopan
+		priority = 11
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:frankopan_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:frankopan_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:frankopan_dynasty
+				}
+			}
+		}
+	}
+}
