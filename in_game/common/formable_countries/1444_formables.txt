@@ -262,7 +262,33 @@ AFG_f = {
     }
 	form_effect = {
 	}
- }
+}
+
+ANU_f = {
+    level = 2
+    required_locations_fraction = 0.8
+    rule = historical
+
+    potential = {
+        culture = culture:ainu_culture
+    }
+
+    allow = { }
+
+    name = ANU
+    flag = ANU
+    adjective = ANU_ADJ
+    tag = ANU
+    color = map_ANU
+
+    areas = {
+        ezo_area
+    }
+    form_effect = {
+        limit = { country_rank_level < 3 }
+        set_country_rank_effect = { rank = country_rank:rank_kingdom }
+    }
+}
 
 KHP_f = {
 	level = 1

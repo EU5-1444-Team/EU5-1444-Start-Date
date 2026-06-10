@@ -1032,3 +1032,17 @@ FPN = { # Senj
 		}
 	}
 }
+
+ANU = { # Ainu/Ezo
+	flag_definition = {
+		coa = ANU
+		priority = 1
+	}
+	flag_definition = {
+		coa = ANU_ezo
+		priority = 10
+		trigger = {
+			NOT = { culture = culture:ainu_culture }
+		}
+	}
+}

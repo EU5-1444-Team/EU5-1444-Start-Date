@@ -1,4 +1,33 @@
-﻿REPLACE:jurchen_confederation_name = {
+﻿ainu_confederation_name = {
+    type = international_organization
+
+    text = {
+        trigger = { has_variable = is_repunmosir }
+        localization_key = repunmosir_ainu_confederation
+    }
+    text = {
+        trigger = { has_variable = is_isikar }
+        localization_key = isikar_ainu_confederation
+    }
+    text = {
+        trigger = { has_variable = is_sumunkur }
+        localization_key = sumunkur_ainu_confederation
+    }
+    text = {
+        trigger = { has_variable = is_menas }
+        localization_key = menas_ainu_confederation
+    }
+    text = {
+        trigger = { has_variable = is_uchiura }
+        localization_key = uchiura_ainu_confederation
+    }
+    text = {
+        localization_key = ainu_confederation
+        fallback = yes
+    }
+}
+
+REPLACE:jurchen_confederation_name = {
     type = international_organization
 
     # Haixi Confederation

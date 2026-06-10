@@ -384,9 +384,19 @@
 					has_reform = government_reform:utsmiate
 				}
 				has_reform = government_reform:japanese_clan
+				AND = {
+					tag = ANU
+					NOT = { culture = culture:ainu_culture }
+				}
 				has_reform = government_reform:gelugpa_institution
 				country_type = pop
 			}
+		}
+	}
+	text = {
+		localization_key = country_name_construction_ainu_kotan
+		trigger = {
+			culture = culture:ainu_culture
 		}
 	}
 	text = {

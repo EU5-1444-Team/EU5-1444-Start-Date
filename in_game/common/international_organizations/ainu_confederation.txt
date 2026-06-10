@@ -1,0 +1,34 @@
+ainu_confederation = {
+    has_target = no
+    unique = no
+    disband_if_no_leader = no
+    show_on_diplomatic_map = yes
+
+    custom_name = ainu_confederation_name
+
+    has_leader_country = yes
+    leader_type = country
+    leader_change_trigger_type = rulerchange
+    leader_change_method = score
+    leader_score = { value = great_power_score }
+
+    create_visible_trigger = { always = no }
+    invite_visible_trigger = { always = no }
+    can_declare_war = { always = yes }
+
+    can_join_trigger = {
+        is_member_of_international_organization = scope:recipient
+    }
+
+    can_leave_trigger = { always = no }
+    auto_leave_trigger = {
+        NOT = { culture = culture:ainu_culture }
+    }
+    auto_disband_trigger = { total_members < 2 }
+
+    on_joined = { }
+    on_left = { }
+
+    ai_desire_to_join = { add = { value = 0 } }
+    ai_desire_to_allow_new_member = { add = { value = 0 } }
+}

@@ -781,3 +781,25 @@ NYE_ADJ = {
 	parent = NYE
 	suffix = "_ADJ"
 }
+
+ANU = {
+	# Ainu-Moshir / Ezo
+	type = country
+	text = {
+		# Ezo (non-Ainu name)
+		localization_key = ANU_ezo
+		trigger = {
+			NOT = { culture = culture:ainu_culture }
+		}
+	}
+	text = {
+		# Ainu (default name)
+		localization_key = ANU
+		fallback = yes
+	}
+}
+
+ANU_ADJ = {
+	parent = ANU
+	suffix = "_ADJ"
+}
