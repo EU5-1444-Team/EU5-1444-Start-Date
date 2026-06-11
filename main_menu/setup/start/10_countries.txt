@@ -32709,9 +32709,10 @@ countries = {
             sergiyevsk
             koshki kamyshla bolshoy_cheremshan staryi_amanak
             aznakayevo
-            zainsk
+            zainsk bavly bugulma abdulino buguruslan
             chalninsky_pochinok
             bolshoye_murashkino kurmysh lyskovo perevoz sechenovo spasskoye_lyskovo alatyr sergach
+            malyy_uran sorochinskaya buzuluk grachevka
         }
 
         capital = kazan
@@ -33009,6 +33010,7 @@ countries = {
         own_control_core = {
             kalmyk terekti oral
             taskala dergachi chertanla piterka yershov ozinki sakminskoye_vodokhranilishche
+            sorochinskaya
         }
 
         capital = oral
@@ -33415,7 +33417,7 @@ countries = {
     UDM = {
         own_control_core = {
             sarapul mozhga yelabuga izhevsk vavozh_mozhga vyatskiye_polyany
-            votkings kasevo yanaul tatyshly saygatsky yelovo osa
+            votkings saygatsky yelovo osa
         }
         government = {
             type = tribe
@@ -33455,166 +33457,351 @@ countries = {
 
     # --- MRZ ---
 
-    TBN = {
-        # Tabyn Bashkirs
+    BS1 = { # Tabyn
         own_control_core = {
-            ufa syun verkhneyarkeyevo chekmagush menzelinsk lower_aktanyshbash burayevo askino baltas
-            chishmy
-        }
-        discovered_regions = {
-            russian_region ruthenia_region ural_region west_siberia_region khorasan_region
+            tabynsky
         }
         starting_technology_level = 3
-        include = "eurasian_muslim_tribe"
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
             ruler = random
-            centralization_vs_decentralization = 85
-            aristocracy_vs_plutocracy = 90
-            serfdom_vs_free_subjects = 10
-            traditionalist_vs_innovative = -60
-            spiritualist_vs_humanist = 40
-            mercantilism_vs_free_trade = -50
-            offensive_vs_defensive = 40
-            land_vs_naval = -50
-            quality_vs_quantity = -70
-            belligerent_vs_conciliatory = 40
-            capital_economy_vs_traditional_economy = -80
-            individualism_vs_communalism = -40
-            outward_vs_inward = -10
-            mysticism_vs_jurisprudence = -15
-            laws = {
-                legal_code_law = sharia_law_policy
-                sharia_law = hanafi_policy
-            }
+        }
+        capital = tabynsky
+        religious_school = hanafi_school
+    }
+    BS2 = { # Burzyan
+        own_control_core = {
+            kapova_pesera
+            beloretsk khaqmar
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = kapova_pesera
+        religious_school = hanafi_school
+    }
+    BS3 = { # Ushergan
+        own_control_core = {
+            ishimbay
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = ishimbay
+        religious_school = hanafi_school
+    }
+    BS4 = { # Tamyan
+        own_control_core = {
+            meleuz
+            yuldibay
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = meleuz
+        religious_school = hanafi_school
+    }
+    BS5 = { # Kuvakan
+        own_control_core = {
+            ust_katav
+            belekes
+            zlatoust
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = ust_katav
+        religious_school = hanafi_school
+    }
+    BS6 = { # Katay
+        own_control_core = {
+            yetkul
+            chebarkul
+            miass
+            bolshoy_ik
+            chelyaba
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = miass
+        religious_school = hanafi_school
+    }
+    BS7 = { # Duvan
+        own_control_core = {
+            mesyagutovo
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = mesyagutovo
+        religious_school = hanafi_school
+    }
+    BS8 = { # Min
+        own_control_core = {
+            ufa
+            chishmy
+            ulukulevo
+            krasnaya_gorka
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
         }
         capital = ufa
         religious_school = hanafi_school
-        accepted_cultures = { chiyalik_culture }
     }
-
-    # --- TBN ---
-
-    YRA = {
-        # Yurmaty Bashkirs
+    BS9 = { # Yurmaty
         own_control_core = {
-            sterlibashevo sterlitamak ulukulevo bizhbulyak turkmenevo ishimbay meleuz kapova_pesera beloretsk
             davlekanovo
-        }
-        discovered_regions = {
-            russian_region ruthenia_region ural_region west_siberia_region khorasan_region
+            sterlitamak
+            sterlibashevo
         }
         starting_technology_level = 3
-        include = "eurasian_muslim_tribe"
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
             ruler = random
-            centralization_vs_decentralization = 85
-            aristocracy_vs_plutocracy = 90
-            serfdom_vs_free_subjects = 10
-            traditionalist_vs_innovative = -60
-            spiritualist_vs_humanist = 40
-            mercantilism_vs_free_trade = -50
-            offensive_vs_defensive = 40
-            land_vs_naval = -50
-            quality_vs_quantity = -70
-            belligerent_vs_conciliatory = 40
-            capital_economy_vs_traditional_economy = -80
-            individualism_vs_communalism = -40
-            outward_vs_inward = -10
-            mysticism_vs_jurisprudence = -15
-            laws = {
-                legal_code_law = sharia_law_policy
-                sharia_law = hanafi_policy
-            }
         }
         capital = sterlitamak
         religious_school = hanafi_school
     }
-
-    # --- YRA ---
-
-    YNI = {
-        # Yenei Bashkirs
+    BS0 = { # Kanly
         own_control_core = {
-            sadak bavly bugulma abdulino buguruslan turkmenevo
-            sorochinskaya buzuluk grachevka
-        }
-        discovered_regions = {
-            russian_region ruthenia_region ural_region west_siberia_region khorasan_region
+            turkmenevo sadak bizhbulyak
         }
         starting_technology_level = 3
-        include = "eurasian_muslim_tribe"
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
             ruler = random
-            centralization_vs_decentralization = 85
-            aristocracy_vs_plutocracy = 90
-            serfdom_vs_free_subjects = 10
-            traditionalist_vs_innovative = -60
-            spiritualist_vs_humanist = 40
-            mercantilism_vs_free_trade = -50
-            offensive_vs_defensive = 40
-            land_vs_naval = -50
-            quality_vs_quantity = -70
-            belligerent_vs_conciliatory = 40
-            capital_economy_vs_traditional_economy = -80
-            individualism_vs_communalism = -40
-            outward_vs_inward = -10
-            mysticism_vs_jurisprudence = -15
-            laws = {
-                legal_code_law = sharia_law_policy
-                sharia_law = hanafi_policy
-            }
         }
-        capital = bugulma
+        capital = turkmenevo
         religious_school = hanafi_school
     }
-
-    # --- YNI ---
-
-    BZY = {
-        # Burzyan Bashkirs
+    BK1 = { # Bulyar
         own_control_core = {
-            ust_katav mesyagutovo zlatoust tabynsky krasnaya_gorka belekes bolshoy_ik
-        }
-        discovered_regions = {
-            russian_region ruthenia_region ural_region west_siberia_region khorasan_region
+            syun
+            chekmagush
         }
         starting_technology_level = 3
-        include = "eurasian_muslim_tribe"
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
             ruler = random
-            centralization_vs_decentralization = 85
-            aristocracy_vs_plutocracy = 90
-            serfdom_vs_free_subjects = 10
-            traditionalist_vs_innovative = -60
-            spiritualist_vs_humanist = 40
-            mercantilism_vs_free_trade = -50
-            offensive_vs_defensive = 40
-            land_vs_naval = -50
-            quality_vs_quantity = -70
-            belligerent_vs_conciliatory = 40
-            capital_economy_vs_traditional_economy = -80
-            individualism_vs_communalism = -40
-            outward_vs_inward = -10
-            mysticism_vs_jurisprudence = -15
-            laws = {
-                legal_code_law = sharia_law_policy
-                sharia_law = hanafi_policy
-            }
         }
-        accepted_cultures = { chiyalik_culture }
-        capital = zlatoust
+        capital = chekmagush
         religious_school = hanafi_school
     }
-
-    # --- BZY ---
+    BK2 = { # Yurmi
+        own_control_core = {
+            verkhneyarkeyevo
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = verkhneyarkeyevo
+        religious_school = hanafi_school
+    }
+    BK3 = { # Baylyar
+        own_control_core = {
+            menzelinsk
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = menzelinsk
+        religious_school = hanafi_school
+    }
+    BK4 = { # Yeney
+        own_control_core = {
+            lower_aktanyshbash
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = lower_aktanyshbash
+        religious_school = hanafi_school
+    }
+    BK5 = { # Tanyp
+        own_control_core = {
+            askino
+            baltas
+            tatyshly
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = askino
+        religious_school = hanafi_school
+    }
+    BK6 = { # Gayna
+        own_control_core = {
+            burayevo
+            kasevo
+            yanaul
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = yanaul
+        religious_school = hanafi_school
+    }
+    BK7 = { # Upey
+        own_control_core = {
+            arti
+            krasnoufimsk
+            nyazepetrovsk
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = krasnoufimsk
+        religious_school = hanafi_school
+    }
+    BK8 = { # Tangaur
+        own_control_core = {
+            shikashin
+            khaiylmysh
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = khaiylmysh
+        religious_school = hanafi_school
+    }
+    BK9 = { # Kipchak
+        own_control_core = {
+            tanalyk
+            suyunduk
+            gebergeyel
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = tanalyk
+        religious_school = hanafi_school
+    }
+    BK0 = { # Ayle
+        own_control_core = {
+            kaslinsky
+            kyshtym
+            polevskoy
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = kaslinsky
+        religious_school = hanafi_school
+    }
+    BZY = { # Kara-Tabyn
+        own_control_core = {
+            troitsk
+            uyskoye
+            atach
+            ishkul
+            yaik
+            kartaly
+        }
+        starting_technology_level = 3
+        include = "1444_bashkir"
+        include = "1444_kazakh_steppe_exploration"
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        capital = atach
+        religious_school = hanafi_school
+    }
 
 
     ###############################################################################
@@ -43907,7 +44094,7 @@ countries = {
             kulykol zhetykol shoptikol siberia_tenteksor konildi
             zhanaarka balyktykol kaynar_atbai
 
-            namjan kumak suyunduk tanalyk
+            namjan kumak
             irgiz chet_irgiz karasay kayrakty sazanbay
             siletiteniz zhalauly
             tuzdysor imakia zhelezin lebyazhye
@@ -44514,7 +44701,7 @@ countries = {
         # Altıoğul
         type = army
         own_control_core = {
-            baytak ilek kargaly_aktobe kobda irek
+            baytak ilek kargaly_aktobe kobda irek bol_shoy_uran
             karatobe shyngyrlau aksay_pointic zhympity kiyl
         }
 
@@ -44682,46 +44869,6 @@ countries = {
     }
 
     # --- JLY ---
-
-    USH = {
-        # Ushergan Bashkirs
-        own_control_core = {
-            bol_shoy_uran malyy_uran gebergeyel khaiylmysh khaqmar
-            shikashin yuldibay
-        }
-        discovered_regions = {
-            russian_region ruthenia_region ural_region west_siberia_region khorasan_region
-        }
-        starting_technology_level = 3
-        include = "eurasian_muslim_tribe"
-        government = {
-            type = tribe
-            heir_selection = tribal_oldest_male
-            ruler = random
-            centralization_vs_decentralization = 85
-            aristocracy_vs_plutocracy = 90
-            serfdom_vs_free_subjects = 10
-            traditionalist_vs_innovative = -60
-            spiritualist_vs_humanist = 40
-            mercantilism_vs_free_trade = -50
-            offensive_vs_defensive = 40
-            land_vs_naval = -50
-            quality_vs_quantity = -70
-            belligerent_vs_conciliatory = 40
-            capital_economy_vs_traditional_economy = -80
-            individualism_vs_communalism = -40
-            outward_vs_inward = -10
-            mysticism_vs_jurisprudence = -15
-            laws = {
-                legal_code_law = sharia_law_policy
-                sharia_law = hanafi_policy
-            }
-        }
-        capital = yuldibay
-        religious_school = hanafi_school
-    }
-
-    # --- USH ---
 
     SFR = {
         #Esfarayen
@@ -44958,8 +45105,7 @@ countries = {
             chimgi_tura
             almenevo safkul shchuchye kargapolye kurtamysh tugulym yalutorovsk shadrinsk tsaryovo_gorodishche chastoozerye polovinnoye armizonskoye berdyuzhye korkina_sloboda
             tobolsk vagay tavdinsky_sloboda yurginskoye vikulovo tara znamenskoye ust_ishim shish muromtsevo omsk kamyshnoye cherlak tyukalinsk kolosovka gorkovskoye okoneshnikovo
-            sartlan taskayevo kargat kainsky_pas kyshtovka tarankol kyzylzhar presnowka staroye zharkol sasykkol kartaly alakol yetkul troitsk uyskoye
-            chebarkul miass yaik atach ishkul
+            sartlan taskayevo kargat kainsky_pas kyshtovka tarankol kyzylzhar presnowka staroye zharkol sasykkol alakol
         }
 
         capital = chimgi_tura
@@ -69336,10 +69482,10 @@ countries = {
     ERZ = { #Erzya People
         type = pop
         add_pops_from_locations = {
-            sadak ardatov azeevo kadom sarov bolshoye_boldino lukoyanov shatki arzamas pavlovo
+            ardatov azeevo kadom sarov bolshoye_boldino lukoyanov shatki arzamas pavlovo
             samara alatyr bolshoye_murashkino perevoz sechenovo sergach spasskoye_lyskovo
             kurmysh lyskovo atrat batyrevo altyshevo promsa chamzinka dalneye_konstantinovo
-            staryi_amanak bavly buguruslan abdulino
+            staryi_amanak
         }
 
         starting_technology_level = 0
@@ -69349,7 +69495,7 @@ countries = {
             heir_selection = tribal_oldest_male
             ruler = random
         }
-        capital = sadak
+        capital = ardatov
     }
     EST = { #Estonian People
         type = pop
