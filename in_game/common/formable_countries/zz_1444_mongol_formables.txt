@@ -365,24 +365,76 @@ BSH_f = { #Bashkira
     required_locations_fraction = 0.70
     rule = historical
 	capital_required = no
+	potential_requires_own = no
     potential = {
         culture = culture:bashkir
     }
     allow = {
-		owns = location:davlekanovo
+		owns = location:ufa
     }
     name = BSH
     flag = BSH
     adjective = BSH_ADJ
     tag = BSH
     color = map_BSH
-    areas = {
-        bashkiria_area
-        bolghar_area
-    }
 	provinces = {
-		khaqmar_province
+		ufa_province
 	}
+    form_effect = {
+        if = {
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+    }
+}
+MRI_f = { #Mari
+    level = 3
+    required_locations_fraction = 0.70
+    rule = historical
+    capital_required = no
+	potential_requires_own = no
+    potential = {
+        culture = culture:mari_culture
+    }
+    allow = {
+        owns = location:yoshkar_ola
+    }
+    name = MRI
+    flag = MRI
+    adjective = MRI_ADJ
+    tag = MRI
+    color = map_mari
+    provinces = {
+        yaransk_province
+    }
+    form_effect = {
+        if = {
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+    }
+}
+
+UDM_f = { #Udmurtia
+    level = 3
+    required_locations_fraction = 0.70
+    rule = historical
+    capital_required = no
+	potential_requires_own = no
+    potential = {
+        culture = culture:udmurt
+    }
+    allow = {
+        owns = location:izhevsk
+    }
+    name = UDM
+    flag = UDM
+    adjective = UDM_ADJ
+    tag = UDM
+    color = map_udmurt
+    provinces = {
+        sarapul_province
+    }
     form_effect = {
         if = {
             limit = { country_rank_level < 3 }

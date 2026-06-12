@@ -105,3 +105,72 @@ middle_kingdom_name = {
         fallback = yes
     }
 }
+REPLACE:european_tribal_confederation_name = {
+    type = international_organization
+    
+    # Southeast Bashkir (Seven Tribes)
+    text = {
+        trigger = {
+            any_international_organization_member = {
+                this = country:BS2
+            }
+        }
+        localization_key = bashkir_southeast_confederation
+    }
+    
+    # Northeast Bashkir (Tabyn/Katay/Ayle)
+    text = {
+        trigger = {
+            any_international_organization_member = {
+                this = country:BS1
+            }
+        }
+        localization_key = bashkir_northeast_confederation
+    }
+    
+    # Northwest Bashkir (Kama-Ik)
+    text = {
+        trigger = {
+            any_international_organization_member = {
+                this = country:BK1
+            }
+        }
+        localization_key = bashkir_northwest_confederation
+    }
+    
+    # Southwest Bashkir (Min)
+    text = {
+        trigger = {
+            any_international_organization_member = {
+                this = country:BS8
+            }
+        }
+        localization_key = bashkir_min_confederation
+    }
+
+    # Mari Confederation
+    text = {
+        trigger = {
+            leader_country ?= {
+                culture ?= culture:mari_culture
+            }
+        }
+        localization_key = mari_confederation
+    }
+
+    # Udmurt Confederation
+    text = {
+        trigger = {
+            leader_country ?= {
+                culture ?= culture:udmurt
+            }
+        }
+        localization_key = udmurt_confederation
+    }
+
+    # Fallback
+    text = {
+        localization_key = european_tribal_confederation
+        fallback = yes
+    }
+}

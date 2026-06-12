@@ -335,3 +335,33 @@ legacy_of_the_steppe_reform = {
     }
     years = 0.1
 }
+european_tribe_unification_reform = {
+    unique = yes
+    major = yes
+    potential = {
+        OR = {
+			has_or_had_tag = UDM
+			has_or_had_tag = UDM
+			has_or_had_tag = UDM
+		}
+    }
+    allow = {
+        OR = {
+			has_or_had_tag = UDM
+			has_or_had_tag = UDM
+			has_or_had_tag = UDM
+		}
+    }
+    country_modifier = {
+        monthly_tribal_cohesion = 0.02
+        monthly_legitimacy = 0.02
+        monthly_devotion = 0.02
+        monthly_prestige = 0.05
+        stability_decay = -0.001
+        global_monthly_prosperity = 0.01
+        trade_land_efficiency = 0.05
+        global_levy_size_modifier = 0.05
+        government_reform_slots = 1
+    }
+    years = 0.1
+}

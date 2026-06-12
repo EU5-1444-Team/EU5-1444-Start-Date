@@ -1,0 +1,162 @@
+cb_throw_off_tatar_yoke = {
+    create_visible = {
+        any_international_organization = {
+            international_organization_type = international_organization_type:european_tribal_confederation
+            is_member_of_international_organization = root
+            any_country_with_special_status_of_type = {
+                type = tatar_overlord
+                this = scope:target
+            }
+        }
+    }
+    create_enabled = {
+        any_international_organization = {
+            international_organization_type = international_organization_type:european_tribal_confederation
+            is_member_of_international_organization = root
+            any_country_with_special_status_of_type = {
+                type = tatar_overlord
+                this = scope:target
+            }
+        }
+        NOT = { has_truce_with = scope:target }
+    }
+    war_goal_type = throw_off_tatar_yoke_wargoal
+    ai_will_do = {
+        add = {
+            desc = "CB_REASON_IMPORTANT_CB"
+            value = 100
+        }
+        # Less likely if obligations are light
+        if = {
+            limit = {
+                any_international_organization = {
+                    international_organization_type = international_organization_type:european_tribal_confederation
+                    is_member_of_international_organization = root
+                    international_organization_has_policy = policy:european_tribal_low_tribute_policy
+                }
+            }
+            subtract = {
+                desc = "LOW_TRIBUTE_DISINCENTIVE"
+                value = 75
+            }
+        }
+        if = {
+            limit = {
+                any_international_organization = {
+                    international_organization_type = international_organization_type:european_tribal_confederation
+                    is_member_of_international_organization = root
+                    international_organization_has_policy = policy:european_tribal_high_tribute_policy
+                }
+            }
+            add = {
+                desc = "HIGH_TRIBUTE_INCENTIVE"
+                value = 50
+            }
+        }
+    }
+}
+cb_enforce_tatar_yoke = {
+    create_visible = {
+        OR = {
+            culture = { has_culture_group = culture_group:tatar_group }
+            culture = { culture = culture:yerle_qaliq_culture }
+        }
+        scope:target = {
+            any_international_organization = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                is_member_of_international_organization = scope:target
+                leader_country = scope:target
+                NOT = {
+                    any_international_organization_member = {
+                        has_special_status_in_international_organization = {
+                            type = special_status:tatar_overlord
+                            international_organization = prev
+                        }
+                    }
+                }
+            }
+        }
+        OR = {
+            is_neighbor_of = scope:target
+            any_international_organization = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                any_international_organization_member = {
+                    is_neighbor_of = root
+                }
+                NOT = {
+                    any_international_organization_member = {
+                        has_special_status_in_international_organization = {
+                            type = special_status:tatar_overlord
+                            international_organization = prev
+                        }
+                    }
+                }
+            }
+        }
+    }
+    create_enabled = {
+        NOT = { has_truce_with = scope:target }
+        OR = {
+            culture = { has_culture_group = culture_group:tatar_group }
+            culture = { culture = culture:yerle_qaliq_culture }
+        }
+    }
+    war_goal_type = enforce_tatar_yoke_wargoal
+    ai_will_do = {
+        add = {
+            desc = "CB_REASON_IMPORTANT_CB"
+            value = 80
+        }
+    }
+}
+cb_takeover_tatar_yoke = {
+    create_visible = {
+        OR = {
+            culture = { has_culture_group = culture_group:tatar_group }
+            culture = { culture = culture:yerle_qaliq_culture }
+        }
+        scope:target = {
+            any_international_organization = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = prev
+                    country = scope:target
+                }
+            }
+        }
+        NOT = {
+            any_international_organization = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = prev
+                    country = root
+                }
+            }
+        }
+        OR = {
+            is_neighbor_of = scope:target
+            any_international_organization = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                any_international_organization_member = {
+                    is_neighbor_of = root
+                }
+            }
+        }
+    }
+    create_enabled = {
+        NOT = { has_truce_with = scope:target }
+        OR = {
+            culture = { has_culture_group = culture_group:tatar_group }
+            culture = { culture = culture:yerle_qaliq_culture }
+        }
+    }
+    war_goal_type = takeover_tatar_yoke_wargoal
+    ai_will_do = {
+        add = {
+            desc = "CB_REASON_IMPORTANT_CB"
+            value = 80
+        }
+    }
+}

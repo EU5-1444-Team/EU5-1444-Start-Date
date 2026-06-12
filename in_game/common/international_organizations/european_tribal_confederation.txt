@@ -1,0 +1,182 @@
+﻿european_tribal_confederation = {
+    has_target = no
+    unique = no
+    expel_members_who_are_targets_of_other_members = no
+    disband_if_no_leader = no
+
+    show_on_diplomatic_map = yes
+    show_as_overlord_on_map_trigger = {
+        always = yes
+    }
+
+    has_leader_country = yes
+    leader_title_key = "EUROPEAN_TRIBAL_LEADER"
+    leader_type = character
+    leader = {
+        leader_country ?= {
+            if = {
+                limit = {
+                    has_regent = yes
+                    has_heir = yes
+                    NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+                    NOT = { culture = { culture = culture:yerle_qaliq_culture } }
+                }
+                heir ?= {
+                    add_to_list = leaders
+                }
+            }
+            else_if = {
+                limit = {
+                    has_ruler = yes
+                    ruler ?= { is_alive = yes }
+                    NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+                    NOT = { culture = { culture = culture:yerle_qaliq_culture } }
+                }
+                ruler ?= {
+                    add_to_list = leaders
+                }
+            }
+        }
+    }
+	leader_change_trigger_type = rulerchange
+	leader_change_method = vote
+    leadership_election_resolution = taiga_steppe_election
+
+    can_lead_trigger = {
+        is_member_of_international_organization = scope:recipient
+        NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+        NOT = { culture = { culture = culture:yerle_qaliq_culture } }
+    }
+
+    payments_implemented = {
+        bashkir_tribute
+    }
+    can_declare_war = {
+        trigger_if = {
+            limit = {
+                scope:attacker = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:tatar_overlord
+                        international_organization = scope:recipient
+                    }
+                }
+            }
+            NOT = {
+                scope:defender = {
+                    is_member_of_international_organization = scope:recipient
+                }
+            }
+        }
+    }
+    join_defensive_wars_auto_call = {
+        scope:target ?= {
+            NOT = { is_member_of_international_organization = root }
+        }
+        scope:recipient ?= {
+            has_special_status_in_international_organization = {
+                type = special_status:tatar_overlord
+                international_organization = root
+            }
+        }
+        # Don't call overlord if attacker is in a same-culture confederation
+        NOT = {
+            scope:target ?= {
+                any_international_organization = {
+                    international_organization_type = international_organization_type:european_tribal_confederation
+                    is_member_of_international_organization = scope:target
+                    leader_country ?= {
+                        culture = root.leader_country.culture
+                    }
+                }
+            }
+        }
+    }
+    join_offensive_wars_always = {
+        scope:target ?= {
+            this = root.international_organization_target
+        }
+        trigger_if = {
+            limit = {
+                exists = scope:casus_belli
+            }
+            scope:casus_belli = casus_belli:cb_throw_off_tatar_yoke
+        }
+    }
+    join_defensive_wars_always = {
+        scope:target ?= {
+            is_member_of_international_organization = root
+        }
+        scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_enforce_tatar_yoke target = scope:defender } }
+    }
+
+    gives_military_access_to_all_when_at_war = yes
+
+    can_initiate_policy_votes = {
+        is_member_of_international_organization = scope:recipient
+        OR = {
+            has_special_status_in_international_organization = {
+                type = special_status:tatar_overlord
+                international_organization = scope:recipient
+            }
+            AND = {
+                is_leader_of_international_organization = scope:recipient
+                NOT = {
+                    any_international_organization_member = {
+                        has_special_status_in_international_organization = {
+                            type = special_status:tatar_overlord
+                            international_organization = scope:recipient
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    create_visible_trigger = {
+        always = no
+    }
+    invite_visible_trigger = {
+        always = no
+    }
+
+    can_join_trigger = {
+        always = no
+    }
+
+    can_leave_trigger = {
+        always = no
+    }
+
+    auto_leave_trigger = {
+        always = no
+    }
+
+    auto_disband_trigger = {
+        total_members < 2
+    }
+
+    on_joined = {}
+    on_left = {}
+
+    monthly_effect = {
+    }
+
+    special_statuses_implemented = {
+        bashkir_biy
+        mari_kart
+        udmurt_toro
+        tatar_overlord
+    }
+
+    variables = {}
+
+    ai_desire_to_join = {
+    }
+
+    ai_desire_to_allow_new_member = {
+        add = {
+            desc = "WE_WANT_THE_ORGANIZATION_TO_GROW"
+            value = 20
+        }
+    }
+}

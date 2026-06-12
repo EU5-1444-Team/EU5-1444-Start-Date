@@ -1484,7 +1484,8 @@ northern_yuan_consolidation_law = {
             international_organization_has_policy = policy:mongol_imperial_authority_policy
         }
         on_activate = {
-            leader_country = {
+            every_country_with_special_status_of_type = {
+                type = protector_general
                 add_reform = government_reform:legacy_of_the_steppe_reform
                 trigger_event_non_silently = { id = io_unification.120 }
             }
