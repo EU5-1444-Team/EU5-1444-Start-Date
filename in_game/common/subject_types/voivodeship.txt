@@ -1,0 +1,65 @@
+﻿voivodeship = { # like a personal union except the subject has much less power
+	subject_pays = subject_pays_vassal
+	color = subject_fiefdom
+	level = 2
+	# Future content allows Eastern European states to create them
+	visible_through_diplomacy = {
+		always = no
+	}
+	visible_through_treaty = {
+		always = no
+	}
+	creation_visible = {
+		always = no
+	}
+	join_offensive_wars_always = {
+		NOT = {
+			scope:actor ?= {
+				is_subject_of = scope:recipient
+			}
+		}
+	}
+	join_offensive_wars_can_call = {
+		scope:actor ?= {
+			is_subject_of = scope:recipient
+		}
+	}
+	join_defensive_wars_always = {
+		always = yes
+	}
+	diplomatic_capacity_cost_scale = 1
+	strength_vs_overlord = -0.5
+	has_overlords_ruler = yes
+	annexation_speed = 1.5
+	annexation_min_years_before = 10
+	annexation_min_opinion = 100
+	annexation_stall_opinion = 75
+	overlord_can_cancel = yes
+	can_overlord_build_roads = yes
+	can_overlord_build_buildings = yes
+	can_overlord_build_rgos = yes
+	has_limited_diplomacy = yes
+	allow_declaring_wars = {
+		OR = {
+			military_order_can_declare_wars_trigger = yes
+			lordship_of_ireland_can_declare_wars_trigger = yes
+		}
+	}
+	food_access = yes
+	can_change_rank = no
+	can_change_heir_selection = yes
+	minimum_opinion_for_offer = 150
+	great_power_score_transfer = 0.25
+	institution_spread_to_overlord = monthly_institution_spread_mild
+	institution_spread_to_subject = monthly_institution_spread_mild
+	overlord_modifier = {
+		monthly_towards_decentralization = societal_value_tiny_monthly_move
+	}
+	subject_modifier = {
+		country_cabinet_efficiency = 0.05
+	}
+	on_enable = {
+	}
+	on_disable = {
+	}
+}

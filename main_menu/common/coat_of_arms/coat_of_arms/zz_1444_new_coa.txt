@@ -1,0 +1,215 @@
+IST = {
+    pattern = "pattern_solid.dds"
+    color1 = "blue"
+    colored_emblem = {
+        texture = "ce_ibex_goat_passant.dds"
+        color1 = "yellow"
+        color2 = "red"
+        color3 = "black"
+        instance = {
+            position = { 0.5 0.5 }
+            scale = { 1 1 }
+        }
+    }
+}
+
+KRZ_frankopan = {
+    pattern = "pattern_solid.dds"
+    color1 = "blue"
+    colored_emblem = {
+        texture = "ce_frankopan.dds"
+        color1 = "yellow"
+        color2 = "yellow"
+		color3 = "blue"
+        instance = { position = { 0.5 0.5 }  scale = { 1.0 1.0 } }
+    }
+}
+KRZ = {
+    pattern = "pattern_solid.dds"
+    color1 = "red"
+    colored_emblem = {
+        texture = "ce_star_06.dds"
+        color1 = "yellow"
+        instance = { position = { 0.5 0.5 }  scale = { 1.0 1.0 } }
+    }
+}
+FPN = {
+    pattern = "pattern_horizontal_split_01.dds"
+    color1 = "red"
+    color2 = "yellow"
+    colored_emblem = {
+        texture = "ce_star_06.dds"
+        color1 = "yellow"
+        instance = { position = { 0.5 0.25 }  scale = { 0.6 0.6 } }
+    }
+}
+FPN_frankopan = { # SENJ
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red"
+	color4 = "white"
+	
+    sub = {
+        parent = "FPN" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "KRZ_frankopan" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+}
+SZE = {
+    pattern = "pattern_solid.dds"
+    color1 = "blue"
+    textured_emblem = {
+        texture = "te_szekelys.dds"
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+
+DUI = {
+    pattern = "pattern_solid.dds"
+    color1 = "red"
+    colored_emblem = {
+        texture = "ce_quarterly_shield.dds"
+        color1 = "white"
+        color2 = "red"
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 0.500 }
+        }
+    }
+}
+
+ESE = {
+    pattern = "pattern_solid.dds"
+    color1 = "blue"
+    colored_emblem = {
+        texture = "ce_eagle_crowned_wide.dds"
+        color1 = "white"
+        color2 = "yellow"
+        color3 = "yellow"
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+
+BRS = { # Brescia
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red_secondary"
+	color4 = "white"
+	
+	colored_emblem = {
+		texture = "ce_lion_wide_tail.dds"
+		color1 = color2
+		color2 = color3
+		color3 = color1
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }		
+	}
+}
+
+DJK = {
+    pattern = "pattern_solid.dds"
+    color1 = "white"
+    textured_emblem = {
+        texture = "te_hrvatinic.dds"
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+DJK = {
+    pattern = "pattern_solid.dds"
+    color1 = "white"
+    colored_emblem = {
+        texture = "ce_bend_three_fleurs.dds"
+        color1 = "blue" 
+        color2 = "yellow"
+        instance = { position = { 0.500 0.500 }   scale = { 1.000 1.000 }}
+    }
+    colored_emblem = {
+        texture = "ce_cross_patty_random.dds"
+        color1 = "yellow_mid" 
+        color2 = "yellow"
+        instance = { position = { 0.2 0.7 }   scale = { 0.65 0.65 }}
+        instance = { position = { 0.8 0.3 }   scale = { 0.65 0.65 }}
+    }
+}
+ZHR = {
+    pattern = "pattern_solid.dds"
+    color1 = "white"
+    colored_emblem = {
+        texture = "ce_zaharia.dds"
+        color1 = "black"
+        color2 = "white"
+        color3 = "red"
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+
+VMG = {
+    pattern = "pattern_solid.dds"
+    color1 = "yellow"
+    colored_emblem = {
+        texture = "ce_chief.dds"
+        color1 = "red"
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 1.000 1.000 }
+        }
+    }
+}
+PVC = {
+    pattern = "pattern_solid.dds"
+    color1 = "blue"
+    colored_emblem = {
+        texture = "ce_castle_short_towers.dds"
+        color1 = "yellow" 
+        color3 = "black"
+        instance = { position = { 0.500 0.500 }   scale = { 1.000 1.000 }}
+    }
+}
+BGD = {
+    pattern = "pattern_vertical_split_01.dds"
+    color1 = "white"
+    color2 = "white"
+    colored_emblem = {
+        texture = "ce_tricolor_vertical_02.dds"
+        color1 = "red"
+        color2 = "white"
+        color3 = "white"
+        instance = {
+            position = { 0.75 0.500 }
+            scale = { 0.5 1.000 }
+        }
+    }
+    colored_emblem = {
+        texture = "ce_eagle_wide.dds"
+        color1 = "black"
+        color2 = "yellow"
+        color3 = color1
+        mask {1}
+        instance = {
+            position = { 0.5 0.5 }
+            scale = { 1.0 1.0 }
+        }
+    }
+    colored_emblem = {
+        texture = "ce_divider_per_pale.dds"
+        color1 = "black"
+    }
+}

@@ -1,5 +1,5 @@
 # Zyrph's Edits
-
+@semy = 0.27
 sub_FLA_shield = {
 	#pattern = "pattern_solid.dds"
 	color1 = "yellow"
@@ -172,5 +172,143 @@ sub_SCA_coa = { # Kalmar coa
 	textured_emblem = {
 		texture = "z_SCA_coa.dds"
 		instance = { position = { 0.5 0.51 } scale = { 0.5 0.5 } }					
+	}
+}
+sub_taranto_canton = {
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red_mid"
+	color4 = "white"
+	color5 = "yellow_mid"
+
+	colored_emblem = {
+		texture = "ce_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.10 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.30 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.50 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.70 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.90 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.00 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.20 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.40 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.60 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.80 0.20 } scale = { @semy @semy } }
+		instance = { position = { 1.00 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.10 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.30 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.50 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.70 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.90 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.00 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.20 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.40 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.60 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.80 0.60 } scale = { @semy @semy } }
+		instance = { position = { 1.00 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.10 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.30 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.50 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.70 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.90 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.00 1.00 } scale = { @semy @semy } }
+		instance = { position = { 0.20 1.00 } scale = { @semy @semy } }
+		instance = { position = { 0.40 1.00 } scale = { @semy @semy } }
+		instance = { position = { 0.60 1.00 } scale = { @semy @semy } }
+		instance = { position = { 0.80 1.00 } scale = { @semy @semy } }
+		instance = { position = { 1.00 1.00 } scale = { @semy @semy } }
+	}
+	colored_emblem = {
+		texture = "ce_label_05.dds"
+		color1 = color3
+		color2 = color3
+		instance = { position = { 0.25 0.61 }  scale = { 0.85 1.0 } }
+	}		
+		colored_emblem = {
+		texture = "ce_bend_bendlet.dds"
+		color1 = color4
+		instance = { position = { 0.25 0.5 }  scale = { 0.5 1.0 } }
+	}		
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "red"
+		instance = { position = { 0.75 0.5 }  scale = { 0.5 1.0 } }
+	}			
+	colored_emblem = {
+		texture = "z_cross_pale.dds"
+		color1 = "yellow"
+		instance = { position = { 0.5 0.5 }  scale = { 1.0 1.0 } }
+	}
+	colored_emblem = {
+		texture = "z_latin_canton_90.dds"
+		color1 = "yellow"
+		instance = { position = { 0.61 0.775 }  scale = { 0.4 0.425 } }
+		instance = { position = { 0.61 0.225 }  scale = { 0.4 0.425 } }
+		instance = { position = { 0.895 0.775 }  scale = { 0.4 0.425 } }
+		instance = { position = { 0.895 0.225 }  scale = { 0.4 0.425 } }
+	}
+	colored_emblem = {
+		texture = "ce_divider_per_pale.dds"
+		color1 = "black"
+		instance = { position = { 0.5 0.5 }  scale = { 1.0 1.0 } }
+	}			
+}
+sub_tocco_chief = { # Aragonese Naples
+	pattern = "pattern_tricolor_vertical_01.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "yellow"
+	color4 = "yellow_mid"
+	color5 = "red_secondary"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "red"
+		mask = { 1 }
+	}
+	colored_emblem = {
+		texture = "ce_eagle_doubleheaded_crowned_wide.dds"
+		color1 = "yellow"
+		color2 = "yellow"
+		color3 = "red"
+		instance = { position = { 0.167 0.5 }  scale = { 0.4 1.125 } }
+		mask = { 1 }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = color2
+		color2 = color2
+		mask = { 3 }
+	}
+	colored_emblem = {
+		texture = "ce_semis_fleur_lis_shield.dds"
+		color1 = color3
+		color2 = color3
+		mask = { 3 }
+	}
+	colored_emblem = {
+		texture = "ce_label_05_long.dds"
+		color1 = color5
+		color2 = color5
+		instance = { position = { 0.833 0.45 }  scale = { 0.67 0.85 } }
+		mask = { 3 }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = color1
+		mask = { 2 }
+	}
+	colored_emblem = {
+		texture = "ce_cross_jerusalem_long.dds"
+		color1 = color4
+		color2 = color4
+		instance = { position = { 0.5 0.5 } scale = { 1.0 0.9 } }
+		mask = { 2 }
+	}
+	colored_emblem = {
+		texture = "ce_divider_threeway.dds"
+		color1 = "black"
 	}
 }

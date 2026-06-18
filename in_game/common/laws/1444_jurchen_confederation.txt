@@ -29,28 +29,7 @@
 		years = 5
 		on_fully_activated = {
 			leader_country = {
-				if = {
-					limit = {
-						OR = {
-							tag = NAN
-							tag = UDE
-							tag = WRK
-							tag = SFN
-							tag = YER
-						}
-					}
-					form_country = formable_country:YER_f
-				}
-				else_if = {
-					limit = {
-						culture ?= culture:haixi_culture
-					}
-					form_country = formable_country:HXI_f
-				}
-				else = {
-					form_country = formable_country:JNZ_f
-				}
-				trigger_event_non_silently = jurchen_confederation_events.17
+				trigger_event_non_silently = { id = io_unification.90 }
 			}
 			custom_tooltip = will_ask_members_to_submit_tt
 		}

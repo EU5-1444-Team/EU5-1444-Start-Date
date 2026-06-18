@@ -2,3 +2,14 @@
 
 # No more Fuggers or Welsers popups, included on game start'
 # In the future we can copy over the base banking events if we wish to introduce new banks post-1444
+
+# Stub events to prevent crash - base game country_monthly.txt references these
+banking.1 = {
+	hidden = yes
+    trigger = { always = no }
+}
+
+banking.3 = {
+	hidden = yes
+    trigger = { always = no }
+}

@@ -67,129 +67,6 @@
 # E - Ermine
 # N - Orange
 
-ENG = { # England
-	# NB: all subject cantons need to be defined for this tag
-	flag_definition = {
-		coa = ENG
-		subject_canton = ENG
-		coa_with_overlord_canton = ENG_subject
-		allow_overlord_canton = yes
-		priority = 1
-	}
-	flag_definition = {
-		coa = ENG_nordic
-		subject_canton = ENG
-		allow_overlord_canton = yes
-		priority = 2
-		trigger = {
-			coa_def_christian_trigger = yes
-			coa_def_nordic_trigger = yes
-		}
-	}
-	flag_definition = {
-		coa = ENG_monarchy
-		subject_canton = ENG
-		allow_overlord_canton = yes
-		priority = 110
-		trigger = {
-			coa_def_monarchy_trigger = yes
-			NOT = { has_variable = has_had_war_of_the_roses_disaster }
-		}
-	}
-	flag_definition = {
-		coa = ENG_quarterly_france
-		subject_canton = ENG
-		allow_overlord_canton = yes
-		priority = 121
-		trigger = {
-			coa_def_monarchy_trigger = yes
-			NOT = { has_variable = has_had_war_of_the_roses_disaster }
-			NOT = { coa_def_capetian_trigger = yes }
-		}
-	}
-	flag_definition = {
-		coa = ENG_capetian
-		subject_canton = ENG
-		allow_overlord_canton = no
-		priority = 122
-		trigger = {
-			coa_def_monarchy_trigger = yes
-			coa_def_capetian_trigger = yes
-		}
-	}
-	flag_definition = {
-		coa = ENG_tudor
-		subject_canton = ENG
-		allow_overlord_canton = no
-		priority = 120
-		trigger = {
-			coa_def_monarchy_trigger = yes
-			exists = dynasty:tudor_dynasty
-			OR = {
-				AND = {
-					has_ruler = yes
-					ruler.dynasty ?= dynasty:tudor_dynasty
-				}
-				AND = {
-					has_ruler = no
-					has_heir = yes
-					heir.dynasty ?= dynasty:tudor_dynasty
-				}
-			}
-		}
-	}
-	flag_definition = {
-		coa = ENG_yorkist
-		subject_canton = ENG
-		allow_overlord_canton = no
-		priority = 120
-		trigger = {
-			coa_def_monarchy_trigger = yes
-			exists = dynasty:york_dynasty
-			OR = {
-				AND = {
-					has_ruler = yes
-					ruler.dynasty ?= dynasty:york_dynasty
-				}
-				AND = {
-					has_ruler = no
-					has_heir = yes
-					heir.dynasty ?= dynasty:york_dynasty
-				}
-			}
-		}
-	}
-	flag_definition = {
-		coa = ENG_lancastrian
-		subject_canton = ENG
-		allow_overlord_canton = no
-		priority = 120
-		trigger = {
-			coa_def_monarchy_trigger = yes
-			exists = dynasty:lancaster_dynasty
-			OR = {
-				AND = {
-					has_ruler = yes
-					ruler.dynasty ?= dynasty:lancaster_dynasty
-				}
-				AND = {
-					has_ruler = no
-					has_heir = yes
-					heir.dynasty ?= dynasty:lancaster_dynasty
-				}
-			}
-		}
-	}
-	flag_definition = {
-		coa = ENG_revolutionary_republic
-		subject_canton = ENG
-		priority = 200
-		trigger = {
-			coa_def_revolutionary_republic_trigger = yes
-		}
-	}
-}
-
 REPLACE:ANJ = { # Anjou
 	flag_definition = {
 		coa = ANJ
@@ -204,6 +81,7 @@ REPLACE:ANJ = { # Anjou
 	}
 	flag_definition = {
 		coa = ANJ_valois
+		priority = 5
 		priority = 5
 		trigger = {
             OR = {
@@ -999,6 +877,157 @@ SCA = {
 			OR = {
 				coa_def_wittelsbach_palatinate_dynasty_trigger = yes
 				coa_def_wittelsbach_dynasty_trigger = yes
+			}
+		}
+	}
+}
+REPLACE:NEV = { # Nevers
+	flag_definition = {
+		coa = NEV
+		priority = 1
+	}
+	flag_definition = {
+		coa = NEV_flanders
+		priority = 10
+		trigger = {
+			coa_def_dampierre_flanders_dynasty_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NEV_Valois
+		priority = 11
+		trigger = {
+			coa_def_valois_burgundy_dynasty_trigger = yes
+			coa_def_BUR_ensign_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = FCB_emperor
+		priority = 0 # Commented out for now (update to DH if restored)
+		trigger = {
+			coa_def_hre_emperor_trigger = yes
+		}
+	}	
+}
+REPLACE:EPI = { # Epirus
+	flag_definition = {
+		coa = EPI
+		priority = 1
+	}
+	flag_definition = {
+		coa = BYZ_eagle
+		priority = 10
+		trigger = {
+			NOT = { country_exists = c:BYZ }
+			coa_def_kingdom_or_higher_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = BYZ_eagle_crowned
+		priority = 10
+		trigger = {
+			NOT = { country_exists = c:BYZ }
+			coa_def_empire_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = EPI_tocco
+		priority = 20
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:tocco_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:tocco_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:tocco_dynasty
+				}
+			}
+		}
+	}
+}
+REPLACE:CEP = { # Cephalonia
+	flag_definition = {
+		coa = CEP
+		priority = 1
+	}
+	flag_definition = {
+		coa = CEP_angevine
+		priority = 100
+		trigger = {
+			coa_def_angevine_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = CEP_tocco
+		priority = 11
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:tocco_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:tocco_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:tocco_dynasty
+				}
+			}
+		}
+	}
+}
+KRZ = { # KRK
+	flag_definition = {
+		coa = KRZ
+		priority = 1
+	}
+	flag_definition = {
+		coa = KRZ_frankopan
+		priority = 11
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:frankopan_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:frankopan_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:frankopan_dynasty
+				}
+			}
+		}
+	}
+}
+FPN = { # Senj
+	flag_definition = {
+		coa = FPN
+		priority = 1
+	}
+	flag_definition = {
+		coa = FPN_frankopan
+		priority = 11
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:frankopan_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:frankopan_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:frankopan_dynasty
+				}
 			}
 		}
 	}

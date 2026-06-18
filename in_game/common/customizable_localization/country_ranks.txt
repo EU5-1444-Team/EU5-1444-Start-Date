@@ -152,7 +152,6 @@
 			OR = {
 				tag = DNC
 				tag = ZAZ
-				tag = KOY
 			}
 		}
 	}
@@ -648,6 +647,7 @@
 				culture = {
 					has_culture_group = culture_group:russian_group
 				}
+				has_variable = muscovite_domination
 			}
 		}
 	}
@@ -1411,8 +1411,11 @@
 		trigger = {
 			country_rank_is_kingdom = yes
 			government_type = government_type:monarchy
-			culture = {
-				has_culture_group = culture_group:russian_group
+			OR = {
+				has_variable = muscovite_domination
+				culture = {
+					has_culture_group = culture_group:russian_group
+				}
 			}
 		}
 	}
@@ -1881,6 +1884,32 @@
 		}
 	}
 	text = {
+		localization_key = rank_duchy_bosnian_banate
+		trigger = {
+			OR = {
+				country_rank_is_county = yes
+				country_rank_is_duchy = yes
+			}
+			OR = {
+				tag = BOS
+				tag = BGD
+				tag = SVR
+			}
+			
+			is_subject = yes
+			court_language ?= language:serbo_croatian_language
+		}
+	}
+	
+	text = {
+		localization_key = rank_duchy_karvuna_despotate
+		trigger = {
+			country_rank_is_duchy = yes
+			tag = KVN
+			is_subject = yes
+		}
+	}
+	text = {
 		localization_key = rank_duchy_voivode
 		trigger = {
 			country_rank_is_duchy = yes
@@ -2097,8 +2126,11 @@
 		trigger = {
 			country_rank_is_duchy = yes
 			government_type = government_type:monarchy
-			culture = {
-				has_culture_group = culture_group:russian_group
+			OR = {
+				has_variable = muscovite_domination
+				culture = {
+					has_culture_group = culture_group:russian_group
+				}
 			}
 		}
 	}
@@ -2158,6 +2190,7 @@
 			OR = {
 				tag = FLO
 				tag = TUS
+				tag = LIT
 			}
 			has_variable = flo_grand_duchy_tus_flag
 		}

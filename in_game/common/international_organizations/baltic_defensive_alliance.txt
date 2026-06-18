@@ -1,0 +1,107 @@
+baltic_defensive_pact = {
+    has_target = no
+    unique = yes
+    expel_members_who_are_targets_of_other_members = no
+    expel_members_who_are_attackers_at_war_with_other_members = yes
+    expel_members_who_are_defenders_at_war_with_other_members = no
+    disband_if_no_leader = no
+    show_on_diplomatic_map = yes
+
+    show_as_overlord_on_map_trigger = {
+        always = yes
+    }
+
+    create_visible_trigger = {
+        always = no
+    }
+
+    invite_visible_trigger = {
+        always = no
+    }
+
+    has_leader_country = yes
+    leader_title_key = "BALTIC_PACT_LEADER"
+    leader_type = country
+
+    leader_change_trigger_type = none
+    leader_change_method = none
+
+    can_lead_trigger = {
+        tag = LIT
+    }
+
+    join_defensive_wars_auto_call = {
+        scope:target ?= {
+            tag = MOS
+        }
+    }
+
+    can_declare_war = {
+        always = yes
+    }
+
+    gives_military_access_to_all_when_at_war = yes
+
+    can_join_trigger = {
+        always = no
+    }
+
+    can_leave_trigger = {
+        opinion = {
+            target = c:LIT
+            value < -150
+        }
+    }
+
+    auto_leave_trigger = {
+        OR = {
+            is_subject_of = c:MOS
+            is_subject_of = c:RUS
+            in_union_with = c:MOS
+            in_union_with = c:RUS
+            has_mutual_scripted_relation = { type = relation_type:alliance target = c:MOS }
+            has_mutual_scripted_relation = { type = relation_type:alliance target = c:RUS }
+            AND = {
+                tag = LIT
+                in_union_with = c:POL
+            }
+        }
+    }
+
+    auto_disband_trigger = {
+        OR = {
+            AND = {
+                NOT = { country_exists = c:MOS }
+                NOT = { country_exists = c:RUS }
+            }
+            NOT = { country_exists = c:LIT }
+            NOT = {
+                c:LIT = {
+                    is_member_of_international_organization = scope:recipient
+                }
+            }
+            total_members < 2
+        }
+    }
+
+    modifier = {
+    }
+
+    leader_modifier = {
+    }
+
+    on_joined = {
+    }
+
+    on_left = {
+    }
+
+    monthly_effect = {
+    }
+
+    ai_desire_to_join = {
+    }
+
+    ai_desire_to_allow_new_member = {
+    }
+}

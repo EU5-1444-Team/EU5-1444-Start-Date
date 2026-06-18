@@ -45,7 +45,6 @@
 
 	can_lead_trigger = {
 		has_ruler = yes
-		government_type = government_type:steppe_horde
 		ruler ?= {
 			is_adult = yes
 		}
@@ -64,7 +63,22 @@
 	}
 
 	auto_disband_trigger = {
-		total_members = 1
+		OR = {
+			NOT = {
+				country_has_special_status = {
+					type = special_status:tatar_overlord
+					OR = {
+						country = c:GLH
+						country = c:GTH
+						country = c:AGZ
+						country = c:MGZ
+						country = c:KGZ
+						country = c:KZN
+					}
+				}
+			}
+			total_members = 1
+		}
 	}
 
 	on_joined = {

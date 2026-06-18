@@ -1039,6 +1039,22 @@ class MainWindow(QMainWindow):
         export_btn.clicked.connect(self.export_coa)
         right.addWidget(export_btn)
 
+        # Layer list for reordering emblems
+        right.addWidget(QLabel("Layers"))
+        self.layer_list = QListWidget()
+        self.layer_list.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.layer_list.itemClicked.connect(self._layer_item_clicked)
+        right.addWidget(self.layer_list)
+        layer_btn_row = QHBoxLayout()
+        raise_btn = QPushButton("Up")
+        raise_btn.clicked.connect(self.raise_layer)
+        lower_btn = QPushButton("Down")
+        lower_btn.clicked.connect(self.lower_layer)
+        layer_btn_row.addWidget(raise_btn)
+        layer_btn_row.addWidget(lower_btn)
+        layer_btn_row.addStretch()
+        right.addLayout(layer_btn_row)
+
         h.addLayout(right, 1)
 
         # connect list interactions
@@ -1737,6 +1753,7 @@ class MainWindow(QMainWindow):
         self.scene.addItem(it)
         # render emblem pixmap with current pattern masking
         self.update_emblem_pixmap(it)
+        self.update_layer_list()
 
     def parse_named_colors(self, path: Path):
         text = Path(path).read_text(encoding="utf-8-sig")  # utf-8-sig strips BOM if present
@@ -1829,24 +1846,21 @@ class MainWindow(QMainWindow):
 
     def export_coa(self):
         # collect current pattern filename (if any)
-        # use selected pattern if present, otherwise prompt
-        pattern_name = None
-        name = "TAG"  # default CoA key
-        if getattr(self, "current_pattern_name", None):
-            pattern_name = self.current_pattern_name
+        pattern_name = getattr(self, "current_pattern_name", None)
+        # prompt for country TAG
+        name = "TAG"
+        tag, ok = QInputDialog.getText(
+            self,
+            "Country TAG",
+            "Enter country TAG (e.g., ENG, FRA, TUR):",
+            text=name,
+        )
+        if ok and tag.strip():
+            name = tag.strip()
         # build block
         lines = [f"{name} = {{"]
-        # pattern: prompt user for file name or leave blank
         if pattern_name:
             lines.append(f'    pattern = "{pattern_name}"')
-        else:
-            pat, ok3 = QInputDialog.getText(
-                self,
-                "Pattern filename",
-                "Enter pattern filename (include extension), or leave blank",
-            )
-            if pat:
-                lines.append(f'    pattern = "{pat}"')
         # colors: export picked colors as rgb { r g b }
         qc1 = getattr(self.col1_btn, "_qcolor", None)
         qc2 = getattr(self.col2_btn, "_qcolor", None)
@@ -2538,6 +2552,7 @@ class MainWindow(QMainWindow):
         except Exception:
             pass
 
+        self.update_layer_list()
         QMessageBox.information(self, "Import CoA", "Imported emblems from CoA block")
 
     def on_selection_changed(self):
@@ -2644,6 +2659,7 @@ class MainWindow(QMainWindow):
                         qc = QColor(255, 255, 255)
             b._qcolor = qc
             b.setStyleSheet(f"background-color: {qc.name()};")
+        self.update_layer_list()
 
     def center_selected(self, axis: str = "both"):
         """Center the selected emblem.
@@ -2680,6 +2696,79 @@ class MainWindow(QMainWindow):
             return
         for item in sel:
             self.scene.removeItem(item)
+        self.update_layer_list()
+
+    def update_layer_list(self):
+        try:
+            self.layer_list.blockSignals(True)
+            self.layer_list.clear()
+            emblems = sorted(
+                [i for i in self.scene.items() if isinstance(i, EmblemItem)],
+                key=lambda e: e.zValue(),
+                reverse=True,
+            )
+            sel = self.scene.selectedItems()
+            for e in emblems:
+                name = e.image_path.name
+                item = QListWidgetItem(name)
+                item.setData(Qt.UserRole, id(e))
+                if e in sel:
+                    item.setSelected(True)
+                    self.layer_list.setCurrentItem(item)
+                self.layer_list.addItem(item)
+        except Exception:
+            pass
+        finally:
+            try:
+                self.layer_list.blockSignals(False)
+            except Exception:
+                pass
+
+    def _layer_item_clicked(self, item):
+        target_id = item.data(Qt.UserRole)
+        self.scene.blockSignals(True)
+        for e in self.scene.items():
+            if isinstance(e, EmblemItem) and id(e) == target_id:
+                self.scene.clearSelection()
+                e.setSelected(True)
+                break
+        self.scene.blockSignals(False)
+
+    def raise_layer(self):
+        emblems = sorted(
+            [i for i in self.scene.items() if isinstance(i, EmblemItem)],
+            key=lambda e: e.zValue(),
+            reverse=True,
+        )
+        sel = [i for i in emblems if i.isSelected()]
+        if not sel:
+            return
+        item = sel[0]
+        idx = emblems.index(item)
+        if idx == 0:
+            return
+        above = emblems[idx - 1]
+        item.setZValue(above.zValue())
+        above.setZValue(item.zValue() - 1)
+        self.update_layer_list()
+
+    def lower_layer(self):
+        emblems = sorted(
+            [i for i in self.scene.items() if isinstance(i, EmblemItem)],
+            key=lambda e: e.zValue(),
+            reverse=True,
+        )
+        sel = [i for i in emblems if i.isSelected()]
+        if not sel:
+            return
+        item = sel[0]
+        idx = emblems.index(item)
+        if idx == len(emblems) - 1:
+            return
+        below = emblems[idx + 1]
+        item.setZValue(below.zValue())
+        below.setZValue(item.zValue() + 1)
+        self.update_layer_list()
 
     def reset_canvas(self):
         """Remove all emblems, clear pattern and reset colour pickers to defaults."""
@@ -2758,6 +2847,7 @@ class MainWindow(QMainWindow):
                         break
         except Exception:
             pass
+        self.update_layer_list()
 
     def render_emblem_pixmap(self, item: EmblemItem):
         """Render an emblem PIL -> QPixmap applying recolor and pattern masking if present."""
