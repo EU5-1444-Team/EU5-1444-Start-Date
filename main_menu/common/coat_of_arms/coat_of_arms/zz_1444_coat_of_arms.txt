@@ -1803,7 +1803,7 @@ VIZ = {
     }
 }
 
-ATS = {
+ATS_ancient = {
     # Asturias
     pattern = "pattern_solid.dds"
     color1 = red
@@ -1827,6 +1827,31 @@ ATS = {
     }
 }
 
+ATS = {
+    # Asturias
+    pattern = "pattern_solid.dds"
+    color1 = red
+    sub = {
+        parent = "CAS" # Q1 Castile
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "LON" # Q4 Leon
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "sub_GLC_simple" # Q2 Galicia
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+    }
+    sub = {
+        parent = "sub_GLC_simple" # Q3 Galicia
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = {
+        parent = "sub_div_quarterly_mid"
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }	
+}
 BGZ = {
     # Braganza
 	pattern = "pattern_solid.dds"
@@ -1835,7 +1860,7 @@ BGZ = {
 	color3 = "blue"
 
 	colored_emblem = {
-		texture = "ce_saltire_braganza.dds"
+		texture = "ce_braganza.dds"
 		color1 = color2
 		color2 = color1
 		color3 = color3	
@@ -2025,8 +2050,11 @@ LEC = {
     }
     sub = {
         parent = "sub_div_quarterly_mid"
-		color1 = "black"
-		color2 = "black"
+
+		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_orsini_badge"
 		instance = { scale = { 1.0 1.0 } offset = { 0.0 0.0 } }
     }
 }
@@ -3028,4 +3056,259 @@ NEV_Valois = { # Nevers (Burgundy-Valois)
 		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
 		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
     }
+}
+DZG = { # Danzig
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	colored_emblem = {
+		texture = "ce_cross_patty.dds"
+		color1 = "white"
+		instance = { position = { 0.3 0.425 } scale = {0.5 0.4 } }
+		instance = { position = { 0.3 0.8 } scale = { 0.5 0.4 } }
+	}
+	colored_emblem = {
+		texture = "ce_crown.dds"
+		color1 = "yellow"
+        color2 = "yellow"
+        color3 = "yellow"
+		instance = { position = { 0.3 0.15 } scale = { 0.6 0.5 } }
+	}
+}
+ELB = { # Elbing
+	pattern = "pattern_horizontal_split_01.dds"
+	color1 = "white"
+    color2 = "red"
+	colored_emblem = {
+		texture = "ce_cross_patty.dds"
+		color1 = "white"
+		instance = { position = { 0.3 0.75 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_cross_patty.dds"
+		color1 = "red"
+		instance = { position = { 0.3 0.25 } scale = {0.55 0.55 } }
+	}
+}
+TRL = { #Torontal
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "red"
+	colored_emblem = {
+		texture = "ce_lion_wide.dds"
+		color1 = color2
+		color2 = "blue"
+		color3 = color1
+		instance = { position = { 0.5 0.475 } scale = { 0.7 0.85 } }	
+	}	
+	colored_emblem = {
+		texture = "ce_brankovic_horns_wide.dds"
+		color1 = "blue"
+		color2 = "yellow"
+		color3 = color1
+	}	
+}
+TRA_ancient = { #Torontal
+	pattern = "pattern_vertical_split_01.dds"
+	color1 = "blue"
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_eagle_wide.dds"
+		color1 = "white"
+		color2 = "white"
+		color3 = color1
+        mask = { 1 }
+	}	
+	colored_emblem = {
+		texture = "ce_eagle_wide.dds"
+		color1 = "blue"
+		color2 = "blue"
+		color3 = color1
+        mask = { 2 }
+	}	
+}
+FAG = { #FAGaras
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_fish_okeane.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color1
+		instance = { position = { 0.5 0.3 } scale = { -1.0 1.0 } }	
+		instance = { position = { 0.5 0.7 } scale = { 1.0 1.0 } }	
+	}			
+}
+SVR = { #Severin
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "black"
+	colored_emblem = {
+		texture = "ce_raven_holding_gem_ring.dds"
+		color1 = color2
+		color2 = "yellow"
+		color3 = color1
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }	
+	}			
+}
+AIA = { #Andria
+    pattern = "pattern_solid.dds"
+    color1 = "red"
+    colored_emblem = {
+        texture = "ce_border_engrailed.dds"
+        color1 = "yellow"
+    }
+    colored_emblem = {
+        texture = "ce_star_16.dds"
+        color1 = "white"
+        instance = {  position = { 0.5 0.5 } scale = { 1.0 1.0 } }
+    }
+}
+BBR = {# Bari
+    pattern = "pattern_quarterly_flag.dds"
+    color1 = "yellow"
+    color2 = "blue"
+}
+TTO_baux = { # Taranto Baux
+	pattern = "pattern_tricolor_vertical_01.dds"
+	color1 = "blue"
+	color2 = "red"
+	color3 = "red"
+	color4 = "red_secondary"
+	color5 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = color1
+		color2 = color1
+		mask = { 1 }
+	}
+	colored_emblem = {
+		texture = "ce_semis_fleur_lis_shield.dds"
+		color1 = color5
+		color2 = color5
+		mask = { 1 }
+	}
+	colored_emblem = {
+		texture = "ce_label_05_long.dds"
+		color1 = color4
+		color2 = color4
+		instance = { position = { 0.175 0.45 }  scale = { 0.67 0.85 } }
+		mask = { 1 }
+	}
+	colored_emblem = {
+		texture = "ce_bend_bendlet.dds"
+		color1 = "white"
+		instance = { position = { 0.2 0.5 }  scale = { 0.33 1.0 } }
+		mask = { 1 }
+	}
+	colored_emblem = {
+		texture = "ce_star_16.dds"
+		color1 = "white"
+		instance = { position = { 0.5 0.5 }  scale = { 0.7 1.0 } }
+		mask = { 2 }
+	}
+	colored_emblem = {
+		texture = "ce_eagle_long.dds"
+		color1 = "yellow"
+		color2 = "yellow"
+		instance = { position = { 0.833 0.5 }  scale = { 0.75 0.9 } }
+	}
+	colored_emblem = {
+		texture = "ce_divider_threeway.dds"
+		color1 = "black"
+	}
+}
+TTO = { # Taranto simple
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red_mid"
+
+	colored_emblem = {
+		texture = "ce_semy_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+	}
+	colored_emblem = {
+		texture = "ce_label_03_long.dds"
+		color1 = color3
+		color2 = color3
+	}
+	colored_emblem = {
+		texture = "ce_bend_bendlet.dds"
+		color1 = "white"
+	}
+}
+OTR = { #Otranto
+    pattern = "pattern_solid.dds"
+    color1 = "yellow"
+    colored_emblem = {
+        texture = "ce_pales_04.dds"
+        color1 = "red"
+    }
+    colored_emblem = {
+        texture = "ce_dolphin_otranto.dds"
+        color1 = "grey"
+        color2 = "white"
+        instance = {  position = { 0.5 0.5 } scale = { 1.2 1.0 } }
+    }
+}
+RSA = { #Rossano
+    pattern = "pattern_solid.dds"
+    color1 = "yellow"
+    colored_emblem = {
+        texture = "ce_cross_potenty.dds"
+        color1 = "black"
+    }
+}
+MCA = { #Modica
+    pattern = "pattern_solid.dds"
+    color1 = "yellow"
+    colored_emblem = {
+        texture = "ce_border_crenelated.dds"
+        color1 = "black"
+    }
+    colored_emblem = {
+        texture = "ce_ibex_goat_passant.dds"
+        color1 = "black"
+        color2 = "black"
+        color3 = "yellow"
+        instance = {  position = { 0.5 0.5 } scale = { 1.1 0.9 } }
+    }
+}
+SRR = { #Sora
+    pattern = "pattern_solid.dds"
+    color1 = "yellow"
+    colored_emblem = {
+        texture = "ce_lion_wide.dds"
+        color1 = "red"
+        color2 = "red"
+        color3 = color1
+    }
+    colored_emblem = {
+        texture = "ce_label_03.dds"
+        color1 = "blue"
+      instance = {  position = { 0.5 0.65 } scale = { 1.0 1.0 } }
+    }
+}
+MTC = { #Montecassino (using Carafa arms)
+    pattern = "pattern_solid.dds"
+    color1 = "red"
+    colored_emblem = {
+        texture = "ce_bars_03.dds"
+        color1 = "white"
+    }
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "red"
+		color2 = "red"
+		instance = { position = { 0.5 0.5 }  scale = { 0.33 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_pale_of_holy_church.dds"
+		color1 = "yellow"
+		color2 = "white"
+		color3 = "red"
+	}
 }
