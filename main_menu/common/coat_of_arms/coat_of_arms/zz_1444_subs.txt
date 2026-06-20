@@ -312,3 +312,39 @@ sub_tocco_chief = { # Aragonese Naples
 		color1 = "black"
 	}
 }
+sub_GLC_simple = { # Galicia
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	colored_emblem = {
+		texture = "ce_chalice_covered.dds"
+		color1 = color2
+		color2 = color2
+	}
+}
+sub_orsini_badge = { # orsini
+	#pattern = "pattern_solid.dds"
+	textured_emblem = {
+		texture = "te_orsini_diamond.dds"
+        instance = { position = { 0.5 0.5 } scale = { 0.8 0.8 } }
+	}
+}
+sub_lascaris = { # lascaris
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color4 = hsv360 	{	42	70	98	}	
+	colored_emblem = {
+		texture = "ce_eagle_doubleheaded_wide.dds"
+		color1 = "black"
+		color2 = "red"
+		color3 = color1
+        instance = { position = { 0.5 0.5 } scale = { 1.1 1.0 } }
+	}
+	colored_emblem = { # Q4
+		texture = "ce_crown_byzantine_small_bold.dds"
+		color1 = color4
+		color2 = "yellow_mid"
+		color3 = "black"
+		instance = { position = { 0.5 0.1 } scale = { 0.2 0.2 } }
+	}	
+}

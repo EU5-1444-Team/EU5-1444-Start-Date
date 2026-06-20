@@ -27,22 +27,15 @@ TIS = {
     pattern = "pattern_solid.dds"
     color1 = "black"
     color2 = "red"
-
     colored_emblem = {
-        texture = "ce_roundel.dds"
+        texture = "ce_ulugh_beg_seal.dds"
         color1 = color2 # Changed to use the new medium red (color2)
         color2 = color2 # Changed to use the new medium red (color2)
-        instance = { position = { 0.345 0.70 } scale = { 0.55 0.55 } }
-        instance = { position = { 0.655 0.70 } scale = { 0.55 0.55 } }
-        instance = { position = { 0.5 0.30 } scale = { 0.55 0.55 } }
+        instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }
     }
     colored_emblem = {
-        texture = "ce_frame_circle.dds"
-        color1 = color1
-        color2 = color1
-        instance = { position = { 0.345 0.70 } scale = { 0.125 0.125 } }
-        instance = { position = { 0.655 0.70 } scale = { 0.125 0.125 } }
-        instance = { position = { 0.5 0.30 } scale = { 0.125 0.125 } }
+        texture = "ce_border_fringe.dds"
+        color1 = color2 # Changed to use the new medium red (color2)
     }
 }
 
@@ -118,26 +111,22 @@ TIG = {
 }
 
 TII = {
-    # Irak-i Ajam Timurids
     pattern = "pattern_solid.dds"
     color1 = "black"
     color2 = "red"
-
     colored_emblem = {
-        texture = "ce_roundel.dds"
-        color1 = color2 # Changed to use the new medium red (color2)
-        color2 = color2 # Changed to use the new medium red (color2)
-        instance = { position = { 0.345 0.70 } scale = { 0.55 0.55 } }
-        instance = { position = { 0.655 0.70 } scale = { 0.55 0.55 } }
-        instance = { position = { 0.5 0.30 } scale = { 0.55 0.55 } }
+        texture = "ce_border_orle_thin.dds"
+        color1 = color2 
     }
     colored_emblem = {
-        texture = "ce_frame_circle.dds"
-        color1 = color1
-        color2 = color1
-        instance = { position = { 0.345 0.70 } scale = { 0.125 0.125 } }
-        instance = { position = { 0.655 0.70 } scale = { 0.125 0.125 } }
-        instance = { position = { 0.5 0.30 } scale = { 0.125 0.125 } }
+        texture = "ce_frame_circle_dots.dds"
+        color1 = color2 
+        instance = { position = { 0.5 0.5 } scale = { 0.8 0.8 } }
+    }
+    colored_emblem = {
+        texture = "ce_ajam_seal.dds"
+        color1 = color2 
+        instance = { position = { 0.5 0.49 } scale = { 0.7 0.7 } }
     }
 }
 
@@ -146,22 +135,15 @@ TIF = {
     pattern = "pattern_solid.dds"
     color1 = "black"
     color2 = "red"
-
     colored_emblem = {
-        texture = "ce_roundel.dds"
-        color1 = color2 # Changed to use the new medium red (color2)
-        color2 = color2 # Changed to use the new medium red (color2)
-        instance = { position = { 0.345 0.70 } scale = { 0.55 0.55 } }
-        instance = { position = { 0.655 0.70 } scale = { 0.55 0.55 } }
-        instance = { position = { 0.5 0.30 } scale = { 0.55 0.55 } }
+        texture = "ce_frame_circle_dots.dds"
+        color1 = color2 
+        instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } }
     }
     colored_emblem = {
-        texture = "ce_frame_circle.dds"
-        color1 = color1
-        color2 = color1
-        instance = { position = { 0.345 0.70 } scale = { 0.125 0.125 } }
-        instance = { position = { 0.655 0.70 } scale = { 0.125 0.125 } }
-        instance = { position = { 0.5 0.30 } scale = { 0.125 0.125 } }
+        texture = "ce_abdullah_mizra_seal.dds"
+        color1 = color2 
+        instance = { position = { 0.5 0.49 } scale = { 0.825 0.825 } }
     }
 }
 AFG = {
@@ -191,5 +173,28 @@ TIX = {
         instance = { position = { 0.345 0.70 } scale = { 0.125 0.125 } }
         instance = { position = { 0.655 0.70 } scale = { 0.125 0.125 } }
         instance = { position = { 0.5 0.30 } scale = { 0.125 0.125 } }
+    }
+}
+TIM_ulugh = {
+    # Timurid Ulugh
+    pattern = "pattern_solid.dds"
+    color1 = "black"
+    color2 = "red"
+
+    colored_emblem = {
+        texture = "ce_roundel.dds"
+        color1 = color2
+        color2 = color2
+        instance = { position = { 0.345 0.30 } scale = { 0.55 0.55 } }
+        instance = { position = { 0.655 0.30 } scale = { 0.55 0.55 } }
+        instance = { position = { 0.5 0.70 } scale = { 0.55 0.55 } }
+    }
+    colored_emblem = {
+        texture = "ce_frame_circle.dds"
+        color1 = color1
+        color2 = color1
+        instance = { position = { 0.345 0.30 } scale = { 0.125 0.125 } }
+        instance = { position = { 0.655 0.30 } scale = { 0.125 0.125 } }
+        instance = { position = { 0.5 0.70 } scale = { 0.125 0.125 } }
     }
 }
