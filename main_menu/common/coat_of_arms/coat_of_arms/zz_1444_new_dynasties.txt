@@ -49,3 +49,59 @@ pavlovic_dynasty = {
         instance = { position = { 0.500 0.44 }   scale = { 0.8 0.8 }}
     }
 }
+
+sommaripa_dynasty = {
+    pattern = "pattern_solid.dds"
+    color1 = "white"
+    color2 = hsv360 { 205 90 58 }
+    color3 = "yellow"
+
+    colored_emblem = {
+        texture = "ce_bars_03_shield.dds"
+        color1 = color2
+        color2 = color1
+    }
+    colored_emblem = {
+        texture = "ce_lion_rampant_shield.dds"
+        color1 = color3
+        color2 = color3
+        color3 = color1
+        instance = { position = { 0.5 0.475 } scale = { 0.9 0.9 } }
+    }
+}
+
+d_aulnay_dynasty = {
+    pattern = "pattern_solid.dds"
+    color1 = "white"
+    color2 = "black"
+    color3 = "red"
+
+    colored_emblem = {
+        texture = "ce_lion_rampant_shield.dds"
+        color1 = color2
+        color2 = color3
+        color3 = color1
+        instance = { position = { 0.5 0.475 } scale = { 0.9 0.9 } }
+    }
+}
+
+barbaro_dynasty = {
+    pattern = "pattern_solid.dds"
+    color1 = white
+    colored_emblem = {
+        texture = "ce_frame_circle.dds"
+        color1 = red
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 0.6 0.6 }
+        }
+    }
+    colored_emblem = {
+        texture = "ce_frame_circle.dds"
+        color1 = white
+        instance = {
+            position = { 0.500 0.500 }
+            scale = { 0.35 0.35 }
+        }
+    }
+}

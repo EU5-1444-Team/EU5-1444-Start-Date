@@ -24741,8 +24741,59 @@ countries = {
 
     NEG = {
         #Negroponte https://en.wikipedia.org/wiki/Triarchy_of_Negroponte
+        type = building
+        capital = negroponte
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "expl_silk_road_west"
+        include = "expl_silk_road_center"
+        include = "expl_silk_road_east"
+        include = "expl_indian_trade_route"
+        include = "catholic_monarchy"
+        government = {
+            type = republic
+            heir_selection = oligarchic_elective
+            ruler = neg_matteo_barbaro
+
+            regnal_numbers = {
+                name_richard = 1
+                name_carintana = 1
+                name_narzotto = 1
+                name_grapella = 1
+                name_cajetan = 1
+                name_grapozzo = 1
+                name_mary = 1
+                name_andrew = 1
+                name_gilbert = 2
+                name_raven = 1
+                name_william = 2
+                name_albert = 1
+                name_beatrix = 1
+                name_john = 1
+                name_peter = 1
+                name_elizabeth = 1
+                name_bertha = 1
+                name_marinus = 2
+                name_alice = 1
+                name_george = 1
+                name_bartholomew = 1
+            }
+        }
+
+        tolerated_cultures = {
+            greek_culture
+        }
+
+        court_language = venetian_dialect
+    }
+
+    # --- NEG ---
+
+    CKS = {
+        #Chalkis - Central Terziere
         own_control_core = {
-            negroponte kleisoura karystos kymi oreos eretreia
+            negroponte eretreia
         }
 
         starting_technology_level = 3
@@ -24755,9 +24806,7 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = neg_matteo_barbaro
-
-            ruler_term = { character = neg_pietro_dalle_carceri start_date = 1323.1.1 regnal_number = 1 }
+            ruler = cks_crusino_sommaripa
 
             regnal_numbers = {
                 name_richard = 1
@@ -24792,7 +24841,70 @@ countries = {
         capital = negroponte
     }
 
-    # --- NEG ---
+    # -- - CKS ---
+
+    ORS = {
+        #Oreos - Northern Terziere
+        own_control_core = {
+            oreos kleisoura
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = ors_goffredo_aulnay
+
+            regnal_numbers = {
+                name_cajetan = 2
+                name_andrew = 1
+                name_john = 1
+                name_marinus = 1
+            }
+        }
+
+        tolerated_cultures = {
+            greek_culture
+        }
+
+        court_language = venetian_dialect
+        capital = oreos
+    }
+
+    # --- ORS ---
+
+    KYS = {
+        #Karystos - Southern Terziere
+        own_control_core = {
+            karystos kymi
+        }
+
+        starting_technology_level = 3
+        include = "expl_mediterranean"
+        include = "catholic_monarchy"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = kys_jacopo_zorzi
+
+            regnal_numbers = {
+                name_george = 2
+                name_bartholomew = 1
+                name_marinus = 1
+            }
+        }
+
+        tolerated_cultures = {
+            greek_culture
+        }
+
+        court_language = venetian_dialect
+        capital = karystos
+    }
+
+    # --- KYS ---
 
     NAX = {
         #https://en.wikipedia.org/wiki/Duchy_of_the_Archipelago

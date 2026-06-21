@@ -1,0 +1,39 @@
+negroponte_triarchy_land_ownership = {
+	modifier = {
+	}
+	can_add_trigger = {
+		always = yes
+	}
+	can_remove_trigger = {
+		always = yes
+	}
+	can_add_location_trigger = {
+		is_land = yes
+		is_passable = yes
+		owner ?= {
+			is_member_of_international_organization = scope:recipient
+		}
+		OR = {
+			province = province:euboea_province
+		}
+	}
+	can_remove_location_trigger = {
+		OR = {
+			owner ?= {
+				NOT = {
+					is_member_of_international_organization = scope:recipient
+				}
+			}
+			NOT = {
+				province = province:euboea_province
+			}
+		}
+	}
+	on_added = {
+	}
+	on_removed = {
+	}
+	ai_desire_to_add = {
+	}
+	allow_control_propagation = yes
+}

@@ -555,3 +555,134 @@ io_unification.120 = { # Northern Yuan unification (Mongolia path)
 		}
 	}
 }
+
+# Negroponte unification
+io_unification.200 = {
+	type = country_event
+	title = io_unification.200.title
+	desc = io_unification.200.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = io_unification.200.a
+		if = {
+			limit = { exists = international_organization:negroponte_triarchy }
+			custom_tooltip = {
+				text = io_unification.200.ctt
+				international_organization:negroponte_triarchy = {
+					every_international_organization_member = {
+						limit = {
+							NOT = { this = root }
+							NOT = {
+								has_special_status_in_international_organization = {
+									type = special_status:negroponte_bailate
+									international_organization = international_organization:negroponte_triarchy
+								}
+							}
+						}
+						trigger_event_silently = { id = io_unification.201 }
+					}
+				}
+			}
+		}
+	}
+}
+
+# Common terziere annexation event
+io_unification.201 = {
+	type = country_event
+	title = io_unification.1.title
+	desc = io_unification.1.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = io_unification.1.a
+		if = {
+			limit = { exists = international_organization:negroponte_triarchy }
+			international_organization:negroponte_triarchy = {
+				leader_country = {
+					annex_country_diplomatically = { country = root }
+				}
+			}
+		}
+	}
+}
+
+# Negroponte dissolution
+io_unification.202 = {
+	type = country_event
+	title = io_unification.202.title
+	desc = io_unification.202.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = io_unification.202.a
+		if = {
+			limit = { exists = c:NEG }
+			c:NEG = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							tag = CKS
+							tag = ORS
+							tag = KYS
+						}
+					}
+					c:VEN = {
+						create_subject = {
+							target = prev
+							type = subject_type:vassal
+						}
+					}
+				}
+			}
+		}
+		c:VEN = {
+			create_subject = {
+				target = c:CKS
+				type = subject_type:vassal
+			}
+			create_subject = {
+				target = c:ORS
+				type = subject_type:vassal
+			}
+			create_subject = {
+				target = c:KYS
+				type = subject_type:vassal
+			}
+		}
+		if = {
+			limit = { exists = international_organization:negroponte_triarchy }
+			international_organization:negroponte_triarchy = {
+				remove_country_from_international_organization = { country = c:NEG }
+			}
+		}
+	}
+}

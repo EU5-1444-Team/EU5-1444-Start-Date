@@ -1,0 +1,113 @@
+negroponte_unification_law = {
+	law_category = centralization
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:negroponte_triarchy
+	}
+	allow = {
+		any_international_organization_member = {
+			count >= 2
+		}
+	}
+	custom_tags = {
+		forbids_no_policy
+	}
+	preserve_negroponte_triarchy_policy = {
+		allow = {
+			scope:actor ?= {
+				tag = NEG
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+	unify_negroponte_policy = {
+		allow = {
+			scope:actor ?= {
+				tag = NEG
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				value = 500
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				value = prev_opinion_of_this
+				multiply = 0.3
+			}
+		}
+		on_fully_activated = {
+			custom_tooltip = unify_negroponte_tt
+			leader_country = {
+				trigger_event_non_silently = { id = io_unification.200 }
+			}
+		}
+		years = 10
+	}
+}
+
+negroponte_dissolution_law = {
+	law_category = centralization
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:negroponte_triarchy
+	}
+	allow = {
+		any_international_organization_member = {
+			count >= 2
+		}
+	}
+	custom_tags = {
+		forbids_no_policy
+	}
+	maintain_negroponte_bailate_policy = {
+		allow = {
+			scope:actor ?= {
+				OR = {
+					tag = CKS
+					tag = ORS
+					tag = KYS
+				}
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				value = 1000
+			}
+		}
+	}
+	dissolve_negroponte_bailate_policy = {
+		allow = {
+			scope:actor ?= {
+				OR = {
+					tag = CKS
+					tag = ORS
+					tag = KYS
+				}
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				value = 500
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				value = prev_opinion_of_this
+				multiply = 0.3
+			}
+		}
+		on_fully_activated = {
+			custom_tooltip = dissolve_negroponte_tt
+			scope:actor = {
+				trigger_event_non_silently = { id = io_unification.202 }
+			}
+		}
+		years = 10
+	}
+}

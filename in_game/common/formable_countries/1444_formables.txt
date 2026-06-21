@@ -1,4 +1,39 @@
-﻿UYG_f = {
+﻿NEG_f = {
+	level = 1
+	required_locations_fraction = 1.0
+	rule = historical
+
+	potential = {
+		NOT = { tag = NEG }
+		OR = {
+			tag = CKS
+			tag = ORS
+			tag = KYS
+		}
+		is_member_of_international_organization = international_organization:negroponte_triarchy
+		is_leader_of_international_organization = international_organization:negroponte_triarchy
+	}
+
+	allow = {
+		owns = location:negroponte
+		owns = location:eretreia
+		owns = location:oreos
+		owns = location:kleisoura
+		owns = location:karystos
+		owns = location:kymi
+	}
+
+	name = NEG
+	flag = NEG
+	adjective = NEG_ADJ
+	tag = NEG
+	color = rgb { 95 105 100 }
+
+	form_effect = {
+	}
+}
+
+UYG_f = {
 	level = 2
 	required_locations_fraction = 0.8
 	rule = historical

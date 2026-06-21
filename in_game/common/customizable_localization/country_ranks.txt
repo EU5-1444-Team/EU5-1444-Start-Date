@@ -750,7 +750,11 @@
 	text = {
 		localization_key = rank_county_bailate
 		trigger = {
-			tag = CFU
+			OR = {
+				tag = CFU
+				tag = NEG
+			}
+			is_subject_of = c:VEN
 		}
 	}
 	text = {
@@ -766,9 +770,13 @@
 		}
 	}
 	text = {
-		localization_key = rank_triarchy
+		localization_key = rank_terzieri
 		trigger = {
-			tag = NEG
+			OR = {
+				tag = CKS
+				tag = ORS
+				tag = KYS
+			}
 		}
 	}
 	text = {

@@ -1,0 +1,220 @@
+negroponte_triarchy = {
+	has_target = no
+	unique = yes
+	show_on_diplomatic_map = yes
+	has_leader_country = yes
+	subject_limited = no
+	expel_members_who_are_targets_of_other_members = no
+	expel_members_who_target_the_leader = no
+	expel_members_who_are_attackers_at_war_with_other_members = no
+	expel_members_who_are_defenders_at_war_with_other_members = no
+	leader_title_key = "NEGROPONTE_TRIARCHY_LEADER"
+	leader_type = character
+	leader = {
+		leader_country ?= {
+			if = {
+				limit = {
+					has_regent = yes
+					has_heir = yes
+				}
+				heir ?= {
+					add_to_list = leaders
+				}
+			}
+			else_if = {
+				limit = {
+					has_ruler = yes
+					ruler ?= {
+						is_alive = yes
+					}
+				}
+				ruler ?= {
+					add_to_list = leaders
+				}
+			}
+		}
+	}
+	leader_change_trigger_type = rulerchange
+	leader_change_method = vote
+	leadership_election_resolution = negroponte_triarchy_election
+	leader_score = {
+		value = great_power_score
+	}
+	disband_if_no_leader = no
+	create_visible_trigger = {
+		always = no
+	}
+	invite_visible_trigger = {
+		always = yes
+	}
+	join_visible_trigger = {
+		always = no
+	}
+	join_enabled_trigger = {
+		always = no
+	}
+	can_lead_trigger = {
+		OR = {
+			AND = {
+				scope:recipient = {
+					leader_country ?= root
+				}
+				heir ?= {
+					is_adult = yes
+				}
+			}
+			AND = {
+				scope:recipient = {
+					NOT = {
+						leader_country ?= root
+					}
+				}
+				ruler ?= {
+					is_adult = yes
+				}
+			}
+		}
+	}
+	can_declare_war = {
+		always = yes
+	}
+	can_initiate_policy_votes = {
+		is_member_of_international_organization = international_organization:negroponte_triarchy
+		is_leader_of_international_organization = international_organization:negroponte_triarchy
+	}
+	special_statuses_implemented = {
+		negroponte_bailate
+		negroponte_terziere
+	}
+	laws = {
+		negroponte_unification_law = preserve_negroponte_triarchy_policy
+		negroponte_dissolution_law = maintain_negroponte_bailate_policy
+	}
+	land_ownership_rule = negroponte_triarchy_land_ownership
+	can_join_trigger = {
+		is_rebel_country = no
+		OR = {
+			tag = CKS
+			tag = ORS
+			tag = KYS
+		}
+		international_organization:negroponte_triarchy = {
+			international_organization_has_leader = yes
+		}
+		opinion = {
+			target = international_organization:negroponte_triarchy.leader_country
+			value >= 50
+		}
+	}
+	ai_desire_to_join = {
+		always = 0
+	}
+	ai_desire_to_allow_new_member = {
+		always = 0
+	}
+	can_leave_trigger = {
+		always = no
+	}
+	auto_leave_trigger = {
+		always = no
+	}
+	auto_disband_trigger = {
+		any_international_organization_member = {
+			count < 2
+		}
+	}
+	on_creation = {
+		every_country_with_special_status_of_type = {
+			type = negroponte_bailate
+			international_organization:negroponte_triarchy = {
+				international_organization_remove_special_status = {
+					type = special_status:negroponte_bailate
+					country = prev
+				}
+			}
+		}
+		every_country_with_special_status_of_type = {
+			type = negroponte_terziere
+			international_organization:negroponte_triarchy = {
+				international_organization_remove_special_status = {
+					type = special_status:negroponte_terziere
+					country = prev
+				}
+			}
+		}
+		every_international_organization_member = {
+			if = {
+				limit = {
+					is_leader_of_international_organization = international_organization:negroponte_triarchy
+				}
+				international_organization:negroponte_triarchy = {
+					international_organization_add_special_status = {
+						type = special_status:negroponte_bailate
+						country = prev
+					}
+				}
+			}
+			else = {
+				international_organization:negroponte_triarchy = {
+					international_organization_add_special_status = {
+						type = special_status:negroponte_terziere
+						country = prev
+					}
+				}
+			}
+		}
+	}
+	on_joined = {
+		hidden_effect = {
+			every_owned_location = {
+				limit = {
+					province = province:euboea_province
+				}
+				international_organization:negroponte_triarchy = {
+					add_location_to_international_organization = prev
+				}
+			}
+			if = {
+				limit = {
+					is_leader_of_international_organization = international_organization:negroponte_triarchy
+				}
+				international_organization:negroponte_triarchy = {
+					international_organization_add_special_status = {
+						type = special_status:negroponte_bailate
+						country = root
+					}
+				}
+			}
+			else = {
+				international_organization:negroponte_triarchy = {
+					international_organization_add_special_status = {
+						type = special_status:negroponte_terziere
+						country = root
+					}
+				}
+			}
+		}
+	}
+	on_left = {
+		hidden_effect = {
+			every_owned_location = {
+				limit = {
+					is_owned_by_international_organization = international_organization:negroponte_triarchy
+				}
+				international_organization:negroponte_triarchy = {
+					remove_location_from_international_organization = prev
+				}
+			}
+			international_organization:negroponte_triarchy = {
+				international_organization_remove_special_status = {
+					type = special_status:negroponte_bailate
+					country = root
+				}
+				international_organization_remove_special_status = {
+					type = special_status:negroponte_terziere
+					country = root
+				}
+			}
+		}
+	}
+}
