@@ -1,4 +1,43 @@
-﻿mount_athos_monastery = {
+﻿crown_seat = {
+    is_special = yes
+    is_foreign = yes
+    stronger_power_projection = no
+    need_good_relation = yes
+    pop_type = nobles
+    category = government_category
+    max_levels = 1
+    employment_size = large_noble_employment
+    town = yes
+    city = yes
+    megalopolis = yes
+    expensive = yes
+    build_time = large_capital_build_time
+
+    country_potential = {
+        is_member_of_international_organization = international_organization:composite_monarchy
+    }
+
+    allow = {
+        owner = {
+            is_member_of_international_organization = international_organization:composite_monarchy
+        }
+    }
+
+    capital_country_modifier = {
+        monthly_prestige = 0.05
+    }
+
+    is_indestructible = yes
+    can_close = no
+
+    modifier = {
+        local_unrest = -0.05
+        local_nobles_estate_power = 0.1
+        local_max_control = 0.05
+    }
+}
+
+mount_athos_monastery = {
 	is_foreign = yes
 	max_levels = 1
 	pop_type = clergy
