@@ -1032,3 +1032,115 @@ FPN = { # Senj
 		}
 	}
 }
+REPLACE:TRA = { # Transylvania
+	flag_definition = {
+		coa = TRA
+		priority = 1
+	}
+flag_definition = {
+		coa = TRA_ancient
+		priority = 5
+		trigger = {
+				coa_def_HUN_ensign_trigger = yes
+		}
+	}	
+	flag_definition = {
+		coa = TRA_hungarian
+		priority = 20
+		trigger = {
+			NOT = { country_exists = c:SBN }
+			OR = {
+				coa_def_HUN_ensign_trigger = yes
+				coa_def_german_trigger = yes
+			}
+		}
+	}		
+}
+SBN = { # Siebenburgen
+	flag_definition = {
+		coa = TRA_hungarian
+		priority = 1
+	}	
+}
+OLT = { # Siebenburgen
+	flag_definition = {
+		coa = RMN_cumania
+		priority = 1
+	}	
+}
+TIM = { # Timurids
+	flag_definition = {
+		coa = TIM
+		priority = 1
+	}
+flag_definition = {
+		coa = TIM_ulugh
+		priority = 5
+		trigger = {
+			scope:actor ?= { has_or_had_tag = TIS }
+		}
+	}		
+}
+TTO = { # Taranto
+	flag_definition = {
+		coa = TTO
+		priority = 1
+	}
+flag_definition = {
+		coa = TTO_baux
+		priority = 5
+		trigger = {
+	OR = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:frankopan_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:baux_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:baux_dynasty
+					}
+				}
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:orsini_balzo_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:orsini_balzo_dynasty
+					}
+				}
+			}
+		}
+	}		
+}
+VMG = { # Ventimiglia
+	flag_definition = {
+		coa = VMG
+		priority = 1
+	}
+flag_definition = {
+		coa = VMG_lascaris
+		priority = 5
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:lascaris_ventimiglia_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:lascaris_ventimiglia_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:lascaris_ventimiglia_dynasty
+					}
+				}
+		}
+	}		
+}
