@@ -416,7 +416,7 @@ REPLACE:NAP = { # Naples
 				coa_def_french_trigger = yes
 				coa_def_french_ruler_trigger = yes
 				coa_def_FRA_ensign_trigger = yes
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 			}
 		}
 	}
@@ -575,7 +575,7 @@ REPLACE:ENG = { # England
 		trigger = {
 			coa_def_monarchy_trigger = yes		
 			NOT = { has_variable = has_had_war_of_the_roses_disaster }
-			NOT = { coa_def_capetian_trigger = yes }
+			NOT = { z_coa_def_capetian_trigger = yes }
 		}
 	}
 		flag_definition = {
@@ -597,7 +597,7 @@ REPLACE:ENG = { # England
 		trigger = {
 			coa_def_monarchy_trigger = yes
 			NOT = { has_variable = has_had_war_of_the_roses_disaster }
-			NOT = { coa_def_capetian_trigger = yes }
+			NOT = { z_coa_def_capetian_trigger = yes }
 		}
 	}
 	flag_definition = {
@@ -607,7 +607,7 @@ REPLACE:ENG = { # England
 		priority = 16
 		trigger = {
 			coa_def_monarchy_trigger = yes
-			coa_def_capetian_trigger = yes
+			z_coa_def_capetian_trigger = yes
 		}
 	}
 	flag_definition = {
@@ -1257,7 +1257,7 @@ REPLACE:SCO = { # Scotland
 		trigger = {
 			coa_def_monarchy_trigger = yes
 			OR = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 				coa_def_FRA_ensign_trigger = yes
 			}
 		}
@@ -1270,7 +1270,7 @@ REPLACE:SCO = { # Scotland
 			coa_def_monarchy_trigger = yes
 			coa_def_discovery_age_3_trigger = yes
 			OR = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 				coa_def_FRA_ensign_trigger = yes
 			}
 		}
@@ -1348,7 +1348,7 @@ REPLACE:DAU = { # Viennois
 		priority = 2
 		trigger = {
 			OR = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 				coa_def_FRA_ensign_trigger = yes
 			}
 		}
@@ -1358,7 +1358,7 @@ REPLACE:DAU = { # Viennois
 		priority = 3
 		trigger = {
 			OR = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 				coa_def_FRA_ensign_trigger = yes
 			}
 		}
@@ -1387,7 +1387,7 @@ REPLACE:MRC = { # La Marche
 		priority = 2
 		trigger = {
 			OR = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 				coa_def_FRA_ensign_trigger = yes
 			}
 		}
@@ -1397,7 +1397,7 @@ REPLACE:MRC = { # La Marche
 		priority = 3
 		trigger = {
 			OR = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 				coa_def_FRA_ensign_trigger = yes
 			}
 		}
@@ -1433,7 +1433,7 @@ REPLACE:ORL = { # Orléans
 		priority = 3
 	}
 }
-REPLACE:ANG = { # Angoulême - with the cadency mark if Orléans exists
+REPLACE:ANG = { # Angoulême 
 	flag_definition = {
 		coa = ANG
 		priority = 1
@@ -1442,14 +1442,14 @@ REPLACE:ANG = { # Angoulême - with the cadency mark if Orléans exists
 		coa = ANG_capetian
 		priority = 50
 		trigger = {
-			coa_def_capetian_trigger = yes
+			z_coa_def_capetian_trigger = yes
 		}
 	}
 	flag_definition = {
 		coa = ANG_france
-		priority = 60
+		priority = 100
 		trigger = {
-			coa_def_capetian_trigger = yes
+			z_coa_def_capetian_trigger = yes
 		}
 	}
 }
@@ -1463,7 +1463,7 @@ REPLACE:BOU = { # Bourbonnais
 		priority = 2
 		trigger = {
 			OR = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 				coa_def_FRA_ensign_trigger = yes
 			}
 		}
@@ -1473,7 +1473,7 @@ REPLACE:BOU = { # Bourbonnais
 		priority = 3
 		trigger = {
 			OR = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 				coa_def_FRA_ensign_trigger = yes
 			}
 		}
@@ -1488,7 +1488,7 @@ VDM = { # Vendôme
 		coa = VDM_bourbon
 		priority = 2
 		trigger = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 		}
 	}
 }
@@ -1501,7 +1501,7 @@ CBU = { # Clermont
 		coa = CBU_bourbon
 		priority = 2
 		trigger = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 		}
 	}
 }
@@ -1514,7 +1514,7 @@ BJU = { # Beaujeu
 		coa = BJU_bourbon
 		priority = 2
 		trigger = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 		}
 	}
 }
@@ -1527,7 +1527,7 @@ CMB = { # Combraille
 		coa = CMB_bourbon
 		priority = 2
 		trigger = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 		}
 	}
 }
@@ -1540,7 +1540,7 @@ FRZ = { # Forez
 		coa = FRZ_bourbon
 		priority = 2
 		trigger = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 		}
 	}
 }
@@ -1553,7 +1553,7 @@ DAV = { # Dauphinate of Auvergne
 		coa = DAV_bourbon
 		priority = 2
 		trigger = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 		}
 	}
 }
@@ -1566,7 +1566,7 @@ DEI = { # Die
 		coa = DEI_capetian
 		priority = 2
 		trigger = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 			scope:actor = {
 				any_overlord_or_above = { has_or_had_tag = DAU }
 			}
@@ -1582,7 +1582,7 @@ LGV = { # Longueville
 		coa = LGV_orleans
 		priority = 2
 		trigger = {
-				coa_def_capetian_trigger = yes
+				z_coa_def_capetian_trigger = yes
 		}
 	}
 	flag_definition = {
@@ -1797,6 +1797,128 @@ ORD = { # Ormond
 					heir.dynasty ?= dynasty:douglas_dynasty
 				}
 			}
+		}
+	}
+}
+REPLACE:ANG = { # Angoulême 
+	flag_definition = {
+		coa = ANG
+		priority = 1
+	}
+	flag_definition = {
+		coa = ANG_capetian
+		priority = 50
+		trigger = {
+			z_coa_def_capetian_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = ANG_france
+		priority = 100
+		trigger = {
+			z_coa_def_capetian_trigger = yes
+		}
+	}
+}
+LMG = { # Limoges 
+	flag_definition = {
+		coa = LMG
+		priority = 1
+	}
+	flag_definition = {
+		coa = LMG_dreux
+		priority = 50
+		trigger = {
+			OR = {	
+			scope:actor = {
+				any_overlord_or_above = { has_or_had_tag = BRI }
+			}
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:chatillon_penthievre_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:chatillon_penthievre_dynasty
+					}
+				}
+			}
+		}
+	}
+}
+PER = { # Perigord 
+	flag_definition = {
+		coa = PER
+		priority = 1
+	}
+	flag_definition = {
+		coa = PER_BRI
+		priority = 50
+		trigger = {
+			OR = {	
+			scope:actor = {
+				any_overlord_or_above = { has_or_had_tag = BRI }
+			}
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:chatillon_penthievre_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:chatillon_penthievre_dynasty
+					}
+				}
+			}
+		}
+	}
+}
+THR = { # Thouars 
+	flag_definition = {
+		coa = THR
+		priority = 1
+	}
+	flag_definition = {
+		coa = THR_amboise
+		priority = 50
+		trigger = {
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:amboise_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:amboise_dynasty
+					}
+				}
+		}
+	}
+}
+DRE = { # Dreux 
+	flag_definition = {
+		coa = DRE
+		priority = 1
+	}
+	flag_definition = {
+		coa = DRE_albret
+		priority = 50
+		trigger = {
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:albret_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:albret_dynasty
+					}
+				}
 		}
 	}
 }

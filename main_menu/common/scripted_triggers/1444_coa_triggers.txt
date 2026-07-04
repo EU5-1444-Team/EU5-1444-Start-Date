@@ -150,7 +150,7 @@ coa_def_BRB_ownership_trigger = {
 		}
 	}
 }
-coa_def_capetian_trigger = { # Royal house including all branches
+z_coa_def_capetian_trigger = { # Royal house including all branches
 	scope:actor ?= {
 		ruler ?= {
 			dynasty ?= {
@@ -176,7 +176,7 @@ coa_def_capetian_trigger = { # Royal house including all branches
 	}
 }
 
-coa_def_capetian_semy_trigger = { # Only the late capetians
+z_coa_def_capetian_semy_trigger = { # Only the late capetians
 	scope:actor.ruler.dynasty ?= {
 		OR = {			
 			dynasty:anjou_dynasty ?= this

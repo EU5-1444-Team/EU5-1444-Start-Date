@@ -1,4 +1,20 @@
-﻿ALR = { 
+﻿@ratio = 1.5 # how wide the flags are compared to their height
+@height = 512 
+@width =  @[height*ratio]
+
+@five_sixths = @[5/6]
+@three_quarters = @[3/4]
+@two_thirds = @[2/3]
+@half = @[1/2]
+@third = @[1/3]
+@quarter = @[1/4]
+@sixth = @[1/6]
+
+@semy = 0.27
+
+@canton_scale_cross_x = @[ ( 333 / 768 ) + 0.001 ]
+@canton_scale_cross_y = @[ ( 205 / 512 ) + 0.001 ]
+ALR = { 
 	pattern = "pattern_solid.dds"
 	color1 = "red"
 	color2 = "blue"
@@ -419,4 +435,410 @@ LGV_douglas = { # Longueville
     sub = { # quartering
         parent = "sub_div_quarterly_mid" 
     }			
+}
+PVR = { # Penthievre
+    pattern = "pattern_solid.dds"
+    color1 = "white"
+    color2 = "black"
+    color3 = "red"
+    colored_emblem = {
+        texture = "ce_ermine_border.dds"
+        color1 = color1
+        color2 = color2
+        color3 = color3
+    }  	
+}
+LMG = { # Limoges
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "blue"
+	color3 = "blue"
+	
+	colored_emblem = {
+		texture = "ce_lion_wide.dds"
+		color1 = color2
+		color2 = color3
+		color3 = color3
+		instance = { position = { 0.34 0.28 } scale = { 0.55 0.55 }  }
+		instance = { position = { 0.66 0.28 } scale = { 0.55 0.55 }  }
+		instance = { position = { 0.5 0.72 } scale = { 0.55 0.55 }  }		
+	}	
+}
+LMG_dreux = { # Limoges
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "blue"
+	color3 = "red"
+	
+	colored_emblem = {
+		texture = "ce_checky_06.dds"
+		color1 = color2
+		color2 = color1	
+	}	
+	colored_emblem = {
+		texture = "ce_border_engrailed.dds"
+		color1 = color3
+	}	
+	colored_emblem = {
+		texture = "ce_canton_ermine.dds"
+		color1 = "white"
+		color2 = "black"
+	}	
+}
+BLS = { # Blois (Châtillon)
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "yellow"
+	color3 = "white"
+	color4 = "blue"
+
+	colored_emblem = {
+		texture = "ce_pales_03.dds"
+		color1 = color3
+		color2 = color3
+	}		
+	colored_emblem = {
+		texture = "ce_chief.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.5 0.48 } scale = { 1.0 1.0 } }		
+	}	
+	colored_emblem = {
+		texture = "ce_vair_spot.dds"
+		color1 = color4
+		color2 = color4
+		instance = { position = { 0.214 0.413 } scale = { 0.218 0.168 } }	
+		instance = { position = { 0.214 0.749 } scale = { 0.218 0.168 } }			
+		instance = { position = { 0.5 0.413 } scale = { 0.218 0.168 } }	
+		instance = { position = { 0.5 0.749 } scale = { 0.218 0.168 } }	
+		instance = { position = { 0.786 0.413 } scale = { 0.218 0.168 } }	
+		instance = { position = { 0.786 0.749 } scale = { 0.218 0.168 } }				
+	}	
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = color4
+		color2 = color4
+		instance = { position = { 0.214 0.581 } scale = { 0.146 0.168 } }		
+		instance = { position = { 0.214 0.916 } scale = { 0.146 0.168 } }			
+		instance = { position = { 0.5 0.581 } scale = { 0.146 0.168 } }		
+		instance = { position = { 0.5 0.916 } scale = { 0.146 0.168 } }		
+		instance = { position = { 0.786 0.581 } scale = { 0.146 0.168 } }		
+		instance = { position = { 0.786 0.916 } scale = { 0.146 0.168 } }			
+	}		
+	colored_emblem = {
+		texture = "ce_vair_spot.dds"
+		color1 = color3
+		color2 = color3
+		instance = { position = { 0.214 0.581 } scale = { 0.218 -0.168 } }	
+		instance = { position = { 0.214 0.916 } scale = { 0.218 -0.168 } }		
+		instance = { position = { 0.5 0.581 } scale = { 0.218 -0.168 } }	
+		instance = { position = { 0.5 0.916 } scale = { 0.218 -0.168 } }			
+		instance = { position = { 0.786 0.581 } scale = { 0.218 -0.168 } }	
+		instance = { position = { 0.786 0.916 } scale = { 0.218 -0.168 } }			
+	}	
+	colored_emblem = {
+		texture = "ce_label_04.dds"
+		color1 = color4
+		instance = { position = { 0.5 0.35 } scale = { 1.0 0.7 } }		
+	}			
+}
+PER_BRI = { # Perigord brittany	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "PVR" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "PER" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }
+}
+TUE = { # Turenne	
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "CMB" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+	colored_emblem = {
+		texture = "ce_bends_04.dds"
+		color1 = "red"
+		instance = { position = { 0.75 0.25 } scale = { 0.5 0.5 } }		
+		instance = { position = { 0.25 0.75 } scale = { 0.5 0.5 } }		
+	}
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }
+}
+RDZ = { # 	
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "yellow"
+	colored_emblem = {
+		texture = "ce_lion_guardant_wide.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color1
+	}
+}
+CST = { # Armagnac-Castres
+	pattern = "pattern_quarterly_inverse_flag.dds"
+	color1 = "red"
+	color2 = "white"
+	color3 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_lion_wide.dds"
+		color1 = "red"
+		color2 = "red"
+		color3 = "white"
+		instance = { position = { 0.75 0.75 } scale = { 0.5 0.5 } }
+		instance = { position = { 0.25 0.25 } scale = { 0.5 0.5 } }
+	}
+	colored_emblem = {
+		texture = "ce_lion_guardant_wide.dds"
+		color1 = "yellow"
+		color2 = "yellow"
+		color3 = "red"
+		instance = { position = { 0.75 0.25 } scale = { 0.5 0.5 } }
+		instance = { position = { 0.25 0.75 } scale = { 0.5 0.5 } }
+	}
+	colored_emblem = {
+		texture = "ce_divider_quarterly.dds"
+		color1 = "red_light"
+	}
+	colored_emblem = {
+		texture = "ce_label_03.dds"
+		color1 = "blue"
+	}
+}
+NMR = { # Nemours	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "MRC_three_fleurs" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "CST" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }
+}
+JOI = { # Joigny-
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "red"
+	color3 = "blue"
+
+	colored_emblem = {
+		texture = "ce_eagle_canton.dds"
+		color1 = color3
+		color2 = color2
+		color3 = color1
+		instance = { position = { 0.5 0.75 } scale = { 0.5 0.5 } }
+		instance = { position = { 0.15 0.25 } scale = { 0.5 0.5 } }
+		instance = { position = { 0.85 0.25 } scale = { 0.5 0.5 } }
+	}
+	colored_emblem = {
+		texture = "ce_chevron.dds"
+		color1 = color2
+	}
+}
+THR = { #Thouars ancient
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "blue"
+	color3 = "red"
+	colored_emblem = {
+		texture = "ce_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.10 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.30 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.50 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.70 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.90 0.00 } scale = { @semy @semy } }
+		instance = { position = { 0.00 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.20 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.40 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.60 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.80 0.20 } scale = { @semy @semy } }
+		instance = { position = { 1.00 0.20 } scale = { @semy @semy } }
+		instance = { position = { 0.10 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.30 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.50 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.70 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.90 0.40 } scale = { @semy @semy } }
+		instance = { position = { 0.00 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.20 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.40 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.60 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.80 0.60 } scale = { @semy @semy } }
+		instance = { position = { 1.00 0.60 } scale = { @semy @semy } }
+		instance = { position = { 0.10 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.30 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.50 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.70 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.90 0.80 } scale = { @semy @semy } }
+		instance = { position = { 0.00 1.00 } scale = { @semy @semy } }
+		instance = { position = { 0.20 1.00 } scale = { @semy @semy } }
+		instance = { position = { 0.40 1.00 } scale = { @semy @semy } }
+		instance = { position = { 0.60 1.00 } scale = { @semy @semy } }
+		instance = { position = { 0.80 1.00 } scale = { @semy @semy } }
+		instance = { position = { 1.00 1.00 } scale = { @semy @semy } }
+	}
+colored_emblem = {
+	texture = "ce_canton.dds"
+	color1 = "red"
+	}
+}
+THR_amboise = { # Nemours	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "sub_d'amboise" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "THR" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }
+}
+LVL = { #Laval
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+colored_emblem = {
+	texture = "ce_cross_overall_scallops.dds"
+	color1 = "red"
+	color2 = "white"
+	}
+	colored_emblem = {
+		texture = "ce_alerion_cross.dds"
+		color1 = "blue"
+		color2 = "blue"	
+	}
+}
+DRE_albret = { # Nemours	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "sub_france_three_fleurs" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "sub_albret_orval" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }
+}
+PRH = { #Parthenay
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "black"
+colored_emblem = {
+	texture = "ce_semy_ermine.dds"
+	color1 = color2
+	color2 = "white"
+	}
+	colored_emblem = {
+		texture = "ce_label_03_lions.dds"
+		color1 = "red"
+		color2 = "yellow"	
+	}
+}
+RTZ = { #Retz
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "black"
+colored_emblem = {
+	texture = "ce_cross.dds"
+	color1 = color2
+	}
+}
+TON = { # Tonnerre
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_keys_saltire.dds"
+		color1 = color2
+		color2 = color2	
+	}	
+}
+MOI = { # Montaigu
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_bend.dds"
+		color1 = "white"
+		instance = { position = { 0.75 0.75 } scale = { 0.5 0.5 } }		
+		instance = { position = { 0.25 0.25 } scale = { 0.5 0.5 } }		
+	}
+	colored_emblem = {
+		texture = "ce_eagle_wide.dds"
+		color1 = "white"
+		color2 = "white"
+		color3 = "red"
+		instance = { position = { 0.75 0.25 } scale = { 0.5 0.5 } }		
+		instance = { position = { 0.25 0.75 } scale = { 0.5 0.5 } }		
+	}
+	colored_emblem = {
+		texture = "ce_divider_quarterly.dds"
+		color1 = "black"
+	}	
+}
+CLU = { # Montaigu
+	pattern = "pattern_quarterly_flag.dds"
+	color1 = "red"
+	color2 = "yellow"
+	colored_emblem = {
+		texture = "ce_bars_02.dds"
+		color1 = color2
+		instance = { position = { 0.75 0.75 } scale = { 0.5 0.5 } }		
+		instance = { position = { 0.25 0.25 } scale = { 0.5 0.5 } }		
+	}
+	colored_emblem = {
+		texture = "ce_bends_03.dds"
+		color1 = "blue"
+		color2 = "yellow"
+		instance = { position = { 0.75 0.25 } scale = { 0.5 0.5 } }		
+		instance = { position = { 0.25 0.75 } scale = { 0.5 0.5 } }		
+	}
+	colored_emblem = {
+		texture = "ce_divider_quarterly.dds"
+		color1 = "black"
+	}	
 }
