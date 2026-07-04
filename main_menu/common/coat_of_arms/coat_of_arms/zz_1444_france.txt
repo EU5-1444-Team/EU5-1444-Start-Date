@@ -29,3 +29,394 @@ FOIz = { # England-France Modern - Quarterly design (15th-16th c.)
         parent = "sub_div_quarterly_mid" 
     }	
 }
+ETA_burgundy = { # England-France Modern - Quarterly design (15th-16th c.)
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "yellow"
+	color3 = "blue"
+	color4 = "yellow"
+	
+    sub = {
+        parent = "sub_touraine" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "ARS" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }	
+}
+VDM_bourbon = { # Vendôme
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "red_secondary"
+	color3 = "blue"
+	color4 = "yellow"
+
+    sub = {
+        parent = "MRC_three_fleurs" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "VDM" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }	
+}
+CBU = { # Clermont
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_wheat_garb.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color1
+		instance = { position = { 0.5 0.50 } scale = { 0.40 0.30 }  }
+		instance = { position = { 0.75 0.50 } scale = { 0.40 0.30 }  }
+		instance = { position = { 0.25 0.50 } scale = { 0.40 0.30 }  }
+		instance = { position = { 0.5 0.2 } scale = { 0.40 0.30 }  }
+		instance = { position = { 0.5 0.8 } scale = { 0.40 0.30 }  }					
+	}	
+}
+CBU_bourbon = { # Clermont Bourbon
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red"
+
+	colored_emblem = {
+		texture = "ce_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color1
+		instance = { position = { 0.31 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.69 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.5 0.66 } scale = { 0.60 0.60 }  }					
+	}	
+	colored_emblem = {
+		texture = "ce_bend_stairs.dds"
+		color1 = color3
+		color2 = color3
+	}
+}
+BJU = { # Beaujeu
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "black"
+
+	colored_emblem = {
+		texture = "ce_lion_wide.dds"
+		color1 = color2
+		color2 = "red"
+		color3 = color1				
+	}	
+
+	colored_emblem = {
+		texture = "ce_label_04_long.dds"
+		color1 = "red"
+			
+	}	
+}
+BJU_bourbon = { # Beaujeu Bourbon
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red"
+
+	colored_emblem = {
+		texture = "ce_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color1
+		instance = { position = { 0.31 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.69 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.5 0.66 } scale = { 0.60 0.60 }  }					
+	}	
+	colored_emblem = {
+		texture = "ce_bend_thin.dds"
+		color1 = color3
+	}
+	colored_emblem = {
+		texture = "ce_dolphin.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color1
+		instance = { position = { 0.5 0.5 } scale = { 0.30 0.2 }  }
+		instance = { position = { 0.2 0.2 } scale = { 0.30 0.2 }  }
+		instance = { position = { 0.8 0.8 } scale = { 0.30 0.2 }  }
+	}
+}
+CMB = { # Combraille
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+	
+	colored_emblem = {
+		texture = "ce_bend_thin.dds"
+		color1 = color2
+		color2 = color2
+	}	
+	colored_emblem = {
+		texture = "ce_rose_double.dds"
+		color1 = color3
+		color2 = color3
+		color3 = "yellow"
+		instance = { position = { 0.62 0.20 } scale = { 0.38 0.36 }  }
+		instance = { position = { 0.87 0.20 } scale = { 0.38 0.36 }  }
+		instance = { position = { 0.87 0.53 } scale = { 0.38 0.36 }  }	
+		instance = { position = { 0.38 0.80 } scale = { 0.38 0.36 }  }
+		instance = { position = { 0.13 0.80 } scale = { 0.38 0.36 }  }
+		instance = { position = { 0.13 0.47 } scale = { 0.38 0.36 }  }		
+	}	
+}
+CMB_bourbon = { # Combraille Bourbon
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "BOU_three_fleurs" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "CMB" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }		
+}
+FRZ_bourbon = { # Bourbon
+	pattern = "pattern_vertical_split_01.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red"
+
+	colored_emblem = {
+		texture = "ce_semy_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+		mask = {1}
+	}
+	colored_emblem = {
+		texture = "ce_bend_bendlet.dds"
+		color1 = color3
+		color2 = color3
+		instance = { position = { 0.25 0.5 } scale = { 0.5 1.0 }  }
+		mask = {1}
+	}
+	colored_emblem = {
+		texture = "ce_quarterly.dds"
+		color1 = color3
+		color2 = color2
+		mask = {2}
+	}
+	colored_emblem = {
+		texture = "ce_dolphin.dds"
+		color1 = color1
+		color2 = color1
+		color3 = color2
+		instance = { position = { 0.75 0.25 } scale = { 0.7 0.475 }  }
+		mask = {2}
+	}
+	colored_emblem = {
+		texture = "ce_dolphin.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color3
+		instance = { position = { 0.75 0.75 } scale = { 0.7 0.475 }  }
+		mask = {2}
+	}
+	colored_emblem = {
+		texture = "ce_divider_quartered_flag_02.dds"
+		color1 = "black"
+		mask = {2}
+	}
+	colored_emblem = {
+		texture = "ce_divider_per_pale.dds"
+		color1 = "black"
+	}
+}
+DAV = { # Dauphinate of Auvergne
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "blue"
+	color3 = "blue_secondary"
+
+	colored_emblem = {
+		texture = "ce_dolphin.dds"
+		color1 = color2
+		color2 = color3
+		color3 = color1
+	}
+}
+DAV_bourbon = { # Dauphinate of Auvergne Bourbon	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "BOU_three_fleurs" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "DAV" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }		
+}
+DEI = { # Die
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "yellow"
+	color3 = "blue_secondary"
+
+	colored_emblem = {
+		texture = "ce_castle_short_towers.dds"
+		color1 = color2
+		color2 = color3
+		color3 = "black"
+	}
+}
+DEI_capetian = { # Die Capetian
+	pattern = "pattern_vertical_split_01.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red"
+
+	colored_emblem = {
+		texture = "ce_three_fleurs.dds"
+		color1 = color2
+		color2 = color2
+		mask = {1}
+		instance = { position = { 0.25 0.5 } scale = { 0.7 1.0 }  }
+	}
+	colored_emblem = {
+		texture = "ce_quarterly.dds"
+		color1 = color2
+		color2 = color3
+		mask = {2}
+	}
+	colored_emblem = {
+		texture = "ce_castle_short_towers.dds"
+		color1 = color2
+		color2 = color3
+		color3 = "black"
+		instance = { position = { 0.75 0.25 } scale = { 0.7 0.475 }  }
+		mask = {2}
+	}
+	colored_emblem = {
+		texture = "ce_dolphin.dds"
+		color1 = color1
+		color2 = color3
+		color3 = color2
+		instance = { position = { 0.75 0.75 } scale = { 0.7 0.475 }  }
+		mask = {2}
+	}
+	colored_emblem = {
+		texture = "ce_divider_quartered_flag_02.dds"
+		color1 = "black"
+		mask = {2}
+	}
+	colored_emblem = {
+		texture = "ce_divider_per_pale.dds"
+		color1 = "black"
+	}
+}
+DUO = { # Orleans-dunois
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "white_secondary"
+
+	colored_emblem = {
+		texture = "ce_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.31 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.69 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.5 0.66 } scale = { 0.60 0.60 }  }					
+	}
+	colored_emblem = {
+		texture = "ce_label_03_long.dds" # Label 03 France
+		color1 = color3
+		color2 = color3			
+    }	
+	colored_emblem = {
+		texture = "ce_bend_bendlet.dds" # Label 03 France
+		color1 = color3
+        instance = { position = { 0.5 0.5 }  scale = { -1.0 1.0 } }
+	}				
+}
+LGV = { # Longueville
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_bars_02.dds" 
+		color1 = color2
+	}				
+}
+LGV_orleans = { # Longueville
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "white_secondary"
+
+	colored_emblem = {
+		texture = "ce_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.31 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.69 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.5 0.66 } scale = { 0.60 0.60 }  }					
+	}
+	colored_emblem = {
+		texture = "ce_label_03.dds" # Label 03 France
+		color1 = color3
+		color2 = color3			
+    }	
+	colored_emblem = {
+		texture = "ce_baton.dds"
+		color1 = color3
+	}			
+}
+LGV_douglas = { # Longueville
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "white_secondary"
+    sub = {
+        parent = "GLY" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+    }
+    sub = {
+        parent = "sub_douglas" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "sub_douglas_2" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }			
+}

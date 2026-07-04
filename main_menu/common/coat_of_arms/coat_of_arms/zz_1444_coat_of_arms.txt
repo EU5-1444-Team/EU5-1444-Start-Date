@@ -3376,3 +3376,338 @@ NUL = { #Amondaschi
 		instance = { position = { 0.38 0.73 }  scale = { -0.35 0.4 } }
     }
 }
+WLS_eng_late = { # Arms used by the Black Prince and successors
+	pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "yellow"
+	color3 = "blue_light"
+	color4 = "white"
+
+    sub = {
+        parent = "sub_france_three_fleurs"
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "sub_england_three_lions"
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = {
+        parent = "sub_label_3_wales"
+		color1 = "white"
+		color2 = "white"
+    }
+}
+ENG_commonwealth = { # Cromwell
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "red"
+	color3 = "black"
+	
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "blue"
+		instance = { position = { 0.75 0.5 } scale = { 0.5 1.0 } }					
+	}	
+	colored_emblem = {
+		texture = "ce_harp_ireland.dds"
+		color1 = "yellow"
+		color2 = color1
+		instance = { position = { 0.75 0.5 } scale = { 0.9 0.9 } }		
+	}
+	colored_emblem = {
+		texture = "ce_cross_per_pale.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }					
+	}
+	colored_emblem = {
+		texture = "ce_divider_per_pale.dds"
+		color1 = color3
+		color2 = color3
+	}	
+}
+WLS_dragon_terrace = { # Welsh dragon - modern design 
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "red"
+	color3 = "green_light"
+
+	colored_emblem = {
+		texture = "ce_terrace_hannover.dds" 
+		color1 = "green_light"
+		color2 = color3
+		instance = { position = { 0.5 0.58 } scale = { 1.2 1.0 } }					
+	}
+	colored_emblem = {
+		texture = "ce_dragon_passant.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color1
+		instance = { position = { 0.5 0.475 } scale = { 1.0 1.0 } }					
+	}
+}
+CNY_bethencourt = { # Canary Islands Bethencourt 
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "black"
+
+	colored_emblem = {
+		texture = "ce_lion_wide.dds" 
+		color1 = color2
+        color2 = "red"
+		color2 = color1				
+	}
+}
+CNY = { # Canary  
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_lion_passant_guardant_long_wide.dds" 
+		color1 = "yellow"
+        color2 = "yellow"
+		color3 = color1		
+		instance = { position = { 0.5 0.2175 } scale = { 0.9 0.8 } }				
+	}
+	colored_emblem = {
+		texture = "ce_elephant_statant.dds" 
+		color1 = color2
+        color2 = color2
+		color3 = color2				
+		instance = { position = { 0.5 0.65 } scale = { 0.9 0.7 } }		
+	}
+}
+ANG_france = { # Angoulême - Orléans-Angoulême
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "white_secondary"
+	color4 = "red"
+
+	colored_emblem = {
+		texture = "ce_fleur_de_lis.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.31 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.69 0.30 } scale = { 0.60 0.60 }  }
+		instance = { position = { 0.5 0.66 } scale = { 0.60 0.60 }  }					
+	}
+	colored_emblem = {
+		texture = "ce_label_03_long.dds" # Label 03 France
+		color1 = color3
+		color2 = color3		
+    }	
+	colored_emblem = {
+		texture = "ce_crescent_charge_canton.dds"
+		color1 = color4
+		color2 = color4
+		instance = { position = { 0.5 0.6 } scale = { 0.17 0.17 }  }	
+		instance = { position = { 0.2 0.6 } scale = { 0.17 0.17 }  }		
+		instance = { position = { 0.8 0.6 } scale = { 0.17 0.17 }  }					
+	}		
+}
+GLY_douglas = { # Galloway Douglas	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "sub_douglas" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "GLY" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }		
+}
+AGS = { # Angus 	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "red"	
+	colored_emblem = {
+		texture = "ce_lion_wide.dds"
+		color1 = color2
+		color2 = color2
+        color3 = color1				
+	}
+}
+AGS_douglas = { # Angus Douglas	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "sub_douglas" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "AGS" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }		
+}
+MOY_douglas = { # Moray Douglas	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "MOY_earldom" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "sub_douglas_3" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }		
+}
+ROS_isles = { # Ross isles	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "LOI_mcdonald_SCO" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "ROS_early" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }		
+}
+LOI_mcdonald = { # Lordship of the Isles
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "black"
+	color3 = "red_secondary"
+	color4 = "white"
+	colored_emblem = {
+		texture = "ce_eagle_wide.dds"
+		color1 = "red"
+		color2 = "red"
+		color3 = color1
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_lymphad.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color3
+		instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }
+	}
+}
+LOI_mcdonald_SCO = { # Lordship of the Isles
+	pattern = "pattern_solid.dds"
+	color1 = "yellow"
+	color2 = "black"
+	color3 = "red_secondary"
+	colored_emblem = {
+		texture = "ce_eagle_wide.dds"
+		color1 = "red"
+		color2 = "red"
+		color3 = color1
+		instance = { position = { 0.5 0.5 } scale = { 1.0 0.8 } }
+	}
+	colored_emblem = {
+		texture = "ce_lymphad.dds"
+		color1 = color2
+		color2 = color2
+		color3 = color3
+		instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }
+	}
+	colored_emblem = {
+		texture = "ce_double_tressure_fleury.dds"
+		color1 = "red"
+	}
+}
+ORK_SCO = { # Orkney
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red"
+
+	colored_emblem = {
+		texture = "ce_double_tressure_fleury.dds"
+		color1 = color2
+		color2 = color3
+	}
+
+	colored_emblem = {
+		texture = "ce_lymphad.dds"
+		color1 = color2
+		color2 = "white"
+		color3 = color3
+		instance = { position = { 0.5 0.5 } scale = { 0.75 0.75 } }
+	}
+}
+ORK = { # Orkney
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	color3 = "red"
+
+	colored_emblem = {
+		texture = "ce_lymphad.dds"
+		color1 = color2
+		color2 = "white"
+		color3 = color3
+	}
+}
+LOI_kingdom = { # Kingdom of the Isles	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "LOI" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "MNN" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }		
+}
+LOI_kingdom_mcdonald = { # Kingdom of the Isles Mcdonald	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	color3 = "red"
+    sub = {
+        parent = "LOI_mcdonald" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.5 } }
+    }
+    sub = {
+        parent = "MNN" 
+		instance = { scale = { 0.5 0.5 } offset = { 0.5 0.0 } }
+		instance = { scale = { 0.5 0.5 } offset = { 0.0 0.5 } }
+    }
+    sub = { # quartering
+        parent = "sub_div_quarterly_mid" 
+    }		
+}

@@ -759,7 +759,10 @@ REPLACE:NOR = { # Norway
 		coa = NOR_cross_lion
 		priority = 100
 		trigger = {
-			coa_def_republic_trigger = yes
+			OR = {
+				coa_def_reformation_age_4_trigger = yes
+				coa_def_republic_trigger = yes
+			}
 		}
 	}
 	flag_definition = {
@@ -1143,4 +1146,657 @@ flag_definition = {
 				}
 		}
 	}		
+}
+REPLACE:WLS = { # Wales
+	flag_definition = {
+		coa = WLS
+		subject_canton = WLS_cross
+		priority = 1
+	}
+	flag_definition = {
+		coa = WLS_lions_rampant
+		subject_canton = WLS_cross
+		priority = 10
+		trigger = {
+			is_subject = yes
+			coa_def_celtic_group_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = WLS_glyndwr
+		subject_canton = WLS_cross
+		priority = 20
+		trigger = {
+			is_subject = no
+			coa_def_celtic_group_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = WLS_cross
+		subject_canton = WLS_cross
+		priority = 50
+		trigger = {
+			OR = {
+			    coa_def_date_after_1600 = yes
+				coa_def_republic_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = WLS_eng_late
+		subject_canton = WLS_cross
+		priority = 45
+		trigger = {
+			coa_def_ENG_ensign_trigger = yes
+			#coa_def_appanage_trigger = yes
+			# TODO : and ENG quartering france
+			#coa_def_plantagenet_trigger = yes
+		c:ENG ?= { coa_monarchy_trigger = yes }
+		}
+	}	
+	flag_definition = {
+		coa = WLS_dragon
+		subject_canton = WLS_cross
+		priority = 100
+		trigger = {
+			coa_def_republic_trigger = yes
+			coa_def_absolutism_age_5_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = WLS_dragon_terrace
+		subject_canton = WLS_cross
+		priority = 100
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			coa_def_revolutions_age_6_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = WLS_cross_neith
+		subject_canton = WLS_cross
+		priority = 150
+		trigger = {
+			coa_def_theocracy_trigger = yes
+		}
+	}		
+	flag_definition = {
+		coa = WLS_tricolor
+		subject_canton = WLS_tricolor
+		priority = 200
+		trigger = {
+			coa_def_revolutionary_republic_trigger = yes
+		}
+	}
+}
+REPLACE:SCO = { # Scotland
+	# NB: all subject cantons need to be defined for this tag
+	# And uses saltire as canton in every case (colonial ensigns)
+	flag_definition = {
+		coa = SCO_monarchy
+		subject_canton = SCO_saltire
+		priority = 1
+		trigger = {
+			coa_def_monarchy_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = SCO_monarchy_balliol
+		subject_canton = SCO_saltire
+		priority = 2
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			coa_def_absolutism_age_5_trigger = no
+			coa_def_balliol_dynasty_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = SCO_per_pale_capetian
+		subject_canton = SCO_saltire
+		priority = 20
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			OR = {
+				coa_def_capetian_trigger = yes
+				coa_def_FRA_ensign_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = SCO_per_pale_capetian_modern
+		subject_canton = SCO_saltire
+		priority = 21
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			coa_def_discovery_age_3_trigger = yes
+			OR = {
+				coa_def_capetian_trigger = yes
+				coa_def_FRA_ensign_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = SCO_per_pale_plantagenet
+		subject_canton = SCO_saltire
+		priority = 22
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			OR = {
+				coa_def_plantagenet_trigger = yes
+				coa_def_ENG_ensign_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = SCO_saltire
+		subject_canton = SCO_saltire
+		priority = 100
+		trigger = {
+			OR = {
+			    coa_def_date_after_1600 = yes
+				coa_def_republic_trigger = yes
+				coa_def_theocracy_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = SCO_saltire_inescutcheon
+		subject_canton = SCO_saltire
+		priority = 150
+		trigger = {
+			coa_def_absolutism_age_5_trigger = yes
+			coa_def_absolute_monarchy_trigger = yes
+		}
+	}
+}
+CNY = { # Canary
+	flag_definition = {
+		coa = CNY
+		priority = 1
+	}
+	flag_definition = {
+		coa = CNY_bethencourt
+		priority = 5
+		trigger = {
+			coa_def_monarchy_trigger = yes
+			exists = dynasty:bethencourt_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:bethencourt_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:bethencourt_dynasty
+					}
+				}
+		}
+	}		
+}
+REPLACE:DAU = { # Viennois
+	# DAU - dauphin OBG - Dauphins of Viennois
+	# DAU_capetian - qtly France (semy) after 1349 Acte de Transport
+	# DAU_france - qtly France modern mid. 15th c.
+
+	flag_definition = {
+		coa = DAU
+		priority = 1
+	}
+	flag_definition = {
+		coa = DAU_capetian
+		priority = 2
+		trigger = {
+			OR = {
+				coa_def_capetian_trigger = yes
+				coa_def_FRA_ensign_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = DAU_france
+		priority = 3
+		trigger = {
+			OR = {
+				coa_def_capetian_trigger = yes
+				coa_def_FRA_ensign_trigger = yes
+			}
+		}
+	}
+}
+REPLACE:ORL = { # Orléans
+	flag_definition = {
+		coa = ORL
+		priority = 1
+	}
+	flag_definition = {
+		coa = ORL_three_fleurs
+	}
+}
+REPLACE:MRC = { # La Marche
+	# MRC_ancient - Barruly AB - Lusignan
+	# MRC - France & bend ch. 3 lions GA - Bourbon-La Marche
+	# MRC_three_fleurs - France modern & bend ch. 3 lions GA
+
+	flag_definition = {
+		coa = MRC_ancient
+		priority = 1
+	}
+	flag_definition = {
+		coa = MRC
+		priority = 2
+		trigger = {
+			OR = {
+				coa_def_capetian_trigger = yes
+				coa_def_FRA_ensign_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = MRC_three_fleurs
+		priority = 3
+		trigger = {
+			OR = {
+				coa_def_capetian_trigger = yes
+				coa_def_FRA_ensign_trigger = yes
+			}
+		}
+	}
+}
+REPLACE:ETA = { # Etampes
+	flag_definition = {
+		coa = ETA
+		priority = 1
+	}
+	flag_definition = {
+		coa = ETA_three_fleurs
+		priority = 2
+	}
+	flag_definition = {
+		coa = ETA_burgundy
+		priority = 4
+		trigger = {
+		OR = {
+			coa_def_valois_burgundy_dynasty_trigger = yes
+			coa_def_BUR_ensign_trigger = yes
+		}
+		}
+	}
+}
+REPLACE:ORL = { # Orléans
+	flag_definition = {
+		coa = ORL
+		priority = 1
+	}
+	flag_definition = {
+		coa = ORL_three_fleurs
+		priority = 3
+	}
+}
+REPLACE:ANG = { # Angoulême - with the cadency mark if Orléans exists
+	flag_definition = {
+		coa = ANG
+		priority = 1
+	}
+	flag_definition = {
+		coa = ANG_capetian
+		priority = 50
+		trigger = {
+			coa_def_capetian_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = ANG_france
+		priority = 60
+		trigger = {
+			coa_def_capetian_trigger = yes
+		}
+	}
+}
+REPLACE:BOU = { # Bourbonnais
+	flag_definition = {
+		coa = BOU_ancient
+		priority = 1
+	}
+	flag_definition = {
+		coa = BOU
+		priority = 2
+		trigger = {
+			OR = {
+				coa_def_capetian_trigger = yes
+				coa_def_FRA_ensign_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = BOU_three_fleurs
+		priority = 3
+		trigger = {
+			OR = {
+				coa_def_capetian_trigger = yes
+				coa_def_FRA_ensign_trigger = yes
+			}
+		}
+	}
+}
+VDM = { # Vendôme
+	flag_definition = {
+		coa = VDM
+		priority = 1
+	}
+	flag_definition = {
+		coa = VDM_bourbon
+		priority = 2
+		trigger = {
+				coa_def_capetian_trigger = yes
+		}
+	}
+}
+CBU = { # Clermont
+	flag_definition = {
+		coa = CBU
+		priority = 1
+	}
+	flag_definition = {
+		coa = CBU_bourbon
+		priority = 2
+		trigger = {
+				coa_def_capetian_trigger = yes
+		}
+	}
+}
+BJU = { # Beaujeu
+	flag_definition = {
+		coa = BJU
+		priority = 1
+	}
+	flag_definition = {
+		coa = BJU_bourbon
+		priority = 2
+		trigger = {
+				coa_def_capetian_trigger = yes
+		}
+	}
+}
+CMB = { # Combraille
+	flag_definition = {
+		coa = CMB
+		priority = 1
+	}
+	flag_definition = {
+		coa = CMB_bourbon
+		priority = 2
+		trigger = {
+				coa_def_capetian_trigger = yes
+		}
+	}
+}
+FRZ = { # Forez
+	flag_definition = {
+		coa = FRZ
+		priority = 1
+	}
+	flag_definition = {
+		coa = FRZ_bourbon
+		priority = 2
+		trigger = {
+				coa_def_capetian_trigger = yes
+		}
+	}
+}
+DAV = { # Dauphinate of Auvergne
+	flag_definition = {
+		coa = DAV
+		priority = 1
+	}
+	flag_definition = {
+		coa = DAV_bourbon
+		priority = 2
+		trigger = {
+				coa_def_capetian_trigger = yes
+		}
+	}
+}
+DEI = { # Die
+	flag_definition = {
+		coa = DEI
+		priority = 1
+	}
+	flag_definition = {
+		coa = DEI_capetian
+		priority = 2
+		trigger = {
+				coa_def_capetian_trigger = yes
+			scope:actor = {
+				any_overlord_or_above = { has_or_had_tag = DAU }
+			}
+		}
+	}
+}
+LGV = { # Longueville
+	flag_definition = {
+		coa = LGV
+		priority = 1
+	}
+	flag_definition = {
+		coa = LGV_orleans
+		priority = 2
+		trigger = {
+				coa_def_capetian_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = LGV_douglas
+		priority = 3
+		trigger = {
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:douglas_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:douglas_dynasty
+				}
+			}
+		}
+	}
+}
+AGS = { # Angus
+	flag_definition = {
+		coa = AGS
+		priority = 1
+	}
+	flag_definition = {
+		coa = AGS_douglas
+		priority = 3
+		trigger = {
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:douglas_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:douglas_dynasty
+				}
+			}
+		}
+	}
+}
+GLY = { # Galloway
+	flag_definition = {
+		coa = GLY
+		priority = 1
+	}
+	flag_definition = {
+		coa = GLY_douglas
+		priority = 3
+		trigger = {
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:douglas_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:douglas_dynasty
+				}
+			}
+		}
+	}
+}
+REPLACE:MOY = { # Moray
+	flag_definition = {
+		coa = MOY
+		subject_canton = MOY
+		priority = 1
+	}
+	flag_definition = {
+		coa = MOY_earldom
+		subject_canton = MOY_earldom
+		priority = 2
+		trigger = {
+			coa_def_SCO_ensign_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = MOY_douglas
+		subject_canton = MOY_earldom
+		priority = 5
+		trigger = {
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:douglas_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:douglas_dynasty
+				}
+			}
+		}
+	}
+}
+LOI = { # Lordship of the Isles
+	flag_definition = {
+		coa = LOI
+		subject_canton = LOI
+		priority = 5
+		trigger = {
+			coa_def_nordic_trigger = yes
+			coa_def_scottish_trigger = no
+		}
+	}
+	flag_definition = {
+		coa = LOI_kingdom
+		subject_canton = LOI
+		priority = 11
+		trigger = {
+			coa_def_kingdom_trigger = yes
+			coa_def_scottish_trigger = no
+		}
+	}
+	flag_definition = {
+		coa = LOI_kingdom_mcdonald
+		subject_canton = LOI
+		priority = 10
+		trigger = {
+			coa_def_kingdom_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = LOI_mcdonald
+		subject_canton = LOI_mcdonald
+		priority = 1
+	}
+	flag_definition = {
+		coa = LOI_mcdonald_SCO
+		subject_canton = LOI_mcdonald_SCO
+		priority = 2
+		trigger = {
+			coa_def_SCO_ensign_trigger = yes
+		}
+	}
+}
+ORK = { # Orkney
+	flag_definition = {
+		coa = ORK
+		subject_canton = ORK
+		priority = 1
+	}
+	flag_definition = {
+		coa = ORK_SCO
+		subject_canton = ORK_SCO
+		priority = 2
+		trigger = {
+			coa_def_SCO_ensign_trigger = yes
+		}
+	}
+}
+REPLACE:ROS = { # Ross
+	flag_definition = {
+		coa = ROS_early
+		subject_canton = ROS_early
+		priority = 1
+	}
+	flag_definition = {
+		coa = ROS
+		subject_canton = ROS_early
+		priority = 2
+		trigger = {
+			coa_def_SCO_ensign_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = ROS_isles
+		subject_canton = ROS_early
+		priority = 2
+		trigger = {
+			OR = {	
+			scope:actor = {
+				any_overlord_or_above = { has_or_had_tag = LOI }
+			}
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:mac_domhnaill_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:mac_domhnaill_dynasty
+					}
+				}
+			}
+		}
+	}
+}
+ORD = { # Ormond
+	flag_definition = {
+		coa = ORD
+		priority = 1
+	}
+	flag_definition = {
+		coa = sub_douglas_3
+		subject_canton = sub_douglas_3
+		priority = 2
+		trigger = {
+				OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:douglas_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:douglas_dynasty
+				}
+			}
+		}
+	}
 }
