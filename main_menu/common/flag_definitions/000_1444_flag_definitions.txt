@@ -1697,7 +1697,7 @@ LOI = { # Lordship of the Isles
 		subject_canton = LOI
 		priority = 11
 		trigger = {
-			coa_def_kingdom_trigger = yes
+			coa_def_kingdom_or_higher_trigger = yes
 			coa_def_scottish_trigger = no
 		}
 	}
@@ -1706,7 +1706,7 @@ LOI = { # Lordship of the Isles
 		subject_canton = LOI
 		priority = 10
 		trigger = {
-			coa_def_kingdom_trigger = yes
+			coa_def_kingdom_or_higher_trigger = yes
 		}
 	}
 	flag_definition = {
@@ -1919,6 +1919,112 @@ DRE = { # Dreux
 					heir.dynasty ?= dynasty:albret_dynasty
 					}
 				}
+		}
+	}
+}
+REPLACE:STP = { # Saint-Pol
+	# STP - BO 5 garbs in cross - Ancient
+	# STP_chatillon - Châtillon & label B 5p
+
+	flag_definition = {
+		coa = STP
+		priority = 1
+	}
+	flag_definition = {
+		coa = STP_limburg
+		priority = 2
+	}
+	flag_definition = {
+		coa = STP_bourbon
+		priority = 10
+		trigger = {
+			z_coa_def_capetian_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = STP_bourbon_duchy
+		priority = 20
+		trigger = {
+			z_coa_def_capetian_trigger = yes
+			coa_def_duchy_or_higher_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = STP_chatillon
+		priority = 3
+		trigger = {
+			coa_def_chatillon_dynasty_trigger = yes
+		}
+	}
+}
+JON = { # Joinville
+
+	flag_definition = {
+		coa = JON
+		priority = 1
+	}
+	flag_definition = {
+		coa = JON_lorraine
+		priority = 10
+		trigger = {
+			coa_def_lorraine_trigger = yes
+		}
+	}
+}
+VAD = { # Vaudemont
+
+	flag_definition = {
+		coa = VAD
+		priority = 1
+	}
+	flag_definition = {
+		coa = VAD_lorraine
+		priority = 10
+		trigger = {
+			coa_def_lorraine_trigger = yes
+		}
+	}
+}
+SAN = { # Sancerre
+	flag_definition = {
+		coa = SAN_bueil
+		priority = 1
+	}
+}
+GPE = { # Grandpre 
+	flag_definition = {
+		coa = GPE
+		priority = 1
+	}
+	flag_definition = {
+		coa = GPE_bourbon
+		priority = 50
+		trigger = {
+			z_coa_def_capetian_trigger = yes
+		}
+	}
+}
+FOI = { # Foix 
+	flag_definition = {
+		coa = FOI
+		priority = 1
+	}
+	flag_definition = {
+		coa = FOI_bearn
+		priority = 50
+		trigger = {
+	scope:actor ?= {
+		OR = {	
+			owns = location:pau
+			any_subject_or_below = { owns = location:pau }
+			any_union_partner = { owns = location:pau }			
+		}
+		OR = {
+			NOT = { country_exists = c:BRR }
+			any_subject_or_below = { this = c:BRR }
+			any_union_partner = { this = c:BRR }
+		}
+	}
 		}
 	}
 }

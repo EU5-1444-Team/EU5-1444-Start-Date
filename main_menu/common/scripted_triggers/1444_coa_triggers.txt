@@ -195,3 +195,15 @@ z_coa_def_capetian_semy_trigger = { # Only the late capetians
 		}
 	}
 }
+coa_def_lorraine_trigger = { # Lorraine branches
+	scope:actor ?= {
+		ruler ?= {
+			dynasty ?= {
+				OR = {
+					this = dynasty:lorraine_dynasty
+					this = dynasty:alsace_dynasty
+				}
+			}
+		}
+	}
+}
