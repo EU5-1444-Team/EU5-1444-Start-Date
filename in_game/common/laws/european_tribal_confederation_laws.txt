@@ -15,18 +15,9 @@ european_tribal_defense_law = {
             international_organization_has_policy = policy:european_tribal_defensive_call_policy
             NOT = { has_cooldown = european_tribal_policy_change_cd }
         }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 0
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 50
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 40 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -48,22 +39,13 @@ european_tribal_defense_law = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
                     type = special_status:tatar_overlord
-                    international_organization = scope:recipient
+                    international_organization = root
                 }
             }
         }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 10
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 40
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 30 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -85,22 +67,13 @@ european_tribal_defense_law = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
                     type = special_status:tatar_overlord
-                    international_organization = scope:recipient
+                    international_organization = root
                 }
             }
         }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 20
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 30
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 20 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -119,22 +92,13 @@ european_tribal_defense_law = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
                     type = special_status:tatar_overlord
-                    international_organization = scope:recipient
+                    international_organization = root
                 }
             }
         }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 30
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 20
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 10 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 50 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 10 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -162,18 +126,9 @@ european_tribal_offense_law = {
             international_organization_has_policy = policy:european_tribal_offense_call_policy
             NOT = { has_cooldown = european_tribal_policy_change_cd }
         }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 0
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 50
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 40 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -195,23 +150,13 @@ european_tribal_offense_law = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
                     type = special_status:tatar_overlord
-                    international_organization = scope:recipient
+                    international_organization = root
                 }
             }
         }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 10
-            }
-            add = io_wants_offensive_war_policy
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 40
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 30 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -233,23 +178,13 @@ european_tribal_offense_law = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
                     type = special_status:tatar_overlord
-                    international_organization = scope:recipient
+                    international_organization = root
                 }
             }
         }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 20
-            }
-            add = io_wants_offensive_war_policy
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 30
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 20 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -268,23 +203,13 @@ european_tribal_offense_law = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
                     type = special_status:tatar_overlord
-                    international_organization = scope:recipient
+                    international_organization = root
                 }
             }
         }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 30
-            }
-            add = io_wants_offensive_war_policy
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 20
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 10 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 50 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 10 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -312,18 +237,9 @@ european_tribal_tribute_law = {
             international_organization_has_policy = policy:european_tribal_medium_tribute_policy
             NOT = { has_cooldown = european_tribal_policy_change_cd }
         }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 0
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 50
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 40 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -342,18 +258,9 @@ european_tribal_tribute_law = {
             NOT = { has_cooldown = european_tribal_policy_change_cd }
         }
         payments_implemented = { european_tribal_tribute }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 10
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 20
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 30 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -372,18 +279,9 @@ european_tribal_tribute_law = {
             NOT = { has_cooldown = european_tribal_policy_change_cd }
         }
         payments_implemented = { european_tribal_tribute }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 20
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 30
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 20 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -399,18 +297,9 @@ european_tribal_tribute_law = {
             NOT = { has_cooldown = european_tribal_policy_change_cd }
         }
         payments_implemented = { european_tribal_tribute }
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 30
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 20
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 10 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 50 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 10 } }
         on_activate = {
             add_cooldown = {
                 type = european_tribal_policy_change_cd
@@ -450,47 +339,21 @@ european_tribal_unification_law = {
     locked = {}
 
     european_tribal_no_unification_policy = {
-        wants_this_policy_bias = {
-            add = {
-                desc = "VOTE_BASE_VALUE"
-                value = 0
-            }
-        }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 50
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 0 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 0 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 50 } }
     }
 
     tatar_overlord_annexation_policy = {
-        wants_this_policy_bias = {
-            if = {
-                limit = {
-                    has_special_status_in_international_organization = {
-                        type = special_status:tatar_overlord
-                        international_organization = scope:recipient
-                    }
-                }
-                add = {
-                    desc = "VOTE_OVERLORD_WANTS_ANNEXATION"
-                    value = 100
-                }
-            }
-            else = {
-                add = {
-                    desc = "VOTE_BASE_VALUE"
-                    value = -100
-                }
+        allow = {
+            OR = {
+                culture = { has_culture_group = culture_group:tatar_group }
+                culture = { culture = culture:yerle_qaliq_culture }
             }
         }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 0
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 25 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 1000 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 0 } }
         on_activate = {
             custom_tooltip = tatar_unification_tt
             every_country_with_special_status_of_type = {
@@ -501,51 +364,30 @@ european_tribal_unification_law = {
     }
 
     european_tribal_confederation_form_policy = {
-        wants_this_policy_bias = {
-            if = {
-                limit = {
-                    NOT = {
-                        has_special_status_in_international_organization = {
-                            type = special_status:tatar_overlord
-                            international_organization = scope:recipient
-                        }
-                    }
-                }
-                add = {
-                    desc = "VOTE_BASHKIR_WANT_INDEPENDENCE"
-                    value = 100
-                }
-            }
-            else = {
-                add = {
-                    desc = "VOTE_BASE_VALUE"
-                    value = -100
-                }
-            }
+        allow = {
+            NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+            NOT = { culture = { culture = culture:yerle_qaliq_culture } }
         }
-        wants_keep_policy = {
-            add = {
-                desc = "VOTE_CONSERVATIVE_CLIMATE"
-                value = 25
-            }
-        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 25 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 1000 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 0 } }
         on_activate = {
             if = {
-                limit = { culture = culture:bashkir }
+                limit = { leader_country ?= { culture = culture:bashkir } }
                 custom_tooltip = bashkir_unification_tt
                 leader_country = {
                     trigger_event_non_silently = { id = io_unification.40 }
                 }
             }
             if = {
-                limit = { culture = culture:mari_culture }
+                limit = { leader_country ?= { culture = culture:mari_culture } }
                 custom_tooltip = mari_unification_tt
                 leader_country = {
                     trigger_event_non_silently = { id = io_unification.50 }
                 }
             }
             if = {
-                limit = { culture = culture:udmurt }
+                limit = { leader_country ?= { culture = culture:udmurt } }
                 custom_tooltip = udmurt_unification_tt
                 leader_country = {
                     trigger_event_non_silently = { id = io_unification.140 }

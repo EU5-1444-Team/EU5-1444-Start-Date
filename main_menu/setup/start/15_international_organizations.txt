@@ -499,7 +499,7 @@ international_organization_manager = {
             #The Khanates
             KZN SBR CRI
             #Golden Pretenders
-            KGZ MGZ AGZ
+            KGZ AGZ
             #Nogai
             MGH NWM JAK AOG QON JIK
             #Tax Collector
@@ -857,12 +857,6 @@ international_organization_manager = {
         members = { MGH JIK JAK AOG QON NWM }
         leader = MGH
     }
-    add_international_organization = {
-        type = bashkir_confederation
-        creation_date = 1440.1.1
-        members = { TBN YRA BZY USH YNI }
-        leader = TBN
-    }
     #################################################################
     #                   Jurchen Confederations                      #
     #################################################################
@@ -920,13 +914,7 @@ international_organization_manager = {
         type = golden_horde
         creation_date = 1242.1.1
         members = { 
-            KZN
-            UZB
-            CRI
-            SBR
-            KAZ
-            KGZ
-            MGZ
+            KZN UZB CRI SBR KAZ KGZ
             AGZ
             MGH JAK AOG QON NWM JIK
         }
@@ -934,7 +922,7 @@ international_organization_manager = {
         laws = {
         }
         golden_horde_claimant = {
-            KGZ MGZ AGZ
+            KGZ AGZ
         }
         
     }
@@ -965,7 +953,7 @@ international_organization_manager = {
         locations = { xuanning yizhou_jurchen tongliao ningchang
             slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat }
         variables = {
-            yeke_mongghul_ulus = 580
+            yeke_mongghul_ulus = 30
         }
         laws = {
             preserve_status_quo_policy
@@ -1949,7 +1937,7 @@ international_organization_manager = {
     add_international_organization = {
         type = european_tribal_confederation
         creation_date = 1300.1.1
-        members = { BK1 BK2 BK3 BK4 BK5 BK6 KZN }
+        members = { BK1 BK2 BK3 BK4 BK5 BK6 BS8 KZN }
         leader = BK1
         bashkir_biy = { BK1 }
         tatar_overlord = { KZN }
@@ -1961,14 +1949,90 @@ international_organization_manager = {
         }
     }
 
-    # Min — Southwest
+    # Kazan-Aligned Udmurt
     add_international_organization = {
         type = european_tribal_confederation
         creation_date = 1300.1.1
-        members = { BS8 KZN }
-        leader = BS8
-        bashkir_biy = { BS8 }
+        members = { UD1 UD2 UD3 UD4 KZN }
+        leader = UD2
+        udmurt_toro = { UD2 }
         tatar_overlord = { KZN }
+        laws = {
+            european_tribal_defensive_auto_policy
+            european_tribal_offense_call_policy
+            european_tribal_medium_tribute_policy
+            european_tribal_no_unification_policy
+        }
+    }
+    # Vyatka-Aligned Udmurt
+    add_international_organization = {
+        type = european_tribal_confederation
+        creation_date = 1300.1.1
+        members = { UD5 UD6 UD7 UD8 UD9 UZ6 UZ7 UZ8 UZ9 VYT }
+        leader = UD6
+        udmurt_toro = { UD6 }
+        tatar_overlord = { VYT }
+        laws = {
+            european_tribal_defensive_call_policy
+            european_tribal_no_offense_policy
+            european_tribal_low_tribute_policy
+            european_tribal_no_unification_policy
+        }
+    }
+    # Wild Udmurt
+    add_international_organization = {
+        type = european_tribal_confederation
+        creation_date = 1300.1.1
+        members = { UD0 UZ1 UZ2 UZ3 UZ4 UZ5 }
+        leader = UZ1
+        udmurt_toro = { UZ1 }
+        laws = {
+            european_tribal_no_defense_policy
+            european_tribal_no_offense_policy
+            european_tribal_no_tribute_policy
+            european_tribal_no_unification_policy
+        }
+    }
+    # Hill Mari
+    add_international_organization = {
+        type = european_tribal_confederation
+        creation_date = 1300.1.1
+        members = { MR1 MR2 MR3 MR4 MR5 KZN }
+        leader = MR2
+        mari_kart = { MR2 }
+        tatar_overlord = { KZN }
+        laws = {
+            european_tribal_defensive_call_policy
+            european_tribal_no_offense_policy
+            european_tribal_low_tribute_policy
+            european_tribal_no_unification_policy
+        }
+    }
+    #Meadow Mari
+    add_international_organization = {
+        type = european_tribal_confederation
+        creation_date = 1300.1.1
+        members = { MR6 MR7 MR8 MR9 MR0 MA1 MA2 KZN }
+        leader = MR6
+        mari_kart = { MR6 }
+        tatar_overlord = { KZN }
+        laws = {
+            european_tribal_defensive_auto_policy
+            european_tribal_offense_call_policy
+            european_tribal_medium_tribute_policy
+            european_tribal_no_unification_policy
+        }
+    }
+    #Vetluga Mari
+    add_international_organization = {
+        type = european_tribal_confederation
+        creation_date = 1300.1.1
+        members = { MA3 MA4 MA5 MA6 MA7 MA8 MA9 #KZN
+        }
+        leader = MA3
+        mari_kart = { MA3 }
+        tatar_overlord = { #KZN
+        }
         laws = {
             european_tribal_defensive_call_policy
             european_tribal_no_offense_policy

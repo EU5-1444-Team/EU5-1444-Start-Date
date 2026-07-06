@@ -218,61 +218,6 @@ war_manager = {
 			}
 		}
 	}
-
-	civil_war = { #Great Horde Civil War 1
-        war_name = {
-            name = "CIVIL_WAR_NAME"
-            ordinal = 1
-            first = {
-                name = "AGZ"
-            }
-        }
-    
-        start_date = 1444.11.11
-        action = 1444.11.11
-    
-        # ATTACKERS
-        attacker = {
-            country = MGZ
-            request = {
-                reason = Instigator
-            }
-        }
-        # DEFENDERS
-        defender = {
-            country = AGZ
-            request = {
-                reason = Target
-            }
-        }
-    }
-	civil_war = { #Great Horde Civil War 2
-        war_name = {
-            name = "CIVIL_WAR_NAME"
-            ordinal = 1
-            first = {
-                name = "AGZ"
-            }
-        }
-    
-        start_date = 1444.11.11
-        action = 1444.11.11
-    
-        # ATTACKERS
-        attacker = {
-            country = MGZ
-            request = {
-                reason = Instigator
-            }
-        }
-        # DEFENDERS
-        defender = {
-            country = KGZ
-            request = {
-                reason = Target
-            }
-        }
-    }
 	civil_war = { #Great Horde Civil War 3
         war_name = {
             name = "CIVIL_WAR_NAME"
@@ -287,14 +232,14 @@ war_manager = {
     
         # ATTACKERS
         attacker = {
-            country = KGZ
+            country = AGZ
             request = {
                 reason = Instigator
             }
         }
         # DEFENDERS
         defender = {
-            country = AGZ
+            country = KGZ
             request = {
                 reason = Target
             }
@@ -309,19 +254,19 @@ war_manager = {
 		take_province = {
 			type = conquer_province
 			casus_belli = cb_subjugation
-			location = taganrog
+			location = qirq_yer
 		}
 		
 		start_date = 1444.11.11
 		action = 1444.11.11
 		attacker = {
-			country = CRI #Crimea
+			country = AGZ
 			request = {
 				reason = Instigator
 			}
 		}
 		defender = {
-			country = AGZ #Ahmed
+			country = CRI
 			request = {
 				reason = Target
 			}

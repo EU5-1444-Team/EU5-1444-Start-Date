@@ -2,33 +2,10 @@ european_tribal_tribute = {
     get_payer_list = {
         every_international_organization_member = {
             limit = {
-                OR = {
-                    # Overlord exists — everyone except overlord pays
-                    AND = {
-                        any_international_organization_member = {
-                            has_special_status_in_international_organization = {
-                                type = special_status:tatar_overlord
-                                international_organization = root
-                            }
-                        }
-                        NOT = {
-                            has_special_status_in_international_organization = {
-                                type = special_status:tatar_overlord
-                                international_organization = root
-                            }
-                        }
-                    }
-                    # No overlord — everyone except leader pays
-                    AND = {
-                        NOT = {
-                            any_international_organization_member = {
-                                has_special_status_in_international_organization = {
-                                    type = special_status:tatar_overlord
-                                    international_organization = root
-                                }
-                            }
-                        }
-                        NOT = { is_leader_of_international_organization = root }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:tatar_overlord
+                        international_organization = root
                     }
                 }
             }
@@ -45,25 +22,6 @@ european_tribal_tribute = {
             add_to_local_variable_list = {
                 name = payees
                 target = this
-            }
-        }
-        # No overlord — leader receives
-        if = {
-            limit = {
-                NOT = {
-                    any_international_organization_member = {
-                        has_special_status_in_international_organization = {
-                            type = special_status:tatar_overlord
-                            international_organization = root
-                        }
-                    }
-                }
-            }
-            leader_country ?= {
-                add_to_local_variable_list = {
-                    name = payees
-                    target = this
-                }
             }
         }
     }

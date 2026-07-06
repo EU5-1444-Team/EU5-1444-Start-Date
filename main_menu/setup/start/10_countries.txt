@@ -29707,7 +29707,6 @@ countries = {
             przemysl_moscow
             #Principality of Pereyaslavl-Zalessky
             pereyaslavl alexandrovskaya_sloboda bogorodskoye_pereyaslavl kirzhach poreevo yanovo
-            khlepen
             murom gorbatovo melenki tuma starodub_votsky shatur
             vladimir moshok muromtsevo_murom osovets sudogda vlasovo yaropolch zolotkovo
             suzdal gavrilovskoye ilyinskoye_khovanskoye
@@ -29717,9 +29716,8 @@ countries = {
             gorodets lukh korenevo vasilyeva_sloboda yuryev_povolzhsk kadyy
             kostroma nerekhta sudislavl yakovlevskoye_bolshoye ostrovskoye
             kolomna koshira vysokoye
-            kovernino
             nizhny_novgorod gorokhovets meshchersk pestyaki rastyapino dalneye_konstantinovo
-            dmitrov rogachevo
+            dmitrov rogachevo khakhaly
         }
 
         own_control_conquered = {
@@ -29858,7 +29856,7 @@ countries = {
 
     MZO = { #Mozhaysk
         own_control_core = {
-            mozhaysk volok vetza
+            mozhaysk volok vetza khlepen
         }
 
         starting_technology_level = 3
@@ -30068,7 +30066,7 @@ countries = {
     GLM = { #Galich Mersky
         own_control_core = {
             galich chukhloma parfenyevo sol_galichskaya sudai unzha
-            sharanga uren tonshayevo vetluga semyonov krasnye_baki varnavino
+            tonshayevo
         }
 
         own_control_integrated = {
@@ -32373,8 +32371,7 @@ countries = {
     # steppes_region
     # --------------
 
-    AGZ = {
-        #Sayid Ahmad's Pretenders
+    AGZ = { #Sayid Ahmad's Pretenders
         type = army
         own_control_core = {
             mityakinskaya belaya_kalitva millerovo oblivskaya kashary
@@ -32386,6 +32383,8 @@ countries = {
             bol_shaya_martynovka cheplak bolshoy_gashun dubovskoye
             ust_tsimla konstantinovsk tatsinskaya tormosin nizhny_chir
             kletskaya ust_medveditskaya novoaidar
+            vithold_hammami argamakli_sarai aslan_horod ordu_bazar rohat_kermen enice velyka_lepetykha kyrylivka
+            oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka sofiivka kryvyi_rih mykytyn_rih
         }
 
         our_cores_conquered_by_others = {
@@ -32416,45 +32415,33 @@ countries = {
             mikhaylovka zimnyatsky
         }
 
+        capital = sarai_al_jadid
         starting_technology_level = 3
-        include = "expl_mongols"
+        include = "1444_expl_pontic_steppe_tatars"
+        include = "1444_pontic_steppe_horde_generic"
         country_rank = rank_duchy
-        court_language = kipchak_language
-        capital = shakhty
         religious_school = hanafi_school
 
         government = {
             type = steppe_horde
             heir_selection = tribal_oldest_male
             ruler = sayid_ahmad_i_borjigin
-            centralization_vs_decentralization = 60
-            aristocracy_vs_plutocracy = 70
-            serfdom_vs_free_subjects = 50
-            traditionalist_vs_innovative = -40
-            spiritualist_vs_humanist = 30
-            mercantilism_vs_free_trade = -20
-            offensive_vs_defensive = 10
-            land_vs_naval = -50
-            quality_vs_quantity = -60
-            belligerent_vs_conciliatory = 50
-            capital_economy_vs_traditional_economy = -50
-            individualism_vs_communalism = -30
-            outward_vs_inward = 0
+
+            ruler_term = { character = sayid_ahmad_i_borjigin start_date = 1432.1.1 regnal_number = 1 }
+
             reforms = {
                 legacy_of_jochi
             }
         }
 
         accepted_cultures = {
-            crimean
             astrakhani
         }
     }
 
     # --- AGZ ---
 
-    KGZ = {
-        #Kuchuk Muhammad's Pretenders
+    KGZ = { #Kuchuk Muhammad's Pretenders
         type = army
         own_control_core = {
             alkhan_kala nazran dzhulat tatartup novopavlovsk yessentuq
@@ -32469,76 +32456,6 @@ countries = {
             yashkul iki_burul
             priyutnoye elista remontnoye gorodovikovsk raguli
             chernyye_zemli
-        }
-
-        our_cores_conquered_by_others = {
-            mityakinskaya belaya_kalitva millerovo oblivskaya kashary
-            bokovskaya milyutinskaya
-            mikhaylovka
-            yundin bagayevskaya yegorlykskaya semikarakorsk shakhty kamenskaya kalmius krasny_sulin rovenky
-            luhansk bakhmut lysychansk oleksandrivka posad velyka_novosilka domakha huliaipole shyrokyne taganrog vasylivka
-            melitopol tokmak konski_vody kuchugur berdiansk
-            tomakivka kichkas rozdory pavlohrad hryshyne
-            bol_shaya_martynovka cheplak bolshoy_gashun dubovskoye
-            ust_tsimla konstantinovsk tatsinskaya tormosin nizhny_chir
-            kletskaya ust_medveditskaya zimnyatsky
-            sarai_al_jadid beljamen zenzevatka nagavskaya aksay
-            rudnya_pontic danilovka kotovo kamyshin goly_karamysh
-            pologoye_zaymishche srednyaya_akhtuba bykovo elton zolotari
-            berezhnovka
-            yenotayevka sapara chyorny_yar
-            nikolskoye_pontic malye_derbety sadovoye_kalmykia
-            ded_khulsun zavetnoye bolkhuny mikhaylovka_pontic rechnoye
-            botkul mechet stepanevka
-            ukek tereshka petrovsk malodelskaya ilovlya
-            savinka rovnoye pokrovsk baronsk krasny_kut_pontic mokrous
-            mordovo tambov bondari staroyuryevo morsha rasskazovo
-            zherdevka uvarovo kirsanov atkarsk serdobinskaya lysye_gory
-            yekaterinovka balanda rtishchevo balashov turki arkadak kremenskaya
-            yelan machekha samoylovka novoaidar
-        }
-
-        starting_technology_level = 3
-        include = "expl_mongols"
-        country_rank = rank_duchy
-        court_language = kipchak_language
-        religious_school = hanafi_school
-        capital = astrakhan
-
-        government = {
-            type = steppe_horde
-            heir_selection = tribal_oldest_male
-            ruler = glh_kuchuk_muhammad_jochid
-
-            centralization_vs_decentralization = 60
-            aristocracy_vs_plutocracy = 70
-            serfdom_vs_free_subjects = 50
-            traditionalist_vs_innovative = -40
-            spiritualist_vs_humanist = 30
-            mercantilism_vs_free_trade = -20
-            offensive_vs_defensive = 10
-            land_vs_naval = -50
-            quality_vs_quantity = -60
-            belligerent_vs_conciliatory = 50
-            capital_economy_vs_traditional_economy = -50
-            individualism_vs_communalism = -30
-            outward_vs_inward = 0
-            reforms = {
-                legacy_of_jochi
-            }
-        }
-
-        accepted_cultures = {
-            astrakhani
-        }
-    }
-
-    # --- KGZ ---
-
-    MGZ = {
-        #Mustafa's Pretenders
-        type = army
-        own_control_core = {
             sarai_al_jadid beljamen zenzevatka nagavskaya aksay
             rudnya_pontic danilovka kotovo kamyshin goly_karamysh
             pologoye_zaymishche srednyaya_akhtuba bykovo elton zolotari
@@ -32555,17 +32472,8 @@ countries = {
             yelan machekha samoylovka
             mikhaylovka zimnyatsky
         }
+
         our_cores_conquered_by_others = {
-            alkhan_kala nazran dzhulat tatartup novopavlovsk yessentuq
-            alexandrovskoye blagodarnoye novoselitskoye
-            shad_kirman petrovskoye_pontic
-            ipatovo
-            khosheutovo krasny_yar ganyushkino zamyany astrakhan ikryanoye
-            dardeling mekletin kok_usn arzgir levokumskoye majar
-            zelenokumsk
-            naurskaya kara_bazaar terekli_mekteb kurskaya kamysh_burun
-            yashkul iki_burul
-            priyutnoye elista remontnoye gorodovikovsk raguli
             mityakinskaya belaya_kalitva millerovo oblivskaya kashary
             bokovskaya milyutinskaya
             yundin bagayevskaya yegorlykskaya semikarakorsk shakhty kamenskaya kalmius krasny_sulin rovenky
@@ -32574,34 +32482,24 @@ countries = {
             tomakivka kichkas rozdory pavlohrad hryshyne
             bol_shaya_martynovka cheplak bolshoy_gashun dubovskoye
             ust_tsimla konstantinovsk tatsinskaya tormosin nizhny_chir
-            kletskaya ust_medveditskaya novoaidar
+            kletskaya ust_medveditskaya
+            novoaidar
         }
 
+        capital = astrakhan
         starting_technology_level = 3
-        include = "expl_mongols"
-        country_rank = rank_duchy
-        court_language = kipchak_language
-        capital = sarai_al_jadid
+        include = "1444_expl_pontic_steppe_tatars"
+        include = "1444_pontic_steppe_horde_generic"
+        country_rank = rank_kingdom
         religious_school = hanafi_school
 
         government = {
             type = steppe_horde
             heir_selection = tribal_oldest_male
-            ruler = mustafa_borjigin
+            ruler = glh_kuchuk_muhammad_jochid
 
-            centralization_vs_decentralization = 60
-            aristocracy_vs_plutocracy = 70
-            serfdom_vs_free_subjects = 50
-            traditionalist_vs_innovative = -40
-            spiritualist_vs_humanist = 30
-            mercantilism_vs_free_trade = -20
-            offensive_vs_defensive = 10
-            land_vs_naval = -50
-            quality_vs_quantity = -60
-            belligerent_vs_conciliatory = 50
-            capital_economy_vs_traditional_economy = -50
-            individualism_vs_communalism = -30
-            outward_vs_inward = 0
+            ruler_term = { character = glh_kuchuk_muhammad_jochid start_date = 1428.1.1 regnal_number = 1 }
+
             reforms = {
                 legacy_of_jochi
             }
@@ -32612,36 +32510,30 @@ countries = {
         }
     }
 
-    # --- MGZ ---
+    # --- KGZ ---
 
-    CRI = {
-        #Crimea
+    CRI = { #Crimea
         type = army
         own_control_core = {
-            qirq_yer qarasuvbazar seyitler solkhat kalay jurchi or_qapi
-            qalancaq aslan_horod ordu_bazar rohat_kermen enice velyka_lepetykha
-            kyrylivka
-            oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka
-            balikley aqmecit_prybuzhzhya vithold_hammami argamakli_sarai
-            khadjibey teligol kuyanlik ananiv iagorlic
-            sofiivka kryvyi_rih mykytyn_rih
+            qirq_yer qarasuvbazar seyitler solkhat kalay jurchi or_qapi qalancaq 
+            balikley aqmecit_prybuzhzhya khadjibey teligol kuyanlik ananiv iagorlic
         }
         our_cores_conquered_by_others = {
             shcherbinovka dashev kezlev aqmecit azok
             akhtar kalininskaya bryukhovetskaya bzhedygu_kal ust_labinsk balzimachi kanevskaya starominskaya pavlovskaya tbilisskaya romanovsky_khutor belaya_glina
             yundin peschanokopskoye bagayevskaya yegorlykskaya semikarakorsk shakhty kamenskaya kalmius krasny_sulin rovenky
             luhansk bakhmut lysychansk oleksandrivka posad velyka_novosilka domakha huliaipole shyrokyne taganrog vasylivka
-            melitopol tokmak konski_vody kuchugur berdiansk
+            melitopol tokmak konski_vody kuchugur berdiansk tomakivka kichkas rozdory pavlohrad hryshyne vithold_hammami argamakli_sarai aslan_horod ordu_bazar rohat_kermen enice velyka_lepetykha kyrylivka
+            oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka sofiivka kryvyi_rih mykytyn_rih
         }
 
-        starting_technology_level = 3
-        include = "expl_mongols"
-        include = "eurasian_horde"
-        country_rank = rank_kingdom
-
         capital = qirq_yer
-
+        starting_technology_level = 3
+        include = "1444_expl_pontic_steppe_tatars"
+        include = "1444_pontic_steppe_horde_generic"
+        country_rank = rank_kingdom
         religious_school = hanafi_school
+
         government = {
             type = steppe_horde
             ruler = cri_haci_giray
@@ -32649,29 +32541,9 @@ countries = {
 
             ruler_term = { character = cri_haci_giray start_date = 1441.1.1 regnal_number = 1 }
 
-            laws = {
-                legal_code_law = sharia_law_policy
-                sharia_law = hanafi_policy
-                marriage_law = muslim_marriage
-                heir_religion_law = heir_same_religion
-            }
             reforms = {
                 legacy_of_jochi
             }
-            mysticism_vs_jurisprudence = -15
-            centralization_vs_decentralization = 30
-            aristocracy_vs_plutocracy = 50
-            serfdom_vs_free_subjects = 30
-            traditionalist_vs_innovative = -15
-            spiritualist_vs_humanist = 10
-            mercantilism_vs_free_trade = 40
-            offensive_vs_defensive = 30
-            land_vs_naval = -20
-            quality_vs_quantity = -30
-            belligerent_vs_conciliatory = 20
-            capital_economy_vs_traditional_economy = -10
-            individualism_vs_communalism = -10
-            outward_vs_inward = 30
         }
         timed_modifier = {
             modifier = "azov_campaign"
@@ -32682,71 +32554,34 @@ countries = {
     }
 
     # --- CRI ---
+
     KZN = { # Kazan
         type = army
         own_control_core = {
-            kazan laish calli mamadysh bogatye_saby dobyaz
-            pokrovskoye simbirsk cherdakly staraya_mayna melekess tetyushi sviyazhsk
-            cheboksary alikovo vasilsursk
-            raznezhye voskresenskoye
-            atrat altyshevo bolshoye_boldino shatki sarov lukoyanov krasnoslobodsk ruzayevka khakhaly
-            promsa batyrevo
-            nikolskoye bazarny_syzgan karsun
-            chamzinka saransk lunino
-            penza gorodishche russky_kameshkir staraya_kulatka solovtsovo
-            atishchevo tsivilsk
-            zemetchino zubova_polyana tarbeevka mokhcha nizhny_lomov insar temnikov
-            mokshan chembar
-            malaya_serdoba shemysheyka
-            troitskoye_kuroedovo
-            sosnovy_ostrov malykovka novye_burasy
-            mechetnaya perelyub ivanteyevka balakovo dukhovnitskoye
-            samara shigony morkvash
-            poganovka
-            s_ezzaja bogatoye
-            khvorostyanka stavropol_na_volge kondurcha pestravka
-            bolghar cukataw bilyar almetyevsk
-            sergiyevsk
-            koshki kamyshla bolshoy_cheremshan staryi_amanak
-            aznakayevo
-            zainsk bavly bugulma abdulino buguruslan
-            chalninsky_pochinok
-            bolshoye_murashkino kurmysh lyskovo perevoz sechenovo spasskoye_lyskovo alatyr sergach
-            malyy_uran sorochinskaya buzuluk grachevka
+            kazan laish calli mamadysh bogatye_saby dobyaz pokrovskoye simbirsk cherdakly staraya_mayna melekess tetyushi sviyazhsk
+            cheboksary alikovo atrat altyshevo bolshoye_boldino shatki sarov lukoyanov krasnoslobodsk ruzayevka
+            promsa batyrevo nikolskoye bazarny_syzgan karsun chamzinka saransk lunino penza gorodishche russky_kameshkir staraya_kulatka solovtsovo atishchevo tsivilsk
+            zemetchino zubova_polyana tarbeevka mokhcha nizhny_lomov insar temnikov mokshan chembar malaya_serdoba shemysheyka troitskoye_kuroedovo sosnovy_ostrov malykovka novye_burasy
+            mechetnaya perelyub ivanteyevka balakovo dukhovnitskoye samara shigony morkvash poganovka s_ezzaja bogatoye khvorostyanka stavropol_na_volge kondurcha pestravka
+            bolghar cukataw bilyar almetyevsk sergiyevsk koshki kamyshla bolshoy_cheremshan staryi_amanak aznakayevo zainsk bavly bugulma abdulino buguruslan chalninsky_pochinok
+            bolshoye_murashkino perevoz sechenovo spasskoye_lyskovo alatyr sergach malyy_uran sorochinskaya buzuluk grachevka
         }
 
         capital = kazan
-
         starting_technology_level = 3
-        include = "expl_mongols"
-        include = "eurasian_horde"
+        include = "1444_expl_pontic_steppe_tatars"
+        include = "1444_pontic_steppe_horde_generic"
         country_rank = rank_kingdom
         religious_school = hanafi_school
+
         government = {
-            centralization_vs_decentralization = 40
-            aristocracy_vs_plutocracy = 60
-            serfdom_vs_free_subjects = 40
-            traditionalist_vs_innovative = -30
-            spiritualist_vs_humanist = 20
-            mercantilism_vs_free_trade = -10
-            offensive_vs_defensive = 20
-            land_vs_naval = -50
-            quality_vs_quantity = -40
-            belligerent_vs_conciliatory = 30
-            capital_economy_vs_traditional_economy = -30
-            individualism_vs_communalism = -20
-            outward_vs_inward = 10
 
             ruler = ulugh_muhammad_borjigin
             heir_selection = tribal_oldest_male
             type = steppe_horde
-            mysticism_vs_jurisprudence = -15
-            laws = {
-                legal_code_law = sharia_law_policy
-                sharia_law = hanafi_policy
-                marriage_law = muslim_marriage
-                heir_religion_law = heir_same_religion
-            }
+
+            ruler_term = { character = ulugh_muhammad_borjigin start_date = 1438.1.1 regnal_number = 1 }
+
             reforms = {
                 legacy_of_jochi
             }
@@ -32769,13 +32604,13 @@ countries = {
             ruler = random
         }
         capital = kasimov
-        include = "eurasian_horde"
-        include = "expl_mongols"
+        include = "1444_expl_pontic_steppe_tatars"
+        include = "1444_pontic_steppe_horde_generic"
     }
 
 
-    ATR = {
-        type = location
+    ATR = { #Astrakhan
+        type = army
         our_cores_conquered_by_others = {
             bol_shaya_martynovka cheplak bolshoy_gashun dubovskoye ust_tsimla konstantinovsk tatsinskaya tormosin kremenskaya kletskaya ust_medveditskaya
             oblivskaya nizhny_chir zimnyatsky malodelskaya ilovlya mechet stepanevka sarai_al_jadid beljamen zenzevatka nagavskaya aksay rudnya_pontic
@@ -32784,28 +32619,27 @@ countries = {
             ded_khulsun zavetnoye bolkhuny mikhaylovka_pontic rechnoye botkul dardeling mekletin kok_usn yashkul iki_burul priyutnoye elista remontnoye savinka rovnoye
         }
         starting_technology_level = 3
-        include = "expl_mongols"
-        include = "eurasian_horde_not_present"
-        country_rank = rank_duchy
+        include = "1444_expl_pontic_steppe_tatars"
+        include = "1444_pontic_steppe_horde_generic"
+        country_rank = rank_kingdom
         religious_school = hanafi_school
 
         capital = astrakhan
 
         government = {
-            mysticism_vs_jurisprudence = -15
-            laws = {
-                legal_code_law = sharia_law_policy
-                sharia_law = hanafi_policy
-                marriage_law = muslim_marriage
-                heir_religion_law = heir_same_religion
+            type = steppe_horde
+            heir_selection = tribal_oldest_male
+            ruler = random
+            
+            reforms = {
+                legacy_of_jochi
             }
         }
     }
 
     # --- ATR ---
 
-    JAG = {
-        # Jagoldai
+    JAG = { # Jagoldai
         own_control_core = {
             korocha belgorod rakitnoye muzhech sudzha oboyan manturovo_kursk oskol
             sumy krasnopillia melnya buryn putyvl glushkovo vilshana
@@ -32832,8 +32666,7 @@ countries = {
 
     # --- JAG ---
 
-    DNC = {
-        #Don Cossacks (I have zero clue who to put here)
+    DNC = { #Don Cossacks
         our_cores_conquered_by_others = {
             izium sloviansk vovchansk adalaga barvinkove ternivka
             kupiansk donets_kharkiv zmiiv chuhuiv
@@ -32863,17 +32696,16 @@ countries = {
 
     # --- DNC ---
 
-    GAZ = {
-        # Gazaria
+    GAZ = { # Gazaria
         own_control_core = {
-            kaffa #Black Sea
+            kaffa
             lusta soldaia vosporo
             taman mapa copa tana
             kezlev aqmecit dashev azok balzimachi
         }
 
         own_control_integrated = {
-            amasra #Black Sea
+            amasra
         }
 
         starting_technology_level = 3
@@ -32898,8 +32730,7 @@ countries = {
 
     # --- GAZ ---
 
-    ZAZ = {
-        #Zaporozhia
+    ZAZ = { #Zaporozhia
         our_cores_conquered_by_others = {
             usivka petrove mala_vyska umanske ingul yelanets
             myshuryn_rih harbuzynka kodak
@@ -33275,12 +33106,11 @@ countries = {
 
     PRM = { #Great Perm
         own_control_core = {
-            cherdyn nyrob ust_kulom lupya chernaya troitsko_pechorsk vukyl
+            cherdyn nyrob ust_kulom lupya chernaya
             kirs afanasyevo siva karagay nytva perm kungur
             beryozovka lysva kizel gubakha dobryanka solikamsk
             usolye yusva chyormoz kudymkar kelich kosa_perm gayny
-            ochyor okhannoye chastye debyosy stepanenki
-            igra yakshur_bodya
+            ochyor okhannoye chastye
         }
 
         own_control_integrated = {
@@ -33330,14 +33160,9 @@ countries = {
 
     VYT = { #Vyatka
         own_control_core = {
-            vyatka ust_cheptsa suna verkhoshizhemye orlov belozerye slobodskoy
-            oparino obyachevo lalsk nikolsk vokhma
-            podosinovets omutninsk kholunitsky kobra nagorsk
-            ural_nema falenki stelty dondykar uni
-        }
-
-        own_control_integrated = {
-            nikolsky koksharov bolshaya_yakshanga
+            vyatka ust_cheptsa suna verkhoshizhemye orlov slobodskoy
+            obyachevo lalsk nikolsk vokhma
+            podosinovets belozerye oparino
         }
 
         starting_technology_level = 3
@@ -33414,48 +33239,584 @@ countries = {
 
     # --- VYT ---
 
-    UDM = {
+    UD1 = { # Mozhga Udmurts
         own_control_core = {
-            sarapul mozhga yelabuga izhevsk vavozh_mozhga vyatskiye_polyany
-            votkings saygatsky yelovo osa
+            mozhga
+            vavozh_mozhga
         }
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
             ruler = random
         }
-
-        liturgical_language = church_slavonic_language
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = mozhga
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UD2 = { # Kalmez
+        own_control_core = {
+            kilmez vyatskiye_polyany
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = kilmez
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UD3 = { # Zhikya Udmurts
+        own_control_core = {
+            sarapul yelabuga
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = sarapul
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UD4 = { # Shudya Udmurts
+        own_control_core = {
+            izhevsk
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
         country_rank = rank_county
         starting_technology_level = 3
         capital = izhevsk
-        include = "limited_russian_principality"
+        include = "1444_bashkir"
         include = "expl_novgorod"
     }
-
-    # --- UDM ---
-
-    MRZ = {
+    UD5 = { # Bigra Udmurts
         own_control_core = {
-            kozmodemyansk kabachischi yoshkar_ola kiknur yaransk kutarka sernur urzhum
-            oli_baraza morki
-            kilmez
+            kholunitsky
         }
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
             ruler = random
         }
-
-        liturgical_language = church_slavonic_language
         country_rank = rank_county
         starting_technology_level = 3
-        capital = morki
-        include = "limited_russian_principality"
+        capital = kholunitsky
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UD6 = { # Durga Udmurts
+        own_control_core = {
+            stelty
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = stelty
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UD7 = { # Syura Udmurts
+        own_control_core = {
+            falenki
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = falenki
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UD8 = { # Chola Udmurts
+        own_control_core = {
+            uni
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = uni
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UD9 = { # Chabya Udmurts
+        own_control_core = {
+            ural_nema
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = ural_nema
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UD0 = { # Tuklya Udmurts
+        own_control_core = {
+            votkings osa yelovo saygatsky
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = votkings
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UZ1 = { # Dondykar Udmurts
+        own_control_core = {
+            dondykar
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = dondykar
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UZ2 = { # Pelga Udmurts
+        own_control_core = {
+            igra
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = igra
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UZ3 = { # Dokya Udmurts
+        own_control_core = {
+            debyosy
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = debyosy
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UZ4 = { # Yakshur-Bodya Udmurts
+        own_control_core = {
+            yakshur_bodya
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = yakshur_bodya
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UZ5 = { # Yumya Udmurts
+        own_control_core = {
+            stepanenki
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = stepanenki
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UZ6 = { # Poska Udmurts
+        own_control_core = {
+            nikolsky
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = nikolsky
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UZ7 = { # Lekma Udmurts
+        own_control_core = {
+            omutninsk
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = omutninsk
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UZ8 = { # Sanya Udmurts
+        own_control_core = {
+            nagorsk
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = nagorsk
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    UZ9 = { # Kushya Udmurts
+        own_control_core = {
+            kobra
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = kobra
+        include = "1444_bashkir"
         include = "expl_novgorod"
     }
 
-    # --- MRZ ---
+    MR1 = { # Akhparys Mari
+        own_control_core = {
+            vasilsursk
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = vasilsursk
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MR2 = { # Akaz Mari
+        own_control_core = {
+            kozmodemyansk
+            voskresenskoye
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = kozmodemyansk
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MR3 = { # Toksubay Mari
+        own_control_core = {
+            kurmysh
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = kurmysh
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MR4 = { # Tokhpa Mari
+        own_control_core = {
+            lyskovo
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = lyskovo
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MR5 = { # Yangit Mari
+        own_control_core = {
+            raznezhye
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = raznezhye
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MR6 = { # Morkin Mari
+        own_control_core = {
+            yoshkar_ola
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = yoshkar_ola
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MR7 = { # Sotnur Mari
+        own_control_core = {
+            morki
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = morki
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MR8 = { # Oshla Mari
+        own_control_core = {
+            kabachischi
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = kabachischi
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MR9 = { # Orsha Mari
+        own_control_core = {
+            sernur
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = sernur
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MR0 = { # Kuksha Mari
+        own_control_core = {
+            urzhum
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = urzhum
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MA1 = { # Syzal Mari
+        own_control_core = {
+            yaransk
+            kutarka
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = yaransk
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MA2 = { # Mamich Mari
+        own_control_core = {
+            oli_baraza
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = oli_baraza
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MA3 = { # Vetluga Mari
+        own_control_core = {
+            vetluga
+            tonshayevo
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = vetluga
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MA4 = { # Koksha Mari
+        own_control_core = {
+            koksharov
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = koksharov
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MA5 = { # Rutka Mari
+        own_control_core = {
+            varnavino
+            krasnye_baki
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = varnavino
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MA6 = { # Kukshenar Mari
+        own_control_core = {
+            sharanga
+            uren
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = sharanga
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MA7 = { # Kerzhen Mari
+        own_control_core = {
+            semyonov
+            kovernino
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = semyonov
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MA8 = { # Yakshanga Mari
+        own_control_core = {
+            bolshaya_yakshanga
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = bolshaya_yakshanga
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
+    MA9 = { # Pizhma Mari
+        own_control_core = {
+            kiknur
+        }
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        country_rank = rank_county
+        starting_technology_level = 3
+        capital = kiknur
+        include = "1444_bashkir"
+        include = "expl_novgorod"
+    }
 
     BS1 = { # Tabyn
         own_control_core = {
@@ -42389,8 +42750,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = tim_sind_qaydu_bahadur
-            ruler_term = { character = tim_sind_qaydu_bahadur start_date = 1440.2.20 }
+            ruler = tzg_masud_mirza
+            ruler_term = { character = tim_pir_muhammad_mirza start_date = 1383.1.1 end_date = 1405.1.1 }
+            ruler_term = { character = tgz_qaydu_ibn_pir_muhammad start_date = 1405.1.1 end_date = 1417.1.1 }
+            ruler_term = { character = tim_soyurghatmish start_date = 1417.1.1 end_date = 1426.1.1 }
+            ruler_term = { character = tzg_masud_mirza start_date = 1426.1.1 }
         }
 
         religious_school = maturidi_school
@@ -42417,8 +42781,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = tim_sind_qaydu_bahadur
-            ruler_term = { character = tim_sind_qaydu_bahadur start_date = 1440.2.20 }
+            ruler = tzg_masud_mirza
+            ruler_term = { character = tim_pir_muhammad_mirza start_date = 1383.1.1 end_date = 1405.1.1 }
+            ruler_term = { character = tgz_qaydu_ibn_pir_muhammad start_date = 1405.1.1 end_date = 1417.1.1 }
+            ruler_term = { character = tim_soyurghatmish start_date = 1417.1.1 end_date = 1426.1.1 }
+            ruler_term = { character = tzg_masud_mirza start_date = 1426.1.1 }
         }
 
         religious_school = maturidi_school
@@ -42442,8 +42809,11 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = tim_sind_qaydu_bahadur
-            ruler_term = { character = tim_sind_qaydu_bahadur start_date = 1440.2.20 }
+            ruler = tzg_masud_mirza
+            ruler_term = { character = tim_pir_muhammad_mirza start_date = 1383.1.1 end_date = 1405.1.1 }
+            ruler_term = { character = tgz_qaydu_ibn_pir_muhammad start_date = 1405.1.1 end_date = 1417.1.1 }
+            ruler_term = { character = tim_soyurghatmish start_date = 1417.1.1 end_date = 1426.1.1 }
+            ruler_term = { character = tzg_masud_mirza start_date = 1426.1.1 }
         }
 
         religious_school = maturidi_school
@@ -45099,13 +45469,14 @@ countries = {
     # -------------------
 
     SBR = {
-        # Sibir Khanate/White Horde
+        # Taibugid Khanate
         type = army
         own_control_core = {
             chimgi_tura
             almenevo safkul shchuchye kargapolye kurtamysh tugulym yalutorovsk shadrinsk tsaryovo_gorodishche chastoozerye polovinnoye armizonskoye berdyuzhye korkina_sloboda
             tobolsk vagay tavdinsky_sloboda yurginskoye vikulovo tara znamenskoye ust_ishim shish muromtsevo omsk kamyshnoye cherlak tyukalinsk kolosovka gorkovskoye okoneshnikovo
             sartlan taskayevo kargat kainsky_pas kyshtovka tarankol kyzylzhar presnowka staroye zharkol sasykkol alakol
+            siberia_abalak qashliq
         }
 
         capital = chimgi_tura
@@ -46533,7 +46904,7 @@ countries = {
         religious_school = hanafi_school
         capital = bijapur
         accepted_cultures = {
-            marathi_culture
+            farsi_culture
         }
     }
 
@@ -69479,13 +69850,11 @@ countries = {
         }
         capital = tuma
     }
-    ERZ = { #Erzya People
+    CHV = { #Chuvash People
         type = pop
         add_pops_from_locations = {
-            ardatov azeevo kadom sarov bolshoye_boldino lukoyanov shatki arzamas pavlovo
-            samara alatyr bolshoye_murashkino perevoz sechenovo sergach spasskoye_lyskovo
-            kurmysh lyskovo atrat batyrevo altyshevo promsa chamzinka dalneye_konstantinovo
-            staryi_amanak
+            alatyr sechenovo sergach spasskoye_lyskovo cheboksary kozmodemyansk alikovo vasilsursk tsivilsk atishchevo sviyazhsk kurmysh lyskovo simbirsk atrat batyrevo altyshevo
+            dobyaz
         }
 
         starting_technology_level = 0
@@ -69495,7 +69864,7 @@ countries = {
             heir_selection = tribal_oldest_male
             ruler = random
         }
-        capital = ardatov
+        capital = cheboksary
     }
     EST = { #Estonian People
         type = pop
@@ -69533,7 +69902,7 @@ countries = {
         }
         capital = riga
     }
-    LVV = { #Liv People
+    LVV = { #Livonian People
         type = pop
         add_pops_from_locations = {
             dundaga kandava cesis aluksne jekabpils kraslava rezekne karksi saarde daugavpils

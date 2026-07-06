@@ -6,7 +6,7 @@
 
     show_on_diplomatic_map = yes
     show_as_overlord_on_map_trigger = {
-        always = yes
+        always = no
     }
 
     has_leader_country = yes
@@ -18,8 +18,6 @@
                 limit = {
                     has_regent = yes
                     has_heir = yes
-                    NOT = { culture = { has_culture_group = culture_group:tatar_group } }
-                    NOT = { culture = { culture = culture:yerle_qaliq_culture } }
                 }
                 heir ?= {
                     add_to_list = leaders
@@ -29,8 +27,6 @@
                 limit = {
                     has_ruler = yes
                     ruler ?= { is_alive = yes }
-                    NOT = { culture = { has_culture_group = culture_group:tatar_group } }
-                    NOT = { culture = { culture = culture:yerle_qaliq_culture } }
                 }
                 ruler ?= {
                     add_to_list = leaders
@@ -43,13 +39,17 @@
     leadership_election_resolution = taiga_steppe_election
 
     can_lead_trigger = {
-        is_member_of_international_organization = scope:recipient
-        NOT = { culture = { has_culture_group = culture_group:tatar_group } }
-        NOT = { culture = { culture = culture:yerle_qaliq_culture } }
+        always = yes
+#        is_member_of_international_organization = scope:recipient
+#        OR = {
+#            NOT = { culture = culture:yerle_qaliq_culture }
+#            NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+#        }
+#        has_ruler = yes
+#        ruler ?= { is_alive = yes }
     }
 
     payments_implemented = {
-        bashkir_tribute
     }
     can_declare_war = {
         trigger_if = {

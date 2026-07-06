@@ -105,71 +105,120 @@ middle_kingdom_name = {
         fallback = yes
     }
 }
-REPLACE:european_tribal_confederation_name = {
+european_tribal_confederation_name = {
     type = international_organization
     
-    # Southeast Bashkir (Seven Tribes)
-    text = {
+    text = { # Southeast Bashkir
         trigger = {
             any_international_organization_member = {
-                this = country:BS2
+                OR = {
+                    country = c:BS2 country = c:BS3 country = c:BS4 
+                    country = c:BS9 country = c:BS0 country = c:BK8 
+                    country = c:BK9
+                }
             }
         }
         localization_key = bashkir_southeast_confederation
     }
-    
-    # Northeast Bashkir (Tabyn/Katay/Ayle)
-    text = {
+    text = { # Northeast Bashkir
         trigger = {
             any_international_organization_member = {
-                this = country:BS1
+                OR = {
+                    country = c:BS1 country = c:BS5 country = c:BS6 
+                    country = c:BS7 country = c:BK0 country = c:BK7 
+                    country = c:BZY
+                }
             }
         }
         localization_key = bashkir_northeast_confederation
     }
-    
-    # Northwest Bashkir (Kama-Ik)
-    text = {
+        text = { # Northwest Bashkir
         trigger = {
             any_international_organization_member = {
-                this = country:BK1
+                OR = {
+                    country = c:BK1 country = c:BK2 country = c:BK3 
+                    country = c:BK4 country = c:BK5 country = c:BK6
+                }
             }
         }
         localization_key = bashkir_northwest_confederation
     }
-    
-    # Southwest Bashkir (Min)
-    text = {
+    text = { # Southwest Bashkir
         trigger = {
             any_international_organization_member = {
-                this = country:BS8
+                tag = BS8
             }
         }
         localization_key = bashkir_min_confederation
     }
-
-    # Mari Confederation
-    text = {
+    text = { # Vetluga Mari
         trigger = {
-            leader_country ?= {
-                culture ?= culture:mari_culture
+            any_international_organization_member = {
+                OR = {
+                    country = c:MA3 country = c:MA4 country = c:MA5 
+                    country = c:MA6 country = c:MA7 country = c:MA8 country = c:MA9
+                }
             }
         }
-        localization_key = mari_confederation
+        localization_key = mari_vetluga_confederation
     }
-
-    # Udmurt Confederation
-    text = {
+    text = { # Hill Mari
         trigger = {
-            leader_country ?= {
-                culture ?= culture:udmurt
+            any_international_organization_member = {
+                OR = {
+                    country = c:MR6 country = c:MR7 country = c:MR8 
+                    country = c:MR9 country = c:MR0 country = c:MA1 country = c:MA2
+                }
             }
         }
-        localization_key = udmurt_confederation
+        localization_key = mari_hill_confederation
     }
-
-    # Fallback
-    text = {
+    text = { # Meadow Mari
+        trigger = {
+            any_international_organization_member = {
+                OR = {
+                    country = c:MR1 country = c:MR2 country = c:MR3 
+                    country = c:MR4 country = c:MR5
+                }
+            }
+        }
+        localization_key = mari_meadow_confederation
+    }
+    text = { # Kalmez Udmurt
+        trigger = {
+            any_international_organization_member = {
+                OR = {
+                    country = c:UD1 country = c:UD2 country = c:UD3 
+                    country = c:UD4
+                }
+            }
+        }
+        localization_key = udmurt_kalmez_confederation
+    }
+    text = { # Vatka Udmurt
+        trigger = {
+            any_international_organization_member = {
+                OR = {
+                    country = c:UD5 country = c:UD6 country = c:UD7 
+                    country = c:UD8 country = c:UD9 country = c:UZ6 
+                    country = c:UZ7 country = c:UZ8 country = c:UZ9
+                }
+            }
+        }
+        localization_key = udmurt_vatka_confederation
+    }
+    text = { # Wild Udmurt
+        trigger = {
+            any_international_organization_member = {
+                OR = {
+                    country = c:UD0 country = c:UZ1 country = c:UZ2 
+                    country = c:UZ3 country = c:UZ4 country = c:UZ5
+                }
+            }
+        }
+        localization_key = udmurt_free_confederation
+    }
+    text = { # Fallback
         localization_key = european_tribal_confederation
         fallback = yes
     }

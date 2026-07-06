@@ -127,36 +127,55 @@ GBR_ADJ = {
 
 GTH = {
 	type = country
-	text = {
-		# Great Horde
+	text = { # Great Horde
 		localization_key = GTH_horde
 		trigger = {
 			government_type = government_type:steppe_horde
 		}
 	}
 	text = {
-		# X of Sarai
 		localization_key = GTH
 		fallback = yes
 	}
 }
-
-GTH_ADJ = {
-	parent = GTH
-	suffix = "_ADJ"
+GTH_ADJ = {	parent = GTH suffix = "_ADJ" }
+BEH = {
+	type = country
+	text = { # Blue Horde
+		localization_key = BEH_horde
+		trigger = {
+			government_type = government_type:steppe_horde
+		}
+	}
+	text = {
+		localization_key = BEH
+		fallback = yes
+	}
 }
-
+BEH_ADJ = {	parent = BEH suffix = "_ADJ" }
+WHI = {
+	type = country
+	text = { # White Horde
+		localization_key = WHI_horde
+		trigger = {
+			government_type = government_type:steppe_horde
+		}
+	}
+	text = {
+		localization_key = WHI
+		fallback = yes
+	}
+}
+WHI_ADJ = {	parent = WHI suffix = "_ADJ" }
 GLH = {
 	type = country
-	text = {
-		# Cumania
+	text = { # Cumania
 		localization_key = GLH_cuman
 		trigger = {
 			culture = culture:cuman_culture
 		}
 	}
-	text = {
-		# Golden Horde
+	text = { # Golden Horde
 		localization_key = GLH_horde
 		trigger = {
 			OR = {
@@ -169,29 +188,22 @@ GLH = {
 			}
 		}
 	}
-	text = {
-		# Kipchak Fallback
+	text = { # Kipchak Fallback
 		localization_key = GLH_kipchak
 		trigger = {
 			government_type = government_type:steppe_horde
 		}
 	}
-	text = {
-		# Jochid X
+	text = { # Jochid X
 		localization_key = GLH
 		fallback = yes
 	}
 }
-
-GLH_ADJ = {
-	parent = GLH
-	suffix = "_ADJ"
-}
+GLH_ADJ = { parent = GLH suffix = "_ADJ" }
 
 ILK = {
 	type = country
-	text = {
-		# Hülegü Ulus
+	text = { # Hülegü Ulus
 		localization_key = ILK_mongol
 		trigger = {
 			culture = {
@@ -204,6 +216,7 @@ ILK = {
 		fallback = yes
 	}
 }
+ILK_ADJ = { parent = ILK suffix = "_ADJ" }
 
 HEN = {
 	type = country
@@ -586,51 +599,6 @@ BAL = {
 }
 BAL_ADJ = {
 	parent = BAL
-	suffix = "_ADJ"
-}
-
-UZB = {
-	# Shaybanids 
-	type = country
-	text = {
-		localization_key = starting_uzbek
-		trigger = {
-			is_subject = yes
-		}
-	}
-	text = {
-		localization_key = UZB
-		fallback = yes
-	}
-}
-
-UZB_ADJ = {
-	parent = UZB
-	suffix = "_ADJ"
-}
-
-SBR = {
-	#White Horde
-	type = country
-	text = {
-		localization_key = SBR_horde
-		trigger = {
-			government_type = government_type:steppe_horde
-			OR = {
-				c:UZB ?= {
-					is_subject_of = root
-				}
-				owns = location:sighnaq
-			}
-		}
-	}
-	text = {
-		localization_key = SBR
-		fallback = yes
-	}
-}
-SBR_ADJ = {
-	parent = SBR
 	suffix = "_ADJ"
 }
 
