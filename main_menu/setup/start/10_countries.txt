@@ -30066,7 +30066,6 @@ countries = {
     GLM = { #Galich Mersky
         own_control_core = {
             galich chukhloma parfenyevo sol_galichskaya sudai unzha
-            tonshayevo
         }
 
         own_control_integrated = {
@@ -32377,14 +32376,16 @@ countries = {
             mityakinskaya belaya_kalitva millerovo oblivskaya kashary
             bokovskaya milyutinskaya
             yundin bagayevskaya yegorlykskaya semikarakorsk shakhty kamenskaya kalmius krasny_sulin rovenky
-            luhansk bakhmut lysychansk oleksandrivka posad velyka_novosilka domakha huliaipole shyrokyne taganrog vasylivka
-            melitopol tokmak konski_vody kuchugur berdiansk
+            luhansk bakhmut lysychansk oleksandrivka posad shyrokyne taganrog vasylivka
+            melitopol tokmak konski_vody kuchugur berdiansk velyka_novosilka domakha huliaipole
             tomakivka kichkas rozdory pavlohrad hryshyne
             bol_shaya_martynovka cheplak bolshoy_gashun dubovskoye
             ust_tsimla konstantinovsk tatsinskaya tormosin nizhny_chir
             kletskaya ust_medveditskaya novoaidar
             vithold_hammami argamakli_sarai aslan_horod ordu_bazar rohat_kermen enice velyka_lepetykha kyrylivka
             oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka sofiivka kryvyi_rih mykytyn_rih
+            kreminna bielska_sloboda bilovodsk chertkovo boguchar veesky kumylzhenskaya
+            alexeyevskaya novoanninsky novonikolayevsky starominskaya shcherbinovka
         }
 
         our_cores_conquered_by_others = {
@@ -32415,7 +32416,7 @@ countries = {
             mikhaylovka zimnyatsky
         }
 
-        capital = sarai_al_jadid
+        capital = shakhty
         starting_technology_level = 3
         include = "1444_expl_pontic_steppe_tatars"
         include = "1444_pontic_steppe_horde_generic"
@@ -32441,7 +32442,7 @@ countries = {
 
     # --- AGZ ---
 
-    KGZ = { #Kuchuk Muhammad's Pretenders
+    GTH = { #Kuchuk Muhammad's Great Horde
         type = army
         own_control_core = {
             alkhan_kala nazran dzhulat tatartup novopavlovsk yessentuq
@@ -32510,16 +32511,15 @@ countries = {
         }
     }
 
-    # --- KGZ ---
+    # --- GTH ---
 
     CRI = { #Crimea
         type = army
         own_control_core = {
-            qirq_yer qarasuvbazar seyitler solkhat kalay jurchi or_qapi qalancaq 
-            balikley aqmecit_prybuzhzhya khadjibey teligol kuyanlik ananiv iagorlic
+            qirq_yer qarasuvbazar seyitler solkhat kalay jurchi or_qapi qalancaq kezlev aqmecit
         }
         our_cores_conquered_by_others = {
-            shcherbinovka dashev kezlev aqmecit azok
+            shcherbinovka azok
             akhtar kalininskaya bryukhovetskaya bzhedygu_kal ust_labinsk balzimachi kanevskaya starominskaya pavlovskaya tbilisskaya romanovsky_khutor belaya_glina
             yundin peschanokopskoye bagayevskaya yegorlykskaya semikarakorsk shakhty kamenskaya kalmius krasny_sulin rovenky
             luhansk bakhmut lysychansk oleksandrivka posad velyka_novosilka domakha huliaipole shyrokyne taganrog vasylivka
@@ -32527,7 +32527,7 @@ countries = {
             oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka sofiivka kryvyi_rih mykytyn_rih
         }
 
-        capital = qirq_yer
+        capital = solkhat
         starting_technology_level = 3
         include = "1444_expl_pontic_steppe_tatars"
         include = "1444_pontic_steppe_horde_generic"
@@ -32545,25 +32545,40 @@ countries = {
                 legacy_of_jochi
             }
         }
-        timed_modifier = {
-            modifier = "azov_campaign"
-            start_date = 1444.11.11
-            date = 1450.1.1
-            size = 1
-        }
     }
 
     # --- CRI ---
 
+    SIN = { #Shirin Ulus
+        type = army
+        own_control_core = {
+            balikley aqmecit_prybuzhzhya khadjibey teligol kuyanlik ananiv iagorlic
+        }
+
+        capital = balikley
+        starting_technology_level = 3
+        include = "1444_expl_pontic_steppe_tatars"
+        include = "1444_pontic_steppe_horde_generic"
+        country_rank = rank_duchy
+        religious_school = hanafi_school
+
+        government = {
+            type = steppe_horde
+            ruler = random
+            heir_selection = tribal_oldest_male
+
+        }
+    }
+
     KZN = { # Kazan
         type = army
         own_control_core = {
-            kazan laish calli mamadysh bogatye_saby dobyaz pokrovskoye simbirsk cherdakly staraya_mayna melekess tetyushi sviyazhsk
+            kazan laish calli mamadysh bogatye_saby dobyaz simbirsk cherdakly melekess tetyushi sviyazhsk
             cheboksary alikovo atrat altyshevo bolshoye_boldino shatki sarov lukoyanov krasnoslobodsk ruzayevka
             promsa batyrevo nikolskoye bazarny_syzgan karsun chamzinka saransk lunino penza gorodishche russky_kameshkir staraya_kulatka solovtsovo atishchevo tsivilsk
             zemetchino zubova_polyana tarbeevka mokhcha nizhny_lomov insar temnikov mokshan chembar malaya_serdoba shemysheyka troitskoye_kuroedovo sosnovy_ostrov malykovka novye_burasy
-            mechetnaya perelyub ivanteyevka balakovo dukhovnitskoye samara shigony morkvash poganovka s_ezzaja bogatoye khvorostyanka stavropol_na_volge kondurcha pestravka
-            bolghar cukataw bilyar almetyevsk sergiyevsk koshki kamyshla bolshoy_cheremshan staryi_amanak aznakayevo zainsk bavly bugulma abdulino buguruslan chalninsky_pochinok
+            mechetnaya perelyub ivanteyevka balakovo dukhovnitskoye samara shigony poganovka s_ezzaja bogatoye khvorostyanka stavropol_na_volge kondurcha pestravka
+            bolghar almetyevsk sergiyevsk koshki kamyshla bolshoy_cheremshan zainsk bavly bugulma abdulino buguruslan chalninsky_pochinok
             bolshoye_murashkino perevoz sechenovo spasskoye_lyskovo alatyr sergach malyy_uran sorochinskaya buzuluk grachevka
         }
 
@@ -32589,6 +32604,28 @@ countries = {
     }
 
     # --- KZN ---
+    BOG = { # Volga Bulgaria
+        own_control_core = {
+            cukataw staraya_mayna pokrovskoye morkvash staryi_amanak bilyar
+            aznakayevo
+        }
+
+        capital = cukataw
+        starting_technology_level = 3
+        include = "russian_principality_no_coast"
+        include = "expl_novgorod"
+        country_rank = rank_duchy
+        religious_school = hanafi_school
+
+        government = {
+
+            ruler = ali_bay
+            heir_selection = cognatic_primogeniture
+
+            ruler_term = { character = ali_bay start_date = 1440.1.1 regnal_number = 1 }
+
+        }
+    }
 
     QAM = { #Qasim
         type = army
@@ -32701,7 +32738,7 @@ countries = {
             kaffa
             lusta soldaia vosporo
             taman mapa copa tana
-            kezlev aqmecit dashev azok balzimachi
+            dashev azok balzimachi
         }
 
         own_control_integrated = {
@@ -32764,7 +32801,7 @@ countries = {
         # Zhaney
         own_control_core = {
             shanjir akhtar kalininskaya bzhedygu_kal siba_circassia
-            ust_labinsk bryukhovetskaya kanevskaya shcherbinovka
+            ust_labinsk bryukhovetskaya kanevskaya
             susaco
         }
 

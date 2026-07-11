@@ -81,30 +81,6 @@
 	
 	auto_disband_trigger = {
 		total_members = 0
-		any_international_organization_member = {
-			NOT = { has_variable = forced_to_renounce_khan_claim }
-			NOT = {
-				has_special_status_in_international_organization = {
-					type = special_status:golden_horde_claimant
-					international_organization = scope:recipient
-				}
-			}
-			NOT = { is_leader_of_international_organization = international_organization:golden_horde }
-			NOR = {
-                ruler_or_heir_if_regent ?= { 
-                    OR = {
-                        is_patrilineal_descendant_of = dynasty:giray_dynasty
-                        is_patrilineal_descendant_of = dynasty:jochi_dynasty
-                    }
-                }
-                any_character = { 
-                    OR = {
-                        is_patrilineal_descendant_of = dynasty:giray_dynasty
-                        is_patrilineal_descendant_of = dynasty:jochi_dynasty
-                    }
-                }
-            }
-		}
 	}
 	on_joined = {
 	}

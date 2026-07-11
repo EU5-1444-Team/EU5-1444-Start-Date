@@ -103,6 +103,7 @@
  				tag = KVU
  				tag = TBU
  				tag = AUK
+				tag = SIN
 			}
 		}
 	}
@@ -695,7 +696,13 @@
 				culture = {
 					has_culture_group = culture_group:russian_group
 				}
-				has_variable = muscovite_domination
+				AND = {
+					government_type = government_type:monarchy
+					OR = {
+						has_variable = muscovite_domination
+						culture = culture:bolghar_culture
+					}
+				}
 			}
 		}
 	}
@@ -1464,6 +1471,7 @@
 				culture = {
 					has_culture_group = culture_group:russian_group
 				}
+				culture = culture:bolghar_culture
 			}
 		}
 	}
@@ -2173,6 +2181,7 @@
 				culture = {
 					has_culture_group = culture_group:russian_group
 				}
+				culture = culture:bolghar_culture
 			}
 		}
 	}

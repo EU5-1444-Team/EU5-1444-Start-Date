@@ -1,0 +1,72 @@
+offensive_pact = {
+    has_target = no
+    unique = yes
+    disband_if_no_leader = no
+    show_on_diplomatic_map = yes
+
+    show_as_overlord_on_map_trigger = {
+        always = yes
+    }
+
+    create_visible_trigger = {
+        always = no
+    }
+
+    invite_visible_trigger = {
+        always = no
+    }
+
+    has_leader_country = yes
+    leader_title_key = "OFFENSIVE_LEADER"
+    leader_type = country
+
+    leader_change_trigger_type = none
+    leader_change_method = none
+
+    can_lead_trigger = {
+        tag = LIT
+    }
+
+    join_offensive_wars_always = {
+        always = yes
+    }
+
+    can_declare_war = {
+        always = yes
+    }
+
+    gives_military_access_to_all_when_at_war = yes
+
+    can_join_trigger = {
+        always = no
+    }
+
+    can_leave_trigger = {
+        always = no
+    }
+
+    auto_disband_trigger = {
+        total_members < 1
+    }
+
+    modifier = {
+    }
+
+    leader_modifier = {
+    }
+
+    on_joined = {
+    }
+
+    on_left = {
+    }
+
+    monthly_effect = {
+    }
+
+    ai_desire_to_join = {
+    }
+
+    ai_desire_to_allow_new_member = {
+    }
+}
