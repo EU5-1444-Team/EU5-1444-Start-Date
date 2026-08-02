@@ -1144,3 +1144,45 @@ flag_definition = {
 		}
 	}		
 }
+KOR = {
+	flag_definition = {
+		coa = JOE
+		priority = 10
+		trigger = {
+			exists = dynasty:yi_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:yi_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:yi_dynasty
+				}
+			}
+		}
+	}
+	flag_definition = {
+		coa = KOR
+		priority = 2
+		trigger = {
+			exists = dynasty:wang_dynasty
+			OR = {
+				AND = {
+					has_ruler = yes
+					ruler.dynasty ?= dynasty:wang_dynasty
+				}
+				AND = {
+					has_ruler = no
+					has_heir = yes
+					heir.dynasty ?= dynasty:wang_dynasty
+				}
+			}
+		}
+	}
+	flag_definition = {
+		coa = KOR_generic
+		priority = 1
+	}
+}

@@ -781,3 +781,35 @@ NYE_ADJ = {
 	parent = NYE
 	suffix = "_ADJ"
 }
+
+KOR = {
+	# Korea (Joseon / Goryeo / Korea)
+	type = country
+	text = {
+		# Joseon
+		localization_key = KOR_joseon
+		trigger = {
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:yi_dynasty ?= this
+			}
+		}
+	}
+	text = {
+		# Goryeo
+		localization_key = KOR
+		trigger = {
+			ruler_or_heir_if_regent.dynasty ?= {
+				dynasty:wang_dynasty ?= this
+			}
+		}
+	}
+	text = {
+		# Korea
+		localization_key = KOR_korea
+		fallback = yes
+	}
+}
+KOR_ADJ = {
+	parent = KOR
+	suffix = "_ADJ"
+}
