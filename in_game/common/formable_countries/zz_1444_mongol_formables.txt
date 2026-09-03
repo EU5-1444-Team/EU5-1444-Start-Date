@@ -52,9 +52,16 @@ KHL_f = { #Khalkha and Chahar Formable
 	tag = KHL
 	color = map_KHL
 	
-	regions = {
-		mongolia_region
+    regions = { mongolia_region }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
 	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
 	form_effect = {
         if = {
 			limit = { country_rank_level < 3 }
@@ -85,9 +92,16 @@ KHA_f = { #Khorchin formable
 	tag = KHA
 	color = map_KHA
 	
-	regions = {
-		mongolia_region
+    regions = { mongolia_region }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
 	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
 	form_effect = {
         if = {
 			limit = { country_rank_level < 3 }
@@ -118,8 +132,15 @@ OIR_f = { #Oirat formable
     tag = OIR
     color = map_OIR
 
-    regions = {
-		mongolia_region
+    regions = { mongolia_region }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
+	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
 	}
 	form_effect = {
         if = {
@@ -168,6 +189,7 @@ URZ_f = { #Uriankhai formable
     required_locations_fraction = 0.25
     rule = historical
 	capital_required = no
+	potential_requires_own = no
     potential = {
         culture = culture:uriankhai_culture
     }
@@ -185,9 +207,16 @@ URZ_f = { #Uriankhai formable
     tag = URZ
     color = map_URZ
 
-    regions = {
-		mongolia_region
+    regions = { mongolia_region }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
 	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
 	form_effect = {
         if = {
 			limit = { country_rank_level < 3 }
@@ -198,36 +227,22 @@ URZ_f = { #Uriankhai formable
 
 GTH_f = { #Great Horde
 	level = 3
-	required_locations_fraction = 0.3
+	required_locations_fraction = 1
 	rule = historical
+	potential_requires_own = no
+	capital_required = no
 	
 	potential = {
-		OR = {
-			tag = AGZ
-			tag = KGZ
-			tag = MGZ
-		}
+		tag = AGZ
 	}
 
 	allow = {
 		owns = location:sarai_al_jadid
-		or = {
-			AND = {
-				tag = AGZ
-				NOT = { country_exists = c:KGZ }
-				NOT = { country_exists = c:MGZ }
-			}
-			AND = {
-				tag = KGZ
-				NOT = { country_exists = c:AGZ }
-				NOT = { country_exists = c:MGZ }
-			}
-			AND = {
-				tag = MGZ
-				NOT = { country_exists = c:AGZ }
-				NOT = { country_exists = c:KGZ }
-			}
+		AND = {
+			tag = AGZ
+			NOT = { country_exists = c:GTH }
 		}
+
 	}
 	
 	name = GTH
@@ -235,20 +250,154 @@ GTH_f = { #Great Horde
 	adjective = GTH_ADJ
 	tag = GTH
 	color = map_GTH
-	regions = {
-		steppes_region
+	locations = {
+		sarai_al_jadid
 	}
 	form_effect = {
 		set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		set_capital = location:sarai_al_jadid
 	}
 }
 
+BEH_f = { #Blue Horde
+
+	level = 3
+	required_locations_fraction = 0.75
+	rule = plausible
+	capital_required = no
+	potential_requires_own = no
+
+	potential = {
+		exists = international_organization:golden_horde
+		is_member_of_international_organization = international_organization:golden_horde
+		culture = { has_culture_group = culture_group:tatar_group }
+		NOT = { tag = UZB }
+		NOT = { tag = SIB }
+		NOT = { country_exists = c:GLH  }
+	}
+
+	allow = {
+		exists = international_organization:golden_horde
+		is_leader_of_international_organization = international_organization:golden_horde
+		owns = location:sarai_al_jadid
+		owns = location:kazan
+		owns = location:qirq_yer
+		OR = {
+			AND = {
+				tag = GTH
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:CRI }
+			}
+			AND = {
+				tag = KZN
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:CRI }
+			}
+			AND = {
+				tag = CRI
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+			}
+			AND = {
+				OR = {
+					culture = culture:cuman_culture
+					culture = culture:nogai
+					culture = culture:bashkir
+					culture = culture:astrakhani
+				}
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:CRI }
+			}
+		}
+	}
+	
+	name = BEH
+	flag = BEH
+	adjective = BEH_ADJ
+	tag = BEH
+	color = map_blue_horde
+	
+	areas = {
+		astrakhan_area majar_area azov_area	lower_don_area lower_yik_area tambov_area samara_area kazan_area
+		bolghar_area pryazovia_area yedisan_area crimea_area zaporizhzhia_area
+	}
+	provinces = {
+		bielska_sloboda_province izium_province voronezh_province alexeyevka_province bogdanovo_province sarov_province
+	}
+
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+WHI_f = { #White Horde
+
+	level = 3
+	required_locations_fraction = 0.80
+	rule = plausible
+	capital_required = no
+	potential_requires_own = no
+
+	potential = {
+		exists = international_organization:golden_horde
+		is_member_of_international_organization = international_organization:golden_horde
+		OR = {
+			culture = culture:uzbek_culture
+			culture = culture:yerle_qaliq_culture
+			culture = culture:kazakh_culture
+		}
+		NOT = { country_exists = c:GLH  }
+	}
+
+	allow = {
+		exists = international_organization:golden_horde
+		owns = location:chimgi_tura
+		OR = {
+			AND = {
+				tag = UZB
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = SBR
+				NOT = { country_exists = c:UZB }
+			}
+			AND = {
+				OR = {
+					culture = culture:kazakh_culture
+				}
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:SBR }
+			}
+		}
+	}
+	
+	name = WHI
+	flag = WHI
+	adjective = WHI_ADJ
+	tag = WHI
+	color = map_SIB
+	
+	areas = {
+		desht_kipchak_area kulykol_area chimgi_tura_area omsk_area
+	}
+	provinces = {
+		bursol_province imakia_province karasor_province tara_province tobolsk_province
+	}
+
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
 GLH_f = { #Golden Horde
 
 	level = 4
-	required_locations_fraction = 0.25
-	rule = historical
+	required_locations_fraction = 0.80
+	rule = plausible
 	capital_required = no
 	potential_requires_own = no
 
@@ -263,6 +412,10 @@ GLH_f = { #Golden Horde
 	allow = {
 		exists = international_organization:golden_horde
 		is_leader_of_international_organization = international_organization:golden_horde
+		owns = location:sarai_al_jadid
+		owns = location:kazan
+		owns = location:qirq_yer
+		owns = location:chimgi_tura
 		OR = {
 			AND = {
 				tag = GTH
@@ -301,10 +454,11 @@ GLH_f = { #Golden Horde
 			}
 			AND = {
 				OR = {
-					tag = KAZ
-					tag = NOG
 					culture = culture:cuman_culture
 					culture = culture:nogai
+					culture = culture:bashkir
+					culture = culture:astrakhani
+					culture = culture:kazakh_culture
 				}
 				NOT = { country_exists = c:GTH }
 				NOT = { country_exists = c:KZN }
@@ -321,8 +475,14 @@ GLH_f = { #Golden Horde
 	tag = GLH
 	color = map_golden_horde
 	
-	regions = {
-		steppes_region
+	areas = {
+		astrakhan_area majar_area azov_area	lower_don_area lower_yik_area tambov_area samara_area kazan_area
+		bolghar_area pryazovia_area yedisan_area crimea_area zaporizhzhia_area desht_kipchak_area kulykol_area
+		chimgi_tura_area omsk_area
+	}
+	provinces = {
+		bielska_sloboda_province izium_province voronezh_province alexeyevka_province bogdanovo_province sarov_province
+		bursol_province imakia_province karasor_province tara_province tobolsk_province
 	}
 
 	form_effect = {
@@ -334,7 +494,7 @@ GLH_f = { #Golden Horde
 	}
 }
 
-KAZ_f = {
+KAZ_f = { #Kazakh
 	level = 1
 	required_locations_fraction = 0.75
 	rule = historical
@@ -360,28 +520,98 @@ KAZ_f = {
 	}
 }
 
-BSH_f = { #Bashkira
+BKA_f = { #Bashkira
     level = 3
     required_locations_fraction = 0.70
     rule = historical
 	capital_required = no
+	potential_requires_own = no
     potential = {
         culture = culture:bashkir
     }
     allow = {
-		owns = location:davlekanovo
     }
-    name = BSH
-    flag = BSH
-    adjective = BSH_ADJ
-    tag = BSH
+    name = BKA
+    flag = BKA
+    adjective = BKA_ADJ
+    tag = BKA
     color = map_BSH
-    areas = {
-        bashkiria_area
-        bolghar_area
-    }
 	provinces = {
+		ufa_province
+		chishmy_province
+		meleuz_province
+		krasnaya_gorka_province
 		khaqmar_province
+		ural_province
+		yetkul_province
+		kaslinsky_province
+		bisert_province
+		syun_province
+	}
+	locations = {
+		kasevo yanaul tatyshly
+	}
+    form_effect = {
+        if = {
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+    }
+}
+MRZ_f = { #Mari
+    level = 3
+    required_locations_fraction = 0.70
+    rule = historical
+    capital_required = no
+	potential_requires_own = no
+    potential = {
+        culture = culture:mari_culture
+    }
+    allow = {
+        owns = location:yoshkar_ola
+    }
+    name = MRZ
+    flag = MRZ
+    adjective = MRZ_ADJ
+    tag = MRZ
+    color = map_mari
+    provinces = {
+        yaransk_province
+    }
+    form_effect = {
+        if = {
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+    }
+}
+
+UDM_f = { #Udmurtia
+    level = 3
+    required_locations_fraction = 0.70
+    rule = historical
+    capital_required = no
+	potential_requires_own = no
+    potential = {
+        culture = culture:udmurt
+    }
+    allow = {
+    }
+    name = UDM
+    flag = UDM
+    adjective = UDM_ADJ
+    tag = UDM
+    color = map_udmurt
+    provinces = {
+        sarapul_province
+		nema_province
+		igra_province
+		omutninsk_province
+    }
+	locations = {
+		nikolsky
+		saygatsky debyosy stepanenki
+		yelovo osa
 	}
     form_effect = {
         if = {
@@ -489,6 +719,15 @@ REPLACE:YUA_f = { #Yuan formable
     regions = {
 		mongolia_region
 	}
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
+	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
 	form_effect = {
         if = {
 			limit = { country_rank_level < 4 }
@@ -524,6 +763,15 @@ REPLACE:MGO_f = { #Mongolia formable
     regions = {
         mongolia_region
     }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
+	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
     form_effect = {
         if = {
             limit = { country_rank_level < 4 }

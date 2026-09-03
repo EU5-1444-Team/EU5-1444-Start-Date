@@ -7,7 +7,6 @@
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:nogai_confederation
-            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
     allow = {
@@ -105,7 +104,6 @@ mongol_tax_obligations = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:nogai_confederation
-            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
     allow = {
@@ -221,7 +219,6 @@ mongol_court_etiquette = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:nogai_confederation
-            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
     allow = {
@@ -339,7 +336,6 @@ mongol_formal_script = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:nogai_confederation
-            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
     allow = {
@@ -436,7 +432,6 @@ mongol_legal_framework = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:nogai_confederation
-            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
     allow = {
@@ -552,7 +547,6 @@ mongol_economic_framework = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:nogai_confederation
-            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
     allow = {
@@ -668,7 +662,6 @@ mongol_trade_relations = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:nogai_confederation
-            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
     allow = {
@@ -784,7 +777,6 @@ mongol_clan_diplomacy = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:nogai_confederation
-            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
     allow = {
@@ -901,7 +893,6 @@ confederation_unification_law = {
             international_organization_type = international_organization_type:khalkha_confederation
             international_organization_type = international_organization_type:khorchin_confederation
             international_organization_type = international_organization_type:nogai_confederation
-            international_organization_type = international_organization_type:bashkir_confederation
         }
     }
  
@@ -954,38 +945,6 @@ confederation_unification_law = {
             custom_tooltip = nogai_unification_tt
             leader_country = {
                 trigger_event_non_silently = { id = io_unification.30 }
-            }
-        }
-    }
- 
-    unify_bashkir_tribal_policy = {
-        potential = {
-            international_organization_type = international_organization_type:bashkir_confederation
-        }
- 
-        wants_propose_policy = { add = { value = 500 } }
-        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
- 
-        on_activate = {
-            custom_tooltip = bashkir_unification_tt
-            leader_country = {
-                trigger_event_non_silently = { id = io_unification.40 }
-            }
-        }
-    }
- 
-    unify_bashkir_horde_policy = {
-        potential = {
-            international_organization_type = international_organization_type:bashkir_confederation
-        }
- 
-        wants_propose_policy = { add = { value = 500 } }
-        wants_this_policy_bias = { subtract = { desc = "POLICY_RESTRICTS_TRADITION" value = -25 } }
- 
-        on_activate = {
-            custom_tooltip = bashkir_horde_unification_tt
-            leader_country = {
-                trigger_event_non_silently = { id = io_unification.50 }
             }
         }
     }

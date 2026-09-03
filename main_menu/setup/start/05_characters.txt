@@ -49816,6 +49816,7 @@ character_db= {
         birth = trakai
         father = lit_vytautas_gediminid
         mother = kie_uliana_olshanska_alseniskiai
+        spouse = mos_vasily_i_rurikovich
         dynasty = gediminid_dynasty
         tag = MOS
     }
@@ -62972,7 +62973,7 @@ character_db= {
         religion = sunni
         adm = 60 dip = 64 mil = 68
         birth_date = 1390.1.1
-        birth = sarayjuk
+        birth = sarai_al_jadid
         father = tokhtamysh_borjigin
         tag = AGZ
     }
@@ -62994,13 +62995,13 @@ character_db= {
 
     shiban_borjigin = {
         first_name = { name = name_Shiban }
-        dynasty = jochi_dynasty
-        culture = uzbek_culture
+        dynasty = shaybanid_dynasty
+        culture = mongolian_culture
         religion = tengri
         adm = 60 dip = 55 mil = 72
         birth_date = 1208.1.1
-        birth = khan_khentii
-        death_date = 1266.1.1
+        birth = sarai_al_jadid
+        death_date = 1248.1.1
         father = jochi_borjigin
         tag = GLH
     }
@@ -63233,7 +63234,7 @@ character_db= {
         religion = sunni
         adm = 70 dip = 65 mil = 78
         birth_date = 1370.1.1
-        birth = sarayjuk
+        birth = sarai_al_jadid
         death_date = 1400.1.1
         father = urung_timur_borjigin
         tag = GLH
@@ -63246,7 +63247,7 @@ character_db= {
         religion = sunni
         adm = 65 dip = 70 mil = 72
         birth_date = 1380.1.1
-        birth = sarayjuk
+        birth = sarai_al_jadid
         death_date = 1412.1.1
         father = tokhtamysh_borjigin
         tag = GLH
@@ -63259,7 +63260,7 @@ character_db= {
         religion = sunni
         adm = 58 dip = 55 mil = 65
         birth_date = 1391.1.1
-        birth = sarayjuk
+        birth = sarai_al_jadid
         death_date = 1412.1.1
         father = timur_qutlugh_borjigin
         tag = GLH
@@ -63275,7 +63276,7 @@ character_db= {
         religion = sunni
         adm = 74 dip = 72 mil = 70
         birth_date = 1405.1.1
-        birth = sarayjuk
+        birth = sarai_al_jadid
         father = jalal_ad_din_borjigin
         tag = KZN
     }
@@ -63287,7 +63288,7 @@ character_db= {
         religion = sunni
         adm = 68 dip = 65 mil = 72
         birth_date = 1419.1.1
-        birth = sarayjuk
+        birth = sarai_al_jadid
         father = ulugh_muhammad_borjigin
         tag = KZN
     }
@@ -63299,7 +63300,7 @@ character_db= {
         religion = sunni
         adm = 62 dip = 70 mil = 60
         birth_date = 1422.1.1
-        birth = sarayjuk
+        birth = sarai_al_jadid
         father = ulugh_muhammad_borjigin
         tag = KZN
     }
@@ -63311,12 +63312,10 @@ character_db= {
         religion = sunni
         adm = 55 dip = 52 mil = 63
         birth_date = 1423.1.1
-        birth = sarayjuk
+        birth = sarai_al_jadid
         father = ulugh_muhammad_borjigin
         tag = KZN
     }
-
-    ### jochi_dynasty | MGZ ###
 
     glh_kuchuk_muhammad_jochid = {
         first_name = { name = Küchük.name_muhammad }
@@ -63325,11 +63324,34 @@ character_db= {
         religion = sunni
         adm = 71 dip = 68 mil = 76
         birth_date = 1391.6.28
-        birth = sarayjuk
+        birth = sarai_al_jadid
         father = timur_khan_borjigin
-        tag = MGZ
+        tag = GTH
     }
-
+    gth_ahmed_khan_bin_kuchuk = {
+        first_name = { name = name_ahmed }
+        last_name = { name = name_bin_kuchuk }
+        dynasty = jochi_dynasty
+        culture = mishar
+        religion = sunni
+        adm = 37 dip = 40 mil = 72
+        birth_date = 1428.1.1
+        birth = sarai_al_jadid
+        father = glh_kuchuk_muhammad_jochid
+        tag = GTH
+    }
+    gth_mahmud_bin_kuchuk = {
+        first_name = { name = name_mahmud }
+        last_name = { name = name_bin_kuchuk }
+        dynasty = jochi_dynasty
+        culture = mishar
+        religion = sunni
+        adm = 54 dip = 34 mil = 61
+        birth_date = 1421.1.1
+        birth = sarai_al_jadid
+        father = glh_kuchuk_muhammad_jochid
+        tag = GTH
+    }
     mustafa_borjigin = {
         first_name = { name = name_mustafa }
         dynasty = jochi_dynasty
@@ -63337,58 +63359,132 @@ character_db= {
         religion = sunni
         adm = 58 dip = 54 mil = 65
         birth_date = 1420.1.1
-        birth = sarayjuk
+        birth = sarai_al_jadid
         father = ulugh_muhammad_borjigin
-        tag = MGZ
+        tag = KZN
     }
 
     ### jochi_dynasty | UZB ###
 
+    bahadur_borjigin = {
+        first_name = { name = name_bahadur }
+        dynasty = shaybanid_dynasty
+        culture = uzbek_culture
+        religion = tengri
+        adm = 50 dip = 48 mil = 58
+        birth_date = 1220.1.1
+        birth = chimgi_tura
+        death_date = 1264.1.1
+        father = shiban_borjigin
+        tag = UZB
+    }
+    jochi_buka_borjigin = {
+        first_name = { name = name_jochi.name_buka }
+        dynasty = shaybanid_dynasty
+        culture = uzbek_culture
+        religion = tengri
+        adm = 50 dip = 48 mil = 58
+        birth_date = 1242.1.1
+        birth = chimgi_tura
+        death_date = 1290.1.1
+        father = bahadur_borjigin
+        tag = UZB
+    }
+
+    badakul_borjigin = {
+        first_name = { name = name_badakul }
+        dynasty = shaybanid_dynasty
+        culture = uzbek_culture
+        religion = tengri
+        adm = 50 dip = 48 mil = 58
+        birth_date = 1266.1.1
+        birth = chimgi_tura
+        death_date = 1315.1.1
+        father = jochi_buka_borjigin
+        tag = UZB
+    }
+
+    munk_timur_borjigin = {
+        first_name = { name = name_munk.name_timur }
+        dynasty = shaybanid_dynasty
+        culture = uzbek_culture
+        religion = sunni
+        adm = 50 dip = 48 mil = 58
+        birth_date = 1292.1.1
+        birth = chimgi_tura
+        death_date = 1344.1.1
+        father = badakul_borjigin
+        tag = UZB
+    }
+
+    fulad_oglan_borjigin = {
+        first_name = { name = name_fulad.name_oglan }
+        dynasty = shaybanid_dynasty
+        culture = uzbek_culture
+        religion = islam
+        adm = 50 dip = 48 mil = 58
+        birth_date = 1320.1.1
+        birth = chimgi_tura
+        death_date = 1375.1.1
+        father = munk_timur_borjigin
+        tag = UZB
+    }
+
+    ibrahim_oglan_borjigin = {
+        first_name = { name = name_ibrahim.name_oglan }
+        dynasty = shaybanid_dynasty
+        culture = uzbek_culture
+        religion = islam
+        adm = 50 dip = 48 mil = 58
+        birth_date = 1345.1.1
+        birth = chimgi_tura
+        death_date = 1400.1.1
+        father = fulad_oglan_borjigin
+        tag = UZB
+    }
     dawlat_shaikh_borjigin = {
-        first_name = { name = name_Dawlat.name_shaikh }
-        dynasty = jochi_dynasty
+        first_name = { name = name_dawlat.name_shaikh }
+        dynasty = shaybanid_dynasty
         culture = uzbek_culture
         religion = sunni
         adm = 50 dip = 48 mil = 58
         birth_date = 1385.1.1
-        birth = sarayjuk
+        birth = chimgi_tura
         death_date = 1420.1.1
-        father = shiban_borjigin
+        father = ibrahim_oglan_borjigin
         tag = UZB
     }
-
     abul_khayr_borjigin = {
-        first_name = { name = name_Abu.name_al_khayr }
-        dynasty = jochi_dynasty
+        first_name = { name = name_bbu.name_al_khayr }
+        dynasty = shaybanid_dynasty
         culture = uzbek_culture
         religion = sunni
         adm = 80 dip = 71 mil = 85
         birth_date = 1412.1.1
-        birth = sarayjuk
+        birth = chimgi_tura
         father = dawlat_shaikh_borjigin
         tag = UZB
     }
-
     shah_budaq_borjigin = {
-        first_name = { name = name_Shah.name_budaq }
-        dynasty = jochi_dynasty
+        first_name = { name = name_shah.name_budaq }
+        dynasty = shaybanid_dynasty
         culture = uzbek_culture
         religion = sunni
-        adm = 60 dip = 55 mil = 62
+        adm = 21 dip = 18 mil = 27
         birth_date = 1438.1.1
-        birth = sarayjuk
+        birth = chimgi_tura
         father = abul_khayr_borjigin
         tag = UZB
     }
 
-    sheikh_khaidar_borjigin = {
-        first_name = { name = name_Shaykh.name_khaidar }
-        dynasty = jochi_dynasty
+    sheikh_haidar_borjigin = {
+        first_name = { name = name_shaykh.name_haidar }
+        dynasty = shaybanid_dynasty
         culture = uzbek_culture
         religion = sunni
-        adm = 52 dip = 50 mil = 58
+        adm = 4 dip = 2 mil = 4
         birth_date = 1440.1.1
-        birth = sarayjuk
+        birth = chimgi_tura
         father = abul_khayr_borjigin
         tag = UZB
     }
@@ -123860,16 +123956,28 @@ character_db= {
     }
 
     tim_pir_muhammad_mirza = {
-        first_name = { name = "Pir_Muhammad_Mirza" }
+        first_name = { name = "Pir_Muhammad" }
         culture = moghul_culture
         religion = sunni
 		adm = 55 dip = 50 mil = 70
         birth_date = 1376.1.1
-        death_date = 1407.2.22
+        death_date = 1405.2.22
 		birth = samarkand
         father = tim_jahangir_mirza
         dynasty = timurid_dynasty
-        tag = TIM
+        tag = TZG
+    }
+    tgz_qaydu_ibn_pir_muhammad = {
+        first_name = { name = "name_qaydu.Pir_Muhammad" }
+        culture = moghul_culture
+        religion = sunni
+		adm = 55 dip = 50 mil = 70
+        birth_date = 1395.1.1
+        death_date = 1417.1.1
+		birth = samarkand
+        father = tim_pir_muhammad_mirza
+        dynasty = timurid_dynasty
+        tag = TZG
     }
 
     tim_shahrukh_mirza = {
@@ -123955,7 +124063,17 @@ character_db= {
         dynasty = timurid_dynasty
         tag = TIM
     }
-
+    tzg_masud_mirza = {
+        first_name = { name = name_masud }
+        culture = moghul_culture
+        religion = sunni
+        adm = 34 dip = 22 mil = 37
+        birth_date = 1417.1.1
+		birth = herat
+        father = tim_soyurghatmish
+        dynasty = timurid_dynasty
+        tag = TZG
+    }
 	tim_muhammad_juki = {
         first_name = { name = name_muhammad.name_juki }
         culture = moghul_culture
@@ -124050,20 +124168,6 @@ character_db= {
         father = tim_muhammad_juki
         dynasty = timurid_dynasty
         tag = TIX
-    }
-
-    ### timurid_dynasty | TKK ###
-
-	tim_sind_qaydu_bahadur = {
-        first_name = { name = name_sind_qaydu_bahadur }
-        culture = moghul_culture
-        religion = sunni
-		adm = 40 dip = 40 mil = 45
-        birth_date = 1425.1.1
-		birth = samarkand
-        father = tim_muhammad_jahangir
-        dynasty = timurid_dynasty
-        tag = TKK
     }
 
     ### tinieres_dynasty | NRB ###
@@ -147381,7 +147485,7 @@ character_db= {
         religion = catholic
         estate = clergy_estate
         birth_date = 1275.1.1 # Estimated
-        birth = miltenburg
+        birth = cheb
         tag = FRE
     }
 
@@ -148965,6 +149069,15 @@ character_db= {
         father = mos_yermolay_rurikovich
         dynasty = rurikovich_dynasty
         tag = MOS
+    }
+    ali_bay = {
+        first_name = { name = name_ali_bay }
+        culture = bolghar_culture
+        religion = sunni
+        birth_date = 1415.1.1
+        birth = cukataw
+        dynasty = dulo_dynasty
+        tag = BOG
     }
 
 }

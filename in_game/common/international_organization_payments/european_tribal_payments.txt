@@ -1,0 +1,107 @@
+european_tribal_tribute = {
+    get_payer_list = {
+        every_international_organization_member = {
+            limit = {
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:tatar_overlord
+                        international_organization = root
+                    }
+                }
+            }
+            add_to_local_variable_list = {
+                name = payers
+                target = this
+            }
+        }
+    }
+    get_payee_list = {
+        # Overlord exists — overlord receives
+        every_country_with_special_status_of_type = {
+            type = tatar_overlord
+            add_to_local_variable_list = {
+                name = payees
+                target = this
+            }
+        }
+    }
+    price = european_tribal_tribute_price
+    uses_maintenance = yes
+    maintenance_modifier = {
+        potential_trigger = { "payment_maintenance(scope:recipient|european_tribal_tribute)" < 0.5 }
+        scale = {
+            value = 1
+            subtract = {
+                value = "payment_maintenance(scope:recipient|european_tribal_tribute)"
+                multiply = 2
+            }
+        }
+        monthly_prestige = -0.1
+        global_monthly_development = -0.005
+        monthly_tribal_cohesion = -0.02
+    }
+    maintenance_modifier = {
+        potential_trigger = { "payment_maintenance(scope:recipient|european_tribal_tribute)" > 0.5 }
+        scale = {
+            value = "payment_maintenance(scope:recipient|european_tribal_tribute)"
+            subtract = 0.5
+            multiply = 2
+        }
+        monthly_diplomats = 0.05
+        monthly_prestige = 0.05
+    }
+    price_multiplier = {
+        # Base from member incomes
+        add = {
+            desc = "TRIBAL_TRIBUTE_BASE"
+            every_international_organization_member = {
+                limit = {
+                    NOT = {
+                        has_special_status_in_international_organization = {
+                            type = special_status:tatar_overlord
+                            international_organization = root
+                        }
+                    }
+                }
+                add = monthly_income_trade_and_tax
+            }
+            multiply = 0.5
+        }
+        # Scale with tribute law tier
+        multiply = {
+            if = {
+                limit = {
+                    international_organization_has_policy = policy:european_tribal_no_tribute_policy
+                }
+                value = 0
+            }
+            else_if = {
+                limit = {
+                    international_organization_has_policy = policy:european_tribal_medium_tribute_policy
+                }
+                value = 1.0
+            }
+            else_if = {
+                limit = {
+                    international_organization_has_policy = policy:european_tribal_high_tribute_policy
+                }
+                value = 2.0
+            }
+            else = {
+                value = 0.5
+            }
+        }
+    }
+    proportion_for_payer = {
+        add = {
+            desc = "european_tribal_tribute"
+            value = monthly_income_trade_and_tax
+        }
+    }
+    proportion_for_payee = {
+        add = {
+            desc = "european_tribal_tribute"
+            value = 1
+        }
+    }
+}

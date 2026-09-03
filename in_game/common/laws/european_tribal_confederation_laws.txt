@@ -1,0 +1,398 @@
+# Defense Law — how much tribes help their Tatar Leader
+european_tribal_defense_law = {
+    type = international_organization
+    law_category = federal
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:european_tribal_confederation
+    }
+    allow = {
+    }
+    locked = {}
+
+    european_tribal_no_defense_policy = {
+        allow = {
+            international_organization_has_policy = policy:european_tribal_defensive_call_policy
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 40 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_defensive_no_tt
+        }
+    }
+
+    european_tribal_defensive_call_policy = {
+        allow = {
+            OR = {
+                international_organization_has_policy = policy:european_tribal_no_defense_policy
+                international_organization_has_policy = policy:european_tribal_defensive_auto_policy
+            }
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        join_defensive_wars_can_call = {
+            scope:actor ?= {
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = root
+                }
+            }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 30 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_defensive_call_tt
+        }
+    }
+
+    european_tribal_defensive_auto_policy = {
+        allow = {
+            OR = {
+                international_organization_has_policy = policy:european_tribal_defensive_call_policy
+                international_organization_has_policy = policy:european_tribal_defensive_always_policy
+            }
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        join_defensive_wars_auto_call = {
+            scope:actor ?= {
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = root
+                }
+            }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 20 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_defensive_auto_tt
+        }
+    }
+
+    european_tribal_defensive_always_policy = {
+        allow = {
+            international_organization_has_policy = policy:european_tribal_defensive_auto_policy
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        join_defensive_wars_always = {
+            scope:actor ?= {
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = root
+                }
+            }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 10 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 50 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 10 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_defensive_always_tt
+        }
+    }
+}
+
+# Offense Law — how much tribes join Tatar offensive wars
+european_tribal_offense_law = {
+    type = international_organization
+    law_category = federal
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:european_tribal_confederation
+    }
+    allow = {
+    }
+    locked = {}
+
+    european_tribal_no_offense_policy = {
+        allow = {
+            international_organization_has_policy = policy:european_tribal_offense_call_policy
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 40 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_offense_no_tt
+        }
+    }
+
+    european_tribal_offense_call_policy = {
+        allow = {
+            OR = {
+                international_organization_has_policy = policy:european_tribal_no_offense_policy
+                international_organization_has_policy = policy:european_tribal_offense_auto_policy
+            }
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        join_offensive_wars_can_call = {
+            scope:actor ?= {
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = root
+                }
+            }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 30 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_offense_call_tt
+        }
+    }
+
+    european_tribal_offense_auto_policy = {
+        allow = {
+            OR = {
+                international_organization_has_policy = policy:european_tribal_offense_call_policy
+                international_organization_has_policy = policy:european_tribal_offense_always_policy
+            }
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        join_offensive_wars_auto_call = {
+            scope:actor ?= {
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = root
+                }
+            }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 20 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_offense_auto_tt
+        }
+    }
+
+    european_tribal_offense_always_policy = {
+        allow = {
+            international_organization_has_policy = policy:european_tribal_offense_auto_policy
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        join_offensive_wars_always = {
+            scope:actor ?= {
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = root
+                }
+            }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 10 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 50 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 10 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_offense_always_tt
+        }
+    }
+}
+
+# Tribute Law
+european_tribal_tribute_law = {
+    type = international_organization
+    law_category = federal
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:european_tribal_confederation
+    }
+    allow = {
+    }
+    locked = {}
+
+    european_tribal_no_tribute_policy = {
+        allow = {
+            international_organization_has_policy = policy:european_tribal_medium_tribute_policy
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 40 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_no_tribute_tt
+        }
+    }
+
+    european_tribal_low_tribute_policy = {
+        allow = {
+            OR = {
+                international_organization_has_policy = policy:european_tribal_no_tribute_policy
+                international_organization_has_policy = policy:european_tribal_medium_tribute_policy
+            }
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        payments_implemented = { european_tribal_tribute }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 30 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_low_tribute_tt
+        }
+    }
+
+    european_tribal_medium_tribute_policy = {
+        allow = {
+            OR = {
+                international_organization_has_policy = policy:european_tribal_low_tribute_policy
+                international_organization_has_policy = policy:european_tribal_high_tribute_policy
+            }
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        payments_implemented = { european_tribal_tribute }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 20 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_medium_tribute_tt
+        }
+    }
+
+    european_tribal_high_tribute_policy = {
+        allow = {
+            international_organization_has_policy = policy:european_tribal_medium_tribute_policy
+            NOT = { has_cooldown = european_tribal_policy_change_cd }
+        }
+        payments_implemented = { european_tribal_tribute }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 10 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 50 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 10 } }
+        on_activate = {
+            add_cooldown = {
+                type = european_tribal_policy_change_cd
+                years = 5
+            }
+            custom_tooltip = european_tribal_high_tribute_tt
+        }
+    }
+}
+
+# Unification Law
+european_tribal_unification_law = {
+    type = international_organization
+    law_category = centralization
+    requires_vote = yes
+    potential = {
+        international_organization_type = international_organization_type:european_tribal_confederation
+    }
+    allow = {
+        NOT = { has_cooldown = european_tribal_policy_change_cd }
+        international_organization_has_policy = policy:european_tribal_defensive_always_policy
+        international_organization_has_policy = policy:european_tribal_offense_always_policy
+        OR = {
+            AND = {
+                international_organization_has_policy = policy:european_tribal_high_tribute_policy
+                OR = {
+                    culture = { has_culture_group = culture_group:tatar_group }
+                    culture = { culture = culture:yerle_qaliq_culture }
+                }
+            }
+            AND = {
+                NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+                NOT = { culture = { culture = culture:yerle_qaliq_culture } }
+            }
+        }
+    }
+    locked = {}
+
+    european_tribal_no_unification_policy = {
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 0 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 0 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 50 } }
+    }
+
+    tatar_overlord_annexation_policy = {
+        allow = {
+            OR = {
+                culture = { has_culture_group = culture_group:tatar_group }
+                culture = { culture = culture:yerle_qaliq_culture }
+            }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 25 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 1000 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 0 } }
+        on_activate = {
+            custom_tooltip = tatar_unification_tt
+            every_country_with_special_status_of_type = {
+                type = tatar_overlord
+                trigger_event_non_silently = { id = io_unification.130 }
+            }
+        }
+    }
+
+    european_tribal_confederation_form_policy = {
+        allow = {
+            NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+            NOT = { culture = { culture = culture:yerle_qaliq_culture } }
+        }
+        wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 25 } }
+        wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 1000 } }
+        wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 0 } }
+        on_activate = {
+            if = {
+                limit = { leader_country ?= { culture = culture:bashkir } }
+                custom_tooltip = bashkir_unification_tt
+                leader_country = {
+                    trigger_event_non_silently = { id = io_unification.40 }
+                }
+            }
+            if = {
+                limit = { leader_country ?= { culture = culture:mari_culture } }
+                custom_tooltip = mari_unification_tt
+                leader_country = {
+                    trigger_event_non_silently = { id = io_unification.50 }
+                }
+            }
+            if = {
+                limit = { leader_country ?= { culture = culture:udmurt } }
+                custom_tooltip = udmurt_unification_tt
+                leader_country = {
+                    trigger_event_non_silently = { id = io_unification.140 }
+                }
+            }
+        }
+    }
+}

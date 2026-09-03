@@ -37,3 +37,109 @@ flavor_muscovy.100 = { # Muscovy demands the absolute submission of Perm
         }
     }
 }
+
+flavor_muscovy.101 = { # Muscovy refuses to pay tribute
+    type = country_event
+    title = flavor_muscovy.101.title
+    desc = flavor_muscovy.101.desc
+    hide_portraits = yes
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = MOS
+        from = 1444.1.1
+        to = 1450.1.1
+        monthly_chance = 100
+    }
+    trigger = {
+        has_or_had_tag = MOS
+    }
+    immediate = {
+    }
+    option = {
+        name = flavor_muscovy.101.a # Refuse to pay tribute
+        ai_chance = {
+            factor = 1
+        }
+        set_global_variable = {
+            name = muscovy_tribute_ended
+            value = 1
+        }
+        c:KZN ?= {
+            trigger_event_silently = { id = flavor_steppe.4 days = { 92 122 } }
+        }
+    }
+    option = {
+        name = flavor_muscovy.101.b # Continue paying tribute
+        ai_chance = {
+            factor = 0
+        }
+        add_stability = stability_extreme_penalty
+        add_prestige = prestige_mild_penalty
+    }
+}
+flavor_muscovy.102 = { #Ransom Vasily
+	type = country_event
+	title = flavor_muscovy.102.title
+	desc = flavor_muscovy.102.desc
+	outcome = neutral
+
+    immediate = {
+        if = {
+			limit = { tag = MOS }
+			random_current_war = {
+				limit = {
+    				AND = {
+						attacker_leader = c:KZN
+						defender_leader = c:MOS
+					}
+				}
+				save_scope_as = target_war
+			}
+		}
+    }
+	option = {
+		name = flavor_muscovy.102.a
+		
+		add_gold = {
+			value = 800
+			multiply = -1
+		}
+		scope:capturing_country = {
+			add_gold = 800
+		}
+
+        add_stability = stability_extreme_penalty
+        add_prestige = prestige_extreme_penalty
+   		white_peace = scope:target_war
+        remove_global_variable = muscovy_tribute_ended
+	}
+}
+
+flavor_muscovy.103 = { # Muscovy wins
+    type = country_event
+    title = flavor_muscovy.103.title
+    desc = flavor_muscovy.103.desc
+    hide_portraits = yes
+    fire_only_once = yes
+    dynamic_historical_event = {
+        tag = MOS
+        from = 1444.1.1
+        to = 1460.1.1
+        monthly_chance = 100
+    }
+    trigger = {
+        has_or_had_tag = MOS
+        at_war = no
+        has_global_variable = muscovy_tribute_ended
+        has_truce_with = c:KZN
+    }
+
+    option = {
+        name = flavor_muscovy.103.a # Victorious
+
+        add_stability = stability_extreme_bonus
+        add_prestige = prestige_mild_bonus
+        remove_global_variable = muscovy_tribute_ended
+        destroy_international_organization = { target = international_organization:tatar_yoke }
+    }
+}

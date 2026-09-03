@@ -1,0 +1,92 @@
+bashkir_biy = {
+    max_countries = 1
+    priority = 20
+    leader = yes
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+
+    can_bestow_trigger = {
+        is_leader_of_international_organization = scope:recipient
+        culture = culture:bashkir
+    }
+    auto_bestowal_trigger = {
+        is_leader_of_international_organization = scope:recipient
+        culture = culture:bashkir
+    }
+    auto_rescind_trigger = {
+        NOT = { is_leader_of_international_organization = scope:recipient }
+        NOT = { culture = culture:bashkir }
+    }
+    special_status_power = {
+        value = 25
+    }
+}
+mari_kart = {
+    max_countries = 1
+    priority = 20
+    leader = yes
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+
+    can_bestow_trigger = {
+        is_leader_of_international_organization = scope:recipient
+        culture = culture:mari_culture
+    }
+    auto_bestowal_trigger = {
+        is_leader_of_international_organization = scope:recipient
+        culture = culture:mari_culture
+    }
+    auto_rescind_trigger = {
+        NOT = { is_leader_of_international_organization = scope:recipient }
+        NOT = { culture = culture:mari_culture }
+    }
+    special_status_power = {
+        value = 25
+    }
+}
+udmurt_toro = {
+    max_countries = 1
+    priority = 20
+    leader = yes
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+
+    can_bestow_trigger = {
+        is_leader_of_international_organization = scope:recipient
+        culture = culture:udmurt
+    }
+    auto_bestowal_trigger = {
+        is_leader_of_international_organization = scope:recipient
+        culture = culture:udmurt
+    }
+    auto_rescind_trigger = {
+        NOT = { is_leader_of_international_organization = scope:recipient }
+        NOT = { culture = culture:udmurt }
+    }
+    special_status_power = {
+        value = 25
+    }
+}
+tatar_overlord = {
+    max_countries = 10
+    priority = 15
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_TIER2_COLOR
+
+    can_bestow_trigger = {
+        is_member_of_international_organization = scope:recipient
+        OR = {
+            culture = { has_culture_group = culture_group:tatar_group }
+            culture = { culture = culture:yerle_qaliq_culture }
+        }
+    }
+    auto_bestowal_trigger = {
+        is_member_of_international_organization = scope:recipient
+        OR = {
+            culture = { has_culture_group = culture_group:tatar_group }
+            culture = { culture = culture:yerle_qaliq_culture }
+        }
+    }
+    auto_rescind_trigger = {
+        NOT = { is_member_of_international_organization = scope:recipient }
+    }
+    special_status_power = {
+        value = 50
+    }
+}

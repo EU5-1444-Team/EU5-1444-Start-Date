@@ -63,22 +63,7 @@
 	}
 
 	auto_disband_trigger = {
-		OR = {
-			NOT = {
-				country_has_special_status = {
-					type = special_status:tatar_overlord
-					OR = {
-						country = c:GLH
-						country = c:GTH
-						country = c:AGZ
-						country = c:MGZ
-						country = c:KGZ
-						country = c:KZN
-					}
-				}
-			}
-			total_members = 1
-		}
+		total_members = 1
 	}
 
 	on_joined = {

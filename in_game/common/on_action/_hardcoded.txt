@@ -382,6 +382,30 @@ on_location_occupied = {
 			}
 			trigger_event_silently = flavor_chi_mon.6
 		}
+		if = {
+			limit = {
+				scope:target = location:or_qapi
+				scope:target.owner ?= {
+					tag = CRI
+				}
+			}
+			set_global_variable = {
+				name = perekop_fallen
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:target = location:shakhty
+				scope:target.owner ?= {
+					tag = AGZ
+				}
+			}
+			set_global_variable = {
+				name = shakhty_fallen
+				value = 1
+			}
+		}
 	}
 }
 
@@ -2632,6 +2656,31 @@ on_battle_won = {
 					set_local_variable = bul_won_against_ottomans
 					trigger_event_non_silently = flavor_bul.5
 				}
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { 
+					owner = { tag = KZN } 
+				}
+				scope:target = { owner = { tag = MOS } } #Enemy tag
+				has_global_variable = muscovy_tribute_ended
+				exists = international_organization:tatar_yoke
+			}
+			trigger_event_silently = {
+				id = flavor_steppe.5
+			}
+		}
+		if = {
+			limit = {
+				scope:actor = { 
+					owner = { tag = CRI }
+				}
+				NOT = { has_global_variable = perekop_fallen } 
+				scope:target = { owner = { tag = AGZ } } #Enemy tag
+			}
+			trigger_event_silently = {
+				id = flavor_steppe.9
 			}
 		}
 	}

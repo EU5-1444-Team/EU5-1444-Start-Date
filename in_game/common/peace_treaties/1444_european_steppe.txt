@@ -1,0 +1,124 @@
+peace_throw_off_tatar_yoke = {
+    cost = 45
+    potential = {
+        scope:winner = {
+            any_international_organization = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                is_member_of_international_organization = scope:winner
+                any_country_with_special_status_of_type = {
+                    type = tatar_overlord
+                    this = scope:loser
+                }
+            }
+        }
+        scope:war = {
+            casus_belli ?= casus_belli:cb_throw_off_tatar_yoke
+        }
+    }
+    allow = {
+    }
+    effect = {
+        every_international_organization = {
+            limit = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                is_member_of_international_organization = scope:winner
+                any_country_with_special_status_of_type = {
+                    type = tatar_overlord
+                    this = scope:loser
+                }
+            }
+            international_organization_remove_special_status = {
+                type = special_status:tatar_overlord
+                country = scope:loser
+            }
+            remove_country_from_international_organization = scope:loser
+        }
+    }
+    ai_desire = 100
+}
+peace_enforce_tatar_yoke = {
+    cost = 80
+    potential = {
+        scope:winner = {
+            OR = {
+                culture = { has_culture_group = culture_group:tatar_group }
+                culture = { culture = culture:yerle_qaliq_culture }
+            }
+        }
+        scope:war = {
+            casus_belli ?= casus_belli:cb_enforce_tatar_yoke
+        }
+    }
+    allow = {
+    }
+    effect = {
+        every_international_organization = {
+            limit = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                is_member_of_international_organization = scope:loser
+                NOT = {
+                    any_international_organization_member = {
+                        has_special_status_in_international_organization = {
+                            type = special_status:tatar_overlord
+                            international_organization = prev
+                        }
+                    }
+                }
+            }
+            add_country_to_international_organization = scope:winner
+            international_organization_add_special_status = {
+                type = special_status:tatar_overlord
+                country = scope:winner
+            }
+        }
+    }
+    ai_desire = 100
+}
+peace_takeover_tatar_yoke = {
+    cost = 50
+    potential = {
+        scope:winner = {
+            OR = {
+                culture = { has_culture_group = culture_group:tatar_group }
+                culture = { culture = culture:yerle_qaliq_culture }
+            }
+        }
+        scope:loser = {
+            any_international_organization = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = prev
+                    country = scope:loser
+                }
+            }
+        }
+        scope:war = {
+            casus_belli ?= casus_belli:cb_takeover_tatar_yoke
+        }
+    }
+    allow = {
+    }
+    effect = {
+        every_international_organization = {
+            limit = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                any_country_with_special_status_of_type = {
+                    type = tatar_overlord
+                    this = scope:loser
+                }
+            }
+            international_organization_remove_special_status = {
+                type = special_status:tatar_overlord
+                country = scope:loser
+            }
+            remove_country_from_international_organization = scope:loser
+            add_country_to_international_organization = scope:winner
+            international_organization_add_special_status = {
+                type = special_status:tatar_overlord
+                country = scope:winner
+            }
+        }
+    }
+    ai_desire = 100
+}

@@ -79,7 +79,7 @@
 		localization_key = horde_clan
 		trigger = {
 			government_type = government_type:steppe_horde
-			or = {
+			OR = {
 				country_rank_is_duchy = yes
 				country_rank_is_county = yes
 			}
@@ -99,13 +99,11 @@
 				tag = AKK
 				tag = ADQ
 				tag = AGZ
-				tag = MGZ
-				tag = KGZ
-
 				tag = KUH
  				tag = KVU
  				tag = TBU
  				tag = AUK
+				tag = SIN
 			}
 		}
 	}
@@ -193,6 +191,57 @@
 				tag = NWM
 				tag = JIK
 			}
+		}
+	}
+	#Bashkir Biy
+	text = {
+		localization_key = bashkir_biy
+		trigger = {
+			is_leader_of_international_organization_of_type = {
+				type = european_tribal_confederation
+			}
+			culture = culture:bashkir
+		}
+	}
+	# Bashkir tribe member
+	text = {
+		localization_key = bashkir_aymak
+		trigger = {
+			culture = culture:bashkir
+		}
+	}
+	# Udmurt Toro
+	text = {
+		localization_key = udmurt_toro_title
+		trigger = {
+			is_leader_of_international_organization_of_type = {
+				type = european_tribal_confederation
+			}
+			culture = culture:udmurt
+		}
+	}
+	# Udmurt tribe member
+	text = {
+		localization_key = udmurt_vorshud
+		trigger = {
+			culture = culture:udmurt
+		}
+	}
+	# Mari Kugyz
+	text = {
+		localization_key = mari_kugyz_title
+		trigger = {
+			is_leader_of_international_organization_of_type = {
+				type = european_tribal_confederation
+			}
+			culture = culture:mari_culture
+		}
+	}
+	# Mari tribe member
+	text = {
+		localization_key = mari_on
+		trigger = {
+			culture = culture:mari_culture
 		}
 	}
 	################## EMPIRE ##################
@@ -647,7 +696,13 @@
 				culture = {
 					has_culture_group = culture_group:russian_group
 				}
-				has_variable = muscovite_domination
+				AND = {
+					government_type = government_type:monarchy
+					OR = {
+						has_variable = muscovite_domination
+						culture = culture:bolghar_culture
+					}
+				}
 			}
 		}
 	}
@@ -1416,6 +1471,7 @@
 				culture = {
 					has_culture_group = culture_group:russian_group
 				}
+				culture = culture:bolghar_culture
 			}
 		}
 	}
@@ -2125,6 +2181,7 @@
 				culture = {
 					has_culture_group = culture_group:russian_group
 				}
+				culture = culture:bolghar_culture
 			}
 		}
 	}
