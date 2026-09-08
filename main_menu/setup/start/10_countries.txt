@@ -3337,8 +3337,9 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
+            ruler = btc_friedrich_i_zweibrucken_bitsch
 
-            ruler = random
+            ruler_term = { character = btc_friedrich_i_zweibrucken_bitsch start_date = 1418.1.1 regnal_number = 1 }
         }
         country_rank = rank_county
         capital = bitche
@@ -16069,12 +16070,24 @@ countries = {
         own_control_core = {
             katzenelnbogen darmstadt
         }
+
+        government = {
+            ruler = ktz_philipp_i_katzenelnbogen
+
+            ruler_term = { character = ktz_johann_iv_katzenelnbogen start_date = 1402.2.19 end_date = 1444.10.27 regnal_number = 4 }
+            ruler_term = { character = ktz_philipp_i_katzenelnbogen start_date = 1444.10.27 regnal_number = 1 }
+
+            regnal_numbers = {
+                name_john = 4
+                name_philip = 1
+            }
+        }
+
         starting_technology_level = 3
         include = "expl_western_europe"
         include = "catholic_monarchy_no_coast"
         include = "expl_northern_europe"
         include = "german_principality"
-        government = { ruler = random }
         country_rank = rank_county
         capital = katzenelnbogen
     }
@@ -23310,13 +23323,15 @@ countries = {
         include = "expl_northern_europe"
         include = "german_principality"
         government = {
+            ruler = lnn_hesso_leiningen_dagsburg
 
-            ruler = random # TODO: add me
             ruler_term = { character = lnn_friedrich_v_leiningen_dagsburg start_date = 1316.1.1 end_date = 1327.1.1 regnal_number = 5 }
-            ruler_term = { character = lnn_friedrich_vi_leiningen_dagsburg start_date = 1327.1.1 regnal_number = 6 }
+            ruler_term = { character = lnn_friedrich_vi_leiningen_dagsburg start_date = 1327.1.1 end_date = 1377.1.1 regnal_number = 6 }
+
+            ruler_term = { character = lnn_hesso_leiningen_dagsburg start_date = 1434.1.1 regnal_number = 0 }
 
             regnal_numbers = {
-                name_frederick = 6
+                name_frederick = 9
             }
         }
         tolerated_cultures = {
