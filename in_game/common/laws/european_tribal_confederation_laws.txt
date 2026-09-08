@@ -325,14 +325,18 @@ european_tribal_unification_law = {
         OR = {
             AND = {
                 international_organization_has_policy = policy:european_tribal_high_tribute_policy
-                OR = {
-                    culture = { has_culture_group = culture_group:tatar_group }
-                    culture = { culture = culture:yerle_qaliq_culture }
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = scope:recipient
                 }
             }
             AND = {
-                NOT = { culture = { has_culture_group = culture_group:tatar_group } }
-                NOT = { culture = { culture = culture:yerle_qaliq_culture } }
+                NOT = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:tatar_overlord
+                        international_organization = scope:recipient
+                    }
+                }
             }
         }
     }
@@ -346,9 +350,9 @@ european_tribal_unification_law = {
 
     tatar_overlord_annexation_policy = {
         allow = {
-            OR = {
-                culture = { has_culture_group = culture_group:tatar_group }
-                culture = { culture = culture:yerle_qaliq_culture }
+            has_special_status_in_international_organization = {
+                type = special_status:tatar_overlord
+                international_organization = scope:recipient
             }
         }
         wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 25 } }
@@ -362,36 +366,22 @@ european_tribal_unification_law = {
             }
         }
     }
-
     european_tribal_confederation_form_policy = {
         allow = {
-            NOT = { culture = { has_culture_group = culture_group:tatar_group } }
+            NOT = {
+                has_special_status_in_international_organization = {
+                    type = special_status:tatar_overlord
+                    international_organization = scope:recipient
+                }
+            }
             NOT = { culture = { culture = culture:yerle_qaliq_culture } }
         }
         wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 25 } }
         wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 1000 } }
         wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 0 } }
         on_activate = {
-            if = {
-                limit = { leader_country ?= { culture = culture:bashkir } }
-                custom_tooltip = bashkir_unification_tt
-                leader_country = {
-                    trigger_event_non_silently = { id = io_unification.40 }
-                }
-            }
-            if = {
-                limit = { leader_country ?= { culture = culture:mari_culture } }
-                custom_tooltip = mari_unification_tt
-                leader_country = {
-                    trigger_event_non_silently = { id = io_unification.50 }
-                }
-            }
-            if = {
-                limit = { leader_country ?= { culture = culture:udmurt } }
-                custom_tooltip = udmurt_unification_tt
-                leader_country = {
-                    trigger_event_non_silently = { id = io_unification.140 }
-                }
+            leader_country = {
+                trigger_event_non_silently = { id = io_unification.130 }
             }
         }
     }

@@ -151,193 +151,6 @@ io_unification.30 = { # Nogai unification
 		}
 	}
 }
-# Bashkir tribal unification
-io_unification.40 = {
-    type = country_event
-    title = io_unification.40.title
-    desc = io_unification.40.desc
-    outcome = neutral
-    illustration_tags = {
-        10 = happy
-        10 = interior
-    }
-    immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        save_scope_as = target_country
-        every_international_organization = {
-            limit = {
-                international_organization_type = international_organization_type:european_tribal_confederation
-                leader_country = scope:target_country
-            }
-            save_scope_as = target_io
-        }
-    }
-    option = {
-        name = io_unification.40.a
-        add_reform = government_reform:european_tribe_unification_reform
-        if = {
-            limit = { exists = scope:target_io }
-            custom_tooltip = {
-                text = io_unification.40.ctt
-                scope:target_io = {
-                    every_international_organization_member = {
-                        limit = {
-							NOT = { this = scope:target_country }
-							NOT = {
-                                has_special_status_in_international_organization = {
-                                    type = special_status:tatar_overlord
-                                    international_organization = scope:target_io
-                                }
-                            }
-						}
-                        trigger_event_silently = { id = io_unification.1 }
-                    }
-                }
-            }
-            destroy_international_organization = { target = scope:target_io }
-        }
-    }
-}
-# Mari tribal unification
-io_unification.50 = {
-    type = country_event
-    title = io_unification.50.title
-    desc = io_unification.50.desc
-    outcome = neutral
-    illustration_tags = {
-        10 = happy
-        10 = interior
-    }
-    immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        save_scope_as = target_country
-        every_international_organization = {
-            limit = {
-                international_organization_type = international_organization_type:european_tribal_confederation
-                leader_country = scope:target_country
-            }
-            save_scope_as = target_io
-        }
-    }
-    option = {
-        name = io_unification.50.a
-        add_reform = government_reform:european_tribe_unification_reform
-        if = {
-            limit = { exists = scope:target_io }
-            custom_tooltip = {
-                text = io_unification.50.ctt
-                scope:target_io = {
-                    every_international_organization_member = {
-                        limit = {
-							NOT = { this = scope:target_country }
-							NOT = {
-                                has_special_status_in_international_organization = {
-                                    type = special_status:tatar_overlord
-                                    international_organization = scope:target_io
-                                }
-                            }
-						}
-                        trigger_event_silently = { id = io_unification.1 }
-                    }
-                }
-            }
-            destroy_international_organization = { target = scope:target_io }
-        }
-    }
-}
-io_unification.140 = { # Udmurt tribal unification
-    type = country_event
-    title = io_unification.140.title
-    desc = io_unification.140.desc
-    outcome = neutral
-    illustration_tags = {
-        10 = happy
-        10 = interior
-    }
-    immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        save_scope_as = target_country
-        every_international_organization = {
-            limit = {
-                international_organization_type = international_organization_type:european_tribal_confederation
-                leader_country = scope:target_country
-            }
-            save_scope_as = target_io
-        }
-    }
-    option = {
-        name = io_unification.140.a
-        add_reform = government_reform:european_tribe_unification_reform
-        if = {
-            limit = { exists = scope:target_io }
-            custom_tooltip = {
-                text = io_unification.140.ctt
-                scope:target_io = {
-                    every_international_organization_member = {
-                        limit = {
-							NOT = { this = scope:target_country }
-							NOT = {
-                                has_special_status_in_international_organization = {
-                                    type = special_status:tatar_overlord
-                                    international_organization = scope:target_io
-                                }
-                            }
-						}
-                        trigger_event_silently = { id = io_unification.1 }
-                    }
-                }
-            }
-            destroy_international_organization = { target = scope:target_io }
-        }
-    }
-}
-io_unification.130 = { # Tatar annexation
-    type = country_event
-    title = io_unification.130.title
-    desc = io_unification.130.desc
-    outcome = neutral
-    illustration_tags = {
-        10 = happy
-        10 = interior
-    }
-    immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        save_scope_as = target_country
-		
-		every_international_organization = {
-			limit = {
-				international_organization_type = international_organization_type:european_tribal_confederation
-				international_organization_has_policy = policy:tatar_overlord_annexation_policy
-			}
-            save_scope_as = target_io
-        }
-    }
-    option = {
-        name = io_unification.130.a
-        if = {
-            limit = { exists = scope:target_io }
-            custom_tooltip = {
-                text = io_unification.130.ctt
-                scope:target_io = {
-                    every_international_organization_member = {
-                        limit = {
-                            NOT = { this = scope:target_country }
-                            NOT = {
-                                has_special_status_in_international_organization = {
-                                    type = special_status:tatar_overlord
-                                    international_organization = scope:target_io
-                                }
-                            }
-                        }
-                        trigger_event_silently = { id = io_unification.1 }
-                    }
-                }
-            }
-            destroy_international_organization = { target = scope:target_io }
-        }
-    }
-}
-
 io_unification.60 = { # League of Lezhe unification
 	type = country_event
 	title = io_unification.60.title
@@ -656,4 +469,162 @@ io_unification.120 = { # Northern Yuan unification (Mongolia path)
 			destroy_international_organization = { target = international_organization:northern_yuan }
 		}
 	}
+}
+io_unification.130 = { # Unified tribal/overlord confederation annexation
+    type = country_event
+    title = io_unification.130.title
+	desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = { scope:target_country = { culture = culture:bashkir } }
+                desc = io_unification.130.desc.bashkir
+            }
+            triggered_desc = {
+                trigger = { scope:target_country = { culture = culture:mari_culture } }
+                desc = io_unification.130.desc.mari
+            }
+            triggered_desc = {
+                trigger = { scope:target_country = { culture = culture:udmurt } }
+                desc = io_unification.130.desc.udmurt
+            }
+            triggered_desc = {
+                trigger = { always = yes }
+                desc = io_unification.130.desc
+            }
+        }
+    }
+    outcome = neutral
+    illustration_tags = {
+        10 = happy
+        10 = interior
+    }
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        root = { save_scope_as = target_country }
+
+        every_international_organization = {
+            limit = {
+                international_organization_type = international_organization_type:european_tribal_confederation
+                OR = {
+                    international_organization_has_policy = policy:european_tribal_confederation_form_policy
+                    international_organization_has_policy = policy:tatar_overlord_annexation_policy
+                }
+            }
+            save_scope_as = target_io
+        }
+    }
+    option = { # Bashkir
+        name = io_unification.130.bashkir
+        trigger = { scope:target_country = { culture = culture:bashkir } }
+        add_reform = government_reform:european_tribe_unification_reform
+		form_country = formable_country:BKA_f
+        if = {
+            limit = { exists = scope:target_io }
+            custom_tooltip = {
+                text = io_unification.130.ctt
+                scope:target_io = {
+                    every_international_organization_member = {
+                        limit = {
+                            NOT = { this = scope:target_country }
+                            NOT = {
+                                has_special_status_in_international_organization = {
+                                    type = special_status:tatar_overlord
+                                    international_organization = scope:target_io
+                                }
+                            }
+                        }
+                        trigger_event_silently = { id = io_unification.1 }
+                    }
+                }
+            }
+            destroy_international_organization = { target = scope:target_io }
+        }
+    }
+    option = { # Mari
+        name = io_unification.130.mari
+        trigger = { scope:target_country = { culture = culture:mari_culture } }
+        add_reform = government_reform:european_tribe_unification_reform
+		form_country = formable_country:MRZ_f
+        if = {
+            limit = { exists = scope:target_io }
+            custom_tooltip = {
+                text = io_unification.130.ctt
+                scope:target_io = {
+                    every_international_organization_member = {
+                        limit = {
+                            NOT = { this = scope:target_country }
+                            NOT = {
+                                has_special_status_in_international_organization = {
+                                    type = special_status:tatar_overlord
+                                    international_organization = scope:target_io
+                                }
+                            }
+                        }
+                        trigger_event_silently = { id = io_unification.1 }
+                    }
+                }
+            }
+            destroy_international_organization = { target = scope:target_io }
+        }
+    }
+    option = { # Udmurt
+        name = io_unification.130.udmurt
+        trigger = { scope:target_country = { culture = culture:udmurt } }
+        add_reform = government_reform:european_tribe_unification_reform
+		form_country = formable_country:UDM_f
+        if = {
+            limit = { exists = scope:target_io }
+            custom_tooltip = {
+                text = io_unification.130.ctt
+                scope:target_io = {
+                    every_international_organization_member = {
+                        limit = {
+                            NOT = { this = scope:target_country }
+                            NOT = {
+                                has_special_status_in_international_organization = {
+                                    type = special_status:tatar_overlord
+                                    international_organization = scope:target_io
+                                }
+                            }
+                        }
+                        trigger_event_silently = { id = io_unification.1 }
+                    }
+                }
+            }
+            destroy_international_organization = { target = scope:target_io }
+        }
+    }
+    option = { # Overlord annexation
+        name = io_unification.130.overlord
+        trigger = {
+            scope:target_io = {
+                exists = yes
+            }
+            has_special_status_in_international_organization = {
+                type = special_status:tatar_overlord
+                international_organization = scope:target_io
+            }
+        }
+        if = {
+            limit = { exists = scope:target_io }
+            custom_tooltip = {
+                text = io_unification.130.ctt
+                scope:target_io = {
+                    every_international_organization_member = {
+                        limit = {
+                            NOT = { this = scope:target_country }
+                            NOT = {
+                                has_special_status_in_international_organization = {
+                                    type = special_status:tatar_overlord
+                                    international_organization = scope:target_io
+                                }
+                            }
+                        }
+                        trigger_event_silently = { id = io_unification.1 }
+                    }
+                }
+            }
+            destroy_international_organization = { target = scope:target_io }
+        }
+    }
 }

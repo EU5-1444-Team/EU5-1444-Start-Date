@@ -1,37 +1,37 @@
 taiga_steppe_election = {
     loc = taiga_steppe_election
-    potential = { always = yes }
+    potential = { }
     allow = { }
-
-    can_vote = {
-        scope:actor = {
-            is_member_of_international_organization = scope:recipient
-        }
-    }
 
     ai_tick = monthly
 
-    is_live = {
-        scope:recipient ?= {
-            international_organization_has_leader = no
-        }
-    }
+    can_vote = {
+		scope:actor = {
+			has_ruler = yes
+			is_member_of_international_organization = scope:recipient
+		}
+	}
 
-    votes = {
-        add = {
-            desc = "[elector|e]"
-            value = 1
-        }
-    }
+	is_live = {
+		scope:recipient ?= {
+			international_organization_has_leader = no
+		}
+	}
 
-    total_votes_needed = {
-        add = {
-            value = scope:total_votes_available
-            multiply = 0.5
-        }
-    }
+	votes = {
+		add = {
+			desc = "[elector|e]"
+			value = 1
+		}
+	}
+	total_votes_needed = {
+		add = {
+			value = scope:total_votes_available
+			multiply = 0.5
+		}
+	}
 
-    requires_explicit_votes = no
+	requires_explicit_votes = no
 
     should_finalize_vote = {
         OR = {
@@ -43,17 +43,17 @@ taiga_steppe_election = {
                 scope:highest_vote >= scope:total_votes_needed
             }
         }
-        hidden_trigger = {
-            trigger_if = {
-                limit = {
-                    scope:recipient = {
-                        international_organization_has_leader = no
-                    }
-                    scope:highest_vote < scope:total_votes_needed
-                }
-                always = no
-            }
-        }
+		hidden_trigger = {
+			trigger_if = {
+				limit = {
+					scope:recipient = {
+						international_organization_has_leader = no
+					}
+					scope:highest_vote < scope:total_votes_needed
+				}
+				always = no
+			}
+		}
     }
 
     select_trigger = {
@@ -64,7 +64,7 @@ taiga_steppe_election = {
             data = name
         }
         visible = {
-            always = no
+            international_organization_type = international_organization_type:european_tribal_confederation
         }
         enabled = { }
     }
@@ -95,25 +95,15 @@ taiga_steppe_election = {
         allow_self = yes
         name = "election_select_country"
         none_available_msg_key = "election_select_no_countries"
-        default_sort = great_power_score
+        default_sort = country_tax_base
         column = {
             data = name
         }
         column = {
-            data = great_power_score
+            data = country_tax_base
         }
         visible = {
-            trigger_if = {
-                limit = {
-                    exists = scope:actor
-                }
-                OR = {
-                    this = scope:actor
-                    scope:actor = {
-                        knows_country = root
-                    }
-                }
-            }
+            can_lead_international_organization = scope:recipient
         }
     }
 
@@ -140,55 +130,12 @@ taiga_steppe_election = {
                         multiply = 0.1
                     }
                 }
-                else = {
-                    add = {
-                        desc = "NOT_A_MEMBER"
-                        value = -10000
-                    }
-                }
-                add = {
-                    desc = "TRIBES_WANTS_STRONG_LEADER"
-                    value = ruler_or_heir_if_regent.mil
-                    subtract = 25
-                    multiply = 0.5
-                }
-                add = {
-                    desc = "TRIBES_WANTS_CAPABLE_LEADER"
-                    value = ruler_or_heir_if_regent.adm
-                    subtract = 25
-                    multiply = 0.1
-                }
 
                 if = {
                     limit = { this = scope:actor }
                     add = {
                         desc = "LEADERSHIP_VOTE_FOR_SELF"
-                        value = 25
-                    }
-                }
-
-                if = {
-                    limit = {
-                        this = scope:actor
-                        scope:recipient = {
-                            "active_resolution(resolution:taiga_steppe_election)" = {
-                                any_voter = {
-                                    this != scope:actor
-                                    save_temporary_scope_as = voter
-                                    scope:recipient = {
-                                        has_cached_or_cast_vote_for = {
-                                            voter = scope:voter
-                                            resolution = resolution:taiga_steppe_election
-                                            vote = scope:actor
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    add = {
-                        desc = "LEADERSHIP_VOTE_FOR_SELF_OTHER_VOTERS"
-                        value = 150
+                        value = 10
                     }
                 }
 
@@ -234,6 +181,13 @@ taiga_steppe_election = {
                             value = this_opinion_of_prev
                             divide = 3
                         }
+                    }
+                }
+            
+                else = {
+                    add = {
+                        desc = "NOT_A_MEMBER"
+                        value = -10000
                     }
                 }
 

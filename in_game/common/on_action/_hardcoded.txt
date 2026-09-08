@@ -394,18 +394,6 @@ on_location_occupied = {
 				value = 1
 			}
 		}
-		if = {
-			limit = {
-				scope:target = location:shakhty
-				scope:target.owner ?= {
-					tag = AGZ
-				}
-			}
-			set_global_variable = {
-				name = shakhty_fallen
-				value = 1
-			}
-		}
 	}
 }
 

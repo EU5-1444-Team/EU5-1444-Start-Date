@@ -223,3 +223,43 @@ REPLACE:repaired_great_wall_of_china = { #Ming Wall
 		propagating_zone_of_control = yes
 	}
 }
+wall_of_perrikop = { #Defensive Wall protecting Perrikop
+	is_special = yes
+	is_foreign = no
+	pop_type = soldiers
+	max_levels = 1
+	
+	employment_size = great_wall_of_china_employment
+	category = defense_category
+	
+	
+	rural_settlement = yes
+	town = yes
+	city = yes
+	megalopolis = yes
+	build_time = huge_unique_build_time
+
+
+	country_potential = {
+	}
+	allow = {
+		OR = {
+			location_of_perrikop = yes
+		}
+	}
+
+	expensive = yes
+	possible_production_methods = {
+		repaired_great_wall_of_china_maintenance
+	}
+	construction_demand = repaired_great_wall_of_china_construction
+
+	modifier = {
+		local_garrison_size = 1
+	}
+	
+	raw_modifier = {
+		fort_level = 1
+		propagating_zone_of_control = yes
+	}
+}

@@ -95,58 +95,71 @@ flavor_steppe.2 = { #Ahmed Coups Mahmud
     title = flavor_steppe.2.title
     desc = flavor_steppe.2.desc
     fire_only_once = yes
-
     illustration_tags = {
         10 = regular
         10 = interior
     }
-
     dynamic_historical_event = {
         tag = GTH
         from = 1455.1.1
         to = 1470.1.1
         monthly_chance = 2
     }
-
     trigger = {
         has_or_had_tag = GTH
-    	character:glh_kuchuk_muhammad_jochid = { is_alive = no }
+        character:glh_kuchuk_muhammad_jochid = { is_alive = no }
         character:gth_ahmed_khan_bin_kuchuk = { is_alive = yes }
         character:gth_mahmud_bin_kuchuk = { is_alive = yes is_ruler = yes }
-        
     }
-
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
         character:gth_ahmed_khan_bin_kuchuk = { save_scope_as = target_character1 }
         character:gth_mahmud_bin_kuchuk = { save_scope_as = target_character2 }
     }
-
     option = { #Mahmud Survives
         name = flavor_steppe.2.a
-        text = flavor_steppe.2.a.ctt #We will succed in removing the participants
-        ai_chance = {
-            factor = 0
-        }
-
+        text = flavor_steppe.2.a.ctt
+        ai_chance = { factor = 0 }
         add_legitimacy = legitimacy_extreme_bonus
         kill_character = {
-			target = scope:target_character1
-			reason = assassination
-			killer = scope:target_character2
-		}
+            target = scope:target_character1
+            reason = assassination
+            killer = scope:target_character2
+        }
     }
-
     option = { #Ahmed Coups
         name = flavor_steppe.2.b
-        text = flavor_steppe.2.b.ctt #We will succed in our coup
-        ai_chance = {
-            factor = 1
-        }
+        text = flavor_steppe.2.b.ctt
+        ai_chance = { factor = 1 }
         set_new_ruler = character:gth_ahmed_khan_bin_kuchuk
         add_legitimacy = legitimacy_mild_bonus
-        trigger_event_silently = { id = flavor_steppe.3 days = { 31 62 } }
-        custom_tooltip = flavor_steppe_2_ctt #Warning about the impending astrakhan
+        set_global_variable = {
+            name = split_horde
+            value = 1
+        }
+        create_rebel = {
+            name = astrakhani_separatists
+            category = nationalist
+            culture = culture:astrakhani
+            save_scope_as = astrakhan_rebels
+        }
+        every_owned_rural_location = {
+            limit = {
+                any_pop = { culture = culture:astrakhani }
+            }
+            every_pop = {
+                limit = {
+                    owner = root
+                    culture = culture:astrakhani
+                }
+                add_pop_satisfaction = pop_satisfaction_ultimate_penalty
+                change_pop_allegiance = scope:astrakhan_rebels
+            }
+        }
+        scope:astrakhan_rebels = {
+            add_rebel_progress = 0.9
+        }
+        custom_tooltip = flavor_steppe_2_ctt
     }
 }
 
@@ -156,53 +169,62 @@ flavor_steppe.3 = { # Rise of Astrakhan
     desc = flavor_steppe.3.desc
     fire_only_once = yes
 
+    dynamic_historical_event = {
+        tag = GTH
+        from = 1455.1.1
+        to = 1850.1.1
+        monthly_chance = 100
+    }
     trigger = {
         has_or_had_tag = GTH
+        has_global_variable = split_horde
+        country_exists = c:ATR
     }
-
     immediate = {
         character:gth_mahmud_bin_kuchuk = { save_scope_as = target_character2 }
-        set_global_variable = {
-            name = split_horde
-            value = 1
+        c:ATR = { save_scope_as = target_country }
+        scope:target_country = {
+            set_new_ruler = scope:target_character2
+            change_government_type = government_type:steppe_horde
         }
-        if = {
-            limit = { NOT = { country_exists = c:ATR } }
-            create_country_from_cores_in_our_locations = c:ATR
-            c:ATR = {
-                save_scope_as = target_country
+        random_current_war = {
+            limit = {
+                OR = {
+                    AND = {
+                        attacker_leader = root
+                        defender_leader = scope:target_country
+                    }
+                    AND = {
+                        attacker_leader = scope:target_country
+                        defender_leader = root
+                    }
+                }
             }
-            scope:target_country = {
-                set_new_ruler = scope:target_character2
-                change_government_type = government_type:steppe_horde
-            }
+            save_scope_as = target_war
         }
     }
 
     option = {
         name = flavor_steppe.3.a #Go to War
-        ai_chance = {
-			factor = 0.1
-		}
-
-		declare_war_with_cb = {
-			target = scope:target_country
-			type = casus_belli:cb_conquer_province
-			target_province = location:astrakhan.province
-		}
+        ai_chance = { factor = 0.1 }
     }
     option = {
         name = flavor_steppe.3.b #Accept the breakaway
-        ai_chance = {
-			factor = 0.9
-		}
+        ai_chance = { factor = 0.9 }
+        if = {
+            limit = { exists = scope:target_war }
+            white_peace = scope:target_war
+        }
+        add_prestige = prestige_mild_penalty
     }
     option = {
         name = flavor_steppe.3.c #Play as Astrakhan
         custom_tooltip = flavor_steppe_3_c_ctt
-        ai_chance = {
-			factor = 0
-		}
+        ai_chance = { factor = 0 }
+        if = {
+            limit = { exists = scope:target_war }
+            white_peace = scope:target_war
+        }
         change_player = scope:target_country
     }
 }
@@ -331,6 +353,7 @@ flavor_steppe.6 = { #Kazan ending the Volga Bulgar remmants
         add_casus_belli = { type = casus_belli:cb_conquer_province target = scope:target_country province = location:cukataw.province }
     }
 }
+
 flavor_steppe.7 = { #Return of Volga Bulgaria
     type = country_event
     title = flavor_steppe.7.title
@@ -530,7 +553,6 @@ flavor_steppe.10 = { #Disaster at Perekop
 			}
 		}
         conquest_of_kherson = yes
-        c:GTH = { save_scope_as = target_country }
     }
 
     option = { #Cut our Losses
@@ -543,12 +565,6 @@ flavor_steppe.10 = { #Disaster at Perekop
         add_prestige = prestige_extreme_penalty
         white_peace = scope:target_war
 
-        scope:target_country = {
-			trigger_event_non_silently = {
-				id = flavor_steppe.12
-				days = { 165 365 }
-			}
-		}
     }
     option = { #Fight on
         name = flavor_steppe.10.b
@@ -559,15 +575,9 @@ flavor_steppe.10 = { #Disaster at Perekop
         add_legitimacy = legitimacy_extreme_penalty
         add_prestige = prestige_extreme_penalty
         add_stability = stability_extreme_penalty
-
-        scope:target_country = {
-			trigger_event_non_silently = {
-				id = flavor_steppe.12
-				days = { 165 365 }
-			}
-		}
     }
 }
+
 flavor_steppe.11 = { #Shirin Ulus Joins Giray after Perekop
     type = country_event
     title = flavor_steppe.11.title
@@ -610,185 +620,6 @@ flavor_steppe.11 = { #Shirin Ulus Joins Giray after Perekop
         c:AGZ ?= {
             cancel_subject = scope:target_country
         }
-    }
-}
-flavor_steppe.12 = { #Aftermath of Perekop, Ahmed's weakness
-    type = country_event
-    title = flavor_steppe.12.title
-    desc = flavor_steppe.12.desc
-    fire_only_once = yes
-
-    illustration_tags = {
-        10 = regular
-        10 = interior
-    }
-
-    immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        c:CRI = { save_scope_as = target_country }
-    }
-
-    option = { #Send on offer to Crimea to partition Ahmed's lands
-        name = flavor_steppe.12.a
-        ai_chance = {
-            factor = 1
-        }
-        custom_tooltip = flavor_steppe_12_tt #If we are successful Ahmed's lands will be partitoned between us
-        scope:target_country = {
-			trigger_event_non_silently = {
-				id = flavor_steppe.13
-				days = 1
-			}
-		}
-    }
-    option = { #Lets not
-        name = flavor_steppe.12.b
-        ai_chance = {
-            factor = 0
-        }
-        add_stability = stability_mild_penalty
-        custom_tooltip = flavor_steppe_12_2_tt #We will not get the option to pursure this path futher
-    }
-}
-flavor_steppe.13 = { #An offer arrives from Sarai
-    type = country_event
-    title = flavor_steppe.13.title
-    desc = flavor_steppe.13.desc
-    fire_only_once = yes
-
-    illustration_tags = {
-        10 = regular
-        10 = interior
-    }
-
-    immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        c:AGZ = { save_scope_as = target_country }
-    }
-
-    option = { #This is a golden oppurtunity!
-        name = flavor_steppe.13.a
-        ai_chance = {
-            factor = 1
-        }
-        custom_tooltip = flavor_steppe_13_tt #If we are successful Ahmed's lands will be partitoned between us
-		create_international_organization = {
-			type = international_organization_type:offensive_pact
-			custom_tooltip = {
-				add_country_to_international_organization = root
-				set_leader_country = root
-                add_country_to_international_organization = c:GTH
-			}
-		}
-
-		declare_war_with_cb = {
-			target = scope:target_country
-			type = casus_belli:cb_conquer_province
-			target_province = location:shakhty.province
-		}
-        destroy_international_organization = { target = international_organization:offensive_pact }
-    }
-    option = { #Ignore the messengers
-        name = flavor_steppe.13.b
-        ai_chance = {
-            factor = 0
-        }
-        add_prestige = prestige_mild_bonus
-    }
-}
-
-scripted_effect partition_of_ahmed_host = {
-    location:semikarakorsk = { change_location_owner = c:GTH }
-	location:ust_tsimla = { change_location_owner = c:GTH }
-	location:kashary = { change_location_owner = c:GTH }
-	location:kletskaya = { change_location_owner = c:GTH }
-	location:ust_medveditskaya = { change_location_owner = c:GTH }
-	location:oblivskaya = { change_location_owner = c:GTH }
-	location:nizhny_chir = { change_location_owner = c:GTH }
-	location:mityakinskaya = { change_location_owner = c:GTH }
-	location:novoaidar = { change_location_owner = c:GTH }
-	location:belaya_kalitva = { change_location_owner = c:GTH }
-	location:millerovo = { change_location_owner = c:GTH }
-	location:kreminna = { change_location_owner = c:GTH }
-	location:bielska_sloboda = { change_location_owner = c:GTH }
-	location:bilovodsk = { change_location_owner = c:GTH }
-	location:veesky = { change_location_owner = c:GTH }
-	location:kumylzhenskaya = { change_location_owner = c:GTH }
-	location:alexeyevskaya = { change_location_owner = c:GTH }
-	location:novoanninsky = { change_location_owner = c:GTH }
-	location:novonikolayevsky = { change_location_owner = c:GTH }
-	location:starominskaya = { change_location_owner = c:GTH }
-	location:shcherbinovka = { change_location_owner = c:GTH }
-	location:chertkovo = { change_location_owner = c:GTH }
-	location:boguchar = { change_location_owner = c:GTH }
-	location:bokovskaya = { change_location_owner = c:GTH }
-	location:milyutinskaya = { change_location_owner = c:GTH }
-	location:krasny_sulin = { change_location_owner = c:CRI }
-	location:shakhty = { change_location_owner = c:CRI }
-	location:rovenky = { change_location_owner = c:CRI }
-	location:kalmius = { change_location_owner = c:CRI }
-	location:kamenskaya = { change_location_owner = c:CRI }
-	location:bagayevskaya = { change_location_owner = c:CRI }
-	location:yegorlykskaya = { change_location_owner = c:CRI }
-	location:bakhmut = { change_location_owner = c:CRI }
-	location:lysychansk = { change_location_owner = c:CRI }
-	location:oleksandrivka = { change_location_owner = c:CRI }
-	location:posad = { change_location_owner = c:CRI }
-	location:luhansk = { change_location_owner = c:CRI }
-	location:taganrog = { change_location_owner = c:CRI }
-	location:shyrokyne = { change_location_owner = c:CRI }
-	location:vasylivka = { change_location_owner = c:CRI }
-	location:konstantinovsk = { change_location_owner = c:CRI }
-	location:tatsinskaya = { change_location_owner = c:CRI }
-	location:tormosin = { change_location_owner = c:CRI }
-	location:bol_shaya_martynovka = { change_location_owner = c:CRI }
-	location:cheplak = { change_location_owner = c:CRI }
-	location:bolshoy_gashun = { change_location_owner = c:CRI }
-	location:dubovskoye = { change_location_owner = c:CRI }
-}
-flavor_steppe.14 = { #The end of Sayid Ahmed
-    type = country_event
-    title = flavor_steppe.14.title
-    desc = flavor_steppe.14.desc
-    fire_only_once = yes
-
-    illustration_tags = {
-        10 = regular
-        10 = interior
-    }
-
-    dynamic_historical_event = {
-        tag = GTH
-        from = 1444.1.1
-        to = 1850.1.1
-        monthly_chance = 100
-    }
-    trigger = {
-        has_or_had_tag = GTH
-        has_global_variable = shakhty_fallen
-        has_truce_with = c:AGZ
-    }
-
-    immediate = {
-        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        c:CRI = { save_scope_as = target_country }
-        remove_global_variable = shakhty_fallen
-    }
-
-    option = { #Divde the spoils as we agreed
-        name = flavor_steppe.14.a
-        ai_chance = {
-            factor = 1
-        }
-
-        add_legitimacy = legitimacy_mild_bonus
-        add_prestige = prestige_mild_bonus
-        partition_of_ahmed_host = yes
-
-        scope:target_country = {
-            add_legitimacy = legitimacy_mild_bonus
-            add_prestige = prestige_mild_bonus
-		}
     }
 }
 
@@ -930,7 +761,7 @@ flavor_steppe.20 = { #Ottomans consider backing Mengli Giray
 	option = { #Back Mengli's claim
 		name = flavor_steppe.20.a
 		ai_chance = {
-			factor = 1
+			factor = 0.7
 		}
  
 		scope:target_country = {
@@ -938,20 +769,27 @@ flavor_steppe.20 = { #Ottomans consider backing Mengli Giray
                 name = ottomans_back_mengli
                 value = 1
             }
-            years = 50
             trigger_event_non_silently = {
 				id = flavor_steppe.21
 				days = 24
 			}
 		}
 		add_prestige = prestige_mild_bonus
+        add_manpower = {
+			value = 400
+			multiply = -1
+		}
+        add_gold = {
+			value = 100
+			multiply = -1
+		}
 		custom_tooltip = flavor_steppe_20_a_ctt #If Mengli rises up, our backing will strengthen his cause
 	}
  
 	option = { #Do not get involved
 		name = flavor_steppe.20.b
 		ai_chance = {
-			factor = 0
+			factor = 0.3
 		}
         scope:target_country = {
 			trigger_event_non_silently = {
@@ -1000,52 +838,34 @@ flavor_steppe.21 = { #Mengli Giray Revolts
 		scope:target_character = {
 			change_character_allegiance = scope:target_rebels
 		}
-		area:crimea_area = {
-			every_location_in_area = {
-				limit = { owner = root }
-				every_pop = {
-					limit = {
-						owner = root
-						pop_type = pop_type:nobles
-					}
-					change_pop_allegiance = scope:target_rebels
+        ordered_owned_location = {
+			limit = {
+				any_pop = {
+					pop_type = pop_type:nobles
 				}
 			}
-		}
-		scope:target_rebels = {
-			if = {
+			order_by = population
+            if = {
 				limit = { has_global_variable = ottomans_back_mengli }
-				add_rebel_progress = rebel_progress_severe_bonus
+    			max = 8
+            }
+            else = {
+                max = 4
+            }
+			check_range_bounds = no
+			every_pop = {
+				limit = {
+					owner = root
+					pop_type = pop_type:nobles
+				}
+				add_pop_satisfaction = pop_satisfaction_ultimate_penalty
+				change_pop_allegiance = scope:target_rebels
 			}
 		}
 	}
  
 	option = { #The Shirin and the nobility rise for Mengli
 		name = flavor_steppe.21.a
-        ai_chance = {
-			factor = 0
-		}
-		custom_tooltip = {
-			text = flavor_steppe_21_a_ctt #Mengli Giray leads the revolt against Nur Devlet
-			scope:target_rebels = {
-				start_civil_war = {
-					save_scope_as = target_rebel_country
-					set_variable = {
-						name = will_not_surrender
-						years = 2
-					}
-				}
-			}
-		}
-		add_stability = stability_mild_penalty
-        change_player = scope:target_rebel_country
-		if = {
-			limit = { has_global_variable = ottomans_back_mengli }
-			custom_tooltip = flavor_steppe_21_ottoman_ctt #Ottoman backing has strengthened the rebellion
-		}
-	}
-    option = { #We stand with our rightful Khan
-		name = flavor_steppe.21.b
         ai_chance = {
 			factor = 1
 		}
@@ -1062,10 +882,48 @@ flavor_steppe.21 = { #Mengli Giray Revolts
 			}
 		}
 		add_stability = stability_mild_penalty
-		if = {
-			limit = { has_global_variable = ottomans_back_mengli }
-			custom_tooltip = flavor_steppe_21_ottoman_ctt #Ottoman backing has strengthened the rebellion
+        change_player = scope:target_rebel_country
+		scope:target_rebel_country = {
+            set_new_ruler = scope:target_character
+            if = {
+                limit = { has_global_variable = ottomans_back_mengli }
+                custom_tooltip = flavor_steppe_21_ottoman_ctt #Ottoman backing has strengthened the rebellion
+                add_stability = stability_extreme_bonus
+                add_legitimacy = legitimacy_extreme_bonus
+                add_manpower = 400
+                add_gold = 200
+            }
+        }
+	}
+    option = { #We stand with our rightful Khan
+		name = flavor_steppe.21.b
+        ai_chance = {
+			factor = 0
 		}
+		custom_tooltip = {
+			text = flavor_steppe_21_a_ctt #Mengli Giray leads the revolt against Nur Devlet
+			scope:target_rebels = {
+				start_civil_war = {
+					save_scope_as = target_rebel_country
+					set_variable = {
+						name = will_not_surrender
+						years = 2
+					}
+				}
+			}
+		}
+		add_stability = stability_mild_penalty
+		scope:target_rebel_country = {
+            set_new_ruler = scope:target_character
+            if = {
+                limit = { has_global_variable = ottomans_back_mengli }
+                custom_tooltip = flavor_steppe_21_ottoman_ctt #Ottoman backing has strengthened the rebellion
+                add_stability = stability_mild_bonus
+                add_legitimacy = legitimacy_mild_bonus
+                add_manpower = 400
+                add_gold = 200
+            }
+        }
 	}
 }
  
@@ -1079,26 +937,34 @@ flavor_steppe.22 = { #The Fate of Haydar Giray
 		10 = regular
 		10 = interior
 	}
+
+    dynamic_historical_event = {
+        tag = CRI
+        from = 1444.1.1
+        to = 1850.1.1
+        monthly_chance = 5
+    }
  
 	trigger = {
 		has_or_had_tag = CRI
 		has_global_variable = crimean_civil_war
 		at_war = no
 		character:cri_haydar_giray = { is_alive = yes }
+        character:cri_mengli_giray = { is_ruler = yes }
 	}
  
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
 		character:cri_haydar_giray = { save_scope_as = target_character }
 		c:TUR = { save_scope_as = target_country }
-		remove_global_variable = crimean_civil_war
-		remove_global_variable = ottomans_back_mengli
+        remove_global_variable = crimean_civil_war
+        remove_global_variable = ottomans_back_mengli
 	}
  
 	option = { #Endure the lingering claim
 		name = flavor_steppe.22.a
 		ai_chance = {
-			factor = 0.8
+			factor = 0.7
 		}
  
 		add_stability = stability_mild_penalty
@@ -1108,19 +974,171 @@ flavor_steppe.22 = { #The Fate of Haydar Giray
 	option = { #Install Haydar instead
 		name = flavor_steppe.22.b
 		ai_chance = {
-			factor = 0.2
+			factor = 0.3
 		}
  
 		set_new_ruler = scope:target_character
         character:cri_mengli_giray = { move_country = c:TUR }
 		add_stability = stability_severe_penalty
 		add_legitimacy = legitimacy_mild_penalty
-		scope:target_country = {
-			add_casus_belli = {
-				target = root
-				type = casus_belli:cb_subjugation
+        set_global_variable = {
+            name = haydar_coup
+            value = 1
+        }
+		custom_tooltip = flavor_steppe_22_b_ctt #The Ottomans will not tolerate this upsurpation in Crimea
+        c:TUR ?= {
+            cancel_subject = c:CRI
+            trigger_event_non_silently = flavor_steppe.23
+        }
+	}
+}
+
+flavor_steppe.23 = { #Haydar Coups Crimea
+    type = country_event
+    title = flavor_steppe.23.title
+    desc = flavor_steppe.23.desc
+    fire_only_once = yes
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+    trigger = {
+        has_or_had_tag = TUR
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+    }
+
+    option = { #Get Casus Belli for restoring Mengli, "They will pay!"
+        name = flavor_steppe.23.a
+        add_casus_belli = {
+	        type = casus_belli:cb_claim_throne
+		    target = c:CRI
+		    character:cri_mengli_giray
+	    	years = 20
+	    }
+    }
+}
+
+flavor_steppe.24 = { #The Crimean Civil War Concludes
+    type = country_event
+    title = flavor_steppe.24.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_global_variable = ottomans_back_mengli }
+				desc = flavor_steppe.24.desc.mengli_ottoman
+			}
+			triggered_desc = {
+				trigger = { always = yes }
+				desc = flavor_steppe.24.desc
 			}
 		}
-		custom_tooltip = flavor_steppe_22_b_ctt #The Ottomans will not tolerate this upsurpation in Crimea
 	}
+    fire_only_once = yes
+
+    illustration_tags = {
+        10 = armed
+        10 = exterior
+    }
+
+    dynamic_historical_event = {
+        tag = CRI
+        from = 1444.1.1
+        to = 1850.1.1
+        monthly_chance = 100
+    }
+
+    trigger = {
+        has_or_had_tag = CRI
+        has_global_variable = crimean_civil_war
+        at_war = no
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        character:cri_nur_devlet_giray = { save_scope_as = target_devlet }
+        character:cri_mengli_giray = { save_scope_as = target_mengli }
+        if = {
+            limit = { character:cri_mengli_giray = { is_ruler = yes } }
+            scope:target_devlet = {
+                kill_character = {
+                    reason = assassination
+                    killer = scope:target_mengli
+                }
+            }
+            if = {
+                limit = { has_global_variable = ottomans_back_mengli }
+                c:CRI = {
+                    make_subject_of = {
+                        target = c:TUR
+                        type = subject_type:march
+                    }
+                }
+            }
+        }
+        else = {
+            scope:target_mengli = {
+                kill_character = {
+                    reason = assassination
+                    killer = scope:target_devlet
+                }
+            }
+        }
+    }
+
+    option = {
+        name = flavor_steppe.24.a
+    }
+}
+flavor_steppe.25 = { #Ottomans reestablish Mengli
+    type = country_event
+    title = flavor_steppe.25.title
+	desc = flavor_steppe.25.desc
+    fire_only_once = yes
+
+    illustration_tags = {
+        10 = armed
+        10 = exterior
+    }
+
+    dynamic_historical_event = {
+        tag = CRI
+        from = 1444.1.1
+        to = 1850.1.1
+        monthly_chance = 100
+    }
+
+	trigger = {
+		has_or_had_tag = CRI
+		has_global_variable = haydar_coup
+		at_war = no
+        character:cri_mengli_giray = { is_ruler = yes }
+	}
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        character:cri_haydar_giray = { save_scope_as = target_haydar }
+        character:cri_mengli_giray = { save_scope_as = target_mengli }
+        scope:target_haydar = {
+            kill_character = {
+                reason = assassination
+                killer = scope:target_mengli
+            }
+        }
+        c:CRI = {
+            make_subject_of = {
+                target = c:TUR
+                type = subject_type:march
+            }
+        }
+        remove_global_variable = haydar_coup
+    }
+
+    option = {
+        name = flavor_steppe.25.a
+    }
 }
