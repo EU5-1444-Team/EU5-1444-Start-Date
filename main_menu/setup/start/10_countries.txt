@@ -574,7 +574,7 @@ countries = {
                 name_charles = 2
                 name_robert = 1
                 name_louis = 3
-                René = 1
+                Rene = 1
             }
         }
 
@@ -1361,7 +1361,7 @@ countries = {
                 name_margaret = 1
                 name_philip = 1
                 name_louis = 3
-                René = 1
+                Rene = 1
             }
         }
 
@@ -11942,7 +11942,7 @@ countries = {
 
     # --- AGE ---
 
-    NVR = {
+    NVA = {
         our_cores_conquered_by_others = {
             novara varallo
         }
@@ -11965,7 +11965,7 @@ countries = {
         capital = novara
     }
 
-    # --- NVR ---
+    # --- NVA ---
 
     MTC = {
         own_control_core = {
@@ -25407,7 +25407,7 @@ countries = {
 
     # --- IST ---
 
-    ZET = {
+    ZTA = {
         ## Zeta
         own_control_core = {
             podgorica gradina
@@ -25429,7 +25429,7 @@ countries = {
         dynasty = crnojevic_dynasty
     }
 
-    # --- ZET ---
+    # --- ZTA ---
 
     RAG = {
         own_control_core = {
@@ -32617,6 +32617,9 @@ countries = {
             reforms = {
                 legacy_of_jochi
             }
+        }
+        accepted_cultures = {
+            bolgar
         }
     }
 
@@ -56987,29 +56990,6 @@ countries = {
 
     # --- MOC ---
 
-    OKU = {
-        # Okura
-        capital = hita
-        include = "japanese_clan"
-
-        own_control_core = {
-            hita
-        }
-
-        government = {
-
-            ruler = random
-
-            reforms = {
-                daimyo
-            }
-        }
-
-        country_rank = rank_county
-    }
-
-    # --- OKU ---
-
     SGA = {
         # Shiga
         capital = naoiri
@@ -60558,23 +60538,6 @@ countries = {
 
     # --- WUY ---
 
-    SFN = {
-        # Suifun
-        our_cores_conquered_by_others = {
-            yongmingcheng
-        }
-
-        include = "expl_manchurian_tribe"
-        include = "yeren_tribe"
-        government = {
-            ruler = random
-            heir_selection = ritual_selection
-        }
-        capital = yongmingcheng
-    }
-
-    # --- SFN ---
-
     HNE = {
         #Hunehe
         our_cores_conquered_by_others = {
@@ -61880,21 +61843,20 @@ countries = {
         }
 
         capital = kunming
-        include = "far_east_asia_monarchy_no_coast"
-        include = "expl_mongols"
-        include = "expl_china"
+        include = "chinese_monarchy"
         include = "expl_silk_road_west"
         include = "expl_silk_road_center"
         include = "expl_silk_road_east"
-        government = {
+        government = { type = monarchy }
+        court_language = northern_mandarin_dialect
+        liturgical_language = classical_chinese_language
+        country_rank = rank_kingdom
+        capital = ganzhou
 
-        }
         tolerated_cultures = {
             yi_culture
             lahu_culture
         }
-        court_language = northern_mandarin_dialect
-        country_rank = rank_kingdom
     }
 
     # --- LNG ---
@@ -80901,21 +80863,6 @@ countries = {
 
     # --- CZA ---
 
-    CLN = {
-        #Liang
-        our_cores_conquered_by_others = { }
-        include = "chinese_monarchy"
-        include = "expl_silk_road_west"
-        include = "expl_silk_road_center"
-        include = "expl_silk_road_east"
-        government = { type = monarchy }
-        court_language = northern_mandarin_dialect
-        liturgical_language = classical_chinese_language
-        country_rank = rank_kingdom
-        capital = ganzhou
-    }
-
-    # --- CLN ---
 
     CMM = {
         #Min

@@ -1,4 +1,4 @@
-namespace = flavor_bsh
+﻿namespace = flavor_bsh
 
 # Tribe or Khanate
 flavor_bsh.1 = {
@@ -118,7 +118,7 @@ flavor_steppe.2 = { #Ahmed Coups Mahmud
     }
     option = { #Mahmud Survives
         name = flavor_steppe.2.a
-        text = flavor_steppe.2.a.ctt
+        custom_tooltip = flavor_steppe.2.a.ctt
         ai_chance = { factor = 0 }
         add_legitimacy = legitimacy_extreme_bonus
         kill_character = {
@@ -129,7 +129,7 @@ flavor_steppe.2 = { #Ahmed Coups Mahmud
     }
     option = { #Ahmed Coups
         name = flavor_steppe.2.b
-        text = flavor_steppe.2.b.ctt
+        custom_tooltip = flavor_steppe.2.b.ctt
         ai_chance = { factor = 1 }
         set_new_ruler = character:gth_ahmed_khan_bin_kuchuk
         add_legitimacy = legitimacy_mild_bonus
@@ -838,31 +838,44 @@ flavor_steppe.21 = { #Mengli Giray Revolts
 		scope:target_character = {
 			change_character_allegiance = scope:target_rebels
 		}
-        ordered_owned_location = {
-			limit = {
-				any_pop = {
-					pop_type = pop_type:nobles
-				}
-			}
-			order_by = population
-            if = {
-				limit = { has_global_variable = ottomans_back_mengli }
-    			max = 8
+        if = {
+            limit = { has_global_variable = ottomans_back_mengli }
+            ordered_owned_location = {
+                limit = {
+                    any_pop = { pop_type = pop_type:nobles }
+                }
+                order_by = population
+                max = 8
+                check_range_bounds = no
+                every_pop = {
+                    limit = {
+                        owner = root
+                        pop_type = pop_type:nobles
+                    }
+                    add_pop_satisfaction = pop_satisfaction_ultimate_penalty
+                    change_pop_allegiance = scope:target_rebels
+                }
             }
-            else = {
+        }
+        else = {
+            ordered_owned_location = {
+                limit = {
+                    any_pop = { pop_type = pop_type:nobles }
+                }
+                order_by = population
                 max = 4
+                check_range_bounds = no
+                every_pop = {
+                    limit = {
+                        owner = root
+                        pop_type = pop_type:nobles
+                    }
+                    add_pop_satisfaction = pop_satisfaction_ultimate_penalty
+                    change_pop_allegiance = scope:target_rebels
+                }
             }
-			check_range_bounds = no
-			every_pop = {
-				limit = {
-					owner = root
-					pop_type = pop_type:nobles
-				}
-				add_pop_satisfaction = pop_satisfaction_ultimate_penalty
-				change_pop_allegiance = scope:target_rebels
-			}
-		}
-	}
+        }
+    }
  
 	option = { #The Shirin and the nobility rise for Mengli
 		name = flavor_steppe.21.a
@@ -870,7 +883,7 @@ flavor_steppe.21 = { #Mengli Giray Revolts
 			factor = 1
 		}
 		custom_tooltip = {
-			text = flavor_steppe_21_a_ctt #Mengli Giray leads the revolt against Nur Devlet
+			custom_tooltip = flavor_steppe_21_a_ctt #Mengli Giray leads the revolt against Nur Devlet
 			scope:target_rebels = {
 				start_civil_war = {
 					save_scope_as = target_rebel_country
@@ -901,7 +914,7 @@ flavor_steppe.21 = { #Mengli Giray Revolts
 			factor = 0
 		}
 		custom_tooltip = {
-			text = flavor_steppe_21_a_ctt #Mengli Giray leads the revolt against Nur Devlet
+			custom_tooltip = flavor_steppe_21_a_ctt #Mengli Giray leads the revolt against Nur Devlet
 			scope:target_rebels = {
 				start_civil_war = {
 					save_scope_as = target_rebel_country
@@ -1010,6 +1023,7 @@ flavor_steppe.23 = { #Haydar Coups Crimea
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        save_scope_as = ruler_cri
     }
 
     option = { #Get Casus Belli for restoring Mengli, "They will pay!"
@@ -1017,7 +1031,7 @@ flavor_steppe.23 = { #Haydar Coups Crimea
         add_casus_belli = {
 	        type = casus_belli:cb_claim_throne
 		    target = c:CRI
-		    character:cri_mengli_giray
+		    character = scope:ruler_cri
 	    	years = 20
 	    }
     }
@@ -1066,6 +1080,7 @@ flavor_steppe.24 = { #The Crimean Civil War Concludes
             limit = { character:cri_mengli_giray = { is_ruler = yes } }
             scope:target_devlet = {
                 kill_character = {
+                    target = scope:target_devlet
                     reason = assassination
                     killer = scope:target_mengli
                 }
@@ -1083,6 +1098,7 @@ flavor_steppe.24 = { #The Crimean Civil War Concludes
         else = {
             scope:target_mengli = {
                 kill_character = {
+                    target = scope:target_mengli
                     reason = assassination
                     killer = scope:target_devlet
                 }
@@ -1125,6 +1141,7 @@ flavor_steppe.25 = { #Ottomans reestablish Mengli
         character:cri_mengli_giray = { save_scope_as = target_mengli }
         scope:target_haydar = {
             kill_character = {
+                target = scope:target_haydar
                 reason = assassination
                 killer = scope:target_mengli
             }

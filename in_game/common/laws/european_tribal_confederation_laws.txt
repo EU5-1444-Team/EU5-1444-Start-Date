@@ -1,4 +1,4 @@
-# Defense Law — how much tribes help their Tatar Leader
+﻿# Defense Law — how much tribes help their Tatar Leader
 european_tribal_defense_law = {
     type = international_organization
     law_category = federal
@@ -38,7 +38,7 @@ european_tribal_defense_law = {
         join_defensive_wars_can_call = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
+                    type = special_status:confederation_overlord
                     international_organization = root
                 }
             }
@@ -66,7 +66,7 @@ european_tribal_defense_law = {
         join_defensive_wars_auto_call = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
+                    type = special_status:confederation_overlord
                     international_organization = root
                 }
             }
@@ -91,7 +91,7 @@ european_tribal_defense_law = {
         join_defensive_wars_always = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
+                    type = special_status:confederation_overlord
                     international_organization = root
                 }
             }
@@ -149,7 +149,7 @@ european_tribal_offense_law = {
         join_offensive_wars_can_call = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
+                    type = special_status:confederation_overlord
                     international_organization = root
                 }
             }
@@ -177,7 +177,7 @@ european_tribal_offense_law = {
         join_offensive_wars_auto_call = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
+                    type = special_status:confederation_overlord
                     international_organization = root
                 }
             }
@@ -202,7 +202,7 @@ european_tribal_offense_law = {
         join_offensive_wars_always = {
             scope:actor ?= {
                 has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
+                    type = special_status:confederation_overlord
                     international_organization = root
                 }
             }
@@ -325,16 +325,16 @@ european_tribal_unification_law = {
         OR = {
             AND = {
                 international_organization_has_policy = policy:european_tribal_high_tribute_policy
-                has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
-                    international_organization = scope:recipient
+                any_country_with_special_status_of_type = {
+                    type = confederation_overlord
+                    international_organization = international_organization:european_tribal_confederation
                 }
             }
             AND = {
                 NOT = {
-                    has_special_status_in_international_organization = {
-                        type = special_status:tatar_overlord
-                        international_organization = scope:recipient
+                    any_country_with_special_status_of_type = {
+                        type = confederation_overlord
+                        international_organization = international_organization:european_tribal_confederation
                     }
                 }
             }
@@ -350,9 +350,9 @@ european_tribal_unification_law = {
 
     tatar_overlord_annexation_policy = {
         allow = {
-            has_special_status_in_international_organization = {
-                type = special_status:tatar_overlord
-                international_organization = scope:recipient
+            any_country_with_special_status_of_type = {
+                type = confederation_overlord
+                international_organization = international_organization:european_tribal_confederation
             }
         }
         wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 25 } }
@@ -361,7 +361,7 @@ european_tribal_unification_law = {
         on_activate = {
             custom_tooltip = tatar_unification_tt
             every_country_with_special_status_of_type = {
-                type = tatar_overlord
+                type = confederation_overlord
                 trigger_event_non_silently = { id = io_unification.130 }
             }
         }
@@ -369,12 +369,11 @@ european_tribal_unification_law = {
     european_tribal_confederation_form_policy = {
         allow = {
             NOT = {
-                has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
-                    international_organization = scope:recipient
+                any_country_with_special_status_of_type = {
+                    type = confederation_overlord
+                    international_organization = international_organization:european_tribal_confederation
                 }
             }
-            NOT = { culture = { culture = culture:yerle_qaliq_culture } }
         }
         wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 25 } }
         wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 1000 } }

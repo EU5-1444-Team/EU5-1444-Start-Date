@@ -29,13 +29,13 @@
 # (no leader) Min Rebellion       -> rtr_release_tag_CMM
 # (no leader) Yue Rebellion       -> rtr_release_tag_CYU
 # (no leader) Yughur Rebellion    -> rtr_release_tag_SRY
-# (no leader) Liang Rebellion     -> rtr_release_tag_CLN
+# (no leader) Liang Rebellion     -> rtr_release_tag_LNG
 # (no leader) Ning Rebellion      -> rtr_release_tag_CNG
 # (no leader) Xi Rebellion        -> rtr_release_tag_CXI
 # (no leader) Yi Rebellion        -> rtr_release_tag_CYI
 # (no leader) Huai Rebellion      -> rtr_release_tag_CAI
 # (no leader) Miao Rebellion      -> rtr_release_tag_CMI
-# (no leader) Tung-nen Rebellion  -> rtr_release_tag_CTU
+# (no leader) Tung-nen Rebellion  -> rtr_release_tag_CTG
 # (no leader) Liao Rebellion      -> rtr_release_tag_CLY
 # (no leader) Hui Rebellion       -> rtr_release_tag_HUZ
 # (no leader) Han Rebellion       -> rtr_release_tag_CCC
@@ -59,13 +59,13 @@ scripted_effect rtr_cleanup_variables = {
     if = { limit = { has_variable = rtr_release_tag_CJN } remove_variable = rtr_release_tag_CJN }
     if = { limit = { has_variable = rtr_release_tag_CMM } remove_variable = rtr_release_tag_CMM }
     if = { limit = { has_variable = rtr_release_tag_CYU } remove_variable = rtr_release_tag_CYU }
-    if = { limit = { has_variable = rtr_release_tag_CLN } remove_variable = rtr_release_tag_CLN }
+    if = { limit = { has_variable = rtr_release_tag_LNG } remove_variable = rtr_release_tag_LNG }
     if = { limit = { has_variable = rtr_release_tag_CNG } remove_variable = rtr_release_tag_CNG }
     if = { limit = { has_variable = rtr_release_tag_CXI } remove_variable = rtr_release_tag_CXI }
     if = { limit = { has_variable = rtr_release_tag_CYI } remove_variable = rtr_release_tag_CYI }
     if = { limit = { has_variable = rtr_release_tag_CAI } remove_variable = rtr_release_tag_CAI }
     if = { limit = { has_variable = rtr_release_tag_CMI } remove_variable = rtr_release_tag_CMI }
-    if = { limit = { has_variable = rtr_release_tag_CTU } remove_variable = rtr_release_tag_CTU }
+    if = { limit = { has_variable = rtr_release_tag_CTG } remove_variable = rtr_release_tag_CTG }
     if = { limit = { has_variable = rtr_release_tag_HUZ } remove_variable = rtr_release_tag_HUZ }
     if = { limit = { has_variable = rtr_release_tag_SRY } remove_variable = rtr_release_tag_SRY }
     if = { limit = { has_variable = rtr_release_tag_CCC } remove_variable = rtr_release_tag_CCC }
@@ -92,13 +92,13 @@ scripted_effect rtr_setup_countries_to_release = {
     set_variable = rtr_release_tag_CJN
     set_variable = rtr_release_tag_CMM
     set_variable = rtr_release_tag_CYU
-    set_variable = rtr_release_tag_CLN
+    set_variable = rtr_release_tag_LNG
     set_variable = rtr_release_tag_CNG
     set_variable = rtr_release_tag_CXI
     set_variable = rtr_release_tag_CYI
     set_variable = rtr_release_tag_CAI
     set_variable = rtr_release_tag_CMI
-    set_variable = rtr_release_tag_CTU
+    set_variable = rtr_release_tag_CTG
     set_variable = rtr_release_tag_HUZ
     set_variable = rtr_release_tag_SRY
     set_variable = rtr_release_tag_CCC
@@ -1343,7 +1343,7 @@ red_turban_rebellions.14 = {
 }
 
 #========================================================
-# CLN (Liang) Rebellion – No Leader, Yuehai Culture
+# LNG (Liang) Rebellion – No Leader, Yuehai Culture
 #========================================================
 red_turban_rebellions.15 = {
     type = country_event
@@ -1359,29 +1359,29 @@ red_turban_rebellions.15 = {
 
     trigger = {
         rtr_can_release_tag = {
-            tag = CLN
+            tag = LNG
             location = ganzhou
         }
     }
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
-        rtr_create_revolter_capital = { location = ganzhou tag = CLN }
-        rtr_add_cores_to_area = { area = gansu_area tag = CLN }
-        rtr_add_cores_to_area = { area = hexi_area tag = CLN }
+        rtr_create_revolter_capital = { location = ganzhou tag = LNG }
+        rtr_add_cores_to_area = { area = gansu_area tag = LNG }
+        rtr_add_cores_to_area = { area = hexi_area tag = LNG }
     }
 
     option = {
         name = red_turban_rebellions.15.a
-        rtr_release_warlord_tag = { tag = CLN culture = culture:liang_culture accepted_culture = culture:qin_culture }
-        c:CLN = { rtr_change_allegiance_points = { value = -100 } }
-        rtr_add_country_to_rebels_and_dow_china = { country = c:CLN }
+        rtr_release_warlord_tag = { tag = LNG culture = culture:liang_culture accepted_culture = culture:qin_culture }
+        c:LNG = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = c:LNG }
     }
 
     option = {
         name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
-        rtr_release_warlord_tag = { tag = CLN culture = culture:liang_culture accepted_culture = culture:qin_culture }
+        rtr_release_warlord_tag = { tag = LNG culture = culture:liang_culture accepted_culture = culture:qin_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country
@@ -1634,7 +1634,7 @@ red_turban_rebellions.20 = {
 }
 
 #========================================================
-# CTU (Tung-nen) Rebellion – No Leader, Yuehai Culture
+# CTG (Tung-nen) Rebellion – No Leader, Yuehai Culture
 #========================================================
 red_turban_rebellions.21 = {
     type = country_event
@@ -1650,28 +1650,28 @@ red_turban_rebellions.21 = {
 
     trigger = {
         rtr_can_release_tag = {
-            tag = CTU
+            tag = CTG
             location = kulun
         }
     }
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
-        rtr_create_revolter_capital = { location = kulun tag = CTU }
-        rtr_add_cores_to_area = { area = taiwan_area tag = CTU }
+        rtr_create_revolter_capital = { location = kulun tag = CTG }
+        rtr_add_cores_to_area = { area = taiwan_area tag = CTG }
     }
 
     option = {
         name = red_turban_rebellions.21.a
-        rtr_release_warlord_tag = { tag = CTU culture = culture:minnan_culture accepted_culture = culture:fuzhou_culture }
-        c:CTU = { rtr_change_allegiance_points = { value = -100 } }
-        rtr_add_country_to_rebels_and_dow_china = { country = c:CTU }
+        rtr_release_warlord_tag = { tag = CTG culture = culture:minnan_culture accepted_culture = culture:fuzhou_culture }
+        c:CTG = { rtr_change_allegiance_points = { value = -100 } }
+        rtr_add_country_to_rebels_and_dow_china = { country = c:CTG }
     }
 
     option = {
         name = red_turban_rebellions.play_as_tag
         trigger = { hidden_trigger = { is_ai = no } }
-        rtr_release_warlord_tag = { tag = CTU culture = culture:minnan_culture accepted_culture = culture:fuzhou_culture }
+        rtr_release_warlord_tag = { tag = CTG culture = culture:minnan_culture accepted_culture = culture:fuzhou_culture }
         scope:target_country = { rtr_change_allegiance_points = { value = -100 } }
         rtr_add_country_to_rebels_and_dow_china = { country = scope:target_country }
         change_player = scope:target_country

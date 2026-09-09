@@ -4,6 +4,8 @@
 	pop_type = clergy
 	
 	employment_size = large_religious_building_employment
+	pop_size_created = religious_building_employment
+	need_good_relation = yes
 	
 	category = religious_category
 	graphical_tags = { medium_religious }
@@ -48,6 +50,8 @@ ganden_monastery = {
 
     max_levels = 1
     employment_size = religious_building_employment
+	pop_size_created = religious_building_employment
+	need_good_relation = yes
 
     rural_settlement = yes
     town = yes
@@ -99,6 +103,8 @@ ordos_garrison = { #Ming's frontier garrisons
     category = defense_category
     
     employment_size = stockade_employment
+	pop_size_created = foreign_trade_employment
+	need_good_relation = yes
     
     rural_settlement = yes
     town = yes
@@ -179,7 +185,9 @@ REPLACE:ruined_great_wall_of_china = { #Han Wall
 	allow = {
 		always = no
 	}
-	expensive = yes
+	possible_production_methods = {
+		ruined_great_wall_of_china_maintenance
+	}
 	construction_demand = ruined_great_wall_of_china_construction
 }
 REPLACE:repaired_great_wall_of_china = { #Ming Wall

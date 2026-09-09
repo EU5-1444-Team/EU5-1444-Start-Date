@@ -1,10 +1,10 @@
-european_tribal_tribute = {
+﻿european_tribal_tribute = {
     get_payer_list = {
         every_international_organization_member = {
             limit = {
                 NOT = {
                     has_special_status_in_international_organization = {
-                        type = special_status:tatar_overlord
+                        type = special_status:confederation_overlord
                         international_organization = root
                     }
                 }
@@ -18,7 +18,7 @@ european_tribal_tribute = {
     get_payee_list = {
         # Overlord exists — overlord receives
         every_country_with_special_status_of_type = {
-            type = tatar_overlord
+            type = confederation_overlord
             add_to_local_variable_list = {
                 name = payees
                 target = this
@@ -58,7 +58,7 @@ european_tribal_tribute = {
                 limit = {
                     NOT = {
                         has_special_status_in_international_organization = {
-                            type = special_status:tatar_overlord
+                            type = special_status:confederation_overlord
                             international_organization = root
                         }
                     }

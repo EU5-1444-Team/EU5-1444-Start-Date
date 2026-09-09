@@ -54,7 +54,7 @@ io_unification.10 = { # Khalkha unification
 		if = {
 			limit = { exists = international_organization:khalkha_confederation }
 			custom_tooltip = {
-				text = io_unification.10.ctt
+				custom_tooltip = io_unification.10.ctt
 				if = {
 					limit = { exists = scope:target_country }
 					international_organization:khalkha_confederation = {
@@ -93,7 +93,7 @@ io_unification.20 = { # Khorchin unification
 		if = {
 			limit = { exists = international_organization:khorchin_confederation }
 			custom_tooltip = {
-				text = io_unification.20.ctt
+				custom_tooltip = io_unification.20.ctt
 				if = {
 					limit = { exists = scope:target_country }
 					international_organization:khorchin_confederation = {
@@ -136,7 +136,7 @@ io_unification.30 = { # Nogai unification
 		if = {
 			limit = { exists = international_organization:nogai_confederation }
 			custom_tooltip = {
-				text = io_unification.30.ctt
+				custom_tooltip = io_unification.30.ctt
 				if = {
 					limit = { exists = scope:target_country }
 					international_organization:nogai_confederation = {
@@ -173,7 +173,7 @@ io_unification.60 = { # League of Lezhe unification
 		if = {
 			limit = { exists = international_organization:league_of_lezhe }
 			custom_tooltip = {
-				text = io_unification.60.ctt
+				custom_tooltip = io_unification.60.ctt
 				if = {
 					limit = { exists = scope:target_country }
 					international_organization:league_of_lezhe = {
@@ -224,7 +224,7 @@ io_unification.70 = {
 		if = {
 			limit = { exists = international_organization:circassia_confederation }
 			custom_tooltip = {
-				text = io_unification.70.ctt
+				custom_tooltip = io_unification.70.ctt
 				if = {
 					limit = { exists = scope:target_country }
 					international_organization:circassia_confederation = {
@@ -276,7 +276,7 @@ io_unification.80 = { # Oirat unification
 		if = {
 			limit = { exists = international_organization:oirat_confederation }
 			custom_tooltip = {
-				text = io_unification.80.ctt
+				custom_tooltip = io_unification.80.ctt
 				if = {
 					limit = { exists = scope:target_country }
 					international_organization:oirat_confederation = {
@@ -313,7 +313,6 @@ io_unification.90 = {
 					tag = NAN
 					tag = UDE
 					tag = WRK
-					tag = SFN
 					tag = YER
 				}
 			}
@@ -359,7 +358,7 @@ io_unification.100 = {
 		if = {
 			limit = { exists = international_organization:frisian_freedom }
 			custom_tooltip = {
-				text = io_unification.100.ctt
+				custom_tooltip = io_unification.100.ctt
 				if = {
 					limit = { exists = scope:target_country }
 					international_organization:frisian_freedom = {
@@ -405,7 +404,7 @@ io_unification.110 = { # Northern Yuan unification (Yuan path)
 		if = {
 			limit = { exists = international_organization:northern_yuan }
 			custom_tooltip = {
-				text = io_unification.110.ctt
+				custom_tooltip = io_unification.110.ctt
 				if = {
 					limit = { exists = scope:target_country }
 					international_organization:northern_yuan = {
@@ -453,7 +452,7 @@ io_unification.120 = { # Northern Yuan unification (Mongolia path)
 		if = {
 			limit = { exists = international_organization:northern_yuan }
 			custom_tooltip = {
-				text = io_unification.120.ctt
+				custom_tooltip = io_unification.120.ctt
 				if = {
 					limit = { exists = scope:target_country }
 					international_organization:northern_yuan = {
@@ -521,14 +520,14 @@ io_unification.130 = { # Unified tribal/overlord confederation annexation
         if = {
             limit = { exists = scope:target_io }
             custom_tooltip = {
-                text = io_unification.130.ctt
+                custom_tooltip = io_unification.130.1.ctt
                 scope:target_io = {
                     every_international_organization_member = {
                         limit = {
                             NOT = { this = scope:target_country }
                             NOT = {
                                 has_special_status_in_international_organization = {
-                                    type = special_status:tatar_overlord
+                                    type = special_status:confederation_overlord
                                     international_organization = scope:target_io
                                 }
                             }
@@ -548,14 +547,14 @@ io_unification.130 = { # Unified tribal/overlord confederation annexation
         if = {
             limit = { exists = scope:target_io }
             custom_tooltip = {
-                text = io_unification.130.ctt
+                custom_tooltip = io_unification.130.2.ctt
                 scope:target_io = {
                     every_international_organization_member = {
                         limit = {
                             NOT = { this = scope:target_country }
                             NOT = {
                                 has_special_status_in_international_organization = {
-                                    type = special_status:tatar_overlord
+                                    type = special_status:confederation_overlord
                                     international_organization = scope:target_io
                                 }
                             }
@@ -575,14 +574,14 @@ io_unification.130 = { # Unified tribal/overlord confederation annexation
         if = {
             limit = { exists = scope:target_io }
             custom_tooltip = {
-                text = io_unification.130.ctt
+                custom_tooltip = io_unification.130.3.ctt
                 scope:target_io = {
                     every_international_organization_member = {
                         limit = {
                             NOT = { this = scope:target_country }
                             NOT = {
                                 has_special_status_in_international_organization = {
-                                    type = special_status:tatar_overlord
+                                    type = special_status:confederation_overlord
                                     international_organization = scope:target_io
                                 }
                             }
@@ -601,14 +600,14 @@ io_unification.130 = { # Unified tribal/overlord confederation annexation
                 exists = yes
             }
             has_special_status_in_international_organization = {
-                type = special_status:tatar_overlord
+                type = special_status:confederation_overlord
                 international_organization = scope:target_io
             }
         }
         if = {
             limit = { exists = scope:target_io }
             custom_tooltip = {
-                text = io_unification.130.ctt
+                custom_tooltip = io_unification.130.4.ctt
                 scope:target_io = {
                     every_international_organization_member = {
                         limit = {

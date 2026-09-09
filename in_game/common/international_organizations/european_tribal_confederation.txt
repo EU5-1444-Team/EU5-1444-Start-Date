@@ -43,7 +43,7 @@
         is_member_of_international_organization = scope:recipient
         NOT = {
             has_special_status_in_international_organization = {
-                type = special_status:tatar_overlord
+                type = special_status:confederation_overlord
                 international_organization = scope:recipient
             }
         }
@@ -58,7 +58,7 @@
             limit = {
                 scope:attacker = {
                     has_special_status_in_international_organization = {
-                        type = special_status:tatar_overlord
+                        type = special_status:confederation_overlord
                         international_organization = scope:recipient
                     }
                 }
@@ -76,7 +76,7 @@
         }
         scope:recipient ?= {
             has_special_status_in_international_organization = {
-                type = special_status:tatar_overlord
+                type = special_status:confederation_overlord
                 international_organization = root
             }
         }
@@ -85,7 +85,7 @@
             scope:target ?= {
                 any_international_organization = {
                     international_organization_type = international_organization_type:european_tribal_confederation
-                    is_member_of_international_organization = scope:target
+                    scope:target = { is_member_of_international_organization = prev }
                     leader_country ?= {
                         culture = root.leader_country.culture
                     }
@@ -101,14 +101,14 @@
             limit = {
                 exists = scope:casus_belli
             }
-            scope:casus_belli = casus_belli:cb_throw_off_tatar_yoke
+            scope:casus_belli = casus_belli:cb_throw_off_overlord
         }
     }
     join_defensive_wars_always = {
         scope:target ?= {
             is_member_of_international_organization = root
         }
-        scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_enforce_tatar_yoke target = scope:defender } }
+        scope:attacker = { has_casus_belli_of_type_on = { type = casus_belli:cb_enforce_overlord target = scope:defender } }
     }
 
     gives_military_access_to_all_when_at_war = yes
@@ -117,16 +117,18 @@
         is_member_of_international_organization = scope:recipient
         OR = {
             has_special_status_in_international_organization = {
-                type = special_status:tatar_overlord
+                type = special_status:confederation_overlord
                 international_organization = scope:recipient
             }
             AND = {
                 is_leader_of_international_organization = scope:recipient
                 NOT = {
-                    any_international_organization_member = {
-                        has_special_status_in_international_organization = {
-                            type = special_status:tatar_overlord
-                            international_organization = scope:recipient
+                    scope:recipient = {
+                        any_international_organization_member = {
+                            has_special_status_in_international_organization = {
+                                type = special_status:confederation_overlord
+                                international_organization = scope:recipient
+                            }
                         }
                     }
                 }
@@ -167,7 +169,7 @@
         bashkir_biy
         mari_kart
         udmurt_toro
-        tatar_overlord
+        confederation_overlord
     }
 
     variables = {}

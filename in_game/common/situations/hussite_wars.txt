@@ -9,26 +9,7 @@ hussite_wars = {
 	}
 	
 	can_end = {
-		end_reason = {
-			trigger = { NOT = { country_exists = c:PAP } }
-			desc = "papacy_dissolved"
-		}
-		end_reason = {
-			trigger = { c:BOH ?= { religion = c:PAP.religion } }
-			desc = "catholic_victory"
-		}
-		end_reason = {
-			trigger = {
-				AND = {
-					situation:hussite_wars = { years_since_situation_start > 30 }
-					c:BOH ?= {
-						at_war = no
-						NOT = { religion = religion:catholic }
-					}
-				}
-			}
-			desc = "hussite_victory"
-		}
+		hussite_wars_unified_requirements = yes
 	}
 	
 	visible = {

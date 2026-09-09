@@ -1,10 +1,10 @@
-cb_throw_off_tatar_yoke = {
+﻿cb_throw_off_overlord = {
     create_visible = {
         any_international_organization = {
             international_organization_type = international_organization_type:european_tribal_confederation
-            is_member_of_international_organization = root
+            root = { is_member_of_international_organization = prev }
             any_country_with_special_status_of_type = {
-                type = tatar_overlord
+                type = confederation_overlord
                 this = scope:target
             }
         }
@@ -12,15 +12,15 @@ cb_throw_off_tatar_yoke = {
     create_enabled = {
         any_international_organization = {
             international_organization_type = international_organization_type:european_tribal_confederation
-            is_member_of_international_organization = root
+            root = { is_member_of_international_organization = prev }
             any_country_with_special_status_of_type = {
-                type = tatar_overlord
+                type = confederation_overlord
                 this = scope:target
             }
         }
         NOT = { has_truce_with = scope:target }
     }
-    war_goal_type = throw_off_tatar_yoke_wargoal
+    war_goal_type = throw_off_overlord_wargoal
     ai_will_do = {
         add = {
             desc = "CB_REASON_IMPORTANT_CB"
@@ -31,7 +31,7 @@ cb_throw_off_tatar_yoke = {
             limit = {
                 any_international_organization = {
                     international_organization_type = international_organization_type:european_tribal_confederation
-                    is_member_of_international_organization = root
+                    root = { is_member_of_international_organization = prev }
                     international_organization_has_policy = policy:european_tribal_low_tribute_policy
                 }
             }
@@ -44,7 +44,7 @@ cb_throw_off_tatar_yoke = {
             limit = {
                 any_international_organization = {
                     international_organization_type = international_organization_type:european_tribal_confederation
-                    is_member_of_international_organization = root
+                    root = { is_member_of_international_organization = prev }
                     international_organization_has_policy = policy:european_tribal_high_tribute_policy
                 }
             }
@@ -55,23 +55,16 @@ cb_throw_off_tatar_yoke = {
         }
     }
 }
-cb_enforce_tatar_yoke = {
+cb_enforce_overlord = {
     create_visible = {
-        OR = {
-            culture = { has_culture_group = culture_group:tatar_group }
-            culture = { culture = culture:yerle_qaliq_culture }
-        }
-        scope:target = {
-            any_international_organization = {
-                international_organization_type = international_organization_type:european_tribal_confederation
-                is_member_of_international_organization = scope:target
-                leader_country = scope:target
-                NOT = {
-                    any_international_organization_member = {
-                        has_special_status_in_international_organization = {
-                            type = special_status:tatar_overlord
-                            international_organization = prev
-                        }
+        any_international_organization = {
+            international_organization_type = international_organization_type:european_tribal_confederation
+            scope:target = { is_member_of_international_organization = prev }
+            NOT = {
+                any_international_organization_member = {
+                    has_special_status_in_international_organization = {
+                        type = special_status:confederation_overlord
+                        international_organization = prev
                     }
                 }
             }
@@ -86,7 +79,7 @@ cb_enforce_tatar_yoke = {
                 NOT = {
                     any_international_organization_member = {
                         has_special_status_in_international_organization = {
-                            type = special_status:tatar_overlord
+                            type = special_status:confederation_overlord
                             international_organization = prev
                         }
                     }
@@ -96,12 +89,8 @@ cb_enforce_tatar_yoke = {
     }
     create_enabled = {
         NOT = { has_truce_with = scope:target }
-        OR = {
-            culture = { has_culture_group = culture_group:tatar_group }
-            culture = { culture = culture:yerle_qaliq_culture }
-        }
     }
-    war_goal_type = enforce_tatar_yoke_wargoal
+    war_goal_type = enforce_overlord_wargoal
     ai_will_do = {
         add = {
             desc = "CB_REASON_IMPORTANT_CB"
@@ -109,27 +98,21 @@ cb_enforce_tatar_yoke = {
         }
     }
 }
-cb_takeover_tatar_yoke = {
+cb_takeover_overlord = {
     create_visible = {
-        OR = {
-            culture = { has_culture_group = culture_group:tatar_group }
-            culture = { culture = culture:yerle_qaliq_culture }
-        }
-        scope:target = {
-            any_international_organization = {
-                international_organization_type = international_organization_type:european_tribal_confederation
-                has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
-                    international_organization = prev
-                    country = scope:target
-                }
+        any_international_organization = {
+            international_organization_type = international_organization_type:european_tribal_confederation
+            has_special_status_in_international_organization = {
+                type = special_status:confederation_overlord
+                international_organization = prev
+                country = scope:target
             }
         }
         NOT = {
             any_international_organization = {
                 international_organization_type = international_organization_type:european_tribal_confederation
                 has_special_status_in_international_organization = {
-                    type = special_status:tatar_overlord
+                    type = special_status:confederation_overlord
                     international_organization = prev
                     country = root
                 }
@@ -147,12 +130,8 @@ cb_takeover_tatar_yoke = {
     }
     create_enabled = {
         NOT = { has_truce_with = scope:target }
-        OR = {
-            culture = { has_culture_group = culture_group:tatar_group }
-            culture = { culture = culture:yerle_qaliq_culture }
-        }
     }
-    war_goal_type = takeover_tatar_yoke_wargoal
+    war_goal_type = takeover_overlord_wargoal
     ai_will_do = {
         add = {
             desc = "CB_REASON_IMPORTANT_CB"
