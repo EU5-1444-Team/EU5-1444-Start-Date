@@ -1,0 +1,401 @@
+﻿adopt_ometeotl = {	
+	monthly_progress = {
+		add = {
+			desc = "DIPLOREASON_BASE"
+			value = 0.5
+		}
+		add = {
+			desc = "SCOPE_CLERGY_ESTATE_SATISFACTION"
+			value = estate_satisfaction:clergy_estate
+			multiply = 0.075
+		}
+		add = {
+			desc = "game_concept_doom"
+			value = doom
+			multiply = -0.05
+		}
+		add = {
+			desc = "[crown_power|e]"
+			value = "estate_power(estate_type:crown_estate)"
+			multiply = 0.5
+		}
+		if = {
+			limit = {
+				capital = { has_location_modifier = nahuatl_temple_expansion_modifier }
+			}
+			add = {
+				desc = "nahuatl_temple_expansion_modifier"
+				value = 0.5
+			}
+		}
+		if = {
+			limit = { has_ruler = yes }
+			add = {
+				desc = "[ruler|e] [total_ability|e]"
+				value = ruler.total_abilities
+				multiply = 0.0033
+			}
+		}
+		min = 0
+	}
+
+	allow = {
+		has_completed_religious_focus = elevate_patron_god
+		has_completed_religious_focus = establish_cihuacoatl
+		has_completed_religious_focus = expand_cuahpipiltin
+		has_completed_religious_focus = increase_militarism
+		has_completed_religious_focus = raise_sacrifice_rate
+	}
+	
+	modifier_while_progressing = {
+		clergy_estate_max_tax = -0.1
+	}
+
+	modifier_on_completion = {
+		country_child_education = 0.1
+		monthly_doom = -0.1
+		global_estate_target_satisfaction = small_permanent_target_satisfaction
+	}
+
+	ai_will_do = { add = 1 }
+}
+
+elevate_patron_god = {
+	monthly_progress = {
+		add = {
+			desc = "DIPLOREASON_BASE"
+			value = 0.5
+		}
+		add = {
+			desc = "[crown_power|e]"
+			value = "estate_power(estate_type:crown_estate)"
+			multiply = 0.33
+		}
+		add = {
+			desc = "clergy_estate_power"
+			value = "estate_power(estate_type:clergy_estate)"
+			multiply = 0.5
+		}
+		add = {
+			desc = "game_concept_doom"
+			value = doom
+			multiply = -0.005
+		}
+		if = {
+			limit = { has_ruler = yes }
+			add = {
+				desc = "[ruler|e] [total_ability|e]"
+				value = ruler.total_abilities
+				multiply = 0.002
+			}
+		}
+		if = {
+			limit = {
+				capital = { has_location_modifier = nahuatl_temple_expansion_modifier }
+			}
+			add = {
+				desc = "nahuatl_temple_expansion_modifier"
+				value = 0.4
+			}
+		}
+		min = 0
+	}
+	
+	modifier_while_progressing = {
+		tolerance_own = -1
+	}
+
+	modifier_on_completion = {
+		global_pop_conversion_speed_modifier = 0.2
+	}
+
+	ai_will_do = {
+		add = 1
+	}
+}
+ # main_menu\localization, loading_screen\localization
+establish_cihuacoatl = {
+	monthly_progress = {
+		add = {
+			desc = "DIPLOREASON_BASE"
+			value = 0.5
+		}
+		add = {
+			desc = "[crown_power|e]"
+			value = "estate_power(estate_type:crown_estate)"
+			multiply = 0.33
+		}
+		if = {
+			limit = { societal_value:centralization_vs_decentralization > 0 }
+			add = {
+				desc = "centralization_vs_decentralization"
+				value = societal_value:centralization_vs_decentralization
+				multiply = 0.02
+			}
+		}
+		else_if = {
+			limit = { societal_value:centralization_vs_decentralization < 0 }
+			add = {
+				desc = "centralization_vs_decentralization"
+				value = societal_value:centralization_vs_decentralization
+				multiply = -0.02
+			}
+		}
+		add = {
+			desc = "game_concept_doom"
+			value = doom
+			multiply = -0.05
+		}
+		if = {
+			limit = { has_ruler = yes }
+			add = {
+				desc = "[ruler|e] [total_ability|e]"
+				value = ruler.total_abilities
+				multiply = 0.002
+			}
+		}
+		if = {
+			limit = {
+				capital = { has_location_modifier = nahuatl_temple_expansion_modifier }
+			}
+			add = {
+				desc = "nahuatl_temple_expansion_modifier"
+				value = 0.4
+			}
+		}
+		min = 0
+	}
+	
+	modifier_while_progressing = {
+		court_spending_cost = 0.025
+	}
+
+	modifier_on_completion = {
+		country_cabinet_efficiency = 0.1
+	}
+	
+	effect_on_completion = { #creates a "Serpent Woman" as thats what the reform is about
+		create_character = {
+			religion = scope:actor.religion
+			culture = scope:actor.culture
+			estate = estate_type:clergy_estate
+			age = 20
+			female = yes
+			add_character_modifier = {
+				modifier = granted_cabinet_right
+				years = -1
+			}
+			add_adm = 20
+			add_dip = 20
+			add_mil = 20
+			save_scope_as = nahua_needs_dynasty
+		}
+		scope:nahua_needs_dynasty = {
+			found_dynasty = random
+		}
+	}
+
+	ai_will_do = {
+		add = 1
+	}
+}
+
+expand_cuahpipiltin = {
+	monthly_progress = {
+		add = {
+			desc = "DIPLOREASON_BASE"
+			value = 0.5
+		}
+		add = {
+			desc = "[crown_power|e]"
+			value = "estate_power(estate_type:crown_estate)"
+			multiply = 0.33
+		}
+		add = {
+			desc = "NUMBER_OF_SUBJECTS"
+			value = num_subjects
+			multiply = 0.05
+		}
+		add = {
+			desc = "game_concept_doom"
+			value = doom
+			multiply = -0.05
+		}
+		if = {
+			limit = { has_ruler = yes }
+			add = {
+				desc = "[ruler|e] [total_ability|e]"
+				value = ruler.total_abilities
+				multiply = 0.002
+			}
+		}
+		min = 0
+	}
+	
+	modifier_while_progressing = {
+		nobles_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+	}
+
+	modifier_on_completion = {
+		global_manpower_modifier = 0.1
+		noble_estate_levy_size = 0.05
+	}
+
+	ai_will_do = {
+		add = 1
+	}
+}
+
+increase_militarism = {
+	monthly_progress = {
+		add = {
+			desc = "DIPLOREASON_BASE"
+			value = 0.5
+		}
+		add = {
+			desc = "[crown_power|e]"
+			value = "estate_power(estate_type:crown_estate)"
+			multiply = 0.33
+		}
+		add = {
+			desc = "game_concept_doom"
+			value = doom
+			multiply = -0.1
+		}
+		add = {
+			desc = "WARRIOR_PROPORTION"
+			value = total_sub_unit_type_count:a_jaguar_warrior
+			add = total_sub_unit_type_count:a_eagle_warrior
+			if = {
+				limit = { expected_army_size != 0 }
+				divide = expected_army_size
+			}
+			multiply = 0.1
+		}
+		add = {
+			desc = "[army_tradition|e]"
+			value = army_tradition
+			multiply = 0.025
+		}
+		if = {
+			limit = {
+				capital = { has_location_modifier = nahuatl_temple_expansion_modifier }
+			}
+			add = {
+				desc = "nahuatl_temple_expansion_modifier"
+				value = 0.4
+			}
+		}
+		if = {
+			limit = { has_ruler = yes }
+			add = {
+				desc = "[ruler|e] [total_ability|e]"
+				value = ruler.total_abilities
+				multiply = 0.002
+			}
+		}
+		min = 0
+	}
+	
+	modifier_while_progressing = {
+		army_maintenance_cost = 0.2
+		global_levy_size_modifier = -0.25
+	}
+
+	modifier_on_completion = {
+		army_tradition_decay = -0.0015
+	}
+
+	effect_on_completion = {
+		if = {
+			limit = {
+				NOT = {
+					region:mesoamerica_region = {
+						any_location_in_region = { has_institution = institution:professional_armies }
+					}
+				}
+			}
+			capital = {
+				change_institution_progress = { 
+					type = institution:professional_armies
+					value = 100
+				}
+			}
+		}
+		else = {
+			capital = {
+				change_institution_progress = { 
+					type = institution:professional_armies
+					value = 33
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		add = 1
+	}
+}
+
+raise_sacrifice_rate = {
+	monthly_progress = {
+		add = {
+			desc = "DIPLOREASON_BASE"
+			value = 0.5
+		}
+		add = {
+			desc = "[crown_power|e]"
+			value = "estate_power(estate_type:crown_estate)"
+			multiply = 0.33
+		}
+		add = {
+			desc = "SCOPE_CLERGY_ESTATE_SATISFACTION"
+			value = estate_satisfaction:clergy_estate
+			multiply = 0.075
+		}
+		add = {
+			desc = "game_concept_doom"
+			value = doom
+			multiply = -0.05
+		}
+		if = {
+			limit = { has_ruler = yes }
+			add = {
+				desc = "[ruler|e] [total_ability|e]"
+				value = ruler.total_abilities
+				multiply = 0.002
+			}
+		}
+		if = {
+			limit = {
+				capital = { has_location_modifier = nahuatl_temple_expansion_modifier }
+			}
+			add = {
+				desc = "nahuatl_temple_expansion_modifier"
+				value = 0.4
+			}
+		}
+		min = 0
+	}
+	
+	modifier_while_progressing = {
+		global_clergy_estate_power = 1
+	}
+	
+	modifier_on_completion = {
+		monthly_doom = -0.05
+	}
+
+	effect_on_completion = { 
+		custom_tooltip = {
+			text = raise_sacrifice_rate_tt
+		}
+	}
+
+	ai_will_do = {
+		add = 1
+	}
+}
+
+
+
