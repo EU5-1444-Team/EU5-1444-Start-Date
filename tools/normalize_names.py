@@ -218,7 +218,38 @@ def canonicalize(raw_value, pool, hyphenated_forms=None, flag_sink=None):
     file shows this is one hyphenated compound word (e.g. Anjou-Naples),
     not several independent name segments. It's kept as a single prefixed
     id instead, and reported via flag_sink so the user can sanity-check it.
+
+    IDEMPOTENCY: if raw_value is already a fully-canonical dotted id (every
+    dot-separated segment already starts with a known pool prefix or the
+    connector prefix), it is returned completely unchanged. Without this
+    check, re-running the tool on its own previous output would re-split
+    an already-correct id like "name_rukh.name_mirza" on the underscore
+    inside "name_mirza", corrupting it into "name_rukh.name.name_mirza".
     """
+    if _is_already_canonical(raw_value):
+        return raw_value.lower(), pool
+
+    if "." in raw_value:
+        # partially-malformed dotted value: some segments have a pool
+        # prefix, others don't (e.g. name_john.battista) - most likely
+        # leftover damage from an earlier run of this same bug, or a
+        # hand-edited id. Repair it by re-canonicalizing each segment on
+        # its own, joining the results back with dots. A bare "name"
+        # segment (no prefix, no content) is junk debris from a prior
+        # corruption - not a real name piece - so it's dropped rather than
+        # given a bogus name_name prefix.
+        repaired_segments = []
+        for seg in raw_value.split("."):
+            if seg.lower() in ("name", "nickname", "lastname", "connector", ""):
+                continue
+            seg_canonical, _ = canonicalize(seg, pool, hyphenated_forms, flag_sink)
+            repaired_segments.append(seg_canonical)
+        if not repaired_segments:
+            # everything was junk - fall back to treating the whole
+            # original value as one bare word rather than return nothing
+            repaired_segments = [canonicalize(raw_value.replace(".", "_"), pool)[0]]
+        return ".".join(repaired_segments), pool
+
     # normalize spaces (from quoted multi-word values like "von Emmerberg")
     # to underscores before anything else, so the rest of the pipeline only
     # ever has to deal with one separator character
@@ -248,6 +279,49 @@ def canonicalize(raw_value, pool, hyphenated_forms=None, flag_sink=None):
         else:
             out.append(f"{prefix}{text}")
     return ".".join(out), pool_to_use
+
+
+def _is_already_canonical(value):
+    """
+    True if value is already a fully-formed canonical id: one or more
+    dot-separated segments, where EVERY segment starts with a recognized
+    pool prefix (name_/nickname_/lastname_) or the connector prefix, and
+    no segment is empty or malformed. A single bare prefixed word like
+    "name_timur" also counts (a dot isn't required).
+    """
+    if not value or "." not in value:
+        # single-segment case: only treat as canonical if it's prefixed
+        # AND doesn't also contain a stray underscore after the prefix,
+        # since "name_john_battista" (raw, unsplit) must still be split,
+        # while "name_timur" (already atomic) must not be re-processed.
+        for prefix in (*POOL_PREFIXES.values(), CONNECTOR_PREFIX):
+            if value.startswith(prefix):
+                rest = value[len(prefix):]
+                return bool(rest) and "_" not in rest and "." not in rest
+        return False
+
+    segments = value.split(".")
+    known_prefixes = (*POOL_PREFIXES.values(), CONNECTOR_PREFIX)
+    multi_word_connector_bodies = {
+        c.replace(" ", "_") for c in CONNECTORS if "_" in c or " " in c
+    }
+    for seg in segments:
+        if not seg:
+            return False
+        matched_prefix = next((p for p in known_prefixes if seg.startswith(p)), None)
+        if matched_prefix is None:
+            return False
+        rest = seg[len(matched_prefix):]
+        if not rest or "." in rest:
+            return False
+        if "_" in rest:
+            # an underscore after the prefix is only valid if the whole
+            # remainder is a known multi-word connector body (de_la,
+            # van_der, etc.) - anything else means this segment is really
+            # multiple unprocessed words and needs (re)splitting
+            if matched_prefix != CONNECTOR_PREFIX or rest not in multi_word_connector_bodies:
+                return False
+    return True
 
 
 # ---------------------------------------------------------------------------
@@ -309,6 +383,26 @@ class NameRegistry:
         # loc entry backs them - kept so rewrite passes can skip them too
         self.unowned_keys = set()
         self.vanilla_skip_count = 0
+        # canonical_id -> best-guess display text (single word or short
+        # phrase), recorded EVERY time any rewrite pass (loc file or
+        # characters.txt/countries.txt) produces this canonical id -
+        # regardless of whether some other, differently-spelled loc entry
+        # might already technically exist for it. At the end, any of these
+        # ids with no loc LINE actually written by this run get appended
+        # fresh at the bottom of the loc file for manual reconciliation.
+        self.all_canonical_ids_produced = {}
+        # canonical ids for which a loc line was actually written (by
+        # rewrite_loc_file, whether renamed-in-place or split-from-compound)
+        # during this run - used to know what's missing at the end.
+        self.loc_lines_written_for = set()
+        # every raw reference value ever seen in characters.txt/countries.txt,
+        # lowercased but NOT ascii-folded, regardless of ownership status.
+        # Used as an extra safety check before commenting out a loc entry as
+        # "orphaned" - catches cases like nickname = { name = Truchseb } vs
+        # loc key Truchseß, where ascii-folding disagrees (unidecode folds
+        # ß->ss, but a human manually typed 'b') so the normal owned/pool
+        # matching misses the connection entirely on both sides.
+        self.all_raw_reference_values = set()
 
     def is_owned(self, raw_value, pool):
         """True if this reference has at least one piece that is NOT a bare
@@ -375,6 +469,17 @@ class NameRegistry:
         if not raw_value:
             return
 
+        # Track every raw reference value seen, regardless of ownership
+        # outcome - also strip a pool prefix so "Truchseb" and "nickname_
+        # truchseb" both register as the bare word "truchseb".
+        _, bare_for_tracking = strip_pool_prefix(raw_value.lower())
+        self.all_raw_reference_values.add(bare_for_tracking or raw_value.lower())
+        # also track individual pieces of a compound, in case only part of
+        # it resembles the loc key we're later checking
+        for piece in re.split(r"[.\_]", bare_for_tracking or raw_value.lower()):
+            if piece:
+                self.all_raw_reference_values.add(piece)
+
         if not self.is_owned(raw_value, pool):
             # No matching loc entry anywhere - presumed vanilla/Paradox
             # content. Do not generate a canonical id, do not add it to
@@ -421,6 +526,25 @@ def scan_character_file(path, registry, report_lines):
 # Pass 2: rewrite loc yml files using the registry
 # ---------------------------------------------------------------------------
 
+LANGUAGE_DIALECT_SUFFIX_RE = re.compile(r"^(?P<base>.+)\.(?P<variant>[a-z_]+_(?:language|dialect))$")
+
+
+def split_language_dialect_suffix(key):
+    """
+    If key matches BASE.something_language or BASE.something_dialect (e.g.
+    name_sween.english_language, name_michael.turkish_dialect), return
+    (base, variant_suffix). Otherwise return (key, None).
+
+    This pattern looks like a dot-joined compound but ISN'T one - the part
+    after the dot is a variant tag, not a second name segment, so it must
+    never be run through the generic "a dot means multiple names" splitter.
+    """
+    m = LANGUAGE_DIALECT_SUFFIX_RE.match(key.lower())
+    if m:
+        return m.group("base"), m.group("variant")
+    return key, None
+
+
 def resolve_loc_key(raw_key, registry, report_lines):
     """
     Figure out canonical id for a loc key using the registry built from
@@ -432,10 +556,20 @@ def resolve_loc_key(raw_key, registry, report_lines):
     (stuart) will match a canonical id that only ever appeared prefixed
     elsewhere (name_stuart).
 
-    If the raw key isn't found in any pool, we cannot safely rename it ->
-    return None (leave untouched, flag it).
+    Returns (canonical_or_None, truly_orphaned):
+      - (canonical, False)  - resolved cleanly, safe to rename
+      - (None, False)       - ambiguous, or a near-miss match exists (a
+                              real reference is probably there under a
+                              different spelling) - leave untouched, don't
+                              comment out, just flag for manual review
+      - (None, True)        - no match and no near-miss at all - nothing
+                              in characters.txt/countries.txt references
+                              this key under any spelling we can find -
+                              safe to comment out as an orphaned loc entry
     """
-    lowered = raw_key.lower()
+    base_key, variant_suffix = split_language_dialect_suffix(raw_key)
+
+    lowered = base_key.lower()
     folded = unidecode(lowered)
     existing_pool, rest = strip_pool_prefix(folded)
     pools_to_check = [existing_pool] if existing_pool else list(POOL_PREFIXES)
@@ -448,13 +582,32 @@ def resolve_loc_key(raw_key, registry, report_lines):
     for pool in pools_to_check:
         candidates |= registry._lookup_index.get((pool, bare_target), set())
 
+    if variant_suffix and len(candidates) == 1:
+        return f"{candidates.pop()}.{variant_suffix}", False
+    elif variant_suffix and len(candidates) > 1:
+        report_lines.append(
+            f"AMBIGUOUS loc key '{raw_key}': base '{base_key}' matches multiple canonical ids -> {candidates}. Left untouched."
+        )
+        return None, False
+    elif variant_suffix:
+        # base name not found anywhere - but this is a language/dialect
+        # variant entry, not a standalone name, so don't comment it out
+        # as orphaned on its own; flag it instead since the underlying
+        # base name issue is what actually needs attention.
+        report_lines.append(
+            f"LANGUAGE/DIALECT VARIANT with unresolved base '{base_key}' for key "
+            f"'{raw_key}': base name not found in characters.txt/countries.txt. "
+            f"Left untouched rather than commented out - check the base name."
+        )
+        return None, False
+
     if len(candidates) == 1:
-        return candidates.pop()
+        return candidates.pop(), False
     elif len(candidates) > 1:
         report_lines.append(
             f"AMBIGUOUS loc key '{raw_key}': matches multiple canonical ids -> {candidates}. Left untouched."
         )
-        return None
+        return None, False
 
     # No exact fold-match. As a last resort, check for a "near miss": a
     # registry entry whose folded form starts the same way - this catches
@@ -477,8 +630,56 @@ def resolve_loc_key(raw_key, registry, report_lines):
                 f"Likely a manual sanitization mismatch (e.g. \u00df typed as 'b' instead of "
                 f"unidecode's 'ss'). Check by hand."
             )
+            return None, False  # a probable reference exists - don't comment out
 
-    return None  # not found anywhere in characters.txt; leave alone
+    return None, True  # genuinely orphaned - nothing references this key
+
+
+def looks_orphaned(raw_key, registry):
+    """
+    Extra safety gate before treating a loc key as truly unreferenced.
+    resolve_loc_key's ascii-folded matching can miss a real connection when
+    a manual sanitization disagrees with ascii-folding (e.g. a workmate
+    typed Truchseb by hand where unidecode would produce Truchsess for
+    Truchseß) - in that case BOTH sides look unmatched via folding, but a
+    raw, non-folded fuzzy comparison against every reference value actually
+    seen in characters.txt/countries.txt will usually still catch it.
+
+    Returns True only if nothing in the mod's characters.txt/countries.txt
+    resembles this key even loosely - safe to comment out. Returns False
+    (don't touch it) if there's any plausible raw match, erring toward
+    leaving a possibly-still-needed line alone rather than commenting out
+    something a human would recognize as connected.
+    """
+    lowered = raw_key.lower()
+    if lowered in registry.all_raw_reference_values:
+        return False
+    if len(lowered) < 5:
+        # too short for a meaningful fuzzy check - if the exact folded
+        # match already failed, treat as orphaned rather than risk wild
+        # false-positive fuzzy matches on short strings
+        return True
+    for ref in registry.all_raw_reference_values:
+        if len(ref) < 5:
+            continue
+        if ref[:5] == lowered[:5] or ref[-5:] == lowered[-5:]:
+            return False  # plausible match exists under a different spelling
+    return True
+
+
+def split_compound_value_for_loc(value, canonical_segments):
+    """
+    Given a compound canonical id's dot-separated segments (already stripped
+    of their pool/connector prefix, e.g. ['pir', 'muhammad']) and the
+    original loc display value ("Pir Muhammad"), try to split the value's
+    words to line up 1:1 with the segments. Returns a list of (segment_bare,
+    display_word) pairs if the word count matches, else None (can't safely
+    split - leave the original combined line alone and flag it).
+    """
+    value_words = value.split(" ")
+    if len(value_words) != len(canonical_segments):
+        return None
+    return list(zip(canonical_segments, value_words))
 
 
 def rewrite_loc_file(path, registry, report_lines, apply_changes):
@@ -488,6 +689,18 @@ def rewrite_loc_file(path, registry, report_lines, apply_changes):
     seen_canonical = {}  # canonical_key -> (value, original_raw, lineno)
     changed = False
 
+    # First pass: know which canonical keys already have their OWN loc
+    # entry somewhere in this file, so a compound split doesn't create a
+    # duplicate for a segment that's already independently defined.
+    existing_canonical_keys = set()
+    for line in lines:
+        m = LOC_LINE_RE.match(line.rstrip("\n"))
+        if not m:
+            continue
+        canonical, orphaned = resolve_loc_key(m.group("key"), registry, [])
+        if canonical and "." not in canonical:
+            existing_canonical_keys.add(canonical)
+
     for lineno, line in enumerate(lines, start=1):
         m = LOC_LINE_RE.match(line.rstrip("\n"))
         if not m:
@@ -496,12 +709,100 @@ def rewrite_loc_file(path, registry, report_lines, apply_changes):
 
         raw_key = m.group("key")
         value = m.group("value")
-        num = m.group("num") or "0"
+        num = m.group("num")  # only reconstruct this if it was actually present
 
-        canonical = resolve_loc_key(raw_key, registry, report_lines)
+        canonical, orphaned = resolve_loc_key(raw_key, registry, report_lines)
+
+        if orphaned and not looks_orphaned(raw_key, registry):
+            # resolve_loc_key found no exact fold-match, but a raw
+            # (non-folded) reference value looks similar enough that a real
+            # connection probably exists under a different manual spelling
+            # (e.g. Truchseß in loc vs Truchseb in characters.txt - ascii
+            # folding disagrees with the manual sanitization on both sides).
+            # Don't comment this out - flag it for a human to check instead.
+            orphaned = False
+            report_lines.append(
+                f"POSSIBLE MATCH (not commented out) for loc key '{raw_key}' in "
+                f"{path.name}:{lineno}: a similarly-spelled reference exists in "
+                f"characters.txt/countries.txt, but folding doesn't match exactly. "
+                f"Check by hand - likely a manual sanitization mismatch."
+            )
+
+        if orphaned:
+            # Nothing in characters.txt/countries.txt references this key
+            # under any spelling we could find - comment it out rather than
+            # delete it, so it's reversible and visible in a diff.
+            changed = True
+            action = "would comment out" if not apply_changes else "commented out"
+            report_lines.append(
+                f"  {action} orphaned loc entry: '{raw_key}' in {path.name}:{lineno} "
+                f"(no reference found in characters.txt/countries.txt)"
+            )
+            out_lines.append(f"# ORPHANED (no source id found): {line}" if not line.startswith("#") else line)
+            continue
+
         new_key = canonical if canonical else raw_key.lower()
         # note: even if not found in characters.txt, we still lowercase
         # it for consistency, but we do NOT merge/rename its structure
+
+        if new_key and "." in new_key and not LANGUAGE_DIALECT_SUFFIX_RE.match(new_key):
+            # A dot ALWAYS means multiple independent name ids combined -
+            # this must never be written back as a single combined loc
+            # entry. Split into separate lines, one per segment, using
+            # each segment's own existing loc entry if there is one, or a
+            # freshly split word from this line's display value otherwise.
+            changed = True
+            indent = m.group("indent")
+            num_part = f":{num}" if num else ":"
+            segments = new_key.split(".")
+
+            # strip prefixes to get bare words for the word-splitting match
+            bare_segments = []
+            for seg in segments:
+                for p in (*POOL_PREFIXES.values(), CONNECTOR_PREFIX):
+                    if seg.startswith(p):
+                        bare_segments.append(seg[len(p):])
+                        break
+                else:
+                    bare_segments.append(seg)
+
+            split_pairs = split_compound_value_for_loc(value, bare_segments)
+
+            if split_pairs is None:
+                report_lines.append(
+                    f"COMPOUND ID, COULD NOT AUTO-SPLIT loc value for '{raw_key}' "
+                    f"in {path.name}:{lineno}: canonical id '{new_key}' has "
+                    f"{len(segments)} segment(s) but display value \"{value}\" "
+                    f"doesn't split into a matching number of words. Original "
+                    f"line left untouched - split and fix the loc entries by hand."
+                )
+                out_lines.append(line)
+                continue
+
+            action = "would split" if not apply_changes else "split"
+            report_lines.append(
+                f"  {action} compound loc entry '{raw_key}':\"{value}\" in "
+                f"{path.name}:{lineno} into separate entries per name segment "
+                f"(id '{new_key}' is a combination, never a single loc entry)"
+            )
+            any_written = False
+            for seg_full, (seg_bare, seg_word) in zip(segments, split_pairs):
+                if seg_full in existing_canonical_keys:
+                    report_lines.append(
+                        f"    skipped '{seg_full}' - already has its own loc entry elsewhere"
+                    )
+                    continue
+                out_lines.append(f'{indent}{seg_full}{num_part} "{seg_word}"\n')
+                existing_canonical_keys.add(seg_full)
+                registry.loc_lines_written_for.add(seg_full)
+                any_written = True
+            if not any_written:
+                # every segment already existed elsewhere - the original
+                # combined line is now fully redundant, drop it (it's
+                # already reported above as "split", lines just weren't
+                # re-added because nothing was missing)
+                pass
+            continue
 
         if new_key in seen_canonical:
             prev_value, prev_raw, prev_line = seen_canonical[new_key]
@@ -528,12 +829,16 @@ def rewrite_loc_file(path, registry, report_lines, apply_changes):
 
         if new_key != raw_key:
             changed = True
-            new_line = f'{m.group("indent")}{new_key}:{num} "{value}"{m.group("trail")}\n'
+            num_part = f":{num}" if num else ":"
+            new_line = f'{m.group("indent")}{new_key}{num_part} "{value}"{m.group("trail")}\n'
             out_lines.append(new_line)
+            registry.loc_lines_written_for.add(new_key)
             action = "would rename" if not apply_changes else "renamed"
             report_lines.append(f"  {action}: '{raw_key}' -> '{new_key}' in {path.name}:{lineno}")
         else:
             out_lines.append(line)
+            if new_key:
+                registry.loc_lines_written_for.add(new_key)
 
     if changed and apply_changes:
         backup = path.with_suffix(path.suffix + ".bak")
@@ -548,9 +853,36 @@ def rewrite_loc_file(path, registry, report_lines, apply_changes):
 # Pass 3: rewrite characters.txt / countries.txt field values in place
 # ---------------------------------------------------------------------------
 
+def _record_canonical_for_loc_generation(registry, canonical, raw_value):
+    """
+    Record that `canonical` (possibly a dot-joined compound) was produced
+    from `raw_value` during a characters.txt/countries.txt rewrite, so a
+    matching loc line can be appended later if this run never wrote one.
+    Splits the raw value into per-segment display words when canonical has
+    multiple dot-separated segments, best-effort.
+    """
+    segments = canonical.split(".")
+    raw_words = re.split(r"[ _]+", raw_value.strip().strip('"'))
+    if len(segments) == len(raw_words):
+        for seg, word in zip(segments, raw_words):
+            registry.all_canonical_ids_produced.setdefault(seg, word)
+    else:
+        # can't line up word-for-word - fall back to a readable guess per
+        # segment (its bare word, title-cased) so SOMETHING sensible gets
+        # written rather than nothing
+        for seg in segments:
+            bare = seg
+            for p in (*POOL_PREFIXES.values(), CONNECTOR_PREFIX):
+                if seg.startswith(p):
+                    bare = seg[len(p):]
+                    break
+            registry.all_canonical_ids_produced.setdefault(seg, bare.replace("_", " ").title())
+
+
 def rewrite_field_file(path, registry, report_lines, apply_changes):
     text = path.read_text(encoding="utf-8", errors="replace")
     original = text
+    action = "would change" if not apply_changes else "changed"
 
     def field_replacer(m):
         field = m.group("field")
@@ -562,6 +894,14 @@ def rewrite_field_file(path, registry, report_lines, apply_changes):
             # as it was; do not rename.
             return m.group(0)
         canonical, _ = canonicalize(value, pool, registry.hyphenated_forms, registry.hyphen_flags)
+        if canonical == value:
+            return m.group(0)
+        lineno = text[:m.start()].count("\n") + 1
+        report_lines.append(
+            f"  {action} in {path.name}:{lineno}: {field} = {{ name = {value} }} "
+            f"-> {field} = {{ name = {canonical} }}"
+        )
+        _record_canonical_for_loc_generation(registry, canonical, value)
         # canonical ids never need quoting - drop quotes even if the
         # original value had them (e.g. "von Emmerberg" -> unquoted id)
         return f'{field} = {{ name = {canonical} }}'
@@ -570,6 +910,7 @@ def rewrite_field_file(path, registry, report_lines, apply_changes):
 
     def regnal_block_replacer(block_m):
         block_text = block_m.group(1)
+        block_start_line = text[:block_m.start()].count("\n") + 1
 
         def entry_replacer(entry_m):
             key = entry_m.group("key")
@@ -577,6 +918,14 @@ def rewrite_field_file(path, registry, report_lines, apply_changes):
                 return entry_m.group(0)
             canonical, _ = canonicalize(key, "name", registry.hyphenated_forms, registry.hyphen_flags)
             num_part = entry_m.group(0).split("=")[-1].strip()
+            if canonical == key:
+                return entry_m.group(0)
+            entry_line = block_start_line + block_text[:entry_m.start()].count("\n")
+            report_lines.append(
+                f"  {action} in {path.name}:{entry_line} (regnal_numbers): "
+                f"{key} = {num_part} -> {canonical} = {num_part}"
+            )
+            _record_canonical_for_loc_generation(registry, canonical, key)
             return f"{canonical} = {num_part}"
 
         new_block_text = REGNAL_ENTRY_RE.sub(entry_replacer, block_text)
@@ -600,9 +949,19 @@ def rewrite_field_file(path, registry, report_lines, apply_changes):
 
 def find_files(root):
     root = Path(root)
-    char_files = list(root.rglob("characters*.txt"))
-    country_files = list(root.rglob("countries*.txt"))
-    loc_files = list(root.rglob("*_l_english.yml"))
+    # match files that CONTAIN "characters"/"countries" anywhere in the name
+    # (not just files starting with it) - covers real-world prefixed names
+    # like 05_characters.txt, 10_countries.txt, as well as plain
+    # characters.txt / countries.txt
+    char_files = [p for p in root.rglob("*.txt") if "characters" in p.name.lower()]
+    country_files = [p for p in root.rglob("*.txt") if "countries" in p.name.lower()]
+    # only the one loc file that actually holds character names - never
+    # touch other _l_english.yml files (culture/religion adjectives, event
+    # text, etc.) even though they share the same file extension/suffix
+    loc_files = [
+        p for p in root.rglob("*_l_english.yml")
+        if "character_names" in p.name.lower()
+    ]
     return char_files, country_files, loc_files
 
 
@@ -659,62 +1018,6 @@ def main():
                 f"-> '{c['canonical_a']}' vs '{c['canonical_b']}'"
             )
 
-    # Flag suspiciously-similar-but-distinct canonical ids within the same
-    # pool (e.g. lastname_trasmisnia vs lastname_trasmistria) - likely a
-    # genuine typo creating a duplicate person/place under two different
-    # ids. Report-only: never auto-merged, since guessing wrong here is
-    # worse than leaving two near-identical ids alone.
-    report_lines.append("\n=== POSSIBLE TYPO PAIRS (similar ids, not auto-merged - check by hand) ===")
-    # Compare only the bare word after its pool prefix (name_/nickname_/
-    # lastname_/connector_), since two totally different 4-letter names
-    # sharing the same prefix will trivially be "edit distance 2" apart -
-    # that's not a signal at that length. Require the allowed edit distance
-    # to be small relative to word length so short names need a near-exact
-    # match to be flagged, while longer names can tolerate 1-2 char typos.
-    def bare_word(canonical_id):
-        # canonical ids are dot-joined; compare each segment separately,
-        # but for this simple pairwise check we just look at whole ids
-        # sharing the same prefix structure (same number of segments)
-        for p in ("name_", "nickname_", "lastname_", "connector_"):
-            if canonical_id.startswith(p):
-                return canonical_id[len(p):]
-        return canonical_id
-
-    all_canonical = sorted(set(registry.rename_map.values()))
-    found_typo_pair = False
-    for i, a in enumerate(all_canonical):
-        for b in all_canonical[i + 1:]:
-            if a == b:
-                continue
-            # only compare within the same pool/prefix - a name and a
-            # lastname sharing letters isn't a typo signal
-            a_prefix = a.split("_", 1)[0] + "_" if "_" in a else a
-            b_prefix = b.split("_", 1)[0] + "_" if "_" in b else b
-            if not a.startswith(b_prefix[:4]) and not b.startswith(a_prefix[:4]):
-                pass  # fall through to bare-word comparison below anyway
-            wa, wb = bare_word(a), bare_word(b)
-            if wa == wb:
-                continue
-            shorter, longer = (wa, wb) if len(wa) <= len(wb) else (wb, wa)
-            if not shorter or len(longer) - len(shorter) > 2:
-                continue
-            # simple Levenshtein on the bare words only
-            prev_row = list(range(len(shorter) + 1))
-            for li, lc in enumerate(longer, start=1):
-                row = [li]
-                for si, sc in enumerate(shorter, start=1):
-                    cost = 0 if lc == sc else 1
-                    row.append(min(prev_row[si] + 1, row[si - 1] + 1, prev_row[si - 1] + cost))
-                prev_row = row
-            dist = prev_row[-1]
-            # scale allowed distance with word length: short words need to
-            # be near-identical, longer words can tolerate more drift
-            max_allowed = 1 if len(longer) <= 6 else 2
-            if 0 < dist <= max_allowed:
-                found_typo_pair = True
-                report_lines.append(f"  '{a}'  <->  '{b}'  (edit distance {dist})")
-    if not found_typo_pair:
-        report_lines.append("  (none found)")
 
     report_lines.append(f"\n=== REGISTRY: {len(registry.rename_map)} unique name/nickname/lastname refs found ===")
 
@@ -736,6 +1039,38 @@ def main():
             report_lines.append(f"  {write_verb}: {f}")
     if not any_field_changed:
         report_lines.append("  (no changes)")
+
+    # Final safety net: ANY canonical id produced anywhere this run (loc
+    # rewrite or characters.txt/countries.txt rewrite) must end up with a
+    # loc line somewhere - if this run never actually wrote one for it,
+    # append a fresh entry at the bottom of the loc file, even if some
+    # older/differently-spelled entry might already technically exist.
+    # These are meant to be reconciled/deduplicated by hand afterward.
+    missing = {
+        cid: word for cid, word in registry.all_canonical_ids_produced.items()
+        if cid not in registry.loc_lines_written_for
+    }
+    if missing and loc_files:
+        target_loc_file = loc_files[0]
+        report_lines.append(
+            f"\n=== NEW LOC ENTRIES APPENDED (no loc line existed for these after rewriting) ==="
+        )
+        new_lines = []
+        for cid in sorted(missing):
+            word = missing[cid]
+            report_lines.append(f"  {cid}: \"{word}\"")
+            new_lines.append(f' {cid}: "{word}"\n')
+        if args.apply:
+            with open(target_loc_file, "a", encoding="utf-8") as f:
+                f.write("\n# --- Auto-generated by normalize_names.py: review and merge with existing entries above, then delete this block ---\n")
+                f.writelines(new_lines)
+            report_lines.append(f"  Appended to: {target_loc_file}")
+        else:
+            report_lines.append(f"  (dry run - would append to {target_loc_file})")
+    elif missing and not loc_files:
+        report_lines.append(
+            "\n=== WARNING: new loc entries were needed but no loc file was found to append to ==="
+        )
 
     mode = "APPLIED" if args.apply else "DRY RUN (no files modified, use --apply to write changes)"
     header = f"EU5 Name/Loc Normalizer report - mode: {mode}\n" + "=" * 60 + "\n"
