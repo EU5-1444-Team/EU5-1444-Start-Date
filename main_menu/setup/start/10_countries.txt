@@ -46963,6 +46963,12 @@ countries = {
             dabhol sangamesvara raigarh janjira savantvadi rajapur
         }
 
+        own_control_conquered = {
+            panugallu devarakonda rachakonda anumagallu amrabad nalgonda ghampur makhtal undrugonda wazirabad
+            khammamet kothagudem kalluru yedagiri
+            kalyan chaul
+        }
+
         starting_technology_level = 3
         include = "indian_muslim_monarchy"
         country_rank = rank_kingdom
@@ -47238,7 +47244,7 @@ countries = {
 
     RCH = {
         #https://en.wikipedia.org/wiki/Recherla_Nayakas
-        own_control_core = {
+        our_cores_conquered_by_others = {
             panugallu devarakonda rachakonda anumagallu amrabad nalgonda ghampur makhtal undrugonda wazirabad
             khammamet kothagudem kalluru yedagiri
         }
@@ -47737,7 +47743,7 @@ countries = {
     BGL = {
         #https://en.wikipedia.org/wiki/Baglana
         own_control_core = {
-            mayuragiri salagiri dang
+            mayuragiri salagiri dang surat
         }
 
         include = "expl_india_hindu"
@@ -49350,7 +49356,6 @@ countries = {
         #https://en.wikipedia.org/wiki/Mewar
         own_control_core = {
             nagahrada amet chittor chavand salumbar kanthal
-            khed pali
             jalor chandravati sirohi nadol
             siwana
             gudamalani
@@ -49418,9 +49423,10 @@ countries = {
     GUJ = {
         # Gujarat Sultanate - https://en.wikipedia.org/wiki/Gujarat_Sultanate
         own_control_core = {
-            ashaval dholka danduka limbdi ranpur khambat
+            ashaval dholka limbdi khambat
             patan radhanpur palanpur deodar
-            baroda broach rander daman bassein bombay kalyan chaul
+            baroda broach rander daman bassein bombay
+            diu
         }
 
         starting_technology_level = 3
@@ -49872,7 +49878,7 @@ countries = {
         own_control_core = {
             kapilkot lakhiyarvira lakhpat kantha
             nagnes dwarka
-            bhanvad gondal
+            gondal
         }
 
         our_cores_conquered_by_others = {
@@ -50237,7 +50243,7 @@ countries = {
     PLT = {
         #https://en.wikipedia.org/wiki/Palitana_State
         own_control_core = {
-            palitana lathi sihor
+            palitana lathi
         }
 
         include = "indian_hindu_monarchy_jain"
@@ -50260,11 +50266,12 @@ countries = {
     # --- PLT ---
 
     BHD = {
-        our_cores_conquered_by_others = {
-            bhanvad
+        own_control_core = {
+            bhanvad chhaya
         }
+
         our_cores_conquered_by_others = {
-            dwarka chhaya
+            dwarka 
         }
 
         include = "expl_india_hindu"
@@ -50283,7 +50290,7 @@ countries = {
 
     MRW = {
         #https://en.wikipedia.org/wiki/Kingdom_of_Marwar
-        our_cores_conquered_by_others = {
+        own_control_core = {
             pali khed bahadamer
         }
 
@@ -50311,7 +50318,7 @@ countries = {
     # --- MRW ---
 
     GHL = {
-        our_cores_conquered_by_others = {
+        own_control_core = {
             sihor danduka
         }
 
@@ -50422,7 +50429,7 @@ countries = {
     SMH = {
         #Somnath
         own_control_core = {
-            somnath chhaya
+            somnath
         }
 
         starting_technology_level = 3
@@ -50542,7 +50549,7 @@ countries = {
 
     RNP = {
         #https://en.wikipedia.org/wiki/Ranpur_State
-        our_cores_conquered_by_others = {
+        own_control_core = {
             ranpur
         }
 
@@ -50607,55 +50614,6 @@ countries = {
     }
 
     # --- PGL ---
-
-    DIU = {
-        #DIU
-        own_control_core = {
-            diu
-        }
-
-        starting_technology_level = 3
-        include = "indian_muslim_monarchy"
-
-        government = {
-            type = monarchy
-            heir_selection = cognatic_primogeniture
-            ruler = random
-
-            reforms = {
-                indian_sultanate_reform
-            }
-        }
-
-        religious_school = hanafi_school
-        capital = diu
-    }
-
-    # --- DIU ---
-
-    SUA = {
-        #Surat
-        own_control_core = {
-            surat
-        }
-
-        starting_technology_level = 3
-        include = "indian_muslim_monarchy"
-
-        government = {
-            type = monarchy
-            ruler = random
-            heir_selection = abbot_elective
-
-            reforms = {
-            }
-        }
-
-        religious_school = hanafi_school
-        capital = surat
-    }
-
-    # --- SUA ---
 
     ## south_east_asia
     ## ===============
