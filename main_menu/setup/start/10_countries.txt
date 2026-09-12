@@ -36927,7 +36927,9 @@ countries = {
             mbaba soyo mbanza_soyo
             ambrizete nsolu nbengo bumbe
             ambriz mussul icalo cahenda loge chimuande
-            tamba_ambriz pove ndembo mbondo pende_kongo matamba mbangala
+            tamba_ambriz pove ndembo mbondo pende_kongo
+            kibango nkunga ngimbo_amburi masinga
+            mbanza_mpemba
         }
 
         starting_technology_level = 3
@@ -36947,9 +36949,7 @@ countries = {
 
     MOM = {
         own_control_core = {
-            nkunga cuilo amulaca kibango ngimbo_amburi cundi mbanza_mpangu
-            masinga
-            mbanza_mpemba dambi_angonga berbela
+            cuilo amulaca cundi mbanza_mpangu
         }
 
         our_cores_conquered_by_others = {
@@ -36977,23 +36977,21 @@ countries = {
     # --- MOM ---
 
     LBA = {
-        type = location
-        own_control_core = {
-            lubudi msassa kuzinde kagoma mukurru_bunkela
-            kikongoluka
-            kabebe mussumba umballa lualaba kazaidi
-            cuoim kalengue olohose
-        }
+		type = pop
+		add_pops_from_locations = {
+			pimpu molundu lubudi msassa kirira songye_kongo nyangwe mweru mlungo kazembe tchafolonguta garengaze mongoffa kuzinde kagoma mukurru_bunkela
+			kikongoluka kaluba
+		}
 
-        discovered_regions = { kongo_region }
+		discovered_regions = { kongo_region	}
 
-        include = "subsaharan_tribe"
-        government = {
-            type = tribe
-            heir_selection = tribal_oldest_male
-            ruler = random
-        }
-    }
+		include = "subsaharan_tribe"
+		government = {
+			type = tribe
+			heir_selection = tribal_oldest_male
+			ruler = random
+		}
+	}
 
     # --- LBA ---
 
@@ -37001,7 +36999,7 @@ countries = {
         #Loango
         own_control_core = {
             loango buali mayumba yumba bramas piri chiloango
-            ncando makabana manguenzo dingi
+            manguenzo dingi
         }
 
         starting_technology_level = 3
@@ -37013,7 +37011,7 @@ countries = {
             ruler = random
         }
 
-        country_rank = rank_kingdom
+        country_rank = rank_duchy
         capital = loango
     }
 
@@ -37021,7 +37019,7 @@ countries = {
 
     NDO = {
         own_control_core = {
-            ndalatando ambaca luanda calumbo muxima
+            ndalatando ambaca
             dondo lucala pungo_ndongo
         }
 
@@ -37043,23 +37041,60 @@ countries = {
 
     # --- NDO ---
 
-    LND = {
-        type = location
+    MTM = {
         own_control_core = {
-            kiluata lucapa sainiambu muata_musembo kisenge nguff sakambunje kassai
+            matamba mbangala kuitonga kuneni
         }
 
-        discovered_regions = { kongo_region }
-
-        include = "subsaharan_tribe"
+        country_rank = rank_county
+        starting_technology_level = 3
+        include = "subsaharan_monarchy_no_coast"
         government = {
-            type = tribe
-            heir_selection = tribal_oldest_male
-            ruler = random
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random # TODO: add me
         }
 
-        capital = kassai
+        capital = matamba
     }
+
+    # --- MTM ---
+
+    KMB = {
+        own_control_core = {
+            kuilembi kuemgo kuido samba_kongo
+        }
+
+        country_rank = rank_county
+        starting_technology_level = 3
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random # TODO: add me
+        }
+
+        capital = kuilembi
+    }
+
+    # --- MTM ---
+
+    LND = {
+		type = pop
+		add_pops_from_locations = {
+			kiluata lucapa sainiambu muata_musembo chamuhongo kabebe kadinga mussumba umballa lualaba kazaidi cuoim kalengue olohose muana kabinda katanga
+			kua_luziga kafaila kinyama mulilimu kushita kitungula ntenke shana_bukanda
+		}
+
+		discovered_regions = { kongo_region	}
+
+		include = "subsaharan_tribe"
+		government = {
+			type = tribe
+			heir_selection = tribal_oldest_male
+			ruler = random
+		}
+	}
 
     # --- LND ---
 
@@ -74397,26 +74432,49 @@ countries = {
     # --- CBD ---
 
     TKE = {
-        #https://en.wikipedia.org/wiki/Teke_people
-        type = pop
-        add_pops_from_locations = {
-            makaka lefini sanga_pumbo monsol ubangi
+        own_control_core = {
+            monsol pumbo sanga_pumbo makaka
         }
 
-        discovered_areas = {
-            south_gabun_area
-        }
+        starting_technology_level = 3
         discovered_regions = { kongo_region }
-
-        include = "subsaharan_tribe"
+        include = "subsaharan_monarchy_no_coast"
         government = {
-            type = tribe
-            heir_selection = tribal_oldest_male
+            type = monarchy
+            heir_selection = cognatic_primogeniture
             ruler = random
         }
+
+        tolerated_cultures = {
+        }
+
+        capital = monsol
     }
 
     # --- TKE ---
+
+    MWE = {
+        own_control_core = {
+            nunu ngabo fimi chuapa
+            bikoro north_juma mfumu_bekussu
+        }
+
+        starting_technology_level = 3
+        discovered_regions = { kongo_region }
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+
+        tolerated_cultures = {
+        }
+
+        capital = nunu
+    }
+
+    # --- MWE ---
 
     ABD = {
         #https://en.wikipedia.org/wiki/Ambundu
@@ -74424,7 +74482,7 @@ countries = {
         add_pops_from_locations = {
             luanda ambaca calumbo dondo muxima muxima_ayo demba pove icalo
             cahenda bondo ayo aco gunza_anbamba nanboa_angonga ndalatando mbangala lucala
-            kuneni pungo_ndongo kabafa malanji mbondo ndembo matamba
+            kuneni pungo_ndongo kabafa malanji mbondo ndembo
         }
 
         discovered_regions = { kongo_region }
