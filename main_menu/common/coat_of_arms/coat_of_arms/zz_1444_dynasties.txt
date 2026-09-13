@@ -1232,6 +1232,68 @@ nef_dynasty = {
         }
     }
 }
+lusignan_cyprus_dynasty = { # Poitiers-Lusignan of Cyprus (banner of 1393-1489), quarterly shield variant
+	pattern = "pattern_quarterly_shield.dds"
+	color1 = "white"
+	color2 = "yellow"
+	color3 = "red"
+	color4 = "blue_secondary"
+	color5 = "blue_light"
+
+	colored_emblem = { # Q1 Jerusalem (Lusignan variant)
+		texture = "ce_cross_jerusalem_lusignan_wide.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.372 0.255 } rotation = 90 scale = { 0.25 0.46 } }
+	}
+	colored_emblem = { # Q2 White field bg for barry
+		texture = "ce_solid.dds"
+		color1 = color1
+		color2 = color1
+		instance = { position = { 0.75 0.255 } scale = { 0.5 0.46 } }
+		mask = { 2 }
+	}
+	colored_emblem = { # Q2 Barry of ten argent and azure (Poitiers-Lusignan)
+		texture = "ce_barry_10.dds"
+		color1 = color1
+		color2 = color5
+		instance = { position = { 0.75 0.255 } scale = { 0.5 0.44 } }
+		mask = { 2 }
+	}
+	colored_emblem = { # Q2 Eye bg for lion
+		texture = "ce_frame_circle.dds"
+		color1 = color1
+		color2 = color1
+		instance = { position = { 0.618 0.095 } scale = { 0.02 0.02 } }
+	}
+	colored_emblem = { # Q2 Crowned lion (Poitiers-Lusignan)
+		texture = "ce_lion_crowned_wide.dds"
+		color1 = color3
+		color2 = color2
+		color3 = color2
+		instance = { position = { 0.628 0.255 } scale = { 0.45 0.48 } }
+	}
+	colored_emblem = { # Q3 Cilicia: red rampant lion on gold, shield variant
+		texture = "ce_lion_rampant_crowned_q3_shield.dds"
+		color1 = color3
+		color2 = color4
+		color3 = color4
+		instance = { position = { 0.380 0.685 } scale = { 0.425 0.425 } }
+	}
+	colored_emblem = { # Q4 Poitiers: red crowned lion on white, shield variant
+		texture = "ce_lion_rampant_crowned_q4_shield.dds"
+		color1 = color3
+		color2 = color2
+		color3 = color2
+		instance = { position = { 0.61 0.68 } scale = { 0.42 0.42 } }
+	}
+	colored_emblem = { # Divider
+		texture = "ce_divider_quarterly_shield_50.dds"
+		color1 = "black"
+		color2 = "black"
+	}
+}
+
 baux_orange_dynasty = { # Baux-Orange - Used from mid 14th c.
 	pattern = "pattern_quarterly_shield.dds"
 	color1 = "red"            # Baux field (Q1, Q4)
