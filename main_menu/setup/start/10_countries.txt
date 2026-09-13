@@ -36925,9 +36925,9 @@ countries = {
             wandu
             kavanga oando wizi mbridge
             mbaba soyo mbanza_soyo
-            ambrizete nsolu nbengo bumbe
-            ambriz mussul icalo cahenda loge chimuande
-            tamba_ambriz pove ndembo mbondo pende_kongo
+            nbengo bumbe
+            icalo cahenda loge chimuande
+            tamba_ambriz pove pende_kongo
             kibango nkunga ngimbo_amburi masinga
             mbanza_mpemba
         }
@@ -36997,9 +36997,8 @@ countries = {
 
     LOA = {
         #Loango
-        own_control_core = {
-            loango buali mayumba yumba bramas piri chiloango
-            manguenzo dingi
+        our_cores_conquered_by_others = {
+            loango buali mayumba bramas piri chiloango
         }
 
         starting_technology_level = 3
@@ -37016,6 +37015,90 @@ countries = {
     }
 
     # --- LOA ---
+
+    PII = {
+        #Piri
+        own_control_core = {
+            piri bramas
+        }
+
+        starting_technology_level = 3
+        discovered_regions = { kongo_region }
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+
+        country_rank = rank_county
+        capital = piri
+    }
+
+    # --- PII ---
+
+    KLO = {
+        #Kilongo
+        own_control_core = {
+            chiloango loango
+        }
+
+        starting_technology_level = 3
+        discovered_regions = { kongo_region }
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+
+        country_rank = rank_county
+        capital = chiloango
+    }
+
+    # --- KLO ---
+
+    MYB = {
+        #Mayumba
+        own_control_core = {
+            mayumba
+        }
+
+        starting_technology_level = 3
+        discovered_regions = { kongo_region }
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+
+        country_rank = rank_county
+        capital = mayumba
+    }
+
+    # --- MYB ---
+
+    WSI = {
+        #Mayumba
+        own_control_core = {
+            buali
+        }
+
+        starting_technology_level = 3
+        discovered_regions = { kongo_region }
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+
+        country_rank = rank_county
+        capital = buali
+    }
+
+    # --- WSI ---
 
     NDO = {
         own_control_core = {
@@ -37059,6 +37142,82 @@ countries = {
     }
 
     # --- MTM ---
+
+    CGL = {
+        own_control_core = {
+            nsolu ambrizete ambriz mussul
+        }
+
+        country_rank = rank_county
+        starting_technology_level = 3
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random # TODO: add me
+        }
+
+        capital = nsolu
+    }
+
+    # --- CGL ---
+
+    DBS = {
+        own_control_core = {
+            ndembo mbondo
+        }
+
+        country_rank = rank_county
+        starting_technology_level = 3
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random # TODO: add me
+        }
+
+        capital = ndembo
+    }
+
+    # --- DBS ---
+
+    KSM = {
+        own_control_core = {
+            calumbo muxima luanda
+        }
+
+        country_rank = rank_county
+        starting_technology_level = 3
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random # TODO: add me
+        }
+
+        capital = calumbo
+    }
+
+    # --- KSM ---
+
+    NSO = {
+        own_control_core = {
+            munza dambi_angonga berbela
+        }
+
+        country_rank = rank_county
+        starting_technology_level = 3
+        include = "subsaharan_monarchy_no_coast"
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random # TODO: add me
+        }
+
+        capital = munza
+    }
+
+    # --- NSO ---
 
     KMB = {
         own_control_core = {
@@ -74513,7 +74672,7 @@ countries = {
 
     TKE = {
         own_control_core = {
-            monsol pumbo sanga_pumbo makaka
+            monsol pumbo sanga_pumbo makaka mindouli ubangi lefini
         }
 
         starting_technology_level = 3
@@ -74537,6 +74696,7 @@ countries = {
         own_control_core = {
             nunu ngabo fimi chuapa
             bikoro north_juma mfumu_bekussu
+            tumba_ikoko
         }
 
         starting_technology_level = 3
