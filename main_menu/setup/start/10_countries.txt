@@ -45856,9 +45856,8 @@ countries = {
 
             alamganj katihar purnia bihariganj saharsa kosi
             khagaria bhagalpur jangipur rajmahal teliagarhi mandar_parvat dumka deoghar
-            tamluk chandrakona madaran
+            tamluk madaran
             monghyr gidhaur
-            bishnupur bankura
             rajgir bihar_sharif narhat roh
             samastipur
         }
@@ -46031,7 +46030,7 @@ countries = {
         #Khokhra
         own_control_core = {
             khukhragarh ranchi ichagarh porahat
-            jashpur_nagar birugarh chaibasa kharsawan ghatsila raipur_bengal barabhum shergarh katrasgarh gobindpur
+            jashpur_nagar birugarh chaibasa kharsawan shergarh katrasgarh gobindpur
             chai hazaribagh urda
         }
 
@@ -46176,10 +46175,13 @@ countries = {
 
     BHP = {
         #Mallabhum
+        own_control_core = {
+            bishnupur bankura ghatsila raipur_bengal barabhum chandrakona
+        }
+
         our_cores_conquered_by_others = {
-            barabhum chandrakona hijli madaran raipur_bengal tamluk
-            ghatsila chaibasa kharsawan
-            bishnupur bankura
+            chandrakona hijli madaran tamluk
+            chaibasa kharsawan
         }
 
         include = "expl_india_hindu"
@@ -46505,8 +46507,7 @@ countries = {
 
     CER = {
         #Chero
-        our_cores_conquered_by_others = {
-            rohtas
+        own_control_core = {
             chatra tarhasi untari
         }
 
@@ -46517,7 +46518,7 @@ countries = {
             magahi
         }
 
-        capital = rohtas
+        capital = tarhasi
         government = {
             ruler = random
         }
@@ -47120,10 +47121,11 @@ countries = {
             vemulawada korutla balkonda nirmal adlur
             sagar gadwal
             dabhol sangamesvara raigarh janjira savantvadi rajapur
+            ramagiri palampet
         }
 
         own_control_conquered = {
-            panugallu devarakonda rachakonda anumagallu amrabad nalgonda ghampur makhtal undrugonda wazirabad
+            panugallu devarakonda rachakonda anumagallu amrabad ghampur makhtal
             khammamet kothagudem kalluru yedagiri
             kalyan chaul
         }
@@ -47403,8 +47405,12 @@ countries = {
 
     RCH = {
         #https://en.wikipedia.org/wiki/Recherla_Nayakas
+
+        own_control_core = {
+            nalgonda undrugonda wazirabad
+        }
         our_cores_conquered_by_others = {
-            panugallu devarakonda rachakonda anumagallu amrabad nalgonda ghampur makhtal undrugonda wazirabad
+            panugallu devarakonda rachakonda anumagallu amrabad ghampur makhtal
             khammamet kothagudem kalluru yedagiri
         }
 
@@ -47428,7 +47434,7 @@ countries = {
         #https://en.wikipedia.org/wiki/Kingdom_of_Chanda
         own_control_core = {
             ballarpur bramhapuri gadchiroli aheri
-            ramagiri palampet bhadrachalam
+            bhadrachalam
         }
 
         own_control_integrated = {
@@ -48230,8 +48236,8 @@ countries = {
         #Jaunpur
         own_control_core = {
             jaunpur hajipur rohtas
-            chatra tarhasi untari gaya deo patna sonepur_bihar andar thawe kushinagar gorakhpur binayakpur rudrapur
-            buxar arrah ballia jaund sasaram chunar varanasi bhadohi sultanpur_uttar_pradesh ghazipur mau_jaunpur azamgarh chillupar bansi basti
+            gaya deo patna sonepur_bihar andar thawe kushinagar gorakhpur binayakpur rudrapur
+            buxar arrah ballia sasaram chunar varanasi bhadohi sultanpur_uttar_pradesh ghazipur mau_jaunpur azamgarh chillupar bansi basti
             gonda balrampur tulsipur shravasti bahraich akbarpur awadh kishi raebareli mungra prayag kara asni manikpur raebareli korra
             makanpur etawah kanauj agra chandwar sargadwari jalesar_doab mathura kol unnao bilgram lucknow ibrahimabad khairabad hardoi pali_uttar_pradesh
             biswan firuzabad_bahraich bhurwara kherigarh nahil pilibhit shahjahanpur bareilly budaun gunnaur sambhal chandpur_uttar_pradesh
@@ -48749,8 +48755,12 @@ countries = {
 
     UJJ = {
         #Ujjainiya
+        own_control_core = {
+            jaund
+        }
+
         our_cores_conquered_by_others = {
-            buxar arrah ballia jaund sasaram
+            buxar arrah ballia
         }
 
         include = "expl_india_hindu"
@@ -49515,10 +49525,8 @@ countries = {
         #https://en.wikipedia.org/wiki/Mewar
         own_control_core = {
             nagahrada amet chittor chavand salumbar kanthal
-            jalor chandravati sirohi nadol
-            siwana
-            gudamalani
             rampura mandalgarh bhilwara phulia ranthambore sheopur sabalgarh
+            ajmer
         }
 
         include = "expl_india_hindu"
@@ -50010,13 +50018,9 @@ countries = {
         #Would retake it from Delhi in 1395, after which it passed to the Rathores.
 
         our_cores_conquered_by_others = {
-            phalvardhika
-        }
-
-        our_cores_conquered_by_others = {
-            mandore osian nagaur khed pali kurki ajmer merta
+            phalvardhika mandore osian nagaur khed pali kurki ajmer merta
             nagaur makrana sambhar
-        } #Mandore + parts of Marwar. At its greatest extent the dynasty had however ruled most of northern India.
+        }
 
         include = "expl_india_hindu"
         include = "india_limited_monarchy"
@@ -50191,7 +50195,7 @@ countries = {
     NAU = {
         #Nagaur
         own_control_core = {
-            nagaur makrana merta ajmer kurki mandore osian
+            nagaur makrana merta
         }
 
         starting_technology_level = 3
@@ -50450,12 +50454,13 @@ countries = {
     MRW = {
         #https://en.wikipedia.org/wiki/Kingdom_of_Marwar
         own_control_core = {
-            pali khed bahadamer
+            mandore pali khed bahadamer kurki osian # Marwar
+            jalor chandravati sirohi nadol siwana gudamalani # Jalore
         }
 
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_jain_no_coast"
-        capital = khed #Or Pali
+        capital = mandore
         government = {
             #Huge Dynasty https://www.indianrajputs.com/history/rathore.php
             ruler_term = { character = mrw_sheoji_rathore start_date = 1226.1.1 end_date = 1273.1.1 regnal_number = 1 }
