@@ -292,6 +292,28 @@ io_unification.80 = { # Oirat unification
 	}
 }
 
+io_unification.81 = { # Oirat destruction
+	type = country_event
+	title = io_unification.81.title
+	desc = io_unification.81.desc
+	outcome = neutral
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		save_scope_as = target_country
+	}
+
+	option = {
+		name = io_unification.81.a
+		destroy_international_organization = { target = international_organization:oirat_confederation }
+	}
+}
+
 # Jurchen unification
 io_unification.90 = {
 	type = country_event

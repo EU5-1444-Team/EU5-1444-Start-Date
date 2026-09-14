@@ -257,7 +257,6 @@ european_tribal_tribute_law = {
             }
             NOT = { has_cooldown = european_tribal_policy_change_cd }
         }
-        payments_implemented = { european_tribal_tribute }
         wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
         wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 30 } }
         wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 30 } }
@@ -278,7 +277,6 @@ european_tribal_tribute_law = {
             }
             NOT = { has_cooldown = european_tribal_policy_change_cd }
         }
-        payments_implemented = { european_tribal_tribute }
         wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 20 } }
         wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 40 } }
         wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 20 } }
@@ -296,7 +294,6 @@ european_tribal_tribute_law = {
             international_organization_has_policy = policy:european_tribal_medium_tribute_policy
             NOT = { has_cooldown = european_tribal_policy_change_cd }
         }
-        payments_implemented = { european_tribal_tribute }
         wants_this_policy_bias = { add = { desc = "VOTE_BASE_VALUE" value = 10 } }
         wants_propose_policy = { add = { desc = "VOTE_BASE_VALUE" value = 50 } }
         wants_keep_policy = { add = { desc = "VOTE_CONSERVATIVE_CLIMATE" value = 10 } }
@@ -325,16 +322,24 @@ european_tribal_unification_law = {
         OR = {
             AND = {
                 international_organization_has_policy = policy:european_tribal_high_tribute_policy
-                any_country_with_special_status_of_type = {
-                    type = confederation_overlord
-                    international_organization = international_organization:european_tribal_confederation
+                root = {
+                    any_international_organization_member = {
+                        has_special_status_in_international_organization = {
+                            type = special_status:confederation_overlord
+                            international_organization = root
+                        }
+                    }
                 }
             }
             AND = {
                 NOT = {
-                    any_country_with_special_status_of_type = {
-                        type = confederation_overlord
-                        international_organization = international_organization:european_tribal_confederation
+                    root = {
+                        any_international_organization_member = {
+                            has_special_status_in_international_organization = {
+                                type = special_status:confederation_overlord
+                                international_organization = root
+                            }
+                        }
                     }
                 }
             }

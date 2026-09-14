@@ -229,7 +229,7 @@
             if = {
                 limit = { var:centralisation_oirat <= -100 }
                 leader_country = {
-                    destroy_international_organization = { target = international_organization:oirat_confederation }
+                    trigger_event_non_silently = { id = io_unification.81 }
                 }
             }
             if = {

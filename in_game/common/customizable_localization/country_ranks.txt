@@ -73,76 +73,51 @@
 			has_reform = government_reform:cossacks_reform
 			country_rank_is_empire = yes
 		}
-	}
-	# Steppe Clan
-	text = {
-		localization_key = horde_clan
-		trigger = {
-			government_type = government_type:steppe_horde
-			OR = {
-				country_rank_is_duchy = yes
-				country_rank_is_county = yes
-			}
-			OR = {
-				tag = JAA
-				tag = BZZ
-				tag = OLK
-				tag = ELJ
-				tag = GOO
-				tag = BAX
-				tag = JAR
-				tag = BYT
-				tag = OJY
-				tag = QAS
-				tag = JAI
-				tag = KDB
-				tag = AKK
-				tag = ADQ
-				tag = AGZ
-				tag = KUH
- 				tag = KVU
- 				tag = TBU
- 				tag = AUK
-				tag = SIN
-			}
 		}
-	}
+	# Oirat Taishi
 	text = {
 		localization_key = horde_clan_taishi
 		trigger = {
+			government_type = government_type:steppe_horde
+			is_leader_of_international_organization = international_organization:oirat_confederation
+		}
+	}
+	# Guard (subject of China)
+	text = {
+		localization_key = horde_guard
+		trigger = {
+			government_type = government_type:steppe_horde
 			OR = {
 				country_rank_is_duchy = yes
 				country_rank_is_county = yes
 			}
-			government_type = government_type:steppe_horde
+			is_subject_of = c:CHI
+		}
+	}
+	# Yurt confederation leader (Nogai)
+	text = {
+		localization_key = horde_yurt_confederation
+		trigger = {
+			is_leader_of_international_organization = international_organization:nogai_confederation
 			OR = {
-				tag = OIR
-				tag = CRS
-				tag = DRB
-				tag = KHO
-				tag = TRH
-				tag = KHD
+				country_rank_is_duchy = yes
+				country_rank_is_county = yes
 			}
 		}
 	}
+	# Yurt (Nogai)
 	text = {
-		localization_key = horde_confederation_taishi
+		localization_key = horde_yurt
 		trigger = {
 			government_type = government_type:steppe_horde
+			culture = culture:nogai
 			OR = {
-				country_rank_is_kingdom = yes
-				country_rank_is_empire = yes
-			}
-			OR = {
-				tag = OIR
-				tag = CRS
-				tag = DRB
-				tag = KHO
-				tag = TRH
-				tag = KHD
+				country_rank_is_duchy = yes
+				country_rank_is_county = yes
 			}
 		}
 	}
+	# Host (Cossack-style, specific tags)
 	text = {
 		localization_key = horde_host
 		trigger = {
@@ -153,43 +128,14 @@
 			}
 		}
 	}
+	# Ulus
 	text = {
-		localization_key = horde_guard
+		localization_key = horde_clan
 		trigger = {
 			government_type = government_type:steppe_horde
 			OR = {
-				country_rank_is_county = yes
 				country_rank_is_duchy = yes
-			}
-			OR = {
-				tag = DOY
-				tag = FUY
-				tag = TIZ
-				tag = CGM
-				tag = SGM
-				tag = HGM
-			}
-		}
-	}
-	#Orda
-	text = {
-		localization_key = horde_yurt_confederation
-		trigger = {
-			is_leader_of_international_organization = international_organization:nogai_confederation
-		}
-	}
-	#Yurt
-	text = {
-		localization_key = horde_yurt
-		trigger = {
-			government_type = government_type:steppe_horde
-			OR = {
-				tag = MGH
-				tag = JAK
-				tag = AOG
-				tag = QON
-				tag = NWM
-				tag = JIK
+				country_rank_is_county = yes
 			}
 		}
 	}
