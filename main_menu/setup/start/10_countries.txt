@@ -28407,7 +28407,7 @@ countries = {
     # caucasus_region
     # ---------------
 
-    QAR = {
+    QAR = { #Qara Qoyunlu
         own_control_core = {
             mosul qayyarah tal_afar
             bargiri ercis
@@ -32400,37 +32400,9 @@ countries = {
             kletskaya ust_medveditskaya novoaidar
             vithold_hammami argamakli_sarai aslan_horod ordu_bazar rohat_kermen enice velyka_lepetykha kyrylivka
             oleshia bereznehuvate bashtanka tavan velyka_oleksandrivka sofiivka kryvyi_rih mykytyn_rih
-            kreminna bielska_sloboda bilovodsk chertkovo boguchar veesky kumylzhenskaya
-            alexeyevskaya novoanninsky novonikolayevsky starominskaya shcherbinovka
+            kreminna bielska_sloboda bilovodsk chertkovo boguchar
+            starominskaya shcherbinovka gorodovikovsk
             azok
-        }
-
-        our_cores_conquered_by_others = {
-            alkhan_kala nazran dzhulat tatartup novopavlovsk yessentuq
-            alexandrovskoye blagodarnoye novoselitskoye
-            shad_kirman petrovskoye_pontic
-            ipatovo
-            khosheutovo krasny_yar ganyushkino zamyany astrakhan ikryanoye
-            dardeling mekletin kok_usn arzgir levokumskoye majar
-            zelenokumsk
-            naurskaya kara_bazaar terekli_mekteb kurskaya kamysh_burun
-            yashkul iki_burul
-            priyutnoye elista remontnoye gorodovikovsk raguli
-            sarai_al_jadid beljamen zenzevatka nagavskaya aksay
-            rudnya_pontic danilovka kotovo kamyshin goly_karamysh
-            pologoye_zaymishche srednyaya_akhtuba bykovo elton zolotari
-            berezhnovka
-            yenotayevka sapara chernyye_zemli chyorny_yar
-            nikolskoye_pontic malye_derbety sadovoye_kalmykia
-            ded_khulsun zavetnoye bolkhuny mikhaylovka_pontic rechnoye
-            botkul mechet stepanevka
-            ukek tereshka petrovsk malodelskaya ilovlya
-            savinka rovnoye pokrovsk baronsk krasny_kut_pontic mokrous
-            mordovo tambov bondari staroyuryevo morsha rasskazovo
-            zherdevka uvarovo kirsanov atkarsk serdobinskaya lysye_gory
-            yekaterinovka balanda rtishchevo balashov turki arkadak kremenskaya
-            yelan machekha samoylovka
-            mikhaylovka zimnyatsky
         }
 
         capital = azok
@@ -32462,17 +32434,9 @@ countries = {
     GTH = { #Kuchuk Muhammad's Great Horde
         type = army
         own_control_core = {
-            alkhan_kala nazran dzhulat tatartup novopavlovsk yessentuq
-            alexandrovskoye blagodarnoye novoselitskoye
-            shad_kirman petrovskoye_pontic
-            ipatovo
-
             khosheutovo krasny_yar ganyushkino zamyany astrakhan ikryanoye
-            dardeling mekletin kok_usn arzgir levokumskoye majar
-            zelenokumsk
-            naurskaya kara_bazaar terekli_mekteb kurskaya kamysh_burun
-            yashkul iki_burul
-            priyutnoye elista remontnoye gorodovikovsk raguli
+            dardeling mekletin kok_usn
+            kara_bazaar yashkul
             chernyye_zemli
             sarai_al_jadid beljamen zenzevatka nagavskaya aksay
             rudnya_pontic danilovka kotovo kamyshin goly_karamysh
@@ -32489,6 +32453,9 @@ countries = {
             yekaterinovka balanda rtishchevo balashov turki arkadak kremenskaya
             yelan machekha samoylovka
             mikhaylovka zimnyatsky
+            veesky kumylzhenskaya alexeyevskaya novoanninsky novonikolayevsky
+            uryupin borisoglebsk
+            alkhan_kala nazran dzhulat tatartup naurskaya terekli_mekteb kurskaya
         }
 
         our_cores_conquered_by_others = {
@@ -32641,6 +32608,7 @@ countries = {
 
             ruler = ali_bay
             heir_selection = cognatic_primogeniture
+            type = monarchy
 
             ruler_term = { character = ali_bay start_date = 1440.1.1 regnal_number = 1 }
 
@@ -32669,11 +32637,13 @@ countries = {
     ATR = { #Astrakhan
         type = army
         our_cores_conquered_by_others = {
-            bol_shaya_martynovka cheplak bolshoy_gashun dubovskoye ust_tsimla konstantinovsk tatsinskaya tormosin kremenskaya kletskaya ust_medveditskaya
-            oblivskaya nizhny_chir zimnyatsky malodelskaya ilovlya mechet stepanevka sarai_al_jadid beljamen zenzevatka nagavskaya aksay rudnya_pontic
-            danilovka kotovo kamyshin goly_karamysh astrakhan khosheutovo krasny_yar ganyushkino pologoye_zaymishche srednyaya_akhtuba bykovo elton
-            zolotari berezhnovka zamyany yenotayevka sapara chernyye_zemli ikryanoye chyorny_yar nikolskoye_pontic malye_derbety sadovoye_kalmykia
-            ded_khulsun zavetnoye bolkhuny mikhaylovka_pontic rechnoye botkul dardeling mekletin kok_usn yashkul iki_burul priyutnoye elista remontnoye savinka rovnoye
+            kara_bazaar dardeling kok_usn mekletin yashkul astrakhan krasny_yar ganyushkino zamyany
+            chernyye_zemli sapara ikryanoye yenotayevka mikhaylovka_pontic rechnoye khosheutovo
+            alkhan_kala nazran dzhulat tatartup naurskaya terekli_mekteb kurskaya
+
+            #Uncored to start
+            iki_burul kamysh_burun
+            novopavlovsk yessentuq alexandrovskoye blagodarnoye novoselitskoye majar zelenokumsk arzgir levokumskoye 
         }
         starting_technology_level = 3
         include = "1444_expl_pontic_steppe_tatars"
@@ -32755,14 +32725,19 @@ countries = {
 
     GAZ = { # Gazaria
         own_control_core = {
-            kaffa
-            lusta soldaia vosporo
-            taman mapa copa tana
+            #Crimea
+            kaffa lusta soldaia vosporo
+            #Kuban
+            taman mapa copa
+            #Azov
+            tana
             dashev balzimachi
         }
 
         own_control_integrated = {
-            amasra
+            amasra #Anatolian Coast
+            dashev #Mykolaiv
+            balzimachi #Yeysk
         }
 
         starting_technology_level = 3
@@ -32847,7 +32822,7 @@ countries = {
     # --- ZHA ---
 
     MGH = {
-        # Manghit
+        # Manghit Nogai
         type = army
         own_control_core = {
             ushtagan sarayjuk kisikkamys kulagin saryadyn talowski
@@ -42094,7 +42069,7 @@ countries = {
     # crescent_region
     # ---------------
 
-    AQQ = {
+    AQQ = { # Aq Qoyunlu
         own_control_core = {
             bayburt erzincan ilic kelkit kemah sebinkarahisar siran
             diyarbekir ergani
@@ -42141,7 +42116,7 @@ countries = {
 
     # --- AQQ ---
 
-    BGH = {
+    BGH = { #Baghdad
         type = location
         own_control_core = {
             baghdad
@@ -45272,7 +45247,7 @@ countries = {
     # --- BRL ---
 
     QON = {
-        # Qongirat
+        # Qongirat Nogai
         type = army
         own_control_core = {
             koskuduk tas_kichu kaynar shagiz tenteksor mavliberda
@@ -45319,7 +45294,7 @@ countries = {
     # --- QON ---
 
     AOG = {
-        # Altıoğul
+        # Altıoğul Nogai
         type = army
         own_control_core = {
             baytak ilek kargaly_aktobe kobda irek bol_shoy_uran
@@ -45365,7 +45340,7 @@ countries = {
     # --- AOG ---
 
     JIK = {
-        # Jaik
+        # Jaik Nogai
         type = army
         own_control_core = {
             kenderli_kayasan koshkar_ata temir_baba ketik_kala kabakty karatobe_mangyshlak kyzylkala sisem_ata

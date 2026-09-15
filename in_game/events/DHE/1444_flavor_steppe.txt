@@ -131,35 +131,17 @@ flavor_steppe.2 = { #Ahmed Coups Mahmud
         name = flavor_steppe.2.b
         custom_tooltip = flavor_steppe.2.b.ctt
         ai_chance = { factor = 1 }
+        custom_tooltip = flavor_steppe_2_ctt
         set_new_ruler = character:gth_ahmed_khan_bin_kuchuk
         add_legitimacy = legitimacy_mild_bonus
         set_global_variable = {
             name = split_horde
             value = 1
         }
-        create_rebel = {
-            name = astrakhani_separatists
-            category = nationalist
-            culture = culture:astrakhani
-            save_scope_as = astrakhan_rebels
+        trigger_event_non_silently = {
+            id = flavor_steppe.3
+            days = 32
         }
-        every_owned_rural_location = {
-            limit = {
-                any_pop = { culture = culture:astrakhani }
-            }
-            every_pop = {
-                limit = {
-                    owner = root
-                    culture = culture:astrakhani
-                }
-                add_pop_satisfaction = pop_satisfaction_ultimate_penalty
-                change_pop_allegiance = scope:astrakhan_rebels
-            }
-        }
-        scope:astrakhan_rebels = {
-            add_rebel_progress = 0.9
-        }
-        custom_tooltip = flavor_steppe_2_ctt
     }
 }
 
@@ -169,62 +151,50 @@ flavor_steppe.3 = { # Rise of Astrakhan
     desc = flavor_steppe.3.desc
     fire_only_once = yes
 
-    dynamic_historical_event = {
-        tag = GTH
-        from = 1455.1.1
-        to = 1850.1.1
-        monthly_chance = 100
-    }
     trigger = {
         has_or_had_tag = GTH
         has_global_variable = split_horde
-        country_exists = c:ATR
     }
     immediate = {
         character:gth_mahmud_bin_kuchuk = { save_scope_as = target_character2 }
-        c:ATR = { save_scope_as = target_country }
-        scope:target_country = {
-            set_new_ruler = scope:target_character2
-            change_government_type = government_type:steppe_horde
-        }
-        random_current_war = {
-            limit = {
-                OR = {
-                    AND = {
-                        attacker_leader = root
-                        defender_leader = scope:target_country
-                    }
-                    AND = {
-                        attacker_leader = scope:target_country
-                        defender_leader = root
-                    }
+        if = {
+            limit = { NOT = { country_exists = c:ATR } }
+            create_country_from_cores_in_our_locations = c:ATR
+            c:ATR = {
+                save_scope_as = target_country
+            }
+            character:gth_mahmud_bin_kuchuk = { move_country = c:ATR }
+            scope:target_country = {
+                set_new_ruler = scope:target_character2
+                change_government_type = government_type:steppe_horde
+                capital = {
+                    create_sub_unit_of_category = sub_unit_category:army_light_cavalry
+                    create_sub_unit_of_category = sub_unit_category:army_light_cavalry
+                    create_sub_unit_of_category = sub_unit_category:army_light_cavalry
+                    create_sub_unit_of_category = sub_unit_category:army_light_cavalry
                 }
             }
-            save_scope_as = target_war
         }
     }
 
     option = {
         name = flavor_steppe.3.a #Go to War
         ai_chance = { factor = 0.1 }
+        declare_war_with_cb = {
+			target = scope:target_country
+			type = casus_belli:cb_conquer_province
+			target_province = location:astrakhan.province
+		}
     }
     option = {
         name = flavor_steppe.3.b #Accept the breakaway
         ai_chance = { factor = 0.9 }
-        if = {
-            limit = { exists = scope:target_war }
-            white_peace = scope:target_war
-        }
         add_prestige = prestige_mild_penalty
     }
     option = {
         name = flavor_steppe.3.c #Play as Astrakhan
         custom_tooltip = flavor_steppe_3_c_ctt
         ai_chance = { factor = 0 }
-        if = {
-            limit = { exists = scope:target_war }
-            white_peace = scope:target_war
-        }
         change_player = scope:target_country
     }
 }
@@ -840,7 +810,7 @@ flavor_steppe.21 = { #Mengli Giray Revolts
 		}
         if = {
             limit = { has_global_variable = ottomans_back_mengli }
-            ordered_owned_location = {
+            every_owned_location = {
                 limit = {
                     any_pop = { pop_type = pop_type:nobles }
                 }
@@ -858,7 +828,7 @@ flavor_steppe.21 = { #Mengli Giray Revolts
             }
         }
         else = {
-            ordered_owned_location = {
+            every_owned_location = {
                 limit = {
                     any_pop = { pop_type = pop_type:nobles }
                 }

@@ -530,6 +530,25 @@
 			tag = MOM			# Momboares
 		}
 	}
+	text = {
+		localization_key = rank_empire_tsar
+		trigger = {
+			country_rank_is_empire = yes
+			OR = {
+				has_reform = government_reform:tsardom
+				culture = {
+					has_culture_group = culture_group:russian_group
+				}
+				AND = {
+					government_type = government_type:monarchy
+					OR = {
+						has_variable = muscovite_domination
+						culture = culture:bolghar_culture
+					}
+				}
+			}
+		}
+	}
 	#---- Dynasties ----
 	text = {
 		localization_key = rank_empire_ilkhanate
@@ -631,25 +650,6 @@
 		localization_key = rank_sheep_confederation
 		trigger = {
 			has_reform = government_reform:turkoman_confederation
-		}
-	}
-	text = {
-		localization_key = rank_empire_tsar
-		trigger = {
-			country_rank_is_empire = yes
-			OR = {
-				has_reform = government_reform:tsardom
-				culture = {
-					has_culture_group = culture_group:russian_group
-				}
-				AND = {
-					government_type = government_type:monarchy
-					OR = {
-						has_variable = muscovite_domination
-						culture = culture:bolghar_culture
-					}
-				}
-			}
 		}
 	}
 	text = {
@@ -1247,6 +1247,13 @@
 			culture = culture:shona_culture
 		}
 	}
+	text = {
+		localization_key = rank_kingdom_russian_prince
+		trigger = {
+			country_rank_is_kingdom = yes
+			culture.language ?= language:east_slavic_language
+		}
+	}
 	#--- Dynasties ---
 	text = {
 		localization_key = rank_kingdom_persian
@@ -1408,20 +1415,6 @@
 		}
 	}
 	text = {
-		localization_key = rank_duchy_grand_principality_slavic
-		trigger = {
-			country_rank_is_kingdom = yes
-			government_type = government_type:monarchy
-			OR = {
-				has_variable = muscovite_domination
-				culture = {
-					has_culture_group = culture_group:russian_group
-				}
-				culture = culture:bolghar_culture
-			}
-		}
-	}
-	text = {
 		localization_key = rank_kingdom_crown
 		trigger = {
 			country_rank_is_kingdom = yes
@@ -1490,13 +1483,6 @@
 		trigger = {
 			country_rank_is_kingdom = yes
 			culture.language ?= language:vietnamese_language
-		}
-	}
-	text = {
-		localization_key = rank_kingdom_russian_prince
-		trigger = {
-			country_rank_is_kingdom = yes
-			culture.language ?= language:east_slavic_language
 		}
 	}
 	text = {
@@ -1940,6 +1926,34 @@
 			}
 		}
 	}
+	text = {
+		localization_key = rank_duchy_grand_principality_slavic
+		trigger = {
+			country_rank_is_kingdom = yes
+			government_type = government_type:monarchy
+			OR = {
+				has_variable = muscovite_domination
+				culture = {
+					has_culture_group = culture_group:russian_group
+				}
+				culture = culture:bolghar_culture
+			}
+		}
+	}
+	text = {
+		localization_key = rank_duchy_principality_slavic
+		trigger = {
+			country_rank_is_duchy = yes
+			government_type = government_type:monarchy
+			OR = {
+				has_variable = muscovite_domination
+				culture = {
+					has_culture_group = culture_group:russian_group
+				}
+				culture = culture:bolghar_culture
+			}
+		}
+	}
 	#--- Dynasties ----
 	text = {
 		localization_key = rank_duchy_andalusi
@@ -2114,20 +2128,6 @@
 			OR = {
 				country_rank_is_duchy = yes
 				country_rank_is_county = yes
-			}
-		}
-	}
-	text = {
-		localization_key = rank_duchy_principality_slavic
-		trigger = {
-			country_rank_is_duchy = yes
-			government_type = government_type:monarchy
-			OR = {
-				has_variable = muscovite_domination
-				culture = {
-					has_culture_group = culture_group:russian_group
-				}
-				culture = culture:bolghar_culture
 			}
 		}
 	}
