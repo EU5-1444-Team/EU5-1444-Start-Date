@@ -1191,7 +1191,7 @@ REPLACE:WLS = { # Wales
 			#coa_def_appanage_trigger = yes
 			# TODO : and ENG quartering france
 			#coa_def_plantagenet_trigger = yes
-		c:ENG ?= { coa_monarchy_trigger = yes }
+			c:ENG ?= { coa_monarchy_trigger = yes }
 		}
 	}	
 	flag_definition = {
@@ -2025,6 +2025,51 @@ FOI = { # Foix
 			any_union_partner = { this = c:BRR }
 		}
 	}
+		}
+	}
+}	
+REPLACE:NAV = { # Navarre          
+	# NAV - Navarre
+	# NAV_capetian - Per pale France & Navarre
+	# NAV_aragon - Per saltire Aragon & Navarre
+
+	flag_definition = {
+		coa = NAV
+		priority = 1
+	}
+	flag_definition = {
+		coa = NAV_capetian
+		priority = 20
+		trigger = {
+			coa_def_capetian_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NAV_aragon
+		priority = 21
+		trigger = {
+			coa_def_aragon_dynasty_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NAV_republic
+		priority = 100
+		trigger = {
+			coa_def_republic_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NAV_evreux
+		priority = 21
+		trigger = {
+			coa_def_evreux_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = NAV_trastamara
+		priority = 21
+		trigger = {
+			coa_def_trastamara_trigger = yes
 		}
 	}
 }

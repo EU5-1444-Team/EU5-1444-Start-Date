@@ -207,3 +207,9 @@ coa_def_lorraine_trigger = { # Lorraine branches
 		}
 	}
 }
+coa_def_evreux_trigger = {
+	scope:actor.ruler.dynasty ?= { dynasty:de_evreux_dynasty ?= this }
+}
+coa_def_trastamara_trigger = {
+	scope:actor.ruler.dynasty ?= { dynasty:trastamara_dynasty ?= this }
+}
