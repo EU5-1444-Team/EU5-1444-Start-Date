@@ -1129,3 +1129,161 @@ flavor_steppe.25 = { #Ottomans reestablish Mengli
         name = flavor_steppe.25.a
     }
 }
+flavor_steppe.26 = { # Torghut Exodus - Formation of the Kalmyks
+    type = country_event
+    title = flavor_steppe.26.title
+    desc = flavor_steppe.26.desc
+    fire_only_once = yes
+
+    illustration_tags = {
+        10 = regular
+        10 = interior
+    }
+
+    dynamic_historical_event = {
+        tag = TRH
+        from = 1450.1.1
+        to = 1800.1.1
+        monthly_chance = 1
+    }
+
+    trigger = {
+        country_exists = c:TRH
+        NOT = { is_member_of_international_organization = international_organization:oirat_confederation }
+    }
+
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+        province:priyutnoye_province = { save_scope_as = priyutnoye }
+    }
+
+    option = { # Accept - begin the migration
+        name = flavor_steppe.26.a
+        ai_chance = { factor = 1.0 }
+
+        province:priyutnoye_province = {
+            every_location_in_province = {
+                limit = {
+                    is_ownable = yes
+                    has_owner = yes
+                }
+                owner = { add_to_list = klk_elista_owners }
+            }
+        }
+
+        custom_tooltip = klk_pops_arrive_in_a_month_tt
+
+        c:TRH = {
+            add_gold = { value = c:TRH.monthly_income_trade_and_tax multiply = 48 }
+            change_government_type = government_type:steppe_horde
+        }
+        international_organization:northern_yuan = { remove_country_from_international_organization = c:TRH }
+        region:steppes_region = {
+			every_location_in_region = {
+				discover_location = root
+			}
+		}
+        
+        if = {
+            limit = { c:TRH = { country_rank_level < 3 } }
+            c:TRH = { set_country_rank = country_rank:rank_kingdom }
+        }
+
+        province:priyutnoye_province = {
+            every_location_in_province = {
+                limit = { is_ownable = yes }
+                change_location_owner = c:TRH
+                add_core = c:TRH
+                change_integration_level = core
+            }
+        }
+
+        set_capital = location:elista
+
+        location:elista = {
+            change_building_level_in_location = {
+                building = building_type:kurultai
+                value = 1
+                owner = owner
+            }
+        }
+        
+        location:elista = {
+            while = {
+                count = {
+                    value = c:TRH.expected_army_size
+                    multiply = 2
+                    min = 1
+                }
+                create_sub_unit_of_category = sub_unit_category:army_light_cavalry
+            }
+        }
+
+        area:astrakhan_area = {
+            every_location_in_area = {
+                limit = { is_ownable = yes has_owner = no }
+                change_location_owner = c:TRH
+            }
+        }
+        area:majar_area = {
+            every_location_in_area = {
+                limit = { is_ownable = yes has_owner = no }
+                change_location_owner = c:TRH
+            }
+        }
+        area:matrega_area = {
+            every_location_in_area = {
+                limit = { is_ownable = yes has_owner = no }
+                change_location_owner = c:TRH
+            }
+        }
+
+        every_in_list = {
+            list = klk_elista_owners
+            limit = { NOT = { this = c:TRH } }
+            save_scope_as = target_country
+            c:TRH = {
+                declare_war_with_cb = {
+                    target = scope:target_country
+                    type = casus_belli:cb_horde_vs_civ
+                }
+            }
+        }
+
+        every_owned_location = {
+            limit = {
+                OR = {
+                    region = region:mongolia_region
+                    region = region:xinjiang_region
+                    region = region:tibet_region
+                    region = region:west_china_region
+                    region = region:west_siberia_region
+                    region = region:khorasan_region
+                }
+            }
+            save_temporary_scope_as = origin_loc
+            add_migration = {
+                owner = c:TRH
+                from = scope:origin_loc.province_definition
+                to = root.capital.province_definition
+                amount = 50.000
+                months = 4
+            }
+            every_unit_in_location = { destroy_unit = yes }
+        }
+
+        region:mongolia_region = { every_location_in_region = { limit = { owner ?= c:TRH } c:TRH = { abandon_location = prev } } }
+        region:xinjiang_region = { every_location_in_region = { limit = { owner ?= c:TRH } c:TRH = { abandon_location = prev } } }
+        region:tibet_region = { every_location_in_region = { limit = { owner ?= c:TRH } c:TRH = { abandon_location = prev } } }
+        region:west_china_region = { every_location_in_region = { limit = { owner ?= c:TRH } c:TRH = { abandon_location = prev } } }
+        region:west_siberia_region = { every_location_in_region = { limit = { owner ?= c:TRH } c:TRH = { abandon_location = prev } } }
+        region:khorasan_region = { every_location_in_region = { limit = { owner ?= c:TRH } c:TRH = { abandon_location = prev } } }
+
+        form_country = formable_country:KLK_f
+    }
+
+    option = { # Refuse
+        name = flavor_steppe.26.b
+        ai_chance = { factor = 0 }
+    }
+}
