@@ -51,7 +51,19 @@
     special_statuses_implemented = {
         tui_tonga_overlord
     }
-
+    monthly_effect = {
+        every_international_organization_owned_location = {
+            limit = {
+                has_owner = yes
+                owner = {
+                    NOT = { is_member_of_international_organization = root }
+                }
+            }
+            root = {
+                remove_location_from_international_organization = prev
+            }
+        }
+    }
     on_joined = {
     }
     on_left = {

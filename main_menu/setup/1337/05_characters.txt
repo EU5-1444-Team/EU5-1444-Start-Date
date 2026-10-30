@@ -28393,12 +28393,113 @@ character_db= {
 		dynasty = chand_dynasty
 		culture = kumaoni
 		religion = hindu
-		birth_date = 1295.1.1 #Unknown
-		death_date = 1399.12.31
+		birth_date = 1295.1.1
+		death_date = 1344.1.1
 
 		birth = champavati
 		tag = KMN
 	}
+    kmn_abhay_chand = {
+        first_name = { name = Abhay }
+        dynasty = chand_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1320.1.1
+        death_date = 1374.1.1
+        father = kmn_dharm_chand
+        birth = champavati
+        tag = KMN
+    }
+    kmn_garur_gyan_chand = {
+        first_name = { name = "Garur Gyan" }
+        dynasty = chand_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1350.1.1
+        death_date = 1419.1.1
+        father = kmn_abhay_chand
+        birth = champavati
+        tag = KMN
+    }
+
+    kmn_harihar_chand = {
+        first_name = { name = Harihar }
+        dynasty = chand_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1380.1.1
+        death_date = 1420.1.1
+        father = kmn_garur_gyan_chand
+        birth = champavati
+        tag = KMN
+    }
+
+    kmn_udyan_chand = {
+        first_name = { name = Udyan }
+        dynasty = chand_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1390.1.1
+        death_date = 1421.1.1
+        father = kmn_garur_gyan_chand
+        birth = champavati
+        tag = KMN
+    }
+
+    kmn_atma_chand_ii = {
+        first_name = { name = Atma }
+        dynasty = chand_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1395.1.1
+        death_date = 1422.1.1
+        father = kmn_garur_gyan_chand
+        birth = champavati
+        tag = KMN
+    }
+
+    kmn_hari_chand_ii = {
+        first_name = { name = Hari }
+        dynasty = chand_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1400.1.1
+        death_date = 1423.1.1
+        father = kmn_garur_gyan_chand
+        birth = champavati
+        tag = KMN
+    }
+    kmn_vikram_chand = {
+        first_name = { name = Vikram }
+        dynasty = chand_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1405.1.1
+        death_date = 1437.1.1
+        father = kmn_garur_gyan_chand
+        birth = champavati
+        tag = KMN
+    }
+    kmn_bharati_chand = {
+        first_name = { name = name_bharati }
+        dynasty = chand_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1420.1.1
+        father = kmn_vikram_chand
+        birth = champavati
+        tag = KMN
+    }
+    kmn_atna_chand = {
+        first_name = { name = name_ratna }
+        dynasty = chand_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1440.1.1
+        father = kmn_bharati_chand
+        birth = champavati
+        tag = KMN
+    }
 
     ### chanda_dynasty | CHD ###
 
@@ -76659,17 +76760,68 @@ character_db= {
 
     ### malla_nepal_dynasty | KTU ###
 
-	ktu_jayari_malla = { #https://en.wikipedia.org/wiki/Jayari_Malla
-		first_name = { name = Jayari }
-		dynasty = malla_nepal_dynasty
-		culture = maithili_culture
-		religion = tibetan_buddhism #Newar Buddhism
-		birth_date = 1276.1.29
-		death_date = 1399.12.31
-
-		birth = kathmandu
-		tag = KTU
-	}
+    ktu_jayari_malla = {
+        first_name = { name = Jayari }
+        dynasty = malla_nepal_dynasty
+        culture = maithili_culture
+        religion = tibetan_buddhism
+        birth_date = 1276.1.29
+        death_date = 1344.9.14
+        birth = kathmandu
+        tag = KTU
+    }
+    ktu_jayaraja_deva = {
+        first_name = { name = Jayaraja }
+        dynasty = malla_nepal_dynasty
+        culture = maithili_culture
+        religion = tibetan_buddhism
+        birth_date = 1320.1.1
+        death_date = 1361.1.1
+        birth = kathmandu
+        tag = KTU
+    }
+    ktu_jayarjuna_malla = {
+        first_name = { name = Jayarjuna }
+        dynasty = malla_nepal_dynasty
+        culture = maithili_culture
+        religion = tibetan_buddhism
+        birth_date = 1340.1.1
+        death_date = 1395.1.1
+        father = ktu_jayaraja_deva
+        birth = kathmandu
+        tag = KTU
+    }
+    ktu_jayasthiti_malla = {
+        first_name = { name = Jayasthiti }
+        dynasty = malla_nepal_dynasty
+        culture = maithili_culture
+        religion = tibetan_buddhism
+        birth_date = 1350.1.1
+        death_date = 1395.9.5
+        birth = kathmandu
+        tag = KTU
+    }
+    ktu_jayajyotir_malla = {
+        first_name = { name = Jayajyotir }
+        dynasty = malla_nepal_dynasty
+        culture = maithili_culture
+        religion = tibetan_buddhism
+        birth_date = 1375.1.1
+        death_date = 1428.1.1
+        father = ktu_jayasthiti_malla
+        birth = kathmandu
+        tag = KTU
+    }
+    ktu_jayayakshya_malla = {
+        first_name = { name = Yakshya }
+        dynasty = malla_nepal_dynasty
+        culture = maithili_culture
+        religion = tibetan_buddhism
+        birth_date = 1400.1.1
+        father = ktu_jayajyotir_malla
+        birth = kathmandu
+        tag = KTU
+    }
 
     ### mallabhum_dynasty | BHP ###
 
@@ -111084,11 +111236,163 @@ character_db= {
 		religion = sunni
 		birth = sehwan
 		birth_date = 1300.1.1
-		death_date = 1399.12.31
+		death_date = 1352.1.1
 
 		dynasty = samma_dynasty
 		tag = SMA
 	}
+    sma_jam_banbina_2 = {
+        first_name = { name = name_jam_banbina }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1320.1.1
+        death_date = 1367.1.1
+        father = sma_jam_unar_samma
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_tamachi = {
+        first_name = { name = name_jam_tamachi }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1325.1.1
+        death_date = 1392.1.1
+        father = sma_jam_unar_samma
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_unar_2 = {
+        first_name = { name = name_jam_unar }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1350.1.1
+        death_date = 1404.1.1
+        father = sma_jam_tamachi
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_ali_sher = {
+        first_name = { name = name_jam_ali_sher }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1355.1.1
+        death_date = 1412.1.1
+        father = sma_jam_tamachi
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_nizamuddin_1 = {
+        first_name = { name = name_jam_nizamuddin }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1375.1.1
+        death_date = 1406.1.1
+        father = sma_jam_unar_2
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_raidhan = {
+        first_name = { name = name_jam_raidhan }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1380.1.1
+        father = sma_jam_unar_2
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+
+    sma_jam_sanjar = {
+        first_name = { name = name_jam_sanjar }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1385.1.1
+        father = sma_jam_unar_2
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_togachi = {
+        first_name = { name = name_jam_karan }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1320.1.1
+        death_date = 1370.1.1
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_karan = {
+        first_name = { name = name_jam_karan }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1360.1.1
+        death_date = 1412.1.1
+        father = sma_jam_togachi
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_sikandar_1 = {
+        first_name = { name = name_jam_sikandar }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1365.1.1
+        death_date = 1413.1.1
+        father = sma_jam_togachi
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_fath = {
+        first_name = { name = name_jam_fath }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1388.1.1
+        death_date = 1428.1.1
+        father = sma_jam_sikandar_1
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_juna_2 = {
+        first_name = { name = name_jam_juna }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1390.1.1
+        death_date = 1442.1.1
+        father = sma_jam_sikandar_1
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_mubarak = {
+        first_name = { name = name_jam_mubarak }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1392.1.1
+        death_date = 1442.1.1
+        father = sma_jam_sikandar_1
+        dynasty = samma_dynasty
+        tag = SMA
+    }
+    sma_jam_sikandar_2 = {
+        first_name = { name = name_jam_sikandar }
+        culture = sindhi
+        religion = sunni
+        birth = sehwan
+        birth_date = 1410.1.1
+        death_date = 1444.11.1
+        father = sma_jam_fath
+        dynasty = samma_dynasty
+        tag = SMA
+    }
 
     ### sangama_dynasty | VIJ ###
 
@@ -149350,5 +149654,1063 @@ character_db= {
         dynasty = dulo_dynasty
         tag = BOG
     }
+    mla_shaikh_yousaf_qureshi = {
+        first_name = { name = name_yousaf }
+        culture = punjabi
+        religion = sunni
+        birth = multan
+        birth_date = 1405.1.1
+        dynasty = qureshi_dynasty
+        tag = MLA
+    }
+    lng_rai_sahra = {
+        first_name = { name = name_sahra }
+        culture = baloch
+        religion = sunni
+        birth = khuzdar
+        birth_date = 1405.1.1
+        dynasty = langah_dynasty
+        tag = KHZ
+    }
 
+    lng_husseyn_1 = {
+        first_name = { name = name_husseyn }
+        culture = baloch
+        religion = sunni
+        birth = khuzdar
+        birth_date = 1435.1.1
+        father = lng_rai_sahra
+        dynasty = langah_dynasty
+        tag = KHZ
+    }
+    jhanda_khan_gakhar = {
+        first_name = { name = name_jhanda }
+        culture = punjabi
+        religion = sunni
+        birth = rawalpindi
+        birth_date = 1429.1.1
+        dynasty = gakhar_dynasty
+        tag = GAK
+    }
+    torra_khan = {
+        first_name = { name = name_torra }
+        culture = shina_culture
+        religion = shia
+        birth = gilgit
+        birth_date = 1429.1.1
+        dynasty = trakhan_dynasty
+        tag = GLI
+    }
+    shah_ud_din = {
+        first_name = { name = name_shah_ud_din }
+        culture = punjabi
+        religion = sunni
+        birth = rajouri
+        birth_date = 1387.1.1
+        dynasty = jaral_dynasty
+        tag = GLI
+    }
+    pahar_chand = {
+        first_name = { name = name_pahar }
+        culture = kangri
+        religion = hindu
+        birth = kahlur
+        birth_date = 1411.1.1
+        dynasty = chandel_dynasty
+        tag = BSP
+    }
+	yabgo_muqeem = {
+		first_name = { name = name_muqeem }
+		dynasty = yabgo_dynasty
+		culture = balti_culture
+		religion = tibetan_buddhism
+		birth_date = 1370.1.1 #Unknown
+
+		birth = khaplu
+		tag = KPU
+	}
+    guge_phuntsok_de = {
+        first_name = { name = name_phuntsok }
+        last_name = { name = name_de }
+        dynasty = pugyal_dynasty
+        culture = ngari_culture
+        religion = tibetan_buddhism
+        birth_date = 1390.1.1 
+        birth = gartok
+        tag = GUG
+    }
+    mar_lodro_chokden = {
+        first_name = { name = name_lodro }
+        last_name = { name = name_chokden }
+        dynasty = pugyal_dynasty
+        culture = ladakh_culture
+        religion = tibetan_buddhism
+        birth_date = 1410.1.1 #Unknown
+        birth = shey 
+        tag = MAR
+    }
+    dti_niranjan_malla_dev = {
+        first_name = { name = Niranjan }
+        dynasty = malla_doti_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1276.1.29
+        death_date = 1330.1.1
+        birth = dipayal
+        tag = DTI
+    }
+    dti_nagi_malla = {
+        first_name = { name = Nagi }
+        dynasty = malla_doti_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1300.1.1
+        death_date = 1360.1.1
+        father = dti_niranjan_malla_dev
+        birth = dipayal
+        tag = DTI
+    }
+    dti_ripu_malla = {
+        first_name = { name = Ripu }
+        dynasty = malla_doti_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1335.1.1
+        death_date = 1384.1.1
+        father = dti_nagi_malla
+        birth = dipayal
+        tag = DTI
+    }
+    dti_nag_malla = {
+        first_name = { name = Nag }
+        dynasty = malla_doti_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1360.1.1
+        death_date = 1400.1.1
+        father = dti_ripu_malla
+        birth = dipayal
+        tag = DTI
+    }
+    dti_dhir_malla = {
+        first_name = { name = Dhir }
+        dynasty = malla_doti_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1380.1.1
+        death_date = 1410.1.1
+        father = dti_nag_malla
+        birth = dipayal
+        tag = DTI
+    }
+    dti_ripu_malla_ii = {
+        first_name = { name = Ripu }
+        dynasty = malla_doti_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1390.1.1
+        death_date = 1430.1.1
+        father = dti_dhir_malla
+        birth = dipayal
+        tag = DTI
+    }
+    dti_anand_malla = {
+        first_name = { name = Anand }
+        dynasty = malla_doti_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1410.1.1
+        death_date = 1442.1.1
+        father = dti_ripu_malla_ii
+        birth = dipayal
+        tag = DTI
+    }
+    dti_sansar_malla = {
+        first_name = { name = Sansar }
+        dynasty = malla_doti_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1420.1.1
+        death_date = 1443.1.1
+        father = dti_anand_malla
+        birth = dipayal
+        tag = DTI
+    }
+    dti_kalyan_malla = {
+        first_name = { name = Kalyan }
+        dynasty = malla_doti_dynasty
+        culture = kumaoni
+        religion = hindu
+        birth_date = 1425.1.1
+        father = dti_anand_malla
+        birth = dipayal
+        tag = DTI
+    }
+    lmb_samba_hang = {
+        first_name = { name = "Samlupi Samba" }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion = hindu
+        birth_date = 1410.1.1
+        birth = tambar
+        tag = LB1
+    }
+    lmb_sireng_hang = {
+        first_name = { name = "Sisigen Sireng" }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion = hindu
+        birth_date = 1415.1.1
+        birth = mewa
+        tag = LB2
+    }
+    lmb_maiwa_hang = {
+        first_name = { name = Thokanto }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion_definition = hindu
+        birth_date = 1420.1.1
+        birth = maiwa
+        tag = LB3
+    }
+    lmb_phedap_hang = {
+        first_name = { name = Murehang }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion = hindu
+        birth_date = 1412.1.1
+        birth = phedap
+        tag = LB4
+    }
+    lmb_galijunga_hang = {
+        first_name = { name = Galijunga }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion = hindu
+        birth_date = 1405.1.1
+        birth = yangwarok
+        tag = LB5
+    }
+    lmb_chhathar_hang = {
+        first_name = { name = Asal }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion = hindu
+        birth_date = 1418.1.1
+        birth = chhathar
+        tag = LB6
+    }
+    lmb_athrai_hang = {
+        first_name = { name = Jangsa }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion = hindu
+        birth_date = 1422.1.1
+        birth = athrai
+        tag = LB7
+    }
+    lmb_wedo_hang = {
+        first_name = { name = Wedo }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion = hindu
+        birth_date = 1400.1.1
+        birth = panchthar
+        tag = LB8
+    }
+    lmb_chemjong_hang = {
+        first_name = { name = Chemjong }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion = hindu
+        birth_date = 1425.1.1
+        birth = ilam
+        tag = LB9
+    }
+    lmb_sirijunga_hang = {
+        first_name = { name = Sirijunga }
+        dynasty = limbu_dynasty
+        culture = limbu_culture
+        religion = hindu
+        birth_date = 1410.1.1
+        birth = therhathum
+        tag = LBZ
+    }
+	jum_baliraja = {
+		first_name = { name = name_Baliraja }
+		dynasty = kalyal_dynasty
+		culture = khas_culture
+		religion = hindu
+		adm = 81 dip = 77 mil = 75
+		birth_date = 1380.1.1
+		birth = jumla
+		#father = jum_medinivarma
+		tag = JUM
+	}
+	jum_vaksaraja = {
+		first_name = { name = name_Vaksaraja }
+		dynasty = kalyal_dynasty
+		culture = khas_culture
+		religion = hindu
+		adm = 72 dip = 70 mil = 73
+		birth_date = 1420.1.1
+		birth = jumla
+		father = jum_baliraja
+		tag = JUM
+	}
+    oiniwar_kamesvara = {
+        first_name = { name = name_kamesvara }
+        culture = maithili_culture
+        religion = hindu
+        birth_date = 1290.1.1
+        birth = janakpur_nepal
+        death_date = 1330.1.1
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+
+    oiniwar_bhogisvara = {
+        first_name = { name = name_bhogisvara }
+        culture = maithili_culture
+        religion = hindu
+        birth_date = 1310.1.1
+        birth = janakpur_nepal
+        death_date = 1363.1.1
+        father = oiniwar_kamesvara
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+
+    oiniwar_ganesvara = {
+        first_name = { name = name_ganesvara }
+        culture = maithili_culture
+        religion = hindu
+        birth_date = 1330.1.1
+        birth = janakpur_nepal
+        death_date = 1371.7.1
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+
+    oiniwar_kirtisimha = {
+        first_name = { name = name_kirtisimha }
+        culture = maithili_culture
+        religion = hindu
+        birth_date = 1350.1.1
+        birth = janakpur_nepal
+        death_date = 1400.1.1
+        father = oiniwar_ganesvara
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+
+    oiniwar_bhavesvara = {
+        first_name = { name = name_bhavesvara }
+        culture = maithili_culture
+        religion = hindu
+        birth_date = 1355.1.1
+        birth = janakpur_nepal
+        death_date = 1402.1.1
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+
+    oiniwar_devasimha = {
+        first_name = { name = name_devasimha }
+        culture = maithili_culture
+        religion = hindu
+        birth_date = 1370.1.1
+        birth = janakpur_nepal
+        death_date = 1418.1.1
+        father = oiniwar_bhavesvara
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+    oiniwar_shivasimha = {
+        first_name = { name = name_shivasimha }
+        culture = maithili_culture
+        religion = hindu
+        birth_date = 1390.1.1
+        birth = janakpur_nepal
+        death_date = 1406.6.6
+        father = oiniwar_devasimha
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+    oiniwar_lakhimadevi = {
+        first_name = { name = name_lakhimadevi }
+        culture = maithili_culture
+        religion = hindu
+        female = yes
+        birth_date = 1395.1.1
+        birth = janakpur_nepal
+        death_date = 1418.1.1
+        spouse = oiniwar_shivasimha
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+    oiniwar_padmasimha = {
+        first_name = { name = name_padmasimha }
+        culture = maithili_culture
+        religion = hindu
+        birth_date = 1392.1.1
+        birth = janakpur_nepal
+        death_date = 1431.1.1
+        father = oiniwar_devasimha
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+    oiniwar_visvasadevi = {
+        first_name = { name = name_visvasadevi }
+        culture = maithili_culture
+        religion = hindu
+        female = yes
+        birth_date = 1405.1.1
+        birth = janakpur_nepal
+        death_date = 1443.1.1
+        spouse = oiniwar_padmasimha
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+    oiniwar_harisimha = {
+        first_name = { name = name_harisimha }
+        culture = maithili_culture
+        religion = hindu
+        birth_date = 1380.1.1
+        birth = janakpur_nepal
+        father = oiniwar_bhavesvara
+        dynasty = oiniwar_dynasty
+        tag = ONW
+    }
+    ujj_sangram_deo = {
+        first_name = { name = name_sangram }
+        last_name = { name = name_deo }
+        culture = bhojpuri_culture
+        religion = hindu
+        birth_date = 1410.1.1
+        birth = buxar
+        dynasty = ujjaini_dynasty
+        tag = UJJ
+    }
+    kma_niladhvaja = {
+        first_name = { name = name_niladhvaja }
+        culture = kamarupi
+        religion = hindu
+        birth_date = 1400.1.1
+        birth = kamatapur
+        dynasty = khen_dynasty
+        tag = KMA
+    }
+    # Oceania
+    oah_maweke = {
+        first_name = { name = name_maweke }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1180.1.1
+        death_date = 1240.1.1
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    oah_mulielealii = {
+        first_name = { name = name_mulielealii }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1205.1.1
+        death_date = 1265.1.1
+        father = oah_maweke
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    oah_kumuhonua = {
+        first_name = { name = name_kumuhonua }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1230.1.1
+        death_date = 1290.1.1
+        father = oah_mulielealii
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    oah_elepuukahonua = {
+        first_name = { name = name_elepuukahonua }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1255.1.1
+        death_date = 1315.1.1
+        father = oah_kumuhonua
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    oah_kahokupohakano = {
+        first_name = { name = name_kahokupohakano }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1280.1.1
+        death_date = 1340.1.1
+        father = oah_elepuukahonua
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    oah_nawele = {
+        first_name = { name = name_nawele }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1305.1.1
+        death_date = 1365.1.1
+        father = oah_kahokupohakano
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    oah_lakona = {
+        first_name = { name = name_lakona }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1330.1.1
+        death_date = 1390.1.1
+        father = oah_nawele
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    oah_kukahoko = {
+        first_name = { name = name_kukahoko }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1355.1.1
+        death_date = 1410.1.1
+        father = oah_lakona
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    oah_mailikukahi = {
+        first_name = { name = name_mailikukahi }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1380.1.1
+        death_date = 1442.1.1
+        father = oah_kukahoko
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    oah_kalanimanuia = {
+        first_name = { name = name_kalanimanuia }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1410.1.1
+        father = oah_mailikukahi
+        dynasty = alii_oahu_dynasty
+        tag = OAH
+    }
+    tog_ahoeitu = {
+        first_name = { name = name_ahoeitu }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 930.1.1
+        death_date = 980.1.1
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_loloofakangalo = {
+        first_name = { name = name_loloofakangalo }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 955.1.1
+        death_date = 1005.1.1
+        father = tog_ahoeitu
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_fangaoneone = {
+        first_name = { name = name_fangaoneone }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 980.1.1
+        death_date = 1030.1.1
+        father = tog_loloofakangalo
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_lihau = {
+        first_name = { name = name_lihau }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1005.1.1
+        death_date = 1055.1.1
+        father = tog_fangaoneone
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_kofutu = {
+        first_name = { name = name_kofutu }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1030.1.1
+        death_date = 1080.1.1
+        father = tog_lihau
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_kaloa = {
+        first_name = { name = name_kaloa }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1055.1.1
+        death_date = 1105.1.1
+        father = tog_kofutu
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_mauhau = {
+        first_name = { name = name_mauhau }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1080.1.1
+        death_date = 1130.1.1
+        father = tog_kaloa
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_apuanea = {
+        first_name = { name = name_apuanea }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1105.1.1
+        death_date = 1150.1.1
+        father = tog_mauhau
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_ahungange = {
+        first_name = { name = name_ahungange }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1130.1.1
+        death_date = 1175.1.1
+        father = tog_apuanea
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_momo = {
+        first_name = { name = name_momo }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1150.1.1
+        death_date = 1200.1.1
+        father = tog_ahungange
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_tuitatui = {
+        first_name = { name = name_tuitatui }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1175.1.1
+        death_date = 1225.1.1
+        father = tog_momo
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_talatama = {
+        first_name = { name = name_talatama }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1200.1.1
+        death_date = 1245.1.1
+        father = tog_tuitatui
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_talaihaapepe = {
+        first_name = { name = name_talaihaapepe }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1205.1.1
+        death_date = 1260.1.1
+        father = tog_tuitatui
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_talakaifaiki = {
+        first_name = { name = name_talakaifaiki }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1230.1.1
+        death_date = 1285.1.1
+        father = tog_talaihaapepe
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_talafapite = {
+        first_name = { name = name_talafapite }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1255.1.1
+        death_date = 1305.1.1
+        father = tog_talakaifaiki
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_tuitonganui = {
+        first_name = { name = name_tuitonganui }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1280.1.1
+        death_date = 1330.1.1
+        father = tog_talafapite
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_havea1 = {
+        first_name = { name = name_havea }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1305.1.1
+        death_date = 1355.1.1
+        father = tog_tuitonganui
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_tatafuavea = {
+        first_name = { name = name_tatafuavea }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1330.1.1
+        death_date = 1375.1.1
+        father = tog_havea1
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_nanasitonga = {
+        first_name = { name = name_nanasitonga }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1355.1.1
+        death_date = 1400.1.1
+        father = tog_tatafuavea
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_takalaua = {
+        first_name = { name = name_takalaua }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1385.1.1
+        father = tog_nanasitonga
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    tog_kauulufonua1 = {
+        first_name = { name = name_kauulufonua }
+        culture = tonga_oceania_culture
+        religion = tapu_religion
+        birth_date = 1415.1.1
+        father = tog_takalaua
+        dynasty = tui_tonga_dynasty
+        tag = TOG
+    }
+    haw_pili = {
+        first_name = { name = name_pili }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1230.1.1
+        death_date = 1290.1.1
+        dynasty = alii_hawaii_dynasty
+        tag = HAW
+    }
+    haw_kuakoa = {
+        first_name = { name = name_kuakoa }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1255.1.1
+        death_date = 1315.1.1
+        father = haw_pili
+        dynasty = alii_hawaii_dynasty
+        tag = HAW
+    }
+    haw_koolau = {
+        first_name = { name = name_koolau }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1280.1.1
+        death_date = 1340.1.1
+        father = haw_kuakoa
+        dynasty = alii_hawaii_dynasty
+        tag = HAW
+    }
+    haw_maihinuui = {
+        first_name = { name = name_maihinuui }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1305.1.1
+        death_date = 1365.1.1
+        father = haw_koolau
+        dynasty = alii_hawaii_dynasty
+        tag = HAW
+    }
+    haw_hiilani = {
+        first_name = { name = name_hiilani }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1330.1.1
+        death_date = 1390.1.1
+        father = haw_maihinuui
+        dynasty = alii_hawaii_dynasty
+        tag = HAW
+    }
+    haw_luahine = {
+        first_name = { name = name_luahine }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1355.1.1
+        death_date = 1415.1.1
+        father = haw_hiilani
+        dynasty = alii_hawaii_dynasty
+        tag = HAW
+    }
+    haw_kameeiamoku_ancestor = {
+        first_name = { name = name_kameeiamoku }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1380.1.1
+        death_date = 1440.1.1
+        father = haw_luahine
+        dynasty = alii_hawaii_dynasty
+        tag = HAW
+    }
+    haw_liloa = {
+        first_name = { name = name_liloa }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1410.1.1
+        father = haw_kameeiamoku_ancestor
+        dynasty = alii_hawaii_dynasty
+        tag = HAW
+    }
+    mui_haho = {
+        first_name = { name = name_haho }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1220.1.1
+        death_date = 1280.1.1
+        dynasty = alii_maui_dynasty
+        tag = MUI
+    }
+    mui_palena = {
+        first_name = { name = name_palena }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1245.1.1
+        death_date = 1305.1.1
+        father = mui_haho
+        dynasty = alii_maui_dynasty
+        tag = MUI
+    }
+    mui_hanalaa = {
+        first_name = { name = name_hanalaa }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1270.1.1
+        death_date = 1330.1.1
+        father = mui_palena
+        dynasty = alii_maui_dynasty
+        tag = MUI
+    }
+    mui_mauiloa = {
+        first_name = { name = name_mauiloa }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1295.1.1
+        death_date = 1355.1.1
+        father = mui_hanalaa
+        dynasty = alii_maui_dynasty
+        tag = MUI
+    }
+    mui_alanaio = {
+        first_name = { name = name_alanaio }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1320.1.1
+        death_date = 1380.1.1
+        father = mui_mauiloa
+        dynasty = alii_maui_dynasty
+        tag = MUI
+    }
+    mui_kahakumakaloa = {
+        first_name = { name = name_kahakumakaloa }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1345.1.1
+        death_date = 1405.1.1
+        father = mui_alanaio
+        dynasty = alii_maui_dynasty
+        tag = MUI
+    }
+    mui_kahekili_1 = {
+        first_name = { name = name_kahekili }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1375.1.1
+        death_date = 1435.1.1
+        father = mui_kahakumakaloa
+        dynasty = alii_maui_dynasty
+        tag = MUI
+    }
+    mui_kakaalaneo = {
+        first_name = { name = name_kakaalaneo }
+        culture = kanaka_maoli_culture
+        religion = tapu_religion
+        birth_date = 1405.1.1
+        father = mui_kahekili_1
+        dynasty = alii_maui_dynasty
+        tag = MUI
+    }
+    poh_olosihpa = {
+        first_name = { name = name_olosihpa }
+        culture = pohnpeian_culture
+        religion = yanolop_religion # or local micronesian pantheon ID
+        birth_date = 1080.1.1
+        death_date = 1140.1.1
+        dynasty = saudeleur_dynasty
+        tag = POH
+    }
+    poh_mwohnmwei = {
+        first_name = { name = name_mwohnmwei }
+        culture = pohnpeian_culture
+        religion = yanolop_religion
+        birth_date = 1200.1.1
+        death_date = 1260.1.1
+        dynasty = saudeleur_dynasty
+        tag = POH
+    }
+    poh_raipwenloko = {
+        first_name = { name = name_raipwenloko }
+        culture = pohnpeian_culture
+        religion = yanolop_religion
+        birth_date = 1270.1.1
+        death_date = 1330.1.1
+        dynasty = saudeleur_dynasty
+        tag = POH
+    }
+    poh_saudemwohl = {
+        first_name = { name = name_saudemwohl }
+        culture = pohnpeian_culture
+        religion = yanolop_religion
+        birth_date = 1375.1.1
+        dynasty = saudeleur_dynasty
+        tag = POH
+    }
+    rsm_tui_o_lite = {
+        first_name = { name = name_tui_o_lite }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1250.1.1
+        death_date = 1310.1.1
+        dynasty = tui_manua_dynasty
+        tag = RSM
+    }
+    rsm_toalepai_ancestor = {
+        first_name = { name = name_toalepai }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1280.1.1
+        death_date = 1340.1.1
+        father = rsm_tui_o_lite
+        dynasty = tui_manua_dynasty
+        tag = RSM
+    }
+    rsm_salofi = {
+        first_name = { name = name_salofi }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1310.1.1
+        death_date = 1370.1.1
+        father = rsm_toalepai_ancestor
+        dynasty = tui_manua_dynasty
+        tag = RSM
+    }
+    rsm_levaomana = {
+        first_name = { name = name_levaomana }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1340.1.1
+        death_date = 1400.1.1
+        father = rsm_salofi
+        dynasty = tui_manua_dynasty
+        tag = RSM
+    }
+    rsm_toalepai = {
+        first_name = { name = name_toalepai }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1375.1.1
+        father = rsm_levaomana
+        dynasty = tui_manua_dynasty
+        tag = RSM
+    }
+    rsm_seuea = {
+        first_name = { name = name_seuea }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        female = yes
+        birth_date = 1410.1.1
+        father = rsm_toalepai
+        dynasty = tui_manua_dynasty
+        tag = RSM
+    }
+    rsm_salofi = {
+        first_name = { name = name_salofi }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1415.1.1
+        father = rsm_toalepai
+        dynasty = tui_manua_dynasty
+        tag = RSM
+    }
+    sam_malietoa_savea = {
+        first_name = { name = name_savea }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1220.1.1
+        death_date = 1280.1.1
+        dynasty = malietoa_dynasty
+        tag = SAM
+    }
+    sam_malietoa_aufaga = {
+        first_name = { name = name_aufaga }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1260.1.1
+        death_date = 1320.1.1
+        father = sam_malietoa_savea
+        dynasty = malietoa_dynasty
+        tag = SAM
+    }
+    sam_malietoa_calata = {
+        first_name = { name = name_calata }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1300.1.1
+        death_date = 1360.1.1
+        father = sam_malietoa_aufaga
+        dynasty = malietoa_dynasty
+        tag = SAM
+    }
+    sam_malietoa_tui = {
+        first_name = { name = name_tui }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1340.1.1
+        death_date = 1400.1.1
+        father = sam_malietoa_calata
+        dynasty = malietoa_dynasty
+        tag = SAM
+    }
+    sam_aliatama = {
+        first_name = { name = name_aliatama }
+        culture = tagata_samoa_culture
+        religion = tapu_religion
+        birth_date = 1385.1.1
+        father = sam_malietoa_tui
+        dynasty = malietoa_dynasty
+        tag = SAM
+    }
 }

@@ -1,0 +1,231 @@
+namespace = flavor_india
+flavor_india.1 = { # The Langah Coup in Multan
+    type = country_event
+    title = flavor_india.1.title
+    desc = flavor_india.1.desc
+    hide_portraits = no
+
+    fire_only_once = yes
+
+    dynamic_historical_event = {
+        tag = MLA
+        from = 1444.1.1
+        to = 1450.1.1
+        monthly_chance = 7
+    }
+
+    trigger = {
+        has_or_had_tag = MLA
+        character:lng_rai_sahra = {
+            is_alive = yes
+        }
+    }
+
+    option = {
+        name = flavor_india.1.a
+        ai_chance = {
+            factor = 1
+        }
+        create_character = {
+			first_name = name_ali
+			dynasty = dynasty:langah_dynasty
+			culture = culture:baloch_culture
+			religion = religion:sunni
+			birth_location = location:khuzdar
+			birth_date = 1430.7.1
+			save_scope_as = target_character
+			create_in_limbo = yes
+		}
+        scope:target_character = { move_country = C:KHZ }
+        c:KHZ ?= {
+            set_new_ruler = character:lng_rai_sahra
+        }
+
+        if = {
+            limit = {
+                character:lng_rai_sahra = {
+                    is_alive = yes
+                }
+            }
+            character:lng_rai_sahra = { move_country = root }
+            set_new_ruler = character:lng_rai_sahra
+        }
+        if = {
+            limit = {
+                character:lng_husseyn_1 = {
+                    is_alive = yes
+                }
+            }
+            character:lng_husseyn_1 = { move_country = root }
+        }
+
+        if = {
+            limit = {
+                character:mlt_shaikh_yousaf_qureshi = {
+                    is_alive = yes
+                }
+            }
+            character:mlt_shaikh_yousaf_qureshi = { move_country = c:DLH }
+        }
+
+        add_stability = stability_minor_loss
+    }
+    option = {
+        name = flavor_india.1.b
+        ai_chance = {
+            factor = 0
+        }
+
+        add_prestige = prestige_mild_bonus
+        add_stability = stability_mild_penalty
+    }
+}
+
+flavor_india.2 = { # The Rise of the Namgyal Dynasty
+    type = country_event
+    title = flavor_india.2.title
+    desc = flavor_india.2.desc
+    hide_portraits = no
+
+    fire_only_once = yes
+
+    dynamic_historical_event = {
+        tag = MAR
+        from = 1450.1.1
+        to = 1480.1.1
+        monthly_chance = 1
+    }
+
+    trigger = {
+        has_or_had_tag = MAR
+    }
+
+    immediate = {
+        ruler = { save_scope_as = target_character }
+        create_character = {
+            first_name = name_bhagan
+            dynasty = dynasty:namgyal_dynasty
+            culture = culture:ladakh_culture
+            religion = religion:tibetan_buddhism
+            birth_date = 1424.1.1
+            save_scope_as = usurper_character
+            create_in_limbo = yes
+        }
+    }
+
+    option = { # The Maryul king is slain — Ladakh rises
+        name = flavor_india.2.a
+        ai_chance = { factor = 1 }
+
+        scope:target_character = { kill_character = yes }
+        scope:usurper_character = { move_country = root }
+        set_new_ruler = scope:usurper_character
+
+        set_global_variable = ladakh_renamed
+        set_capital = location:leh
+
+        if = {
+            limit = {
+                country_rank_level < 3
+            }
+            set_country_rank_effect = {
+                rank = country_rank:rank_kingdom
+            }
+        }
+    }
+
+    option = { # Bhagan is driven back — Maryul endures
+        name = flavor_india.2.b
+        ai_chance = { factor = 0 }
+
+        add_stability = stability_extreme_penalty
+    }
+}
+flavor_india.3 = { #Delhi's Crown Offered
+    type = country_event
+    title = flavor_india.3.title
+    desc = flavor_india.3.desc
+    hide_portraits = no
+
+    fire_only_once = yes
+
+    dynamic_historical_event = {
+        tag = DLH
+        from = 1450.1.1
+        to = 1470.1.1
+        monthly_chance = 5
+    }
+
+    trigger = {
+        has_or_had_tag = DLH
+        character:dlh_muhammad_shah_sayyid = {
+            is_alive = no
+        }
+    }
+
+    immediate = {
+        c:DLH ?= {
+            cancel_subject = c:SRH
+        }
+    }
+
+    option = { # Bahlul is invited to take the throne
+        name = flavor_india.3.a
+        ai_chance = { factor = 0.9 }
+        custom_tooltip = flavor_india_3_a_ctt
+        c:SRH ?= {
+            trigger_event_silently = { id = flavor_india.4 days = { 1 2 } }
+        }
+    }
+
+    option = { # Delhi refuses
+        name = flavor_india.3.b
+        ai_chance = { factor = 0.1 }
+
+        add_stability = stability_mild_penalty
+        add_prestige = prestige_mild_penalty
+        c:SRH ?= {
+            add_casus_belli = { type = casus_belli:cb_annex  target = c:DLH }
+            trigger_event_silently = { id = flavor_india.5 days = { 1 2 } }
+        }
+    }
+}
+
+flavor_india.4 = { # Bahlul Lodi Departs for Delhi
+    type = country_event
+    title = flavor_india.4.title
+    desc = flavor_india.4.desc
+    hide_portraits = no
+
+    fire_only_once = yes
+
+    trigger = {
+        has_or_had_tag = SRH
+    }
+
+    option = {
+        name = flavor_india.4.a
+        ai_chance = { factor = 1 }
+        c:DLH ?= {
+            annex_country_diplomatically = { country = root }
+        }
+        form_country = formable_country:DLH_f
+    }
+}
+flavor_india.5 = { # Delhi refuses to crown Bahlul
+    type = country_event
+    title = flavor_india.5.title
+    desc = flavor_india.5.desc
+    hide_portraits = no
+
+    fire_only_once = yes
+
+    trigger = {
+        has_or_had_tag = SRH
+    }
+
+    option = {
+        name = flavor_india.5.a
+        ai_chance = { factor = 1 }
+    }
+}

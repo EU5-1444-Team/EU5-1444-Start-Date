@@ -42958,13 +42958,11 @@ countries = {
     TIK = { #Kabul Timurids
         own_control_core = {
             kabul andarab kahmard bamyan charikar bagram istalif kohi_safi
-            gandamak jalalabad alishang panjshir
+            gandamak jalalabad panjshir
             logar chak peshawar
         }
         own_control_integrated = {
-            dir timergara malakand bajaur
-            lalpur mardan kohat
-            asadabad_kunar parun hajiabad
+            kohat
         }
 
         starting_technology_level = 3
@@ -43696,37 +43694,34 @@ countries = {
 
     # --- BDS ---
 
-    KHZ = {
-        #Khuzdar https://en.wikipedia.org/wiki/Khuzdar
+    KHZ = { #Langah Baloch Tribe
         own_control_core = {
             sonamiani bela
             khuzdar lakhsar nal wadh
         }
 
         include = "expl_middle_east"
-        starting_technology_level = 0
+        starting_technology_level = 3
         include = "muslim_tribe"
         government = {
             type = tribe
             heir_selection = tribal_oldest_male
-            ruler = random
+            ruler = lng_rai_sahra
 
             laws = {
                 sharia_law = hanafi_policy
             }
+            ruler_term = { character = lng_rai_sahra start_date = 1443.1.1 regnal_number = 1 }
         }
 
         tolerated_cultures = {
             brahui_culture
-            baloch_culture
         }
 
         religious_school = hanafi_school
         government = { mysticism_vs_jurisprudence = -15 }
 
         capital = khuzdar
-        dynasty = jat_dynasty
-        court_language = persian_language
     }
 
     # --- KHZ ---
@@ -45814,14 +45809,13 @@ countries = {
     # bengal_region
     # -------------
 
-    BNG = {
-        #Bengal
+    BNG = { #Bengal
         own_control_core = {
             satgaon pandua baragram bardhaman dubrajpur ilambazar
             khulna east_sundarban husaynabad jaynagar kulpi west_sundarban
             nadia chandrabad jessore jhenaidah maheshpur pipli sreepur
-            sonargaon bikrampur chandpur kobirhat kumilla savar
-            khalifatabad barguna chandrawip fathabad kotalipara qasba shahbazpur
+            sonargaon bikrampur kumilla savar
+            fathabad kotalipara qasba
             mymensingh atiya belabo kapasia muktagacha tarakanda
             gaur godagari naogaon pabna rampur_boalla
             bogra birampur goraghat rangpur_bengal shahjadpur
@@ -45834,10 +45828,11 @@ countries = {
             tamluk madaran
             monghyr gidhaur
             rajgir bihar_sharif narhat roh
-            samastipur
+            samastipur baniachang shaharpara khaliajuri
         }
 
         include = "indian_muslim_monarchy"
+        include = "expl_india_hindu"
         religious_school = hanafi_school
         government = { mysticism_vs_jurisprudence = -15 }
         country_rank = rank_kingdom
@@ -45863,7 +45858,41 @@ countries = {
 
         capital = gaur
     }
+    CWP = { #Chandradwip
+        own_control_core = {
+            chandrawip barguna shahbazpur khalifatabad kotlipara
+        }
 
+        include = "indian_hindu_monarchy"
+        include = "expl_india_hindu"
+        country_rank = rank_kingdom
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+
+            ruler = random
+        }
+        capital = chandrawip
+        dynasty = basu_dynasty
+    }
+    BUA = { #Bhulua
+        own_control_core = {
+            kobirhat chandpur
+        }
+
+        include = "indian_hindu_monarchy"
+        include = "expl_india_hindu"
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+
+            ruler = random
+        }
+        capital = kobirhat
+        dynasty = bishwambhar_sur_dynasty
+    }
     # --- BNG ---
 
     ORI = {
@@ -45914,8 +45943,7 @@ countries = {
 
     # --- ORI ---
 
-    SGN = {
-        #Sonargaon
+    SGN = { #Sonargaon
         our_cores_conquered_by_others = {
             sonargaon bikrampur chandpur kobirhat kumilla savar
             khalifatabad barguna chandrawip fathabad kotalipara qasba shahbazpur
@@ -45948,8 +45976,7 @@ countries = {
 
     # --- SGN ---
 
-    GAU = {
-        #Gaur
+    GAU = { #Gaur
         our_cores_conquered_by_others = {
             gaur godagari naogaon pabna rampur_boalla
             bogra birampur goraghat rangpur_bengal shahjadpur
@@ -45974,19 +46001,14 @@ countries = {
 
     # --- GAU ---
 
-    AHO = {
-        #Ahom
+    AHO = { #Ahom
         own_control_core = {
             charaideo charagua
-            morangi dergaon
-            tezpur bordowa rowta durjaya guwahati
-            lyngngam sohra nabagram
-            daboka sutnga jaintiapur
-            namrup noadihang
+            dergaon namrup noadihang
         }
 
         include = "expl_india_hindu"
-        include = "indian_animist_monarchy"
+        include = "indian_hindu_monarchy"
         government = {
             ruler = random # TODO: add me
             laws = { medieval_levy_law = paik_system }
@@ -45996,7 +46018,25 @@ countries = {
             tiwa_culture tani_culture karbi_culture
         }
 
-        capital = charaideo
+        capital = dergaon
+    }
+    BBC = { #Baro-Bhuyan Confederacy
+        own_control_core = {
+            tezpur bordowa rowta durjaya guwahati
+            morangi
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_animist_monarchy"
+        government = {
+            ruler = random
+        }
+
+        tolerated_cultures = {
+            tiwa_culture tani_culture karbi_culture bodo_culture
+        }
+
+        capital = bordowa
     }
 
     # --- AHO ---
@@ -46025,9 +46065,8 @@ countries = {
 
     # --- KKR ---
 
-    LMN = {
-        #Lho Mon
-        own_control_core = {
+    LMN = { #Lho Mon
+        our_cores_conquered_by_others = {
             paro daga jabar_goemba punakha thimpu wangdue
             trongsa bumthang lhuntsi tawang trasigang zhemgang zhongkar
         }
@@ -46042,13 +46081,12 @@ countries = {
 
     # --- LMN ---
 
-    TWI = {
-        #Twipra
+    TWI = { #Twipra
         own_control_core = {
             rangamati agartala chandrapur kailashahar pilak
             karpus_mahal
-            laskarpur baniachang
-            sylhet khaliajuri patharkandi rajnagar shaharpara
+            laskarpur
+            patharkandi rajnagar
         }
 
         include = "expl_india_hindu"
@@ -46067,8 +46105,7 @@ countries = {
 
     # --- TWI ---
 
-    ONW = {
-        #Oiniwar
+    ONW = { #Oiniwar/Tirhut Sarkar
         own_control_core = {
             madhubani darbhanga janakpur_nepal jhanjharpur siraha sitamarhi
             chaudandi sheohar mehsi bettiah ramnagar_bihar simraungadh
@@ -46077,14 +46114,25 @@ countries = {
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
         government = {
-            ruler = random # TODO: add me
-        }
+            ruler = oiniwar_harisimha
+            country_rank = rank_kingdom
+            ruler_term = { character = oiniwar_kamesvara start_date = 1325.1.1 end_date = 1330.1.1 regnal_number = 1 }
+            ruler_term = { character = oiniwar_bhogisvara start_date = 1330.1.1 end_date = 1363.1.1 regnal_number = 1 }
+            ruler_term = { character = oiniwar_ganesvara start_date = 1363.1.1 end_date = 1371.7.1 regnal_number = 1 }
+            ruler_term = { character = oiniwar_kirtisimha start_date = 1371.7.1 end_date = 1385.1.1 regnal_number = 1 }
+            ruler_term = { character = oiniwar_bhavesvara start_date = 1385.1.1 end_date = 1400.1.1 regnal_number = 1 }
+            ruler_term = { character = oiniwar_devasimha start_date = 1400.1.1 end_date = 1402.1.1 regnal_number = 1 }
+            ruler_term = { character = oiniwar_shivasimha start_date = 1402.1.1 end_date = 1406.6.6 regnal_number = 1 }
+            ruler_term = { character = oiniwar_lakhimadevi start_date = 1406.6.6 end_date = 1418.1.1 regnal_number = 1 }
+            ruler_term = { character = oiniwar_padmasimha start_date = 1418.1.1 end_date = 1431.1.1 regnal_number = 1 }
+            ruler_term = { character = oiniwar_visvasadevi start_date = 1431.1.1 end_date = 1443.1.1 regnal_number = 1 }
+            ruler_term = { character = oiniwar_harisimha start_date = 1443.1.1 end_date = 1460.1.1 regnal_number = 1 }        }
 
         tolerated_cultures = {
             kamarupi
         }
 
-        capital = madhubani
+        capital = janakpur_nepal
     }
 
     # --- ONW ---
@@ -46122,13 +46170,11 @@ countries = {
 
     # --- PTN ---
 
-    CUT = {
-        #Chutia / Sadiya
+    CUT = { #Chutia / Sadiya
         own_control_core = {
             sadiya gomsi tengapani malinithan dibang
             bengmara dibrugarh
-            # NOTE: Possibly Ahom territory
-            konwargaon lakhimpur itanagar nakshaparvat
+            konwargaon lakhimpur itanagar
         }
 
         include = "expl_india_hindu"
@@ -46203,8 +46249,7 @@ countries = {
 
     # --- JPO ---
 
-    KMA = {
-        #Kamata
+    KMA = { #Kamata
         own_control_core = {
             kamatapur
             barpeta bijni dhubri goalpara hajo kokrajhar
@@ -46221,7 +46266,7 @@ countries = {
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
         government = {
-            ruler = random # TODO: add me
+            ruler = kma_niladhvaja
         }
 
         tolerated_cultures = {
@@ -46319,10 +46364,9 @@ countries = {
 
     # --- BAD ---
 
-    DIM = {
-        #Dimasa
+    DIM = { #Dimasa
         own_control_core = {
-            dimapur dhansiri diphu maibong lanka khaspur
+            dimapur dhansiri diphu maibong lanka daboka
         }
 
         include = "expl_india_hindu"
@@ -46335,15 +46379,15 @@ countries = {
         capital = dimapur
         government = {
             ruler = random
+            country_rank = rank_kingdom
         }
     }
 
     # --- DIM ---
 
-    LUR = {
-        #Laur
-        our_cores_conquered_by_others = {
-            nabagram dura chisobibra lyngngam ruga sohra
+    LUR = { #Laur
+        own_control_core = {
+            nabagram lyngngam sohra
         }
 
         include = "expl_india_hindu"
@@ -46413,9 +46457,8 @@ countries = {
 
     # --- KJA ---
 
-    SKK = {
-        #Sikkim
-        own_control_core = {
+    SKK = { #Sikkim
+        our_cores_conquered_by_others = {
             yuksom dalingkot gangtok phari tsunthang
         }
 
@@ -46429,11 +46472,10 @@ countries = {
 
     # --- SKK ---
 
-    JNT = {
-        #Jaintia
-        our_cores_conquered_by_others = {
+    JNT = { #Jaintia
+        own_control_core = {
             jaintiapur sutnga
-            maibong lanka daboka
+            sylhet khaspur
         }
 
         include = "expl_india_hindu"
@@ -46480,8 +46522,7 @@ countries = {
 
     # --- KLH ---
 
-    CER = {
-        #Chero
+    CER = { #Chero
         own_control_core = {
             chatra tarhasi untari
         }
@@ -47084,8 +47125,7 @@ countries = {
 
     # --- VIJ ---
 
-    BAH = {
-        #Bahmanis
+    BAH = { #Bahmanis
         own_control_core = {
             bidar bijapur mudgal raichur devadurga
             khanapur belgaum gokak mudhol badami bagalkot basavana_bagewadi talikota sindagi kembhavi chitapur manyakheta gulbarga
@@ -48207,12 +48247,11 @@ countries = {
     # hindustan_region
     # ----------------
 
-    JNP = {
-        #Jaunpur
+    JNP = { #Jaunpur
         own_control_core = {
-            jaunpur hajipur rohtas
+            jaunpur hajipur
             gaya deo patna sonepur_bihar andar thawe kushinagar gorakhpur binayakpur rudrapur
-            buxar arrah ballia sasaram chunar varanasi bhadohi sultanpur_uttar_pradesh ghazipur mau_jaunpur azamgarh chillupar bansi basti
+            ballia chunar varanasi bhadohi sultanpur_uttar_pradesh ghazipur mau_jaunpur azamgarh chillupar bansi basti
             gonda balrampur tulsipur shravasti bahraich akbarpur awadh kishi raebareli mungra prayag kara asni manikpur raebareli korra
             makanpur etawah kanauj agra chandwar sargadwari jalesar_doab mathura kol unnao bilgram lucknow ibrahimabad khairabad hardoi pali_uttar_pradesh
             biswan firuzabad_bahraich bhurwara kherigarh nahil pilibhit shahjahanpur bareilly budaun gunnaur sambhal chandpur_uttar_pradesh
@@ -48239,36 +48278,41 @@ countries = {
         ruler_term = { character = jnp_ibrahim_shah_sharqi start_date = 1402.1.1 end_date = 1440.1.1 regnal_number = 3 }
         ruler_term = { character = jnp_mahmud_shah_sharqi start_date = 1440.1.1 regnal_number = 4 }
 
-        religious_school = hanafi_school
+        religious_school = jafari_school
         capital = jaunpur
     }
 
     # --- JNP ---
 
-    DLH = {
+    DLH = { #Delhi
         own_control_core = {
             delhi rohtak panipat dadri mirat hapur jansath baran saharanpur piran_i_kaliyar
             hisar hansi jind kaithal karnal thanesar sadhaura
         }
         our_cores_conquered_by_others = {
-            sirhind samana_india sunam bathinda raikot rahon bajwara jalandhar hajner faridkot
-            muktsar chishtian milwat kapurthala firozpur pakpattan chichawatni dipalpur
-            gugera kasur lahore fatehabad batala sultanwind kalanaur pasrur sialkot eminabad virkgarh
-            pindi_bhattian talwandi jaranwala chiniot dijkot jhang kamalia shorkot sillanwali shahpur
-            lalian bhera busal gujrat
+            sirhind samana_india sunam bathinda raikot jalandhar hajner faridkot
+            muktsar chishtian firozpur pakpattan chichawatni dipalpur
+            gugera kasur lahore fatehabad
+            talwandi jaranwala chiniot dijkot jhang kamalia shorkot sillanwali
+            multan tulamba mailsi karur_punjab jalalpur_pirwala
+            dunga_bunga mir_garh_qila kot_marot khairpur channan_pir uch derawar bijnot
+            daraban harrand mithankot dajal sitpur kot_addu dera_ghazi_khan karor karor_2 bhakkar dera_ismail_khan mankera
+            dinkot isakhel
+            aror nawakot omerkot
         }
 
         court_language = persian_language
 
         religious_school = chishti_school
         include = "indian_muslim_monarchy"
+        include = "expl_india_hindu"
         country_rank = rank_kingdom
         capital = delhi
         government = {
             # Insert Tughlaq dynasty here
             ruler_term = { character = dlh_khizr_khan start_date = 1414.5.28 end_date = 1421.5.20 regnal_number = 1 }
             ruler_term = { character = dlh_mubarak_shah_sayyid start_date = 1421.5.21 end_date = 1434.2.19 regnal_number = 2 }
-            ruler_term = { character = dlh_muhammad_shah_sayyid start_date = 1434.2.19 end_date = 1445.1.1 regnal_number = 4 }
+            ruler_term = { character = dlh_muhammad_shah_sayyid start_date = 1434.2.19 regnal_number = 4 }
             ruler = dlh_muhammad_shah_sayyid
             heir = dlh_alam_shah_sayyid
             nobles_estate = { satisfaction = 0.3 }
@@ -48286,7 +48330,7 @@ countries = {
 
         #Delhi Setup to accurately portray the starting situation
         currency_data = {
-            stability = -10
+            stability = -20
             prestige = 20
             government_power = 40
             inflation = 1
@@ -48295,13 +48339,12 @@ countries = {
 
     # --- SRH ---
 
-    SRH = {
+    SRH = { #Sirhind Afghans
         own_control_core = {
-            sirhind samana_india sunam bathinda raikot rahon bajwara jalandhar hajner faridkot
-            muktsar chishtian milwat kapurthala firozpur pakpattan chichawatni dipalpur
-            gugera kasur lahore fatehabad batala sultanwind kalanaur pasrur sialkot eminabad virkgarh
-            pindi_bhattian talwandi jaranwala chiniot dijkot jhang kamalia shorkot sillanwali shahpur
-            lalian bhera busal gujrat
+            sirhind samana_india sunam bathinda raikot hajner faridkot
+            muktsar chishtian firozpur pakpattan chichawatni dipalpur
+            gugera kasur lahore fatehabad
+            talwandi jaranwala chiniot dijkot jhang kamalia shorkot sillanwali
         }
         our_cores_conquered_by_others = {
             delhi rohtak panipat dadri mirat hapur jansath baran saharanpur piran_i_kaliyar
@@ -48324,14 +48367,16 @@ countries = {
 
     # --- SRH ---
 
-    MLA = {
-        #Multan
+    MLA = { #Multan
         own_control_core = {
             multan tulamba mailsi karur_punjab jalalpur_pirwala
             dunga_bunga mir_garh_qila kot_marot khairpur channan_pir uch derawar bijnot
-            daraban harrand mithankot dajal sitpur kot_addu dera_ghazi_khan karor karor_2 bhakkar dera_ismail_khan mankera
-            dinkot isakhel khushab
+            harrand mithankot dajal sitpur kot_addu dera_ghazi_khan
             aror nawakot omerkot
+        }
+        own_control_integrated = {
+            bhakkar dera_ismail_khan mankera karor karor_2 daraban
+            dinkot isakhel
         }
 
         starting_technology_level = 3
@@ -48341,11 +48386,12 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = mla_shaikh_yousaf_qureshi
 
             reforms = {
                 indian_sultanate_reform
             }
+            ruler_term = { character = mla_shaikh_yousaf_qureshi start_date = 1438.1.1 regnal_number = 1 }
         }
 
         religious_school = hanafi_school
@@ -48353,19 +48399,78 @@ countries = {
     }
 
     # --- MLA ---
+    KKS = { #Khokhars
+        own_control_core = {
+            sialkot eminabad pindi_bhattian sultanwind
+            kalanaur batala pasrur virkgarh
+        }
 
-    KSH = {
-        #https://en.wikipedia.org/wiki/History_of_Kashmir
-        #Taken over by the Muslim Shah Mir dynasty in 1339 after killing the remaining Loharas.
-        #This needs some early game events to make sense
+        include = "expl_india_hindu"
+        include = "1444_baloch_tribe_template"
+        capital = sialkot
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        religious_school = hanafi_school
+        dynasty = khokhar_dynasty
+    }
+    GAK = { #Gakhars
+        own_control_core = {
+            attock rawalpindi rawalakot sherwan
+            pindi_gheb sangni chakwal dina khewra kohtali khushab
+        }
+
+        include = "expl_india_hindu"
+        include = "1444_baloch_tribe_template"
+        capital = rawalpindi
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = jhanda_khan_gakhar
+        }
+        religious_school = hanafi_school
+        dynasty = gakhar_dynasty
+    }
+    JAN = { #Janjuas
+        own_control_core = {
+            gujrat busal bhera lalian shahpur
+        }
+
+        include = "expl_india_hindu"
+        include = "1444_baloch_tribe_template"
+        capital = gujrat
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        religious_school = hanafi_school
+        dynasty = janjua_dynasty
+    }
+    AWN = { #Awans
+        own_control_core = {
+            milwat kapurthala jalandhar rahon bajwara
+        }
+
+        include = "expl_india_hindu"
+        include = "1444_baloch_tribe_template"
+        capital = milwat
+        government = {
+            type = tribe
+            heir_selection = tribal_oldest_male
+            ruler = random
+        }
+        religious_school = hanafi_school
+        dynasty = awan_dynasty
+    }
+    KSH = { #Kashmir
         own_control_core = {
             srinagar pulawama baramulla ganderbal kupwara banihal sharda
-            rawalakot kohtali
-            attock rawalpindi sangni pindi_gheb chakwal khewra dina
-            bhimber rajouri rasyal poonch
             baligram
             agror behali
-            kalam_swat sherwan udabhanda
+            kalam_swat udabhanda
         }
 
         capital = srinagar
@@ -48388,19 +48493,17 @@ countries = {
             }
         }
 
-        tolerated_cultures = { punjabi }
         religious_school = hanafi_school
     }
 
     # --- KSH ---
 
-    KHS = {
-        #Khasa
+    KHS = { #Khasa
         our_cores_conquered_by_others = {
             sinja bajura dullu jumla kharpunath yanal_densa
             jagatipur chaughera dolpo malneta musikot pyuthan salianah
             pokhara gulmi takam tanahun tansen
-            lumbini
+            lumbini lo_mustang
         }
 
         include = "expl_india_hindu"
@@ -48420,25 +48523,24 @@ countries = {
 
     # --- KHS ---
 
-    KGR = {
-        #https://en.wikipedia.org/wiki/Kangra_State
+    KGR = { #Kangra
         own_control_core = {
-            nagarkot palampur kutlehar suket mandi sarahan naggar bajaura nurpur pathankot kahlur chamba_india barmaur
+            nagarkot palampur
         }
 
         capital = nagarkot
 
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
+        dynasty = katoch_dynasty
         government = {
-            ruler_term = { character = kgr_prithvi_chandra_katoch start_date = 1300.1.1 regnal_number = 2 }
+            ruler_term = { character = kgr_prithvi_chandra_katoch start_date = 1300.1.1 end_date 1350.1.1 regnal_number = 2 }
 
-            ruler = random # TODO: add me
+            ruler = random
 
             regnal_numbers = {
                 name_prithvi.name_chandra = 2
             }
-
             reforms = {
 
             }
@@ -48447,13 +48549,9 @@ countries = {
 
     # --- KGR ---
 
-    LWA = {
-        #Limbuwan
-        own_control_core = {
+    LWA = { #Limbuwan
+        our_cores_conquered_by_others = {
             vijayapur phakphok taplejung
-        }
-
-        own_control_integrated = {
             chainpur ranibas dudhakunda halesi okhaldhunga dolakha sunkoshi ramechhap sindhuli rajanari
         }
 
@@ -48473,19 +48571,221 @@ countries = {
             }
         }
     }
+    LB1 = { #Tamarkhola
+        own_control_core = {
+            okhaldhunga
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        capital = okhaldhunga
+        government = {
+            ruler = lmb_samba_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
+    LB2 = { #Mewakhola
+        own_control_core = {
+            chainpur ranibas
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        capital = chainpur
+
+        tolerated_cultures = {
+            kamarupi
+        }
+
+        government = {
+            ruler = lmb_sireng_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
+    LB3 = { #Maiwakhola
+        own_control_core = {
+            dudhakunda halesi
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        tolerated_cultures = {
+            kamarupi
+        }
+
+        capital = dudhakunda
+        government = {
+            ruler = lmb_maiwa_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
+    LB4 = { #Phedap
+        own_control_core = {
+            sunkoshi
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        tolerated_cultures = {
+            kamarupi
+        }
+
+        capital = sunkoshi
+        government = {
+            ruler = lmb_phedap_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
+    LB5 = { #Taplejung
+        own_control_core = {
+            taplejung
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        tolerated_cultures = {
+            kamarupi
+        }
+
+        capital = taplejung
+        government = {
+            ruler = lmb_galijunga_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
+    LB6 = { #Chhathar
+        own_control_core = {
+            ramechhap sindhuli
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        tolerated_cultures = {
+            kamarupi
+        }
+
+        capital = ramechhap
+        government = {
+            ruler = lmb_chhathar_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
+    LB7 = { #Athrai
+        own_control_core = {
+            phakphok
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        tolerated_cultures = {
+            kamarupi
+        }
+
+        capital = phakphok
+        government = {
+            ruler = lmb_athrai_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
+    LB8 = { #Panchthar
+        own_control_core = {
+            vijayapur
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        tolerated_cultures = {
+            kamarupi
+        }
+
+        capital = vijayapur
+        government = {
+            ruler = lmb_wedo_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
+    LB9 = { #Miklung
+        own_control_core = {
+            rajanari
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        tolerated_cultures = {
+            kamarupi
+        }
+
+        capital = rajanari
+        government = {
+            ruler = lmb_chemjong_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
+    LBZ = { # Therhathum
+        own_control_core = {
+            dolakha
+        }
+
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        tolerated_cultures = {
+            kamarupi
+        }
+
+        capital = dolakha
+        government = {
+            ruler = lmb_sirijunga_hang
+
+            laws = {
+                medieval_levy_law = peasant_levies
+            }
+        }
+    }
 
     # --- LWA ---
 
-    SWT = {
-        #https://en.wikipedia.org/wiki/Sultanate_of_Swat
-        our_cores_conquered_by_others = {
+    SWT = { #Swat
+        own_control_core = {
             baligram
-            agror behali mardan lalpur
-            timergara bajaur kalam_swat malakand
-
-            #Indus Kohistan:
-            #Autonomous and perhaps better shown as independent, with one state per location/valley
-            jijial kandia dasu
+            agror behali mardan malakand lalpur
+            timergara bajaur kalam_swat dir
         }
 
         capital = baligram
@@ -48500,14 +48800,12 @@ countries = {
 
             mysticism_vs_jurisprudence = -15
         }
-
+        dynasty = jahangiri_dynasty
         tolerated_cultures = {
             afghan_culture
-            kohistani
         }
         religious_school = hanafi_school
     }
-
     # --- SWT ---
     
     KIZ = { #Indus Kohistan
@@ -48521,52 +48819,57 @@ countries = {
         government = {
 
             ruler = random
-
+            type = tribe
 
             laws = {
                 sharia_law = hanafi_policy
             }
 
             mysticism_vs_jurisprudence = -15 
+            centralization_vs_decentralization = 100
         }
         religious_school = hanafi_school
+    }
+    CRL = { #Nuristan
+        own_control_core = {
+            asadabad_kunar parun hajiabad alishang
+        }
+
+        capital = asadabad_kunar
+
+        include = "indian_muslim_monarchy_no_coast_no_censor"
+        government = {
+            ruler = random
+            type = tribe
+            mysticism_vs_jurisprudence = -15
+            centralization_vs_decentralization = 100
+        }
+
+        tolerated_cultures = {
+            afghan_culture
+        }
     }
 
     # --- KIZ ---
 
-    GLI = {
-        #https://en.wikipedia.org/wiki/Gilgit
+    GLI = { #Gilgit
         own_control_core = {
             phander yasin punial
-            gilgit ishkoman bunji
+            gilgit bunji
             astore chilas
         }
 
         capital = gilgit
-        #Ruler: Rau Sau Malik II
-        #Dynasty: Trakhan
 
         include = "expl_india_muslim"
         include = "india_limited_muslim_monarchy"
         government = {
-            #Shri Badat	760s-780
-            #Azur Jamshid	780-796
-            #Nur Bakht Khatun	?-?
-            #Kark (or Gark)
-            #Rajah Sau Malik	?-?
-            #Rajah Shah Malik	?-?
-            #Deng Malik	?-?	Son
-            #Khusraw Khan	?-997
-            #Rajah Haydar Khan	997
-            #Nur Khan	1057-1127
-            #Shah Mirza	1127-1205
-            #Tartora Khan	1205-1236
-            #the Dareli queen (name
-            #Torra Khan	1241-1275
-            #Shah Ra’is Khan	1275
-            ruler_term = { character = gli_sau_malik_ii_trakhan start_date = 1276.1.1 regnal_number = 2 }
+            type = monarchy
 
-            ruler = random # TODO: add me
+            ruler_term = { character = gli_sau_malik_ii_trakhan start_date = 1276.1.1 end_date 1337.1.1 regnal_number = 2 }
+            ruler_term = { character = torra_khan start_date = 1437.1.1 regnal_number = 1 }
+
+            ruler = torra_khan
 
             regnal_numbers = {
                 name_sau.name_malik = 2
@@ -48576,27 +48879,76 @@ countries = {
                 sharia_law = ismaili_policy
             }
         }
-
-        tolerated_cultures = {
-            shina_culture
-            chitrali
-        }
+        dynasty = trakhan_dynasty
         religious_school = ismaili_school
     }
 
     # --- GLI ---
 
-    KMN = {
-        #Kumaon
+    YSI = { #Yasin
         own_control_core = {
-            champavati almora askot baijnath dwarahat kashipur nainital rudrapur_kumaon
+            phander yasin
+        }
+
+        capital = yasin
+
+        include = "expl_india_muslim"
+        include = "india_limited_muslim_monarchy"
+        government = {
+            type = monarchy
+            ruler = random
+
+            laws = {
+                education_masses_law = basic_religious_education
+                sharia_law = ismaili_policy
+            }
+        }
+
+        religious_school = ismaili_school
+    }
+
+    PIL = { #Punial
+        own_control_core = {
+            punial ishkoman
+        }
+
+        capital = punial
+
+        include = "expl_india_muslim"
+        include = "india_limited_muslim_monarchy"
+        government = {
+            type = monarchy
+            ruler = random
+
+            laws = {
+                education_masses_law = basic_religious_education
+                sharia_law = ismaili_policy
+            }
+        }
+
+        religious_school = ismaili_school
+    }
+    KMN = { #Kumaon
+        own_control_core = {
+            champavati almora baijnath dwarahat kashipur nainital rudrapur_kumaon
         }
 
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
         court_language = sanskrit_language
         government = {
-            ruler = random # TODO: add me
+            ruler = kmn_bharati_chand
+            ruler_term = { character = kmn_dharm_chand start_date = 1321.1.1 end_date = 1344.1.1 regnal_number = 1 }
+            ruler_term = { character = kmn_abhay_chand start_date = 1344.1.1 end_date = 1374.1.1 regnal_number = 1 }
+            ruler_term = { character = kmn_garur_gyan_chand start_date = 1374.1.1 end_date = 1419.1.1 regnal_number = 1 }
+            ruler_term = { character = kmn_harihar_chand start_date = 1419.1.1 end_date = 1420.1.1 regnal_number = 1 }
+            ruler_term = { character = kmn_udyan_chand start_date = 1420.1.1 end_date = 1421.1.1 regnal_number = 1 }
+            ruler_term = { character = kmn_atma_chand_ii start_date = 1421.1.1 end_date = 1422.1.1 regnal_number = 2 }
+            ruler_term = { character = kmn_hari_chand_ii start_date = 1422.1.1 end_date = 1423.1.1 regnal_number = 2 }
+            ruler_term = { character = kmn_vikram_chand start_date = 1423.1.1 end_date = 1437.1.1 regnal_number = 1 }
+            ruler_term = { character = kmn_bharati_chand start_date = 1437.1.1 regnal_number = 1 }
+
+            centralization_vs_decentralization = 100
         }
 
         tolerated_cultures = {
@@ -48609,8 +48961,7 @@ countries = {
 
     # --- KMN ---
 
-    GWL = {
-        #Garhwal
+    GWL = { #Garhwal
         own_control_core = {
             chandpur_garhi badrinath devprayag gangadvara srinagar_garhwal thalisain uttarkashi
         }
@@ -48618,13 +48969,10 @@ countries = {
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
         court_language = sanskrit_language
+        dynasty = panwar_dynasty
         government = {
-            ruler = random # TODO: add me
-            ruler_term = { character = gwl_anant_pal_ii start_date = 1330.1.1 regnal_number = 2 }
-        }
-
-        tolerated_cultures = {
-            dehlavi
+            ruler = random
+            ruler_term = { character = gwl_anant_pal_ii start_date = 1330.1.1 end_date = 1380.1.1 regnal_number = 2 }
         }
 
         capital = chandpur_garhi
@@ -48632,8 +48980,7 @@ countries = {
 
     # --- GWL ---
 
-    KTU = {
-        #Kathmandu
+    KTU = { #Kathmandu
         own_control_core = {
             kathmandu dhading gorkha lamjung nuwakot upardang makwanpur
         }
@@ -48641,7 +48988,13 @@ countries = {
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
         government = {
-            ruler = random # TODO: add me
+            ruler = ktu_jayayakshya_malla
+            ruler_term = { character = ktu_jayari_malla start_date = 1320.4.5 end_date = 1344.9.14 regnal_number = 1 }
+            ruler_term = { character = ktu_jayaraja_deva start_date = 1348.9.6 end_date = 1361.1.1 regnal_number = 1 }
+            ruler_term = { character = ktu_jayarjuna_malla start_date = 1360.4.18 end_date = 1381.11.23 regnal_number = 1 }
+            ruler_term = { character = ktu_jayasthiti_malla start_date = 1382.9.15 end_date = 1395.9.5 regnal_number = 1 }
+            ruler_term = { character = ktu_jayajyotir_malla start_date = 1395.9.5 end_date = 1428.1.1 regnal_number = 1 }
+            ruler_term = { character = ktu_jayayakshya_malla start_date = 1428.1.1 regnal_number = 1 }
         }
 
         tolerated_cultures = {
@@ -48663,8 +49016,6 @@ countries = {
 
         capital = bhatnir
 
-        #Subdued by Delhi in 1331 with Bhairu, a son of the old ruler, in charge. Bersi had converted to Islam
-
         include = "expl_india_hindu"
         include = "indian_muslim_monarchy_no_coast"
         government = {
@@ -48685,32 +49036,37 @@ countries = {
 
     # --- BHA ---
 
-    DTI = {
-        #Doti
+    DTI = { #Doti
         own_control_core = {
-            dipayal acham ajayameru bajhang kailali kanchapur
+            dipayal acham ajayameru bajhang kailali kanchapur askot
         }
 
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
-
         tolerated_cultures = {
             khas_culture
             tharu_culture
         }
-
         capital = dipayal
         government = {
-            ruler = random
+            ruler = dti_kalyan_malla
+            ruler_term = { character = dti_niranjan_malla_dev start_date = 1279.1.1 end_date = 1300.1.1 regnal_number = 1 }
+            ruler_term = { character = dti_nagi_malla start_date = 1300.1.1 end_date = 1335.1.1 regnal_number = 1 }
+            ruler_term = { character = dti_ripu_malla start_date = 1335.1.1 end_date = 1384.1.1 regnal_number = 1 }
+            ruler_term = { character = dti_nag_malla start_date = 1384.1.1 end_date = 1400.1.1 regnal_number = 1 }
+            ruler_term = { character = dti_dhir_malla start_date = 1400.1.1 end_date = 1410.1.1 regnal_number = 1 }
+            ruler_term = { character = dti_ripu_malla_ii start_date = 1410.1.1 end_date = 1430.1.1 regnal_number = 2 }
+            ruler_term = { character = dti_anand_malla start_date = 1430.1.1 end_date = 1442.1.1 regnal_number = 1 }
+            ruler_term = { character = dti_sansar_malla start_date = 1442.1.1 end_date = 1443.1.1 regnal_number = 1 }
+            ruler_term = { character = dti_kalyan_malla start_date = 1443.1.1 regnal_number = 1 }
         }
     }
 
     # --- DTI ---
 
-    JUM = {
-        # Jumla
+    JUM = { # Jumla
         own_control_core = {
-            sinja bajura dullu jumla kharpunath yanal_densa
+            sinja jumla kharpunath yanal_densa
         }
 
         starting_technology_level = 3
@@ -48720,7 +49076,9 @@ countries = {
         government = {
             type = monarchy
             heir_selection = cognatic_primogeniture
-            ruler = random
+            ruler = jum_baliraja
+            ruler_term = { character = jum_medinivarma start_date = 1400.1.1 end_date = 1404.12.31 regnal_number = 1 }
+	        ruler_term = { character = jum_baliraja start_date = 1404.1.1 regnal_number = 1 }
         }
 
         capital = jumla
@@ -48728,26 +49086,21 @@ countries = {
 
     # --- JUM ---
 
-    UJJ = {
-        #Ujjainiya
+    UJJ = { #Ujjainiya
         own_control_core = {
-            jaund
+            jaund buxar arrah sasaram rohtas
         }
 
         our_cores_conquered_by_others = {
-            buxar arrah ballia
+            ballia
         }
 
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
 
-        tolerated_cultures = {
-            bhojpuri_culture
-        }
-
         capital = buxar
         government = {
-            ruler = random
+            ruler = ujj_sangram_deo
         }
     }
 
@@ -48777,8 +49130,7 @@ countries = {
     }
 
     # --- MEA ---
-
-    KSW = {
+    KSW = { #Kishtwar
         own_control_core = {
             kishtwar paddar pangi
             marwah #Unclear
@@ -48806,10 +49158,12 @@ countries = {
 
     # --- KSW ---
 
-    CTR = {
-        #https://en.wikipedia.org/wiki/Chitral_(princely_state)
+    CTR = { #Kingdom of Chitral
         own_control_core = {
             chitral mulkhow yarkhun mastuj
+        }
+        own_control_integrated = {
+            urtsun
         }
 
         capital = chitral
@@ -48819,14 +49173,13 @@ countries = {
         government = {
             ruler_term = { character = ctr_shah_nadir_rais start_date = 1320.1.1 regnal_number = 0 }
 
-            ruler = random # TODO: add me
-
+            ruler = random
+            country_rank = rank_kingdom
             laws = {
                 sharia_law = hanafi_policy
             }
         }
-
-        tolerated_cultures = { chitrali }
+        dynasty = rais_dynasty
         religious_school = hanafi_school
         government = { mysticism_vs_jurisprudence = -15 }
 
@@ -48834,7 +49187,7 @@ countries = {
 
     # --- CTR ---
 
-    DOG = {
+    DOG = { #Jammu
         own_control_core = {
             jammu udamphur kathua
         }
@@ -48854,18 +49207,18 @@ countries = {
         tolerated_cultures = {
             kashmiri_culture
         }
+        dynasty = deva_dynasty
     }
 
     # --- DOG ---
 
-    SKT = {
-        #https://en.wikipedia.org/wiki/Suket_State
-        our_cores_conquered_by_others = {
+    SKT = { #Suket
+        own_control_core = {
             suket mandi sarahan
         }
 
         capital = suket
-
+        dynasty = sen_dynasty
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
         government = {
@@ -48883,8 +49236,7 @@ countries = {
 
     # --- SKT ---
 
-    HNZ = {
-        #https://en.wikipedia.org/wiki/Hunza_(princely_state)
+    HNZ = { #Hunza
         own_control_core = {
             altit passu misgar
         }
@@ -48904,10 +49256,9 @@ countries = {
             #Lali Tham
             #Sahub Khan (Girkis)
             ruler_term = { character = hnz_nur_bibi_girkis start_date = 1310.1.1 end_date = 1313.1.1 regnal_number = 1 }
-            ruler_term = { character = hnz_ayasho_ayasho start_date = 1313.1.1 regnal_number = 1 }
+            ruler_term = { character = hnz_ayasho_ayasho start_date = 1313.1.1 end_date = 1357.1.1 regnal_number = 1 }
 
-            ruler = random # TODO: add me
-
+            ruler = random
             regnal_numbers = {
                 name_ayasho = 1
             }
@@ -48916,20 +49267,50 @@ countries = {
                 sharia_law = ismaili_policy
             }
         }
-
-        tolerated_cultures = {
-            burusho
-            pamiri_culture
-        }
+        dynasty = trakhan_dynasty
         religious_school = ismaili_school
     }
 
+    SHZ = { #Shigar
+        own_control_core = {
+            shigar
+        }
+
+        starting_technology_level = 3
+        include = "expl_india_muslim"
+        include = "india_limited_muslim_monarchy"
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+        dynasty = trakhan_dynasty
+        capital = shigar
+        religious_school = ismaili_school
+    }
+    SKD = { #Skardo
+        own_control_core = {
+            skardu
+        }
+
+        starting_technology_level = 3
+        include = "expl_india_muslim"
+        include = "india_limited_muslim_monarchy"
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+        dynasty = maqpon_dynasty
+        capital = skardu
+    }
     # --- HNZ ---
 
-    PLP = {
-        # Palpa
+    PLP = { #Palpa
         own_control_core = {
-            tansen gulmi lumbini
+            tansen
         }
 
         starting_technology_level = 3
@@ -48941,14 +49322,51 @@ countries = {
             heir_selection = cognatic_primogeniture
             ruler = random
         }
+        dynasty = mullu_dynasty
 
         capital = tansen
+    }
+    GMI = { #Gulmi
+        own_control_core = {
+            gulmi
+        }
+
+        starting_technology_level = 3
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_jain_no_coast"
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+        dynasty = mullu_dynasty
+
+        capital = gulmi
+    }
+    LBI = { #Lumbini
+        own_control_core = {
+            lumbini
+        }
+
+        starting_technology_level = 3
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_jain_no_coast"
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+        dynasty = mullu_dynasty
+
+        capital = lumbini
     }
 
     # --- PLP ---
 
-    RJR = {
-        our_cores_conquered_by_others = {
+    RJR = { #Rajouri
+        own_control_core = {
             rajouri rasyal
         }
 
@@ -48960,13 +49378,11 @@ countries = {
 
         include = "indian_muslim_monarchy_no_coast"
         government = {
-            #Raja Nur al-Din (Neil Singh) 1194-?
-            #Raja Baha al-Din Khan (Bhag Singh) ?-1252 (fill)
-            #Raja Anwar Khan (Awardan Singh) 1252-? (fill)
-            #Raja Haibat Khan (Haibat Singh) ?-1289 (fill)
-            ruler_term = { character = rjr_sirdar_khan_jarral start_date = 1289.1.1 regnal_number = 0 }
 
-            ruler = random
+            ruler_term = { character = rjr_sirdar_khan_jarral start_date = 1289.1.1 end_date 1338.1.1 regnal_number = 0 }
+            ruler_term = { character = shah_ud_din start_date = 1412.1.1 regnal_number = 1 }
+
+            ruler = shah_ud_din
 
             reforms = {
                 taluqdar_nobility
@@ -48979,21 +49395,19 @@ countries = {
         }
 
         tolerated_cultures = {
-            kangri
             punjabi
         }
     }
 
     # --- RJR ---
 
-    NRP = {
-        #https://en.wikipedia.org/wiki/Nurpur_kingdom
-        our_cores_conquered_by_others = {
+    NRP = { #Nurpur
+        own_control_core = {
             pathankot nurpur
         }
 
         capital = nurpur
-
+        dynasty = tomar_dynasty
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
         government = {
@@ -49011,7 +49425,7 @@ countries = {
     # --- NRP ---
 
     LHL = {
-        own_control_core = {
+        our_cores_conquered_by_others = {
             keylong koksar
         }
 
@@ -49027,14 +49441,12 @@ countries = {
             }
         }
 
-        tolerated_cultures = { utsang_culture }
     }
 
     # --- LHL ---
 
-    CAB = {
-        #https://en.wikipedia.org/wiki/Chamba_State
-        our_cores_conquered_by_others = {
+    CAB = { #Chamba
+        own_control_core = {
             chamba_india barmaur
         }
 
@@ -49064,20 +49476,19 @@ countries = {
 
             }
         }
+        dynasty = mushana_dynasty
     }
 
     # --- CAB ---
 
-    KLU = {
-        our_cores_conquered_by_others = {
+    KLU = { #Kullu
+        own_control_core = {
             naggar bajaura
         }
 
         capital = naggar
 
-        #Ruler: Keral
-        #Counted backwards from 1418 when Urdhan Pal ruled, before him came Madan Pal, Agast Pal, Hans Pal and his predecessor was Keral Pal. No dates are known, only the order.
-        #dynasty = pal dynasty_dynasty
+        dynasty = kull_sen_dynasty
 
         include = "expl_india_muslim"
         include = "indian_hindu_monarchy_no_coast"
@@ -49092,19 +49503,14 @@ countries = {
 
     # --- KLU ---
 
-    SRM = {
-        #Nahan
+    SRM = { #Simur
         own_control_core = {
             kalsi nahan
         }
 
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
-
-        tolerated_cultures = {
-            kangri
-        }
-
+        dynasty = plassia_dynasty
         capital = kalsi
         government = {
             ruler = random
@@ -49113,8 +49519,7 @@ countries = {
 
     # --- SRM ---
 
-    JBL = {
-        #Jubbal
+    JBL = { #Jubbal
         own_control_core = {
             soonpur hanol
         }
@@ -49130,10 +49535,9 @@ countries = {
 
     # --- JBL ---
 
-    PAB = {
-        # Parbat
+    PAB = { #Lamjung
         own_control_core = {
-            takam dolpo
+            takam
         }
 
         starting_technology_level = 3
@@ -49166,14 +49570,15 @@ countries = {
             heir_selection = cognatic_primogeniture
             ruler = random
         }
+        dynasty = mullu_dynasty
 
         capital = salianah
     }
 
     # --- SLY ---
 
-    PNC = {
-        our_cores_conquered_by_others = {
+    PNC = { #Poonch
+        own_control_core = {
             poonch
         }
 
@@ -49183,7 +49588,6 @@ countries = {
         include = "indian_hindu_monarchy_no_coast"
         government = {
             ruler = random
-            #Ruler: Unknown, was still independent when Mughals arrive in the area
             reforms = {
 
             }
@@ -49196,9 +49600,9 @@ countries = {
 
     # --- PNC ---
 
-    CBH = {
+    CBH = { #Bimber
         #Taken over by the Chibhal/Jibhal dynasty around 1400
-        our_cores_conquered_by_others = {
+        own_control_core = {
             bhimber
         }
 
@@ -49223,9 +49627,8 @@ countries = {
 
     # --- CBH ---
 
-    BSP = {
-        #https://en.wikipedia.org/wiki/Bilaspur_State_(princely_state)
-        our_cores_conquered_by_others = {
+    BSP = { #Kahlur
+        own_control_core = {
             kahlur
         }
 
@@ -49255,9 +49658,9 @@ countries = {
             #Dev Chand
             #Ahim Chand
             #Abhisand Chand, (r. 1302–1317)
-            ruler_term = { character = bsp_sampurn_chandel start_date = 1317.1.1 regnal_number = 0 }
+            ruler_term = { character = bsp_sampurn_chandel start_date = 1317.1.1 end_date - 1360.1.1 regnal_number = 0 }
 
-            ruler = random
+            ruler = pahar_chand
 
             reforms = {
 
@@ -49269,9 +49672,8 @@ countries = {
 
     # --- BSP ---
 
-    KTL = {
-        #https://en.wikipedia.org/wiki/Kutlehar_State
-        our_cores_conquered_by_others = {
+    KTL = { #Kutlehar
+        own_control_core = {
             kutlehar
         }
 
@@ -49292,35 +49694,6 @@ countries = {
 
     # --- KTL ---
 
-    CRL = {
-        own_control_core = {
-            urtsun
-        }
-
-        capital = urtsun
-
-        include = "expl_india_hindu"
-        include = "india_limited_monarchy"
-        government = {
-            ruler_term = { character = crl_kriznook start_date = 1300.1.1 regnal_number = 0 }
-
-            ruler = random
-            #Ruler: Kriznook - Dynasty unknown
-            #Kalasha ruler who resisted Shah Nadir Rais (unlike Bula Singh)
-            laws = {
-                censorship = limited_censorship
-                education_masses_law = basic_religious_education
-            }
-        }
-
-        tolerated_cultures = {
-            kohistani
-            chitrali
-        }
-    }
-
-    # --- CRL ---
-
     NAG = {
         #Nagar
         own_control_core = {
@@ -49334,14 +49707,14 @@ countries = {
         government = {
             ruler_term = { character = nag_shamshir_ali_moghlot start_date = 1315.1.1 regnal_number = 1 }
 
-            ruler = random # TODO: add me
+            ruler = random
             laws = {
                 censorship = limited_censorship
                 education_masses_law = basic_religious_education
             }
         }
-
-        tolerated_cultures = { burusho }
+        dynasty = trakhan_dynasty
+        religious_school = jafari_school
     }
 
     # --- NAG ---
@@ -49367,8 +49740,7 @@ countries = {
 
     # --- CDD ---
 
-    JAJ = {
-        # Jajarkot
+    JAJ = { #Jajarkot
         own_control_core = {
             jagatipur
         }
@@ -49382,14 +49754,67 @@ countries = {
             heir_selection = cognatic_primogeniture
             ruler = random
         }
-
+        dynasty = mullu_dynasty
         capital = jagatipur
+    }
+    MSE = { #Mustang
+        own_control_core = {
+            lo_mustang dolpo
+        }
+
+        starting_technology_level = 3
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_jain_no_coast"
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+        dynasty = mullu_dynasty
+
+        capital = lo_mustang
+    }
+    DLL = { #Dullu
+        own_control_core = {
+            dullu
+        }
+
+        starting_technology_level = 3
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_jain_no_coast"
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+        dynasty = mullu_dynasty
+
+        capital = dullu
+    }
+    BAJ = { #Bajura
+        own_control_core = {
+            bajura
+        }
+
+        starting_technology_level = 3
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_jain_no_coast"
+
+        government = {
+            type = monarchy
+            heir_selection = cognatic_primogeniture
+            ruler = random
+        }
+        dynasty = mullu_dynasty
+
+        capital = bajura
     }
 
     # --- JAJ ---
 
-    DAG = {
-        # Dang
+    DAG = { #Dang
         own_control_core = {
             chaughera
         }
@@ -49403,14 +49828,14 @@ countries = {
             heir_selection = cognatic_primogeniture
             ruler = random
         }
+        dynasty = mullu_dynasty
 
         capital = chaughera
     }
 
     # --- DAG ---
 
-    MSI = {
-        # Musikot
+    MSI = { #Musikot
         own_control_core = {
             musikot
         }
@@ -49424,14 +49849,14 @@ countries = {
             heir_selection = cognatic_primogeniture
             ruler = random
         }
+        dynasty = mullu_dynasty
 
         capital = musikot
     }
 
     # --- MSI ---
 
-    PUY = {
-        # Pyuthan
+    PUY = { #Pyuthan
         own_control_core = {
             pyuthan
         }
@@ -49445,6 +49870,7 @@ countries = {
             heir_selection = cognatic_primogeniture
             ruler = random
         }
+        dynasty = mullu_dynasty
 
         capital = pyuthan
     }
@@ -49454,7 +49880,7 @@ countries = {
     KPI = {
         # Kaski
         own_control_core = {
-            pokhara
+            pokhara takam
         }
 
         starting_technology_level = 3
@@ -49472,8 +49898,7 @@ countries = {
 
     # --- KPI ---
 
-    THN = {
-        # Tanahun
+    THN = { #Tanahun
         own_control_core = {
             tanahun
         }
@@ -49487,6 +49912,7 @@ countries = {
             heir_selection = cognatic_primogeniture
             ruler = random
         }
+        dynasty = mullu_dynasty
 
         capital = tanahun
     }
@@ -49522,8 +49948,7 @@ countries = {
 
     # --- MEW ---
 
-    SND = {
-        #https://en.wikipedia.org/wiki/Sindh
+    SND = { #Sindh
         own_control_core = {
             thatta sonda manora muhammad_tur laribandar
             ahmad_khan kotri naserpur hala ranikot
@@ -49540,7 +49965,7 @@ countries = {
         capital = thatta
 
         government = {
-            ruler = random
+            ruler = sma_jam_raidhan
 
             reforms = {
                 taluqdar_nobility
@@ -49549,6 +49974,25 @@ countries = {
             laws = {
                 sharia_law = ismaili_policy
             }
+
+            ruler_term = { character = sma_jam_unar_samma start_date = 1351.1.1 end_date = 1352.1.1 regnal_number = 1 }
+            ruler_term = { character = sma_jam_banbina_2 start_date = 1352.1.1 end_date = 1367.1.1 regnal_number = 1 }
+            ruler_term = { character = sma_jam_tamachi start_date = 1367.1.1 end_date = 1379.1.1 regnal_number = 1 }
+            ruler_term = { character = sma_jam_togachi start_date = 1379.1.1 end_date = 1389.1.1 }
+            ruler_term = { character = sma_jam_tamachi start_date = 1389.1.1 end_date = 1392.1.1 regnal_number = 1 }
+            ruler_term = { character = sma_jam_unar_2 start_date = 1392.1.1 end_date = 1404.1.1 regnal_number = 2 }
+            ruler_term = { character = sma_jam_ali_sher start_date = 1404.1.1 end_date = 1406.1.1 }
+            ruler_term = { character = sma_jam_karan start_date = 1406.1.1 end_date = 1406.2.1 }
+            ruler_term = { character = sma_jam_nizamuddin_1 start_date = 1406.2.1 end_date = 1406.12.1 regnal_number = 1 }
+            ruler_term = { character = sma_jam_ali_sher start_date = 1406.12.1 end_date = 1412.1.1 }
+            ruler_term = { character = sma_jam_sikandar_1 start_date = 1412.1.1 end_date = 1413.1.1 regnal_number = 1 }
+            ruler_term = { character = sma_jam_raidhan start_date = 1413.1.1 end_date = 1414.1.1 }
+            ruler_term = { character = sma_jam_sanjar start_date = 1414.1.1 end_date = 1422.1.1 }
+            ruler_term = { character = sma_jam_fath start_date = 1422.1.1 end_date = 1428.1.1 }
+            ruler_term = { character = sma_jam_juna_2 start_date = 1428.1.1 end_date = 1442.1.1 regnal_number = 2 }
+            ruler_term = { character = sma_jam_mubarak start_date = 1442.1.1 end_date = 1442.4.1 }
+            ruler_term = { character = sma_jam_sikandar_2 start_date = 1442.4.1 end_date = 1444.11.1 regnal_number = 2 }
+             ruler_term = { character = sma_jam_raidhan start_date = 1442.4.1 regnal_number = 1 }
 
             #Societal Values
             land_vs_naval = 50
@@ -49562,8 +50006,7 @@ countries = {
 
     # --- SND ---
 
-    GUJ = {
-        # Gujarat Sultanate - https://en.wikipedia.org/wiki/Gujarat_Sultanate
+    GUJ = { # Gujarat Sultanate - https://en.wikipedia.org/wiki/Gujarat_Sultanate
         own_control_core = {
             ashaval dholka limbdi khambat
             patan radhanpur palanpur deodar
@@ -49599,24 +50042,18 @@ countries = {
 
     # --- GUJ ---
 
-    SMA = {
-        our_cores_conquered_by_others = {
-            sehwan
-            kashmore shadodkot shikarpur jhatpat sukkur paat
-            rohri dubbi ghotki kot_lalu kandiaro islamgarh
-            rajabar moro_sindh mansura
+    SMA = { #Sehwan
+        own_control_core = {
+            sehwan paat kandiaro kot_lalu moro_sindh ranikot
         }
 
-        religious_school = hanafi_school
-        government = { mysticism_vs_jurisprudence = -15 }
-        country_rank = rank_kingdom
-
-
-        include = "indian_muslim_monarchy_no_dharmic_dhimmi_no_coast_no_censor"
-        capital = sehwan
+        starting_technology_level = 3
+        include = "indian_muslim_monarchy"
 
         government = {
+            type = monarchy
             ruler = random
+            heir_selection = cognatic_primogeniture
 
             reforms = {
                 taluqdar_nobility
@@ -49625,13 +50062,10 @@ countries = {
             laws = {
                 sharia_law = hanafi_policy
             }
-            #Societal Values
-            centralization_vs_decentralization = 75
         }
-
-        tolerated_cultures = {
-            marwari
-        }
+        dynasty = samma_dynasty
+        religious_school = maturidi_school
+        capital = sehwan
     }
 
     # --- SMA ---
@@ -49989,8 +50423,6 @@ countries = {
     PRT = {
         #https://en.wikipedia.org/wiki/Mandore
         #Mandore / Last remnant of the last branch of the Imperial Pratiharas.
-        #Had lost Mandore to Delhi in 1292 after which they became a minor subject of the Bhattis of Jaisalmer.
-        #Would retake it from Delhi in 1395, after which it passed to the Rathores.
 
         our_cores_conquered_by_others = {
             phalvardhika mandore osian nagaur khed pali kurki ajmer merta
@@ -50041,7 +50473,7 @@ countries = {
 
     # --- KUT ---
 
-    SKU = {
+    SKU = { #Sukkur
         own_control_core = {
             kashmore shadodkot shikarpur jhatpat sukkur rohri dubbi ghotki rajabar
         }
@@ -50062,7 +50494,7 @@ countries = {
                 sharia_law = hanafi_policy
             }
         }
-
+        dynasty = samma_dynasty
         religious_school = maturidi_school
         capital = sukkur
     }
@@ -50194,8 +50626,6 @@ countries = {
 
     JLR = {
         #Chauhans/Chahamanas of Chandravati
-        #After the Delhi destruction of most of their land this state is home to a great number of Chauhans that have taken refuge here.
-        #Was ultimately destroyed by the Gujarat Sultanate, and most of its artisans, etc, were relocated to Ahmedabad.
 
         our_cores_conquered_by_others = {
             jalor chandravati sirohi nadol
@@ -50220,38 +50650,8 @@ countries = {
 
     # --- JLR ---
 
-    SEH = {
-        own_control_core = {
-            sehwan paat kandiaro kot_lalu moro_sindh ranikot
-        }
-
-        starting_technology_level = 3
-        include = "indian_muslim_monarchy"
-
-        government = {
-            type = monarchy
-            ruler = random
-            heir_selection = cognatic_primogeniture
-
-            reforms = {
-                taluqdar_nobility
-                indian_sultanate_reform
-            }
-            laws = {
-                sharia_law = hanafi_policy
-            }
-        }
-
-        religious_school = maturidi_school
-        capital = sehwan
-    }
-
-    # --- SEH ---
-
     KLI = {
-        #Jadon Karauli Principality - Originally in Bayana and Dholpur but conquered by Delhi.
-        #Reestablished in 1327 by the conquest of the fort in Mandrael. Karauli (city) founded nearby in 1348.
-        #At that time Dholpur and Bayana had also been reclaimed.
+        #Jadon Karauli Principality 
 
         own_control_core = {
             karauli dholpur
@@ -51266,8 +51666,7 @@ countries = {
 
     # --- SUK ---
 
-    ARK = {
-        # Mrauk U (Previously Launggyet, Arakan in EU4)
+    ARK = { #Mrauk U (Previously Launggyet, Arakan in EU4)
         own_control_core = {
             launggyet
             akyab ann gwa maungdaw minbya mrauk_u ramree talak_burma taungup thandwe weithali
@@ -62887,8 +63286,7 @@ countries = {
     # tibet_region
     # ------------
 
-    RIN = {
-        # Rinpungpa
+    RIN = { #Rinpungpa
         own_control_core = {
             shigatse jonang namling tropu tsangdram
             ganden_delingshar lhadrak ngamring tagmo_lingkha
@@ -62899,14 +63297,12 @@ countries = {
             dingri pelmo nyalam
             sakya gonga_chode chorten_nyima
             dargyeling dzongkar
-            baryang lo_mustang tradun
             namtso_doring
 
             nakchu barom rongpo
             namtso_doring tsedzong ronglung gonkri
             phari
-            tsherlung ormogang
-            mendong samten selephu
+            mendong
         }
 
         country_rank = rank_duchy
@@ -62970,8 +63366,7 @@ countries = {
 
     # --- RIN ---
 
-    PHA = {
-        # Phagmodrupa
+    PHA = { #Phagmodrupa
         own_control_core = {
             gyamda buchu daklha_gampo zhokha
             trigu chikchar gonpatsi lhodrak lho_taklung tragor zangchen
@@ -63055,47 +63450,57 @@ countries = {
 
     # --- PHA ---
 
-    GUG = {
-        #Guge
+    GUG = { #Guge
         own_control_core = {
-            nako tabo tsorub
             toling dungkar tsaparang
             gyanema khyunglung purang tokchen
-            rutok drangtse hanle tashigang gartok rala
-            # baryang lo_mustang tradun
-            # ormogang tsherlung
-            # mendong samten selephu
-            # dargyeling dzongkar
+            gartok rala tradun baryang
+            tsherlung ormogang samten selephu
         }
 
         starting_technology_level = 3
         include = "expl_india_hindu"
         include = "indian_hindu_monarchy_no_coast"
-
+        dynasty = pugyal_dynasty
         capital = tsaparang
+        government = {
+            ruler = guge_phuntsok_de
+        }
+    }
+    KIN = { #Kinnaur
+        own_control_core = {
+            nako
+        }
+
+        starting_technology_level = 3
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+        dynasty = singh_tibet_dynasty
+        capital = nako
         government = {
             ruler = random
         }
     }
+    SPI = { #Spiti
+        own_control_core = {
+            tabo
+        }
 
+        starting_technology_level = 3
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+        dynasty = pugyal_dynasty
+        capital = tabo
+        government = {
+            ruler = random
+        }
+    }
     # --- GUG ---
 
-    MAR = {
-        # Maryul, Ladakh in 1460
+    MAR = { # Maryul, Ladakh in 1460
         own_control_core = {
             shey leh charasa kargil karpokhar lamayuru
-            # Baltistan?
-            skardu khaplu shigar
-            # ????
-            # zangla padum phuktal
-            # nagar
-            # phander yasin punial
-            # gilgit ishkoman bunji
-            # astore chilas
-            # altit passu misgar
-            # chitral mulkhow yarkhun mastuj urtsun
-            # Yarkent passageway
-            # murgo amtogor raskam sanju
+            tsorub rutok drangtse hanle tashigang
         }
 
         starting_technology_level = 3
@@ -63104,10 +63509,26 @@ countries = {
 
         capital = shey
         government = {
-            ruler = random
+            ruler = mar_lodro_chokden
+        }
+        accepted_cultures = {
+            balti_culture
         }
     }
+    KPU = { #Khaplu
+        own_control_core = {
+            khaplu
+        }
 
+        starting_technology_level = 3
+        include = "expl_india_hindu"
+        include = "indian_hindu_monarchy_no_coast"
+
+        capital = khaplu
+        government = {
+            ruler = yabgo_muqeem
+        }
+    }
     # --- MAR ---
 
     AMD = { #Amdo
@@ -63258,8 +63679,7 @@ countries = {
 
     # --- NBH ---
 
-    DRG = {
-        #Derge
+    DRG = { #Derge
         own_control_core = {
             derge jomda katok kharak sibda tromge wara_kham
         }
@@ -63343,14 +63763,14 @@ countries = {
 
     # --- GYE ---
 
-    ZNK = {
-        #Zanskar
+    ZNK = { #Zanskar
         own_control_core = {
             zangla padum phuktal
+            keylong koksar
         }
 
         include = "east_asia_monarchy_no_coast"
-
+        dynasty = pugyal_dynasty
         capital = zangla
         government = {
             ruler = random
@@ -63375,8 +63795,7 @@ countries = {
 
     # --- LTN ---
 
-    PUR = {
-        #Purang
+    PUR = { #Purang
         our_cores_conquered_by_others = {
             purang tokchen
         }
@@ -69091,8 +69510,7 @@ countries = {
     # OCEANIA
     ###############################################################################
 
-    KAM = {
-        #Kaimana
+    KAM = { #Kaimana
         own_control_core = {
             kaimana buruwai
         }
@@ -69109,7 +69527,6 @@ countries = {
     }
 
     YAP = { #Yap
-        #https://en.wikipedia.org/wiki/Yapese_Empire
         own_control_core = {
             yap
         }
@@ -69125,11 +69542,12 @@ countries = {
         }
         court_language = thin_nu_waab_language
         capital = yap
+        currency_data = {
+            prestige = 80
+        }
     }
 
     TOG = { #Tu'i Tonga
-        #https://en.wikipedia.org/wiki/Tu%CA%BBi_Tonga_Empire
-
         own_control_core = {
             tongatapu niue uvea_atoll
         }
@@ -69141,14 +69559,35 @@ countries = {
         government = {
             type = monarchy
             heir_selection = absolute_cognatic_primogeniture
-            ruler = random
+            ruler = tog_takalaua
+            heir = tog_kauulufonua1
+
+            ruler_term = { character = tog_ahoeitu start_date = 930.1.1 end_date = 980.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_loloofakangalo start_date = 980.1.1 end_date = 1005.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_fangaoneone start_date = 1005.1.1 end_date = 1030.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_lihau start_date = 1030.1.1 end_date = 1055.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_kofutu start_date = 1055.1.1 end_date = 1080.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_kaloa start_date = 1080.1.1 end_date = 1105.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_mauhau start_date = 1105.1.1 end_date = 1130.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_apuanea start_date = 1130.1.1 end_date = 1150.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_ahungange start_date = 1150.1.1 end_date = 1175.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_momo start_date = 1175.1.1 end_date = 1200.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_tuitatui start_date = 1200.1.1 end_date = 1225.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_talatama start_date = 1225.1.1 end_date = 1245.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_talaihaapepe start_date = 1245.1.1 end_date = 1260.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_talakaifaiki start_date = 1260.1.1 end_date = 1285.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_talafapite start_date = 1285.1.1 end_date = 1305.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_tuitonganui start_date = 1305.1.1 end_date = 1330.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_havea1 start_date = 1330.1.1 end_date = 1355.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_tatafuavea start_date = 1355.1.1 end_date = 1375.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_nanasitonga start_date = 1375.1.1 end_date = 1400.1.1 regnal_number = 1 }
+            ruler_term = { character = tog_takalaua start_date = 1400.1.1 regnal_number = 1 }
         }
         court_language = tongic_language
         capital = tongatapu
     }
 
     SAM = { #Samoa
-        #https://en.wikipedia.org/wiki/History_of_Samoa
         own_control_core = {
             savaii upolu
         }
@@ -69159,7 +69598,12 @@ countries = {
         government = {
             type = tribe
             heir_selection = tribal_absolute_cognatic_primogeniture
-            ruler = random
+            ruler = sam_aliatama
+            ruler_term = { character = sam_malietoa_savea start_date = 1220.1.1 end_date = 1280.1.1 regnal_number = 1 }
+            ruler_term = { character = sam_malietoa_aufaga start_date = 1280.1.1 end_date = 1320.1.1 regnal_number = 1 }
+            ruler_term = { character = sam_malietoa_calata start_date = 1320.1.1 end_date = 1360.1.1 regnal_number = 1 }
+            ruler_term = { character = sam_malietoa_tui start_date = 1360.1.1 end_date = 1400.1.1 regnal_number = 1 }
+            ruler_term = { character = sam_aliatama start_date = 1400.1.1 regnal_number = 1 }
         }
         court_language = tongic_language
         capital = savaii
@@ -69177,7 +69621,13 @@ countries = {
         government = {
             type = monarchy
             heir_selection = absolute_cognatic_primogeniture
-            ruler = random
+            ruler = rsm_toalepai
+            heir = rsm_seuea
+            ruler_term = { character = rsm_tui_o_lite start_date = 1250.1.1 end_date = 1310.1.1 regnal_number = 1 }
+            ruler_term = { character = rsm_toalepai_ancestor start_date = 1310.1.1 end_date = 1340.1.1 regnal_number = 1 }
+            ruler_term = { character = rsm_salofi start_date = 1340.1.1 end_date = 1370.1.1 regnal_number = 1 }
+            ruler_term = { character = rsm_levaomana start_date = 1370.1.1 end_date = 1400.1.1 regnal_number = 1 }
+            ruler_term = { character = rsm_toalepai start_date = 1400.1.1 regnal_number = 1 }
         }
         court_language = tongic_language
         capital = tutuila
@@ -69195,13 +69645,17 @@ countries = {
         government = {
             type = theocracy
             heir_selection = theocratic_elective
-            ruler = random
+            ruler = poh_saudemwohl
+            ruler_term = { character = poh_olosihpa start_date = 1100.1.1 end_date = 1140.1.1 regnal_number = 1 }
+            ruler_term = { character = poh_mwohnmwei start_date = 1200.1.1 end_date = 1260.1.1 regnal_number = 1 }
+            ruler_term = { character = poh_raipwenloko start_date = 1270.1.1 end_date = 1330.1.1 regnal_number = 1 }
+            ruler_term = { character = poh_saudemwohl start_date = 1375.1.1 end_date = 1450.1.1 regnal_number = 1 }
         }
         capital = pohnpei
     }
 
     #Hawaii
-    HAW = { #Big Island Hilo
+    HAW = { #Big Island Hawaii
         own_control_core = {
             kohala kona ka_u hilo
         }
@@ -69213,7 +69667,15 @@ countries = {
         government = {
             type = tribe
             heir_selection = tribal_absolute_cognatic_primogeniture
-            ruler = random
+            ruler = haw_liloa
+            ruler_term = { character = haw_pili start_date = 1230.1.1 end_date = 1290.1.1 regnal_number = 1 }
+            ruler_term = { character = haw_kuakoa start_date = 1290.1.1 end_date = 1315.1.1 regnal_number = 1 }
+            ruler_term = { character = haw_koolau start_date = 1315.1.1 end_date = 1340.1.1 regnal_number = 1 }
+            ruler_term = { character = haw_maihinuui start_date = 1340.1.1 end_date = 1365.1.1 regnal_number = 1 }
+            ruler_term = { character = haw_hiilani start_date = 1365.1.1 end_date = 1390.1.1 regnal_number = 1 }
+            ruler_term = { character = haw_luahine start_date = 1390.1.1 end_date = 1415.1.1 regnal_number = 1 }
+            ruler_term = { character = haw_kameeiamoku_ancestor start_date = 1415.1.1 end_date = 1440.1.1 regnal_number = 1 }
+            ruler_term = { character = haw_liloa start_date = 1440.1.1 regnal_number = 1 }
         }
         capital = hilo
     }
@@ -69230,7 +69692,15 @@ countries = {
         government = {
             type = tribe
             heir_selection = tribal_absolute_cognatic_primogeniture
-            ruler = random
+            ruler = mui_kakaalaneo
+            ruler_term = { character = mui_haho start_date = 1220.1.1 end_date = 1280.1.1 regnal_number = 1 }
+            ruler_term = { character = mui_palena start_date = 1280.1.1 end_date = 1305.1.1 regnal_number = 1 }
+            ruler_term = { character = mui_hanalaa start_date = 1305.1.1 end_date = 1330.1.1 regnal_number = 1 }
+            ruler_term = { character = mui_mauiloa start_date = 1330.1.1 end_date = 1355.1.1 regnal_number = 1 }
+            ruler_term = { character = mui_alanaio start_date = 1355.1.1 end_date = 1380.1.1 regnal_number = 1 }
+            ruler_term = { character = mui_kahakumakaloa start_date = 1380.1.1 end_date = 1405.1.1 regnal_number = 1 }
+            ruler_term = { character = mui_kahekili_1 start_date = 1405.1.1 end_date = 1435.1.1 regnal_number = 1 }
+            ruler_term = { character = mui_kakaalaneo start_date = 1435.1.1 regnal_number = 1 }
         }
         capital = maui
     }
@@ -69269,7 +69739,7 @@ countries = {
         capital = moloka_i
     }
 
-    OAH = {
+    OAH = { #O'ahu
         own_control_core = {
             o_ahu
         }
@@ -69281,8 +69751,18 @@ countries = {
         government = {
             type = tribe
             heir_selection = tribal_absolute_cognatic_primogeniture
-            ruler = random
+            ruler = oah_kalanimanuia
             capital = o_ahu
+            ruler_term = { character = oah_maweke start_date = 1180.1.1 end_date = 1240.1.1 regnal_number = 1 }
+            ruler_term = { character = oah_mulielealii start_date = 1240.1.1 end_date = 1265.1.1 regnal_number = 1 }
+            ruler_term = { character = oah_kumuhonua start_date = 1265.1.1 end_date = 1290.1.1 regnal_number = 1 }
+            ruler_term = { character = oah_elepuukahonua start_date = 1290.1.1 end_date = 1315.1.1 regnal_number = 1 }
+            ruler_term = { character = oah_kahokupohakano start_date = 1315.1.1 end_date = 1340.1.1 regnal_number = 1 }
+            ruler_term = { character = oah_nawele start_date = 1340.1.1 end_date = 1365.1.1 regnal_number = 1 }
+            ruler_term = { character = oah_lakona start_date = 1365.1.1 end_date = 1390.1.1 regnal_number = 1 }
+            ruler_term = { character = oah_kukahoko start_date = 1390.1.1 end_date = 1410.1.1 regnal_number = 1 }
+            ruler_term = { character = oah_mailikukahi start_date = 1410.1.1 end_date = 1442.1.1 regnal_number = 1 }
+            ruler_term = { character = oah_kalanimanuia start_date = 1442.1.1 regnal_number = 1 }
         }
     }
 
@@ -69313,7 +69793,8 @@ countries = {
         government = {
             type = tribe
             heir_selection = tribal_absolute_cognatic_primogeniture
-            ruler = random
+            ruler = tog_takalaua
+            heir = tog_kauulufonua1
         }
         court_language = tongic_language
         capital = vauvau
@@ -69395,6 +69876,7 @@ countries = {
             heir_selection = tribal_absolute_cognatic_primogeniture
             ruler = random
         }
+        dynasty = tamatoa_dynasty
         court_language = tongic_language
         capital = havaii
     }
@@ -79253,8 +79735,7 @@ countries = {
 
     # --- YMT ---
 
-    GPH = {
-        # Ganden Monastery, seat of the first Dalai Lama
+    GPH = { # Ganden Monastery, seat of the first Dalai Lama
         type = building
         capital = lhasa
         government = {
@@ -79272,7 +79753,25 @@ countries = {
 
         include = "expl_china"
     }
+    SYA = { # Sakya Monastery, waning seat of the old theocratic order
+        type = building
+        capital = sakya
+        dynasty = khon_dynasty
+        government = {
+            ruler = random
+            type = theocracy
+            heir_selection = theocratic_elective
+            laws = {
+                heir_religion_law = heir_special_succession
+            }
 
+            reforms = {
+                gelugpa_institution
+            }
+        }
+
+        include = "expl_china"
+    }
     # --- GPH ---
 
     AHS = {

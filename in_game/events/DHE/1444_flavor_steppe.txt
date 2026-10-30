@@ -1157,7 +1157,7 @@ flavor_steppe.26 = { # Torghut Exodus - Formation of the Kalmyks
         province:priyutnoye_province = { save_scope_as = priyutnoye }
     }
 
-    option = { # Accept - begin the migration
+    option = { #Migrate
         name = flavor_steppe.26.a
         ai_chance = { factor = 1.0 }
 
@@ -1167,7 +1167,9 @@ flavor_steppe.26 = { # Torghut Exodus - Formation of the Kalmyks
                     is_ownable = yes
                     has_owner = yes
                 }
-                owner = { add_to_list = klk_elista_owners }
+                owner ?= {
+					add_to_list = klk_elista_owners
+				}
             }
         }
 
@@ -1240,7 +1242,6 @@ flavor_steppe.26 = { # Torghut Exodus - Formation of the Kalmyks
 
         every_in_list = {
             list = klk_elista_owners
-            limit = { NOT = { this = c:TRH } }
             save_scope_as = target_country
             c:TRH = {
                 declare_war_with_cb = {

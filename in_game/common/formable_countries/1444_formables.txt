@@ -1,113 +1,156 @@
-﻿UYG_f = {
+﻿# EAST ASIA 
+BOA_f = { # Balhae / Bóhǎi
 	level = 2
-	required_locations_fraction = 0.8
+	required_locations_fraction = 0.7
 	rule = historical
-
+	
 	potential = {
-		culture = culture:uyghur_culture
-		culture = culture:yugur_culture
-		culture = culture:kashgari_culture
-		culture = culture:yarkandi_culture
-		culture = culture:khotani_culture
-		culture = culture:aqsulik_culture
-		culture = culture:turpanlik_culture
-		AND = {
-			OR = {
-				tag = YRK
-				tag = CTK
-				tag = HMI
-			}
-			NOT = {
-				is_subject_of = c:CHG
-				is_subject_of = c:CRS
-			}
+		OR = {
+			culture ?= { has_culture_group = culture_group:jurchen_group }
+			culture = culture:korean_culture
 		}
-		NOT = {
-			tag = CHG
-		}
-	}
-
-	allow = {
-		owns = location:turpan
-		owns = location:urumqi
-		owns = location:yarkand
-		owns = location:kashgar
-		owns = location:khotan
-		owns = location:aksu
 	}
 	
-	name = UYG
-	flag = UYG
-	adjective = UYG_ADJ
-	tag = UYG
-	color = map_UYG
-
-	regions = {
-		xinjiang_region
-	}
-	form_effect = {
-	}
-}
-
-JNZ_f = {
-	level = 1
-	required_locations_fraction = 0.40
-	rule = historical
-
-	potential = {
-		NOT = { tag = JNZ }
-		NOT = { tag = MCH }
-		culture = culture:jurchen_culture
-	}
-
 	allow = {
+		NOT = { tag = MCH } # The Jurchen Jin would want to form Qing.
+		NOT = { tag = KOR } # Joseon wouldn't want to form Balhae.
+		owns = location:shangjing
+		owns = location:hamheung
 	}
-
-	name = JNZ
-	flag = JNZ
-	adjective = JNZ_ADJ
-	tag = JNZ
-	color = map_JNZ
-
-	provinces = {
-		dingliao_province
-		liaoyang_province
-		upper_songhua_province
-		tumen_province
-		mudan_province
+	
+	name = BOA
+	flag = BOA
+	adjective = BOA_ADJ
+	tag = BOA
+	color = map_BOA
+	
+	areas = {
+		liaodong_area
+		songhua_area
+		ussuri_area
+		gwanbuk_area
+		gwanseo_area
 	}
+	
 	form_effect = {
 		if = {
-			limit = {
-				country_rank_level < 3
-			}
-			set_country_rank_effect = {
-				rank = country_rank:rank_kingdom
-			}
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
 		}
 	}
 }
-
-HXI_f = {
+ 
+CDL_f = { # Dali Kingdom / Dablit Guaif
+	level = 2
+	required_locations_fraction = 0.5
+	rule = historical
+ 
+	potential = {
+		culture = culture:bai_culture
+	}
+ 
+	allow = {
+		owns = location:taihe_dali
+	}
+ 
+	name = CDL
+	flag = CDL
+	adjective = CDL_ADJ
+	tag = CDL
+	color = map_CDL
+ 
+	areas = {
+		yunnan_area
+		dali_area
+	}
+ 
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+REPLACE:CHI_f = { #China
+	level = 4
+	required_locations_fraction = 0.7
+	rule = historical
+ 
+	potential = {
+		culture = {
+			OR = {
+				has_culture_group = culture_group:chinese_group
+				has_culture_group = culture_group:confucian_group
+			}
+		}
+		NOT = { exists = international_organization:middle_kingdom }
+	}
+ 
+	allow = {
+		NOT = { is_situation_active = situation:red_turban_rebellions }
+	}
+ 
+	tag = CHI
+ 
+	regions = {
+		west_china_region east_china_region north_china_region south_china_region
+	}
+	form_effect = {
+		change_government_type = government_type:monarchy
+		rtr_recreate_middle_kingdom = yes
+		set_country_rank_effect = { rank = country_rank:rank_empire }
+	}
+}
+ 
+DNM_f = { # Đại Nam
+	level = 3
+	required_locations_fraction = 0.8
+	rule = historical
+	
+	potential = {
+		culture = culture:vietnamese_culture
+	}
+	
+	allow = {
+	}
+	
+	name = DNM
+	flag = DNM
+	adjective = DNM_ADJ
+	tag = DNM
+	color = map_DNM
+	
+	areas = {
+		red_river_delta_area
+		lower_mekong_area
+		champa_area
+	}
+	
+	form_effect = {
+	}
+}
+ 
+HXI_f = { #Haixi Confederation
 	level = 1
 	required_locations_fraction = 0.40
 	rule = historical
-
+ 
 	potential = {
 		NOT = { tag = HXI }
 		NOT = { tag = MCH }
 		culture = culture:haixi_culture
 	}
-
+ 
 	allow = {
 	}
-
+ 
 	name = HXI
 	flag = HXI
 	adjective = HXI_ADJ
 	tag = HXI
 	color = map_HXI
-
+ 
 	provinces = {
 		yizhou_liaodong_province
 		middle_songhua_province
@@ -126,32 +169,33 @@ HXI_f = {
 		}
 	}
 }
-
-YER_f = {
+ 
+JNZ_f = { # Jurchen Confederation
 	level = 1
-	required_locations_fraction = 0.07
+	required_locations_fraction = 0.40
 	rule = historical
-
+ 
 	potential = {
-		NOT = { tag = YER }
+		NOT = { tag = JNZ }
 		NOT = { tag = MCH }
-		OR = {
-			culture = culture:hurga_culture
-			culture = culture:udege_culture
-		}
+		culture = culture:jurchen_culture
 	}
-
+ 
 	allow = {
 	}
-
-	name = YER
-	flag = YER
-	adjective = YER_ADJ
-	tag = YER
-	color = map_YER
-
-	regions = {
-		manchuria_region
+ 
+	name = JNZ
+	flag = JNZ
+	adjective = JNZ_ADJ
+	tag = JNZ
+	color = map_JNZ
+ 
+	provinces = {
+		dingliao_province
+		liaoyang_province
+		upper_songhua_province
+		tumen_province
+		mudan_province
 	}
 	form_effect = {
 		if = {
@@ -164,8 +208,8 @@ YER_f = {
 		}
 	}
 }
-
-REPLACE:MCH_f = {
+ 
+REPLACE:MCH_f = { #Manchuria
 	level = 3
 	required_locations_fraction = 0.35
 	rule = historical
@@ -173,8 +217,7 @@ REPLACE:MCH_f = {
 	potential = {
 		culture ?= { has_culture_group = culture_group:jurchen_group }
 	}
-
-
+ 
 	name = MCH
 	flag = MCH
 	adjective = MCH_ADJ
@@ -200,515 +243,8 @@ REPLACE:MCH_f = {
 		}
 	}
 }
-
-BAL_f = {
-	level = 2
-	required_locations_fraction = 0.6
-	rule = historical
-
-	potential = {
-		OR = { 
-			culture = culture:baloch_culture
-			culture = culture:brahui_culture
-		}
-	}
-
-	allow = {
-	}
-	
-	name = BAL
-	flag = BAL
-	adjective = BAL_ADJ
-	tag = BAL
-	color = map_BAL
-
-	areas = {
-		baluchistan_area
-	}
-	provinces = {
-		sibi_province
-		koh_e_sulayman_province
-		kahnuj_province
-	}
-	form_effect = {
-	}
-}
-
-AFG_f = {
-    level = 2
-    required_locations_fraction = 0.5
-    rule = historical
-	potential_requires_own = no
-
-    potential = {
-        culture = culture:afghan_culture 
-    }
-
-    allow = {
-        owns = location:kabul
-        owns = location:kandahar 
-    }
-    
-    name = AFG
-    flag = AFG
-    adjective = AFG_ADJ
-    tag = AFG
-    color = desaturated_green
-
-    provinces = {
-        kabul_province
-        kandahar_province
-		ghazni_province
-    }
-	form_effect = {
-	}
- }
-
-KHP_f = {
-	level = 1
-	required_locations_fraction = 0.6
-	rule = historical
-
-	potential = {
-		culture = culture:khampa_culture
-	}
-
-	allow = {
-	}
-	
-	name = KHP
-	flag = KHP
-	adjective = KHP_ADJ
-	tag = KHP
-	color = map_KHP
-
-	areas = {
-		kham_area
-	}
-	form_effect = {
-	}
-}
-
-UTS_f = {
-	level = 1
-	required_locations_fraction = 0.8
-	rule = historical
-
-	potential = {
-		culture = culture:utsang_culture
-	}
-
-	allow = {
-		NOT = {
-			tag = TIB
-		}
-	}
-	
-	name = UTS
-	flag = UTS
-	adjective = UTS_ADJ
-	tag = UTS
-	color = map_UTS
-
-	areas = {
-		u_area
-		tsang_area
-	}
-	form_effect = {
-		set_country_rank_effect = { rank = country_rank:rank_kingdom }
-	}
-}
-
-CAZ_f = { #Carolinias
-	level = 2
-	required_locations_fraction = 0.8
-	rule = plausible
-	
-	potential = {
-		OR = {
-			culture = culture:yap_culture
-			culture = culture:chamoru_culture
-		}
-	}
-
-	allow = {
-	}
-	
-	name = CAZ
-	flag = CAZ
-	adjective = CAZ_ADJ
-	tag = CAZ
-	color = map_CAZ
-	areas = {
-		belau_area
-		chuuk_area
-		marianas_area
-	}
-	form_effect = {
-	}
-}
-
-AKO_f = { #Aleon Kein Ad
-	level = 2
-	required_locations_fraction = 0.8
-	rule = plausible
-	
-	potential = {
-		culture = culture:kajoor_ri_majel_culture
-	}
-
-	allow = {
-	}
-	
-	name = AKO
-	flag = AKO
-	adjective = AKO_ADJ
-	tag = AKO
-	color = map_AKO
-	areas = {
-		ratak_area
-		ralik_area
-	}
-	form_effect = {
-	}
-}
-
-VIT_f = { #Viti
-	level = 2
-	required_locations_fraction = 0.8
-	rule = plausible
-	
-	potential = {
-		culture = culture:itaukei_culture
-	}
-
-	allow = {
-	}
-	
-	name = VIT
-	flag = VIT
-	adjective = VIT_ADJ
-	tag = VIT
-	color = map_VIT
-	areas = {
-		fiji_area
-	}
-	form_effect = {
-	}
-}
-
-HII_f = { #Kingdom of Hawaii
-	level = 2
-	required_locations_fraction = 0.8
-	rule = historical
-	
-	potential = {
-		culture = culture:kanaka_maoli_culture
-	}
-
-	allow = {
-	}
-	
-	name = HII
-	flag = HII
-	adjective = HII_ADJ
-	tag = HII
-	color = map_HII
-	areas = {
-		hawaii_area
-	}
-	form_effect = {
-		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		}
-	}
-}
-
-AOT_f = { #Aotearoa
-	level = 2y
-	required_locations_fraction = 0.8
-	rule = plausible
-	
-	potential = {
-		culture = culture:maori_culture
-	}
-
-	allow = {
-	}
-	
-	name = AOT
-	flag = AOT
-	adjective = AOT_ADJ
-	tag = AOT
-	color = map_AOT
-	regions = {
-		new_zealand_region
-	}
-	form_effect = {
-	}
-}
-
-POF_f = { #Maohi
-	level = 2
-	required_locations_fraction = 0.7
-	rule = plausible
-	
-	potential = {
-		OR = {
-			culture = culture:maohi_culture
-			culture = culture:tuamotus_culture
-			culture = culture:mangareva_culture
-			culture = culture:enana_culture
-		}
-	}
-
-	allow = {
-	}
-	
-	name = POF
-	flag = POF
-	adjective = POF_ADJ
-	tag = POF
-	color = map_POF
-	areas = {
-		totaiete_ma_area
-		palliser_area
-		raeffsky_area
-		kuki_airani_area
-		tuamotu_area
-		te_henua_enana_area
-	}
-	form_effect = {
-	}
-}
-
-HMZ_f = { #Hamoa
-	level = 2
-	required_locations_fraction = 1
-	rule = plausible
-	
-	potential = {
-		OR = {
-			culture = culture:tagata_samoa_culture
-			culture = culture:tonga_oceania_culture
-		}
-	}
-
-	allow = {
-	}
-	
-	name = HMZ
-	flag = HMZ
-	adjective = HMZ_ADJ
-	tag = HMZ
-	color = map_HMZ
-	areas = {
-		tonga_area
-		samoa_area
-		niue_area
-		futuna_area
-	}
-	form_effect = {
-	}
-}
-
-PYN_f = { #Polynesia
-	level = 3
-	required_locations_fraction = 0.9
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		culture = { has_culture_group = culture_group:polynesian_group }
-	}
-
-	allow = {
-	}
-	
-	name = PYN
-	flag = PYN
-	adjective = PYN_ADJ
-	tag = PYN
-	color = map_PYN
-	regions = {
-		polynesia_region
-	}
-	form_effect = {
-		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		}
-	}
-}
-
-
-MIN_f = { #Micronesia
-	level = 3
-	required_locations_fraction = 0.80
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		culture = { has_culture_group = culture_group:micronesian_group }
-	}
-
-	allow = {
-
-	}
-	
-	name = MIN
-	flag = MIN
-	adjective = MIN_ADJ
-	tag = MIN
-	color = map_MIN
-	areas = {
-		ratak_area
-		ralik_area
-		belau_area
-		chuuk_area
-		marianas_area
-	}
-	form_effect = {
-		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		}
-	}
-}
-
-MLN_f = { #Melanesia
-	level = 3
-	required_locations_fraction = 0.80
-	capital_required = yes 
-	rule = plausible
-	
-	potential = {
-		culture = { has_culture_group = culture_group:micronesian_group }
-	}
-
-	allow = {
-
-	}
-	
-	name = MLN
-	flag = MLN
-	adjective = MLN_ADJ
-	tag = MLN
-	color = map_MLN
-	areas = {
-		fiji_area
-		tinputz_area
-		vanuatu_area
-		kanaky_area
-		bismarck_area
-	}
-	form_effect = {
-		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		}
-	}
-}
-
-OCE_f = { #Oceania
-	level = 4
-	required_locations_fraction = 0.7
-	capital_required = yes 
-	rule = historical
-	
-	potential = {
-		or = {
-			culture = { has_culture_group = culture_group:micronesian_group }
-			culture = { has_culture_group = culture_group:polynesian_group }
-		}
-	}
-
-	allow = {
-	}
-	
-	name = OCE
-	flag = OCE
-	adjective = OCE_ADJ
-	tag = OCE
-	color = map_OCE
-	regions = {
-		new_zealand_region
-		micronesia_region
-		melanesia_region
-		polynesia_region
-	}
-	form_effect = {
-		if = {
-			limit = { country_rank_level < 4 }
-			set_country_rank_effect = { rank = country_rank:rank_empire }
-		}
-	}
-}
-
-FRI_f = {
-	level = 1
-	required_locations_fraction = 0.6
-	rule = historical
-
-	potential = {
-		culture = culture:frisian
-	}
-
-	allow = {
-	}
-
-	name = FRI
-	flag = FRI
-	adjective = FRI_ADJ
-	tag = FRI
-	color = map_FRI
-
-	areas = {
-		friesland_area
-	}
-	provinces = {
-		south_holland_province
-		north_holland_province
-	}
-	locations = {
-		elsfleth
-		ritzebuttel
-		husum tonder
-	}
-	form_effect = {
-	}
-}
-
-POR_f = {
-	level = 2
-	required_locations_fraction = 0.8
-	rule = historical
-
-	potential = {
-		culture = culture:portuguese
-	}
-
-	allow = {
-	}
-
-	name = POR
-	flag = POR
-	adjective = POR_ADJ
-	tag = POR
-	color = map_POR
-
-	areas = {
-		south_portugal_area
-		north_portugal_area
-	}
-	form_effect = {
-		set_country_rank_effect = { rank = country_rank:rank_empire }
-	}
-}
-
-NYE_f = {
-	# Nanyue / Nam Việt
+ 
+NYE_f = { # Nanyue / Nam Việt
 	level = 3
 	required_locations_fraction = 0.8
 	rule = historical
@@ -759,164 +295,230 @@ NYE_f = {
 		}
 	}
 }
-
-BOA_f = {
-	# Balhae / Bóhǎi
-	level = 2
-	required_locations_fraction = 0.7
+ 
+YER_f = { #Yeren Confederation
+	level = 1
+	required_locations_fraction = 0.07
 	rule = historical
-	
+ 
 	potential = {
+		NOT = { tag = YER }
+		NOT = { tag = MCH }
 		OR = {
-			culture ?= { has_culture_group = culture_group:jurchen_group }
-			culture = culture:korean_culture
+			culture = culture:hurga_culture
+			culture = culture:udege_culture
 		}
 	}
-	
+ 
 	allow = {
-		NOT = { tag = MCH } # The Jurchen Jin would want to form Qing.
-		NOT = { tag = KOR } # Joseon wouldn't want to form Balhae.
-		owns = location:shangjing
-		owns = location:hamheung
 	}
-	
-	name = BOA
-	flag = BOA
-	adjective = BOA_ADJ
-	tag = BOA
-	color = map_BOA
-	
-	areas = {
-		liaodong_area
-		songhua_area
-		ussuri_area
-		gwanbuk_area
-		gwanseo_area
+ 
+	name = YER
+	flag = YER
+	adjective = YER_ADJ
+	tag = YER
+	color = map_YER
+ 
+	regions = {
+		manchuria_region
 	}
-	
 	form_effect = {
 		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank_effect = { rank = country_rank:rank_kingdom }
-		}
-	}
-}
-
-REPLACE:CHI_f = {
-	level = 4
-	required_locations_fraction = 0.7
-	rule = historical
-
-	potential = {
-		culture = {
-			OR = {
-				has_culture_group = culture_group:chinese_group
-				has_culture_group = culture_group:confucian_group
+			limit = {
+				country_rank_level < 3
+			}
+			set_country_rank_effect = {
+				rank = country_rank:rank_kingdom
 			}
 		}
-		NOT = { exists = international_organization:middle_kingdom }
 	}
-
+}
+ 
+# CENTRAL ASIA / SILK ROAD
+AFG_f = { #Afghanistan
+    level = 2
+    required_locations_fraction = 0.5
+    rule = historical
+	potential_requires_own = no
+ 
+    potential = {
+        culture = culture:afghan_culture 
+    }
+ 
+    allow = {
+        owns = location:kabul
+        owns = location:kandahar 
+    }
+    
+    name = AFG
+    flag = AFG
+    adjective = AFG_ADJ
+    tag = AFG
+    color = desaturated_green
+ 
+    provinces = {
+        kabul_province
+        kandahar_province
+		ghazni_province
+    }
+	form_effect = {
+	}
+}
+ 
+CHG_f = { #Chagatai / Moghulistan
+	level = 3
+	required_locations_fraction = 1
+	rule = historical
+	potential_requires_own = no
+ 
+	potential = {
+		tag = CTK
+	}
+ 
 	allow = {
-		NOT = { is_situation_active = situation:red_turban_rebellions }
+		owns = location:almaliq
+		owns = location:turpan
 	}
-
-	tag = CHI
-
-	regions = {
-		west_china_region east_china_region north_china_region south_china_region
+	
+	name = CHG
+	flag = CHG
+	adjective = CHG_ADJ
+	tag = CHG
+	color = map_CHG
+ 
+	provinces = {
+		almaliq_province
 	}
 	form_effect = {
-		change_government_type = government_type:monarchy
-		rtr_recreate_middle_kingdom = yes
-		set_country_rank_effect = { rank = country_rank:rank_empire }
 	}
-
 }
-
-DNM_f = {
-	# Đại Nam
+ 
+KRO_f = { #Khorezmia
 	level = 3
 	required_locations_fraction = 0.8
 	rule = historical
-	
+	capital_required = yes 
+ 
 	potential = {
-		culture = culture:vietnamese_culture
+		OR = {
+			owns = location:urgench
+			owns = location:khiva
+		}
+		OR = {
+			culture = culture:uzbek_culture
+			culture = culture:khorezmian_culture
+		}
 	}
-	
+ 
 	allow = {
+		OR = {
+			owns = location:urgench
+			owns = location:khiva
+		}
+		is_subject = no
 	}
 	
-	name = DNM
-	flag = DNM
-	adjective = DNM_ADJ
-	tag = DNM
-	color = map_DNM
-	
-	areas = {
-		red_river_delta_area
-		lower_mekong_area
-		champa_area
+	name = KRO
+	flag = KRO
+	adjective = KRO_ADJ
+	tag = KRO
+	color = map_khorezmian
+ 
+	provinces = {
+		khiva_province
+		kath_province
 	}
-	
 	form_effect = {
 	}
 }
-
-CDL_f = {
-	# Dali Kingdom / Dablit Guaif
-	level = 2
-	required_locations_fraction = 0.5
+ 
+REPLACE:MUG_f = { #Mughal
+	level = 4
+	required_locations_fraction = 0.8
 	rule = historical
-
+	potential_requires_own = no
+	
 	potential = {
-		culture = culture:bai_culture
+		OR = {
+			ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
+			culture = culture:tajik_culture
+			culture = culture:moghul_culture
+			culture = culture:afghan_culture
+		}
 	}
-
+ 
 	allow = {
-		owns = location:taihe_dali
+		religion.group = religion_group:muslim
+		owns = location:delhi
+		owns = location:agra
+		owns = location:lahore
 	}
-
-	name = CDL
-	flag = CDL
-	adjective = CDL_ADJ
-	tag = CDL
-	color = map_CDL
-
-	areas = {
-		yunnan_area
-		dali_area
+	
+	name = MUG
+	flag = MUG
+	adjective = MUG_ADJ
+	tag = MUG
+	color = map_MUG
+	regions = {
+		hindustan_region
 	}
-
 	form_effect = {
 		if = {
-			limit = { country_rank_level < 3 }
-			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
 		}
 	}
 }
-
+ 
+REPLACE:TIM_f = { #Timurid Empire
+	level = 4
+	required_locations_fraction = 0.8
+	potential_requires_own = no
+	rule = historical
+	
+	potential = {
+		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
+	}
+ 
+	name = TIM
+	flag = TIM
+	adjective = TIM_ADJ
+	tag = TIM
+	color = map_TIM
+	regions = {
+		persia_region
+		khorasan_region
+	}
+ 
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+	}
+}
+ 
 TTK_f = { #Balkh
 	level = 2
 	required_locations_fraction = 0.5
 	rule = historical
 	capital_required = yes 
-
+ 
 	potential = {
 		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
 	}
-
+ 
 	allow = {
 		owns = location:balkh
 		owns = location:mazar_i_sharif
 	}
-
+ 
 	name = TTK
 	flag = TTK
 	adjective = TTK_ADJ
 	tag = TTK
 	color = map_TTK
-
+ 
 	provinces = {
 		balkh_province
 		maymana_province
@@ -932,7 +534,791 @@ TTK_f = { #Balkh
         }
 	}
 }
-GII_f = {
+ 
+UYG_f = { #Uyghuristan / Altishar
+	level = 2
+	required_locations_fraction = 0.8
+	rule = historical
+ 
+	potential = {
+		culture = culture:uyghur_culture
+		culture = culture:yugur_culture
+		culture = culture:kashgari_culture
+		culture = culture:yarkandi_culture
+		culture = culture:khotani_culture
+		culture = culture:aqsulik_culture
+		culture = culture:turpanlik_culture
+		AND = {
+			OR = {
+				tag = YRK
+				tag = CTK
+				tag = HMI
+			}
+			NOT = {
+				is_subject_of = c:CHG
+				is_subject_of = c:CRS
+			}
+		}
+		NOT = {
+			tag = CHG
+		}
+	}
+ 
+	allow = {
+		owns = location:turpan
+		owns = location:urumqi
+		owns = location:yarkand
+		owns = location:kashgar
+		owns = location:khotan
+		owns = location:aksu
+	}
+	
+	name = UYG
+	flag = UYG
+	adjective = UYG_ADJ
+	tag = UYG
+	color = map_UYG
+ 
+	regions = {
+		xinjiang_region
+	}
+	form_effect = {
+	}
+}
+ 
+# TIBET / HIMALAYAS
+ 
+KHP_f = { #Kham
+	level = 1
+	required_locations_fraction = 0.6
+	rule = historical
+ 
+	potential = {
+		culture = culture:khampa_culture
+	}
+ 
+	allow = {
+	}
+	
+	name = KHP
+	flag = KHP
+	adjective = KHP_ADJ
+	tag = KHP
+	color = map_KHP
+ 
+	areas = {
+		kham_area
+	}
+	form_effect = {
+	}
+}
+ 
+REPLACE:TIB_f = { #Tibet
+	level = 2
+	required_locations_fraction = 0.6
+	rule = historical
+	potential = {
+		culture = { has_culture_group = culture_group:tibetan_group }
+	}
+	name = TIB
+	flag = TIB
+	adjective = TIB_ADJ
+	tag = TIB
+	color = map_TIB
+	regions = {
+		tibet_region
+	}
+	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_empire }
+	}
+}
+ 
+UTS_f = { # U-Tsang
+	level = 1
+	required_locations_fraction = 0.8
+	rule = historical
+ 
+	potential = {
+		culture = culture:utsang_culture
+	}
+ 
+	allow = {
+		NOT = {
+			tag = TIB
+		}
+	}
+	
+	name = UTS
+	flag = UTS
+	adjective = UTS_ADJ
+	tag = UTS
+	color = map_UTS
+ 
+	areas = {
+		u_area
+		tsang_area
+	}
+	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_kingdom }
+	}
+}
+ 
+# STEPPE
+BEH_f = { #Blue Horde
+	level = 3
+	required_locations_fraction = 0.75
+	rule = plausible
+	capital_required = no
+	potential_requires_own = no
+ 
+	potential = {
+		exists = international_organization:golden_horde
+		is_member_of_international_organization = international_organization:golden_horde
+		culture = { has_culture_group = culture_group:tatar_group }
+		NOT = { tag = UZB }
+		NOT = { tag = SIB }
+		NOT = { country_exists = c:GLH  }
+	}
+ 
+	allow = {
+		exists = international_organization:golden_horde
+		is_leader_of_international_organization = international_organization:golden_horde
+		owns = location:sarai_al_jadid
+		owns = location:kazan
+		owns = location:qirq_yer
+		OR = {
+			AND = {
+				tag = GTH
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:CRI }
+			}
+			AND = {
+				tag = KZN
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:CRI }
+			}
+			AND = {
+				tag = CRI
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+			}
+			AND = {
+				OR = {
+					culture = culture:cuman_culture
+					culture = culture:nogai
+					culture = culture:bashkir
+					culture = culture:astrakhani
+				}
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:CRI }
+			}
+		}
+	}
+	
+	name = BEH
+	flag = BEH
+	adjective = BEH_ADJ
+	tag = BEH
+	color = map_blue_horde
+	
+	areas = {
+		astrakhan_area majar_area azov_area	lower_don_area lower_yik_area tambov_area samara_area kazan_area
+		bolghar_area pryazovia_area yedisan_area crimea_area zaporizhzhia_area
+	}
+	provinces = {
+		bielska_sloboda_province izium_province voronezh_province alexeyevka_province bogdanovo_province sarov_province
+	}
+ 
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+GLH_f = { #Golden Horde
+	level = 4
+	required_locations_fraction = 0.80
+	rule = plausible
+	capital_required = no
+	potential_requires_own = no
+ 
+	potential = {
+		exists = international_organization:golden_horde
+		OR = {
+			is_member_of_international_organization = international_organization:golden_horde
+			culture = culture:cuman_culture
+		}
+	}
+ 
+	allow = {
+		exists = international_organization:golden_horde
+		is_leader_of_international_organization = international_organization:golden_horde
+		owns = location:sarai_al_jadid
+		owns = location:kazan
+		owns = location:qirq_yer
+		owns = location:chimgi_tura
+		OR = {
+			AND = {
+				tag = GTH
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:CRI }
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = KZN
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:CRI }
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = UZB
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:CRI }
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = CRI
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = SBR
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:CRI }
+			}
+			AND = {
+				OR = {
+					culture = culture:cuman_culture
+					culture = culture:nogai
+					culture = culture:bashkir
+					culture = culture:astrakhani
+					culture = culture:kazakh_culture
+				}
+				NOT = { country_exists = c:GTH }
+				NOT = { country_exists = c:KZN }
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:CRI }
+				NOT = { country_exists = c:SBR }
+			}
+		}
+	}
+	
+	name = GLH
+	flag = GLH
+	adjective = GLH_ADJ
+	tag = GLH
+	color = map_golden_horde
+	
+	areas = {
+		astrakhan_area majar_area azov_area	lower_don_area lower_yik_area tambov_area samara_area kazan_area
+		bolghar_area pryazovia_area yedisan_area crimea_area zaporizhzhia_area desht_kipchak_area kulykol_area
+		chimgi_tura_area omsk_area
+	}
+	provinces = {
+		bielska_sloboda_province izium_province voronezh_province alexeyevka_province bogdanovo_province sarov_province
+		bursol_province imakia_province karasor_province tara_province tobolsk_province
+	}
+ 
+	form_effect = {
+		destroy_international_organization = { target = international_organization:golden_horde }
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+	}
+}
+ 
+GTH_f = { #Great Horde
+	level = 3
+	required_locations_fraction = 1
+	rule = historical
+	potential_requires_own = no
+	capital_required = no
+	
+	potential = {
+		tag = AGZ
+	}
+ 
+	allow = {
+		owns = location:sarai_al_jadid
+		AND = {
+			tag = AGZ
+			NOT = { country_exists = c:GTH }
+		}
+	}
+	
+	name = GTH
+	flag = GTH
+	adjective = GTH_ADJ
+	tag = GTH
+	color = map_GTH
+	locations = {
+		sarai_al_jadid
+	}
+	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_kingdom }
+	}
+}
+ 
+REPLACE:KAZ_f = { #Kazakh
+	level = 1
+	required_locations_fraction = 0.75
+	rule = historical
+ 
+	potential = {
+		culture = culture:kazakh_culture
+	}
+	allow = {
+	}
+ 
+	name = KAZ
+	flag = KAZ	
+	adjective = KAZ_ADJ
+	tag = KAZ
+	color = map_KAZ
+ 
+	areas = {
+		desht_kipchak_area
+		zhetysu_area
+	}
+ 
+	form_effect = {
+	}
+}
+ 
+KHA_f = { #Khorchin
+	level = 3
+	required_locations_fraction = 0.25
+	rule = historical
+	potential_requires_own = no
+	capital_required = no
+	potential = {
+		culture = culture:khorchin_culture
+	}
+ 
+	allow = {
+		custom_tooltip = {
+			text = KHA_f_tt
+			always = no
+		}
+	}
+	
+	name = KHA
+	flag = KHA
+	adjective = KHA_ADJ
+	tag = KHA
+	color = map_KHA
+	
+    regions = { mongolia_region }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
+	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
+	form_effect = {
+        if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+KHL_f = { #Khalkha and Chahar
+	level = 3
+	required_locations_fraction = 0.25
+	rule = plausible
+	capital_required = no
+	potential_requires_own = no
+	potential = {
+        or = {
+    		culture = culture:khalkha_culture
+            culture = culture:mongolian_culture
+        }
+    }
+ 
+	allow = {
+		custom_tooltip = {
+			text = KHL_f_tt
+			always = no
+		}
+	}
+	
+	name = KHL
+	flag = KHL
+	adjective = KHL_ADJ
+	tag = KHL
+	color = map_KHL
+	
+    regions = { mongolia_region }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
+	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
+	form_effect = {
+        if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+REPLACE:MGE_f = { #Mongol Empire
+	level = 4
+	required_locations_fraction = 0.85
+	rule = historical
+	potential = {
+		OR = {
+			AND = {
+				culture = {
+					OR = {
+						has_culture_group = culture_group:mongolian_group
+						has_culture_group = culture_group:turkic_group
+					}
+				}
+				government_type = government_type:steppe_horde
+				OR = {
+					tag = GLH
+					tag = YUA
+					tag = ILK
+					tag = CHA
+				}
+			}
+		}
+	}
+	allow = {
+		in_civil_war = no
+		owns = location:sarai_al_jadid
+		owns = location:kazan
+		owns = location:samarkand
+		owns = location:kaffa
+		owns = location:dadu
+		owns = location:shangyuan
+		owns = location:baxian
+		owns = location:guangzhou
+		owns = location:karakorum
+	}
+	
+	name = MGE
+	flag = MGE
+	adjective = MGE_ADJ
+	tag = MGE
+	color = map_MGE
+	regions = {
+		mongolia_region
+		persia_region
+		east_china_region
+		north_china_region
+		south_china_region
+		west_china_region
+		steppes_region
+		russian_region
+		khorasan_region
+		xinjiang_region
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+		if = {
+			limit = { has_variable = rise_of_timur_situation_country }
+			trigger_event_non_silently = rise_of_timur.9
+		}
+		else = {
+			add_country_modifier = {
+				modifier = restoration_of_the_mongol_empire
+				years = 50
+				mode = add_and_extend
+			}
+		}
+	}
+}
+ 
+REPLACE:MGO_f = { #Mongolia
+    level = 4
+    required_locations_fraction = 0.50
+    rule = plausible
+	potential_requires_own = no
+ 
+    potential = {
+        exists = international_organization:northern_yuan
+		is_member_of_international_organization = international_organization:northern_yuan
+    }
+ 
+    allow = {
+        custom_tooltip = {
+            text = MGA_f_tt
+            always = no
+        }
+    }
+ 
+    name = MGA
+    flag = MGA
+    adjective = MGA_ADJ
+    tag = MGA
+    color = map_MGA
+ 
+    regions = {
+        mongolia_region
+    }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
+	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
+    form_effect = {
+        if = {
+            limit = { country_rank_level < 4 }
+            set_country_rank_effect = { rank = country_rank:rank_empire }
+        }
+    }
+}
+ 
+NOG_f = { #Nogai
+    level = 3
+    required_locations_fraction = 0.1
+    rule = historical
+	capital_required = no
+	potential_requires_own = no
+    potential = {
+        culture = culture:nogai
+    }
+ 
+    allow = {
+        custom_tooltip = {
+            text = NOG_f_tt
+            always = no
+        }
+    }
+ 
+    name = NOG
+    flag = NOG
+    adjective = NOG_ADJ
+    tag = NOG
+    color = map_NOG
+ 
+    regions = {
+		steppes_region
+	}
+	form_effect = {
+        if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+OIR_f = { #Oirat
+    level = 3
+    required_locations_fraction = 0.25
+	potential_requires_own = no
+    rule = historical
+	capital_required = no
+    potential = {
+        culture = culture:oirat_culture
+    }
+ 
+    allow = {
+        custom_tooltip = {
+            text = OIR_f_tt
+            always = no
+        }
+    }
+ 
+    name = OIR
+    flag = OIR
+    adjective = OIR_ADJ
+    tag = OIR
+    color = map_OIR
+ 
+    regions = { mongolia_region }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
+	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}
+	form_effect = {
+        if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+URZ_f = { #Uriankhai
+    level = 3
+    required_locations_fraction = 0.25
+    rule = historical
+	capital_required = no
+	potential_requires_own = no
+    potential = {
+        culture = culture:uriankhai_culture
+    }
+ 
+    allow = {
+        custom_tooltip = {
+            text = URZ_f_tt
+            always = no
+        }
+    }
+ 
+    name = URZ
+    flag = URZ
+    adjective = URZ_ADJ
+    tag = URZ
+    color = map_URZ
+ 
+    regions = { mongolia_region }
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
+	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
+	form_effect = {
+        if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+WHI_f = { #White Horde
+	level = 3
+	required_locations_fraction = 0.80
+	rule = plausible
+	capital_required = no
+	potential_requires_own = no
+ 
+	potential = {
+		exists = international_organization:golden_horde
+		is_member_of_international_organization = international_organization:golden_horde
+		OR = {
+			culture = culture:uzbek_culture
+			culture = culture:yerle_qaliq_culture
+			culture = culture:kazakh_culture
+		}
+		NOT = { country_exists = c:GLH  }
+	}
+ 
+	allow = {
+		exists = international_organization:golden_horde
+		owns = location:chimgi_tura
+		OR = {
+			AND = {
+				tag = UZB
+				NOT = { country_exists = c:SBR }
+			}
+			AND = {
+				tag = SBR
+				NOT = { country_exists = c:UZB }
+			}
+			AND = {
+				OR = {
+					culture = culture:kazakh_culture
+				}
+				NOT = { country_exists = c:UZB }
+				NOT = { country_exists = c:SBR }
+			}
+		}
+	}
+	
+	name = WHI
+	flag = WHI
+	adjective = WHI_ADJ
+	tag = WHI
+	color = map_SIB
+	
+	areas = {
+		desht_kipchak_area kulykol_area chimgi_tura_area omsk_area
+	}
+	provinces = {
+		bursol_province imakia_province karasor_province tara_province tobolsk_province
+	}
+ 
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+REPLACE:YUA_f = { #Yuan
+    level = 4
+    required_locations_fraction = 0.50
+    rule = plausible
+	potential_requires_own = no
+    potential = {
+        exists = international_organization:northern_yuan
+		is_member_of_international_organization = international_organization:northern_yuan
+    }
+ 
+    allow = {
+        custom_tooltip = {
+            text = YUA_f_tt
+            always = no
+        }
+    }
+ 
+    name = YUA
+    flag = YUA
+    adjective = YUA_ADJ
+    tag = YUA
+    color = map_YUA
+ 
+    regions = {
+		mongolia_region
+	}
+    areas = { yanbei_area }
+    provinces = {
+		hetao_province ordos_province qingcheng_province jining_shanxi_province xiliao_province taoer_province chol_province nuomin_province
+        hami_province beshbalik_province altay_province yangjibaliq_province altayskoye_province kurchum_province guangning_province
+	}
+    locations = {
+		xuanning yizhou_jurchen tongliao ningchang
+        slyudyanka oskemen niuquanzi changchun nongan boduna kuile gan dobkuri non mohe gonganbao zhekdeliq manas kuytun usu_xinjiang urghtbulaq utbulaq toli hoboksar emin targabatay dahra_sasykkol ayagoz sarybulak arkat
+	}    
+	form_effect = {
+        if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+	}
+}
+ 
+# CAUCASUS / CASPIAN
+GII_f = { #Gilan
 	level = 1
 	required_locations_fraction = 0.5
 	rule = historical
@@ -944,7 +1330,7 @@ GII_f = {
 			culture = culture:talysh_culture
 		}
 	}
-
+ 
 	allow = {
 		owns = location:fuman
 		owns = location:astara
@@ -956,58 +1342,21 @@ GII_f = {
 	adjective = GII_ADJ
 	tag = GII
 	color = map_gilak
-
+ 
 	provinces = {
 		gilan_province
 	}
 	form_effect = {
 	}
 }
-KRO_f = { #Khorezmia
-	level = 3
-	required_locations_fraction = 0.8
-	rule = historical
-	capital_required = yes 
-
-	potential = {
-		OR = {
-			owns = location:urgench
-			owns = location:khiva
-		}
-		OR = {
-			culture = culture:uzbek_culture
-			culture = culture:khorezmian_culture
-		}
-	}
-
-	allow = {
-		OR = {
-			owns = location:urgench
-			owns = location:khiva
-		}
-		is_subject = no
-	}
-	
-	name = KRO
-	flag = KRO
-	adjective = KRO_ADJ
-	tag = KRO
-	color = map_khorezmian
-
-	provinces = {
-		khiva_province
-		kath_province
-	}
-	form_effect = {
-	}
-}
+ 
 MZN_f = { #Mazandaran
 	level = 2
 	required_locations_fraction = 0.5
 	rule = historical
 	capital_required = yes
 	potential_requires_own = no
-
+ 
 	potential = {
 		OR = {
 			culture = culture:gilak_culture
@@ -1015,7 +1364,7 @@ MZN_f = { #Mazandaran
 			culture = culture:mazanderani_culture
 		}
 	}
-
+ 
 	allow = {
 	}
 	
@@ -1024,19 +1373,115 @@ MZN_f = { #Mazandaran
 	adjective = MZN_ADJ
 	tag = MZN
 	color = map_mazadaran
-
+ 
 	areas = {
 		mazandaran_area
 	}
 	form_effect = {
 	}
 }
+ 
+# VOLGA
+BKA_f = { #Bashkira
+    level = 3
+    required_locations_fraction = 0.70
+    rule = historical
+	capital_required = no
+	potential_requires_own = no
+    potential = {
+        culture = culture:bashkir
+    }
+    allow = {
+    }
+    name = BKA
+    flag = BKA
+    adjective = BKA_ADJ
+    tag = BKA
+    color = map_BKA
+	provinces = {
+		ufa_province
+		chishmy_province
+		meleuz_province
+		krasnaya_gorka_province
+		khaqmar_province
+		ural_province
+		yetkul_province
+		kaslinsky_province
+		bisert_province
+		syun_province
+	}
+	locations = {
+		kasevo yanaul tatyshly
+	}
+    form_effect = {
+        if = {
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+    }
+}
+ 
+KLK_f = { #Kalmykia
+    level = 1
+    required_locations_fraction = 1
+    rule = historical
+	potential_requires_own = no
+ 
+    potential = {
+        always = no
+    }
+ 
+    allow = {
+        owns = location:elista 
+    }
+    
+    name = KLK
+    flag = KLK
+    adjective = KLK_ADJ
+    tag = KLK
+    color = map_KLK
+ 
+    provinces = {
+        priyutnoye_province
+    }
+	form_effect = {
+	}
+}
+ 
+MRZ_f = { #Mari
+    level = 3
+    required_locations_fraction = 0.70
+    rule = historical
+    capital_required = no
+	potential_requires_own = no
+    potential = {
+        culture = culture:mari_culture
+    }
+    allow = {
+        owns = location:yoshkar_ola
+    }
+    name = MRZ
+    flag = MRZ
+    adjective = MRZ_ADJ
+    tag = MRZ
+    color = map_mari
+    provinces = {
+        yaransk_province
+    }
+    form_effect = {
+        if = {
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+    }
+}
+ 
 NSL_f = { #Novosil
     level = 1
     required_locations_fraction = 0.3
     rule = historical
 	potential_requires_own = no
-
+ 
     potential = {
         OR = {
 			tag = BLV
@@ -1046,7 +1491,7 @@ NSL_f = { #Novosil
 			tag = KZK
 		}
     }
-
+ 
     allow = {
         owns = location:vorotynsk 
 		owns = location:belyov
@@ -1059,37 +1504,477 @@ NSL_f = { #Novosil
     adjective = NSL_ADJ
     tag = NSL
     color = map_NSL
-
+ 
     areas = {
         oka_area
     }
 	form_effect = {
 	}
 }
-KLK_f = { #Kalmykia
-    level = 1
-    required_locations_fraction = 1
+ 
+UDM_f = { #Udmurtia
+    level = 3
+    required_locations_fraction = 0.70
     rule = historical
+    capital_required = no
 	potential_requires_own = no
-
     potential = {
-        always = no
+        culture = culture:udmurt
     }
-
     allow = {
-        owns = location:elista 
-
     }
-    
-    name = KLK
-    flag = KLK
-    adjective = KLK_ADJ
-    tag = KLK
-    color = map_KLK
-
+    name = UDM
+    flag = UDM
+    adjective = UDM_ADJ
+    tag = UDM
+    color = map_udmurt
     provinces = {
-        priyutnoye_province
+        sarapul_province
+		nema_province
+		igra_province
+		omutninsk_province
     }
+	locations = {
+		nikolsky
+		saygatsky debyosy stepanenki
+		yelovo osa
+	}
+    form_effect = {
+        if = {
+            limit = { country_rank_level < 3 }
+            set_country_rank_effect = { rank = country_rank:rank_kingdom }
+        }
+    }
+}
+ 
+# EUROPE
+REPLACE:BEL_f = { #Belgium
+	level = 2
+	required_locations_fraction = 0.75
+	rule = historical
+ 
+	potential = {
+		OR = {
+			culture = culture:walloon
+			culture = culture:flemish
+			culture = culture:brabantish
+		}
+		current_age_or_later = { age = age_6_revolutions }
+	}
+	allow = {
+		
+	}
+}
+
+FRI_f = { #Frisia
+	level = 1
+	required_locations_fraction = 0.6
+	rule = historical
+ 
+	potential = {
+		culture = culture:frisian
+	}
+ 
+	allow = {
+	}
+ 
+	name = FRI
+	flag = FRI
+	adjective = FRI_ADJ
+	tag = FRI
+	color = map_FRI
+ 
+	areas = {
+		friesland_area
+	}
+	provinces = {
+		south_holland_province
+		north_holland_province
+	}
+	locations = {
+		elsfleth
+		ritzebuttel
+		husum tonder
+	}
 	form_effect = {
+	}
+}
+ 
+POR_f = { #Portugal
+	level = 2
+	required_locations_fraction = 0.8
+	rule = historical
+ 
+	potential = {
+		culture = culture:portuguese
+	}
+ 
+	allow = {
+	}
+ 
+	name = POR
+	flag = POR
+	adjective = POR_ADJ
+	tag = POR
+	color = map_POR
+ 
+	areas = {
+		south_portugal_area
+		north_portugal_area
+	}
+	form_effect = {
+		set_country_rank_effect = { rank = country_rank:rank_empire }
+	}
+}
+ 
+# OCEANIA
+AKO_f = { #Aleon Kein Ad
+	level = 2
+	required_locations_fraction = 0.8
+	rule = plausible
+	
+	potential = {
+		culture = culture:kajoor_ri_majel_culture
+	}
+ 
+	allow = {
+	}
+	
+	name = AKO
+	flag = AKO
+	adjective = AKO_ADJ
+	tag = AKO
+	color = map_AKO
+	areas = {
+		ratak_area
+		ralik_area
+	}
+	form_effect = {
+	}
+}
+ 
+AOT_f = { #Aotearoa
+	level = 2
+	required_locations_fraction = 0.8
+	rule = plausible
+	
+	potential = {
+		culture = culture:maori_culture
+	}
+ 
+	allow = {
+	}
+	
+	name = AOT
+	flag = AOT
+	adjective = AOT_ADJ
+	tag = AOT
+	color = map_AOT
+	regions = {
+		new_zealand_region
+	}
+	form_effect = {
+	}
+}
+ 
+CAZ_f = { #Carolinias
+	level = 2
+	required_locations_fraction = 0.8
+	rule = plausible
+	
+	potential = {
+		OR = {
+			culture = culture:yap_culture
+			culture = culture:chamoru_culture
+		}
+	}
+ 
+	allow = {
+	}
+	
+	name = CAZ
+	flag = CAZ
+	adjective = CAZ_ADJ
+	tag = CAZ
+	color = map_CAZ
+	areas = {
+		belau_area
+		chuuk_area
+		marianas_area
+	}
+	form_effect = {
+	}
+}
+ 
+HII_f = { #Kingdom of Hawaii
+	level = 2
+	required_locations_fraction = 0.8
+	rule = historical
+	
+	potential = {
+		culture = culture:kanaka_maoli_culture
+	}
+ 
+	allow = {
+	}
+	
+	name = HII
+	flag = HII
+	adjective = HII_ADJ
+	tag = HII
+	color = map_HII
+	areas = {
+		hawaii_area
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+HMZ_f = { #Hamoa
+	level = 2
+	required_locations_fraction = 1
+	rule = plausible
+	
+	potential = {
+		OR = {
+			culture = culture:tagata_samoa_culture
+			culture = culture:tonga_oceania_culture
+		}
+	}
+ 
+	allow = {
+	}
+	
+	name = HMZ
+	flag = HMZ
+	adjective = HMZ_ADJ
+	tag = HMZ
+	color = map_HMZ
+	areas = {
+		tonga_area
+		samoa_area
+		niue_area
+		futuna_area
+	}
+	form_effect = {
+	}
+}
+ 
+MIN_f = { #Micronesia
+	level = 3
+	required_locations_fraction = 0.80
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		culture = { has_culture_group = culture_group:micronesian_group }
+	}
+ 
+	allow = {
+	}
+	
+	name = MIN
+	flag = MIN
+	adjective = MIN_ADJ
+	tag = MIN
+	color = map_MIN
+	areas = {
+		ratak_area
+		ralik_area
+		belau_area
+		chuuk_area
+		marianas_area
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+MLN_f = { #Melanesia
+	level = 3
+	required_locations_fraction = 0.80
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		culture = { has_culture_group = culture_group:micronesian_group }
+	}
+ 
+	allow = {
+	}
+	
+	name = MLN
+	flag = MLN
+	adjective = MLN_ADJ
+	tag = MLN
+	color = map_MLN
+	areas = {
+		fiji_area
+		tinputz_area
+		vanuatu_area
+		kanaky_area
+		bismarck_area
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+OCE_f = { #Oceania
+	level = 4
+	required_locations_fraction = 0.7
+	capital_required = yes 
+	rule = historical
+	
+	potential = {
+		or = {
+			culture = { has_culture_group = culture_group:micronesian_group }
+			culture = { has_culture_group = culture_group:polynesian_group }
+		}
+	}
+ 
+	allow = {
+	}
+	
+	name = OCE
+	flag = OCE
+	adjective = OCE_ADJ
+	tag = OCE
+	color = map_OCE
+	regions = {
+		new_zealand_region
+		micronesia_region
+		melanesia_region
+		polynesia_region
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+	}
+}
+ 
+POF_f = { #Maohi
+	level = 2
+	required_locations_fraction = 0.7
+	rule = plausible
+	
+	potential = {
+		OR = {
+			culture = culture:maohi_culture
+			culture = culture:tuamotus_culture
+			culture = culture:mangareva_culture
+			culture = culture:enana_culture
+		}
+	}
+ 
+	allow = {
+	}
+	
+	name = POF
+	flag = POF
+	adjective = POF_ADJ
+	tag = POF
+	color = map_POF
+	areas = {
+		totaiete_ma_area
+		palliser_area
+		raeffsky_area
+		kuki_airani_area
+		tuamotu_area
+		te_henua_enana_area
+	}
+	form_effect = {
+	}
+}
+ 
+PYN_f = { #Polynesia
+	level = 3
+	required_locations_fraction = 0.9
+	capital_required = yes 
+	rule = plausible
+	
+	potential = {
+		culture = { has_culture_group = culture_group:polynesian_group }
+	}
+ 
+	allow = {
+	}
+	
+	name = PYN
+	flag = PYN
+	adjective = PYN_ADJ
+	tag = PYN
+	color = map_PYN
+	regions = {
+		polynesia_region
+	}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
+}
+ 
+VIT_f = { #Viti
+	level = 2
+	required_locations_fraction = 0.8
+	rule = plausible
+	
+	potential = {
+		culture = culture:itaukei_culture
+	}
+ 
+	allow = {
+	}
+	
+	name = VIT
+	flag = VIT
+	adjective = VIT_ADJ
+	tag = VIT
+	color = map_VIT
+	areas = {
+		fiji_area
+	}
+	form_effect = {
+	}
+}
+LWA_f = { #Limbuwan
+	level = 2
+	required_locations_fraction = 0.8
+	rule = historical
+	capital_required = no
+	potential_requires_own = no
+	
+	potential = {
+		culture = culture:limbu_culture
+	}
+ 
+	allow = {
+		societal_value:centralization_vs_decentralization < -20
+	}
+	
+	name = LWA
+	flag = LWA
+	adjective = LWA_ADJ
+	tag = LWA
+	color = map_LWA
+	provinces = {
+		lower_kosi_province
+	}
+	form_effect = {
+		change_government_type = government_type:monarchy
 	}
 }

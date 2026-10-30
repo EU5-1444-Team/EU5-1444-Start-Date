@@ -147,6 +147,9 @@ diplomacy_manager = {
     dependency = { first = VIJ second = VND subject_type = samanta }
     dependency = { first = VIJ second = TKU subject_type = samanta }
 
+    dependency = { first = BNG second = CWP subject_type = vassal }
+    dependency = { first = BNG second = BUA subject_type = vassal }
+
     dependency = { first = BAH second = RCH subject_type = vassal }
 
     dependency = { first = JNP second = BGK subject_type = vassal }
@@ -182,8 +185,6 @@ diplomacy_manager = {
     dependency = { first = ORI second = PLA subject_type = samanta }
     dependency = { first = ORI second = BNA subject_type = samanta }
     dependency = { first = ORI second = KLH subject_type = samanta }
-
-    dependency = { first = SRM second = JBL subject_type = samanta }
 
     #-------France-------
     #Auld Alliance
@@ -536,7 +537,7 @@ diplomacy_manager = {
     dependency = { first = MAM second = KIL subject_type = vassal }
     #dependency = { first = MAM second = DUL subject_type = tributary }
     dependency = { first = MAM second = DUL subject_type = vassal }
-    dependency = { first = MAM second = CYP subject_type = vassal }
+    dependency = { first = MAM second = CYP subject_type = tributary }
     scripted_oneway = { first = MAM second = DUL type = guarantee }
     dependency = { first = AQQ second = EGL subject_type = vassal }
     dependency = { first = AQQ second = BIN subject_type = vassal }
@@ -687,7 +688,7 @@ diplomacy_manager = {
     dependency = { first = OIR second = YUA subject_type = vassal }
 
     #-------------Tibet--------------
-    dependency = { first = PHA second = RIN subject_type = vassal }
+    dependency = { first = ZNK second = SPI subject_type = tributary }
 
     #-------------China------------
     dependency = { first = CHI second = KOR subject_type = tributary }
@@ -886,7 +887,6 @@ diplomacy_manager = {
     dependency = { first = AVV second = MYA subject_type = tributary }
     dependency = { first = AYU second = LIG subject_type = vassal }
     dependency = { first = LNA second = MNI subject_type = vassal }
-    dependency = { first = BNG second = ARK subject_type = vassal }
     scripted_oneway = { first = DAI second = MPH type = guarantee }
     scripted_oneway = { first = MUA second = MPH type = guarantee }
 
@@ -1039,6 +1039,8 @@ diplomacy_manager = {
     dependency = { first = TIM second = MZN subject_type = vassal }
     dependency = { first = TIM second = ASR subject_type = vassal }
 
+    dependency = { first = TIM second = QAR subject_type = nominal_vassal }
+
     dependency = { first = TIM second = MIH subject_type = vassal }
     dependency = { first = TIP second = HZP subject_type = vassal }
     dependency = { first = MZN second = BDS subject_type = vassal }
@@ -1046,14 +1048,17 @@ diplomacy_manager = {
     dependency = { first = MIH second = BLA subject_type = tributary }
     dependency = { first = MIH second = NWI subject_type = tributary }
     dependency = { first = KRM second = BSH subject_type = tributary } 
+    dependency = { first = TIK second = CRL subject_type = tributary }
 
     # ------ Sindh -------
-    dependency = { first = SND second = SKU subject_type = samanta}
-    dependency = { first = SND second = SEH subject_type = samanta}
+    dependency = { first = SND second = SKU subject_type = tributary }
+    dependency = { first = SND second = SMA subject_type = tributary }
 
     #------- Delhi -------------
     dependency = { first = DLH second = PNA subject_type = vassal }
     dependency = { first = DLH second = BHA subject_type = vassal }
+
+    dependency = { first = DLH second = SRH subject_type = nominal_vassal }
 
     #--------Gujarat----------------------
     dependency = { first = GUJ second = JWR subject_type = tributary }
@@ -1070,7 +1075,7 @@ diplomacy_manager = {
     dependency = { first = GUJ second = SMH subject_type = vassal }
 
     #Pacific
-    dependency = { first = TOG second = VAU subject_type = vassal }
+    dependency = { first = TOG second = VAU subject_type = fiefdom }
 
     #Japan
     dependency = { first = NB1 second = HAN subject_type = vassal }

@@ -81,3 +81,25 @@ confederation_overlord = {
         value = 50
     }
 }
+limbuwan_hang = {
+    max_countries = 1
+    priority = 20
+    leader = yes
+    map_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+
+    can_bestow_trigger = {
+        is_leader_of_international_organization = scope:recipient
+        culture = culture:limbu_culture
+    }
+    auto_bestowal_trigger = {
+        is_leader_of_international_organization = scope:recipient
+        culture = culture:limbu_culture
+    }
+    auto_rescind_trigger = {
+        NOT = { is_leader_of_international_organization = scope:recipient }
+        NOT = { culture = culture:limbu_culture }
+    }
+    special_status_power = {
+        value = 25
+    }
+}
