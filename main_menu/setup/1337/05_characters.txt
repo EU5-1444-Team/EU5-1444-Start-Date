@@ -653,6 +653,53 @@ character_db= {
 		father = aho_sukhaangphaa
 		tag = AHO
 	}
+    aho_sudangphaa = {
+        first_name = { name = Sudangphaa }
+        dynasty = ahom_dynasty
+        culture = tai_nua_culture
+        religion = satsana_phi
+        birth_date = 1380.1.1 # Born during the 1389–1397 interregnum
+        death_date = 1407.1.1
+
+        birth = charaideo
+        father = aho_tyao_khamti
+        tag = AHO
+    }
+    aho_sujangphaa = {
+        first_name = { name = Sujangphaa }
+        dynasty = ahom_dynasty
+        culture = tai_nua_culture
+        religion = satsana_phi
+        birth_date = 1398.1.1
+        death_date = 1422.1.1
+
+        birth = charaideo
+        father = aho_sudangphaa
+        tag = AHO
+    }
+    aho_suphakphaa = {
+        first_name = { name = Suphakphaa }
+        dynasty = ahom_dynasty
+        culture = tai_nua_culture
+        religion = satsana_phi
+        birth_date = 1410.1.1
+        death_date = 1439.1.1
+
+        birth = charaideo
+        father = aho_sujangphaa
+        tag = AHO
+    }
+
+    aho_susenphaa = {
+        first_name = { name = Susenphaa }
+        dynasty = ahom_dynasty
+        culture = tai_nua_culture
+        religion = satsana_phi
+        birth_date = 1425.1.1
+        birth = charaideo
+        father = aho_suphakphaa
+        tag = AHO
+    }
 
     ### aisu_dynasty | AIS ###
 
@@ -64374,6 +64421,27 @@ character_db= {
 		dynasty = kangleipak_dynasty
 		tag = MLB
 	}
+	mlb_ningthou_khomba = {
+		first_name = { name = name_ningthou }
+        last_name = { name = name_khomba }
+		culture = meitei_culture
+		religion = sanamahism
+		birth_date = 1411.1.1
+		birth = imphal
+		dynasty = kangleipak_dynasty
+		tag = MLB
+	}
+	mlb_senbi_kiyamba = {
+		first_name = { name = name_senbi }
+        last_name = { name = name_kiyamba }
+		culture = meitei_culture
+		religion = sanamahism
+		birth_date = 1443.1.1
+		birth = imphal
+        father = mlb_ningthou_khomba
+		dynasty = kangleipak_dynasty
+		tag = MLB
+	}
 
     ### kantakouzenos_dynasty | BYZ ###
 
@@ -71388,6 +71456,15 @@ character_db= {
 		birth_date = 1274.1.1
 		death_date = 1399.12.31
 
+		birth = launggyet
+		dynasty = launggyet_dynasty
+		tag = ARK
+	}
+    min_khayi = {
+		first_name = { name = Min_Khayi }
+		culture = rakhine_culture
+		religion = theravada
+		birth_date = 1392.1.1
 		birth = launggyet
 		dynasty = launggyet_dynasty
 		tag = ARK
@@ -150108,6 +150185,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1180.1.1
         death_date = 1240.1.1
+        birth = o_ahu
         dynasty = alii_oahu_dynasty
         tag = OAH
     }
@@ -150117,6 +150195,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1205.1.1
         death_date = 1265.1.1
+        birth = o_ahu
         father = oah_maweke
         dynasty = alii_oahu_dynasty
         tag = OAH
@@ -150127,6 +150206,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1230.1.1
         death_date = 1290.1.1
+        birth = o_ahu
         father = oah_mulielealii
         dynasty = alii_oahu_dynasty
         tag = OAH
@@ -150137,6 +150217,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1255.1.1
         death_date = 1315.1.1
+        birth = o_ahu
         father = oah_kumuhonua
         dynasty = alii_oahu_dynasty
         tag = OAH
@@ -150147,6 +150228,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1280.1.1
         death_date = 1340.1.1
+        birth = o_ahu
         father = oah_elepuukahonua
         dynasty = alii_oahu_dynasty
         tag = OAH
@@ -150157,6 +150239,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1305.1.1
         death_date = 1365.1.1
+        birth = o_ahu
         father = oah_kahokupohakano
         dynasty = alii_oahu_dynasty
         tag = OAH
@@ -150168,6 +150251,7 @@ character_db= {
         birth_date = 1330.1.1
         death_date = 1390.1.1
         father = oah_nawele
+        birth = o_ahu
         dynasty = alii_oahu_dynasty
         tag = OAH
     }
@@ -150178,6 +150262,7 @@ character_db= {
         birth_date = 1355.1.1
         death_date = 1410.1.1
         father = oah_lakona
+        birth = o_ahu
         dynasty = alii_oahu_dynasty
         tag = OAH
     }
@@ -150188,6 +150273,7 @@ character_db= {
         birth_date = 1380.1.1
         death_date = 1442.1.1
         father = oah_kukahoko
+        birth = o_ahu
         dynasty = alii_oahu_dynasty
         tag = OAH
     }
@@ -150196,6 +150282,7 @@ character_db= {
         culture = kanaka_maoli_culture
         religion = tapu_religion
         birth_date = 1410.1.1
+        birth = o_ahu
         father = oah_mailikukahi
         dynasty = alii_oahu_dynasty
         tag = OAH
@@ -150206,6 +150293,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 930.1.1
         death_date = 980.1.1
+        birth = tongatapu
         dynasty = tui_tonga_dynasty
         tag = TOG
     }
@@ -150215,6 +150303,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 955.1.1
         death_date = 1005.1.1
+        birth = tongatapu
         father = tog_ahoeitu
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150225,6 +150314,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 980.1.1
         death_date = 1030.1.1
+        birth = tongatapu
         father = tog_loloofakangalo
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150235,6 +150325,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1005.1.1
         death_date = 1055.1.1
+        birth = tongatapu
         father = tog_fangaoneone
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150245,6 +150336,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1030.1.1
         death_date = 1080.1.1
+        birth = tongatapu
         father = tog_lihau
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150255,6 +150347,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1055.1.1
         death_date = 1105.1.1
+        birth = tongatapu
         father = tog_kofutu
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150265,6 +150358,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1080.1.1
         death_date = 1130.1.1
+        birth = tongatapu
         father = tog_kaloa
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150275,6 +150369,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1105.1.1
         death_date = 1150.1.1
+        birth = tongatapu
         father = tog_mauhau
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150285,6 +150380,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1130.1.1
         death_date = 1175.1.1
+        birth = tongatapu
         father = tog_apuanea
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150295,6 +150391,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1150.1.1
         death_date = 1200.1.1
+        birth = tongatapu
         father = tog_ahungange
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150305,6 +150402,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1175.1.1
         death_date = 1225.1.1
+        birth = tongatapu
         father = tog_momo
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150315,6 +150413,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1200.1.1
         death_date = 1245.1.1
+        birth = tongatapu
         father = tog_tuitatui
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150325,6 +150424,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1205.1.1
         death_date = 1260.1.1
+        birth = tongatapu
         father = tog_tuitatui
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150335,6 +150435,8 @@ character_db= {
         religion = tapu_religion
         birth_date = 1230.1.1
         death_date = 1285.1.1
+        birth = tongatapu
+        birth = tongatapu
         father = tog_talaihaapepe
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150345,6 +150447,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1255.1.1
         death_date = 1305.1.1
+        birth = tongatapu
         father = tog_talakaifaiki
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150355,6 +150458,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1280.1.1
         death_date = 1330.1.1
+        birth = tongatapu
         father = tog_talafapite
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150365,6 +150469,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1305.1.1
         death_date = 1355.1.1
+        birth = tongatapu
         father = tog_tuitonganui
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150375,6 +150480,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1330.1.1
         death_date = 1375.1.1
+        birth = tongatapu
         father = tog_havea1
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150385,6 +150491,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1355.1.1
         death_date = 1400.1.1
+        birth = tongatapu
         father = tog_tatafuavea
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150394,6 +150501,7 @@ character_db= {
         culture = tonga_oceania_culture
         religion = tapu_religion
         birth_date = 1385.1.1
+        birth = tongatapu
         father = tog_nanasitonga
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150403,6 +150511,7 @@ character_db= {
         culture = tonga_oceania_culture
         religion = tapu_religion
         birth_date = 1415.1.1
+        birth = tongatapu
         father = tog_takalaua
         dynasty = tui_tonga_dynasty
         tag = TOG
@@ -150413,6 +150522,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1230.1.1
         death_date = 1290.1.1
+        birth = hilo
         dynasty = alii_hawaii_dynasty
         tag = HAW
     }
@@ -150423,6 +150533,7 @@ character_db= {
         birth_date = 1255.1.1
         death_date = 1315.1.1
         father = haw_pili
+        birth = hilo
         dynasty = alii_hawaii_dynasty
         tag = HAW
     }
@@ -150433,6 +150544,7 @@ character_db= {
         birth_date = 1280.1.1
         death_date = 1340.1.1
         father = haw_kuakoa
+        birth = hilo
         dynasty = alii_hawaii_dynasty
         tag = HAW
     }
@@ -150442,6 +150554,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1305.1.1
         death_date = 1365.1.1
+        birth = hilo
         father = haw_koolau
         dynasty = alii_hawaii_dynasty
         tag = HAW
@@ -150452,6 +150565,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1330.1.1
         death_date = 1390.1.1
+        birth = hilo
         father = haw_maihinuui
         dynasty = alii_hawaii_dynasty
         tag = HAW
@@ -150462,6 +150576,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1355.1.1
         death_date = 1415.1.1
+        birth = hilo
         father = haw_hiilani
         dynasty = alii_hawaii_dynasty
         tag = HAW
@@ -150473,6 +150588,7 @@ character_db= {
         birth_date = 1380.1.1
         death_date = 1440.1.1
         father = haw_luahine
+        birth = hilo
         dynasty = alii_hawaii_dynasty
         tag = HAW
     }
@@ -150481,6 +150597,7 @@ character_db= {
         culture = kanaka_maoli_culture
         religion = tapu_religion
         birth_date = 1410.1.1
+        birth = hilo
         father = haw_kameeiamoku_ancestor
         dynasty = alii_hawaii_dynasty
         tag = HAW
@@ -150490,6 +150607,7 @@ character_db= {
         culture = kanaka_maoli_culture
         religion = tapu_religion
         birth_date = 1220.1.1
+        birth = maui
         death_date = 1280.1.1
         dynasty = alii_maui_dynasty
         tag = MUI
@@ -150501,6 +150619,7 @@ character_db= {
         birth_date = 1245.1.1
         death_date = 1305.1.1
         father = mui_haho
+        birth = maui
         dynasty = alii_maui_dynasty
         tag = MUI
     }
@@ -150511,6 +150630,7 @@ character_db= {
         birth_date = 1270.1.1
         death_date = 1330.1.1
         father = mui_palena
+        birth = maui
         dynasty = alii_maui_dynasty
         tag = MUI
     }
@@ -150521,6 +150641,7 @@ character_db= {
         birth_date = 1295.1.1
         death_date = 1355.1.1
         father = mui_hanalaa
+        birth = maui
         dynasty = alii_maui_dynasty
         tag = MUI
     }
@@ -150531,6 +150652,7 @@ character_db= {
         birth_date = 1320.1.1
         death_date = 1380.1.1
         father = mui_mauiloa
+        birth = maui
         dynasty = alii_maui_dynasty
         tag = MUI
     }
@@ -150541,6 +150663,7 @@ character_db= {
         birth_date = 1345.1.1
         death_date = 1405.1.1
         father = mui_alanaio
+        birth = maui
         dynasty = alii_maui_dynasty
         tag = MUI
     }
@@ -150551,6 +150674,7 @@ character_db= {
         birth_date = 1375.1.1
         death_date = 1435.1.1
         father = mui_kahakumakaloa
+        birth = maui
         dynasty = alii_maui_dynasty
         tag = MUI
     }
@@ -150560,15 +150684,17 @@ character_db= {
         religion = tapu_religion
         birth_date = 1405.1.1
         father = mui_kahekili_1
+        birth = maui
         dynasty = alii_maui_dynasty
         tag = MUI
     }
     poh_olosihpa = {
         first_name = { name = name_olosihpa }
         culture = pohnpeian_culture
-        religion = yanolop_religion # or local micronesian pantheon ID
+        religion = yanolop_religion
         birth_date = 1080.1.1
         death_date = 1140.1.1
+        birth = pohnpei
         dynasty = saudeleur_dynasty
         tag = POH
     }
@@ -150578,6 +150704,7 @@ character_db= {
         religion = yanolop_religion
         birth_date = 1200.1.1
         death_date = 1260.1.1
+        birth = pohnpei
         dynasty = saudeleur_dynasty
         tag = POH
     }
@@ -150587,6 +150714,7 @@ character_db= {
         religion = yanolop_religion
         birth_date = 1270.1.1
         death_date = 1330.1.1
+        birth = pohnpei
         dynasty = saudeleur_dynasty
         tag = POH
     }
@@ -150596,6 +150724,7 @@ character_db= {
         religion = yanolop_religion
         birth_date = 1375.1.1
         dynasty = saudeleur_dynasty
+        birth = pohnpei
         tag = POH
     }
     rsm_tui_o_lite = {
@@ -150604,6 +150733,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1250.1.1
         death_date = 1310.1.1
+        birth = tutuila
         dynasty = tui_manua_dynasty
         tag = RSM
     }
@@ -150613,6 +150743,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1280.1.1
         death_date = 1340.1.1
+        birth = tutuila
         father = rsm_tui_o_lite
         dynasty = tui_manua_dynasty
         tag = RSM
@@ -150623,6 +150754,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1310.1.1
         death_date = 1370.1.1
+        birth = tutuila
         father = rsm_toalepai_ancestor
         dynasty = tui_manua_dynasty
         tag = RSM
@@ -150634,6 +150766,7 @@ character_db= {
         birth_date = 1340.1.1
         death_date = 1400.1.1
         father = rsm_salofi
+        birth = tutuila
         dynasty = tui_manua_dynasty
         tag = RSM
     }
@@ -150642,6 +150775,7 @@ character_db= {
         culture = tagata_samoa_culture
         religion = tapu_religion
         birth_date = 1375.1.1
+        birth = tutuila
         father = rsm_levaomana
         dynasty = tui_manua_dynasty
         tag = RSM
@@ -150652,6 +150786,7 @@ character_db= {
         religion = tapu_religion
         female = yes
         birth_date = 1410.1.1
+        birth = tutuila
         father = rsm_toalepai
         dynasty = tui_manua_dynasty
         tag = RSM
@@ -150662,6 +150797,7 @@ character_db= {
         religion = tapu_religion
         birth_date = 1415.1.1
         father = rsm_toalepai
+        birth = tutuila
         dynasty = tui_manua_dynasty
         tag = RSM
     }
@@ -150672,6 +150808,7 @@ character_db= {
         birth_date = 1220.1.1
         death_date = 1280.1.1
         dynasty = malietoa_dynasty
+        birth = savaii
         tag = SAM
     }
     sam_malietoa_aufaga = {
@@ -150681,6 +150818,7 @@ character_db= {
         birth_date = 1260.1.1
         death_date = 1320.1.1
         father = sam_malietoa_savea
+        birth = savaii
         dynasty = malietoa_dynasty
         tag = SAM
     }
@@ -150691,6 +150829,7 @@ character_db= {
         birth_date = 1300.1.1
         death_date = 1360.1.1
         father = sam_malietoa_aufaga
+        birth = savaii
         dynasty = malietoa_dynasty
         tag = SAM
     }
@@ -150701,6 +150840,7 @@ character_db= {
         birth_date = 1340.1.1
         death_date = 1400.1.1
         father = sam_malietoa_calata
+        birth = savaii
         dynasty = malietoa_dynasty
         tag = SAM
     }
@@ -150710,7 +150850,72 @@ character_db= {
         religion = tapu_religion
         birth_date = 1385.1.1
         father = sam_malietoa_tui
+        birth = savaii
         dynasty = malietoa_dynasty
         tag = SAM
+    }
+    twi_dharma_manikya = {
+        first_name = { name = name_chhengthung }
+        last_name = { name = name_fa }
+        nickname = { name = name_maha_manikya }
+        culture = tripuri_culture
+        religion = hindu
+        birth_date = 1423.1.1
+        birth = rangamati
+        dynasty = manikya_dynasty
+        tag = TWI
+    }
+    cut_nandisvara = {
+        first_name = { name = name_nandisvara }
+        culture = chutia_culture
+        religion = hindu
+        birth_date = 1340.1.1
+        death_date = 1395.1.1
+        birth = sadiya
+        dynasty = chutia_dynasty
+        tag = CUT
+    }
+    cut_satyanarayana = {
+        first_name = { name = name_satyanarayana }
+        culture = chutia_culture
+        religion = hindu
+        birth_date = 1360.1.1
+        death_date = 1410.1.1
+        birth = sadiya
+        dynasty = chutia_dynasty
+        father = cut_nandisvara
+        tag = CUT
+    }
+    cut_lakshminarayana = {
+        first_name = { name = name_lakshminarayana }
+        culture = chutia_culture
+        religion = hindu
+        birth_date = 1385.1.1
+        death_date = 1430.1.1
+        birth = sadiya
+        dynasty = chutia_dynasty
+        father = cut_satyanarayana
+        tag = CUT
+    }
+    cut_dharmanarayana = {
+        first_name = { name = name_dharmanarayana }
+        culture = chutia_culture
+        religion = hindu
+        birth_date = 1410.1.1
+        death_date = 1450.1.1
+        birth = sadiya
+        dynasty = chutia_dynasty
+        father = cut_lakshminarayana
+        tag = CUT
+    }
+    cut_muktadharmanarayana = {
+        first_name = { name = name_muktadharmanarayana }
+        culture = chutia_culture
+        religion = hindu
+        birth_date = 1430.1.1
+        birth = sadiya
+        dynasty = chutia_dynasty
+        father = cut_dharmanarayana
+        tag = CUT
     }
 }
