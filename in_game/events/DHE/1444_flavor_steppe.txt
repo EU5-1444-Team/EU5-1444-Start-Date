@@ -1154,7 +1154,11 @@ flavor_steppe.26 = { # Kalmykia Rising
                     has_owner = yes
                 }
                 owner ?= {
-					add_to_list = klk_elista_owners
+                    declare_war_with_cb = {
+                        target = TRH
+                        type = casus_belli:cb_conquer_province
+                        target_province = location:elista.province
+                    }
 				}
             }
         }
@@ -1171,8 +1175,8 @@ flavor_steppe.26 = { # Kalmykia Rising
 				discover_location = root
 			}
 		}
-        area:desht_kipchak_area = {
-        	every_location_in_area = {
+        region:caucasus_region = {
+			every_location_in_region = {
 				discover_location = root
 			}
 		}
@@ -1181,14 +1185,31 @@ flavor_steppe.26 = { # Kalmykia Rising
             limit = { c:TRH = { country_rank_level < 3 } }
             c:TRH = { set_country_rank = country_rank:rank_kingdom }
         }
-
-        province:priyutnoye_province = {
-            every_location_in_province = {
-                change_location_owner = c:TRH
-                add_core = c:TRH
-                change_integration_level = core
-            }
-        }
+        location:elista = {
+			change_location_owner = c:TRH
+            add_core = c:TRH
+            change_integration_level = core
+		}
+        location:remontnoye = {
+			change_location_owner = c:TRH
+            add_core = c:TRH
+            change_integration_level = core
+		}
+        location:priyutnoye = {
+			change_location_owner = c:TRH
+            add_core = c:TRH
+            change_integration_level = core
+		}
+        location:raguli = {
+			change_location_owner = c:TRH
+            add_core = c:TRH
+            change_integration_level = core
+		}
+        location:gorodovikovsk = {
+			change_location_owner = c:TRH
+            add_core = c:TRH
+            change_integration_level = core
+		}
 
         set_capital = location:elista
 
@@ -1200,13 +1221,31 @@ flavor_steppe.26 = { # Kalmykia Rising
             }
         }
         
-        location:elista = {
-            while = {
-                count = {
+        set_variable = {
+            name = total_gained_cavalry_variable
+            value = {
+                add = {
                     value = c:TRH.expected_army_size
                     multiply = 2
-                    min = 1
                 }
+                min = 1
+                ceiling = yes
+            }
+        }
+
+        location:elista = {
+            save_scope_as = target_location
+        }
+
+        while = {
+            limit = {
+                var:total_gained_cavalry_variable > 0
+            }
+            change_variable = {
+                name = total_gained_cavalry_variable
+                subtract = 1
+            }
+            scope:target_location = {
                 create_sub_unit_of_category = sub_unit_category:army_light_cavalry
             }
         }
@@ -1229,18 +1268,6 @@ flavor_steppe.26 = { # Kalmykia Rising
                 change_location_owner = c:TRH
             }
         }
-
-        every_in_list = {
-            list = klk_elista_owners
-            declare_war_with_cb = {
-                target = ROOT
-                type = casus_belli:cb_conquer_province
-			    target_province = location:elista.province
-            }
-        }
-        location:elista = {
-			save_scope_as = target_location
-		}
         every_owned_location = {
             limit = {
                 OR = {
