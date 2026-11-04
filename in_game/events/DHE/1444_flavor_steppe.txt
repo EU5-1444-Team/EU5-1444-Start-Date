@@ -1147,22 +1147,6 @@ flavor_steppe.26 = { # Kalmykia Rising
         name = flavor_steppe.26.a
         ai_chance = { factor = 1.0 }
 
-        province:priyutnoye_province = {
-            every_location_in_province = {
-                limit = {
-                    is_ownable = yes
-                    has_owner = yes
-                }
-                owner ?= {
-                    declare_war_with_cb = {
-                        target = TRH
-                        type = casus_belli:cb_conquer_province
-                        target_province = location:elista.province
-                    }
-				}
-            }
-        }
-
         custom_tooltip = klk_pops_arrive_in_a_month_tt
 
         c:TRH = {
