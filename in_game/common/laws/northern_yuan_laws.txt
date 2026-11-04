@@ -1433,18 +1433,17 @@ northern_yuan_consolidation_law = {
         allow = {
             any_country_with_special_status_of_type = {
                 type = protector_general
-                international_organization = international_organization:northern_yuan
-                ruler_or_heir_if_regent = {
-                    OR = {
-                        dynasty ?= dynasty:borjigin_dynasty
-                        dynasty ?= dynasty:jochi_dynasty
-                        dynasty ?= dynasty:giray_dynasty
-                        dynasty ?= dynasty:chagatayid_dynasty
-                        dynasty ?= dynasty:shaybanid_dynasty
-                    }
-                }
-                is_leader_of_international_organization = international_organization:northern_yuan
             }
+            ruler_or_heir_if_regent = {
+                OR = {
+                    dynasty ?= dynasty:borjigin_dynasty
+                    dynasty ?= dynasty:jochi_dynasty
+                    dynasty ?= dynasty:giray_dynasty
+                    dynasty ?= dynasty:chagatayid_dynasty
+                    dynasty ?= dynasty:shaybanid_dynasty
+                }
+            }
+            is_leader_of_international_organization = international_organization:northern_yuan
             international_organization_has_policy = policy:yuan_imperial_authority_policy
         }
         on_activate = {

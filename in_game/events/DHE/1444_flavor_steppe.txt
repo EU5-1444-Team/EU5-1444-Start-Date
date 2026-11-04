@@ -89,7 +89,6 @@ flavor_steppe.1 = { #Victory in the Great Horde Civil War
         add_prestige = prestige_mild_bonus
     }
 }
-
 flavor_steppe.2 = { #Ahmed Coups Mahmud
     type = country_event
     title = flavor_steppe.2.title
@@ -144,7 +143,6 @@ flavor_steppe.2 = { #Ahmed Coups Mahmud
         }
     }
 }
-
 flavor_steppe.3 = { # Rise of Astrakhan
     type = country_event
     title = flavor_steppe.3.title
@@ -198,7 +196,6 @@ flavor_steppe.3 = { # Rise of Astrakhan
         change_player = scope:target_country
     }
 }
-
 flavor_steppe.4 = { #Vasily refuses to pay tribute
     type = country_event
     title = flavor_steppe.4.title
@@ -241,7 +238,6 @@ flavor_steppe.4 = { #Vasily refuses to pay tribute
         destroy_international_organization = { target = international_organization:tatar_yoke }
     }
 }
-
 flavor_steppe.5 = { #Vasily captured
     type = country_event
     title = flavor_steppe.5.title
@@ -273,7 +269,6 @@ flavor_steppe.5 = { #Vasily captured
 		}
     }
 }
-
 flavor_steppe.6 = { #Kazan ending the Volga Bulgar remmants
     type = country_event
     title = flavor_steppe.6.title
@@ -323,7 +318,6 @@ flavor_steppe.6 = { #Kazan ending the Volga Bulgar remmants
         add_casus_belli = { type = casus_belli:cb_conquer_province target = scope:target_country province = location:cukataw.province }
     }
 }
-
 flavor_steppe.7 = { #Return of Volga Bulgaria
     type = country_event
     title = flavor_steppe.7.title
@@ -375,7 +369,6 @@ flavor_steppe.7 = { #Return of Volga Bulgaria
         if = { limit = {owns = location:bolghar} set_capital = location:bolghar }
     }
 }
-
 flavor_steppe.8 = { #Sayid Ahmed invades Crimea
     type = country_event
     title = flavor_steppe.8.title
@@ -424,7 +417,6 @@ flavor_steppe.8 = { #Sayid Ahmed invades Crimea
         add_casus_belli = { type = casus_belli:cb_conquer_province target = c:CRI province = location:solkhat.province }
     }
 }
-
 flavor_steppe.9 = { #Crimea defeats Sayid at Perekop
     type = country_event
     title = flavor_steppe.9.title
@@ -547,7 +539,6 @@ flavor_steppe.10 = { #Disaster at Perekop
         add_stability = stability_extreme_penalty
     }
 }
-
 flavor_steppe.11 = { #Shirin Ulus Joins Giray after Perekop
     type = country_event
     title = flavor_steppe.11.title
@@ -592,8 +583,7 @@ flavor_steppe.11 = { #Shirin Ulus Joins Giray after Perekop
         }
     }
 }
-
-flavor_steppe.15 = { #Giray moves the capital to qirq_yer
+flavor_steppe.15 = { #Giray moves the capital to Qirq Yer
     type = country_event
     title = flavor_steppe.15.title
     desc = flavor_steppe.15.desc
@@ -769,7 +759,6 @@ flavor_steppe.20 = { #Ottomans consider backing Mengli Giray
 		}
 	}
 }
- 
 flavor_steppe.21 = { #Mengli Giray Revolts
 	type = country_event
 	title = flavor_steppe.21.title
@@ -909,7 +898,6 @@ flavor_steppe.21 = { #Mengli Giray Revolts
         }
 	}
 }
- 
 flavor_steppe.22 = { #The Fate of Haydar Giray
 	type = country_event
 	title = flavor_steppe.22.title
@@ -975,7 +963,6 @@ flavor_steppe.22 = { #The Fate of Haydar Giray
         }
 	}
 }
-
 flavor_steppe.23 = { #Haydar Coups Crimea
     type = country_event
     title = flavor_steppe.23.title
@@ -993,7 +980,7 @@ flavor_steppe.23 = { #Haydar Coups Crimea
 
     immediate = {
         event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-        save_scope_as = ruler_cri
+        character:cri_mengli_giray = { save_scope_as = ruler_cri }
     }
 
     option = { #Get Casus Belli for restoring Mengli, "They will pay!"
@@ -1006,7 +993,6 @@ flavor_steppe.23 = { #Haydar Coups Crimea
 	    }
     }
 }
-
 flavor_steppe.24 = { #The Crimean Civil War Concludes
     type = country_event
     title = flavor_steppe.24.title
@@ -1129,7 +1115,7 @@ flavor_steppe.25 = { #Ottomans reestablish Mengli
         name = flavor_steppe.25.a
     }
 }
-flavor_steppe.26 = { # Torghut Exodus - Formation of the Kalmyks
+flavor_steppe.26 = { # Kalmykia Rising
     type = country_event
     title = flavor_steppe.26.title
     desc = flavor_steppe.26.desc
@@ -1185,6 +1171,11 @@ flavor_steppe.26 = { # Torghut Exodus - Formation of the Kalmyks
 				discover_location = root
 			}
 		}
+        area:desht_kipchak_area = {
+        	every_location_in_area = {
+				discover_location = root
+			}
+		}
         
         if = {
             limit = { c:TRH = { country_rank_level < 3 } }
@@ -1193,7 +1184,6 @@ flavor_steppe.26 = { # Torghut Exodus - Formation of the Kalmyks
 
         province:priyutnoye_province = {
             every_location_in_province = {
-                limit = { is_ownable = yes }
                 change_location_owner = c:TRH
                 add_core = c:TRH
                 change_integration_level = core
@@ -1242,15 +1232,15 @@ flavor_steppe.26 = { # Torghut Exodus - Formation of the Kalmyks
 
         every_in_list = {
             list = klk_elista_owners
-            save_scope_as = target_country
-            c:TRH = {
-                declare_war_with_cb = {
-                    target = scope:target_country
-                    type = casus_belli:cb_horde_vs_civ
-                }
+            declare_war_with_cb = {
+                target = ROOT
+                type = casus_belli:cb_conquer_province
+			    target_province = location:elista.province
             }
         }
-
+        location:elista = {
+			save_scope_as = target_location
+		}
         every_owned_location = {
             limit = {
                 OR = {
@@ -1266,7 +1256,7 @@ flavor_steppe.26 = { # Torghut Exodus - Formation of the Kalmyks
             add_migration = {
                 owner = c:TRH
                 from = scope:origin_loc.province_definition
-                to = root.capital.province_definition
+                to = scope:target_location.province_definition
                 amount = 50.000
                 months = 4
             }
