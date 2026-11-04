@@ -472,12 +472,19 @@ REPLACE:MUG_f = { #Mughal
  
 REPLACE:TIM_f = { #Timurid Empire
 	level = 4
-	required_locations_fraction = 0.8
+	required_locations_fraction = 0.2
 	potential_requires_own = no
 	rule = historical
 	
 	potential = {
 		ruler_or_heir_if_regent.dynasty ?= { dynasty:timurid_dynasty ?= this } 
+	}
+	allow = {
+		is_leader_of_international_organization = international_organization:timurid_empire
+		character:tim_shahrukh_mirza = { is_ruler = no }
+		owns_or_non_sovereign_subject_owns = location:herat
+		owns_or_non_sovereign_subject_owns = location:samarkand
+		owns_or_non_sovereign_subject_owns = location:fergana
 	}
  
 	name = TIM

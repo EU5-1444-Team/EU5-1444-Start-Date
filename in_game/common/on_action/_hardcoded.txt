@@ -554,17 +554,17 @@ on_annex = {
 				target = scope:target 
 			}
 		}
-		if = {
-			limit = {
-				situation:rise_of_timur = {
-					situation_is_active = yes
-				}
-				scope:target = {
-					is_rebel_country = no
-					tag = TIM
-				}
-			}
-			root = { trigger_event_non_silently = rise_of_timur.3 }
+		#if = {
+		#	limit = {
+		#		situation:rise_of_timur = {
+		#			situation_is_active = yes
+		#		}
+		#		scope:target = {
+		#			is_rebel_country = no
+		#			tag = TIM
+		#		}
+		#	}
+		#	root = { trigger_event_non_silently = rise_of_timur.3 }
 		}
 		if = {
 			limit = {
@@ -1780,21 +1780,21 @@ on_ending_war = {
 			}
 			trigger_event_silently = flavor_mor.36
 		}
-		if = {
-			limit = {
-				is_situation_active = situation:rise_of_timur
-				OR = {
-					scope:winner = { tag = TIM }
-					scope:loser = { tag = TIM }
-				}
-			}
-			#just clear it for the whole region
-			situation:rise_of_timur.var:rot_conquest_ambition = {
-				every_location_in_region = {
-					remove_location_modifier = rot_timur_scare
-				}
-			}
-		}
+		#if = {
+		#	limit = {
+		#		is_situation_active = situation:rise_of_timur
+		#		OR = {
+		#			scope:winner = { tag = TIM }
+		#			scope:loser = { tag = TIM }
+		#		}
+		#	}
+		#	#just clear it for the whole region
+		#	situation:rise_of_timur.var:rot_conquest_ambition = {
+		#		every_location_in_region = {
+		#			remove_location_modifier = rot_timur_scare
+		#		}
+		#	}
+		#}
 	}
 }
 
@@ -1992,40 +1992,40 @@ on_war_declared = {
 			}
 		}
 		#Timur Scare
-		if = {
-			limit = {
-				scope:actor = {
-					tag = TIM
-					ruler ?= { has_character_modifier = timmy_wants_to_play }
-				}
-				situation:rise_of_timur = {
-					situation_is_active = yes
-					has_variable = rot_conquest_ambition
-					scope:recipient.capital.region = var:rot_conquest_ambition
-				}
-			}
-			situation:rise_of_timur = {
-				var:rot_conquest_ambition = {
-					every_location_in_region = {
-						limit = { is_ownable = yes }
-						remove_location_modifier = rot_timur_scare
-						if = {
-							limit = {
-								owner ?= {
-									this != scope:actor
-									is_at_war_with = scope:actor
-								}
-							}
-							add_location_modifier = {
-								modifier = rot_timur_scare
-								years = 10
-								mode = replace
-							}
-						}
-					}
-				}
-			}
-		}
+		#if = {
+		#	limit = {
+		#		scope:actor = {
+		#			tag = TIM
+		#			ruler ?= { has_character_modifier = timmy_wants_to_play }
+		#		}
+		#		situation:rise_of_timur = {
+		#			situation_is_active = yes
+		#			has_variable = rot_conquest_ambition
+		#			scope:recipient.capital.region = var:rot_conquest_ambition
+		#		}
+		#	}
+		#	situation:rise_of_timur = {
+		#		var:rot_conquest_ambition = {
+		#			every_location_in_region = {
+		#				limit = { is_ownable = yes }
+		#				remove_location_modifier = rot_timur_scare
+		#				if = {
+		#					limit = {
+		#						owner ?= {
+		#							this != scope:actor
+		#							is_at_war_with = scope:actor
+		#						}
+		#					}
+		#					add_location_modifier = {
+		#						modifier = rot_timur_scare
+		#						years = 10
+		#						mode = replace
+		#					}
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
 	}
 }
 
@@ -2424,28 +2424,28 @@ on_great_battle_won = {
 				set_variable = { name = land_units_killed value = scope:killed_land_units }
 			}
 		}
-		if = {
-			limit = { situation:rise_of_timur = { situation_is_active = yes } }
-			scope:actor = {
-				owner = {
-					set_variable = { name = land_units_killed value = scope:killed_land_units }
-				}
-			}
-			if = {
-				limit = { scope:actor = { owner = { tag = TIM } } }
-				rot_increase_kill_counter = {
-					type = battle
-					variable = scope:actor.owner.var:land_units_killed
-				}
-			}
-			if = {
-				limit = { scope:target = { owner = { tag = TIM } } }
-				rot_increase_kill_counter = {
-					type = battle
-					variable = scope:target.owner.var:land_units_killed
-				}
-			}
-		}
+		#if = {
+		#	limit = { situation:rise_of_timur = { situation_is_active = yes } }
+		#	scope:actor = {
+		#		owner = {
+		#			set_variable = { name = land_units_killed value = scope:killed_land_units }
+		#		}
+		#	}
+		#	if = {
+		#		limit = { scope:actor = { owner = { tag = TIM } } }
+		#		rot_increase_kill_counter = {
+		#			type = battle
+		#			variable = scope:actor.owner.var:land_units_killed
+		#		}
+		#	}
+		#	if = {
+		#		limit = { scope:target = { owner = { tag = TIM } } }
+		#		rot_increase_kill_counter = {
+		#			type = battle
+		#			variable = scope:target.owner.var:land_units_killed
+		#		}
+		#	}
+		#}
 		if = {
 			limit = { 
 				scope:actor = { 
@@ -2561,30 +2561,30 @@ on_battle_won = {
 				value = special_unit_defeat_experience
 			}
 		}
-		if = {
-			limit = {
-				situation:rise_of_timur = { situation_is_active = yes }
-			}
-			scope:actor = {
-				owner = {
-					set_variable = { name = land_units_killed value = scope:killed_land_units }
-				}
-			}
-			if = {
-				limit = { scope:actor = { owner = { tag = TIM } } }
-				rot_increase_kill_counter = {
-					type = battle
-					variable = scope:actor.owner.var:land_units_killed
-				}
-			}
-			if = {
-				limit = { scope:target = { owner = { tag = TIM } } }
-				rot_increase_kill_counter = {
-					type = battle
-					variable = scope:target.owner.var:land_units_killed
-				}
-			}
-		}
+		#if = {
+		#	limit = {
+		#		situation:rise_of_timur = { situation_is_active = yes }
+		#	}
+		#	scope:actor = {
+		#		owner = {
+		#			set_variable = { name = land_units_killed value = scope:killed_land_units }
+		#		}
+		#	}
+		#	if = {
+		#		limit = { scope:actor = { owner = { tag = TIM } } }
+		#		rot_increase_kill_counter = {
+		#			type = battle
+		#			variable = scope:actor.owner.var:land_units_killed
+		#		}
+		#	}
+		#	if = {
+		#		limit = { scope:target = { owner = { tag = TIM } } }
+		#		rot_increase_kill_counter = {
+		#			type = battle
+		#			variable = scope:target.owner.var:land_units_killed
+		#		}
+		#	}
+		#}
 		if = {
 			limit = { 
 				scope:actor = { 
@@ -2838,16 +2838,16 @@ on_becoming_free = {
 # root = country, scope:overlord = new overlord
 on_dependency_gained = {
 	effect = {
-		if = {
-			limit = {
-				situation:rise_of_timur = {
-					situation_is_active = yes
-				}
-				root = { tag = TIM }
-				scope:overlord = { NOT = { tag = TIM } }
-			}
-			scope:overlord = { trigger_event_non_silently = rise_of_timur.5 }
-		}
+		#if = {
+		#	limit = {
+		#		situation:rise_of_timur = {
+		#			situation_is_active = yes
+		#		}
+		#		root = { tag = TIM }
+		#		scope:overlord = { NOT = { tag = TIM } }
+		#	}
+		#	scope:overlord = { trigger_event_non_silently = rise_of_timur.5 }
+		#}
 		if = {
 			limit = {
 				scope:overlord = {
@@ -4270,19 +4270,19 @@ on_location_changed_owner = {
 			}
 			root = { change_integration_level = core }
 		}
-		if = {
-			limit = {
-				can_fire_situation_event = {
-					situation = situation:rise_of_timur
-					event = rot_fall_of_delhi
-				}
-				scope:winner ?= { tag = TIM }
-				this = location:delhi
-			}
-			scope:winner = {
-				trigger_event_non_silently = rise_of_timur.11
-			}
-		}
+		#if = {
+		#	limit = {
+		#		can_fire_situation_event = {
+		#			situation = situation:rise_of_timur
+		#			event = rot_fall_of_delhi
+		#		}
+		#		scope:winner ?= { tag = TIM }
+		#		this = location:delhi
+		#	}
+		#	scope:winner = {
+		#		trigger_event_non_silently = rise_of_timur.11
+		#	}
+		#}
 
 		if = {
 			limit = {

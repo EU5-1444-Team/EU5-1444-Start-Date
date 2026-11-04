@@ -830,3 +830,40 @@ MAR = { #Ladakh/Maryul
 	}
 }
 MAR_ADJ = {	parent = MAR	suffix = "_ADJ" }
+TIM = { #Timurids
+	type = country
+	text = { #Gurkani
+		localization_key = gurkani_unified
+		trigger = {
+			is_leader_of_international_organization = international_organization:timurid_empire
+			owns = location:samarkand
+			owns = location:herat
+			owns = location:isfahan
+			owns = location:qom
+			owns = location:shiraz
+			owns = location:fergana
+			owns = location:urgench
+			owns = location:chach
+		}
+	}
+	text = { #Timurid
+		localization_key = TIM
+		fallback = yes
+	}
+}
+TIM_ADJ = {	parent = TIM	suffix = "_ADJ" }
+HRT = { #Timurids
+	type = country
+	text = { #Herat
+		localization_key = HRT
+		trigger = {
+			NOT = { is_leader_of_international_organization = international_organization:timurid_empire }
+			character:tim_shahrukh_mirza = { is_ruler = no }
+		}
+	}
+	text = { #Timurid
+		localization_key = TIM
+		fallback = yes
+	}
+}
+HRT_ADJ = {	parent = HRT	suffix = "_ADJ" }
